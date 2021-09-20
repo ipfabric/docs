@@ -1,0 +1,20 @@
+variables:
+  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i .ssh/gitlab-ci"
+  GIT_STRATEGY: clone
+
+image: python
+build_main_pages:
+  stage: deploy
+  only:
+    - main
+  before_script:
+    - git config --global user.email "gl_ci_bot@bobek.cz"
+    - git config --global user.name "ci_bot"
+    - mkdir -pvm 0700 .ssh
+    - echo "$ssh_deploy_key" > .ssh/gitlab-ci
+    - chmod 0400 .ssh/gitlab-ci
+    - git remote set-url origin "$(perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#' <<< $CI_REPOSITORY_URL)"
+  script:
+    - pip install -r requirements.txt
+    - git fetch origin gh-pages --depth=1
+    - mike deploy --push main

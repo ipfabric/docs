@@ -1,0 +1,31 @@
+site_name: IP Fabric Documentation
+copyright: <a href="https://ipfabric.io">IP Fabric</a>
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - pymdownx.snippets
+  - pymdownx.superfences:
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - search:
+  - mike:
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+      canonical_version:
+        null # the version for <link rel="canonical">; `null`
+        # uses the version specified via `mike deploy`
