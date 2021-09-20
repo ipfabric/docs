@@ -1,0 +1,1186 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+    
+    
+      
+        <title>Deploying the IP Fabric Virtual Machine (VM) - IP Fabric Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.92558b1b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deploying-the-ip-fabric-virtual-machine-vm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IP Fabric Documentation" class="md-header__button md-logo" aria-label="IP Fabric Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IP Fabric Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deploying the IP Fabric Virtual Machine (VM)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Welcome to IP Fabric Documentation
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../overview/" class="md-tabs__link md-tabs__link--active">
+        Getting started
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../system_administration/increase_disk_space/" class="md-tabs__link">
+        System administration
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IP Fabric Documentation" class="md-nav__button md-logo" aria-label="IP Fabric Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    IP Fabric Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to IP Fabric Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Getting started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        IP Fabric Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/discovery/" class="md-nav__link">
+        How Discovery Works
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/snapshots/" class="md-nav__link">
+        How Snapshots Work
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/vendors_features/" class="md-nav__link">
+        Supported vendors and features
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Platform first steps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platform first steps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Platform first steps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deploying the IP Fabric Virtual Machine (VM)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Deploying the IP Fabric Virtual Machine (VM)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-vmware-ova-virtual-machine" class="md-nav__link">
+    Deploying on VMware OVA Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-hyper-v-virtual-machine" class="md-nav__link">
+    Deploying on Hyper-V Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-to-nutanix-virtual-machine" class="md-nav__link">
+    Deploying to Nutanix Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-kvm-virtual-machine" class="md-nav__link">
+    Deploying on KVM Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-to-amazon-aws-ec2-instance" class="md-nav__link">
+    Deploying to Amazon AWS EC2 instance
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploying to Amazon AWS EC2 instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-steps" class="md-nav__link">
+    Deployment Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-first-time-boot-wizard" class="md-nav__link">
+    Complete (first-time) Boot Wizard
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-access_ui/" class="md-nav__link">
+        Access User Interface and Install License
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-configuration_wizard/" class="md-nav__link">
+        Configuration Wizard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-initial_discovery/" class="md-nav__link">
+        Initial discovery
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Platform wizard
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platform wizard" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Platform wizard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/" class="md-nav__link">
+        Configuration Wizard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/01-credentials/" class="md-nav__link">
+        01 - Configure Credentials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/02-enable/" class="md-nav__link">
+        02 - Enable mode passwords (optional)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/03-discovery_seed/" class="md-nav__link">
+        03 - Starting point for the discovery (optional)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/04-include_exclude_nets/" class="md-nav__link">
+        04 - Include or Exclude networks in Discovery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/05-site_separation/" class="md-nav__link">
+        05 - Site Separation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/06-cli_settings/" class="md-nav__link">
+        06 - CLI Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_wizard/07-vendors_api/" class="md-nav__link">
+        07 - Vendors API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        System administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          System administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_administration/increase_disk_space/" class="md-nav__link">
+        Increase disk space
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Admin ui
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Admin ui" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Admin ui
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_administration/admin_ui/create_local_administrator/" class="md-nav__link">
+        Create Local Administrator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-vmware-ova-virtual-machine" class="md-nav__link">
+    Deploying on VMware OVA Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-hyper-v-virtual-machine" class="md-nav__link">
+    Deploying on Hyper-V Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-to-nutanix-virtual-machine" class="md-nav__link">
+    Deploying to Nutanix Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-on-kvm-virtual-machine" class="md-nav__link">
+    Deploying on KVM Virtual Machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-to-amazon-aws-ec2-instance" class="md-nav__link">
+    Deploying to Amazon AWS EC2 instance
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploying to Amazon AWS EC2 instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-steps" class="md-nav__link">
+    Deployment Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-first-time-boot-wizard" class="md-nav__link">
+    Complete (first-time) Boot Wizard
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="deploying-the-ip-fabric-virtual-machine-vm">Deploying the IP Fabric Virtual Machine (VM)</h1>
+<p>All virtual appliance images are available at  <a href="https://releases.ipfabric.io/ipfabric/#current">https://releases.ipfabric.io/ipfabric/#current</a>. Access is restricted to registered customers only. Please contact our <a href="mailto:sales@ipfabric.io">sales representative</a> if you are interested in a trial of IP Fabric.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please bear in mind that IP Fabric uses CLI access (SSH or telnet) to connect to devices for data collection. It's important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
+</div>
+<h2 id="deploying-on-vmware-ova-virtual-machine">Deploying on VMware OVA Virtual Machine</h2>
+<ol>
+<li>Deploy OVA to your vSphere environment as described at <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA
+    Template</a>.</li>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../overview/#operational-requirements">operational requirements section</a>.<ol>
+<li>Change CPU count.</li>
+<li>Change memory size.</li>
+<li><a href="../../../system_administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</li>
+</ol>
+</li>
+<li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
+</ol>
+<h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
+<p>Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before deploying, please check if your Hyper-V server supports it.<a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server">Virtual Machine version on Windows or Windows Server</a></p>
+<ol>
+<li>Download <code>ipfabric-*-hyperv.zip</code> from official source.</li>
+<li>Extract previously downloaded archive <code>ipfabric-*-hyperv.zip</code>.</li>
+<li>Import HyperV image to your hypervisor server. <a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines">Export and Import virtual machines (Microsoft docs)</a></li>
+<li>
+<p>During <strong>Choose Import Type</strong> part, check option <strong>Copy the virtual machine(create a new unique ID)</strong>:</p>
+<p><img alt="HyperV Import" src="../hyperv_import.png" /></p>
+</li>
+<li>
+<p>Wait until import process ends.</p>
+</li>
+<li>
+<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>). Right click on VM -- choose <strong>Settings</strong>:</p>
+<p><img alt="HyperV Settings" src="../hyperv_settings.png" /></p>
+<ol>
+<li>
+<p>Change CPU count</p>
+<p><img alt="HyperV Setting CPU count" src="../hyperv_settings_cpu.png" /></p>
+</li>
+<li>
+<p>Change memory size</p>
+<p><img alt="HyperV Setting memory size" src="../hyperv_settings_mem.png" /></p>
+</li>
+<li>
+<p>Extend system disk if necessary</p>
+<p><img alt="HyperV Setting disk size" src="../hyperv_settings_disk.png" /></p>
+</li>
+<li>
+<p><a href="../../../system_administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</p>
+</li>
+<li>
+<p>Close VM Settings window</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Start VM.</p>
+</li>
+</ol>
+<h2 id="deploying-to-nutanix-virtual-machine">Deploying to Nutanix Virtual Machine</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at <a href="#deploying-on-vmware-ova-virtual-machine">VMware deploytment section</a>.</p>
+</div>
+<ol>
+<li>Download <code>ipfabric-*-.OVA</code> file from official source.</li>
+<li>
+<p>Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below</p>
+<p><img alt="Unzip OVA" src="../unzip_ova.png" /></p>
+</li>
+<li>
+<p>Import <code>.vmdk</code> files to Nutanix hypervisor, following Nutanix official documentation -- <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
+</li>
+<li>
+<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>).</p>
+<ol>
+<li>Change CPU count</li>
+<li>Change memory size</li>
+<li>Extend system disk if necessary</li>
+<li><a href="../../../system_administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</li>
+</ol>
+</li>
+<li>
+<p>Start VM and check if system starts without any interrupts.</p>
+</li>
+</ol>
+<h2 id="deploying-on-kvm-virtual-machine">Deploying on KVM Virtual Machine</h2>
+<ol>
+<li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
+<li>
+<p>Create a second <code>qcow2</code> disk for data with size that corresponds to <a href="../../overview/#operational-requirements">your network needs</a>) with the following command:</p>
+<div class="highlight"><pre><span></span><code>qemu-img create -f qcow2 ipfabric-data.qcow2 10G <span class="c1"># (up to 920G for 20 000 devices)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):</p>
+<div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the first, larger disk with OS&gt;.qcow2 --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the second disk <span class="k">for</span> data&gt;.qcow2 --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
+</code></pre></div>
+</li>
+<li>
+<p>This command deploys a new virtual machine with IP_Fabric name, two <code>qcow2</code> disks, 4 CPU cores, 16GB of RAM and will connect VM to the internet through <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change <code>--network</code> parameter).</p>
+</li>
+<li>
+<p>This command also starts up just created VM.</p>
+</li>
+<li>
+<p>Additionally, you can create and add a new empty virtual disk if <a href="../../../system_administration/increase_disk_space/">needed</a>.</p>
+</li>
+</ol>
+<h2 id="deploying-to-amazon-aws-ec2-instance">Deploying to Amazon AWS EC2 instance</h2>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>Before you begin the deployment, please note the following:</p>
+<ol>
+<li>
+<p>IP Fabric uses SSH, telnet and REST API over http/https in order to access network devices and controllers and carry out its discovery. Please ensure that the VPC subnet chosen for the deployment has the appropriate level of access and routing in order to complete the discovery.</p>
+</li>
+<li>
+<p>The IP Fabric AMI uses SSH for CLI console access, and HTTPS on ports <code>443</code> and <code>8443</code> for Web UI and system console access respectively. Security groups will need the appropriate configuration to allow inbound access to the AMI.</p>
+</li>
+</ol>
+<h3 id="deployment-steps">Deployment Steps</h3>
+<ol>
+<li>
+<p>Login to the AWS console for the account provided to the IP Fabric support team.</p>
+</li>
+<li>
+<p>Select the region for the VPC where you want to deploy IP Fabric:</p>
+<p><img alt="AWS region selection" src="../aws_region.png" /></p>
+</li>
+<li>
+<p>From the <strong>Services</strong> menu at the top left, select <strong>EC2</strong>.</p>
+</li>
+<li>
+<p>Then choose <strong>Instances</strong> in the left hand menu, and hit the <strong>Launch Instances</strong> button on the right:</p>
+<p><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></p>
+</li>
+<li>
+<p>Select <strong>My AMIs</strong>, then under <strong>Ownership</strong>, select <strong>Shared with me</strong>. The IP Fabric AMI should show up here. <strong>Select</strong> it.</p>
+<p><img alt="AWS Select IPF AMI" src="../aws_select_ami.png" /></p>
+</li>
+<li>
+<p>Choose the most appropriate instance type:</p>
+<table>
+<thead>
+<tr>
+<th>Devices</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>HDD</th>
+<th>Example EC2 Instance Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td>4</td>
+<td>16 GB</td>
+<td>90 GB</td>
+<td><code>c5.2xlarge</code></td>
+</tr>
+<tr>
+<td>1 000</td>
+<td>4</td>
+<td>32 GB</td>
+<td>100 GB</td>
+<td><code>c5.4xlarge</code></td>
+</tr>
+<tr>
+<td>2 000</td>
+<td>8</td>
+<td>32 GB</td>
+<td>200 GB</td>
+<td><code>c5.4xlarge</code></td>
+</tr>
+<tr>
+<td>5 000</td>
+<td>12</td>
+<td>64 GB</td>
+<td>300 GB</td>
+<td><code>c5.9xlarge</code></td>
+</tr>
+<tr>
+<td>10 000</td>
+<td>16</td>
+<td>128 GB</td>
+<td>550 GB</td>
+<td><code>c5.18xlarge</code></td>
+</tr>
+<tr>
+<td>20 000</td>
+<td>18</td>
+<td>256 GB</td>
+<td>1000 GB</td>
+<td><code>d3.8xlarge</code></td>
+</tr>
+</tbody>
+</table>
+<p>Selecting an appropriate instance type is necessary to achieve a stable and reliable system! Please double-check if your Instance settings are proper for your environment size.</p>
+</li>
+<li>
+<p>Select <strong>Configure Instance Details</strong>, then ensure the correct VPC and subnet are selected for the IP Fabric instance. (Create a new VPC and subnet if required):</p>
+<p><img alt="AWS selecting VPC" src="../aws_vpc.png" /></p>
+</li>
+<li>
+<p>Then select <strong>Add Storage</strong>, add 80G to the additional amount from the table above for the root volume. For example, the instance <code>c5.4xlarge</code> should have 200G in total.</p>
+<p><img alt="AWS disk size" src="../aws_disk.png" /></p>
+</li>
+<li>
+<p>Select <strong>Edit Security Groups</strong> to make sure that IP Fabric will have the connectivity it requires to function:</p>
+<p><img alt="AWS security groups" src="../aws_sec_groups.png" /></p>
+</li>
+<li>
+<p>Confirm the details with the <a href="Network_Connectivity_Requirements">IP Fabric Connectivity Requirements</a>. The security group rules should look something like:</p>
+<p><img alt="AWS security groups configuration" src="../aws_sec_groups_cfg.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that you can only select incoming rules at this point! By default the security group allows access to everything over any protocol and port: you will need to revisit once the instance has launched if you need to restrict access at source.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Review and Launch</strong>.</p>
+</li>
+<li>
+<p>At this point, if you never used Debian in AWS before, subscription alert can appear. If requires, please follow instruction and open
+    hyperlink in Error message: <em>In order to user this AWS Marketplace product….</em></p>
+<p><img alt="AWS Subscription notification" src="../aws_subscription_notification.png" /></p>
+</li>
+<li>
+<p>On new page, please click <strong>Continue to Subscribe</strong></p>
+<p><img alt="AWS Subscription continue" src="../aws_subscription_cont.png" /></p>
+</li>
+<li>
+<p>When done, please click <strong>Launch</strong> button once again.</p>
+</li>
+<li>
+<p>Please confirm <strong>Key pair</strong> information and click <strong>Launch Instance</strong>.</p>
+<p><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></p>
+</li>
+<li>
+<p>Your Instance appears in the instances list, and it is started automatically by AWS:</p>
+<p><img alt="AWS instance" src="../aws_instance_booted.png" /></p>
+</li>
+<li>
+<p>You can now <a href="Access_User_Interface_and_Install_License">access the Web UI, install the license file</a> and login to the instance to run the Configuration Wizard.</p>
+</li>
+<li>
+<p>There is a bug in the latest version and you will need to setup <code>traceroute</code> in the IPFabric in order to run Discovery. <code>traceroute</code> must be setup to -- <code>127.0.0.1/32</code>. This is going to be fixed in the future.</p>
+<p><img alt="AWS tranceroute" src="../aws_traceroute.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="complete-first-time-boot-wizard">Complete (first-time) Boot Wizard</h2>
+<p>The <em>First Boot Wizard</em> starts when IP Fabric is run for the first time and configures system options. The wizard can also be re-run later from the service interface to modify basic system parameters.</p>
+<ol>
+<li>Assign hostname.</li>
+<li>Assign domain name.</li>
+<li>Choose IP address acquisition method.</li>
+<li>If a static method is used, configure IP address, netmask, default GW, and DNS servers.</li>
+<li>Configure NTP servers or just click OK to continue if not using NTP.</li>
+<li>Select time zone.</li>
+<li>Configure Internet Proxy if used.</li>
+<li>Set shell user password of <code>osadmin</code> user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the <code>admin</code> username by default, for more information, please, read: <a href="Access_User_Interface_and_Install_License">Access User Interface and Install License</a> and also for encrypting system backups.</li>
+<li>Optionally define organization parameters for the local SSL certificate.</li>
+<li>After rebooting, the console login screen will display the assigned IP address of the system and provide a link to access the user interface.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember password from step 8! IP Fabric support engineers are able to reset <code>osadmin</code> user passwords but <strong>encrypted backups will be lost</strong>!</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A trusted certificate can replace a self-signed SSL certificate using IP Fabric web UI.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../overview/vendors_features/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Supported vendors and features" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Supported vendors and features
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../02-access_ui/" class="md-footer__link md-footer__link--next" aria-label="Next: Access User Interface and Install License" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Access User Interface and Install License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://ipfabric.io">IP Fabric</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.94ec81fe.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      
+    
+  </body>
+</html>

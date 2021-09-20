@@ -1,0 +1,1092 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+    
+    
+      
+        <title>06 - CLI Settings - IP Fabric Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.92558b1b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#06-cli-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IP Fabric Documentation" class="md-header__button md-logo" aria-label="IP Fabric Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IP Fabric Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06 - CLI Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Welcome to IP Fabric Documentation
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../overview/" class="md-tabs__link md-tabs__link--active">
+        Getting started
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../system_administration/increase_disk_space/" class="md-tabs__link">
+        System administration
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IP Fabric Documentation" class="md-nav__button md-logo" aria-label="IP Fabric Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    IP Fabric Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to IP Fabric Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Getting started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        IP Fabric Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/discovery/" class="md-nav__link">
+        How Discovery Works
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/snapshots/" class="md-nav__link">
+        How Snapshots Work
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/vendors_features/" class="md-nav__link">
+        Supported vendors and features
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Platform first steps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platform first steps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Platform first steps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_first_steps/01-deployment/" class="md-nav__link">
+        Deploying the IP Fabric Virtual Machine (VM)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_first_steps/02-access_ui/" class="md-nav__link">
+        Access User Interface and Install License
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_first_steps/03-configuration_wizard/" class="md-nav__link">
+        Configuration Wizard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform_first_steps/04-initial_discovery/" class="md-nav__link">
+        Initial discovery
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Platform wizard
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Platform wizard" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Platform wizard
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Configuration Wizard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-credentials/" class="md-nav__link">
+        01 - Configure Credentials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-enable/" class="md-nav__link">
+        02 - Enable mode passwords (optional)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-discovery_seed/" class="md-nav__link">
+        03 - Starting point for the discovery (optional)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-include_exclude_nets/" class="md-nav__link">
+        04 - Include or Exclude networks in Discovery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-site_separation/" class="md-nav__link">
+        05 - Site Separation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          06 - CLI Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        06 - CLI Settings
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tune-sshtelnet-cli-parameters" class="md-nav__link">
+    Fine-Tune SSH/telnet CLI parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jump-host" class="md-nav__link">
+    Jump host
+  </a>
+  
+    <nav class="md-nav" aria-label="Jump host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-jump-host" class="md-nav__link">
+    Set up Jump host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-configuration" class="md-nav__link">
+    SSH key configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-jumphost-connection" class="md-nav__link">
+    Disabling Jumphost connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-jumphost-configuration" class="md-nav__link">
+    Remove Jumphost configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+    Custom SSH/Telnet ports
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-vendors_api/" class="md-nav__link">
+        07 - Vendors API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        System administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="System administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          System administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_administration/increase_disk_space/" class="md-nav__link">
+        Increase disk space
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Admin ui
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Admin ui" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Admin ui
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_administration/admin_ui/create_local_administrator/" class="md-nav__link">
+        Create Local Administrator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tune-sshtelnet-cli-parameters" class="md-nav__link">
+    Fine-Tune SSH/telnet CLI parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jump-host" class="md-nav__link">
+    Jump host
+  </a>
+  
+    <nav class="md-nav" aria-label="Jump host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-jump-host" class="md-nav__link">
+    Set up Jump host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-configuration" class="md-nav__link">
+    SSH key configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-jumphost-connection" class="md-nav__link">
+    Disabling Jumphost connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-jumphost-configuration" class="md-nav__link">
+    Remove Jumphost configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+    Custom SSH/Telnet ports
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="06-cli-settings">06 - CLI Settings</h1>
+<p><img alt="CLI" src="../cli.png" /></p>
+<h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI parameters</h2>
+<p>The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>:</p>
+<p><img alt="CLI" src="../cli_settings.png" /></p>
+<dl>
+<dt>Network device login timeout</dt>
+<dd>Timeout before the logging prompt is received. It may take longer for remote branches over low-speed lines, or destined to overloaded devices.</dd>
+<dt>Network device session timeout</dt>
+<dd>Too many <em>Command Timeout</em> errors during the Discovery process may indicate that <em>Network device session timeout</em> is too short and it may be necessary to expect a delay for a response to arrive.</dd>
+<dt>Maximum number of parallel sessions</dt>
+<dd>
+<p>To prevent flooding your network with too many SSH/TELNET sessions set <em>Maximum number of parallel sessions</em>. This setting can be also helpful if the AAA server (TACACS/Radius) has a limit of parallel AAA requests for users.</p>
+<p>In rare cases, the Cisco ISE or similar systems may rate limit the command authorization. When there are too many authorization failures and Cisco ISE is in place, try to limit the number of parallel sessions down to 10 and steadily increase.</p>
+</dd>
+<dt>Basic failure</dt>
+<dd>How many times to retry a connection for any error, except authentication failure.</dd>
+<dt>Authentication failure</dt>
+<dd><em>Authentication failure</em> can occur even if a user is authorized to login but may happen, for example, when an AAA server is overloaded or an authentication packet is lost.</dd>
+<dt>Command Authorization Failure retries</dt>
+<dd>If you see many examples of <em>Authentication error</em> during the Discovery process, please adjust <em>Authentication failure</em> and <em>Command Authorization Failure retries</em>.</dd>
+</dl>
+<div class="admonition example">
+<p class="admonition-title">Example of error message in Connectivity Report</p>
+<p>According to the summary of issues in the very first completed snapshot, the CLI Settings can be adjusted. Here are some of the most common errors and adjustments:</p>
+<table>
+<thead>
+<tr>
+<th>Error </th>
+<th>Error Type</th>
+<th>How to mitigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
+<td>Connection error</td>
+<td>Received no response from the destination.</td>
+</tr>
+<tr>
+<td>connect ECONNREFUSED XX.XX.XX.XX:22</td>
+<td>Connection error</td>
+<td>The connection to the destination is being blocked by an access-list or firewall.</td>
+</tr>
+<tr>
+<td>All configured authentication methods failed</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>Authentication failed</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>Authentication failed - login prompt appeared again</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$</td>
+<td>Command timeout</td>
+<td>The command <code>show vrrp  \| e #^$</code> timed out. Increase <strong>device session timeout.</strong></td>
+</tr>
+<tr>
+<td>Can't detect prompt</td>
+<td>Command timeout</td>
+<td>Unable to detect CLI prompt. Increase <strong>network device login timeout.</strong></td>
+</tr>
+<tr>
+<td>Command "enable" authorization failed, tried 2x</td>
+<td>Command authorization failure</td>
+<td>The command wasn't authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="jump-host">Jump host</h2>
+<p><strong>Jump host</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. For connecting, IP Fabric uses the <code>sshuttle</code> library that has the <a href="https://sshuttle.readthedocs.io/en/stable/requirements.html#client-side-requirements">following requirements for the jump host.</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.</p>
+</div>
+<h3 id="set-up-jump-host">Set up Jump host</h3>
+<ol>
+<li>
+<p>Open jump host settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></p>
+</li>
+<li>
+<p>At the bottom of the page, please select <strong>Add</strong> button</p>
+<p><img alt="Add jump host" src="../jumphost_add.png" /></p>
+</li>
+<li>
+<p>Fill in all necessary data</p>
+<ol>
+<li><strong>Label</strong> - the name for configuration (mandatory)</li>
+<li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
+<li><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</li>
+<li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
+<li><strong>Login type</strong><ol>
+<li><strong>Use credentials</strong> - require to provide username and password</li>
+<li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
+</ol>
+</li>
+<li><strong>Username</strong> - Username for authentication (mandatory)</li>
+<li>
+<p><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used)</p>
+<p><img alt="Jump host auth" src="../jumphost_auth.png" /></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>If a connection is open, you will see the <strong>Running</strong> status in Jumphost list</p>
+<p><img alt="Jump host auth" src="../jumphost_list.png" /></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use 0.0.0.0/0 or another subnet that includes your network from which you are connecting to IP Fabric, make sure you put your network to <strong>“Exclude IPv4 subnet”</strong>. Otherwise, your IP connection will be lost and you will have to recover from the console.</p>
+</div>
+<h3 id="ssh-key-configuration">SSH key configuration</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding ssh key to proxy server allows you to avoid using passwords for authentication.</p>
+</div>
+<ol>
+<li>
+<p>Download ssh key from Jumphost settings</p>
+<p><img alt="Downloading public key" src="../jumphost_pub.png" /></p>
+</li>
+<li>
+<p>Save <code>ipf-discovery-public-key.pub</code></p>
+</li>
+<li>
+<p>Copy file content to <code>~/.ssh/authorized_keys</code> (or equivalent) file of the user that will authenticate with Jumphost server.</p>
+</li>
+<li>
+<p>If the key has been copied you can use the option <strong>Use SSH keys</strong> while adding a new Jumphost server, instead of <strong>Use credentials</strong>.</p>
+</li>
+</ol>
+<h3 id="disabling-jumphost-connection">Disabling Jumphost connection</h3>
+<ol>
+<li>
+<p>Edit configuration that needs to be disabled, i.e.</p>
+<p><img alt="Edit jump host" src="../jumphost_edit.png" /></p>
+</li>
+<li>
+<p>Change the setting to <strong>Disabled</strong>,</p>
+</li>
+<li>
+<p>Click the <strong>Update</strong> button</p>
+<p><img alt="Disable jump host" src="../jumphost_disable.png" /></p>
+</li>
+</ol>
+<h3 id="remove-jumphost-configuration">Remove Jumphost configuration</h3>
+<ol>
+<li>
+<p>On Jumphost servers list, check configuration that needs to be removed</p>
+</li>
+<li>
+<p>Click <strong>Delete</strong> button</p>
+<p><img alt="Delete jump host" src="../jumphost_delete.png" /></p>
+</li>
+</ol>
+<h3 id="limitations">Limitations</h3>
+<p>Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.</p>
+<h2 id="custom-sshtelnet-ports">Custom SSH/Telnet ports</h2>
+<p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
+<p>In the following example we will configure the discovery process to use port <code>8080</code> for SSH connections towards firewall at <code>192.168.168.10</code>:</p>
+<p><img alt="Custom SSH port" src="../custom_ssh_port.png" /></p>
+<p>As a result of such configuration, we would create a new item under the <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every new snapshot created by IP Fabric.</p>
+<p><img alt="List of custom SSH port" src="../custom_ssh_port_list.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../05-site_separation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 05 - Site Separation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              05 - Site Separation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../07-vendors_api/" class="md-footer__link md-footer__link--next" aria-label="Next: 07 - Vendors API" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              07 - Vendors API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://ipfabric.io">IP Fabric</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.94ec81fe.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      
+    
+  </body>
+</html>
