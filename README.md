@@ -47,8 +47,9 @@ layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
 ### Writing your documents
 
-Documents are written in Markdown with some helpful extensions. List of enabled
-extensions is at `mkdocs.yml` under `markdown_extensions` section.
+Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
+with some helpful extensions. List of enabled extensions is at `mkdocs.yml`
+under `markdown_extensions` section.
 
 - [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/) for call outs like "example", "note", "warning" etc.
 - [attr_list](https://squidfunk.github.io/mkdocs-material/reference/buttons/) for nice Buttons
