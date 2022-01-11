@@ -919,164 +919,164 @@ regions.</p>
 <p>Copy those keys to the AWS API settings in your IP Fabric and don't forget to <strong>fill the region where the devices which you want to discover are</strong>.</p>
 <p><img alt="AWS New Access Key" src="../vapi_aws_key.png" /></p>
 <p>To ensure that IP Fabric can retrieve all the required data to model the AWS networks, a series of specific policies are required to be applied to the user account or role used for the API key. Example configuration with all required IAM policies:</p>
-<div class="highlight"><span class="filename">ipf_aws_policy.json</span><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeAccountAttributes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeAddresses&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeAddressesAttribute&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeAvailabilityZones&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeByoipCidrs&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeCarrierGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeCoipPools&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeCustomerGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeDhcpOptions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeEgressOnlyInternetGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInternetGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeIpv6Pools&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeManagedPrefixLists&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeMovingAddresses&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNatGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkAcls&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkInsightsAnalyses&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkInsightsPaths&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkInterfaceAttribute&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkInterfacePermissions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeNetworkInterfaces&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribePlacementGroups&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribePrefixLists&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribePublicIpv4Pools&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeRegions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeRouteTables&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSecurityGroupReferences&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSecurityGroupRules&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSecurityGroups&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeStaleSecurityGroups&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSubnets&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTags&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTrafficMirrorFilters&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTrafficMirrorSessions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTrafficMirrorTargets&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2VPC&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeVpcAttribute&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcClassicLink&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcClassicLinkDnsSupport&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpointConnectionNotifications&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpointConnections&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpoints&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpointServiceConfigurations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpointServicePermissions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcEndpointServices&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcPeeringConnections&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeVpcs&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2Instances&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeClassicLinkInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeFleetHistory&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeFleetInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeFleets&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeHostReservationOfferings&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeHostReservations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeHosts&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceAttribute&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceCreditSpecifications&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceEventNotificationAttributes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceStatus&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceTypeOfferings&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeInstanceTypes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeReservedInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeReservedInstancesListings&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeReservedInstancesModifications&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeReservedInstancesOfferings&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeScheduledInstanceAvailability&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeScheduledInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSpotFleetInstances&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeSpotInstanceRequests&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2ClientVPN&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeClientVpnAuthorizationRules&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeClientVpnConnections&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeClientVpnEndpoints&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeClientVpnRoutes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeClientVpnTargetNetworks&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2VPNGW&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ec2:DescribeVpnConnections&quot;</span><span class="p">,</span> <span class="s2">&quot;ec2:DescribeVpnGateways&quot;</span><span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2LocalGW&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeLocalGatewayRouteTables&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeLocalGatewayRouteTableVpcAssociations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeLocalGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeLocalGatewayVirtualInterfaceGroups&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeLocalGatewayVirtualInterfaces&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricEC2TransitGW&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayAttachments&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayConnectPeers&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayConnects&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayMulticastDomains&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayPeeringAttachments&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayRouteTables&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGateways&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:DescribeTransitGatewayVpcAttachments&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:GetTransitGatewayAttachmentPropagations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:GetTransitGatewayMulticastDomainAssociations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:GetTransitGatewayPrefixListReferences&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:GetTransitGatewayRouteTableAssociations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:GetTransitGatewayRouteTablePropagations&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:SearchTransitGatewayMulticastGroups&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ec2:SearchTransitGatewayRoutes&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricELB&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerAttributes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerPolicies&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerPolicyTypes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancers&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight"><span class="filename">ipf_aws_policy.json</span><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeAccountAttributes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeAddresses&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeAddressesAttribute&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeAvailabilityZones&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeByoipCidrs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeCarrierGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeCoipPools&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeCustomerGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeDhcpOptions&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeEgressOnlyInternetGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInternetGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeIpv6Pools&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeManagedPrefixLists&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeMovingAddresses&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNatGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkAcls&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkInsightsAnalyses&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkInsightsPaths&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkInterfaceAttribute&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkInterfacePermissions&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeNetworkInterfaces&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribePlacementGroups&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribePrefixLists&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribePublicIpv4Pools&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeRegions&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeRouteTables&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSecurityGroupReferences&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSecurityGroupRules&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSecurityGroups&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeStaleSecurityGroups&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSubnets&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTags&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTrafficMirrorFilters&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTrafficMirrorSessions&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTrafficMirrorTargets&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2VPC&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcAttribute&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcClassicLink&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcClassicLinkDnsSupport&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpointConnectionNotifications&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpointConnections&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpoints&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpointServiceConfigurations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpointServicePermissions&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcEndpointServices&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcPeeringConnections&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeVpcs&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2Instances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClassicLinkInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeFleetHistory&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeFleetInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeFleets&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeHostReservationOfferings&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeHostReservations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeHosts&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceAttribute&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceCreditSpecifications&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceEventNotificationAttributes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceStatus&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceTypeOfferings&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeInstanceTypes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeReservedInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeReservedInstancesListings&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeReservedInstancesModifications&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeReservedInstancesOfferings&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeScheduledInstanceAvailability&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeScheduledInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSpotFleetInstances&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeSpotInstanceRequests&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2ClientVPN&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClientVpnAuthorizationRules&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClientVpnConnections&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClientVpnEndpoints&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClientVpnRoutes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeClientVpnTargetNetworks&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2VPNGW&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ec2:DescribeVpnConnections&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ec2:DescribeVpnGateways&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2LocalGW&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGatewayRouteTables&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGatewayRouteTableVpcAssociations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGatewayVirtualInterfaceGroups&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeLocalGatewayVirtualInterfaces&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricEC2TransitGW&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayAttachments&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayConnectPeers&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayConnects&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayMulticastDomains&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayPeeringAttachments&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayRouteTables&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGateways&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:DescribeTransitGatewayVpcAttachments&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:GetTransitGatewayAttachmentPropagations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:GetTransitGatewayMulticastDomainAssociations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:GetTransitGatewayPrefixListReferences&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:GetTransitGatewayRouteTableAssociations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:GetTransitGatewayRouteTablePropagations&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:SearchTransitGatewayMulticastGroups&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;ec2:SearchTransitGatewayRoutes&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPFabricELB&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerAttributes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerPolicies&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancerPolicyTypes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;elasticloadbalancing:DescribeLoadBalancers&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
               
