@@ -83,7 +83,7 @@ normally, we have:
 - there is a CD/CI job in the branch, which copies content to `public` artifact
   when pushed to `gh-pages` branch.
 
-You can see the previous versions being saved in the `dh-pages`. It looks
+You can see the previous versions being saved in the `gh-pages` branch. It looks
 something like this:
 
 ```none
