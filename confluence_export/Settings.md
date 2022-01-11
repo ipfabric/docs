@@ -117,7 +117,7 @@ option to separate the site using ***tunnel*** and/or
 For configuration go to ***Settings → Advanced → Discovery → Site
 separation***.
 
-<img src="attachments/102203393/802750477.png?width=285" class="image-left" loading="lazy" data-image-src="attachments/102203393/802750477.png" data-height="242" data-width="891" data-unresolved-comment-count="0" data-linked-resource-id="802750477" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-10_16-56-3.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="102203393" data-linked-resource-container-version="12" data-media-id="0c5c7a43-bae9-4bc5-aa8e-ff64e834f2b7" data-media-type="file" width="285" />
+<img src="attachments/102203393/802750477.png?width=272" class="image-left" loading="lazy" data-image-src="attachments/102203393/802750477.png" data-height="242" data-width="891" data-unresolved-comment-count="0" data-linked-resource-id="802750477" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-10_16-56-3.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="102203393" data-linked-resource-container-version="13" data-media-id="0c5c7a43-bae9-4bc5-aa8e-ff64e834f2b7" data-media-type="file" width="272" />
 
 ## RegEx based on hostname
 
@@ -174,7 +174,7 @@ The change in the regex is displayed as a live preview.
 Once the regex is ready, click '***Site overview with this RegEx'*** and
 observer results. ***Save*** (in the upper right corner).
 
-<img src="attachments/102203393/802652173.png?width=394" class="image-left" loading="lazy" data-image-src="attachments/102203393/802652173.png" data-height="445" data-width="1350" data-unresolved-comment-count="0" data-linked-resource-id="802652173" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-10_16-57-15.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="102203393" data-linked-resource-container-version="12" data-media-id="627d2d24-beb4-4fa7-87dd-f187bb50ef7b" data-media-type="file" width="394" />
+<img src="attachments/102203393/802652173.png?width=374" class="image-left" loading="lazy" data-image-src="attachments/102203393/802652173.png" data-height="445" data-width="1350" data-unresolved-comment-count="0" data-linked-resource-id="802652173" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-1-10_16-57-15.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="102203393" data-linked-resource-container-version="13" data-media-id="627d2d24-beb4-4fa7-87dd-f187bb50ef7b" data-media-type="file" width="374" />
 
 **RegEx example**:
 
@@ -220,7 +220,3 @@ The Manual Site Separation option is complementary to two previous
 options and provides the users with full flexibility. It can be enabled
 in **Inventory \> Sites \> Manual Separation** where any device's site
 can be adjusted based on more attributes.
-
-  
-
-  

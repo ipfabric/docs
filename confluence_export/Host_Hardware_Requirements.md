@@ -1,6 +1,6 @@
 # Host Hardware Requirements
 
-# Host Hardware Requirements
+## Host Hardware Requirements
 
 The IP Fabric platform runs on Intel Xeon Nehalem CPUs or later. The
 system runs in at least 4 parallel threads, but scheduling can handle
@@ -65,4 +65,8 @@ The recommended hardware resources may not allow running the most
 demanding graph traversal functions. These functions may require a
 sizable memory pool to complete successfully.
 
-  
+## VMware Requirements
+
+IP Fabric OVA images are built on Hardware Version 13.
+
+ESXi version 6.5 or newer is required.

@@ -2,11 +2,24 @@
 
 ## CheckPoint API
 
+<div>
+
+<div>
+
+We use API only to collect information that cannot be retrieved from CLI
+logs.
+
+To discover CheckPoint devices, CLI access also needs to be available.
+
+</div>
+
+</div>
+
 Checkpoint requires the following settings to be applied:
 
 -   API Key - Available in version R80.40 and above (API v1.6). To
     generate the key, use CheckPoint SmartConsole, and select "API Key"
-    as administrator's Authentication method  
+    as user's Authentication method  
     **or**
 
 -   Username - Username to access API data

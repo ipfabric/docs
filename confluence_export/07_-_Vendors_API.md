@@ -1,6 +1,6 @@
 # 07 - Vendors API
 
-<img src="attachments/2393342021/2393342031.png" class="image-center" loading="lazy" data-image-src="attachments/2393342021/2393342031.png" data-height="198" data-width="497" data-unresolved-comment-count="0" data-linked-resource-id="2393342031" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210513-232501.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2393342021" data-linked-resource-container-version="2" data-media-id="17359542-f9ec-43b3-8d38-3f1b6fd48cf0" data-media-type="file" />
+<img src="attachments/2393342021/2393342031.png?width=113" class="image-center" loading="lazy" data-image-src="attachments/2393342021/2393342031.png" data-height="198" data-width="497" data-unresolved-comment-count="0" data-linked-resource-id="2393342031" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210513-232501.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2393342021" data-linked-resource-container-version="3" data-media-id="17359542-f9ec-43b3-8d38-3f1b6fd48cf0" data-media-type="file" width="113" />
 
 ## Meraki API
 
@@ -27,11 +27,24 @@ Meraki requires the following settings to be applied:
 
 ## CheckPoint API
 
+<div>
+
+<div>
+
+We use API only to collect information that cannot be retrieved from CLI
+logs.
+
+To discover CheckPoint devices, CLI access also needs to be available.
+
+</div>
+
+</div>
+
 Checkpoint requires the following settings to be applied:
 
 -   API Key - Available in version R80.40 and above (API v1.6). To
     generate the key, use CheckPoint SmartConsole, and select "API Key"
-    as administrator's Authentication method  
+    as user's Authentication method  
     **or**
 
 -   Username - Username to access API data
@@ -123,6 +136,25 @@ contains a JSON description of the required IAM policies:
 </div>
 
 [<img src="attachments/thumbnails/2691563521/2691399704" height="250" />](attachments/2691563521/2691399704.json)
+
+## Viptela API
+
+Starting version 4.1.0 IP Fabric supports Viptela API.
+
+Viptela devices are discovered only through API.
+
+To add Viptela to discovery global settings, go to **Settings → Advanced
+→ Vendors API** and press **+Add** button
+
+<img src="attachments/2809626625/2809888769.png?width=204" class="image-center" loading="lazy" data-image-src="attachments/2809626625/2809888769.png" data-height="829" data-width="1248" data-unresolved-comment-count="0" data-linked-resource-id="2809888769" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20211118-105748.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2809626625" data-linked-resource-container-version="5" data-media-id="de93a3da-5924-47c0-8dde-aa2989f36dce" data-media-type="file" width="204" />
+
+Afterwards, choose Viptela API from the list and fill in
+
+-   **Username and password** used to log in to vManage
+
+-   **Base URL** of vManage server (https://vmanage-ip-address)
+
+<img src="attachments/2809626625/2809954305.png" class="image-center" loading="lazy" data-image-src="attachments/2809626625/2809954305.png" data-height="402" data-width="601" data-unresolved-comment-count="0" data-linked-resource-id="2809954305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20211118-111744.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2809626625" data-linked-resource-container-version="5" data-media-id="02b21588-b923-430b-b57a-3c35073f88cb" data-media-type="file" />
 
   
 

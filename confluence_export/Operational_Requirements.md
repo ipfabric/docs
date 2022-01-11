@@ -1,6 +1,6 @@
 # Operational Requirements
 
-# Host Hardware Requirements
+## Host Hardware Requirements
 
 The IP Fabric platform runs on Intel Xeon Nehalem CPUs or later. The
 system runs in at least 4 parallel threads, but scheduling can handle
@@ -65,7 +65,11 @@ The recommended hardware resources may not allow running the most
 demanding graph traversal functions. These functions may require a
 sizable memory pool to complete successfully.
 
-  
+## VMware Requirements
+
+IP Fabric OVA images are built on Hardware Version 13.
+
+ESXi version 6.5 or newer is required.
 
 # Network Connectivity Requirements
 
@@ -76,12 +80,13 @@ direction to provide an additional safety measure.
 IP Fabric should be connected to a network that has direct connectivity
 to managed devices. [Jumphost
 server](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/1384841217/Jumphost+settings)
-can also be set-up and used. (Jumphost server requires an installation
-of SSH Python (versions 2.4 to 3.7).)
+can also be set up and used.
+
+## Inbound Flow List
 
 <div class="table-wrap">
 
-<table class="confluenceTable" data-layout="default">
+<table class="confluenceTable" data-layout="default" data-local-id="c4bd1fd9-7fce-440f-8fcf-96adfe6ba2b2">
 <tbody>
 <tr class="header">
 <th class="confluenceTh"><p>Source port (remote)</p></th>
@@ -132,11 +137,11 @@ of SSH Python (versions 2.4 to 3.7).)
 
 </div>
 
-*Table* *3: Inbound flow list*
+## Outbound Flow List
 
 <div class="table-wrap">
 
-<table class="confluenceTable" data-layout="default">
+<table class="confluenceTable" data-layout="default" data-local-id="9480f0b6-5fc7-4d3a-8320-13d3f6cf0374">
 <tbody>
 <tr class="header">
 <th class="confluenceTh"><p>Source port (local)</p></th>
@@ -187,10 +192,24 @@ of SSH Python (versions 2.4 to 3.7).)
 
 </div>
 
-*Table* *4: Outbound flow list*
-
 Internet connectivity is used to check product updates, upgrades, setup
 support VPN, send error reports, and submit support tickets.
+
+## Jumphost server requirements
+
+<div class="table-wrap">
+
+|                    |             |
+|--------------------|-------------|
+| **Python version** |             |
+| 2.7                | supported   |
+| 3.5                | supported   |
+| 3.6                | supported   |
+| 3.7                | supported   |
+| 3.8                | unsupported |
+| 3.9                | unsupported |
+
+</div>
 
 # Network Access Credentials Requirements
 

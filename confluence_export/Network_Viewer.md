@@ -9,7 +9,7 @@ on a cloud to explore further that specific site.
 
 Top-level view with all network:
 
-<img src="attachments/2491121666/2492825601.png?width=340" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825601.png" data-height="880" data-width="1424" data-unresolved-comment-count="0" data-linked-resource-id="2492825601" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-9-40.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="a1aaed49-957c-4956-b211-359ddf3e014d" data-media-type="file" width="340" />
+<img src="attachments/2491121666/2492825601.png?width=340" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825601.png" data-height="880" data-width="1424" data-unresolved-comment-count="0" data-linked-resource-id="2492825601" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-9-40.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="a1aaed49-957c-4956-b211-359ddf3e014d" data-media-type="file" width="340" />
 
 ### **Adding networks to the view**
 
@@ -27,7 +27,7 @@ and *47 Brno Warehouse*:
 
 3.  Click ***Submit***
 
-<img src="attachments/2491121666/2492792858.png?width=340" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792858.png" data-height="867" data-width="1689" data-unresolved-comment-count="0" data-linked-resource-id="2492792858" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-19-22.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="bfa378a4-407e-40b8-8685-de25ef7d7eba" data-media-type="file" width="340" />
+<img src="attachments/2491121666/2492792858.png?width=340" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792858.png" data-height="867" data-width="1689" data-unresolved-comment-count="0" data-linked-resource-id="2492792858" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-19-22.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="bfa378a4-407e-40b8-8685-de25ef7d7eba" data-media-type="file" width="340" />
 
 ### **Removing** **networks**
 
@@ -59,7 +59,15 @@ operations can change their layout:
 
 The ***Center View*** button can also center the screen view.
 
-<img src="attachments/2491121666/2492629041.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492629041.png" data-height="101" data-width="176" data-unresolved-comment-count="0" data-linked-resource-id="2492629041" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-28-24.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="7f888068-f41b-4b1f-ae7e-9c6bb6824b3b" data-media-type="file" />
+<img src="attachments/2491121666/2492629041.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492629041.png" data-height="101" data-width="176" data-unresolved-comment-count="0" data-linked-resource-id="2492629041" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-28-24.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="7f888068-f41b-4b1f-ae7e-9c6bb6824b3b" data-media-type="file" />
+
+### **Hide/Collapse Items in the view**
+
+After selecting a set of devices, or cloud, if you do a right-click, you
+have the option to collapse the selected items into a new cloud, or hide
+them:
+
+<img src="attachments/2491121666/2751758339.png?width=210" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2751758339.png" data-height="413" data-width="911" data-unresolved-comment-count="0" data-linked-resource-id="2751758339" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210914-143019.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="f91f156d-9db5-41c1-b7a3-7bc9cd45aa53" data-media-type="file" width="210" /><img src="attachments/2491121666/2751889409.png?width=210" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2751889409.png" data-height="410" data-width="910" data-unresolved-comment-count="0" data-linked-resource-id="2751889409" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210914-143146.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="22bdf64e-f542-49f8-9a02-136b4e5dde20" data-media-type="file" width="210" />
 
 ### **Save User-defined**
 
@@ -69,7 +77,7 @@ open a menu ***Select Diagram Layout Settings*** and the last entry is
 the ***User-Defined Layout**. B*y clicking on the floppy disk icon you
 will update the default view (see below).
 
-<img src="attachments/2491121666/2492629046.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492629046.png" data-height="90" data-width="384" data-unresolved-comment-count="0" data-linked-resource-id="2492629046" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-31-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="f2cab7f5-162f-4d93-8a99-f3c42bc1a3f3" data-media-type="file" /><img src="attachments/2491121666/2492792877.png?width=102" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792877.png" data-height="378" data-width="346" data-unresolved-comment-count="0" data-linked-resource-id="2492792877" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-35-15.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="abb11ef2-42e0-488d-ac7b-36c679518f97" data-media-type="file" width="102" />
+<img src="attachments/2491121666/2492629046.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492629046.png" data-height="90" data-width="384" data-unresolved-comment-count="0" data-linked-resource-id="2492629046" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-31-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="f2cab7f5-162f-4d93-8a99-f3c42bc1a3f3" data-media-type="file" /><img src="attachments/2491121666/2492792877.png?width=102" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792877.png" data-height="378" data-width="346" data-unresolved-comment-count="0" data-linked-resource-id="2492792877" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-35-15.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="abb11ef2-42e0-488d-ac7b-36c679518f97" data-media-type="file" width="102" />
 
 ### **Use User-defined layout as the default layout**
 
@@ -77,11 +85,26 @@ Once you have created a user-defined layout, you probably want to use
 this as the default layout. For this, click on the icon of the site you
 want to update, then select the User-Defined layout and click **Save**
 
-<img src="attachments/2491121666/2495053832.png?width=204" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2495053832.png" data-height="608" data-width="872" data-unresolved-comment-count="0" data-linked-resource-id="2495053832" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-135021.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="ef2c42ea-89b6-478d-9807-fe04fda7d031" data-media-type="file" width="204" />
+<img src="attachments/2491121666/2495053832.png?width=204" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2495053832.png" data-height="608" data-width="872" data-unresolved-comment-count="0" data-linked-resource-id="2495053832" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-135021.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="ef2c42ea-89b6-478d-9807-fe04fda7d031" data-media-type="file" width="204" />
 
 From now on, this will be the default layout for this site:
 
-<img src="attachments/2491121666/2496331777.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2496331777.png" data-height="38" data-width="357" data-unresolved-comment-count="0" data-linked-resource-id="2496331777" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-135550.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="e336609a-e190-4673-ae09-57230f4fab26" data-media-type="file" />
+<img src="attachments/2491121666/2496331777.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2496331777.png" data-height="38" data-width="357" data-unresolved-comment-count="0" data-linked-resource-id="2496331777" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-135550.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="e336609a-e190-4673-ae09-57230f4fab26" data-media-type="file" />
+
+### **Choose a specific layout for a selection of devices**
+
+You can now specify which layout you want to use for a set of devices:
+
+<img src="attachments/2491121666/2751561729.gif?width=272" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2751561729.gif" data-height="534" data-width="867" data-unresolved-comment-count="0" data-linked-resource-id="2751561729" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20210914-1512-layout.gif" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/gif" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="197efb65-84a2-445f-bbaf-97d6266e09dc" data-media-type="file" width="272" />
+
+### **Choose a layout to apply for the whole site**
+
+Similarly, you can select a layout for the whole site, using the layout
+selection.
+
+-   Circular Layout can be used only for 500 nodes or less.
+
+<img src="attachments/2491121666/2751266824.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2751266824.png" data-height="515" data-width="523" data-unresolved-comment-count="0" data-linked-resource-id="2751266824" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210914-142612.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="80840b1c-4ca4-47b5-8782-a05d5e6230d4" data-media-type="file" width="170" />
 
 ## **Save, load, and share view**
 
@@ -92,7 +115,7 @@ later.
 
 Click the floppy icon on the menu on the right end side:
 
-<img src="attachments/2491121666/2492760079.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760079.png" data-height="98" data-width="172" data-unresolved-comment-count="0" data-linked-resource-id="2492760079" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-37-29.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="fa89df6e-0073-4c61-beb5-2dbdbcf06802" data-media-type="file" />
+<img src="attachments/2491121666/2492760079.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760079.png" data-height="98" data-width="172" data-unresolved-comment-count="0" data-linked-resource-id="2492760079" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-37-29.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="fa89df6e-0073-4c61-beb5-2dbdbcf06802" data-media-type="file" />
 
 Enter a name for that view and click save.
 
@@ -108,7 +131,7 @@ The view saved in this way is not the default view for that object.
 
 #### **Load view**
 
-<img src="attachments/2491121666/2492825633.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2492825633.png" data-height="137" data-width="157" data-unresolved-comment-count="0" data-linked-resource-id="2492825633" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-39-38.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="21835bb3-cf28-4272-a3b3-8e7c299b0407" data-media-type="file" />
+<img src="attachments/2491121666/2492825633.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2492825633.png" data-height="137" data-width="157" data-unresolved-comment-count="0" data-linked-resource-id="2492825633" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-39-38.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="21835bb3-cf28-4272-a3b3-8e7c299b0407" data-media-type="file" />
 
 The view can be loaded by clicking the folder icon.
 
@@ -116,17 +139,28 @@ Select the desired view and click to load.
 
 #### **Share view**
 
-<img src="attachments/2491121666/2495119366.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2495119366.png" data-height="87" data-width="151" data-unresolved-comment-count="0" data-linked-resource-id="2495119366" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-141042.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="e74b2dd6-4dfb-44e8-953b-e12383ace80e" data-media-type="file" />
+<img src="attachments/2491121666/2495119366.png" class="image-wrap-left" loading="lazy" data-image-src="attachments/2491121666/2495119366.png" data-height="87" data-width="151" data-unresolved-comment-count="0" data-linked-resource-id="2495119366" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210602-141042.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="e74b2dd6-4dfb-44e8-953b-e12383ace80e" data-media-type="file" />
 
 By clicking here, an URL will be displayed, which you can share with
 other users, and they will be able to see this view.
 
-### **Export current view to SVG**
+### **Export current view to SVG/PNG**
 
-The view can be exported in the form of a SVG image by clicking on
-***→SVG ***:
+The view can be exported in the form of a SVG or PNG image by clicking
+on ***Export ***and selecting the format you want
 
-<img src="attachments/2491121666/2492825644.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825644.png" data-height="75" data-width="168" data-unresolved-comment-count="0" data-linked-resource-id="2492825644" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-43-13.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="d3a3aeb1-f8d6-4474-b7ac-3709e868b636" data-media-type="file" />
+<img src="attachments/2491121666/2751102977.gif" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2751102977.gif" data-height="120" data-width="370" data-unresolved-comment-count="0" data-linked-resource-id="2751102977" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20210914-1454-Export.gif" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/gif" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="36dce51d-e336-4560-ac3c-c8d785375a9e" data-media-type="file" />
+
+<div>
+
+<div>
+
+The SVG file can be imported into a Visio diagram, or on other drawing
+application
+
+</div>
+
+</div>
 
 ### **Search**
 
@@ -134,12 +168,12 @@ Search looks up any text currently present on the diagram. Typing query
 filters the view and clicking on the search button focuses and zooms in
 on the item.
 
-<img src="attachments/2491121666/2492760087.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760087.png" data-height="49" data-width="408" data-unresolved-comment-count="0" data-linked-resource-id="2492760087" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-43-42.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="254bba8c-08b6-4f83-8526-b6bffdf77dcc" data-media-type="file" /><img src="attachments/2491121666/2492792893.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792893.png" data-height="214" data-width="378" data-unresolved-comment-count="0" data-linked-resource-id="2492792893" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-44-40.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="a02229e0-3d46-42b0-ab12-c70e5d14f604" data-media-type="file" />
+<img src="attachments/2491121666/2492760087.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760087.png" data-height="49" data-width="408" data-unresolved-comment-count="0" data-linked-resource-id="2492760087" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-43-42.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="254bba8c-08b6-4f83-8526-b6bffdf77dcc" data-media-type="file" /><img src="attachments/2491121666/2492792893.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792893.png" data-height="214" data-width="378" data-unresolved-comment-count="0" data-linked-resource-id="2492792893" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-44-40.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="a02229e0-3d46-42b0-ab12-c70e5d14f604" data-media-type="file" />
 
 If you hover your mouse on one entry, you will see the device on the
 diagram:
 
-<img src="attachments/2491121666/2492825655.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825655.png" data-height="160" data-width="592" data-unresolved-comment-count="0" data-linked-resource-id="2492825655" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-45-30.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="a582baf0-dd96-4b9c-8c6c-4e441494f04a" data-media-type="file" />
+<img src="attachments/2491121666/2492825655.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825655.png" data-height="160" data-width="592" data-unresolved-comment-count="0" data-linked-resource-id="2492825655" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-45-30.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="a582baf0-dd96-4b9c-8c6c-4e441494f04a" data-media-type="file" />
 
 ## **Protocols**
 
@@ -147,7 +181,7 @@ The user can filter connection protocols between devices of the second
 and third layer of ISO OSI by using filters in the ***Network Viewer /
 Visualization Setup / Protocols ***menu.
 
-<img src="attachments/2491121666/2492760101.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760101.png" data-height="706" data-width="470" data-unresolved-comment-count="0" data-linked-resource-id="2492760101" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_0-53-4.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="aafbede5-a39e-461b-8d2e-25c24697810e" data-media-type="file" width="170" />
+<img src="attachments/2491121666/2764079109.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2764079109.png" data-height="797" data-width="472" data-unresolved-comment-count="0" data-linked-resource-id="2764079109" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20211001-104853.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="df17b9d9-a290-47b2-a208-e310b262f3aa" data-media-type="file" />
 
 You can decide which layer/protocol you want to display/hide and
 group/ungroup
@@ -159,28 +193,28 @@ they belong to. This is the “**System**” view. You can edit this, which
 means you are able to ungroup certain protocols. For this click on the
 Settings icon:
 
-<img src="attachments/2491121666/2551676941.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551676941.png" data-height="168" data-width="462" data-unresolved-comment-count="0" data-linked-resource-id="2551676941" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-130006.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="fa6f13a4-65ee-469e-9955-9e75ebd352a9" data-media-type="file" width="170" />
+<img src="attachments/2491121666/2551676941.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551676941.png" data-height="168" data-width="462" data-unresolved-comment-count="0" data-linked-resource-id="2551676941" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-130006.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="fa6f13a4-65ee-469e-9955-9e75ebd352a9" data-media-type="file" width="170" />
 
-Move the protocols you want to ungroup to the “Ungrouped Protocols”,
-click on Save as and give a name to the new protocol view.
+Drag and drop protocols you want to put to a custom group to the “Other
+Protocols”, click on Save as and give a name to the new protocol view.
 
-<img src="attachments/2491121666/2551513097.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551513097.png" data-height="204" data-width="376" data-unresolved-comment-count="0" data-linked-resource-id="2551513097" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-130352.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="9942deca-51fd-419d-8291-aba87739c15f" data-media-type="file" />
+<img src="attachments/2491121666/2764636163.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2764636163.png" data-height="180" data-width="543" data-unresolved-comment-count="0" data-linked-resource-id="2764636163" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20211001-105453.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="a7057160-fa08-4de8-9b5a-8b8612a3b909" data-media-type="file" />
 
 With the example below, you are now able to hide only the DGW protocol,
 without affecting the other Layer3 protocols:
 
-<img src="attachments/2491121666/2551513103.png?width=204" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551513103.png" data-height="631" data-width="811" data-unresolved-comment-count="0" data-linked-resource-id="2551513103" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-131016.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="9bc18101-8e58-40a8-ae59-7f443b98230b" data-media-type="file" width="204" />
+<img src="attachments/2491121666/2764898305.png?width=340" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2764898305.png" data-height="799" data-width="972" data-unresolved-comment-count="0" data-linked-resource-id="2764898305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20211001-115646.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="c98bf14f-444b-4882-95df-411e27ae822c" data-media-type="file" width="340" />
 
-#### **Link grouping**
+**Link grouping**
 
-<img src="attachments/2491121666/2492825666.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825666.png" data-height="233" data-width="413" data-unresolved-comment-count="0" data-linked-resource-id="2492825666" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-1-41.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="4696caa5-b339-4ab0-aee9-29bfb2b492b3" data-media-type="file" width="136" />
+<img src="attachments/2491121666/2492825666.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492825666.png" data-height="233" data-width="413" data-unresolved-comment-count="0" data-linked-resource-id="2492825666" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-1-41.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="4696caa5-b339-4ab0-aee9-29bfb2b492b3" data-media-type="file" width="136" />
 
 Link grouping means that protocols of the specific layer are not shown
 as separate lines but together as a single line.
 
 #### **Layer grouping**
 
-<img src="attachments/2491121666/2492792907.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792907.png" data-height="136" data-width="425" data-unresolved-comment-count="0" data-linked-resource-id="2492792907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-2-21.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="67a79cba-1a9c-46d4-8a6f-4d3ee217f609" data-media-type="file" />
+<img src="attachments/2491121666/2492792907.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492792907.png" data-height="136" data-width="425" data-unresolved-comment-count="0" data-linked-resource-id="2492792907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-2-21.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="67a79cba-1a9c-46d4-8a6f-4d3ee217f609" data-media-type="file" />
 
 Layer Grouping collapses groups of devices according to the types of
 links that connect these, either in Layer 2 or 3 groups. Devices
@@ -191,14 +225,14 @@ connected with different layer protocols can't be grouped together.
 You can select/un-select the type o devices you want to see on the
 diagram.
 
-<img src="attachments/2491121666/2492760115.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760115.png" data-height="317" data-width="387" data-unresolved-comment-count="0" data-linked-resource-id="2492760115" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-4-30.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="eda5d6b7-fd9f-46e9-bd1a-c68db44a5299" data-media-type="file" width="136" />
+<img src="attachments/2491121666/2492760115.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2492760115.png" data-height="317" data-width="387" data-unresolved-comment-count="0" data-linked-resource-id="2492760115" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-6-2_1-4-30.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="eda5d6b7-fd9f-46e9-bd1a-c68db44a5299" data-media-type="file" width="136" />
 
 ### **Device information deep dive**
 
 After right-clicking on the device, it is possible to display additional
 information about it by selecting “show detail”:
 
-<img src="attachments/2491121666/2551152654.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551152654.png" data-height="364" data-width="495" data-unresolved-comment-count="0" data-linked-resource-id="2551152654" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-131552.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="8" data-media-id="b2a846a7-34b9-40ee-acdc-f177c0d307dd" data-media-type="file" />
+<img src="attachments/2491121666/2551152654.png" class="image-left" loading="lazy" data-image-src="attachments/2491121666/2551152654.png" data-height="364" data-width="495" data-unresolved-comment-count="0" data-linked-resource-id="2551152654" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210615-131552.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="2491121666" data-linked-resource-container-version="13" data-media-id="b2a846a7-34b9-40ee-acdc-f177c0d307dd" data-media-type="file" />
 
 <div class="pageSectionHeader">
 
@@ -372,6 +406,36 @@ IPFabric.png](attachments/2491121666/2491121725.png) (image/png)
 (image/png)  
 <img src="images/icons/bullet_blue.gif" width="8" height="8" />
 [image-20210615-131552.png](attachments/2491121666/2551152654.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[20210914-1454-Export.gif](attachments/2491121666/2751102977.gif)
+(image/gif)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[20210914-1512-layout.gif](attachments/2491121666/2751561729.gif)
+(image/gif)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[20210914-1523-site layout.gif](attachments/2491121666/2751299589.gif)
+(image/gif)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20210914-142612.png](attachments/2491121666/2751266824.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20210914-143019.png](attachments/2491121666/2751758339.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20210914-143146.png](attachments/2491121666/2751889409.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20211001-104853.png](attachments/2491121666/2764079109.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20211001-105448.png](attachments/2491121666/2764341253.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20211001-105453.png](attachments/2491121666/2764636163.png)
+(image/png)  
+<img src="images/icons/bullet_blue.gif" width="8" height="8" />
+[image-20211001-115646.png](attachments/2491121666/2764898305.png)
 (image/png)  
 
 </div>

@@ -37,15 +37,6 @@
 
         <!-- -->
 
-        -   [How Discovery Works](How_Discovery_Works)
-
-        <!-- -->
-
-        -   [Used CLI commands for
-            Discovery](Used_CLI_commands_for_Discovery)
-
-        <!-- -->
-
         -   [How Snapshots Work](How_Snapshots_Work)
 
         <!-- -->
@@ -142,39 +133,31 @@
 
     <!-- -->
 
-    -   [System Administration](System_Administration)
-        -   [Administrative Interface](Administrative_Interface)
-            -   [System Status](System_Status)
-
-            <!-- -->
-
-            -   [Backup and restore](Backup_and_restore)
-                -   [Backup](Backup)
-
-                <!-- -->
-
-                -   [Restore](Restore)
-
-            <!-- -->
-
-            -   [System Update](System_Update)
-
-            <!-- -->
-
-            -   [Create Local Administrator](Create_Local_Administrator)
+    -   [IP Fabric's Discovery](IP_Fabric_s_Discovery)
+        -   [How Discovery Works](How_Discovery_Works)
 
         <!-- -->
 
-        -   [Command Line Interface](Command_Line_Interface)
+        -   [No Devices Discovered](No_Devices_Discovered)
 
         <!-- -->
 
-        -   [Increase disk space](Increase_disk_space)
+        -   [Used CLI commands per Task](Used_CLI_commands_per_Task)
 
         <!-- -->
 
-        -   [Reinitiate system 'Boot
-            Wizard'](Reinitiate_system_Boot_Wizard_)
+        -   [Used CLI commands for
+            Discovery](Used_CLI_commands_for_Discovery)
+
+        <!-- -->
+
+        -   [Connectivity report - Type of
+            Error](Connectivity_report_-_Type_of_Error)
+
+        <!-- -->
+
+        -   [Fine-Tune SSH/telnet CLI
+            parameters](Fine-Tune_SSH_telnet_CLI_parameters)
 
     <!-- -->
 
@@ -331,8 +314,8 @@
 
                     <!-- -->
 
-                    -   [Limit download BGP
-                        routes](Limit_download_BGP_routes)
+                    -   [Limit Download of BGP
+                        Routes](Limit_Download_of_BGP_Routes)
 
                     <!-- -->
 
@@ -340,17 +323,12 @@
 
                     <!-- -->
 
-                    -   [Saved configuration
-                        check](Saved_configuration_check)
+                    -   [Discovery Tasks
+                        Settings](Discovery_Tasks_Settings)
 
                     <!-- -->
 
                     -   [Traceroute settings](Traceroute_settings)
-
-                    <!-- -->
-
-                    -   [Discovery Tasks
-                        Settings](Discovery_Tasks_Settings)
 
                 <!-- -->
 
@@ -398,6 +376,10 @@
 
                     -   [AWS API](AWS_API)
 
+                    <!-- -->
+
+                    -   [Viptela API](Viptela_API)
+
                 <!-- -->
 
                 -   [Configuration Management](Configuration_Management)
@@ -409,6 +391,12 @@
                 <!-- -->
 
                 -   [System](System)
+                    -   [Schedule System Backup](Schedule_System_Backup)
+
+                    <!-- -->
+
+                    -   [Schedule System
+                        Maintenance](Schedule_System_Maintenance)
 
                 <!-- -->
 
@@ -433,6 +421,46 @@
 
     <!-- -->
 
+    -   [System Administration](System_Administration)
+        -   [Administrative Interface](Administrative_Interface)
+            -   [System Status](System_Status)
+
+            <!-- -->
+
+            -   [Backup and restore](Backup_and_restore)
+                -   [Backup](Backup)
+
+                <!-- -->
+
+                -   [Restore](Restore)
+
+            <!-- -->
+
+            -   [System Update](System_Update)
+
+            <!-- -->
+
+            -   [Create Local Administrator](Create_Local_Administrator)
+
+        <!-- -->
+
+        -   [Command Line Interface](Command_Line_Interface)
+
+        <!-- -->
+
+        -   [Increase disk space](Increase_disk_space)
+
+        <!-- -->
+
+        -   [Reinitiate system 'Boot
+            Wizard'](Reinitiate_system_Boot_Wizard_)
+
+        <!-- -->
+
+        -   [Enabling SSO Providers](Enabling_SSO_Providers)
+
+    <!-- -->
+
     -   [IP Fabric's API](IP_Fabric_s_API)
         -   [API Tech Note - Intent Verification
             Rules](API_Tech_Note_-_Intent_Verification_Rules)
@@ -447,6 +475,21 @@
         -   [API Tech Note - Retrieving
             configurations](API_Tech_Note_-_Retrieving_configurations)
 
+        <!-- -->
+
+        -   [API Tech Note - IP Fabric 4.x Unicast Path
+            Lookup](API_Tech_Note_-_IP_Fabric_4.x_Unicast_Path_Lookup)
+
+        <!-- -->
+
+        -   [API Tech Note - Retrieving device log
+            file](API_Tech_Note_-_Retrieving_device_log_file)
+
+        <!-- -->
+
+        -   [API Tech Note - Refreshing devices in a
+            snapshot](API_Tech_Note_-_Refreshing_devices_in_a_snapshot)
+
     <!-- -->
 
     -   [IP Fabric TIPs](IP_Fabric_TIPs)
@@ -458,12 +501,13 @@
 
         <!-- -->
 
-        -   [No Devices Discovered](No_Devices_Discovered)
+        -   [Troubleshooting VM Network Problems Using IP Fabric
+            CLI](Troubleshooting_VM_Network_Problems_Using_IP_Fabric_CLI)
 
         <!-- -->
 
-        -   [Troubleshooting VM Network Problems Using IP Fabric
-            CLI](Troubleshooting_VM_Network_Problems_Using_IP_Fabric_CLI)
+        -   [How to configure Quagga/FRR to work with IP
+            Fabric](How_to_configure_Quagga_FRR_to_work_with_IP_Fabric)
 
     <!-- -->
 
@@ -478,6 +522,25 @@
             -   [Invalid default username and
                 password](Invalid_default_username_and_password)
 
+            <!-- -->
+
+            -   [Local time inconsistencies](Local_time_inconsistencies)
+
+            <!-- -->
+
+            -   [Error messages: "Error: Resource
+                Conflict"](Error_messages_Error_Resource_Conflict_)
+
+            <!-- -->
+
+            -   [Error message: "Error: AQL: internal error - in
+                index"](Error_message_Error_AQL_internal_error_-_in_index_)
+
+            <!-- -->
+
+            -   [Site name can change to an obscure UUID value after
+                update](Site_name_can_change_to_an_obscure_UUID_value_after_update)
+
         <!-- -->
 
         -   [Cisco](Cisco)
@@ -489,9 +552,36 @@
             -   [Show Interface
                 Transceivers](Show_Interface_Transceivers)
 
+            <!-- -->
+
+            -   [Command cli whitespace
+                completion](Command_cli_whitespace_completion)
+
+            <!-- -->
+
+            -   [VRFs are not found on
+                IOS-XR](VRFs_are_not_found_on_IOS-XR)
+
         <!-- -->
 
         -   [Checkpoint](Checkpoint)
+            -   ["fw ctl pstat" command requires admin
+                rights](_fw_ctl_pstat_command_requires_admin_rights)
+
+            <!-- -->
+
+            -   [Discovery of Security
+                Policies](Discovery_of_Security_Policies)
+
+            <!-- -->
+
+            -   [Required permissions for successful discovery over
+                CLI](Required_permissions_for_successful_discovery_over_CLI)
+
+            <!-- -->
+
+            -   [ARP table contains only master VSYS 0
+                entries](ARP_table_contains_only_master_VSYS_0_entries)
 
         <!-- -->
 
@@ -500,6 +590,10 @@
         <!-- -->
 
         -   [Fortinet FortiGate](Fortinet_FortiGate)
+
+        <!-- -->
+
+        -   [3Com](3Com)
 
         <!-- -->
 
@@ -526,9 +620,17 @@
         -   [Palo Alto](Palo_Alto)
             -   [Networks Panorama](Networks_Panorama)
 
+        <!-- -->
+
+        -   [Versa](Versa)
+
     <!-- -->
 
     -   [Release Notes](Release_Notes)
+        -   [IP Fabric v4.x.x](IP_Fabric_v4.x.x)
+
+        <!-- -->
+
         -   [IP Fabric v3.x.x](IP_Fabric_v3.x.x)
 
         <!-- -->

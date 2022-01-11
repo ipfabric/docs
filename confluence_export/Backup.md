@@ -53,7 +53,7 @@ to enable local backups. (See steps below)
     recommended to select a virtual disk on a different datastore
     ideally on different physical storage)  
 
-    <img src="attachments/82116646/1843363848.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1843363848.png" data-height="732" data-width="748" data-unresolved-comment-count="0" data-linked-resource-id="1843363848" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (1).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="6d1f2479-499c-4104-8abc-3c3d90be12eb" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1843363848.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1843363848.png" data-height="732" data-width="748" data-unresolved-comment-count="0" data-linked-resource-id="1843363848" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (1).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="6d1f2479-499c-4104-8abc-3c3d90be12eb" data-media-type="file" width="136" />
 
 5.  Finish configuration wizard.
 
@@ -65,7 +65,7 @@ to enable local backups. (See steps below)
 
 8.  During system boot, a *Disk space expansion* wizard appears.  
 
-    <img src="attachments/82116646/1842708519.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842708519.png" data-height="942" data-width="1274" data-unresolved-comment-count="0" data-linked-resource-id="1842708519" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (2).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="0d1e49a9-4c61-4dc5-8e9a-9f61b5f2b392" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1842708519.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842708519.png" data-height="942" data-width="1274" data-unresolved-comment-count="0" data-linked-resource-id="1842708519" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (2).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="0d1e49a9-4c61-4dc5-8e9a-9f61b5f2b392" data-media-type="file" width="136" />
 
 9.  Select *Yes* to start disk space expansion.
 
@@ -74,7 +74,7 @@ to enable local backups. (See steps below)
 
 11. Selected volume is extended.  
 
-    <img src="attachments/82116646/1842642960.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842642960.png" data-height="940" data-width="1267" data-unresolved-comment-count="0" data-linked-resource-id="1842642960" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (3).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="3eb203cc-6af3-4d0d-a1cd-0e55b038c49f" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1842642960.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842642960.png" data-height="940" data-width="1267" data-unresolved-comment-count="0" data-linked-resource-id="1842642960" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (3).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="3eb203cc-6af3-4d0d-a1cd-0e55b038c49f" data-media-type="file" width="136" />
 
 12. Enter *OK*
 
@@ -94,7 +94,7 @@ To schedule automatic local backups do the following steps:
 
 6.  Enable backup
 
-<img src="attachments/82116646/639172612.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/82116646/639172612.png" data-height="254" data-width="598" data-unresolved-comment-count="0" data-linked-resource-id="639172612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-14 14_56_37-System settings - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="5a683fa5-58d5-4068-a2a1-ba5b4cf14f86" data-media-type="file" width="170" />
+<img src="attachments/82116646/639172612.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/82116646/639172612.png" data-height="254" data-width="598" data-unresolved-comment-count="0" data-linked-resource-id="639172612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-14 14_56_37-System settings - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="5a683fa5-58d5-4068-a2a1-ba5b4cf14f86" data-media-type="file" width="170" />
 
 ## Remote backup
 
@@ -106,6 +106,16 @@ or sFTP protocol.
 <div>
 
 This is a recommended type of backup.
+
+</div>
+
+</div>
+
+<div>
+
+<div>
+
+A directory **has to be specified** for FTP and SFTP backups
 
 </div>
 
@@ -123,7 +133,7 @@ To set up remote backup do the following steps:
 
 5.  Set a backup schedule. See example for "Every day at 5:15 and 17:15
     (for setting more options, please, hold SHIFT during selection)".  
-    <img src="attachments/82116646/82051139.png" loading="lazy" data-image-src="attachments/82116646/82051139.png" data-unresolved-comment-count="0" data-linked-resource-id="82051139" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-7-24_17-10-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="e5f4d1a7-db4e-42f5-8c42-1a9b6da93102" data-media-type="file" />
+    <img src="attachments/82116646/82051139.png" loading="lazy" data-image-src="attachments/82116646/82051139.png" data-unresolved-comment-count="0" data-linked-resource-id="82051139" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-7-24_17-10-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="e5f4d1a7-db4e-42f5-8c42-1a9b6da93102" data-media-type="file" />
 
 6.  Change ***Destination*** to ***FTP*** or ***SFTP**.*
 
@@ -135,8 +145,7 @@ To set up remote backup do the following steps:
 
 9.  Enter ***Password*** to access FTP/SFTP server.
 
-10. If you would like to use a different ***Directory*** than FTP/SFTP
-    root please specify.
+10. Specify a ***Directory*** where FTP/SFTP backup should be uploaded.
 
 11. Click ***Save ***(The IP Fabric platform will immediately test the
     connection)
@@ -148,6 +157,17 @@ To set up remote backup do the following steps:
 <div>
 
 FTP/SFTP user needs read, write, list and delete permissions.
+
+</div>
+
+</div>
+
+<div>
+
+<div>
+
+From version 4.1.1 onward we do not check validity of SSL certificates
+during FTP backups.
 
 </div>
 
@@ -182,8 +202,8 @@ Manual backup can be triggered from IP Fabric Administrative interface:
 
     3.  Enter ***Password*** to access FTP/SFTP server.
 
-    4.  If you would like to use a different ***Directory*** than
-        FTP/SFTP root please specify.
+    4.  Specify a **Directory** where FTP/SFTP backup should be
+        uploaded.
 
 6.  Click ***Next***
 

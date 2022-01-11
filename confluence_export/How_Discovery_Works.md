@@ -22,7 +22,7 @@ discovery at least once a day to record all network changes.
 
 A connection to every attempted address either succeeds or is recorded
 in the Connectivity
-Report<img src="attachments/79003743/1891467297.png" loading="lazy" data-image-src="attachments/79003743/1891467297.png" data-unresolved-comment-count="0" data-linked-resource-id="1891467297" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-18_16-50-38.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79003743" data-linked-resource-container-version="13" data-media-id="daabb2be-c51b-484f-b353-178deb74ef3b" data-media-type="file" /> which
+Report<img src="attachments/79003743/1891467297.png" loading="lazy" data-image-src="attachments/79003743/1891467297.png" data-unresolved-comment-count="0" data-linked-resource-id="1891467297" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2021-1-18_16-50-38.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79003743" data-linked-resource-container-version="14" data-media-id="daabb2be-c51b-484f-b353-178deb74ef3b" data-media-type="file" /> which
 details the reason for the connection failure. The most frequent reason
 for failure is a timeout of the login attempt. A connectivity report can
 be useful for troubleshooting failed credentials and other

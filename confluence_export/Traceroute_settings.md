@@ -1,6 +1,6 @@
 # Traceroute settings
 
-## Traceroute settings
+# Traceroute settings
 
 Traceroute is used when next hop is not available for SSH/telnet.
 Devices discovered using traceroute are marked as *unmanaged* in IP
@@ -10,7 +10,7 @@ can be found on [Wikipedia](https://en.wikipedia.org/wiki/Traceroute).
 For traceroute configuration go to  ***Settings → Advanced → Discovery
 → Traceroute settings.***
 
-Trace scope - limits traceroute scope to the defined subnets. This
+***Trace scope ***- limits traceroute scope to the defined subnets. This
 prevents scan networks outside an internal network.
 
 ***RFC6890*** - this button resets ***Trace scope*** setting to subnets

@@ -54,7 +54,7 @@ to enable local backups. (See steps below)
     recommended to select a virtual disk on a different datastore
     ideally on different physical storage)  
 
-    <img src="attachments/82116646/1843363848.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1843363848.png" data-height="732" data-width="748" data-unresolved-comment-count="0" data-linked-resource-id="1843363848" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (1).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="6d1f2479-499c-4104-8abc-3c3d90be12eb" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1843363848.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1843363848.png" data-height="732" data-width="748" data-unresolved-comment-count="0" data-linked-resource-id="1843363848" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (1).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="6d1f2479-499c-4104-8abc-3c3d90be12eb" data-media-type="file" width="136" />
 
 5.  Finish configuration wizard.
 
@@ -66,7 +66,7 @@ to enable local backups. (See steps below)
 
 8.  During system boot, a *Disk space expansion* wizard appears.  
 
-    <img src="attachments/82116646/1842708519.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842708519.png" data-height="942" data-width="1274" data-unresolved-comment-count="0" data-linked-resource-id="1842708519" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (2).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="0d1e49a9-4c61-4dc5-8e9a-9f61b5f2b392" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1842708519.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842708519.png" data-height="942" data-width="1274" data-unresolved-comment-count="0" data-linked-resource-id="1842708519" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (2).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="0d1e49a9-4c61-4dc5-8e9a-9f61b5f2b392" data-media-type="file" width="136" />
 
 9.  Select *Yes* to start disk space expansion.
 
@@ -75,7 +75,7 @@ to enable local backups. (See steps below)
 
 11. Selected volume is extended.  
 
-    <img src="attachments/82116646/1842642960.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842642960.png" data-height="940" data-width="1267" data-unresolved-comment-count="0" data-linked-resource-id="1842642960" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (3).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="3eb203cc-6af3-4d0d-a1cd-0e55b038c49f" data-media-type="file" width="136" />
+    <img src="attachments/82116646/1842642960.png?width=136" class="image-left" loading="lazy" data-image-src="attachments/82116646/1842642960.png" data-height="940" data-width="1267" data-unresolved-comment-count="0" data-linked-resource-id="1842642960" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image (3).png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="3eb203cc-6af3-4d0d-a1cd-0e55b038c49f" data-media-type="file" width="136" />
 
 12. Enter *OK*
 
@@ -95,7 +95,7 @@ To schedule automatic local backups do the following steps:
 
 6.  Enable backup
 
-<img src="attachments/82116646/639172612.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/82116646/639172612.png" data-height="254" data-width="598" data-unresolved-comment-count="0" data-linked-resource-id="639172612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-14 14_56_37-System settings - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="5a683fa5-58d5-4068-a2a1-ba5b4cf14f86" data-media-type="file" width="170" />
+<img src="attachments/82116646/639172612.png?width=170" class="image-left" loading="lazy" data-image-src="attachments/82116646/639172612.png" data-height="254" data-width="598" data-unresolved-comment-count="0" data-linked-resource-id="639172612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-14 14_56_37-System settings - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="5a683fa5-58d5-4068-a2a1-ba5b4cf14f86" data-media-type="file" width="170" />
 
 ## Remote backup
 
@@ -107,6 +107,16 @@ or sFTP protocol.
 <div>
 
 This is a recommended type of backup.
+
+</div>
+
+</div>
+
+<div>
+
+<div>
+
+A directory **has to be specified** for FTP and SFTP backups
 
 </div>
 
@@ -124,7 +134,7 @@ To set up remote backup do the following steps:
 
 5.  Set a backup schedule. See example for "Every day at 5:15 and 17:15
     (for setting more options, please, hold SHIFT during selection)".  
-    <img src="attachments/82116646/82051139.png" loading="lazy" data-image-src="attachments/82116646/82051139.png" data-unresolved-comment-count="0" data-linked-resource-id="82051139" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-7-24_17-10-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="22" data-media-id="e5f4d1a7-db4e-42f5-8c42-1a9b6da93102" data-media-type="file" />
+    <img src="attachments/82116646/82051139.png" loading="lazy" data-image-src="attachments/82116646/82051139.png" data-unresolved-comment-count="0" data-linked-resource-id="82051139" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2018-7-24_17-10-18.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="82116646" data-linked-resource-container-version="25" data-media-id="e5f4d1a7-db4e-42f5-8c42-1a9b6da93102" data-media-type="file" />
 
 6.  Change ***Destination*** to ***FTP*** or ***SFTP**.*
 
@@ -136,8 +146,7 @@ To set up remote backup do the following steps:
 
 9.  Enter ***Password*** to access FTP/SFTP server.
 
-10. If you would like to use a different ***Directory*** than FTP/SFTP
-    root please specify.
+10. Specify a ***Directory*** where FTP/SFTP backup should be uploaded.
 
 11. Click ***Save ***(The IP Fabric platform will immediately test the
     connection)
@@ -149,6 +158,17 @@ To set up remote backup do the following steps:
 <div>
 
 FTP/SFTP user needs read, write, list and delete permissions.
+
+</div>
+
+</div>
+
+<div>
+
+<div>
+
+From version 4.1.1 onward we do not check validity of SSL certificates
+during FTP backups.
 
 </div>
 
@@ -183,14 +203,14 @@ Manual backup can be triggered from IP Fabric Administrative interface:
 
     3.  Enter ***Password*** to access FTP/SFTP server.
 
-    4.  If you would like to use a different ***Directory*** than
-        FTP/SFTP root please specify.
+    4.  Specify a **Directory** where FTP/SFTP backup should be
+        uploaded.
 
 6.  Click ***Next***
 
   
 
-# Restore
+## Restore
 
 In case of database or system corruption, IP Fabric can be restored from
 a backup.
@@ -199,24 +219,25 @@ a backup.
 
 <div>
 
-Restore is supported only to the same version of IP Fabric as the source
-of a backup. This is checked automatically during restore.  
-The only exceptions are snapshots which can be restored to any version
-of IP Fabric appliance.
+Restore is supported only to the same version of IP Fabric as source of
+a backup. This is checked automatically during restore.
+
+The only exception are snapshots which can be restored to any version of
+IP Fabric appliance.
 
 </div>
 
 </div>
 
-## Restore from local hard drive
+### Restore from local hard drive
 
 1.  Login to admin interface (for
-    example [https://ipfabric.example.com:8443)](https://ipfabric.example.com:8443))
+    example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
 
 2.  Go to ***Restore or Backup***
 
 3.  Select ***Restore** *from ***Do you wish proceed a backup or
-    restore?*** drop-down menu.
+    restore?*** drop down menu.
 
 4.  Select ***What restore?***. There are four options:
 
@@ -225,11 +246,11 @@ of IP Fabric appliance.
         system failures or upgrade failures.
 
     2.  ***Restore database*** - it means that only database data are
-        restored. It can be sufficient in case of a database failure or
+        restored. It can be sufficient in case of database failure or
         accidental database drop.
 
     3.  ***Restore syslog data*** - it means that only syslog data are
-        restored. It can be sufficient in case of a database failure or
+        restored. It can be sufficient in case of database failure or
         accidental database drop.
 
     4.  ***Restore snapshot file*** - particular snapshot can be
@@ -240,31 +261,29 @@ of IP Fabric appliance.
 
 6.  Click ***Next***.
 
-7.  ***Select backup file*** - there is a year, month, day and time when
-    a backup file was created in a backup filename.
+7.  ***Select backup file*** - there is year, month, day and time when a
+    backup file was created in a backup filename.
 
-8.  Enter IP Fabric user password to ***Specify decryption password
-    (same as IP Fabric user)***.
-
-9.  Click ***Restore***.
+8.  Click ***Restore***.
 
 <div>
 
 <div>
 
-Backups are encrypted with ***osadmin ***user password configured
-during [first boot
-wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/78872592/Deploy+NIMPEE+VM).
-When you loose ***osadmin** *user password, backups are also lost.
+Backups are encrypted with ***osadmin*** user password configured during
+the [First Boot
+Wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/901808145/Deploying+VMware+OVA+Virtual+Machine).
+When you loose ***osadmin*** user password, all backups encrypted by
+this password are lost.
 
 </div>
 
 </div>
 
-## Restore from a remote server
+### Restore from remote server
 
 1.  Login to admin interface (for
-    example [https://ipfabric.example.com:8443)](https://ipfabric.example.com:8443))
+    example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
 
 2.  Go to ***Restore or Backup***
 
@@ -306,19 +325,17 @@ When you loose ***osadmin** *user password, backups are also lost.
 11. ***Select backup file*** - there is year, month, day and time when a
     backup file was created in a backup filename.
 
-12. Enter IP Fabric user password to ***Specify decryption password
-    (same as IP Fabric user)***.
-
-13. Click ***Restore***.
+12. Click ***Restore***.
 
 <div>
 
 <div>
 
-Backups are encrypted with ***osadmin ***user password configured
-during [first boot
-wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/78872592/Deploy+NIMPEE+VM).
-When you loose ***osadmin** *user password, backups are also lost.
+Backups are encrypted with ***osadmin*** user password configured during
+the [First Boot
+Wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/901808145/Deploying+VMware+OVA+Virtual+Machine).
+When you loose ***osadmin*** user password, all backups encrypted by
+this password are lost.
 
 </div>
 
