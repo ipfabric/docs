@@ -17,6 +17,7 @@ documentation happens as follows:
   at the beginning. For example `NIM-5808_readme`.
 - do all you commits in the branch. When ready, open a merge-request in GitLab
   (also make sure, that it starts with your ticket number, correctly formatted).
+- please, assign all your MRs (merge-requests) to @bobek at the moment.
 - the CI/CD pipeline builds and publishes on every push to `main`.
 - `mike` is then used by repository maintainers to push a new version release to
   the documentation web. (See the `mike` section below.)
