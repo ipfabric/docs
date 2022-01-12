@@ -1,0 +1,2 @@
+webpackJsonp([41483654900951],{503:function(a,e){a.exports={pathContext:{task:{taskName:"sites",description:"SD-WAN sites information"},commands:[{uid:"versa@vos",vendor:"versa",family:"vos",cmd:"GET /vnms/dashboard/appliance/<appliance>/live?command=orgs/org/<organization>/sd-wan/detail",note:null,auth:null,taskName:"sites"},{uid:"versa@vos",vendor:"versa",family:"vos",cmd:"GET /api/config/devices/device/<appliance>/config/networks/network",note:null,auth:null,taskName:"sites"}]}}}});
+//# sourceMappingURL=path---commands-task-sites-aa1c4859137530473c3d.js.map

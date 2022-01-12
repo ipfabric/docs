@@ -1,0 +1,2 @@
+webpackJsonp([2041900954452],{498:function(o,i){o.exports={pathContext:{task:{taskName:"QOS",description:"Quality of service policy"},commands:[{uid:"cisco@ios",vendor:"cisco",family:"ios",cmd:"show policy-map interface",note:null,auth:null,taskName:"QOS"},{uid:"cisco@ios-xe",vendor:"cisco",family:"ios-xe",cmd:"show policy-map interface",note:null,auth:null,taskName:"QOS"}]}}}});
+//# sourceMappingURL=path---commands-task-qos-ed8ee1aba43d9d4d165c.js.map
