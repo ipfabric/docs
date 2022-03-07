@@ -1,0 +1,81 @@
+# API Tech Note- 4.0-2 Unicast Path Lookup
+
+## Request Parameters
+
+-   **"parameters"** *\[mandatory\]*- A nested JSON data structure with
+    keys
+
+    -   **"type"** *\[mandatory\]* - A quoted string with a value of
+        "pathLookup" for an E2E path simulation output
+
+    -   **"pathLookupType"** *\[mandatory\]* - A quoted string
+        containing the word "unicast" or "multicast" depending which
+        type of path simulation you're wanting to execute
+
+    -   **"protocol"** *\[mandatory\]* - A quoted string with a value of
+        "tcp", "udp", "icmp"
+
+    -   **“vrf”** *\[optional\] -* A quoted string containing the VRF
+        identifier required
+
+    -   **“flags”** *\[optional\]* - an array of TCP flags to be set in
+        the simulated path
+
+    -   **"startingPoint"** *\[mandatory\]*- A quoted string containing
+        the source IP address
+
+    -   **"startingPort"** *\[mandatory\]*- An integer representing the
+        source port
+
+    -   **"destinationPoint"** *\[mandatory\]*- A quoted string
+        containing the destination IP address
+
+    -   **"destinationPort"** *\[mandatory\]*- An integer representing
+        the destination port
+
+    -   **"groupBy"** *\[mandatory\]*- A quoted string representing the
+        grouping of devices in the output - at this time one of
+        "siteName", "routingDomain" or "stpDomain"
+
+    -   **"networkMode"** *\[mandatory\]*- A boolean - the new version
+        of IP Fabric allows you to simulate paths between subnets.
+        Setting this key to true means that you will create a single
+        result representing the subnets; false means that IP Fabric will
+        create a separate path for each source or destination in the
+        range of addresses up to a maximum of 255.
+
+    -   **"securedPath"** *\[mandatory\]*- A boolean - when you run a
+        path simulation, you can tell IP Fabric if you want to stop when
+        it hits a security policy which blocks the traffic in question
+        (true) or complete the forwarding paht and simply highlight the
+        policy enforcement point (false)
+
+## Example minimal request body
+
+<div class="code panel pdl" style="border-width: 1px;">
+
+<div class="codeContent panelContent pdl">
+
+``` jscript
+{
+    "snapshot": "$last",
+    "parameters": {
+        "type": "pathLookup",
+        "pathLookupType": "unicast",
+        "protocol": "tcp",
+        "startingPoint": "1.1.1.1",
+        "startingPort": 10000,
+        "destinationPoint": "2.2.2.2",
+        "destinationPort": 80,
+        "groupBy": "siteName",
+        "networkMode": false,
+        "securedPath": false
+    }
+}
+```
+
+</div>
+
+</div>
+
+  
