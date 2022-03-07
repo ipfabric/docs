@@ -1,5 +1,5 @@
 # VRFs are not found on IOS-XR
 
 To collect full VRF data on IOS-XR operating system, it is necessary to
-have enabled the MPSL package. Without it, the command **show vrf all
+have enabled the MPLS package. Without it, the command **show vrf all
 detail** does not work and it is marked as invalid input.

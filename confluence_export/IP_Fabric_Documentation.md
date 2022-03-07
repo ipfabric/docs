@@ -105,15 +105,16 @@ Search
         -   [11 - Configuration Complete](11_-_Configuration_Complete)
     -   [Run initial discovery](Run_initial_discovery)
 -   [IP Fabric's Discovery](IP_Fabric_s_Discovery)
-    -   [How Discovery Works](How_Discovery_Works)
-    -   [No Devices Discovered](No_Devices_Discovered)
-    -   [Used CLI commands per Task](Used_CLI_commands_per_Task)
-    -   [Used CLI commands for
-        Discovery](Used_CLI_commands_for_Discovery)
-    -   [Connectivity report - Type of
-        Error](Connectivity_report_-_Type_of_Error)
-    -   [Fine-Tune SSH/telnet CLI
-        parameters](Fine-Tune_SSH_telnet_CLI_parameters)
+    -   [How CLI Discovery Works](How_CLI_Discovery_Works)
+        -   [No Devices Discovered](No_Devices_Discovered)
+        -   [Used CLI commands per Task](Used_CLI_commands_per_Task)
+        -   [Used CLI commands for
+            Discovery](Used_CLI_commands_for_Discovery)
+        -   [Connectivity report - Type of
+            Error](Connectivity_report_-_Type_of_Error)
+        -   [Fine-Tune SSH/telnet CLI
+            parameters](Fine-Tune_SSH_telnet_CLI_parameters)
+    -   [How API Discovery Works](How_API_Discovery_Works)
 -   [IP Fabric's GUI](IP_Fabric_s_GUI)
     -   [Discovery Snapshot](Discovery_Snapshot)
     -   [Dashboard](Dashboard)
@@ -158,6 +159,9 @@ Search
         -   [Authentication](Authentication)
         -   [Discovery Seed](Discovery_Seed)
         -   [Site Separation](Site_Separation)
+            -   [Site Separation (up to
+                4.2.x)](Site_Separation_up_to_4.2.x_)
+            -   [Site Separation (from 4.3)](Site_Separation_from_4.3_)
         -   [Advanced](Advanced)
             -   [Discovery](Discovery)
                 -   [IP Scope](IP_Scope)
@@ -176,12 +180,16 @@ Search
                 -   [Custom SSH/Telnet ports](Custom_SSH_Telnet_ports)
                 -   [Set Up Telnet/SSH URL Handler on MS Windows 7 and
                     later](Set_Up_Telnet_SSH_URL_Handler_on_MS_Windows_7_and_later)
-            -   [Vendor API](Vendor_API)
-                -   [Meraki API](Meraki_API)
-                -   [CheckPoint API](CheckPoint_API)
-                -   [Versa API](Versa_API)
-                -   [AWS API](AWS_API)
-                -   [Viptela API](Viptela_API)
+            -   [Vendors API](Vendors_API)
+                -   [AWS (Amazon Web
+                    Services)](AWS_Amazon_Web_Services_)
+                -   [Azure Networking](Azure_Networking)
+                -   [Check Point](Check_Point)
+                -   [Cisco Meraki](Cisco_Meraki)
+                -   [Cisco Viptela SD-WAN](Cisco_Viptela_SD-WAN)
+                -   [Silver Peak SD-WAN](Silver_Peak_SD-WAN)
+                -   [Versa Networks SD-WAN](Versa_Networks_SD-WAN)
+                -   [VMware NSX-T](VMware_NSX-T)
             -   [Configuration Management](Configuration_Management)
             -   [IP Fabric Certificate](IP_Fabric_Certificate)
             -   [System](System)
@@ -193,6 +201,7 @@ Search
             -   [LDAP Authentication](LDAP_Authentication)
         -   [API tokens](API_tokens)
         -   [Webhooks](Webhooks)
+        -   [Device Attributes](Device_Attributes)
         -   [OUI](OUI)
 -   [System Administration](System_Administration)
     -   [Administrative Interface](Administrative_Interface)
@@ -213,12 +222,27 @@ Search
     -   [API Tech Note - Serial numbers](API_Tech_Note_-_Serial_numbers)
     -   [API Tech Note - Retrieving
         configurations](API_Tech_Note_-_Retrieving_configurations)
-    -   [API Tech Note - IP Fabric 4.x Unicast Path
-        Lookup](API_Tech_Note_-_IP_Fabric_4.x_Unicast_Path_Lookup)
+    -   [API Tech Note - 4.x Path
+        Lookup](API_Tech_Note_-_4.x_Path_Lookup)
+        -   [API Tech Note- 4.0-2 Unicast Path
+            Lookup](API_Tech_Note-_4.0-2_Unicast_Path_Lookup)
+        -   [API Tech Note - 4.3 Unicast Path
+            Lookup](API_Tech_Note_-_4.3_Unicast_Path_Lookup)
+        -   [API Tech Note - 4.3 Multicast Path
+            Lookup](API_Tech_Note_-_4.3_Multicast_Path_Lookup)
+        -   [API Tech Note - 4.3 Host to Gateway Path
+            Lookup](API_Tech_Note_-_4.3_Host_to_Gateway_Path_Lookup)
+        -   [API Tech Note - Path Lookup ICMP
+            Decoder](API_Tech_Note_-_Path_Lookup_ICMP_Decoder)
     -   [API Tech Note - Retrieving device log
         file](API_Tech_Note_-_Retrieving_device_log_file)
-    -   [API Tech Note - Refreshing devices in a
-        snapshot](API_Tech_Note_-_Refreshing_devices_in_a_snapshot)
+    -   [API Tech Note - Snapshots](API_Tech_Note_-_Snapshots)
+        -   [API Tech Note - Create new snapshots via
+            API](API_Tech_Note_-_Create_new_snapshots_via_API)
+        -   [API Tech Note - Refreshing devices in a
+            snapshot](API_Tech_Note_-_Refreshing_devices_in_a_snapshot)
+        -   [API Tech Note - Snapshot
+            Table](API_Tech_Note_-_Snapshot_Table)
 -   [IP Fabric TIPs](IP_Fabric_TIPs)
     -   [How To Search Technologies](How_To_Search_Technologies)
     -   [Navigate in Tables](Navigate_in_Tables)
@@ -228,24 +252,29 @@ Search
         Fabric](How_to_configure_Quagga_FRR_to_work_with_IP_Fabric)
 -   [Known issues](Known_issues)
     -   [IP Fabric](IP_Fabric)
-        -   [Error messages: "a request xxx Failed to fetch HTTP status:
-            504" followed by "Database seems to be
-            overloaded"](Error_messages_a_request_xxx_Failed_to_fetch_HTTP_status_504_followed_by_Database_seems_to_be_overloaded_)
         -   [Invalid default username and
             password](Invalid_default_username_and_password)
         -   [Local time inconsistencies](Local_time_inconsistencies)
-        -   [Error messages: "Error: Resource
-            Conflict"](Error_messages_Error_Resource_Conflict_)
-        -   [Error message: "Error: AQL: internal error - in
-            index"](Error_message_Error_AQL_internal_error_-_in_index_)
         -   [Site name can change to an obscure UUID value after
             update](Site_name_can_change_to_an_obscure_UUID_value_after_update)
+        -   [Error Messages](Error_Messages)
+            -   [Message: "a request xxx Failed to fetch HTTP status:
+                504" followed by "Database seems to be
+                overloaded"](Message_a_request_xxx_Failed_to_fetch_HTTP_status_504_followed_by_Database_seems_to_be_overloaded_)
+            -   [Message: "Error: AQL: internal error - in
+                index"](Message_Error_AQL_internal_error_-_in_index_)
+            -   [Messages: "Error: Resource
+                Conflict"](Messages_Error_Resource_Conflict_)
     -   [Cisco](Cisco)
         -   [Adding AAA user to Cisco ACS](Adding_AAA_user_to_Cisco_ACS)
         -   [Show Interface Transceivers](Show_Interface_Transceivers)
         -   [Command cli whitespace
             completion](Command_cli_whitespace_completion)
         -   [VRFs are not found on IOS-XR](VRFs_are_not_found_on_IOS-XR)
+        -   [Inconsistent VRF names on Cisco
+            platforms](Inconsistent_VRF_names_on_Cisco_platforms)
+        -   [Dropping support for ACL on Cisco
+            Firepower](Dropping_support_for_ACL_on_Cisco_Firepower)
     -   [Checkpoint](Checkpoint)
         -   ["fw ctl pstat" command requires admin
             rights](_fw_ctl_pstat_command_requires_admin_rights)
@@ -266,6 +295,7 @@ Search
     -   [Palo Alto](Palo_Alto)
         -   [Networks Panorama](Networks_Panorama)
     -   [Versa](Versa)
+    -   [Brocade](Brocade)
 -   [Release Notes](Release_Notes)
     -   [IP Fabric v4.x.x](IP_Fabric_v4.x.x)
     -   [IP Fabric v3.x.x](IP_Fabric_v3.x.x)
@@ -273,8 +303,9 @@ Search
     -   [NIMPEE v1.x.x](NIMPEE_v1.x.x)
 -   [Technical Support](Technical_Support)
     -   [Techsupport](Techsupport)
+    -   [Security incident/event
+        response](Security_incident_event_response)
     -   [Support VPN](Support_VPN)
-    -   [Vulnerability reports](Vulnerability_reports)
 -   [Frequently Asked Question - FAQ](Frequently_Asked_Question_-_FAQ)
 -   [Contacts](Contacts)
 

@@ -3,7 +3,8 @@
 ## Contacts
 
 IP FABRIC s.r.o.  
-Francouzská 30, Prague 12000  
+Kateřinská 466/40  
+Praha 2 - Nové Město, 120 00  
 Czech Republic  
 email: <support@ipfabric.io>  
 phone: +420 720 022 997  

@@ -18,17 +18,28 @@ access the User Management menu.
 
 A new user is added to the system by filling out his/her user details
 
-<img src="attachments/79462445/1931804688.png" class="image-left" loading="lazy" data-image-src="attachments/79462445/1931804688.png" data-height="476" data-width="422" data-unresolved-comment-count="0" data-linked-resource-id="1931804688" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-115359.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="8" data-media-id="4fafea76-4d7c-4fea-8656-4cd6db9d7edc" data-media-type="file" />
+<div>
+
+<div>
+
+Valid email domain needs to be set (for example .com, .io, .fr etc) for
+a user to be successfully created
+
+</div>
+
+</div>
+
+<img src="attachments/79462445/1931804688.png" class="image-left" loading="lazy" data-image-src="attachments/79462445/1931804688.png" data-height="476" data-width="422" data-unresolved-comment-count="0" data-linked-resource-id="1931804688" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-115359.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="11" data-media-id="4fafea76-4d7c-4fea-8656-4cd6db9d7edc" data-media-type="file" />
 
 ### Following are the pre-defined user roles:
 
-**READ** – a user can view the discovered data, load diagram views, view
-stored configurations, but cannot launch a discovery themselves or
-modify or delete existing views. He is also unable to execute basic
-snapshot operations like loading and unloading snapshots.
+**READ** – a user can view the discovered data, load diagram views, but
+cannot launch a discovery themselves or modify or delete existing views.
+He is also unable to execute basic snapshot operations like loading and
+unloading snapshots.
 
 **DISCOVERY** – a user can launch a discovery, save new view or modify
-existing diagram view.
+existing diagram view and view stored configurations.
 
 **USER MANAGEMENT** – an administrative right that specifically grants a
 privilege to a user to create, delete or modify other users.
@@ -41,12 +52,12 @@ settings of the system.
 Within this table, all user accounts can be modified or deleted. It also
 transparently shows user permissions and emails.
 
-<img src="attachments/79462445/1931804696.png" class="image-center" loading="lazy" data-image-src="attachments/79462445/1931804696.png" data-height="223" data-width="1522" data-unresolved-comment-count="0" data-linked-resource-id="1931804696" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-121525.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="8" data-media-id="dd3241f8-2dc5-4f47-9f79-f16a89f671e6" data-media-type="file" />
+<img src="attachments/79462445/1931804696.png" class="image-center" loading="lazy" data-image-src="attachments/79462445/1931804696.png" data-height="223" data-width="1522" data-unresolved-comment-count="0" data-linked-resource-id="1931804696" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-121525.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="11" data-media-id="dd3241f8-2dc5-4f47-9f79-f16a89f671e6" data-media-type="file" />
 
 When an edit menu for a specific user account is opened, user
 permissions or a password can be updated.
 
-<img src="attachments/79462445/1931804702.png" class="image-left" loading="lazy" data-image-src="attachments/79462445/1931804702.png" data-height="601" data-width="424" data-unresolved-comment-count="0" data-linked-resource-id="1931804702" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-125129.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="8" data-media-id="58c45a4a-1db1-4587-81dc-08697347b052" data-media-type="file" />
+<img src="attachments/79462445/1931804702.png" class="image-left" loading="lazy" data-image-src="attachments/79462445/1931804702.png" data-height="601" data-width="424" data-unresolved-comment-count="0" data-linked-resource-id="1931804702" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image-20210128-125129.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="79462445" data-linked-resource-container-version="11" data-media-id="58c45a4a-1db1-4587-81dc-08697347b052" data-media-type="file" />
 
 The password of the default admin account can also be changed here.
 

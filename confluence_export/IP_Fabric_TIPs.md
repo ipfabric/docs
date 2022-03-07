@@ -45,14 +45,6 @@ were built to handle a large capacity and complex queries, so the
 outcome should be better than analyzing the output in an external
 application like Excel.
 
-## Network or Site view
-
-Each technology table displays information for the whole network by
-default. To restrict the view to a specific site, use the drop down menu
-on the top left corner and select the site you want to display the
-information for. To return to the full network view, select “Network”
-from the site list.
-
 ## Working with tables
 
 An ARP technology table is used as an example below to demonstrate the
@@ -60,19 +52,19 @@ functionality of tables.
 
 ### Table description
 
-<img src="attachments/86474761/86540297.png" loading="lazy" data-image-src="attachments/86474761/86540297.png" data-unresolved-comment-count="0" data-linked-resource-id="86540297" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_14-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="6e32d198-0c3f-4404-a136-5d02fc873038" data-media-type="file" />
+<img src="attachments/86474761/86540297.png" loading="lazy" data-image-src="attachments/86474761/86540297.png" data-unresolved-comment-count="0" data-linked-resource-id="86540297" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_14-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="6e32d198-0c3f-4404-a136-5d02fc873038" data-media-type="file" />
 
 For a short table description click on
-the <img src="attachments/86474761/86212616.png" loading="lazy" data-image-src="attachments/86474761/86212616.png" data-unresolved-comment-count="0" data-linked-resource-id="86212616" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 11_00_12-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="62c63035-f7c4-401c-9dcf-80616bd9ab7c" data-media-type="file" /> button.
+the <img src="attachments/86474761/86212616.png" loading="lazy" data-image-src="attachments/86474761/86212616.png" data-unresolved-comment-count="0" data-linked-resource-id="86212616" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 11_00_12-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="62c63035-f7c4-401c-9dcf-80616bd9ab7c" data-media-type="file" /> button.
 
-<img src="attachments/86474761/86638612.png?height=150" loading="lazy" data-image-src="attachments/86474761/86638612.png" data-unresolved-comment-count="0" data-linked-resource-id="86638612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_59_35-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="e2160bf9-a272-4e54-bf60-e9a5e6382fdc" data-media-type="file" height="150" />
+<img src="attachments/86474761/86638612.png?height=150" loading="lazy" data-image-src="attachments/86474761/86638612.png" data-unresolved-comment-count="0" data-linked-resource-id="86638612" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_59_35-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="e2160bf9-a272-4e54-bf60-e9a5e6382fdc" data-media-type="file" height="150" />
 
 ### Contextual help
 
 Contextual help is displayed when a mouse cursor hovers over a table
 icon or table header text.
 
-<img src="attachments/86474761/86474774.png" loading="lazy" data-image-src="attachments/86474761/86474774.png" data-unresolved-comment-count="0" data-linked-resource-id="86474774" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_48_09-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="358bb570-a355-4973-b8ca-b77f8e9b6ad0" data-media-type="file" />
+<img src="attachments/86474761/86474774.png" loading="lazy" data-image-src="attachments/86474761/86474774.png" data-unresolved-comment-count="0" data-linked-resource-id="86474774" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_48_09-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="358bb570-a355-4973-b8ca-b77f8e9b6ad0" data-media-type="file" />
 
 ### Table search
 
@@ -84,10 +76,10 @@ Use  to clear the search results.
 
 ### Advanced table search (Advanced Filter)
 
-<img src="attachments/86474761/86310919.png" loading="lazy" data-image-src="attachments/86474761/86310919.png" data-unresolved-comment-count="0" data-linked-resource-id="86310919" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_41_32-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="57eee5dd-fbd8-4386-be41-0deb5ac1c15c" data-media-type="file" />
+<img src="attachments/86474761/86310919.png" loading="lazy" data-image-src="attachments/86474761/86310919.png" data-unresolved-comment-count="0" data-linked-resource-id="86310919" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_41_32-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="57eee5dd-fbd8-4386-be41-0deb5ac1c15c" data-media-type="file" />
 
 If you need a more precise filter use ***Advanced Filter***. Click
-on <img src="attachments/86474761/86179874.png" loading="lazy" data-image-src="attachments/86474761/86179874.png" data-unresolved-comment-count="0" data-linked-resource-id="86179874" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_40_38-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="98bb0a5c-6de6-44b3-9492-b7d7e578aad9" data-media-type="file" /> and
+on <img src="attachments/86474761/86179874.png" loading="lazy" data-image-src="attachments/86474761/86179874.png" data-unresolved-comment-count="0" data-linked-resource-id="86179874" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_40_38-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="98bb0a5c-6de6-44b3-9492-b7d7e578aad9" data-media-type="file" /> and
 configure filter rules.
 
 Filters are defined by groups and rules. Each group can contain on or
@@ -104,11 +96,11 @@ In other words: "Show me all devices with hostname L47AC8 which have
 interface Et7/2, plus all devices with hostname L43SD73 with interface
 Et13/0.
 
-<img src="attachments/86474761/86376511.png?height=250" loading="lazy" data-image-src="attachments/86474761/86376511.png" data-unresolved-comment-count="0" data-linked-resource-id="86376511" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Advanced_Filter.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="fcc3195d-79c3-4fbe-83e6-5f5578b57bcb" data-media-type="file" height="250" />
+<img src="attachments/86474761/86376511.png?height=250" loading="lazy" data-image-src="attachments/86474761/86376511.png" data-unresolved-comment-count="0" data-linked-resource-id="86376511" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Advanced_Filter.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="fcc3195d-79c3-4fbe-83e6-5f5578b57bcb" data-media-type="file" height="250" />
 
 ### Share table view
 
-<img src="attachments/86474761/86376482.png" loading="lazy" data-image-src="attachments/86474761/86376482.png" data-unresolved-comment-count="0" data-linked-resource-id="86376482" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_41_45-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="a912e502-4b45-46f9-b0f4-d2b4fa2c867f" data-media-type="file" />
+<img src="attachments/86474761/86376482.png" loading="lazy" data-image-src="attachments/86474761/86376482.png" data-unresolved-comment-count="0" data-linked-resource-id="86376482" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_41_45-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="a912e502-4b45-46f9-b0f4-d2b4fa2c867f" data-media-type="file" />
 
 The table view can be shared with other users.
 
@@ -116,14 +108,14 @@ The table view can be shared with other users.
 
 ### Colorize column
 
-<img src="attachments/86474761/86245389.png" loading="lazy" data-image-src="attachments/86474761/86245389.png" data-unresolved-comment-count="0" data-linked-resource-id="86245389" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_00-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="77fce79b-0f95-4897-8bc0-3a17a43921c4" data-media-type="file" />
+<img src="attachments/86474761/86245389.png" loading="lazy" data-image-src="attachments/86474761/86245389.png" data-unresolved-comment-count="0" data-linked-resource-id="86245389" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_00-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="77fce79b-0f95-4897-8bc0-3a17a43921c4" data-media-type="file" />
 
 The table column can be colored based on predefined rules. Existing (as
 well as default rules) are visible above table as ***Reports*** and can
 be edited or removed.
 
 Click
-on <img src="attachments/86474761/86376536.png" loading="lazy" data-image-src="attachments/86474761/86376536.png" data-unresolved-comment-count="0" data-linked-resource-id="86376536" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 16_36_06-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="9d0540ce-3db0-4a22-bf5e-ffbeb03cd795" data-media-type="file" /> to
+on <img src="attachments/86474761/86376536.png" loading="lazy" data-image-src="attachments/86474761/86376536.png" data-unresolved-comment-count="0" data-linked-resource-id="86376536" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 16_36_06-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="9d0540ce-3db0-4a22-bf5e-ffbeb03cd795" data-media-type="file" /> to
 add a new coloring rule. Specify ***Rule name***, select the column to
 add the color to - ***Colorized column*** and also, optionally,
 dashboard ***Widgets*** (check [Dashboard
@@ -144,11 +136,11 @@ In the example below, all items in the "*VRF*" column which are named
 this rule will also be displayed on ***Dashboard*** in
 the ***Interfaces*** widget.
 
-<img src="attachments/86474761/86212645.png?height=250" loading="lazy" data-image-src="attachments/86474761/86212645.png" data-unresolved-comment-count="0" data-linked-resource-id="86212645" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 16_31_44-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="02dc9110-da80-4b96-8bfb-99fbbf2cafc4" data-media-type="file" height="250" />
+<img src="attachments/86474761/86212645.png?height=250" loading="lazy" data-image-src="attachments/86474761/86212645.png" data-unresolved-comment-count="0" data-linked-resource-id="86212645" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 16_31_44-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="02dc9110-da80-4b96-8bfb-99fbbf2cafc4" data-media-type="file" height="250" />
 
 ### Display setting
 
-<img src="attachments/86474761/86310924.png" loading="lazy" data-image-src="attachments/86474761/86310924.png" data-unresolved-comment-count="0" data-linked-resource-id="86310924" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_27-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="e7870671-b63d-4224-91ec-ebb8288631c5" data-media-type="file" />
+<img src="attachments/86474761/86310924.png" loading="lazy" data-image-src="attachments/86474761/86310924.png" data-unresolved-comment-count="0" data-linked-resource-id="86310924" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_27-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="e7870671-b63d-4224-91ec-ebb8288631c5" data-media-type="file" />
 
 Select what columns are displayed by choosing in ***Column
 Visibility***.
@@ -164,14 +156,14 @@ with ***Rows height adjust*** .
 
 ### Export to CSV
 
-<img src="attachments/86474761/86376487.png" loading="lazy" data-image-src="attachments/86474761/86376487.png" data-unresolved-comment-count="0" data-linked-resource-id="86376487" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_37-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="1da10c56-85e6-4337-8906-8e78c267aaaa" data-media-type="file" />
+<img src="attachments/86474761/86376487.png" loading="lazy" data-image-src="attachments/86474761/86376487.png" data-unresolved-comment-count="0" data-linked-resource-id="86376487" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_37-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="1da10c56-85e6-4337-8906-8e78c267aaaa" data-media-type="file" />
 
 The current table view can be exported to CSV. This is useful for
 additional data processing in an external application.
 
 ### Restore table setting
 
-<img src="attachments/86474761/86376492.png" loading="lazy" data-image-src="attachments/86474761/86376492.png" data-unresolved-comment-count="0" data-linked-resource-id="86376492" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_50-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="12" data-media-id="a7ff9f92-edc7-415a-8f2c-f6b828e0b6a6" data-media-type="file" />
+<img src="attachments/86474761/86376492.png" loading="lazy" data-image-src="attachments/86474761/86376492.png" data-unresolved-comment-count="0" data-linked-resource-id="86376492" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2018-08-02 10_42_50-ARP Table - IP Fabric network infrastructure controller - IPFabric.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="86474761" data-linked-resource-container-version="13" data-media-id="a7ff9f92-edc7-415a-8f2c-f6b828e0b6a6" data-media-type="file" />
 
 Table filters and other settings can be restored using the ***Restore
 Table Settings*** button.

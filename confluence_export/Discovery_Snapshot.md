@@ -132,7 +132,7 @@ Snapshots can be deleted by the “Delete snapshot“ button.
 ### Related Articles
 
 If you want to learn more about how network discovery works from a
-technical point of view, [read this article](How_Discovery_Works).
+technical point of view, [read this article](How_CLI_Discovery_Works).
 
 <div class="pageSectionHeader">
 

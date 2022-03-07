@@ -134,30 +134,31 @@
     <!-- -->
 
     -   [IP Fabric's Discovery](IP_Fabric_s_Discovery)
-        -   [How Discovery Works](How_Discovery_Works)
+        -   [How CLI Discovery Works](How_CLI_Discovery_Works)
+            -   [No Devices Discovered](No_Devices_Discovered)
+
+            <!-- -->
+
+            -   [Used CLI commands per Task](Used_CLI_commands_per_Task)
+
+            <!-- -->
+
+            -   [Used CLI commands for
+                Discovery](Used_CLI_commands_for_Discovery)
+
+            <!-- -->
+
+            -   [Connectivity report - Type of
+                Error](Connectivity_report_-_Type_of_Error)
+
+            <!-- -->
+
+            -   [Fine-Tune SSH/telnet CLI
+                parameters](Fine-Tune_SSH_telnet_CLI_parameters)
 
         <!-- -->
 
-        -   [No Devices Discovered](No_Devices_Discovered)
-
-        <!-- -->
-
-        -   [Used CLI commands per Task](Used_CLI_commands_per_Task)
-
-        <!-- -->
-
-        -   [Used CLI commands for
-            Discovery](Used_CLI_commands_for_Discovery)
-
-        <!-- -->
-
-        -   [Connectivity report - Type of
-            Error](Connectivity_report_-_Type_of_Error)
-
-        <!-- -->
-
-        -   [Fine-Tune SSH/telnet CLI
-            parameters](Fine-Tune_SSH_telnet_CLI_parameters)
+        -   [How API Discovery Works](How_API_Discovery_Works)
 
     <!-- -->
 
@@ -301,6 +302,13 @@
             <!-- -->
 
             -   [Site Separation](Site_Separation)
+                -   [Site Separation (up to
+                    4.2.x)](Site_Separation_up_to_4.2.x_)
+
+                <!-- -->
+
+                -   [Site Separation (from
+                    4.3)](Site_Separation_from_4.3_)
 
             <!-- -->
 
@@ -361,24 +369,37 @@
 
                 <!-- -->
 
-                -   [Vendor API](Vendor_API)
-                    -   [Meraki API](Meraki_API)
+                -   [Vendors API](Vendors_API)
+                    -   [AWS (Amazon Web
+                        Services)](AWS_Amazon_Web_Services_)
 
                     <!-- -->
 
-                    -   [CheckPoint API](CheckPoint_API)
+                    -   [Azure Networking](Azure_Networking)
 
                     <!-- -->
 
-                    -   [Versa API](Versa_API)
+                    -   [Check Point](Check_Point)
 
                     <!-- -->
 
-                    -   [AWS API](AWS_API)
+                    -   [Cisco Meraki](Cisco_Meraki)
 
                     <!-- -->
 
-                    -   [Viptela API](Viptela_API)
+                    -   [Cisco Viptela SD-WAN](Cisco_Viptela_SD-WAN)
+
+                    <!-- -->
+
+                    -   [Silver Peak SD-WAN](Silver_Peak_SD-WAN)
+
+                    <!-- -->
+
+                    -   [Versa Networks SD-WAN](Versa_Networks_SD-WAN)
+
+                    <!-- -->
+
+                    -   [VMware NSX-T](VMware_NSX-T)
 
                 <!-- -->
 
@@ -414,6 +435,10 @@
             <!-- -->
 
             -   [Webhooks](Webhooks)
+
+            <!-- -->
+
+            -   [Device Attributes](Device_Attributes)
 
             <!-- -->
 
@@ -477,8 +502,30 @@
 
         <!-- -->
 
-        -   [API Tech Note - IP Fabric 4.x Unicast Path
-            Lookup](API_Tech_Note_-_IP_Fabric_4.x_Unicast_Path_Lookup)
+        -   [API Tech Note - 4.x Path
+            Lookup](API_Tech_Note_-_4.x_Path_Lookup)
+            -   [API Tech Note- 4.0-2 Unicast Path
+                Lookup](API_Tech_Note-_4.0-2_Unicast_Path_Lookup)
+
+            <!-- -->
+
+            -   [API Tech Note - 4.3 Unicast Path
+                Lookup](API_Tech_Note_-_4.3_Unicast_Path_Lookup)
+
+            <!-- -->
+
+            -   [API Tech Note - 4.3 Multicast Path
+                Lookup](API_Tech_Note_-_4.3_Multicast_Path_Lookup)
+
+            <!-- -->
+
+            -   [API Tech Note - 4.3 Host to Gateway Path
+                Lookup](API_Tech_Note_-_4.3_Host_to_Gateway_Path_Lookup)
+
+            <!-- -->
+
+            -   [API Tech Note - Path Lookup ICMP
+                Decoder](API_Tech_Note_-_Path_Lookup_ICMP_Decoder)
 
         <!-- -->
 
@@ -487,8 +534,19 @@
 
         <!-- -->
 
-        -   [API Tech Note - Refreshing devices in a
-            snapshot](API_Tech_Note_-_Refreshing_devices_in_a_snapshot)
+        -   [API Tech Note - Snapshots](API_Tech_Note_-_Snapshots)
+            -   [API Tech Note - Create new snapshots via
+                API](API_Tech_Note_-_Create_new_snapshots_via_API)
+
+            <!-- -->
+
+            -   [API Tech Note - Refreshing devices in a
+                snapshot](API_Tech_Note_-_Refreshing_devices_in_a_snapshot)
+
+            <!-- -->
+
+            -   [API Tech Note - Snapshot
+                Table](API_Tech_Note_-_Snapshot_Table)
 
     <!-- -->
 
@@ -513,12 +571,6 @@
 
     -   [Known issues](Known_issues)
         -   [IP Fabric](IP_Fabric)
-            -   [Error messages: "a request xxx Failed to fetch HTTP
-                status: 504" followed by "Database seems to be
-                overloaded"](Error_messages_a_request_xxx_Failed_to_fetch_HTTP_status_504_followed_by_Database_seems_to_be_overloaded_)
-
-            <!-- -->
-
             -   [Invalid default username and
                 password](Invalid_default_username_and_password)
 
@@ -528,18 +580,25 @@
 
             <!-- -->
 
-            -   [Error messages: "Error: Resource
-                Conflict"](Error_messages_Error_Resource_Conflict_)
-
-            <!-- -->
-
-            -   [Error message: "Error: AQL: internal error - in
-                index"](Error_message_Error_AQL_internal_error_-_in_index_)
-
-            <!-- -->
-
             -   [Site name can change to an obscure UUID value after
                 update](Site_name_can_change_to_an_obscure_UUID_value_after_update)
+
+            <!-- -->
+
+            -   [Error Messages](Error_Messages)
+                -   [Message: "a request xxx Failed to fetch HTTP
+                    status: 504" followed by "Database seems to be
+                    overloaded"](Message_a_request_xxx_Failed_to_fetch_HTTP_status_504_followed_by_Database_seems_to_be_overloaded_)
+
+                <!-- -->
+
+                -   [Message: "Error: AQL: internal error - in
+                    index"](Message_Error_AQL_internal_error_-_in_index_)
+
+                <!-- -->
+
+                -   [Messages: "Error: Resource
+                    Conflict"](Messages_Error_Resource_Conflict_)
 
         <!-- -->
 
@@ -561,6 +620,16 @@
 
             -   [VRFs are not found on
                 IOS-XR](VRFs_are_not_found_on_IOS-XR)
+
+            <!-- -->
+
+            -   [Inconsistent VRF names on Cisco
+                platforms](Inconsistent_VRF_names_on_Cisco_platforms)
+
+            <!-- -->
+
+            -   [Dropping support for ACL on Cisco
+                Firepower](Dropping_support_for_ACL_on_Cisco_Firepower)
 
         <!-- -->
 
@@ -624,6 +693,10 @@
 
         -   [Versa](Versa)
 
+        <!-- -->
+
+        -   [Brocade](Brocade)
+
     <!-- -->
 
     -   [Release Notes](Release_Notes)
@@ -648,11 +721,12 @@
 
         <!-- -->
 
-        -   [Support VPN](Support_VPN)
+        -   [Security incident/event
+            response](Security_incident_event_response)
 
         <!-- -->
 
-        -   [Vulnerability reports](Vulnerability_reports)
+        -   [Support VPN](Support_VPN)
 
     <!-- -->
 
