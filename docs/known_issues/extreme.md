@@ -1,4 +1,4 @@
-# Extreme
+# Extreme Networks
 
 **Known Affected platforms**: Extreme ESR - BOSS (ex Nortel)
 
