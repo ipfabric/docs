@@ -64,7 +64,7 @@ You can run live preview, which is super helpful when writing / editing the
 documentation. It is simple as equivalent of
 
 ```shell
-virtualenv -p python3 /tmp/virtualenv && source /tmp/virtualenv/bin/activate && pip3 install -r requirements.txt && mkdocs serve
+virtualenv -p python3 .venv && source .venv/bin/activate && pip3 install -r requirements.txt && mkdocs serve
 ```
 
 ## `mike` cookbook
