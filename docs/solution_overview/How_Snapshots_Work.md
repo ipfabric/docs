@@ -8,12 +8,12 @@ data. Active network view displays information from a network snapshot
 which can be selected using Snapshot selector drop-down menu in the top
 left corner of the Main User Interface.
 
-![Snapshot selector menu](./How_Snapshots_Work/snapshot_selector_menu.png "Snapshot selector menu")
+![Snapshot selector menu](snapshot_selector_menu.png "Snapshot selector menu")
 
 
 # Snapshot Management
 
-![Snapshot Management Overview](./How_Snapshots_Work/snapshot_management_overview.png "Snapshot Management Overview")
+![Snapshot Management Overview](snapshot_management_overview.png "Snapshot Management Overview")
 
 Up to five (5) snapshots can be loaded simultaneously into active
 memory. When the snapshot is active it is considered "loaded". Other
@@ -47,9 +47,9 @@ New network state snapshots can be created from the Discovery page using
 the start button.
 
 To add devices to existing snapshot, use
-the ![Add Device](./How_Snapshots_Work/add_device.png "Add Device") button.
+the ![Add Device](add_device.png "Add Device") button.
 When adding devices, no data is overwritten.
 
 To refresh network state data for specific devices in existing snapshot,
-use ![Refresh Device Data](./How_Snapshots_Work/refresh_device_data.png "Refresh Device Data") button.
+use ![Refresh Device Data](refresh_device_data.png "Refresh Device Data") button.
 
