@@ -16,7 +16,7 @@ are a bit slower than UI tokens (as the token is verified in DB with
 each API call), but they can be revoked easily.
 
 To make use of the API tokens, you can generate the in UI  
-\<\< guide with screenshots comes here \>\>
+<< guide with screenshots comes here \>\>
 
 Please note that the token string is visible / editable only when you
 create the token, you will not see it or be able to modify it later on.
@@ -26,14 +26,6 @@ the API token in the UI.
 To use the token, send it in `X-API-Token` HTTP header along the
 request.
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 ``` bash
 $ curl -v -H "X-Api-Token: ${YOUR_TOKEN}" http://${API_HOST_PORT}/v1/api-tokens | jq
 ```
-
-</div>
-
-</div>
