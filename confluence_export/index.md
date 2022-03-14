@@ -562,11 +562,6 @@
         -   [Troubleshooting VM Network Problems Using IP Fabric
             CLI](Troubleshooting_VM_Network_Problems_Using_IP_Fabric_CLI)
 
-        <!-- -->
-
-        -   [How to configure Quagga/FRR to work with IP
-            Fabric](How_to_configure_Quagga_FRR_to_work_with_IP_Fabric)
-
     <!-- -->
 
     -   [Known issues](Known_issues)

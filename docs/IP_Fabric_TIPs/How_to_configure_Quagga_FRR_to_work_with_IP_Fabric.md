@@ -11,17 +11,9 @@ Quagga/FRR shell usually runs in /usr/bin/vtysh.
 A new user with a direct access to Quagga/FRR shell needs to be created
 as follows in the bash:
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 ``` bash
 useradd -s /usr/bin/vtysh username
 ```
-
-</div>
-
-</div>
 
 Afterwards, you will be prompted to set up a password.
 
