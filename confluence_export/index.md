@@ -189,7 +189,7 @@
 
             <!-- -->
 
-            -   [Intent Checks](Intent_Checks)
+            -   [Intent Checks](../docs/IP_Fabric_GUI/Diagrams_(from_v4.0)/Intent_Checks.md)
 
             <!-- -->
 
