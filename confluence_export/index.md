@@ -657,10 +657,6 @@
 
         <!-- -->
 
-        -   [Huawei](Huawei)
-
-        <!-- -->
-
         -   [Juniper](Juniper)
 
         <!-- -->

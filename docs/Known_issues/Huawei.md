@@ -6,9 +6,9 @@
 domain model. The bridge domain is mapped into the VLAN model. This has
 limitations:
 
--   The bridge domain number can have a maximal value of 4095 and must
-    be the same as the VLAN tag
+- The bridge domain number can have a maximal value of 4095 and must
+  be the same as the VLAN tag
 
--   Vlan and bridge domain with the same number is not supported
+- Vlan and bridge domain with the same number is not supported
 
 **Fix**: Currently no fix. Can be improved in future releases.
