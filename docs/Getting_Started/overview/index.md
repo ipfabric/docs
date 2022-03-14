@@ -129,3 +129,17 @@ privilege cmd level 1 mode exec command terminal
 ```
 
 List of all commands used for CLI discovery can be found [on this page](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/80019486/Used+CLI+commands+for+Discovery) and in this [feature/vendor matrix](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/392003585).
+
+### Staging vs Production Deployment
+
+IP Fabric is a complex solution with multiple moving parts. We thoroughly test every release before it is made available to our customers. Testing comprises of the automated unit testing on the code level and automated tests run against various physical and virtual lab environments. These emulate complex networks with many devices from multiple vendors. Despite these efforts, issues can still arise after deploying a new version of IP Fabric to the customer's environment. For example, it is not feasible to replicate the entire network or a combination of particular device models.
+
+Therefore, we suggest 2-stage deployment of the new IP Fabric releases for complex or critical implementations. The first stage is _staging_ deployment, used to verify the functionality of the new release within the customer's environment.
+
+!!! info
+
+    You will need a valid license for the staging deployment. Please, contact our sales team to check eligibility for a free complimentary license.
+
+The second stage is the deployment to the production / live environment. The staging environment's sizing follows the suggestions mentioned above for a standard deployment. We don't provide special staging builds. These are regular production builds, which are just deployed separately not to potentially disrupt the day-to-day use of IP Fabric within the organization.
+
+We suggest that you make stating as close as possible to the final production environment. The staging environment should discover the same devices as the production (e.g., there is only a limited value if the staging environment "sees" only 500 network devices, while the whole network consists of thousands of devices). On the other side, it is perfectly fine to provision the staging environment dynamically if your deployment environment allows it. Also, a typical "acceptance test" on the staging environment lasts only a couple of days to verify overall functionality.
