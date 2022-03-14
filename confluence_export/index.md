@@ -189,10 +189,6 @@
 
             <!-- -->
 
-            -   [How to use Path Look-Up](How_to_use_Path_Look-Up)
-
-            <!-- -->
-
             -   [Intent Checks](Intent_Checks)
 
             <!-- -->
