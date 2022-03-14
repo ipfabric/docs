@@ -615,7 +615,7 @@
             <!-- -->
 
             -   [Inconsistent VRF names on Cisco
-                platforms](Inconsistent_VRF_names_on_Cisco_platforms)
+                platforms](../docs/Known_issues/Cisco/Inconsistent_VRF_names_on_Cisco_platforms.md)
 
             <!-- -->
 
