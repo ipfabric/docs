@@ -229,7 +229,6 @@
 
             <!-- -->
 
-            -   [Interfaces](Interfaces)
                 -   [Transceivers](Transceivers)
 
             <!-- -->
