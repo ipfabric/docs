@@ -6,4 +6,4 @@ All
 
 ## Result
 
-Without this command collected no memory utilization will be present.
+Without this command, no information about memory utilization is collected.
