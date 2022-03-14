@@ -92,3 +92,26 @@ You can set up what you want to prioritize in the view. Just simply move
 the bars up or down.
 
 ![Visualization setup](visualization_setup.png)
+
+## Improvements from 4.3 version
+
+From version 4.3, IP Fabric supports more granular path lookup.
+
+### First Hop Algorithm
+First hop algorithm can be defined - when **Automatic** option is selected,
+source VRF can be automatically detected, or selected manually.
+
+![First hop algorithm](first_hop_algorithm.png)
+
+Also your source network device and its interface can be selected when choosing
+**User defined** First Hop Algorithm.
+
+### Source/Destination IP Address and Port
+
+By default, ICMP protocol and Echo request is chosen for path lookup.
+
+![Source and destination](pathlookup_src_dst.jpeg)
+
+When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is selected by default.
+
+![HTTP default](pathlookup_http_default.jpeg)
