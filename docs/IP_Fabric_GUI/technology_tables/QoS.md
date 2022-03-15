@@ -1,7 +1,5 @@
 # QoS
 
-## QoS
-
 ### Overview
 
 The QoS technology section provides information about all class-maps and
