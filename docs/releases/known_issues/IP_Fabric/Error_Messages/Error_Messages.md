@@ -1,4 +1,4 @@
-# Error Messages
+# General
 
 The following table describes some of the know error messages, that may
 be observed during the platform operation.
