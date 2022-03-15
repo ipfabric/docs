@@ -1,8 +1,13 @@
 # Release Notes
 
-## Release Notes
-
-## IP Fabric v4.x.x
+!!! Warning
+    Please force refresh your browser cache after an upgrade!
+    
+    Depending on your operating system all you need to do is the following key combination:
+    
+    Windows: ***ctrl + F5***
+    Mac/Apple: ***Apple + R or command + R***
+    Linux: ***F5***
 
 ## 4.3.4+3 (7rd March 2022)
 
@@ -1361,8 +1366,6 @@ SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 -   Wrong MAC address classification as a phone for proxy ARP fix.
 
   
-
-## IP Fabric v3.x.x
 
 ## 3.8.2 (1st July 2021)
 
@@ -4485,8 +4488,6 @@ in case of any problems contact our support team, either via the
 <https://support.ipfabric.io> portal or through <support@ipfabric.io>.
 
   
-
-## NIMPEE v2.x.x
 
 ### 2.4.0 (27th February 2019)
 
