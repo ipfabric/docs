@@ -2945,7 +2945,7 @@
 <ol>
 <li>Open VMware vSphere web console.</li>
 <li>Right click on VM name and select <em>Edit Settings</em>.</li>
-<li>Click <em>Add New Device</em> → <em>Hard Disk</em></li>
+<li>Click <em>Add New Device</em> → <em>Hard Disk</em></li>
 <li>Select new size</li>
 <li>Specify <em>Location</em>:<ol>
 <li>for system disk expansion is recommended to select <em>Store with
@@ -2954,33 +2954,33 @@
     ideally on a different physical storage</li>
 </ol>
 </li>
-<li>Click OK<br />
-    <img src="attachments/634060809/634191898.png?height=400" loading="lazy" data-image-src="attachments/634060809/634191898.png" data-unresolved-comment-count="0" data-linked-resource-id="634191898" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-06 16_31_48-Window.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="aed917ec-3df4-42d5-9002-29a0084fd17d" data-media-type="file" height="400" /></li>
+<li>Click OK
+    <img alt="VMWare virtual hardware" src="../vmware_virtual_hardware.png" /></li>
 <li>Launch Remote (Web) Console.</li>
 <li><a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/79036518/Service+Interfaces">Reboot</a>
-    (<em>Send Ctrl+Alt+Delete</em> function can be also used) or power on IP
+    (<em>Send Ctrl+Alt+Delete</em> function can be also used) or power on IP
     Fabric VM.</li>
-<li>During system boot <em>Disk space expansion</em> wizard appears.<br />
-    <img src="attachments/634060809/634093592.png?height=250" loading="lazy" data-image-src="attachments/634060809/634093592.png" data-unresolved-comment-count="0" data-linked-resource-id="634093592" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-06 16_39_44-Window.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="694f617d-5e41-4be8-9394-31d8e3d49c82" data-media-type="file" height="250" /></li>
+<li>During system boot <em>Disk space expansion</em> wizard appears.
+    <img alt="VMWare disk space expansion" src="../vmware_disk_space_expansion.png" /></li>
 <li>Select <em>Yes</em> to start disk space expansion.</li>
 <li>Select which volume to extend:<ol>
 <li>System volume is used for all data except local backups.</li>
 <li>Backup is used only for local backups.</li>
 </ol>
 </li>
-<li>Selected volume is extended.<br />
-    <img src="attachments/634060809/633995283.png?height=250" loading="lazy" data-image-src="attachments/634060809/633995283.png" data-unresolved-comment-count="0" data-linked-resource-id="633995283" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-06 16_43_21-Window.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="ba26fe14-131c-459e-9743-4646754ab3d3" data-media-type="file" height="250" /></li>
-<li>Enter <em>OK</em></li>
+<li>Selected volume is extended.
+    <img alt="VMWare disk space expanded" src="../vmware_disk_space_expanded.png" /></li>
+<li>Enter <em>OK</em></li>
 </ol>
 <h2 id="increase-disk-space-for-hyper-v">Increase disk space for Hyper-V</h2>
 <h3 id="option-1-extend-existing-virtual-disk-for-system-and-data_1">Option 1 - extend existing virtual disk (for system and data)</h3>
 <ol>
 <li>Open Hyper-V Manager.</li>
-<li>Shutdown VM. <em>(when </em><em>Started</em><em>, HyperV won't let you change any
+<li>Shutdown VM. <em>(when </em><em>Started</em><em>, HyperV won't let you change any
     hardware settings)</em></li>
 <li>Right click on VM name and select <strong><em>Settings</em></strong>.</li>
 <li>Select <strong><em>IDE Controller - Hard Drive -
-    ipfabric-3-x-x-disk1.vhdx </em></strong></li>
+    ipfabric-3-x-x-disk1.vhdx </em></strong></li>
 <li>Click <strong><em>Edit</em></strong> - <strong><em>Choose Action</em></strong> - select option <strong><em>Expand</em></strong>,
     click <strong><em>Next</em></strong>.</li>
 <li>Set up required disk size and click <strong><em>Finish.</em></strong></li>
@@ -2989,36 +2989,36 @@
 </ol>
 <h3 id="option-2-add-new-virtual-disk-as-additional-backup-disk_1">Option 2 - add new virtual disk (as additional backup disk)</h3>
 <ol>
-<li>Open HyperV Manager.</li>
-<li>Shutdown VM. <em>(when </em><em>Started</em><em>, HyperV won't let you change any
+<li>Open HyperV Manager.</li>
+<li>Shutdown VM. <em>(when </em><em>Started</em><em>, HyperV won't let you change any
     hardware settings)</em></li>
-<li>Right click on VM name an select <strong><em>Settings</em></strong>. <br />
-    <img src="attachments/634060809/869236752.png?height=250" loading="lazy" data-image-src="attachments/634060809/869236752.png" data-unresolved-comment-count="0" data-linked-resource-id="869236752" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-7_10-12-44.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="45ea4b05-3fa6-4a1b-a5ff-b93a6548b9f4" data-media-type="file" height="250" /></li>
-<li>Select IDE Controller 1 - Hard Drive - click Add <br />
-    <img src="attachments/634060809/869203982.png?height=250" loading="lazy" data-image-src="attachments/634060809/869203982.png" data-unresolved-comment-count="0" data-linked-resource-id="869203982" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-7_10-17-21.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="e6b2e263-6d23-48fb-9d43-a820675b5b8c" data-media-type="file" height="250" /></li>
+<li>Right click on VM name an select <strong><em>Settings</em></strong>.
+   <img alt="HyperV settings" src="../hyperv_settings.png" /></li>
+<li>Select IDE Controller 1 - Hard Drive - click Add
+   <img alt="HyperV Add hard drive" src="../hyperv_add_hdd.png" /></li>
 <li>Select <strong><em>Virtual hard disk</em></strong> - click <strong><em>New</em></strong> - select <strong><em>Choose
-    Disk Format</em></strong> - select <strong><em>VHDX</em></strong> - click <strong><em>Next</em></strong>.<br />
-    <img src="attachments/634060809/866713658.png?height=250" loading="lazy" data-image-src="attachments/634060809/866713658.png" data-unresolved-comment-count="0" data-linked-resource-id="866713658" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-7_10-19-2.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="9d599457-6b55-44e8-9bca-2a8f3cebe7b6" data-media-type="file" height="250" /></li>
-<li>Select <strong><em>Dynamically expanding</em></strong> - click <strong><em>Next</em></strong><br />
-    <img src="attachments/634060809/866713663.png?height=250" loading="lazy" data-image-src="attachments/634060809/866713663.png" data-unresolved-comment-count="0" data-linked-resource-id="866713663" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-7_10-21-28.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="f90153d1-a01d-4610-8b98-8856e2e31af6" data-media-type="file" height="250" /></li>
+    Disk Format</em></strong> - select <strong><em>VHDX</em></strong> - click <strong><em>Next</em></strong>.
+   <img alt="HyperV Add hard drive - format" src="../hyperv_add_hdd_format.png" /></li>
+<li>Select <strong><em>Dynamically expanding</em></strong> - click <strong><em>Next</em></strong>
+   <img alt="HyperV Add hard drive - type" src="../hyperv_add_hdd_type.png" /></li>
 <li>Specify name and location of disk.</li>
 <li><strong><em>Configure Disk</em></strong> - select <strong><em>Create a new blank virtual hard
     disk</em></strong> - change <strong><em>Size</em></strong> to required value - click
-    <strong><em>Finish</em></strong>.<br />
-    <img src="attachments/634060809/869269526.png?height=250" loading="lazy" data-image-src="attachments/634060809/869269526.png" data-unresolved-comment-count="0" data-linked-resource-id="869269526" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-2-7_10-24-12.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="65ee302b-f71a-43eb-9c3c-d7922d5005bc" data-media-type="file" height="250" /></li>
+    <strong><em>Finish</em></strong>.
+   <img alt="HyperV Add hard drive - space" src="../hyperv_add_hdd_space.png" /></li>
 <li>Apply new disk on Settings window - close <strong><em>Settings</em></strong>.</li>
 <li>Start VM.</li>
-<li>During system boot <strong><em>Disk space expansion</em></strong> wizard appears.<br />
-    <img src="attachments/634060809/634093592.png?height=250" loading="lazy" data-image-src="attachments/634060809/634093592.png" data-unresolved-comment-count="0" data-linked-resource-id="634093592" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-06 16_39_44-Window.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="694f617d-5e41-4be8-9394-31d8e3d49c82" data-media-type="file" height="250" /></li>
+<li>During system boot <strong><em>Disk space expansion</em></strong> wizard appears.
+    <img alt="VMWare disk space expansion" src="../vmware_disk_space_expansion.png" /></li>
 <li>Select <strong><em>Yes</em></strong> to start disk space expansion.</li>
 <li>Select which volume to extend:<ol>
 <li>System volume is used for all data except local backups.</li>
 <li>Backup is used only for local backups.</li>
 </ol>
 </li>
-<li>Selected volume is extended.<br />
-    <img src="attachments/634060809/633995283.png?height=250" loading="lazy" data-image-src="attachments/634060809/633995283.png" data-unresolved-comment-count="0" data-linked-resource-id="633995283" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2019-05-06 16_43_21-Window.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="634060809" data-linked-resource-container-version="6" data-media-id="ba26fe14-131c-459e-9743-4646754ab3d3" data-media-type="file" height="250" /></li>
-<li>Enter <strong><em>OK</em></strong></li>
+<li>Selected volume is extended.
+    <img alt="VMWare disk space expanded" src="../vmware_disk_space_expanded.png" /></li>
+<li>Enter <strong><em>OK</em></strong></li>
 </ol>
 
               
