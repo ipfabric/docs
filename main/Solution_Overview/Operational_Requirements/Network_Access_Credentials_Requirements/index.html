@@ -1999,7 +1999,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Operational Requirements
+        Host Hardware Requirements
       </a>
     </li>
   
@@ -2021,9 +2021,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Network Access Credentials Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Network Access Credentials Requirements
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-device-access" class="md-nav__link">
+    Network Device Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-device-access" class="md-nav__link">
+    Additional Device Access
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2603,7 +2641,7 @@
   
     <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/Error_Messages/Error_Messages/" class="md-nav__link">
-        Error Messages
+        General
       </a>
     </li>
   
@@ -3062,6 +3100,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-device-access" class="md-nav__link">
+    Network Device Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-device-access" class="md-nav__link">
+    Additional Device Access
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3075,17 +3135,12 @@
 
 
 <h1 id="network-access-credentials-requirements">Network Access Credentials Requirements</h1>
-<h1 id="network-access-credentials-requirements_1">Network Access Credentials Requirements</h1>
-<h2 id="network-device-access">Network device access</h2>
+<h2 id="network-device-access">Network Device Access</h2>
 <p>IP Fabric accesses network-infrastructure devices via CLI (command-line
 interface) using SSH or TELNET protocols. All device interaction is
 accounted on the platform and only “read-only” or “operator” group
 privilege level 1 credentials are required.</p>
 <p>The following list contains an example of commands used for Cisco IOS:</p>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>terminal length 0
 show version
 show inventory
@@ -3105,24 +3160,15 @@ show standby [brief]
 show vrrp [brief]
 show vlan brief
 </code></pre></div>
-
-</div>
-
-</div>
-
 <p>In the beginning, IP Fabric fingerprints the device using the “show
 version” command (or equivalent) to identify a vendor and a system
 version. A "terminal length" command is optional but highly recommended,
 as it greatly improves the speed of the device interaction, reduces the
 load on the network and the device, and improves collection precision.</p>
-<h2 id="additional-device-access">Additional device access</h2>
+<h2 id="additional-device-access">Additional Device Access</h2>
 <p>Since firewalls do not follow privilege levels, it may be necessary to
 explicitly specify the commands allowed for each user. The following
 list specifies the exec-mode commands needed for firewall discovery.</p>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>show version
 show interface
 show route
@@ -3130,32 +3176,18 @@ show arp
 show context
 terminal pager 0
 </code></pre></div>
-
-</div>
-
-</div>
-
 <p>Turning off paging greatly improves the speed of the discovery and
 allows a terminal pager command, making it highly recommended although
 not mandatory. The commands can be allowed through the central TACACS or
 RADIUS access control system, or they can be configured locally on a
 device. The following example adds the necessary commands to a
 privilege-1 user:</p>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>privilege show level 1 mode exec command interface
 privilege show level 1 mode exec command arp
 privilege show level 1 mode exec command route
 privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 </code></pre></div>
-
-</div>
-
-</div>
-
 <p>List of all commands used for CLI discovery can be found <a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/80019486/Used+CLI+commands+for+Discovery">on this
 page</a>
 and in this <a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/392003585">feature/vendor
@@ -3173,7 +3205,7 @@ matrix</a>.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operational Requirements" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Host Hardware Requirements" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3182,7 +3214,7 @@ matrix</a>.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Operational Requirements
+              Host Hardware Requirements
             </div>
           </div>
         </a>

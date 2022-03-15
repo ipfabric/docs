@@ -1999,7 +1999,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Operational Requirements
+        Host Hardware Requirements
       </a>
     </li>
   
@@ -2035,9 +2035,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Network Connectivity Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Network Connectivity Requirements
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inbound-flow-list" class="md-nav__link">
+    Inbound Flow List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outbound-flow-list" class="md-nav__link">
+    Outbound Flow List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumphost-server-requirements" class="md-nav__link">
+    Jumphost Server Requirements
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2603,7 +2648,7 @@
   
     <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/Error_Messages/Error_Messages/" class="md-nav__link">
-        Error Messages
+        General
       </a>
     </li>
   
@@ -3062,6 +3107,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inbound-flow-list" class="md-nav__link">
+    Inbound Flow List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outbound-flow-list" class="md-nav__link">
+    Outbound Flow List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumphost-server-requirements" class="md-nav__link">
+    Jumphost Server Requirements
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3075,137 +3149,142 @@
 
 
 <h1 id="network-connectivity-requirements">Network Connectivity Requirements</h1>
-<h1 id="network-connectivity-requirements_1">Network Connectivity Requirements</h1>
-<p>During the snapshot operations, the user can control network bandwidth
-limit which never exceeds an aggregate of set bandwidths in any
-direction to provide an additional safety measure.</p>
-<p>IP Fabric should be connected to a network that has direct connectivity
-to managed devices. <a href="Jumphost_settings">Jumphost server</a> can also be set
-up and used.</p>
+<p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
+<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="Jumphost_settings">Jumphost server</a> can also be set up and used.</p>
 <h2 id="inbound-flow-list">Inbound Flow List</h2>
-<div class="table-wrap">
-
-<table class="confluenceTable" data-layout="default" data-local-id="c4bd1fd9-7fce-440f-8fcf-96adfe6ba2b2">
+<table>
+<thead>
+<tr>
+<th>Source port (remote)</th>
+<th>Destination port (local)</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
-<tr class="header">
-<th class="confluenceTh"><p>Source port (remote)</p></th>
-<th class="confluenceTh"><p>Destination port (local)</p></th>
-<th class="confluenceTh"><p>Protocol</p></th>
-<th class="confluenceTh"><p>Description</p></th>
+<tr>
+<td>&gt;1024</td>
+<td>443</td>
+<td>TCP</td>
+<td>User Interface</td>
 </tr>
-
-<tr class="odd">
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>443</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>User Interface</p></td>
+<tr>
+<td>&gt;1024</td>
+<td>8443</td>
+<td>TCP</td>
+<td>Administrative Interface</td>
 </tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>&gt;1024</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>8443</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>TCP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Administrative Interface</p></td>
+<tr>
+<td>443</td>
+<td>&gt;1024</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - API, Support, Updates (Optional)</td>
 </tr>
-<tr class="odd">
-<td class="confluenceTd"><p>443</p></td>
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>Network Infrastructure Interaction - API</p>
-<p>Support, Updates (Optional)</p></td>
+<tr>
+<td>22</td>
+<td>&gt;1024</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - SSH</td>
 </tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>22</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>&gt;1024</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>TCP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Network Infrastructure Interaction - SSH</p></td>
+<tr>
+<td>23</td>
+<td>&gt;1024</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - Telnet</td>
 </tr>
-<tr class="odd">
-<td class="confluenceTd"><p>23</p></td>
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>Network Infrastructure Interaction - Telnet</p></td>
-</tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p> n/a</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>n/a </p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>ICMP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Network Infrastructure Interaction - Traceroute</p></td>
+<tr>
+<td>N/A</td>
+<td>N/A</td>
+<td>ICMP</td>
+<td>Network Infrastructure Interaction - Traceroute</td>
 </tr>
 </tbody>
 </table>
-
-</div>
-
 <h2 id="outbound-flow-list">Outbound Flow List</h2>
-<div class="table-wrap">
-
-<table class="confluenceTable" data-layout="default" data-local-id="9480f0b6-5fc7-4d3a-8320-13d3f6cf0374">
+<table>
+<thead>
+<tr>
+<th>Source port (local)</th>
+<th>Destination port (remote)</th>
+<th>Protocol</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
-<tr class="header">
-<th class="confluenceTh"><p>Source port (local)</p></th>
-<th class="confluenceTh"><p>Destination port (remote)</p></th>
-<th class="confluenceTh"><p>Protocol</p></th>
-<th class="confluenceTh"><p>Description</p></th>
+<tr>
+<td>443</td>
+<td>&gt;1024</td>
+<td>TCP</td>
+<td>User Interface</td>
 </tr>
-
-<tr class="odd">
-<td class="confluenceTd"><p>443</p></td>
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>User Interface</p></td>
+<tr>
+<td>8443</td>
+<td>&gt;1024</td>
+<td>TCP</td>
+<td>Administrative Interface</td>
 </tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>8443</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>&gt;1024</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>TCP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Administrative Interface</p></td>
+<tr>
+<td>&gt;1024</td>
+<td>443</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - API, Support, Updates (Optional)</td>
 </tr>
-<tr class="odd">
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>443</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>Network Infrastructure Interaction - API</p>
-<p>Technical Support, Updates (Optional)</p></td>
+<tr>
+<td>&gt;1024</td>
+<td>22</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - SSH</td>
 </tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>&gt;1024</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>22</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>TCP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Network Infrastructure Interaction - SSH</p></td>
+<tr>
+<td>&gt;1024</td>
+<td>23</td>
+<td>TCP</td>
+<td>Network Infrastructure Interaction - Telnet</td>
 </tr>
-<tr class="odd">
-<td class="confluenceTd"><p>&gt;1024</p></td>
-<td class="confluenceTd"><p>23</p></td>
-<td class="confluenceTd"><p>TCP</p></td>
-<td class="confluenceTd"><p>Network Infrastructure Interaction - Telnet</p></td>
-</tr>
-<tr class="even">
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>n/a</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>n/a</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>ICMP</p></td>
-<td class="confluenceTd" data-highlight-colour="#e0f0ff"><p>Network Infrastructure Interaction - Traceroute</p></td>
+<tr>
+<td>N/A</td>
+<td>N/A</td>
+<td>ICMP</td>
+<td>Network Infrastructure Interaction - Traceroute</td>
 </tr>
 </tbody>
 </table>
-
-</div>
-
-<p>Internet connectivity is used to check product updates, upgrades, setup
-support VPN, send error reports, and submit support tickets.</p>
-<h2 id="jumphost-server-requirements">Jumphost server requirements</h2>
-<div class="table-wrap">
-
-|                    |             |
-|--------------------|-------------|
-| **Python version** |             |
-| 2.7                | supported   |
-| 3.5                | supported   |
-| 3.6                | supported   |
-| 3.7                | supported   |
-| 3.8                | unsupported |
-| 3.9                | unsupported |
-
-</div>
+<p>Internet connectivity is used to check product updates, upgrades, setup support VPN, send error reports, and submit support tickets.</p>
+<h2 id="jumphost-server-requirements">Jumphost Server Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Python version</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.7</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.8</td>
+<td>unsupported</td>
+</tr>
+<tr>
+<td>3.9</td>
+<td>unsupported</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>
