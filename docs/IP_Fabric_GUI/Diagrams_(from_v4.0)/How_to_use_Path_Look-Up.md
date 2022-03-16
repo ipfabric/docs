@@ -93,11 +93,11 @@ the bars up or down.
 
 ![Visualization setup](visualization_setup.png)
 
-## Improvements from 4.3 version
+# Improvements from 4.3 version
 
 From version 4.3, IP Fabric supports more granular path lookup.
 
-### First Hop Algorithm
+## First Hop Algorithm
 First hop algorithm can be defined - when **Automatic** option is selected,
 source VRF can be automatically detected, or selected manually.
 
@@ -106,7 +106,7 @@ source VRF can be automatically detected, or selected manually.
 Also your source network device and its interface can be selected when choosing
 **User defined** First Hop Algorithm.
 
-### Source/Destination IP Address and Port
+## Source/Destination IP Address and Port
 
 By default, ICMP protocol and Echo request is chosen for path lookup.
 
@@ -115,3 +115,31 @@ By default, ICMP protocol and Echo request is chosen for path lookup.
 When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is selected by default.
 
 ![HTTP default](pathlookup_http_default.jpeg)
+
+When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.
+
+![Source and destination ports](pathlookup_src_dst_port.png)
+
+## TTL and Fragment Offset
+
+In **More details**, **TTL** (Time to live ) and **Fragment offset** can be set - thus affecting path lookup - default TTL is 128 and Fragment offset is set to 0
+
+![TTL and Fragmentation](pathlookup_ttl_fragment.png)
+
+##Application
+
+When evaluating security rules and security appliances on the path check traffic on L7, an application can be checked on the path lookup.
+
+It’s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.
+
+An application name input is just a string, so it needs to be defined exactly as in a security rule!
+
+![Application](pathlookup_application.png)
+
+##Source/Destination IP Regions
+
+When testing access to or from the internet, source or destination IP regions can be set.
+
+Example: Europe, China, etc.
+
+![Regions](pathlookup_src_dst_regions.png)
