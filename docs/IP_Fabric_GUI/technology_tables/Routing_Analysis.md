@@ -1,7 +1,5 @@
 # Routing Analysis
 
-## Routing Analysis
-
 ### Individual routes
 
 Detailed analysis of individual routes can performed through a
