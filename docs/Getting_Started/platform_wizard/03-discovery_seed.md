@@ -4,10 +4,6 @@ If you know a particular starting point for discovering the network, the informa
 
 The starting points can be management IP addresses or networks, or existing inventory data can also be imported.
 
-!!! note 
-
-    Network will try all IP addresses in its range. Maximum length of the prefix is /23
-
 If no seed information is entered, the discovery will begin from the current default gateway. The system will try to trace `RFC6890` subnets (by default) to determine the immediate next hops to log in to.
 
 ![Discovery seed](seed.png)
