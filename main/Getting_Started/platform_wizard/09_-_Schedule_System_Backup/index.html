@@ -844,6 +844,19 @@
     Schedule System Backup
   </a>
   
+    <nav class="md-nav" aria-label="Schedule System Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    Backup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -891,6 +904,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_-_Schedule_System_Maintenance/" class="md-nav__link">
+        10 - Schedule System Maintenance
+      </a>
     </li>
   
 
@@ -3471,6 +3498,19 @@
     Schedule System Backup
   </a>
   
+    <nav class="md-nav" aria-label="Schedule System Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    Backup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3531,6 +3571,7 @@
 <h1 id="09-schedule-system-backup">09 - Schedule System Backup</h1>
 <h2 id="schedule-system-backup">Schedule System Backup</h2>
 <p><img alt="Schedule system backup" src="../schedule_system_backup.png" /></p>
+<h3 id="backup">Backup</h3>
 <p>Use IP Fabric backup to protect your important data.</p>
 <p>There are two types of backup:</p>
 <ul>
@@ -3547,8 +3588,10 @@
 </div>
 <h2 id="local-backup">Local backup</h2>
 <p>Local backup saves database, user and system files locally on a dedicated backup volume. It's highly recommended placing backup volume on different datastore ideally on different physical storage.</p>
-<p><strong>Backup Disk</strong><br />
-The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See steps below)</p>
+<div class="admonition info backup disk">
+<p class="admonition-title">Info</p>
+<p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See steps below)</p>
+</div>
 <h3 id="adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk">Adding a new virtual disk to your IP Fabric VM as a local backup disk</h3>
 <ol>
 <li>
@@ -3699,20 +3742,10 @@ The backup disk is not present by default! Please add a new virtual disk to enab
 </li>
 <li>
 <p>For remote backup select <strong><em>FTP</em></strong> or <strong><em>SFTP </em></strong>from the <strong><em>Backup files destination</em></strong>.</p>
-<ol>
-<li>
-<p>Enter remote FTP/SFTP <strong><em>Server</em></strong> FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.</p>
-</li>
-<li>
-<p>Enter <strong><em>Username</em></strong> to access FTP/SFTP server.</p>
-</li>
-<li>
-<p>Enter <strong><em>Password</em></strong> to access FTP/SFTP server.</p>
-</li>
-<li>
-<p>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</p>
-</li>
-</ol>
+<p>a)  Enter remote FTP/SFTP <strong><em>Server</em></strong> FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.</p>
+<p>b)  Enter <strong><em>Username</em></strong> to access FTP/SFTP server.</p>
+<p>c)  Enter <strong><em>Password</em></strong> to access FTP/SFTP server.</p>
+<p>d)  Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</p>
 </li>
 <li>
 <p>Click <strong><em>Next</em></strong></p>
@@ -3747,13 +3780,13 @@ The backup disk is not present by default! Please add a new virtual disk to enab
       
       
         
-        <a href="../../../IP_Fabric_API/" class="md-footer__link md-footer__link--next" aria-label="Next: API Introduction" rel="next">
+        <a href="../10_-_Schedule_System_Maintenance/" class="md-footer__link md-footer__link--next" aria-label="Next: 10 - Schedule System Maintenance" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              API Introduction
+              10 - Schedule System Maintenance
             </div>
           </div>
           <div class="md-footer__button md-icon">

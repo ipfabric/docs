@@ -824,6 +824,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_-_Schedule_System_Maintenance/" class="md-nav__link">
+        10 - Schedule System Maintenance
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3406,12 +3420,11 @@
 <p>Specific parts of the network can be also excluded from discovery using <strong>Settings → Advanced → Discovery →  IP Scope → IP networks to exclude from discovery and analysis</strong>.</p>
 <p><img alt="Include exclude networks" src="../inc_ex_nets.png" /></p>
 <p>IP Scope settings are not applied to Vendor API (everything is downloaded and used in discovery).</p>
-<p>Exclude option takes precedence over include. For example</p>
-<ul>
-<li>IP networks to include in discovery and analysis: <code>10.0.0.0/8</code></li>
-<li>IP networks to exclude from discovery and analysis: <code>10.24.0.0/16</code></li>
-</ul>
-<p>Results in <code>10.0.0.0/8</code> being scanned excluding <code>10.24.0.0/16</code> subnet.</p>
+<p>Exclude option takes precedence over include.</p>
+<p><strong>Example:</strong>
+- IP networks to include in discovery and analysis: <code>10.0.0.0/8</code>
+- IP networks to exclude from discovery and analysis: <code>10.24.0.0/16</code>
+Result: Only network <code>10.0.0.0/8</code> is scanned excluding <code>10.24.0.0/16 subnet.</code></p>
 
               
             </article>

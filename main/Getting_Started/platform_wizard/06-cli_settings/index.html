@@ -841,8 +841,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#discovery-with-jumphost-issues" class="md-nav__link">
+    Discovery with Jumphost issues
   </a>
   
 </li>
@@ -904,6 +904,20 @@
     <li class="md-nav__item">
       <a href="../09_-_Schedule_System_Backup/" class="md-nav__link">
         09 - Schedule System Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_-_Schedule_System_Maintenance/" class="md-nav__link">
+        10 - Schedule System Maintenance
       </a>
     </li>
   
@@ -3524,8 +3538,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#discovery-with-jumphost-issues" class="md-nav__link">
+    Discovery with Jumphost issues
   </a>
   
 </li>
@@ -3727,8 +3741,11 @@
 <p><img alt="Delete jump host" src="../jumphost_delete.png" /></p>
 </li>
 </ol>
-<h3 id="limitations">Limitations</h3>
+<h3 id="discovery-with-jumphost-issues">Discovery with Jumphost issues</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.</p>
+</div>
 <h2 id="custom-sshtelnet-ports">Custom SSH/Telnet ports</h2>
 <p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
 <p>In the following example we will configure the discovery process to use port <code>8080</code> for SSH connections towards firewall at <code>192.168.168.10</code>:</p>
