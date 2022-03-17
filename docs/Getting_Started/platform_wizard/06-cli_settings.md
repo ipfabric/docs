@@ -122,9 +122,10 @@ Command Authorization Failure retries
 
     ![Delete jump host](jumphost_delete.png)
 
-### Limitations
+### Discovery with Jumphost issues
 
-Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.
+!!! warning 
+    Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.
 
 ## Custom SSH/Telnet ports
 

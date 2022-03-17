@@ -3,7 +3,7 @@
 ## Schedule System Backup
 
 ![Schedule system backup](schedule_system_backup.png)
-
+### Backup
 Use IP Fabric backup to protect your important data.
 
 There are two types of backup:
@@ -20,8 +20,9 @@ There are two types of backup:
 
 Local backup saves database, user and system files locally on a dedicated backup volume. It's highly recommended placing backup volume on different datastore ideally on different physical storage.
 
-**Backup Disk**  
-The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See steps below)
+!!! info Backup Disk
+
+    The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See steps below)
 
 ### Adding a new virtual disk to your IP Fabric VM as a local backup disk
 
@@ -137,12 +138,12 @@ Manual backup can be triggered from IP Fabric Administrative interface:
 
 5.  For remote backup select ***FTP*** or ***SFTP ***from the ***Backup files destination***.
 
-    1.  Enter remote FTP/SFTP ***Server*** FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.
+    a)  Enter remote FTP/SFTP ***Server*** FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.
 
-    2.  Enter ***Username*** to access FTP/SFTP server.
+    b)  Enter ***Username*** to access FTP/SFTP server.
 
-    3.  Enter ***Password*** to access FTP/SFTP server.
+    c)  Enter ***Password*** to access FTP/SFTP server.
 
-    4.  Specify a **Directory** where FTP/SFTP backup should be uploaded.
+    d)  Specify a **Directory** where FTP/SFTP backup should be uploaded.
 
 6.  Click ***Next***

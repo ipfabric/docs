@@ -10,9 +10,9 @@ Specific parts of the network can be also excluded from discovery using **Setti
 
 IP Scope settings are not applied to Vendor API (everything is downloaded and used in discovery).
 
-Exclude option takes precedence over include. For example
+Exclude option takes precedence over include.
 
-- IP networks to include in discovery and analysis: `10.0.0.0/8`
+**Example:**
+- IP networks to include in discovery and analysis: `10.0.0.0/8`
 - IP networks to exclude from discovery and analysis: `10.24.0.0/16`
-
-Results in `10.0.0.0/8` being scanned excluding `10.24.0.0/16` subnet.
+Result: Only network `10.0.0.0/8` is scanned excluding `10.24.0.0/16 subnet.`
