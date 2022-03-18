@@ -92,7 +92,7 @@
 
         -   If **protocol = icmp** refer to: [API Tech Note - Path
             Lookup ICMP
-            Decoder](API_Tech_Note_-_Path_Lookup_ICMP_Decoder)
+            Decoder](/IP_Fabric_API/API_Tech_Note_-_4.x_Path_Lookup/API_Tech_Note_-_Path_Lookup_ICMP_Decoder/)
 
             -   **“type”** *\[mandatory\]*- An integer representing the
                 ICMP type
@@ -100,42 +100,34 @@
             -   **“code”** *\[mandatory\]*- An integer representing the
                 ICMP code
 
-## Example minimal request body
+!!! example Example minimal request body
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
-``` jscript
-{
-    "snapshot": "$last",
-    "parameters": {
-    "group": "233.1.1.1",
-    "groupBy": "siteName",
-    "pathLookupType": "multicast",
-    "securedPath": true,
-    "source": "10.33.230.2",
-    "type": "pathLookup",
-    "firstHopAlgorithm": {
-      "type": "automatic"
-    },
-    "protocol": "tcp",
-    "srcRegions": ".*",
-    "dstRegions": ".*",
-    "ttl": 128,
-    "fragmentOffset": 0,
-    "otherOptions": {
-      "applications": ".*",
-      "tracked": false
-    },
-    "l4Options": {
-      "dstPorts": "80,443",
-      "srcPorts": "1024-65535",
-      "flags": []
+    ``` jscript
+    {
+        "snapshot": "$last",
+        "parameters": {
+        "group": "233.1.1.1",
+        "groupBy": "siteName",
+        "pathLookupType": "multicast",
+        "securedPath": true,
+        "source": "10.33.230.2",
+        "type": "pathLookup",
+        "firstHopAlgorithm": {
+        "type": "automatic"
+        },
+        "protocol": "tcp",
+        "srcRegions": ".*",
+        "dstRegions": ".*",
+        "ttl": 128,
+        "fragmentOffset": 0,
+        "otherOptions": {
+        "applications": ".*",
+        "tracked": false
+        },
+        "l4Options": {
+        "dstPorts": "80,443",
+        "srcPorts": "1024-65535",
+        "flags": []
+        }
     }
-}
-```
-
-</div>
-
-</div>
+    ```
