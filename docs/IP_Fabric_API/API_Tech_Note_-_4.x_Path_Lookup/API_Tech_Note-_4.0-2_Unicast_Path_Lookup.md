@@ -50,32 +50,24 @@
         (true) or complete the forwarding paht and simply highlight the
         policy enforcement point (false)
 
-## Example minimal request body
+!!! example Example minimal request body
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
-``` jscript
-{
-    "snapshot": "$last",
-    "parameters": {
-        "type": "pathLookup",
-        "pathLookupType": "unicast",
-        "protocol": "tcp",
-        "startingPoint": "1.1.1.1",
-        "startingPort": 10000,
-        "destinationPoint": "2.2.2.2",
-        "destinationPort": 80,
-        "groupBy": "siteName",
-        "networkMode": false,
-        "securedPath": false
+    ``` jscript
+    {
+        "snapshot": "$last",
+        "parameters": {
+            "type": "pathLookup",
+            "pathLookupType": "unicast",
+            "protocol": "tcp",
+            "startingPoint": "1.1.1.1",
+            "startingPort": 10000,
+            "destinationPoint": "2.2.2.2",
+            "destinationPort": 80,
+            "groupBy": "siteName",
+            "networkMode": false,
+            "securedPath": false
+        }
     }
-}
-```
-
-</div>
-
-</div>
+    ```
 
   
