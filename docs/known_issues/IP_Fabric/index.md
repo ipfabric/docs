@@ -28,6 +28,7 @@
 
 ***Description***: Format of configurations (show run etc) saved in IP
 Fabric is changed, end of line characters were changed from rn to n
+
 ***Result***: Configurations saved before 2.1 and from 2.1 can show
 differences when configurations are same
 

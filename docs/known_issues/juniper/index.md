@@ -1,12 +1,14 @@
-#Juniper
+# Juniper
 
 -   Route leak defined by reference to another VRF is not supported.
     Route leak with the policy is supported.
 ------------------------------------------------------------------------
 
 ***Known Affected platforms***: Juniper SRX300
+
 ***Description***: *show ethernet-switching interface detail* can cause
 infinite loop output
+
 ***Result***: 
 
 Version 3.1.1 and earlier.
@@ -30,16 +32,20 @@ Version 3.1.2 and above
 ------------------------------------------------------------------------
 
 ***Known Affected platforms***: SRX, MX
+
 ***Description***: *show ntp associations no-resolve* command timeouts
+
 ***Result***: <https://kb.juniper.net/InfoCenter/index?page=content&id=KB11436>
 
 ------------------------------------------------------------------------
 
 ***Known Affected platforms***: ALL - valid for version 3.1.1 and
 earlier
+
 ***Description***: The platform doesn't discover Juniper devices with the
 'root' login. The 'root' enters the shell prompt (%) and not the
 operational mode directly.
+
 ***Result***: 
 
 Version 3.1.1 and earlier - the 'root' login cannot be used for
@@ -50,8 +56,10 @@ Version 3.1.2 and above - the 'root' login may be used for discovery.
 ------------------------------------------------------------------------
 
 ***Known Affected platforms***: ALL
+
 ***Description***: The Link-Layer Discovery Protocol (LLDP) links are not
 displayed in diagrams.
+
 ***Result***: To display LLDP links in diagrams correctly, the IP address
 of the neighbor has to be present in '**shot lldp neighbor interface
 xx-x/x/x**' command. The IP address is present only when configured with
@@ -64,8 +72,10 @@ at: <https://www.juniper.net/documentation/en_US/junos/topics/reference/configu
 ------------------------------------------------------------------------
 
 ***Known Affected platforms***: ALL
+
 ***Description***: Information gathered from running-config doesn't
 reflect apply-groups.
+
 ***Result***: Some information gathered from running-config can be
 missing. It affect all tasks using running config - for example firewall
 filters, snmp, syslog.  
@@ -75,7 +85,9 @@ at: <https://www.juniper.net/documentation/en_US/junos/topics/reference/configu
 
 # `fw ctl pstat` command requires admin rights
 
+
 ***Known Affected platforms***: All
+
 
 ***Result***: Without this command collected no memory utilization will be
 present
