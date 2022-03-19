@@ -6,9 +6,10 @@
 
     Depending on your operating system all you need to do is the following key
     combination:
-    - Windows: CTRL + F5
-    - Mac/Apple: Apple + R or command + R
-    - Linux: F5
+
+      - Windows: CTRL + F5
+      - Mac/Apple: Apple + R or command + R
+      - Linux: F5
 
 
 ## 4.3.5+1 (9th March 2022)
