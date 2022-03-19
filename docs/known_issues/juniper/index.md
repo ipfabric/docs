@@ -82,15 +82,15 @@ filters, snmp, syslog.
 More
 at: <https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html>
 
-
-# `fw ctl pstat` command requires admin rights
-
+------------------------------------------------------------------------
 
 ***Known Affected platforms***: All
 
+***Description***: `fw ctl pstat` command requires admin rights
 
 ***Result***: Without this command collected no memory utilization will be
 present
+------------------------------------------------------------------------
 
 # Discovery of Security Policies
 

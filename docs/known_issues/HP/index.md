@@ -10,11 +10,6 @@ information, SN can’t be detected
 one from chassis. This can for example show incorrect change management
 results.
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeHeader panelHeader pdl"
-style="border-bottom-width: 1px;">
-
 ***Output***
 
 ``` text
