@@ -1,5 +1,9 @@
 #Juniper
 
+-   Route leak defined by reference to another VRF is not supported.
+    Route leak with the policy is supported.
+------------------------------------------------------------------------
+
 ***Known Affected platforms***: Juniper SRX300
 ***Description***: *show ethernet-switching interface detail* can cause
 infinite loop output
