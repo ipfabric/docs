@@ -1,14 +1,12 @@
 # IP Telephony
 
-## IP Telephony
-
-### Overview
+## Overview
 
 The IP Telephony section provides information about all IP Phones (VoIP)
 and their clients that are detected on the network. Phone information is
 extracted using a link layer discovery protocol or MAC address.
 
-### IP Phones table
+## IP Phones table
 
 The table details network information of every discovered IP phone and
 their connected hosts. Phone IP is the IP address of the phone; Name is
