@@ -1,6 +1,28 @@
 # IP Fabric v4.x.x
 
+!!! warning "Clearing Cache Memory"
+
+    Please force refresh your browser cache after an upgrade!
+
+    Depending on your operating system all you need to do is the following key
+    combination:
+    Windows: CTRL + F5
+    Mac/Apple: Apple + R or command + R
+    Linux: F5
+
+
+## 4.3.5+1 (9th March 2022)
+
+###Bug Fixes
+
+- Routing protocol edges wrong establish to transit fix
+
 ## 4.3.4+3 (7rd March 2022)
+
+```
+OVA MD5SUM: A5DB9B8C51169216167866C9AD6E951C
+OVA SHA256SUM: 2D64A41DF78D3965F70AD80807D788FD12E0F7A1DDCF39A6B23911BF72A8311D
+```
 
 ### Bug Fixes
 
