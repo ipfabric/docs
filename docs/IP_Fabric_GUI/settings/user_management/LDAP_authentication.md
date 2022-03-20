@@ -87,7 +87,8 @@ grand access.
     It is recommended to create new
     LDAP groups (such as IP_FABRIC_ADMINISTRATORS, IP_FABRIC_USERS, ...) and
     assign them permissions.
-    ![LDAP-group-permissions](ldap-group-permissions.png)
+    
+![LDAP-group-permissions](ldap-group-permissions.png)
 
 ## Disable LDAP authentication
 
