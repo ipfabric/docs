@@ -1,7 +1,5 @@
 # Azure Networking
 
-# Azure Networking
-
 Starting version 4.3 IP Fabric supports the discovery of the Azure Cloud
 infrastructure.
 
@@ -43,17 +41,3 @@ and devices related to a Virtual WAN solution
 The plan is to add support of Load Balancer
 (<https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview>
 ) in one of next releases.
-
-<div class="pageSectionHeader">
-
-## Attachments:
-
-</div>
-
-<div class="greybox" align="left">
-
-<img src="images/icons/bullet_blue.gif" width="8" height="8" /> [Snímek
-obrazovky 2022-02-28
-v 17.48.25.png](attachments/2911174714/2910978076.png) (image/png)  
-
-</div>
