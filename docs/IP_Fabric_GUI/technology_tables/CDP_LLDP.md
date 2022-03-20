@@ -1,7 +1,5 @@
 # CDP/LLDP
 
-## CDP/LLDP
-
 The Discovery Protocols section provides information about link layer
 discovery protocols such as CDP and LLDP. “All neighbors” lists
 information about all neighborships. “Unmanaged neighbors” provides
