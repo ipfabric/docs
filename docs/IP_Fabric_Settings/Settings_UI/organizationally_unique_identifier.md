@@ -1,4 +1,4 @@
-# OUI
+# Organizationally Unique Identifier (OUI)
 
 IP Fabric includes an OUI (organizationally unique identifier) MAC table
 of network device manufacturers and uses it during the discovery process
