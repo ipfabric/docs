@@ -1,4 +1,4 @@
-# Change management
+# Change Management
 
 ## Overview
 

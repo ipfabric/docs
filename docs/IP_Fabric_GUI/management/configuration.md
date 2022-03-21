@@ -1,5 +1,3 @@
-# Configuration
-
 # Configuration Management
 
 ## Overview
