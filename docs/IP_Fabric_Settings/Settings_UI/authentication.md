@@ -1,7 +1,5 @@
 # Authentication
 
-# Authentication
-
 Platform interacts with the network infrastructure devices by running
 show commands through CLI using SSH or Telnet. Credentials added in the
 Authentication section will be used by IP Fabric to access the CLI of
