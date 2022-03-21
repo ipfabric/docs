@@ -11,7 +11,7 @@ Link: `https://\[nimpee_address\]/management/configuration/first`
 
 Network access **credentials allowing** **the “show run” command** (or equivalent) **are necessary** for configuration storage and configuration management to work properly.
 These credentials are set-up in ***Setting → Authentication*** menu. These elevated credentials need ***Use for configuration management*** box checked.
-See [Authentication](../../IP_Fabric_Settings/Settings_UI/advanced/authentication.md) configuration.
+See [Authentication](../../IP_Fabric_Settings/Settings_UI/authentication.md) configuration.
 
 ### Trigger
 
