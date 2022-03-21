@@ -1,13 +1,13 @@
 # Checkpoint
 
-# "fw ctl pstat" command requires admin rights
+## "fw ctl pstat" command requires admin rights
 
 **Known Affected platforms**: All
 
 **Result**: Without this command collected no memory utilization will be
 present
 
-# Discovery of Security Policies
+## Discovery of Security Policies
 
 -   Wildcard & Dynamic objects and negated services are not supported
 

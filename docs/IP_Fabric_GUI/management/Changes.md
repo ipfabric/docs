@@ -1,6 +1,4 @@
-# Changes
-
-# Change Management
+# Change management
 
 ## Overview
 
@@ -9,9 +7,9 @@ dynamic changes in the network** when a snapshot of the network
 (discovery run) completes successfully.
 
 **To enable a periodic discovery run** check the [*Timed
-Snapshots*](Snapshots)* *configuration.
+Snapshots*](../settings/advanced/Snapshots.md) configuration.
 
-## Comparing changes
+## Comparing changes    
 
 To control changes between two discovery runs, go to ***Management →
 Changes***.
