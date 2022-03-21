@@ -56,3 +56,13 @@ it.
 ### ![Other](ico_other.png) Other Questions
 
 For inquiries which are not related to any other option on support portal.
+
+## Contact
+
+IP FABRIC s.r.o.  
+Kateřinská 466/40  
+Praha 2 - Nové Město, 120 00  
+Czech Republic  
+email: <support@ipfabric.io>  
+phone: [+420 720 022 997](tel:00420720022997)  
+web: [www.ipfabric.io](http://www.ipfabric.io)
