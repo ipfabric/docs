@@ -1,4 +1,4 @@
-# API Tech Note - Intent Verification Rules
+# Intent Verification Rules
 
 This tech note describes the association between the intent verification rules and the technology tables and how to read those associations through the API.
 
@@ -10,13 +10,13 @@ In order to handle the intent verification checks to be able to act on them then
 
 First step is to fetch a list of the reports from the snapshot you’re interested in. This is a simple GET request to `/api/v1/reports?snapshot=<id>` where `<id>` is `$last` or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:
 
--   the table they relate to
+- the table they relate to
 
--   the columns coloured by the test
+- the columns coloured by the test
 
--   the conditions for each colour
+- the conditions for each colour
 
--   the values used to mark the columns
+- the values used to mark the columns
 
 !!! example For example, take this report for DMVPN status:
 
@@ -64,15 +64,15 @@ First step is to fetch a list of the reports from the snapshot you’re interest
 
 Breaking this down, we can see that the report
 
--   is called “DMVPN Tunnel State”
+- is called “DMVPN Tunnel State”
 
--   is presented in the “Stability” group on the dashboard
+- is presented in the “Stability” group on the dashboard
 
--   relates to the technology table accessed through the API endpoint `/api/v1/tables/security/dmvpn` or the web UI endpoint `/technology/security/dmvpn`
+- relates to the technology table accessed through the API endpoint `/api/v1/tables/security/dmvpn` or the web UI endpoint `/technology/security/dmvpn`
 
--   sets the colour of the “state” column in that table
+- sets the colour of the “state” column in that table
 
--   sets the colour to a value of 0 (which maps to green) if the tunnels are in the **“UP”** state, signified by the content of the “state” column having the value **“UP”**, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.
+- sets the colour to a value of 0 (which maps to green) if the tunnels are in the **“UP”** state, signified by the content of the “state” column having the value **“UP”**, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.
 
 We can compare that with the Web UI dialogue for the same check:
 
@@ -80,7 +80,7 @@ We can compare that with the Web UI dialogue for the same check:
 
 So once we have found the report we are looking for, we retrieve the technology table from the “apiEndpoint” field in the report dictionary, filtered for the colour that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an **“UP”** state, we make a POST request to `/api/v1/tables/security/dmvpn`with the following request payload:
 
-``` js
+```js
 {
   "columns":["id","sn","hostname","siteKey","siteName","peerNbma","peerTunnel","state","time","attrb"],
   "filters":{"state":["color","eq","0"]},

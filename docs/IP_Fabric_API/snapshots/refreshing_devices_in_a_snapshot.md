@@ -1,10 +1,10 @@
-# API Tech Note - Refreshing devices in a snapshot
+# Refreshing devices in a snapshot
 
 Do this in two stages:
 
 1.  Retrieve the snapshot ID and the serial numbers of the devices you want to update using eg **/tables/inventory/devices** with a request body like
 
-    ``` js
+    ```js
     {
       "columns":["sn","hostname"],
       "filters":{"siteName",["like","L38"]}
@@ -16,10 +16,10 @@ Do this in two stages:
 
 2.  send a POST to **/snapshots/XXXXXXXXXXX/devices** where XXXXXXXXXX is the snapshot ID that needs to be refreshed with a request body like
 
-    ``` jsc
+    ```jsc
     {
       "snList":["SN_AAAA","SN_BBBB","SN_CCCC"]
     }
     ```
 
-    Where SN_AAAA, SN_BBBB, SN_CCCC are the serial numbers of the devices that need to be updated. This triggers the update.  
+    Where SN_AAAA, SN_BBBB, SN_CCCC are the serial numbers of the devices that need to be updated. This triggers the update.
