@@ -2241,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_admin_UI/Administrative_Interface/" class="md-nav__link">
+      <a href="../../System_admin_UI/" class="md-nav__link">
         Administrative Interface
       </a>
     </li>
@@ -2255,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_admin_UI/Backup_and_restore/" class="md-nav__link">
+      <a href="../../System_admin_UI/backup_and_restore/" class="md-nav__link">
         Backup and restore
       </a>
     </li>
@@ -2269,22 +2269,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_admin_UI/Create_Local_Administrator/" class="md-nav__link">
+      <a href="../../System_admin_UI/create_local_administrator/" class="md-nav__link">
         Create Local Administrator
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../System_admin_UI/Restore/" class="md-nav__link">
-        Restore
       </a>
     </li>
   
@@ -2330,6 +2316,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../boot_wizard/" class="md-nav__link">
+        Reinitiate system 'Boot Wizard'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -2364,13 +2364,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-interface_1" class="md-nav__link">
-    Command Line Interface
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#troubleshooting-vm-network-problems-using-ip-fabric-cli" class="md-nav__link">
@@ -2431,20 +2424,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reinitiate_system_Boot_Wizard_/" class="md-nav__link">
-        Reinitiate system 'Boot Wizard'
-      </a>
     </li>
   
 
@@ -3416,13 +3395,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-line-interface_1" class="md-nav__link">
-    Command Line Interface
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#troubleshooting-vm-network-problems-using-ip-fabric-cli" class="md-nav__link">
     Troubleshooting VM network problems using IP Fabric CLI
   </a>
@@ -3492,7 +3464,6 @@
 
 
 <h1 id="command-line-interface">Command Line Interface</h1>
-<h2 id="command-line-interface_1">Command Line Interface</h2>
 <p>The command-line interface is a secondary service interface in IP Fabric VM which serves troubleshooting and testing purposes. For example, for testing authentication credentials from the specific IP address of IP
 Fabric VM, in case of address-restricted access. The CLI interface is the main tool in servicing the system by the support teams.</p>
 <p>A first boot wizard can be used to change system settings, such as IP addressing parameters, domain names, NTP, system proxy settings, or a user's password. To launch First Boot Wizard again, connect via SSH to IP Fabric as <strong><em>osadmin</em></strong> user, launch ipfabric-net-wizard and then reboot the system.</p>
@@ -3501,17 +3472,18 @@ Fabric VM, in case of address-restricted access. The CLI interface is the main t
 <p>In the event of a VM network connection problem, DNS issues, network devices connectivity issue, IP Fabric CLI is a useful helper.</p>
 <p>CLI can be also used to access system and application logs as well as snapshot files.</p>
 <h3 id="system-and-application-logs">System and application logs</h3>
-<p>System and application logs are placed in <strong><em>/var/log</em></strong> folder. Specifically IP Fabric application logs can be found in:
+<p>System and application logs are placed in <strong><em>/var/log</em></strong> folder. Specifically IP Fabric application logs can be found in:</p>
 <div class="highlight"><pre><span></span><code>/var/log/nimpee.
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="snapshots">Snapshots</h3>
 <p>Snapshots are available in <strong><em>osadmin</em></strong> home directory <strong><em>/home/osadmin/snapshots</em></strong>. Each folder inside represents one snapshot. Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.</p>
 <h3 id="checking-the-network-interface-settings">Checking the network interface settings</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When you log in through a VM console or SSH, network settings are displayed. This content is static, generated when VM boots! When DHCP is used, an IP address can change in some cases.</p>
-<p><img alt="VM IP" src="../vm_ip.png" /></p>
 </div>
+<p>When you log in through a VM console or SSH, network settings are displayed. This content is static, generated when VM boots! When DHCP is used, an IP address can change in some cases.</p>
+<pre><code>![VM IP](vm_ip.png)
+</code></pre>
 <p>To display actual IP address use command:</p>
 <div class="highlight"><pre><span></span><code>ip addr show
 </code></pre></div>
@@ -3521,7 +3493,7 @@ Fabric VM, in case of address-restricted access. The CLI interface is the main t
 <h3 id="checking-dns">Checking DNS</h3>
 <p>DNS can be checked using the <strong><em>dig</em></strong> or <strong><em>nslookup</em></strong> command.</p>
 <p>For example, let's check A record and PTR (reverse) record of some device using <strong><em>dig</em></strong>.</p>
-<p>For A record check <strong><em>ANSWER</em></strong> which contains requested IP address. Also <strong><em>SERVER</em></strong> section below is  important as it tell us what DNS server answered our DNS query.</p>
+<p>For A record check <strong><em>ANSWER</em></strong> which contains requested IP address. Also <strong><em>SERVER</em></strong> section below is important as it tell us what DNS server answered our DNS query.</p>
 <p><img alt="DNS A record" src="../dns_a_rec.png" /></p>
 <p>For PTR record check <strong><em>ANSWER</em></strong> which contains requested domain name.</p>
 <p><img alt="DNS PTR record" src="../dns_ptr_rec.png" /></p>
@@ -3531,8 +3503,8 @@ Fabric VM, in case of address-restricted access. The CLI interface is the main t
 <p>The very basic test is <strong><em>ping</em></strong> or <strong><em>traceroute</em></strong>.</p>
 <div class="admonition warning icmp">
 <p class="admonition-title">Warning</p>
-<p>Please bear in mind that ICMP packets used by <strong><em>ping</em></strong> and <strong><em>traceroute</em></strong> can be blocked by ACL or firewall. It does not mean that a device cannot be reached using SSH or telnet.</p>
 </div>
+<p>Please bear in mind that ICMP packets used by <strong><em>ping</em></strong> and <strong><em>traceroute</em></strong> can be blocked by ACL or firewall. It does not mean that a device cannot be reached using SSH or telnet.</p>
 <p>To make sure that the network device is available from IP Fabric VM, you
 can use the <strong><em>telnet</em></strong> and <strong><em>ssh</em></strong> client from the command line.</p>
 <p>For SSH use:</p>
@@ -3558,7 +3530,7 @@ can use the <strong><em>telnet</em></strong> and <strong><em>ssh</em></strong> c
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../System_admin_UI/Restore/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Restore" rel="prev">
+        <a href="../boot_wizard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reinitiate system &#39;Boot Wizard&#39;" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3567,20 +3539,20 @@ can use the <strong><em>telnet</em></strong> and <strong><em>ssh</em></strong> c
               <span class="md-footer__direction">
                 Previous
               </span>
-              Restore
+              Reinitiate system 'Boot Wizard'
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Reinitiate_system_Boot_Wizard_/" class="md-footer__link md-footer__link--next" aria-label="Next: Reinitiate system &#39;Boot Wizard&#39;" rel="next">
+        <a href="../increase_disk_space/" class="md-footer__link md-footer__link--next" aria-label="Next: Increase disk space" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Reinitiate system 'Boot Wizard'
+              Increase disk space
             </div>
           </div>
           <div class="md-footer__button md-icon">
