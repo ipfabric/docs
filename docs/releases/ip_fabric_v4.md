@@ -1,16 +1,13 @@
 # IP Fabric v4.x.x
 
-!!! warning "Clearing Cache Memory"
+!!! warning "Clearing Browser Cache"
 
-    Please force refresh your browser cache after an upgrade!
-
-    Depending on your operating system all you need to do is the following key
+    Please force refresh your browser cache after an upgrade. Depending on your operating system all you need to do is the following key
     combination:
 
       - Windows: CTRL + F5
       - Mac/Apple: Apple + R or command + R
-      - Linux: F5
-
+      - Linux: CTRL + F5
 
 ## 4.3.5+1 (9th March 2022)
 
