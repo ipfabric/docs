@@ -11,19 +11,19 @@ Link: `https://\[nimpee_address\]/management/configuration/first`
 
 Network access **credentials allowing** **the “show run” command** (or equivalent) **are necessary** for configuration storage and configuration management to work properly.
 These credentials are set-up in ***Setting → Authentication*** menu. These elevated credentials need ***Use for configuration management*** box checked.
-See [Authentication](Authentication)
+See [Authentication](../../IP_Fabric_Settings/Settings_UI/advanced/authentication.md) configuration.
 
 ### Trigger
 
-Trigger archiving can be [configured in settings](Configuration_Management) and can be based on a **syslog message** or a **timed event**.
+Trigger archiving can be [configured in settings](../../IP_Fabric_Settings/Settings_UI/advanced/configuration_management.md)  and can be based on a ***syslog message*** or a ***timed event***.
 
 ## Configuration
 
-Configuration can be retrieved in **full** or **sanitized forms**. **Sanitization removes all of the passwords and network identification information** from the configuration to prevent sharing of sensitive information.
+Configuration can be retrieved in ***full*** or ***sanitized forms***. ***Sanitization removes all of the passwords and network identification information*** from the configuration to prevent sharing of sensitive information.
 
 ### Configuration Comparison Table
 
-**Stored configurations are displayed in a table** that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (“Last change” column),
+***Stored configurations are displayed in a table*** that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (“Last change” column),
 and the last time a particular configuration was saved in the “Last check” column.
 
 The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the “Before” and “After” states to compare,

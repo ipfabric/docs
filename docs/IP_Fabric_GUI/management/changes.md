@@ -7,7 +7,7 @@ dynamic changes in the network** when a snapshot of the network
 (discovery run) completes successfully.
 
 **To enable a periodic discovery run** check the [*Timed
-Snapshots*](../settings/advanced/Snapshots.md) configuration.
+Snapshots*](../../IP_Fabric_Settings/Settings_UI/advanced/snapshots.md) configuration.
 
 ## Comparing changes    
 
