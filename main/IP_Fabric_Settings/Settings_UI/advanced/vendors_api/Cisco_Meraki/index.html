@@ -35,6 +35,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../../../vendor/featherlight.css">
+    
     <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -3529,7 +3533,7 @@ publicIp has the lowest priority
 <p>PublicIP parameter can be duplicit as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.</p>
 </div>
 <p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:</p>
-<p><img alt="discovery snapshot" src="../discovery_snapshot.png" /></p>
+<p><a data-featherlight="../discovery_snapshot.png" href="#"><img alt="discovery snapshot" src="../discovery_snapshot.png" /></a></p>
 <p>The Tasker file contains complete communication between IP Fabric and Meraki Dashboard. We can use the device hostname to locate the JSON source:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
    <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;mx01-dl1&quot;</span><span class="p">,</span>
@@ -3622,6 +3626,10 @@ publicIp has the lowest priority
     
     
       <script src="../../../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>

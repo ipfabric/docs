@@ -35,6 +35,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../vendor/featherlight.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -3587,26 +3591,26 @@
 <li>Import HyperV image to your hypervisor server. <a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines">Export and Import virtual machines (Microsoft docs)</a></li>
 <li>
 <p>During <strong>Choose Import Type</strong> part, check option <strong>Copy the virtual machine(create a new unique ID)</strong>:</p>
-<p><img alt="HyperV Import" src="../hyperv_import.png" /></p>
+<p><a data-featherlight="../hyperv_import.png" href="#"><img alt="HyperV Import" src="../hyperv_import.png" /></a></p>
 </li>
 <li>
 <p>Wait until import process ends.</p>
 </li>
 <li>
 <p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>). Right click on VM -- choose <strong>Settings</strong>:</p>
-<p><img alt="HyperV Settings" src="../hyperv_settings.png" /></p>
+<p><a data-featherlight="../hyperv_settings.png" href="#"><img alt="HyperV Settings" src="../hyperv_settings.png" /></a></p>
 <ol>
 <li>
 <p>Change CPU count</p>
-<p><img alt="HyperV Setting CPU count" src="../hyperv_settings_cpu.png" /></p>
+<p><a data-featherlight="../hyperv_settings_cpu.png" href="#"><img alt="HyperV Setting CPU count" src="../hyperv_settings_cpu.png" /></a></p>
 </li>
 <li>
 <p>Change memory size</p>
-<p><img alt="HyperV Setting memory size" src="../hyperv_settings_mem.png" /></p>
+<p><a data-featherlight="../hyperv_settings_mem.png" href="#"><img alt="HyperV Setting memory size" src="../hyperv_settings_mem.png" /></a></p>
 </li>
 <li>
 <p>Extend system disk if necessary</p>
-<p><img alt="HyperV Setting disk size" src="../hyperv_settings_disk.png" /></p>
+<p><a data-featherlight="../hyperv_settings_disk.png" href="#"><img alt="HyperV Setting disk size" src="../hyperv_settings_disk.png" /></a></p>
 </li>
 <li>
 <p><a href="../../system_administration/increase_disk_space.md">Add a new empty virtual disk</a> if necessary.</p>
@@ -3629,7 +3633,7 @@
 <li>Download <code>ipfabric-*-.OVA</code> file from official source.</li>
 <li>
 <p>Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below</p>
-<p><img alt="Unzip OVA" src="../unzip_ova.png" /></p>
+<p><a data-featherlight="../unzip_ova.png" href="#"><img alt="Unzip OVA" src="../unzip_ova.png" /></a></p>
 </li>
 <li>
 <p>Import <code>.vmdk</code> files to Nutanix hypervisor, following Nutanix official documentation -- <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
@@ -3688,18 +3692,18 @@
 </li>
 <li>
 <p>Select the region for the VPC where you want to deploy IP Fabric:</p>
-<p><img alt="AWS region selection" src="../aws_region.png" /></p>
+<p><a data-featherlight="../aws_region.png" href="#"><img alt="AWS region selection" src="../aws_region.png" /></a></p>
 </li>
 <li>
 <p>From the <strong>Services</strong> menu at the top left, select <strong>EC2</strong>.</p>
 </li>
 <li>
 <p>Then choose <strong>Instances</strong> in the left hand menu, and hit the <strong>Launch Instances</strong> button on the right:</p>
-<p><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></p>
+<p><a data-featherlight="../aws_launch_instance.png" href="#"><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></a></p>
 </li>
 <li>
 <p>Select <strong>My AMIs</strong>, then under <strong>Ownership</strong>, select <strong>Shared with me</strong>. The IP Fabric AMI should show up here. <strong>Select</strong> it.</p>
-<p><img alt="AWS Select IPF AMI" src="../aws_select_ami.png" /></p>
+<p><a data-featherlight="../aws_select_ami.png" href="#"><img alt="AWS Select IPF AMI" src="../aws_select_ami.png" /></a></p>
 </li>
 <li>
 <p>Choose the most appropriate instance type:</p>
@@ -3762,19 +3766,19 @@
 </li>
 <li>
 <p>Select <strong>Configure Instance Details</strong>, then ensure the correct VPC and subnet are selected for the IP Fabric instance. (Create a new VPC and subnet if required):</p>
-<p><img alt="AWS selecting VPC" src="../aws_vpc.png" /></p>
+<p><a data-featherlight="../aws_vpc.png" href="#"><img alt="AWS selecting VPC" src="../aws_vpc.png" /></a></p>
 </li>
 <li>
 <p>Then select <strong>Add Storage</strong>, add 80G to the additional amount from the table above for the root volume. For example, the instance <code>c5.4xlarge</code> should have 200G in total.</p>
-<p><img alt="AWS disk size" src="../aws_disk.png" /></p>
+<p><a data-featherlight="../aws_disk.png" href="#"><img alt="AWS disk size" src="../aws_disk.png" /></a></p>
 </li>
 <li>
 <p>Select <strong>Edit Security Groups</strong> to make sure that IP Fabric will have the connectivity it requires to function:</p>
-<p><img alt="AWS security groups" src="../aws_sec_groups.png" /></p>
+<p><a data-featherlight="../aws_sec_groups.png" href="#"><img alt="AWS security groups" src="../aws_sec_groups.png" /></a></p>
 </li>
 <li>
 <p>Confirm the details with the <a href="Network_Connectivity_Requirements">IP Fabric Connectivity Requirements</a>. The security group rules should look something like:</p>
-<p><img alt="AWS security groups configuration" src="../aws_sec_groups_cfg.png" /></p>
+<p><a data-featherlight="../aws_sec_groups_cfg.png" href="#"><img alt="AWS security groups configuration" src="../aws_sec_groups_cfg.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that you can only select incoming rules at this point! By default the security group allows access to everything over any protocol and port: you will need to revisit once the instance has launched if you need to restrict access at source.</p>
@@ -3786,29 +3790,29 @@
 <li>
 <p>At this point, if you never used Debian in AWS before, subscription alert can appear. If requires, please follow instruction and open
     hyperlink in Error message: <em>In order to user this AWS Marketplace product….</em></p>
-<p><img alt="AWS Subscription notification" src="../aws_subscription_notification.png" /></p>
+<p><a data-featherlight="../aws_subscription_notification.png" href="#"><img alt="AWS Subscription notification" src="../aws_subscription_notification.png" /></a></p>
 </li>
 <li>
 <p>On new page, please click <strong>Continue to Subscribe</strong></p>
-<p><img alt="AWS Subscription continue" src="../aws_subscription_cont.png" /></p>
+<p><a data-featherlight="../aws_subscription_cont.png" href="#"><img alt="AWS Subscription continue" src="../aws_subscription_cont.png" /></a></p>
 </li>
 <li>
 <p>When done, please click <strong>Launch</strong> button once again.</p>
 </li>
 <li>
 <p>Please confirm <strong>Key pair</strong> information and click <strong>Launch Instance</strong>.</p>
-<p><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></p>
+<p><a data-featherlight="../aws_launch_instance.png" href="#"><img alt="AWS Launch instance" src="../aws_launch_instance.png" /></a></p>
 </li>
 <li>
 <p>Your Instance appears in the instances list, and it is started automatically by AWS:</p>
-<p><img alt="AWS instance" src="../aws_instance_booted.png" /></p>
+<p><a data-featherlight="../aws_instance_booted.png" href="#"><img alt="AWS instance" src="../aws_instance_booted.png" /></a></p>
 </li>
 <li>
 <p>You can now <a href="Access_User_Interface_and_Install_License">access the Web UI, install the license file</a> and login to the instance to run the Configuration Wizard.</p>
 </li>
 <li>
 <p>There is a bug in the latest version and you will need to setup <code>traceroute</code> in the IPFabric in order to run Discovery. <code>traceroute</code> must be setup to -- <code>127.0.0.1/32</code>. This is going to be fixed in the future.</p>
-<p><img alt="AWS tranceroute" src="../aws_traceroute.png" /></p>
+<p><a data-featherlight="../aws_traceroute.png" href="#"><img alt="AWS tranceroute" src="../aws_traceroute.png" /></a></p>
 </li>
 </ol>
 <hr />
@@ -3907,6 +3911,10 @@
     
     
       <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>

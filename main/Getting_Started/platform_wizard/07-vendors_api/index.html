@@ -35,6 +35,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../vendor/featherlight.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -3766,7 +3770,7 @@
 
 
 <h1 id="07-vendors-api">07 - Vendors API</h1>
-<p><img alt="Vendors API" src="../vapi.png" /></p>
+<p><a data-featherlight="../vapi.png" href="#"><img alt="Vendors API" src="../vapi.png" /></a></p>
 <h2 id="cisco-meraki">Cisco Meraki</h2>
 <p>Starting the version 3.5.0, IP Fabric supports API based discovery for Cisco Meraki.
 Meraki requires the following settings to be applied:
@@ -3790,7 +3794,7 @@ publicIp has the lowest priority
 <p>PublicIP parameter can be duplicit as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.</p>
 </div>
 <p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:
-<img alt="Meraki API" src="../vendors_api_meraki.png" /></p>
+<a data-featherlight="../vendors_api_meraki.png" href="#"><img alt="Meraki API" src="../vendors_api_meraki.png" /></a></p>
 <p>The Tasker file contains complete communication between IP Fabric and Meraki Dashboard. We can use the device hostname to locate the JSON source:
 <div class="highlight"><pre><span></span><code>{
    &quot;name&quot;:&quot;mx01-dl1&quot;,
@@ -3855,21 +3859,21 @@ To discover CheckPoint devices, CLI access is essential as well.</p>
 <h2 id="aws-amazon-web-services">AWS (Amazon Web Services)</h2>
 <p>Starting version 3.8.0 IP Fabric supports AWS API.</p>
 <p>To add AWS to the discovery you will need an access key &amp; secret access key from your AWS account. Those keys can be found/generated under your account in the AWS dashboard.</p>
-<p><img alt="AWS Dashboard" src="../vapi_aws_dash.png" /></p>
+<p><a data-featherlight="../vapi_aws_dash.png" href="#"><img alt="AWS Dashboard" src="../vapi_aws_dash.png" /></a></p>
 <p>Click on <strong>My Security Credentials</strong> and open <strong>Access keys</strong> tab.</p>
-<p><img alt="AWS Access Keys" src="../vapi_aws_keys.png" /></p>
+<p><a data-featherlight="../vapi_aws_keys.png" href="#"><img alt="AWS Access Keys" src="../vapi_aws_keys.png" /></a></p>
 <p>To generate keys click on “Create New Access Key” and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.</p>
-<p><img alt="AWS New Access Key" src="../vapi_aws_new_key.png" /></p>
+<p><a data-featherlight="../vapi_aws_new_key.png" href="#"><img alt="AWS New Access Key" src="../vapi_aws_new_key.png" /></a></p>
 <p>Copy those keys to the AWS API settings in your IP Fabric and don't forget to <strong>fill the region where the devices which you want to discover are</strong>.</p>
-<p><img alt="AWS New Access Key" src="../vapi_aws_key.png" /></p>
+<p><a data-featherlight="../vapi_aws_key.png" href="#"><img alt="AWS New Access Key" src="../vapi_aws_key.png" /></a></p>
 <p>!!! info To ensure that IP Fabric can retrieve all the required data to model the AWS networks, a series of specific policies are required to be applied to the user account or role used for the API key. Example configuration with all required IAM policies:</p>
 <p><a href="/ipf_aws_ami_policy.json">ipf_aws_ami_policy</a></p>
 <h3 id="aws-assumerole">AWS AssumeRole</h3>
 <p>From version 4.3, IP Fabric enables you to add AssumeRole to AWS API configuration. AssumeRole basically sets higher permissions that may be required for the discovery process in some environments.</p>
 <p>AssumeRole is a standard way how to obtain additional rights when talking to AWS API. It returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to. These temporary credentials consist of an access key ID, a secret access key, and a security token. Typically, you use AssumeRole within your account or for cross-account access. For more information about AssumeRole see https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
-<img alt="AWS assume role" src="../vendors_api_aws_assumerole.png" /></p>
+<a data-featherlight="../vendors_api_aws_assumerole.png" href="#"><img alt="AWS assume role" src="../vendors_api_aws_assumerole.png" /></a></p>
 <h2 id="cisco-viptela-sd-wan">Cisco Viptela SD-WAN</h2>
 <p>Starting version 4.1.0 IP Fabric supports Viptela API.</p>
 <p>Viptela devices are discovered only through API.</p>
@@ -3924,7 +3928,7 @@ regions.</p>
 </li>
 <li>
 <p><strong>Base URL</strong> of NSX Manager server (https://nsx-manager-ip-address)
-<img alt="NSXT" src="../vendors_api_nsxt.png" /></p>
+<a data-featherlight="../vendors_api_nsxt.png" href="#"><img alt="NSXT" src="../vendors_api_nsxt.png" /></a></p>
 </li>
 </ul>
 <h3 id="general-support-information">General support information</h3>
@@ -3974,7 +3978,7 @@ regions.</p>
 </div>
 <ul>
 <li><strong>Base URL</strong> of Unity Orchestrator (https://unity-orchestrator-ip)
-<img alt="Silverpeak" src="../vendors_api_silverpeak.png" /></li>
+<a data-featherlight="../vendors_api_silverpeak.png" href="#"><img alt="Silverpeak" src="../vendors_api_silverpeak.png" /></a></li>
 </ul>
 <h2 id="azure-networking">Azure Networking</h2>
 <ul>
@@ -4016,13 +4020,13 @@ The plan is to add support of Load Balancer (https://docs.microsoft.com/en-us/az
 <p>Search for “Subscriptions“ and select the subscription you like to add to IPF (IPF can do discovery per subscription)
 1. On the overview page note the <strong>Subscription ID.</strong>
 2. From the left menu, click on Access control (IAM), click on “+ Add” and “Add custom role“. Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select “Start from JSON“ and upload JSON file with the required permissions (find it at the very bottom of this page). Click on the Next button to continue.
-<img alt="azure create custom role" src="../vendors_api_azure_create_custome_role.png" />
+<a data-featherlight="../vendors_api_azure_create_custome_role.png" href="#"><img alt="azure create custom role" src="../vendors_api_azure_create_custome_role.png" />
 3. Review the permissions and click Next. Now you have to assign a scope for this role. Click on “Add assignable scopes“ and from the right panel select Type: Subscription and than click on the Subscription you want to assign
-<img alt="azure role scope" src="../vendors_api_azure_role_scope.png" />
+</a><a data-featherlight="../vendors_api_azure_role_scope.png" href="#"><img alt="azure role scope" src="../vendors_api_azure_role_scope.png" />
 4. Click on “Review + Create“
 5. Now you have to assign the newly created Role to the Registered App. From the left menu, select again “Access control (IAM)“ and then click “+ New“ and “Add role assignment“.
 6. Find the previously created role, click “Next“ and then click on “+ Select members“. Find the app you created before. Click “Review + Assign“
-<img alt="azure role assignment" src="../vendors_api_azure_role_assignment.png" /></p>
+</a><a data-featherlight="../vendors_api_azure_role_assignment.png" href="#"><img alt="azure role assignment" src="../vendors_api_azure_role_assignment.png" /></a></p>
 <h3 id="role-definitions-for-ip-fabric-json">Role definitions for IP Fabric (JSON)</h3>
 <p>Following JSON format applies for IP Fabric version 4.3 and above:
 <a href="/vendors_api_azure_role_azure_4_3.json">azure role</a></p>
@@ -4034,7 +4038,7 @@ The plan is to add support of Load Balancer (https://docs.microsoft.com/en-us/az
 <p>Afterward, choose Cisco FMC API from the list and fill in
 - <strong>Username and password</strong> used to log in to Cisco FMC
 - <strong>Base URL</strong> of Cisco FMC server (https://cisco-fmc-ip-address)
-<img alt="cisco fmc" src="../vendors_api_fmc.png" /></p>
+<a data-featherlight="../vendors_api_fmc.png" href="#"><img alt="cisco fmc" src="../vendors_api_fmc.png" /></a></p>
 
               
             </article>
@@ -4108,6 +4112,10 @@ The plan is to add support of Load Balancer (https://docs.microsoft.com/en-us/az
     
     
       <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>
