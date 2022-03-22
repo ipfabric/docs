@@ -6,8 +6,9 @@ This makes it potentially more difficult to match the serial number with other p
 
 We have added a new column to the device inventory table in `v3.7.0`, and renamed the previous one to allow us to work around this issue.
 
-!!! example This is now the default view:
-![device inventory](device_inventory.png)
+!!! example
+
+    This is now the default view: ![device inventory](device_inventory.png)
 
     Showing the “Unique serial number” column which has been renamed. This has now been augmented with a new “serial number” column which is the serial number from the captured state of the device itself:
 
@@ -17,15 +18,18 @@ We have added a new column to the device inventory table in `v3.7.0`, and rename
 
     ![device inventory unique serial focus](device_inventory_unique_serial_focus.png)
 
-    The “Serial number” column is the one that will match other external captures of the serial number in other platforms.
+    The "Serial number" column is the one that will match other external captures of the serial number in other platforms.
 
-!!! info In the API, these columns are defined in the request body as
+!!! info
 
-```js
-{
-  "columns": ["sn","snHw"]
-}
-```
+    In the API, these columns are defined in the request body as
+
+    ```json
+    {
+      "columns": ["sn","snHw"]
+    }
+    ```
 
 !!! attention
-Where sn is the “Unique Serial Number” field and snHw is the “Serial Number” field.
+
+    Where `sn` is the "Unique Serial Number" field and snHw is the "Serial Number" field.
