@@ -3412,22 +3412,21 @@
 <p>You do this in two stages:</p>
 <ol>
 <li>
-<p>send a POST to <strong>/tables/inventory/devices</strong> with a request body like</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="s2">&quot;columns&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;hostname&quot;</span><span class="p">,</span> <span class="s2">&quot;taskKey&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;snapshot&quot;</span><span class="o">:</span><span class="s2">&quot;$last&quot;</span>
-<span class="p">}</span>
+<p>send a POST to <code>/tables/inventory/devices</code> with a request body like</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hostname&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;taskKey&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$last&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>You can (and probably would) filter that list (for example for a specific device with the hostname “SWITCH01”) by including a <code>key:value</code> pair.</p>
-<div class="highlight"><pre><span></span><code>  <span class="s2">&quot;filters&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;hostname&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="s2">&quot;SWITCH01&quot;</span><span class="p">]</span>
-            <span class="p">}</span>
+<p>You can (and probably would) filter that list (for example for a specific device with the hostname <code>SWITCH01</code>) by including a <code>key:value</code> pair.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="s2">&quot;SWITCH01&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>This gives you the task ID for the discovery for the device in question.</p>
 </li>
 <li>
-<p>send a GET to <strong>/os/logs/task/XXXXXXXXXXXXX</strong> where XXXXXXXXXXXXX is the taskKey value returned in step 1 for the required network device.
-    This returns the plain text of the log file for that device discovery.</p>
+<p>send a <code>GET</code> to <code>/os/logs/task/XXXXXXXXXXXXX</code> where <code>XXXXXXXXXXXXX</code> is the <code>taskKey</code> value returned in step 1 for the required network device. This returns the plain text of the log file for that device discovery.</p>
 </li>
 </ol>
 

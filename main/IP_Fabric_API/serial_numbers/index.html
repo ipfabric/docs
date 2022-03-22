@@ -3411,27 +3411,27 @@
 <p>IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple elements - for example, clusters, stacks or virtualised platforms) and so the serial number is manipulated in some way - anything from a virtual context name to a simple <code>_1</code> might be added for example.</p>
 <p>This makes it potentially more difficult to match the serial number with other platforms outside IP Fabric.</p>
 <p>We have added a new column to the device inventory table in <code>v3.7.0</code>, and renamed the previous one to allow us to work around this issue.</p>
-<p>!!! example This is now the default view:
-<a data-featherlight="../device_inventory.png" href="#"><img alt="device inventory" src="../device_inventory.png" /></a></p>
-<pre><code>Showing the “Unique serial number” column which has been renamed. This has now been augmented with a new “serial number” column which is the serial number from the captured state of the device itself:
-
-![device inventory serial number selection](device_inventory_serial_number_selection.png)
-
-Note when that is enabled, the difference between the two columns:
-
-![device inventory unique serial focus](device_inventory_unique_serial_focus.png)
-
-The “Serial number” column is the one that will match other external captures of the serial number in other platforms.
-</code></pre>
-<p>!!! info In the API, these columns are defined in the request body as</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="s2">&quot;columns&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;sn&quot;</span><span class="p">,</span><span class="s2">&quot;snHw&quot;</span><span class="p">]</span>
-<span class="p">}</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>This is now the default view: <a data-featherlight="../device_inventory.png" href="#"><img alt="device inventory" src="../device_inventory.png" /></a></p>
+<p>Showing the “Unique serial number” column which has been renamed. This has now been augmented with a new “serial number” column which is the serial number from the captured state of the device itself:</p>
+<p><a data-featherlight="../device_inventory_serial_number_selection.png" href="#"><img alt="device inventory serial number selection" src="../device_inventory_serial_number_selection.png" /></a></p>
+<p>Note when that is enabled, the difference between the two columns:</p>
+<p><a data-featherlight="../device_inventory_unique_serial_focus.png" href="#"><img alt="device inventory unique serial focus" src="../device_inventory_unique_serial_focus.png" /></a></p>
+<p>The "Serial number" column is the one that will match other external captures of the serial number in other platforms.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In the API, these columns are defined in the request body as</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sn&quot;</span><span class="p">,</span><span class="s2">&quot;snHw&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
+</div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
+<p>Where <code>sn</code> is the "Unique Serial Number" field and snHw is the "Serial Number" field.</p>
 </div>
-<p>Where sn is the “Unique Serial Number” field and snHw is the “Serial Number” field.</p>
 
               
             </article>
