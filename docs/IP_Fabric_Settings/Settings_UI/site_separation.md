@@ -26,7 +26,7 @@ Go to **Settings → Site separation** and change **Routing & Switching Domain*
 - Lower case - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `prague`
 - No transformation - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that each device has its own site named `PRAGUE` and `prague`
 
-![Hostname Regex](2887417896.png)
+![Hostname Regex](site_separation/2887417896.png)
 
 In this example the regular expression matches items such as `PRAGUE-`, `LONDON-`, etc.
 
@@ -34,17 +34,17 @@ In this example the regular expression matches items such as `PRAGUE-`, `LONDON-
 
 Go to **Settings → Site separation** and change **Routing & Switching Domain** to **RegEx based on SNMP location** or create a new rule by **Add rule** button.
 
-![SNMP Regex](2896297985.png)
+![SNMP Regex](site_separation/2896297985.png)
 
 ### Testing
 
 The UI now allows you to edit and test your rules directly in the browser when selecting the **Test rule** option. Here you can see a live preview of devices that will match the regex you created.
 
-![Testing](2888859659.png)
+![Testing](site_separation/2888859659.png)
 
 You can also test SNMP location rules:
 
-![SNMP location](2896330753.png)
+![SNMP location](site_separation/2896330753.png)
 
 ### RegEx example:
 
@@ -56,7 +56,7 @@ We have several locations whose name is logically designed as one letter with on
 
 ## Device Neighborship
 
-![Device Neighborship](2896232449.png)
+![Device Neighborship](site_separation/2896232449.png)
 
 This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.
 
@@ -66,11 +66,11 @@ The Manual Site Separation enables the **Device Attributes** feature to create m
 
 To configure **Device Attributes** first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.
 
-![Device Attributes](2888728582.png)
+![Device Attributes](site_separation/2888728582.png)
 
 ### Device Attributes
 
-![Device Attributes](2888663043.png)
+![Device Attributes](site_separation/2888663043.png)
 
 - Serial Number is IP Fabric’s "Unique Serial Number" (API column `sn`); this is not the column "Serial Number" which represents the Hardware SN (API column `snHw`). Devices discovered via API can also be assigned using Device Attributes.
 - **Hostname** is populated by IP Fabric when a device matching the **Serial Number** is found
@@ -81,11 +81,11 @@ To configure **Device Attributes** first enable the toggle in the Site Separatio
 
 You are able to create rules in the UI by selecting the **Add attribute** button. This will provide you a form to fill out.
 
-![Add Attribute](2888630298.png)
+![Add Attribute](site_separation/2888630298.png)
 
 The dropdown is intuitive and will let you search based on SN or hostname. Currently there is an issue where IP Fabric will not search for devices discovered via an API in the UI. Even though it appears no devices match the SN it will still perform the site separation correctly on the next snapshot.
 
-![Dropdown](2896265219.png)
+![Dropdown](site_separation/2896265219.png)
 
 #### Creating rules via the API
 
@@ -105,13 +105,13 @@ Please see example at [GitHub](https://github.com/community-fabric/python-ipfabr
 
 ## Rule Priority
 
-![Add Attribute](2888597511.png)
+![Add Attribute](site_separation/2888597511.png)
 
 Rule precedence is defined by the order from top to bottom. So in show example that is
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on serial number if a match is found.
 2. Rules you define. In the example above it will check the following
-    1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
-    2. If Hostname matches `^L21` → Site `MPLS`
-    3. If Hostname matches `^(L\d{1,2})` → Site `L2-99`
+   1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
+   2. If Hostname matches `^L21` → Site `MPLS`
+   3. If Hostname matches `^(L\d{1,2})` → Site `L2-99`
 3. **Try to assign devices without sites based on device neighborship** (if enabled)

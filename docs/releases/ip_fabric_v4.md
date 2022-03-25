@@ -157,16 +157,7 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
   - unfortunately, all the above Path lookup changes cause a
     breaking change in the API request payload.
 
-  - See following Tech Notes for API:
-
-    - [API Tech Note - 4.3 Unicast Path
-      Lookup](API_Tech_Note_-_4.3_Unicast_Path_Lookup)
-
-    - [API Tech Note - 4.3 Multicast Path
-      Lookup](API_Tech_Note_-_4.3_Multicast_Path_Lookup)
-
-    - [API Tech Note - 4.3 Host to Gateway Path
-      Lookup](API_Tech_Note_-_4.3_Host_to_Gateway_Path_Lookup)
+  - See [Tech Notes for Path Lookup](../../IP_Fabric_API/path_lookup-4.x/)
 
 ### Features - Protocol and technology support
 
@@ -184,9 +175,8 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
 
 ### Improvements
 
-- Site Separation has been rewritten, it respects Device Attributes
-  (see New Features) [Site Separation (from
-  4.3)](Site_Separation_from_4.3_)
+- [Site Separation](../../IP_Fabric_Settings/Settings_UI/site_separation) has been rewritten, it respects Device Attributes
+  (see New Features)
   - there was added an algorithm to determine the site name based on
     SNMP location.
   - also added an option that will try to assign devices without
@@ -215,8 +205,7 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
   Cisco Firepower](Dropping_support_for_ACL_on_Cisco_Firepower)
 - Added API endpoint POST `/v1/tables/management/snapshots` for the
   possibility to get information about all snapshots (loaded,
-  unloaded) via API [API Tech Note - Snapshot
-  Table](API_Tech_Note_-_Snapshot_Table)
+  unloaded) via [API](../../IP_Fabric_API/path_lookup-4.x/)
 - Path Lookup inspector - cosmetic improvement of ACI endpoint lookup
   reporting
 - Path Lookup - Forwarding for explicit label 0 fix
@@ -614,8 +603,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - Snapshot cannot be refreshed from the graph in this release. This
   function will come back in the following release 4.1.
 
-- API for pathlookup has changed see API Documetation [API Tech Note -
-  4.x Path Lookup](API_Tech_Note_-_4.x_Path_Lookup)
+- API for pathlookup has changed see [API Documetation](../../IP_Fabric_API/path_lookup-4.x/)
 
 ### Improvements
 
