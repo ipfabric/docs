@@ -13,7 +13,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 2.  [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../overview/index.md#operational-requirements).
     1.  Change CPU count.
     2.  Change memory size.
-    3.  [Add a new empty virtual disk](../../system_administration/increase_disk_space.md) if necessary.
+    3.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md)
 3.  Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
 
 ## Deploying on Hyper-V Virtual Machine
@@ -44,7 +44,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
         ![HyperV Setting disk size](hyperv_settings_disk.png)
 
-    4.  [Add a new empty virtual disk](../../system_administration/increase_disk_space.md) if necessary.
+    4.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md) if necessary.
 
     5.  Close VM Settings window
 
@@ -68,7 +68,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
     1.  Change CPU count
     2.  Change memory size
     3.  Extend system disk if necessary
-    4.  [Add a new empty virtual disk](../../system_administration/increase_disk_space.md) if necessary.
+    4.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md) if necessary.
 
 5.  Start VM and check if system starts without any interrupts.
 
@@ -91,7 +91,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
 5.  This command also starts up just created VM.
 
-6.  Additionally, you can create and add a new empty virtual disk if [needed](../../system_administration/increase_disk_space.md).
+6.  Additionally, you can create and add a new empty virtual disk if [needed](../../IP_Fabric_Settings/system_administration/increase_disk_space.md).
 
 ## Deploying to Amazon AWS EC2 instance
 

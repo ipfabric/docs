@@ -16,4 +16,4 @@ Once the license is valid, the system will present a login screen. The default s
 
 !!! hint "Invalid default admin credentials"
 
-    In case that that default system username and password are not working, please gin to the System administration running on port `8443`. After login as `osadmin` user go to **Create admin** and create a new local administrator account. With this new account, you can login to the main IP Fabric user interface and change a password to the default admin account or delete him. See [Create Local Administrator](../../system_administration/admin_ui/create_local_administrator.md) page.
+    In case that that default system username and password are not working, please gin to the System administration running on port `8443`. After login as `osadmin` user go to **Create admin** and create a new local administrator account. With this new account, you can login to the main IP Fabric user interface and change a password to the default admin account or delete him. See [Create Local Administrator](../../IP_Fabric_Settings/System_admin_UI/create_local_administrator.md).
