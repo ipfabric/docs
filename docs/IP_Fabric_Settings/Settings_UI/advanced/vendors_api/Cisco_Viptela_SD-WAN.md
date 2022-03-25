@@ -15,3 +15,5 @@ Viptela devices are discovered only through API.
 -   **Username and password** used to log in to vManage
 
 -   **Base URL** of vManage server ([https://vmanage-ip-address](https://vmanage-ip-address))
+
+Starting version **4.4.0** IP Fabric supports Viptela on Cisco IOS XE devices in the controller (SD-WAN) mode (cEdge).
