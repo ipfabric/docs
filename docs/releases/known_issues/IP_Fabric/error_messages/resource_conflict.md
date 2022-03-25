@@ -1,4 +1,4 @@
-# Messages: "Error: Resource Conflict"
+# Error: Resource Conflict
 
 This error only shows up when a user tries to start a job for the second
 time (a specific task like discovery, maintenance, unload/upload

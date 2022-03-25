@@ -32,7 +32,9 @@ icon or table header text.
 
 Type in what you are looking for in most columns. The example below shows a
 search for all devices with an IP address starting "10.41.133" throughout all
-of the ARP tables in our infrastructure. Use ![clear filter](known_issues/IP_Fabric/filter_clear_btn.png) to clear the search results.
+of the ARP tables in our infrastructure. Use ![clear
+filter](../releases/known_issues/IP_Fabric/filter_clear_btn.png) to clear the
+search results.
 
 ![Table filter](table_filter.png)
 
