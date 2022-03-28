@@ -3,6 +3,7 @@ variables:
   GIT_STRATEGY: clone
 
 image: python
+
 build_main_pages:
   stage: deploy
   only:
@@ -18,3 +19,13 @@ build_main_pages:
     - pip install -r requirements.txt
     - git fetch origin gh-pages --depth=1
     - mike deploy --push main
+
+strict_build_mr:
+  stage: test
+  only:
+    - merge_requests
+  script:
+    - export DOC_TARGET=`mktemp -d`
+    - pip install -r requirements.txt
+    - mkdocs build -d "$DOC_TARGET" --strict
+    - rm -rf "$DOC_TARGET"
