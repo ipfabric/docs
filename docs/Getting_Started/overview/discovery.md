@@ -4,13 +4,13 @@
 
 Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.
 
-The process is controlled from the discovery tab of the web user interface using the ![start](start.png) start and ![stop](stop.png) stop buttons.
+The process is controlled from the discovery tab of the web user interface using the [![start](start.png)] start and [![stop](stop.png)] stop buttons.
 
 The timing of the network discovery snapshots can be automated in **Settings → Advanced → Snapshots** to collect data in periodic intervals or at a specific time. It is recommended to do a network discovery at least once a day to record all network changes.
 
 ## Connectivity Report
 
-A connection to every attempted address either succeeds or is recorded in the Connectivity Report ![Connectivity Report](connectivity_report.png) which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure messages denote an unsuccessful login attempt and provide a description of how the device has responded.
+A connection to every attempted address either succeeds or is recorded in the Connectivity Report [![Connectivity Report](connectivity_report.png)] which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure messages denote an unsuccessful login attempt and provide a description of how the device has responded.
 
 ## Bandwidth Limit
 

@@ -1,4 +1,4 @@
-# Supported vendors and features
+# Supported Vendors And Features
 
 [Vendor-Feature matrix](https://docs.ipfabric.io/matrix){ .md-button .md-button--primary }
 
@@ -12,7 +12,7 @@ Following commands are used during the discovery of a network device.
 
 ### Cisco
 
-#### cisco asa
+#### Cisco ASA
 
 ```
 *changeto context <contextName>
@@ -46,7 +46,7 @@ show sflow-export counters
 show startup-config
 ```
 
-#### cisco sg
+#### Cisco SG
 
 ```
 *enable
@@ -83,7 +83,7 @@ show spanning-tree bpdu
 show startup-config
 ```
 
-#### cisco ios
+#### Cisco IOS
 
 ```
 *show cdp neighbors detail
@@ -164,7 +164,7 @@ show switch detail
 show vrf interfaces
 ```
 
-#### cisco ios-xe
+#### Cisco IOS-XE
 
 ```
 * show bridge-domain
@@ -248,7 +248,7 @@ show switch detail
 show vrf interfaces
 ```
 
-#### cisco ios-xr
+#### Cisco IOS-XR
 
 ```
 *show arp
@@ -296,7 +296,7 @@ show snmp host
 show vrf all detail
 ```
 
-#### cisco nx-os
+#### Cisco NX-OS
 
 ```
 *show cdp neighbors detail
@@ -374,7 +374,7 @@ show vrf interface
 show ip eigrp interfaces vrf all
 ```
 
-#### cisco wlc-air
+#### Cisco WLC-Air
 
 ```
 *config paging disabled
@@ -421,7 +421,7 @@ show wlan <wlanId>
 show wlan summary
 ```
 
-#### cisco ftd
+#### Cisco FTD
 
 ```
 *show arp
@@ -440,7 +440,7 @@ show route summary
 show startup-config
 ```
 
-#### cisco aci
+#### Cisco ACI
 
 ```
 *show cdp neighbors detail
@@ -466,7 +466,7 @@ show system internal epm vrf all
 
 ### Dell
 
-#### dell ftos
+#### Dell FTOS
 
 ```
 *enable
@@ -494,7 +494,7 @@ show interfaces port-channel brief
 show ntp associations
 ```
 
-#### dell powerconnect
+#### Dell PowerConnect
 
 ```
 *enable
@@ -524,7 +524,7 @@ show ntp associations
 
 ### Hewlett Packard
 
-#### hp comware
+#### HP Comware
 
 ```
 *_cmdline-mode on
@@ -599,7 +599,7 @@ display wlan client stats
 display wlan client verbose
 ```
 
-#### hp aruba
+#### HP Aruba
 
 ```
 *no paging
@@ -639,7 +639,7 @@ show wlan <id>
 show wlan summary
 ```
 
-#### hp arubasw
+#### HP ArubaSW
 
 ```
 *no page
@@ -673,7 +673,7 @@ show running-configuration
 show syslog config
 ```
 
-### RiverBed steelhead
+### RiverBed SteelHead
 
 ```
 *enable
@@ -696,7 +696,7 @@ show snmp
 show snmp usernames
 ```
 
-### CheckPoint gaia
+### CheckPoint Gaia
 
 ```
 *clish
@@ -725,7 +725,7 @@ show route summary
 show syslog all
 ```
 
-### Juniper junos
+### Juniper Junos
 
 ```
 *set cli screen-length 0
@@ -819,7 +819,7 @@ show routing protocol ospf neighbor
 show system environmentals
 ```
 
-### Extreme xos
+### Extreme XOS
 
 ```
 *debug vlan show vlans
@@ -862,7 +862,7 @@ show ospf neighbor detail
 show sflow config
 ```
 
-### Huawei vrp
+### Huawei VRP
 
 ```
 *display telnet server status
@@ -911,7 +911,7 @@ display snmp-agent community read
 display snmp-agent community write
 ```
 
-### f5 big-ip
+### F5 BIG-IP
 
 ```
 *list net self
@@ -943,7 +943,7 @@ show bgp neighbors
 show sys sflow data-source
 ```
 
-### Arista eos
+### Arista EOS
 
 ```
 *show arp
@@ -981,7 +981,7 @@ show sflow interfaces
 show vxlan vtep
 ```
 
-### FortiNET fortigate
+### FortiNET FortiGate
 
 ```
 *config global
