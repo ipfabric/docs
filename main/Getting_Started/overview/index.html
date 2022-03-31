@@ -498,14 +498,14 @@
         
           <li class="md-nav__item">
   <a href="#network-device-access" class="md-nav__link">
-    Network device access
+    Network Device Access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#additional-device-access" class="md-nav__link">
-    Additional device access
+    Additional Device Access
   </a>
   
 </li>
@@ -3839,14 +3839,14 @@
         
           <li class="md-nav__item">
   <a href="#network-device-access" class="md-nav__link">
-    Network device access
+    Network Device Access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#additional-device-access" class="md-nav__link">
-    Additional device access
+    Additional Device Access
   </a>
   
 </li>
@@ -3968,7 +3968,7 @@
 </div>
 <h3 id="network-connectivity-requirements">Network Connectivity Requirements</h3>
 <p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
-<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/1384841217/Jumphost+settings">Jumphost server</a> can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)</p>
+<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="jumphost_settings">Jumphost server</a> can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)</p>
 <p>Inbound flows:</p>
 <table>
 <thead>
@@ -4069,7 +4069,7 @@
 </table>
 <p>Internet connectivity is used to check product updates, upgrades, setup support VPN, send error reports, and submit support tickets.</p>
 <h3 id="network-access-credentials-requirements">Network Access Credentials Requirements</h3>
-<h4 id="network-device-access">Network device access</h4>
+<h4 id="network-device-access">Network Device Access</h4>
 <p>IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or TELNET protocols. All device interaction is accounted on the platform and only "read-only" or "operator" group privilege level 1 credentials are required.</p>
 <p>The following list contains an example of commands used for Cisco IOS:</p>
 <div class="highlight"><pre><span></span><code>terminal length 0
@@ -4092,7 +4092,7 @@ show vrrp [brief]
 show vlan brief
 </code></pre></div>
 <p>In the beginning, IP Fabric fingerprints the device using the "show version" command (or equivalent) to identify a vendor and a system version. A "terminal length" command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.</p>
-<h4 id="additional-device-access">Additional device access</h4>
+<h4 id="additional-device-access">Additional Device Access</h4>
 <p>Since firewalls do not follow privilege levels, it may be necessary to
 explicitly specify the commands allowed for each user. The following list specifies the exec-mode commands needed for firewall discovery.</p>
 <div class="highlight"><pre><span></span><code>show version
@@ -4109,7 +4109,7 @@ privilege show level 1 mode exec command route
 privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 </code></pre></div>
-<p>List of all commands used for CLI discovery can be found <a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/80019486/Used+CLI+commands+for+Discovery">on this page</a> and in this <a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/392003585">feature/vendor matrix</a>.</p>
+<p>List of all commands used for CLI discovery can be found <a href="vendors_features">on this page</a> and in this <a href="https://docs.ipfabric.io/matrix/">feature/vendor matrix</a>.</p>
 <h3 id="staging-vs-production-deployment">Staging vs Production Deployment</h3>
 <p>IP Fabric is a complex solution with multiple moving parts. We thoroughly test every release before it is made available to our customers. Testing comprises of the automated unit testing on the code level and automated tests run against various physical and virtual lab environments. These emulate complex networks with many devices from multiple vendors. Despite these efforts, issues can still arise after deploying a new version of IP Fabric to the customer's environment. For example, it is not feasible to replicate the entire network or a combination of particular device models.</p>
 <p>Therefore, we suggest 2-stage deployment of the new IP Fabric releases for complex or critical implementations. The first stage is <em>staging</em> deployment, used to verify the functionality of the new release within the customer's environment.</p>
