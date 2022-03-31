@@ -47,7 +47,7 @@ The following table represents the recommended hardware requirements for optimal
 
 During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.
 
-IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/1384841217/Jumphost+settings) can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)
+IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](jumphost_settings) can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)
 
 Inbound flows:
 
@@ -75,7 +75,7 @@ Internet connectivity is used to check product updates, upgrades, setup support 
 
 ### Network Access Credentials Requirements
 
-#### Network device access
+#### Network Device Access
 
 IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or TELNET protocols. All device interaction is accounted on the platform and only "read-only" or "operator" group privilege level 1 credentials are required.
 
@@ -104,7 +104,7 @@ show vlan brief
 
 In the beginning, IP Fabric fingerprints the device using the "show version" command (or equivalent) to identify a vendor and a system version. A "terminal length" command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.
 
-#### Additional device access
+#### Additional Device Access
 
 Since firewalls do not follow privilege levels, it may be necessary to
 explicitly specify the commands allowed for each user. The following list specifies the exec-mode commands needed for firewall discovery.
@@ -128,7 +128,7 @@ privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 ```
 
-List of all commands used for CLI discovery can be found [on this page](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/80019486/Used+CLI+commands+for+Discovery) and in this [feature/vendor matrix](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/392003585).
+List of all commands used for CLI discovery can be found [on this page](vendors_features) and in this [feature/vendor matrix](https://docs.ipfabric.io/matrix/).
 
 ### Staging vs Production Deployment
 
