@@ -24,6 +24,10 @@ Snapshots can be also permanently deleted from the system.
 
 New network state snapshots can be created from the Discovery page using the start button.
 
-To add devices to existing snapshot, use the ![Add device](snapshot_add_device.png) button. When adding devices, no data is overwritten.
+To add devices to existing snapshot, use the **+** "Add devices" button. When adding devices, no data is overwritten.
 
-To refresh network state data for specific devices in existing snapshot, use ![Refresh device data](snapshot_refresh_device.png) button.
+![Add device](snapshot_add_device.png)
+
+To refresh network state data for specific devices in existing snapshot, use the "Refresh device data" button.
+
+![Refresh device data](snapshot_refresh_device.png)

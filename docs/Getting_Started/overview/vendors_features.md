@@ -2,7 +2,7 @@
 
 [Vendor-Feature matrix](https://docs.ipfabric.io/matrix){ .md-button .md-button--primary }
 
-## CLI commands used during Discovery
+## CLI Commands Used During Discovery
 
 Following commands are used during the discovery of a network device.
 
