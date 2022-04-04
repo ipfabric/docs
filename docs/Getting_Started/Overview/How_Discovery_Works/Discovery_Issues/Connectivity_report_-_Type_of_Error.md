@@ -1,4 +1,4 @@
-# Connectivity report - Type of Error
+# Connectivity Report - Type of Error
 
 | **Error msg**                                         | **Type of Error**                              | **Description / mitigation**                        |
 |:------------------------------------------------------|:-----------------------------------------------|:----------------------------------------------------|

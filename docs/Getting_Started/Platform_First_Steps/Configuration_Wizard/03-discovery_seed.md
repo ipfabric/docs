@@ -1,4 +1,4 @@
-# 03 - Starting point for the discovery (optional)
+# 03 - Starting Point For The Discovery (Optional)
 
 If you know a particular starting point for discovering the network, the information can be entered at **Settings → Discovery Seed**. This option does not exclude any networks from discovery (for this option see next step).
 

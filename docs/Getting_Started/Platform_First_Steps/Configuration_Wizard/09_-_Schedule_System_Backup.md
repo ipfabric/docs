@@ -128,7 +128,7 @@ Both types of backup can be also triggered manually on demand. This is useful fo
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
-1.  Login to admin interface (for example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
+1.  Login to admin interface (for example https://ipfabric.example.com:8443)
 
 2.  Go to ***Restore or Backup***
 

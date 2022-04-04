@@ -1,4 +1,4 @@
-# Initial discovery
+# Initial Discovery
 
 !!! note
 

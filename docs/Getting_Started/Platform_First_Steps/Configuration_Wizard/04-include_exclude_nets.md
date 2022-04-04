@@ -1,4 +1,4 @@
-# 04 - Include or Exclude networks in Discovery
+# 04 - Include Or Exclude Networks In Discovery
 
 By default, there are no limitations on discovery, and all IP addresses are allowed (i.e. *Include scope* is `0.0.0.0/0`).
 

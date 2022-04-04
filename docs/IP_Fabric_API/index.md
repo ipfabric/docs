@@ -1,4 +1,4 @@
-# API Introduction
+# Overview
 
 The following API endpoints are available in IP Fabric. Descriptions and
 allowed methods are coming soon. For more information about IP Fabric
