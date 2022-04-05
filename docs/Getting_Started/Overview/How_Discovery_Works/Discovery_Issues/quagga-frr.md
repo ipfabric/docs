@@ -1,4 +1,4 @@
-# How to configure Quagga/FRR to work with IP Fabric
+# How To Configure Quagga/FRR To Work With IP Fabric
 
 When running discovery, IP Fabric needs to connect directly to the
 device console.
