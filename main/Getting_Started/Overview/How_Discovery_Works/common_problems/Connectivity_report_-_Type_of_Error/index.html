@@ -13,7 +13,7 @@
     
     
       
-        <title>No Devices Discovered - IP Fabric Documentation Portal</title>
+        <title>Connectivity Report - Type of Error - IP Fabric Documentation Portal</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#no-devices-discovered" class="md-skip">
+        <a href="#connectivity-report-type-of-error" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              No Devices Discovered
+              Connectivity Report - Type of Error
             
           </span>
         </div>
@@ -547,14 +547,14 @@
       
       
         <label class="md-nav__link" for="__nav_2_1_6_3">
-          Discovery Issues
+          Common problems
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Discovery Issues" data-md-level="4">
+      <nav class="md-nav" aria-label="Common problems" data-md-level="4">
         <label class="md-nav__title" for="__nav_2_1_6_3">
           <span class="md-nav__icon md-icon"></span>
-          Discovery Issues
+          Common problems
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -562,11 +562,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Connectivity_report_-_Type_of_Error/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Connectivity Report - Type of Error
       </a>
+      
     </li>
   
 
@@ -590,59 +600,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          No Devices Discovered
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../No_Devices_Discovered/" class="md-nav__link">
         No Devices Discovered
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3760,28 +3722,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3794,51 +3734,153 @@
                 
 
 
-<h1 id="no-devices-discovered">No Devices Discovered</h1>
-<h2 id="problem">Problem</h2>
-<p>No network devices are discovered when you run Discovery for the first
-time or after system changes</p>
-<h2 id="solution">Solution</h2>
-<ol>
-<li>Check the "Connectivity report" on the Discovery page to see the
-    specific addresses attempted and the reason for the failure (link:
-    /discovery/tasks)<ol>
-<li>If the reason reports timeout, IP Fabric has IP address assigned
-    that cannot reach the device. The route may not be present or
-    the traffic may be filtered. Check IP Fabric connectivity
-    with <a href="Troubleshooting_VM_Network_Problems_Using_IP_Fabric_CLI">Troubleshooting VM network problems using IP Fabric
-    CLI</a>.</li>
-<li>If the reason reports authentication failure, IP Fabric was not
-    able to login to the device. Check <a href="Authentication">Authentication -
-    Settings</a>.</li>
-<li>Check the "CLI output" file in the Action column of the
-    Connectivity Report to see the full interaction log to help you
-    troubleshoot the issue. Check <a href="Fine-Tune_SSH_telnet_CLI_parameters">Fine-Tune SSH/TELNET
-    parameters</a>.</li>
-</ol>
-</li>
-<li>Provide discovery seed address on Discovery Seed page of the
-    Settings section (link: /settings/discovery-seed)<ol>
-<li>Seed addresses specify starting points of discovery. If default
-    gateway of IP Fabric VM is not discoverable, you need to specify
-    an IP address or a network to start the discovery. It is
-    recommended to provide IP address of a router as a starting
-    point for discovery. Check <a href="Discovery_Seed">Discovery Seed -
-    Settings</a>.</li>
-</ol>
-</li>
-<li>Test the connection manually using IP Fabric CLI<ol>
-<li>Connect to IP Fabric using SSH and attempt to connect to the
-    device using SSH or TELNET using the credentials entered on the
-    authentication page. Check IP Fabric connectivity
-    with <a href="Troubleshooting_VM_Network_Problems_Using_IP_Fabric_CLI">Troubleshooting VM Network Problems Using IP Fabric
-    CLI</a>.</li>
-</ol>
-</li>
-<li>If no devices are discovered after checking the Connectivity Report
-    and after entering the Seed addresses, contact support for
-    troubleshooting assistance. Check <a href="../../Contacts">Contacts</a>.</li>
-</ol>
+<h1 id="connectivity-report-type-of-error">Connectivity Report - Type of Error</h1>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Error msg</strong></th>
+<th align="left"><strong>Type of Error</strong></th>
+<th align="left"><strong>Description / mitigation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left">Ambiguous or Incomplete command</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">All configured authentication methods failed</td>
+<td align="left">Authentication error</td>
+<td align="left">Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td align="left">Authentication failed</td>
+<td align="left">Authentication error</td>
+<td align="left">Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td align="left">Authentication failed - login prompt appeared again</td>
+<td align="left">Authentication error</td>
+<td align="left">Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td align="left">Command "enable" authorization failed, tried 2x</td>
+<td align="left">Command authorization failure</td>
+<td align="left">The command wasn't authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Command not executed for prevented reasons</td>
+<td align="left">Excluded for specific reason (bug with specific)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Command result mapping failure</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$</td>
+<td align="left">Command timeout</td>
+<td align="left">The command timed out. Increase <strong>device session timeout.</strong></td>
+</tr>
+<tr>
+<td align="left">Can't detect prompt</td>
+<td align="left">Command timeout</td>
+<td align="left">Unable to detect CLI prompt. Increase <strong>network device login timeout.</strong></td>
+</tr>
+<tr>
+<td align="left">connect ETIMEDOUT XX.XX.XX.XX:22</td>
+<td align="left">Connection error</td>
+<td align="left">Received no response from the destination.</td>
+</tr>
+<tr>
+<td align="left">connect ECONNREFUSED XX.XX.XX.XX:22</td>
+<td align="left">Connection error</td>
+<td align="left">The connection to the destination is being blocked by an access-list or firewall.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Fatal error</td>
+<td align="left">Contact the support team</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Invalid command</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">No credentials provided</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Parsing command failure</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Parsing failures (pre command)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Possible device issue (during command mapping)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Possible device issue (during parsing)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Possible device issue (during task mapping)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Request failed</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Result mapping failures (per command)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Result mapping failures (per task)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">SSH credentials requires username</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Task result mapping failure</td>
+<td align="left"><em>tasks/sn Error: Can't find sn for IOS-XR:</em> missing information, command did not provide the expected result</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Unknown device version</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Unspecified command</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Unsupported device</td>
+<td align="left">This device is not yet supported by IP Fabric</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>
@@ -3852,7 +3894,7 @@ time or after system changes</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Fine-Tune_SSH_telnet_CLI_parameters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fine-Tune SSH/Telnet CLI Parameters" rel="prev">
+        <a href="../../CLI_discovery/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How CLI Discovery Works" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3861,20 +3903,20 @@ time or after system changes</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Fine-Tune SSH/Telnet CLI Parameters
+              How CLI Discovery Works
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../../Platform_First_Steps/01-deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying the IP Fabric Virtual Machine (VM)" rel="next">
+        <a href="../Fine-Tune_SSH_telnet_CLI_parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Fine-Tune SSH/Telnet CLI Parameters" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Deploying the IP Fabric Virtual Machine (VM)
+              Fine-Tune SSH/Telnet CLI Parameters
             </div>
           </div>
           <div class="md-footer__button md-icon">
