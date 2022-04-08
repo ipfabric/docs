@@ -33,7 +33,7 @@ icon or table header text.
 Type in what you are looking for in most columns. The example below shows a
 search for all devices with an IP address starting "10.41.133" throughout all
 of the ARP tables in our infrastructure. Use ![clear
-filter](../releases/known_issues/IP_Fabric/filter_clear_btn.png) to clear the
+filter](../../releases/known_issues/IP_Fabric/filter_clear_btn.png) to clear the
 search results.
 
 ![Table filter](table_filter.png)
@@ -74,7 +74,7 @@ be edited or removed.
 
 To create a new rule, you need to specify _Rule name_, select the column to add
 the color to -- _Colorized column_ and also, optionally, dashboard _Widgets_
-(check [Dashboard documentation](../IP_Fabric_GUI/dashboard.md) for more
+(check [Dashboard documentation](../../IP_Fabric_GUI/dashboard.md) for more
 details). Specify a filter rule to colorize the selected column:
 
 1. Choose the color to apply rules to.

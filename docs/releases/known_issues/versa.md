@@ -1,6 +1,6 @@
 # Versa
 
-## HTTP 500 error “AsyncRequestTimeoutException”
+## HTTP 500 error `AsyncRequestTimeoutException`
 
 **Known Affected platforms**: All
 
