@@ -1,14 +1,12 @@
 # Wireless
 
-## Wireless
-
-### Overview
+## Overview
 
 The Wireless Technology section provides information about Wireless
 Controllers, Wireless Access Points, and every individual client
 connected to the access point.
 
-### Wireless Controllers
+## Wireless Controllers
 
 The Wireless Controllers table provides an overview of all of the
 Wireless Controllers in the network, including the site where the
@@ -21,7 +19,7 @@ Each controller entry enables the opportunity jump to the details of the
 registered wireless access points or to the individual clients connected
 to the access points.
 
-### Wireless Access Points
+## Wireless Access Points
 
 Site shows the name of the site where access point is located;
 Controller shows the name of the controller where the AP was found to be
@@ -36,7 +34,7 @@ a particular Wireless Access Point.
 Each entry for each wireless access point enables the opportunity to
 jump to the wireless client table detailing each client connection.
 
-### Wireless Clients
+## Wireless Clients
 
 Site is the name of the site where the Access Point and the Client are
 located; AP Name is the hostname of the Wireless Access Point;

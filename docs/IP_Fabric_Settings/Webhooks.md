@@ -9,7 +9,7 @@ your imagination.
 
 To setup a webhook, please navigate to `Settings / Webhooks`
 
-<img src="attachments/1456537601/1458405377.png" class="image-center" loading="lazy" data-image-src="attachments/1456537601/1458405377.png" data-height="891" data-width="1427" data-unresolved-comment-count="0" data-linked-resource-id="1458405377" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="obrazek-20200901-101651.png" data-base-url="https://ipfabric.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1456537601" data-linked-resource-container-version="6" data-media-id="8834aae3-f041-487e-af41-0ab09486a288" data-media-type="file" />
+![Webhooks Settings](webhooks.png)
 
 ## Events
 
@@ -25,7 +25,7 @@ since the initial delivery. In case we cannot delivery the webhook in
 these five attempts, we give up. All delivery attempts are recorded in
 the webhook delivery history (in webhook edit view).
 
-## Payload hash
+## Payload Hash
 
 Since the webhook payload might be delivered over untrusted networks,
 each webhook message is accompanied with SHA256 HMAC payload hash
@@ -37,10 +37,6 @@ receiving end (with the same password), and compare it with the hash
 calculated by the server (sent in `X-IPF-Signature` HTTP header of the
 webhook message).
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 ``` js
 // JavaScript validation code
 
@@ -48,11 +44,6 @@ const hmac = createHmac('sha256', secret);
 hmac.update(bodyString);
 const verified = (hmac.digest('hex') === request.headers['x-ipf-signature']);
 ```
-
-</div>
-
-</div>
-
 To test your webhook (even an inactive one), use the Test button in UI.
 Pick the webhook type and action and confirm the popup dialog. We’ll
 send dummy payload corresponding to the selected webhook. To be able to
@@ -61,16 +52,12 @@ property to the testing messages.
 
 Currently, we the following webhook types are triggered by IPF platform:
 
-### snapshot
+### Snapshot
 
 The event is triggered upon network discovery and when manipulating
 snapshots.
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
-``` jscript
+``` js
 {
   "type": "snapshot",
   "action": "discover" | "clone" | "delete" | "download" | "load" | "unload",
@@ -87,10 +74,6 @@ snapshots.
   "test"?: boolean
 }
 ```
-
-</div>
-
-</div>
 
 In case the action has `failed`, the payload includes top-level `reason`
 field with string describing why the action has failed.
@@ -110,11 +93,7 @@ In case you are testing the webhook, the `test` field is set to `true`.
 
 The event is triggered when intent verification is calculated.
 
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
-``` jscript
+``` js
 {
   "type": "intent-verification",
   "action": "calculate",
@@ -128,10 +107,6 @@ The event is triggered when intent verification is calculated.
 }
 ```
 
-</div>
-
-</div>
-
 In case the action has `failed`, the payload includes top-level `reason`
 field with string describing why the action has failed.
 
@@ -139,28 +114,6 @@ When the intent verification is related to:
 
 -   a report, its id is available as `reportId`,
 
-<!-- -->
-
 -   a snapshot, its id is available as `snapshotId`.
 
 In case you are testing the webhook, the `test` field is set to `true`.
-
-<div class="pageSectionHeader">
-
-## Attachments:
-
-</div>
-
-<div class="greybox" align="left">
-
-<img src="images/icons/bullet_blue.gif" width="8" height="8" />
-[obrazek-20200901-092927.png](attachments/1456537601/1458176001.png)
-(image/png)  
-<img src="images/icons/bullet_blue.gif" width="8" height="8" />
-[obrazek-20200901-093009.png](attachments/1456537601/1458241537.png)
-(image/png)  
-<img src="images/icons/bullet_blue.gif" width="8" height="8" />
-[obrazek-20200901-101651.png](attachments/1456537601/1458405377.png)
-(image/png)  
-
-</div>

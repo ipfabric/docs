@@ -33,6 +33,13 @@ and how many watts are left.
 
 ![PoE - Device Modules](platforms/poe_device_modules.png)
 
+# Stacks
+
+Stacks menu contains information about stacks in your network - stack
+members, stack ports, their uptime, role in the stack, status and more.
+
+![Stacks](platforms/stacks.png)
+
 ## Environment
 
 Environment menu provides information about power supplies, power

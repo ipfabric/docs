@@ -1,8 +1,4 @@
-# Site Separation
-
-!!! info
-
-    This page desribes situation from relase 4.3 onwards.
+# Site Separation From 4.3 
 
 ## Regular Expression Site Separation
 
