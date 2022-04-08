@@ -2690,6 +2690,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3893,6 +3900,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4253,6 +4267,27 @@ combination:</p>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
 <li>Routing protocol edges wrong establish to transit fix</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li>
+<p>Discovery with added Vendor API can get stuck and doesn’t finish in some cases. Replicated on NSX-T v2.5, Azure, Meraki</p>
+<ul>
+<li>ID: NIM-7505, NIM-7479, NIM-7437</li>
+<li>Root cause: Unlocked resources after calling unsupported API endpoint</li>
+<li>Status: Fixed in 4.4.0 release</li>
+<li>Workaround: Stop discovery and disable Vendor API</li>
+</ul>
+</li>
+<li>
+<p>When discovery is stopped after collection from devices is done, API will allow other jobs to run - making them run in parallel. It is especially an issue when running maintenance is started immediately because it re-indexes the DB - making caching take really long time. </p>
+<ul>
+<li>ID: NIM-7722</li>
+<li>Root cause: Discovery allows to run parallel jobs.</li>
+<li>Status: Fixed in 4.4.0 release</li>
+<li>Workaround: Do not stop discovery job or do not run maintenance (manually or as a scheduled job).</li>
+</ul>
+</li>
 </ul>
 <h2 id="4343-7rd-march-2022">4.3.4+3 (7rd March 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: A5DB9B8C51169216167866C9AD6E951C
