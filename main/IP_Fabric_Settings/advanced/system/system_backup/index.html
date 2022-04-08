@@ -13,7 +13,7 @@
     
     
       
-        <title>Schedule System Maintenance - IP Fabric Documentation Portal</title>
+        <title>Schedule System Backup - IP Fabric Documentation Portal</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#schedule-system-maintenance" class="md-skip">
+        <a href="#schedule-system-backup" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Schedule System Maintenance
+              Schedule System Backup
             
           </span>
         </div>
@@ -2080,20 +2080,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discovery/Scanner_settings/" class="md-nav__link">
-        Scanner settings
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../discovery/discovery_settings/" class="md-nav__link">
         Discovery Tasks Settings
       </a>
@@ -2144,6 +2130,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discovery/scanner_settings/" class="md-nav__link">
+        Scanner settings
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2183,20 +2183,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Schedule_System_Backup/" class="md-nav__link">
-        Schedule System Backup
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -2208,10 +2194,96 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Schedule System Backup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Schedule System Maintenance
+        Schedule System Backup
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    Backup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-backup" class="md-nav__link">
+    Local backup
+  </a>
+  
+    <nav class="md-nav" aria-label="Local backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
+    Adding a new virtual disk to your IP Fabric VM as a local backup disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-local-backups" class="md-nav__link">
+    Automatic Local Backups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-backup" class="md-nav__link">
+    Remote backup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-a-backup-manually-on-demand" class="md-nav__link">
+    Trigger a backup manually (on-demand)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_maitenance/" class="md-nav__link">
+        Schedule System Maintenance
+      </a>
     </li>
   
 
@@ -3478,6 +3550,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    Backup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-backup" class="md-nav__link">
+    Local backup
+  </a>
+  
+    <nav class="md-nav" aria-label="Local backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
+    Adding a new virtual disk to your IP Fabric VM as a local backup disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-local-backups" class="md-nav__link">
+    Automatic Local Backups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-backup" class="md-nav__link">
+    Remote backup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-a-backup-manually-on-demand" class="md-nav__link">
+    Trigger a backup manually (on-demand)
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3490,16 +3618,115 @@
                 
 
 
-<h1 id="schedule-system-maintenance">Schedule System Maintenance</h1>
-<p>To ensure the platform’s good health, it’s highly recommended to run the
-System Maintenance on regular basis. The recommended frequency for
-System Maintenance is once a day.</p>
-<p>Even though the process is very quick, we would recommend performing it
-at a time when no one is working with the platform, as access is not
-available during the maintenance.</p>
-<p>Sometimes it is necessary to run maintenance manually, this can be done
-in this menu with the Start Maintenance button.</p>
-<p><a data-featherlight="../Schedule_System_Maintenance.png" href="#"><img alt="Schedule System Maintenance" src="../Schedule_System_Maintenance.png" /></a></p>
+<h1 id="schedule-system-backup">Schedule System Backup</h1>
+<h2 id="backup">Backup</h2>
+<p>Use IP Fabric backup to protect your important data.</p>
+<p>There are two types of backup:</p>
+<ul>
+<li>Local backup</li>
+<li>Remote backup (FTP, sFTP)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Backups are encrypted with <code>osadmin</code> user password configured during the <em>first boot wizard</em>. When you lose <code>osadmin</code> user password, backups are also lost!</p>
+</div>
+<h2 id="local-backup">Local backup</h2>
+<p>Local backup saves database, user and system files locally on a dedicated backup volume. It's highly recommended placing backup volume on different datastore ideally on different physical storage.</p>
+<div class="admonition info">
+<p class="admonition-title">Backup Disk</p>
+<p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
+</div>
+<h3 id="adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk">Adding a new virtual disk to your IP Fabric VM as a local backup disk</h3>
+<ol>
+<li>Open your VM platform.</li>
+<li>Go to IP Fabric VM settings and add <em>New Hard Disk</em>.</li>
+<li>Select size of a new disk.</li>
+<li>
+<p>Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different datastore ideally on different physical storage).</p>
+<p><a data-featherlight="../new_virtual_disk.png" href="#"><img alt="New disk" src="../new_virtual_disk.png" /></a></p>
+</li>
+<li>
+<p>Finish configuration wizard.</p>
+</li>
+<li>Launch Remote (Web) Console.</li>
+<li>Reboot (<em>Send Ctrl+Alt+Delete</em> function can be also used) or power on IP Fabric VM.</li>
+<li>
+<p>During system boot, a <em>Disk space expansion</em> wizard appears.</p>
+<p><a data-featherlight="../disk_space_expansion_extend.png" href="#"><img alt="Disk space expansion extend" src="../disk_space_expansion_extend.png" /></a></p>
+</li>
+<li>
+<p>Select <em>Yes</em> to start disk space expansion.</p>
+</li>
+<li>Expand the new volume as a backup (Backup is used only for local backups).</li>
+<li>
+<p>Selected volume is extended.</p>
+<p><a data-featherlight="../disk_space_expansion_extended.png" href="#"><img alt="Disk space expansion extended" src="../disk_space_expansion_extended.png" /></a></p>
+</li>
+<li>
+<p>Hit <em>OK</em></p>
+</li>
+</ol>
+<h3 id="automatic-local-backups">Automatic Local Backups</h3>
+<p>To schedule automatic local backups do the following steps:</p>
+<ol>
+<li>Add dedicated backup volume if not available - see steps above.</li>
+<li>Login to the user interface.</li>
+<li>Go to <em>Settings → Advanced → System → Schedule system backup</em>.</li>
+<li>Change <em>Destination</em> to <em>Local hard drive</em>.</li>
+<li>Set a backup schedule. See example for "Every day at 3:00".</li>
+<li>Enable backup.</li>
+</ol>
+<p><a data-featherlight="../schedule_local_backup.png" href="#"><img alt="Schedule local backup" src="../schedule_local_backup.png" /></a></p>
+<h2 id="remote-backup">Remote backup</h2>
+<p>Remote backup saves database, user and system files remotely using <code>FTP</code> or <code>sFTP</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a recommended type of backup.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups</p>
+</div>
+<p>To set up remote backup do the following steps:</p>
+<ol>
+<li>Login to the user interface.</li>
+<li>Go to <em>Settings → Advanced → System → Schedule system backup</em>.</li>
+<li>Enable backup.</li>
+<li>Set a backup schedule. See example for "Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)".<br />
+<a data-featherlight="../backup_schedule.png" href="#"><img alt="backup schedule" src="../backup_schedule.png" /></a></li>
+<li>Change <em>Destination</em> to <code>FTP</code> or <code>SFTP</code>.</li>
+<li>Enter remote FTP/SFTP <em>Server</em> FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.</li>
+<li>Enter <em>Username</em> to access FTP/SFTP server.</li>
+<li>Enter <em>Password</em> to access FTP/SFTP server.</li>
+<li>Specify a <em>Directory</em> where FTP/SFTP backup should be uploaded.</li>
+<li>Click <em>Save</em>.</li>
+<li>IP Fabric tries to reach FTP/SFTP server with configured parameters.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>FTP/SFTP user needs read, write, list and delete permissions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.</p>
+</div>
+<h2 id="trigger-a-backup-manually-on-demand">Trigger a backup manually (on-demand)</h2>
+<p>Both types of backup can be also triggered manually on demand. This is useful for example before a system upgrade.</p>
+<p>Manual backup can be triggered from IP Fabric Administrative interface:</p>
+<ol>
+<li>Login to admin interface (for example <code>https://ipfabric.example.com:8443</code></li>
+<li>Go to <em>Restore or Backup</em></li>
+<li>Select <em>Backup</em> from <em>Do you wish to proceed with a backup or restore?</em> drop-down menu.</li>
+<li>For local backup select <em>Local hard drive</em> from the <em>Backup files destination</em>.</li>
+<li>For remote backup select <code>FTP</code> or <code>SFTP</code> from the <em>Backup files destination</em>.<ol>
+<li>Enter remote FTP/SFTP <em>Server</em> FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.</li>
+<li>Enter <em>Username</em> to access FTP/SFTP server.</li>
+<li>Enter <em>Password</em> to access FTP/SFTP server.</li>
+<li>Specify a <em>Directory</em> where FTP/SFTP backup should be uploaded.</li>
+</ol>
+</li>
+<li>Click <em>Next</em></li>
+</ol>
 
               
             </article>
@@ -3513,7 +3740,7 @@ in this menu with the Start Maintenance button.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Schedule_System_Backup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Schedule System Backup" rel="prev">
+        <a href="../../discovery/scanner_settings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Scanner settings" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3522,20 +3749,20 @@ in this menu with the Start Maintenance button.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Schedule System Backup
+              Scanner settings
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../vendors_api/" class="md-footer__link md-footer__link--next" aria-label="Next: Vendors API" rel="next">
+        <a href="../system_maitenance/" class="md-footer__link md-footer__link--next" aria-label="Next: Schedule System Maintenance" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Vendors API
+              Schedule System Maintenance
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -1993,9 +1993,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuration Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Configuration Management
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syslog-triggered" class="md-nav__link">
+    Syslog triggered
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    Schedule
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2090,20 +2128,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../discovery/Scanner_settings/" class="md-nav__link">
-        Scanner settings
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../discovery/discovery_settings/" class="md-nav__link">
         Discovery Tasks Settings
       </a>
@@ -2154,6 +2178,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/scanner_settings/" class="md-nav__link">
+        Scanner settings
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2193,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system/Schedule_System_Backup/" class="md-nav__link">
+      <a href="../system/system_backup/" class="md-nav__link">
         Schedule System Backup
       </a>
     </li>
@@ -2207,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system/Schedule_System_Maintenance/" class="md-nav__link">
+      <a href="../system/system_maitenance/" class="md-nav__link">
         Schedule System Maintenance
       </a>
     </li>
@@ -3476,6 +3514,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syslog-triggered" class="md-nav__link">
+    Syslog triggered
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    Schedule
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3489,30 +3549,26 @@
 
 
 <h1 id="configuration-management">Configuration Management</h1>
-<h1 id="configuration-management-setup">Configuration Management Setup</h1>
 <p>There are two ways to detect configuration changes:</p>
 <h2 id="syslog-triggered">Syslog triggered</h2>
-<p>IP Fabric checks incoming syslog messages for key phrase (for example "<em>Configured from console by admin15 on vty0.</em>"). This option needs proper syslog configuration on the device side.</p>
-<p><strong><em>Syslog</em></strong> server listens on port <strong>514/UDP</strong> and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>)
+<p>IP Fabric checks incoming syslog messages for key phrase (for example <code>Configured from console by admin15 on vty0.</code>). This option needs proper <code>syslog</code> configuration on the device side.</p>
+<p>Syslog server listens on port <code>514/UDP</code> and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>)
 or using syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
-<p><strong>Notes:</strong></p>
+<p>Please, note</p>
 <ul>
-<li>
-<p>The receiving port <code>514</code> cannot be modified.</p>
-</li>
-<li>
-<p>The Syslog messages are filtered and are stored in RabbitMQ database
-    apart from the main DB and cannot be observed in IP Fabric's GUI</p>
-</li>
+<li>The receiving port <code>514</code> cannot be modified.</li>
+<li>The Syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric's GUI</li>
 </ul>
-<p>To enable the syslog triggered configuration management go to <strong><em>Settings → Advanced → Configuration  Management → Configuration Management Setup</em></strong><strong> </strong>and select <strong><em>Syslogtrigger</em></strong>.</p>
+<p>To enable the syslog triggered configuration management go to <em>Settings → Advanced → Configuration  Management → Configuration Management Setup</em> and select <em>Syslogtrigger</em>.</p>
 <h2 id="schedule">Schedule</h2>
 <p>Configuration change is checked at regular intervals as configured by user.</p>
-<p>Schedule can be enabled and configured at <strong><em>Settings → Advanced → Configuration Management → Configuration Management Setup</em></strong><strong> </strong>and select <strong><em>Schedule</em></strong>.</p>
-<p>!!! example Example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.</p>
-<pre><code>![configuration managment setup](configuration_managment_setup.png)
-</code></pre>
-<p>Multiple values from the lists can be selected by holding CTRL or SHIFT  key.</p>
+<p>Schedule can be enabled and configured at <em>Settings → Advanced → Configuration Management → Configuration Management Setup</em> and select <em>Schedule</em>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.</p>
+<p><a data-featherlight="../configuration_managment_setup.png" href="#"><img alt="configuration managment setup" src="../configuration_managment_setup.png" /></a></p>
+</div>
+<p>Multiple values from the lists can be selected with <code>CTRL</code> or <code>SHIFT</code> keys.</p>
 
               
             </article>
