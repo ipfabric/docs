@@ -3015,7 +3015,7 @@
   
     <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/" class="md-nav__link">
-        Error: AQL: internal error - in index
+        Error: AQL: internal error -- in index
       </a>
     </li>
   
@@ -3682,10 +3682,10 @@
 <ol>
 <li>Deploy OVA to your vSphere environment as described at <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA
     Template</a>.</li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../overview/index.md#operational-requirements">operational requirements section</a>.<ol>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.<ol>
 <li>Change CPU count.</li>
 <li>Change memory size.</li>
-<li><a href="../../IP_Fabric_Settings/system_administration/increase_disk_space.md">Add a new empty virtual disk</a></li>
+<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a></li>
 </ol>
 </li>
 <li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
@@ -3704,7 +3704,7 @@
 <p>Wait until import process ends.</p>
 </li>
 <li>
-<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../overview/index.md#operational-requirements">operational requirements section</a>). Right click on VM -- choose <strong>Settings</strong>:</p>
+<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>). Right click on VM -- choose <strong>Settings</strong>:</p>
 <p><a data-featherlight="../hyperv_settings.png" href="#"><img alt="HyperV Settings" src="../hyperv_settings.png" /></a></p>
 <ol>
 <li>
@@ -3720,7 +3720,7 @@
 <p><a data-featherlight="../hyperv_settings_disk.png" href="#"><img alt="HyperV Setting disk size" src="../hyperv_settings_disk.png" /></a></p>
 </li>
 <li>
-<p><a href="../../IP_Fabric_Settings/system_administration/increase_disk_space.md">Add a new empty virtual disk</a> if necessary.</p>
+<p><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</p>
 </li>
 <li>
 <p>Close VM Settings window</p>
@@ -3746,12 +3746,12 @@
 <p>Import <code>.vmdk</code> files to Nutanix hypervisor, following Nutanix official documentation -- <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
 </li>
 <li>
-<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../overview/index.md#operational-requirements">operational requirements section</a>).</p>
+<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>).</p>
 <ol>
 <li>Change CPU count</li>
 <li>Change memory size</li>
 <li>Extend system disk if necessary</li>
-<li><a href="../../IP_Fabric_Settings/system_administration/increase_disk_space.md">Add a new empty virtual disk</a> if necessary.</li>
+<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</li>
 </ol>
 </li>
 <li>
@@ -3762,7 +3762,7 @@
 <ol>
 <li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
-<p>Create a second <code>qcow2</code> disk for data with size that corresponds to <a href="../overview/index.md#operational-requirements">your network needs</a>) with the following command:</p>
+<p>Create a second <code>qcow2</code> disk for data with size that corresponds to <a href="../../Overview/#operational-requirements">your network needs</a>) with the following command:</p>
 <div class="highlight"><pre><span></span><code>qemu-img create -f qcow2 ipfabric-data.qcow2 10G <span class="c1"># (up to 920G for 20 000 devices)</span>
 </code></pre></div>
 </li>
@@ -3778,7 +3778,7 @@
 <p>This command also starts up just created VM.</p>
 </li>
 <li>
-<p>Additionally, you can create and add a new empty virtual disk if <a href="../../IP_Fabric_Settings/system_administration/increase_disk_space.md">needed</a>.</p>
+<p>Additionally, you can create and add a new empty virtual disk if <a href="../../../System_Administration/increase_disk_space/">needed</a>.</p>
 </li>
 </ol>
 <h2 id="deploying-to-amazon-aws-ec2-instance">Deploying to Amazon AWS EC2 instance</h2>

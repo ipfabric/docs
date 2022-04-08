@@ -3034,7 +3034,7 @@
   
     <li class="md-nav__item">
       <a href="../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/" class="md-nav__link">
-        Error: AQL: internal error - in index
+        Error: AQL: internal error -- in index
       </a>
     </li>
   
@@ -3718,15 +3718,15 @@
 <ul>
 <li>
 <p>The state of the network at the moment of the initialization of the
-    snapshot.</p>
+  snapshot.</p>
 </li>
 <li>
-<p>All service logs - logs used internally by the IP Fabric system as
-    well as a log of commands issued on every network device.</p>
+<p>All service logs -- logs used internally by the IP Fabric system as
+  well as a log of commands issued on every network device.</p>
 </li>
 <li>
 <p>Connectivity issues that had occurred during the retrieval of the
-    snapshot.</p>
+  snapshot.</p>
 </li>
 </ul>
 <p>A network snapshot is a fully functional software copy of your network,
@@ -3744,20 +3744,20 @@ top left corner of the Main User Interface.</p>
 snapshots can be scheduled. Initial snapshot of the network may not
 include all information about your network. There might be user
 privilege level issues, connectivity issues related to firewall rules,
-etc. A new snapshot can be taken at any time by clicking the “New
-Snapshot” button in the “Discovery Snapshot” menu entry. The system then
+etc. A new snapshot can be taken at any time by clicking the "New
+Snapshot" button in the "Discovery Snapshot" menu entry. The system then
 automatically starts a new snapshot of the network with globally set
-parameters in the “Settings” menu entry. If you need to make some
-changes to the discovery process - add a new network seed, change login
-credentials, etc. - it needs to be done before a new snapshot is taken.</p>
+parameters in the "Settings" menu entry. If you need to make some
+changes to the discovery process -- add a new network seed, change login
+credentials, etc. -- it needs to be done before a new snapshot is taken.</p>
 <h3 id="inspection-of-network-issues">Inspection of Network Issues</h3>
 <p><a data-featherlight="../connectivity_report.png" href="#"><img alt="Connectivity report and summary of issues" src="../connectivity_report.png" /></a></p>
 <p>After the snapshot is taken, there might be some devices not showing in
-the discovery table. You can then go through <a href="../IP_Fabric_Discovery/CLI_discovery/Fine-Tune_SSH_telnet_CLI_parameters.md">the Summary of
+the discovery table. You can then go through <a href="../../Getting_Started/Overview/How_Discovery_Works/common_problems/Fine-Tune_SSH_telnet_CLI_parameters/">the Summary of
 Issues/Connectivity Report tables to see where this device in the
 discovery process
 failed</a>.</p>
-<p>Each connection attempt - successful or unsuccessful is logged (see the
+<p>Each connection attempt -- successful or unsuccessful is logged (see the
 following picture). Log for each device can be found in the Connectivity
 Report. These logs are especially helpful when an error occurs. By
 examining them you can find the reason why the device wasn't correctly
@@ -3786,29 +3786,29 @@ the memory.</p>
 into the memory. If the maximum number of loaded snapshot is 5 and 6th
 snapshot is created, the IP Fabric will automatically unload the oldest
 snapshot from the memory and save it to the hard drive. This can be done
-also manually on a selected snapshot by the “Unload snapshot” button.</p>
+also manually on a selected snapshot by the "Unload snapshot" button.</p>
 <p>When a snapshot is unloaded, it's safely stored on your hard drive, but
 the data from a snapshot cannot be accessed directly through the IP
 Fabric user interface. To browse an unloaded snapshot, it needs to be
-loaded again to the memory by “Load snapshot”</p>
+loaded again to the memory by "Load snapshot".</p>
 <p><a data-featherlight="../snapshot_load.png" href="#"><img alt="Snapshot load" src="../snapshot_load.png" /></a></p>
 <p>button accessible on an unloaded snapshot.</p>
 <p><a data-featherlight="../snapshot_unload.png" href="#"><img alt="Snapshot unload" src="../snapshot_unload.png" /></a></p>
 <h3 id="download-snapshot">Download Snapshot</h3>
 <p>If needed, a selected snapshot can be downloaded directly from IP Fabric
-to your hard drive by the “Download snapshot” button.</p>
+to your hard drive by the "Download snapshot" button.</p>
 <p><a data-featherlight="../snapshot_download.png" href="#"><img alt="Snapshot download" src="../snapshot_download.png" /></a></p>
 <p>This snapshot can be loaded back to the IP Fabric platform by a “Load
 From File” button.</p>
 <p><a data-featherlight="../snapshot_load_from_file.png" href="#"><img alt="Snapshot load from file" src="../snapshot_load_from_file.png" /></a></p>
 <h3 id="clone-snapshot">Clone Snapshot</h3>
-<p>Loaded as well as unloaded snapshots can be cloned by the “Clone
-snapshot“ button. This is handy in case you want to make some changes to
+<p>Loaded as well as unloaded snapshots can be cloned by the "Clone
+snapshot" button. This is handy in case you want to make some changes to
 the snapshot (adding a device etc.) but you want to keep the original
 file as a backup.</p>
 <p><a data-featherlight="../snapshot_clone.png" href="#"><img alt="Snapshot clone" src="../snapshot_clone.png" /></a></p>
 <h3 id="delete-snapshot">Delete Snapshot</h3>
-<p>Snapshots can be deleted by the “Delete snapshot“ button.</p>
+<p>Snapshots can be deleted by the "Delete snapshot" button.</p>
 <p><a data-featherlight="../snapshot_delete.png" href="#"><img alt="Snapshot delete" src="../snapshot_delete.png" /></a></p>
 <h3 id="related-articles">Related Articles</h3>
 <p>If you want to learn more about how network discovery works from a

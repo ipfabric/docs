@@ -3000,7 +3000,7 @@
   
     <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/" class="md-nav__link">
-        Error: AQL: internal error - in index
+        Error: AQL: internal error -- in index
       </a>
     </li>
   
@@ -3644,22 +3644,32 @@
 
 <h1 id="configuration">Configuration</h1>
 <h2 id="overview">Overview</h2>
-<p>Configuration management <strong>backs up the running configuration</strong> of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison.
-<strong>Only changed configurations</strong> are stored, and these report both the time of the <strong>last change</strong> and the <strong>time of the last</strong> configuration <strong>check</strong> for a change.</p>
-<p>Link: <code>https://\[nimpee_address\]/management/configuration/first</code></p>
+<p>Configuration management <em>backs up the running configuration</em> of managed
+network devices based on the defined trigger. Downloaded configuration is then
+available for viewing in full or sanitized formats, or for comparison. <em>Only
+changed configurations</em> are stored, and these report both the time of the <em>last
+change</em> and the <em>time of the last</em> configuration <em>check</em> for a change.</p>
+<p>Link: <code>https://[ip_fabric_address]/management/configuration/first</code></p>
 <h3 id="credential-requirements">Credential Requirements</h3>
-<p>Network access <strong>credentials allowing</strong> <strong>the “show run” command</strong> (or equivalent) <strong>are necessary</strong> for configuration storage and configuration management to work properly.
-These credentials are set-up in <strong><em>Setting → Authentication</em></strong> menu. These elevated credentials need <strong><em>Use for configuration management</em></strong> box checked.
-See <a href="../../IP_Fabric_Settings/Settings_UI/authentication.md">Authentication</a> configuration.</p>
+<p>Network access <em>credentials allowing the <code>show run</code> command</em> (or equivalent)
+<em>are necessary</em> for configuration storage and configuration management to work
+properly. These credentials are set-up in <em>Setting → Authentication</em> menu.
+These elevated credentials need <em>Use for configuration management</em> box checked.</p>
 <h3 id="trigger">Trigger</h3>
-<p>Trigger archiving can be <a href="../../IP_Fabric_Settings/Settings_UI/advanced/configuration_management.md">configured in settings</a>  and can be based on a <strong><em>syslog message</em></strong> or a <strong><em>timed event</em></strong>.</p>
+<p>Trigger archiving can be <a href="../../../IP_Fabric_Settings/advanced/configuration_management/">configured in settings</a> and can be based on a <em>syslog message</em> or a <em>timed event</em>.</p>
 <h2 id="configuration_1">Configuration</h2>
-<p>Configuration can be retrieved in <strong><em>full</em></strong> or <strong><em>sanitized forms</em></strong>. <strong><em>Sanitization removes all of the passwords and network identification information</em></strong> from the configuration to prevent sharing of sensitive information.</p>
+<p>Configuration can be retrieved in <em>full</em> or <em>sanitized forms</em>. Sanitization
+removes all passwords and network identification information from the
+configuration to prevent sharing of sensitive information.</p>
 <h3 id="configuration-comparison-table">Configuration Comparison Table</h3>
-<p><strong><em>Stored configurations are displayed in a table</em></strong> that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (“Last change” column),
-and the last time a particular configuration was saved in the “Last check” column.</p>
-<p>The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the “Before” and “After” states to compare,
-and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.</p>
+<p>Stored configurations are displayed in a table that shows information such as
+the serial number of the device, the device host name, the time when
+configuration change was detected ("Last change" column), and the last time a
+particular configuration was saved in the "Last check" column.</p>
+<p>The table can be used to compare between two different configurations directly
+from the user interface. This is done by selecting the "Before" and "After"
+states to compare, and the resulting differences can be displayed side-by-side,
+inline with all rows, or inline with only rows where the changes have occurred.</p>
 
               
             </article>
