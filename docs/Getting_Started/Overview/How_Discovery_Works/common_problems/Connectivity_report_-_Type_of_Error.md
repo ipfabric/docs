@@ -1,6 +1,6 @@
 # Connectivity Report - Type of Error
 
-| **Error msg**                                         | **Type of Error**                              | **Description / mitigation**                        |
+| **Error message**                                         | **Type of Error**                              | **Description / mitigation**                        |
 |:------------------------------------------------------|:-----------------------------------------------|:----------------------------------------------------|
 |                                                       | Ambiguous or Incomplete command                |                                                     |
 | All configured authentication methods failed          | Authentication error                           | Unable to authenticate to the destination host      |
@@ -17,7 +17,7 @@
 |                                                       | Invalid command                                |                                                     |
 |                                                       | No credentials provided                        |                                                     |
 |                                                       | Parsing command failure                        |                                                     |
-|                                                       | Parsing failures (pre command)                 |                                                     |
+|                                                       | Parsing failures (per command)                 |                                                     |
 |                                                       | Possible device issue (during command mapping) |                                                     |
 |                                                       | Possible device issue (during parsing)         |                                                     |
 |                                                       | Possible device issue (during task mapping)    |                                                     |

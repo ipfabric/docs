@@ -179,7 +179,7 @@ Before you begin the deployment, please note the following:
 
 18. There is a bug in the latest version and you will need to setup `traceroute` in the IPFabric in order to run Discovery. `traceroute` must be setup to -- `127.0.0.1/32`. This is going to be fixed in the future.
 
-    ![AWS tranceroute](aws_traceroute.png)
+    ![AWS traceroute](aws_traceroute.png)
 
 ---
 

@@ -6,5 +6,5 @@ To ensure the platform’s good health, it’s highly recommended to run the Sys
 
 Even though the process is very quick, we would recommend performing it at a time when no one is working with the platform, as access is not available during the maintenance.
 
-![schedule_system_maitenance](schedule_system_maitenance.png)
+![schedule_system_maintenance](schedule_system_maitenance.png)
 

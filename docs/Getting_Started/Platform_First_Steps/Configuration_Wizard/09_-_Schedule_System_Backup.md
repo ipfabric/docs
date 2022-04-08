@@ -18,7 +18,7 @@ There are two types of backup:
 
 ## Local backup
 
-Local backup saves database, user and system files locally on a dedicated backup volume. It's highly recommended placing backup volume on different datastore ideally on different physical storage.
+Local backup saves database, user and system files locally on a dedicated backup volume. It's highly recommended placing backup volume on different data store ideally on different physical storage.
 
 !!! info Backup Disk
 
@@ -32,7 +32,7 @@ Local backup saves database, user and system files locally on a dedicated backup
 
 3.  Select size of a new disk
 
-4.  Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different datastore ideally on different physical storage)  
+4.  Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different data store ideally on different physical storage)
 
 ![Add disk](add_disk.png)
 
@@ -40,9 +40,9 @@ Local backup saves database, user and system files locally on a dedicated backup
 
 6.  Launch Remote (Web) Console.
 
-7.  [Reboot](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/79036518/Service+Interfaces) (*Send Ctrl+Alt+Delete* function can be also used) or power on IP Fabric VM.
+7.  [Reboot](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/79036518/Service+Interfaces) (*Send `Ctrl+Alt+Delete`* function can be also used) or power on IP Fabric VM.
 
-8.  During system boot, a *Disk space expansion* wizard appears.  
+8.  During system boot, a *Disk space expansion* wizard appears.
 
 ![Disk expansion](disk_expansion.png)
 
@@ -128,7 +128,7 @@ Both types of backup can be also triggered manually on demand. This is useful fo
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
-1.  Login to admin interface (for example https://ipfabric.example.com:8443)
+1.  Login to admin interface (for example `https://ipfabric.example.com:8443`)
 
 2.  Go to ***Restore or Backup***
 
