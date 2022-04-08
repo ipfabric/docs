@@ -11,9 +11,26 @@
 
 ## 4.3.5+1 (9th March 2022)
 
-###Bug Fixes
+### Bug Fixes
 
 - Routing protocol edges wrong establish to transit fix
+
+### Known issues
+
+  * Discovery with added Vendor API can get stuck and doesn’t finish in some cases. Replicated on NSX-T v2.5, Azure, Meraki
+
+    * ID: NIM-7505, NIM-7479, NIM-7437
+    * Root cause: Unlocked resources after calling unsupported API endpoint
+    * Status: Fixed in 4.4.0 release
+    * Workaround: Stop discovery and disable Vendor API
+
+
+  * When discovery is stopped after collection from devices is done, API will allow other jobs to run - making them run in parallel. It is especially an issue when running maintenance is started immediately because it re-indexes the DB - making caching take really long time. 
+
+    * ID: NIM-7722
+    * Root cause: Discovery allows to run parallel jobs.
+    * Status: Fixed in 4.4.0 release
+    * Workaround: Do not stop discovery job or do not run maintenance (manually or as a scheduled job).
 
 ## 4.3.4+3 (7rd March 2022)
 
