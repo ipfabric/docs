@@ -1,7 +1,5 @@
 # Scanner settings
 
-# Scanner settings
-
 The Scanner intelligently scans the parts of the network which are not
 reachable using standard methods by testing the login (SSH/Telnet) to
 each IP address from IP networks without any discovered device.
