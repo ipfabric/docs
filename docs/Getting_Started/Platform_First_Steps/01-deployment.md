@@ -10,10 +10,10 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 
 1.  Deploy OVA to your vSphere environment as described at [Deploy an OVF or OVA
     Template](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html).
-2.  [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../overview/index.md#operational-requirements).
+2.  [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../Overview/index.md#operational-requirements).
     1.  Change CPU count.
     2.  Change memory size.
-    3.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md)
+    3.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md)
 3.  Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
 
 ## Deploying on Hyper-V Virtual Machine
@@ -28,7 +28,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
     ![HyperV Import](hyperv_import.png)
 
 5.  Wait until import process ends.
-6.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../overview/index.md#operational-requirements)). Right click on VM -- choose **Settings**:
+6.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)). Right click on VM -- choose **Settings**:
 
     ![HyperV Settings](hyperv_settings.png)
 
@@ -44,7 +44,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
         ![HyperV Setting disk size](hyperv_settings_disk.png)
 
-    4.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md) if necessary.
+    4.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
     5.  Close VM Settings window
 
@@ -63,19 +63,19 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
 3.  Import `.vmdk` files to Nutanix hypervisor, following Nutanix official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
 
-4.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../overview/index.md#operational-requirements)).
+4.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)).
 
     1.  Change CPU count
     2.  Change memory size
     3.  Extend system disk if necessary
-    4.  [Add a new empty virtual disk](../../IP_Fabric_Settings/system_administration/increase_disk_space.md) if necessary.
+    4.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
 5.  Start VM and check if system starts without any interrupts.
 
 ## Deploying on KVM Virtual Machine
 
 1.  Download `qcow2` system disk to your KVM hypervisor.
-2.  Create a second `qcow2` disk for data with size that corresponds to [your network needs](../overview/index.md#operational-requirements)) with the following command:
+2.  Create a second `qcow2` disk for data with size that corresponds to [your network needs](../Overview/index.md#operational-requirements)) with the following command:
 
     ```shell
     qemu-img create -f qcow2 ipfabric-data.qcow2 10G # (up to 920G for 20 000 devices)
@@ -91,7 +91,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
 5.  This command also starts up just created VM.
 
-6.  Additionally, you can create and add a new empty virtual disk if [needed](../../IP_Fabric_Settings/system_administration/increase_disk_space.md).
+6.  Additionally, you can create and add a new empty virtual disk if [needed](../../System_Administration/increase_disk_space.md).
 
 ## Deploying to Amazon AWS EC2 instance
 

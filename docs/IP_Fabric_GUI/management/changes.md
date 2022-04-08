@@ -2,17 +2,17 @@
 
 ## Overview
 
-**Snapshots** at different time intervals **can be compared to find
-dynamic changes in the network** when a snapshot of the network
+*Snapshots* at different time intervals can be compared to find
+dynamic changes in the network when a snapshot of the network
 (discovery run) completes successfully.
 
-**To enable a periodic discovery run** check the [*Timed
-Snapshots*](../../IP_Fabric_Settings/Settings_UI/advanced/snapshots.md) configuration.
+*To enable a periodic discovery run* check the [Timed
+Snapshots](../../IP_Fabric_Settings/advanced/snapshots.md) configuration.
 
-## Comparing changes    
+## Comparing changes
 
-To control changes between two discovery runs, go to ***Management →
-Changes***.
+To control changes between two discovery runs, go to *Management →
+Changes*.
 
 First select the more distant point in time (older snapshot) and then
 select the second step point after the first one (newer snapshot).
