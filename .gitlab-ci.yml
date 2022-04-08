@@ -1,6 +1,7 @@
 variables:
   GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i .ssh/gitlab-ci"
   GIT_STRATEGY: clone
+  VALE_RELEASE: "https://github.com/errata-ai/vale/releases/download/v2.15.5/vale_2.15.5_Linux_64-bit.tar.gz"
 
 image: python
 
@@ -26,6 +27,9 @@ strict_build_mr:
     - merge_requests
   script:
     - export DOC_TARGET=`mktemp -d`
+    - curl --fail -L -o /tmp/vale.tar.gz "$VALE_RELEASE"
+    - tar -C /tmp -zxvf /tmp/vale.tar.gz
     - pip install -r requirements.txt
     - mkdocs build -d "$DOC_TARGET" --strict
+    - /tmp/vale docs
     - rm -rf "$DOC_TARGET"

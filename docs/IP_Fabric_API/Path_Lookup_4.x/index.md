@@ -4,12 +4,12 @@ This post is intended to explain the use of the IP Fabric Path Lookup API reques
 
 ## Python SDK
 
-For IP Fabric version `4.0.x` - `4.2.x` diagraming has been built into `python-ipfabric`
+For IP Fabric version `4.0.x` - `4.2.x` diagramming has been built into `python-ipfabric`
 
 - [https://github.com/community-fabric/python-ipfabric](https://github.com/community-fabric/python-ipfabric)
 - `pip install ipfabric`
 
-For IP Fabric version 4.3.x diagraming has been built into `python-ipfabric-diagrams` and is the recommended method for graphing via the API.
+For IP Fabric version 4.3.x diagramming has been built into `python-ipfabric-diagrams` and is the recommended method for graphing via the API.
 
 - [https://github.com/community-fabric/python-ipfabric-diagrams](https://github.com/community-fabric/python-ipfabric-diagrams)
 - `pip install ipfabric-diagrams`
