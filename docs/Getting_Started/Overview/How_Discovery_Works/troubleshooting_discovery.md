@@ -179,12 +179,12 @@ hostnames.
 This table shows you unmanaged neighbors based many protocols and has a
 built-in default Intent Check for you.
 
-- **RED:** Provides a list of unmanaged CDP/LLDP neighbors
+- <span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP neighbors
   (`cdp|lldp|mndp`). This does not provide you with the remote
   hostname which is why it is recommended to look at this table
   second.
 
-- **AMBER:** Is a list of unmanaged Interior Gateway Protocols
+- <span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior Gateway Protocols
   (`eigrp|ospf|rip|isis|pim|vxlan|cef`). It is specified as such
   because if you have a neighbor adjacency with an iGP it is assumed
   it is under the control of your network.
@@ -192,10 +192,10 @@ built-in default Intent Check for you.
     !!! tip
         Check this table for help locating rogue devices in your network.
 
-- **BLUE:** Is the default rule if the protocol does not match any
+- <span style="color: blue;">BLUE</span>: Is the default rule if the protocol does not match any
   other regex.
 
-- **GREEN:** Is defined for the Exterior Gateway Protocol BGP.
+- <span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway Protocol BGP.
 
 ### Auditing using an External Network Management System
 
