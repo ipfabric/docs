@@ -12,12 +12,6 @@
 
 **Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `“master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Checkpoint firewalls.
 
-## Commands including `bash` require admin rights
-
-** Known Affected Software Versions**: All
-
-**Result**: Commands `run util bash -c uptime` for device uptime and `run util bash -c "ntpq -np"` for NTP peer server communications will not run without [administration permissions.](https://api-u.f5.com/support/kb-articles/K10272?pdf)
-
 ## Discovery of Security Policies
 
 -   Wildcard & Dynamic objects and negated services are not supported
