@@ -1,2 +1,0 @@
-webpackJsonp([0xc89a7a42ebd1],{406:function(s,a){s.exports={pathContext:{task:{taskName:"EXTENDERS",description:"Fabric Extenders Chassis"},commands:[{uid:"cisco@nx-os",vendor:"cisco",family:"nx-os",cmd:"show fex detail",note:null,auth:null,taskName:"EXTENDERS"}]}}}});
-//# sourceMappingURL=path---commands-task-extenders-1041a92dbd10f2254f5c.js.map
