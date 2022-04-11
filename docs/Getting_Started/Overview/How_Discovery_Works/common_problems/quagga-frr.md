@@ -1,9 +1,7 @@
-# How To Configure Quagga/FRR To Work With IP Fabric
+# Configuring Quagga/FRR To Work With IP Fabric
 
 When running discovery, IP Fabric needs to connect directly to the
-device console.
-
-Because of that, to discover Quagga/FRR devices, a separate user with a
+device console. Because of that, to discover Quagga/FRR devices, a separate user with a
 specific shell needs to be created on a device.
 
 Quagga/FRR shell usually runs in `/usr/bin/vtysh`.
@@ -15,7 +13,5 @@ as follows in the bash:
 useradd -s /usr/bin/vtysh username
 ```
 
-Afterwards, you will be prompted to set up a password.
-
-Add this username and password to IP Fabric credentials used for
+Afterwards, you will be prompted to set up a password. Add this username and password to IP Fabric credentials used for
 discovery.
