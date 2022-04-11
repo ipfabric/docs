@@ -49,7 +49,7 @@ After the snapshot is taken, there might be some devices not showing in
 the discovery table. You can then go through [the Summary of
 Issues/Connectivity Report tables to see where this device in the
 discovery process
-failed](../Getting_Started/Overview/How_Discovery_Works/common_problems/Fine-Tune_SSH_telnet_CLI_parameters.md).
+failed](../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet.md).
 
 Each connection attempt -- successful or unsuccessful is logged (see the
 following picture). Log for each device can be found in the Connectivity
