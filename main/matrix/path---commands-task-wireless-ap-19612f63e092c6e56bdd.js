@@ -1,0 +1,2 @@
+webpackJsonp([34636460441826],{525:function(e,s){e.exports={pathContext:{task:{taskName:"Wireless - AP",description:"Standalone wireless AP information"},commands:[{uid:"cisco@meraki",vendor:"cisco",family:"meraki",cmd:"GET /networks/{networkId}/devices/{sn}/wireless/status",note:null,auth:null,taskName:"Wireless - AP"}]}}}});
+//# sourceMappingURL=path---commands-task-wireless-ap-19612f63e092c6e56bdd.js.map
