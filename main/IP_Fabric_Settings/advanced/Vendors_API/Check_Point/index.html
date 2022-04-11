@@ -2184,40 +2184,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Check Point
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Check Point
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#check-point_1" class="md-nav__link">
-    Check Point
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3625,21 +3594,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#check-point_1" class="md-nav__link">
-    Check Point
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3653,32 +3607,15 @@
 
 
 <h1 id="check-point">Check Point</h1>
-<h2 id="check-point_1">Check Point</h2>
-<p>We use API only to collect information that cannot be retrieved from CLI logs.</p>
-<p>To discover CheckPoint devices, CLI access also needs to be available.</p>
-<p>Checkpoint requires the following settings to be applied:</p>
+<p>We use API only to collect information that cannot be retrieved from CLI logs. To discover CheckPoint devices, CLI access also needs to be available. Checkpoint requires the following settings to be applied:</p>
 <ul>
-<li>
-<p>API Key - Available in version R80.40 and above (API v1.6). To generate the key, use CheckPoint SmartConsole, and select "API Key" as user's Authentication method <strong>or</strong></p>
-</li>
-<li>
-<p>Username - Username to access API data</p>
-</li>
-<li>
-<p>Password - Password to access API data  </p>
-</li>
-<li>
-<p>Base URL - Base URL for API calls
-    (ie: <a href="https://management.server.domain.tld">https://management.server.domain.tld).</a> If  the API isn't available on the default port 443, add a port part to the URL (ie: <a href="https://server:4443/">server:4443</a>)</p>
-</li>
-<li>
-<p>Collect following domains - Mandatory only if the "Base URL" points to a Multi-Domain Server. Please verify, that all selected domains can be accessed by the provided credentials.  </p>
-</li>
+<li>API Key -- Available in version R80.40 and above (API v1.6). To generate the key, use CheckPoint SmartConsole, and select "API Key" as user's Authentication method <strong>or</strong></li>
+<li>Username -- Username to access API data</li>
+<li>Password -- Password to access API data  </li>
+<li>Base URL -- Base URL for API calls, for example <code>https://management.server.domain.tld</code>. If the API isn't available on the default port 443, add a port part to the URL (<code>https://server:4443/</code>)</li>
+<li>Collect following domains - Mandatory only if the "Base URL" points to a Multi-Domain Server. Please verify, that all selected domains can be accessed by the provided credentials.  </li>
 </ul>
-<p>Don't forget to add IPF appliance to the list of allowed clients.
-In SmartConsole, go to Manage &amp; Settings --&gt; Blades and click on "Advanced Settings..." in the “Management API“ section to verify, from where are API calls allowed.
-In case that you use setting "All IP addresses that can be used for GUI clients", don't forget to add IPF appliance address to Manage &amp; Settings --&gt; Permissions &amp; Administrators --&gt; Trusted Clients.
-In case you use Multi-Domain server, all necessary settings are in Multi Domain menu (ie: Multi Domain --&gt; Blades)</p>
+<p>Don't forget to add IPF appliance to the list of allowed clients. In SmartConsole, go to Manage &amp; Settings --&gt; Blades and click on "Advanced Settings..." in the "Management API" section to verify, from where are API calls allowed. In case that you use setting "All IP addresses that can be used for GUI clients", don't forget to add IPF appliance address to Manage &amp; Settings --&gt; Permissions &amp; Administrators --&gt; Trusted Clients. In case you use Multi-Domain server, all necessary settings are in Multi Domain menu (ie: Multi Domain --&gt; Blades)</p>
 
               
             </article>
