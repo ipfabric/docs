@@ -19,6 +19,7 @@ build_main_pages:
   script:
     - pip install -r requirements.txt
     - git fetch origin gh-pages --depth=1
+    - cat main_preamble.md docs/index.md > docs/index.md.tmp && mv docs/index.md.tmp docs/index.md
     - mike deploy --push main
 
 strict_build_mr:
