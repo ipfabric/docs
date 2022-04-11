@@ -130,7 +130,7 @@ Please see [SSH/TELNET](../../../IP_Fabric_Settings/advanced/SSH_telnet.md) for 
 
 ![](troubleshooting/2953740315.png)
 
-Please see [Vendors API](../../../IP_Fabric_Settings/advanced/vendors_api/index.md) as each vendor has different
+Please see [Vendors API](../../../IP_Fabric_Settings/advanced/Vendors_API/index.md) as each vendor has different
 requirements.
 
 ### Settings > Authentication

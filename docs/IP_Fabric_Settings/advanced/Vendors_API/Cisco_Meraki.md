@@ -1,20 +1,15 @@
 # Cisco Meraki
 
-## Cisco Meraki
-
 Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for Cisco Meraki.
 
-### Meraki requires the following settings to be applied:
+## Meraki requires the following settings to be applied:
 
- - **API key** - Generated in Meraki dashboard
+- **API key** - Generated in Meraki dashboard
+- **Organizations ID** - You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used
+- **Version** - Meraki currently provides only a v0 version of their API. This version has a lot of limitations (Meraki known issues)
+- **Base URL** - URL is supported in the following format [https://nXYZ.meraki.com/api](https://nXYZ.meraki.com/api). Be aware that the dashboard can redirect communication to a different URL
 
- - **Organizations ID** - You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used
-
- - **Version** - Meraki currently provides only a v0 version of their API. This version has a lot of limitations (Meraki known issues)
-
- - **Base URL** - URL is supported in the following format [https://nXYZ.meraki.com/api](https://nXYZ.meraki.com/api). Be aware that the dashboard can redirect communication to a different URL
-
-### Management IP for Cisco Meraki
+## Management IP for Cisco Meraki
 
 For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices
 
