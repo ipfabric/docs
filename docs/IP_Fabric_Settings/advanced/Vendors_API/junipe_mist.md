@@ -10,21 +10,21 @@ To add Juniper Mist to discovery global settings, go to **Settings → Advanced 
 
 1) Login to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
 
-![login](mist_login.png)
+![login](mist/mist_login.png)
 
-![main gui](mist_gui.png)
+![main gui](mist/mist_gui.png)
 
 2) Once logged in you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
 
-![](mist_api_token.png)
+![](mist/mist_api_token.png)
 
 3) Once generated, the API token can be used in the IP Fabric GUI.
 
-![](mist_api_create.png)
+![](mist/mist_api_create.png)
 
 4) Fill in login details in the **Settings → Advanced → Vendors API** menu pressing the **+Add** button in the IP Fabric:
 
-![](mist_ipf_settings.png)
+![](mist/mist_ipf_settings.png)
 
 ##Known issues
 
