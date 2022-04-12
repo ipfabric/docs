@@ -9,6 +9,82 @@
       - Mac/Apple: Apple + R or command + R
       - Linux: CTRL + F5
 
+## 4.4.0+6 (11th April 2022)
+
+!!! warning "Breaking change -- How is `sn` created for virtual contexts"
+
+    We needed to unify the way how is the device `sn` (Serial Number)
+    constructed for devices with virtual context. Following vendors are
+    affected with the change:
+
+      - Cisco ASA with virtual contexts
+      - Cisco WLC with system access point
+      - Cisco NX-OS with VDC
+      - Fortigate with VDOM
+    
+    In 4.4.0 we are migrating device attributes that are necessary for manual site separation but we are not able to migrate snapshots from the older versions. Therefore sites in the older snapshots can be wrong if manual site separation was used. Also, if you compare a snapshot in a version higher or equal to 4.4.0 with a snapshot in a lower version than 4.4.0 that includes affected devices then you might encounter false-positive changes in the snapshot comparison.
+
+!!! important "Changes in licensing model"
+
+    Please note the changes in licensing model. Devices discovered via APIs are
+    going to consume license similarly to the physical devices (except Access
+    Points). You can find more information at the [dedicated licensing
+    page](../Getting_Started/Overview/licensing.md).
+
+### New Vendor Support
+
+- Added support for Cisco Viptela cEdge
+- Added support for Juniper Mist
+- Added support for Ruckus Virtual Smartzone
+
+### Features -- Protocol and technology support
+
+- HP ArubaCX -- added support for AAA.
+- HP ArubaCX -- added parsing for SNMP configuration.
+- HP ArubaCX -- Added parsing VXLAN info.
+- Extreme XOS -- Add support for AAA.
+- Cisco Viptela -- added cEdge support. If cEdge is discovered via cli, discovery ends and notify, that API discovery should be used.
+- Cisco -- Added information about device licenses. Tables located at *Technology / Management / License*.
+- Added data for Virtual Machines deployed in the network (AWS, Azure, VMware). Tables are located at *Technology / Cloud*.
+- Add additional interface counters to most of the vendors. Table are located at *Technology / Interfaces / Counters*.
+- Add new table ACL global policies located at *Technology / Security / ACL / Global ACL policies*.
+
+### Bug Fixes
+
+- The discovery process for vendors processed via API can get stuck -- fixed.
+- VLAN L3 gateway table -- Access points are removed as they produce false-positive gateways.
+- Routing protocols destination interface fix -- path lookup multicast routing was broken because of this.
+- The data from global tables are available also when running snapshot is selected.
+- Snapshot attributes are now copied when a snapshot is cloned.
+- Loading a snapshot could sometimes cause an `Unexpected end of JSON input` error and then the snapshot will get corrupted. The root cause has been fixed.
+- Arista EOS -- Fixed false positive error emitting from `show interfaces vxlan 1`.
+- Azure -- fixed mapping of network interfaces without MAC address.
+- Brocade Fastiron -- Improved parsing hostname from prompt.
+- Cisco -- fixed host table for devices reachable with LISP.
+- Cisco -- fixed parsing of PIDs containing plus symbol in command `show inventory`.
+- Cisco FTD -- `commands/cisco/routingTable` -- fixed parsing for null summarized routes.
+- Cisco IOS -- removed text `, wildcard bits` from texts in standard ACL.
+- Cisco IOS-XE -- fixed parsing of rebuild version.
+- Cisco IOS-XE -- fixed parsing of power supply and fans on Catalyst 9200/9300/9500.
+- Cisco IOS/IOS-XE -- Fix transport protocol (telnet) detection.
+- Cisco NX-OS -- fixed matching of MAC Addresses interface reference (fabric path) to real interface.
+- Cisco NX-OS -- add parsing of port-channel interfaces without members.
+- Cisco Meraki, Juniper Mist, Ruckus -- fixed device’s type detection to ensure wireless APs are detected properly.
+- Extreme XOS -- fixed parsing of l2Interfaces of missing interfaces.
+- Fortinet FortiGate -- fixed executing of cmd `get system password-policy` on VDOM enabled firewalls.
+- Fortinet FortiGate -- Fixed missing FQDN in firewall policies unless configured in lower case.
+- Fortinet Fortigate -- fixed parsing of `get router info ospf nei detail` for NSSA cases.
+- HP Aruba switch -- added parsing of port information.
+- HP ArubaCX -- fixed parsing of IGMP query interval.
+- HP Comware -- fixed parsing of `display lldp neighbor-information verbose`
+- HP Comware -- fixed parsing of `display stp region-configuration` in case vlans list is on multiple lines.
+- Juniper Junos -- access-internal routes were removed from routing table.
+- Palo Alto -- fixed parsing of empty applications/services in security rules.
+- Palo Alto -- fixed parsing of `show high-availability state` for suspended state.
+- Versa VOS -- `commands/versa/_vos/vnms/dashboard/appliance/sdWanSites` -- fixed mapping for unsupported IPv6 links.
+- Versa VOS -- VRRP -- Allow virtual IP for instances in `Init` status.
+- VMware -- NSX-T -- fixed discovery for T0/T1 routers.
+
 ## 4.3.5+1 (9th March 2022)
 
 ### Bug Fixes
