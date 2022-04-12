@@ -7,7 +7,7 @@ at ***Settings → Advanced → Snapshots → Timed Snapshots.***
 Here is an example for an automatic discovery run at *10 minutes past
 every hour* (0:10; 1:10; 2:10; 3:10, etc.).
 
-![Timed Snapshots](102564017.png)
+![Timed Snapshots](snapshots/102564017.png)
 
 **How scheduling work in IPF:**
 
@@ -16,14 +16,14 @@ takes 4h:20min to be created, then the next snapshot will be scheduled
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.
 
-![Timed Snapshots](1405059074.jpg)
+![Timed Snapshots](snapshots/1405059074.jpg)
 
 ##  Snapshot Retention Rules (from version 4.1)
 
 We added support for various snapshot retention policies in IP Fabric
 version 4.1.
 
-![Timed Snapshots](2790883329.png)
+![Timed Snapshots](snapshots/2790883329.png)
 
 ### How Does the Snapshot Retention Work
 

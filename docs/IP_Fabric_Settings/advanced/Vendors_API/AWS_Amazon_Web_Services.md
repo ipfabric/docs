@@ -8,23 +8,23 @@ key from your AWS account.
 Those keys can be found/generated under your account in the AWS
 dashboard.
 
-![AWS Management Console](2691596295.png)
+![AWS Management Console](aws/2691596295.png)
 
 Click on “My Security Credentials” and open “Access keys” tab.
 
-![AWS - Your Security Credentials](2691596301.png)
+![AWS - Your Security Credentials](aws/2691596301.png)
 
 To generate keys click on “Create New Access Key” and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.
 
-![AWS - Create Access Key](2691596307.png)
+![AWS - Create Access Key](aws/2691596307.png)
 
 Copy those keys to the AWS API settings in your IP Fabric and don't
 forget to **fill the region where the devices which you want to discover
 are**.
 
-![Add Connection](2691596313.png)
+![Add Connection](aws/2691596313.png)
 
 !!! info
     To ensure that IP Fabric can retrieve all the required data to model the
@@ -47,4 +47,4 @@ a secret access key, and a security token. Typically, you use
 `AssumeRole` within your account or for cross-account access. For more
 information about AssumeRole see [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
-![Add Connection With AssumeRole](2913828865.png)
+![Add Connection With AssumeRole](aws/2913828865.png)

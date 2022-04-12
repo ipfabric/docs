@@ -28,23 +28,23 @@ Local backup saves database, user and system files locally on a dedicated backup
 1. Select size of a new disk.
 1. Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different datastore ideally on different physical storage).
 
-    ![New disk](new_virtual_disk.png)
+    ![New disk](system_backup/new_virtual_disk.png)
 
 1. Finish configuration wizard.
 1. Launch Remote (Web) Console.
 1. Reboot (*Send Ctrl+Alt+Delete* function can be also used) or power on IP Fabric VM.
 1. During system boot, a *Disk space expansion* wizard appears.
 
-    ![Disk space expansion extend](disk_space_expansion_extend.png)
+    ![Disk space expansion extend](system_backup/disk_space_expansion_extend.png)
 
 1. Select *Yes* to start disk space expansion.
 1. Expand the new volume as a backup (Backup is used only for local backups).
 
-    ![Choose drive expansion backup](choose_drive_expansion_backup.png)
+    ![Choose drive expansion backup](system_backup/choose_drive_expansion_backup.png)
 
 1. Selected volume is extended.
 
-    ![Disk space expansion extended](disk_space_expansion_extended.png)
+    ![Disk space expansion extended](system_backup/disk_space_expansion_extended.png)
 
 1. Hit *OK*
 
@@ -59,7 +59,7 @@ To schedule automatic local backups do the following steps:
 1. Set a backup schedule. See example for "Every day at 3:00".
 1. Enable backup.
 
-![Schedule local backup](schedule_local_backup.png)
+![Schedule local backup](system_backup/schedule_local_backup.png)
 
 ## Remote backup
 
@@ -79,7 +79,7 @@ To set up remote backup do the following steps:
 1. Go to *Settings → Advanced → System → Schedule system backup*.
 1. Enable backup.
 1. Set a backup schedule. See example for "Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)".
-    ![backup schedule](backup_schedule.png)
+    ![backup schedule](system_backup/backup_schedule.png)
 1. Change *Destination* to `FTP` or `SFTP`.
 1. Enter remote FTP/SFTP *Server* FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.
 1. Enter *Username* to access FTP/SFTP server.

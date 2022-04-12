@@ -6,7 +6,7 @@ Discovery creates a snapshot of the network, finding all active network infrastr
 
 The process is controlled from the discovery tab of the web user interface using the (start) and (stop) buttons.
 
-![start](start.png) ![stop](stop.png)
+![start](cli_discovery/start.png) ![stop](cli_discovery/stop.png)
 
 The timing of the network discovery snapshots can be automated in **Settings → Advanced → Snapshots** to collect data in periodic intervals or at a specific time. It is recommended to do a network discovery at least once a day to record all network changes.
 
@@ -14,7 +14,7 @@ The timing of the network discovery snapshots can be automated in **Settings →
 
 A connection to every attempted address either succeeds or is recorded in the Connectivity Report
 
-![Connectivity Report](connectivity_report.png)
+![Connectivity Report](cli_discovery/connectivity_report.png)
 
 which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure messages denote an unsuccessful login attempt and provide a description of how the device has responded.
 
@@ -31,7 +31,7 @@ The selected number of megabits per second also controls the number of simultane
 
 Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to login to the default gateway and to responders of ICMP probes returning from the traceroute to the `10.0.0.0` network address.
 
-![discovery process](discovery.png)
+![discovery process](cli_discovery/discovery.png)
 
 After a successful login, discovery reads the network protocol state tables and looks for known neighbours, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbour information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
 
