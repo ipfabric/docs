@@ -44,8 +44,10 @@ Appliance disk space can be extended by extending existing virtual disk or by ad
     ![VMWare disk space expansion](vmware_disk_space_expansion.png)
 10. Select _Yes_ to start disk space expansion.
 11. Select which volume to extend:
-    1.  System volume is used for all data except local backups.
-    2.  Backup is used only for local backups.
+    1. System volume is used for all data except local backups.
+    ![Choose drive expansion system](choose_drive_expansion_system.png)
+    2. Backup is used only for local backups.
+    ![Choose drive expansion backup](choose_drive_expansion_backup.png)
 12. Selected volume is extended.
     ![VMWare disk space expanded](vmware_disk_space_expanded.png)
 13. Enter *OK*
@@ -91,8 +93,10 @@ Appliance disk space can be extended by extending existing virtual disk or by ad
     ![VMWare disk space expansion](vmware_disk_space_expansion.png)
 12. Select **_Yes_** to start disk space expansion.
 13. Select which volume to extend:
-    1.  System volume is used for all data except local backups.
-    2.  Backup is used only for local backups.
+    1. System volume is used for all data except local backups.
+    ![Choose drive expansion system](choose_drive_expansion_system.png)
+    2. Backup is used only for local backups.
+    ![Choose drive expansion backup](choose_drive_expansion_backup.png)
 14. Selected volume is extended.
     ![VMWare disk space expanded](vmware_disk_space_expanded.png)
 15. Enter **_OK_**
