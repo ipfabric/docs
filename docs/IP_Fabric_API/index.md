@@ -2,7 +2,7 @@
 
 The following API endpoints are available in IP Fabric. Descriptions and
 allowed methods are coming soon. For more information about IP Fabric
-API, please, read: <https://docs.ipfabric.io/api/>
+API, please visit [generated IP Fabric API documentation](../api/index.html).
 
 ## Technology Table Endpoints
 
