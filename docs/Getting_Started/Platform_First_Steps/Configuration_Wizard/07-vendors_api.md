@@ -12,6 +12,7 @@ Meraki requires the following settings to be applied:
 ### Management IP for Cisco Meraki
 
 For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices
+
 ```
 LAN IP is considered to have the highest priority
   setIps('lanIp');
@@ -24,7 +25,7 @@ publicIp has the lowest priority
 ```
 
 !!! info 
-    PublicIP parameter can be duplicit as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.
+    `PublicIP` parameter can have multiple occurrences as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.
 
 To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:
 ![Meraki API](vendors_api_meraki.png)
@@ -58,7 +59,7 @@ Checkpoint requires the following settings to be applied:
 
 - API Key - Available in version R80.40 and above (API v1.6). To generate the key, use CheckPoint SmartConsole, and select "API Key" as user's Authentication method **or**
 
-- Username - Usernam to access API data
+- Username - Username to access API data
 - Password - Password to access API data
 
 - Base URL - Base URL for API calls `https://management.server.domain.tld`. If the API isn't available on the default port 443, add a port part to the URL (ie: `https://server:4443/`).
@@ -164,7 +165,7 @@ Afterward, choose NSX-T API from the list and fill in
 - Forwarding policies - planned to add in upcoming releases
 - VPN services
 - NAT
-- EVPN Vxlans
+- EVPN VXLANs
 
 ### External connectivity
 We are supporting both external connectivity protocols, which are implemented in NSX-T, and of course static routes. External connectivity can be done only on Tier-0 routers.
