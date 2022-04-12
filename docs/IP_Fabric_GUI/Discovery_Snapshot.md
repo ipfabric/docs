@@ -22,13 +22,13 @@ Information about the network displayed in IP Fabric corresponds to the
 network snapshot selected in the Snapshot selector drop-down menu in the
 top left corner of the Main User Interface.
 
-![Current snapshot](current_snapshot.png)
+![Current snapshot](snapshots/current_snapshot.png)
 
 ## Available Snapshot Operations
 
 ### New Snapshot
 
-![New snapshot](new_snapshot.png)
+![New snapshot](snapshots/new_snapshot.png)
 
 During the initial configuration of the IP Fabric VM, automatic
 snapshots can be scheduled. Initial snapshot of the network may not
@@ -43,7 +43,7 @@ credentials, etc. -- it needs to be done before a new snapshot is taken.
 
 ### Inspection of Network Issues
 
-![Connectivity report and summary of issues](connectivity_report.png)
+![Connectivity report and summary of issues](snapshots/connectivity_report.png)
 
 After the snapshot is taken, there might be some devices not showing in
 the discovery table. You can then go through [the Summary of
@@ -57,7 +57,7 @@ Report. These logs are especially helpful when an error occurs. By
 examining them you can find the reason why the device wasn't correctly
 or fully discovered or what led to a connection failure.
 
-![Discovery connectivity report](discovery_connectivity_report.png)
+![Discovery connectivity report](snapshots/discovery_connectivity_report.png)
 
 ### Add a New Device/Changing Snapshot Settings
 
@@ -72,7 +72,7 @@ network seed, login credentials, etc.) in order to add a new device to
 an existing snapshot, you need first to change settings for that
 particular snapshot and then add a new device.
 
-![Snapshot add device](snapshot_add_device.png)
+![Snapshot add device](snapshots/snapshot_add_device.png)
 
 ### Lock Snapshot
 
@@ -81,7 +81,7 @@ into the memory. By locking a snapshot, IP Fabric won’t unload the
 selected snapshot automatically to the hard disk and it will keep it in
 the memory.
 
-![Snapshot lock](snapshot_lock.png)
+![Snapshot lock](snapshots/snapshot_lock.png)
 
 ### Unload/load Snapshot
 
@@ -96,23 +96,23 @@ the data from a snapshot cannot be accessed directly through the IP
 Fabric user interface. To browse an unloaded snapshot, it needs to be
 loaded again to the memory by "Load snapshot".
 
-![Snapshot load](snapshot_load.png)
+![Snapshot load](snapshots/snapshot_load.png)
 
 button accessible on an unloaded snapshot.
 
-![Snapshot unload](snapshot_unload.png)
+![Snapshot unload](snapshots/snapshot_unload.png)
 
 ### Download Snapshot
 
 If needed, a selected snapshot can be downloaded directly from IP Fabric
 to your hard drive by the "Download snapshot" button.
 
-![Snapshot download](snapshot_download.png)
+![Snapshot download](snapshots/snapshot_download.png)
 
 This snapshot can be loaded back to the IP Fabric platform by a “Load
 From File” button.
 
-![Snapshot load from file](snapshot_load_from_file.png)
+![Snapshot load from file](snapshots/snapshot_load_from_file.png)
 
 ### Clone Snapshot
 
@@ -121,13 +121,13 @@ snapshot" button. This is handy in case you want to make some changes to
 the snapshot (adding a device etc.) but you want to keep the original
 file as a backup.
 
-![Snapshot clone](snapshot_clone.png)
+![Snapshot clone](snapshots/snapshot_clone.png)
 
 ### Delete Snapshot
 
 Snapshots can be deleted by the "Delete snapshot" button.
 
-![Snapshot delete](snapshot_delete.png)
+![Snapshot delete](snapshots/snapshot_delete.png)
 
 ### Related Articles
 
