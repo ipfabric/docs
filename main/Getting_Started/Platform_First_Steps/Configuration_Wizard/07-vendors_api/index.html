@@ -3990,7 +3990,7 @@ Meraki requires the following settings to be applied:
 - Version - Meraki currently provides only a v0 version of their API. This version has a lot of limitations (<a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/968032257/Meraki">Meraki known issues</a>)
 - Base URL - URL is supported in the following format https://nXYZ.meraki.com/api. Be aware that the dashboard can redirect communication to a different URL</p>
 <h3 id="management-ip-for-cisco-meraki">Management IP for Cisco Meraki</h3>
-<p>For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices
+<p>For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices</p>
 <div class="highlight"><pre><span></span><code>LAN IP is considered to have the highest priority
   setIps(&#39;lanIp&#39;);
 wan1Ip has the 2nd highest priority
@@ -3999,10 +3999,10 @@ wan2Ip has the 3rd highest priority
   setIps(&#39;wan2Ip&#39;);
 publicIp has the lowest priority
   setIps(&#39;publicIp&#39;);
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>PublicIP parameter can be duplicit as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.</p>
+<p><code>PublicIP</code> parameter can have multiple occurrences as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.</p>
 </div>
 <p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:
 <a data-featherlight="../vendors_api_meraki.png" href="#"><img alt="Meraki API" src="../vendors_api_meraki.png" /></a></p>
@@ -4037,7 +4037,7 @@ To discover CheckPoint devices, CLI access is essential as well.</p>
 <p>API Key - Available in version R80.40 and above (API v1.6). To generate the key, use CheckPoint SmartConsole, and select "API Key" as user's Authentication method <strong>or</strong></p>
 </li>
 <li>
-<p>Username - Usernam to access API data</p>
+<p>Username - Username to access API data</p>
 </li>
 <li>
 <p>Password - Password to access API data</p>
@@ -4169,7 +4169,7 @@ regions.</p>
 <li>Forwarding policies - planned to add in upcoming releases</li>
 <li>VPN services</li>
 <li>NAT</li>
-<li>EVPN Vxlans</li>
+<li>EVPN VXLANs</li>
 </ul>
 <h3 id="external-connectivity">External connectivity</h3>
 <p>We are supporting both external connectivity protocols, which are implemented in NSX-T, and of course static routes. External connectivity can be done only on Tier-0 routers.
