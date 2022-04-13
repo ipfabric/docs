@@ -16,13 +16,6 @@ is not considered a site boundary, so unmanaged infrastructure is
 reconstructed from the probes. The specific method of site boundary
 calculation can be changed in the settings.
 
-The site inventory also enables the renaming of the site. To rename the site,
-select the site from the list and then click on the "Rename Site" button in the
-pop-up menu above the table. In the popup box, enter the desired site name and
-click "Save".
-
-![Renaming the site](inventory_site.png)
-
 An unknown site is either a collection of isolated devices or when a
 device forms a single-device site.
 

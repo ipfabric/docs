@@ -1,4 +1,4 @@
-# Site Separation From 4.3 
+# Site Separation
 
 ## Regular Expression Site Separation
 
@@ -42,13 +42,13 @@ You can also test SNMP location rules:
 
 ![SNMP location](site_separation/2896330753.png)
 
-### RegEx example:
+!!! example "RegEx example"
 
-We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as `^([a-zA-Z]\\d{1,3})`. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator **or**. Following example will match one of 3 options:
+    We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as `^([a-zA-Z]\\d{1,3})`. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator **or**. Following example will match one of 3 options:
 
-```
-^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
-```
+    ```
+    ^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
+    ```
 
 ## Device Neighborship
 
@@ -87,9 +87,7 @@ The dropdown is intuitive and will let you search based on SN or hostname. Curre
 
 This is the preferred method of creating rules as it allows for bulk importing. Via `PUT` verb on `https://<IPF_URL>/api/v1/attributes/global`. Data looks like
 
-```
-
-
+``` json
 {"attributes": [
   {"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}
 ]
@@ -107,7 +105,7 @@ Rule precedence is defined by the order from top to bottom. So in show example t
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on serial number if a match is found.
 2. Rules you define. In the example above it will check the following
-   1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
-   2. If Hostname matches `^L21` → Site `MPLS`
-   3. If Hostname matches `^(L\d{1,2})` → Site `L2-99`
-3. **Try to assign devices without sites based on device neighborship** (if enabled)
+     1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
+     2. If Hostname matches `^L21` → Site `MPLS`
+     3. If Hostname matches `^(L\d{1,2})` → Site `L2-99`
+4. **Try to assign devices without sites based on device neighborship** (if enabled)
