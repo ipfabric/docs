@@ -9,6 +9,15 @@
       - Mac/Apple: Apple + R or command + R
       - Linux: CTRL + F5
 
+## 4.4.1+1 (13th April 2022)
+
+!!! note
+    If you have already successfully upgraded to 4.4.0, you do not need to apply this release.
+
+### Bug Fixes
+
+- We had a bug in data migration that caused a `unique constraint violated` error.
+
 ## 4.4.0+6 (11th April 2022)
 
 !!! warning "Breaking change -- How is `sn` created for virtual contexts"
