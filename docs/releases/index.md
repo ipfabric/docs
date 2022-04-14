@@ -11,6 +11,11 @@
 
 ## 4.4.1+1 (13th April 2022)
 
+```
+OVA MD5SUM: 0CFD220F2D4BE5AB71D8D33E382C624E
+OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
+```
+
 !!! note
     If you have already successfully upgraded to 4.4.0, you do not need to apply this release.
 
