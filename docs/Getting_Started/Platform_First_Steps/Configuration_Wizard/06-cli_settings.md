@@ -84,7 +84,7 @@ Command Authorization Failure retries
 
 !!! warning
 
-    If you use 0.0.0.0/0 or another subnet that includes your network from which you are connecting to IP Fabric, make sure you put your network to **“Exclude IPv4 subnet”**. Otherwise, your IP connection will be lost and you will have to recover from the console.
+    If you use 0.0.0.0/0 or another subnet that includes your network from which you are connecting to IP Fabric, make sure you put your network to **"Exclude IPv4 subnet"**. Otherwise, your IP connection will be lost and you will have to recover from the console.
 
 ### SSH key configuration
 

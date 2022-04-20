@@ -42,9 +42,9 @@ Controller is the name of the controller where an AP is registered;
 Client MAC is the MAC address of the wireless host, such as a PC,
 tablet, phone, or wireless device; Client IP is the IP address of the
 wireless host, such as a PC, tablet, phone, or a wireless device;
-“In/Out/Bidir bps” is the wireless traffic rate for particular client in
+"In/Out/Bidir bps" is the wireless traffic rate for particular client in
 bits per second for inbound/outbound directions or combined for both
-directions; “In/Out/Bidir pps” is the wireless traffic rate for a client
+directions; "In/Out/Bidir pps" is the wireless traffic rate for a client
 in packets per second for inbound and outbound directions or combined
 for both directions; Signal Strength is the wireless signal strength in
 dB; Signal to Noise Ratio is the wireless signal to noise ratio for the

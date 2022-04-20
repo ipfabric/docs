@@ -179,7 +179,7 @@ OVA SHA256SUM: 2D64A41DF78D3965F70AD80807D788FD12E0F7A1DDCF39A6B23911BF72A8311D
 ### Bug Fixes
 
 - Palo Alto - Fixed discovery of multi vsys firewalls.
-- Mikrotik RouterOS - Fixed parsing of MTU in case it has value ”auto”
+- Mikrotik RouterOS - Fixed parsing of MTU in case it has value "auto"
   in output of command ``/interface print detail`
 - Fortinet FortiGate - Fixed wrongly assigned MAC address to link
   aggregation interfaces on HA primary units
@@ -563,7 +563,7 @@ OVA SHA256SUM: 901018EE369B630CD80C6438B3A4D0C54F0F3D7BCD9156B9F93087C9B5147ECE
 - Fixed filename of downloaded Techsupport file
 - Routing to Cisco ACI pervasive address fix
 - Fortinet FortiGate - prevented to execute command `get system interface transceiver` if transceivers task is disabled
-- Cisco - SUP32 based Catalyst platforms - fixed to use `show ip igmp interface” comman` to gather IGMP snooping interface related
+- Cisco - SUP32 based Catalyst platforms - fixed to use `show ip igmp interface" comman` to gather IGMP snooping interface related
   information
 - Cisco ASA/FTD - added `show failover` command to detect
   Active/Standby status of unit/context in HA cluster
@@ -838,11 +838,11 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - Cisco IOS - Fixed parsing for AAA section from running config.
 - Cisco IOS - fixed parsing of `show power inline` command for cases
   of empty device name
-- Cisco IOS - fixed parsing of ”show version” command in case of
+- Cisco IOS - fixed parsing of "show version" command in case of
   faulty master switch
 - Cisco IOS - Fixed parsing of command `sh ip mroute vrf \<vrfName>`
   that would get translated by the DNS server
-- Cisco IOS - fixed parsing of command ”show ip igmp snooping groups”
+- Cisco IOS - fixed parsing of command "show ip igmp snooping groups"
   in case port list does not contain any interface for a group
 - Cisco IOS - fixed parsing of the different output for command `show ip flow export command`
 - Cisco IOS - fixed parsing of the different output format of command

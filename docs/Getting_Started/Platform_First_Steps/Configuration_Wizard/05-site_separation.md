@@ -34,11 +34,11 @@ Go to **Settings → Site separation** and change **Routing & Switching Domain**
 
 **Transform hostname** is used to normalize site names based on hostname:
 
-- Upper case (default) - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" => result is that both devices in one site named "PRAGUE"
+- Upper case (default) - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `PRAGUE`
 
-- Lower case - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" => result is that both devices in one site named "prague"
+- Lower case - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `prague`
 
-- No transformation - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =>result is that each device has its own site named "PRAGUE" and "prague"
+- No transformation - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that each device has its own site named `PRAGUE` and `prague`
 
 In the last step, introduce the **Regular Expression**. Use [this tool](https://regex101.com) for validation and parentheses to extract the site from the hostname correctly.
 
@@ -91,18 +91,18 @@ Go to **Settings → Site separation** and change **Routing & Switching Domain**
 
 **Transform hostname** is used to normalize site names based on hostname:
 
-- Upper case (default) - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" => result is that both devices in one site named "PRAGUE"
+- Upper case (default) - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `PRAGUE`
 
-- Lower case - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" => result is that both devices in one site named "prague"
+- Lower case - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `prague`
 
-- No transformation - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =>result is that each device has its own site named "PRAGUE" and "prague"
+- No transformation - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that each device has its own site named `PRAGUE` and `prague`
 ![Site separation hostname regex](site_separation_hostname_regex.png)
 
 In this example the regular expression will match items such as PRAGUE-, LONDON-, etc.
 
 ### SNMP Location Regex
 Go to **Settings → Site separation** and change **Routing & Switching Domain** to **RegEx based on SNMP location** or create a new rule by **Add rule** button.
-![Site separation snmp regex](site_separation_snmp_regex.png)
+![Site separation SNMP regex](site_separation_snmp_regex.png)
 ### Testing
 The UI now allows you to edit and test your rules directly in the browser when selecting the **Test rule** option. Here you can see a live preview of devices that will match the regex you created.
 ![Site separation testing](site_separation_testing.png)
@@ -121,12 +121,12 @@ This option will try to define a device based on its neighbor relationship if a 
 ## Manual Site Separation (Device Attributes)
 The Manual Site Separation enables the **Device Attributes** feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.
 
-To configure **Device Attributes** first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings. 
+To configure **Device Attributes** first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.
 ![Site separation manual site separtion](site_separation_manual_site_separation.png)
 ## Device Attributes
 ![Site separation device attributes](site_separation_device_attributes.png)
 
-- **Serial Number is IP Fabric’s “Unique Serial Number” (API column “sn”); this is not the column “Serial Number” which represents the Hardware SN (API column “snHw”)**
+- **Serial Number** is IP Fabric’s "Unique Serial Number" (API column `sn`); this is not the column "Serial Number" which represents the Hardware SN (API column `snHw`)
     - Devices discovered via API can also be assigned using Device Attributes.
 - **Hostname** is populated by IP Fabric when a device matching the **Serial Number** is found
 - **Attribute** is the Device Attribute to assign, since we want to set the Site based on the serial number set it to **Site name**
@@ -144,8 +144,8 @@ This is the preferred method of creating rules as it allows for bulk importing.
 
 Method | PUT
 ---|---
-URL| https://<IPF_URL>/api/v1/attributes/global
-Data | {"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]
+URL| `https://<IPF_URL>/api/v1/attributes/global`
+Data | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]}`
 
 ### Creating Rules with python-ipfabric package
 Please see example located on [Community Fabric GitHub](https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py).
@@ -156,8 +156,9 @@ Please see example located on [Community Fabric GitHub](https://github.com/commu
 Rule precedence are followed in a top down manner.
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on serial number if a match is found.
-2. Rules you define. In the example above it will check the following 
-   1. If SNMP Location matches “IPFABRIC, (LAB01)” → Site LAB01 
-   2. If Hostname matches “^L21” → Site MPLS 
-   3. If Hostname matches “^(L\d{1,2})” → Site L2-99
-3. **Try to assign devices without sites based on [device neighborship](../../../IP_Fabric_Settings/site_separation)** (if enabled)
+2. Rules you define. In the example above it will check the following
+   1. If SNMP Location matches "IPFABRIC, (LAB01)" → Site LAB01
+   2. If hostname matches "^L21" → Site MPLS 
+   3. If hostname matches "^(L\d{1,2})" → Site L2-99
+3. Try to assign devices without sites based on [device neighborship](../../../IP_Fabric_Settings/site_separation) (if enabled)
+

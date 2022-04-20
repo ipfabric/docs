@@ -29,8 +29,8 @@ version 4.1.
 
 It works in two steps:
 
-1.  If any of the “keep” rules are enabled, IP Fabric goes through
-    unloaded snapshots and based on enabled “keep” rules it marks
+1.  If any of the "keep" rules are enabled, IP Fabric goes through
+    unloaded snapshots and based on enabled "keep" rules it marks
     snapshots that will retain and those that will be deleted.
 
 2.  HDD utilization and a number of unloaded snapshots are checked. If
@@ -40,8 +40,8 @@ It works in two steps:
 Please note:
 
 1.  HDD utilization and the number of snapshots have precedence over
-    “keep” rules. This means that snapshots marked as retained by a
-    “keep” rule can be deleted when the HDD utilization or number of
+    "keep" rules. This means that snapshots marked as retained by a
+    "keep" rule can be deleted when the HDD utilization or number of
     snapshots are exceeded.
 
 2.  When at least one retention rule is enabled, all snapshots not

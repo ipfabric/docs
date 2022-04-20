@@ -59,7 +59,7 @@ Tables can be especially large to facilitate easier information
 correlation, however not all columns need to always be visible. To hide
 or show individual columns, click the ![visibility](visibility.png)
 (toggle column visibility) button and select which the columns to be
-displayed. The first column can be set as “sticky” to facilitate
+displayed. The first column can be set as "sticky" to facilitate
 analysis of tables with many columns. Row height can be adjusted by
 selecting small, medium or large font.
 

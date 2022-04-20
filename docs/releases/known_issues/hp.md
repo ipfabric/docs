@@ -22,6 +22,6 @@ Error: Failed to display the manufacture information of the chassis.
 ------------------------------------------------------------------------
 
 **Description**: HP Aruba switches may not display their serial number
-in “show version” command output. In such cases their base MAC address
+in "show version" command output. In such cases their base MAC address
 from the show version output is set as their serial number. This issue
 is known e.g. for HP 2824 version I.10.107.

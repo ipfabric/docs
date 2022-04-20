@@ -60,7 +60,7 @@ added to the IP Fabric after they log in for the first time.***
     `OU=NetworkAdmins,DC=your,DC=domain,DC=com`)
 10. Enter an attribute where email is stored in the LDAP user object
     into ***Search email attribute**.*
-11. Only for “*Microsoft Active Directory*”: Tick ***Allow nested
+11. Only for "*Microsoft Active Directory*": Tick ***Allow nested
     groups*** for nested group permission lookup. This uses [Extensible
     Match](https://ldapwiki.com/wiki/ExtensibleMatch) Rule
     ([LDAP_MATCHING_RULE_IN_CHAIN](https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN))
@@ -153,7 +153,7 @@ a user follow:
 ### Error Codes
 
 All LDAP errors regarding server connection and user binding are
-returned as “*LDAP as provided is not reachable*” due to security
+returned as "*LDAP as provided is not reachable*" due to security
 concerns. Please check your *Search base* and *Search login attribute*
-when “*LDAP Search Failed*“ error is shown.
+when "*LDAP Search Failed*" error is shown.
 

@@ -182,14 +182,14 @@ group/ungroup
 #### **Default Protocols View**
 
 By default, all discovered protocols will be grouped based on the layer
-they belong to. This is the “**System**” view. You can edit this, which
+they belong to. This is the "**System**" view. You can edit this, which
 means you are able to ungroup certain protocols. For this click on the
 Settings icon:
 
 ![Configure visualization setup](network_viewer/visualization_setup_settings.png)
 
-Drag and drop protocols you want to put to a custom group to the “Other
-Protocols”, click on Save as and give a name to the new protocol view.
+Drag and drop protocols you want to put to a custom group to the "Other
+Protocols", click on Save as and give a name to the new protocol view.
 
 ![Drag & drop protocol](network_viewer/protocols_drag_drop.png)
 
@@ -223,6 +223,6 @@ diagram.
 ### **Device information deep dive**
 
 After right-clicking on the device, it is possible to display additional
-information about it by selecting “Show detail”:
+information about it by selecting "Show detail":
 
 ![Device - Show detail](network_viewer/device_show_detail.png)
