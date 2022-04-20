@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1063,7 +1063,7 @@
   
     <li class="md-nav__item">
       <a href="../../Path_Lookup_4.x/4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1215,7 +1215,7 @@
   
     <li class="md-nav__item">
       <a href="../create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1229,7 +1229,7 @@
   
     <li class="md-nav__item">
       <a href="../refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3634,7 +3634,7 @@
 
 <h1 id="snapshot-table">Snapshot Table</h1>
 <p>In IP Fabric v4.3.0 a new method for retrieving Snapshot information has
-been added. This is a POST method to “tables/management/snapshots” which
+been added. This is a <code>POST</code> method to "tables/management/snapshots" which
 allows for filtering based on columns.</p>
 <h1 id="columns">Columns</h1>
 <table>
@@ -3647,123 +3647,119 @@ allows for filtering based on columns.</p>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
+<td><code>id</code></td>
 <td>str</td>
 <td>Snapshot ID</td>
 </tr>
 <tr>
-<td>status</td>
+<td><code>status</code></td>
 <td>str</td>
-<td>‘done’ - Loaded<br>‘unloaded’ - Unloaded<br>‘ready’ - The snapshot record was created, discovery process not started yet<br>‘run’ - Discovery or Snapshot Load in progress<br>‘finishing’ - Almost done, Tasker creating Topology and other calculations like site separation<br>‘error’ - Errored</td>
+<td><code>done</code> - Loaded<br><code>unloaded</code> - Unloaded<br><code>ready</code> - The snapshot record was created, discovery process not started yet<br><code>run</code> - Discovery or Snapshot Load in progress<br><code>finishing</code> - Almost done, Tasker creating Topology and other calculations like site separation<br><code>error</code> - Errored</td>
 </tr>
 <tr>
-<td>finishStatus</td>
+<td><code>finishStatus</code></td>
 <td>str</td>
-<td>‘done’ - Done<br>‘error’ - Errored<br>'' - Other</td>
+<td><code>done</code> - Done<br><code>error</code> - Errored<br>'' - Other</td>
 </tr>
 <tr>
-<td>loading</td>
+<td><code>loading</code></td>
 <td>bool</td>
-<td>True if the snapshot is currently loading.</td>
+<td><code>true</code> if the snapshot is currently loading.</td>
 </tr>
 <tr>
-<td>loadedSize</td>
+<td><code>loadedSize</code></td>
 <td>int</td>
 <td>Size of snapshot when loaded</td>
 </tr>
 <tr>
-<td>unloadedSize</td>
+<td><code>unloadedSize</code></td>
 <td>int</td>
 <td>Size of snapshot when loaded</td>
 </tr>
 <tr>
-<td>isLastSnapshot</td>
+<td><code>isLastSnapshot</code></td>
 <td>bool</td>
-<td>True if it is the last loaded snapshot ($last)</td>
+<td>True if it is the last loaded snapshot <code>($last)</code></td>
 </tr>
 <tr>
-<td>name</td>
+<td><code>name</code></td>
 <td>str</td>
-<td>Snapshot name or empty string</td>
+<td>Snapshot <code>name</code> or <code>empty</code> string</td>
 </tr>
 <tr>
-<td>note</td>
+<td><code>note</code></td>
 <td>str</td>
-<td>Snapshot note or empty string</td>
+<td>Snapshot <code>note</code> or <code>empty</code> string</td>
 </tr>
 <tr>
-<td>sites</td>
+<td><code>sites</code></td>
 <td>list</td>
 <td>List of Site Names</td>
 </tr>
 <tr>
-<td>fromArchive</td>
+<td><code>fromArchive</code></td>
 <td>bool</td>
-<td>True if snapshot was loaded from a file</td>
+<td><code>true</code> if snapshot was loaded from a file</td>
 </tr>
 <tr>
-<td>locked</td>
+<td><code>locked</code></td>
 <td>bool</td>
-<td>True if snapshot is locked</td>
+<td><code>true</code> if snapshot is locked</td>
 </tr>
 <tr>
-<td>totalDevCount</td>
+<td><code>totalDevCount</code></td>
 <td>int</td>
-<td>Number of total devices (licensed and unlicensed)</td>
+<td>Number of total devices (<code>licensed</code> and <code>unlicensed</code>)</td>
 </tr>
 <tr>
-<td>deviceAddedCount</td>
+<td><code>deviceAddedCount</code></td>
 <td>int</td>
 <td>Number of devices added since the previous snapshot</td>
 </tr>
 <tr>
-<td>deviceRemovedCount</td>
+<td><code>deviceRemovedCount</code></td>
 <td>int</td>
 <td>Number of devices removed since the previous snapshot</td>
 </tr>
 <tr>
-<td>interfaceCount</td>
+<td><code>interfaceCount</code></td>
 <td>int</td>
 <td>Number of interfaces<br>Inventory &gt; Interfaces</td>
 </tr>
 <tr>
-<td>interfaceActiveCount</td>
+<td><code>interfaceActiveCount</code></td>
 <td>int</td>
 <td>Number of Active Interface<br>Inventory &gt; Interfaces [Filter L2 State=up]</td>
 </tr>
 <tr>
-<td>interfaceEdgeCount</td>
+<td><code>interfaceEdgeCount</code></td>
 <td>int</td>
 <td>Number of Edge interfaces<br>Technology &gt; Interfaces &gt; Switchport [Filter Edge=yes]</td>
 </tr>
 <tr>
-<td>userCount</td>
+<td><code>userCount</code></td>
 <td>int</td>
 <td>Number of hosts<br>Inventory &gt; Hosts</td>
 </tr>
 <tr>
-<td>tsStart</td>
+<td><code>tsStart</code></td>
 <td>int</td>
 <td>Timestamp in milliseconds when the snapshot started</td>
 </tr>
 <tr>
-<td>tsEnd</td>
+<td><code>tsEnd</code></td>
 <td>int</td>
 <td>Timestamp in milliseconds when the snapshot completed</td>
 </tr>
 <tr>
-<td>tsChange</td>
+<td><code>tsChange</code></td>
 <td>int</td>
 <td>Timestamp in milliseconds when the snapshot was last changed</td>
 </tr>
 </tbody>
 </table>
 <h1 id="v430-examples">v4.3.0 Examples</h1>
-<h2 id="get-last">Get $last</h2>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
+<h2 id="get-last">Get <code>($last)</code></h2>
 <div class="highlight"><pre><span></span><code>{
     &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
     &quot;filters&quot;: {
@@ -3777,16 +3773,7 @@ allows for filtering based on columns.</p>
     }
 }
 </code></pre></div>
-
-</div>
-
-</div>
-
 <h2 id="get-valid-snapshots-newest-to-oldest">Get Valid Snapshots Newest to Oldest</h2>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>{
     &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
     &quot;filters&quot;: {
@@ -3804,16 +3791,7 @@ allows for filtering based on columns.</p>
     }
 }
 </code></pre></div>
-
-</div>
-
-</div>
-
 <h2 id="get-loaded-snapshots-newest-to-oldest">Get Loaded Snapshots Newest to Oldest</h2>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>{
     &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
     &quot;filters&quot;: {
@@ -3836,16 +3814,7 @@ allows for filtering based on columns.</p>
     }
 }
 </code></pre></div>
-
-</div>
-
-</div>
-
 <h2 id="get-locked-snapshots-oldest-to-newest">Get Locked Snapshots Oldest to Newest</h2>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>{
     &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
     &quot;filters&quot;: {
@@ -3863,16 +3832,7 @@ allows for filtering based on columns.</p>
     }
 }
 </code></pre></div>
-
-</div>
-
-</div>
-
 <h2 id="get-running-snapshot">Get Running Snapshot</h2>
-<div class="code panel pdl" style="border-width: 1px;">
-
-<div class="codeContent panelContent pdl">
-
 <div class="highlight"><pre><span></span><code>{
     &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
     &quot;filters&quot;: {
@@ -3887,10 +3847,6 @@ allows for filtering based on columns.</p>
 }
 </code></pre></div>
 
-</div>
-
-</div>
-
               
             </article>
           </div>
@@ -3903,7 +3859,7 @@ allows for filtering based on columns.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../refreshing_devices_in_a_snapshot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Refreshing devices in a snapshot" rel="prev">
+        <a href="../refreshing_devices_in_a_snapshot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Refreshing Devices In a Snapshot" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3912,7 +3868,7 @@ allows for filtering based on columns.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Refreshing devices in a snapshot
+              Refreshing Devices In a Snapshot
             </div>
           </div>
         </a>

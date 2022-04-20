@@ -1211,7 +1211,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1265,7 +1265,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/Path_Lookup_4.x/4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1415,7 +1415,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1429,7 +1429,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -4087,7 +4087,7 @@ To discover CheckPoint devices, CLI access is essential as well.</p>
 <p><a data-featherlight="../vapi_aws_dash.png" href="#"><img alt="AWS Dashboard" src="../vapi_aws_dash.png" /></a></p>
 <p>Click on <strong>My Security Credentials</strong> and open <strong>Access keys</strong> tab.</p>
 <p><a data-featherlight="../vapi_aws_keys.png" href="#"><img alt="AWS Access Keys" src="../vapi_aws_keys.png" /></a></p>
-<p>To generate keys click on “Create New Access Key” and your keys will be
+<p>To generate keys click on "Create New Access Key" and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.</p>
 <p><a data-featherlight="../vapi_aws_new_key.png" href="#"><img alt="AWS New Access Key" src="../vapi_aws_new_key.png" /></a></p>
@@ -4235,22 +4235,22 @@ The plan is to add support of Load Balancer (https://docs.microsoft.com/en-us/az
 <p>IP Fabric needs the following data in order to connect to the Azure API - Tenant ID, Subscription ID, Application ID, and Application secret. Follow these steps to get the required data.</p>
 <p>First login to the Azure portal (https://portal.azure.com/ )</p>
 <h3 id="register-an-app">Register an App</h3>
-<p>Search for “Active Directory“.
-1. From the left menu, click on “App registrations“, then click on “+ New registration”.
-2. Fill in the name of the application (e.g. “IP Fabric”). From the “Supported account types“, select the first option “Single Tenant“. Leave other options blank
-3. Once you click on “Register“, you’ll be redirected to the App overview page. Note the “Application (client) ID” and <strong>“Directory (tenant) ID“</strong>
-4. Click on “Certificates &amp; Secrets“ and select the “Client secrets (0)“ tab, click “+ New secret“, select Expiration and then click “Add“.
+<p>Search for "Active Directory".
+1. From the left menu, click on "App registrations", then click on "+ New registration".
+2. Fill in the name of the application (e.g. "IP Fabric"). From the "Supported account types", select the first option "Single Tenant". Leave other options blank
+3. Once you click on "Register", you’ll be redirected to the App overview page. Note the "Application (client) ID" and <strong>"Directory (tenant) ID"</strong>
+4. Click on "Certificates &amp; Secrets" and select the "Client secrets (0)" tab, click "+ New secret", select Expiration and then click "Add".
 5. Copy the created <strong>client secret</strong> to the clipboard (column Value). <strong>You won’t be able to see it again.</strong></p>
 <h3 id="subscription-access-control">Subscription &amp; Access Control</h3>
-<p>Search for “Subscriptions“ and select the subscription you like to add to IPF (IPF can do discovery per subscription)
+<p>Search for "Subscriptions" and select the subscription you like to add to IPF (IPF can do discovery per subscription)
 1. On the overview page note the <strong>Subscription ID.</strong>
-2. From the left menu, click on Access control (IAM), click on “+ Add” and “Add custom role“. Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select “Start from JSON“ and upload JSON file with the required permissions (find it at the very bottom of this page). Click on the Next button to continue.
+2. From the left menu, click on Access control (IAM), click on "+ Add" and "Add custom role". Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select "Start from JSON" and upload JSON file with the required permissions (find it at the very bottom of this page). Click on the Next button to continue.
 <a data-featherlight="../vendors_api_azure_create_custome_role.png" href="#"><img alt="azure create custom role" src="../vendors_api_azure_create_custome_role.png" />
-3. Review the permissions and click Next. Now you have to assign a scope for this role. Click on “Add assignable scopes“ and from the right panel select Type: Subscription and than click on the Subscription you want to assign
+3. Review the permissions and click Next. Now you have to assign a scope for this role. Click on "Add assignable scopes" and from the right panel select Type: Subscription and than click on the Subscription you want to assign
 </a><a data-featherlight="../vendors_api_azure_role_scope.png" href="#"><img alt="azure role scope" src="../vendors_api_azure_role_scope.png" />
-4. Click on “Review + Create“
-5. Now you have to assign the newly created Role to the Registered App. From the left menu, select again “Access control (IAM)“ and then click “+ New“ and “Add role assignment“.
-6. Find the previously created role, click “Next“ and then click on “+ Select members“. Find the app you created before. Click “Review + Assign“
+4. Click on "Review + Create"
+5. Now you have to assign the newly created Role to the Registered App. From the left menu, select again "Access control (IAM)" and then click "+ New" and "Add role assignment".
+6. Find the previously created role, click "Next" and then click on "+ Select members". Find the app you created before. Click "Review + Assign"
 </a><a data-featherlight="../vendors_api_azure_role_assignment.png" href="#"><img alt="azure role assignment" src="../vendors_api_azure_role_assignment.png" /></a></p>
 <h3 id="role-definitions-for-ip-fabric-json">Role definitions for IP Fabric (JSON)</h3>
 <p>Following JSON format applies for IP Fabric version 4.3 and above:

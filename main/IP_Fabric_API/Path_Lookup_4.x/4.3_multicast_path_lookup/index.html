@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1065,7 +1065,7 @@
   
     <li class="md-nav__item">
       <a href="../4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1256,7 +1256,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1270,7 +1270,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3682,140 +3682,136 @@
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
 <li>
-<p><strong>"parameters"</strong> <em>[mandatory]</em>- A nested JSON data structure with
+<p><code>parameters</code> <em>[mandatory]</em> - A nested JSON data structure with
   keys</p>
 </li>
 <li>
-<p><strong>"type"</strong> <em>[mandatory]</em> - A quoted string with a value of
-    "pathLookup" for an E2E path simulation output</p>
+<p><code>type</code> <em>[mandatory]</em> - A quoted string with a value of
+    <code>pathLookup</code> for an E2E path simulation output</p>
 </li>
 <li>
-<p><strong>"pathLookupType"</strong> <em>[mandatory]</em> - A quoted string
-    containing the word "multicast"</p>
+<p><code>pathLookupType</code> <em>[mandatory]</em> - A quoted string
+    containing the word <code>multicast</code></p>
 </li>
 <li>
-<p><strong>"protocol"</strong> <em>[mandatory]</em> - A quoted string with a value of
-    "tcp", "udp", "icmp"</p>
+<p><code>protocol</code> <em>[mandatory]</em> - A quoted string with a value of
+    <code>tcp</code>, <code>udp</code>, <code>icmp</code></p>
 </li>
 <li>
-<p><strong>"source"</strong> <em>[mandatory]</em>- A quoted string containing the
+<p><code>source</code> <em>[mandatory]</em> - A quoted string containing the
     source IP address</p>
 </li>
 <li>
-<p><strong>"group"</strong> <em>[mandatory]</em>- A quoted string containing the
+<p><code>group</code> <em>[mandatory]</em> - A quoted string containing the
     group IP address</p>
 </li>
 <li>
-<p><strong>"receiver"</strong> <em>[optional]</em>- A quoted string containing the
+<p><code>receiver</code> <em>[optional]</em> - A quoted string containing the
     receiver’s IP address</p>
 </li>
 <li>
-<p><strong>"groupBy"</strong> <em>[mandatory]</em>- A quoted string representing the
+<p><code>groupBy</code> <em>[mandatory]</em> - A quoted string representing the
     grouping of devices in the output - at this time one of
-    "siteName", "routingDomain" or "stpDomain"</p>
+    <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code></p>
 </li>
 <li>
-<p><strong>"securedPath"</strong> <em>[mandatory]</em>- A boolean - when you run a
+<p><code>securedPath</code> <em>[mandatory]</em> - A boolean - when you run a
     path simulation, you can tell IP Fabric if you want to stop when
     it hits a security policy which blocks the traffic in question
-    (true) or complete the forwarding path and simply highlight the
-    policy enforcement point (false)</p>
+    (<code>true</code>) or complete the forwarding path and simply highlight the
+    policy enforcement point (<code>false</code>)</p>
 </li>
 <li>
-<p><strong>“ttl”</strong> <em>[mandatory]</em>- integer - Time-to-live value (default
-    is 128)</p>
+<p><code>ttl</code> <em>[mandatory]</em> - integer - Time-to-live value (default
+    is <code>128</code>)</p>
 </li>
 <li>
-<p><strong>“fragmentOffset”</strong> <em>[mandatory]</em>- integer - Fragment offset
-    value (default is 0)</p>
+<p><code>fragmentOffset</code> <em>[mandatory]</em> - integer - Fragment offset
+    value (default is <code>0</code>)</p>
 </li>
 <li>
-<p><strong>“srcRegions”</strong> <em>[mandatory]</em>- string - (default “.*”)</p>
+<p><code>srcRegions</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</p>
 </li>
 <li>
-<p><strong>“dstRegions”</strong> <em>[mandatory]</em>- string - (default “.*”)</p>
+<p><code>dstRegions</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</p>
 </li>
 <li>
-<p><strong>“otherOptions”</strong> <em>[mandatory]</em>- nested JSON data</p>
+<p><code>otherOptions</code> <em>[mandatory]</em> - nested JSON data</p>
 <ul>
 <li>
-<p><strong>“applications”</strong> <em>[mandatory]</em>- string - (default “.*”)</p>
+<p><code>applications</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</p>
 </li>
 <li>
-<p><strong>“tracked”</strong> <em>[mandatory]- boolean - (default false)</em></p>
+<p><code>tracked</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</p>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>“firstHopAlgorithm”</strong> <em>[mandatory]</em>- nested JSON data</p>
+<p><code>firstHopAlgorithm</code> <em>[mandatory]</em> - nested JSON data</p>
 <ul>
 <li>
-<p><strong>“type” </strong> <em>[mandatory]</em>- Either “automatic” or
-  “userDefined”</p>
+<p><code>type</code> <em>[mandatory]</em> - Either <code>automatic</code> or
+  <code>userDefined</code></p>
 </li>
 <li>
-<p><strong>“vrf” </strong> <em>[Optional and if type == automatic]</em></p>
+<p><code>vrf</code> <em>[Optional and if type == <code>automatic</code>]</em></p>
 </li>
 <li>
-<p><strong>“entryPoints” </strong> <em>[mandatory and if type ==
-  userDefined]</em> - nested array of JSON data</p>
+<p><code>entryPoints</code> <em>[mandatory]</em> - if type == <code>userDefined</code> it is nested array of JSON data</p>
 </li>
 <li>
-<p><strong>“hostname”</strong> <em>[mandatory]-</em> Hostname string</p>
+<p><code>hostname</code> <em>[mandatory]</em> - Hostname string</p>
 </li>
 <li>
-<p><strong>“sn”</strong> <em>[mandatory]-</em> IP Fabric Unique Serial Number
-    string</p>
+<p><code>sn</code> <em>[mandatory]</em> - IP Fabric Unique Serial Number string</p>
 </li>
 <li>
-<p><strong>“iface”</strong> <em>[mandatory]-</em> Interface name</p>
+<p><code>iface</code> <em>[mandatory]</em> - Interface name</p>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>“l4Options”</strong> <em>[mandatory]</em> - nested JSON data</p>
+<p><code>l4Options</code> <em>[mandatory]</em> - nested JSON data</p>
 <ul>
 <li>
-<p>If <strong>protocol = tcp</strong></p>
+<p>If <code>protocol</code> is <code>tcp</code></p>
 </li>
 <li>
-<p><strong>"srcPorts"</strong> <em>[mandatory]</em>- A string representing
-    ports; ex. “80,443,1025-4096”</p>
+<p><code>srcPorts</code> <em>[mandatory]</em> - A string representing
+    ports; ex. <code>80,443,1025-4096</code></p>
 </li>
 <li>
-<p><strong>"dstPorts"</strong> <em>[mandatory]</em>- A string representing
-    ports; ex. “80,443,1025-4096”</p>
+<p><code>dstPorts</code> <em>[mandatory]</em> - A string representing
+    ports; ex. <code>80,443,1025-4096</code></p>
 </li>
 <li>
-<p><strong>“flags”</strong> <em>[mandatory]</em> - An array of TCP flags to
+<p><code>flags</code> <em>[mandatory]</em> - An array of TCP flags to
     be set in the simulated path or empty array</p>
 <ul>
 <li>Valid flags:
-  <code>["ack", "fin", "psh", "rst", "syn", "urg"]</code></li>
+  [<code>ack</code>, <code>fin</code>, <code>psh</code>, <code>rst</code>, <code>syn</code>, <code>urg</code>]</li>
 </ul>
 </li>
 <li>
-<p>If <strong>protocol = udp</strong></p>
+<p>If <code>protocol</code> is <code>udp</code></p>
 </li>
 <li>
-<p><strong>"srcPorts"</strong> <em>[mandatory]</em>- A string representing
-    ports; ex. “80,443,1025-4096”</p>
+<p><code>srcPorts</code> <em>[mandatory]</em> - A string representing
+    ports; ex. <code>80,443,1025-4096</code></p>
 </li>
 <li>
-<p><strong>"dstPorts"</strong> <em>[mandatory]</em>- An integer representing
+<p><code>dstPorts</code> <em>[mandatory]</em> - An integer representing
     the destination port</p>
 </li>
 <li>
-<p>If <strong>protocol = icmp</strong> refer to: <a href="/IP_Fabric_API/API_Tech_Note_-_4.x_Path_Lookup/API_Tech_Note_-_Path_Lookup_ICMP_Decoder/">API Tech Note - Path
-  Lookup ICMP
-  Decoder</a></p>
+<p>If <code>protocol</code> is <code>icmp</code> refer to: <a href="path_lookup_ICMP_decoder">Path Lookup ICMP Decoder</a></p>
 </li>
 <li>
-<p><strong>“type”</strong> <em>[mandatory]</em>- An integer representing the
+<p><code>type</code> <em>[mandatory]</em> - An integer representing the
     ICMP type</p>
 </li>
 <li>
-<p><strong>“code”</strong> <em>[mandatory]</em>- An integer representing the
+<p><code>code</code> <em>[mandatory]</em> - An integer representing the
     ICMP code</p>
 </li>
 </ul>

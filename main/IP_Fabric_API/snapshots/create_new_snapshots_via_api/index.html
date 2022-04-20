@@ -13,7 +13,7 @@
     
     
       
-        <title>Create new snapshots via API - IP Fabric Documentation Portal</title>
+        <title>Create New Snapshots Via API - IP Fabric Documentation Portal</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create new snapshots via API
+              Create New Snapshots Via API
             
           </span>
         </div>
@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1063,7 +1063,7 @@
   
     <li class="md-nav__item">
       <a href="../../Path_Lookup_4.x/4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1224,12 +1224,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Create new snapshots via API
+          Create New Snapshots Via API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
       
         
@@ -1256,21 +1256,21 @@
       
         <li class="md-nav__item">
   <a href="#create-a-new-snapshot-with-the-existing-settings" class="md-nav__link">
-    Create a new snapshot with the existing settings
+    Create a New Snapshot With The Existing Settings
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#create-a-new-snapshot-with-different-settings-than-the-default-ones" class="md-nav__link">
-    Create a new snapshot with different settings than the default ones
+    Create a New Snapshot With Different Settings Than The Default Ones
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#what-settings-can-i-use-when-creating-a-new-snapshot" class="md-nav__link">
-    What settings can I use when creating a new snapshot?
+    What Settings Can I Use When Creating a New Snapshot?
   </a>
   
 </li>
@@ -1291,7 +1291,7 @@
   
     <li class="md-nav__item">
       <a href="../refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3687,21 +3687,21 @@
       
         <li class="md-nav__item">
   <a href="#create-a-new-snapshot-with-the-existing-settings" class="md-nav__link">
-    Create a new snapshot with the existing settings
+    Create a New Snapshot With The Existing Settings
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#create-a-new-snapshot-with-different-settings-than-the-default-ones" class="md-nav__link">
-    Create a new snapshot with different settings than the default ones
+    Create a New Snapshot With Different Settings Than The Default Ones
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#what-settings-can-i-use-when-creating-a-new-snapshot" class="md-nav__link">
-    What settings can I use when creating a new snapshot?
+    What Settings Can I Use When Creating a New Snapshot?
   </a>
   
 </li>
@@ -3720,33 +3720,44 @@
                 
 
 
-<h1 id="create-new-snapshots-via-api">Create new snapshots via API</h1>
+<h1 id="create-new-snapshots-via-api">Create New Snapshots Via API</h1>
 <p>This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with a different set of settings, if you wanted to have a reduced scope for example.</p>
 <h2 id="api-endpoints">API Endpoints</h2>
 <ul>
 <li>
-<p><a href="https://host.domain/api/v1/graphs/svg">https://host.domain/api/v1/snapshots</a> -<strong><code>method[POST]</code></strong> to create a new snapshot</p>
+<p><strong>https://host.domain/api/v1/graphs/svg</strong> - method <strong><code>[POST]</code></strong> to create a new snapshot</p>
 </li>
 <li>
-<p><a href="https://host.domain/api/v1/graphs">https://host.domain/api/v1/settings</a> - <strong><code>method[GET]</code></strong> to collect all IP Fabric settings</p>
+<p><strong>https://host.domain/api/v1/graphs</strong> - method <strong><code>[GET]</code></strong> to collect all IP Fabric settings</p>
 </li>
 </ul>
-<h2 id="create-a-new-snapshot-with-the-existing-settings">Create a new snapshot with the existing settings</h2>
-<p>If you want to start a discovery, using the existing settings, it is a simple POST request to <a href="https://host.domain/api/v1/graphs/svg">https://host.domain/api/v1/snapshots</a>, without a body.</p>
-<p><a href="https://ipfabric.atlassian.net/wiki/spaces/ND/pages/2785640457/API+Tech+Note+-+IP+Fabric+4.x+Unicast+Path+Lookup#POST-Request">Information regarding the Header/Authentication</a> has already been mentioned in another article. Please refer to this if needed.</p>
+<h2 id="create-a-new-snapshot-with-the-existing-settings">Create a New Snapshot With The Existing Settings</h2>
+<p>If you want to start a discovery, using the existing settings, it is a simple POST request to <strong>https://host.domain/api/v1/graphs/svg</strong>, without a body.</p>
+<p><a href="../../Path_Lookup_4.x/#post-request">Information regarding the Header/Authentication</a> has already been mentioned in another article. Please refer to this if needed.</p>
 <p><a data-featherlight="../configure_of_Creating_snapshoot.gif" href="#"><img alt="configure of Creating snapshoot" src="../configure_of_Creating_snapshoot.gif" /></a></p>
-<h2 id="create-a-new-snapshot-with-different-settings-than-the-default-ones">Create a new snapshot with different settings than the default ones</h2>
+<h2 id="create-a-new-snapshot-with-different-settings-than-the-default-ones">Create a New Snapshot With Different Settings Than The Default Ones</h2>
 <p>What if you wanted a snapshot for a smaller scope of your network. For this, you can use the API to start a new discovery, with some specific settings used for a specific discovery.</p>
-<p>Here is an example of a body to use to perform a discovery with a new scope (“networks”), new seed devices (“seedList”) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,</p>
+<p>Here is an example of a body to use to perform a discovery with a new scope (<code>networks</code>), new seed devices (<code>seedList</code>) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,</p>
 <div class="admonition info the value from your settings will be used">
 <p class="admonition-title">Info</p>
 </div>
-<p><code>js { "snapshotName": "Name of the Snapshot", "snapshotNote": "Some notes to describe the snapshot", "networks": { "exclude": [], "include": [ "10.66.0.0/16" ] }, "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ], "vendorApi": [] }</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;snapshotName&quot;</span><span class="o">:</span> <span class="s2">&quot;Name of the Snapshot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;snapshotNote&quot;</span><span class="o">:</span> <span class="s2">&quot;Some notes to describe the snapshot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;networks&quot;</span><span class="o">:</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;exclude&quot;</span><span class="o">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;include&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;10.66.0.0/16&quot;</span> <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="s2">&quot;seedList&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;10.66.255.104/31&quot;</span><span class="p">,</span> <span class="s2">&quot;10.66.0.1/32&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;vendorApi&quot;</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Let’s see how it looks when using Postman:</p>
 <p><a data-featherlight="../create_snapshot.gif" href="#"><img alt="create snapshot" src="../create_snapshot.gif" /></a></p>
-<h2 id="what-settings-can-i-use-when-creating-a-new-snapshot">What settings can I use when creating a new snapshot?</h2>
-<p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a GET on the endpoint <a href="https://host.domain/api/v1/graphs">https://host.domain/api/v1/settings</a></p>
-<p>The response will look like this <em>(this is just an extract of the JSON):</em></p>
+<h2 id="what-settings-can-i-use-when-creating-a-new-snapshot">What Settings Can I Use When Creating a New Snapshot?</h2>
+<p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a <code>GET</code> on the endpoint <strong>https://host.domain/api/v1/settings</strong></p>
+<p>The response will look like this <em>(this is just an extract of the JSON)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="s2">&quot;fullBgpLimit&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;enabled&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -3837,13 +3848,13 @@
       
       
         
-        <a href="../refreshing_devices_in_a_snapshot/" class="md-footer__link md-footer__link--next" aria-label="Next: Refreshing devices in a snapshot" rel="next">
+        <a href="../refreshing_devices_in_a_snapshot/" class="md-footer__link md-footer__link--next" aria-label="Next: Refreshing Devices In a Snapshot" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Refreshing devices in a snapshot
+              Refreshing Devices In a Snapshot
             </div>
           </div>
           <div class="md-footer__button md-icon">

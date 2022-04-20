@@ -13,7 +13,7 @@
     
     
       
-        <title>4.0-2 Unicast Path Lookup - IP Fabric Documentation Portal</title>
+        <title>4.0.2 Unicast Path Lookup - IP Fabric Documentation Portal</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#40-2-unicast-path-lookup" class="md-skip">
+        <a href="#402-unicast-path-lookup" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.0-2 Unicast Path Lookup
+              4.0.2 Unicast Path Lookup
             
           </span>
         </div>
@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1074,12 +1074,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          4.0-2 Unicast Path Lookup
+          4.0.2 Unicast Path Lookup
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
       
         
@@ -1256,7 +1256,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1270,7 +1270,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3678,57 +3678,51 @@
                 
 
 
-<h1 id="40-2-unicast-path-lookup">4.0-2 Unicast Path Lookup</h1>
+<h1 id="402-unicast-path-lookup">4.0.2 Unicast Path Lookup</h1>
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
 <li>
-<p><strong>"parameters"</strong> <em>[mandatory]</em>- A nested JSON data structure with
+<p><code>parameters</code> <em>[mandatory]</em> - A nested JSON data structure with
   keys</p>
 </li>
 <li>
-<p><strong>"type"</strong> <em>[mandatory]</em> - A quoted string with a value of
-    "pathLookup" for an E2E path simulation output</p>
+<p><code>type</code> <em>[mandatory]</em> - A quoted string with a value of <code>pathLookup</code> for an E2E path simulation output</p>
 </li>
 <li>
-<p><strong>"pathLookupType"</strong> <em>[mandatory]</em> - A quoted string
-    containing the word "unicast" or "multicast" depending which
-    type of path simulation you're wanting to execute</p>
+<p><code>pathLookupType</code> <em>[mandatory]</em> - A quoted string containing the word <code>unicast</code> or <code>multicast</code> depending which type of path simulation you're wanting to execute</p>
 </li>
 <li>
-<p><strong>"protocol"</strong> <em>[mandatory]</em> - A quoted string with a value of
-    "tcp", "udp", "icmp"</p>
+<p><code>protocol</code> <em>[mandatory]</em> - A quoted string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></p>
 </li>
 <li>
-<p><strong>“vrf”</strong> <em>[optional] -</em> A quoted string containing the VRF
+<p><code>vrf</code> <em>[optional]</em> - A quoted string containing the VRF
     identifier required</p>
 </li>
 <li>
-<p><strong>“flags”</strong> <em>[optional]</em> - an array of TCP flags to be set in
+<p><code>flags</code> <em>[optional]</em> - an array of TCP flags to be set in
     the simulated path</p>
 </li>
 <li>
-<p><strong>"startingPoint"</strong> <em>[mandatory]</em>- A quoted string containing
+<p><code>startingPoint</code> <em>[mandatory]</em> - A quoted string containing
     the source IP address</p>
 </li>
 <li>
-<p><strong>"startingPort"</strong> <em>[mandatory]</em>- An integer representing the
+<p><code>startingPort</code> <em>[mandatory]</em> - An integer representing the
     source port</p>
 </li>
 <li>
-<p><strong>"destinationPoint"</strong> <em>[mandatory]</em>- A quoted string
+<p><code>destinationPoint</code> <em>[mandatory]</em> - A quoted string
     containing the destination IP address</p>
 </li>
 <li>
-<p><strong>"destinationPort"</strong> <em>[mandatory]</em>- An integer representing
+<p><code>destinationPort</code> <em>[mandatory]</em> - An integer representing
     the destination port</p>
 </li>
 <li>
-<p><strong>"groupBy"</strong> <em>[mandatory]</em>- A quoted string representing the
-    grouping of devices in the output - at this time one of
-    "siteName", "routingDomain" or "stpDomain"</p>
+<p><code>groupBy</code> <em>[mandatory]</em> - A quoted string representing the grouping of devices in the output - at this time one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code></p>
 </li>
 <li>
-<p><strong>"networkMode"</strong> <em>[mandatory]</em>- A boolean - the new version
+<p><code>networkMode</code> <em>[mandatory]</em> - A boolean - the new version
     of IP Fabric allows you to simulate paths between subnets.
     Setting this key to true means that you will create a single
     result representing the subnets; false means that IP Fabric will
@@ -3736,7 +3730,7 @@
     range of addresses up to a maximum of 255.</p>
 </li>
 <li>
-<p><strong>"securedPath"</strong> <em>[mandatory]</em>- A boolean - when you run a
+<p><code>securedPath</code> <em>[mandatory]</em> - A boolean - when you run a
     path simulation, you can tell IP Fabric if you want to stop when
     it hits a security policy which blocks the traffic in question
     (true) or complete the forwarding path and simply highlight the

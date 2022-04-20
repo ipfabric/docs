@@ -1023,7 +1023,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1077,7 +1077,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/Path_Lookup_4.x/4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1227,7 +1227,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1241,7 +1241,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3661,13 +3661,13 @@ Go to <strong>Settings → Site separation</strong> and change <strong>Routing &
 <p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
 <ul>
 <li>
-<p>Upper case (default) - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt; result is that both devices in one site named "PRAGUE"</p>
+<p>Upper case (default) - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>PRAGUE</code></p>
 </li>
 <li>
-<p>Lower case - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt; result is that both devices in one site named "prague"</p>
+<p>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></p>
 </li>
 <li>
-<p>No transformation - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt;result is that each device has its own site named "PRAGUE" and "prague"</p>
+<p>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code></p>
 </li>
 </ul>
 <p>In the last step, introduce the <strong>Regular Expression</strong>. Use <a href="https://regex101.com">this tool</a> for validation and parentheses to extract the site from the hostname correctly.</p>
@@ -3710,20 +3710,20 @@ Once the regex is ready, click <strong>Site overview with this RegEx</strong> an
 <p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
 <ul>
 <li>
-<p>Upper case (default) - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt; result is that both devices in one site named "PRAGUE"</p>
+<p>Upper case (default) - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>PRAGUE</code></p>
 </li>
 <li>
-<p>Lower case - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt; result is that both devices in one site named "prague"</p>
+<p>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></p>
 </li>
 <li>
-<p>No transformation - first hostname "PRAGUE-RTR1", second hostname "prague-rtr2" =&gt;result is that each device has its own site named "PRAGUE" and "prague"
+<p>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code>
 <a data-featherlight="../site_separation_hostname_regex.png" href="#"><img alt="Site separation hostname regex" src="../site_separation_hostname_regex.png" /></a></p>
 </li>
 </ul>
 <p>In this example the regular expression will match items such as PRAGUE-, LONDON-, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
 <p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.
-<a data-featherlight="../site_separation_snmp_regex.png" href="#"><img alt="Site separation snmp regex" src="../site_separation_snmp_regex.png" /></a></p>
+<a data-featherlight="../site_separation_snmp_regex.png" href="#"><img alt="Site separation SNMP regex" src="../site_separation_snmp_regex.png" /></a></p>
 <h3 id="testing">Testing</h3>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.
 <a data-featherlight="../site_separation_testing.png" href="#"><img alt="Site separation testing" src="../site_separation_testing.png" /></a></p>
@@ -3737,12 +3737,12 @@ Once the regex is ready, click <strong>Site overview with this RegEx</strong> an
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule.  Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured.  If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h2 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h2>
 <p>The Manual Site Separation enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
-<p>To configure <strong>Device Attributes</strong> first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings. 
+<p>To configure <strong>Device Attributes</strong> first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.
 <a data-featherlight="../site_separation_manual_site_separation.png" href="#"><img alt="Site separation manual site separtion" src="../site_separation_manual_site_separation.png" /></a></p>
 <h2 id="device-attributes">Device Attributes</h2>
 <p><a data-featherlight="../site_separation_device_attributes.png" href="#"><img alt="Site separation device attributes" src="../site_separation_device_attributes.png" /></a></p>
 <ul>
-<li><strong>Serial Number is IP Fabric’s “Unique Serial Number” (API column “sn”); this is not the column “Serial Number” which represents the Hardware SN (API column “snHw”)</strong><ul>
+<li><strong>Serial Number</strong> is IP Fabric’s "Unique Serial Number" (API column <code>sn</code>); this is not the column "Serial Number" which represents the Hardware SN (API column <code>snHw</code>)<ul>
 <li>Devices discovered via API can also be assigned using Device Attributes.</li>
 </ul>
 </li>
@@ -3767,11 +3767,11 @@ Once the regex is ready, click <strong>Site overview with this RegEx</strong> an
 <tbody>
 <tr>
 <td>URL</td>
-<td>https://<IPF_URL>/api/v1/attributes/global</td>
+<td><code>https://&lt;IPF_URL&gt;/api/v1/attributes/global</code></td>
 </tr>
 <tr>
 <td>Data</td>
-<td>{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]</td>
+<td><code>{"attributes": [{"sn": "&lt;IPF SERIAL NUMBER&gt;", "value": "&lt;SITE NAME&gt;", "name": "siteName"}]}</code></td>
 </tr>
 </tbody>
 </table>
@@ -3782,11 +3782,11 @@ Once the regex is ready, click <strong>Site overview with this RegEx</strong> an
 <p>Rule precedence are followed in a top down manner.</p>
 <ol>
 <li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
-<li>Rules you define. In the example above it will check the following </li>
-<li>If SNMP Location matches “IPFABRIC, (LAB01)” → Site LAB01 </li>
-<li>If Hostname matches “^L21” → Site MPLS </li>
-<li>If Hostname matches “^(L\d{1,2})” → Site L2-99</li>
-<li><strong>Try to assign devices without sites based on <a href="../../../IP_Fabric_Settings/site_separation">device neighborship</a></strong> (if enabled)</li>
+<li>Rules you define. In the example above it will check the following</li>
+<li>If SNMP Location matches "IPFABRIC, (LAB01)" → Site LAB01</li>
+<li>If hostname matches "^L21" → Site MPLS </li>
+<li>If hostname matches "^(L\d{1,2})" → Site L2-99</li>
+<li>Try to assign devices without sites based on <a href="../../../IP_Fabric_Settings/site_separation">device neighborship</a> (if enabled)</li>
 </ol>
 
               

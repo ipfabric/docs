@@ -1007,7 +1007,7 @@
   
     <li class="md-nav__item">
       <a href="../../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1061,7 +1061,7 @@
   
     <li class="md-nav__item">
       <a href="../../../IP_Fabric_API/Path_Lookup_4.x/4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1211,7 +1211,7 @@
   
     <li class="md-nav__item">
       <a href="../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1225,7 +1225,7 @@
   
     <li class="md-nav__item">
       <a href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3752,7 +3752,7 @@
 <p><strong>Result</strong>: Without this command collected no memory utilization will be present</p>
 <h2 id="arp-table-contains-only-master-vsys-0-entries">ARP table contains only master <code>VSYS 0</code> entries</h2>
 <p><strong> Known Affected Software Versions</strong>: R80.30 and R80.40</p>
-<p><strong>Result</strong>: Command <code>show arp dynamic all</code> on VSx always (by mistake) shows ARP only for the <code>“master VSYS 0</code> regardless of active <code>VSYS</code>. It is a confirmed bug on the Checkpoint firewalls.</p>
+<p><strong>Result</strong>: Command <code>show arp dynamic all</code> on VSx always (by mistake) shows ARP only for the <code>master VSYS 0</code> regardless of active <code>VSYS</code>. It is a confirmed bug on the Checkpoint firewalls.</p>
 <h2 id="discovery-of-security-policies">Discovery of Security Policies</h2>
 <ul>
 <li>
@@ -3766,7 +3766,7 @@
 <h2 id="required-permissions-for-successful-discovery-over-cli">Required permissions for successful discovery over CLI</h2>
 <p>To successfully discover a CheckPoint Gateway, correct role have to be
 assigned to a user. IPF requires role features set as read-only, except
-of “Virtual-System“ where read-write is needed (only if VSX firewalls
+of "Virtual-System" where read-write is needed (only if VSX firewalls
 are in your network, otherwise read-only is enough).</p>
 <p><a data-featherlight="checkpoint_role.png" href="#"><img alt="" src="checkpoint_role.png" /></a></p>
 <h3 id="how-to-setup-a-role-from-web-gui">How to setup a role from web GUI</h3>
@@ -3779,13 +3779,13 @@ are in your network, otherwise read-only is enough).</p>
 </li>
 <li>
 <p>Click Add, fill in the name. In the Features tab select all items
-    and mark them as “Read-Only“. No permissions from “Extended
-    Commands“ tab are needed*.</p>
+    and mark them as "Read-Only". No permissions from "Extended
+    Commands" tab are needed*.</p>
 </li>
 <li>
 <p>If you have VSX firewall in your network, you have to set
-    “Virtual-System“ feature to “Read-Write“ (we call “set
-    virtual-system \<ID>“ to switch to proper virtual system). This
+    "Virtual-System" feature to "Read-Write" (we call "set
+    virtual-system \<ID>" to switch to proper virtual system). This
     allows IPF just to change context and can’t be used for anything
     else.</p>
 </li>

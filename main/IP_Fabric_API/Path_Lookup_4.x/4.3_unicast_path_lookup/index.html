@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../serial_numbers/" class="md-nav__link">
-        Serial numbers
+        Serial Numbers
       </a>
     </li>
   
@@ -1065,7 +1065,7 @@
   
     <li class="md-nav__item">
       <a href="../4.0-2_unicast_path_lookup/" class="md-nav__link">
-        4.0-2 Unicast Path Lookup
+        4.0.2 Unicast Path Lookup
       </a>
     </li>
   
@@ -1263,7 +1263,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/create_new_snapshots_via_api/" class="md-nav__link">
-        Create new snapshots via API
+        Create New Snapshots Via API
       </a>
     </li>
   
@@ -1277,7 +1277,7 @@
   
     <li class="md-nav__item">
       <a href="../../snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        Refreshing devices in a snapshot
+        Refreshing Devices In a Snapshot
       </a>
     </li>
   
@@ -3696,19 +3696,19 @@
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
 <li>
-<p><code>parameters</code> <em>[mandatory]</em>- A nested JSON data structure with keys</p>
+<p><code>parameters</code> <em>[mandatory]</em> - A nested JSON data structure with keys</p>
 </li>
 <li>
 <p><code>type</code> <em>[mandatory]</em> - A string with a value of <code>pathLookup</code> for an E2E path simulation output</p>
 </li>
 <li>
-<p><code>pathLookupType</code> <em>[mandatory]</em> - A string containing the word "unicast"</p>
+<p><code>pathLookupType</code> <em>[mandatory]</em> - A string containing the word <code>unicast</code></p>
 </li>
 <li>
 <p><code>protocol</code> <em>[mandatory]</em> - A string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></p>
 </li>
 <li>
-<p><code>startingPoint</code> <em>[mandatory]</em>- A string containing the source IP address or subnet</p>
+<p><code>startingPoint</code> <em>[mandatory]</em> - A string containing the source IP address or subnet</p>
 </li>
 <li>
 <p><code>destinationPoint</code> <em>[mandatory]</em> - A string containing the destination IP address or subnet</p>
@@ -3719,8 +3719,8 @@
 <li>
 <p><code>networkMode</code> <em>[mandatory]</em> - A boolean - the new version
     of IP Fabric allows you to simulate paths between subnets.
-    Setting this key to true means that you will create a single
-    result representing the subnets; false means that IP Fabric will
+    Setting this key to <code>true</code> means that you will create a single
+    result representing the subnets; <code>false</code> means that IP Fabric will
     create a separate path for each source or destination in the
     range of addresses up to a maximum of 255.</p>
 </li>
@@ -3728,8 +3728,8 @@
 <p><code>securedPath</code> <em>[mandatory]</em> - A boolean - when you run a
     path simulation, you can tell IP Fabric if you want to stop when
     it hits a security policy which blocks the traffic in question
-    (true) or complete the forwarding path and highlight the
-    policy enforcement point (false)</p>
+    (<code>true</code>) or complete the forwarding path and highlight the
+    policy enforcement point (<code>false</code>)</p>
 </li>
 <li>
 <p><code>ttl</code> <em>[mandatory]</em> - integer - Time-to-live value (default is <code>128</code>)</p>
@@ -3750,30 +3750,30 @@
 <p><code>applications</code> <em>[mandatory]</em> - string - (default <code>.*</code>)</p>
 </li>
 <li>
-<p><code>tracked</code><em>[mandatory] - boolean - (default <code>false</code>)</em></p>
+<p><code>tracked</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</p>
 </li>
 </ul>
 </li>
 <li>
-<p><code>firstHopAlgorithm</code><em>[mandatory]</em> - nested JSON data</p>
+<p><code>firstHopAlgorithm</code> <em>[mandatory]</em> - nested JSON data</p>
 <ul>
 <li>
-<p><code>type</code><em>[mandatory]</em> - Either <code>automatic</code> or <code>userDefined</code></p>
+<p><code>type</code> <em>[mandatory]</em> - Either <code>automatic</code> or <code>userDefined</code></p>
 </li>
 <li>
-<p><code>vrf</code> <em>[Optional and <code>if type == automatic</code>]</em></p>
+<p><code>vrf</code> <em>[Optional and if type == <code>automatic</code>]</em></p>
 </li>
 <li>
-<p><code>entryPoints</code> <em>[mandatory and <code>if type == userDefined</code>]</em> - nested array of JSON data</p>
+<p><code>entryPoints</code> <em>[mandatory and if type == <code>userDefined</code>]</em> - nested array of JSON data</p>
 </li>
 <li>
-<p><code>hostname</code> <em>[mandatory] -</em> Hostname string</p>
+<p><code>hostname</code> <em>[mandatory]</em> - Hostname string</p>
 </li>
 <li>
-<p><code>sn</code> <em>[mandatory] -</em> IP Fabric Unique Serial Number string</p>
+<p><code>sn</code> <em>[mandatory]</em> - IP Fabric Unique Serial Number string</p>
 </li>
 <li>
-<p><code>iface</code> <em>[mandatory] -</em> Interface name</p>
+<p><code>iface</code> <em>[mandatory]</em> - Interface name</p>
 </li>
 </ul>
 </li>
@@ -3781,7 +3781,7 @@
 <p><code>l4Options</code> <em>[mandatory]</em> - nested JSON data</p>
 <ul>
 <li>
-<p>If <code>rotocol = tc</code></p>
+<p>If <code>protocol = tcp</code></p>
 </li>
 <li>
 <p><code>srcPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></p>
@@ -3792,7 +3792,7 @@
 <li>
 <p><code>flags</code> <em>[mandatory]</em> - An array of TCP flags to be set in the simulated path or empty array</p>
 <ul>
-<li>Valid flags: <code>["ack", "fin", "psh", "rst", "syn", "urg"]</code></li>
+<li>Valid flags: [<code>ack</code>, <code>fin</code>, <code>psh</code>, <code>rst</code>, <code>syn</code>, <code>urg</code>]</li>
 </ul>
 </li>
 <li>
