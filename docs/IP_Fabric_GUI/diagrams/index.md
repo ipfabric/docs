@@ -49,7 +49,7 @@ missing parts denote unavailable network information necessary for
 completing the routing process.
 
 The End to end path can be found in ***Diagrams → End to end path*** or
-on any diagram using the “Path Look-Up” menu on the left (see picture
+on any diagram using the "Path Look-Up" menu on the left (see picture
 below)
 
 ![End to end](diagrams_end_end.png)
@@ -62,8 +62,8 @@ The host to Gateway path diagram displays the Layer 2 path from every
 identified endpoint in the network to its active gateway router.
 
 The Host to Gateway path can be found in ***Diagrams → Host to gateway
-path*** or any diagram using the “Path Look-Up” menu on the left and
-selecting “Host To Gateway”(see picture below)
+path*** or any diagram using the "Path Look-Up" menu on the left and
+selecting "Host To Gateway"(see picture below)
 
 ![Host to gateway](diagrams_host_gateway.png)
 

@@ -25,7 +25,7 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
   advanced settings
 - Vendor API setting is part of snapshot settings now
 - Cisco IOS, IOS-XE and NX-OS - Added support for access-classes and
-  transport methods on VTY lines to “technology/management/aaa/lines”
+  transport methods on VTY lines to "technology/management/aaa/lines"
   table (as hidden columns Inbound ACL, Outbound ACL, Transport Input,
   Transport Output, Allow VRF login)
 - Transceivers statistics table - round delta low value to two decimal
@@ -34,7 +34,7 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 ### Bug Fixes
 
 - Arista EOS - fixed parsing of different output for command "show ptp
-  masters”
+  masters"
 - Arista EOS - fixed parsing of different output for command "show ptp
   local-clock"
 - Aruba CX - Added support for Aruba OS 10.07 routing table output
@@ -340,8 +340,8 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   snooping"
 - Huawei VRP - VXLAN Tunnels - command parsing fix when empty output
   is received
-- Juniper Junos - Configuration parsing fix for “protect protocols
-  mstp” command
+- Juniper Junos - Configuration parsing fix for "protect protocols
+  mstp" command
 - Juniper Junos - fixed parsing of different output for command 'show
   configuration \| display set \| except "^deactivate"'
 - Juniper Junos - fixed parsing of different output for command "show
@@ -351,7 +351,7 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 - Juniper Junos - IGMP groups fix mapping of 'never' value for expires
   for
 - Juniper Junos fix false-positive err-disabled statuses
-- Meraki - L2 interfaces, reason “connecting” added
+- Meraki - L2 interfaces, reason "connecting" added
 - Palo Alto - an interface that wasn’t associated with any VSYS could
   be missing in the interface inventory
 - Palo Alto - collect list of VRFs from show commands instead of
@@ -361,10 +361,10 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 - Palo Alto - fixed missing routing tables on single vsys firewalls
 - Palo Alto - fixed parsing of command "show vpn gateway" with
   multiple DH groups
-- Palo Alto - fixed parsing of different output for command “show
-  routing route”
-- Palo Alto - fixed parsing of different output for command “show vpn
-  flow“
+- Palo Alto - fixed parsing of different output for command "show
+  routing route"
+- Palo Alto - fixed parsing of different output for command "show vpn
+  flow"
 - Palo Alto - fixed vendor bug where the sessions keep open even the
   connection is correctly closed. Using "exit" cmd for disconnection.
 - Vlan topology calculation - Virtual mac used in switch ID for Cisco
@@ -463,7 +463,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
 - HP Aruba switch fix parsing of hostname
 - HP Arubasw - fixed parsing of different output for command "show
   vlans"
-- HP Arubasw - fixed parsing of different output for command “show
+- HP Arubasw - fixed parsing of different output for command "show
   lldp info local-device"
 - HP Comware - fixed parsing of different output for command "display
   arp"
@@ -536,7 +536,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
 - Cisco NX-OS, IOS-XR - fixed parsing of different output for commands
   "show hsrp", "show hsrp detail", "show vrrp detail"
 - Cisco SG - dot1x related commands parsing fixed
-- F5 BigIP - fix “show sys hardware” failure in version detection
+- F5 BigIP - fix "show sys hardware" failure in version detection
 - Fixed Device type detection - One non-connected route is enough for
   router
 - Fortinet FortiGate - fixed missing VIP groups in zone firewall
@@ -597,7 +597,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
 - Fortinet FortiGate - fixed parsing of different output for command
   "show firewall address"
 - Fortinet FortiGate - fixed parsing of different output for command
-  “get system status“
+  "get system status"
 - Fortinet FortiGate - fixed processing of policies with service ALL
   in zone firewall
 - Fortinet FortiGate - neighbor relationships fixed on VDOM links
@@ -614,7 +614,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
 - Juniper Junos - fixed parsing of different output for command "show
   configuration \| display set \| except "^deactivate""
 - Juniper Junos - fixed parsing of different output for command "show
-  configuration security policies \| display set”
+  configuration security policies \| display set"
 - Juniper Junos - fixed parsing of different output for command "show
   ethernet-switching interface"
 - Juniper Junos - fixed parsing of different output for command "show
@@ -682,8 +682,8 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
   crypto ipsec sa"
 - Cisco IOS - fixed parsing of different output for command "show ip
   route"
-- Cisco IOS - fixed parsing of different output for command “show vlan
-  brief“
+- Cisco IOS - fixed parsing of different output for command "show vlan
+  brief"
 - Cisco IOS - multicast MAC address table - parsing updated to support
   IOS based routers
 - Cisco IOS XR - fixed platform and model detection for NCS series
@@ -874,8 +874,8 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
   stackwise
 - Cisco Catalyst 3K & 9K - Total output drops bytes/packets handling
   (CSCve59640).
-- Cisco IOS - add correct parameters to the command “show
-  storm-control“ on Cat4500 platforms
+- Cisco IOS - add correct parameters to the command "show
+  storm-control" on Cat4500 platforms
 - Cisco IOS - fixed parsing of different output for command "show lldp
   neighbors"
 - Cisco IOS - fixed parsing of different output for command "show run"
@@ -916,7 +916,7 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
 - Extreme Boss - fixed parsing of different output for command "show
   mac-address-table"
 - Extreme Boss - fixed parsing of different output for command "show
-  port-statistics”
+  port-statistics"
 - Extreme Boss - fixed parsing of different output for command "show
   running-config"
 - Extreme Boss - fixed parsing of different output for command "show
@@ -942,8 +942,8 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
 - Fortinet Fortigate - Zone firewall fixes for load balancing VIP
 - HP Aruba - fixed parsing of different output for command "show ap
   port status ap-name \<apName>"
-- HP Aruba - fixed parsing of different output for command “show lldp
-  neighbor interface \<intName> detail“
+- HP Aruba - fixed parsing of different output for command "show lldp
+  neighbor interface \<intName> detail"
 - HP Arubasw - fixed model detection on stack switches
 - HP Arubasw - fixed parsing of different output for command "show ap
   details ap-name \<apName>"
@@ -1043,7 +1043,7 @@ SHA256SUM: 0FBC098CEE58B7A1F14C6D7DAB822E47788ED2ADB0074DBCC9F745CE7BBEF557
   switch virtual redundancy"
 - Cisco NX-OS - fixed version detection for models NX-OSv
 - Cisco NX-OS - MDS switches and Nexus 1k Virtual Services Appliance
-  servers are flagged as “Unsupported devices”
+  servers are flagged as "Unsupported devices"
 - Cisco NX-OS - fixed parsing of different outputs for command "show
   ip igmp interface"
 - Cisco NX-OS - fixed parsing of different outputs for command "show
@@ -1192,7 +1192,7 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 - Cisco IOS/IOS-XE - fixed parsing of different outputs for command
   "show interfaces"
 - Cisco IOS C3750 - fixed parsing of provisioned member switches in
-  command “show switch detail“
+  command "show switch detail"
 - Cisco IOS-XE - "show version" stack member parsing fixed
 - Cisco IOS XR - fixed parsing of different outputs for command "show
   cef vrf \<instance> detail"
@@ -1299,9 +1299,9 @@ SHA256SUM: 3FBA60725BC7261145759AE79DA8E38B54167141F755140D8F67699B5A7F1525
 - Arista EOS - IGMP snooping groups - flood support added
 - Cisco ASA/FTD - ACL evaluation fixed (for cases with inbound global
   ACL only)
-- Cisco ASA/FTD - "internal-only” interfaces are not parsed anymore
-  (names like "Internal-Data”, "Internal-Control” or "Virtual” with
-  nameif "\_internal_loopback”)
+- Cisco ASA/FTD - "internal-only" interfaces are not parsed anymore
+  (names like "Internal-Data", "Internal-Control" or "Virtual" with
+  nameif "\_internal_loopback")
 - Cisco IOS - fixed parsing of different output for command "show ip
   igmp snooping"
 - Cisco IOS - IGMP snooping - parsing fix for EOL comma, multiple
@@ -1373,7 +1373,7 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
 - Table Technology / IP Telephony / Phones - added columns "Vendor"
 - Cisco Nexus - Mroute table counters (incoming packets and avg.
   packet size) added
-- Cisco Nexus - routes with “pending only” parameters are not put into
+- Cisco Nexus - routes with "pending only" parameters are not put into
   the routing table
 - Cisco FTD - uptime parsing fixed for device in failover cluster
   (device uptime is used now)
@@ -1431,7 +1431,7 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
   ldp neighbor extensive instance \<vpnName>"
 - Juniper Junos - fixed parsing of different output for command "show
   spanning-tree bridge detail"
-- Juniper Junos - fixed parsing of various output for command “show
+- Juniper Junos - fixed parsing of various output for command "show
   interfaces terse"
 - Juniper Junos - fixed parsing of different output for command "show
   configuration \| display set"
@@ -1798,7 +1798,7 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0
 
 **Features - Protocol and technology support**
 
-- Added support for Cisco Converged Access WLCs and “Next-Gen” WLCs
+- Added support for Cisco Converged Access WLCs and "Next-Gen" WLCs
   9800
 - Added support for Quagga Routing Suite
 - Added basic support for Virtual Systems on Palo Alto firewalls
@@ -2104,7 +2104,7 @@ SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17
   "show ip dhcp snooping binding"
 - Cisco IOS & NX-OS - fixed parsing of different output for command
   "show ip dhcp snooping statistics"
-- Cisco IOS & NX-OS - “show vlan brief” support for long names and
+- Cisco IOS & NX-OS - "show vlan brief" support for long names and
   spaces in names added
 - Cisco IOS use "show vlan-switch brief" command (instead of show vlan
   which gives ambiguous command).
@@ -2306,7 +2306,7 @@ SHA256SUM: 237754a2d2594c7ee096c6d90f00a7833bb8f6159e40bb9b5f303b5674d30ce6
 - Cisco ACL - added support for more complex rules combining several
   service object-groups
 - HP Arubasw - LLDP information gathering extended to support switches
-  not supporting “show lldp info remote-device detail” command
+  not supporting "show lldp info remote-device detail" command
 
 **Bug Fixes**
 
@@ -2325,7 +2325,7 @@ SHA256SUM: 237754a2d2594c7ee096c6d90f00a7833bb8f6159e40bb9b5f303b5674d30ce6
 - F5 Big-IP - fixed parsing of different output for command "list sys
   snmp all-properties"
 - Fortinet - NTP task fixed for case when NTP is disabled and command
-  “diagnose sys ntp status“ is not available
+  "diagnose sys ntp status" is not available
 - HP Aruba switch - fixed parsing of different output for command
   "show system"
 - HP Comware - Interface with lag down state parsing fix
@@ -2451,7 +2451,7 @@ unloaded and loaded again.
   interface"
 - Cisco IOS - fixed parsing of different output for command "show
   object-group"
-- Cisco IOS - do not run “show flow interface” command on devices
+- Cisco IOS - do not run "show flow interface" command on devices
   where is no exporter (ambiguous cmd fix).
 - Cisco IOS-XE & IOS-XR MPLS forwarding table parsing fixes
 - Cisco IOS-XE - fixed parsing of different output for command "show
@@ -2584,13 +2584,13 @@ version 3.4.7.
 - User Interface Security - TLSv1.2 is now the only allowed HTTPS
   protocol
 - Network Assurance Dashboard loading speedup
-- Cisco WLC - Syslog related information is now parsed from “show
-  run-config commands” instead of “show logging” which provided a lot
+- Cisco WLC - Syslog related information is now parsed from "show
+  run-config commands" instead of "show logging" which provided a lot
   of unnecessary data
 - Fortinet FortiGate - added support for any-any zone firewall
   policies
-- Juniper memory information is now taken from “show chassis routing“
-  command instead of “show system memory“
+- Juniper memory information is now taken from "show chassis routing"
+  command instead of "show system memory"
 - F5 BigIp Improved prompt detection
 - Settings - Advanced - SSH/Telnet - Maximum number of parallel
   sessions can be limited to a single session (Warning: Discovery

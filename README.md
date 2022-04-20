@@ -1,13 +1,11 @@
-# IP Fabric Documentation Project
+ IP Fabric Documentation Project
 
 We are using [MkDocs](https://www.mkdocs.org/) with an excellent [Material for
 MkDocs](https://squidfunk.github.io/mkdocs-material/). Last, but not least, is
 [mike](https://github.com/jimporter/mike), which is a tool for building and
 publishing different versions of the documentation.
 
-> Site is currently accessible at https://docs.bobek.cz/main/
-
-## Release process
+# Release process
 
 One of the main motivations for migration towards Markdown-based documentation
 is ability to follow standard development model. Thus any update to the
@@ -23,13 +21,38 @@ documentation happens as follows:
 - `mike` is then used by repository maintainers to push a new version release to
   the documentation web. (See the `mike` section below.)
 
-## Writing documentation
+# Writing documentation
 
-### General recommendations
+## Style Guide
 
-You can use [vale](https://github.com/errata-ai/vale) to help you keep
-consistent documentation style. It keeps an eye on your choice of words, tenses,
-sentence complexity and much more.
+* Make sure you use relative links, otherwise you'd break versioned links.
+* Make sure your links work - esp. please make sure your internal links are
+  relative (usually this means they're starting with `..`, internal links must
+  not start with `/` or even `https://` as these would not work correctly when
+  deployed).
+* If you use an abbreviation, make sure you define it before.
+  * Abbreviations are always uppercase, unless used in a verbatim text (e.g.
+    API call) when they need to be marked as `monotype`.
+* Verbatim strings are to be rendered in monotype (backticks) - e.g. API call
+  parameters, command line arguments etc...
+* Please use regular double quotes - character `"` instead of fancy/curly
+  quotes from UTF-8 - `""`
+
+TODO: take a look at e.g. https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
+
+## CI/CD
+
+We use [vale](https://github.com/errata-ai/vale) to help you keep consistent
+documentation style. It keeps an eye on your choice of words, tenses, sentence
+complexity and much more. It us run as a part of CI/CD pipeline.
+
+Failure is not a fatal error at the moment, but please look into CI/CD logs
+during MR to avoid adding new problems.
+
+We also build the documentation during CI/CD which means that internal links
+are being validated. 
+
+## General recommendations
 
 There are some great resource on how to write a good documentation out on
 Interwebs. Good starting points:
@@ -37,17 +60,23 @@ Interwebs. Good starting points:
 - [Google's Technical Documentation Style Guide](https://developers.google.com/style)
 - [Google's Technical Writing Course](https://developers.google.com/tech-writing)
 
-### Repository layout
+## Repository layout
 
 All the documents live under `docs` directory. Directories are used to create
 sections. Please, pay attention to naming. We have opted for automated content
-discovery which honors alphabetical order. Another approach would be manual
-configuration with `nav` section, but that would require manual addition of
-every single new page. This approach is similar in other documentation builders
-(except Sphinx). You can read more at [mkdocs documentation on file
+discovery which honors alphabetical order.
+
+* Folder names are translated directly to chapter names, please use English
+  capitalization rules for folder/file names.
+* Words in folder/file names are separated by underscore `_`.
+
+Another approach would be manual configuration with `nav` section, but that
+would require manual addition of every single new page. This approach is
+similar in other documentation builders (except Sphinx). You can read more at
+[mkdocs documentation on file
 layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
-### Writing your documents
+## Writing your documents
 
 Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
 with some helpful extensions. List of enabled extensions is at `mkdocs.yml`
@@ -59,7 +88,7 @@ under `markdown_extensions` section.
 
 Please, make yourself familiar with [Material Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/) and [MkDocs Markdown Guide](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown).
 
-### Live preview
+## Live preview
 
 You can run live preview, which is super helpful when writing / editing the
 documentation. It is simple as equivalent of
@@ -68,13 +97,13 @@ documentation. It is simple as equivalent of
 virtualenv -p python3 .venv && source .venv/bin/activate && pip3 install -r requirements.txt && mkdocs serve
 ```
 
-## `mike` cookbook
+# `mike` cookbook
 
 `mike` is a build and version tool for MkDocs. It works by building the current
 checkout locally and then pushing it to appropriate directory under `gh-pages`
 branch.
 
-### Why do we have `gh-pages` on GitLab?
+## Why do we have `gh-pages` on GitLab?
 
 `mike` expects to be running on GitHub. GitHub uses `gh-pages` branch as a store
 for files being deployed to the static website. GitLab has a different approach
@@ -110,7 +139,7 @@ File `versions.json` contains information about published versions. This is
 consumed by the Material Theme to render version switcher at the top of the
 screen.
 
-### Release a new version of documentation
+## Release a new version of documentation
 
 Let's assume, that we are on version `4.5` and want to release a brand new
 `4.6`. Current `main` corresponds to content of `4.6` release. To release it we
@@ -123,7 +152,7 @@ just need to do the following:
   - updates alias `latest` to point to newly created `4.6`
   - push all commits which were made on `gh-pages` to the origin
 
-### Release an update to existing version
+## Release an update to existing version
 
 Let's assume, that our latest version is `4.6`. But we have found a serious
 issue with documentation for version `3.8` and we want to update it.
@@ -137,7 +166,7 @@ issue with documentation for version `3.8` and we want to update it.
 - Update the released documentation with `mike deploy --push 3.8`.
 - agrr, profit!
 
-### Removing old release
+## Removing old release
 
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!

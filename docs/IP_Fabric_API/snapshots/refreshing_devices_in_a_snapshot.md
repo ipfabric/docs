@@ -1,4 +1,4 @@
-# Refreshing devices in a snapshot
+# Refreshing Devices In a Snapshot
 
 Do this in two stages:
 
@@ -14,12 +14,12 @@ Do this in two stages:
 
     to return the actual snapshot ID for $last, and the list of serial numbers and hostnames for devices in site L38.
 
-2.  send a POST to **/snapshots/XXXXXXXXXXX/devices** where XXXXXXXXXX is the snapshot ID that needs to be refreshed with a request body like
+2.  send a `POST` to **/snapshots/XXXXXXXXXXX/devices** where XXXXXXXXXX is the snapshot ID that needs to be refreshed with a request body like
 
-    ```jsc
+    ```js
     {
       "snList":["SN_AAAA","SN_BBBB","SN_CCCC"]
     }
     ```
 
-    Where SN_AAAA, SN_BBBB, SN_CCCC are the serial numbers of the devices that need to be updated. This triggers the update.
+Where SN_AAAA, SN_BBBB, SN_CCCC are the serial numbers of the devices that need to be updated. This triggers the update.

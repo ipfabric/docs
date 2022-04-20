@@ -34,14 +34,14 @@
 ------------------------------------------------------------------------
 
 !!! info Cisco ASA
-    **Description**: Some Cisco ASA and Firepower Hardware platforms enable running either Cisco ASA software or Firepower Threat Defense software. Depending on the software actually in use these devices are detected either as Cisco ASA or Cisco FTD. E.g. Cisco Firepower 2100 can be detected as “asa” when running ASA software, or as “ftd” when running FTD software.
+    **Description**: Some Cisco ASA and Firepower Hardware platforms enable running either Cisco ASA software or Firepower Threat Defense software. Depending on the software actually in use these devices are detected either as Cisco ASA or Cisco FTD. E.g. Cisco Firepower 2100 can be detected as "asa" when running ASA software, or as "ftd" when running FTD software.
 
 ------------------------------------------------------------------------
 
 !!! bug **Affected platforms**: Cisco Nexus 5000, 6000 and 9000
 
-    **Description**: Several Cisco Nexus platforms allow setting MTU on a per-service basis. Interface MTU shown in IPF GUI is only interface specific (e.g. inventory/interfaces table). Therefore interface MTU value for Nexus 5k/6k/9k can only be displayed if the network-qos system policy defines the same MTU for all services or when no network-qos system policy is active. Command “show policy-map system type network-qos” is used to determine the network-qos system policy.
-    MTU value displayed in “show interface” command is assumed to be the default value. Note: class-fcoe is not considered when comparing different services MTUs.
+    **Description**: Several Cisco Nexus platforms allow setting MTU on a per-service basis. Interface MTU shown in IPF GUI is only interface specific (e.g. inventory/interfaces table). Therefore interface MTU value for Nexus 5k/6k/9k can only be displayed if the network-qos system policy defines the same MTU for all services or when no network-qos system policy is active. Command "show policy-map system type network-qos" is used to determine the network-qos system policy.
+    MTU value displayed in "show interface" command is assumed to be the default value. Note: class-fcoe is not considered when comparing different services MTUs.
     
     - [CSCsl21529](https://bst.cloudapps.cisco.com/bugsearch/bug/CSCsl21529)
 
@@ -57,7 +57,7 @@
 
 !!! bug **Affected platforms**: ASA and FTD family firewalls
 
-    **Description**: VLAN ID detection for interfaces - If “show interface detail” doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.
+    **Description**: VLAN ID detection for interfaces - If "show interface detail" doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.
 
     **Result**: In rare cases, VLAN ID for interface might be not determined correctly
 
@@ -65,7 +65,7 @@
 
 !!! bug **Affected platforms**: FTD family firewalls
 
-    **Description**: VLAN ID detection for interfaces - If “show interface detail” doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.
+    **Description**: VLAN ID detection for interfaces - If "show interface detail" doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.
 
     **Result**: When using FTD, if you run the 'show ntp' command a password prompt will appear in the command line. This will break the discovery of FTD. NTP tasks for FTD is by default disabled. If your FTD are not affected by this bug, you can safely enable it.
 

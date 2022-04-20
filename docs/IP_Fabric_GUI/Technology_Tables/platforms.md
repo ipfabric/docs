@@ -17,10 +17,10 @@ and highest PoE class available on the device
 
 PoE interface table lists all interfaces that support PoE protocol.
 Filters can be used to check PoE interface status on a particular
-device. _“Admin status”_ shows the administrative status of an
+device. _"Admin status"_ shows the administrative status of an
 interface. It can be enabled/auto or admin-down, shutdown or disabled.
 Operation status lists status of every enabled PoE port. Type/PID of
-powered devices are available in the _“Powered Device”_ column if
+powered devices are available in the _"Powered Device"_ column if
 available. The last three columns describe PoE class and power usage.
 
 ![PoE - Interfaces](platforms/poe_interfaces.png)

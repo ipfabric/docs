@@ -8,9 +8,9 @@ assigned a new snapshot is required for it to be applied.
 
 ![Device attributes](device_attributes.png)
 
--   **Serial Number is IP Fabric’s “Unique Serial Number” (API column
-    “sn”); this is not the column “Serial Number” which represents the
-    Hardware SN (API column “snHw”)**
+-   **Serial Number is IP Fabric’s "Unique Serial Number" (API column
+    "sn"); this is not the column "Serial Number" which represents the
+    Hardware SN (API column "snHw")**
 
     -   *Devices discovered via API can also be assigned using Device
         Attributes.*

@@ -109,8 +109,8 @@ to your hard drive by the "Download snapshot" button.
 
 ![Snapshot download](snapshots/snapshot_download.png)
 
-This snapshot can be loaded back to the IP Fabric platform by a “Load
-From File” button.
+This snapshot can be loaded back to the IP Fabric platform by a "Load
+From File" button.
 
 ![Snapshot load from file](snapshots/snapshot_load_from_file.png)
 

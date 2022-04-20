@@ -33,6 +33,6 @@ The function can be **Enabled/Disabled** in section **Settings → Advanced → 
 
 To **disable** this task, you need to **delete the default Transceivers task** or **edit** this default task.
 
-When **editing** this rule, you select by regex expression on which devices this command **should not** be executed (so for example if you don't want to run show interface transceivers command for all CISCO devices, put cisco to the Vendor field. More specific device selection can be done by Family, Platform, Model and Version fields). You can simply test your Regex rules by *“Test rules“* button.
+When **editing** this rule, you select by regex expression on which devices this command **should not** be executed (so for example if you don't want to run show interface transceivers command for all CISCO devices, put cisco to the Vendor field. More specific device selection can be done by Family, Platform, Model and Version fields). You can simply test your Regex rules by *"Test rules"* button.
 
 ![](transceivers_edit.png)

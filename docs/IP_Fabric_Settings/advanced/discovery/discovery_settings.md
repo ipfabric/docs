@@ -17,7 +17,7 @@ The feature is especially helpful for large complex networks with
 already defined device scope to avoid multiple repetitive failed
 SSH/Telnet attempts that may slow down snapshot creation.
 
-When “Limit discovery” is enabled it also ignores all new devices from
+When "Limit discovery" is enabled it also ignores all new devices from
 the discovery seed and new include lists! If you need to discover new
 device(s) with "Limit discovery" please add them manually to the last
 (or any other) snapshot.

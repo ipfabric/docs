@@ -10,7 +10,7 @@
 
 ** Known Affected Software Versions**: R80.30 and R80.40
 
-**Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `“master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Checkpoint firewalls.
+**Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Checkpoint firewalls.
 
 ## Discovery of Security Policies
 
@@ -23,7 +23,7 @@
 
 To successfully discover a CheckPoint Gateway, correct role have to be
 assigned to a user. IPF requires role features set as read-only, except
-of “Virtual-System“ where read-write is needed (only if VSX firewalls
+of "Virtual-System" where read-write is needed (only if VSX firewalls
 are in your network, otherwise read-only is enough).
 
 ![](checkpoint/checkpoint_role.png)
@@ -35,12 +35,12 @@ are in your network, otherwise read-only is enough).
 2.  Navigate to User Management > Roles in the left menu
 
 3.  Click Add, fill in the name. In the Features tab select all items
-    and mark them as “Read-Only“. No permissions from “Extended
-    Commands“ tab are needed\*.
+    and mark them as "Read-Only". No permissions from "Extended
+    Commands" tab are needed\*.
 
 4.  If you have VSX firewall in your network, you have to set
-    “Virtual-System“ feature to “Read-Write“ (we call “set
-    virtual-system \<ID>“ to switch to proper virtual system). This
+    "Virtual-System" feature to "Read-Write" (we call "set
+    virtual-system \<ID>" to switch to proper virtual system). This
     allows IPF just to change context and can’t be used for anything
     else.
 

@@ -47,7 +47,7 @@ After opening the details, we can select the destination link to proceed with pa
 ## Understand the path selection
 
 To understand the decision taken by a device, right-click on the device
-and “show detail”. You will then be presented with the details. If you
+and "show detail". You will then be presented with the details. If you
 have more than one interface where the flow can come from, you will need
 to select the interface you want to look at. Similarly, if you have
 several interfaces that can be used to forward the traffic, you will

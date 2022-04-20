@@ -55,7 +55,7 @@
 
 **System Features**
 
--   Improved MOTD for “nimpee” troubleshooting user
+-   Improved MOTD for "nimpee" troubleshooting user
 -   HTTPS access.
 -   HTTPS certificate wizard is now part of the initial configuration
 -   Image hardening

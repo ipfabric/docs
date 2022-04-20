@@ -1,39 +1,51 @@
-# Create new snapshots via API
+# Create New Snapshots Via API
 
 This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with a different set of settings, if you wanted to have a reduced scope for example.
 
 ## API Endpoints
 
-- [https://host.domain/api/v1/snapshots](https://host.domain/api/v1/graphs/svg) -**`method[POST]`** to create a new snapshot
+- **https://host.domain/api/v1/graphs/svg** - method **`[POST]`** to create a new snapshot
 
-- [https://host.domain/api/v1/settings](https://host.domain/api/v1/graphs) - **`method[GET]`** to collect all IP Fabric settings
+- **https://host.domain/api/v1/graphs** - method **`[GET]`** to collect all IP Fabric settings
 
-## Create a new snapshot with the existing settings
+## Create a New Snapshot With The Existing Settings
 
-If you want to start a discovery, using the existing settings, it is a simple POST request to [https://host.domain/api/v1/snapshots](https://host.domain/api/v1/graphs/svg), without a body.
+If you want to start a discovery, using the existing settings, it is a simple POST request to **https://host.domain/api/v1/graphs/svg**, without a body.
 
-[Information regarding the Header/Authentication](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/2785640457/API+Tech+Note+-+IP+Fabric+4.x+Unicast+Path+Lookup#POST-Request) has already been mentioned in another article. Please refer to this if needed.
+[Information regarding the Header/Authentication](../../Path_Lookup_4.x/#post-request) has already been mentioned in another article. Please refer to this if needed.
 
 ![configure of Creating snapshoot](configure_of_Creating_snapshoot.gif)
 
-## Create a new snapshot with different settings than the default ones
+## Create a New Snapshot With Different Settings Than The Default Ones
 
 What if you wanted a snapshot for a smaller scope of your network. For this, you can use the API to start a new discovery, with some specific settings used for a specific discovery.
 
-Here is an example of a body to use to perform a discovery with a new scope (“networks”), new seed devices (“seedList”) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,
+Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,
 
 !!! info The value from your settings will be used
-`js { "snapshotName": "Name of the Snapshot", "snapshotNote": "Some notes to describe the snapshot", "networks": { "exclude": [], "include": [ "10.66.0.0/16" ] }, "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ], "vendorApi": [] } `
+```js
+{
+    "snapshotName": "Name of the Snapshot",
+    "snapshotNote": "Some notes to describe the snapshot",
+    "networks":
+        {
+            "exclude": [],
+            "include": [ "10.66.0.0/16" ]
+        },
+    "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ],
+    "vendorApi": []
+}
+```
 
 Let’s see how it looks when using Postman:
 
 ![create snapshot](create_snapshot.gif)
 
-## What settings can I use when creating a new snapshot?
+## What Settings Can I Use When Creating a New Snapshot?
 
-There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a GET on the endpoint [https://host.domain/api/v1/settings](https://host.domain/api/v1/graphs)
+There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint **https://host.domain/api/v1/settings**
 
-The response will look like this _(this is just an extract of the JSON):_
+The response will look like this *(this is just an extract of the JSON)*:
 
 ```js
 {

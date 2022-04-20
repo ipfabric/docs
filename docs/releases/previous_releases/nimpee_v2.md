@@ -668,8 +668,8 @@
   / Error reports & in each table with Hostname detail (only for user
   with Settings privileges)
 - XDP (Discovery Protocols) now consider only neighbors with
-  capabilities “router” or (“switch” or “bridge” but excluding “phone”
-  or “host”)
+  capabilities "router" or ("switch" or "bridge" but excluding "phone"
+  or "host")
 
 **Improvements and Bug Fixes**
 
@@ -813,7 +813,7 @@ of history collected.
 - Discovery connectivity report now contains vendor column for
   connection attempts from ARP entries
 - Discovery from XDP protocols now considers only neighbor with
-  capabilities “router”, “switch”, or “bridge”
+  capabilities "router", "switch", or "bridge"
 - SSH/TELNET authentication credentials can now be limited to a
   specific subnet
 
@@ -989,7 +989,7 @@ Features
   hostname and interface.
 - Added support for relayed Syslog messages
 - Improved diagram performance
-- Improved diagrams **Diagrams - Network** - added “ignore filters”
+- Improved diagrams **Diagrams - Network** - added "ignore filters"
   option to allow displaying of a single device with no known
   connections
 - Improved diagrams **Diagrams - Network** - added show utilization
@@ -1004,14 +1004,14 @@ Features
 - Improved diagrams UI - enabled searching in the list of sites,
   routing domains, and switching domains
 - Settings - Authentication - disable browser popup to save passwords
-- Sites calculation type “Routing & Switching domain” change to
+- Sites calculation type "Routing & Switching domain" change to
   sticky. Now using an intersection of previously found serials
   numbers with new ones. Previously renamed sites before this release
   will be discarded without a migration script.
 
 **BugFixes**
 
-- CLI parsing - Fixed false prompt detection when was used “>” char in
+- CLI parsing - Fixed false prompt detection when was used ">" char in
   the interface description
 - CLI parsing - Cisco NXOS - fixed parsing of the routing table for
   local routes
@@ -1107,7 +1107,7 @@ Features
 
 - SSH & Telnet clients - fixed false prompts detection *(Cisco ASA
   timeouted on \<—More—>)*
-- Cisco WLC - **show client summary** command timeout fix *(reply “y”
+- Cisco WLC - **show client summary** command timeout fix *(reply "y"
   on display more entries? y/n)*
 - Cisco WLC - **show port detailed info** fixed parsing
 - Cisco **show spanning-tree detail** STP instances with no interfaces
@@ -1155,7 +1155,7 @@ Features
 - Jumphost support
 - Connectivity matrix based on protocol direction
 - Access List - new filter for source & destination port (searching in
-  port range, filter values can be separated by “,”)
+  port range, filter values can be separated by ",")
 - Tables improvements (Automatic calculation of rows per page, Table
   rows size, Sticky first column, better pagination design)
 - User management including roles
