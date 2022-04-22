@@ -45,6 +45,11 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
     Points). You can find more information at the [dedicated licensing
     page](../Getting_Started/Overview/licensing.md).
 
+!!! important "Changes in Configuration Table since v4.4.0"
+
+    The following column names were changed `["_id", "lastChange", "lastCheck"]` to `["id", "lastChangeAt", "lastCheckAt"]`. 
+    Providing a `snapshot` ID in the POST was also removed from the `/tables/management/configuration` endpoint.
+
 ### New Vendor Support
 
 - Added support for Cisco Viptela cEdge
