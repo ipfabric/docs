@@ -52,6 +52,8 @@ to enable local backups. (See steps below)
 
 10. Expand the new volume as a backup (Backup is used only for local
     backups).
+   
+    ![New backup volume](backup_expand.png)
 
 11. Selected volume is extended.  
 
