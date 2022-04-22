@@ -8,8 +8,7 @@ You do this in two stages:
 
     ```json
     {
-      "columns":["_id", "hash", "hostname", "lastChange", "lastCheck", "reason", "sn", "status"],
-      "snapshot":"$last"
+      "columns":["id", "hash", "hostname", "lastChangeAt", "lastCheckAt", "reason", "sn", "status"]
     }
     ```
 
