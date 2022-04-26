@@ -2186,9 +2186,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Azure Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Azure Networking
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-setup" class="md-nav__link">
+    Azure Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-an-app" class="md-nav__link">
+    Register an App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-access-control" class="md-nav__link">
+    Subscription &amp; Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-definitions-for-ip-fabric" class="md-nav__link">
+    Role definitions for IP Fabric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3624,6 +3682,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-setup" class="md-nav__link">
+    Azure Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-an-app" class="md-nav__link">
+    Register an App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscription-access-control" class="md-nav__link">
+    Subscription &amp; Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-definitions-for-ip-fabric" class="md-nav__link">
+    Role definitions for IP Fabric
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3638,49 +3738,92 @@
 
 <h1 id="azure-networking">Azure Networking</h1>
 <p>Starting version 4.3 IP Fabric supports the discovery of the Azure Cloud
+infrastructure. Azure devices are discovered only through API. The IP
+Fabric covers the IaaS (Infrastructure as a Service) part of the cloud.
+Azure Cloud Compute provides an abstract view of the Azure physical
 infrastructure.</p>
-<p>Azure devices are discovered only through API.</p>
-<p>To add Azure devices to discovery global settings, go to <strong>Settings →
-Advanced → Vendors API</strong> and press <strong>the +Add</strong> button</p>
-<p>To discover Azure devices, a subscription ID, tenant ID, client
-(application) ID, and client secret are needed.</p>
-<p>The IP Fabric covers the IaaS (Infrastructure as a Service) part of the
-cloud. Azure Cloud Compute provides an abstract view of the Azure
-physical infrastructure.</p>
-<p><strong>Following Azure elements are supported:</strong></p>
 <ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview">Virtual Network</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-gateway-resource">NAT Gateway</a></li>
 <li>
-<p>Virtual Network
-    (<a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview">https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview</a>)</p>
-</li>
-<li>
-<p>NAT Gateway
-    (<a href="https://docs.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-gateway-resource">https://docs.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-gateway-resource</a>)</p>
-</li>
-<li>
-<p>Virtual Network Gateway (both types: VPN
-    <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/">https://docs.microsoft.com/en-us/azure/vpn-gateway/</a> and
-    ExpressRoute
-    <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways">https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways</a>)</p>
+<p>Virtual Network Gateway (both types: <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/">VPN</a> and <a href="https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways">ExpressRoute</a>) and devices related to a <a href="https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about">Virtual WAN</a> solution:</p>
+<ul>
+<li>Virtual HUB</li>
+<li>VPN Gateway (the same functionality as VNGw type VPN)</li>
+<li>ExpressRoute Gateway (the same functionality as VNGw type ExpressRoute)</li>
+</ul>
 </li>
 </ul>
-<p>and devices related to a Virtual WAN solution
-(<a href="https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about">https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about</a>):</p>
-<ul>
+<p>We want to bring support for The plan is to add support of <a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview">Load Balancer</a> in one of next releases.</p>
+<h2 id="azure-setup">Azure Setup</h2>
+<p>To add Azure devices to discovery global settings, go to <em>Settings →
+Advanced → Vendors API</em> and press the <em>+Add</em> button</p>
+<p>IP Fabric needs the following data in order to connect to the Azure API
+-- Tenant ID, Subscription ID, Application ID, and Application secret.
+Follow these steps to get the required data.</p>
+<p>First login to the Azure portal (<a href="https://portal.azure.com/">https://portal.azure.com/</a>)</p>
+<h3 id="register-an-app">Register an App</h3>
+<p>Search for "Active Directory".</p>
+<ol>
+<li>From the left menu, click on "App registrations", then click on "+New registration".</li>
+<li>Fill in the name of the application (e.g. "IP Fabric"). From the "Supported account types", select the first option "Single Tenant". Leave other options blank</li>
+<li>Once you click on "Register", you’ll be redirected to the App overview page. Note the "Application (client) ID" and "Directory (tenant) ID"</li>
+<li>Click on "Certificates &amp; Secrets" and select the "Client secrets (0)" tab, click "+ New secret", select Expiration and then click "Add".</li>
+<li>Copy the created <strong>client secret</strong> to the clipboard (column Value). <strong>You won’t be able to see it again</strong>.</li>
+</ol>
+<h3 id="subscription-access-control">Subscription &amp; Access Control</h3>
+<p>Search for "Subscriptions" and select the subscription you like to add to IPF (IPF can do discovery per subscription)</p>
+<ol>
+<li>On the overview page note the <em>Subscription ID</em>.</li>
 <li>
-<p>Virtual HUB</p>
+<p>From the left menu, click on Access control (IAM), click on "+ Add" and "Add custom role". Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select "Start from JSON" and upload JSON file with the required permissions (find it at the very bottom of this page). Click on the Next button to continue.</p>
+<p><a data-featherlight="../azure/create_custom_role.png" href="#"><img alt="Creating Custom Role" src="../azure/create_custom_role.png" /></a></p>
 </li>
 <li>
-<p>VPN Gateway (the same functionality as VNGw type VPN)</p>
+<p>Review the permissions and click Next. Now you have to assign a scope for this role. Click on "Add assignable scopes" and from the right panel select Type: Subscription and than click on the Subscription you want to assign  </p>
+<p><a data-featherlight="../azure/assign_scopes.png" href="#"><img alt="Assigning Scopes" src="../azure/assign_scopes.png" /></a></p>
 </li>
 <li>
-<p>ExpressRoute Gateway (the same functionality as VNGw type
-    ExpressRoute)</p>
+<p>Click on "Review + Create"</p>
 </li>
-</ul>
-<p>The plan is to add support of Load Balancer
-(<a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview">https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview</a>
-) in one of next releases.</p>
+<li>Now you have to assign the newly created Role to the Registered App. From the left menu, select again "Access control (IAM)" and then click "+ New" and "Add role assignment".</li>
+<li>
+<p>Find the previously created role, click "Next" and then click on "+ Select members". Find the app you created before. Click "Review + Assign"</p>
+<p><a data-featherlight="../azure/add_role_assignment.png" href="#"><img alt="Add Role assignment" src="../azure/add_role_assignment.png" /></a></p>
+</li>
+</ol>
+<h3 id="role-definitions-for-ip-fabric">Role definitions for IP Fabric</h3>
+<p>Following JSON format applies for IP Fabric version 4.3 and above:</p>
+<div class="highlight"><span class="filename">azure-role-4_3.json</span><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;roleName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPF discovery role&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Permissions needed for IP Fabric to discover Azure network infrastructure&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;assignableScopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/instanceView/read&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/read&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/vmSizes/read&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/*/read&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/connections/getikesas/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveNetworkSecurityGroups/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveRouteTable/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualHubs/effectiveRoutes/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getbgppeerstatus/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getlearnedroutes/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/vpnGateways/vpnConnections/vpnLinkConnections/getikesas/action&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Resources/subscriptions/locations/read&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Resources/subscriptions/resourceGroups/read&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;notActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;dataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;notDataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
