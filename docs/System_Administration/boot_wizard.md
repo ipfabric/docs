@@ -1,4 +1,4 @@
-# Reinitiate system 'Boot Wizard'
+# Reinitiate System 'Boot Wizard'
 
 The Boot Wizard needs to be completed during the IP Fabric virtual server
 deployment before the image installation begins. The Boot Wizard introduces the

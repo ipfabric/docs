@@ -73,7 +73,7 @@ To configure **Device Attributes** first enable the toggle in the Site Separatio
 - **Attribute** is the Device Attribute to assign, since we want to set the Site based on the serial number set it to **Site name**
 - **Value** is the attribute’s value to assign, in this case we want to split site `L35` into separate sites named `35COLO`, `35PRODUCTION`, `35HEADOFFICE`
 
-#### Creating rules in the UI
+### Creating Rules In The UI
 
 You are able to create rules in the UI by selecting the **Add attribute** button. This will provide you a form to fill out.
 
@@ -83,7 +83,7 @@ The dropdown is intuitive and will let you search based on SN or hostname. Curre
 
 ![Dropdown](site_separation/2896265219.png)
 
-#### Creating rules via the API
+### Creating Rules Via The API
 
 This is the preferred method of creating rules as it allows for bulk importing. Via `PUT` verb on `https://<IPF_URL>/api/v1/attributes/global`. Data looks like
 
@@ -93,7 +93,7 @@ This is the preferred method of creating rules as it allows for bulk importing. 
 ]
 ```
 
-#### Creating Rules with python-ipfabric package
+### Creating Rules With `python-ipfabric` Package
 
 Please see example at [GitHub](https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py).
 

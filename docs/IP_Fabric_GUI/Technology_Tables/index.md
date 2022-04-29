@@ -8,13 +8,13 @@ however all tables were built to handle large capacities and complex
 queries, so the outcome is likely to be better than analyzing the output
 in external applications like Excel.
 
-## Network or Site view
+## Network Or Site View
 
 Tables display data for the whole network by default. To only display
 data for a specific site, select "site" from the drop down menu on the
 top left.
 
-## Table filtering
+## Table Filtering
 
 Simple or advanced filters can be applied to each table. By default,
 filtering is available above each column, and accepted filtering values
@@ -41,7 +41,7 @@ Table outputs can be exported into CSV format for further processing and
 the text can be opened by any spreadsheet processor. In some cases,
 Microsoft Excel and Google Spreadsheets convert strings from the CSV
 files into dates, but these can remain as exact values by renaming the
-content to `"string"` to force the spreadsheet to retain the original
+content to `string` to force the spreadsheet to retain the original
 content.
 
 !!! note
@@ -50,22 +50,32 @@ content.
 ## Tooltips
 
 Each table contains built in help with the table description by clicking on the
-question mark ![tooltip](tooltip.png). Hover the mouse over the column name for
-a description of column content.
+question mark
 
-## Column visibility
+![tooltip](tooltip.png)
+
+Hover the mouse over the column name for a description of column content.
+
+## Column Visibility
 
 Tables can be especially large to facilitate easier information
 correlation, however not all columns need to always be visible. To hide
-or show individual columns, click the ![visibility](visibility.png)
+or show individual columns, click the
+
+![visibility](visibility.png)
+
 (toggle column visibility) button and select which the columns to be
 displayed. The first column can be set as "sticky" to facilitate
 analysis of tables with many columns. Row height can be adjusted by
 selecting small, medium or large font.
 
-## Persistent table view
+## Persistent Table View
 
 To improve usability, each table remembers the settings and filtering for each
 user. To reset a table to it’s original state, click
-the ![restore](restore.png) (restore table settings) button on the right hand
+the
+
+![restore](restore.png)
+
+(restore table settings) button on the right hand
 side of the column header.

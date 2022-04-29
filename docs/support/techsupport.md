@@ -10,9 +10,9 @@
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJZAzYAuXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Generating Techsupport file
+## Generating Techsupport File
 
-Go to Support -> Generate Techsupport
+Go to **Support -> Generate Techsupport**
 
 ![Generate techsupport](techsupport/generate.png)
 
@@ -20,7 +20,7 @@ Select data to be included in a Techsupport file (leave in default when in doubt
 
 ![Configure techsupport](techsupport/config.png)
 
-## Uploading a Techsupport file
+## Uploading a Techsupport File
 
 ### WEB / HTTPS
 
@@ -32,7 +32,7 @@ your browser. User and password are provided by technical support.
 Open [ftp://upload.ipfabric.io](ftp://upload.ipfabric.io) with your `ftp`
 client. User and password are provided by technical support.
 
-## What is included in the techsupport file?
+## What Is Included In The Techsupport File?
 
 1.  **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, MongoDB,
     ArangoDB and IP Fabric API service logs. Customer data are **not**

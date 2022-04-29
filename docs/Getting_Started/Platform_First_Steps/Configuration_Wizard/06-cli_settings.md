@@ -45,7 +45,7 @@ Command Authorization Failure retries
 
 ## Jump host
 
-**Jump host** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. For connecting, IP Fabric uses the `sshuttle` library that has the [following requirements for the jump host.](https://sshuttle.readthedocs.io/en/stable/requirements.html#client-side-requirements).
+**Jump host** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. For connecting, IP Fabric uses the `sshuttle` library that has the [following requirements for the jump hosts.](../../../../IP_Fabric_Settings/advanced/SSH_telnet/#setting-up-jump-host)
 
 !!! warning
 

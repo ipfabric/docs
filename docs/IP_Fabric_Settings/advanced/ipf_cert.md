@@ -23,8 +23,8 @@ To do this you have to:
 
 ## Generate Certificate Signing Request (CSR)
 
-1. Go to *Settings → Advanced → System → IP Fabric Certificate*.
-2. Fill in *Create a CSR (Certificate Signing Request)* form.
+1. Go to **Settings → Advanced → System → IP Fabric Certificate**.
+2. Fill in **Create a CSR (Certificate Signing Request)** form.
 
 !!! note Subject Alternative Name
 
@@ -37,7 +37,7 @@ To do this you have to:
 This step depends on the vendor and particular version of your
 certification authority so check the vendor's documentation.
 
-## Upload signed certificate
+## Upload Signed Certificate
 
 !!! warning
 
@@ -50,9 +50,9 @@ certification authority so check the vendor's documentation.
     previously generated and signed CSR, the certificate will not be
     applied.
 
-1. Go to **\*Settings → Advanced → System → IP Fabric Certificate**.\*
-2. Click **_Upload_** (the right upper corner)
-3. **_Drag and drop_** certificate or **_Select file_**
+1. Go to **Settings → Advanced → System → IP Fabric Certificate**.
+2. Click **Upload** (the right upper corner)
+3. **Drag and drop** certificate or **Select file**
 4. The IP Fabric web can be unresponsive for a few seconds while a new
    certificate is being installed
 5. Close your browser and re-open IP Fabric web UI

@@ -1,28 +1,28 @@
 # SSH/TELNET
 
-## Fine-Tune SSH/telnet CLI parameters
+## Fine-Tune SSH/telnet CLI Parameters
 
 The IP Fabric's discovery is primarily using Command Line Interface
 (CLI) to discover network elements. There are certain default CLI
-parameters that can be found in *Settings → Advanced → SSH/TELNET*
+parameters that can be found in **Settings → Advanced → SSH/TELNET**.
 
 ![CLI Settings](ssh/2396258368.png)
 
-### Network device login timeout
+### Network Device Login Timeout
 
 Timeout before the logging prompt is received. It may take longer for
 remote branches over low-speed lines, or destined to overloaded devices.
 
-### Network device session timeout
+### Network Device Session Timeout
 
-Too many *Command Timeout* errors during the Discovery process may
-indicate that *Network device session timeout* is too short and it
+Too many **Command Timeout** errors during the Discovery process may
+indicate that **Network device session timeout** is too short and it
 may be necessary to expect a delay for a response to arrive.
 
-### Maximum number of parallel sessions
+### Maximum Number Of Parallel Sessions
 
 To prevent flooding your network with too many SSH/TELNET sessions set
-*Maximum number of parallel sessions*. This setting can be also
+**Maximum number of parallel sessions**. This setting can be also
 helpful if the AAA server (TACACS/Radius) has a limit of parallel AAA
 requests for users.
 
@@ -31,32 +31,31 @@ command authorization. When there are too many authorization failures
 and Cisco ISE is in place, try to limit the number of parallel sessions
 down to 10 and steadily increase.
 
-### Basic failure
+### Basic Failure
 
 How many times to retry a connection for any error, except
 authentication failure.
 
-### Authentication failure
+### Authentication Failure
 
-*Authentication failure* can occur even if a user is authorized to
+**Authentication failure** can occur even if a user is authorized to
 login but may happen, for example, when an AAA server is overloaded or
 an authentication packet is lost.
 
-### Command Authorization Failure retries
+### Command Authorization Failure Retries
 
-If you see many examples of *Authentication error* during the
-Discovery process, please adjust *Authentication failure* and
-*Command Authorization Failure retries*.
+If you see many examples of **Authentication error** during the
+Discovery process, please adjust **Authentication failure** and
+**Command Authorization Failure retries**.
 
-### Example of error message in Connectivity Report
+### Example Of Error Message In Connectivity Report
 
 According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common
 errors and adjustments:
 
-|                                                                                 |                               |                                                                                                                    |
+| Error                                                                           | Error Type                    | How To Mitigate                                                                                                    |
 | ------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Error                                                                           | Error Type                    | How to mitigate                                                                                                    |
 | connect ETIMEDOUT XX.XX.XX.XX:22                                                | Connection error              | Received no response from the destination.                                                                         |
 | connect ECONNREFUSED XX.XX.XX.XX:22                                             | Connection error              | The connection to the destination is being blocked by an access-list or firewall.                                  |
 | All configured authentication methods failed                                    | Authentication error          | Unable to authenticate to the destination host                                                                     |
@@ -66,7 +65,7 @@ errors and adjustments:
 | Can't detect prompt                                                             | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
 | Command "enable" authorization failed, tried 2x                                 | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
 
-## Setting up Jump host
+## Setting Up Jumphost
 
 **Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.
 
@@ -85,10 +84,10 @@ errors and adjustments:
 !!! important
     At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.
 
-### Adding new Jumphost
+### Adding New Jumphost
 
-1. Open jump host settings, using item **_Settings → Advanced → SSH/TELNET_**
-2. At the bottom of the page, please select **_Add_** button
+1. Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
+2. At the bottom of the page, please select **+ Add** button
 
     ![Jump host settings](ssh/1384480773.png)
 
@@ -104,7 +103,7 @@ errors and adjustments:
     7. **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below
        ![Add Jumphost](ssh/1384480780.png)
 
-4. Click **_Add_** button
+4. Click **+ Add** button
 5. If a connection is open, you will see the **_Running_** status in Jumphost list
  
     ![Jumphost list](ssh/1384513560.png)
@@ -115,7 +114,7 @@ errors and adjustments:
     *"Exclude IPv4 subnet"*. Otherwise, your IP connection will be lost and
     you will have to recover from the console.
 
-### SSH key configuration
+### SSH Key Configuration
 
 !!! info
     Adding ssh key to proxy server allows you to avoid using passwords for authentication
@@ -135,58 +134,58 @@ errors and adjustments:
 5. If the key has been copied you can use the option _‘Use SSH keys'_
    while adding a new Jumphost server, instead of _'Use credentials’_
 
-### Disabling Jumphost connection
+### Disabling Jumphost Connection
 
 1. Edit configuration that needs to be disabled, i.e.\
 
     ![Jumphost settings](ssh/1384972305.png)
 
-2. Change the setting to **_Disabled_**,
+2. Change the setting to **Disabled**,
 
-3. Click the **_Update_** button
+3. Click the **Update** button
 
     ![Disable jumphost](ssh/1384906766.png)
 
-### Remove Jumphost configuration
+### Remove Jumphost Configuration
 
 1.  On Jumphost servers list, check configuration that needs to be
     removed
 
-2.  Click **_Delete_** button
+2.  Click **Delete** button
 
     ![Delete jumphost](ssh/1384939529.png)
 
-### Discovery with Jumphost issues
+### Discovery With Jumphost Issues
 
 Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.
 
-### Custom SSH/Telnet ports
+### Custom SSH/Telnet Ports
 
 !!! info
     Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
 
-In the following example we configure the discovery process to use port 8080
+In the following example we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
 
 ![edit custom ssh telnet port](ssh/edit_custom_ssh_telnet_port.png)
 
 As a result of such configuration, we would create a new item under the
-*Custom SSH/Telnet ports* configuration, which will be applied to every
+**Custom SSH/Telnet ports** configuration, which will be applied to every
 new snapshot created by IP Fabric.
 
 ![custom ssh telnet ports](ssh/custom_ssh_telnet_ports.png)
 
-## Telnet/SSH URL Handler on MS Windows 7 and later
+## Telnet/SSH URL Handler On MS Windows 7 And Later
 
 If you want to be able to connect directly to a device from the IP Fabric web
 interface, you need to register a Telnet/SSH URL handler. You will be touching
 Windows Registry, please be sure, that you know what you are doing, have
 appropriate backups and are comfortable in doing so.
 
-### Backup Windows registry
+### Backup Windows Registry
 
 1. Click `Start`, type `regedit.exe` in the search box, and then press `Enter`
-1. In Registry Editor, click *File → Export*
+1. In Registry Editor, click **File → Export**
 1. In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click *Save*
 
 ### Putty

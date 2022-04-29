@@ -2,8 +2,6 @@
 
 ![Configuration management](configuration_management.png)
 
-# Configuration Management Setup
-
 There are two ways to detect configuration changes:
 
 ## Syslog triggered

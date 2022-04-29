@@ -2,7 +2,11 @@
 
 There are two ways to detect configuration changes:
 
-## Syslog triggered
+**Syslog Triggered**
+
+**Scheduled**
+
+## Syslog Triggered
 
 IP Fabric checks incoming syslog messages for key phrase (for example `Configured from console by admin15 on vty0.`). This option needs proper `syslog` configuration on the device side.
 
@@ -14,13 +18,13 @@ Please, note
 - The receiving port `514` cannot be modified.
 - The Syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric's GUI
 
-To enable the syslog triggered configuration management go to *Settings → Advanced → Configuration  Management → Configuration Management Setup* and select *Syslogtrigger*.
+To enable the syslog triggered configuration management go to **Settings → Advanced → Configuration  Management → Configuration Management Setup** and select **Syslogtrigger**.
 
 ## Schedule
 
 Configuration change is checked at regular intervals as configured by user.
 
-Schedule can be enabled and configured at *Settings → Advanced → Configuration Management → Configuration Management Setup* and select *Schedule*.
+Schedule can be enabled and configured at **Settings → Advanced → Configuration Management → Configuration Management Setup** and select **Schedule**.
 
 !!! example
 

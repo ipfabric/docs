@@ -11,16 +11,16 @@ SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
 
     Connection through proxy servers should work, but not guaranteed.
 
-## How to establish support VPN
+## How To Establish Support VPN
 
 !!! info "Security tip"
 
     VPN is always established and teared down by customer. VPN connection
     cannot be triggered externally!
 
-1.  Login to IP Fabric web ui.
-2.  At top right corner click _Support_.
-3.  Select _Remote support VPN_.
+1.  Login to IP Fabric web GUI.
+2.  At top right corner click **Support**.
+3.  Select **Remote support VPN**.
 
     ![VPN Menu](vpn/menu.png)
 
@@ -30,10 +30,10 @@ SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
 
 5.  VPN status should change to connected and also you should see assigned IP address.
 
-## How to tear down support VPN
+## How To Tear Down Support VPN
 
-1.  Repeat steps 1 - 3 from "How to establish support VPN" part from above
-2.  On newly opened page click the _Disconnect_ button.
+1.  Repeat steps 1 - 3 from **How To Establish Support VPN** part from above
+2.  On newly opened page click the **Disconnect** button.
 
     ![VPN Disconnect](vpn/disconnect.png)
 

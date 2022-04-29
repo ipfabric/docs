@@ -4,13 +4,13 @@ This post is intended to explain how to create a new snapshot using the API. You
 
 ## API Endpoints
 
-- **https://host.domain/api/v1/graphs/svg** - method **`[POST]`** to create a new snapshot
+- `https://host.domain/api/v1/graphs/svg` - method `POST` to create a new snapshot
 
-- **https://host.domain/api/v1/graphs** - method **`[GET]`** to collect all IP Fabric settings
+- `https://host.domain/api/v1/graphs` - method `GET` to collect all IP Fabric settings
 
 ## Create a New Snapshot With The Existing Settings
 
-If you want to start a discovery, using the existing settings, it is a simple POST request to **https://host.domain/api/v1/graphs/svg**, without a body.
+If you want to start a discovery, using the existing settings, it is a simple `POST` request to `https://host.domain/api/v1/graphs/svg`, without a body.
 
 [Information regarding the Header/Authentication](../../Path_Lookup_4.x/#post-request) has already been mentioned in another article. Please refer to this if needed.
 
@@ -43,7 +43,7 @@ Let’s see how it looks when using Postman:
 
 ## What Settings Can I Use When Creating a New Snapshot?
 
-There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint **https://host.domain/api/v1/settings**
+There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `https://host.domain/api/v1/settings`
 
 The response will look like this *(this is just an extract of the JSON)*:
 

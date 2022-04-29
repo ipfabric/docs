@@ -160,5 +160,5 @@ Rule precedence are followed in a top down manner.
    1. If SNMP Location matches "IPFABRIC, (LAB01)" → Site LAB01
    2. If hostname matches "^L21" → Site MPLS 
    3. If hostname matches "^(L\d{1,2})" → Site L2-99
-3. Try to assign devices without sites based on [device neighborship](../../../IP_Fabric_Settings/site_separation) (if enabled)
+3. Try to assign devices without sites based on [device neighborship](../../../../IP_Fabric_Settings/site_separation) (if enabled)
 

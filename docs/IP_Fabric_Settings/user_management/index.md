@@ -38,7 +38,7 @@ privilege to a user to create, delete or modify other users.
 **SETTINGS** – an administrative right that enables access to the global
 settings of the system.
 
-## Working with Users
+## Working With Users
 
 Within this table, all user accounts can be modified or deleted. It also
 transparently shows user permissions and emails.

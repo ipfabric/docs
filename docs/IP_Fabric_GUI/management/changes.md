@@ -11,8 +11,8 @@ Snapshots](../../IP_Fabric_Settings/advanced/snapshots.md) configuration.
 
 ## Comparing changes
 
-To control changes between two discovery runs, go to *Management →
-Changes*.
+To control changes between two discovery runs, go to **Management →
+Changes**.
 
 First select the more distant point in time (older snapshot) and then
 select the second step point after the first one (newer snapshot).

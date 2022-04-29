@@ -1,15 +1,15 @@
 ## Snapshots
 
-For [***change management***](Changes), regularly running IP Fabric
+For [change management](../../../IP_Fabric_GUI/management/changes/), regularly running IP Fabric
 discovery is necessary. A periodic discovery run can be scheduled
-at ***Settings → Advanced → Snapshots → Timed Snapshots.***
+at **Settings → Advanced → Snapshots → Timed Snapshots.**
 
-Here is an example for an automatic discovery run at *10 minutes past
-every hour* (0:10; 1:10; 2:10; 3:10, etc.).
+Here is an example for an automatic discovery run at **10 minutes past
+every hour** (0:10; 1:10; 2:10; 3:10, etc.).
 
 ![Timed Snapshots](snapshots/102564017.png)
 
-**How scheduling work in IPF:**
+### How Scheduling Work In IPF
 
 Let's assume that snapshot is scheduled for every hour and snapshot
 takes 4h:20min to be created, then the next snapshot will be scheduled
@@ -29,8 +29,8 @@ version 4.1.
 
 It works in two steps:
 
-1.  If any of the "keep" rules are enabled, IP Fabric goes through
-    unloaded snapshots and based on enabled "keep" rules it marks
+1.  If any of the **keep** rules are enabled, IP Fabric goes through
+    unloaded snapshots and based on enabled **keep** rules it marks
     snapshots that will retain and those that will be deleted.
 
 2.  HDD utilization and a number of unloaded snapshots are checked. If
@@ -40,8 +40,8 @@ It works in two steps:
 Please note:
 
 1.  HDD utilization and the number of snapshots have precedence over
-    "keep" rules. This means that snapshots marked as retained by a
-    "keep" rule can be deleted when the HDD utilization or number of
+    **keep** rules. This means that snapshots marked as retained by a
+    **keep** rule can be deleted when the HDD utilization or number of
     snapshots are exceeded.
 
 2.  When at least one retention rule is enabled, all snapshots not

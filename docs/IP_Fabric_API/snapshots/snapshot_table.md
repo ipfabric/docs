@@ -1,7 +1,7 @@
 # Snapshot Table
 
 In IP Fabric v4.3.0 a new method for retrieving Snapshot information has
-been added. This is a `POST` method to "tables/management/snapshots" which
+been added. This is a `POST` method to `tables/management/snapshots` which
 allows for filtering based on columns.
 
 # Columns

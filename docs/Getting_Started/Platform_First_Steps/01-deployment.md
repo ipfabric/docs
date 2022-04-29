@@ -175,9 +175,9 @@ Before you begin the deployment, please note the following:
 
     ![AWS instance](aws_instance_booted.png)
 
-17. You can now [access the Web UI, install the license file](Access_User_Interface_and_Install_License) and login to the instance to run the Configuration Wizard.
+17. You can now [access the Web UI, install the license file](../02-access_ui) and login to the instance to run the Configuration Wizard.
 
-18. There is a bug in the latest version and you will need to setup `traceroute` in the IPFabric in order to run Discovery. `traceroute` must be setup to -- `127.0.0.1/32`. This is going to be fixed in the future.
+18. There is a bug in the latest version and you will need to setup `traceroute` in the IP Fabric in order to run Discovery. `traceroute` must be setup to -- `127.0.0.1/32`. This is going to be fixed in the future.
 
     ![AWS traceroute](aws_traceroute.png)
 
@@ -194,7 +194,7 @@ The *First Boot Wizard* starts when IP Fabric is run for the first time and co
 5.  Configure NTP servers or just click OK to continue if not using NTP.
 6.  Select time zone.
 7.  Configure Internet Proxy if used.
-8.  Set shell user password of `osadmin` user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the `admin` username by default, for more information, please, read: [Access User Interface and Install License](Access_User_Interface_and_Install_License) and also for encrypting system backups.
+8.  Set shell user password of `osadmin` user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the `admin` username by default, for more information, please, read: [Access User Interface and Install License](../02-access_ui) and also for encrypting system backups.
 9.  Optionally define organization parameters for the local SSL certificate.
 10. After rebooting, the console login screen will display the assigned IP address of the system and provide a link to access the user interface.
 

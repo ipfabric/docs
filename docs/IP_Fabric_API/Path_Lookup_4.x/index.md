@@ -16,9 +16,9 @@ For IP Fabric version 4.3.x diagramming has been built into `python-ipfabric-dia
 
 ## API Endpoints
 
-- [https://host.domain/api/v1/graphs](https://host.domain/api/v1/graphs) - for JSON output
-- [https://host.domain/api/v1/graphs/svg](https://host.domain/api/v1/graphs/svg) - for SVG vector image output
-- [https://host.domain/api/v1/graphs/png](https://host.domain/api/v1/graphs/png) - for PNG bitmap image output
+- `https://host.domain/api/v1/graphs` - for JSON output
+- `https://host.domain/api/v1/graphs/svg` - for SVG vector image output
+- `https://host.domain/api/v1/graphs/png` - for PNG bitmap image output
 
 ## POST Request
 

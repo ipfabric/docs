@@ -1,12 +1,12 @@
-# Organizationally Unique Identifier (OUI)
+# OUI (Organizationally Unique Identifier)
 
-IP Fabric includes an OUI (organizationally unique identifier) MAC table
+IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table
 of network device manufacturers and uses it during the discovery process
 whenever there is a network device discovered through the ARP table.
 
-![](OUI.png)
+![OUI table](OUI.png)
 
-This table can be found in the Settings → OUI menu.
+This table can be found in the **Settings → OUI** menu.
 
 It contains OUI (start of a MAC address of a device), vendor to whom
 this OUI belongs and if it is enabled (can be used) during the discovery
