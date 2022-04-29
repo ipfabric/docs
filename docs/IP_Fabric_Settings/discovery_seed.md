@@ -1,7 +1,7 @@
 # Discovery Seed
 
 If you know a particular starting point for discovering the network, the
-information can be entered at *Settings → Discovery Seed*. This option
+information can be entered at **Settings → Discovery Seed**. This option
 does not exclude any networks from discovery.
 
 The starting points can be management IP addresses of network devices or

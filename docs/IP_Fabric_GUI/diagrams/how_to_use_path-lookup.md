@@ -1,4 +1,4 @@
-# How to use Path Look-Up
+# How To Use Path Look-Up
 
 ## Unicast Path-Lookup
 
@@ -44,7 +44,7 @@ With the mouse right-click, more options are enabled:
 After opening the details, we can select the destination link to proceed with packet analysis:
 ![Path detail](path_detail.png)
 
-## Understand the path selection
+## Understand The Path Selection
 
 To understand the decision taken by a device, right-click on the device
 and "show detail". You will then be presented with the details. If you
@@ -93,11 +93,11 @@ the bars up or down.
 
 ![Visualization setup](visualization_setup.png)
 
-# Improvements from 4.3 version
+## Improvements from 4.3 version
 
 From version 4.3, IP Fabric supports more granular path lookup.
 
-## First Hop Algorithm
+### First Hop Algorithm
 First hop algorithm can be defined - when **Automatic** option is selected,
 source VRF can be automatically detected, or selected manually.
 
@@ -106,7 +106,7 @@ source VRF can be automatically detected, or selected manually.
 Also your source network device and its interface can be selected when choosing
 **User defined** First Hop Algorithm.
 
-## Source/Destination IP Address and Port
+### Source/Destination IP Address and Port
 
 By default, ICMP protocol and Echo request is chosen for path lookup.
 
@@ -120,13 +120,13 @@ When extending details, transport protocol and range of ports can be specified f
 
 ![Source and destination ports](pathlookup_src_dst_port.png)
 
-## TTL and Fragment Offset
+### TTL and Fragment Offset
 
 In **More details**, **TTL** (Time to live ) and **Fragment offset** can be set - thus affecting path lookup - default TTL is 128 and Fragment offset is set to 0
 
 ![TTL and Fragmentation](pathlookup_ttl_fragment.png)
 
-##Application
+### Application
 
 When evaluating security rules and security appliances on the path check traffic on L7, an application can be checked on the path lookup.
 
@@ -136,7 +136,7 @@ An application name input is just a string, so it needs to be defined exactly as
 
 ![Application](pathlookup_application.png)
 
-##Source/Destination IP Regions
+### Source/Destination IP Regions
 
 When testing access to or from the internet, source or destination IP regions can be set.
 

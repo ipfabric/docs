@@ -1,18 +1,18 @@
 # IP Scope
 
-### Including and excluding networks from discovery
+## Including And Excluding Networks From Discovery
 
 By default, there are no limitations on discovery and all IP addresses
 are allowed (i.e. *Include scope* is `0.0.0.0/0`)
 
-Discovery can be limited to one or more subnets using **_Settings →
-Advanced → Discovery → IP Scope → IP networks to include in discovery_**
+Discovery can be limited to one or more subnets using **Settings →
+Advanced → Discovery → IP Scope → IP networks to include in discovery**
 and analysis. Enter one or more subnets to limit the discovery process
 to addresses from particular networks.
 
 Specific parts of the network can be also excluded from discovery
-using **_Settings → Advanced → Discovery →  IP Scope → IP networks to
-exclude from discovery_** and analysis.  
+using **Settings → Advanced → Discovery →  IP Scope → IP networks to
+exclude from discovery** and analysis.  
 
 !!! warning "Priority"
 

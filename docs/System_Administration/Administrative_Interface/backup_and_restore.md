@@ -10,11 +10,11 @@ There are two types of backup:
 
 !!! tip Security tip
 
-    Backups are encrypted with *osadmin *user password configured during the [first boot wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/78872592).
+    Backups are encrypted with *osadmin *user password configured during the [first boot wizard](../../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard).
     When you lose *osadmin *user password, backups are also lost!
 
 
-### Local backup
+### Local Backup
 
 Local backup saves database, user and system files locally on a
 dedicated backup volume. It's highly recommended placing backup volume
@@ -24,11 +24,11 @@ on different datastore ideally on different physical storage.
 The backup disk is not present by default! Please add a new virtual disk
 to enable local backups. (See steps below)
 
-#### Adding a new virtual disk to your IP Fabric VM as a local backup disk
+#### Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
 
 1.  Open your VM platform.
 
-2.  Go to IP Fabric VM settings and add *New* *Hard Disk*
+2.  Go to IP Fabric VM settings and add **New Hard Disk**
 
 3.  Select size of a new disk
 
@@ -42,13 +42,13 @@ to enable local backups. (See steps below)
 
 6.  Launch Remote (Web) Console.
 
-7.  [Reboot](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/79036518/Service+Interfaces) (*Send Ctrl+Alt+Delete* function can be also used) or power on IP Fabric VM.
+7.  Reboot (**Send Ctrl+Alt+Delete** function can be also used) or power on IP Fabric VM.
 
-8.  During system boot, a *Disk space expansion* wizard appears.  
+8.  During system boot, a **Disk space expansion** wizard appears.  
 
     ![Disk expansion](disk_expansion.png)
 
-9.  Select *Yes* to start disk space expansion.
+9.  Select **Yes** to start disk space expansion.
 
 10. Expand the new volume as a backup (Backup is used only for local
     backups).
@@ -59,7 +59,7 @@ to enable local backups. (See steps below)
 
     ![Disk space](disk_space.png)
 
-12. Enter *OK*
+12. Enter **OK**
 
 ### Automatic Local Backups
 
@@ -69,9 +69,9 @@ To schedule automatic local backups do the following steps:
 
 2.  Login to the user interface.
 
-3.  Go to ***Settings → Advanced → System → Schedule system backup**.*
+3.  Go to **Settings → Advanced → System → Schedule system backup**.
 
-4.  Change ***Destination*** to ***Local hard drive***.
+4.  Change **Destination** to **Local hard drive**.
 
 5.  Set a backup schedule. See example for "Every day at 3:00".
 
@@ -80,7 +80,7 @@ To schedule automatic local backups do the following steps:
     ![Schedule system backup](schedule_system_backup2.png)
 
 
-### Remote backup
+### Remote Backup
 
 Remote backup saves database, user and system files remotely using FTP
 or sFTP protocol.
@@ -97,11 +97,11 @@ To set up remote backup do the following steps:
 
 1.  Login to the user interface.
 
-2.  Go to ***Settings → Advanced → System → Schedule system backup**.*
+2.  Go to **Settings → Advanced → System → Schedule system backup**.
 
 3.  Enable backup
 
-4.  Change ***Destination*** to ***FTP*** or ***SFTP**.*
+4.  Change **Destination** to **FTP** or **SFTP**.
 
 5.  Set a backup schedule. See example for "Every day at 5:15 and 17:15
     (for setting more options, please, hold SHIFT during selection)".
@@ -109,19 +109,19 @@ To set up remote backup do the following steps:
     ![Backup schedule](backup_schedule.png)
 
 
-6.  Change ***Destination*** to ***FTP*** or ***SFTP**.*
+6.  Change **Destination** to **FTP** or **SFTP**.
 
-7.  Enter remote FTP/SFTP ***Server*** FQDN or IP address. Make sure
+7.  Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure
     that your DNS client is configured and working properly in case of
     FQDN.
 
-8.  Enter ***Username*** to access FTP/SFTP server.
+8.  Enter **Username** to access FTP/SFTP server.
 
-9.  Enter ***Password*** to access FTP/SFTP server.
+9.  Enter **Password** to access FTP/SFTP server.
 
-10. Specify a ***Directory*** where FTP/SFTP backup should be uploaded.
+10. Specify a **Directory** where FTP/SFTP backup should be uploaded.
 
-11. Click ***Save ***(The IP Fabric platform will immediately test the
+11. Click **Save **(The IP Fabric platform will immediately test the
     connection)
 
 12. IP Fabric tries to reach FTP/SFTP server with configured parameters.
@@ -134,7 +134,7 @@ To set up remote backup do the following steps:
 
     From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.
 
-### Trigger a backup manually (on-demand)
+### Trigger a Backup Manually (On-Demand)
 
 Both types of backup can be also triggered manually on demand. This is
 useful for example before a system upgrade.
@@ -142,31 +142,31 @@ useful for example before a system upgrade.
 Manual backup can be triggered from IP Fabric Administrative interface:
 
 1.  Login to admin interface (for
-    example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
+    example `https://ipfabric.example.com:8443`)
 
-2.  Go to ***Restore or Backup***
+2.  Go to **Restore or Backup**
 
-3.  Select ***Backup*** from ***Do you wish to proceed with a backup or
-    restore?*** drop-down menu.
+3.  Select **Backup** from **Do you wish to proceed with a backup or
+    restore?** drop-down menu.
 
-4.  For local backup select ***Local hard drive*** from the ***Backup
-    files destination***.
+4.  For local backup select **Local hard drive** from the **Backup
+    files destination**.
 
-5.  For remote backup select ***FTP*** or ***SFTP ***from the ***Backup
-    files destination***.
+5.  For remote backup select **FTP** or **SFTP **from the **Backup
+    files destination**.
 
-    1.  Enter remote FTP/SFTP ***Server*** FQDN or IP address. Make sure
+    1.  Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure
         that your DNS client is configured and working properly in the
         case of FQDN.
 
-    2.  Enter ***Username*** to access FTP/SFTP server.
+    2.  Enter **Username** to access FTP/SFTP server.
 
-    3.  Enter ***Password*** to access FTP/SFTP server.
+    3.  Enter **Password** to access FTP/SFTP server.
 
     4.  Specify a **Directory** where FTP/SFTP backup should be
         uploaded.
 
-6.  Click ***Next***
+6.  Click **Next**
 
 
 ## Restore
@@ -183,99 +183,99 @@ a backup.
     IP Fabric appliance.
 
 
-### Restore from local hard drive
+### Restore From Local Hard Drive
 
 1.  Login to admin interface (for
-    example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
+    example `https://ipfabric.example.com:8443`)
 
-2.  Go to ***Restore or Backup***
+2.  Go to **Restore or Backup**
 
-3.  Select ***Restore** *from ***Do you wish proceed a backup or
-    restore?*** drop down menu.
+3.  Select **Restore** from *Do you wish proceed a backup or
+    restore?* drop down menu.
 
-4.  Select ***What restore?***. There are four options:
+4.  Select **What restore?**. There are four options:
 
-    1.  ***Restore data & all system services*** - This option restores
+    1.  **Restore data & all system services** - This option restores
         database and system files. It's usable for restore from general
         system failures or upgrade failures.
 
-    2.  ***Restore database*** - it means that only database data are
+    2.  **Restore database** - it means that only database data are
         restored. It can be sufficient in case of database failure or
         accidental database drop.
 
-    3.  ***Restore syslog data*** - it means that only syslog data are
+    3.  **Restore syslog data** - it means that only syslog data are
         restored. It can be sufficient in case of database failure or
         accidental database drop.
 
-    4.  ***Restore snapshot file*** - particular snapshot can be
+    4.  **Restore snapshot file** - particular snapshot can be
         restored.
 
-5.  For restore from local backup choose ***Local hard drive*** from
-    ***Backup files source***.
+5.  For restore from local backup choose **Local hard drive** from
+    **Backup files source**.
 
-6.  Click ***Next***.
+6.  Click **Next**.
 
-7.  ***Select backup file*** - there is year, month, day and time when a
+7.  **Select backup file** - there is year, month, day and time when a
     backup file was created in a backup filename.
 
-8.  Click ***Restore***.
+8.  Click **Restore**.
 
 
 !!! warning
 
-    Backups are encrypted with ***osadmin*** user password configured during the [First Boot Wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/901808145/Deploying+VMware+OVA+Virtual+Machine). When you loose ***osadmin*** user password, all backups encrypted by this password are lost.
+    Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard). When you loose **osadmin** user password, all backups encrypted by this password are lost.
 
 
-### Restore from remote server
+### Restore From Remote Server
 
 1.  Login to admin interface (for
-    example [https://ipfabric.example.com:8443)](https://nimpee.example.com:8443))
+    example `https://ipfabric.example.com:8443`)
 
-2.  Go to ***Restore or Backup***
+2.  Go to **Restore or Backup**
 
-3.  Select ***Restore** *from ***Do you wish proceed a backup or
-    restore?*** drop down menu.
+3.  Select **Restore** from *Do you wish proceed a backup or
+    restore?* drop down menu.
 
-4.  Select ***What restore?***. There are four options:
+4.  Select **What restore?**. There are four options:
 
-    1.  ***Restore data & all system services*** - This option restores
+    1.  **Restore data & all system services*** - This option restores
         database and system files. It's usable for restore from general
         system failures or upgrade failures.
 
-    2.  ***Restore database*** - it means that only database data are
+    2.  **Restore database** - it means that only database data are
         restored. It can be sufficient in case of database failure or
         accidental database drop.
 
-    3.  ***Restore syslog data*** - it means that only syslog data are
+    3.  **Restore syslog data** - it means that only syslog data are
         restored. It can be sufficient in case of database failure or
         accidental database drop.
 
-    4.  ***Restore snapshot file*** - particular snapshot can be
+    4.  **Restore snapshot file** - particular snapshot can be
         restored.
 
-5.  For restore from local backup choose ***FTP*** or ***SFTP*** from
-    ***Backup files source***.
+5.  For restore from local backup choose **FTP** or **SFTP** from
+    **Backup files source**.
 
-6.  Specify ***Server*** FQDN or IP address. Make sure that your DNS
+6.  Specify **Server** FQDN or IP address. Make sure that your DNS
     client is configured and working properly in case of FQDN.
 
-7.  Enter ***Username***** **to access FTP/SFTP server.
+7.  Enter **Username** to access FTP/SFTP server.
 
-8.  Enter ***Password***** **to access FTP/SFTP server.
+8.  Enter **Password** to access FTP/SFTP server.
 
-9.  If you would like to use different ***Directory***** **than
+9.  If you would like to use different **Directory** *than
     FTP/SFTP root please specify.
 
-10. Click ***Next***.
+10. Click **Next**.
 
-11. ***Select backup file*** - there is year, month, day and time when a
+11. **Select backup file** - there is year, month, day and time when a
     backup file was created in a backup filename.
 
-12. Click ***Restore***.
+12. Click **Restore**.
 
 !!! warning
 
     Backups are encrypted with ***osadmin*** user password configured during
-    the [First Boot Wizard](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/901808145/Deploying+VMware+OVA+Virtual+Machine).
+    the [First Boot Wizard](../../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard).
     When you loose ***osadmin*** user password, all backups encrypted by
     this password are lost.

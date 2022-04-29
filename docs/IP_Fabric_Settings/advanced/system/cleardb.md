@@ -5,8 +5,8 @@
     Before erasing databases, make sure that you have access to a recent backup!
 
 In rare cases, it may be necessary to delete and recreate the IP
-Fabric's database. Go to *Settings → Advanced → System* and click
-*Clear DB*.
+Fabric's database. Go to **Settings → Advanced → System** and click
+**Clear DB**.
 
 When running Clear DB, all loaded snapshots are automatically unloaded
 and the database recreated.
@@ -14,11 +14,11 @@ and the database recreated.
 !!! info
     We recommend unloading all your snapshots before running Clear DB.
 
-![](2828599305.png)
+![ClearDB](2828599305.png)
 
 There is two-way confirmation.
 
-![](2829352961.png)
+![Confirmation](2829352961.png)
 
 In the second screen, you can choose from clear (reset) everything or
 keep settings.

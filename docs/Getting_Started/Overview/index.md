@@ -47,7 +47,7 @@ The following table represents the recommended hardware requirements for optimal
 
 During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.
 
-IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../../IP_Fabric_Settings/Settings_UI/advanced/ssh_telnet/jumphost_settings/#setting-up-jump-host) can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)
+IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../../IP_Fabric_Settings/advanced/SSH_telnet/#setting-up-jump-host) can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)
 
 Inbound flows:
 
@@ -128,7 +128,7 @@ privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 ```
 
-List of all commands used for CLI discovery can be found [on this page](vendors_features) and in this [feature/vendor matrix](https://docs.ipfabric.io/matrix/).
+List of all commands used for CLI discovery can be found [on this page](vendors_features) and in this [feature/vendor matrix](../../../matrix/).
 
 ### Staging vs Production Deployment
 

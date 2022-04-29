@@ -18,22 +18,22 @@ changed using drag and drop.
 Read-only (Privilege 1) credentials are sufficient for basic
 functionality. Security sensitive operations and advanced functionality
 might require higher privilege. See the [full list of used command in
-the documentation](Used_CLI_commands_for_Discovery).
+the documentation](../../Getting_Started/Overview/vendors_features/#cli-commands-used-during-discovery).
 
 When adding new credentials, you can limit the validity of the
-credentials just for a part of your network using *Use in subnets*
-and *Don't use in subnets* fields.
+credentials just for a part of your network using **Use in subnets**
+and **Don't use in subnets** fields.
 
 ![Add new CLI credential](1935310852.png)
 
 Provided credentials can be used for configuration change tracking and
-saved configuration consistency (i.e. they allow commands such as *show
-run* and *show start*).
+saved configuration consistency (i.e. they allow commands such as **show
+run** and **show start**).
 
 To use this credentials for configuration change tracking,
-please check [*Use for configuration management*](Configuration)* *box.
+please check [Use for configuration management](../../IP_Fabric_Settings/advanced/configuration_management/) box.
 
-## (Optional) Passwords for enable mode
+## (Optional) Passwords For Enable Mode
 
 Privileged credentials are generally only necessary for configuration
 management. However, some platforms require privileged credentials to

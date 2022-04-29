@@ -7,8 +7,8 @@ task execution control system.
 
 **Known bugs**:
 
-**Cisco IOS -** Router crash when issuing a command: "show interface
-transceiver"
+**Cisco IOS -** Router crash when issuing a command: `show interface
+transceiver`
 
 - Bug ID: CSCua29548
 - Affected versions: 15.1(4)M4, 15.1(4)M4.7, 15.1(4)M5

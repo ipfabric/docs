@@ -1,4 +1,4 @@
-# Site name can change to an obscure UUID value after update
+# Site Name Can Change To An Obscure UUID Value After Update
 
 There have been reported issues that some sites had changed their names to an obscure UUID value after an update to the newer version of IP Fabric.
 

@@ -31,29 +31,29 @@ Notes:
 
 ## How To Find Transceivers In IP Fabric
 
-Navigate to *Technology → Interfaces → Transceivers*.
+Navigate to **Technology → Interfaces → Transceivers**.
 
-![](transcievers_list.png)
+![trascievers in the menu](transcievers_list.png)
 
 ## How To Enable/Disable Transceivers Task
 
-This function is *enabled by default* for all vendors and product
-families. This means that *this command is not executed on any
-device*.
+This function is **enabled by default** for all vendors and product
+families. This means that **this command is not executed on any
+device**.
 
-The function can be *Enabled/Disabled* in section *Settings →
-Advanced → Discovery task*.
+The function can be **Enabled/Disabled** in section **Settings →
+Advanced → Discovery task**.
 
-![](transcievers_tasks.png)
+![transceivers task](transcievers_tasks.png)
 
-To *disable* this task, you need to *delete the default Transceivers
-task* or *edit* this default task.
+To **disable** this task, you need to **delete the default Transceivers
+task** or **edit** this default task.
 
-When *editing* this rule, you select by regex expression on which
-devices this command *should not* be executed (so for example if you
+When **editing** this rule, you select by regex expression on which
+devices this command **should not** be executed (so for example if you
 don't want to run show interface transceivers command for all CISCO
 devices, put cisco to the Vendor field. More specific device selection
 can be done by Family, Platform, Model and Version fields). You can
-simply test your Regex rules by *Test rules* button.
+simply test your Regex rules by **Test rules** button.
 
-![](transcievers_tasks_edit.png)
+![edit trasceivers tasks](transcievers_tasks_edit.png)

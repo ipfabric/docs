@@ -1,7 +1,5 @@
 # Networks Panorama
 
-## Overview:
-
 Panorama is a centralized management system that provides global
 visibility and control over multiple Palo Alto Networks next-generation
 firewalls through an easy-to-use web-based interface. Panorama enables

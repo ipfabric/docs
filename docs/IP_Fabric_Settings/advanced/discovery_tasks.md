@@ -5,7 +5,7 @@ The TASK is a data collection related to a specific network protocol or
 technology (MPLS, Transceivers, ARP Table, Spanning-Tree Protocol,
 Multicast, or VXLAN). Each task consists of 1 or more operational
 commands (CLI or API). You can find the list of all Discovery Tasks
-in [the Feature matrix](https://docs.ipfabric.io/matrix/).
+in [the Feature matrix](../../../matrix/).
 
 Some fundamental TASKS required for discovery and topology calculations
 cannot be disabled (Neighbors, ARP, Mac, RIB, etc.)
@@ -16,13 +16,13 @@ to avoid extra data collection (when particular protocols are not
 present on the network) or avoid specific operational commands to be
 executed on specific hardware platforms.
 
-**By default, there are three main Discovery Task rules in the
-platform:**
+By default, there are **three main Discovery Task rules** in the
+platform:
 
 | **Rule Name** | **Rule Description** |
 | --- | --- |
 | **Disable Pagination** | By default disabled for F5 devices - command is modifying the configuration and can break cluster synchronization. |
-| **Transceivers** | By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at [Known Issues \> Cisco](https://ipfabric.atlassian.net/wiki/spaces/ND/pages/79986775/Cisco) |
+| **Transceivers** | By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at [Known Issues \> Cisco](../../../releases/known_issues/cisco/) |
 | **NTP** | By default disabled for Cisco Firepower - on some versions a Firepower bug may freeze the CLI session |
 
 In the following example, we are creating a rule to disable OSPFv3 on

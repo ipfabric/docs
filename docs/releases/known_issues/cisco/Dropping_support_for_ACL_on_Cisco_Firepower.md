@@ -1,4 +1,4 @@
-# Dropping support for ACL on Cisco Firepower
+# Dropping Support For ACL On Cisco Firepower
 
 In IP Fabric v4.3 we are introducing support for Cisco Firepower Zone
 Firewall feature which extends (to L7) and improves capabilities of IP

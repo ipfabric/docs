@@ -8,23 +8,23 @@
 	Mac/Apple: Command + Shift + R  
 	Linux: F5
 
-## Access Administrative interface and backup the system
+## Access Administrative Interface And Backup The System
 
-Access administrative interface by clicking "**Support**" button at the
-top right of the main user interface and then clicking "**System
-Administration**". You can also access administrative interface directly
-by connecting to HTTPS port 8443 of the IP Fabric VM, e.g.
-(https://ipfabric-ip-address:8443)
+Access administrative interface by clicking **Support** button at the
+top right of the main user interface and then clicking **System
+Administration**. You can also access administrative interface directly
+by connecting to HTTPS port `8443` of the IP Fabric VM, e.g.
+(`https://ipfabric-ip-address:8443`)
 
 Use the user **osadmin** with password configured during the first boot
 wizard.
 
-On [Restore and Backup](backup_and_restore) page perform system backup.
+On [Restore and Backup](../backup_and_restore) page perform system backup.
 
 !!! info "Backup Disk"  
 	Local backup disk is not present by default! Please add a new virtual disk to your VM to enable local backups. (See Restore and Backup page)
 
-## Online upgrade
+## Online Upgrade
 
 At the **System update** page of the administrative interface, click the
 **Update** button. (In releases earlier than 2.2.6 additional release
@@ -33,9 +33,9 @@ credentials are required).
 !!! warning "Network requirements"  
 	An online upgrade requires access to:
 
-	**callhome.ipfabric.io** (194.228.111.170) remote port 443/TCP for upgrade availability check
+	`callhome.ipfabric.io` (194.228.111.170) remote port 443/TCP for upgrade availability check
 
-	**releases.ipfabric.io** (194.228.111.172) remote port 443/TCP for upgrade package download
+	`releases.ipfabric.io` (194.228.111.172) remote port 443/TCP for upgrade package download
 
 In the following screenshot, the green 3.7.5 button in the right top
 corner indicates that a new version of Ip Fabric is available (if the
@@ -43,7 +43,7 @@ system has Internet connectivity).
 
 ![New version](system_update_new_version.png)
 
-## Offline upgrade
+## Offline Upgrade
 
 Download the latest upgrade package from the updates folder on the distribution page [https://releases.ipfabric.io/ipfabric/#updates](https://releases.ipfabric.io/ipfabric/#updates)
 

@@ -14,7 +14,7 @@ Apart from significant benefits to network administrators, it elevates collabora
 
 **Q:** Is the IP Fabric a monitoring solution?
 
-A: The IP Fabric platform collects data from the network on a regular basis to provide in-depth analytics. The output of the data collection [is a digital snapshot of the entire network ](https://ipfabric.io/product/network-history/)at the time of discovery. But IP Fabric does not monitor the network in real-time. 
+A: The IP Fabric platform collects data from the network on a regular basis to provide in-depth analytics. The output of the data collection is a digital snapshot of the entire network at the time of discovery. But IP Fabric does not monitor the network in real-time. 
 
 **Q:** Why to use the analytical platform, isn't my monitoring suite enough?
 
@@ -38,7 +38,7 @@ A: No additional supporting servers or licenses are needed for successful deploy
 
 **Q:** Do I need a hardware appliance to install IP Fabric?
 
-A: IP Fabric is a virtual appliance that runs on VMware 5.0 or later. It doesn’t need a standalone hardware appliance by design. 
+A: IP Fabric is a virtual appliance that runs on VMware 6.5 or later. It doesn’t need a standalone hardware appliance by design. 
 
 **Q:** How's the product licensed?
 
@@ -88,7 +88,7 @@ A: IP Fabric can discover **all supported IP based active network devices**, in
 
 **Q:** What network vendors are currently supported?
 
-A: IP Fabric is a powerful tool for multi-vendor, large-scale networks. The network vendor list is ever-expanding with new items added each release. Complete support matrix can be found **[in our Support Matrix.](https://docs.ipfabric.io/matrix/) **
+A: IP Fabric is a powerful tool for multi-vendor, large-scale networks. The network vendor list is ever-expanding with new items added each release. Complete support matrix can be found **[in our Support Matrix.](../../../matrix/) **
 
 **Q:** What if I have unsupported vendor in my network?
 

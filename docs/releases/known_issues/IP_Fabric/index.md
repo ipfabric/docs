@@ -2,17 +2,18 @@
 
 - Diagram displays device, which is not connected to anything. The
   situation appears when site separation prevents displaying the
-  device on the other end. To show connection to a device, click "Show
-  Edge Cloud"
+  device on the other end. To show connection to a device, click **Show
+  Edge Cloud**
 
 - Diagrams drill-down missing. Current diagrams offer vast amount of
   information, which is not available through drill-downs. More
   drill-down capabilities are planned for future releases.
 
 - Advanced Filter Visibility. When Advanced filter is applied, and
-  then collapsed via advanced filter button ![advanced filter button](filter_advanced_btn.png),
+  then collapsed via advanced filter button
+	![advanced filter button](filter_advanced_btn.png)
   it's not clear that filter is being applied to the table, except for
-  the visible clear filter button ![clear filter button](filter_clear_btn.png).
+  the visible clear filter button. ![clear filter button](filter_clear_btn.png)
 
 - Jumphost can be activated only from support console.
 

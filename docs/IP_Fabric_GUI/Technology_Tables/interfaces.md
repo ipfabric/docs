@@ -3,7 +3,7 @@
 The interfaces section provides detailed information about packet
 counters and undesired network states.
 
-## Interface transmission rates
+## Interface Transmission Rates
 
 Packet loss issues due to errors and drops are detailed for each
 direction, interface, and device where an issue occurs. Each packet loss
@@ -17,7 +17,7 @@ usually affecting more end hosts than access ports.
 The transmission rates of packets per second and megabits per second are
 presented for each interface and device in each direction.
 
-## Interface state
+## Interface State
 
 The Half-Duplex table presents interfaces in the Half-Duplex mode. Most
 network equipment supports and prefers the full duplex setting. There
@@ -29,7 +29,7 @@ to violations of operational parameters. Interfaces in an error state
 should be self-healed by the automatic recovery timers or recovered
 manually, to ensure no future repeats of the same violation.
 
-## Connectivity matrix
+## Connectivity Matrix
 
 The connectivity matrix maps connection information between devices for
 the network protocols to form dynamic neighbor relationships. Each

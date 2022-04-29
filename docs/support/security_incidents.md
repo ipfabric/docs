@@ -1,4 +1,4 @@
-# Security incident response
+# Security Incident Response
 
 ## Initial source of information
 
@@ -6,7 +6,7 @@ We can ingest information about security incident from multiple sources. Main
 ingestion points for customers' submitted reports are:
 
 - email: `security@ipfabric.io` or `support@ipfabric.io`
-- IPFabric customers' support portal (Atlassian Service Desk – [NSD](https://ipfabric.atlassian.net/servicedesk/customer/portals))
+- IP Fabric customers' support portal (Atlassian Service Desk – [NSD](https://ipfabric.atlassian.net/servicedesk/customer/portals))
 - to the office phone `+420 720 022 997`
 - CVE database for software vulnerabilities
 - internal monitoring (doesn’t cover the customers’ deployments)

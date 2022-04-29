@@ -1,9 +1,9 @@
 # Discovery History
 
 This table shows every device that has ever been discovered in all
-snapshots (their **_Hostname_**, **_IP address_**, **\*Management
-protocol** used\* for discovery, **_Serial Number_**, **_Username_** used
-for discovery and **_Last discovery time_** filed).
+snapshots (their **Hostname**, **IP address**, **Management
+protocol** used for discovery, **Serial Number**, **Username** used
+for discovery and **Last discovery time** filed).
 
 ![Discovery history](discovery_history.png)
 

@@ -1,6 +1,6 @@
 # VMware NSX-T
 
-Starting version 4.3 IP Fabric supports NSX-T API.
+Starting version **4.3** IP Fabric supports NSX-T API.
 
 NSX-T devices are discovered only through API.
 
@@ -10,9 +10,9 @@ Afterward, choose NSX-T API from the list and fill in
 
 -   **Username and password** used to log in to NSX Manager
 
--   **Base URL** of NSX Manager server (https://nsx-manager-ip-address)
+-   **Base URL** of NSX Manager server (`https://nsx-manager-ip-address`)
 
-## General support information
+## General Support Information
 
 -   IP Fabric is supporting NSX-T from version 3.0 and higher,
     development was done on version 3.1.2, the latest version is 3.2. We
@@ -28,7 +28,7 @@ Afterward, choose NSX-T API from the list and fill in
     connected to the NSX-T cloud, we will collect information about
     those also.
 
-## We are supporting those types of devices
+## We Are Supporting These Types Of Devices
 
 -   Tier-0 router
 
@@ -36,7 +36,7 @@ Afterward, choose NSX-T API from the list and fill in
 
     -   also supporting VRFs
 
-## Not supported features
+## Not Supported Features
 
 -   Load balancing
 
@@ -52,7 +52,7 @@ Afterward, choose NSX-T API from the list and fill in
 
 -   EVPN Vxlans
 
-## External connectivity
+## External Connectivity
 
 We are supporting both external connectivity protocols, which are
 implemented in NSX-T, and of course static routes. External connectivity

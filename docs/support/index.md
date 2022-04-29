@@ -5,11 +5,11 @@ please contact our support teams at
 [support.ipfabric.io](https://support.ipfabric.io).
 
 Detailed error reports can be submitted manually by generating
-[Techsupport](Techsupport) file and uploading it through support portal
+[techsupport](techsupport) file and uploading it through support portal
 or dedicated upload page in case of large techsupport files.
 
 Send diagnostics
-to [callhome.ipfabric.io](http://callhome.ipfabric.io) we will be
+to `callhome.ipfabric.io` we will be
 pleased to help you.
 
 ## IP Fabric Help Center
@@ -17,7 +17,7 @@ pleased to help you.
 Is a support portal where you can contact our support teams in case of
 any issue with IP Fabric.
 
-![IPFabric Help Center](help_center.png)
+![IP Fabric Help Center](help_center.png)
 
 We want to make sure your IP Fabric experience is as smooth as possible
 and provide you with strong support, to ensure you are satisfied. To
