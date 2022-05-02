@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.12">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.27ad92d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -3710,81 +3710,81 @@
 <div class="admonition info the value from your settings will be used">
 <p class="admonition-title">Info</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="s2">&quot;snapshotName&quot;</span><span class="o">:</span> <span class="s2">&quot;Name of the Snapshot&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;snapshotNote&quot;</span><span class="o">:</span> <span class="s2">&quot;Some notes to describe the snapshot&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;networks&quot;</span><span class="o">:</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;exclude&quot;</span><span class="o">:</span> <span class="p">[],</span>
-            <span class="s2">&quot;include&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;10.66.0.0/16&quot;</span> <span class="p">]</span>
-        <span class="p">},</span>
-    <span class="s2">&quot;seedList&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;10.66.255.104/31&quot;</span><span class="p">,</span> <span class="s2">&quot;10.66.0.1/32&quot;</span> <span class="p">],</span>
-    <span class="s2">&quot;vendorApi&quot;</span><span class="o">:</span> <span class="p">[]</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;snapshotName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Name of the Snapshot&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;snapshotNote&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Some notes to describe the snapshot&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;networks&quot;</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;exclude&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;include&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;10.66.0.0/16&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;seedList&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;10.66.255.104/31&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;10.66.0.1/32&quot;</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;vendorApi&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Let’s see how it looks when using Postman:</p>
 <p><a data-featherlight="../create_snapshot.gif" href="#"><img alt="create snapshot" src="../create_snapshot.gif" /></a></p>
 <h2 id="what-settings-can-i-use-when-creating-a-new-snapshot">What Settings Can I Use When Creating a New Snapshot?</h2>
 <p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a <code>GET</code> on the endpoint <code>https://host.domain/api/v1/settings</code></p>
 <p>The response will look like this <em>(this is just an extract of the JSON)</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="s2">&quot;fullBgpLimit&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;enabled&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">&quot;threshold&quot;</span><span class="o">:</span> <span class="mf">500000</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;networks&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;exclude&quot;</span><span class="o">:</span> <span class="p">[],</span>
-        <span class="s2">&quot;include&quot;</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s2">&quot;10.66.0.0/16&quot;</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;resolveNames&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;discoveryDevices&quot;</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;scanner&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;enabled&quot;</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;traceroute&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;scope&quot;</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s2">&quot;10.0.0.0/8&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;100.64.0.0/10&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;169.254.0.0/16&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;172.16.0.0/12&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;192.168.0.0/16&quot;</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="s2">&quot;icmp&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;port&quot;</span><span class="o">:</span> <span class="kc">null</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;limitDiscoveryTasks&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;alreadyDiscovered&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="s2">&quot;sourceOfTasks&quot;</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s2">&quot;arp&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;routes&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;trace&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;xdp&quot;</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;allowTelnet&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;timeouts&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;login&quot;</span><span class="o">:</span> <span class="mf">20</span><span class="p">,</span>
-        <span class="s2">&quot;session&quot;</span><span class="o">:</span> <span class="mf">20</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;cliSessionsLimit&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;enabled&quot;</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;cliRetryLimit&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
-        <span class="s2">&quot;authFail&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-        <span class="s2">&quot;tacacs&quot;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;retry&quot;</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-            <span class="s2">&quot;delay&quot;</span><span class="o">:</span> <span class="mf">1000</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;seedList&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s2">&quot;10.66.255.104/31&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;10.0.0.1/32&quot;</span>
-    <span class="p">],</span>
-    <span class="p">[...]</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;fullBgpLimit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;enabled&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;threshold&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">500000</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;networks&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;exclude&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;include&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;10.66.0.0/16&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;resolveNames&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;discoveryDevices&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;scanner&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;enabled&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;traceroute&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;scope&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;10.0.0.0/8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;100.64.0.0/10&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;169.254.0.0/16&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;172.16.0.0/12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;192.168.0.0/16&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;protocol&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;icmp&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;limitDiscoveryTasks&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;alreadyDiscovered&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;sourceOfTasks&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;arp&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;routes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;trace&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;xdp&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;allowTelnet&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;timeouts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;login&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;session&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;cliSessionsLimit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;enabled&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;cliRetryLimit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;default&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;authFail&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;tacacs&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;retry&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;delay&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;seedList&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;10.66.255.104/31&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;10.0.0.1/32&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="p">[...]</span><span class="w"></span>
 </code></pre></div>
 <p>Most fields can be entered in the body of the request to change the settings when performing a new discovery.</p>
 <p>This won’t affect the settings for the next scheduled discovery.</p>
@@ -3860,7 +3860,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
         <script src="../../../vendor/jquery-3.6.0.min.js"></script>
       
