@@ -9,6 +9,16 @@
       - Mac/Apple: Apple + R or command + R
       - Linux: CTRL + F5
 
+## 4.4.2+1 (3rd May 2022)
+
+### Bug Fixes
+
+- Juniper Mist -- API connection now uses a system proxy.
+- Cisco -- VSS table -- fixed missing switches with legacy VSS
+- Cisco -- fix inventory parsing of PID values (power supply, transceivers, device id,...)
+- Fortinet FortiGate -- fixed discovery of device with pre/post login banner enabled
+
+
 ## 4.4.1+1 (13th April 2022)
 
 ```
