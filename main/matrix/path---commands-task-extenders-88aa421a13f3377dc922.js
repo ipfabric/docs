@@ -1,2 +1,0 @@
-webpackJsonp([0xc89a7a42ebd1],{448:function(s,a){s.exports={pathContext:{task:{taskName:"EXTENDERS",description:"Fabric Extenders Chassis"},commands:[{uid:"cisco@nx-os",vendor:"cisco",family:"nx-os",cmd:"show fex detail",note:null,auth:null,taskName:"EXTENDERS"},{uid:"cisco@nx-os",vendor:"cisco",family:"nx-os",cmd:"show interface fex-fabric",note:null,auth:null,taskName:"EXTENDERS"}]}}}});
-//# sourceMappingURL=path---commands-task-extenders-88aa421a13f3377dc922.js.map
