@@ -1,2 +1,0 @@
-webpackJsonp([0xf42efe90b9b8],{464:function(s,n){s.exports={pathContext:{task:{taskName:"Cluster",description:"Cluster information - nodes, sync links etc."},commands:[{uid:"juniper@junos",vendor:"juniper",family:"junos",cmd:"show chassis cluster status",note:null,auth:null,taskName:"Cluster"},{uid:"juniper@junos",vendor:"juniper",family:"junos",cmd:"show chassis cluster interfaces",note:null,auth:null,taskName:"Cluster"}]}}}});
-//# sourceMappingURL=path---commands-task-cluster-ff903e3d4a8f88956a51.js.map
