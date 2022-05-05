@@ -88,7 +88,7 @@ A: IP Fabric can discover **all supported IP based active network devices**, in
 
 **Q:** What network vendors are currently supported?
 
-A: IP Fabric is a powerful tool for multi-vendor, large-scale networks. The network vendor list is ever-expanding with new items added each release. Complete support matrix can be found **[in our Support Matrix.](../../../matrix/) **
+A: IP Fabric is a powerful tool for multi-vendor, large-scale networks. The network vendor list is ever-expanding with new items added each release. Complete support matrix can be found [in our Support Matrix](https://matrix.ipfabric.io).
 
 **Q:** What if I have unsupported vendor in my network?
 

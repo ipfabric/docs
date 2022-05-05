@@ -1,6 +1,6 @@
 # Supported Vendors And Features
 
-[Vendor-Feature matrix](/matrix){ .md-button .md-button--primary }
+[Vendor-Feature matrix](https://matrix.ipfabric.io){ .md-button .md-button--primary }
 
 ## CLI Commands Used During Discovery
 

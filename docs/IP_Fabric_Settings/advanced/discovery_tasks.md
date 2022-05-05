@@ -5,7 +5,7 @@ The TASK is a data collection related to a specific network protocol or
 technology (MPLS, Transceivers, ARP Table, Spanning-Tree Protocol,
 Multicast, or VXLAN). Each task consists of 1 or more operational
 commands (CLI or API). You can find the list of all Discovery Tasks
-in [the Feature matrix](/matrix/).
+in [the Feature matrix](https://matrix.ipfabric.io).
 
 Some fundamental TASKS required for discovery and topology calculations
 cannot be disabled (Neighbors, ARP, Mac, RIB, etc.)

@@ -128,7 +128,7 @@ privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 ```
 
-List of all commands used for CLI discovery can be found [on this page](vendors_features) and in this [feature/vendor matrix](../../../matrix/).
+List of all commands used for CLI discovery can be found [on this page](vendors_features) and in this [feature/vendor matrix](https://matrix.ipfabric.io).
 
 ### Staging vs Production Deployment
 
