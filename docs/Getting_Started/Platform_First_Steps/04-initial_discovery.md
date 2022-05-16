@@ -14,7 +14,7 @@ At the **Discovery Snapshot** page, click on **New snapshot** and start the disc
 
 ![Start discovery](start_discovery.png)
 
-IP Fabric will attempt to connect to the default gateway of the VM and any provided Seed IP Addresses. Once connected to a device, IP Fabric will fingerprint the vendor, model, and version, and adjust accordingly to run the [necessary commands](../Overview/vendors_features.md#cli-commands-used-during-discovery). You can read more about discovery process at [How Discovery Works](../Overview/How_Discovery_Works/CLI_discovery.md).
+IP Fabric will attempt to connect to the default gateway of the VM and any provided Seed IP Addresses. Once connected to a device, IP Fabric will fingerprint the vendor, model, and version, and adjust accordingly to run the [necessary commands](https://matrix.ipfabric.io). You can read more about discovery process at [How Discovery Works](../Overview/How_Discovery_Works/CLI_discovery.md).
 
 After the discovery is completed, all of the state data is available and you can start exploring [IP Fabric GUI](../../../IP_Fabric_GUI/Discovery_Snapshot/).
 
