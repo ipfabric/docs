@@ -19,6 +19,14 @@ You do this in two stages:
       "hostname": ["like","L36"]
     }
     ```
+    Or you can select the range of dates you are interested in:
+
+    ```json
+    "filters": {
+      "lastCheckAt": ["gte",XXXXXXXXXXXXXX]
+    }
+    ```
+    where XXXXXXXXXXXXXX is the [UNIX epoch time](https://www.epoch101.com/) representing the start of the time range.
 
     This gives you the list of saved configurations, and most importantly, the "hash" for each.
 
