@@ -262,7 +262,7 @@ documentation can be found at [Jumphost settings](../../../IP_Fabric_Settings/ad
 
 Another common error is due to Authentication or Authorization errors. Please
 ensure that the username configured has the correct permissions. There is also
-[a list of CLI commands](../vendors_features.md) used which can help ensure
+[a list of CLI commands](https://matrix.ipfabric.io) used which can help ensure
 authorization is correct.
 
 If you find other errors you can refer to this document [Connectivity
