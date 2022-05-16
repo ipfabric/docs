@@ -25,7 +25,7 @@ Enter the details:
 If you’ve used a network instead of a single IP, you will have the
 option between:
 
-– **Network Mode**: simulation stats and ends with whole networks,
+– **Network Mode**: simulation starts and ends with whole networks,
 individual hosts are not considered
 
 – **Host Mode**: simulation starts and ends with each host. It is
