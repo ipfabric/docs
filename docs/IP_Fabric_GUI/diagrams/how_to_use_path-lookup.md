@@ -6,9 +6,7 @@
 
 Enter the details:
 
--   Source IP / CIDR (it can be a network, but the total number of IPs
-    has to be less than 255 including source and destination IPs.
-    Subnets are also supported.)
+-   Source IP / CIDR
 
 -   Port (Source Port)
 
