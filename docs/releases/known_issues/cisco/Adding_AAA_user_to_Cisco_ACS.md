@@ -22,7 +22,7 @@ In our example, we will create the following:
 -   a single device group named **RoutersHQ** for the routers.
 -   a single router that will be placed in the **RoutersHQ** device group.
 -   two Identity groups – **Admin** and **HelpDesk**
--   two users – an administrator that will be placed in the the **Admin
+-   two users – an administrator that will be placed in the **Admin
     group**, and a user that will be placed in the **HelpDesk group**.
 -   two authorization policies – the **AdminRole** group with the full
     privilege level 15 access, and the **HelpDeskRole** with the privilege

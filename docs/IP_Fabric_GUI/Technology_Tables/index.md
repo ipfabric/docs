@@ -19,7 +19,7 @@ top left.
 Simple or advanced filters can be applied to each table. By default,
 filtering is available above each column, and accepted filtering values
 can be strings, numbers, IP addresses, networks, boolean values, or
-selectbox values.
+select box values.
 
 RegEx can be used in a string filter by adding `=~` **after** the
 expression. An exact match of the value can be achieved by adding `=`

@@ -84,24 +84,24 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 - HP Comware - fixed parsing of `display interface` command for the
   different output format
 - Huawei NE 8000 platforms - version detection fixed
-- Juniper Junos - fixed parsing of command `show spanning-tree
+- Juniper JunOS - fixed parsing of command `show spanning-tree
   statistics interface` to support another output format
-- Juniper Junos - fixed parsing of different output for command `show
+- Juniper JunOS - fixed parsing of different output for command `show
   route active-path`
-- Juniper Junos - fixed vrf leak to the main routing table (`inet.0`).
-- Juniper Junos - Improve error message when the firewall isn’t able
+- Juniper JunOS - fixed vrf leak to the main routing table (`inet.0`).
+- Juniper JunOS - Improve error message when the firewall isn’t able
   to provide output for cmd `show security ike security-associations
   detail`.
-- Juniper Junos - Improve error message when the firewall isn’t able
+- Juniper JunOS - Improve error message when the firewall isn’t able
   to provide output for cmd `show security ipsec security-associations
   detail`.
-- Juniper Junos - MPLS forwarding tables collection fix
+- Juniper JunOS - MPLS forwarding tables collection fix
 - Mikrotik - fixed ipsec parsing for non-tunnel policies
 - Mikrotik - fixed parsing of interfaces which have an only numeric
   name
 - Palo Alto - Cluster state detection added. Fixes path lookup on
   duplicate IP on both nodes in the cluster.
-- Paloalto - fixed tunnel proposals were not parsed correctly with
+- Palo Alto - fixed tunnel proposals were not parsed correctly with
   long tunnel names
 - STP edges to Juniper SRX firewalls with virtual mac address fix
 - UI - fixed overflow of items from select boxes used in modals
@@ -136,10 +136,10 @@ OVA SHA256SUM: 4E7FBA8DF01A787D93B8E6D0E3FE8AED68E3C9F6EABB3D162F84E1F99DADDD3D
 - Cisco ASA - Fixed parsing of snmp location
 - Cisco IOS - fixed parsing for command `show flow exporter`
 - Cisco NX-OS - fixed parsing for command `show flow exporter`
-- Juniper Junos - routing table - fixed parsing of MPLS labels
+- Juniper JunOS - routing table - fixed parsing of MPLS labels
 - F5 BigIP - new cmd `show sys cluster all-properties` to add cluster
   management interfaces to interface list.
-- Paloalto IPSec - fixed parsing of tunnels with long names and
+- Palo Alto IPSec - fixed parsing of tunnels with long names and
   multiple proposals
 
 ## 3.8.0 (26th April 2021)
@@ -200,7 +200,7 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   can be enabled / disabled
 - When the application will lose connection with the server then is
   shown "Connection lost" overlay
-- Juniper Junos - filter out VRRP backup virtual IP from the managed
+- Juniper JunOS - filter out VRRP backup virtual IP from the managed
   IP list
 - Managed duplicate IP table - removed for:
   - Aruba AP - /32 IP on tunnel interfaces taken from another
@@ -340,17 +340,17 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   snooping"
 - Huawei VRP - VXLAN Tunnels - command parsing fix when empty output
   is received
-- Juniper Junos - Configuration parsing fix for "protect protocols
+- Juniper JunOS - Configuration parsing fix for "protect protocols
   mstp" command
-- Juniper Junos - fixed parsing of different output for command 'show
+- Juniper JunOS - fixed parsing of different output for command 'show
   configuration \| display set \| except "^deactivate"'
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   chassis environment"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   chassis routing-engine"
-- Juniper Junos - IGMP groups fix mapping of 'never' value for expires
+- Juniper JunOS - IGMP groups fix mapping of 'never' value for expires
   for
-- Juniper Junos fix false-positive err-disabled statuses
+- Juniper JunOS fix false-positive err-disabled statuses
 - Meraki - L2 interfaces, reason "connecting" added
 - Palo Alto - an interface that wasn’t associated with any VSYS could
   be missing in the interface inventory
@@ -391,7 +391,7 @@ OVA SHA256SUM: c5972d44b012ff3b3411ea3c6666651e9c6c453a50009c0062df99c11ae29e0b
 ### Bug Fixes
 
 - Pathlookup - IGMP snooping fail fix
-- Juniper - IRB L3 interface correct VLAN ID assignement
+- Juniper - IRB L3 interface correct VLAN ID assignment
 - Fortinet FortiGate - zone firewall could be missing in some cases
   since the unit was considered as a HA slave
 - Palo Alto - first configured vsys could be missing in discovery
@@ -469,10 +469,10 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
   arp"
 - HP Comware 1910 - fixed version detection
 - HPE V1910 - Fixed platform detection
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   igmp group"
-- Juniper Junos - IRB L3 interface correct VLAN ID assignment
-- Juniper Junos - STP - VLAN specific information parsing fixed for
+- Juniper JunOS - IRB L3 interface correct VLAN ID assignment
+- Juniper JunOS - STP - VLAN specific information parsing fixed for
   VSTP
 - Palo Alto - list only L2 interfaces that belong to the processed
   virtual system
@@ -550,9 +550,9 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
   port-mirroring
 - Huawei - MPLS to RIB transport label mapping - 3 implicit null label
   removed
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vlans detail"
-- Juniper Junos - show route active-path command parsing updated and
+- Juniper JunOS - show route active-path command parsing updated and
   fixed
 - Palo Alto - fixed parsing of different output for command "show
   config merged"
@@ -611,19 +611,19 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
   vxlan tunnel"
 - Huawei VRP - Mac address table, add bridge domain number to
   interface if missing
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration \| display set \| except "^deactivate""
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration security policies \| display set"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ethernet-switching interface"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lldp neighbors interface \<int>"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   security ipsec security-associations detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   security ipsec security-associations detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vlans detail"
 - Mikrotik RouterOS - fixed parsing of different output for command
   "/ip neighbor print detail"
@@ -650,14 +650,14 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
 - The login into the platform was slow - rewritten DB query for GET
   /snapshot endpoint
 - Rewritten DB query to speedup post-discovery topology calculation
-- Technology / Security / Zone firewal / Interfaces - format data in
+- Technology / Security / Zone firewall / Interfaces - format data in
   Zone column (separate multiple zones by space)
 - Cisco IOS-XE - command "show interfaces transceiver detail" - added
   handling for Cisco bug CSCuw38988 (version 03.07.05E & platform
   cat3k_caa)
 - Fortinet FortiGate - check whether a VDOM still exists before
   switching to it
-- HOTFIX - MERAKI API processing is disabled when the snapshot is
+- HOTFIX - Meraki API processing is disabled when the snapshot is
   started from graphs
 
 ### Bug Fixes
@@ -722,9 +722,9 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4
   vxlan vni"
 - Huawei VRP - Task VXLAN - Device without VXLAN configuration error
   fix
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   chassis environment"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   chassis routing-engine"
 - Palo Alto - fixed parsing of different output for commands "show vpn
   \*"
@@ -743,7 +743,7 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
 
 - Adds IPSec support for the following platforms
   - Cisco IOS, IOS-XE, ASA
-  - Juniper Junos
+  - Juniper JunOS
   - PaloAlto
   - Mikrotik
 - Adds detailed IPSec technology tables
@@ -764,9 +764,9 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
   - Fortinet Fortigate
   - HP Arubasw, Comware
   - Huawei VRP
-  - Juniper Junos
-  - Paloalto
-- Juniper Junos - Adds support for IGMP snooping
+  - Juniper JunOS
+  - Palo Alto
+- Juniper JunOS - Adds support for IGMP snooping
 - Huawei - Adds support for MPLS LDP
 - Huawei - Adds support for MPLS
 - Huawei - Adds support for BGP EVPN
@@ -900,8 +900,8 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
 - Cisco NX-OS - PIM with unnumbered interfaces fix
 - Cisco NX-OS fixed parsing of different output for command "show cdp
   internal global-info"
-- Cisco NX-OS fixed parsing of different output for command "show ip
-  bgp vrf all all nei"
+- Cisco NX-OS fixed parsing of different output for command `show ip
+  bgp vrf all all nei`
 - Cisco NX1000v - don't execute unsupported cmd "show cdp internal
   global-info"
 - Cisco SG - fixed hostname detection
@@ -957,16 +957,16 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc
 - Huawei VRP - fixed parsing of different output for command "display
   memory"
 - Huawei VRP - Route summary for VPN instances (VRF) fix
-- Juniper Junos - DHCP bindings for private VLANs without VLAN ID
-- Juniper Junos - don’t run discovery on secondary nodes.
-- Juniper Junos - EX3400 sn parsing fix
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - DHCP bindings for private VLANs without VLAN ID
+- Juniper JunOS - don’t run discovery on secondary nodes.
+- Juniper JunOS - EX3400 sn parsing fix
+- Juniper JunOS - fixed parsing of different output for command "show
   ethernet-switching interfaces"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lldp neighbors interface \<intName>"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vrrp detail"
-- Juniper Junos - IRB interface support in pathlookup
+- Juniper JunOS - IRB interface support in pathlookup
 - Mikrotik RouterOS - fixed showing duplicated L3 interface in case
   that both IPv4 and IPv6 address is configured
 - Palo Alto - fixed parsing of different outputs for command "show arp
@@ -1175,7 +1175,7 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 - Arista EOS - changed command for multicast routes counters for
   firmware version 4.23 and higher
 - Arista EOS - fixed version detection on virtual appliance (vEOS)
-- Arista EOS - remove duplicit route, route summary and arp records in
+- Arista EOS - remove duplicate route, route summary and arp records in
   vrf default. Fix missing vrf default in VRF task.
 - Arista EOS - fixed parsing of different outputs for command "show ip
   interface"
@@ -1216,15 +1216,15 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 - Cisco SG - fixed parsing of different output for command "show arp"
 - Dell PowerConnect - fixed parsing of different output for command
   "show interfaces status"
-- Juniper Junos - fixed parsing of different outputs for commands
+- Juniper JunOS - fixed parsing of different outputs for commands
   "show multicast route extensive"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   connections extensive"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   virtual-chassis"
-- Juniper Junos - fixed parsing of different output for command 'show
+- Juniper JunOS - fixed parsing of different output for command 'show
   configuration \| display set \| except "^deactivate"'
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lldp neighbors interface \<int>"
 - Extreme Enterasys - fixed parsing of different output for command
   "show spantree stats active sid \<id>"
@@ -1342,7 +1342,7 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
 **Features - Protocol and technology support**
 
 - Arista EOS - Added AAA support
-- Juniper Junos - add ISIS IPv6 neighbors support
+- Juniper JunOS - add ISIS IPv6 neighbors support
 - Cisco FTD added support for AAA, ACL, NAT, NTP, Object groups,
   Routing table, SNMP, Syslog
 - Cisco IOS, IOS-XE, NX-OS & Arista - New IGMP Snooping and mac
@@ -1394,7 +1394,7 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
 - Fixed detection of some entry-level FortiGate models (e.g. 30D)
 - Unable to discover Meraki with automated snapshot
 - Enable discover HP ProCurve in the stack
-- The user with read priviliges could update intent verification
+- The user with read privileges could update intent verification
   rules.
 - Arista EOS - fixed collecting of multicast routing table for all
   VRFs
@@ -1427,17 +1427,17 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
   bgp peer"
 - Huawei VRP - fixed parsing of different output for command "display
   bgp peer verbose"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ldp neighbor extensive instance \<vpnName>"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   spanning-tree bridge detail"
-- Juniper Junos - fixed parsing of various output for command "show
+- Juniper JunOS - fixed parsing of various output for command "show
   interfaces terse"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration \| display set"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ethernet-switching interface"
-- Juniper Junos - fixed showing of RPs in multicast routing table
+- Juniper JunOS - fixed showing of RPs in multicast routing table
 - Huawei VRP - fixed parsing of different output for command "display
   ospf peer"
 - Palo Alto - fixed parsing of different output for command "show arp
@@ -1503,8 +1503,8 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
   command "show version"
 - Cisco Firepower Threat Defense - fixed mapping of L2 management
   interface
-- Cisco NX-OS - fixed parsing of different output for command "show ip
-  bgp vrf all all neighbor"
+- Cisco NX-OS - fixed parsing of different output for command `show ip
+  bgp vrf all all neighbor`
 - Cisco NX-OS - fixed parsing of different output for command "show
   nve vni"
 - Cisco NX-OS - several multicast fixes regarding PIM neighbors &
@@ -1521,10 +1521,10 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F
   wlan 802.11a \<apName>"
 - Cisco WLC - fixed parsing of different output for command "show ap
   wlan 802.11b \<apName>"
-- Juniper Junos - several multicast fixes regarding PIM neighbors &
+- Juniper JunOS - several multicast fixes regarding PIM neighbors &
   interfaces, IGMP
-- Juniper Junos - fixed remote IP’s mapping of CCC with long LSP names
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed remote IP’s mapping of CCC with long LSP names
+- Juniper JunOS - fixed parsing of different output for command "show
   connections extensive"
 - Palo Alto - fixed missing routing table on some of devices
 - CDP/LLDP - Meraki neighbor parsing fixed
@@ -1547,7 +1547,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
   - Tables in Technology / MPLS / L2 VPN
 - Add support BGP over IPv6 for Cisco XR
 - Add support for Multicast (IGMP, PIM, MROUTE) for Cisco IOS, IOS-XE,
-  IOS-XR, NX-OS, Arista EOS, Juniper Junos
+  IOS-XR, NX-OS, Arista EOS, Juniper JunOS
   - Tables in Technology / Multicast
 
 **Features - System**
@@ -1567,7 +1567,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
   so this feature is disabled for some tables. "unknown" is used
   instead of total rows.
   - Technology / MPLS / L3 VPN / PE Routes
-- Juniper Junos - Get import/export route targets to VRF from policies
+- Juniper JunOS - Get import/export route targets to VRF from policies
 
 **Bug Fixes**
 
@@ -1655,7 +1655,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
   ap wlan 802.11b \<apName>"
 - Cisco WLC Air - fixed parsing of different output for command "show
   lag summary"
-- Checkpoin Gaia - fixed parsing of different output for command "show
+- Checkpoint Gaia - fixed parsing of different output for command "show
   ospf interfaces detailed"
 - Extreme XOS - fixed mapping for L2 interfaces
 - Extreme XOS - fixed parsing of different output for command "show
@@ -1698,25 +1698,25 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
   mac-address"
 - Huawei VRP - fixed parsing of different output for command "display
   port-mirroring"
-- Huawei VRP - imporved parsing for command "display ip vpn-instance"
+- Huawei VRP - improved parsing for command "display ip vpn-instance"
   to support long names of VRF
 - Huawei VRP - "display device" and "display device manufacture-info"
   parsing fixed and extended to better support modular chassis
 - Checkpoint Gaia - improved OS version detection, support for new
   versions outputs.
 - Mikrotik RouterOS - fixed command to get bridge hosts table
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lacp interfaces"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   spanning-tree interface detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration security policies \| display set"
-- Juniper Junos - fixed getting VRRP group in idle state
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed getting VRRP group in idle state
+- Juniper JunOS - fixed parsing of different output for command "show
   vrrp detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   interfaces statistics detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ldp neighbor extensive instance \<ipv4VpnName>"
 - Palo Alto - interfaces: n/a duplex and speed are not parsed as
   unknown but as n/a
@@ -1786,7 +1786,7 @@ Hyper-V SHA256SUM: AF8A6B44963C71E7FE28FB08D4D474FD2B18F93E17265C4F3CE5C605198
   route \<protocol>"
 - Arista EOS - fixed parsing of different output for command "show ip
   bgp neighbors"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   version" - missing hostname in output
 
 ### 3.4.0 (28th January 2020)
@@ -1839,13 +1839,13 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0
 - Fortinet Fortigate - added verstion detection for fortigate with
   Wifi module
 - Snapshot Management - Settings detail can be closed on ESC
-- Juniper Junos - VRRP groups were assigned to wrong subinterface. Now
-  groups are assigned properly.
+- Juniper JunOS - VRRP groups were assigned to wrong subinterface. Now
+  groups are signed properly.
 - End of Life table improvement - One summary table per unique PID,
   one detail table showing all PID and their SN
 - Technology / Routing / Summary - BGP, IS-IS, OSPF, OSPFv3 added VRF
   column
-- CLI Authentication - allow to save duplicit usernames
+- CLI Authentication - allow to save duplicate usernames
 - L2 Edge port - xDP protocols on void are removed from decisions
   process as they can lie with their capabilities (e.g. OPX send it’s
   router)
@@ -1934,24 +1934,24 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0
   mirroring-group all"
 - HP Comware - fixed parsing of different output for command "display
   link-aggregation verbose"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   route active-path"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   interfaces terse"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration forwarding-options sampling"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration interfaces \| match sampling \| display set"
-- Juniper Junos - fixed parsing of different output for command 'show
+- Juniper JunOS - fixed parsing of different output for command 'show
   configuration \| display set \| except "^deactivate"'
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   route active-path"
 - Juniper - SNMP & Logging parsing fix when deactivated part was in
   config
 - Juniper - fixed getting ACL from device configuration
-- Juniper Junos - fixed route summary calculations, now corresponds
+- Juniper JunOS - fixed route summary calculations, now corresponds
   correctly to number of routes in routing table
-- Juniper Junos - BGP summary parsing fix
+- Juniper JunOS - BGP summary parsing fix
 
 ### 3.3.3 (10th December 2019)
 
@@ -2024,7 +2024,7 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e
 - Management / Changes - the changes could be wrong after ADD or
   REFRESH actions in that snapshot
 - Diagrams - if the site was opened from network overview diagram then
-  "single point of failure" or "Nonredundant links" didn't work
+  "single point of failure" or "Non-redundant links" didn't work
 - System - Backup - backup to FTP/FTPS server didn't work without
   directory specification
 - Add devices into snapshot - if the IP addresses were already tried
@@ -2041,7 +2041,7 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e
   lldp info remote-device detail"
 - HP ArubaSW - L2 interfaces - not all interfaces were correctly
   parsed
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   interfaces statistics detail"
 
 ### 3.3.1 (18th November 2019)
@@ -2119,7 +2119,7 @@ SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17
   spanning-tree detail"
 - HP Comware WLC - client AP mac detection improved so it’s correctly
   tied to AP
-- Juniper Junos - fixed parsing of different outpur for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vlans detail"
 - Mikrotik - fixed parsing of different output for command "/interface
   print detail"
@@ -2165,7 +2165,7 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c
 - Performance improvements - loading of graph should be faster
 - Comparing was improved to display changes for edges pointing into
   transit cloud + changes for interconnected sites edges (If the site
-  have more than 400 ummanaged neighbors then it can't be compared)
+  have more than 400 unmanaged neighbors then it can't be compared)
 - If transit cloud have more than 100 devices then it can't be
   expanded.
 
@@ -2183,7 +2183,7 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c
 - Settings / Advanced / Maintenance - a new job which is necessary to
   run on daily to keep the system healthy (The job can be run also
   manually)
-- Reserverd IPv4 prefixes are automatically excluded from discovery
+- Reserved IPv4 prefixes are automatically excluded from discovery
   (0.0.0.0/8, 127.0.0.0/8, 224.0.0.0/4, 240.0.0.0/4)
 - Pathlookup - Gateway selection algorithm will consider only /8 and
   smaller networks.
@@ -2229,7 +2229,7 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c
   each member has correct hostname.
 - F5 Big-IP - fixed parsing of different output for command 'run util
   bash -c "ntpq -np"'
-- HP Aruba WLC - duplicit client output fixed - it caused that no
+- HP Aruba WLC - duplicate client output fixed - it caused that no
   access point was saved (unique index duplicity)
 - HP Aruba switch - fixed parsing of different output for command
   "show mac-address"
@@ -2275,11 +2275,11 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c
   snmp all-properties"
 - F5 Big-IP - Recursive RIB interface lookup fix
 - F5 Big-IP - IP on L3 interfaces fix
-- F5 Big-IP - Duplicit IP in cluster as RIB nexthop fix (active node
+- F5 Big-IP - Duplicate IP in cluster as RIB nexthop fix (active node
   IP used)
 - HP Comware - fixed parsing of different output for command " display
   ip routing-table verbose"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ldp neighbor extensive instance \<vpnName>"
 - PaloAlto- fixed parsing of different output for command "show system
   resources"
@@ -2435,7 +2435,7 @@ unloaded and loaded again.
 - Arista EOS - fixed parsing of different output for command "show ip
   bgp neighbors vrf all"
 - Arista EOS - fixed parsing of different output for command "show ip
-  roout vrf \<vrfName>"
+  rout vrf \<vrfName>"
 - Arista EOS - fixed parsing of different output for command "show
   vxlan address-table"
 - Cisco ASA - fixed parsing of different output for command "show ipv6
@@ -2466,15 +2466,15 @@ unloaded and loaded again.
   run-config commands"
 - Cisco - fixed parsing of different output for command "show snmp
   user"
-- Checkpoit GAIA - fixed parsing of different output for command "show
+- Checkpoint GAIA - fixed parsing of different output for command "show
   ospf neighbors detailed"
-- Checkpoit GAIA - fixed parsing of different output for command "fw
+- Checkpoint GAIA - fixed parsing of different output for command "fw
   ctl pstat"
 - Juniper - Corrected BGP neighbor uptime if the uptime is less than
-  60 minutess
-- Juniper Junos - fixed parsing of different output for command "show
+  60 minutes
+- Juniper JunOS - fixed parsing of different output for command "show
   vrrp detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ethernet-switching interfaces"
 - F5 Big-IP - fixed parsing of different output for command "show net
   trunk all-properties" (unsupported counters units)
@@ -2506,9 +2506,9 @@ unloaded and loaded again.
   ntp sessions"
 - Huawei Vrp - fixed parsing of different output for command "display
   vrrp"
-- Paloalto - fixed parsing of different output for command "show
+- Palo Alto - fixed parsing of different output for command "show
   interface \<intName>"
-- Paloalto - fixed parsing of different output for command "show
+- Palo Alto - fixed parsing of different output for command "show
   routing proto ospf interface"
 - Riverbed - fixed collecting information about memory & device
   platform
@@ -2620,7 +2620,7 @@ version 3.4.7.
 - Juniper VLAN parsing fixed to include even vlans with names starting
   and ending with double underscores.
 - Juniper - some platform did not correctly set IP as virtual
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vlans detail"
 - Arista EOS - fixed parsing of different output for command "show
   lldp neighbors detail"
@@ -2638,7 +2638,7 @@ version 3.4.7.
   "diag hard dev nic \<intName>"
 - Huawei - fixed parsing of different output for command "display bgp
   \<addressFamily> \<vpnInstance> peer verbose'"
-- Paloalto - fixed parsing of different output for command "show ntp"
+- Palo Alto - fixed parsing of different output for command "show ntp"
 - Palo Alto - L2 connection to switches fix
 - Palo Alto - routing table parsing fix
 - Palo Alto - L3 connection on cluster fix
@@ -2774,7 +2774,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
 - Discovery - Tasker process - fixed include/exclude list, sometime
   could be discovered IP addresses what wasn't in included or was in
   excluded list.
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   interfaces statistics detail"
 - Arista EOS - fixed mapping for Task STP - when STP is disabled on
   the device
@@ -2829,25 +2829,25 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
   "diag hard dev nic \<intName>"
 - Fortinet FortiGate - fixed parsing of different output for command
   "get system arp"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   spanning-tree interface detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration interfaces \| match sampling \| display set"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lacp interfaces"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   ethernet-switching interface detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration \| display set"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   sflow"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   lldp neighbors interface \<intName>"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   interfaces statistics detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration forwarding-options sampling"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   configuration firewall"
 - Site Low-level design report - table Interfaces in the HALF duplex
   was wrongly reported
@@ -2881,21 +2881,21 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
   information fixed
 - Cisco MPLS forwarding with multiple next-hop including route and
   label fixed parsing
-- Juniper Junos - fixed parsing issue for command "show vlans
+- Juniper JunOS - fixed parsing issue for command "show vlans
   detail" - VPLS VLANs aren't supported
-- Juniper Junos - fixed parsing for command "show sflow" when SFlow
+- Juniper JunOS - fixed parsing for command "show sflow" when SFlow
   isn't configured
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   vrrp detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   virtual-chassis device-topology"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   virtual-chassis vc-port all-members"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   spanning-tree interface detail"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   spanning-tree statistics interface"
-- Juniper Junos - fixed parsing of different output for command "show
+- Juniper JunOS - fixed parsing of different output for command "show
   route active-path"
 - Fixed RIB edges with duplicate GLBP addresses for devices without
   ARP table (AP) or without
@@ -3015,7 +3015,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
   neigh vrf all"
 - Extreme XOS - fixed parsing of various output for command "show
   ip-fix"
-- Juniper Junos - fixed parsing of various output for command "show
+- Juniper JunOS - fixed parsing of various output for command "show
   spanning-tree interface detail"
 
 #### Known issues
@@ -3084,7 +3084,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
 - DB indexes optimizations
 - Discovery - Refresh data for specific devices - access points was
   removed from table
-- Discovery - Refresh data for specific devices - overide device
+- Discovery - Refresh data for specific devices - override device
   output in snapshot
 - Discovery - Fixed - Cannot be started when proxy is configured.
 - Initial network configuration wizard - Fixed - NTP configuration
@@ -3103,14 +3103,14 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0
   included
 - Maximum BW limit changed to 10Mbps
 
-### 3.0.1 (12th Fabruary 2019)
+### 3.0.1 (12th February 2019)
 
 #### Improvements
 
 - Fixed an error in Site Separation by regex
 - Tech Support file now contains CLI logs
 
-### 3.0.0 Release Candidate 1 (6th Fabruary 2019)
+### 3.0.0 Release Candidate 1 (6th February 2019)
 
 - A complete overview of network history through individual network
   "Snapshots"

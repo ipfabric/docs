@@ -129,7 +129,7 @@
 - Juniper - SRX firewall/router mode detection, the default is
   firewall when no relevant output is available
 - Tables - FIX filtering in columns where is able to switch property
-  for filtering ie. Nat - Rules
+  for filtering i.e. Nat - Rules
 - Tables - Filter rules were inserted randomly after the seventh rule
 - Tables - some tables had wrong values for export into CSV (Object
   Object)
@@ -149,7 +149,7 @@
 #### Bug Fixes
 
 - Cisco NX 7K - fixed parsing of version, VDC wasn't recognized
-- Juniper Junos - fixed parsing pf memory information
+- Juniper JunOS - fixed parsing pf memory information
 
 ### 2.3.0 (5th December)
 
@@ -165,7 +165,7 @@
   IOS/IOS-XE/IOS-XR/NX, Juniper
   - New tables in Technology => MPLS
 - Added support for Port Mirroring for Cisco IOS/IOS-XE/NX/SG, Juniper
-  Junos, HP Comware, Huawei VRP
+  JunOS, HP Comware, Huawei VRP
   - New table in Technology => Management => Port Mirroring
 - Added support for NAT for Cisco IOS/IOS-XE/ASA
   - New tables in Technology => Addressing => NAT
@@ -253,7 +253,7 @@
   fix (the mask is considered in calculation now)
 - 802.1x interface authentication port control mode is now parsed from
   show run if it is not available in show dot1x command output
-- Updated RIP neighborship mapping for Junos routers
+- Updated RIP neighborship mapping for JunOS routers
 
 ### 2.2.9 (31st October 2018)
 
@@ -277,7 +277,7 @@
 - Added vendor support for Huawei VRP
 - Added vendor support for F5 BIG IP
 - Detailed information about IS-IS protocol (support for Juniper
-  Junos)
+  JunOS)
   - New table Technology \\ Routing \\ IS-IS \\ Neighbors
   - New table Technology \\ Routing \\ IS-IS \\ Interfaces
 
@@ -322,7 +322,7 @@
   unnumbered interfaces.
 - Cisco - IPv4 Unicast address group for BGP neighbors accepts only
   IPv4 records.
-- Juniper Junos - correctly detects SRX device in packet mode as
+- Juniper JunOS - correctly detects SRX device in packet mode as
   router device type
 - HP Comware BGP neighbor idle parsing fix
 - HP Comware platform a-msr30 wasn't discovered
@@ -353,7 +353,7 @@
   - New table Technology \\ Routing \\ EIGRP \\ Neighbors
   - New table Technology \\ Routing \\ EIGRP \\ Interfaces
 - Detailed information about RIP protocol (support for Cisco IOS,
-  IOS-XE, IOS-XR, NX-OS, HP Comware, Juniper Junos)
+  IOS-XE, IOS-XR, NX-OS, HP Comware, Juniper JunOS)
   - New table Technology \\ Routing \\ RIP \\ Neighbors
   - New table Technology \\ Routing \\ RIP \\ Interfaces
 
@@ -409,7 +409,7 @@
   separation, and one of the sites was previously renamed.
 - STP - inconsistencies Multiple STP & Vlans without STP: false
   positives fix
-- Juniper Junos - Hostname representing chassis cluster is now derived
+- Juniper JunOS - Hostname representing chassis cluster is now derived
   from the active node.
 - CDP/LLDP devices with phone capabilities were recognized as a
   network device.
@@ -481,7 +481,7 @@
 **Features - Protocol and technology support**
 
 - Detailed information about BGP protocol (support for Cisco IOS,
-  IOS-XE, IOS-XR, NX-OS, Juniper Junos)
+  IOS-XE, IOS-XR, NX-OS, Juniper JunOS)
   - New table Technology \\ Routing \\ BGP \\ Neighbors
 - Collecting information about MTU on interfaces
   - Added MTU column into Inventory\\Interfaces
@@ -524,12 +524,12 @@
   - Table header can be seen as fixed (sticky) when scrolling
   - new advanced filter operator - not equal to a column
 - Management / Changes - Speed up of the table for snapshot selection
-- Juniper Junos Description for interfaces is now available in NIMPEE.
-- Juniper Junos added MAC address for logical interfaces.
-- Juniper Junos Fixed parsing of routing table with MPLS records
-- Juniper Junos show ethernet-switching interfaces changed to an
+- Juniper JunOS Description for interfaces is now available in NIMPEE.
+- Juniper JunOS added MAC address for logical interfaces.
+- Juniper JunOS Fixed parsing of routing table with MPLS records
+- Juniper JunOS show ethernet-switching interfaces changed to an
   interface for compatibility with newer platforms
-- Juniper Junos Updated routing engine schema for EX3400
+- Juniper JunOS Updated routing engine schema for EX3400
 - Cisco - Secured Access ports - fixed parsing for ports with MAB only
   clients, changed command for IOS c2960c405
 - Cisco WLC - fixed getting of hostname for HA cluster
@@ -608,13 +608,13 @@
 - HP Comware 7 fixed processing of L2 interfaces
 - HP Comware - display license command is sent only for virtual
   platforms to get the SN
-- Juniper Junos fixed ethernetSwitchningInterfaceDetail parsing error
+- Juniper JunOS fixed ethernetSwitchningInterfaceDetail parsing error
   when untagged VLAN is unavailable
-- Juniper Junos Command Route - updated parsing of access-internal
+- Juniper JunOS Command Route - updated parsing of access-internal
   routes
-- Juniper Junos Updated mapping for routing table (multi discard
+- Juniper JunOS Updated mapping for routing table (multi discard
   flag).
-- Juniper Junos fixed mapping for task SecureAccessPort
+- Juniper JunOS fixed mapping for task SecureAccessPort
 - Extreme XOS - fixed parsing of OS version
 - Riverbed L3 interfaces fixed task mapping
 - Fixed processing of CLI pagination for corner cases and improved
@@ -673,9 +673,9 @@
 
 **Improvements and Bug Fixes**
 
-- Juniper/Junos ARP records weren’t used as discovery targets
+- Juniper/JunOS ARP records weren’t used as discovery targets
 
-- Juniper/Junos Zone FW is now collected from configuration (fixing
+- Juniper/JunOS Zone FW is now collected from configuration (fixing
   100% CPU BUG)
 
 - Configuration management no longer attempts to download
@@ -746,11 +746,11 @@
 
 - Fixed updater failing on validation of Zone FW rules
 
-- Fixed discovery of Juniper/Junos from ARP entries
+- Fixed discovery of Juniper/JunOS from ARP entries
 
-- Fixed routing table flags parsing for Juniper/Junos
+- Fixed routing table flags parsing for Juniper/JunOS
 
-- Fixed parsing of non-active routes for Juniper/Junos
+- Fixed parsing of non-active routes for Juniper/JunOS
 
 - Fixed ARP parsing of incomplete entries for Palo Alto
 
@@ -759,7 +759,7 @@
 - Fixed parsing of Cisco interfaces and IP interfaces under certain
   conditions
 
-- Fixed parsing of Juniper/Junos configuration firewall command
+- Fixed parsing of Juniper/JunOS configuration firewall command
 
 - Disabled sanitization of configuration files for Saved Configuration
   Consistency checks
@@ -945,7 +945,7 @@ Features
 
 - FortiGate
 - Palo Alto
-- Juniper - Junos OS
+- Juniper - JunOS OS
 - Cisco wireless - added support for new wireless access point
   AIR-AP2802I
 - HP 830 Unified Wired-WLAN platform - (Interface parsing, without

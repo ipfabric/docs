@@ -14,7 +14,7 @@ If you want to start a discovery, using the existing settings, it is a simple `P
 
 [Information regarding the Header/Authentication](../../Path_Lookup_4.x/#post-request) has already been mentioned in another article. Please refer to this if needed.
 
-![configure of Creating snapshoot](configure_of_Creating_snapshoot.gif)
+![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 
 ## Create a New Snapshot With Different Settings Than The Default Ones
 

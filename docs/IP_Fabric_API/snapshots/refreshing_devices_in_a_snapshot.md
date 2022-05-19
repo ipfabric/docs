@@ -2,7 +2,7 @@
 
 Do this in two stages:
 
-1.  Retrieve the snapshot ID and the serial numbers of the devices you want to update using eg `/tables/inventory/devices` with a request body like
+1.  Retrieve the snapshot ID and the serial numbers of the devices you want to update using e.g. `/tables/inventory/devices` with a request body like
 
     ```js
     {

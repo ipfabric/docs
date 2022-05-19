@@ -33,7 +33,7 @@ Notes:
 
 Navigate to **Technology → Interfaces → Transceivers**.
 
-![trascievers in the menu](transcievers_list.png)
+![transcievers in the menu](transcievers_list.png)
 
 ## How To Enable/Disable Transceivers Task
 
@@ -56,4 +56,4 @@ devices, put cisco to the Vendor field. More specific device selection
 can be done by Family, Platform, Model and Version fields). You can
 simply test your Regex rules by **Test rules** button.
 
-![edit trasceivers tasks](transcievers_tasks_edit.png)
+![edit transceivers tasks](transcievers_tasks_edit.png)

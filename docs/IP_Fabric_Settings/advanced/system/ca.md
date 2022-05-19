@@ -1,7 +1,7 @@
 # Certification authorities
 
 By default, the IP Fabric only trusts certificates issued by CAs listed
-in the [nodejs](https://github.com/nodejs/node/blob/master/src/node_root_certs.h). Because
+in the [node.js](https://github.com/nodejs/node/blob/master/src/node_root_certs.h). Because
 internal systems typically use certificates signed by an internal CA,
 the root certificate of this certification authority needs to be
 uploaded.
