@@ -38,7 +38,7 @@ credentials are required).
 	`releases.ipfabric.io` (194.228.111.172) remote port 443/TCP for upgrade package download
 
 In the following screenshot, the green 3.7.5 button in the right top
-corner indicates that a new version of Ip Fabric is available (if the
+corner indicates that a new version of IP Fabric is available (if the
 system has Internet connectivity).
 
 ![New version](system_update_new_version.png)

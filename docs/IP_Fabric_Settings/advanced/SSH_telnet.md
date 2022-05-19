@@ -69,7 +69,7 @@ errors and adjustments:
 
 **Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.
 
-| Python version on the jumhost |                 |
+| Python version on the jumphost |                 |
 | ----------------------------- | --------------- |
 | 2.7                           | supported       |
 | 3.5                           | supported       |

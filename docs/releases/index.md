@@ -107,7 +107,7 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
 - HP ArubaCX -- fixed parsing of IGMP query interval.
 - HP Comware -- fixed parsing of `display lldp neighbor-information verbose`
 - HP Comware -- fixed parsing of `display stp region-configuration` in case vlans list is on multiple lines.
-- Juniper Junos -- access-internal routes were removed from routing table.
+- Juniper JunOS -- access-internal routes were removed from routing table.
 - Palo Alto -- fixed parsing of empty applications/services in security rules.
 - Palo Alto -- fixed parsing of `show high-availability state` for suspended state.
 - Versa VOS -- `commands/versa/_vos/vnms/dashboard/appliance/sdWanSites` -- fixed mapping for unsupported IPv6 links.
@@ -332,7 +332,7 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
   reporting
 - Path Lookup - Forwarding for explicit label 0 fix
 - Check Point Gaia - added collecting of static ARP
-- Cisco - IOS, IOS-XE, IOS-XR, NX-OS and Juniper Junos - change BGP
+- Cisco - IOS, IOS-XE, IOS-XR, NX-OS and Juniper JunOS - change BGP
   route max threshold evaluation to be done on a per VRF basis.
 - Extreme XOS - Added new reason of disabled port `port not present`
 - Fortinet FortiGate - configured virtual IPs and IP pools were
@@ -440,29 +440,29 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
 - HP Comware: fix routing relation on own address.
 - Juniper - fixed parsing firewall rules - added nonterminating
   actions.
-- Juniper Junos - Add an exception for infinite values while parsing
+- Juniper JunOS - Add an exception for infinite values while parsing
   the command `show interfaces diagnostics optics`
-- Juniper junos - `commands/juniper/junos/configurationDisplaySet` -
+- Juniper JunOS - `commands/juniper/junos/configurationDisplaySet` -
   added from `dscp`, `ttl`, `is-fragment` (with except actions if
   applicable) action to firewall parsing.
-- Juniper junos -
+- Juniper JunOS -
   `commands/juniper/_junos/interfacesStatisticsDetail` - fix parsing
   errors on interfaces - added support for a type of output.
-- Juniper Junos - `commands/juniper/_junos/route` - Removed Service to
+- Juniper JunOS - `commands/juniper/_junos/route` - Removed Service to
   routes, unable to resolve next hop for those routes
-- Juniper Junos - Fix parsing of no output from command `show sflow`
-- Juniper Junos - fixed parsing for fans which don't have tray
+- Juniper JunOS - Fix parsing of no output from command `show sflow`
+- Juniper JunOS - fixed parsing for fans which don't have tray
   information from command `show chassis environment`
-- Juniper Junos - fixed parsing of "null" encryption in command `show security ipsec security-associations detail`
-- Juniper Junos - improved information parsing of deactivated and
+- Juniper JunOS - fixed parsing of "null" encryption in command `show security ipsec security-associations detail`
+- Juniper JunOS - improved information parsing of deactivated and
   protected configuration
-- Juniper Junos - removed management interfaces with configured ip
+- Juniper JunOS - removed management interfaces with configured ip
   `128.0.0.1/2` or `10.0.0.1/8`
-- Juniper Junos- fixed parsing of command `show interfaces statistics detail` for logical-unit-number larger than 4095
-- Paloalto pan-os -
+- Juniper JunOS- fixed parsing of command `show interfaces statistics detail` for logical-unit-number larger than 4095
+- Palo Alto pan-os -
   `commands/paloalto/showConfigPushedSharedPolicyVsys` - fixed parsing
   of none zone in security rule.
-- Paloalto pan-os - fix services parsing from command `show config merged`
+- Palo Alto pan-os - fix services parsing from command `show config merged`
 
 ## 4.2.0 (20th December 2021)
 
@@ -497,9 +497,9 @@ OVA SHA256SUM: 8D773667434B4C27C9C199E84784312864E01C08D51DAA158B7C07C9B99BFD8F
   group
 - HP ArubaCX - Add parsing of reload reason
 - HP ArubaCX - added support for parsing of interface load.
-- Juniper Junos - added missing community string in table
+- Juniper JunOS - added missing community string in table
   technology/management/snmp/trap-hosts.
-- Juniper Junos - `commands/juniper/\_junos/configurationDisplaySet` -
+- Juniper JunOS - `commands/juniper/\_junos/configurationDisplaySet` -
   add parsing for firewall tcp-established `from` action
 
 ### Bugfixes
@@ -508,9 +508,9 @@ OVA SHA256SUM: 8D773667434B4C27C9C199E84784312864E01C08D51DAA158B7C07C9B99BFD8F
 - The path lookup form wasn't correctly filled with data from the
   loaded view
 - Arista 7010t - fixed parsing of different output for command `show inventory`
-- Arista eos - `commands/arista/_eos/ntp` - fixed parsing with
+- Arista EOS - `commands/arista/_eos/ntp` - fixed parsing with
   different `refid`
-- Arista eos - fixed parsing of `default-control-plane-acl` by command
+- Arista EOS - fixed parsing of `default-control-plane-acl` by command
   `show ip access-lists` in case it contains `cvx-license` port
 - Cisco ACI - fixed parsing of backbone area in `show ip ospf interface vrf all`
 - Cisco ASA - added support for another output format of `show bgp neighbors`
@@ -531,7 +531,7 @@ OVA SHA256SUM: 8D773667434B4C27C9C199E84784312864E01C08D51DAA158B7C07C9B99BFD8F
 - HP Comware - Fixed parsing of TwentyGigE interfaces.
 - HP Comware 5130 - AAA - fixed parsing of server parameters
 - Huawei VRP - fixed parsing of different output for command `display info-center`
-- Juniper Junos - Fix parsing firewall filter section - problem with
+- Juniper JunOS - Fix parsing firewall filter section - problem with
   unsupported `from` action
 - Palo Alto - fix parsing of interface secondary IPs.
 
@@ -585,7 +585,7 @@ OVA SHA256SUM: 901018EE369B630CD80C6438B3A4D0C54F0F3D7BCD9156B9F93087C9B5147ECE
 - Cisco ASR routers - added support for PTP related commands `show ptp clock dataset default`, `show ptp clock dataset parent domain <domainId>` and `show ptp`
 - CheckPoint Gaia - fix of missing zoneFw rules for some of the
   managed firewalls
-- Juniper Junos - fixed parsing for security with no address books.
+- Juniper JunOS - fixed parsing for security with no address books.
 - Cisco - NX-OS - fixed parsing of interface speed on for some nexus
   switches
 - Cisco NX-OS - commands/cisco/stpMstMapList fixed parsing when mapped
@@ -624,7 +624,7 @@ OVA SHA256SUM: DD5F1F0F701974CC8367336DDB7B3877CAAF3BD6DC114BB37C178CD104CA8BA7
   Non-standardized interface name (hidden by default)
 - Inventory / Interface - column IP now shows the physical address of
   the interface (instead of virtual IP)
-- Paloalto pan-os - `tasks/_helpers/security/preProcess` - added
+- Palo Alto pan-os - `tasks/_helpers/security/preProcess` - added
   support for application-filter
 - Significant optimization of DB queries for snapshots where exists
   hundreds of interfaces for a single device.
@@ -702,8 +702,8 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - Cisco IOS-XR - added ACL support
 - Cisco IOS-XR - added support for port channels
 - Extreme XOS - Add support for switchport
-- Juniper Junos - added support for OSPFv3
-- Juniper Junos - added VXLAN support
+- Juniper JunOS - added support for OSPFv3
+- Juniper JunOS - added VXLAN support
 
 ### Breaking changes
 
@@ -874,7 +874,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - Cisco IOS-XE - Fixed parsing of command `show interfaces transceiver detail` for another output format
 - Cisco IOS-XE fixed parsing of `show environment all` command for
   devices with multiple PSU
-- Cisco IOS-XR - ACL add suport for networks in CIDR format
+- Cisco IOS-XR - ACL add support for networks in CIDR format
 - Cisco IOS-XR - fixed parsing for dot1x interfaces configured as
   authenticator and supplicant
 - Cisco IOS-XR - Removed backup (FRR) routes from routing tables.
@@ -932,7 +932,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - HP Aruba - `commands/_osVersions/showVersion` - fixed parsing for
   Aruba Mobility Master and Mobility Controller.
 - HP Aruba - Mobility Master - platform and LLDP parsing fixed
-- HP Aruba 7200 - Fix parsing for APs that dont respond to
+- HP Aruba 7200 - Fix parsing for APs that don't respond to
   `show ap debug system-status ap-name <apName> command`.
 - HP Aruba CX - fixed memory parsing
 - HP Aruba CX - fixed parsing for `show vsx brief` with state in
@@ -977,30 +977,30 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 - HP Comware 5130 - commands/hp/\_comware/currentConfiguration - AAA
   scheme fixed parsing for test-profile in aaa server configuration
 - Juniper Junes - fixed parsing of different output for command `show configuration | display set`
-- Juniper Junos - added parsing for another output format of command
+- Juniper JunOS - added parsing for another output format of command
   `show lldp neighbor`
-- Juniper Junos - fixed false-positive error emitting in STP task for
+- Juniper JunOS - fixed false-positive error emitting in STP task for
   STP disabled interfaces
-- Juniper Junos - fixed mapping of stacking for cases switch is not
+- Juniper JunOS - fixed mapping of stacking for cases switch is not
   present (disconnected)
-- Juniper Junos - fixed parsing of `show chassis environment` command
+- Juniper JunOS - fixed parsing of `show chassis environment` command
   to support different output format of fans
-- Juniper Junos - fixed parsing of `show route` command for discarded
+- Juniper JunOS - fixed parsing of `show route` command for discarded
   routes
-- Juniper Junos - fixed parsing of `show vrrp detail` command in case
+- Juniper JunOS - fixed parsing of `show vrrp detail` command in case
   `version` is missing
-- Juniper Junos - Fixed parsing of LLDP neighbors.
-- Juniper Junos - fixed parsing of the routing table to parse
+- Juniper JunOS - Fixed parsing of LLDP neighbors.
+- Juniper JunOS - fixed parsing of the routing table to parse
   correctly Administrative Distance and Metric
-- Juniper Junos - fixed parsing of secondary address for command `show interfaces statistics detail`
-- Juniper Junos - removed duplicates in the routing table
+- Juniper JunOS - fixed parsing of secondary address for command `show interfaces statistics detail`
+- Juniper JunOS - removed duplicates in the routing table
 - Mikrotik RB1100 - Fixed parsing for command `ip ipsec installed-sa print detail`
 - Mikrotik RouterOS - fixed parsing of IP addresses of
   actual-interface in command 'ip address print detail'
 - Palo Alto - fixed parsing of different output for command `show routing route`
 - Palo Alto, F5 clusters - Fix for establishing routing protocol edges
-- Paloalto - fixed parsing for the routing table.
-- PaloAlto 5200 - `commands/paloalto/showConfigMerged` - fix parsing,
+- Palo Alto - fixed parsing for the routing table.
+- Palo Alto 5200 - `commands/paloalto/showConfigMerged` - fix parsing,
   when vsys has no configuration
 - Pathlookup - STP edge between switch and firewall in a cluster with
   virtual mac fix

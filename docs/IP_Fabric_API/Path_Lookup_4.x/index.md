@@ -173,7 +173,7 @@ The `pathlookup` construct describes the hop-by-hop forwarding and policy deci
 
   - `eventSummary` - which highlights the success or failure of the path and the cause of any issues along the way.
 
-    - `flags` will show if any policy has caused the traffic to fail to reach the destination (eg `acl-deny` or `zone-deny`)
+    - `flags` will show if any policy has caused the traffic to fail to reach the destination (e.g. `acl-deny` or `zone-deny`)
 
     - `topics` is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point
 

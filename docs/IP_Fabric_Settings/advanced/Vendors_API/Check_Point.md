@@ -14,4 +14,4 @@ In SmartConsole, go to **Manage & Settings -> Blades** and click on **Advanced S
 
 In case that you use setting **All IP addresses that can be used for GUI clients**, don't forget to add IPF appliance address to **Manage & Settings -> Permissions** and **Administrators -> Trusted Clients**.
 
-In case you use Multi-Domain server, all necessary settings are in Multi Domain menu (ie: **Multi Domain -> Blades**)
+In case you use Multi-Domain server, all necessary settings are in Multi Domain menu (i.e.: **Multi Domain -> Blades**)
