@@ -1,4 +1,4 @@
- IP Fabric Documentation Project
+IP Fabric Documentation Project
 
 We are using [MkDocs](https://www.mkdocs.org/) with an excellent [Material for
 MkDocs](https://squidfunk.github.io/mkdocs-material/). Last, but not least, is
@@ -25,17 +25,17 @@ documentation happens as follows:
 
 ## Style Guide
 
-* Make sure you use relative links, otherwise you'd break versioned links.
-* Make sure your links work - esp. please make sure your internal links are
+- Make sure you use relative links, otherwise you'd break versioned links.
+- Make sure your links work - esp. please make sure your internal links are
   relative (usually this means they're starting with `..`, internal links must
   not start with `/` or even `https://` as these would not work correctly when
   deployed).
-* If you use an abbreviation, make sure you define it before.
-  * Abbreviations are always uppercase, unless used in a verbatim text (e.g.
+- If you use an abbreviation, make sure you define it before.
+  - Abbreviations are always uppercase, unless used in a verbatim text (e.g.
     API call) when they need to be marked as `monotype`.
-* Verbatim strings are to be rendered in monotype (backticks) - e.g. API call
+- Verbatim strings are to be rendered in monotype (backticks) - e.g. API call
   parameters, command line arguments etc...
-* Please use regular double quotes - character `"` instead of fancy/curly
+- Please use regular double quotes - character `"` instead of fancy/curly
   quotes from UTF-8 - `""`
 
 TODO: take a look at e.g. https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
@@ -50,7 +50,7 @@ Failure is not a fatal error at the moment, but please look into CI/CD logs
 during MR to avoid adding new problems.
 
 We also build the documentation during CI/CD which means that internal links
-are being validated. 
+are being validated.
 
 ## General recommendations
 
@@ -66,9 +66,9 @@ All the documents live under `docs` directory. Directories are used to create
 sections. Please, pay attention to naming. We have opted for automated content
 discovery which honors alphabetical order.
 
-* Folder names are translated directly to chapter names, please use English
+- Folder names are translated directly to chapter names, please use English
   capitalization rules for folder/file names.
-* Words in folder/file names are separated by underscore `_`.
+- Words in folder/file names are separated by underscore `_`.
 
 Another approach would be manual configuration with `nav` section, but that
 would require manual addition of every single new page. This approach is
@@ -170,3 +170,15 @@ issue with documentation for version `3.8` and we want to update it.
 
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!
+
+## Updating low-level release notes from JIRA
+
+There is a script `jira_release_notes.py` which will refresh all low-level
+release notes from JIRA. There are certain shortcuts, like hard-coded
+configuration values for example. Also check your release filtering in there to
+limit which releases are actually refreshed.
+
+To use this script you need to export two environment variables
+- `JIRA_USER` - your username (e.g. `pavel.bykov@ipfabric.io`)
+- `JIRA_PASS` - a token you can get from [jira api tokens](https://id.atlassian.com/manage-profile/security/api-tokens) page 
+
