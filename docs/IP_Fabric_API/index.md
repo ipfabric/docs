@@ -4,6 +4,16 @@ The following API endpoints are available in IP Fabric. Descriptions and
 allowed methods are coming soon. For more information about IP Fabric
 API, please visit [generated IP Fabric API documentation](../api/index.html).
 
+!!! example "API Blog Posts"
+
+    Please take a look at the following blog posts about using the IP Fabric API and Python SDK:
+    
+      - [Part 1: The Basics](https://ipfabric.io/blog/api-programmability-part-1/) Explains creating an API token, finding the API documentation, and retrieving data using Python requests which can be translated into other coding languages.
+      - [Part 2: Python](https://ipfabric.io/blog/api-programmability-python/) Utilizing the official [IP Fabric Python SDK](https://github.com/community-fabric/python-ipfabric) to retrieve data.
+      - [Part 3: Webhooks](https://ipfabric.io/blog/api-programmability-part-3-webhooks/) Creating Webhooks to further your automation journey based on IP Fabric events.
+      - [Part 4: Diagramming](https://ipfabric.io/blog/api-programmability-part-4-diagramming/) Utilizing the official [IP Fabric Python Diagramming SDK](https://github.com/community-fabric/python-ipfabric-diagrams) to automate creation of Network and Path Lookup Diagrams.
+
+
 ## Technology Table Endpoints
 
 The technology tables use `POST` requests **only** for reading information and
