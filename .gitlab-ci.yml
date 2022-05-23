@@ -36,8 +36,7 @@ vale_mr:
   stage: test
   only:
     - merge_requests
-  allow_failure: true
   script:
     - curl --fail -L -o /tmp/vale.tar.gz "$VALE_RELEASE"
     - tar -C /tmp -zxvf /tmp/vale.tar.gz
-    - /tmp/vale docs
+    - 'find docs -name "*.md" \! -regex ".*/low-level_release_notes/.*" | xargs /tmp/vale'
