@@ -33,30 +33,6 @@ troubleshooting of IP Fabric.
 
 Select this feature to tell us about problems you have found or experiencing.
 
-### ![Improvements](ico_improvement.png) Suggest and Improvement
-
-Do you have a suggestion for us where we can do better or what we
-can do better -- tell us.
-
-### ![Feature](ico_feature.png) Suggest a New Feature
-
-Do you have any idea for new features which can be added to IP
-Fabric? Tell us, we are all ears!
-
-### ![Billing](ico_billing.png) Licensing and Billing
-
-Please use this category for any issues or questions around licensing or billing.
-
-### ![Trial](ico_trial.png) Questions about Trial Product
-
-This category should be used if you are having question about our
-product in case you are testing it and want more information about
-it.
-
-### ![Other](ico_other.png) Other Questions
-
-For inquiries which are not related to any other option on support portal.
-
 ## Contact
 
 IP FABRIC s.r.o.  
