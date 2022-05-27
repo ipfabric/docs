@@ -9,6 +9,23 @@
       - Mac/Apple: Apple + R or command + R
       - Linux: CTRL + F5
 
+## 4.4.3+2 (27th May 2022)
+
+```shell
+SHA256: e3814056b5a7d6bb9486d9875959b6c40308c280cb5bb42a7d708b49a1530a7c
+MD5: 7982c0f0a268b3a743072014e06d1549
+```
+
+### Bug Fixes
+
+- Graph cache -- was not cleared after snapshot unload, could cause extensive
+  memory consummation and API stuck
+- Discovery -- Already discovered device IP addresses were added to discovery
+  process. We fixed this inefficiency
+- Cisco Viptela -- fix label mapping for OMP routes
+- Reports / Site low level design -- EoL dates in table fix
+- Juniper JunOS -- fixed parsing of deactivated security policies
+
 ## 4.4.2+1 (3rd May 2022)
 
 ### Bug Fixes
@@ -18,7 +35,6 @@
 - Cisco -- fix inventory parsing of PID values (power supply, transceivers, device id,...)
 - Fortinet FortiGate -- fixed discovery of device with pre/post login banner enabled
 
-
 ## 4.4.1+1 (13th April 2022)
 
 ```
@@ -27,7 +43,9 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
 ```
 
 !!! note
-    If you have already successfully upgraded to 4.4.0, you do not need to apply this release.
+
+    If you have already successfully upgraded to 4.4.0, you do not need to
+    apply this release.
 
 ### Bug Fixes
 
@@ -45,7 +63,7 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
       - Cisco WLC with system access point
       - Cisco NX-OS with VDC
       - Fortigate with VDOM
-    
+
     In 4.4.0 we are migrating device attributes that are necessary for manual site separation but we are not able to migrate snapshots from the older versions. Therefore sites in the older snapshots can be wrong if manual site separation was used. Also, if you compare a snapshot in a version higher or equal to 4.4.0 with a snapshot in a lower version than 4.4.0 that includes affected devices then you might encounter false-positive changes in the snapshot comparison.
 
 !!! important "Changes in licensing model"
@@ -57,7 +75,7 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
 
 !!! important "Changes in Configuration Table since v4.4.0"
 
-    The following column names were changed `["_id", "lastChange", "lastCheck"]` to `["id", "lastChangeAt", "lastCheckAt"]`. 
+    The following column names were changed `["_id", "lastChange", "lastCheck"]` to `["id", "lastChangeAt", "lastCheckAt"]`.
     Providing a `snapshot` ID in the POST was also removed from the `/tables/management/configuration` endpoint.
 
 ### New Vendor Support
@@ -73,10 +91,10 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
 - HP ArubaCX -- Added parsing VXLAN info.
 - Extreme XOS -- Add support for AAA.
 - Cisco Viptela -- added cEdge support. If cEdge is discovered via cli, discovery ends and notify, that API discovery should be used.
-- Cisco -- Added information about device licenses. Tables located at *Technology / Management / License*.
-- Added data for Virtual Machines deployed in the network (AWS, Azure, VMware). Tables are located at *Technology / Cloud*.
-- Add additional interface counters to most of the vendors. Table are located at *Technology / Interfaces / Counters*.
-- Add new table ACL global policies located at *Technology / Security / ACL / Global ACL policies*.
+- Cisco -- Added information about device licenses. Tables located at _Technology / Management / License_.
+- Added data for Virtual Machines deployed in the network (AWS, Azure, VMware). Tables are located at _Technology / Cloud_.
+- Add additional interface counters to most of the vendors. Table are located at _Technology / Interfaces / Counters_.
+- Add new table ACL global policies located at _Technology / Security / ACL / Global ACL policies_.
 
 ### Bug Fixes
 
@@ -122,20 +140,19 @@ OVA SHA256SUM: 68055EE2884256F2C7BC7AAE0C2C525C7E4779651FB404BC38EAFF76775A66D2
 
 ### Known issues
 
-  * Discovery with added Vendor API can get stuck and doesn’t finish in some cases. Replicated on NSX-T v2.5, Azure, Meraki
+- Discovery with added Vendor API can get stuck and doesn’t finish in some cases. Replicated on NSX-T v2.5, Azure, Meraki
 
-    * ID: NIM-7505, NIM-7479, NIM-7437
-    * Root cause: Unlocked resources after calling unsupported API endpoint
-    * Status: Fixed in 4.4.0 release
-    * Workaround: Stop discovery and disable Vendor API
+  - ID: NIM-7505, NIM-7479, NIM-7437
+  - Root cause: Unlocked resources after calling unsupported API endpoint
+  - Status: Fixed in 4.4.0 release
+  - Workaround: Stop discovery and disable Vendor API
 
+- When discovery is stopped after collection from devices is done, API will allow other jobs to run - making them run in parallel. It is especially an issue when running maintenance is started immediately because it re-indexes the DB - making caching take really long time.
 
-  * When discovery is stopped after collection from devices is done, API will allow other jobs to run - making them run in parallel. It is especially an issue when running maintenance is started immediately because it re-indexes the DB - making caching take really long time. 
-
-    * ID: NIM-7722
-    * Root cause: Discovery allows to run parallel jobs.
-    * Status: Fixed in 4.4.0 release
-    * Workaround: Do not stop discovery job or do not run maintenance (manually or as a scheduled job).
+  - ID: NIM-7722
+  - Root cause: Discovery allows to run parallel jobs.
+  - Status: Fixed in 4.4.0 release
+  - Workaround: Do not stop discovery job or do not run maintenance (manually or as a scheduled job).
 
 ## 4.3.4+3 (7rd March 2022)
 
