@@ -19,7 +19,7 @@ MD5: 7982c0f0a268b3a743072014e06d1549
 ### Bug Fixes
 
 - Graph cache -- was not cleared after snapshot unload, could cause extensive
-  memory consummation and API stuck
+  memory consumption and impact platform stability
 - Discovery -- Already discovered device IP addresses were added to discovery
   process. We fixed this inefficiency
 - Cisco Viptela -- fix label mapping for OMP routes
