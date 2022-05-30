@@ -9,7 +9,9 @@ from snakemd import Document
 AUTH = None  # Assigned in main()
 JIRA_BASE_URL = 'https://ipfabric.atlassian.net/'
 OUT_DIR = 'docs/releases/low-level_release_notes/'
-PROJECT_KEY = 'NIM'
+# Make sure, that project keys don't need any escaping!
+# Firs project is used as a source of releases
+PROJECT_KEYS = ('NIM', 'DOS')
 
 
 def get_project_versions(project):
@@ -26,7 +28,7 @@ def get_project_versions(project):
 def get_project_issues_from_version(project, projectVersion):
     jql = ('project = ' + project + ' AND fixVersion = "'
            + projectVersion['name'] +
-           '" AND resolution IS NOT EMPTY ORDER BY key')
+           '" AND (resolution IS NOT EMPTY OR statusCategory = Done) ORDER BY key')
     params = {
                 'projectId': projectVersion['projectId'],
                 'maxResults': 1000,
@@ -75,7 +77,7 @@ def generate_release_notes(rn, project_issues):
     ]
     for type in types:
         issues = []
-        for issue in project_issues['issues']:
+        for issue in project_issues:
             if issue['fields']['issuetype']['name'] == type[0]:
                 issues.append(format_issue(issue))
 
@@ -94,7 +96,7 @@ def main():
         print("You need to set JIRA_USER and JIRA_PASS environment variables")
         exit(1)
 
-    for v in get_project_versions(PROJECT_KEY):
+    for v in get_project_versions(PROJECT_KEYS[0]):
         print(v)
         if not re.match(r'^[456789]\.\d+\.\d+', v['name']):
             print(f"Skipping release {v['name']}")
@@ -102,8 +104,15 @@ def main():
 
         version_dir = re.match(r'^(\d+\.\d+).\d+', v['name'])[1] + '.x'
 
-        project_issues = get_project_issues_from_version(PROJECT_KEY, v)
-        # print(json.dumps(projectIssues, indent=2))
+        issues = []
+        issues_total = 0
+
+        for project in PROJECT_KEYS:
+            project_issues = get_project_issues_from_version(project, v)
+            print(f"For {project} fetched {project_issues['total']} issues")
+            # print(json.dumps(projectIssues, indent=2))
+            issues += project_issues['issues']
+            issues_total += project_issues['total']
 
         rn = Document("release_notes")
         rn.add_header(f"LLRN {v['name']}")
@@ -114,10 +123,10 @@ def main():
                 tickets. On the other hand we believe, that it can provide a
                 valuable information, if you are looking for particular detail.
                 This release of IP Fabric contains total of
-                {project_issues['total']} issues. And was internally released
+                {issues_total} issues. And was internally released
                 on {v['releaseDate']}. """)
 
-        generate_release_notes(rn, project_issues)
+        generate_release_notes(rn, issues)
 
         os.makedirs(os.path.join(OUT_DIR, version_dir), exist_ok=True)
         with open(os.path.join(
