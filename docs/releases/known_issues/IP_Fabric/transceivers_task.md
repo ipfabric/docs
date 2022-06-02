@@ -10,7 +10,7 @@ Executing some commands to get transceiver related information may cause issues 
 **Note:**
 
 - Transceiver task is disabled by default. A user can enable it in IPF settings (see the steps below).
-- Even if the transceiver task is enabled, IPF still prevents its execution on any device that is classified to be affected by any known bug. It is not possible to disable this feature now. See the list of known bugs and their corresponding [software and hardware versions.](../../cisco/Show_Interface_Transceivers/)
+- Even if the transceiver task is enabled, IPF still prevents its execution on any device that is classified to be affected by any known bug. It is not possible to disable this feature now. See the list of known bugs and their corresponding [software and hardware versions.](../cisco/Show_Interface_Transceivers.md)
 
 **Disclaimer**
 

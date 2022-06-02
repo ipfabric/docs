@@ -16,17 +16,17 @@ the relationships between them. They are grouped into sites represented
 by a cloud for better visibility. You can double-click on a cloud to
 explore further that specific site.
 
-Check this page [Network Viewer](network_viewer) for more details on using the diagrams.
+Check this page [Network Viewer](network_viewer.md) for more details on using the diagrams.
 
 ### Sites Diagrams
 
-Site diagrams display all devices discovered per site. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and unmanaged infrastructure. Site boundary calculation can be [configured in settings](../../IP_Fabric_Settings/site_separation).
+Site diagrams display all devices discovered per site. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and unmanaged infrastructure. Site boundary calculation can be [configured in settings](../../IP_Fabric_Settings/site_separation.md).
 
 The site name can be changed. To rename a site, go to **Inventory → Sites**, choose the site you would like to rename, click ***Rename site***, enter a new name, and click ***Rename***.
 
 ![Site Diagrams](diagrams_sites.png)
 
-Check this page [Network Viewer](network_viewer) for more details on using the diagrams.
+Check this page [Network Viewer](network_viewer.md) for more details on using the diagrams.
 
 ### Routing
 
@@ -54,7 +54,7 @@ below)
 
 ![End to end](diagrams_end_end.png)
 
-Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup)
+Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup.md)
 
 ### Host to Gateway path
 
@@ -67,4 +67,4 @@ selecting "Host To Gateway"(see picture below)
 
 ![Host to gateway](diagrams_host_gateway.png)
 
-Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup)
+Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup.md)

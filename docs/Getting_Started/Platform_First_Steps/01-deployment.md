@@ -106,7 +106,7 @@ The *First Boot Wizard* starts when IP Fabric is run for the first time and co
 5.  Configure NTP servers or just click OK to continue if not using NTP.
 6.  Select time zone.
 7.  Configure Internet Proxy if used.
-8.  Set shell user password of `osadmin` user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the `admin` username by default, for more information, please, read: [Access User Interface and Install License](../02-access_ui) and also for encrypting system backups.
+8.  Set shell user password of `osadmin` user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the `admin` username by default, for more information, please, read: [Access User Interface and Install License](02-access_ui.md) and also for encrypting system backups.
 9.  Optionally define organization parameters for the local SSL certificate.
 10. After rebooting, the console login screen will display the assigned IP address of the system and provide a link to access the user interface.
 

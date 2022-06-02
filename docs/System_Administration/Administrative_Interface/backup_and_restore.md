@@ -10,7 +10,7 @@ There are two types of backup:
 
 !!! tip Security tip
 
-    Backups are encrypted with *osadmin *user password configured during the [first boot wizard](../../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard).
+    Backups are encrypted with *osadmin *user password configured during the [first boot wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
     When you lose *osadmin *user password, backups are also lost!
 
 
@@ -223,7 +223,7 @@ a backup.
 
 !!! warning
 
-    Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard). When you loose **osadmin** user password, all backups encrypted by this password are lost.
+    Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard). When you loose **osadmin** user password, all backups encrypted by this password are lost.
 
 
 ### Restore From Remote Server
@@ -276,6 +276,6 @@ a backup.
 !!! warning
 
     Backups are encrypted with ***osadmin*** user password configured during
-    the [First Boot Wizard](../../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard).
+    the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
     When you loose ***osadmin*** user password, all backups encrypted by
     this password are lost.

@@ -4,7 +4,7 @@ Network infrastructure credentials are stored in **Settings → Authenticatio
 
 ![Network credentials](credentials.png)
 
-If credentials are provided for configuration changes tracking and saved configuration consistency (i.e. they allow commands such as `show run` and `show start`), mark this set of credentials using the checkbox [Use for configuration management](../../../../IP_Fabric_Settings/advanced/configuration_management/).
+If credentials are provided for configuration changes tracking and saved configuration consistency (i.e. they allow commands such as `show run` and `show start`), mark this set of credentials using the checkbox [Use for configuration management](../../../IP_Fabric_Settings/advanced/configuration_management.md).
 
 ![Network credentials](credentials_cfg_mgmt.png)
 

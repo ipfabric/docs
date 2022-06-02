@@ -18,7 +18,7 @@ changed using drag and drop.
 Read-only (Privilege 1) credentials are sufficient for basic
 functionality. Security sensitive operations and advanced functionality
 might require higher privilege. See the [full list of used command in
-the documentation](../../Getting_Started/Overview/vendors_features/#cli-commands-used-during-discovery).
+the documentation](https://matrix.ipfabric.io/).
 
 When adding new credentials, you can limit the validity of the
 credentials just for a part of your network using **Use in subnets**
@@ -31,7 +31,7 @@ saved configuration consistency (i.e. they allow commands such as **show
 run** and **show start**).
 
 To use this credentials for configuration change tracking,
-please check [Use for configuration management](../../IP_Fabric_Settings/advanced/configuration_management/) box.
+please check [Use for configuration management](advanced/configuration_management.md) box.
 
 ## (Optional) Passwords For Enable Mode
 

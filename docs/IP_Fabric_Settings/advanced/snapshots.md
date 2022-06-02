@@ -1,6 +1,6 @@
 ## Snapshots
 
-For [change management](../../../IP_Fabric_GUI/management/changes/), regularly running IP Fabric
+For [change management](../../IP_Fabric_GUI/management/changes.md), regularly running IP Fabric
 discovery is necessary. A periodic discovery run can be scheduled
 at **Settings → Advanced → Snapshots → Timed Snapshots.**
 
