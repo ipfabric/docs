@@ -22,7 +22,7 @@ platform:
 | **Rule Name**          | **Rule Description**                                                                                                                                                                                                 |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Disable Pagination** | By default disabled for F5 devices - command is modifying the configuration and can break cluster synchronization.                                                                                                   |
-| **Transceivers**       | By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at [Known Issues \> Cisco](../../../releases/known_issues/cisco/) |
+| **Transceivers**       | By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at [Known Issues \> Cisco](../../releases/known_issues/cisco/index.md) |
 | **NTP**                | By default disabled for Cisco Firepower - on some versions a Firepower bug may freeze the CLI session                                                                                                                |
 
 In the following example, we are creating a rule to disable OSPFv3 on

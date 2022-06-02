@@ -12,7 +12,7 @@ This post is intended to explain how to create a new snapshot using the API. You
 
 If you want to start a discovery, using the existing settings, it is a simple `POST` request to `https://host.domain/api/v1/settings`, without a body.
 
-[Information regarding the Header/Authentication](../../Path_Lookup_4.x/#post-request) has already been mentioned in another article. Please refer to this if needed.
+[Information regarding the Header/Authentication](../Path_Lookup_4.x/index.md#post-request) has already been mentioned in another article. Please refer to this if needed.
 
 ![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 

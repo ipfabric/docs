@@ -5,7 +5,7 @@ please contact our support teams at
 [support.ipfabric.io](https://support.ipfabric.io).
 
 Detailed error reports can be submitted manually by generating
-[techsupport](techsupport) file and uploading it through support portal
+[techsupport](techsupport.md) file and uploading it through support portal
 or dedicated upload page in case of large techsupport files.
 
 Send diagnostics

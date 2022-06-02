@@ -4,4 +4,4 @@ Starting with version 3.8, the IP Fabric platform can combine the CLI (Command-L
 
 Please, take into consideration connectivity requirements for the platform when planning to add cloud or SD-WAN vendors with API discovery. The API discovery is not automated and requires manually adding all necessary HTTP endpoint initiate connection to in the **Settings > Advanced > Vendors API**.
 
-Please, visit the [Vendors API](../../../../IP_Fabric_Settings/advanced/Vendors_API/) section of the documentation.
+Please, visit the [Vendors API](../../../IP_Fabric_Settings/advanced/Vendors_API/index.md) section of the documentation.
