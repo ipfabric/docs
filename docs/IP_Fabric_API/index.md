@@ -188,7 +188,7 @@ os
 report
 settings
 site
-snapshot
+snapshots
 support
 user
 ```
