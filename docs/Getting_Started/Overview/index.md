@@ -12,7 +12,7 @@ A distributed system of micro-service components resides within IP Fabric VM, al
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with following instructions: `sse,sse2,sse4.1,sse4.2,sse4a,ssse3,popcnt`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.
+The IP Fabric platform runs on any x64 CPU with following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.
 
 Minimum requirements are:
 
