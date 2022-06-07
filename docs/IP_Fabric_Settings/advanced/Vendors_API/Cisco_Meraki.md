@@ -9,9 +9,9 @@ Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for
 - **Version** -- Meraki currently provides only a `v0` version of their API. This version has a lot of limitations (Meraki known issues)
 - **Base URL** -- URL is supported in the following format `https://nXYZ.meraki.com/api`. Be aware that the dashboard can redirect communication to a different URL
 
-## Management IP For Cisco Meraki
+## Login IP For Cisco Meraki
 
-For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices
+For the CLI (SSH/Telnet) discovery, the Login IP represents the IP address that platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore different logic described below is used to assign Login IP parameter for Meraki devices in the main inventory.
 
 ``` bash
 LAN IP is considered to have the highest priority
@@ -25,9 +25,9 @@ publicIp has the lowest priority
 ```
 
 !!! info
-    PublicIP parameter can be duplicate as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.
+    The `publicIp` parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device's public IP in the dashboard.
 
-To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:
+To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker or Log File from the device:
 
 ![discovery snapshot](discovery_snapshot.png)
 
