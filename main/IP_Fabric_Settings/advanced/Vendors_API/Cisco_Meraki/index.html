@@ -2233,8 +2233,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#management-ip-for-cisco-meraki" class="md-nav__link">
-    Management IP For Cisco Meraki
+  <a href="#login-ip-for-cisco-meraki" class="md-nav__link">
+    Login IP For Cisco Meraki
   </a>
   
 </li>
@@ -4080,8 +4080,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#management-ip-for-cisco-meraki" class="md-nav__link">
-    Management IP For Cisco Meraki
+  <a href="#login-ip-for-cisco-meraki" class="md-nav__link">
+    Login IP For Cisco Meraki
   </a>
   
 </li>
@@ -4109,8 +4109,8 @@
 <li><strong>Version</strong> -- Meraki currently provides only a <code>v0</code> version of their API. This version has a lot of limitations (Meraki known issues)</li>
 <li><strong>Base URL</strong> -- URL is supported in the following format <code>https://nXYZ.meraki.com/api</code>. Be aware that the dashboard can redirect communication to a different URL</li>
 </ul>
-<h2 id="management-ip-for-cisco-meraki">Management IP For Cisco Meraki</h2>
-<p>For the CLI (SSH/Telnet) discovery, the Management IP represents the login IP address that the platform used to discover the device. Cisco Meraki is discovered via API and therefore different logic is used to create management IP parameters for Meraki devices</p>
+<h2 id="login-ip-for-cisco-meraki">Login IP For Cisco Meraki</h2>
+<p>For the CLI (SSH/Telnet) discovery, the Login IP represents the IP address that platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore different logic described below is used to assign Login IP parameter for Meraki devices in the main inventory.</p>
 <div class="highlight"><pre><span></span><code>LAN IP is considered to have the highest priority
 ------- key --&gt; <span class="s1">&#39;lanIp&#39;</span>
 wan1Ip has the 2nd highest priority
@@ -4122,9 +4122,9 @@ publicIp has the lowest priority
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>PublicIP parameter can be duplicate as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g. when WAN circuit fails over to secondary it can take quite longe until the device public IP is refreshed in dashboard. PublicIp property is currently not provided by organizationsDevices.</p>
+<p>The <code>publicIp</code> parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device's public IP in the dashboard.</p>
 </div>
-<p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker information:</p>
+<p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker or Log File from the device:</p>
 <p><a data-featherlight="../discovery_snapshot.png" href="#"><img alt="discovery snapshot" src="../discovery_snapshot.png" /></a></p>
 <p>The Tasker file contains complete communication between IP Fabric and Meraki Dashboard. We can use the device hostname to locate the JSON source:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
