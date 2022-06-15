@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -35,10 +35,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="../../../../vendor/featherlight-v.1.7.14.min.css">
-    
-      <link rel="stylesheet" href="../../../../vendor/featherlight.css">
     
       <link rel="stylesheet" href="../../../../stylesheets/theme.css">
     
@@ -4356,18 +4352,18 @@ changes. Here are two methods for testing settings.</p>
 <p>Make your changes in the Snapshot specific Settings and then
   <code>Add Devices</code> (or <code>Rediscover timed out devices</code>). If these changes
   fixed your issue, then apply them globally.</p>
-<p><a data-featherlight="../troubleshooting/2953642050.png" href="#"><img alt="" src="../troubleshooting/2953642050.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953642050.png" /></p>
 </li>
 <li>
 <p>Make your changes globally and then run a new Snapshot. You could
   also filter the allowed discovery scope in the Snapshot specific
   Settings to a subset of /32 addresses to speed up discovery. In the
   example below I am telling discovery only to test 1 device.</p>
-<p><a data-featherlight="../troubleshooting/2953314353.png" href="#"><img alt="" src="../troubleshooting/2953314353.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953314353.png" /></p>
 </li>
 </ul>
 <h3 id="discovery-seed">Discovery Seed</h3>
-<p><a data-featherlight="../troubleshooting/2953281573.png" href="#"><img alt="" src="../troubleshooting/2953281573.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953281573.png" /></p>
 <p>These are self-defined IP Addresses that IP Fabric will try to connect
 to and discover. If a device is successfully discovered it will check
 the settings in the Discovery Tasks Settings to see what technologies to
@@ -4380,7 +4376,7 @@ devices so IP Fabric can discover and crawl that site.</p>
 <p>Adding new devices here will only discover them if <code>Limit discovery to already discovered devices</code> is not enabled in the Discovery Tasks Settings.</p>
 </div>
 <h3 id="management-discovery-history">Management &gt; Discovery History</h3>
-<p><a data-featherlight="../troubleshooting/2952626286.png" href="#"><img alt="" src="../troubleshooting/2952626286.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2952626286.png" /></p>
 <p>The Discovery History table is also used by IP Fabric as the seed
 addresses. Once a device is discovered in a snapshot it will be placed
 in this table for use in other snapshots.</p>
@@ -4404,7 +4400,7 @@ in this table for use in other snapshots.</p>
 </ul>
 <h3 id="settings-advanced">Settings &gt; Advanced</h3>
 <h4 id="discovery-ip-scope">Discovery -- IP Scope</h4>
-<p><a data-featherlight="../troubleshooting/2952888388.png" href="#"><img alt="" src="../troubleshooting/2952888388.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2952888388.png" /></p>
 <p>IP Scope tells IP Fabric which networks to include or exclude in the
 discovery process. The default is set to include everything (0.0.0.0/0).
 When IP Fabric discovers a neighbor in this network it will try to log
@@ -4423,7 +4419,7 @@ IP in the seeds. Also note IP Fabric does not do any ICMP pings to find
 hosts so having a /16 here will not send massive amounts of pings.</p>
 </div>
 <h4 id="discovery-tasks-settings">Discovery Tasks Settings</h4>
-<p><a data-featherlight="../troubleshooting/2953445432.png" href="#"><img alt="" src="../troubleshooting/2953445432.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953445432.png" /></p>
 <p>Discovery Tasks Settings is where the magic happens for automated
 discovery of new devices on your network.</p>
 <ul>
@@ -4464,14 +4460,14 @@ discovery of new devices on your network.</p>
 </li>
 </ul>
 <h4 id="sshtelnet">SSH/Telnet</h4>
-<p><a data-featherlight="../troubleshooting/2953642017.png" href="#"><img alt="" src="../troubleshooting/2953642017.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953642017.png" /></p>
 <p>Please see <a href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">SSH/TELNET</a> for explanation of these settings.</p>
 <h4 id="vendors-api">Vendors API</h4>
-<p><a data-featherlight="../troubleshooting/2953740315.png" href="#"><img alt="" src="../troubleshooting/2953740315.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953740315.png" /></p>
 <p>Please see <a href="../../../../IP_Fabric_Settings/advanced/Vendors_API/">Vendors API</a> as each vendor has different
 requirements.</p>
 <h3 id="settings-authentication">Settings &gt; Authentication</h3>
-<p><a data-featherlight="../troubleshooting/2952888380.png" href="#"><img alt="" src="../troubleshooting/2952888380.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2952888380.png" /></p>
 <p>Authentication is where you define the username and password IP Fabric
 uses to connect a physical device (devices discovered through the API
 are managed through <em>Advanced &gt; Vendors API</em>). Ensure that you have a
@@ -4490,7 +4486,7 @@ will take a look at some tables to help you find these and then show how
 to use the <em>Connectivity Report</em> to debug them.</p>
 <h3 id="technology-tables">Technology Tables</h3>
 <h4 id="cdplldp-unmanaged-neighbors">CDP/LLDP &gt; Unmanaged neighbors</h4>
-<p><a data-featherlight="../troubleshooting/2952560777.png" href="#"><img alt="" src="../troubleshooting/2952560777.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2952560777.png" /></p>
 <p>This is the best table to start as not only do you see the local host
 and interface names but also the remote hostname, interface name, and
 remote IP. Since devices can connect to multiple other devices it is
@@ -4500,7 +4496,7 @@ hostnames to get a unique list of devices. For instance in this demo I
 see a total of 59 unmanaged neighbors but only 40 unique remote
 hostnames.</p>
 <h4 id="interfaces-connectivity-matrix-unmanaged-neighbors-detail">Interfaces &gt; Connectivity matrix &gt; Unmanaged Neighbors Detail</h4>
-<p><a data-featherlight="../troubleshooting/2952921141.png" href="#"><img alt="" src="../troubleshooting/2952921141.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2952921141.png" /></p>
 <p>This table shows you unmanaged neighbors based many protocols and has a
 built-in default Intent Check for you.</p>
 <ul>
@@ -4569,8 +4565,8 @@ differences between the two is seen in firewalls with virtual contexts,
 vdoms, etc.</p>
 </div>
 <h3 id="connectivity-report">Connectivity Report</h3>
-<p><a data-featherlight="../troubleshooting/2953314341.png" href="#"><img alt="" src="../troubleshooting/2953314341.png" />
-</a><a data-featherlight="../troubleshooting/2953642038.png" href="#"><img alt="" src="../troubleshooting/2953642038.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953314341.png" />
+<img alt="" src="../troubleshooting/2953642038.png" /></p>
 <p>The <em>Connectivity Report</em> is a per Snapshot report stating the successes
 or errors of IP addresses that IP Fabric tried to discover. Once you
 have a list of IP Addresses from the unmanaged neighbor tables above or
@@ -4600,7 +4596,7 @@ configured to use. If you cannot open a connection this is due to an
 external reason.</p>
 <p>Further information can be found at <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
 <h2 id="troubleshooting-configuration-management">Troubleshooting Configuration Management</h2>
-<p><a data-featherlight="../troubleshooting/2953740355.png" href="#"><img alt="" src="../troubleshooting/2953740355.png" /></a></p>
+<p><img alt="" src="../troubleshooting/2953740355.png" /></p>
 <p>Configuration Management is a separate process from discovery. First a
 device must be discover in a Snapshot and placed in the <em>Management &gt;
 Discovery History</em> table. Once in this table then next time IP Fabric is
@@ -4706,11 +4702,7 @@ scheduled to pull configs it should be populated in the list.</p>
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f758a944.min.js"></script>
-      
-        <script src="../../../../vendor/jquery-3.6.0.min.js"></script>
-      
-        <script src="../../../../vendor/featherlight-v.1.7.14.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
     
   </body>

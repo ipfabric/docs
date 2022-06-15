@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -35,10 +35,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="../../vendor/featherlight-v.1.7.14.min.css">
-    
-      <link rel="stylesheet" href="../../vendor/featherlight.css">
     
       <link rel="stylesheet" href="../../stylesheets/theme.css">
     
@@ -4265,16 +4261,16 @@
 <li>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></li>
 <li>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code></li>
 </ul>
-<p><a data-featherlight="2887417896.png" href="#"><img alt="Hostname Regex" src="2887417896.png" /></a></p>
+<p><img alt="Hostname Regex" src="2887417896.png" /></p>
 <p>In this example the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
 <p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
-<p><a data-featherlight="2896297985.png" href="#"><img alt="SNMP Regex" src="2896297985.png" /></a></p>
+<p><img alt="SNMP Regex" src="2896297985.png" /></p>
 <h3 id="testing">Testing</h3>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.</p>
-<p><a data-featherlight="2888859659.png" href="#"><img alt="Testing" src="2888859659.png" /></a></p>
+<p><img alt="Testing" src="2888859659.png" /></p>
 <p>You can also test SNMP location rules:</p>
-<p><a data-featherlight="2896330753.png" href="#"><img alt="SNMP location" src="2896330753.png" /></a></p>
+<p><img alt="SNMP location" src="2896330753.png" /></p>
 <div class="admonition example">
 <p class="admonition-title">RegEx example</p>
 <p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>. Following example will match one of 3 options:</p>
@@ -4282,14 +4278,14 @@
 </code></pre></div>
 </div>
 <h2 id="device-neighborship">Device Neighborship</h2>
-<p><a data-featherlight="2896232449.png" href="#"><img alt="Device Neighborship" src="2896232449.png" /></a></p>
+<p><img alt="Device Neighborship" src="2896232449.png" /></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h2 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h2>
 <p>The Manual Site Separation enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
 <p>To configure <strong>Device Attributes</strong> first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.</p>
-<p><a data-featherlight="2888728582.png" href="#"><img alt="Device Attributes" src="2888728582.png" /></a></p>
+<p><img alt="Device Attributes" src="2888728582.png" /></p>
 <h3 id="device-attributes">Device Attributes</h3>
-<p><a data-featherlight="2888663043.png" href="#"><img alt="Device Attributes" src="2888663043.png" /></a></p>
+<p><img alt="Device Attributes" src="2888663043.png" /></p>
 <ul>
 <li>Serial Number is IP Fabric’s "Unique Serial Number" (API column <code>sn</code>); this is not the column "Serial Number" which represents the Hardware SN (API column <code>snHw</code>). Devices discovered via API can also be assigned using Device Attributes.</li>
 <li><strong>Hostname</strong> is populated by IP Fabric when a device matching the <strong>Serial Number</strong> is found</li>
@@ -4298,9 +4294,9 @@
 </ul>
 <h3 id="creating-rules-in-the-ui">Creating Rules In The UI</h3>
 <p>You are able to create rules in the UI by selecting the <strong>Add attribute</strong> button. This will provide you a form to fill out.</p>
-<p><a data-featherlight="2888630298.png" href="#"><img alt="Add Attribute" src="2888630298.png" /></a></p>
+<p><img alt="Add Attribute" src="2888630298.png" /></p>
 <p>The dropdown is intuitive and will let you search based on SN or hostname. Currently there is an issue where IP Fabric will not search for devices discovered via an API in the UI. Even though it appears no devices match the SN it will still perform the site separation correctly on the next snapshot.</p>
-<p><a data-featherlight="2896265219.png" href="#"><img alt="Dropdown" src="2896265219.png" /></a></p>
+<p><img alt="Dropdown" src="2896265219.png" /></p>
 <h3 id="creating-rules-via-the-api">Creating Rules Via The API</h3>
 <p>This is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> verb on <code>https://&lt;IPF_URL&gt;/api/v1/attributes/global</code>. Data looks like</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -4310,7 +4306,7 @@
 <h3 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h3>
 <p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py">GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
-<p><a data-featherlight="2888597511.png" href="#"><img alt="Add Attribute" src="2888597511.png" /></a></p>
+<p><img alt="Add Attribute" src="2888597511.png" /></p>
 <p>Rule precedence is defined by the order from top to bottom. So in show example that is</p>
 <ol>
 <li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
@@ -4396,11 +4392,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
-      
-        <script src="../../vendor/jquery-3.6.0.min.js"></script>
-      
-        <script src="../../vendor/featherlight-v.1.7.14.min.js"></script>
+      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
     
   </body>

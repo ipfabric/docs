@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -35,10 +35,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="../../../vendor/featherlight-v.1.7.14.min.css">
-    
-      <link rel="stylesheet" href="../../../vendor/featherlight.css">
     
       <link rel="stylesheet" href="../../../stylesheets/theme.css">
     
@@ -4252,7 +4248,7 @@
 
 <h1 id="how-to-use-path-look-up">How To Use Path Look-Up</h1>
 <h2 id="unicast-path-lookup">Unicast Path-Lookup</h2>
-<p><a data-featherlight="../unicast.png" href="#"><img alt="Unicast form" src="../unicast.png" /></a></p>
+<p><img alt="Unicast form" src="../unicast.png" /></p>
 <p>Enter the details:</p>
 <ul>
 <li>
@@ -4284,12 +4280,12 @@ individual hosts are not considered</p>
 <p>– <strong>Host Mode</strong>: simulation starts and ends with each host. It is
 limited to 255 hosts, source and destination combined.</p>
 <p>Then click on submit:</p>
-<p><a data-featherlight="../example.png" href="#"><img alt="Path look-up example" src="../example.png" /></a></p>
+<p><img alt="Path look-up example" src="../example.png" /></p>
 <h2 id="path-controls">Path Controls</h2>
 <p>With the mouse right-click, more options are enabled:
-<a data-featherlight="../path_controls.png" href="#"><img alt="Path controls" src="../path_controls.png" /></a></p>
+<img alt="Path controls" src="../path_controls.png" /></p>
 <p>After opening the details, we can select the destination link to proceed with packet analysis:
-<a data-featherlight="../path_detail.png" href="#"><img alt="Path detail" src="../path_detail.png" /></a></p>
+<img alt="Path detail" src="../path_detail.png" /></p>
 <h2 id="understand-the-path-selection">Understand The Path Selection</h2>
 <p>To understand the decision taken by a device, right-click on the device
 and "show detail". You will then be presented with the details. If you
@@ -4298,56 +4294,56 @@ to select the interface you want to look at. Similarly, if you have
 several interfaces that can be used to forward the traffic, you will
 have to choose one. Then in the middle of the table, you will see the
 forwarding decision:</p>
-<p><a data-featherlight="../forwarding_decision.png" href="#"><img alt="Forwarding decision" src="../forwarding_decision.png" /></a></p>
+<p><img alt="Forwarding decision" src="../forwarding_decision.png" /></p>
 <p>In this example, we are looking at the device L33R4, which has 2
 incoming interfaces and one forwarding for this flow:</p>
-<p><a data-featherlight="../forwarding_decision_animation.gif" href="#"><img alt="Forwarding decision animation" src="../forwarding_decision_animation.gif" /></a></p>
+<p><img alt="Forwarding decision animation" src="../forwarding_decision_animation.gif" /></p>
 <h2 id="multicast-tree-look-up">Multicast Tree Look-Up</h2>
 <p>You want to understand how a certain multicast flow is used, you can use
 the Multicast Tree Look-Up. For that, just select the correct option and
 enter the relevant details</p>
-<p><a data-featherlight="../multicast.png" href="#"><img alt="Multicast form" src="../multicast.png" /></a></p>
+<p><img alt="Multicast form" src="../multicast.png" /></p>
 <p>You will then see the Multicast Tree:</p>
-<p><a data-featherlight="../multicast_example.png" href="#"><img alt="Multicast example" src="../multicast_example.png" /></a></p>
+<p><img alt="Multicast example" src="../multicast_example.png" /></p>
 <p>And you will have access to a lot of information regarding the Multicast
 forwarding decision:</p>
-<p><a data-featherlight="../multicast_path_inspector.png" href="#"><img alt="Multicast path inspector" src="../multicast_path_inspector.png" /></a></p>
+<p><img alt="Multicast path inspector" src="../multicast_path_inspector.png" /></p>
 <h2 id="host-to-gateway">Host To Gateway</h2>
 <p>To find out more details between a host and its network gateway, you can
 use this menu: Host To Gateway. You only need to provide the host, and
 you will the details:</p>
-<p><a data-featherlight="../host_to_gw.png" href="#"><img alt="Host to gateway form" src="../host_to_gw.png" /></a></p>
+<p><img alt="Host to gateway form" src="../host_to_gw.png" /></p>
 <h2 id="visualization-setup">Visualization Setup</h2>
 <p>You can set up what you want to prioritize in the view. Just simply move
 the bars up or down.</p>
-<p><a data-featherlight="../visualization_setup.png" href="#"><img alt="Visualization setup" src="../visualization_setup.png" /></a></p>
+<p><img alt="Visualization setup" src="../visualization_setup.png" /></p>
 <h2 id="improvements-from-43-version">Improvements from 4.3 version</h2>
 <p>From version 4.3, IP Fabric supports more granular path lookup.</p>
 <h3 id="first-hop-algorithm">First Hop Algorithm</h3>
 <p>First hop algorithm can be defined - when <strong>Automatic</strong> option is selected,
 source VRF can be automatically detected, or selected manually.</p>
-<p><a data-featherlight="../first_hop_algorithm.png" href="#"><img alt="First hop algorithm" src="../first_hop_algorithm.png" /></a></p>
+<p><img alt="First hop algorithm" src="../first_hop_algorithm.png" /></p>
 <p>Also your source network device and its interface can be selected when choosing
 <strong>User defined</strong> First Hop Algorithm.</p>
 <h3 id="sourcedestination-ip-address-and-port">Source/Destination IP Address and Port</h3>
 <p>By default, ICMP protocol and Echo request is chosen for path lookup.</p>
-<p><a data-featherlight="../pathlookup_src_dst.jpeg" href="#"><img alt="Source and destination" src="../pathlookup_src_dst.jpeg" /></a></p>
+<p><img alt="Source and destination" src="../pathlookup_src_dst.jpeg" /></p>
 <p>When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is selected by default.</p>
-<p><a data-featherlight="../pathlookup_http_default.jpeg" href="#"><img alt="HTTP default" src="../pathlookup_http_default.jpeg" /></a></p>
+<p><img alt="HTTP default" src="../pathlookup_http_default.jpeg" /></p>
 <p>When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.</p>
-<p><a data-featherlight="../pathlookup_src_dst_port.png" href="#"><img alt="Source and destination ports" src="../pathlookup_src_dst_port.png" /></a></p>
+<p><img alt="Source and destination ports" src="../pathlookup_src_dst_port.png" /></p>
 <h3 id="ttl-and-fragment-offset">TTL and Fragment Offset</h3>
 <p>In <strong>More details</strong>, <strong>TTL</strong> (Time to live ) and <strong>Fragment offset</strong> can be set - thus affecting path lookup - default TTL is 128 and Fragment offset is set to 0</p>
-<p><a data-featherlight="../pathlookup_ttl_fragment.png" href="#"><img alt="TTL and Fragmentation" src="../pathlookup_ttl_fragment.png" /></a></p>
+<p><img alt="TTL and Fragmentation" src="../pathlookup_ttl_fragment.png" /></p>
 <h3 id="application">Application</h3>
 <p>When evaluating security rules and security appliances on the path check traffic on L7, an application can be checked on the path lookup.</p>
 <p>It’s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.</p>
 <p>An application name input is just a string, so it needs to be defined exactly as in a security rule!</p>
-<p><a data-featherlight="../pathlookup_application.png" href="#"><img alt="Application" src="../pathlookup_application.png" /></a></p>
+<p><img alt="Application" src="../pathlookup_application.png" /></p>
 <h3 id="sourcedestination-ip-regions">Source/Destination IP Regions</h3>
 <p>When testing access to or from the internet, source or destination IP regions can be set.</p>
 <p>Example: Europe, China, etc.</p>
-<p><a data-featherlight="../pathlookup_src_dst_regions.png" href="#"><img alt="Regions" src="../pathlookup_src_dst_regions.png" /></a></p>
+<p><img alt="Regions" src="../pathlookup_src_dst_regions.png" /></p>
 
               
             </article>
@@ -4422,11 +4418,7 @@ source VRF can be automatically detected, or selected manually.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f758a944.min.js"></script>
-      
-        <script src="../../../vendor/jquery-3.6.0.min.js"></script>
-      
-        <script src="../../../vendor/featherlight-v.1.7.14.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
     
   </body>
