@@ -4,13 +4,13 @@ This post is intended to explain how to create a new snapshot using the API. You
 
 ## API Endpoints
 
-- `https://host.domain/api/v1/snapshots` - method `POST` to create a new snapshot
+- `/api/{api_version}/snapshots` - method `POST` to create a new snapshot
 
-- `https://host.domain/api/v1/settings` - method `GET` to collect all IP Fabric settings
+- `/api/{api_version}/settings` - method `GET` to collect all IP Fabric settings
 
 ## Create a New Snapshot With The Existing Settings
 
-If you want to start a discovery, using the existing settings, it is a simple `POST` request to `https://host.domain/api/v1/settings`, without a body.
+If you want to start a discovery, using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
 
 [Information regarding the Header/Authentication](../Path_Lookup_4.x/index.md#post-request) has already been mentioned in another article. Please refer to this if needed.
 
@@ -23,6 +23,7 @@ What if you wanted a snapshot for a smaller scope of your network. For this, you
 Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,
 
 !!! info The value from your settings will be used
+
 ```js
 {
     "snapshotName": "Name of the Snapshot",
@@ -43,9 +44,9 @@ Let’s see how it looks when using Postman:
 
 ## What Settings Can I Use When Creating a New Snapshot?
 
-There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `https://host.domain/api/v1/settings`
+There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `/api/{api_version}/settings`
 
-The response will look like this *(this is just an extract of the JSON)*:
+The response will look like this _(this is just an extract of the JSON)_:
 
 ```js
 {
