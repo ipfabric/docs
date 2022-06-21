@@ -4131,14 +4131,14 @@
 <h2 id="api-endpoints">API Endpoints</h2>
 <ul>
 <li>
-<p><code>https://host.domain/api/v1/snapshots</code> - method <code>POST</code> to create a new snapshot</p>
+<p><code>/api/{api_version}/snapshots</code> - method <code>POST</code> to create a new snapshot</p>
 </li>
 <li>
-<p><code>https://host.domain/api/v1/settings</code> - method <code>GET</code> to collect all IP Fabric settings</p>
+<p><code>/api/{api_version}/settings</code> - method <code>GET</code> to collect all IP Fabric settings</p>
 </li>
 </ul>
 <h2 id="create-a-new-snapshot-with-the-existing-settings">Create a New Snapshot With The Existing Settings</h2>
-<p>If you want to start a discovery, using the existing settings, it is a simple <code>POST</code> request to <code>https://host.domain/api/v1/settings</code>, without a body.</p>
+<p>If you want to start a discovery, using the existing settings, it is a simple <code>POST</code> request to <code>/api/{api_version}/settings</code>, without a body.</p>
 <p><a href="../../Path_Lookup_4.x/#post-request">Information regarding the Header/Authentication</a> has already been mentioned in another article. Please refer to this if needed.</p>
 <p><a data-featherlight="../configure_of_Creating_snapshoot.gif" href="#"><img alt="configure of Creating snapshot" src="../configure_of_Creating_snapshoot.gif" /></a></p>
 <h2 id="create-a-new-snapshot-with-different-settings-than-the-default-ones">Create a New Snapshot With Different Settings Than The Default Ones</h2>
@@ -4162,7 +4162,7 @@
 <p>Let’s see how it looks when using Postman:</p>
 <p><a data-featherlight="../create_snapshot.gif" href="#"><img alt="create snapshot" src="../create_snapshot.gif" /></a></p>
 <h2 id="what-settings-can-i-use-when-creating-a-new-snapshot">What Settings Can I Use When Creating a New Snapshot?</h2>
-<p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a <code>GET</code> on the endpoint <code>https://host.domain/api/v1/settings</code></p>
+<p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a <code>GET</code> on the endpoint <code>/api/{api_version}/settings</code></p>
 <p>The response will look like this <em>(this is just an extract of the JSON)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;fullBgpLimit&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
