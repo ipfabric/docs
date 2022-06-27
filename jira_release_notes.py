@@ -102,7 +102,11 @@ def main():
             print(f"Skipping release {v['name']}")
             continue
 
-        version_dir = re.match(r'^(\d+\.\d+).\d+', v['name'])[1] + '.x'
+        version_dir = (re.match(r'^(\d+)\.\d+\.\d+', v['name'])[1] +
+                       '.x' +
+                       '/' +
+                       re.match(r'^(\d+\.\d+)\.\d+', v['name'])[1] +
+                       '.x')
 
         issues = []
         issues_total = 0
