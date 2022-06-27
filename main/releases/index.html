@@ -2904,7 +2904,7 @@
         
           <li class="md-nav__item">
   <a href="#features-protocol-and-technology-support" class="md-nav__link">
-    Features -- Protocol and technology support
+    Features – Protocol and technology support
   </a>
   
 </li>
@@ -4578,7 +4578,7 @@
         
           <li class="md-nav__item">
   <a href="#features-protocol-and-technology-support" class="md-nav__link">
-    Features -- Protocol and technology support
+    Features – Protocol and technology support
   </a>
   
 </li>
@@ -4979,21 +4979,21 @@ MD5: 7982c0f0a268b3a743072014e06d1549
 </code></pre></div>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
-<li>Graph cache -- was not cleared after snapshot unload, could cause extensive
+<li>Graph cache – was not cleared after snapshot unload, could cause extensive
   memory consumption and impact platform stability</li>
-<li>Discovery -- Already discovered device IP addresses were added to discovery
+<li>Discovery – Already discovered device IP addresses were added to discovery
   process. We fixed this inefficiency</li>
-<li>Cisco Viptela -- fix label mapping for OMP routes</li>
-<li>Reports / Site low level design -- EoL dates in table fix</li>
-<li>Juniper JunOS -- fixed parsing of deactivated security policies</li>
+<li>Cisco Viptela – fix label mapping for OMP routes</li>
+<li>Reports / Site low level design – EoL dates in table fix</li>
+<li>Juniper JunOS – fixed parsing of deactivated security policies</li>
 </ul>
 <h2 id="4421-3rd-may-2022">4.4.2+1 (3rd May 2022)</h2>
 <h3 id="bug-fixes_1">Bug Fixes</h3>
 <ul>
-<li>Juniper Mist -- API connection now uses a system proxy.</li>
-<li>Cisco -- VSS table -- fixed missing switches with legacy VSS</li>
-<li>Cisco -- fix inventory parsing of PID values (power supply, transceivers, device id,...)</li>
-<li>Fortinet FortiGate -- fixed discovery of device with pre/post login banner enabled</li>
+<li>Juniper Mist – API connection now uses a system proxy.</li>
+<li>Cisco – VSS table – fixed missing switches with legacy VSS</li>
+<li>Cisco – fix inventory parsing of PID values (power supply, transceivers, device id,...)</li>
+<li>Fortinet FortiGate – fixed discovery of device with pre/post login banner enabled</li>
 </ul>
 <h2 id="4411-13th-april-2022">4.4.1+1 (13th April 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: 0CFD220F2D4BE5AB71D8D33E382C624E
@@ -5010,7 +5010,7 @@ apply this release.</p>
 </ul>
 <h2 id="4406-11th-april-2022">4.4.0+6 (11th April 2022)</h2>
 <div class="admonition warning">
-<p class="admonition-title">Breaking change -- How is <code>sn</code> created for virtual contexts</p>
+<p class="admonition-title">Breaking change – How is <code>sn</code> created for virtual contexts</p>
 <p>We needed to unify the way how is the device <code>sn</code> (Serial Number)
 constructed for devices with virtual context. Following vendors are
 affected with the change:</p>
@@ -5040,53 +5040,53 @@ Providing a <code>snapshot</code> ID in the POST was also removed from the <code
 <li>Added support for Juniper Mist</li>
 <li>Added support for Ruckus Virtual Smartzone</li>
 </ul>
-<h3 id="features-protocol-and-technology-support">Features -- Protocol and technology support</h3>
+<h3 id="features-protocol-and-technology-support">Features – Protocol and technology support</h3>
 <ul>
-<li>HP ArubaCX -- added support for AAA.</li>
-<li>HP ArubaCX -- added parsing for SNMP configuration.</li>
-<li>HP ArubaCX -- Added parsing VXLAN info.</li>
-<li>Extreme XOS -- Add support for AAA.</li>
-<li>Cisco Viptela -- added cEdge support. If cEdge is discovered via cli, discovery ends and notify, that API discovery should be used.</li>
-<li>Cisco -- Added information about device licenses. Tables located at <em>Technology / Management / License</em>.</li>
+<li>HP ArubaCX – added support for AAA.</li>
+<li>HP ArubaCX – added parsing for SNMP configuration.</li>
+<li>HP ArubaCX – Added parsing VXLAN info.</li>
+<li>Extreme XOS – Add support for AAA.</li>
+<li>Cisco Viptela – added cEdge support. If cEdge is discovered via cli, discovery ends and notify, that API discovery should be used.</li>
+<li>Cisco – Added information about device licenses. Tables located at <em>Technology / Management / License</em>.</li>
 <li>Added data for Virtual Machines deployed in the network (AWS, Azure, VMware). Tables are located at <em>Technology / Cloud</em>.</li>
 <li>Add additional interface counters to most of the vendors. Table are located at <em>Technology / Interfaces / Counters</em>.</li>
 <li>Add new table ACL global policies located at <em>Technology / Security / ACL / Global ACL policies</em>.</li>
 </ul>
 <h3 id="bug-fixes_3">Bug Fixes</h3>
 <ul>
-<li>The discovery process for vendors processed via API can get stuck -- fixed.</li>
-<li>VLAN L3 gateway table -- Access points are removed as they produce false-positive gateways.</li>
-<li>Routing protocols destination interface fix -- path lookup multicast routing was broken because of this.</li>
+<li>The discovery process for vendors processed via API can get stuck – fixed.</li>
+<li>VLAN L3 gateway table – Access points are removed as they produce false-positive gateways.</li>
+<li>Routing protocols destination interface fix – path lookup multicast routing was broken because of this.</li>
 <li>The data from global tables are available also when running snapshot is selected.</li>
 <li>Snapshot attributes are now copied when a snapshot is cloned.</li>
 <li>Loading a snapshot could sometimes cause an <code>Unexpected end of JSON input</code> error and then the snapshot will get corrupted. The root cause has been fixed.</li>
-<li>Arista EOS -- Fixed false positive error emitting from <code>show interfaces vxlan 1</code>.</li>
-<li>Azure -- fixed mapping of network interfaces without MAC address.</li>
-<li>Brocade Fastiron -- Improved parsing hostname from prompt.</li>
-<li>Cisco -- fixed host table for devices reachable with LISP.</li>
-<li>Cisco -- fixed parsing of PIDs containing plus symbol in command <code>show inventory</code>.</li>
-<li>Cisco FTD -- <code>commands/cisco/routingTable</code> -- fixed parsing for null summarized routes.</li>
-<li>Cisco IOS -- removed text <code>, wildcard bits</code> from texts in standard ACL.</li>
-<li>Cisco IOS-XE -- fixed parsing of rebuild version.</li>
-<li>Cisco IOS-XE -- fixed parsing of power supply and fans on Catalyst 9200/9300/9500.</li>
-<li>Cisco IOS/IOS-XE -- Fix transport protocol (telnet) detection.</li>
-<li>Cisco NX-OS -- fixed matching of MAC Addresses interface reference (fabric path) to real interface.</li>
-<li>Cisco NX-OS -- add parsing of port-channel interfaces without members.</li>
-<li>Cisco Meraki, Juniper Mist, Ruckus -- fixed device’s type detection to ensure wireless APs are detected properly.</li>
-<li>Extreme XOS -- fixed parsing of l2Interfaces of missing interfaces.</li>
-<li>Fortinet FortiGate -- fixed executing of cmd <code>get system password-policy</code> on VDOM enabled firewalls.</li>
-<li>Fortinet FortiGate -- Fixed missing FQDN in firewall policies unless configured in lower case.</li>
-<li>Fortinet Fortigate -- fixed parsing of <code>get router info ospf nei detail</code> for NSSA cases.</li>
-<li>HP Aruba switch -- added parsing of port information.</li>
-<li>HP ArubaCX -- fixed parsing of IGMP query interval.</li>
-<li>HP Comware -- fixed parsing of <code>display lldp neighbor-information verbose</code></li>
-<li>HP Comware -- fixed parsing of <code>display stp region-configuration</code> in case vlans list is on multiple lines.</li>
-<li>Juniper JunOS -- access-internal routes were removed from routing table.</li>
-<li>Palo Alto -- fixed parsing of empty applications/services in security rules.</li>
-<li>Palo Alto -- fixed parsing of <code>show high-availability state</code> for suspended state.</li>
-<li>Versa VOS -- <code>commands/versa/_vos/vnms/dashboard/appliance/sdWanSites</code> -- fixed mapping for unsupported IPv6 links.</li>
-<li>Versa VOS -- VRRP -- Allow virtual IP for instances in <code>Init</code> status.</li>
-<li>VMware -- NSX-T -- fixed discovery for T0/T1 routers.</li>
+<li>Arista EOS – Fixed false positive error emitting from <code>show interfaces vxlan 1</code>.</li>
+<li>Azure – fixed mapping of network interfaces without MAC address.</li>
+<li>Brocade Fastiron – Improved parsing hostname from prompt.</li>
+<li>Cisco – fixed host table for devices reachable with LISP.</li>
+<li>Cisco – fixed parsing of PIDs containing plus symbol in command <code>show inventory</code>.</li>
+<li>Cisco FTD – <code>commands/cisco/routingTable</code> – fixed parsing for null summarized routes.</li>
+<li>Cisco IOS – removed text <code>, wildcard bits</code> from texts in standard ACL.</li>
+<li>Cisco IOS-XE – fixed parsing of rebuild version.</li>
+<li>Cisco IOS-XE – fixed parsing of power supply and fans on Catalyst 9200/9300/9500.</li>
+<li>Cisco IOS/IOS-XE – Fix transport protocol (telnet) detection.</li>
+<li>Cisco NX-OS – fixed matching of MAC Addresses interface reference (fabric path) to real interface.</li>
+<li>Cisco NX-OS – add parsing of port-channel interfaces without members.</li>
+<li>Cisco Meraki, Juniper Mist, Ruckus – fixed device’s type detection to ensure wireless APs are detected properly.</li>
+<li>Extreme XOS – fixed parsing of l2Interfaces of missing interfaces.</li>
+<li>Fortinet FortiGate – fixed executing of cmd <code>get system password-policy</code> on VDOM enabled firewalls.</li>
+<li>Fortinet FortiGate – Fixed missing FQDN in firewall policies unless configured in lower case.</li>
+<li>Fortinet Fortigate – fixed parsing of <code>get router info ospf nei detail</code> for NSSA cases.</li>
+<li>HP Aruba switch – added parsing of port information.</li>
+<li>HP ArubaCX – fixed parsing of IGMP query interval.</li>
+<li>HP Comware – fixed parsing of <code>display lldp neighbor-information verbose</code></li>
+<li>HP Comware – fixed parsing of <code>display stp region-configuration</code> in case vlans list is on multiple lines.</li>
+<li>Juniper JunOS – access-internal routes were removed from routing table.</li>
+<li>Palo Alto – fixed parsing of empty applications/services in security rules.</li>
+<li>Palo Alto – fixed parsing of <code>show high-availability state</code> for suspended state.</li>
+<li>Versa VOS – <code>commands/versa/_vos/vnms/dashboard/appliance/sdWanSites</code> – fixed mapping for unsupported IPv6 links.</li>
+<li>Versa VOS – VRRP – Allow virtual IP for instances in <code>Init</code> status.</li>
+<li>VMware – NSX-T – fixed discovery for T0/T1 routers.</li>
 </ul>
 <h2 id="4351-9th-march-2022">4.3.5+1 (9th March 2022)</h2>
 <h3 id="bug-fixes_4">Bug Fixes</h3>
@@ -5134,20 +5134,20 @@ OVA SHA256SUM: 2D64A41DF78D3965F70AD80807D788FD12E0F7A1DDCF39A6B23911BF72A8311D
   are in different sites, L2 edges will be established properly.</li>
 <li>L2 edges for back-to-back connections - fix for non matching
   switchport modes.</li>
-<li>HP Comware -- fix parsing of Route-Aggregation interfaces.</li>
+<li>HP Comware – fix parsing of Route-Aggregation interfaces.</li>
 <li>HP 3Com - fixed parsing of <code>display device manuinfo</code> command</li>
 <li>Duplicate IP on same device on different subinterfaces and different
-  sites -- establishing forwarding and routing protocols sessions is
+  sites – establishing forwarding and routing protocols sessions is
   fixed.</li>
 <li>Some topology calculation speed ups for networks with many routing
   protocols sessions</li>
 <li>Pathlookup - Routing with OIDs, skip checking underlying L2 path</li>
 <li>Fix parsing Virtual Servers and Pool members with routing domains
   and <code>any</code> ports.</li>
-<li>VMWare NSX-T -- fixed mapping of empty mac-table</li>
+<li>VMWare NSX-T – fixed mapping of empty mac-table</li>
 <li>Error when opening Intent Rule verification in End Of Life
   Milestones page fix</li>
-<li>Arista -- fixed parsing of platform</li>
+<li>Arista – fixed parsing of platform</li>
 <li>Fixed possible crash in syslog worker when collecting device
   configurations</li>
 <li>Fixed POST <code>/snapshots</code> endpoint, it failed when <code>snapshotName</code> or
