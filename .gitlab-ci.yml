@@ -19,7 +19,7 @@ build_main_pages:
   script:
     - pip install -r requirements.txt
     - git fetch origin gh-pages --depth=1
-    - cp -v main_preamble overrides/main.html
+    - cp -v main_preamble.html overrides/main.html
     - mike deploy --push main
 
 strict_build_mr:
