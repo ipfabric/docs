@@ -74,6 +74,8 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
 ## Deploying on KVM Virtual Machine
 
+We have currently limitation with drives to be `/dev/sdx`. Usually Linux hypervisors are using `virtio-blk` driver which is represented as `/dev/vdx` in guest system. To overcome this limitation use `virtio-scsi` as drive controller.
+
 1.  Download `qcow2` system disk to your KVM hypervisor.
 2.  Create a second `qcow2` disk for data with size that corresponds to [your network needs](../Overview/index.md#operational-requirements)) with the following command:
 
@@ -84,7 +86,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 3.  Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):
 
     ```shell
-    virt-install --name=IP_Fabric --disk path=<path to the first, larger disk with OS>.qcow2 --disk path=<path to the second disk for data>.qcow2 --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
+    virt-install --name=IP_Fabric --disk path=<path to the first, larger disk with OS>.qcow2,bus=scsi --disk path=<path to the second disk for data>.qcow2,bus=scsi --controller virtio-scsi --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
     ```
 
 4.  This command deploys a new virtual machine with IP_Fabric name, two `qcow2` disks, 4 CPU cores, 16GB of RAM and will connect VM to the internet through `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change `--network` parameter).
