@@ -98,15 +98,21 @@ def main():
 
     for v in get_project_versions(PROJECT_KEYS[0]):
         print(v)
-        if not re.match(r'^[456789]\.\d+\.\d+', v['name']):
+
+        version_match = re.match(r'^(\d+)\.(\d+)\.(\d+)', v['name'])
+        if not version_match:
+            print(f"Unable to parse release name {v['name']}")
+            continue
+
+        major = int(version_match[1])
+        minor = int(version_match[2])
+
+        # Include only versions 4.3 and later
+        if (major*1000 + minor) < 4003:
             print(f"Skipping release {v['name']}")
             continue
 
-        version_dir = (re.match(r'^(\d+)\.\d+\.\d+', v['name'])[1] +
-                       '.x' +
-                       '/' +
-                       re.match(r'^(\d+\.\d+)\.\d+', v['name'])[1] +
-                       '.x')
+        version_dir = f"{major}.x/{major}.{minor}.x"
 
         issues = []
         issues_total = 0
