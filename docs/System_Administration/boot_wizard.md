@@ -1,29 +1,29 @@
-# Reinitiate System 'Boot Wizard'
+# Run System 'Boot Wizard'
 
 The Boot Wizard needs to be completed during the IP Fabric virtual server
 deployment before the image installation begins. The Boot Wizard introduces the
 configuration of basic network parameters, including time zone, NTP, IP
-address, DNS or Proxy settings. In case some of the initial parameters need to
+address, DNS or Proxy settings. In case some initial parameters need to
 be modified after the installation is complete, the IP Fabric administrator may
-reinitiate the Boot Wizard by completing the following procedure.
+start the Boot Wizard or part of it by running `nimpee-net-config`.
 
-!!! warning
-
-    Direct access to the virtual machine console is required after reboot
-
-Login as ‘osadmin’ via SSH and re-enable Boot Wizard and reboot ![](ipfabric_net_wizard.png)
-
+Login as `osadmin` and run `nimpee-net-config -h` for detailed help. 
 ```
-osadmin@demo4:~$ ipfabric-net-wizard
+root@ipfabric:~# nimpee-net-config -h
+IP Fabric network configuration wizard.
+Usage: nimpee-net-config [-a] [-n] [-p] [-s] [-t] [-b] [-h]
+	-a	configure all services (network, proxy, SSL cert., osadmin user)
+	-n	network
+	-p	proxy
+	-s	SSL certificates (web)
+	-t	nimpee troubleshooting user
+	-b	used for start during boot
+	-h	displays basic help
 
-## Network configuration wizard has been enabled. Please reboot this VM.
-## If you do not want to run network configuration wizard during next boot,
-## run this command again with parameter "disable" (without quotes)
-
-osadmin@demo4:~$ reboot
+This script is started automatically if "firstrun" parameter is set to "yes" in /opt/nimpee/conf.d/sys-nimpee.conf
+or user "nimpee" enables it using "nimpee-net-wizard" script.
 ```
 
-After rebooting the IP Fabric server the virtual machine will
-automatically jump into the Boot Wizard.
-
-Follow the Boot Wizard steps to update the settings.
+Examples:
+- `nimpee-net-config -a` runs _full_ Boot Wizard same way as described in [Platform First Steps](../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard)
+- `nimpee-net-config -t` sets new password for `osadmin` user
