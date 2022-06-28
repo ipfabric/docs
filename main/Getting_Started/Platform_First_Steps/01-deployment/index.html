@@ -2745,7 +2745,7 @@ differently in you production deployment, than described here.
   
     <li class="md-nav__item">
       <a href="../../../System_Administration/boot_wizard/" class="md-nav__link">
-        Reinitiate System 'Boot Wizard'
+        Run System 'Boot Wizard'
       </a>
     </li>
   
@@ -4271,6 +4271,7 @@ differently in you production deployment, than described here.
 </li>
 </ol>
 <h2 id="deploying-on-kvm-virtual-machine">Deploying on KVM Virtual Machine</h2>
+<p>We have currently limitation with drives to be <code>/dev/sdx</code>. Usually Linux hypervisors are using <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in guest system. To overcome this limitation use <code>virtio-scsi</code> as drive controller.</p>
 <ol>
 <li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
@@ -4280,7 +4281,7 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):</p>
-<div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the first, larger disk with OS&gt;.qcow2 --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the second disk <span class="k">for</span> data&gt;.qcow2 --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
+<div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the first, larger disk with OS&gt;.qcow2,bus<span class="o">=</span>scsi --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the second disk <span class="k">for</span> data&gt;.qcow2,bus<span class="o">=</span>scsi --controller virtio-scsi --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
 </code></pre></div>
 </li>
 <li>

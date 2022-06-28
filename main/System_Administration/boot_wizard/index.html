@@ -13,7 +13,7 @@
     
     
       
-        <title>Reinitiate System 'Boot Wizard' - IP Fabric Documentation Portal</title>
+        <title>Run System 'Boot Wizard' - IP Fabric Documentation Portal</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reinitiate-system-boot-wizard" class="md-skip">
+        <a href="#run-system-boot-wizard" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@ differently in you production deployment, than described here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reinitiate System 'Boot Wizard'
+              Run System 'Boot Wizard'
             
           </span>
         </div>
@@ -2683,7 +2683,7 @@ differently in you production deployment, than described here.
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Reinitiate System 'Boot Wizard'
+        Run System 'Boot Wizard'
       </a>
       
     </li>
@@ -4080,29 +4080,31 @@ differently in you production deployment, than described here.
                 
 
 
-<h1 id="reinitiate-system-boot-wizard">Reinitiate System 'Boot Wizard'</h1>
+<h1 id="run-system-boot-wizard">Run System 'Boot Wizard'</h1>
 <p>The Boot Wizard needs to be completed during the IP Fabric virtual server
 deployment before the image installation begins. The Boot Wizard introduces the
 configuration of basic network parameters, including time zone, NTP, IP
-address, DNS or Proxy settings. In case some of the initial parameters need to
+address, DNS or Proxy settings. In case some initial parameters need to
 be modified after the installation is complete, the IP Fabric administrator may
-reinitiate the Boot Wizard by completing the following procedure.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Direct access to the virtual machine console is required after reboot</p>
-</div>
-<p>Login as ‘osadmin’ via SSH and re-enable Boot Wizard and reboot <a data-featherlight="../ipfabric_net_wizard.png" href="#"><img alt="" src="../ipfabric_net_wizard.png" /></a></p>
-<div class="highlight"><pre><span></span><code>osadmin@demo4:~$ ipfabric-net-wizard
+start the Boot Wizard or part of it by running <code>nimpee-net-config</code>.</p>
+<p>Login as <code>osadmin</code> and run <code>nimpee-net-config -h</code> for detailed help. 
+<div class="highlight"><pre><span></span><code>root@ipfabric:~# nimpee-net-config -h
+IP Fabric network configuration wizard.
+Usage: nimpee-net-config [-a] [-n] [-p] [-s] [-t] [-b] [-h]
+    -a  configure all services (network, proxy, SSL cert., osadmin user)
+    -n  network
+    -p  proxy
+    -s  SSL certificates (web)
+    -t  nimpee troubleshooting user
+    -b  used for start during boot
+    -h  displays basic help
 
-## Network configuration wizard has been enabled. Please reboot this VM.
-## If you do not want to run network configuration wizard during next boot,
-## run this command again with parameter &quot;disable&quot; (without quotes)
-
-osadmin@demo4:~$ reboot
-</code></pre></div>
-<p>After rebooting the IP Fabric server the virtual machine will
-automatically jump into the Boot Wizard.</p>
-<p>Follow the Boot Wizard steps to update the settings.</p>
+This script is started automatically if &quot;firstrun&quot; parameter is set to &quot;yes&quot; in /opt/nimpee/conf.d/sys-nimpee.conf
+or user &quot;nimpee&quot; enables it using &quot;nimpee-net-wizard&quot; script.
+</code></pre></div></p>
+<p>Examples:
+- <code>nimpee-net-config -a</code> runs <em>full</em> Boot Wizard same way as described in <a href="../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">Platform First Steps</a>
+- <code>nimpee-net-config -t</code> sets new password for <code>osadmin</code> user</p>
 
               
             </article>
