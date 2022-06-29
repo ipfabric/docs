@@ -25,5 +25,6 @@ or user "nimpee" enables it using "nimpee-net-wizard" script.
 ```
 
 Examples:
-- `nimpee-net-config -a` runs _full_ Boot Wizard same way as described in [Platform First Steps](../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard)
+
+- `nimpee-net-config -a` runs _full_ Boot Wizard same way as described in [Complete (first-time) Boot Wizard](../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard)
 - `nimpee-net-config -t` sets new password for `osadmin` user
