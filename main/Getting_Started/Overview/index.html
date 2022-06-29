@@ -4287,18 +4287,71 @@ differently in you production deployment, than described here.
 <h3 id="hardware-requirements">Hardware Requirements</h3>
 <p>The IP Fabric platform runs on any x64 CPU with following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.</p>
 <p>Minimum requirements are:</p>
-<p>| CPU | RAM   | HDD  |
-| — | ----- | ---- |
-| 4C  | 16 GB | 90GB |</p>
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>RAM</th>
+<th>HDD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4C</td>
+<td>16 GB</td>
+<td>90GB</td>
+</tr>
+</tbody>
+</table>
 <p>The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.</p>
-<p>| Devices | CPU | RAM    | HDD (OS + data)      |
-| ------- | — | ------ | -------------------- |
-| 500     | 4   | 16 GB  | 90 GB (80G + 10G)    |
-| 1 000   | 4   | 32 GB  | 100 GB (80G + 20G)   |
-| 2 000   | 8   | 64 GB  | 200 GB (80G + 120G)  |
-| 5 000   | 12  | 64 GB  | 300 GB (80G + 220G)  |
-| 10 000  | 16  | 128 GB | 550 GB (80G + 470G)  |
-| 20 000  | 18  | 256 GB | 1000 GB (80G + 920G) |</p>
+<table>
+<thead>
+<tr>
+<th>Devices</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>HDD (OS + data)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td>4</td>
+<td>16 GB</td>
+<td>90 GB (80G + 10G)</td>
+</tr>
+<tr>
+<td>1 000</td>
+<td>4</td>
+<td>32 GB</td>
+<td>100 GB (80G + 20G)</td>
+</tr>
+<tr>
+<td>2 000</td>
+<td>8</td>
+<td>64 GB</td>
+<td>200 GB (80G + 120G)</td>
+</tr>
+<tr>
+<td>5 000</td>
+<td>12</td>
+<td>64 GB</td>
+<td>300 GB (80G + 220G)</td>
+</tr>
+<tr>
+<td>10 000</td>
+<td>16</td>
+<td>128 GB</td>
+<td>550 GB (80G + 470G)</td>
+</tr>
+<tr>
+<td>20 000</td>
+<td>18</td>
+<td>256 GB</td>
+<td>1000 GB (80G + 920G)</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition info">
 <p class="admonition-title">Additional resources requirements</p>
 <p>To make sure you have enough resources, please use the following formulas.</p>
@@ -4311,7 +4364,7 @@ differently in you production deployment, than described here.
 </div>
 <h3 id="network-connectivity-requirements">Network Connectivity Requirements</h3>
 <p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
-<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="../../IP_Fabric_Settings/advanced/SSH_telnet/#setting-up-jumphost">Jumphost server</a> can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)</p>
+<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="../../IP_Fabric_Settings/advanced/SSH_telnet/#setting-up-jumphost">Jumphost server</a> can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)</p>
 <p>Inbound flows:</p>
 <table>
 <thead>

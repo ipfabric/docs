@@ -4238,17 +4238,62 @@ parameters that can be found in <strong><em>Settings → Advanced → SSH/TELN
 <p>According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common
 errors and adjustments:</p>
-<p>| Error | Error Type | How to  mitigate |
-|--- | — | — |
-| connect ETIMEDOUT XX.XX.XX.XX:22 | Connection error | Received no response from the destination. |
-| connect ECONNREFUSED XX.XX.XX.XX:22 | Connection error | The connection to the destination is being blocked by an access-list or firewall. |
-| read ECONNRESET | Connection error | Connection reset by FW or destination |
-| All configured authentication methods failed | Authentication error | Unable to authenticate to the destination host |
-| Authentication failed | Authentication error | Unable to authenticate to the destination host |
-| Authentication failed - login prompt appeared again | Authentication error          | Unable to authenticate to the destination host |
-| SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$ | Command timeout | The command 'show vrrp  | e #^$' timed out. Increase <strong>device session timeout.</strong> |
-| Can't detect prompt | Command timeout | Unable to detect CLI prompt. Increase <strong>network device login timeout.</strong> |
-| Command "enable" authorization failed, tried 2x | Command authorization failure | The command wasn't authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms) |</p>
+<table>
+<thead>
+<tr>
+<th>Error </th>
+<th>Error Type</th>
+<th>How to  mitigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
+<td>Connection error</td>
+<td>Received no response from the destination.</td>
+</tr>
+<tr>
+<td>connect ECONNREFUSED XX.XX.XX.XX:22</td>
+<td>Connection error</td>
+<td>The connection to the destination is being blocked by an access-list or firewall.</td>
+</tr>
+<tr>
+<td>read ECONNRESET</td>
+<td>Connection error</td>
+<td>Connection reset by FW or destination</td>
+</tr>
+<tr>
+<td>All configured authentication methods failed</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>Authentication failed</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>Authentication failed - login prompt appeared again</td>
+<td>Authentication error</td>
+<td>Unable to authenticate to the destination host</td>
+</tr>
+<tr>
+<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$</td>
+<td>Command timeout</td>
+<td>The command 'show vrrp  | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
+</tr>
+<tr>
+<td>Can't detect prompt</td>
+<td>Command timeout</td>
+<td>Unable to detect CLI prompt. Increase <strong>network device login timeout.</strong></td>
+</tr>
+<tr>
+<td>Command "enable" authorization failed, tried 2x</td>
+<td>Command authorization failure</td>
+<td>The command wasn't authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="network-device-login-timeout">Network device login timeout</h3>
 <p>Timeout before the logging prompt is received. It may take longer for
 remote branches over low-speed lines, or destined to overloaded devices.</p>
