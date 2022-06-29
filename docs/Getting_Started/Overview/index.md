@@ -25,11 +25,11 @@ The following table represents the recommended hardware requirements for optimal
 | Devices | CPU | RAM    | HDD (OS + data)      |
 | ------- | --- | ------ | -------------------- |
 | 500     | 4   | 16 GB  | 90 GB (80G + 10G)    |
-| 1 000   | 4   | 32 GB  | 100 GB (80G + 20G)   |
-| 2 000   | 8   | 64 GB  | 200 GB (80G + 120G)  |
-| 5 000   | 12  | 64 GB  | 300 GB (80G + 220G)  |
+| 1 000   | 4   | 32 GB  | 100 GB (80G + 20G)   |
+| 2 000   | 8   | 64 GB  | 200 GB (80G + 120G)  |
+| 5 000   | 12  | 64 GB  | 300 GB (80G + 220G)  |
 | 10 000  | 16  | 128 GB | 550 GB (80G + 470G)  |
-| 20 000  | 18  | 256 GB | 1000 GB (80G + 920G) |
+| 20 000  | 18  | 256 GB | 1000 GB (80G + 920G) |
 
 !!! info "Additional resources requirements"
 
@@ -47,7 +47,7 @@ The following table represents the recommended hardware requirements for optimal
 
 During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.
 
-IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../../IP_Fabric_Settings/advanced/SSH_telnet.md#setting-up-jumphost) can also be set-up and used. (Jumphost server requires an installation of SSH Python (versions 2.4 to 3.7).)
+IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../../IP_Fabric_Settings/advanced/SSH_telnet.md#setting-up-jumphost) can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)
 
 Inbound flows:
 

@@ -67,16 +67,7 @@ errors and adjustments:
 
 ## Setting Up Jumphost
 
-**Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.
-
-| Python version on the jumphost |                 |
-| ----------------------------- | --------------- |
-| 2.7                           | supported       |
-| 3.5                           | supported       |
-| 3.6                           | supported       |
-| 3.7                           | supported       |
-| 3.8                           | **unsupported** |
-| 3.9                           | **unsupported** |
+**Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side. Supported python version is 3.6+.
 
 !!! warning
     Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.
