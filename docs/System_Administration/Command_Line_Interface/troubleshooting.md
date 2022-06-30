@@ -1,31 +1,10 @@
-# Command Line Interface
-
-The command-line interface is a secondary service interface in IP Fabric VM which serves troubleshooting and testing purposes. For example, for testing authentication credentials from the specific IP address of IP
-Fabric VM, in case of address-restricted access. The CLI interface is the main tool in servicing the system by the support teams.
-
-A first boot wizard can be used to change system settings, such as IP addressing parameters, domain names, NTP, system proxy settings, or a user's password. To launch First Boot Wizard again, connect via SSH to IP Fabric as **osadmin** user, launch `ipfabric-net-wizard` and then reboot the system.
-
-Command-line also allows the use of the standard networking tools, such as telnet, ssh, traceroute or ping.
-
-## Troubleshooting VM Network Problems Using IP Fabric CLI
+# Troubleshooting VM Using IP Fabric CLI
 
 In the event of a VM network connection problem, DNS issues, network devices connectivity issue, IP Fabric CLI is a useful helper.
 
 CLI can be also used to access system and application logs as well as snapshot files.
 
-### System And Application Logs
-
-System and application logs are placed in `/var/log` folder. Specifically IP Fabric application logs can be found in:
-
-```bash
-/var/log/nimpee.
-```
-
-### Snapshots
-
-Snapshots are available in **osadmin** home directory `/home/osadmin/snapshots`. Each folder inside represents one snapshot. Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.
-
-### Checking The Network Interface Settings
+## Checking The Network Interface Settings
 
 !!! warning
 	When you log in through a VM console or SSH, network settings are displayed. This content is static, generated when VM boots! When DHCP is used, an IP address can change in some cases.
@@ -44,7 +23,7 @@ Default gateway and other routes (if configured) can be check as follows:
 ip r
 ```
 
-### Checking DNS
+## Checking DNS
 
 DNS can be checked using the `dig` or `nslookup` command.
 
@@ -62,7 +41,7 @@ If you prefer `nslookup` you can achieve the same results.
 
 ![nslookup](nslookup.png)
 
-### Testing Connectivity To a Network Device
+## Testing Connectivity To a Network Device
 
 The very basic test is `ping` or `traceroute`.
 
@@ -84,7 +63,7 @@ For telnet use:
 telnet device-IP-or-Hostname
 ```
 
-### Reboot And Shutdown
+## Reboot And Shutdown
 
 IP Fabric VM can be also rebooted or shutdown using CLI.
 
