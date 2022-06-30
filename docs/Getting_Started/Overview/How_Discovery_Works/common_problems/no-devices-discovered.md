@@ -13,7 +13,7 @@ time or after system changes
         that cannot reach the device. The route may not be present or
         the traffic may be filtered. Check IP Fabric connectivity
         with [Troubleshooting VM network problems using IP Fabric
-        CLI](../../../../System_Administration/cli.md#troubleshooting-vm-network-problems-using-ip-fabric-cli).
+        CLI](../../../../System_Administration/Command_Line_Interface/troubleshooting.md).
     2.  If the reason reports authentication failure, IP Fabric was not
         able to login to the device. Check [Authentication -
         Settings](../../../../IP_Fabric_Settings/authentication.md).
@@ -34,7 +34,7 @@ time or after system changes
         device using SSH or TELNET using the credentials entered on the
         authentication page. Check IP Fabric connectivity
         with [Troubleshooting VM Network Problems Using IP Fabric
-        CLI](../../../../System_Administration/cli.md#troubleshooting-vm-network-problems-using-ip-fabric-cli).
+        CLI](../../../../System_Administration/Command_Line_Interface/troubleshooting.md).
 4.  If no devices are discovered after checking the Connectivity Report
     and after entering the Seed addresses, contact support for
     troubleshooting assistance. Check [Contacts](../../../../support/index.md#contact).
