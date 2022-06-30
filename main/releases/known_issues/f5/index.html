@@ -3107,6 +3107,13 @@ differently in you production deployment, than described here.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#long-timeout-for-command-show-ltm-virtual-details" class="md-nav__link">
+    Long timeout for command show ltm virtual details
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4203,6 +4210,13 @@ differently in you production deployment, than described here.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#long-timeout-for-command-show-ltm-virtual-details" class="md-nav__link">
+    Long timeout for command show ltm virtual details
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4222,6 +4236,11 @@ differently in you production deployment, than described here.
 <p><strong> Known Affected Software Versions</strong>: All</p>
 <p><strong>Result</strong>: Commands <code>run util bash -c uptime</code> for device uptime and <code>run util bash -c "ntpq -np"</code> for NTP peer server communications will not run without
  <a href="https://api-u.f5.com/support/kb-articles/K10272?pdf">administration permissions.</a></p>
+<h2 id="long-timeout-for-command-show-ltm-virtual-details">Long timeout for command <code>show ltm virtual details</code></h2>
+<p><strong> Known Affected Software version</strong>: All</p>
+<p><strong>Description</strong>: Command <code>show ltm virtual details</code> may hang for a long time before sending any response back to the user and discovery process can be stopped.</p>
+<p><strong>Result</strong>: Some F5 devices might not be discovered</p>
+<p><strong>Fix</strong>: Test how long it takes to get data for this command via CLI and update <a href="../../../IP_Fabric_Settings/advanced/SSH_telnet/">Network device session timeout</a> accordingly</p>
 
               
             </article>
