@@ -38,6 +38,10 @@ If you selected **version 3** please configure:
 3. **System Contact** - contact to responsible person or department
 4. **Username** - SNMP v3 user
 5. **Passphrase** - authentication and privacy passphrase
+
+	!!! Info
+		Passphrase can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+
 6. Click **Save**
 
     ![Version 3](snmp/640516117.png)

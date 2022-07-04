@@ -83,7 +83,11 @@ To set up remote backup do the following steps:
 1. Change **Destination** to `FTP` or `SFTP`.
 1. Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.
 1. Enter **Username** to access FTP/SFTP server.
-1. Enter **Password** to access FTP/SFTP server.
+1. Enter **Password** to access FTP/SFTP server
+
+	!!! Info
+		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`.
+
 1. Specify a **Directory** where FTP/SFTP backup should be uploaded.
 1. Click **Save**.
 1. IP Fabric tries to reach FTP/SFTP server with configured parameters.
@@ -110,5 +114,9 @@ Manual backup can be triggered from IP Fabric Administrative interface:
     1. Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.
     1. Enter **Username** to access FTP/SFTP server.
     1. Enter **Password** to access FTP/SFTP server.
-    1. Specify a **Directory** where FTP/SFTP backup should be uploaded.
+
+	!!! Info
+	    Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+
+1. Specify a **Directory** where FTP/SFTP backup should be uploaded.
 1. Click **Next**

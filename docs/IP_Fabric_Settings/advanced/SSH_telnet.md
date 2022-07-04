@@ -92,7 +92,11 @@ errors and adjustments:
         2. **Use SSH keys** - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
     6. **Username** - Username for authentication (mandatory)
     7. **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below
-       ![Add Jumphost](ssh/1384480780.png)
+       
+	!!! Info
+		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+	
+	![Add Jumphost](ssh/1384480780.png)
 
 4. Click **+ Add** button
 5. If a connection is open, you will see the **_Running_** status in Jumphost list
