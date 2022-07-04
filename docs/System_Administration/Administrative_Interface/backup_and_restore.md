@@ -119,6 +119,9 @@ To set up remote backup do the following steps:
 
 9.  Enter **Password** to access FTP/SFTP server.
 
+	!!! Info
+		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+
 10. Specify a **Directory** where FTP/SFTP backup should be uploaded.
 
 11. Click **Save **(The IP Fabric platform will immediately test the
@@ -162,6 +165,9 @@ Manual backup can be triggered from IP Fabric Administrative interface:
     2.  Enter **Username** to access FTP/SFTP server.
 
     3.  Enter **Password** to access FTP/SFTP server.
+		
+	!!! Info
+		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
 
     4.  Specify a **Directory** where FTP/SFTP backup should be
         uploaded.
