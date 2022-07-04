@@ -1,14 +1,5 @@
 # Local Users
 
-The default user `admin` with password `netHero!123` is used for
-the initial login to the system. This user has administrative privileges
-to create or manage other users and to perform network management tasks.
-It is recommended to change the password for the admin user and to use a
-standard user account for access to the system. If you are unable to
-login with the default admin account after the first startup, please
-follow this guideline [Invalid default username and
-password](../../releases/known_issues/IP_Fabric/invalid_default_username_and_password.md).
-
 Main user management tab allows you to create a new local account with
 various user permissions or modify already existing users including
 default admin account. Only a user with User Management permission can
