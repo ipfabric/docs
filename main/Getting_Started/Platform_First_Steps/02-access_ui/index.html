@@ -13,7 +13,7 @@
     
     
       
-        <title>Access User Interface and Install License - IP Fabric Documentation Portal</title>
+        <title>Access User Interface And Install License - IP Fabric Documentation Portal</title>
       
     
     
@@ -120,7 +120,7 @@ differently in you production deployment, than described here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Access User Interface and Install License
+              Access User Interface And Install License
             
           </span>
         </div>
@@ -698,9 +698,47 @@ differently in you production deployment, than described here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Access User Interface And Install License
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Access User Interface and Install License
+        Access User Interface And Install License
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-first-ip-fabric-user" class="md-nav__link">
+    Creating The First IP Fabric User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-main-user-interface" class="md-nav__link">
+    Accessing The Main User Interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3229,20 +3267,6 @@ differently in you production deployment, than described here.
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/invalid_default_username_and_password/" class="md-nav__link">
-        Invalid Default Username And Password
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
         Local Time Inconsistencies
       </a>
@@ -3274,18 +3298,18 @@ differently in you production deployment, than described here.
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_6" type="checkbox" id="__nav_7_2_14_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_5" type="checkbox" id="__nav_7_2_14_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_2_14_6">
+        <label class="md-nav__link" for="__nav_7_2_14_5">
           Error messages
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Error messages" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_2_14_6">
+        <label class="md-nav__title" for="__nav_7_2_14_5">
           <span class="md-nav__icon md-icon"></span>
           Error messages
         </label>
@@ -4159,6 +4183,28 @@ differently in you production deployment, than described here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-first-ip-fabric-user" class="md-nav__link">
+    Creating The First IP Fabric User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-main-user-interface" class="md-nav__link">
+    Accessing The Main User Interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4171,20 +4217,34 @@ differently in you production deployment, than described here.
                 
 
 
-<h1 id="access-user-interface-and-install-license">Access User Interface and Install License</h1>
+<h1 id="access-user-interface-and-install-license">Access User Interface And Install License</h1>
+<h2 id="creating-the-first-ip-fabric-user">Creating The First IP Fabric User</h2>
+<p>To create the first user, please log in to the System administration running on port <code>8443</code>.</p>
+<p>After logging in as the <code>osadmin</code> user, go to <strong>Create admin</strong> menu and set up a new local administrator account.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You will not be able to create a new user account with name <code>admin</code> as this user already exists in the IP Fabric, see next paragraph</p>
+</div>
+<p><a data-featherlight="../admin_create_new.png" href="#"><img alt="Creating new admin user" src="../admin_create_new.png" /></a></p>
+<p>With this new account, you will be able to log in to the main IP Fabric user
+interface and change a password to the default <code>admin</code> account or delete
+it. This can be done in <strong>Setting → User Management</strong> menu.</p>
+<p>Also, other local user accounts can be created here.</p>
+<p><a data-featherlight="../modify_local_accounts.png" href="#"><img alt="Creating a new user account" src="../modify_local_accounts.png" /></a></p>
+<h2 id="accessing-the-main-user-interface">Accessing The Main User Interface</h2>
 <p>Type IP Fabric VM's address into a web browser and allow HTTPS exceptions in case of a warning.</p>
 <div class="admonition note">
 <p class="admonition-title">Trusted certificate</p>
 <p>You can replace a self-signed SSL certificate with a trusted one in the web UI.</p>
 </div>
-<p>The system requires a license file that uniquely identifies the system and links it to the dedicated support channels. Keep the license file safe, as the license file is also used as part of the key to encrypt sensitive information. Drag the license.key file into the web interface, or click <strong>Select file</strong> and browse to the license file. If the license installation fails, contact the IP Fabric support team.</p>
+<p>The system requires a license file that uniquely identifies the system and links it to the dedicated support channels.
+Keep the license file safe, as the license file is also used as part of the key to encrypt sensitive information.
+Drag the license.key file into the web interface, or click <strong>Select file</strong> and browse to the license file.
+If the license installation fails, contact the IP Fabric support team.</p>
 <p><a data-featherlight="../ui_license.png" href="#"><img alt="IPF License" src="../ui_license.png" /></a></p>
-<p>Once the license is valid, the system will present a login screen. The default system username is <code>admin</code> and the password is <code>netHero!123</code>. The admin account can be used as a regular account to run the system or to create and manage other users.</p>
+<p>Once the license is valid, the system will present a login screen.</p>
+<p>Login with the account created in <a href="#creating-the-first-ipfabric-user">Creating the first IPFabric user</a></p>
 <p><a data-featherlight="../ui_admin.png" href="#"><img alt="IPF admin" src="../ui_admin.png" /></a></p>
-<div class="admonition hint">
-<p class="admonition-title">Invalid default admin credentials</p>
-<p>In case that that default system username and password are not working, please gin to the System administration running on port <code>8443</code>. After login as <code>osadmin</code> user go to <strong>Create admin</strong> and create a new local administrator account. With this new account, you can login to the main IP Fabric user interface and change a password to the default admin account or delete him. See <a href="../../../System_Administration/Administrative_Interface/create_local_administrator/">Create Local Administrator</a>.</p>
-</div>
 
               
             </article>

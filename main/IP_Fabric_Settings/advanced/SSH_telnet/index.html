@@ -686,7 +686,7 @@ differently in you production deployment, than described here.
   
     <li class="md-nav__item">
       <a href="../../../Getting_Started/Platform_First_Steps/02-access_ui/" class="md-nav__link">
-        Access User Interface and Install License
+        Access User Interface And Install License
       </a>
     </li>
   
@@ -3444,20 +3444,6 @@ differently in you production deployment, than described here.
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/invalid_default_username_and_password/" class="md-nav__link">
-        Invalid Default Username And Password
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
         Local Time Inconsistencies
       </a>
@@ -3489,18 +3475,18 @@ differently in you production deployment, than described here.
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_6" type="checkbox" id="__nav_7_2_14_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_5" type="checkbox" id="__nav_7_2_14_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_2_14_6">
+        <label class="md-nav__link" for="__nav_7_2_14_5">
           Error messages
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Error messages" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_2_14_6">
+        <label class="md-nav__title" for="__nav_7_2_14_5">
           <span class="md-nav__icon md-icon"></span>
           Error messages
         </label>
@@ -4674,7 +4660,50 @@ errors and adjustments:</p>
 </tbody>
 </table>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side. Supported python version is 3.6+.</p>
+<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.</p>
+<table>
+<thead>
+<tr>
+<th>Python version on the jumphost</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.7</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.8</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.9</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>3.10</td>
+<td><strong>unsupported</strong></td>
+</tr>
+</tbody>
+</table>
+<p>We strongly recommend using <strong>python 3.6+</strong> on the client side.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.</p>
