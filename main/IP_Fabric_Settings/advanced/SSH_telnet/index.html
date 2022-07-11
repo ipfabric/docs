@@ -4660,7 +4660,8 @@ errors and adjustments:</p>
 </tbody>
 </table>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.</p>
+<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
+<p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
 <table>
 <thead>
 <tr>
@@ -4671,15 +4672,15 @@ errors and adjustments:</p>
 <tbody>
 <tr>
 <td>2.7</td>
-<td>supported</td>
+<td>tested</td>
 </tr>
 <tr>
 <td>3.4</td>
-<td>supported</td>
+<td>tested</td>
 </tr>
 <tr>
 <td>3.5</td>
-<td>supported</td>
+<td>tested</td>
 </tr>
 <tr>
 <td>3.6</td>
@@ -4699,11 +4700,13 @@ errors and adjustments:</p>
 </tr>
 <tr>
 <td>3.10</td>
-<td><strong>unsupported</strong></td>
+<td>tested</td>
 </tr>
 </tbody>
 </table>
-<p>We strongly recommend using <strong>python 3.6+</strong> on the client side.</p>
+<p>tested – jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues</p>
+<p>supported – jumphost was tested, it works and also underlying project supports it officially</p>
+<p>We strongly recommend using <strong>python 3.6-3.9</strong> on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.</p>
@@ -4724,8 +4727,16 @@ errors and adjustments:</p>
 <ol>
 <li><strong>Label</strong> - the name for configuration (mandatory)</li>
 <li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
-<li><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</li>
-<li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
+<li>
+<p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes IP address of the IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, IP connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention (on OS level most probably from our support) to fix.</p>
+</div>
+</li>
+<li>
+<p><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</p>
+</li>
 <li><strong>Login type</strong><ol>
 <li><strong>Use credentials</strong> - require to provide username and password</li>
 <li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
@@ -4748,13 +4759,6 @@ errors and adjustments:</p>
 <p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you use <code>0.0.0.0/0</code> or another subnet that includes your network from
-which you are connecting to IP Fabric, make sure you put your network to
-<em>"Exclude IPv4 subnet"</em>. Otherwise, your IP connection will be lost and
-you will have to recover from the console.</p>
-</div>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
