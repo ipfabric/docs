@@ -67,20 +67,27 @@ errors and adjustments:
 
 ## Setting Up Jumphost
 
-**Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an ssh connection to the jumphost server and python on the client and server side.
+**Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
 
-| Python version on the jumphost |                 |
-| ----------------------------- | --------------- |
-| 2.7                           | supported       |
-| 3.4                           | supported       |
-| 3.5                           | supported       |
-| 3.6                           | supported       |
-| 3.7                           | supported       |
-| 3.8                           | supported       |
-| 3.9                           | supported       |
-| 3.10                           | **unsupported** |
+We successfully tested IP Fabric against jumphosts with the following python versions:
 
-We strongly recommend using **python 3.6+** on the client side.
+| Python version on the jumphost |              |
+| ------------------------------ | ------------ |
+| 2.7                            | tested       |
+| 3.4                            | tested       |
+| 3.5                            | tested       |
+| 3.6                            | supported    |
+| 3.7                            | supported    |
+| 3.8                            | supported    |
+| 3.9                            | supported    |
+| 3.10                           | tested       |
+
+tested -- jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues
+
+supported -- jumphost was tested, it works and also underlying project supports it officially
+
+
+We strongly recommend using **python 3.6-3.9** on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.
 
 
 !!! warning
@@ -100,6 +107,11 @@ We strongly recommend using **python 3.6+** on the client side.
     1. **Label** - the name for configuration (mandatory)
     2. **Jump host Address** - IP address of FQDN name (mandatory)
     3. **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
+		
+		!!! Warning
+
+			If you use `0.0.0.0/0` or another subnet that **includes IP address of the IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, IP connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention (on OS level most probably from our support) to fix.
+
     4. **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
     5. **Login type**
         1. **Use credentials** - require to provide username and password
@@ -116,12 +128,6 @@ We strongly recommend using **python 3.6+** on the client side.
 5. If a connection is open, you will see the **_Running_** status in Jumphost list
  
     ![Jumphost list](ssh/1384513560.png)
-
-!!! warning
-    If you use `0.0.0.0/0` or another subnet that includes your network from
-    which you are connecting to IP Fabric, make sure you put your network to
-    *"Exclude IPv4 subnet"*. Otherwise, your IP connection will be lost and
-    you will have to recover from the console.
 
 ### SSH Key Configuration
 
