@@ -170,11 +170,55 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
     ![Delete jumphost](ssh/1384939529.png)
 
-### Discovery With Jumphost Issues
+## Jumphost Known Issues
 
-Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.
+### Non-TCP Discovery
 
-### Custom SSH/Telnet Ports
+Only TCP connections work through the jumphost.
+
+Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).
+
+Because of this you will have to add at least one IP address of a network device from each site to the [Discovery seeds](../discovery_seed.md) settings.
+
+### IP Fabric Is Not Accessible After Saving Jumphost Configuration
+
+If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
+
+To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, know password for `osadmin` user account, and do the following:
+
+1. Login with `osadmin` account to the **virtual machine CLI**
+
+2. Filter out the **jumphost** services with `systemctl | grep jumphost` command
+
+	!!! info
+		Each configured jumphost has its own ID
+
+	![systemctl_jumphost](systemctl_jumphost.png)
+
+3. **Stop the jumphost service** with command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password
+
+	![systemctl_stop_jumphost](systemctl_stop_jumphost.png)
+
+4. Check that the **jumphost process is inactive** with `systemctl status jumphost@xxxx.service` command
+
+	![systemctl_status_jumphost](systemctl_status_jumphost.png)
+
+5. IP Fabric GUI should be accessible by now.
+
+6. Login into to the **IP Fabric main GUI** with your regular account and go to **Settings → Advanced → SSH/Telnet**.
+
+7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
+
+	![jumphost_delete_settings](jumphost_delete_settings.png)
+
+8. Put **IP address/subnet of the IP Fabric** machine to the **exclude IPv4 subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP address of IP Fabric**.
+
+	![jumphost_exclude](jumphost_exclude.png)
+
+!!! info
+    If **IP Fabric** becomes inaccessible via GUI or SSH again, repeat the previous steps and again edit the jumphost configuration.
+
+## Custom SSH/Telnet Ports
 
 !!! info
     Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
