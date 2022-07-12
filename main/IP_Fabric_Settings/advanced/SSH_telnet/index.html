@@ -2227,22 +2227,42 @@ differently in you production deployment, than described here.
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumphost-known-issues" class="md-nav__link">
+    Jumphost Known Issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Jumphost Known Issues">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#discovery-with-jumphost-issues" class="md-nav__link">
-    Discovery With Jumphost Issues
+  <a href="#non-tcp-discovery" class="md-nav__link">
+    Non-TCP Discovery
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-sshtelnet-ports" class="md-nav__link">
-    Custom SSH/Telnet Ports
+  <a href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration" class="md-nav__link">
+    IP Fabric Is Not Accessible After Saving Jumphost Configuration
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+    Custom SSH/Telnet Ports
+  </a>
   
 </li>
       
@@ -4506,22 +4526,42 @@ differently in you production deployment, than described here.
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumphost-known-issues" class="md-nav__link">
+    Jumphost Known Issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Jumphost Known Issues">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#discovery-with-jumphost-issues" class="md-nav__link">
-    Discovery With Jumphost Issues
+  <a href="#non-tcp-discovery" class="md-nav__link">
+    Non-TCP Discovery
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#custom-sshtelnet-ports" class="md-nav__link">
-    Custom SSH/Telnet Ports
+  <a href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration" class="md-nav__link">
+    IP Fabric Is Not Accessible After Saving Jumphost Configuration
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+    Custom SSH/Telnet Ports
+  </a>
   
 </li>
       
@@ -4852,9 +4892,54 @@ errors and adjustments:</p>
 <p><a data-featherlight="../ssh/1384939529.png" href="#"><img alt="Delete jumphost" src="../ssh/1384939529.png" /></a></p>
 </li>
 </ol>
-<h3 id="discovery-with-jumphost-issues">Discovery With Jumphost Issues</h3>
-<p>Only TCP connections work through the Jump host. Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable part of the network (for example sites separated by the provider’s network). In this case, you will have to add at least one IP from each site to the seeds settings.</p>
-<h3 id="custom-sshtelnet-ports">Custom SSH/Telnet Ports</h3>
+<h2 id="jumphost-known-issues">Jumphost Known Issues</h2>
+<h3 id="non-tcp-discovery">Non-TCP Discovery</h3>
+<p>Only TCP connections work through the jumphost.</p>
+<p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
+<p>Because of this you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
+<h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
+<p>If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
+<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, know password for <code>osadmin</code> user account, and do the following:</p>
+<ol>
+<li>
+<p>Login with <code>osadmin</code> account to the <strong>virtual machine CLI</strong></p>
+</li>
+<li>
+<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Each configured jumphost has its own ID</p>
+</div>
+<p><a data-featherlight="../systemctl_jumphost.png" href="#"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></a></p>
+</li>
+<li>
+<p><strong>Stop the jumphost service</strong> with command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
+<p><a data-featherlight="../systemctl_stop_jumphost.png" href="#"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png" /></a></p>
+</li>
+<li>
+<p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
+<p><a data-featherlight="../systemctl_status_jumphost.png" href="#"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png" /></a></p>
+</li>
+<li>
+<p>IP Fabric GUI should be accessible by now.</p>
+</li>
+<li>
+<p>Login into to the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
+</li>
+<li>
+<p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
+<p><a data-featherlight="../jumphost_delete_settings.png" href="#"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png" /></a></p>
+</li>
+<li>
+<p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
+<p><a data-featherlight="../jumphost_exclude.png" href="#"><img alt="jumphost_exclude" src="../jumphost_exclude.png" /></a></p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If <strong>IP Fabric</strong> becomes inaccessible via GUI or SSH again, repeat the previous steps and again edit the jumphost configuration.</p>
+</div>
+<h2 id="custom-sshtelnet-ports">Custom SSH/Telnet Ports</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
