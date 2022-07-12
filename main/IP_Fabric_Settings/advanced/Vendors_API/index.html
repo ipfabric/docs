@@ -2217,9 +2217,47 @@ differently in you production deployment, than described here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Overview
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-proxy" class="md-nav__link">
+    System Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reject-unauthorized-certificates" class="md-nav__link">
+    Reject Unauthorized Certificates
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4189,6 +4227,28 @@ differently in you production deployment, than described here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-proxy" class="md-nav__link">
+    System Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reject-unauthorized-certificates" class="md-nav__link">
+    Reject Unauthorized Certificates
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4202,7 +4262,18 @@ differently in you production deployment, than described here.
 
 
 <h1 id="overview">Overview</h1>
-<p>IP Fabric supports discovery of network devices via a dedicated vendors' APIs. They are frequently complementary to CLI based discovery process for the established networking vendors, but completely essential for SD-WAN or cloud vendors. This section describes per-API specific settings for supported APIs.</p>
+<p>IP Fabric supports discovery of network devices via a <strong>dedicated Vendors' APIs</strong>.</p>
+<p>They are frequently <strong>complementary to CLI</strong> based discovery process for the established networking vendors, but <strong>completely essential</strong> for <strong>SD-WAN</strong> or <strong>cloud vendors</strong>.</p>
+<p>This section describes per-API specific settings for supported APIs.</p>
+<p>For each Vendor API, <strong>additional system settings</strong> can be applied.</p>
+<h2 id="system-proxy">System Proxy</h2>
+<p><strong>System proxy</strong> is by default used for communication from IP Fabric to the Internet e.g. IP Fabric and system updates.</p>
+<p>Some Vendor API controllers might be <strong>located on the Internet</strong> or other parts of the network and sending traffic through the System proxy might be required.</p>
+<p>This setting can be enabled/disabled per Vendor API.</p>
+<h2 id="reject-unauthorized-certificates">Reject Unauthorized Certificates</h2>
+<p>Due to <strong>security reasons</strong>, accepting unauthorized certificates might be undesired.</p>
+<p>This setting can be enabled/disabled per Vendor API.</p>
+<p><a data-featherlight="proxy_and_certificates%20settings.png" href="#"><img alt="proxy_and_certificates settings" src="proxy_and_certificates%20settings.png" /></a></p>
 
               
             </article>
