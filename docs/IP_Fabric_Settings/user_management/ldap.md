@@ -1,12 +1,11 @@
 # LDAP Authentication
 
-Only LDAP user authentication is supported. Users need to be assigned
-the appropriate permissions locally or default user permissions for
-authenticated users need to be set.
-
 User synchronization or import capabilities **are not supported at
-this time**. LDAP hence work in an **on-demand** state - **users are
-added to the IP Fabric after they log in for the first time.**
+this time**.
+
+LDAP hence work in an **on-demand** state -- **users are
+added** to the IP Fabric after they **log in for the first time** and **user
+group permissions** are also checked with **every login attempt**.
 
 ## Supported LDAP Servers Are:
 
@@ -16,7 +15,7 @@ added to the IP Fabric after they log in for the first time.**
 ## Enable LDAP Authentication
 
 1.  Log in to the IP Fabric as a user with admin rights.
-2.  Go to **Settings → User Management → LDAP Settings** tab.
+2.  Go to **Settings → User Management → LDAP** menu.
 3.  Select **+Add Domain**.
 4.  Choose LDAP server type in the **Type** drop-down menu. Only
     **Microsoft Active Directory** or **Open LDAP** servers are
@@ -74,11 +73,11 @@ added to the IP Fabric after they log in for the first time.**
 
 ## LDAP Group Permissions
 
-After the LDAP server is added, default permissions for authenticated
-users can be set. By default, all permissions are denied. This means
-that a user even with the correct LDAP username and password won't be
-able to log in since he/she won't even have read-only permission. It is
-recommended to create new LDAP groups (such as `IP_FABRIC_ADMINISTRATORS`,
+After the LDAP server is added, Group Permissions can be set. All
+authenticated users will get assigned role configured for `Authenticated user`
+— by leaving this role empty it's possible to ensure that users logged via LDAP
+will get `API_INSUFFICIENT_RIGHTS` error upon login / access to API.
+It is recommended to create new LDAP groups (such as `IP_FABRIC_ADMINISTRATORS`,
 `IP_FABRIC_USERS`, ...) and assign to them users to which you want to
 grand access.
 
@@ -87,8 +86,8 @@ grand access.
     It is recommended to create new
     LDAP groups (such as `IP_FABRIC_ADMINISTRATORS`, `IP_FABRIC_USERS`, ...) and
     assign them permissions.
-    
-![LDAP-group-permissions](ldap-group-permissions.png)
+
+![LDAP Group Permissions](ldap_group_permissions.png)
 
 ## Disable LDAP Authentication
 
