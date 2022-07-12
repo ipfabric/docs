@@ -1,44 +1,22 @@
-# Local Users
+# Overview
 
-Main user management tab allows you to create a new local account with
-various user permissions or modify already existing users including
-default admin account. Only a user with User Management permission can
-access the User Management menu.
+User management is accessible via **Settings → User Management** menu and contains management of
 
-## Adding New Local User
+- [Users / Local Users](users.md)
+- [LDAP Configuration](ldap.md)
+- [Policies](policies.md)
+- [Roles](roles.md)
 
-A new user is added to the system by filling out his/her user details. Valid
-email domain needs to be set (for example .com, .io, .fr etc) for a user to be
-successfully created
+IP Fabric supports also **Single Sign On (SSO)** authentication. However, it uses **Dex** (A Federated OpenID Connect Provider) and configuration requires besides configuration of Dex service access to 3rd party OpenID providers, hence its configuration is not included in UI.
 
-![Adding local user](add_local_user.png)
+For more information follow [Single Sign On (SSO) Authentication](sso.md).
 
-Following are the pre-defined user roles:
+## Role Based Access Control (RBAC)
 
-**READ** – a user can view the discovered data, load diagram views, but
-cannot launch a discovery themselves or modify or delete existing views.
-He is also unable to execute basic snapshot operations like loading and
-unloading snapshots.
+IP Fabric uses **Role Based Access Control** to manage users access to particular resources as well as allow certain actions on the top of those resources.
 
-**DISCOVERY** – a user can launch a discovery, save new view or modify
-existing diagram view and view stored configurations.
+Foundation for RBAC is list of resources (e.g. *Reports*, *Discovery*) and actions on those resources (e.g. *Read*, *Execute*).
 
-**USER MANAGEMENT** – an administrative right that specifically grants a
-privilege to a user to create, delete or modify other users.
+Those resources are then assigned to *Policies* which are sets of resources with their actions (e.g. *discovery* policy allows access to discovery api endpoints).
 
-**SETTINGS** – an administrative right that enables access to the global
-settings of the system.
-
-## Working With Users
-
-Within this table, all user accounts can be modified or deleted. It also
-transparently shows user permissions and emails.
-
-![Local users](local_users.png)
-
-When an edit menu for a specific user account is opened, user
-permissions or a password can be updated.
-
-![Edit Local User](edit_local_user.png)
-
-The password of the default admin account can also be changed here.
+*Policies* are then assignable to *Roles* to enable users assigned to particular roles perform actions on system resources (e.g. *user-management* role with assigned *team* policy enables users view, add, update and delete Users, Roles, Policies, LDAP Configuration).
