@@ -33,10 +33,11 @@ Keep the license file safe, as the license file is also used as part of the key 
 Drag the license.key file into the web interface, or click **Select file** and browse to the license file.
 If the license installation fails, contact the IP Fabric support team.
 
-![IPF License](ui_license.png)
+![IPF License 1](ui_license_1.png)
+![IPF License 2](ui_license_2.png)
 
 Once the license is valid, the system will present a login screen.
 
-Login with the account created in [Creating the first IPFabric user](#creating-the-first-ipfabric-user)
+Login with the account created in [Creating The First IP Fabric User](#creating-the-first-ip-fabric-user)
 
 ![IPF admin](ui_admin.png)
