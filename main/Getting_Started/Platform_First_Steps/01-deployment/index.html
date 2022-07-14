@@ -4314,7 +4314,7 @@ differently in you production deployment, than described here.
 <li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.<ol>
 <li>Change CPU count.</li>
 <li>Change memory size.</li>
-<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a></li>
+<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
 </ol>
 </li>
 <li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
@@ -4345,11 +4345,7 @@ differently in you production deployment, than described here.
 <p><a data-featherlight="../hyperv_settings_mem.png" href="#"><img alt="HyperV Setting memory size" src="../hyperv_settings_mem.png" /></a></p>
 </li>
 <li>
-<p>Extend system disk if necessary</p>
-<p><a data-featherlight="../hyperv_settings_disk.png" href="#"><img alt="HyperV Setting disk size" src="../hyperv_settings_disk.png" /></a></p>
-</li>
-<li>
-<p><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</p>
+<p><a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
 </li>
 <li>
 <p>Close VM Settings window</p>
@@ -4379,8 +4375,7 @@ differently in you production deployment, than described here.
 <ol>
 <li>Change CPU count</li>
 <li>Change memory size</li>
-<li>Extend system disk if necessary</li>
-<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk</a> if necessary.</li>
+<li><a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</li>
 </ol>
 </li>
 <li>
@@ -4392,23 +4387,23 @@ differently in you production deployment, than described here.
 <ol>
 <li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
-<p>Create a second <code>qcow2</code> disk for data with size that corresponds to <a href="../../Overview/#operational-requirements">your network needs</a>) with the following command:</p>
-<div class="highlight"><pre><span></span><code>qemu-img create -f qcow2 ipfabric-data.qcow2 10G <span class="c1"># (up to 920G for 20 000 devices)</span>
+<p>Resize the <code>qcow2</code> disk for data with size that corresponds to <a href="../../Overview/#operational-requirements">your network needs</a> if necessary with the following command:</p>
+<div class="highlight"><pre><span></span><code>qemu-img resize ipfabric-disk1.qcow2 100G <span class="c1"># (up to 1000G for 20 000 devices)</span>
 </code></pre></div>
 </li>
 <li>
 <p>Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):</p>
-<div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the first, larger disk with OS&gt;.qcow2,bus<span class="o">=</span>scsi --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the second disk <span class="k">for</span> data&gt;.qcow2,bus<span class="o">=</span>scsi --controller virtio-scsi --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
+<div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the disk&gt;.qcow2 --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
 </code></pre></div>
 </li>
 <li>
-<p>This command deploys a new virtual machine with IP_Fabric name, two <code>qcow2</code> disks, 4 CPU cores, 16GB of RAM and will connect VM to the internet through <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change <code>--network</code> parameter).</p>
+<p>This command deploys a new virtual machine with IP_Fabric name, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change <code>--network</code> parameter).</p>
 </li>
 <li>
 <p>This command also starts up just created VM.</p>
 </li>
 <li>
-<p>Additionally, you can create and add a new empty virtual disk if <a href="../../../System_Administration/increase_disk_space/">needed</a>.</p>
+<p>Additionally, you can <a href="../../../System_Administration/increase_disk_space/">create and add a new empty virtual disk if needed</a>.</p>
 </li>
 </ol>
 <hr />

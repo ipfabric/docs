@@ -2603,13 +2603,6 @@ differently in you production deployment, than described here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
-    Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     Automatic Local Backups
   </a>
@@ -4283,13 +4276,6 @@ differently in you production deployment, than described here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
-    Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     Automatic Local Backups
   </a>
@@ -4347,39 +4333,7 @@ differently in you production deployment, than described here.
 <p class="admonition-title">Backup Disk</p>
 <p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
 </div>
-<h3 id="adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk">Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk</h3>
-<ol>
-<li>Open your VM platform.</li>
-<li>Go to IP Fabric VM settings and add <strong>New Hard Disk</strong>.</li>
-<li>Select size of a new disk.</li>
-<li>
-<p>Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different datastore ideally on different physical storage).</p>
-<p><a data-featherlight="new_virtual_disk.png" href="#"><img alt="New disk" src="new_virtual_disk.png" /></a></p>
-</li>
-<li>
-<p>Finish configuration wizard.</p>
-</li>
-<li>Launch Remote (Web) Console.</li>
-<li>Reboot (<strong>Send Ctrl+Alt+Delete</strong> function can be also used) or power on IP Fabric VM.</li>
-<li>
-<p>During system boot, a <strong>Disk space expansion</strong> wizard appears.</p>
-<p><a data-featherlight="disk_space_expansion_extend.png" href="#"><img alt="Disk space expansion extend" src="disk_space_expansion_extend.png" /></a></p>
-</li>
-<li>
-<p>Select <strong>Yes</strong> to start disk space expansion.</p>
-</li>
-<li>
-<p>Expand the new volume as a backup (Backup is used only for local backups).</p>
-<p><a data-featherlight="choose_drive_expansion_backup.png" href="#"><img alt="Choose drive expansion backup" src="choose_drive_expansion_backup.png" /></a></p>
-</li>
-<li>
-<p>Selected volume is extended.</p>
-<p><a data-featherlight="disk_space_expansion_extended.png" href="#"><img alt="Disk space expansion extended" src="disk_space_expansion_extended.png" /></a></p>
-</li>
-<li>
-<p>Hit <strong>OK</strong></p>
-</li>
-</ol>
+<p>To add a new backup drive and <code>mount</code> it as desired, follow instructions in <a href="../../../../System_Administration/increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
 <h3 id="automatic-local-backups">Automatic Local Backups</h3>
 <p>To schedule automatic local backups do the following steps:</p>
 <ol>

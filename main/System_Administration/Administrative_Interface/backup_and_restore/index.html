@@ -2869,19 +2869,6 @@ differently in you production deployment, than described here.
     Local Backup
   </a>
   
-    <nav class="md-nav" aria-label="Local Backup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
-    Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -4305,19 +4292,6 @@ differently in you production deployment, than described here.
     Local Backup
   </a>
   
-    <nav class="md-nav" aria-label="Local Backup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk" class="md-nav__link">
-    Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -4409,55 +4383,11 @@ When you lose <em>osadmin </em>user password, backups are also lost!</p>
 <p>Local backup saves database, user and system files locally on a
 dedicated backup volume. It's highly recommended placing backup volume
 on different datastore ideally on different physical storage.</p>
-<p><strong>Backup Disk</strong><br />
-The backup disk is not present by default! Please add a new virtual disk
-to enable local backups. (See steps below)</p>
-<h4 id="adding-a-new-virtual-disk-to-your-ip-fabric-vm-as-a-local-backup-disk">Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk</h4>
-<ol>
-<li>
-<p>Open your VM platform.</p>
-</li>
-<li>
-<p>Go to IP Fabric VM settings and add <strong>New Hard Disk</strong></p>
-</li>
-<li>
-<p>Select size of a new disk</p>
-</li>
-<li>
-<p>Specify the type of a new disk (for the backup volume it is
-    recommended to select a virtual disk on a different datastore
-    ideally on different physical storage)</p>
-<p><a data-featherlight="../add_disk.png" href="#"><img alt="Add disk" src="../add_disk.png" /></a></p>
-</li>
-<li>
-<p>Finish configuration wizard.</p>
-</li>
-<li>
-<p>Launch Remote (Web) Console.</p>
-</li>
-<li>
-<p>Reboot (<strong>Send Ctrl+Alt+Delete</strong> function can be also used) or power on IP Fabric VM.</p>
-</li>
-<li>
-<p>During system boot, a <strong>Disk space expansion</strong> wizard appears.  </p>
-<p><a data-featherlight="../disk_expansion.png" href="#"><img alt="Disk expansion" src="../disk_expansion.png" /></a></p>
-</li>
-<li>
-<p>Select <strong>Yes</strong> to start disk space expansion.</p>
-</li>
-<li>
-<p>Expand the new volume as a backup (Backup is used only for local
-    backups).</p>
-<p><a data-featherlight="../backup_expand.png" href="#"><img alt="New backup volume" src="../backup_expand.png" /></a></p>
-</li>
-<li>
-<p>Selected volume is extended.  </p>
-<p><a data-featherlight="../disk_space.png" href="#"><img alt="Disk space" src="../disk_space.png" /></a></p>
-</li>
-<li>
-<p>Enter <strong>OK</strong></p>
-</li>
-</ol>
+<div class="admonition info">
+<p class="admonition-title">Backup Disk</p>
+<p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
+</div>
+<p>To add a new backup drive and <code>mount</code> it as desired, follow instructions in <a href="../../increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
 <h3 id="automatic-local-backups">Automatic Local Backups</h3>
 <p>To schedule automatic local backups do the following steps:</p>
 <ol>
@@ -4680,7 +4610,7 @@ IP Fabric appliance.</p>
 <p>Select <strong>What restore?</strong>. There are four options:</p>
 <ol>
 <li>
-<p><strong>Restore data &amp; all system services</strong>* - This option restores
+<p><strong>Restore data &amp; all system services</strong> - This option restores
     database and system files. It's usable for restore from general
     system failures or upgrade failures.</p>
 </li>
@@ -4715,7 +4645,7 @@ IP Fabric appliance.</p>
 <p>Enter <strong>Password</strong> to access FTP/SFTP server.</p>
 </li>
 <li>
-<p>If you would like to use different <strong>Directory</strong> *than
+<p>If you would like to use different <strong>Directory</strong> than
     FTP/SFTP root please specify.</p>
 </li>
 <li>
