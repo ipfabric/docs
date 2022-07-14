@@ -1,12 +1,13 @@
 # System Update
 
 !!! fail "Clearing Cache Memory"
+
     Please force refresh your browser cache after an upgrade!
     Depending on your operating system all you need to do is the following key combination:
 
-    Windows: Ctrl + F5
-    Mac/Apple: Command + Shift + R
-    Linux: CTRL + SHIFT + R (for Chrome/Chromium based browsers and Firefox)
+    - Windows: Ctrl + F5
+    - Mac/Apple: Command + Shift + R
+    - Linux: CTRL + SHIFT + R (for Chrome/Chromium based browsers and Firefox)
 
 ## Access Administrative Interface And Backup The System
 
