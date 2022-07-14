@@ -22,14 +22,14 @@ Minimum requirements are:
 
 The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.
 
-| Devices | CPU | RAM    | HDD (OS + data)      |
-| ------- | --- | ------ | -------------------- |
-| 500     | 4   | 16 GB  | 90 GB (80G + 10G)    |
-| 1 000   | 4   | 32 GB  | 100 GB (80G + 20G)   |
-| 2 000   | 8   | 64 GB  | 200 GB (80G + 120G)  |
-| 5 000   | 12  | 64 GB  | 300 GB (80G + 220G)  |
-| 10 000  | 16  | 128 GB | 550 GB (80G + 470G)  |
-| 20 000  | 18  | 256 GB | 1000 GB (80G + 920G) |
+| Devices | CPU  | RAM    | HDD      |
+| ------: | ---: | -----: | -------: |
+|    500  |  4   |  16 GB |    90 GB |
+|  1 000  |  4   |  32 GB |   100 GB |
+|  2 000  |  8   |  64 GB |   200 GB |
+|  5 000  | 12   |  64 GB |   300 GB |
+| 10 000  | 16   | 128 GB |   550 GB |
+| 20 000  | 18   | 256 GB | 1 000 GB |
 
 !!! info "Additional resources requirements"
 

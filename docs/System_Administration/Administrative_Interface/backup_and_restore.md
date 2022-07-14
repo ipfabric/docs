@@ -20,46 +20,11 @@ Local backup saves database, user and system files locally on a
 dedicated backup volume. It's highly recommended placing backup volume
 on different datastore ideally on different physical storage.
 
-**Backup Disk**  
-The backup disk is not present by default! Please add a new virtual disk
-to enable local backups. (See steps below)
+!!! info "Backup Disk"
 
-#### Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
+	The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)
 
-1.  Open your VM platform.
-
-2.  Go to IP Fabric VM settings and add **New Hard Disk**
-
-3.  Select size of a new disk
-
-4.  Specify the type of a new disk (for the backup volume it is
-    recommended to select a virtual disk on a different datastore
-    ideally on different physical storage)
-
-    ![Add disk](add_disk.png)
-
-5.  Finish configuration wizard.
-
-6.  Launch Remote (Web) Console.
-
-7.  Reboot (**Send Ctrl+Alt+Delete** function can be also used) or power on IP Fabric VM.
-
-8.  During system boot, a **Disk space expansion** wizard appears.  
-
-    ![Disk expansion](disk_expansion.png)
-
-9.  Select **Yes** to start disk space expansion.
-
-10. Expand the new volume as a backup (Backup is used only for local
-    backups).
-   
-    ![New backup volume](backup_expand.png)
-
-11. Selected volume is extended.  
-
-    ![Disk space](disk_space.png)
-
-12. Enter **OK**
+To add a new backup drive and `mount` it as desired, follow instructions in [Increase Disk Space - Local Backup Disk](../../System_Administration/increase_disk_space.md#local-backup-disk).
 
 ### Automatic Local Backups
 
@@ -244,7 +209,7 @@ a backup.
 
 4.  Select **What restore?**. There are four options:
 
-    1.  **Restore data & all system services*** - This option restores
+    1.  **Restore data & all system services** - This option restores
         database and system files. It's usable for restore from general
         system failures or upgrade failures.
 
@@ -269,7 +234,7 @@ a backup.
 
 8.  Enter **Password** to access FTP/SFTP server.
 
-9.  If you would like to use different **Directory** *than
+9.  If you would like to use different **Directory** than
     FTP/SFTP root please specify.
 
 10. Click **Next**.
