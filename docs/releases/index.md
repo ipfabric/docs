@@ -25,4 +25,4 @@ components of the version are `major.minor.patch+build`:
 
       - Windows: CTRL + F5
       - Mac/Apple: Apple + R or command + R
-      - Linux: CTRL + F5
+      - Linux: CTRL + SHIFT + R (for Chrome/Chromium based browsers and Firefox)
