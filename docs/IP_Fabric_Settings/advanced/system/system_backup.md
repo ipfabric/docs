@@ -21,32 +21,7 @@ Local backup saves database, user and system files locally on a dedicated backup
 
     The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)
 
-### Adding a New Virtual Disk To Your IP Fabric VM As a Local Backup Disk
-
-1. Open your VM platform.
-1. Go to IP Fabric VM settings and add **New Hard Disk**.
-1. Select size of a new disk.
-1. Specify the type of a new disk (for the backup volume it is recommended to select a virtual disk on a different datastore ideally on different physical storage).
-
-    ![New disk](system_backup/new_virtual_disk.png)
-
-1. Finish configuration wizard.
-1. Launch Remote (Web) Console.
-1. Reboot (**Send Ctrl+Alt+Delete** function can be also used) or power on IP Fabric VM.
-1. During system boot, a **Disk space expansion** wizard appears.
-
-    ![Disk space expansion extend](system_backup/disk_space_expansion_extend.png)
-
-1. Select **Yes** to start disk space expansion.
-1. Expand the new volume as a backup (Backup is used only for local backups).
-
-    ![Choose drive expansion backup](system_backup/choose_drive_expansion_backup.png)
-
-1. Selected volume is extended.
-
-    ![Disk space expansion extended](system_backup/disk_space_expansion_extended.png)
-
-1. Hit **OK**
+To add a new backup drive and `mount` it as desired, follow instructions in [Increase Disk Space - Local Backup Disk](../../../System_Administration/increase_disk_space.md#local-backup-disk).
 
 ### Automatic Local Backups
 

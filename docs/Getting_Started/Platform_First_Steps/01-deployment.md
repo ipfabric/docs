@@ -13,7 +13,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 2.  [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../Overview/index.md#operational-requirements).
     1.  Change CPU count.
     2.  Change memory size.
-    3.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md)
+    3.  [Add a new empty virtual disk or resize the main system disk](../../System_Administration/increase_disk_space.md)
 3.  Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
 
 ## Deploying on Hyper-V Virtual Machine
@@ -40,11 +40,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
         ![HyperV Setting memory size](hyperv_settings_mem.png)
 
-    3.  Extend system disk if necessary
-
-        ![HyperV Setting disk size](hyperv_settings_disk.png)
-
-    4.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
+    4.  [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
     5.  Close VM Settings window
 
@@ -67,8 +63,7 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
     1.  Change CPU count
     2.  Change memory size
-    3.  Extend system disk if necessary
-    4.  [Add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
+    4.  [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
 5.  Start VM and check if system starts without any interrupts.
 
@@ -77,23 +72,23 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 We have currently limitation with drives to be `/dev/sdx`. Usually Linux hypervisors are using `virtio-blk` driver which is represented as `/dev/vdx` in guest system. To overcome this limitation use `virtio-scsi` as drive controller.
 
 1.  Download `qcow2` system disk to your KVM hypervisor.
-2.  Create a second `qcow2` disk for data with size that corresponds to [your network needs](../Overview/index.md#operational-requirements)) with the following command:
+2.  Resize the `qcow2` disk for data with size that corresponds to [your network needs](../Overview/index.md#operational-requirements) if necessary with the following command:
 
     ```shell
-    qemu-img create -f qcow2 ipfabric-data.qcow2 10G # (up to 920G for 20 000 devices)
+    qemu-img resize ipfabric-disk1.qcow2 100G # (up to 1000G for 20 000 devices)
     ```
 
 3.  Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):
 
     ```shell
-    virt-install --name=IP_Fabric --disk path=<path to the first, larger disk with OS>.qcow2,bus=scsi --disk path=<path to the second disk for data>.qcow2,bus=scsi --controller virtio-scsi --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
+    virt-install --name=IP_Fabric --disk path=<path to the disk>.qcow2 --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
     ```
 
-4.  This command deploys a new virtual machine with IP_Fabric name, two `qcow2` disks, 4 CPU cores, 16GB of RAM and will connect VM to the internet through `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change `--network` parameter).
+4.  This command deploys a new virtual machine with IP_Fabric name, system `qcow2` disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change `--network` parameter).
 
 5.  This command also starts up just created VM.
 
-6.  Additionally, you can create and add a new empty virtual disk if [needed](../../System_Administration/increase_disk_space.md).
+6.  Additionally, you can [create and add a new empty virtual disk if needed](../../System_Administration/increase_disk_space.md).
 
 ---
 
