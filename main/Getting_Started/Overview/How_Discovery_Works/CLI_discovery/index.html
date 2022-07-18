@@ -36,10 +36,6 @@
       
     
     
-      <link rel="stylesheet" href="../../../../vendor/featherlight-v.1.7.14.min.css">
-    
-      <link rel="stylesheet" href="../../../../vendor/featherlight.css">
-    
       <link rel="stylesheet" href="../../../../stylesheets/theme.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -4293,11 +4289,11 @@ differently in you production deployment, than described here.
 <h2 id="overview">Overview</h2>
 <p>Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.</p>
 <p>The process is controlled from the discovery tab of the web user interface using the (start) and (stop) buttons.</p>
-<p><a data-featherlight="../cli_discovery/start.png" href="#"><img alt="start" src="../cli_discovery/start.png" /> </a><a data-featherlight="../cli_discovery/stop.png" href="#"><img alt="stop" src="../cli_discovery/stop.png" /></a></p>
+<p><img alt="start" src="../cli_discovery/start.png" /> <img alt="stop" src="../cli_discovery/stop.png" /></p>
 <p>The timing of the network discovery snapshots can be automated in <strong>Settings → Advanced → Snapshots</strong> to collect data in periodic intervals or at a specific time. It is recommended to do a network discovery at least once a day to record all network changes.</p>
 <h2 id="connectivity-report">Connectivity Report</h2>
 <p>A connection to every attempted address either succeeds or is recorded in the Connectivity Report</p>
-<p><a data-featherlight="../cli_discovery/connectivity_report.png" href="#"><img alt="Connectivity Report" src="../cli_discovery/connectivity_report.png" /></a></p>
+<p><img alt="Connectivity Report" src="../cli_discovery/connectivity_report.png" /></p>
 <p>which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure messages denote an unsuccessful login attempt and provide a description of how the device has responded.</p>
 <h2 id="bandwidth-limit">Bandwidth Limit</h2>
 <p>Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.</p>
@@ -4306,7 +4302,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
 <p>The selected number of megabits per second also controls the number of simultaneous connections. Each additional megabit adds 3 parallel sessions.</p>
 <h2 id="discovery-process">Discovery Process</h2>
 <p>Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to login to the default gateway and to responders of ICMP probes returning from the traceroute to the <code>10.0.0.0</code> network address.</p>
-<p><a data-featherlight="../cli_discovery/discovery.png" href="#"><img alt="discovery process" src="../cli_discovery/discovery.png" /></a></p>
+<p><img alt="discovery process" src="../cli_discovery/discovery.png" /></p>
 <p>After a successful login, discovery reads the network protocol state tables and looks for known neighbours, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbour information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.</p>
 <p>This is how the discovery process continues after a successful connection to a network device:</p>
 <ol>
@@ -4399,10 +4395,6 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
     
     
       <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
-      
-        <script src="../../../../vendor/jquery-3.6.0.min.js"></script>
-      
-        <script src="../../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>
