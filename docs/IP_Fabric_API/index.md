@@ -104,6 +104,16 @@ version when moving to the new major release only. Frequently, the client code
 is actually not going to change except of the API version. Thus we recommend
 using a global constant for it.
 
+## API Authentication
+
+Majority of API calls need to be authenticated. API Token needs to be passed as
+a request header
+
+```http
+Content-Type: application/json
+X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI
+```
+
 ## Technology Table Endpoints
 
 The technology tables use `POST` requests **only** for reading information and

@@ -1,33 +1,33 @@
-# 4.3 Multicast Path Lookup
+# Multicast Path Lookup
 
 ## Request Parameters
 
-- `parameters` *\[mandatory\]* - A nested JSON data structure with
+- `parameters` *\[mandatory\]* - A nested JSON data structure with
   keys
 
-  - `type` *\[mandatory\]* - A quoted string with a value of
+  - `type` *\[mandatory\]* - A quoted string with a value of
     `pathLookup` for an E2E path simulation output
 
-  - `pathLookupType` *\[mandatory\]* - A quoted string
+  - `pathLookupType` *\[mandatory\]* - A quoted string
     containing the word `multicast`
 
-  - `protocol` *\[mandatory\]* - A quoted string with a value of
+  - `protocol` *\[mandatory\]* - A quoted string with a value of
     `tcp`, `udp`, `icmp`
 
-  - `source` *\[mandatory\]* - A quoted string containing the
+  - `source` *\[mandatory\]* - A quoted string containing the
     source IP address
 
-  - `group` *\[mandatory\]* - A quoted string containing the
+  - `group` *\[mandatory\]* - A quoted string containing the
     group IP address
 
-  - `receiver` *\[optional\]* - A quoted string containing the
+  - `receiver` *\[optional\]* - A quoted string containing the
     receiver’s IP address
 
-  - `groupBy` *\[mandatory\]* - A quoted string representing the
+  - `groupBy` *\[mandatory\]* - A quoted string representing the
     grouping of devices in the output - at this time one of
     `siteName`, `routingDomain` or `stpDomain`
 
-  - `securedPath` *\[mandatory\]* - A boolean - when you run a
+  - `securedPath` *\[mandatory\]* - A boolean - when you run a
     path simulation, you can tell IP Fabric if you want to stop when
     it hits a security policy which blocks the traffic in question
     (`true`) or complete the forwarding path and simply highlight the
@@ -38,6 +38,8 @@
 
   - `fragmentOffset` *\[mandatory\]* - integer - Fragment offset
     value (default is `0`)
+
+  - `enableRegions` *\[mandatory\]* - boolean - (default `false`)
 
   - `srcRegions` *\[mandatory\]* - string - (default `.\*`)
 
@@ -68,10 +70,10 @@
 
     - If `protocol` is `tcp`
 
-      - `srcPorts` *\[mandatory\]* - A string representing
+      - `srcPorts` *\[mandatory\]* - A string representing
         ports; ex. `80,443,1025-4096`
 
-      - `dstPorts` *\[mandatory\]* - A string representing
+      - `dstPorts` *\[mandatory\]* - A string representing
         ports; ex. `80,443,1025-4096`
 
       - `flags` *\[mandatory\]* - An array of TCP flags to
@@ -82,10 +84,10 @@
 
     - If `protocol` is `udp`
 
-      - `srcPorts` *\[mandatory\]* - A string representing
+      - `srcPorts` *\[mandatory\]* - A string representing
         ports; ex. `80,443,1025-4096`
 
-      - `dstPorts` *\[mandatory\]* - An integer representing
+      - `dstPorts` *\[mandatory\]* - An integer representing
         the destination port
 
     - If `protocol` is `icmp` refer to: [Path Lookup ICMP Decoder](path_lookup_ICMP_decoder.md)
@@ -112,6 +114,7 @@
         "type": "automatic"
         },
         "protocol": "tcp",
+        "enableRegions": false,
         "srcRegions": ".*",
         "dstRegions": ".*",
         "ttl": 128,

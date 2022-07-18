@@ -1,29 +1,29 @@
-# 4.3 Unicast Path Lookup
+# Unicast Path Lookup
 
 ## Request Parameters
 
-- `parameters` *\[mandatory\]* - A nested JSON data structure with keys
+- `parameters` *\[mandatory\]* - A nested JSON data structure with keys
 
-  - `type` *\[mandatory\]* - A string with a value of `pathLookup` for an E2E path simulation output
+  - `type` *\[mandatory\]* - A string with a value of `pathLookup` for an E2E path simulation output
 
-  - `pathLookupType` *\[mandatory\]* - A string containing the word `unicast`
+  - `pathLookupType` *\[mandatory\]* - A string containing the word `unicast`
 
-  - `protocol` *\[mandatory\]* - A string with a value of `tcp`, `udp`, `icmp`
+  - `protocol` *\[mandatory\]* - A string with a value of `tcp`, `udp`, `icmp`
 
-  - `startingPoint` *\[mandatory\]* - A string containing the source IP address or subnet
+  - `startingPoint` *\[mandatory\]* - A string containing the source IP address or subnet
 
-  - `destinationPoint` *\[mandatory\]* - A string containing the destination IP address or subnet
+  - `destinationPoint` *\[mandatory\]* - A string containing the destination IP address or subnet
 
-  - `groupBy` *\[mandatory\]* - A quoted string representing the grouping of devices in the output - at this time one of `siteName`, `routingDomain` or `stpDomain`.
+  - `groupBy` *\[mandatory\]* - A quoted string representing the grouping of devices in the output - at this time one of `siteName`, `routingDomain` or `stpDomain`.
 
-  - `networkMode` *\[mandatory\]* - A boolean - the new version
+  - `networkMode` *\[mandatory\]* - A boolean - the new version
     of IP Fabric allows you to simulate paths between subnets.
     Setting this key to `true` means that you will create a single
     result representing the subnets; `false` means that IP Fabric will
     create a separate path for each source or destination in the
     range of addresses up to a maximum of 255.
 
-  - `securedPath` *\[mandatory\]* - A boolean - when you run a
+  - `securedPath` *\[mandatory\]* - A boolean - when you run a
     path simulation, you can tell IP Fabric if you want to stop when
     it hits a security policy which blocks the traffic in question
     (`true`) or complete the forwarding path and highlight the
@@ -32,6 +32,8 @@
   - `ttl` *\[mandatory\]* - integer - Time-to-live value (default is `128`)
 
   - `fragmentOffset` *\[mandatory\]* - integer - Fragment offset value (default is `0`)
+
+  - `enableRegions` *\[mandatory\]* - boolean - (default `false`)
 
   - `srcRegions` *\[mandatory\]* - string - (default `.*`)
 
@@ -61,9 +63,9 @@
 
     - If `protocol = tcp`
 
-      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
+      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
 
-      - `dstPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
+      - `dstPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
 
       - `flags` *\[mandatory\]* - An array of TCP flags to be set in the simulated path or empty array
 
@@ -71,9 +73,9 @@
 
     - If `protocol = udp`
 
-      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
+      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
 
-      - `dstPorts` *\[mandatory\]* - An integer representing the destination port
+      - `dstPorts` *\[mandatory\]* - An integer representing the destination port
 
     - If `protocol = icmp`
 
@@ -98,6 +100,7 @@
       "type": "automatic"
     },
     "protocol": "tcp",
+    "enableRegions": false,
     "srcRegions": ".*",
     "dstRegions": ".*",
     "ttl": 128,

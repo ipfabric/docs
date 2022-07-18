@@ -2,8 +2,8 @@
 
 !!! important "Current release"
 
-    The current major release is `4.4` please check the [detailed release
-    notes](release_notes/4.x/4.4.md) for this release.
+    The current major release is `5.0` please check the [detailed release
+    notes](release_notes/5.0.md) for this release.
 
 Our release naming follows [semantic versioning](https://semver.org/). Where
 components of the version are `major.minor.patch+build`:
@@ -20,9 +20,9 @@ components of the version are `major.minor.patch+build`:
 
 !!! warning "Clearing Browser Cache"
 
-    Please force refresh your browser cache after an upgrade. Depending on your operating system all you need to do is the following key
-    combination:
+    Please force refresh your browser cache after an upgrade.
+    Depending on your operating system use the following key combination in your browser window:
 
       - Windows: CTRL + F5
       - Mac/Apple: Apple + R or command + R
-      - Linux: CTRL + SHIFT + R (for Chrome/Chromium based browsers and Firefox)
+      - Linux: CTRL + F5
