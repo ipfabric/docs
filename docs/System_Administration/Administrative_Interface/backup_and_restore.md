@@ -1,3 +1,5 @@
+# Backup And Restore
+
 ## Backup
 
 Use IP Fabric backup to protect your important data.
@@ -10,8 +12,8 @@ There are two types of backup:
 
 !!! tip Security tip
 
-    Backups are encrypted with *osadmin *user password configured during the [first boot wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
-    When you lose *osadmin *user password, backups are also lost!
+    Backups are encrypted with **osadmin** user password configured during the [first boot wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
+    When you lose **osadmin** user password, backups are also lost!
 
 
 ### Local Backup
@@ -26,86 +28,16 @@ on different datastore ideally on different physical storage.
 
 To add a new backup drive and `mount` it as desired, follow instructions in [Increase Disk Space - Local Backup Disk](../../System_Administration/increase_disk_space.md#local-backup-disk).
 
-### Automatic Local Backups
-
-To schedule automatic local backups do the following steps:
-
-1.  Add dedicated backup volume if not available - see steps above.
-
-2.  Login to the user interface.
-
-3.  Go to **Settings → Advanced → System → Schedule system backup**.
-
-4.  Change **Destination** to **Local hard drive**.
-
-5.  Set a backup schedule. See example for "Every day at 3:00".
-
-6.  Enable backup
-
-    ![Schedule system backup](schedule_system_backup2.png)
-
-
-### Remote Backup
-
-Remote backup saves database, user and system files remotely using FTP
-or sFTP protocol.
-
-!!! note
-
-    This is a recommended type of backup.
-
-!!! warning
-
-    A directory **has to be specified** for FTP and SFTP backups
-
-To set up remote backup do the following steps:
-
-1.  Login to the user interface.
-
-2.  Go to **Settings → Advanced → System → Schedule system backup**.
-
-3.  Enable backup
-
-4.  Change **Destination** to **FTP** or **SFTP**.
-
-5.  Set a backup schedule. See example for "Every day at 5:15 and 17:15
-    (for setting more options, please, hold SHIFT during selection)".
-
-    ![Backup schedule](backup_schedule.png)
-
-
-6.  Change **Destination** to **FTP** or **SFTP**.
-
-7.  Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure
-    that your DNS client is configured and working properly in case of
-    FQDN.
-
-8.  Enter **Username** to access FTP/SFTP server.
-
-9.  Enter **Password** to access FTP/SFTP server.
-
-	!!! Info
-		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
-
-10. Specify a **Directory** where FTP/SFTP backup should be uploaded.
-
-11. Click **Save **(The IP Fabric platform will immediately test the
-    connection)
-
-12. IP Fabric tries to reach FTP/SFTP server with configured parameters.
-
-!!! warning
-
-    FTP/SFTP user needs read, write, list and delete permissions.
-
-!!! info
-
-    From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.
-
 ### Trigger a Backup Manually (On-Demand)
 
 Both types of backup can be also triggered manually on demand. This is
 useful for example before a system upgrade.
+
+!!! Warning
+
+	A directory **has to be specified** for FTP and SFTP backups.
+
+	Directory path for **SFTP** has to be defined as **an absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
@@ -114,8 +46,8 @@ Manual backup can be triggered from IP Fabric Administrative interface:
 
 2.  Go to **Restore or Backup**
 
-3.  Select **Backup** from **Do you wish to proceed with a backup or
-    restore?** drop-down menu.
+3.  Select **Backup** from *Do you wish to proceed with a backup or
+    restore?* drop-down menu.
 
 4.  For local backup select **Local hard drive** from the **Backup
     files destination**.
@@ -164,7 +96,7 @@ a backup.
 3.  Select **Restore** from *Do you wish proceed a backup or
     restore?* drop down menu.
 
-4.  Select **What restore?**. There are four options:
+4.  Select **What restore?** There are four options:
 
     1.  **Restore data & all system services** - This option restores
         database and system files. It's usable for restore from general
@@ -194,7 +126,7 @@ a backup.
 
 !!! warning
 
-    Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard). When you loose **osadmin** user password, all backups encrypted by this password are lost.
+    Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard). When you lose **osadmin** user password, all backups encrypted by this password are lost.
 
 
 ### Restore From Remote Server
@@ -207,7 +139,7 @@ a backup.
 3.  Select **Restore** from *Do you wish proceed a backup or
     restore?* drop down menu.
 
-4.  Select **What restore?**. There are four options:
+4.  Select **What restore?** There are four options:
 
     1.  **Restore data & all system services** - This option restores
         database and system files. It's usable for restore from general
@@ -246,7 +178,7 @@ a backup.
 
 !!! warning
 
-    Backups are encrypted with ***osadmin*** user password configured during
+    Backups are encrypted with **osadmin** user password configured during
     the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
-    When you loose ***osadmin*** user password, all backups encrypted by
+    When you lose **osadmin** user password, all backups encrypted by
     this password are lost.
