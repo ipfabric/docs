@@ -6,7 +6,7 @@ IP Fabric appliance is using LVM type for **root** and **swap** partitions.
 
 On default installation **swap** has 16GB and **root** has ~72GB of space.
 
-With the help of `cloud-init` we automatically resize the **boot** disk as follows:
+We automatically resize the **boot** disk as follows:
 
  * resize primary partition to full size of the disk
  * resize extended partition to full size of primary partition
