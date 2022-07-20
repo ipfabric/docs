@@ -141,6 +141,10 @@ screen.
 
 ## Release a new version of documentation
 
+Please, be careful, running `mike` with `--push` will result in immediate
+changes into the repository (no reviews and such), as described in the taken
+steps.
+
 Let's assume, that we are on version `4.5` and want to release a brand new
 `4.6`. Current `main` corresponds to content of `4.6` release. To release it we
 just need to do the following:
@@ -179,6 +183,6 @@ configuration values for example. Also check your release filtering in there to
 limit which releases are actually refreshed.
 
 To use this script you need to export two environment variables
-- `JIRA_USER` - your username (e.g. `pavel.bykov@ipfabric.io`)
-- `JIRA_PASS` - a token you can get from [jira api tokens](https://id.atlassian.com/manage-profile/security/api-tokens) page 
 
+- `JIRA_USER` - your username (e.g. `pavel.bykov@ipfabric.io`)
+- `JIRA_PASS` - a token you can get from [jira api tokens](https://id.atlassian.com/manage-profile/security/api-tokens) page
