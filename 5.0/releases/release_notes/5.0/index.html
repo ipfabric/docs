@@ -3966,11 +3966,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-jul-19th-2022" class="md-nav__link">
-    v5.0.0 (Jul 19th, 2022)
+  <a href="#v500-19th-jul-2022" class="md-nav__link">
+    v5.0.0 (19th Jul, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
+    <nav class="md-nav" aria-label="v5.0.0 (19th Jul, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4330,11 +4330,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-jul-19th-2022" class="md-nav__link">
-    v5.0.0 (Jul 19th, 2022)
+  <a href="#v500-19th-jul-2022" class="md-nav__link">
+    v5.0.0 (19th Jul, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
+    <nav class="md-nav" aria-label="v5.0.0 (19th Jul, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4392,7 +4392,7 @@
 
 
 <h1 id="ip-fabric-v50">IP Fabric v5.0</h1>
-<h2 id="v500-jul-19th-2022">v5.0.0 (Jul 19th, 2022)</h2>
+<h2 id="v500-19th-jul-2022">v5.0.0 (19th Jul, 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA SHA256: ac8a7e68f97b53e299ce3eecac6bd4ddc56c2c025b1ae48d95fbad925213a7bd
 OVA MD5: 65e979f0ea93ba77c9731cfcc0008fa5
 QCOW SHA256: 1e681e249d69d21feb83cbc62f5e3d2bb80db76d22a3acfd90c840c30506748c
@@ -4456,6 +4456,12 @@ migrate data between versions, but if you do have issues in <code>5.0.0</code>, 
 run a new snapshot and check the data again. Please raise a support ticket
 if you still experience problems.</p>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Path Lookup API Change</p>
+<p>A new required parameter <code>enableRegions</code> has been added to the Path Lookup API for Unicast and Multicast.
+If set to <code>false</code> it will ignore the values in the <code>srcRegions</code> and <code>dstRegions</code> parameters.</p>
+<p><code>enableRegions [mandatory] - boolean - (default false)</code></p>
+</div>
 <h3 id="upgrade-notices"><strong>UPGRADE NOTICES</strong></h3>
 <ul>
 <li>This upgrade requires IP Fabric to be on <code>v4.4.3</code> prior to upgrade to <code>v5.0.0</code>. IP Fabric <code>v4.4.2</code> or lower will not work -– please upgrade to <code>4.4.3</code> using the normal method before carrying out the <code>5.0.0</code> upgrade process.</li>
@@ -4518,9 +4524,9 @@ if you still experience problems.</p>
 <li>DNS<ul>
 <li>DNS Basic configuration</li>
 <li>DNS Resolver configuration</li>
-<li>DHCP servers and relays</li>
 </ul>
 </li>
+<li>DHCP servers and relays</li>
 <li>Extreme ACL support</li>
 <li>RSVP neighbors &amp; interfaces</li>
 <li>IPv4 and IPv6 Tunnels Table</li>
