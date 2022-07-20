@@ -13,7 +13,7 @@
     
     
       
-        <title>Backup and restore - IP Fabric Documentation Portal</title>
+        <title>Backup And Restore - IP Fabric Documentation Portal</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backup" class="md-skip">
+        <a href="#backup-and-restore" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backup and restore
+              Backup And Restore
             
           </span>
         </div>
@@ -2803,14 +2803,16 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Backup and restore
+          Backup And Restore
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Backup and restore
+        Backup And Restore
       </a>
       
         
@@ -2818,6 +2820,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2837,20 +2841,6 @@
           <li class="md-nav__item">
   <a href="#local-backup" class="md-nav__link">
     Local Backup
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automatic-local-backups" class="md-nav__link">
-    Automatic Local Backups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remote-backup" class="md-nav__link">
-    Remote Backup
   </a>
   
 </li>
@@ -4336,6 +4326,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -4354,20 +4346,6 @@
           <li class="md-nav__item">
   <a href="#local-backup" class="md-nav__link">
     Local Backup
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automatic-local-backups" class="md-nav__link">
-    Automatic Local Backups
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remote-backup" class="md-nav__link">
-    Remote Backup
   </a>
   
 </li>
@@ -4425,8 +4403,7 @@
                 
 
 
-  <h1>Backup and restore</h1>
-
+<h1 id="backup-and-restore">Backup And Restore</h1>
 <h2 id="backup">Backup</h2>
 <p>Use IP Fabric backup to protect your important data.</p>
 <p>There are two types of backup:</p>
@@ -4440,8 +4417,8 @@
 </ul>
 <div class="admonition tip security tip">
 <p class="admonition-title">Tip</p>
-<p>Backups are encrypted with <em>osadmin </em>user password configured during the <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">first boot wizard</a>.
-When you lose <em>osadmin </em>user password, backups are also lost!</p>
+<p>Backups are encrypted with <strong>osadmin</strong> user password configured during the <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">first boot wizard</a>.
+When you lose <strong>osadmin</strong> user password, backups are also lost!</p>
 </div>
 <h3 id="local-backup">Local Backup</h3>
 <p>Local backup saves database, user and system files locally on a
@@ -4452,99 +4429,14 @@ on different datastore ideally on different physical storage.</p>
 <p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
 </div>
 <p>To add a new backup drive and <code>mount</code> it as desired, follow instructions in <a href="../../increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
-<h3 id="automatic-local-backups">Automatic Local Backups</h3>
-<p>To schedule automatic local backups do the following steps:</p>
-<ol>
-<li>
-<p>Add dedicated backup volume if not available - see steps above.</p>
-</li>
-<li>
-<p>Login to the user interface.</p>
-</li>
-<li>
-<p>Go to <strong>Settings → Advanced → System → Schedule system backup</strong>.</p>
-</li>
-<li>
-<p>Change <strong>Destination</strong> to <strong>Local hard drive</strong>.</p>
-</li>
-<li>
-<p>Set a backup schedule. See example for "Every day at 3:00".</p>
-</li>
-<li>
-<p>Enable backup</p>
-<p><a data-featherlight="../schedule_system_backup2.png" href="#"><img alt="Schedule system backup" src="../schedule_system_backup2.png" /></a></p>
-</li>
-</ol>
-<h3 id="remote-backup">Remote Backup</h3>
-<p>Remote backup saves database, user and system files remotely using FTP
-or sFTP protocol.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a recommended type of backup.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups</p>
-</div>
-<p>To set up remote backup do the following steps:</p>
-<ol>
-<li>
-<p>Login to the user interface.</p>
-</li>
-<li>
-<p>Go to <strong>Settings → Advanced → System → Schedule system backup</strong>.</p>
-</li>
-<li>
-<p>Enable backup</p>
-</li>
-<li>
-<p>Change <strong>Destination</strong> to <strong>FTP</strong> or <strong>SFTP</strong>.</p>
-</li>
-<li>
-<p>Set a backup schedule. See example for "Every day at 5:15 and 17:15
-    (for setting more options, please, hold SHIFT during selection)".</p>
-<p><a data-featherlight="../backup_schedule.png" href="#"><img alt="Backup schedule" src="../backup_schedule.png" /></a></p>
-</li>
-<li>
-<p>Change <strong>Destination</strong> to <strong>FTP</strong> or <strong>SFTP</strong>.</p>
-</li>
-<li>
-<p>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure
-    that your DNS client is configured and working properly in case of
-    FQDN.</p>
-</li>
-<li>
-<p>Enter <strong>Username</strong> to access FTP/SFTP server.</p>
-</li>
-<li>
-<p>Enter <strong>Password</strong> to access FTP/SFTP server.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
-</div>
-</li>
-<li>
-<p>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</p>
-</li>
-<li>
-<p>Click <strong>Save </strong>(The IP Fabric platform will immediately test the
-    connection)</p>
-</li>
-<li>
-<p>IP Fabric tries to reach FTP/SFTP server with configured parameters.</p>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>FTP/SFTP user needs read, write, list and delete permissions.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.</p>
-</div>
 <h3 id="trigger-a-backup-manually-on-demand">Trigger a Backup Manually (On-Demand)</h3>
 <p>Both types of backup can be also triggered manually on demand. This is
 useful for example before a system upgrade.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups.</p>
+<p>Directory path for <strong>SFTP</strong> has to be defined as <strong>an absolute path</strong> and for <strong>FTP</strong> as a <strong>relative path</strong>. Directory <strong>has to exist</strong> on the remote side. If it does not exist, you will get an error.</p>
+</div>
 <p>Manual backup can be triggered from IP Fabric Administrative interface:</p>
 <ol>
 <li>
@@ -4555,8 +4447,8 @@ useful for example before a system upgrade.</p>
 <p>Go to <strong>Restore or Backup</strong></p>
 </li>
 <li>
-<p>Select <strong>Backup</strong> from <strong>Do you wish to proceed with a backup or
-    restore?</strong> drop-down menu.</p>
+<p>Select <strong>Backup</strong> from <em>Do you wish to proceed with a backup or
+    restore?</em> drop-down menu.</p>
 </li>
 <li>
 <p>For local backup select <strong>Local hard drive</strong> from the <strong>Backup
@@ -4615,7 +4507,7 @@ IP Fabric appliance.</p>
     restore?</em> drop down menu.</p>
 </li>
 <li>
-<p>Select <strong>What restore?</strong>. There are four options:</p>
+<p>Select <strong>What restore?</strong> There are four options:</p>
 <ol>
 <li>
 <p><strong>Restore data &amp; all system services</strong> - This option restores
@@ -4655,7 +4547,7 @@ IP Fabric appliance.</p>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Backups are encrypted with <strong>osadmin</strong> user password configured during the <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">First Boot Wizard</a>. When you loose <strong>osadmin</strong> user password, all backups encrypted by this password are lost.</p>
+<p>Backups are encrypted with <strong>osadmin</strong> user password configured during the <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">First Boot Wizard</a>. When you lose <strong>osadmin</strong> user password, all backups encrypted by this password are lost.</p>
 </div>
 <h3 id="restore-from-remote-server">Restore From Remote Server</h3>
 <ol>
@@ -4671,7 +4563,7 @@ IP Fabric appliance.</p>
     restore?</em> drop down menu.</p>
 </li>
 <li>
-<p>Select <strong>What restore?</strong>. There are four options:</p>
+<p>Select <strong>What restore?</strong> There are four options:</p>
 <ol>
 <li>
 <p><strong>Restore data &amp; all system services</strong> - This option restores
@@ -4725,9 +4617,9 @@ IP Fabric appliance.</p>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Backups are encrypted with <strong><em>osadmin</em></strong> user password configured during
+<p>Backups are encrypted with <strong>osadmin</strong> user password configured during
 the <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/#complete-first-time-boot-wizard">First Boot Wizard</a>.
-When you loose <strong><em>osadmin</em></strong> user password, all backups encrypted by
+When you lose <strong>osadmin</strong> user password, all backups encrypted by
 this password are lost.</p>
 </div>
 

@@ -2569,31 +2569,18 @@
     Local Backup
   </a>
   
-    <nav class="md-nav" aria-label="Local Backup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     Automatic Local Backups
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#remote-backup" class="md-nav__link">
-    Remote Backup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trigger-a-backup-manually-on-demand" class="md-nav__link">
-    Trigger a Backup Manually (On-Demand)
+  <a href="#automatic-remote-backups" class="md-nav__link">
+    Automatic Remote Backups
   </a>
   
 </li>
@@ -2875,7 +2862,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../System_Administration/Administrative_Interface/backup_and_restore/" class="md-nav__link">
-        Backup and restore
+        Backup And Restore
       </a>
     </li>
   
@@ -4336,31 +4323,18 @@
     Local Backup
   </a>
   
-    <nav class="md-nav" aria-label="Local Backup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     Automatic Local Backups
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#remote-backup" class="md-nav__link">
-    Remote Backup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trigger-a-backup-manually-on-demand" class="md-nav__link">
-    Trigger a Backup Manually (On-Demand)
+  <a href="#automatic-remote-backups" class="md-nav__link">
+    Automatic Remote Backups
   </a>
   
 </li>
@@ -4398,26 +4372,27 @@
 <p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
 </div>
 <p>To add a new backup drive and <code>mount</code> it as desired, follow instructions in <a href="../../../../System_Administration/increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
-<h3 id="automatic-local-backups">Automatic Local Backups</h3>
+<h2 id="automatic-local-backups">Automatic Local Backups</h2>
 <p>To schedule automatic local backups do the following steps:</p>
 <ol>
 <li>Add dedicated backup volume if not available – see steps above.</li>
-<li>Login to the user interface.</li>
+<li>Login to the main user interface.</li>
 <li>Go to <strong>Settings → Advanced → System → Schedule system backup</strong>.</li>
 <li>Change <strong>Destination</strong> to <strong>Local hard drive</strong>.</li>
 <li>Set a backup schedule. See example for "Every day at 3:00".</li>
 <li>Enable backup.</li>
 </ol>
 <p><a data-featherlight="schedule_local_backup.png" href="#"><img alt="Schedule local backup" src="schedule_local_backup.png" /></a></p>
-<h2 id="remote-backup">Remote Backup</h2>
-<p>Remote backup saves database, user and system files remotely using <code>FTP</code> or <code>sFTP</code>.</p>
+<h2 id="automatic-remote-backups">Automatic Remote Backups</h2>
+<p>Remote backup saves database, user and system files remotely using <code>FTP</code> or <code>SFTP</code> protocol.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is a recommended type of backup.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups</p>
+<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups.</p>
+<p>Directory path for <strong>SFTP</strong> has to be defined as an <strong>absolute path</strong> and for <strong>FTP</strong> as a <strong>relative path</strong>. Directory <strong>has to exist</strong> on the remote side. If it does not exist, you will get an error.</p>
 </div>
 <p>To set up remote backup do the following steps:</p>
 <ol>
@@ -4450,31 +4425,6 @@
 <p class="admonition-title">Note</p>
 <p>From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.</p>
 </div>
-<h2 id="trigger-a-backup-manually-on-demand">Trigger a Backup Manually (On-Demand)</h2>
-<p>Both types of backup can be also triggered manually on demand. This is useful for example before a system upgrade.</p>
-<p>Manual backup can be triggered from IP Fabric Administrative interface:</p>
-<ol>
-<li>Login to admin interface (for example <code>https://ipfabric.example.com:8443</code>)</li>
-<li>Go to <strong>Restore or Backup</strong></li>
-<li>Select <strong>Backup</strong> from <strong>Do you wish to proceed with a backup or restore?</strong> drop-down menu.</li>
-<li>For local backup select <strong>Local hard drive</strong> from the <strong>Backup files destination</strong>.</li>
-<li>
-<p>For remote backup select <code>FTP</code> or <code>SFTP</code> from the <em>Backup files destination</em>.</p>
-<ol>
-<li>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.</li>
-<li>Enter <strong>Username</strong> to access FTP/SFTP server.</li>
-<li>Enter <strong>Password</strong> to access FTP/SFTP server.</li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
-</div>
-</li>
-<li>
-<p>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</p>
-</li>
-<li>Click <strong>Next</strong></li>
-</ol>
 
               
             </article>
