@@ -4283,6 +4283,12 @@ differently in you production deployment, than described here.
 <p>The command-line interface is a secondary service interface in IP Fabric VM which serves troubleshooting and testing purposes. For example, for testing authentication credentials from the specific IP address of IP
 Fabric VM, in case of address-restricted access. The CLI interface is the main tool in servicing the system by the support teams.</p>
 <p>Command-line also allows the use of the standard networking tools, such as telnet, ssh, traceroute, ping or tcpdump.</p>
+<p>From 5.0 release, <code>osadmin</code> account is no longer restricted to <code>chroot</code> only and have access to the whole system.</p>
+<p>The <code>osadmin</code> account has <code>sudo</code> rights with <code>osadmin</code> password and a standard 5 minutes retention.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Password cannot be changed via <code>cloudinit</code> or <code>passwd</code>, please run command <code>nimpee-net-config -t</code> to change <code>osadmin</code> password.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the CLI as a <code>root</code>, <code>osadmin</code> and/or <code>autoboss</code> user may severely damage the product and/or the system itself. Such actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
