@@ -23,12 +23,12 @@ Local backup saves database, user and system files locally on a dedicated backup
 
 To add a new backup drive and `mount` it as desired, follow instructions in [Increase Disk Space - Local Backup Disk](../../../System_Administration/increase_disk_space.md#local-backup-disk).
 
-### Automatic Local Backups
+## Automatic Local Backups
 
 To schedule automatic local backups do the following steps:
 
 1. Add dedicated backup volume if not available -- see steps above.
-1. Login to the user interface.
+1. Login to the main user interface.
 1. Go to **Settings → Advanced → System → Schedule system backup**.
 1. Change **Destination** to **Local hard drive**.
 1. Set a backup schedule. See example for "Every day at 3:00".
@@ -36,9 +36,9 @@ To schedule automatic local backups do the following steps:
 
 ![Schedule local backup](system_backup/schedule_local_backup.png)
 
-## Remote Backup
+## Automatic Remote Backups
 
-Remote backup saves database, user and system files remotely using `FTP` or `sFTP`.
+Remote backup saves database, user and system files remotely using `FTP` or `SFTP` protocol.
 
 !!! note
 
@@ -46,7 +46,9 @@ Remote backup saves database, user and system files remotely using `FTP` or `sFT
 
 !!! warning
 
-    A directory **has to be specified** for FTP and SFTP backups
+	A directory **has to be specified** for FTP and SFTP backups.
+
+	Directory path for **SFTP** has to be defined as an **absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
 
 To set up remote backup do the following steps:
 
@@ -74,24 +76,3 @@ To set up remote backup do the following steps:
 !!! note
 
     From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.
-
-## Trigger a Backup Manually (On-Demand)
-
-Both types of backup can be also triggered manually on demand. This is useful for example before a system upgrade.
-
-Manual backup can be triggered from IP Fabric Administrative interface:
-
-1. Login to admin interface (for example `https://ipfabric.example.com:8443`)
-1. Go to **Restore or Backup**
-1. Select **Backup** from **Do you wish to proceed with a backup or restore?** drop-down menu.
-1. For local backup select **Local hard drive** from the **Backup files destination**.
-1. For remote backup select `FTP` or `SFTP` from the *Backup files destination*.
-    1. Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure that your DNS client is configured and working properly in the case of FQDN.
-    1. Enter **Username** to access FTP/SFTP server.
-    1. Enter **Password** to access FTP/SFTP server.
-
-	!!! Info
-	    Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
-
-1. Specify a **Directory** where FTP/SFTP backup should be uploaded.
-1. Click **Next**
