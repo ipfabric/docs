@@ -36,6 +36,10 @@
       
     
     
+      <link rel="stylesheet" href="../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../vendor/featherlight.css">
+    
       <link rel="stylesheet" href="../../stylesheets/theme.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -4495,10 +4499,10 @@ connectivity issues, and more.</p>
 <p>Information about the network displayed in IP Fabric corresponds to the
 network snapshot selected in the Snapshot selector drop-down menu in the
 top left corner of the Main User Interface.</p>
-<p><img alt="Current snapshot" src="../snapshots/current_snapshot.png" /></p>
+<p><a data-featherlight="../snapshots/current_snapshot.png" href="#"><img alt="Current snapshot" src="../snapshots/current_snapshot.png" /></a></p>
 <h2 id="available-snapshot-operations">Available Snapshot Operations</h2>
 <h3 id="new-snapshot">New Snapshot</h3>
-<p><img alt="New snapshot" src="../snapshots/new_snapshot.png" /></p>
+<p><a data-featherlight="../snapshots/new_snapshot.png" href="#"><img alt="New snapshot" src="../snapshots/new_snapshot.png" /></a></p>
 <p>During the initial configuration of the IP Fabric VM, automatic
 snapshots can be scheduled. Initial snapshot of the network may not
 include all information about your network. There might be user
@@ -4510,7 +4514,7 @@ parameters in the "Settings" menu entry. If you need to make some
 changes to the discovery process – add a new network seed, change login
 credentials, etc. -- it needs to be done before a new snapshot is taken.</p>
 <h3 id="inspection-of-network-issues">Inspection of Network Issues</h3>
-<p><img alt="Connectivity report and summary of issues" src="../snapshots/connectivity_report.png" /></p>
+<p><a data-featherlight="../snapshots/connectivity_report.png" href="#"><img alt="Connectivity report and summary of issues" src="../snapshots/connectivity_report.png" /></a></p>
 <p>After the snapshot is taken, there might be some devices not showing in
 the discovery table. You can then go through <a href="../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/">the Summary of
 Issues/Connectivity Report tables to see where this device in the
@@ -4521,7 +4525,7 @@ following picture). Log for each device can be found in the Connectivity
 Report. These logs are especially helpful when an error occurs. By
 examining them you can find the reason why the device wasn't correctly
 or fully discovered or what led to a connection failure.</p>
-<p><img alt="Discovery connectivity report" src="../snapshots/discovery_connectivity_report.png" /></p>
+<p><a data-featherlight="../snapshots/discovery_connectivity_report.png" href="#"><img alt="Discovery connectivity report" src="../snapshots/discovery_connectivity_report.png" /></a></p>
 <h3 id="add-a-new-devicechanging-snapshot-settings">Add a New Device/Changing Snapshot Settings</h3>
 <p>A new device can be added to an already existing snapshot. This might be
 desirable if you performed almost a full snapshot of the network but
@@ -4533,13 +4537,13 @@ will be applied. If you need to change some settings (for example new
 network seed, login credentials, etc.) in order to add a new device to
 an existing snapshot, you need first to change settings for that
 particular snapshot and then add a new device.</p>
-<p><img alt="Snapshot add device" src="../snapshots/snapshot_add_device.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_add_device.png" href="#"><img alt="Snapshot add device" src="../snapshots/snapshot_add_device.png" /></a></p>
 <h3 id="lock-snapshot">Lock Snapshot</h3>
 <p>Because of database maintenance, only up to 5 snapshots can be loaded
 into the memory. By locking a snapshot, IP Fabric won’t unload the
 selected snapshot automatically to the hard disk and it will keep it in
 the memory.</p>
-<p><img alt="Snapshot lock" src="../snapshots/snapshot_lock.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_lock.png" href="#"><img alt="Snapshot lock" src="../snapshots/snapshot_lock.png" /></a></p>
 <h3 id="unloadload-snapshot">Unload/load Snapshot</h3>
 <p>Because of database maintenance, only up to 5 snapshots can be loaded
 into the memory. If the maximum number of loaded snapshot is 5 and 6th
@@ -4550,25 +4554,25 @@ also manually on a selected snapshot by the "Unload snapshot" button.</p>
 the data from a snapshot cannot be accessed directly through the IP
 Fabric user interface. To browse an unloaded snapshot, it needs to be
 loaded again to the memory by "Load snapshot".</p>
-<p><img alt="Snapshot load" src="../snapshots/snapshot_load.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_load.png" href="#"><img alt="Snapshot load" src="../snapshots/snapshot_load.png" /></a></p>
 <p>button accessible on an unloaded snapshot.</p>
-<p><img alt="Snapshot unload" src="../snapshots/snapshot_unload.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_unload.png" href="#"><img alt="Snapshot unload" src="../snapshots/snapshot_unload.png" /></a></p>
 <h3 id="download-snapshot">Download Snapshot</h3>
 <p>If needed, a selected snapshot can be downloaded directly from IP Fabric
 to your hard drive by the "Download snapshot" button.</p>
-<p><img alt="Snapshot download" src="../snapshots/snapshot_download.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_download.png" href="#"><img alt="Snapshot download" src="../snapshots/snapshot_download.png" /></a></p>
 <p>This snapshot can be loaded back to the IP Fabric platform by a "Load
 From File" button.</p>
-<p><img alt="Snapshot load from file" src="../snapshots/snapshot_load_from_file.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_load_from_file.png" href="#"><img alt="Snapshot load from file" src="../snapshots/snapshot_load_from_file.png" /></a></p>
 <h3 id="clone-snapshot">Clone Snapshot</h3>
 <p>Loaded as well as unloaded snapshots can be cloned by the "Clone
 snapshot" button. This is handy in case you want to make some changes to
 the snapshot (adding a device etc.) but you want to keep the original
 file as a backup.</p>
-<p><img alt="Snapshot clone" src="../snapshots/snapshot_clone.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_clone.png" href="#"><img alt="Snapshot clone" src="../snapshots/snapshot_clone.png" /></a></p>
 <h3 id="delete-snapshot">Delete Snapshot</h3>
 <p>Snapshots can be deleted by the "Delete snapshot" button.</p>
-<p><img alt="Snapshot delete" src="../snapshots/snapshot_delete.png" /></p>
+<p><a data-featherlight="../snapshots/snapshot_delete.png" href="#"><img alt="Snapshot delete" src="../snapshots/snapshot_delete.png" /></a></p>
 <h3 id="related-articles">Related Articles</h3>
 <p>If you want to learn more about how network discovery works from a
 technical point of view, <a href="../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">read this article</a>.</p>
@@ -4647,6 +4651,10 @@ technical point of view, <a href="../../Getting_Started/Overview/How_Discovery_W
     
     
       <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>

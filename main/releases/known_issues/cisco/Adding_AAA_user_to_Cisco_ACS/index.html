@@ -36,6 +36,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../../vendor/featherlight.css">
+    
       <link rel="stylesheet" href="../../../../stylesheets/theme.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -4308,60 +4312,60 @@ these devices.</p>
 <p>We can create the ACS components listed above. First, we need to create
 a device group called <strong>RoutersHQ</strong>. To do so, go to <strong>Network Resources >
 Network Device Groups > Device Type > Create</strong>:</p>
-<p><img alt="acs1" src="../acs1.png" /></p>
+<p><a data-featherlight="../acs1.png" href="#"><img alt="acs1" src="../acs1.png" /></a></p>
 <p>Enter the device group information and click the <strong>Submit</strong> button:</p>
-<p><img alt="acs2" src="../acs2.png" /></p>
+<p><a data-featherlight="../acs2.png" href="#"><img alt="acs2" src="../acs2.png" /></a></p>
 <p>After the device group has been created, we need to add a router in it.
 To do this, go to <strong>Network Resources > Network Devices and AAA Clients
 > Create</strong>:</p>
-<p><img alt="acs1" src="../acs3.png" /></p>
+<p><a data-featherlight="../acs3.png" href="#"><img alt="acs1" src="../acs3.png" /></a></p>
 <p>Under <strong>Name</strong>, enter the name for the router (it does not have to match the
 real router’s hostname). Under <strong>Device Type</strong>, select the device group
 you’ve created in the previous step. Under <strong>IP address</strong>, enter the IP
 address of the router. Under <strong>Authentication options</strong>, click the checkbox
 next to the protocol that will be used and type the password.</p>
-<p><img alt="acs4" src="../acs4.png" /></p>
+<p><a data-featherlight="../acs4.png" href="#"><img alt="acs4" src="../acs4.png" /></a></p>
 <p>Next, we need to create two user groups: <strong>Admin</strong> and <strong>HelpDesk</strong>. To do this,
 go to <strong>Users and Identity Stores > Identity Groups > Create</strong>:</p>
-<p><img alt="acs5" src="../acs5.png" /></p>
+<p><a data-featherlight="../acs5.png" href="#"><img alt="acs5" src="../acs5.png" /></a></p>
 <p>Enter the group information:</p>
-<p><img alt="acs6" src="../acs6.png" /></p>
+<p><a data-featherlight="../acs6.png" href="#"><img alt="acs6" src="../acs6.png" /></a></p>
 <p>Repeat the process to create the second group:</p>
-<p><img alt="acs7" src="../acs7.png" /></p>
+<p><a data-featherlight="../acs7.png" href="#"><img alt="acs7" src="../acs7.png" /></a></p>
 <p>Now we need to create two users and place them in the appropriate
 identity groups. To do that, go to <strong>Users and Identity Stores > Internal
 Identity Stores > Users > Create</strong>:</p>
-<p><img alt="acs8" src="../acs8.png" /></p>
+<p><a data-featherlight="../acs8.png" href="#"><img alt="acs8" src="../acs8.png" /></a></p>
 <p>Under<strong> Name</strong>, enter <strong>Administrator</strong>. Under <strong>Identity Group</strong>, select
 the <strong>Admin</strong> group. Under <strong>Password</strong>, configure the password for the user.
 When you are done, click <strong>Submit</strong> to create the user:</p>
-<p><img alt="acs9" src="../acs9.png" /></p>
+<p><a data-featherlight="../acs9.png" href="#"><img alt="acs9" src="../acs9.png" /></a></p>
 <p>Repeat the process for the <strong>Helpdesk</strong> user. Make sure to select
 the <strong>HelpDesk</strong> group:</p>
-<p><img alt="acs10" src="../acs10.png" /></p>
+<p><a data-featherlight="../acs10.png" href="#"><img alt="acs10" src="../acs10.png" /></a></p>
 <p>The next step is to create authorization policies to give full access to
 users in the <strong>Admin</strong> group and limited access to users in
 the <strong>HelpDesk</strong> group. Go to <strong>Access Policies > Access Services >
 Default Device Admin > Authorization > Create</strong>:</p>
-<p><img alt="acs11" src="../acs11.png" /></p>
+<p><a data-featherlight="../acs11.png" href="#"><img alt="acs11" src="../acs11.png" /></a></p>
 <p>Name this policy <strong>AdminRole</strong>. Under <strong>Identity Group</strong>, choose
 the <strong>Admin</strong> group. Under <strong>NDG:Device Type</strong>, choose
 the<strong>RoutersHQ</strong> device group. Click the <strong>Select</strong> button next
 to <strong>Shell Profile</strong>:</p>
-<p><img alt="acs12" src="../acs12.png" /></p>
+<p><a data-featherlight="../acs12.png" href="#"><img alt="acs12" src="../acs12.png" /></a></p>
 <p>We will not use the preconfigured profiles – we will create our own.
 Click<strong> Create</strong>:</p>
-<p><img alt="acs13" src="../acs13.png" /></p>
+<p><a data-featherlight="../acs13.png" href="#"><img alt="acs13" src="../acs13.png" /></a></p>
 <p>Name the profile and click the <strong>Common Tasks</strong> tab:</p>
-<p><img alt="acs14" src="../acs14.png" /></p>
+<p><a data-featherlight="../acs14.png" href="#"><img alt="acs14" src="../acs14.png" /></a></p>
 <p>Change the <strong>Default privilege </strong>level to <strong>Static</strong>, and assign the
 privilege level of <strong>15</strong>:</p>
-<p><img alt="acs15" src="../acs15.png" /></p>
+<p><a data-featherlight="../acs15.png" href="#"><img alt="acs15" src="../acs15.png" /></a></p>
 <p>Click <strong>Submit</strong>. We need to repeat the process to create the <strong>HelpDeskRole</strong>:</p>
-<p><img alt="acs16" src="../acs16.png" />
-<img alt="acs17" src="../acs17.png" /></p>
+<p><a data-featherlight="../acs16.png" href="#"><img alt="acs16" src="../acs16.png" />
+</a><a data-featherlight="../acs17.png" href="#"><img alt="acs17" src="../acs17.png" /></a></p>
 <p>This time, assign the privilege level of <strong>1</strong>:</p>
-<p><img alt="acs16" src="../acs18.png" /></p>
+<p><a data-featherlight="../acs18.png" href="#"><img alt="acs16" src="../acs18.png" /></a></p>
 <p>You can now test the user and then add it to IP Fabric authentication
 list.</p>
 
@@ -4439,6 +4443,10 @@ list.</p>
     
     
       <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>

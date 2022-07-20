@@ -36,6 +36,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../../vendor/featherlight.css">
+    
       <link rel="stylesheet" href="../../../../stylesheets/theme.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -4434,10 +4438,10 @@ differently in you production deployment, than described here.
 
 
 <h1 id="06-cli-settings">06 - CLI Settings</h1>
-<p><img alt="CLI" src="../cli.png" /></p>
+<p><a data-featherlight="../cli.png" href="#"><img alt="CLI" src="../cli.png" /></a></p>
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI parameters</h2>
 <p>The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>:</p>
-<p><img alt="CLI" src="../cli_settings.png" /></p>
+<p><a data-featherlight="../cli_settings.png" href="#"><img alt="CLI" src="../cli_settings.png" /></a></p>
 <dl>
 <dt>Network device login timeout</dt>
 <dd>Timeout before the logging prompt is received. It may take longer for remote branches over low-speed lines, or destined to overloaded devices.</dd>
@@ -4527,7 +4531,7 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>At the bottom of the page, please select <strong>Add</strong> button</p>
-<p><img alt="Add jump host" src="../jumphost_add.png" /></p>
+<p><a data-featherlight="../jumphost_add.png" href="#"><img alt="Add jump host" src="../jumphost_add.png" /></a></p>
 </li>
 <li>
 <p>Fill in all necessary data</p>
@@ -4544,7 +4548,7 @@ differently in you production deployment, than described here.
 <li><strong>Username</strong> - Username for authentication (mandatory)</li>
 <li>
 <p><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used)</p>
-<p><img alt="Jump host auth" src="../jumphost_auth.png" /></p>
+<p><a data-featherlight="../jumphost_auth.png" href="#"><img alt="Jump host auth" src="../jumphost_auth.png" /></a></p>
 </li>
 </ol>
 </li>
@@ -4553,7 +4557,7 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>If a connection is open, you will see the <strong>Running</strong> status in Jumphost list</p>
-<p><img alt="Jump host auth" src="../jumphost_list.png" /></p>
+<p><a data-featherlight="../jumphost_list.png" href="#"><img alt="Jump host auth" src="../jumphost_list.png" /></a></p>
 </li>
 </ol>
 <div class="admonition warning">
@@ -4568,7 +4572,7 @@ differently in you production deployment, than described here.
 <ol>
 <li>
 <p>Download ssh key from Jumphost settings</p>
-<p><img alt="Downloading public key" src="../jumphost_pub.png" /></p>
+<p><a data-featherlight="../jumphost_pub.png" href="#"><img alt="Downloading public key" src="../jumphost_pub.png" /></a></p>
 </li>
 <li>
 <p>Save <code>ipf-discovery-public-key.pub</code></p>
@@ -4584,14 +4588,14 @@ differently in you production deployment, than described here.
 <ol>
 <li>
 <p>Edit configuration that needs to be disabled, i.e.</p>
-<p><img alt="Edit jump host" src="../jumphost_edit.png" /></p>
+<p><a data-featherlight="../jumphost_edit.png" href="#"><img alt="Edit jump host" src="../jumphost_edit.png" /></a></p>
 </li>
 <li>
 <p>Change the setting to <strong>Disabled</strong>,</p>
 </li>
 <li>
 <p>Click the <strong>Update</strong> button</p>
-<p><img alt="Disable jump host" src="../jumphost_disable.png" /></p>
+<p><a data-featherlight="../jumphost_disable.png" href="#"><img alt="Disable jump host" src="../jumphost_disable.png" /></a></p>
 </li>
 </ol>
 <h3 id="remove-jumphost-configuration">Remove Jumphost configuration</h3>
@@ -4601,7 +4605,7 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
-<p><img alt="Delete jump host" src="../jumphost_delete.png" /></p>
+<p><a data-featherlight="../jumphost_delete.png" href="#"><img alt="Delete jump host" src="../jumphost_delete.png" /></a></p>
 </li>
 </ol>
 <h3 id="discovery-with-jumphost-issues">Discovery with Jumphost issues</h3>
@@ -4612,9 +4616,9 @@ differently in you production deployment, than described here.
 <h2 id="custom-sshtelnet-ports">Custom SSH/Telnet ports</h2>
 <p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
 <p>In the following example we will configure the discovery process to use port <code>8080</code> for SSH connections towards firewall at <code>192.168.168.10</code>:</p>
-<p><img alt="Custom SSH port" src="../custom_ssh_port.png" /></p>
+<p><a data-featherlight="../custom_ssh_port.png" href="#"><img alt="Custom SSH port" src="../custom_ssh_port.png" /></a></p>
 <p>As a result of such configuration, we would create a new item under the <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every new snapshot created by IP Fabric.</p>
-<p><img alt="List of custom SSH port" src="../custom_ssh_port_list.png" /></p>
+<p><a data-featherlight="../custom_ssh_port_list.png" href="#"><img alt="List of custom SSH port" src="../custom_ssh_port_list.png" /></a></p>
 
               
             </article>
@@ -4690,6 +4694,10 @@ differently in you production deployment, than described here.
     
     
       <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>

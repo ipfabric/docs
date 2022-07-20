@@ -36,6 +36,10 @@
       
     
     
+      <link rel="stylesheet" href="../../../vendor/featherlight-v.1.7.14.min.css">
+    
+      <link rel="stylesheet" href="../../../vendor/featherlight.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/theme.css">
     
     <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -4734,7 +4738,7 @@ differently in you production deployment, than described here.
 <p>The IP Fabric's discovery is primarily using Command Line Interface
 (CLI) to discover network elements. There are certain default CLI
 parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
-<p><img alt="CLI Settings" src="../ssh/2396258368.png" /></p>
+<p><a data-featherlight="../ssh/2396258368.png" href="#"><img alt="CLI Settings" src="../ssh/2396258368.png" /></a></p>
 <h3 id="network-device-login-timeout">Network Device Login Timeout</h3>
 <p>Timeout before the logging prompt is received. It may take longer for
 remote branches over low-speed lines, or destined to overloaded devices.</p>
@@ -4878,7 +4882,7 @@ errors and adjustments:</p>
 <li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
 <li>
 <p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
-<p><img alt="Jump host settings" src="../ssh/1384480773.png" /></p>
+<p><a data-featherlight="../ssh/1384480773.png" href="#"><img alt="Jump host settings" src="../ssh/1384480773.png" /></a></p>
 </li>
 <li>
 <p>Fill in all necessary data</p>
@@ -4907,14 +4911,14 @@ errors and adjustments:</p>
 <p class="admonition-title">Info</p>
 <p>Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
 </div>
-<p><img alt="Add Jumphost" src="../ssh/1384480780.png" /></p>
+<p><a data-featherlight="../ssh/1384480780.png" href="#"><img alt="Add Jumphost" src="../ssh/1384480780.png" /></a></p>
 </li>
 <li>
 <p>Click <strong>+ Add</strong> button</p>
 </li>
 <li>
 <p>If a connection is open, you will see the <strong><em>Running</em></strong> status in Jumphost list</p>
-<p><img alt="Jumphost list" src="../ssh/1384513560.png" /></p>
+<p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
 </li>
 </ol>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
@@ -4925,7 +4929,7 @@ errors and adjustments:</p>
 <ol>
 <li>
 <p>Download ssh key from Jumphost settings</p>
-<p><img alt="Download ssh key" src="../ssh/1384153110.png" /></p>
+<p><a data-featherlight="../ssh/1384153110.png" href="#"><img alt="Download ssh key" src="../ssh/1384153110.png" /></a></p>
 </li>
 <li>
 <p>Save <code>jumphost-public-key.pub</code></p>
@@ -4947,14 +4951,14 @@ errors and adjustments:</p>
 <ol>
 <li>
 <p>Edit configuration that needs to be disabled, i.e.\</p>
-<p><img alt="Jumphost settings" src="../ssh/1384972305.png" /></p>
+<p><a data-featherlight="../ssh/1384972305.png" href="#"><img alt="Jumphost settings" src="../ssh/1384972305.png" /></a></p>
 </li>
 <li>
 <p>Change the setting to <strong>Disabled</strong>,</p>
 </li>
 <li>
 <p>Click the <strong>Update</strong> button</p>
-<p><img alt="Disable jumphost" src="../ssh/1384906766.png" /></p>
+<p><a data-featherlight="../ssh/1384906766.png" href="#"><img alt="Disable jumphost" src="../ssh/1384906766.png" /></a></p>
 </li>
 </ol>
 <h3 id="remove-jumphost-configuration">Remove Jumphost Configuration</h3>
@@ -4965,7 +4969,7 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
-<p><img alt="Delete jumphost" src="../ssh/1384939529.png" /></p>
+<p><a data-featherlight="../ssh/1384939529.png" href="#"><img alt="Delete jumphost" src="../ssh/1384939529.png" /></a></p>
 </li>
 </ol>
 <h2 id="jumphost-known-issues">Jumphost Known Issues</h2>
@@ -4986,15 +4990,15 @@ errors and adjustments:</p>
 <p class="admonition-title">Info</p>
 <p>Each configured jumphost has its own ID</p>
 </div>
-<p><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></p>
+<p><a data-featherlight="../systemctl_jumphost.png" href="#"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></a></p>
 </li>
 <li>
 <p><strong>Stop the jumphost service</strong> with command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
-<p><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png" /></p>
+<p><a data-featherlight="../systemctl_stop_jumphost.png" href="#"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png" /></a></p>
 </li>
 <li>
 <p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
-<p><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png" /></p>
+<p><a data-featherlight="../systemctl_status_jumphost.png" href="#"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png" /></a></p>
 </li>
 <li>
 <p>IP Fabric GUI should be accessible by now.</p>
@@ -5004,11 +5008,11 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
-<p><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png" /></p>
+<p><a data-featherlight="../jumphost_delete_settings.png" href="#"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png" /></a></p>
 </li>
 <li>
 <p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
-<p><img alt="jumphost_exclude" src="../jumphost_exclude.png" /></p>
+<p><a data-featherlight="../jumphost_exclude.png" href="#"><img alt="jumphost_exclude" src="../jumphost_exclude.png" /></a></p>
 </li>
 </ol>
 <div class="admonition info">
@@ -5022,11 +5026,11 @@ errors and adjustments:</p>
 </div>
 <p>In the following example we configure the discovery process to use port <code>8080</code>
 for SSH connections to <code>192.168.168.10</code>:</p>
-<p><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png" /></p>
+<p><a data-featherlight="../ssh/edit_custom_ssh_telnet_port.png" href="#"><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png" /></a></p>
 <p>As a result of such configuration, we would create a new item under the
 <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every
 new snapshot created by IP Fabric.</p>
-<p><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png" /></p>
+<p><a data-featherlight="../ssh/custom_ssh_telnet_ports.png" href="#"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png" /></a></p>
 <h2 id="telnetssh-url-handler-on-ms-windows-7-and-later">Telnet/SSH URL Handler On MS Windows 7 And Later</h2>
 <p>If you want to be able to connect directly to a device from the IP Fabric web
 interface, you need to register a Telnet/SSH URL handler. You will be touching
@@ -5138,6 +5142,10 @@ appropriate backups and are comfortable in doing so.</p>
     
     
       <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../vendor/jquery-3.6.0.min.js"></script>
+      
+        <script src="../../../vendor/featherlight-v.1.7.14.min.js"></script>
       
     
   </body>
