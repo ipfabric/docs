@@ -3982,11 +3982,11 @@ differently in you production deployment, than described here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-jul-19-2022" class="md-nav__link">
-    v5.0.0 (Jul 19, 2022)
+  <a href="#v500-jul-19th-2022" class="md-nav__link">
+    v5.0.0 (Jul 19th, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (Jul 19, 2022)">
+    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4346,11 +4346,11 @@ differently in you production deployment, than described here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-jul-19-2022" class="md-nav__link">
-    v5.0.0 (Jul 19, 2022)
+  <a href="#v500-jul-19th-2022" class="md-nav__link">
+    v5.0.0 (Jul 19th, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (Jul 19, 2022)">
+    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4408,7 +4408,7 @@ differently in you production deployment, than described here.
 
 
 <h1 id="ip-fabric-v50">IP Fabric v5.0</h1>
-<h2 id="v500-jul-19-2022">v5.0.0 (Jul 19, 2022)</h2>
+<h2 id="v500-jul-19th-2022">v5.0.0 (Jul 19th, 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA SHA256: ac8a7e68f97b53e299ce3eecac6bd4ddc56c2c025b1ae48d95fbad925213a7bd
 OVA MD5: 65e979f0ea93ba77c9731cfcc0008fa5
 QCOW SHA256: 1e681e249d69d21feb83cbc62f5e3d2bb80db76d22a3acfd90c840c30506748c
@@ -4481,16 +4481,20 @@ if you still experience problems.</p>
 <li>Requires 10GB of free disk space.</li>
 <li>Estimated upgrade time is around 20 minutes however depending on the resources of your VM it could take longer than an hour.</li>
 <li>During update to <code>5.0.0</code> no message about the update being finished is shown and a refresh of the Admin page is required to check if the API and services are back online.</li>
-<li>After approximately 5-10 minutes after the update file has finished uploading to the server you should be able to log into the IPF CLI as <code>osadmin</code> and run the following command to track installation progress</li>
+<li>After approximately 5-10 minutes after the update file has finished uploading to the server you should be able to log into the IPF CLI as <code>osadmin</code> and run the following command to track installation progress<ul>
 <li><code>tail -f /var/log/nimpee/dist_upgrade.log</code></li>
 <li>If <code>tail</code> command is not found wait a few minutes and log out and back into the CLI.</li>
+</ul>
+</li>
 <li>Once upgrade has finished the system will reboot (see below the example output of the <code>dist_upgrade.log</code> file).</li>
 <li>After all updates please <a href="../../"><strong>Clear Browser Cache</strong></a>.</li>
 <li>Not all new features will be available until a new snapshot is created on the updated version.</li>
-<li>If after the upgrade you experience issues with <code>AQL: internal error</code>, Dashboards, or Topology please first try restarting the <code>ArangoDB</code> service from the System Administrator page prior to contacting support.</li>
+<li>If after the upgrade you experience issues with <code>AQL: internal error</code>, Dashboards, or Topology please first try restarting the <code>ArangoDB</code> service from the System Administrator page prior to contacting support.<ul>
 <li>Log into the System Administrator Page located or port <code>443</code></li>
 <li>In the <code>System Status</code> page under <code>System Services</code> you will find <code>ArangoDB</code></li>
 <li>Next to the status color is a <code>restart</code> button which will restart the service</li>
+</ul>
+</li>
 <li>If you run into any other issues during or after the upgrade please open a <a href="http://support.ipfabric.io/">support ticket</a>.</li>
 </ul>
 <p>Example output of successful <code>/var/log/nimpee/dist_upgrade.log</code> log file:</p>
@@ -4508,23 +4512,31 @@ if you still experience problems.</p>
 </code></pre></div>
 <h3 id="new-vendor-support">New Vendor Support</h3>
 <ul>
-<li>Cisco APIC discovery</li>
+<li>Cisco APIC discovery<ul>
 <li>Cisco ACI - contracts, tenants, applications, zone filtering</li>
+</ul>
+</li>
 <li>Aruba Instant APs</li>
 <li>Ruckus Wireless controller</li>
 <li>Dell SmartFabric OS10 Basic Discovery</li>
-<li>Cisco Meraki has been migrated from API <code>v0</code> to API <code>v1</code></li>
+<li>Cisco Meraki has been migrated from API <code>v0</code> to API <code>v1</code><ul>
 <li>Following the announcement of Meraki's addition of Cisco Catalyst switches we have ensured that these will be only discoverable via CLI at this time and excluded in the Meraki discovery.</li>
+</ul>
+</li>
 </ul>
 <h3 id="features-protocol-and-technology-support">Features – Protocol and Technology Support</h3>
 <ul>
-<li>IPv6</li>
+<li>IPv6<ul>
 <li>Dual-Stack Basic Discovery</li>
 <li>Technology Tables (Routing, managed IP, hosts, interfaces)</li>
-<li>DNS</li>
+</ul>
+</li>
+<li>DNS<ul>
 <li>DNS Basic configuration</li>
 <li>DNS Resolver configuration</li>
 <li>DHCP servers and relays</li>
+</ul>
+</li>
 <li>Extreme ACL support</li>
 <li>RSVP neighbors &amp; interfaces</li>
 <li>IPv4 and IPv6 Tunnels Table</li>
@@ -4538,7 +4550,7 @@ if you still experience problems.</p>
 <h3 id="role-based-access-control-phase-1">Role-Based Access Control Phase 1</h3>
 <p>IP Fabric <code>v5.0.0</code> includes Phase 1 of RBAC. The most significant change is that Users are now assigned to a Role(s) and not given specific permissions. During the upgrade process your users will be migrated to the appropriate roles. For more information see the documentation at the links below.</p>
 <ul>
-<li><a href="../../../IP_Fabric_Settings/user_management/policies/">Policies</a></li>
+<li><a href="../../../IP_Fabric_Settings/user_management/policies/">Policies</a><ul>
 <li>This is where you define the endpoints users have access to.</li>
 <li>There are 5 built-in Policies in <code>v5.0.0</code><ul>
 <li><code>settings</code>: Access to snapshot and product settings endpoints</li>
@@ -4548,15 +4560,21 @@ if you still experience problems.</p>
 <li><code>others</code>: Migrated read scope - to be deprecated in 5.1</li>
 </ul>
 </li>
-<li><a href="../../../IP_Fabric_Settings/user_management/roles/">Roles</a></li>
+</ul>
+</li>
+<li><a href="../../../IP_Fabric_Settings/user_management/roles/">Roles</a><ul>
 <li>A Role can consist of one or more policies</li>
 <li><code>admin</code> role cannot be changed or deleted</li>
-<li><a href="../../../IP_Fabric_Settings/user_management/users/">Users</a></li>
+</ul>
+</li>
+<li><a href="../../../IP_Fabric_Settings/user_management/users/">Users</a><ul>
 <li>A User can also consist of one or more roles</li>
+</ul>
+</li>
 </ul>
 <h3 id="ip-fabric-vm-os-level-changes">IP Fabric VM OS-Level Changes</h3>
 <ul>
-<li>The OS has been updated to Debian 11 "bullseye"</li>
+<li>The OS has been updated to Debian 11 "bullseye"<ul>
 <li><code>openvpn</code> version has been updated to <code>2.5.1</code><ul>
 <li>This version drops older ciphers, and could have an impact on users utilizing those ciphers</li>
 </ul>
@@ -4565,31 +4583,41 @@ if you still experience problems.</p>
 <li>This upgrade could potentially impact jumphost connectivity</li>
 </ul>
 </li>
-<li>removed jailkit for <code>osadmin</code> user</li>
+</ul>
+</li>
+<li>removed jailkit for <code>osadmin</code> user<ul>
 <li>There is still the limitation for changing the <code>osadmin</code> account password only via running <code>nimpee-net-config -t</code></li>
 <li>CLI users logging in as <code>osadmin</code> now have <code>sudo</code> access</li>
+</ul>
+</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the CLI as a <code>root</code> and/or <code>autoboss</code> user may severely damage the product and/or the system itself. Such actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ul>
-<li>Boot Wizard Changes</li>
+<li>Boot Wizard Changes<ul>
 <li>For VM initial deployments where console access is not possible, it's now possible to run the boot wizard via SSH<ul>
 <li>Boot the VM, determine the IP address assigned to it from DHCP, and SSH to the VM: <code>ssh osadmin@&lt;dhcp-learned-ip-address&gt;</code></li>
 <li>Once logged in, run <code>nimpee-net-config -a</code></li>
 </ul>
 </li>
-<li><a href="https://cloud-init.io/">cloud-init</a> preliminary support</li>
+</ul>
+</li>
+<li><a href="https://cloud-init.io/">cloud-init</a> preliminary support<ul>
 <li>For users wanting to automate VM installations, <code>cloud-init</code> can be used for initial VM provisioning</li>
 <li>IP address assignment to the VM is supported via <code>cloud-init</code></li>
 <li>Any other changes via <code>cloud-init</code> (users, ssh keys, resizing) may work, but are untested and unsupported</li>
 <li>Changing the password for <code>osadmin</code> through <code>cloud-init</code> is discouraged as it has some implications, use <code>nimpee-net-config -t</code> instead</li>
 <li>If you are using auto <code>cloud-init</code> via certain cloud providers, note the OpenSSH server will regenerate new public/private keys</li>
+</ul>
+</li>
 <li>Added <code>qemu-guest-agent</code> for easier monitoring in environments such as OpenStack</li>
-<li>Entry input validation has been improved in features such as backup, jumphosts, SNMP and certificates</li>
+<li>Entry input validation has been improved in features such as backup, jumphosts, SNMP and certificates<ul>
 <li>Strings should only accept the following characters: <code>A-Za-z0-9.,/-_@%^:=+ -</code></li>
 <li>Previously set strings may no longer work. For example, an SNMP community string previously set with an invalid character (i.e. <code>IPFabric&amp;123</code>) would cause SNMP queries not to work until the string is updated with only valid characters</li>
+</ul>
+</li>
 </ul>
 
               
