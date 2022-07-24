@@ -2680,9 +2680,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sso-connectors" class="md-nav__link">
-    SSO Connectors
+  <a href="#sso-configuration" class="md-nav__link">
+    SSO Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="SSO Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipf-api-configuration" class="md-nav__link">
+    IPF API configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-client" class="md-nav__link">
+    Static client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openid-connect-oidc" class="md-nav__link">
+    OpenID Connect (OIDC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saml-connector" class="md-nav__link">
+    SAML Connector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4289,9 +4323,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sso-connectors" class="md-nav__link">
-    SSO Connectors
+  <a href="#sso-configuration" class="md-nav__link">
+    SSO Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="SSO Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipf-api-configuration" class="md-nav__link">
+    IPF API configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-client" class="md-nav__link">
+    Static client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openid-connect-oidc" class="md-nav__link">
+    OpenID Connect (OIDC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saml-connector" class="md-nav__link">
+    SAML Connector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4310,15 +4378,138 @@
 
 
 <h1 id="single-sign-on-sso">Single Sign On (SSO)</h1>
-<p>IP Fabric uses <a href="https://dexidp.io/">Dex (A Federated OpenID Connect Provider)</a> for <strong>Single Sign On (SSO) Authentication</strong>.</p>
-<p>Implementation of SSO configuration is complex and because of that it
-is configured for you by our IP Fabric Solution Architects.</p>
-<p>If you are not sure who is your Solution Architect, contact our Support Team.</p>
-<h2 id="sso-connectors">SSO Connectors</h2>
-<p>For more information about supported Dex SSO
-connectors, see <a href="https://dexidp.io/docs/connectors">official Dex documentation</a>.</p>
-<p>If you need more information regarding SSO configuration, please also
-contact your IP Fabric Solution Architect or Support Team.</p>
+<p>IP Fabric includes support for single sign-on. We have opted for <a href="https://dexidp.io/">Dex (A
+Federated OpenID Connect Provider)</a> as a key building block
+to allow a broader set of Identity providers (IdP).</p>
+<pre class="mermaid"><code>sequenceDiagram
+  IPF-&gt;&gt;IPF: User selects SSO on the IPF login screen.
+  IPF-&gt;&gt;Dex: Redirect after starting SSO auth.
+  Dex-&gt;&gt;IdP: Dex redirects to selected and cofigured IdP.
+  IdP-&gt;&gt;IdP: User authenticates, provides MFA etc.
+  IdP-&gt;&gt;Dex: User is redirected back to Dex with code.
+  Dex-&gt;&gt;IdP: Dex fetches token from IdP.
+  Dex-&gt;&gt;IPF: Dex redirects the user back to IPF with code.
+  IPF-&gt;&gt;Dex: IPF fetches token from Dex.</code></pre>
+<p>Implementation of SSO configuration can be complex, and because of that, it is configured for you by our Solution Architects. If you are unsure who your Solution Architect is, contact our Support Team.</p>
+<h2 id="sso-configuration">SSO Configuration</h2>
+<p>While Dex supports various connectors, we strongly recommend using OpenID
+Connect (OIDC) for SSO integration. Please, check <a href="https://dexidp.io/docs/connectors">official Dex
+documentation</a> for their overview.</p>
+<p>Dex configuration is located at <code>/etc/ipf-dex.yaml</code> on the IP Fabric appliance.
+It has several configuration sections. The key ones are covered below.</p>
+<p>Dex configuration has at the very top attribute called <code>issuer</code>. This needs to
+be configured to be the same as <code>url</code> in the IPF API configuration. For example</p>
+<div class="highlight"><pre><span></span><code><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ipf-device-fqdn/dex</span><span class="w"></span>
+</code></pre></div>
+<h3 id="ipf-api-configuration">IPF API configuration</h3>
+<p>The IPF API configuration is stored at <code>/opt/nimpee/conf.d/api.json</code>. The
+relevant section for SSO is called <code>dex</code>. It's general format looks like</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&quot;dex&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ipf-device-fqdn/dex&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>providers</code> sections have to contain at least one SSO provider (which
+corresponds to <code>staticClient</code> in the Dex configuration).</p>
+<div class="admonition example">
+<p class="admonition-title">Example of <code>providers</code> section</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;okta&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;clientId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ipfabric&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;clientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;aiphoocah6oucieco2ae5VeiJo&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;roleAssignments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;any&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;roleId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID_OF_CREATED_ROLE_WITH_READ_POLICY&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;groupName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;group01&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;roleId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="static-client">Static client</h3>
+<p>Section <code>staticClients</code> contain configuration for the IP Fabric portal, which
+acts as a client to <code>dex</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span><span class="w"></span>
+<span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;https://ipf-device-fqdn/api/v5.0/auth/external/okta&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;IP</span><span class="nv"> </span><span class="s">Fabric&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aiphoocah6oucieco2ae5VeiJo</span><span class="w"></span>
+</code></pre></div>
+</div>
+<ul>
+<li><code>id</code> is a unique identification of the client within Dex configuration. Has
+  to be the same as <code>clientId</code> from the IPF API config.</li>
+<li><code>redirectURIs</code> is a full path to the callback endpoint of the IP Fabric client.
+  It is in the format of
+  <code>https://{{ipf-device-fqdn}}/api/{api_version}/auth/external/{{name-from-api-config}}"</code>.
+  The end of the URI has to be the same as <code>name</code> attribute in the IPF API
+  config. Please, use only letters. No special characters are allowed. Please,
+  be aware of the <code>{api_version}</code> property. It is updated with every <em>major</em>
+  IPF release.</li>
+<li><code>name</code> is an arbitrary name of the client.</li>
+<li><code>secret</code> has to be the same as <code>clientSecret</code> in the API config. It is a
+  shared secret between IFP and Dex.</li>
+</ul>
+<h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
+<p><a href="https://dexidp.io/docs/connectors/oidc/">Dex documentation on OIDC</a> covers all
+configuration options.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of OIDC provider</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oidc</span><span class="w"></span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sso</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SSO SAML</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://auth.customer.com/auth/idp</span><span class="w"></span>
+<span class="w">    </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ipf-device-fqdn/dex/callback</span><span class="w"></span>
+<span class="w">    </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span><span class="w"></span>
+<span class="w">    </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">woo5ieSa7die4fooy6Oop7gedi</span><span class="w"></span>
+<span class="w">    </span><span class="nt">getUserInfo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">insecureEnableGroups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">scopes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openid</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">profile</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">roles</span><span class="w"></span>
+<span class="w">    </span><span class="nt">claimMapping</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">roles</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="saml-connector">SAML Connector</h3>
+<p>Please review the <a href="https://dexidp.io/docs/connectors/saml/">official Dex SAML
+documentation</a> for all configuration
+options and potential caveats.</p>
+<div class="admonition example">
+<p class="admonition-title">Example Okta SAML configuration</p>
+<div class="highlight"><pre><span></span><code><span class="nt">connectors</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">saml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">okta_saml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Okta SAML</span><span class="w"></span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssoURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dev-xxxxx.okta.com/app/dev-xxxxxx_dexdevsaml_1/exk2jwjoow8IomIfk5d7/sso/saml</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssoIssuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://www.okta.com/exk2jwjoow8IomIfk5d7</span><span class="w"></span>
+<span class="w">      </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ipf-device-fqdn/dex/callback</span><span class="w"></span>
+<span class="w">      </span><span class="nt">caData</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LS0t</span><span class="nv"> </span><span class="s">...</span><span class="nv"> </span><span class="s">0tLS0tCg==&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">usernameAttr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
+<span class="w">      </span><span class="nt">emailAttr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groupsAttr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">groups</span><span class="w"></span>
+<span class="w">      </span><span class="nt">nameIDPolicyFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">emailAddress</span><span class="w"></span>
+</code></pre></div>
+</div>
+<ul>
+<li><code>redirectURI</code> is <code>issuer</code> with appended <code>/callback</code>. It needs to point back to the Dex instance,
+  which will handle incoming redirects from IdP. The 'redirectURI'property is configured on the IdP side.</li>
+<li><code>caData</code> contain Base64 encoded certification chain which is used to verify
+  IdP identity. It can be replaced with <code>ca</code> attribute alternatively, which points to a file containing a chain.</li>
+</ul>
 
               
             </article>
