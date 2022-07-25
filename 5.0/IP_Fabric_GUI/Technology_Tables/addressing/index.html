@@ -1811,7 +1811,7 @@
   
     <li class="md-nav__item">
       <a href="../../diagrams/how_to_use_path-lookup/" class="md-nav__link">
-        How To Use Path Look-Up
+        How To Use Path Lookup
       </a>
     </li>
   
@@ -3318,6 +3318,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../releases/known_issues/IP_Fabric/Service_passwords/" class="md-nav__link">
+        Service Passwords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/" class="md-nav__link">
         Site Name Can Change To An Obscure UUID Value After Update
       </a>
@@ -3363,18 +3377,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_5" type="checkbox" id="__nav_7_2_14_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_6" type="checkbox" id="__nav_7_2_14_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_2_14_5">
+        <label class="md-nav__link" for="__nav_7_2_14_6">
           Error messages
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Error messages" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_2_14_5">
+        <label class="md-nav__title" for="__nav_7_2_14_6">
           <span class="md-nav__icon md-icon"></span>
           Error messages
         </label>
@@ -4495,7 +4509,7 @@ down:</p>
 <li>If you are satisfied with the result click <strong>Update rule</strong>.</li>
 </ol>
 <p>You can also add new set of coloring rules. For example, you want to check used
-aggregation protocol. Please check <em>Colorize column</em> section.</p>
+aggregation protocol. Please check <em>Intent Verification Rules</em> section.</p>
 <h3 id="step-3-fix-it">Step 3 – Fix It</h3>
 <p>In step 2 we found few malfunctioned port channels. You can gather more
 information in IP Fabric like check network diagrams or directly connect to
@@ -4519,13 +4533,13 @@ table with color filter applied.</p>
 Dashboard.</p>
 <ol>
 <li>Go to <strong>Technology → Port Channels → Member status table</strong>.</li>
-<li>Click to <strong>Colorize columns</strong> button in the right toolbox menu.<br />
-<a data-featherlight="1878327405.png" href="#"><img alt="colorize columns" src="1878327405.png" /></a></li>
+<li>Click to <strong>Intent Verification Rules</strong> button in the right toolbox menu.<br />
+<a data-featherlight="1878327405.png" href="#"><img alt="intent_verification_rules" src="1878327405.png" /></a></li>
 <li>Specify <strong>Rule name</strong>, for example <strong>Check protocol</strong>.</li>
 <li>Select <strong>Colorized column</strong>, it's <strong>Protocol</strong> in our case.</li>
 <li>Leave <strong>Widgets</strong> empty for now.</li>
 <li>Click on <strong>blue</strong>.</li>
-<li>Create rule <strong>Protocol regex <code>(LACP\|lacp)</code></strong>.</li>
+<li>Create rule <strong>Protocol insensitive equal <code>lacp</code></strong></li>
 <li>Click on <strong>yellow</strong>.</li>
 <li>Create rule <strong>Protocol equal static</strong>.</li>
 <li>Click <strong>Create rule</strong>.<br />
@@ -4534,14 +4548,14 @@ Dashboard.</p>
 <p>We crated new coloring rule but we would like to see status of port
 channel protocol on the Dashboard. We can add it like this:</p>
 <ol>
-<li>Go to <strong>Dashboard → Overview</strong>.</li>
+<li>Go to <strong>Dashboard</strong>.</li>
 <li>Click Edit in the upper right corner.</li>
 <li>Click <strong>+Add row</strong>.</li>
 <li>Choose row style what you would like to add.</li>
 <li>Click on <strong>Untitled</strong> and enter some name for example <strong>Port
    channels</strong>.</li>
 <li>Click <strong>+Add Widget</strong>.</li>
-<li>Select widget type in our case it's <strong>Table Colors</strong>.</li>
+<li>Select widget type in our case it's <strong>Intent Verifications</strong>.</li>
 <li>Name widget for example <strong>Port channels</strong>.</li>
 <li>Look for <strong>Table color rules</strong> and add it to Widget. For example
    <strong>Technology → Port channels → Member status table → Protocol check</strong>.
