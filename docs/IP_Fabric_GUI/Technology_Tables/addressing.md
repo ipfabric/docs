@@ -88,7 +88,7 @@ down:
 8. If you are satisfied with the result click **Update rule**.
 
 You can also add new set of coloring rules. For example, you want to check used
-aggregation protocol. Please check *Colorize column* section.
+aggregation protocol. Please check *Intent Verification Rules* section.
 
 ### Step 3 -- Fix It
 
@@ -118,13 +118,13 @@ First let's create new coloring rule which will be then added to the
 Dashboard.
 
 1. Go to **Technology → Port Channels → Member status table**.
-2. Click to **Colorize columns** button in the right toolbox menu.  
-     ![colorize columns](addressing/1878327405.png)
+2. Click to **Intent Verification Rules** button in the right toolbox menu.  
+     ![intent_verification_rules](addressing/1878327405.png)
 3. Specify **Rule name**, for example **Check protocol**.
 4. Select **Colorized column**, it's **Protocol** in our case.
 5. Leave **Widgets** empty for now.
 6. Click on **blue**.
-7. Create rule **Protocol regex `(LACP\|lacp)`**.
+7. Create rule **Protocol insensitive equal `lacp`**
 8. Click on **yellow**.
 9. Create rule **Protocol equal static**.
 10. Click **Create rule**.  
@@ -133,14 +133,14 @@ Dashboard.
 We crated new coloring rule but we would like to see status of port
 channel protocol on the Dashboard. We can add it like this:
 
-1. Go to **Dashboard → Overview**.
+1. Go to **Dashboard**.
 2. Click Edit in the upper right corner.
 3. Click **+Add row**.
 4. Choose row style what you would like to add.
 5. Click on **Untitled** and enter some name for example **Port
    channels**.
 6. Click **+Add Widget**.
-7. Select widget type in our case it's **Table Colors**.
+7. Select widget type in our case it's **Intent Verifications**.
 8. Name widget for example **Port channels**.
 9. Look for **Table color rules** and add it to Widget. For example
    **Technology → Port channels → Member status table → Protocol check**.

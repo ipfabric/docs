@@ -8,7 +8,7 @@ After logging in as the `osadmin` user, go to **Create admin** menu and set
 
 !!! Info
 
-	You will not be able to create a new user account with name `admin` as this user already exists in the IP Fabric, see next paragraph
+	No user to the main GUI is present by default on a clean IP Fabric installation. It is mandatory to create a new local administrator account.
 
 ![Creating new admin user](admin_create_new.png)
 
