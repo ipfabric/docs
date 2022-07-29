@@ -66,10 +66,16 @@ group permissions** are also checked with **every login attempt**.
     which might be slow in your local setup.
 12. Click **Confirm**.
 
-!!! note ""
+!!! note
 
     If the LDAP server is not reachable or credentials to the service
     account are not correct, LDAP authentication cannot be set.
+
+!!! Info "Two or more LDAP servers"
+
+    When two or more LDAP server configurations are present, an email suffix needs to be added to the username when logging in.
+    
+    Username alone works only in a situation when one LDAP server configuration is present.
 
 ## LDAP Group Permissions
 
