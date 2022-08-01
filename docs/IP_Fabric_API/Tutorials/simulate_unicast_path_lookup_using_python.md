@@ -4,9 +4,8 @@ A quick tutorial about how to use IP Fabric’s API with [python-ipfabric-diagra
 
 ## Prerequisites
 
-* we strongly recommend using a virtual environment for development testing
-
-* install the Python package in your environment:
+- we strongly recommend using a virtual environment for development testing
+- install the Python package in your environment:
 
 ```bash
 pip install ipfabric-diagrams

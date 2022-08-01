@@ -1,6 +1,7 @@
 # 05 - Site Separation
 
 ## Site separation
+
 The site represents a separate collection of devices. A site can be a branch, a factory, a production floor, a campus, or anything that might represent a logical group for a user.
 
 By default, the Site distribution is generated automatically after the discovery process ends and is based on the rules described below. It can also be triggered manually without the need for the whole discovery process by going to **Settings → Site separation (In global or Snapshot settings)**.
@@ -17,7 +18,7 @@ To configure **Device Attributes** first enable the toggle in the Site Separatio
 ![Site separation device attributes](site_separation_device_attributes.png)
 
 - **Serial Number** is IP Fabric’s "Unique Serial Number" (API column `sn`); this is not the column "Serial Number" which represents the Hardware SN (API column `snHw`)
-    - Devices discovered via API can also be assigned using Device Attributes.
+  - Devices discovered via API can also be assigned using Device Attributes.
 - **Hostname** is populated by IP Fabric when a device matching the **Serial Number** is found
 - **Attribute** is the Device Attribute to assign, since we want to set the Site based on the serial number set it to **Site name**
 - **Value** is the attribute’s value to assign, in this case we want to split site L35 into separate sites named 35COLO, 35PRODUCTION, 35HEADOFFICE
@@ -35,10 +36,10 @@ The dropdown is intuitive and will let you search based on SN or hostname. Curre
 
 This is the preferred method of creating rules as it allows for bulk importing.
 
-Method | PUT
----|---
-URL| `https://<IPF_URL>/api/v5.0/attributes/global`
-Data | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]}`
+| Method | PUT                                                                                           |
+| ------ | --------------------------------------------------------------------------------------------- |
+| URL    | `https://<IPF_URL>/api/v5.0/attributes/global`                                                |
+| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]}` |
 
 ### Routing And Switching Domain
 
@@ -61,6 +62,7 @@ For networks that have direct routing connectivity between sites, such as DMVPN 
 !!! hint
 
     Site distribution cannot be changed manually when regex rules are used. Sites cannot be renamed.
+
 Alternatively, site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location.
 
 !!! note
@@ -78,7 +80,7 @@ Go to **Settings → Site separation** and change **Routing & Switching Domain**
 - Lower case - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `prague`
 
 - No transformation - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that each device has its own site named `PRAGUE` and `prague`
-![Site separation hostname regex](site_separation_hostname_regex.png)
+  ![Site separation hostname regex](site_separation_hostname_regex.png)
 
 In this example the regular expression will match items such as PRAGUE-, LONDON-, etc.
 
@@ -106,7 +108,7 @@ We have several locations whose name is logically designed as one letter with on
 
 ![Site separtion device neighborship](site_separation_device_neighborship.png)
 
-This option will try to define a device based on its neighbor relationship if a device does not match any previous rule.  Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured.  If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.
+This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.
 
 #### Creating Rules With `python-ipfabric` Package
 
@@ -120,8 +122,7 @@ Rule precedence are followed in a top down manner.
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on serial number if a match is found.
 2. Rules you define. In the example above it will check the following
-   1. If SNMP Location matches "IPFABRIC, (LAB01)" → Site LAB01
-   2. If hostname matches "^L21" → Site MPLS 
-   3. If hostname matches "^(L\d{1,2})" → Site L2-99
+   1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
+   2. If hostname matches `^L21` → Site `MPLS`
+   3. If hostname matches `^(L\d{1,2})` → Site `L2-99`
 3. Try to assign devices without sites based on [device neighborship](../../../IP_Fabric_Settings/site_separation.md) (if enabled)
-

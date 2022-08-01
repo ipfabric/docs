@@ -23,6 +23,6 @@ components of the version are `major.minor.patch+build`:
     Please force refresh your browser cache after an upgrade.
     Depending on your operating system use the following key combination in your browser window:
 
-      - Windows: CTRL + F5
-      - Mac/Apple: Apple + R or command + R
-      - Linux: CTRL + F5
+    - Windows: `CTRL + F5`
+    - Mac/Apple: `Apple + R` or `⌘ + R`
+    - Linux: `CTRL + F5`

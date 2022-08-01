@@ -26,48 +26,48 @@ Contains a JSON data structure with the keys
 - `parameters` _[mandatory]_ - A nested JSON data structure with keys
 - `positions` _[optional]_ - A nested JSON data structure consisting of keys representing the serial number of devices and their positions in the completed diagram. Origin of `x=0, y=0` is the top left of the resulting image.
 
-    !!! example "Sample position data structure"
+  !!! example "Sample position data structure"
 
-        ``` json
-        {
-            "positions": {
-                "SNXXXXXXXXX": {
-                    "x": 40,
-                    "y": 160
-                }
-            }
-        }
-        ```
+      ``` json
+      {
+          "positions": {
+              "SNXXXXXXXXX": {
+                  "x": 40,
+                  "y": 160
+              }
+          }
+      }
+      ```
 
 - `settings` _[optional]_ - A nested JSON data structure representing visualisation settings to override the default view in IP Fabric's diagram canvas. In these settings, it is possible to:
 
-    - change edge properties like colours and thickness of lines representing protocols and groups
-    - change labels on the edges and interfaces
-    - hide certain device types.
+  - change edge properties like colours and thickness of lines representing protocols and groups
+  - change labels on the edges and interfaces
+  - hide certain device types.
 
-        !!! example "Example settings data structure"
+    !!! example "Example settings data structure"
 
-            ```json
-            {
-              "settings": {
-                  "edges": [
-                      {
-                          "id": "6129bb53-d19d-47ee-8f45-8829073221c1",
-                          "name": "vxlan",
-                          "type": "pathLookupEdge",
-                          "grouped": false,
-                          "style": {
-                              "color": "#d4b524",
-                              "pattern": "solid",
-                              "thicknessThresholds": [2,4,8]
-                          },
-                          "visible": true,
-                          "labels": ["intName","protocol"]
-                      }
-                  ]
-              }
-            }
-            ```
+        ```json
+        {
+          "settings": {
+              "edges": [
+                  {
+                      "id": "6129bb53-d19d-47ee-8f45-8829073221c1",
+                      "name": "vxlan",
+                      "type": "pathLookupEdge",
+                      "grouped": false,
+                      "style": {
+                          "color": "#d4b524",
+                          "pattern": "solid",
+                          "thicknessThresholds": [2,4,8]
+                      },
+                      "visible": true,
+                      "labels": ["intName","protocol"]
+                  }
+              ]
+          }
+        }
+        ```
 
 ### Response
 
@@ -90,12 +90,12 @@ The `graphResult` construct describes the detail of the topology of the end to e
 - `boxLabels` - text labels for each of the groups
 - `graphData` - a JSON construct containing a list of nodes and edges in the topological view of the path. Takes the form:
 
-    ```json
-    {
-       "nodes": {...},
-       "edges": {...}
-    }
-    ```
+  ```json
+  {
+     "nodes": {...},
+     "edges": {...}
+  }
+  ```
 
 where `nodes` contains data relating to the individual nodes in the graph. Each one is assigned a `vDevice` ID but there is recorded in each its hostname as `label`, it's `position`, its serial number in the `sn` field and the device `type`. Other key:value pairs relate to the inner workings of the IP Fabric graphing process.
 
@@ -163,20 +163,20 @@ The `pathlookup` construct describes the hop-by-hop forwarding and policy decisi
 
 - `eventSummary` -- which highlights the success or failure of the path and the cause of any issues along the way.
 
-    - `flags` will show if any policy has caused the traffic to fail to reach the destination (e.g. `acl-deny` or `zone-deny`)
+  - `flags` will show if any policy has caused the traffic to fail to reach the destination (e.g. `acl-deny` or `zone-deny`)
 
-    - `topics` is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point
+  - `topics` is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point
 
 - `decisions` -- contains a record for each device in the path and the forwarding and policy decision it has to make in the path. For each device:
 
-    - `trafficIn` is a representation of the ingress interface and the edge that it is connected to
-    - `trafficOut` represents the egress interface and the edge that it sends traffic along towards the destination
-    - `traces` contains the data to represent how that decision was taken - for example that might include:
+  - `trafficIn` is a representation of the ingress interface and the edge that it is connected to
+  - `trafficOut` represents the egress interface and the edge that it sends traffic along towards the destination
+  - `traces` contains the data to represent how that decision was taken - for example that might include:
 
-        - a `switching-nexthop` decision in a switch will require a MAC address table match;
-        - an `ip-routing` decision in a router will require a routing table lookup and an ARP table;
-        - an `ip-routing` decision in a zone-based firewall will add in a security check to validate that policy allows the packet to pass;
-        - an `mpls-switching` decision will validate the VRF, MPLS labels and push/pop behaviour in the label stack; and so on.
+    - a `switching-nexthop` decision in a switch will require a MAC address table match;
+    - an `ip-routing` decision in a router will require a routing table lookup and an ARP table;
+    - an `ip-routing` decision in a zone-based firewall will add in a security check to validate that policy allows the packet to pass;
+    - an `mpls-switching` decision will validate the VRF, MPLS labels and push/pop behaviour in the label stack; and so on.
 
 I've not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the `pathlookup` construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behaviour of the path lookup using this guidance.
 

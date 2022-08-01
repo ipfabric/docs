@@ -13,14 +13,14 @@ changes. Here are two methods for testing settings.
   `Add Devices` (or `Rediscover timed out devices`). If these changes
   fixed your issue, then apply them globally.
 
-    ![](troubleshooting/2953642050.png)
+  ![](troubleshooting/2953642050.png)
 
 - Make your changes globally and then run a new Snapshot. You could
   also filter the allowed discovery scope in the Snapshot specific
   Settings to a subset of /32 addresses to speed up discovery. In the
   example below I am telling discovery only to test 1 device.
 
-    ![](troubleshooting/2953314353.png)
+  ![](troubleshooting/2953314353.png)
 
 ### Discovery Seed
 
@@ -36,6 +36,7 @@ you, this would be the location to put the IP Addresses of some of your
 devices so IP Fabric can discover and crawl that site.
 
 !!! important
+
     Adding new devices here will only discover them if `Limit discovery to already discovered devices` is not enabled in the Discovery Tasks Settings.
 
 ### Management > Discovery History
@@ -48,7 +49,7 @@ in this table for use in other snapshots.
 
 - The username last successfully used for a device will be recorded
   here and be the first one tried in a future snapshot. If
-  unsuccessful it will check the *Settings > Authentication* list and
+  unsuccessful it will check the _Settings > Authentication_ list and
   go back through the decision tree. This may cause the next snapshot
   to take longer due to authentication failures but once this table is
   updated with the new username the discovery time will return to
@@ -79,6 +80,7 @@ it trying to log into a terminal server which IPF could not understand;
 once added to the exclude list the discovery completed successfully.
 
 !!! important
+
     Do not confuse the Include List with the Seed list. Include will only
     try to discover an IP if it is found through the Discovery task or the
     IP in the seeds. Also note IP Fabric does not do any ICMP pings to find
@@ -93,23 +95,23 @@ discovery of new devices on your network.
 
 - **If you are not finding new devices in your snapshot ensure**
   `Limit discovery to already discovered devices` **is not enabled**.
-  If this is enabled then only devices in the *Discovery History*
+  If this is enabled then only devices in the _Discovery History_
   table will be added to the snapshot and no new devices (**even if
   those devices are manually added to the Settings > Discovery
   Seed**).
 
-    - If you want to limit to only discovered devices but want to add
-      new devices this is still possible by going to *Discovery
-      Snapshot* and manually adding devices into a snapshot which it
-      will then be added to the *Discovery History* table and picked
-      up in future snapshots.
+  - If you want to limit to only discovered devices but want to add
+    new devices this is still possible by going to _Discovery
+    Snapshot_ and manually adding devices into a snapshot which it
+    will then be added to the _Discovery History_ table and picked
+    up in future snapshots.
 
 - `xDP (neighbors)` signifies using CDP or LLDP information to
   discover devices in your network.
 
 - `ARP` uses the ARP and MAC Address OUI information to find devices.
-  If the OUI is set for `Enabled for discovery` in the *Settings >
-  OUI* table then IP Fabric will attempt to connect and discover the
+  If the OUI is set for `Enabled for discovery` in the _Settings >
+  OUI_ table then IP Fabric will attempt to connect and discover the
   device.
 
 - `Routing Table` will try to connect to next-hop devices.
@@ -139,11 +141,12 @@ requirements.
 
 Authentication is where you define the username and password IP Fabric
 uses to connect a physical device (devices discovered through the API
-are managed through *Advanced > Vendors API*). Ensure that you have a
+are managed through _Advanced > Vendors API_). Ensure that you have a
 username configured for all scopes of the network you wish to discover
 or set to the default of `0.0.0.0/0`.
 
 !!! tip
+
     If you are having issues with Configuration Backup not pulling data ensure that you have `Use for configuration management` set on the proper usernames.
 
 Further information can be located at [Authentication](../../../IP_Fabric_Settings/authentication.md).
@@ -154,7 +157,7 @@ There can been a numerous amount of reason why IP Fabric did not
 discover a device from Day 0 or incorrectly configured devices, AAA
 outage, or insufficient authorization privileges to name a few. First we
 will take a look at some tables to help you find these and then show how
-to use the *Connectivity Report* to debug them.
+to use the _Connectivity Report_ to debug them.
 
 ### Technology Tables
 
@@ -189,8 +192,9 @@ built-in default Intent Check for you.
   because if you have a neighbor adjacency with an iGP it is assumed
   it is under the control of your network.
 
-    !!! tip
-        Check this table for help locating rogue devices in your network.
+  !!! tip
+
+      Check this table for help locating rogue devices in your network.
 
 - <span style="color: blue;">BLUE</span>: Is the default rule if the protocol does not match any
   other regex.
@@ -205,11 +209,13 @@ the UI or JSON using the API. This would perhaps help you find other
 missing devices IP Fabric could not discover.
 
 !!! tip
+
     Don’t forget to audit your NMS or alarming systems inventory from what IP
     Fabric discovered on the network. Many customers have found devices that
     were not being monitored.
 
 !!! Note "Note on Management IP"
+
     In IPF v4.3.5 or below the UI in many places has a column of
     `Management IP`; in v4.4 this has been renamed to `Login IP` to avoid
     confusion and to match the API column name of `loginIp`.
@@ -229,8 +235,8 @@ missing devices IP Fabric could not discover.
     not always unique and there is a chance of overlap so please take this
     into account.
 
-
 !!! Note "Note on Serial Numbers"
+
     IP Fabric records two Serial Numbers for the device. The column name
     `Serial Number` is the actual hardware serial number of the device which
     is why it is labeled `snHw` in the API.
@@ -246,7 +252,7 @@ missing devices IP Fabric could not discover.
 ![](troubleshooting/2953314341.png)
 ![](troubleshooting/2953642038.png)
 
-The *Connectivity Report* is a per Snapshot report stating the successes
+The _Connectivity Report_ is a per Snapshot report stating the successes
 or errors of IP addresses that IP Fabric tried to discover. Once you
 have a list of IP Addresses from the unmanaged neighbor tables above or
 perhaps an external Network Management System this is where you would
@@ -286,25 +292,25 @@ Further information can be found at [No Devices Discovered](common_problems/no-d
 ![](troubleshooting/2953740355.png)
 
 Configuration Management is a separate process from discovery. First a
-device must be discover in a Snapshot and placed in the *Management >
-Discovery History* table. Once in this table then next time IP Fabric is
+device must be discover in a Snapshot and placed in the _Management >
+Discovery History_ table. Once in this table then next time IP Fabric is
 scheduled to pull configs it should be populated in the list.
 
-Example:
+!!! example
 
-- *Settings > Advanced > Snapshots* is set to periodically create
-  snapshots every day at 6AM
+    - _Settings > Advanced > Snapshots_ is set to periodically create
+      snapshots every day at 6AM
 
-- *Settings > Advanced > Configuration Management* is set to
-  periodically create snapshots every day at 11PM
+    - _Settings > Advanced > Configuration Management_ is set to
+      periodically create snapshots every day at 11PM
 
-- New device will be found at 6AM but since the config mgmt is
-  scheduled for 11PM you will need to wait until the next day to
-  ensure it was pulled.
+    - New device will be found at 6AM but since the config mgmt is
+      scheduled for 11PM you will need to wait until the next day to
+      ensure it was pulled.
 
 Other troubleshooting tips:
 
-- Please ensure that in *Settings > Authentication* you have enabled
+- Please ensure that in _Settings > Authentication_ you have enabled
   the correct usernames to `Use for configuration management`, if no
   usernames have this enabled then configs will not be backed up.
 
