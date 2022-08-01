@@ -4371,66 +4371,62 @@ differently in you production deployment, than described here.
 
 <h1 id="general">General</h1>
 <ul>
-<li>
-<p>Diagram displays device, which is not connected to anything. The
+<li>Diagram displays device, which is not connected to anything. The
   situation appears when site separation prevents displaying the
   device on the other end. To show connection to a device, click <strong>Show
-  Edge Cloud</strong></p>
-</li>
-<li>
-<p>Diagrams drill-down missing. Current diagrams offer vast amount of
+  Edge Cloud</strong></li>
+</ul>
+<ul>
+<li>Diagrams drill-down missing. Current diagrams offer vast amount of
   information, which is not available through drill-downs. More
-  drill-down capabilities are planned for future releases.</p>
-</li>
-<li>
-<p>Advanced Filter Visibility. When Advanced filter is applied, and
+  drill-down capabilities are planned for future releases.</li>
+</ul>
+<ul>
+<li>Advanced Filter Visibility. When Advanced filter is applied, and
   then collapsed via advanced filter button
     <a data-featherlight="filter_advanced_btn.png" href="#"><img alt="advanced filter button" src="filter_advanced_btn.png" />
   it's not clear that filter is being applied to the table, except for
-  the visible clear filter button. </a><a data-featherlight="filter_clear_btn.png" href="#"><img alt="clear filter button" src="filter_clear_btn.png" /></a></p>
-</li>
-<li>
-<p>Jumphost can be activated only from support console.</p>
-</li>
-<li>
-<p>TACACS may be limited to the specific maximum number of simultaneous
+  the visible clear filter button. </a><a data-featherlight="filter_clear_btn.png" href="#"><img alt="clear filter button" src="filter_clear_btn.png" /></a></li>
+</ul>
+<ul>
+<li>Jumphost can be activated only from support console.</li>
+</ul>
+<ul>
+<li>TACACS may be limited to the specific maximum number of simultaneous
   authentication sessions, preventing discovery of all of the devices in the
   network. If fewer than expected number of devices are discovered, decrease
   bandwidth rate (like to 3Mb/s), increase SSH/TELNET session timeout (for
   example to 30 seconds), and decrease the maximum number of simultaneous
-  sessions (like 40).</p>
-</li>
-<li>
-<p>Inter-platform spanning-tree topology enumeration requires L2
+  sessions (like 40).</li>
+</ul>
+<ul>
+<li>Inter-platform spanning-tree topology enumeration requires L2
   discovery protocol to form a connection when
   <code>port_id.port_priority.port_id</code> field separation boundary is in
-  inconsistent position between the two platforms.</p>
-</li>
-<li>
-<p>Site separation - Changing "Firewall in site" and new
-  discovery/recalculation can change site names.</p>
-</li>
+  inconsistent position between the two platforms.</li>
+</ul>
+<ul>
+<li>Site separation - Changing "Firewall in site" and new
+  discovery/recalculation can change site names.</li>
 </ul>
 <h2 id="snapshots-release-candidate">Snapshots (Release Candidate)</h2>
 <ul>
-<li>
-<p>When Discovery is stopped mid way, and then Refresh is executed, the
+<li>When Discovery is stopped mid way, and then Refresh is executed, the
   refresh does not consider IPs with status "STOP" for the next
-  discovery</p>
-</li>
-<li>
-<p>Resource check for sufficient RAM and HDD use a sliding window.
+  discovery</li>
+</ul>
+<ul>
+<li>Resource check for sufficient RAM and HDD use a sliding window.
   Creating a new snapshot immediately after previous one may result in
   a "insufficient resources" failure. In such a case, verify resources
-  on the status page and retry in several minutes.</p>
-</li>
-<li>
-<p>Visualization does not work properly in Internet Explorer. Use
-  Firefox or Chrome.</p>
-</li>
-<li>
-<p>Switching site separation to RegEx can cause issues.</p>
-</li>
+  on the status page and retry in several minutes.</li>
+</ul>
+<ul>
+<li>Visualization does not work properly in Internet Explorer. Use
+  Firefox or Chrome.</li>
+</ul>
+<ul>
+<li>Switching site separation to RegEx can cause issues.</li>
 </ul>
 <h2 id="duplicate-ip-detection">Duplicate IP detection</h2>
 <ul>

@@ -4378,39 +4378,33 @@ time or after system changes</p>
 <h2 id="solution">Solution</h2>
 <ol>
 <li>Check the "Connectivity report" on the Discovery page to see the
-    specific addresses attempted and the reason for the failure (https://ip-fabric/snapshot-management/tasks)<ol>
-<li>If the reason reports timeout, IP Fabric has IP address assigned
-    that cannot reach the device. The route may not be present or
-    the traffic may be filtered. Check IP Fabric connectivity
-    with <a href="../../../../../System_Administration/Command_Line_Interface/troubleshooting/">Troubleshooting VM network problems using IP Fabric
-    CLI</a>.</li>
-<li>If the reason reports authentication failure, IP Fabric was not
-    able to login to the device. Check <a href="../../../../../IP_Fabric_Settings/authentication/">Authentication -
-    Settings</a>.</li>
-<li>Check the "CLI output" file in the Action column of the
-    Connectivity Report to see the full interaction log to help you
-    troubleshoot the issue. Check <a href="../finetune-ssh-telnet">Fine-Tune SSH/TELNET
-    parameters</a>.</li>
-</ol>
-</li>
+    specific addresses attempted and the reason for the failure (https://ip-fabric/snapshot-management/tasks)
+    1.  If the reason reports timeout, IP Fabric has IP address assigned
+        that cannot reach the device. The route may not be present or
+        the traffic may be filtered. Check IP Fabric connectivity
+        with <a href="../../../../../System_Administration/Command_Line_Interface/troubleshooting/">Troubleshooting VM network problems using IP Fabric
+        CLI</a>.
+    2.  If the reason reports authentication failure, IP Fabric was not
+        able to login to the device. Check <a href="../../../../../IP_Fabric_Settings/authentication/">Authentication -
+        Settings</a>.
+    3.  Check the "CLI output" file in the Action column of the
+        Connectivity Report to see the full interaction log to help you
+        troubleshoot the issue. Check <a href="../finetune-ssh-telnet">Fine-Tune SSH/TELNET
+        parameters</a>.</li>
 <li>Provide discovery seed address on Discovery Seed page of the
-    Settings section (<code>https://ip-fabric/settings/discovery-seed</code>)<ol>
-<li>Seed addresses specify starting points of discovery. If default
-    gateway of IP Fabric VM is not discoverable, you need to specify
-    an IP address or a network to start the discovery. It is
-    recommended to provide IP address of a router as a starting
-    point for discovery. Check <a href="../../../../../IP_Fabric_Settings/discovery_seed/">Discovery Seed -
-    Settings</a>.</li>
-</ol>
-</li>
-<li>Test the connection manually using IP Fabric CLI<ol>
-<li>Connect to IP Fabric using SSH and attempt to connect to the
-    device using SSH or TELNET using the credentials entered on the
-    authentication page. Check IP Fabric connectivity
-    with <a href="../../../../../System_Administration/Command_Line_Interface/troubleshooting/">Troubleshooting VM Network Problems Using IP Fabric
-    CLI</a>.</li>
-</ol>
-</li>
+    Settings section (<code>https://ip-fabric/settings/discovery-seed</code>)
+    1.  Seed addresses specify starting points of discovery. If default
+        gateway of IP Fabric VM is not discoverable, you need to specify
+        an IP address or a network to start the discovery. It is
+        recommended to provide IP address of a router as a starting
+        point for discovery. Check <a href="../../../../../IP_Fabric_Settings/discovery_seed/">Discovery Seed -
+        Settings</a>.</li>
+<li>Test the connection manually using IP Fabric CLI
+    1.  Connect to IP Fabric using SSH and attempt to connect to the
+        device using SSH or TELNET using the credentials entered on the
+        authentication page. Check IP Fabric connectivity
+        with <a href="../../../../../System_Administration/Command_Line_Interface/troubleshooting/">Troubleshooting VM Network Problems Using IP Fabric
+        CLI</a>.</li>
 <li>If no devices are discovered after checking the Connectivity Report
     and after entering the Seed addresses, contact support for
     troubleshooting assistance. Check <a href="../../../../../support/#contact">Contacts</a>.</li>

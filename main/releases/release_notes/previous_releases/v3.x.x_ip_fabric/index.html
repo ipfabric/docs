@@ -6257,19 +6257,29 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <h3 id="features-protocol-and-technology-support_1">Features - Protocol and technology support</h3>
 <ul>
 <li>Cisco ACI - Added NTP support</li>
-<li>Cisco ACI - DTEP collection added</li>
+<li>Cisco ACI - DTEP collection added<ul>
 <li>Tables located at Technology / SDN / ACI / DTEP</li>
-<li>Added Multi-Chassis LAG support for Arista EOS and Extreme XOS</li>
+</ul>
+</li>
+<li>Added Multi-Chassis LAG support for Arista EOS and Extreme XOS<ul>
 <li>Tables located at Technology / PortChannel / MLAG</li>
-<li>Arista EOS - added support for VARP (Virtual-ARP)</li>
+</ul>
+</li>
+<li>Arista EOS - added support for VARP (Virtual-ARP)<ul>
 <li>Table located ar Technology / FHRP / Virtual Gateways</li>
+</ul>
+</li>
 <li>Arista EOS - added PoE support</li>
 <li>Arista EOS - added support for environment information</li>
 <li>Cisco NX-OS, IOS-XE, Arista EOS - The Precision Time Protocol
-  support added</li>
+  support added<ul>
 <li>Tables located at Technology / Management / PTP</li>
-<li>Cisco IOS, IOS-XE: Add support for PPPoE</li>
+</ul>
+</li>
+<li>Cisco IOS, IOS-XE: Add support for PPPoE<ul>
 <li>Tables located at Technology / Interfaces / PPPoE</li>
+</ul>
+</li>
 </ul>
 <h3 id="improvements_2">Improvements</h3>
 <ul>
@@ -6299,12 +6309,14 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   shown "Connection lost" overlay</li>
 <li>Juniper JunOS - filter out VRRP backup virtual IP from the managed
   IP list</li>
-<li>Managed duplicate IP table - removed for:</li>
+<li>Managed duplicate IP table - removed for:<ul>
 <li>Aruba AP - /32 IP on tunnel interfaces taken from another
-    interface</li>
+  interface</li>
 <li>Versa - Internal IP</li>
 <li>IPv4 link local addresses 169.254.0.0/16</li>
 <li>Loopback addresses 127.0.0.0/8</li>
+</ul>
+</li>
 <li>The End Of Live database has been updated for Vendors (Cisco, HP,
   F5, PaloAlto, Arista, Extreme)</li>
 </ul>
@@ -6827,23 +6839,29 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
 <h3 id="features-protocol-and-technology-support_5">Features - Protocol and technology support</h3>
 <ul>
-<li>Adds IPSec support for the following platforms</li>
+<li>Adds IPSec support for the following platforms<ul>
 <li>Cisco IOS, IOS-XE, ASA</li>
 <li>Juniper JunOS</li>
 <li>PaloAlto</li>
 <li>Mikrotik</li>
-<li>Adds detailed IPSec technology tables</li>
+</ul>
+</li>
+<li>Adds detailed IPSec technology tables<ul>
 <li>Tunnels (/technology/security/ipsec/tunnels)</li>
 <li>Gateways (/technology/security/ipsec/gateways)</li>
-<li>Adds Zone-Based Firewall support for the following platforms</li>
+</ul>
+</li>
+<li>Adds Zone-Based Firewall support for the following platforms<ul>
 <li>Palo Alto</li>
 <li>Checkpoint Gaia</li>
-<li>Adds Transceiver support for the following platforms</li>
+</ul>
+</li>
+<li>Adds Transceiver support for the following platforms<ul>
 <li>WARNING: Transceiver information collection is intentionally
-    disabled by default due to frequent bugs associated with reading
-    transceiver status. Please make sure with vendor support about
-    presence of such bugs in your code, or contact our support for
-    best practices.</li>
+  disabled by default due to frequent bugs associated with reading
+  transceiver status. Please make sure with vendor support about
+  presence of such bugs in your code, or contact our support for
+  best practices.</li>
 <li>Cisco ACI, ASA, FTD, IOS, IOS-XE, IOS-XR, NX-OS, WLC</li>
 <li>Arista EOS</li>
 <li>Extreme XOS</li>
@@ -6852,6 +6870,8 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
 <li>Huawei VRP</li>
 <li>Juniper JunOS</li>
 <li>Palo Alto</li>
+</ul>
+</li>
 <li>Juniper JunOS - Adds support for IGMP snooping</li>
 <li>Huawei - Adds support for MPLS LDP</li>
 <li>Huawei - Adds support for MPLS</li>
@@ -6933,9 +6953,11 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
 <li>Table Help - the request payload formatted to valid JSON. Added
   button for payload &amp; URL copy.</li>
 <li>OSPF Area always formatted as an IP address</li>
-<li>API - added route for device config backup triggering</li>
+<li>API - added route for device config backup triggering<ul>
 <li>POST /v1/discovery/trigger-config-backup (payload is JSON with
-    IP or SN property)</li>
+  IP or SN property)</li>
+</ul>
+</li>
 </ul>
 <h3 id="bug-fixes_7">Bug Fixes</h3>
 <ul>
@@ -7156,18 +7178,22 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 </ul>
 <h3 id="features-protocol-and-technology-support_6">Features - Protocol and technology support</h3>
 <ul>
-<li>Device Explorer - Detailed view for each device</li>
+<li>Device Explorer - Detailed view for each device<ul>
 <li>When you click on hostname value in every table then you can see
-    data from any other table where the data will be automatically
-    filtered for that device.</li>
+  data from any other table where the data will be automatically
+  filtered for that device.</li>
+</ul>
+</li>
 <li>Added summarized tables about device inventory. New tabs in
-  Inventory / Devices:</li>
+  Inventory / Devices:<ul>
 <li>Vendors - Vendor overview in the whole network</li>
 <li>Families - Vendor / Family overview in the whole network</li>
 <li>Platforms - Vendor / Family / Platform overview in the whole
-    network</li>
+  network</li>
 <li>Models - Vendor / Family / Platform / Model overview in the
-    whole network</li>
+  whole network</li>
+</ul>
+</li>
 <li>New table Technology =&gt; VLANs =&gt; L3 Gateways - shows VLANs without
   L3 gateway</li>
 <li>New table Technology =&gt; Platforms =&gt; PoE =&gt; Modules - shows PoE
@@ -7175,12 +7201,18 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 <li>Cisco ACI - Multicast support added</li>
 <li>Cisco ACI - Add support for FEX &amp; environment</li>
 <li>Cisco IOS, IOS-XE - UDLD support added - interfaces and neighbors
-  tables</li>
+  tables<ul>
 <li>Technology / OAM / UDLD</li>
-<li>Cisco IOS, IOS-XE - VSS support added</li>
+</ul>
+</li>
+<li>Cisco IOS, IOS-XE - VSS support added<ul>
 <li>Technology / Platforms / Cisco VSS</li>
-<li>Cisco IOS, NX-OS, HP Comware - Storm Control support added</li>
+</ul>
+</li>
+<li>Cisco IOS, NX-OS, HP Comware - Storm Control support added<ul>
 <li>Technology / Interfaces / Storm Control</li>
+</ul>
+</li>
 </ul>
 <h3 id="system">System</h3>
 <ul>
@@ -7236,15 +7268,19 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
   etc.</li>
 <li>Pathlookup - WLC detection improved for virtual IP on the management
   interface.</li>
-<li>Multicast pathlookup</li>
+<li>Multicast pathlookup<ul>
 <li>Source MAC taken from any node if not found on connected node in
-    ARP</li>
+  ARP</li>
 <li>IGMP Snooping L2 path support added</li>
 <li>Vlan added to device forwarding summary table</li>
-<li>Table Technology / Inventory / OS versions</li>
+</ul>
+</li>
+<li>Table Technology / Inventory / OS versions<ul>
 <li>Performance improvement</li>
 <li>F5 included</li>
 <li>Palo Alto correct calculation fix</li>
+</ul>
+</li>
 </ul>
 <h3 id="bug-fixes_10">Bug Fixes</h3>
 <ul>
@@ -7420,25 +7456,31 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 <li>Cisco FTD added support for AAA, ACL, NAT, NTP, Object groups,
   Routing table, SNMP, Syslog</li>
 <li>Cisco IOS, IOS-XE, NX-OS &amp; Arista - New IGMP Snooping and mac
-  multicast tables</li>
+  multicast tables<ul>
 <li>Technology / Multicast / Mac table</li>
 <li>Technology / Multicast / IGMP Snooping / Vlans Configuration</li>
 <li>Technology / Multicast / IGMP Snooping / Global Configuration</li>
 <li>Technology / Multicast / IGMP Snooping / Groups</li>
+</ul>
+</li>
 <li>Cisco IOS, IOS-XE, IOS-XR, NX-OS &amp; Arista &amp; Juniper - Add info about
-  PIM Rendezvous Points (RP) and Bootstrap servers</li>
+  PIM Rendezvous Points (RP) and Bootstrap servers<ul>
 <li>Technology / Multicast / RP / Overview</li>
 <li>Technology / Multicast / RP / BSR</li>
 <li>Technology / Multicast / RP / Mappings</li>
 <li>Technology / Multicast / RP / Mappings Groups</li>
 </ul>
+</li>
+</ul>
 <p><strong>Improvements</strong></p>
 <ul>
-<li>Settings - Advanced - new setting for discovery tasks</li>
+<li>Settings - Advanced - new setting for discovery tasks<ul>
 <li>The discovery process can be limited only to devices that were
-    already discovered in the past.</li>
+  already discovered in the past.</li>
 <li>The number of tasks for discovery process can be also limited by
-    "What information is used to identify neighbors"</li>
+  "What information is used to identify neighbors"</li>
+</ul>
+</li>
 <li>Pathlookup - Multicast over unreachable transit support added.</li>
 <li>Mikrotik RouterOS - remove syslog messages from command output +
   fixed processing of tunnel interfaces</li>
@@ -7462,9 +7504,11 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>Managed duplicate IP false positive removed for</li>
+<li>Managed duplicate IP false positive removed for<ul>
 <li>VXLAN virtual address</li>
 <li>VXLAN source loopback address</li>
+</ul>
+</li>
 <li>Fixed detection of some entry-level FortiGate models (e.g. 30D)</li>
 <li>Unable to discover Meraki with automated snapshot</li>
 <li>Enable discover HP ProCurve in the stack</li>
@@ -7528,9 +7572,11 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 </ul>
 <p><strong>Improvements</strong></p>
 <ul>
-<li>Improved system update procedure</li>
+<li>Improved system update procedure<ul>
 <li>Allow downloading logs from an update process</li>
 <li>Progress bar for manual package upload</li>
+</ul>
+</li>
 <li>At the user's request, we increased CLI session timeout to a maximum
   of 600s (Warning: a high timeout can significantly prolong the
   discovery time)</li>
@@ -7611,15 +7657,21 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 <p><strong>Features - Protocol and technology support</strong></p>
 <ul>
 <li>Add support for Cisco Meraki (REST API provides limited set of
-  information)</li>
+  information)<ul>
 <li>Setup REST API connection at Settings / Advanced / Vendors API</li>
+</ul>
+</li>
 <li>Add support for L2VPN technologies: CCC, VPWS and VPLS. (Cisco
-  IOS's, Juniper)</li>
+  IOS's, Juniper)<ul>
 <li>Tables in Technology / MPLS / L2 VPN</li>
+</ul>
+</li>
 <li>Add support BGP over IPv6 for Cisco XR</li>
 <li>Add support for Multicast (IGMP, PIM, MROUTE) for Cisco IOS, IOS-XE,
-  IOS-XR, NX-OS, Arista EOS, Juniper JunOS</li>
+  IOS-XR, NX-OS, Arista EOS, Juniper JunOS<ul>
 <li>Tables in Technology / Multicast</li>
+</ul>
+</li>
 </ul>
 <p><strong>Features - System</strong></p>
 <ul>
@@ -7631,13 +7683,17 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 <li>Technology / FHRP tables improved to be VRF aware</li>
 <li>CSV export - removed first line with "sep=;" and escape all value
   (stop forcing auto-format in excel</li>
-<li>Pathlookup</li>
+<li>Pathlookup<ul>
 <li>MPLS explicit null label support added</li>
 <li>MPLS swap and push label support added</li>
+</ul>
+</li>
 <li>Count of total rows for some table can be a big performance problem,
   so this feature is disabled for some tables. "unknown" is used
-  instead of total rows.</li>
+  instead of total rows.<ul>
 <li>Technology / MPLS / L3 VPN / PE Routes</li>
+</ul>
+</li>
 <li>Juniper JunOS - Get import/export route targets to VRF from policies</li>
 </ul>
 <p><strong>Bug Fixes</strong></p>
@@ -7864,16 +7920,20 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0</p>
   9800</li>
 <li>Added support for Quagga Routing Suite</li>
 <li>Added basic support for Virtual Systems on Palo Alto firewalls</li>
-<li>New VRF tables (Technology =&gt; Routing =&gt; VRF)</li>
+<li>New VRF tables (Technology =&gt; Routing =&gt; VRF)<ul>
 <li>Summary - to get a quick overview of configured VRF in your
-    network.</li>
+  network.</li>
 <li>Detail - configured VRF per device.</li>
 <li>interfaces - configured VRF on device and interface.</li>
-<li>New L3 VPN tables (Technology =&gt; MPLS =&gt; L3 VPN)</li>
+</ul>
+</li>
+<li>New L3 VPN tables (Technology =&gt; MPLS =&gt; L3 VPN)<ul>
 <li>PE Routers in network</li>
 <li>VRF configured on PE routers with summary of routes in VRF</li>
 <li>Route targets import and export configured in VRF</li>
 <li>Routes on PE in VRF including originating source PE</li>
+</ul>
+</li>
 </ul>
 <p><strong>Features - System</strong></p>
 <ul>
@@ -8053,9 +8113,11 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
 <p><strong>Features - Protocol and technology support</strong></p>
 <ul>
 <li>PortChannel - added support HP ArubaSW</li>
-<li>New table Management =&gt; Discovery History</li>
+<li>New table Management =&gt; Discovery History<ul>
 <li>This table shows all discovered devices in history (no matter
-    which snapshot is selected).</li>
+  which snapshot is selected).</li>
+</ul>
+</li>
 </ul>
 <p><strong>Visualization</strong></p>
 <p><strong>Improvements</strong></p>
@@ -8105,22 +8167,28 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
 SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17</p>
 <p><strong>Features - Protocol and technology support</strong></p>
 <ul>
-<li>New table Technology =&gt; CDP/LLDP =&gt; Endpoints neighbors</li>
+<li>New table Technology =&gt; CDP/LLDP =&gt; Endpoints neighbors<ul>
 <li>This table shows all endpoints found by XDP protocols.</li>
+</ul>
+</li>
 </ul>
 <p><strong>Improvements</strong></p>
 <ul>
 <li>TechSupport &amp; Snapshot Download is generated via API jobs and the
-  result (link for download) will be in Jobs menu now.</li>
+  result (link for download) will be in Jobs menu now.<ul>
 <li>Those links will be there until user confirm it with X button
-    (user can safely reload the page)</li>
+  (user can safely reload the page)</li>
+</ul>
+</li>
 <li>Allow to save credentials with empty username (for telnet purposes)</li>
 <li>Discovery remember used protocol now and this protocol is preferred
   for next discovery (improved speed of discovery)</li>
 <li>Improved "Save historical data" job which is run after discovery -
-  precalculation of data is much faster now</li>
+  precalculation of data is much faster now<ul>
 <li>WARNING - all snapshots should be reloaded otherwise you will
-    get false changes in Management / Changes tables.</li>
+  get false changes in Management / Changes tables.</li>
+</ul>
+</li>
 <li>Maintenance page is displayed also during job "Clean DB" - during
   this time API don't responding to any request returns HTTP status
   503</li>
@@ -8193,17 +8261,21 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
   settings.</li>
 <li>SSID Summary table for wireless (Technology / Wireless /
   Radios/BSSID / SSID Summary)</li>
-<li>Vlan database collection with new vlan detail and summary tables</li>
+<li>Vlan database collection with new vlan detail and summary tables<ul>
 <li>Technology -&gt; Vlans -&gt; Device Summary - Number of VLANs
-    configured per device</li>
+  configured per device</li>
 <li>Technology -&gt; Vlans -&gt; Device Detail - Detail for specific vlan
-    and device</li>
+  and device</li>
 <li>Technology -&gt; Vlans -&gt; Network Summary - List of all vlans
-    configured in network. Grouped by VLAN ID</li>
+  configured in network. Grouped by VLAN ID</li>
 <li>Technology -&gt; Vlans -&gt; Site Summary - List of all vlans
-    configured on the site</li>
-<li>Collecting information about DHCP snooping</li>
+  configured on the site</li>
+</ul>
+</li>
+<li>Collecting information about DHCP snooping<ul>
 <li>Technology -&gt; Security -&gt; DHCP Snooping</li>
+</ul>
+</li>
 </ul>
 <p><strong>Visualization</strong></p>
 <ul>
@@ -8336,12 +8408,14 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
 <p><strong>API Changes</strong></p>
 <ul>
 <li>Following endpoints have changed 'vlan' column to 'vlanId', next new
-  column added 'vlanName'</li>
+  column added 'vlanName'<ul>
 <li>/tables/spanning-tree/ports</li>
 <li>/tables/spanning-tree/instances</li>
 <li>/tables/spanning-tree/topology</li>
 <li>/tables/spanning-tree/neighbors</li>
 <li>/tables/spanning-tree/vlans</li>
+</ul>
+</li>
 </ul>
 <h3 id="321-19th-september-2019">3.2.1 (19th September 2019)</h3>
 <p>OVA MD5SUM: 362052f0fc1cecb4c9fefcb0c0cd76e2</p>
@@ -8419,8 +8493,10 @@ unloaded and loaded again.
 <h4 id="features-protocol-and-technology-support_7">Features - Protocol and technology support</h4>
 <ul>
 <li>Arista EOS - added support for PortChannel task</li>
-<li>Cisco ACI - added support for discovering</li>
+<li>Cisco ACI - added support for discovering<ul>
 <li>New tables in Technology =&gt; SDN =&gt; ACI</li>
+</ul>
+</li>
 <li>Cisco IOS - Added Flexible flow support</li>
 <li>Dell FTOS (ver 8 &amp; 9 only) - add support for discovering</li>
 <li>Dell PowerConnect - add support for discovering</li>
@@ -8431,26 +8507,30 @@ unloaded and loaded again.
 <h4 id="visualization">Visualization</h4>
 <ul>
 <li>Compare feature - allows compare topology changes between snapshots</li>
-<li>Refresh data directly from the graph:</li>
+<li>Refresh data directly from the graph:<ul>
 <li>New snapshot from devices in the view - allows you to create a
-    network snapshot containing only devices in the view to quickly
-    refresh data for troubleshooting, path lookup, or other
-    purposes.</li>
+  network snapshot containing only devices in the view to quickly
+  refresh data for troubleshooting, path lookup, or other
+  purposes.</li>
 <li>Refresh devices in the view - refreshes and overwrites collected
-    information in the current snapshot for devices in the view.</li>
+  information in the current snapshot for devices in the view.</li>
 <li>Add devices into this snapshot - allows adding new devices into
-    current snapshot in the same way as from snapshot management but
-    directly from the diagram.</li>
+  current snapshot in the same way as from snapshot management but
+  directly from the diagram.</li>
+</ul>
+</li>
 <li>Site separation implemented in graphs - use drag&amp;drop to move
   devices into new site (use CTRL/SHIFT to select multiple)</li>
-<li>ViewBuilder</li>
+<li>ViewBuilder<ul>
 <li>Added "expand" icon to add all devices what are connected to
-    parent device</li>
+  parent device</li>
 <li>Added "collapse" icon to remove all devices what are connected
-    to parent device</li>
+  to parent device</li>
 <li>Multiple devices can be also selected with CTRL or SHIFT holding
-    and those devices can be then added or removed from ViewBuilder
-    view.</li>
+  and those devices can be then added or removed from ViewBuilder
+  view.</li>
+</ul>
+</li>
 </ul>
 <h4 id="improvements_13">Improvements</h4>
 <ul>
@@ -8580,11 +8660,13 @@ unloaded and loaded again.
 <h4 id="api-changes">API Changes</h4>
 <ul>
 <li>Datatype changed for column vlanId from string to number in
-  following endpoints</li>
+  following endpoints<ul>
 <li>/tables/addressing/arp</li>
 <li>/tables/interfaces/inconsistencies/details</li>
+</ul>
+</li>
 <li>Datatype changed for column vlan from string to number in following
-  endpoints</li>
+  endpoints<ul>
 <li>/tables/addressing/mac</li>
 <li>/tables/addressing/hosts</li>
 <li>/tables/reports/capacity/hosts</li>
@@ -8594,12 +8676,16 @@ unloaded and loaded again.
 <li>/tables/spanning-tree/ports</li>
 <li>/tables/spanning-tree/topology</li>
 <li>/tables/spanning-tree/vlans</li>
-<li>Routes changes</li>
+</ul>
+</li>
+<li>Routes changes<ul>
 <li>POST /start/discovery was replaced with:<ul>
 <li>POST /snapshots for starting a new discovery / creating a
 new snapshot</li>
 <li>POST /snapshots/:key/devices for adding a new device</li>
 <li>DELETE /snapshots/:key/devices for removing a device</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -8701,8 +8787,10 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
   article</a>)</li>
 <li>Fortinet FortiGate - added support for Zone Firewall</li>
 <li>Added PortChannel support for Fortinet/FortiGate (802.11ad only)</li>
-<li>Added support for OSPF v3 (Cisco).</li>
+<li>Added support for OSPF v3 (Cisco).<ul>
 <li>Technology -&gt; Routing -&gt; OSPF v3</li>
+</ul>
+</li>
 <li>Added basic support of firewall policies on FortiGate firewalls (UTM
   security profiles, load balancing, NAT and user auth objects are not
   supported in this release)</li>
@@ -8719,41 +8807,41 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <h4 id="improvements_15">Improvements</h4>
 <ul>
-<li>Snapshot management</li>
+<li>Snapshot management<ul>
 <li>Discovery page was merged with snapshot management</li>
 <li>Services logs are now included in the snapshot data file.</li>
-<li>
-<p>Added ability to remove devices from the snapshot</p>
+<li>Added ability to remove devices from the snapshot</li>
+</ul>
 </li>
-<li>
-<p>Added Manual site separation (for now only from table) Inventory =&gt;
-  Sites =&gt; Manual Separation</p>
+</ul>
+<ul>
+<li>Added Manual site separation (for now only from table) Inventory =&gt;
+  Sites =&gt; Manual Separation</li>
+</ul>
+<ul>
+<li>Host table speed up - the table is pre-calculated in the topology
+  build process</li>
+</ul>
+<ul>
+<li>The API documentation is now directly in UI<ul>
+<li>Each table has API documentation accessible through the "?"
+  button</li>
+</ul>
 </li>
-<li>
-<p>Host table speed up - the table is pre-calculated in the topology
-  build process</p>
+</ul>
+<ul>
+<li>Improved site separation by regex<ul>
+<li>After regex separation is completed, all devices in the unknown
+  site (not matched by regex) are moved to the site where they are
+  directly connected, if such a connection exists.</li>
+</ul>
 </li>
-<li>
-<p>The API documentation is now directly in UI</p>
-</li>
-<li>
-<p>Each table has API documentation accessible through the "?"
-    button</p>
-</li>
-<li>
-<p>Improved site separation by regex</p>
-</li>
-<li>
-<p>After regex separation is completed, all devices in the unknown
-    site (not matched by regex) are moved to the site where they are
-    directly connected, if such a connection exists.</p>
-</li>
+</ul>
+<ul>
 <li>
 <p>Backup and restore have been rewritten from scratch. IP Fabric
   backup now supports incremental backup, local backup to separate
   datastore, DB restores, snapshot restore and full restore.</p>
-</li>
-</ul>
 <div>
 
   Backup has changed!
@@ -8770,60 +8858,60 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 
   </div>
 
+</li>
+</ul>
 <ul>
-<li>
-<p>Added support for IP Fabric appliance monitoring via SNMP (CPU, RAM,
-  storage, network)</p>
-</li>
-<li>
-<p>Advanced Filtering</p>
-</li>
+<li>Added support for IP Fabric appliance monitoring via SNMP (CPU, RAM,
+  storage, network)</li>
+</ul>
+<ul>
+<li>Advanced Filtering<ul>
 <li>Added new operators "is empty" and "is not empty" to able to
-    filter for empty values</li>
-<li>
-<p>Array datatypes is able to specify filtering rules for a
-    specific item in the array or for all items in the array.</p>
+  filter for empty values</li>
+<li>Array datatypes is able to specify filtering rules for a
+  specific item in the array or for all items in the array.</li>
+</ul>
 </li>
-<li>
-<p>Path lookup - Protocol menu can now display available protocols
-  according to the path</p>
-</li>
-<li>
-<p>Path lookup - MPLS link type is now based on the presence of label
-  stack</p>
-</li>
-<li>
-<p>Path lookup - routing to connected devices (e.g. for WLC) is
-  improved</p>
-</li>
-<li>
-<p>Discovery - Multiple CLI credentials - system now remember what
+</ul>
+<ul>
+<li>Path lookup - Protocol menu can now display available protocols
+  according to the path</li>
+</ul>
+<ul>
+<li>Path lookup - MPLS link type is now based on the presence of label
+  stack</li>
+</ul>
+<ul>
+<li>Path lookup - routing to connected devices (e.g. for WLC) is
+  improved</li>
+</ul>
+<ul>
+<li>Discovery - Multiple CLI credentials - system now remember what
   credentials works and these credentials will be prioritized for next
-  attempt to connect to individual devices.</p>
+  attempt to connect to individual devices.</li>
+</ul>
+<ul>
+<li>TechSupport file<ul>
+<li>DB dump can be executed only for selected snapshot</li>
+</ul>
 </li>
-<li>
-<p>TechSupport file</p>
-</li>
-<li>
-<p>DB dump can be executed only for selected snapshot</p>
-</li>
-<li>
-<p>Technology -&gt; Routing -&gt; IS-IS - added VRF column</p>
-</li>
-<li>
-<p>Technology &gt; Networks &gt; Gateway redundancy - added VRF column</p>
-</li>
-<li>
-<p>Cisco ASA - improved hostname for clusters &amp; contexts</p>
-</li>
-<li>
-<p>Cisco WLC - improved hostname for clusters</p>
-</li>
-<li>
-<p>NTP - Cisco WLC sync unknown state added. NTP summary table now
+</ul>
+<ul>
+<li>Technology -&gt; Routing -&gt; IS-IS - added VRF column</li>
+</ul>
+<ul>
+<li>Technology &gt; Networks &gt; Gateway redundancy - added VRF column</li>
+</ul>
+<ul>
+<li>Cisco ASA - improved hostname for clusters &amp; contexts</li>
+</ul>
+<ul>
+<li>Cisco WLC - improved hostname for clusters</li>
+</ul>
+<ul>
+<li>NTP - Cisco WLC sync unknown state added. NTP summary table now
   considers the unknown state as reachable and is not reported as a
-  violation</p>
-</li>
+  violation</li>
 </ul>
 <h4 id="bug-fixes_14">Bug Fixes</h4>
 <ul>
@@ -9101,10 +9189,12 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <h4 id="improvements_19">Improvements</h4>
 <ul>
-<li>Site reports</li>
+<li>Site reports<ul>
 <li>STP domains graph has only STP protocol now</li>
 <li>Routing domains graph has only L3 protocols</li>
 <li>Overall site graph - access points were removed</li>
+</ul>
+</li>
 <li>Tables - sort by color was removed</li>
 <li>Tables - filtering using simple filters isn't triggered
   automatically when you typing, you have to confirm filtering by

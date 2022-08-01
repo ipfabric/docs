@@ -4398,84 +4398,56 @@ differently in you production deployment, than described here.
 
 
 <h1 id="vmware-nsx-t">VMware NSX-T</h1>
-<p>Starting version <strong>4.3</strong> IP Fabric supports NSX-T API.</p>
-<p>NSX-T devices are discovered only through API.</p>
-<p>To add NSX-T to discovery global settings, go to <strong>Settings → Advanced → Vendors API</strong> and press the <strong>+Add</strong> button</p>
-<p>Afterward, choose NSX-T API from the list and fill in</p>
+<p>Starting version <strong>4.3</strong> IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.</p>
+<p>To add NSX-T to discovery global settings, go to <strong>Settings → Advanced → Vendors API</strong> and press the <strong>+Add</strong> button. Afterward, choose NSX-T API from the list and fill in</p>
 <ul>
-<li>
-<p><strong>Username and password</strong> used to log in to NSX Manager</p>
-</li>
-<li>
-<p><strong>Base URL</strong> of NSX Manager server (<code>https://nsx-manager-ip-address</code>)</p>
-</li>
+<li><strong>Username and password</strong> used to log in to NSX Manager</li>
+<li><strong>Base URL</strong> of NSX Manager server (<code>https://nsx-manager-ip-address</code>)</li>
 </ul>
 <h2 id="general-support-information">General Support Information</h2>
 <ul>
-<li>
-<p>IP Fabric is supporting NSX-T from version 3.0 and higher,
-    development was done on version 3.1.2, the latest version is 3.2. We
-    are not supporting the 2.x version, there are a lot of differences,
-    Vmware’s end of general support was in September 2021. <a href="https://lifecycle.vmware.com/#/">Product Lifecycle Matrix</a></p>
-</li>
-<li>
-<p>NSX-T running as on-premise (there are also cloud versions for AWS
-    and Azure, where can NSX-T cloud be deployed on top of AWS/Azure
-    infrastructure ), but we don’t support it now</p>
-</li>
-<li>
-<p>We don’t collect any data from vCenter, as NSX-T is multiplatform
-    and supports KVM and bare metal servers as well, if those are
-    connected to the NSX-T cloud, we will collect information about
-    those also.</p>
-</li>
+<li>IP Fabric is supporting NSX-T from version 3.0 and higher,
+  development was done on version 3.1.2, the latest version is 3.2. We
+  are not supporting the 2.x version, there are a lot of differences,
+  Vmware’s end of general support was in September 2021. <a href="https://lifecycle.vmware.com/#/">Product Lifecycle Matrix</a></li>
+</ul>
+<ul>
+<li>NSX-T running as on-premise (there are also cloud versions for AWS
+  and Azure, where can NSX-T cloud be deployed on top of AWS/Azure
+  infrastructure ), but we don’t support it now</li>
+</ul>
+<ul>
+<li>We don’t collect any data from vCenter, as NSX-T is multiplatform
+  and supports KVM and bare metal servers as well, if those are
+  connected to the NSX-T cloud, we will collect information about
+  those also.</li>
 </ul>
 <h2 id="we-are-supporting-these-types-of-devices">We Are Supporting These Types Of Devices</h2>
 <ul>
-<li>
-<p>Tier-0 router</p>
-</li>
-<li>
-<p>Tier-1 router</p>
-<ul>
+<li>Tier-0 router</li>
+<li>Tier-1 router<ul>
 <li>also supporting VRFs</li>
 </ul>
 </li>
 </ul>
 <h2 id="not-supported-features">Not Supported Features</h2>
 <ul>
-<li>
-<p>Load balancing</p>
-</li>
-<li>
-<p>All security features (IPS/IDS, Distributed FW, Gateway FW, Network
-    introspection) - planned to add security features in upcoming
-    releases</p>
-</li>
-<li>
-<p>Forwarding policies - planned to add in upcoming releases</p>
-</li>
-<li>
-<p>VPN services</p>
-</li>
-<li>
-<p>NAT</p>
-</li>
-<li>
-<p>EVPN Vxlans</p>
-</li>
+<li>Load balancing</li>
+<li>All security features (IPS/IDS, Distributed FW, Gateway FW, Network
+  introspection) - planned to add security features in upcoming
+  releases</li>
+<li>Forwarding policies - planned to add in upcoming releases</li>
+<li>VPN services</li>
+<li>NAT</li>
+<li>EVPN Vxlans</li>
 </ul>
 <h2 id="external-connectivity">External Connectivity</h2>
 <p>We are supporting both external connectivity protocols, which are
 implemented in NSX-T, and of course static routes. External connectivity
 can be done only on Tier-0 routers.</p>
 <ul>
-<li>
-<p>OSPF</p>
-</li>
-<li>
-<p>BGP</p>
-</li>
+<li>OSPF</li>
+<li>BGP</li>
 </ul>
 
               

@@ -4583,12 +4583,10 @@ differently in you production deployment, than described here.
 <p>Rule precedence is defined by the order from top to bottom. So in show example that is</p>
 <ol>
 <li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
-<li>Rules you define. In the example above it will check the following<ol>
-<li>If SNMP Location matches <code>IPFABRIC, (LAB01)</code> → Site <code>LAB01</code></li>
-<li>If Hostname matches <code>^L21</code> → Site <code>MPLS</code></li>
-<li>If Hostname matches <code>^(L\d{1,2})</code> → Site <code>L2-99</code></li>
-</ol>
-</li>
+<li>Rules you define. In the example above it will check the following
+     1. If SNMP Location matches <code>IPFABRIC, (LAB01)</code> → Site <code>LAB01</code>
+     2. If Hostname matches <code>^L21</code> → Site <code>MPLS</code>
+     3. If Hostname matches <code>^(L\d{1,2})</code> → Site <code>L2-99</code></li>
 <li><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled)</li>
 </ol>
 

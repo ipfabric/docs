@@ -4497,6 +4497,8 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 </code></pre></div>
 </div>
 </li>
+</ul>
+<ul>
 <li>
 <p><code>settings</code> <em>[optional]</em> - A nested JSON data structure representing visualisation settings to override the default view in IP Fabric's diagram canvas. In these settings, it is possible to:</p>
 <ul>
@@ -4615,14 +4617,14 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 <li>
 <p><code>eventSummary</code> -- which highlights the success or failure of the path and the cause of any issues along the way.</p>
 <ul>
-<li>
-<p><code>flags</code> will show if any policy has caused the traffic to fail to reach the destination (e.g. <code>acl-deny</code> or <code>zone-deny</code>)</p>
-</li>
-<li>
-<p><code>topics</code> is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point</p>
-</li>
+<li><code>flags</code> will show if any policy has caused the traffic to fail to reach the destination (e.g. <code>acl-deny</code> or <code>zone-deny</code>)</li>
+</ul>
+<ul>
+<li><code>topics</code> is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>
 <p><code>decisions</code> -- contains a record for each device in the path and the forwarding and policy decision it has to make in the path. For each device:</p>
 <ul>

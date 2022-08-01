@@ -4419,12 +4419,10 @@ differently in you production deployment, than described here.
 <ol>
 <li>Deploy OVA to your vSphere environment as described at <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA
     Template</a>.</li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.<ol>
-<li>Change CPU count.</li>
-<li>Change memory size.</li>
-<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
-</ol>
-</li>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.
+    1.  Change CPU count.
+    2.  Change memory size.
+    3.  <a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
 <li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
 </ol>
 <h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
@@ -4443,22 +4441,14 @@ differently in you production deployment, than described here.
 <li>
 <p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>). Right click on VM – choose <strong>Settings</strong>:</p>
 <p><a data-featherlight="../hyperv_settings.png" href="#"><img alt="HyperV Settings" src="../hyperv_settings.png" /></a></p>
-<ol>
-<li>
-<p>Change CPU count</p>
-<p><a data-featherlight="../hyperv_settings_cpu.png" href="#"><img alt="HyperV Setting CPU count" src="../hyperv_settings_cpu.png" /></a></p>
-</li>
-<li>
-<p>Change memory size</p>
-<p><a data-featherlight="../hyperv_settings_mem.png" href="#"><img alt="HyperV Setting memory size" src="../hyperv_settings_mem.png" /></a></p>
-</li>
-<li>
-<p><a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
-</li>
-<li>
-<p>Close VM Settings window</p>
-</li>
-</ol>
+<p>1.  Change CPU count</p>
+<pre><code>  ![HyperV Setting CPU count](hyperv_settings_cpu.png)
+</code></pre>
+<p>2.  Change memory size</p>
+<pre><code>  ![HyperV Setting memory size](hyperv_settings_mem.png)
+</code></pre>
+<p>4.  <a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
+<p>5.  Close VM Settings window</p>
 </li>
 <li>
 <p>Start VM.</p>
@@ -4480,11 +4470,9 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>).</p>
-<ol>
-<li>Change CPU count</li>
-<li>Change memory size</li>
-<li><a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</li>
-</ol>
+<p>1.  Change CPU count
+  2.  Change memory size
+  4.  <a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
 </li>
 <li>
 <p>Start VM and check if system starts without any interrupts.</p>

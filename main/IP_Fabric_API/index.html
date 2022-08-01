@@ -4440,12 +4440,10 @@ API, please visit <a href="../api/">generated IP Fabric API documentation</a>.</
 <div class="admonition example">
 <p class="admonition-title">API Blog Posts</p>
 <p>Please take a look at the following blog posts about using the IP Fabric API and Python SDK:</p>
-<ul>
-<li><a href="https://ipfabric.io/blog/api-programmability-part-1/">Part 1: The Basics</a> Explains creating an API token, finding the API documentation, and retrieving data using Python requests which can be translated into other coding languages.</li>
-<li><a href="https://ipfabric.io/blog/api-programmability-python/">Part 2: Python</a> Utilizing the official <a href="https://github.com/community-fabric/python-ipfabric">IP Fabric Python SDK</a> to retrieve data.</li>
-<li><a href="https://ipfabric.io/blog/api-programmability-part-3-webhooks/">Part 3: Webhooks</a> Creating Webhooks to further your automation journey based on IP Fabric events.</li>
-<li><a href="https://ipfabric.io/blog/api-programmability-part-4-diagramming/">Part 4: Diagramming</a> Utilizing the official <a href="https://github.com/community-fabric/python-ipfabric-diagrams">IP Fabric Python Diagramming SDK</a> to automate creation of Network and Path Lookup Diagrams.</li>
-</ul>
+<p>- <a href="https://ipfabric.io/blog/api-programmability-part-1/">Part 1: The Basics</a> Explains creating an API token, finding the API documentation, and retrieving data using Python requests which can be translated into other coding languages.
+  - <a href="https://ipfabric.io/blog/api-programmability-python/">Part 2: Python</a> Utilizing the official <a href="https://github.com/community-fabric/python-ipfabric">IP Fabric Python SDK</a> to retrieve data.
+  - <a href="https://ipfabric.io/blog/api-programmability-part-3-webhooks/">Part 3: Webhooks</a> Creating Webhooks to further your automation journey based on IP Fabric events.
+  - <a href="https://ipfabric.io/blog/api-programmability-part-4-diagramming/">Part 4: Diagramming</a> Utilizing the official <a href="https://github.com/community-fabric/python-ipfabric-diagrams">IP Fabric Python Diagramming SDK</a> to automate creation of Network and Path Lookup Diagrams.</p>
 </div>
 <h2 id="api-versioning">API Versioning</h2>
 <p>We have adopted a rather fast-moving API versioning schema starting with
@@ -4465,18 +4463,16 @@ resource being accessed.</p>
 </code></pre></div>
 <p>where</p>
 <ul>
-<li>
-<p><code>major</code> and <code>minor</code> follows the release version of the platform. So, if the
+<li><code>major</code> and <code>minor</code> follows the release version of the platform. So, if the
   <code>4.4.3</code> version of the IP Fabric platform is deployed, its latest API path
-  would be <code>/api/v4.4/</code>.</p>
-</li>
-<li>
-<p>The whole <code>.{minor}</code> is optional and it is treated as <code>0</code> if omitted.</p>
-</li>
-<li>
-<p><code>{api_version}</code> stands for the complete version string, for example <code>v5.1</code>.
-  Please, mind the <code>v</code> prefix.</p>
-</li>
+  would be <code>/api/v4.4/</code>.</li>
+</ul>
+<ul>
+<li>The whole <code>.{minor}</code> is optional and it is treated as <code>0</code> if omitted.</li>
+</ul>
+<ul>
+<li><code>{api_version}</code> stands for the complete version string, for example <code>v5.1</code>.
+  Please, mind the <code>v</code> prefix.</li>
 </ul>
 <h3 id="api-version-deprecation-and-allowed-changes">API version deprecation and allowed changes</h3>
 <p>IPF commits to keep support for all <code>minor</code> versions within the particular

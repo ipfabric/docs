@@ -4627,6 +4627,8 @@ changes. Here are two methods for testing settings.</p>
   fixed your issue, then apply them globally.</p>
 <p><a data-featherlight="../troubleshooting/2953642050.png" href="#"><img alt="" src="../troubleshooting/2953642050.png" /></a></p>
 </li>
+</ul>
+<ul>
 <li>
 <p>Make your changes globally and then run a new Snapshot. You could
   also filter the allowed discovery scope in the Snapshot specific
@@ -4654,22 +4656,20 @@ devices so IP Fabric can discover and crawl that site.</p>
 addresses. Once a device is discovered in a snapshot it will be placed
 in this table for use in other snapshots.</p>
 <ul>
-<li>
-<p>The username last successfully used for a device will be recorded
+<li>The username last successfully used for a device will be recorded
   here and be the first one tried in a future snapshot. If
   unsuccessful it will check the <em>Settings &gt; Authentication</em> list and
   go back through the decision tree. This may cause the next snapshot
   to take longer due to authentication failures but once this table is
   updated with the new username the discovery time will return to
-  normal.</p>
-</li>
-<li>
-<p>If you have removed devices from your network IP Fabric will still
+  normal.</li>
+</ul>
+<ul>
+<li>If you have removed devices from your network IP Fabric will still
   try to connect to them because the IP addresses are defined as seeds
   in this Discovery History table. To speed up discovery you could
   delete stale records. You can also filter on <code>Last discovery time</code>
-  and delete records older than X months.</p>
-</li>
+  and delete records older than X months.</li>
 </ul>
 <h3 id="settings-advanced">Settings &gt; Advanced</h3>
 <h4 id="discovery-ip-scope">Discovery – IP Scope</h4>
@@ -4711,26 +4711,26 @@ discovery of new devices on your network.</p>
   up in future snapshots.</li>
 </ul>
 </li>
-<li>
-<p><code>xDP (neighbors)</code> signifies using CDP or LLDP information to
-  discover devices in your network.</p>
-</li>
-<li>
-<p><code>ARP</code> uses the ARP and MAC Address OUI information to find devices.
+</ul>
+<ul>
+<li><code>xDP (neighbors)</code> signifies using CDP or LLDP information to
+  discover devices in your network.</li>
+</ul>
+<ul>
+<li><code>ARP</code> uses the ARP and MAC Address OUI information to find devices.
   If the OUI is set for <code>Enabled for discovery</code> in the <em>Settings &gt;
   OUI</em> table then IP Fabric will attempt to connect and discover the
-  device.</p>
-</li>
-<li>
-<p><code>Routing Table</code> will try to connect to next-hop devices.</p>
-</li>
-<li>
-<p><code>Trace</code> signifies using traceroute to RFC1918 addresses to help
+  device.</li>
+</ul>
+<ul>
+<li><code>Routing Table</code> will try to connect to next-hop devices.</li>
+</ul>
+<ul>
+<li><code>Trace</code> signifies using traceroute to RFC1918 addresses to help
   discover your internal network. This is helpful for the VM as IPF
   might not be able to log into the default gateway (vRouter) but
   using traceroute it can find some other physical devices in the
-  network to use as starting points.</p>
-</li>
+  network to use as starting points.</li>
 </ul>
 <h4 id="sshtelnet">SSH/Telnet</h4>
 <p><a data-featherlight="../troubleshooting/2953642017.png" href="#"><img alt="" src="../troubleshooting/2953642017.png" /></a></p>
@@ -4773,12 +4773,12 @@ hostnames.</p>
 <p>This table shows you unmanaged neighbors based many protocols and has a
 built-in default Intent Check for you.</p>
 <ul>
-<li>
-<p><span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP neighbors
+<li><span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP neighbors
   (<code>cdp|lldp|mndp</code>). This does not provide you with the remote
   hostname which is why it is recommended to look at this table
-  second.</p>
-</li>
+  second.</li>
+</ul>
+<ul>
 <li>
 <p><span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior Gateway Protocols
   (<code>eigrp|ospf|rip|isis|pim|vxlan|cef</code>). It is specified as such
@@ -4789,13 +4789,13 @@ built-in default Intent Check for you.</p>
 <p>Check this table for help locating rogue devices in your network.</p>
 </div>
 </li>
-<li>
-<p><span style="color: blue;">BLUE</span>: Is the default rule if the protocol does not match any
-  other regex.</p>
-</li>
-<li>
-<p><span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway Protocol BGP.</p>
-</li>
+</ul>
+<ul>
+<li><span style="color: blue;">BLUE</span>: Is the default rule if the protocol does not match any
+  other regex.</li>
+</ul>
+<ul>
+<li><span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway Protocol BGP.</li>
 </ul>
 <h3 id="auditing-using-an-external-network-management-system">Auditing using an External Network Management System</h3>
 <p>Perhaps you would like to audit IP Fabric (or vice versa) using an NMS.
@@ -4874,32 +4874,30 @@ external reason.</p>
 device must be discover in a Snapshot and placed in the <em>Management &gt;
 Discovery History</em> table. Once in this table then next time IP Fabric is
 scheduled to pull configs it should be populated in the list.</p>
-<p>Example:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <ul>
-<li>
-<p><em>Settings &gt; Advanced &gt; Snapshots</em> is set to periodically create
-  snapshots every day at 6AM</p>
-</li>
-<li>
-<p><em>Settings &gt; Advanced &gt; Configuration Management</em> is set to
-  periodically create snapshots every day at 11PM</p>
-</li>
-<li>
-<p>New device will be found at 6AM but since the config mgmt is
-  scheduled for 11PM you will need to wait until the next day to
-  ensure it was pulled.</p>
-</li>
+<li><em>Settings &gt; Advanced &gt; Snapshots</em> is set to periodically create
+  snapshots every day at 6AM</li>
 </ul>
+<ul>
+<li><em>Settings &gt; Advanced &gt; Configuration Management</em> is set to
+  periodically create snapshots every day at 11PM</li>
+</ul>
+<ul>
+<li>New device will be found at 6AM but since the config mgmt is
+  scheduled for 11PM you will need to wait until the next day to
+  ensure it was pulled.</li>
+</ul>
+</div>
 <p>Other troubleshooting tips:</p>
 <ul>
-<li>
-<p>Please ensure that in <em>Settings &gt; Authentication</em> you have enabled
+<li>Please ensure that in <em>Settings &gt; Authentication</em> you have enabled
   the correct usernames to <code>Use for configuration management</code>, if no
-  usernames have this enabled then configs will not be backed up.</p>
-</li>
-<li>
-<p>Ensure the users have proper authorization for pulling configs.</p>
-</li>
+  usernames have this enabled then configs will not be backed up.</li>
+</ul>
+<ul>
+<li>Ensure the users have proper authorization for pulling configs.</li>
 </ul>
 
               

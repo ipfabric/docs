@@ -4476,9 +4476,7 @@ differently in you production deployment, than described here.
 <dt>Network device session timeout</dt>
 <dd>Too many <em>Command Timeout</em> errors during the Discovery process may indicate that <em>Network device session timeout</em> is too short and it may be necessary to expect a delay for a response to arrive.</dd>
 <dt>Maximum number of parallel sessions</dt>
-<dd>
-<p>To prevent flooding your network with too many SSH/TELNET sessions set <em>Maximum number of parallel sessions</em>. This setting can be also helpful if the AAA server (TACACS/Radius) has a limit of parallel AAA requests for users.</p>
-<p>In rare cases, the Cisco ISE or similar systems may rate limit the command authorization. When there are too many authorization failures and Cisco ISE is in place, try to limit the number of parallel sessions down to 10 and steadily increase.</p>
+<dd>To prevent flooding your network with too many SSH/TELNET sessions set <em>Maximum number of parallel sessions</em>. This setting can be also helpful if the AAA server (TACACS/Radius) has a limit of parallel AAA requests for users.<p>In rare cases, the Cisco ISE or similar systems may rate limit the command authorization. When there are too many authorization failures and Cisco ISE is in place, try to limit the number of parallel sessions down to 10 and steadily increase.</p>
 </dd>
 <dt>Basic failure</dt>
 <dd>How many times to retry a connection for any error, except authentication failure.</dd>
@@ -4563,29 +4561,22 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>Fill in all necessary data</p>
-<ol>
-<li><strong>Label</strong> - the name for configuration (mandatory)</li>
-<li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
-<li><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</li>
-<li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
-<li><strong>Login type</strong><ol>
-<li><strong>Use credentials</strong> - require to provide username and password</li>
-<li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
-</ol>
-</li>
-<li><strong>Username</strong> - Username for authentication (mandatory)</li>
-<li>
-<p><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used)</p>
-<p><a data-featherlight="../jumphost_auth.png" href="#"><img alt="Jump host auth" src="../jumphost_auth.png" /></a></p>
-</li>
-</ol>
+<p>1.  <strong>Label</strong> - the name for configuration (mandatory)
+  2.  <strong>Jump host Address</strong> - IP address of FQDN name (mandatory)
+  3.  <strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
+  4.  <strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
+  5.  <strong>Login type</strong>
+      1.  <strong>Use credentials</strong> - require to provide username and password
+      2.  <strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)
+  6.  <strong>Username</strong> - Username for authentication (mandatory)
+  7.  <strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used)</p>
+<pre><code>  ![Jump host auth](jumphost_auth.png)
+</code></pre>
 </li>
 <li>
 <p>Click <strong>Add</strong>.</p>
 </li>
-<li>
-<p>If a connection is open, you will see the <strong>Running</strong> status in Jumphost list</p>
-<p><a data-featherlight="../jumphost_list.png" href="#"><img alt="Jump host auth" src="../jumphost_list.png" /></a></p>
+<li>If a connection is open, you will see the <strong>Running</strong> status in Jumphost list<p><a data-featherlight="../jumphost_list.png" href="#"><img alt="Jump host auth" src="../jumphost_list.png" /></a></p>
 </li>
 </ol>
 <div class="admonition warning">

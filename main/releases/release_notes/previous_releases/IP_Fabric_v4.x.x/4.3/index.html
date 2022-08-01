@@ -4691,24 +4691,24 @@ differently in you production deployment, than described here.
 <ul>
 <li>
 <p>Discovery with added Vendor API can get stuck and doesn’t finish in some cases. Replicated on NSX-T v2.5, Azure, Meraki</p>
-</li>
-<li>
-<p>ID: NIM-7505, NIM-7479, NIM-7437</p>
-</li>
+<ul>
+<li>ID: NIM-7505, NIM-7479, NIM-7437</li>
 <li>Root cause: Unlocked resources after calling unsupported API endpoint</li>
 <li>Status: Fixed in 4.4.0 release</li>
-<li>
-<p>Workaround: Stop discovery and disable Vendor API</p>
+<li>Workaround: Stop discovery and disable Vendor API</li>
+</ul>
 </li>
+</ul>
+<ul>
 <li>
 <p>When discovery is stopped after collection from devices is done, API will allow other jobs to run - making them run in parallel. It is especially an issue when running maintenance is started immediately because it re-indexes the DB - making caching take really long time.</p>
-</li>
-<li>
-<p>ID: NIM-7722</p>
-</li>
+<ul>
+<li>ID: NIM-7722</li>
 <li>Root cause: Discovery allows to run parallel jobs.</li>
 <li>Status: Fixed in 4.4.0 release</li>
 <li>Workaround: Do not stop discovery job or do not run maintenance (manually or as a scheduled job).</li>
+</ul>
+</li>
 </ul>
 <h2 id="4343-7rd-march-2022">4.3.4+3 (7rd March 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: A5DB9B8C51169216167866C9AD6E951C
@@ -4805,57 +4805,59 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
   Attributes, where you can set attribute per device (SN) and the
   value for a specific attribute. <a href="../../../../../IP_Fabric_Settings/device_attributes/">Device
   Attributes</a>. We support following attributes</p>
+<ul>
+<li><code>siteName</code> - set a site name (location) for a specific
+  device and in case you have enabled the
+  <em>Manual site separation</em> rule in Site Separation settings
+  then the name will be used in future snapshots for that
+  device.</li>
+</ul>
+<ul>
+<li><code>stpDomain</code> - set a name of the STP domain for a specific
+  device and this domain name will be used in future snapshots
+  for that device. But also other members that belong to the
+  same STP domain and don't have an attribute set will be
+  moved there automatically.</li>
+</ul>
+<ul>
+<li><code>routingDomain</code> - same as STP domain, but for Routing domain</li>
+</ul>
 </li>
-<li>
-<p><code>siteName</code> - set a site name (location) for a specific
-    device and in case you have enabled the
-    <em>Manual site separation</em> rule in Site Separation settings
-    then the name will be used in future snapshots for that
-    device.</p>
-</li>
-<li>
-<p><code>stpDomain</code> - set a name of the STP domain for a specific
-    device and this domain name will be used in future snapshots
-    for that device. But also other members that belong to the
-    same STP domain and don't have an attribute set will be
-    moved there automatically.</p>
-</li>
-<li>
-<p><code>routingDomain</code> - same as STP domain, but for Routing domain</p>
-</li>
-<li>
-<p>Added support for <a href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services/">AWS Assume
+</ul>
+<ul>
+<li>Added support for <a href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services/">AWS Assume
   Role</a>
-  that can be configured in Vendor API settings</p>
-</li>
-<li>
-<p>Graphs - Path Lookup - Added simulation for Cloud / SD-WAN networks.
-  Simulate packets between legacy and next-gen networks!</p>
-</li>
-<li>
-<p>Graphs - Path Lookup - Added detection of packets in the loop - the
-  option is on Visualization Setup.</p>
-</li>
-<li>
-<p>Graphs - Path Lookup - The packet can be traced hop by hop in "Show
-  Detail" by Next/Prev buttons</p>
-</li>
-<li>
-<p>Graphs - Path Lookup - added more options into path lookup form like
+  that can be configured in Vendor API settings</li>
+</ul>
+<ul>
+<li>Graphs - Path Lookup - Added simulation for Cloud / SD-WAN networks.
+  Simulate packets between legacy and next-gen networks!</li>
+</ul>
+<ul>
+<li>Graphs - Path Lookup - Added detection of packets in the loop - the
+  option is on Visualization Setup.</li>
+</ul>
+<ul>
+<li>Graphs - Path Lookup - The packet can be traced hop by hop in "Show
+  Detail" by Next/Prev buttons</li>
+</ul>
+<ul>
+<li>Graphs - Path Lookup - added more options into path lookup form like
   L7 applications, ICMP options, IP Regions, TTL, and everything can
-  be saved to setting preset</p>
-</li>
+  be saved to setting preset</li>
+</ul>
+<ul>
 <li>
 <p>Graphs - Path Lookup - added "First hop algorithm" option, this will
   allow you to simulate external networks by specifying where the
   packet should start (device/interface)</p>
-</li>
-<li>
-<p>unfortunately, all the above Path lookup changes cause a
-    breaking change in the API request payload.</p>
-</li>
-<li>
-<p>See <a href="../../../../../IP_Fabric_API/Path_Lookup/">Tech Notes for Path Lookup</a></p>
+<ul>
+<li>unfortunately, all the above Path lookup changes cause a
+  breaking change in the API request payload.</li>
+</ul>
+<ul>
+<li>See <a href="../../../../../IP_Fabric_API/Path_Lookup/">Tech Notes for Path Lookup</a></li>
+</ul>
 </li>
 </ul>
 <h3 id="features-protocol-and-technology-support_1">Features - Protocol and technology support</h3>
@@ -4864,28 +4866,28 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
 <li>
 <p>F5 BigIP - Added support for virtual servers and pools. New tables
   added:</p>
-</li>
-<li>
-<p>Technology / Load-balancing / Virtual Servers</p>
-</li>
+<ul>
+<li>Technology / Load-balancing / Virtual Servers</li>
 <li>Technology / Load-balancing / Virtual Servers Pools</li>
 <li>Technology / Load-balancing / Virtual Servers - Pool members</li>
-<li>
-<p>Technology / Load-balancing / F5 Partitions</p>
+<li>Technology / Load-balancing / F5 Partitions</li>
+</ul>
 </li>
-<li>
-<p>Added new table Technology/ Port channels / MLAG / Cisco VPC</p>
-</li>
+</ul>
+<ul>
+<li>Added new table Technology/ Port channels / MLAG / Cisco VPC</li>
 <li>Extreme Xos - Added POE support</li>
 </ul>
 <h3 id="improvements_1">Improvements</h3>
 <ul>
 <li><a href="../../../../../IP_Fabric_Settings/site_separation/">Site Separation</a> has been rewritten, it respects Device Attributes
-  (see New Features)</li>
+  (see New Features)<ul>
 <li>there was added an algorithm to determine the site name based on
-    SNMP location.</li>
+  SNMP location.</li>
 <li>also added an option that will try to assign devices without
-    site name to the site based on device neighborship.</li>
+  site name to the site based on device neighborship.</li>
+</ul>
+</li>
 <li>Discovery classification improved - only IP addresses with
   interfaces in UP state go to the discovery process.</li>
 <li>Router to switch connection with some members of port-channel in
@@ -4901,9 +4903,11 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
 <li>Zone Firewall and Access lists security tables are now broken to
   rule level with columns that are string searchable for all values
   (some of the columns are hidden by default). Tables also allow the
-  application of intent checks.</li>
+  application of intent checks.<ul>
 <li>Table Technology / Security / Access lists</li>
 <li>Table Technology / Security / Zone firewall</li>
+</ul>
+</li>
 <li>The date and time values are now displayed in ISO8601 format</li>
 <li>Cisco Firepower - Change collecting data to use FMC API and add
   support for application rules: More <a href="../../../../known_issues/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">Dropping support for ACL on
@@ -4988,13 +4992,11 @@ OVA SHA256SUM: 3d07c8f1a51497eae671a43130cbf536b7e7bdf9ae6ba9030ebc50c981328119
   command <code>show ip dhcp snooping statistics</code>, probably bug on device.</li>
 <li>Cisco NX-OS - fixed parsing of command <code>show mac address-table</code> that
   were containing fabric path SWID.</li>
-<li>
-<p>Cisco NX-OS - fixed parsing of different output for command <code>show snmp user</code></p>
-</li>
-<li>
-<p>Cisco viptela - Fix parsing of uptime from command
-  <code>/device/bfd/sessions?deviceId=</code></p>
-</li>
+<li>Cisco NX-OS - fixed parsing of different output for command <code>show snmp user</code></li>
+</ul>
+<ul>
+<li>Cisco viptela - Fix parsing of uptime from command
+  <code>/device/bfd/sessions?deviceId=</code></li>
 <li>F5 Big-IP - added support for IPv6 NTP source addresses in command
   <code>run util bash -c "ntpq -np"</code></li>
 <li>F5 Big-IP - <code>commands/f5/_big-ip/showSysHardware</code> - fix parsing
