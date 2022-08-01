@@ -8,20 +8,20 @@ assigned a new snapshot is required for it to be applied.
 
 ![Device attributes](device_attributes.png)
 
--   **Serial Number** is IP Fabric’s **Unique Serial Number** (API column
-    `sn`); this is not the column **Serial Number** which represents the
-    Hardware SN (API column `snHw`)
+- **Serial Number** is IP Fabric’s **Unique Serial Number** (API column
+  `sn`); this is not the column **Serial Number** which represents the
+  Hardware SN (API column `snHw`)
 
-    -   Devices discovered via API can also be assigned using Device
-        Attributes.
+  - Devices discovered via API can also be assigned using Device
+    Attributes.
 
--   **Hostname** is populated by IP Fabric when a device matching the
-    **Serial Number** is found
+- **Hostname** is populated by IP Fabric when a device matching the
+  **Serial Number** is found
 
--   **Attribute** is the Device Attribute to assign. Currently supported
-    is Site Name, Routing Domain, or STP Domain
+- **Attribute** is the Device Attribute to assign. Currently supported
+  is Site Name, Routing Domain, or STP Domain
 
--   **Value** is the attribute’s value to assign.
+- **Value** is the attribute’s value to assign.
 
 ## Creating rules in the UI
 
@@ -34,9 +34,10 @@ The dropdown is intuitive and will let you search based on SN or
 hostname.
 
 !!! Info
-	Currently there is an issue where IP Fabric will not search
-	for devices discovered via an API in the UI. Even though it appears no
-	devices match the SN it will still assign the attribute to the device.
+
+    Currently there is an issue where IP Fabric will not search
+    for devices discovered via an API in the UI. Even though it appears no
+    devices match the SN it will still assign the attribute to the device.
 
 ![Device attributes dropdown](device_attributes_dropdown.png)
 
@@ -45,10 +46,10 @@ hostname.
 This is the preferred method of creating rules as it allows for bulk
 importing.
 
-| Method | Put |
-|:-------|:----|
-| URL | `https://<IPF_URL>/api/v1/attributes/global` |
-| Data|`{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]`|
+| Method | Put                                                                                          |
+| :----- | :------------------------------------------------------------------------------------------- |
+| URL    | `https://<IPF_URL>/api/v1/attributes/global`                                                 |
+| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]` |
 
 ## Creating Rules With `python-ipfabric` Package
 

@@ -2,86 +2,42 @@
 
 ## Request Parameters
 
-- `parameters` *\[mandatory\]* - A nested JSON data structure with keys
-
-  - `type` *\[mandatory\]* - A string with a value of `pathLookup` for an E2E path simulation output
-
-  - `pathLookupType` *\[mandatory\]* - A string containing the word `unicast`
-
-  - `protocol` *\[mandatory\]* - A string with a value of `tcp`, `udp`, `icmp`
-
-  - `startingPoint` *\[mandatory\]* - A string containing the source IP address or subnet
-
-  - `destinationPoint` *\[mandatory\]* - A string containing the destination IP address or subnet
-
-  - `groupBy` *\[mandatory\]* - A quoted string representing the grouping of devices in the output - at this time one of `siteName`, `routingDomain` or `stpDomain`.
-
-  - `networkMode` *\[mandatory\]* - A boolean - the new version
-    of IP Fabric allows you to simulate paths between subnets.
-    Setting this key to `true` means that you will create a single
-    result representing the subnets; `false` means that IP Fabric will
-    create a separate path for each source or destination in the
-    range of addresses up to a maximum of 255.
-
-  - `securedPath` *\[mandatory\]* - A boolean - when you run a
-    path simulation, you can tell IP Fabric if you want to stop when
-    it hits a security policy which blocks the traffic in question
-    (`true`) or complete the forwarding path and highlight the
-    policy enforcement point (`false`)
-
-  - `ttl` *\[mandatory\]* - integer - Time-to-live value (default is `128`)
-
-  - `fragmentOffset` *\[mandatory\]* - integer - Fragment offset value (default is `0`)
-
-  - `enableRegions` *\[mandatory\]* - boolean - (default `false`)
-
-  - `srcRegions` *\[mandatory\]* - string - (default `.*`)
-
-  - `dstRegions` *\[mandatory\]* - string - (default `.*`)
-
-  - `otherOptions` *\[mandatory\]* - nested JSON data
-
-    - `applications` *\[mandatory\]* - string - (default `.*`)
-
-    - `tracked` *\[mandatory\]* - boolean - (default `false`)
-
-  - `firstHopAlgorithm` *\[mandatory\]* - nested JSON data
-
-    - `type` *\[mandatory\]* - Either `automatic` or `userDefined`
-
-    - `vrf` *\[Optional and if type == `automatic`\]*
-
-    - `entryPoints` *\[mandatory and if type == `userDefined`\]* - nested array of JSON data
-
-      - `hostname` *\[mandatory\]* - Hostname string
-
-      - `sn` *\[mandatory\]* - IP Fabric Unique Serial Number string
-
-      - `iface` *\[mandatory\]* - Interface name
-
-  - `l4Options` *\[mandatory\]* - nested JSON data
-
+- `parameters` _\[mandatory\]_ - A nested JSON data structure with keys
+  - `type` _\[mandatory\]_ - A string with a value of `pathLookup` for an E2E path simulation output
+  - `pathLookupType` _\[mandatory\]_ - A string containing the word `unicast`
+  - `protocol` _\[mandatory\]_ - A string with a value of `tcp`, `udp`, `icmp`
+  - `startingPoint` _\[mandatory\]_ - A string containing the source IP address or subnet
+  - `destinationPoint` _\[mandatory\]_ - A string containing the destination IP address or subnet
+  - `groupBy` _\[mandatory\]_ - A quoted string representing the grouping of devices in the output - at this time one of `siteName`, `routingDomain` or `stpDomain`.
+  - `networkMode` _\[mandatory\]_ - A boolean - the new version of IP Fabric allows you to simulate paths between subnets. Setting this key to `true` means that you will create a single result representing the subnets; `false` means that IP Fabric will create a separate path for each source or destination in the range of addresses up to a maximum of 255.
+  - `securedPath` _\[mandatory\]_ - A boolean - when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (`true`) or complete the forwarding path and highlight the policy enforcement point (`false`)
+  - `ttl` _\[mandatory\]_ - integer - Time-to-live value (default is `128`)
+  - `fragmentOffset` _\[mandatory\]_ - integer - Fragment offset value (default is `0`)
+  - `enableRegions` _\[mandatory\]_ - boolean - (default `false`)
+  - `srcRegions` _\[mandatory\]_ - string - (default `.*`)
+  - `dstRegions` _\[mandatory\]_ - string - (default `.*`)
+  - `otherOptions` _\[mandatory\]_ - nested JSON data
+    - `applications` _\[mandatory\]_ - string - (default `.*`)
+    - `tracked` _\[mandatory\]_ - boolean - (default `false`)
+  - `firstHopAlgorithm` _\[mandatory\]_ - nested JSON data
+    - `type` _\[mandatory\]_ - Either `automatic` or `userDefined`
+    - `vrf` _\[Optional and if type == `automatic`\]_
+    - `entryPoints` _\[mandatory and if type == `userDefined`\]_ - nested array of JSON data
+      - `hostname` _\[mandatory\]_ - Hostname string
+      - `sn` _\[mandatory\]_ - IP Fabric Unique Serial Number string
+      - `iface` _\[mandatory\]_ - Interface name
+  - `l4Options` _\[mandatory\]_ - nested JSON data
     - If `protocol = tcp`
-
-      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
-
-      - `dstPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
-
-      - `flags` *\[mandatory\]* - An array of TCP flags to be set in the simulated path or empty array
-
+      - `srcPorts` _\[mandatory\]_ - A string representing ports; ex. `80,443,1025-4096`
+      - `dstPorts` _\[mandatory\]_ - A string representing ports; ex. `80,443,1025-4096`
+      - `flags` _\[mandatory\]_ - An array of TCP flags to be set in the simulated path or empty array
         - Valid flags: [`ack`, `fin`, `psh`, `rst`, `syn`, `urg`]
-
     - If `protocol = udp`
-
-      - `srcPorts` *\[mandatory\]* - A string representing ports; ex. `80,443,1025-4096`
-
-      - `dstPorts` *\[mandatory\]* - An integer representing the destination port
-
+      - `srcPorts` _\[mandatory\]_ - A string representing ports; ex. `80,443,1025-4096`
+      - `dstPorts` _\[mandatory\]_ - An integer representing the destination port
     - If `protocol = icmp`
-
-      - `type` *\[mandatory\]* - An integer representing the ICMP type
-
-      - `code` *\[mandatory\]* - An integer representing the ICMP code
+      - `type` _\[mandatory\]_ - An integer representing the ICMP type
+      - `code` _\[mandatory\]_ - An integer representing the ICMP code
 
 ## Example minimal request body
 

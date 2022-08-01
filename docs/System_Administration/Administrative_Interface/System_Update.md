@@ -22,8 +22,9 @@ wizard.
 
 On [Restore and Backup](../backup_and_restore) page perform system backup.
 
-!!! info "Backup Disk"  
-	Local backup disk is not present by default! Please add a new virtual disk to your VM to enable local backups. (See Restore and Backup page)
+!!! info "Backup Disk"
+
+    Local backup disk is not present by default! Please add a new virtual disk to your VM to enable local backups. (See Restore and Backup page)
 
 ## Online Upgrade
 
@@ -31,12 +32,12 @@ At the **System update** page of the administrative interface, click the
 **Update** button. (In releases earlier than 2.2.6 additional release
 credentials are required).
 
-!!! warning "Network requirements"  
-	An online upgrade requires access to:
+!!! warning "Network requirements"
 
-	`callhome.ipfabric.io` (194.228.111.170) remote port 443/TCP for upgrade availability check
+    An online upgrade requires access to:
 
-	`releases.ipfabric.io` (194.228.111.172) remote port 443/TCP for upgrade package download
+    - `callhome.ipfabric.io` (194.228.111.170) remote port 443/TCP for upgrade availability check
+    - `releases.ipfabric.io` (194.228.111.172) remote port 443/TCP for upgrade package download
 
 In the following screenshot, the green 3.7.5 button in the right top
 corner indicates that a new version of IP Fabric is available (if the
@@ -49,7 +50,8 @@ system has Internet connectivity).
 Download the latest upgrade package from the updates folder on the distribution page [https://releases.ipfabric.io/ipfabric/#updates](https://releases.ipfabric.io/ipfabric/#updates)
 
 !!! warning
-	When performing offline upgrade IP FABRIC v2.2.2 or lower, load the patch for large offline updates first using [https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig](https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig)
+
+    When performing offline upgrade IP FABRIC v2.2.2 or lower, load the patch for large offline updates first using [https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig](https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig)
 
 Go to **Support -> System Administration** (use 'osadmin' user to access). At the **System update** page of the administrative interface, upload the package. The following screenshot depicts the actual upgrade process in the System Administration.
 

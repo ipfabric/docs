@@ -34,19 +34,15 @@ client. User and password are provided by technical support.
 
 ## What Is Included In The Techsupport File?
 
-1.  **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, MongoDB,
-    ArangoDB and IP Fabric API service logs. Customer data are **not**
-    included.
-2.  **Service logs** -- Includes IP Fabric discovery service logs without
-    CLI. Customer data are limited, only IP addresses which were used
-    during discovery and serial numbers of devices.
-3.  **Current Snapshot** -- Includes selected snapshot
-    - **Remove CLI logs from snapshot** -- Removes devices CLI logs from snapshot
-    - **Database dump** -- Includes database dump of selected snapshot.
-4.  **Complete database dump** -- Includes database dump of all snapshots
-    which are loaded in memory
-5.  **Database dump without devices data** -- Removes all collected data
-    from devices. Dump contains only error and service tables.
+1. **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, MongoDB, ArangoDB and IP Fabric API service logs. Customer data are **not** included.
+2. **Service logs** -- Includes IP Fabric discovery service logs without CLI. Customer data are limited, only IP addresses which were used during discovery and serial numbers of devices.
+3. **Current Snapshot** -- Includes selected snapshot
+
+   - **Remove CLI logs from snapshot** -- Removes devices CLI logs from snapshot
+   - **Database dump** -- Includes database dump of selected snapshot.
+
+4. **Complete database dump** -- Includes database dump of all snapshots which are loaded in memory
+5. **Database dump without devices data** -- Removes all collected data from devices. Dump contains only error and service tables.
 
 !!! info
 
