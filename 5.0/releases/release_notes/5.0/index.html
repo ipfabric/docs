@@ -3325,6 +3325,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3891,6 +3905,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3980,11 +4008,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-19th-jul-2022" class="md-nav__link">
-    v5.0.0 (19th Jul, 2022)
+  <a href="#v501-aug-08th-2022" class="md-nav__link">
+    v5.0.1 (Aug 08th, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (19th Jul, 2022)">
+    <nav class="md-nav" aria-label="v5.0.1 (Aug 08th, 2022)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v500-jul-19th-2022" class="md-nav__link">
+    v5.0.0 (Jul 19th, 2022)
+  </a>
+  
+    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4344,11 +4399,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v500-19th-jul-2022" class="md-nav__link">
-    v5.0.0 (19th Jul, 2022)
+  <a href="#v501-aug-08th-2022" class="md-nav__link">
+    v5.0.1 (Aug 08th, 2022)
   </a>
   
-    <nav class="md-nav" aria-label="v5.0.0 (19th Jul, 2022)">
+    <nav class="md-nav" aria-label="v5.0.1 (Aug 08th, 2022)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v500-jul-19th-2022" class="md-nav__link">
+    v5.0.0 (Jul 19th, 2022)
+  </a>
+  
+    <nav class="md-nav" aria-label="v5.0.0 (Jul 19th, 2022)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4406,7 +4488,31 @@
 
 
 <h1 id="ip-fabric-v50">IP Fabric v5.0</h1>
-<h2 id="v500-19th-jul-2022">v5.0.0 (19th Jul, 2022)</h2>
+<h2 id="v501-aug-08th-2022">v5.0.1 (Aug 08th, 2022)</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># ipfabric-5-0-1+10.ova</span>
+OVA SHA256: 6ec97dde3bc7b4eae424799838a99453d759adf14ef42f20039fc89cd0c2eb49
+OVA MD5: 4624340f1f6c515db0946b859944558e
+<span class="c1"># ipfabric-5-0-1+10.qcow2</span>
+QCOW SHA256: 7539bbaf7eb6c8f7c5e0c72517210e49feec0bb2ae9cca68bb900321d56d2996
+QCOW MD5: 04fed50a120a49bf1b610b39096b1051
+<span class="c1"># ipfabric-update-5_0_1+10.tar.gz.sig</span>
+TAR SHA256: edbf3cfa8c0628b39682a952f61d62ba7b3ea9176c5f36edd1b93decee501047
+TAR MD5: 0f79000974e0e5c60590e161785a1067
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Read All Upgrade Notices</p>
+<p>Please read all v5.0.0 UPGRADE NOTICES, WARNINGS, and IMPORTANT messages prior to beginning installation.
+This upgrade requires IP Fabric to be on <code>v4.4.3</code> or greater prior to upgrading to <code>v5.0.1</code>.</p>
+</div>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><code>v5.0.0</code> was unpublished as a race condition in Palo Alto discovery was reported; this has been fixed in <code>v5.0.1</code>.</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>Checkpoint <code>Management Data Plane Separation (MDPS)</code> if enabled is now supported in IP Fabric for discovery</li>
+</ul>
+<h2 id="v500-jul-19th-2022">v5.0.0 (Jul 19th, 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA SHA256: ac8a7e68f97b53e299ce3eecac6bd4ddc56c2c025b1ae48d95fbad925213a7bd
 OVA MD5: 65e979f0ea93ba77c9731cfcc0008fa5
 QCOW SHA256: 1e681e249d69d21feb83cbc62f5e3d2bb80db76d22a3acfd90c840c30506748c
@@ -4415,7 +4521,7 @@ QCOW MD5: 0204de624001d1dfe8067e68f11ef3c5
 <div class="admonition warning">
 <p class="admonition-title">Read All Upgrade Notices</p>
 <p>Please read all UPGRADE NOTICES, WARNINGS, and IMPORTANT messages prior to beginning installation.
-This upgrade requires IP Fabric to be on <code>v4.4.3</code> prior to upgrade to <code>v5.0.0</code>.</p>
+This upgrade requires IP Fabric to be on <code>v4.4.3</code> prior to upgrading to <code>v5.0.0</code>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">API Versioning</p>
@@ -4452,7 +4558,7 @@ characters</p>
 <p>The first phase of a new implementation of Role-Based Access Control is
 included in <code>5.0.0</code>. There is a known caveat where generation of API tokens
 does not take into account the new RBAC roles – this will be remedied in
-<code>5.0.1</code>. If you are planning on using Roles and API Tokens it is
+<code>5.0.0</code>. If you are planning on using Roles and API Tokens it is
 recommended to wait for the fix before assigning any user to the custom
 roles. If a user is in a custom Role they will not be able to create an API
 token until the next patch release.</p>
@@ -4638,7 +4744,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../low-level_release_notes/5.x/5.0.x/5.0.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LLRN 5.0.0" rel="prev">
+        <a href="../../low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LLRN 5.0.1" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -4647,7 +4753,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
               <span class="md-footer__direction">
                 Previous
               </span>
-              LLRN 5.0.0
+              LLRN 5.0.1
             </div>
           </div>
         </a>

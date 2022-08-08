@@ -3325,6 +3325,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3959,6 +3973,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4370,7 +4398,7 @@
 
 
 <h1 id="llrn-500">LLRN 5.0.0</h1>
-<p>These are low-level release notes for IP Fabric release <code>5.0.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don't have access to the tickets. On the other hand we believe, that it can provide a valuable information, if you are looking for particular detail. This release of IP Fabric contains total of 629 issues. And was internally released on 2022-07-12.</p>
+<p>These are low-level release notes for IP Fabric release <code>5.0.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don't have access to the tickets. On the other hand we believe, that it can provide a valuable information, if you are looking for particular detail. This release of IP Fabric contains total of 606 issues. And was internally released on 2022-07-12.</p>
 <h2 id="epics">Epics</h2>
 <p>Epics are high-level features, which may consist of many tasks.</p>
 <ul>
@@ -4428,12 +4456,6 @@
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7473">NIM-7473</a> -- High – F5 - Incorrect URL in the advanced filter when clicking on #Members from the "Virtual Server - Pool" tab</li>
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7490">NIM-7490</a> -- Highest – tasks/_helpers/hostname/cisco - viptela &amp; meraki</li>
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7491">NIM-7491</a> -- Medium – E2E path throws an exception when no ARP record found</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-570">DOS-570</a> -- Highest – nimpeeMigrate failing</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-600">DOS-600</a> -- High – IPF5.0 discovery is running from old services location</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-608">DOS-608</a> -- High – Missing expect package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-618">DOS-618</a> -- Medium – sys-scale-workers is accessing old locations of services</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-631">DOS-631</a> -- Highest – nimpee-install Missing sshpass</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-632">DOS-632</a> -- Highest – nimpee-install - error in sys-backup-duplicity.sh - missing paramiko</li>
 </ul>
 <h2 id="tasks">Tasks</h2>
 <p>A typical unit of work. They may be associated into Epics or Stories to form large features.</p>
@@ -4489,26 +4511,6 @@
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7383">NIM-7383</a> -- Highest – Vendor API clients to respect proxies setting</li>
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7384">NIM-7384</a> -- Medium – Improve UX for Snapshot Creation component</li>
 <li><a href="https://ipfabric.atlassian.net/browse/NIM-7402">NIM-7402</a> -- Medium – Update InputOptions Typescript Types in Path Lookup Simulation</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-54">DOS-54</a> -- High – Jumphost servers don't run on python3</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-341">DOS-341</a> -- Medium – Allow / Document how to add remote target for syslog</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-345">DOS-345</a> -- High – Package API service as a debian package (kw: deb api pkg)</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-393">DOS-393</a> -- Highest – Update tooling for Debian 11 migration</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-405">DOS-405</a> -- Medium – Investigate posibility of directly updating to debian 11</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-425">DOS-425</a> -- Medium – Improve product nginx configuration from the security perspective (kw TLS1.2, 1.2)</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-435">DOS-435</a> -- Highest – Update image / update / dev build "scripts" (i.e. "devOps" scripts) to node 16 [waiting for devs to prepare sources for migration to node 16]</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-466">DOS-466</a> -- Low – Add sar archives to techsupport packing</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-511">DOS-511</a> -- Highest – create hetzner image for 5.0.x appliance on debian 11</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-548">DOS-548</a> -- Medium – create nimpee discovery deb package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-549">DOS-549</a> -- Medium – create nimpee webng deb package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-550">DOS-550</a> -- Medium – create nimpee update service deb package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-551">DOS-551</a> -- Medium – create nimpee init (nimpeeMigrate) database deb package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-552">DOS-552</a> -- Medium – create nimpee webhook-worker deb package</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-559">DOS-559</a> -- Highest – net-config removes nimpee-conf-required only when triggered in fist boot mode</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-569">DOS-569</a> -- Medium – make net-config work with IPF 5.0</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-575">DOS-575</a> -- Low – nimpee-install - validate that all user-replaceable/editable files are handled properly</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-610">DOS-610</a> -- Medium – Please let arango db listen on 0.0.0.0 in the product for debugging purposes</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-629">DOS-629</a> -- High – Do not enable discovery services during package installation</li>
-<li><a href="https://ipfabric.atlassian.net/browse/DOS-672">DOS-672</a> -- Medium – Promote ipf-appliance 5.0.0+47 versions to prod deb repository</li>
 </ul>
 
               
@@ -4541,13 +4543,13 @@
       
       
         
-        <a href="../../../../release_notes/5.0/" class="md-footer__link md-footer__link--next" aria-label="Next: IP Fabric v5.0" rel="next">
+        <a href="../5.0.1/" class="md-footer__link md-footer__link--next" aria-label="Next: LLRN 5.0.1" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              IP Fabric v5.0
+              LLRN 5.0.1
             </div>
           </div>
           <div class="md-footer__button md-icon">

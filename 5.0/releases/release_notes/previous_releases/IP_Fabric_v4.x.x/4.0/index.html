@@ -3325,6 +3325,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3885,6 +3899,20 @@
     <li class="md-nav__item">
       <a href="../../../../low-level_release_notes/5.x/5.0.x/5.0.0/" class="md-nav__link">
         LLRN 5.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
       </a>
     </li>
   
@@ -4468,14 +4496,13 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 </ul>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
-<li>
-<p>Table <strong>Technology-&gt;Security-&gt;Object Groups</strong> was dropped. All
+<li>Table <strong>Technology-&gt;Security-&gt;Object Groups</strong> was dropped. All
   object groups are now part of the new security model. API calls to
   URL <code>/v1/tables/security/acl/object-groups</code> will no longer be
-  working.</p>
-</li>
-<li>
-<p>For tables <strong>Technology-&gt;Security-&gt;Access lists</strong>
+  working.</li>
+</ul>
+<ul>
+<li>For tables <strong>Technology-&gt;Security-&gt;Access lists</strong>
   (<code>/v1/tables/security/acl</code>) and <strong>Zone Firewall</strong>
   (<code>/v1/tables/security/zone-firewall/policies</code>), all columns except
   <code>name</code> were dropped
@@ -4483,15 +4510,14 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
   for ACL table and
   <code>type</code>, <code>fromZone</code>, <code>toZone</code>, <code>seq</code>, <code>src</code>, <code>dst</code>, <code>appNames</code> and <code>actions</code> for
   Zone Firewall table) as new security model is represented by a tree.
-  Because of that, it can't be fitted into a table format.</p>
-</li>
-<li>
-<p>Snapshot cannot be refreshed from the graph in this release. This
-  function will come back in the following release 4.1.</p>
-</li>
-<li>
-<p>API for pathlookup has changed see <a href="../../../../../IP_Fabric_API/Path_Lookup/">API Documetation</a></p>
-</li>
+  Because of that, it can't be fitted into a table format.</li>
+</ul>
+<ul>
+<li>Snapshot cannot be refreshed from the graph in this release. This
+  function will come back in the following release 4.1.</li>
+</ul>
+<ul>
+<li>API for pathlookup has changed see <a href="../../../../../IP_Fabric_API/Path_Lookup/">API Documetation</a></li>
 </ul>
 <h3 id="improvements">Improvements</h3>
 <h4 id="the-visualization-part-of-the-application-was-fully-rewritten-to-boost-performance-and-capabilities">The visualization part of the application was fully rewritten to boost performance and capabilities.</h4>

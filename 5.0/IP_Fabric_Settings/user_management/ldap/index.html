@@ -3423,6 +3423,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3989,6 +4003,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4456,34 +4484,28 @@ group permissions</strong> are also checked with <strong>every login attempt</st
     suffixes</strong> field. Each suffix must begin with @. If the same user
     can log in with other suffixes, for example, <code>joe@europe.domain.com</code>
     and <code>joe@domain.com</code> then fill in <code>@europe.domain.com</code> and <code>@domain.com</code>.</li>
-<li>Add servers for the domain:<ol>
-<li>as an <strong>explicit list of addresses</strong><ol>
-<li>Choose <strong>Use pre-configured LDAP servers</strong> in Servers
-    dropdown</li>
-<li>Specify FQDN or IP address of the LDAP server including the
-    protocol prefix (such as <code>ldap://your.domain.com</code> or
-    <code>ldaps://your.domain.com</code>)</li>
-<li>Specify the port (default LDAP port is 389 and default LDAPS
-    port is 636)</li>
-<li>For LDAP over SSL, also upload a CA certificate used for the
-    LDAP certificate signature</li>
-<li>Click on <strong>+Add Server</strong> if you want to add backup servers</li>
-</ol>
-</li>
-<li>using <strong>DNS service records</strong><ol>
-<li>Choose <strong>Use DNS to find LDAP servers</strong> in Servers
-    dropdown</li>
-<li>Choose/upload a certificate (recommended in the production
-    environment)</li>
-<li>Define the DNS address</li>
-<li>Define Service location name (common names are <code>ldap</code> and
-    <code>ldaps</code>). This is the network service that constructs the
-    final name of the record. The construction is done as
-    follows: <code>\_{{service location name}}.\_tcp.{{dns address}}</code></li>
-</ol>
-</li>
-</ol>
-</li>
+<li>Add servers for the domain:
+    1.  as an <strong>explicit list of addresses</strong>
+        1.  Choose <strong>Use pre-configured LDAP servers</strong> in Servers
+            dropdown
+        2.  Specify FQDN or IP address of the LDAP server including the
+            protocol prefix (such as <code>ldap://your.domain.com</code> or
+            <code>ldaps://your.domain.com</code>)
+        3.  Specify the port (default LDAP port is 389 and default LDAPS
+            port is 636)
+        4.  For LDAP over SSL, also upload a CA certificate used for the
+            LDAP certificate signature
+        5.  Click on <strong>+Add Server</strong> if you want to add backup servers
+    2.  using <strong>DNS service records</strong>
+        1.  Choose <strong>Use DNS to find LDAP servers</strong> in Servers
+            dropdown
+        2.  Choose/upload a certificate (recommended in the production
+            environment)
+        3.  Define the DNS address
+        4.  Define Service location name (common names are <code>ldap</code> and
+            <code>ldaps</code>). This is the network service that constructs the
+            final name of the record. The construction is done as
+            follows: <code>\_{{service location name}}.\_tcp.{{dns address}}</code></li>
 <li>Specify service account with LDAP read permissions in the <strong>Bind
     DN</strong> field. This field must be an <strong>escaped</strong> LDAP-style
     <strong>distinguished name</strong>. (for example
@@ -4505,8 +4527,14 @@ group permissions</strong> are also checked with <strong>every login attempt</st
 <li>Click <strong>Confirm</strong>.</li>
 </ol>
 <div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If the LDAP server is not reachable or credentials to the service
 account are not correct, LDAP authentication cannot be set.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Two or more LDAP servers</p>
+<p>When two or more LDAP server configurations are present, an email suffix needs to be added to the username when logging in.</p>
+<p>Username alone works only in a situation when one LDAP server configuration is present.</p>
 </div>
 <h2 id="ldap-group-permissions">LDAP Group Permissions</h2>
 <p>After the LDAP server is added, Group Permissions can be set. All

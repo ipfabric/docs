@@ -3415,6 +3415,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../releases/known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3981,6 +3995,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4422,12 +4450,10 @@
 <p>Use IP Fabric backup to protect your important data.</p>
 <p>There are two types of backup:</p>
 <ul>
-<li>
-<p>Local backup</p>
-</li>
-<li>
-<p>Remote backup (FTP, sFTP)</p>
-</li>
+<li>Local backup</li>
+</ul>
+<ul>
+<li>Remote backup (FTP, sFTP)</li>
 </ul>
 <div class="admonition tip security tip">
 <p class="admonition-title">Tip</p>
@@ -4471,27 +4497,15 @@ useful for example before a system upgrade.</p>
 <li>
 <p>For remote backup select <strong>FTP</strong> or <strong>SFTP </strong>from the <strong>Backup
     files destination</strong>.</p>
-<ol>
-<li>
-<p>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure
-    that your DNS client is configured and working properly in the
-    case of FQDN.</p>
-</li>
-<li>
-<p>Enter <strong>Username</strong> to access FTP/SFTP server.</p>
-</li>
-<li>
-<p>Enter <strong>Password</strong> to access FTP/SFTP server.</p>
-</li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
-</div>
-<ol>
-<li>Specify a <strong>Directory</strong> where FTP/SFTP backup should be
-    uploaded.</li>
-</ol>
+<p>1.  Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure
+      that your DNS client is configured and working properly in the
+      case of FQDN.</p>
+<p>2.  Enter <strong>Username</strong> to access FTP/SFTP server.</p>
+<p>3.  Enter <strong>Password</strong> to access FTP/SFTP server.</p>
+<p>!!! Info
+      Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
+<p>4.  Specify a <strong>Directory</strong> where FTP/SFTP backup should be
+      uploaded.</p>
 </li>
 <li>
 <p>Click <strong>Next</strong></p>
@@ -4522,27 +4536,17 @@ IP Fabric appliance.</p>
 </li>
 <li>
 <p>Select <strong>What restore?</strong> There are four options:</p>
-<ol>
-<li>
-<p><strong>Restore data &amp; all system services</strong> - This option restores
-    database and system files. It's usable for restore from general
-    system failures or upgrade failures.</p>
-</li>
-<li>
-<p><strong>Restore database</strong> - it means that only database data are
-    restored. It can be sufficient in case of database failure or
-    accidental database drop.</p>
-</li>
-<li>
-<p><strong>Restore syslog data</strong> - it means that only syslog data are
-    restored. It can be sufficient in case of database failure or
-    accidental database drop.</p>
-</li>
-<li>
-<p><strong>Restore snapshot file</strong> - particular snapshot can be
-    restored.</p>
-</li>
-</ol>
+<p>1.  <strong>Restore data &amp; all system services</strong> - This option restores
+      database and system files. It's usable for restore from general
+      system failures or upgrade failures.</p>
+<p>2.  <strong>Restore database</strong> - it means that only database data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.</p>
+<p>3.  <strong>Restore syslog data</strong> - it means that only syslog data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.</p>
+<p>4.  <strong>Restore snapshot file</strong> - particular snapshot can be
+      restored.</p>
 </li>
 <li>
 <p>For restore from local backup choose <strong>Local hard drive</strong> from
@@ -4578,27 +4582,17 @@ IP Fabric appliance.</p>
 </li>
 <li>
 <p>Select <strong>What restore?</strong> There are four options:</p>
-<ol>
-<li>
-<p><strong>Restore data &amp; all system services</strong> - This option restores
-    database and system files. It's usable for restore from general
-    system failures or upgrade failures.</p>
-</li>
-<li>
-<p><strong>Restore database</strong> - it means that only database data are
-    restored. It can be sufficient in case of database failure or
-    accidental database drop.</p>
-</li>
-<li>
-<p><strong>Restore syslog data</strong> - it means that only syslog data are
-    restored. It can be sufficient in case of database failure or
-    accidental database drop.</p>
-</li>
-<li>
-<p><strong>Restore snapshot file</strong> - particular snapshot can be
-    restored.</p>
-</li>
-</ol>
+<p>1.  <strong>Restore data &amp; all system services</strong> - This option restores
+      database and system files. It's usable for restore from general
+      system failures or upgrade failures.</p>
+<p>2.  <strong>Restore database</strong> - it means that only database data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.</p>
+<p>3.  <strong>Restore syslog data</strong> - it means that only syslog data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.</p>
+<p>4.  <strong>Restore snapshot file</strong> - particular snapshot can be
+      restored.</p>
 </li>
 <li>
 <p>For restore from local backup choose <strong>FTP</strong> or <strong>SFTP</strong> from

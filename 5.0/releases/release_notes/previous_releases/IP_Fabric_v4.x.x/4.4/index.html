@@ -3325,6 +3325,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+        Error: Invalid OVF checksum algorithm: SHA256
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
         `Error: Resource Conflict`
       </a>
@@ -3885,6 +3899,20 @@
     <li class="md-nav__item">
       <a href="../../../../low-level_release_notes/5.x/5.0.x/5.0.0/" class="md-nav__link">
         LLRN 5.0.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+        LLRN 5.0.1
       </a>
     </li>
   
@@ -4543,12 +4571,10 @@ apply this release.</p>
 <p>We needed to unify the way how is the device <code>sn</code> (Serial Number)
 constructed for devices with virtual context. Following vendors are
 affected with the change:</p>
-<ul>
-<li>Cisco ASA with virtual contexts</li>
-<li>Cisco WLC with system access point</li>
-<li>Cisco NX-OS with VDC</li>
-<li>Fortigate with VDOM</li>
-</ul>
+<p>- Cisco ASA with virtual contexts
+  - Cisco WLC with system access point
+  - Cisco NX-OS with VDC
+  - Fortigate with VDOM</p>
 <p>In 4.4.0 we are migrating device attributes that are necessary for manual site separation but we are not able to migrate snapshots from the older versions. Therefore sites in the older snapshots can be wrong if manual site separation was used. Also, if you compare a snapshot in a version higher or equal to 4.4.0 with a snapshot in a lower version than 4.4.0 that includes affected devices then you might encounter false-positive changes in the snapshot comparison.</p>
 </div>
 <div class="admonition important">
