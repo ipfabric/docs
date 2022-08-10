@@ -4417,36 +4417,71 @@
 <ol>
 <li>Deploy OVA to your vSphere environment as described at <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA
     Template</a>.</li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.
-    1.  Change CPU count.
-    2.  Change memory size.
-    3.  <a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../Overview/#operational-requirements">operational requirements section</a>.<ol>
+<li>Change CPU count.</li>
+<li>Change memory size.</li>
+<li><a href="../../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
+</ol>
+</li>
 <li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
 </ol>
 <h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
-<p>Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before deploying, please check if your Hyper-V server supports it.<a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server">Virtual Machine version on Windows or Windows Server</a></p>
+<p>The <code>QCOW2</code> disk image file can be converted to different formats.
+Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
 <ol>
-<li>Download <code>ipfabric-*-hyperv.zip</code> from official source.</li>
-<li>Extract previously downloaded archive <code>ipfabric-*-hyperv.zip</code>.</li>
-<li>Import HyperV image to your hypervisor server. <a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines">Export and Import virtual machines (Microsoft docs)</a></li>
-<li>
-<p>During <strong>Choose Import Type</strong> part, check option <strong>Copy the virtual machine(create a new unique ID)</strong>:</p>
-<p><a data-featherlight="../hyperv_import.png" href="#"><img alt="HyperV Import" src="../hyperv_import.png" /></a></p>
+<li>Download <code>ipfabric-*.qcow2</code> from official source.</li>
+<li>Convert <code>QCOW2</code> image to <code>VHDX</code> (Be sure to change the filenames in the command examples below.) <ul>
+<li>Windows instructions:<ol>
+<li>Download <a href="https://cloudbase.it/qemu-img-windows/">qemu-img-windows</a></li>
+<li>Unzip <code>qemu-img-windows</code></li>
+<li>Run <code>qemu-img.exe convert ipfabric-&lt;*&gt;.qcow2 -O vhdx -o subformat=dynamic ipfabric-&lt;*&gt;.vhdx</code></li>
+</ol>
+</li>
+<li>Linux instructions:<ol>
+<li>Install qemu-utils <code>sudo apt install qemu-utils</code></li>
+<li>Convert file: <code>qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-&lt;*&gt;.qcow2 ipfabric-&lt;*&gt;.vhdx</code></li>
+</ol>
+</li>
+</ul>
 </li>
 <li>
-<p>Wait until import process ends.</p>
+<p>Create New Hyper-V Virtual Machine and Specify Name and Location</p>
+<p><a data-featherlight="../hyperv_create.png" href="#"><img alt="HyperV Create" src="../hyperv_create.png" /></a></p>
 </li>
 <li>
-<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>). Right click on VM – choose <strong>Settings</strong>:</p>
+<p>Specify Generation as <code>Generation 1</code></p>
+<p><a data-featherlight="../hyperv_generation.png" href="#"><img alt="HyperV Generation" src="../hyperv_generation.png" /></a></p>
+</li>
+<li>
+<p>Assign Memory (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>)</p>
+<p><a data-featherlight="../hyperv_memory.png" href="#"><img alt="HyperV Memory" src="../hyperv_memory.png" /></a></p>
+</li>
+<li>
+<p>Configure Networking</p>
+<p><a data-featherlight="../hyperv_networking.png" href="#"><img alt="HyperV Networking" src="../hyperv_networking.png" /></a></p>
+</li>
+<li>
+<p>Connect Virtual Hard Disk</p>
+<p><a data-featherlight="../hyperv_harddisk.png" href="#"><img alt="HyperV Hard Disk" src="../hyperv_harddisk.png" /></a></p>
+</li>
+<li>
+<p>Verify Summary and Finish</p>
+<p><a data-featherlight="../hyperv_summary.png" href="#"><img alt="HyperV Summary" src="../hyperv_summary.png" /></a></p>
+</li>
+<li>
+<p>Wait for VM to be created</p>
+</li>
+<li>
+<p>Edit VM CPU settings (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>)</p>
 <p><a data-featherlight="../hyperv_settings.png" href="#"><img alt="HyperV Settings" src="../hyperv_settings.png" /></a></p>
-<p>1.  Change CPU count</p>
-<pre><code>  ![HyperV Setting CPU count](hyperv_settings_cpu.png)
-</code></pre>
-<p>2.  Change memory size</p>
-<pre><code>  ![HyperV Setting memory size](hyperv_settings_mem.png)
-</code></pre>
-<p>4.  <a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
-<p>5.  Close VM Settings window</p>
+<p><a data-featherlight="../hyperv_settings_cpu.png" href="#"><img alt="HyperV Settings CPU" src="../hyperv_settings_cpu.png" /></a></p>
+</li>
+<li>
+<p>Optionally increase Hard Disk Size based on <a href="../../Overview/#operational-requirements">operational requirements section</a>
+    1. <a href="../../../System_Administration/increase_disk_space/#increase-disk-space-for-hyper-v">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
+</li>
+<li>
+<p>Close VM Settings window</p>
 </li>
 <li>
 <p>Start VM.</p>
@@ -4468,9 +4503,11 @@
 </li>
 <li>
 <p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>).</p>
-<p>1.  Change CPU count
-  2.  Change memory size
-  4.  <a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
+<ol>
+<li>Change CPU count</li>
+<li>Change memory size</li>
+<li><a href="../../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</li>
+</ol>
 </li>
 <li>
 <p>Start VM and check if system starts without any interrupts.</p>

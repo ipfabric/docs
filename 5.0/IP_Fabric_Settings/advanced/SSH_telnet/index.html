@@ -4904,37 +4904,47 @@ errors and adjustments:</p>
 <p>At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.</p>
 </div>
 <h3 id="adding-new-jumphost">Adding New Jumphost</h3>
-<ol>
+<ul>
 <li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
 <li>
 <p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
 <p><a data-featherlight="../ssh/1384480773.png" href="#"><img alt="Jump host settings" src="../ssh/1384480773.png" /></a></p>
 </li>
+</ul>
+<ul>
 <li>
-<p>Fill in all necessary data
-    1. <strong>Label</strong> - the name for configuration (mandatory)
-    2. <strong>Jump host Address</strong> - IP address of FQDN name (mandatory)
-    3. <strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
-<pre><code>  !!! Warning
-
-      If you use `0.0.0.0/0` or another subnet that **includes IP address of the IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, IP connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention (on OS level most probably from our support) to fix.
-</code></pre>
-<p>4. <strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
-  5. <strong>Login type</strong>
-      1. <strong>Use credentials</strong> - require to provide username and password
-      2. <strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)
-  6. <strong>Username</strong> - Username for authentication (mandatory)
-  7. <strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below</p>
-<p>!!! Info
-      Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
+<p>Fill in all necessary data</p>
 <p><a data-featherlight="../ssh/1384480780.png" href="#"><img alt="Add Jumphost" src="../ssh/1384480780.png" /></a></p>
-</li>
+<ul>
+<li><strong>Label</strong> - the name for configuration (mandatory)</li>
+<li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
 <li>
-<p>Click <strong>+ Add</strong> button</p>
+<p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes IP address of the IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, IP connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention (on OS level most probably from our support) to fix.</p>
+</div>
 </li>
-<li>If a connection is open, you will see the <strong><em>Running</em></strong> status in Jumphost list<p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
+</ul>
+<ul>
+<li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
+<li><strong>Login type</strong></li>
+<li><strong>Use credentials</strong> - require to provide username and password</li>
+<li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
+<li><strong>Username</strong> - Username for authentication (mandatory)</li>
+<li><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code>.</li>
+</ul>
 </li>
-</ol>
+</ul>
+<ul>
+<li>Click <strong>+ Add</strong> button</li>
+</ul>
+<ul>
+<li>
+<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in Jumphost list</p>
+<p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
+</li>
+</ul>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -4979,7 +4989,7 @@ errors and adjustments:</p>
 <ol>
 <li>
 <p>On Jumphost servers list, check configuration that needs to be
-    removed</p>
+   removed</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
@@ -4999,9 +5009,7 @@ errors and adjustments:</p>
 <p>Login with <code>osadmin</code> account to the <strong>virtual machine CLI</strong></p>
 </li>
 <li>
-<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command</p>
-<p>!!! info
-      Each configured jumphost has its own ID</p>
+<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID.</p>
 <p><a data-featherlight="../systemctl_jumphost.png" href="#"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></a></p>
 </li>
 <li>
