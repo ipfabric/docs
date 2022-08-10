@@ -58,3 +58,42 @@ Snapshot related logs are visible in `/home/autoboss/snapshots/<id>/*`
 /home/autoboss/snapshots/<id>/services/updater/all.txt      - updater is transforming device JSON into DB
 /home/autoboss/snapshots/<id>/services/worker/*.txt         - worker does parsing
 ```
+
+## Remote Syslog
+
+In IP Fabric version >= `5.0.0` it is now possible to send logs to a remote collector.  This will use a basic example
+using default UDP port of 514.  More advanced examples such as TCP connections please consult the [syslog-ng Documentation](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide)
+
+!!! warning "Changes to `/etc/*.conf` files"
+
+    It is important not to touch any `*.conf` files in the `/etc/` as this can cause issues during upgrades.
+    The recommended approach is to create a new file under the service's `conf.d` directory.
+
+### Forwarding Syslog Messages
+
+1. Log into IP Fabric CLI using `osadmin` user.
+2. Elevate to root access using `sudo -s` and the `osadmin` password
+3. Create a new file (filename should be understandable by your team and should not conflict with other files).
+   1. `nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf`
+4. Add the following lines (replacing `<YOUR_IP>` with the IP of your syslog server):
+   1. Forwarding All Syslog Messages (including system messages)
+
+      ```
+      destination remote { network("<YOUR_IP>" transport("udp") port(514)); }; 
+      log { source(s_src); destination(remote); };
+      ```
+   2. Forwarding Only IP Fabric Syslog Messages
+   
+      ```
+      destination remote { network("<YOUR_IP>" transport("udp") port(514)); };
+
+      log {
+      source(s_src);
+      filter(f_ipf_api);
+      parser(p_json);
+      destination(remote);
+      };
+      ```
+   
+5. Save the file and exit
+6. Restart syslog-ng: `systemctl restart syslog-ng`

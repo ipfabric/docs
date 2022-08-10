@@ -8,43 +8,66 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 
 ## Deploying on VMware OVA Virtual Machine
 
-1.  Deploy OVA to your vSphere environment as described at [Deploy an OVF or OVA
+1. Deploy OVA to your vSphere environment as described at [Deploy an OVF or OVA
     Template](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html).
-2.  [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../Overview/index.md#operational-requirements).
-    1.  Change CPU count.
-    2.  Change memory size.
-    3.  [Add a new empty virtual disk or resize the main system disk](../../System_Administration/increase_disk_space.md)
-3.  Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
+2. [Edit VM settings](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html) and adjust according to your network size as described in the [operational requirements section](../Overview/index.md#operational-requirements).
+   1. Change CPU count.
+   2. Change memory size.
+   3. [Add a new empty virtual disk or resize the main system disk](../../System_Administration/increase_disk_space.md)
+3. Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
 
 ## Deploying on Hyper-V Virtual Machine
 
-Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before deploying, please check if your Hyper-V server supports it.[Virtual Machine version on Windows or Windows Server](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server)
+The `QCOW2` disk image file can be converted to different formats.
+Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
 
-1.  Download `ipfabric-*-hyperv.zip` from official source.
-2.  Extract previously downloaded archive `ipfabric-*-hyperv.zip`.
-3.  Import HyperV image to your hypervisor server. [Export and Import virtual machines (Microsoft docs)](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/deploy/export-and-import-virtual-machines)
-4.  During **Choose Import Type** part, check option **Copy the virtual machine(create a new unique ID)**:
+1. Download `ipfabric-*.qcow2` from official source.
+2. Convert `QCOW2` image to `VHDX` (Be sure to change the filenames in the command examples below.) 
+   * Windows instructions:
+     1. Download [qemu-img-windows](https://cloudbase.it/qemu-img-windows/)
+     2. Unzip `qemu-img-windows`
+     3. Run `qemu-img.exe convert ipfabric-<*>.qcow2 -O vhdx -o subformat=dynamic ipfabric-<*>.vhdx`
+   * Linux instructions:
+     1. Install qemu-utils `sudo apt install qemu-utils`
+     2. Convert file: `qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-<*>.qcow2 ipfabric-<*>.vhdx`
+3. Create New Hyper-V Virtual Machine and Specify Name and Location
 
-    ![HyperV Import](hyperv_import.png)
+    ![HyperV Create](hyperv_create.png)
 
-5.  Wait until import process ends.
-6.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)). Right click on VM -- choose **Settings**:
+4. Specify Generation as `Generation 1`
+
+   ![HyperV Generation](hyperv_generation.png)
+
+5. Assign Memory (check requirements in [operational requirements section](../Overview/index.md#operational-requirements))
+
+    ![HyperV Memory](hyperv_memory.png)
+
+6. Configure Networking
+
+    ![HyperV Networking](hyperv_networking.png)
+
+7. Connect Virtual Hard Disk
+
+   ![HyperV Hard Disk](hyperv_harddisk.png)
+
+8. Verify Summary and Finish
+
+   ![HyperV Summary](hyperv_summary.png)
+
+9. Wait for VM to be created
+
+10. Edit VM CPU settings (check requirements in [operational requirements section](../Overview/index.md#operational-requirements))
 
     ![HyperV Settings](hyperv_settings.png)
 
-    1.  Change CPU count
+    ![HyperV Settings CPU](hyperv_settings_cpu.png)
 
-        ![HyperV Setting CPU count](hyperv_settings_cpu.png)
+11. Optionally increase Hard Disk Size based on [operational requirements section](../Overview/index.md#operational-requirements)
+    1. [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md#increase-disk-space-for-hyper-v) if necessary.
 
-    2.  Change memory size
+12. Close VM Settings window
 
-        ![HyperV Setting memory size](hyperv_settings_mem.png)
-
-    4.  [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
-
-    5.  Close VM Settings window
-
-7.  Start VM.
+13. Start VM.
 
 ## Deploying to Nutanix Virtual Machine
 
@@ -52,20 +75,20 @@ Hyper-V image has been created using Hyper-V Configuration Version 8.0. Before d
 
     Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at [VMware deploytment section](#deploying-on-vmware-ova-virtual-machine).
 
-1.  Download `ipfabric-*-.OVA` file from official source.
-2.  Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below
+1. Download `ipfabric-*-.OVA` file from official source.
+2. Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below
 
     ![Unzip OVA](unzip_ova.png)
 
-3.  Import `.vmdk` files to Nutanix hypervisor, following Nutanix official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
+3. Import `.vmdk` files to Nutanix hypervisor, following Nutanix official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
 
-4.  Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)).
+4. Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)).
 
-    1.  Change CPU count
-    2.  Change memory size
-    4.  [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
+   1. Change CPU count
+   2. Change memory size
+   3. [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
-5.  Start VM and check if system starts without any interrupts.
+5. Start VM and check if system starts without any interrupts.
 
 ## Deploying on KVM Virtual Machine
 
