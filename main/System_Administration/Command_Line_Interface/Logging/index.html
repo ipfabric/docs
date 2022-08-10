@@ -2956,6 +2956,26 @@ differently in you production deployment, than described here.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remote-syslog" class="md-nav__link">
+    Remote Syslog
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Syslog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forwarding-syslog-messages" class="md-nav__link">
+    Forwarding Syslog Messages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4381,6 +4401,26 @@ differently in you production deployment, than described here.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remote-syslog" class="md-nav__link">
+    Remote Syslog
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Syslog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forwarding-syslog-messages" class="md-nav__link">
+    Forwarding Syslog Messages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4440,6 +4480,46 @@ differently in you production deployment, than described here.
 /home/autoboss/snapshots/&lt;id&gt;/services/updater/all.txt      - updater is transforming device JSON into DB
 /home/autoboss/snapshots/&lt;id&gt;/services/worker/*.txt         - worker does parsing
 </code></pre></div>
+<h2 id="remote-syslog">Remote Syslog</h2>
+<p>In IP Fabric version &gt;= <code>5.0.0</code> it is now possible to send logs to a remote collector.  This will use a basic example
+using default UDP port of 514.  More advanced examples such as TCP connections please consult the <a href="https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide">syslog-ng Documentation</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Changes to <code>/etc/*.conf</code> files</p>
+<p>It is important not to touch any <code>*.conf</code> files in the <code>/etc/</code> as this can cause issues during upgrades.
+The recommended approach is to create a new file under the service's <code>conf.d</code> directory.</p>
+</div>
+<h3 id="forwarding-syslog-messages">Forwarding Syslog Messages</h3>
+<ol>
+<li>Log into IP Fabric CLI using <code>osadmin</code> user.</li>
+<li>Elevate to root access using <code>sudo -s</code> and the <code>osadmin</code> password</li>
+<li>Create a new file (filename should be understandable by your team and should not conflict with other files).<ol>
+<li><code>nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf</code></li>
+</ol>
+</li>
+<li>
+<p>Add the following lines (replacing <code>&lt;YOUR_IP&gt;</code> with the IP of your syslog server):</p>
+<ol>
+<li>Forwarding All Syslog Messages (including system messages)<p><div class="highlight"><pre><span></span><code>destination remote { network(&quot;&lt;YOUR_IP&gt;&quot; transport(&quot;udp&quot;) port(514)); }; 
+log { source(s_src); destination(remote); };
+</code></pre></div>
+   2. Forwarding Only IP Fabric Syslog Messages</p>
+<div class="highlight"><pre><span></span><code>destination remote { network(&quot;&lt;YOUR_IP&gt;&quot; transport(&quot;udp&quot;) port(514)); };
+
+log {
+source(s_src);
+filter(f_ipf_api);
+parser(p_json);
+destination(remote);
+};
+</code></pre></div>
+</li>
+</ol>
+</li>
+<li>
+<p>Save the file and exit</p>
+</li>
+<li>Restart syslog-ng: <code>systemctl restart syslog-ng</code></li>
+</ol>
 
               
             </article>
