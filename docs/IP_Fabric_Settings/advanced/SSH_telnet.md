@@ -71,72 +71,72 @@ errors and adjustments:
 
 We successfully tested IP Fabric against jumphosts with the following python versions:
 
-| Python version on the jumphost |              |
-| ------------------------------ | ------------ |
-| 2.7                            | tested       |
-| 3.4                            | tested       |
-| 3.5                            | tested       |
-| 3.6                            | supported    |
-| 3.7                            | supported    |
-| 3.8                            | supported    |
-| 3.9                            | supported    |
-| 3.10                           | tested       |
+| Python version on the jumphost |           |
+| ------------------------------ | --------- |
+| 2.7                            | tested    |
+| 3.4                            | tested    |
+| 3.5                            | tested    |
+| 3.6                            | supported |
+| 3.7                            | supported |
+| 3.8                            | supported |
+| 3.9                            | supported |
+| 3.10                           | tested    |
 
 tested -- jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues
 
 supported -- jumphost was tested, it works and also underlying project supports it officially
 
-
 We strongly recommend using **python 3.6-3.9** on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.
 
-
 !!! warning
+
     Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.
 
 !!! important
+
     At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.
 
 ### Adding New Jumphost
 
-1. Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
-2. At the bottom of the page, please select **+ Add** button
+- Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
+- At the bottom of the page, please select **+ Add** button
 
-    ![Jump host settings](ssh/1384480773.png)
+  ![Jump host settings](ssh/1384480773.png)
 
-3. Fill in all necessary data
-    1. **Label** - the name for configuration (mandatory)
-    2. **Jump host Address** - IP address of FQDN name (mandatory)
-    3. **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
-		
-		!!! Warning
+- Fill in all necessary data
 
-			If you use `0.0.0.0/0` or another subnet that **includes IP address of the IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, IP connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention (on OS level most probably from our support) to fix.
+  ![Add Jumphost](ssh/1384480780.png)
 
-    4. **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
-    5. **Login type**
-        1. **Use credentials** - require to provide username and password
-        2. **Use SSH keys** - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
-    6. **Username** - Username for authentication (mandatory)
-    7. **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below
-       
-	!!! Info
-		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
-	
-	![Add Jumphost](ssh/1384480780.png)
+  - **Label** - the name for configuration (mandatory)
+  - **Jump host Address** - IP address of FQDN name (mandatory)
+  - **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
 
-4. Click **+ Add** button
-5. If a connection is open, you will see the **_Running_** status in Jumphost list
- 
-    ![Jumphost list](ssh/1384513560.png)
+    !!! warning
+
+        If you use `0.0.0.0/0` or another subnet that **includes IP address of the IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, IP connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention (on OS level most probably from our support) to fix.
+
+  - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
+  - **Login type**
+  - **Use credentials** - require to provide username and password
+  - **Use SSH keys** - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
+  - **Username** - Username for authentication (mandatory)
+  - **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`.
+
+- Click **+ Add** button
+
+- If a connection is open, you will see the **_Running_** status in Jumphost list
+
+  ![Jumphost list](ssh/1384513560.png)
 
 ### SSH Key Configuration
 
 !!! info
+
     Adding ssh key to proxy server allows you to avoid using passwords for authentication
 
 1. Download ssh key from Jumphost settings
 
-    ![Download ssh key](ssh/1384153110.png)
+   ![Download ssh key](ssh/1384153110.png)
 
 2. Save `jumphost-public-key.pub`
 
@@ -153,22 +153,22 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 1. Edit configuration that needs to be disabled, i.e.\
 
-    ![Jumphost settings](ssh/1384972305.png)
+   ![Jumphost settings](ssh/1384972305.png)
 
 2. Change the setting to **Disabled**,
 
 3. Click the **Update** button
 
-    ![Disable jumphost](ssh/1384906766.png)
+   ![Disable jumphost](ssh/1384906766.png)
 
 ### Remove Jumphost Configuration
 
-1.  On Jumphost servers list, check configuration that needs to be
-    removed
+1. On Jumphost servers list, check configuration that needs to be
+   removed
 
-2.  Click **Delete** button
+2. Click **Delete** button
 
-    ![Delete jumphost](ssh/1384939529.png)
+   ![Delete jumphost](ssh/1384939529.png)
 
 ## Jumphost Known Issues
 
@@ -188,20 +188,17 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 1. Login with `osadmin` account to the **virtual machine CLI**
 
-2. Filter out the **jumphost** services with `systemctl | grep jumphost` command
+2. Filter out the **jumphost** services with `systemctl | grep jumphost` command. Each configured jumphost has its own ID.
 
-	!!! info
-		Each configured jumphost has its own ID
-
-	![systemctl_jumphost](systemctl_jumphost.png)
+   ![systemctl_jumphost](systemctl_jumphost.png)
 
 3. **Stop the jumphost service** with command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password
 
-	![systemctl_stop_jumphost](systemctl_stop_jumphost.png)
+   ![systemctl_stop_jumphost](systemctl_stop_jumphost.png)
 
 4. Check that the **jumphost process is inactive** with `systemctl status jumphost@xxxx.service` command
 
-	![systemctl_status_jumphost](systemctl_status_jumphost.png)
+   ![systemctl_status_jumphost](systemctl_status_jumphost.png)
 
 5. IP Fabric GUI should be accessible by now.
 
@@ -209,18 +206,20 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
 
-	![jumphost_delete_settings](jumphost_delete_settings.png)
+   ![jumphost_delete_settings](jumphost_delete_settings.png)
 
 8. Put **IP address/subnet of the IP Fabric** machine to the **exclude IPv4 subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP address of IP Fabric**.
 
-	![jumphost_exclude](jumphost_exclude.png)
+   ![jumphost_exclude](jumphost_exclude.png)
 
 !!! info
+
     If **IP Fabric** becomes inaccessible via GUI or SSH again, repeat the previous steps and again edit the jumphost configuration.
 
 ## Custom SSH/Telnet Ports
 
 !!! info
+
     Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
 
 In the following example we configure the discovery process to use port `8080`
@@ -245,7 +244,7 @@ appropriate backups and are comfortable in doing so.
 
 1. Click `Start`, type `regedit.exe` in the search box, and then press `Enter`
 1. In Registry Editor, click **File → Export**
-1. In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click *Save*
+1. In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click _Save_
 
 ### Putty
 
@@ -272,6 +271,6 @@ SecureCRT is not free software. To obtain SecureCRT license please visit <https
 
 #### Register Telnet/SSH URL Handler
 
-1.  Download [securecrt.reg](ssh/securecrt.reg)
-1.  Edit path to SecureCRT if differs from `C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe`
-1.  Launch `securecrt.reg` to associate `ssh://` and `telnet://` to this script
+1. Download [securecrt.reg](ssh/securecrt.reg)
+1. Edit path to SecureCRT if differs from `C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe`
+1. Launch `securecrt.reg` to associate `ssh://` and `telnet://` to this script
