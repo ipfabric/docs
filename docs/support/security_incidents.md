@@ -2,16 +2,16 @@
 
 ## Initial source of information
 
-We can ingest information about security incident from multiple sources. Main
-ingestion points for customers' submitted reports are:
+If you have any information about potential security incidents relating to the IP Fabric product, please notify us in one of the following ways:
 
 - email: `security@ipfabric.io` or `support@ipfabric.io`
-- IP Fabric customers' support portal (Atlassian Service Desk – [NSD](https://ipfabric.atlassian.net/servicedesk/customer/portals))
+- IP Fabric Help Center (IP Fabric Help Center(https://support.ipfabric.io))
 - to the office phone `+420 720 022 997`
-- CVE database for software vulnerabilities
-- internal monitoring (doesn’t cover the customers’ deployments)
+
+In line with industry best practice, we also monitor standard data sources including (but not limited to): 
+- Mitre CVE database for software vulnerabilities
 - `debian-security` mailing list
-- Other security relevant sources
+- internal monitoring (doesn’t cover customers’ deployments)
 
 ## Classification
 
@@ -29,21 +29,20 @@ Timeline and escalation path is as follows
 | 7.0 – 8.9  | High               | High       | Next working day         | CTO, VPE, SRE |
 | 9.0 – 10.0 | Critical           | Critical   | 4h during business hours | CTO, VPE, SRE |
 
-You may wonder, why we don't list "Remediation time". It is hard to predict upfront time complexity of particular issue, or availability of the solution (for example, we can be blocked by upstream). Thus we provide a reaction time. Reaction time is not a simple "thank you for your report" type of answer, but rather solution proposal with time-frame and real resolution time estimation.
+ Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third party component on which there may be a dependency).  Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.
+
 
 ## Tracking
 
-Every security incident has to have a tracking ticket, which has to contain:
+Every security incident has a tracking ticket, which contains:
 
 - CVSS score
 - CVE number / link (when applicable)
 - Affected customers (if specific)
-- It has to have `security` tag assigned
+- `security` tag assigned
 
-Also notify `#security` Slack channel. A dedicated channel can be created if
-the mitigation is going to be complex or is imposing immediate operational
-issue.
+Also the IP Fabric internal security Slack channel will be notified, with a dedicated channel created for a specific incident as necesssary.
 
-We select one person to coordinate internal communication and serve as an
-interface to the work outside of Engineering. Typical candidates: DevOps TL,
+We select one person to be responsible for coordinating internal communication and serve as an
+interface to the teams communicating directly with customers. Typical candidates: DevOps TL,
 Head of Development, VPE, CTO.
