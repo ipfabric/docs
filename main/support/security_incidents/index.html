@@ -4395,17 +4395,16 @@ differently in you production deployment, than described here.
 
 <h1 id="security-incident-response">Security Incident Response</h1>
 <h2 id="initial-source-of-information">Initial source of information</h2>
-<p>We can ingest information about security incident from multiple sources. Main
-ingestion points for customers' submitted reports are:</p>
+<p>If you have any information about potential security incidents relating to the IP Fabric product, please notify us in one of the following ways:</p>
 <ul>
 <li>email: <code>security@ipfabric.io</code> or <code>support@ipfabric.io</code></li>
-<li>IP Fabric customers' support portal (Atlassian Service Desk – <a href="https://ipfabric.atlassian.net/servicedesk/customer/portals">NSD</a>)</li>
+<li>IP Fabric Help Center (IP Fabric Help Center(https://support.ipfabric.io))</li>
 <li>to the office phone <code>+420 720 022 997</code></li>
-<li>CVE database for software vulnerabilities</li>
-<li>internal monitoring (doesn’t cover the customers’ deployments)</li>
-<li><code>debian-security</code> mailing list</li>
-<li>Other security relevant sources</li>
 </ul>
+<p>In line with industry best practice, we also monitor standard data sources including (but not limited to): 
+- Mitre CVE database for software vulnerabilities
+- <code>debian-security</code> mailing list
+- internal monitoring (doesn’t cover customers’ deployments)</p>
 <h2 id="classification">Classification</h2>
 <p>We use industry standard <a href="https://en.wikipedia.org/wiki/Common_Vulnerability_Scoring_System">CVSS</a> scoring for classification of the reported / discovered vulnerabilities.</p>
 <p><a data-featherlight="../cvss.png" href="#"><img alt="CVSS Score" src="../cvss.png" /></a></p>
@@ -4458,20 +4457,18 @@ ingestion points for customers' submitted reports are:</p>
 </tr>
 </tbody>
 </table>
-<p>You may wonder, why we don't list "Remediation time". It is hard to predict upfront time complexity of particular issue, or availability of the solution (for example, we can be blocked by upstream). Thus we provide a reaction time. Reaction time is not a simple "thank you for your report" type of answer, but rather solution proposal with time-frame and real resolution time estimation.</p>
+<p>Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third party component on which there may be a dependency).  Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.</p>
 <h2 id="tracking">Tracking</h2>
-<p>Every security incident has to have a tracking ticket, which has to contain:</p>
+<p>Every security incident has a tracking ticket, which contains:</p>
 <ul>
 <li>CVSS score</li>
 <li>CVE number / link (when applicable)</li>
 <li>Affected customers (if specific)</li>
-<li>It has to have <code>security</code> tag assigned</li>
+<li><code>security</code> tag assigned</li>
 </ul>
-<p>Also notify <code>#security</code> Slack channel. A dedicated channel can be created if
-the mitigation is going to be complex or is imposing immediate operational
-issue.</p>
-<p>We select one person to coordinate internal communication and serve as an
-interface to the work outside of Engineering. Typical candidates: DevOps TL,
+<p>Also the IP Fabric internal security Slack channel will be notified, with a dedicated channel created for a specific incident as necesssary.</p>
+<p>We select one person to be responsible for coordinating internal communication and serve as an
+interface to the teams communicating directly with customers. Typical candidates: DevOps TL,
 Head of Development, VPE, CTO.</p>
 
 
