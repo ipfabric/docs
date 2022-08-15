@@ -8,7 +8,7 @@ There are two ways to detect configuration changes:
 
 ## Syslog Triggered
 
-IP Fabric checks incoming syslog messages for key phrase (for example `Configured from console by admin15 on vty0.`). This option needs proper `syslog` configuration on the device side.
+IP Fabric checks incoming syslog messages for key phrases (for example `Configured from console by admin15 on vty0.`). This option needs the appropriate `syslog` configuration on the device side.
 
 Syslog server listens on port `514/UDP` and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices ([example for Cisco IOS](https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436))
 or using syslog forwarder ([example for syslog-ng](https://support.symantec.com/en_US/article.TECH92854.html)).
@@ -16,15 +16,15 @@ or using syslog forwarder ([example for syslog-ng](https://support.symantec.com/
 Please, note
 
 - The receiving port `514` cannot be modified.
-- The Syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric's GUI
+- The syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric's GUI
 
-To enable the syslog triggered configuration management go to **Settings → Advanced → Configuration  Management → Configuration Management Setup** and select **Syslogtrigger**.
+To enable the syslog triggered configuration management go to **Settings → Advanced → Configuration  Management → Configuration Management Setup** and select **Syslogtrigger**.
 
 ## Schedule
 
 Configuration change is checked at regular intervals as configured by user.
 
-Schedule can be enabled and configured at **Settings → Advanced → Configuration Management → Configuration Management Setup** and select **Schedule**.
+Schedule can be enabled and configured at **Settings → Advanced → Configuration Management → Configuration Management Setup** and select **Schedule**.
 
 !!! example
 

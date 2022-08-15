@@ -25,7 +25,7 @@ assigned a new snapshot is required for it to be applied.
 
 ## Creating rules in the UI
 
-You are able to create rules in the UI by selecting the **Add
+You can create rules in the UI by selecting the **Add
 attribute** button. This will provide you a form to fill out.
 
 ![Device attributes rules](device_attributes_rules.png)
@@ -35,9 +35,10 @@ hostname.
 
 !!! Info
 
-    Currently there is an issue where IP Fabric will not search
-    for devices discovered via an API in the UI. Even though it appears no
-    devices match the SN it will still assign the attribute to the device.
+    Currently, there is an issue where IP Fabric will not search
+    for devices discovered via an API in the UI. Even though it seems that no
+    device matches the SN, the attribute will still be assigned to the device.
+
 
 ![Device attributes dropdown](device_attributes_dropdown.png)
 
@@ -48,11 +49,13 @@ importing.
 
 | Method | Put                                                                                          |
 | :----- | :------------------------------------------------------------------------------------------- |
-| URL    | `https://<IPF_URL>/api/v1/attributes/global`                                                 |
-| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]` |
+| URL    | `https://<IPF_URL>/api/v5.0/attributes/global`                                                 |
+| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]}`|
 
 ## Creating Rules With `python-ipfabric` Package
 
 Please see example at the following GitHub location:
 
-<https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py>
+<https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py>
+
+

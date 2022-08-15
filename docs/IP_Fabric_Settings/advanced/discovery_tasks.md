@@ -1,20 +1,23 @@
 # Discovery Tasks
 
-The discovery process for network device divides into multiple Tasks.
+The discovery process for network devices is divided into multiple Tasks.
 The TASK is a data collection related to a specific network protocol or
 technology (MPLS, Transceivers, ARP Table, Spanning-Tree Protocol,
 Multicast, or VXLAN). Each task consists of 1 or more operational
 commands (CLI or API). You can find the list of all Discovery Tasks
-in [the Feature matrix](https://matrix.ipfabric.io).
+in [the Feature matrix](https://matrix.ipfabric.io).
 
-Some fundamental TASKS required for discovery and topology calculations
-cannot be disabled (Neighbors, ARP, Mac, RIB, etc.)
+Some fundamental TASKS are critical for discovery and topology calculations (Neighbors, ARP, Mac, RIB, etc.).
 
 The Discovery Tasks settings are introduced in version 3.7.0. Since
 then, the user can manipulate specific tasks for the discovery process
 to avoid extra data collection (when particular protocols are not
 present on the network) or avoid specific operational commands to be
 executed on specific hardware platforms.
+
+!!! warning
+
+    Disabling TASKS will reduce the level of information collected by IP Fabric. If some fundamental TASKS are disabled, it can affect the topology or Path Lookup results.
 
 By default, there are **three main Discovery Task rules** in the
 platform:
@@ -30,3 +33,5 @@ Juniper EX. The test for the rule reveals one match, the
 HWLAB-JEX2200-SW1 switch:
 
 ![Discovery Tasks settings in IP Fabric](./1936130053.png "Discovery Tasks settings in IP Fabric")
+
+
