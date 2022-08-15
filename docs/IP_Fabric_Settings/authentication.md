@@ -1,6 +1,6 @@
 # Authentication
 
-Platform interacts with the network infrastructure devices by running
+IP Fabric interacts with the network infrastructure devices by running
 show commands through CLI using SSH or Telnet. Credentials added in the
 Authentication section will be used by IP Fabric to access the CLI of
 the network devices.
@@ -33,7 +33,7 @@ run** and **show start**).
 To use this credentials for configuration change tracking,
 please check [Use for configuration management](advanced/configuration_management.md) box.
 
-## (Optional) Passwords For Enable Mode
+## (Optional) Passwords for Enable Mode
 
 Privileged credentials are generally only necessary for configuration
 management. However, some platforms require privileged credentials to

@@ -3,21 +3,19 @@
 ## Fine-Tune SSH/telnet CLI Parameters
 
 The IP Fabric's discovery is primarily using Command Line Interface
-(CLI) to discover network elements. There are certain default CLI
-parameters that can be found in **Settings → Advanced → SSH/TELNET**.
+(CLI) to discover network elements. The CLI Parameters can be found in **Settings → Advanced → SSH/TELNET**.
 
 ![CLI Settings](ssh/2396258368.png)
 
 ### Network Device Login Timeout
 
 Timeout before the logging prompt is received. It may take longer for
-remote branches over low-speed lines, or destined to overloaded devices.
+remote branches over low-speed lines or overloaded devices to respond.
 
 ### Network Device Session Timeout
 
 Too many **Command Timeout** errors during the Discovery process may
-indicate that **Network device session timeout** is too short and it
-may be necessary to expect a delay for a response to arrive.
+indicate that **Network device session timeout** is too short and the session is closed before the response arrives. It may be necessary to increase this timeout.
 
 ### Maximum Number Of Parallel Sessions
 
@@ -39,12 +37,12 @@ authentication failure.
 ### Authentication Failure
 
 **Authentication failure** can occur even if a user is authorized to
-login but may happen, for example, when an AAA server is overloaded or
+Login. For example, this may happen when an AAA server is overloaded or
 an authentication packet is lost.
 
 ### Command Authorization Failure Retries
 
-If you see many examples of **Authentication error** during the
+If you see many examples of **Authentication error** during the
 Discovery process, please adjust **Authentication failure** and
 **Command Authorization Failure retries**.
 
@@ -54,20 +52,20 @@ According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common
 errors and adjustments:
 
-| Error                                                                           | Error Type                    | How To Mitigate                                                                                                    |
-| ------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| connect ETIMEDOUT XX.XX.XX.XX:22                                                | Connection error              | Received no response from the destination.                                                                         |
-| connect ECONNREFUSED XX.XX.XX.XX:22                                             | Connection error              | The connection to the destination is being blocked by an access-list or firewall.                                  |
-| All configured authentication methods failed                                    | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| Authentication failed                                                           | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| Authentication failed - login prompt appeared again                             | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| SSH client not received any data for last 120000 ms! cmd => show vrrp  \| e #^$ | Command timeout               | The command 'show vrrp  \| e #^$' timed out. Increase **device session timeout.**                                  |
-| Can't detect prompt                                                             | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
-| Command "enable" authorization failed, tried 2x                                 | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
+| Error                                                                          | Error Type                    | How To Mitigate                                                                                                    |
+| ------------------------------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| connect ETIMEDOUT XX.XX.XX.XX:22                                               | Connection error              | Received no response from the destination.                                                                         |
+| connect ECONNREFUSED XX.XX.XX.XX:22                                            | Connection error              | The connection to the destination is being blocked by an access-list or firewall.                                  |
+| All configured authentication methods failed                                   | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| Authentication failed                                                          | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| Authentication failed - login prompt appeared again                            | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| SSH client not received any data for last 120000 ms! cmd => show vrrp \| e #^$ | Command timeout               | The command 'show vrrp \| e #^$' timed out. Increase **device session timeout.**                                   |
+| Can't detect prompt                                                            | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
+| Command "enable" authorization failed, tried 2x                                | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
 
 ## Setting Up Jumphost
 
-**Jumphost** allows to set-up connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
+**Jumphost** allows to set-up a connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
 
 We successfully tested IP Fabric against jumphosts with the following python versions:
 
@@ -82,9 +80,9 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 | 3.9                            | supported |
 | 3.10                           | tested    |
 
-tested -- jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues
+tested -- jumphost was successfully tested, but it is not officially supported by the underlying SSH tunnel project
 
-supported -- jumphost was tested, it works and also underlying project supports it officially
+supported -- jumphost was successfully tested, and it is officially supported by the underlying SSH tunnel project
 
 We strongly recommend using **python 3.6-3.9** on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.
 
@@ -94,11 +92,11 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 !!! important
 
-    At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.
+    In Discovery Seed, at least one IP address behind the Jumphost has to be provided as a starting point.
 
 ### Adding New Jumphost
 
-- Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
+- Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
 - At the bottom of the page, please select **+ Add** button
 
   ![Jump host settings](ssh/1384480773.png)
@@ -113,18 +111,18 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
     !!! warning
 
-        If you use `0.0.0.0/0` or another subnet that **includes IP address of the IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, IP connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention (on OS level most probably from our support) to fix.
+        If you use `0.0.0.0/0` or another subnet that **includes the IP address of IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, the connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention to fix.
 
   - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
   - **Login type**
-  - **Use credentials** - require to provide username and password
-  - **Use SSH keys** - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
+  - **Use credentials** - required to provide username and password
+  - **Use SSH keys** - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
   - **Username** - Username for authentication (mandatory)
   - **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`.
 
 - Click **+ Add** button
 
-- If a connection is open, you will see the **_Running_** status in Jumphost list
+- If a connection is open, you will see the **_Running_** status in the Jumphost list
 
   ![Jumphost list](ssh/1384513560.png)
 
@@ -132,9 +130,9 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 !!! info
 
-    Adding ssh key to proxy server allows you to avoid using passwords for authentication
+    To avoid using a password for authentication, you can add the ssh key to the proxy server.
 
-1. Download ssh key from Jumphost settings
+1. Download the ssh key from Jumphost settings
 
    ![Download ssh key](ssh/1384153110.png)
 
@@ -147,7 +145,7 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 4. Restart `sshd` service to apply settings
 
 5. If the key has been copied you can use the option _‘Use SSH keys'_
-   while adding a new Jumphost server, instead of _'Use credentials’_
+   instead of _'Use credentials’_
 
 ### Disabling Jumphost Connection
 
@@ -163,8 +161,7 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 ### Remove Jumphost Configuration
 
-1. On Jumphost servers list, check configuration that needs to be
-   removed
+1. On the Jumphost servers list, select the server you want to remove
 
 2. Click **Delete** button
 
@@ -178,13 +175,13 @@ Only TCP connections work through the jumphost.
 
 Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).
 
-Because of this you will have to add at least one IP address of a network device from each site to the [Discovery seeds](../discovery_seed.md) settings.
+Because of this, you will have to add at least one IP address of a network device from each site to the [Discovery seeds](../discovery_seed.md) settings.
 
 ### IP Fabric Is Not Accessible After Saving Jumphost Configuration
 
 If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
 
-To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, know password for `osadmin` user account, and do the following:
+To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, the password for `osadmin` user account, and do the following:
 
 1. Login with `osadmin` account to the **virtual machine CLI**
 
@@ -192,7 +189,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
    ![systemctl_jumphost](systemctl_jumphost.png)
 
-3. **Stop the jumphost service** with command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password
+3. **Stop the jumphost service** with the command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password
 
    ![systemctl_stop_jumphost](systemctl_stop_jumphost.png)
 
@@ -202,7 +199,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 5. IP Fabric GUI should be accessible by now.
 
-6. Login into to the **IP Fabric main GUI** with your regular account and go to **Settings → Advanced → SSH/Telnet**.
+6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings → Advanced → SSH/Telnet**.
 
 7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
 
@@ -220,7 +217,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 !!! info
 
-    Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
+    Custom SSH/Telnet ports settings enable the discovery process to use different ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
 
 In the following example we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
@@ -236,41 +233,41 @@ new snapshot created by IP Fabric.
 ## Telnet/SSH URL Handler On MS Windows 7 And Later
 
 If you want to be able to connect directly to a device from the IP Fabric web
-interface, you need to register a Telnet/SSH URL handler. You will be touching
-Windows Registry, please be sure, that you know what you are doing, have
-appropriate backups and are comfortable in doing so.
+interface, you need to register a Telnet/SSH URL handler. You will be touching
+Windows Registry, please, be sure that you know what you are doing, have
+appropriate backups, and are comfortable in doing so.
 
 ### Backup Windows Registry
 
 1. Click `Start`, type `regedit.exe` in the search box, and then press `Enter`
-1. In Registry Editor, click **File → Export**
-1. In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click _Save_
+2. In Registry Editor, click **File → Export**
+3. In the Export Registry File box, select the location where you want to save the backup copy, name your backup file, and click _Save_
 
 ### Putty
 
 #### Download Putty
 
-1. Go to <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
-1. Download `Putty`
-1. This tutorial expects Putty in `C:\Program Files (x86)\putty.exe`
+1. Go to <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
+2. Download `Putty`
+3. This tutorial expects Putty in `C:\Program Files (x86)\putty.exe`
 
 #### Register Telnet/SSH URL Handler
 
-1. Go to <https://gist.github.com/sbiffi/11256316>
-1. Download `putty.reg` file
-1. Edit path to Putty if differs from `C:\Program Files (x86)\putty.exe`
-1. Download `putty.vbs` (save it to `C:\putty.vbs` or change this path in `putty.reg` above)
-1. Edit path to Putty if differs from `C:\Program Files (x86)\putty.exe`
-1. Launch `putty.reg` to associate `ssh://` and `telnet://` to this script
+1. Go to <https://gist.github.com/sbiffi/11256316>
+2. Download `putty.reg` file
+3. Edit path to Putty if differs from `C:\Program Files (x86)\putty.exe`
+4. Download `putty.vbs` (save it to `C:\putty.vbs` or change this path in `putty.reg` above)
+5. Edit path to Putty if differs from `C:\Program Files (x86)\putty.exe`
+6. Launch `putty.reg` to associate `ssh://` and `telnet://` to this script
 
 ### SecureCRT
 
 #### Download SecureCRT
 
-SecureCRT is not free software. To obtain SecureCRT license please visit <https://www.vandyke.com/products/securecrt/>
+SecureCRT is not free software. To obtain SecureCRT license please visit <https://www.vandyke.com/products/securecrt/>
 
 #### Register Telnet/SSH URL Handler
 
-1. Download [securecrt.reg](ssh/securecrt.reg)
-1. Edit path to SecureCRT if differs from `C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe`
-1. Launch `securecrt.reg` to associate `ssh://` and `telnet://` to this script
+1. Download [securecrt.reg](ssh/securecrt.reg)
+2. Edit path to SecureCRT if differs from `C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe`
+3. Launch `securecrt.reg` to associate `ssh://` and `telnet://` to this script
