@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -42,7 +42,7 @@
     
       <link rel="stylesheet" href="../../stylesheets/theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,9 +76,7 @@
     </div>
     
       <div data-md-component="outdated" hidden>
-        <aside class="md-banner md-banner--warning">
-          
-        </aside>
+        
       </div>
     
     
@@ -4449,70 +4447,50 @@
 
 <h1 id="inventory">Inventory</h1>
 <h2 id="overview">Overview</h2>
-<p>The inventory provides a list overview of sites, devices, modules,
-interfaces, and users discovered within the network.</p>
+<p>The inventory provides a list overview of sites, devices, modules, interfaces, and users discovered within the network.</p>
 <h2 id="sites">Sites</h2>
-<p>The site inventory provides an overview of discovered sites, the number
-of devices and users present at the site, and enables the generation of
-site-specific reports and diagrams. Sites are automatically calculated
-based on the administrative domain boundaries, such as carrier networks
-and other unmanaged infrastructure. A single, unmanaged <code>traceroute</code> hop
-is not considered a site boundary, so unmanaged infrastructure is
-reconstructed from the probes. The specific method of site boundary
-calculation can be changed in the settings.</p>
-<p>An unknown site is either a collection of isolated devices or when a
-device forms a single-device site.</p>
+<p>The site inventory provides an overview of discovered sites, the number of devices and users present at the site, and enables the generation of site-specific reports and diagrams. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and other unmanaged infrastructure. A single, unmanaged <code>traceroute</code> hop is not considered a site boundary, so unmanaged infrastructure is reconstructed from the probes. The specific method of site boundary calculation can be changed in the settings.</p>
+<p>An unknown site is either a collection of isolated devices or when a device forms a single-device site.</p>
 <h2 id="devices">Devices</h2>
-<p>The device inventory represents all logical managed network
-infrastructure devices that have been discovered and analyzed. Each
-entry provides the following information:</p>
+<p>The device inventory represents all logical managed network infrastructure devices that have been discovered and analyzed. Each entry provides the following information:</p>
 <ul>
-<li>The site is the logical grouping to which device belongs to, while
-  single-site or isolated devices belong to an unknown site.</li>
-<li>The routing domain is the contiguous layer 3 routing domain to which
-  the device belongs to.</li>
-<li>Switching domains are the contiguous layer 2 switching domain the
-  device belongs to.</li>
-<li>"Hostname" is the short name of the device.</li>
-<li>Serial Number is the serial number of the device.</li>
-<li>Management IP is the IP address used to connect to the device.</li>
-<li>Management Protocol is the protocol used to connect to the device.</li>
-<li>Uptime is the time since the device's last boot.</li>
-<li>Reload reason is the reason why the device has booted.</li>
-<li>The vendor is the vendor of the device.</li>
-<li>The platform is the hardware platform of the device.</li>
-<li>Family is the software family of the device.</li>
-<li>Version is the operating system the device is running with.</li>
-<li>Image is the path to the operating system image file.</li>
-<li>Processor is the hardware CPU family name.</li>
-<li>Memory is the amount of RAM memory available on the device.</li>
+<li><code>Site</code> is the logical grouping to which device belongs to, while single-site or isolated devices belong to an unknown site.</li>
+<li><code>Routing domain</code> is an IP Fabric generated separation based upon the contiguous layer 3 routing domain to which the device belongs to.</li>
+<li><code>Switching domain</code> is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.</li>
+<li><code>Hostname</code> is the short name of the device.</li>
+<li><code>Serial Number</code> is the serial number of the device (API column name is <code>snHw</code>).</li>
+<li><code>Unique serial number</code> is the serial number IP Fabric assigns to the device this could be different from the Hardware SN especially in cases of virtualized equipment (API column name is <code>sn</code>).</li>
+<li><code>Login IP</code> is the IP address used to connect to the device.</li>
+<li><code>Management Protocol</code> is the protocol used to connect to the device.</li>
+<li><code>Uptime</code> is the time since the device's last boot.</li>
+<li><code>Reload reason</code> is the reason why the device has booted.</li>
+<li><code>Vendor</code> is the vendor of the device.</li>
+<li><code>Platform</code> is the hardware platform of the device.</li>
+<li><code>Family</code> is the software family of the device.</li>
+<li><code>Version</code> is the operating system the device is running with.</li>
+<li><code>Image</code> is the path to the operating system image file.</li>
+<li><code>Processor</code> is the hardware CPU family name.</li>
+<li><code>Memory</code> is the amount of RAM memory available on the device.</li>
 </ul>
 <h2 id="modules-and-part-numbers">Modules and Part Numbers</h2>
-<p>The part numbers inventory provides information about every identifiable
-module through device inventories.</p>
+<p>The part numbers inventory provides information about every identifiable module through device inventories.</p>
 <h2 id="os-versions">OS Versions</h2>
-<p>The operating system versions inventory provides an overview of the
-unique operating systems used in the network and their variation.</p>
+<p>The operating system versions inventory provides an overview of the unique operating systems used in the network and their variation.</p>
 <h2 id="interfaces">Interfaces</h2>
-<p>The interface inventory provides information about every unique network
-interface discovered and includes information such as state,
-description, speed, duplex, and media type.</p>
+<p>The interface inventory provides information about every unique network interface discovered and includes information such as state, description, speed, duplex, and media type.</p>
 <h2 id="hosts">Hosts</h2>
-<p>The hosts' inventory provides information about every discovered host
-and user utilizing network infrastructure. A host is any unique IP or
-MAC address, or an IP/MAC tuple, that is not part of the network
-infrastructure. Following rules may prevent the IP addresses from the
-ARP to be included in the Hosts' inventory:</p>
+<p>The hosts' inventory provides information about every discovered host and user utilizing network infrastructure. A host is any unique IP or MAC address, or an IP/MAC tuple, that is not part of the network infrastructure. Following rules may
+prevent the IP addresses from the ARP to be included in the Hosts' inventory:</p>
 <ul>
 <li>There can't be any route pointing to that interface</li>
 <li>No CDP/LLDP information should be coming from that IP</li>
 <li>The MAC shouldn't be in the OUI flagged as "Enabled for Discovery"</li>
 </ul>
 <h2 id="end-of-life-milestones">End of Life Milestones</h2>
-<p>EoX reports provide an overview of the announced end-of-life milestones.
-Network infrastructure vendors use end-of-life milestones to communicate
-stages of the product life cycle, allowing sufficient time to migrate to
-next-generation products.</p>
+<p>EoX reports provide an overview of the announced end-of-life milestones. Network infrastructure vendors use end-of-life milestones to communicate stages of the product life cycle, allowing sufficient time to migrate to next-generation products.</p>
+
+
+
 
               
             </article>
@@ -4584,10 +4562,11 @@ next-generation products.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
         <script src="../../vendor/jquery-3.6.0.min.js"></script>
       

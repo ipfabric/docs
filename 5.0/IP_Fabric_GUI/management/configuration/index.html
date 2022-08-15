@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -42,7 +42,7 @@
     
       <link rel="stylesheet" href="../../../stylesheets/theme.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,9 +76,7 @@
     </div>
     
       <div data-md-component="outdated" hidden>
-        <aside class="md-banner md-banner--warning">
-          
-        </aside>
+        
       </div>
     
     
@@ -1836,39 +1834,54 @@
     Overview
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#credential-requirements" class="md-nav__link">
     Credential Requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#trigger" class="md-nav__link">
     Trigger
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-comparison-table" class="md-nav__link">
+    Configuration Comparison Table
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration_1" class="md-nav__link">
-    Configuration
+  <a href="#configuration-comparison" class="md-nav__link">
+    Configuration Comparison
   </a>
   
-    <nav class="md-nav" aria-label="Configuration">
+    <nav class="md-nav" aria-label="Configuration Comparison">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-comparison-table" class="md-nav__link">
-    Configuration Comparison Table
+  <a href="#side-by-side-diff" class="md-nav__link">
+    Side by Side Diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
+    Inline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-diff" class="md-nav__link">
+    Inline Diff
   </a>
   
 </li>
@@ -4375,39 +4388,54 @@
     Overview
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#credential-requirements" class="md-nav__link">
     Credential Requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#trigger" class="md-nav__link">
     Trigger
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-comparison-table" class="md-nav__link">
+    Configuration Comparison Table
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration_1" class="md-nav__link">
-    Configuration
+  <a href="#configuration-comparison" class="md-nav__link">
+    Configuration Comparison
   </a>
   
-    <nav class="md-nav" aria-label="Configuration">
+    <nav class="md-nav" aria-label="Configuration Comparison">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-comparison-table" class="md-nav__link">
-    Configuration Comparison Table
+  <a href="#side-by-side-diff" class="md-nav__link">
+    Side by Side Diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
+    Inline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-diff" class="md-nav__link">
+    Inline Diff
   </a>
   
 </li>
@@ -4433,32 +4461,29 @@
 
 <h1 id="configuration">Configuration</h1>
 <h2 id="overview">Overview</h2>
-<p>Configuration management <em>backs up the running configuration</em> of managed
-network devices based on the defined trigger. Downloaded configuration is then
-available for viewing in full or sanitized formats, or for comparison. <em>Only
-changed configurations</em> are stored, and these report both the time of the <em>last
-change</em> and the <em>time of the last</em> configuration <em>check</em> for a change.</p>
-<p>Link: <code>https://[ip_fabric_address]/management/configuration/first</code></p>
-<h3 id="credential-requirements">Credential Requirements</h3>
-<p>Network access <em>credentials allowing the <code>show run</code> command</em> (or equivalent)
-<em>are necessary</em> for configuration storage and configuration management to work
-properly. These credentials are set-up in <em>Setting → Authentication</em> menu.
-These elevated credentials need <em>Use for configuration management</em> box checked.</p>
-<h3 id="trigger">Trigger</h3>
+<p>Configuration management can be found at <strong>Management → Configuration</strong> and <strong>backs up the running configuration</strong> of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. <strong>Only changed configurations</strong> are stored, and these report both the time of the last change and the time of the last configuration check for a change.</p>
+<p>Configuration can be retrieved in <code>full</code> or <code>sanitized</code> forms. Sanitization removes all passwords and network identification information from the configuration to prevent sharing of sensitive information.</p>
+<h2 id="credential-requirements">Credential Requirements</h2>
+<p>Network access credentials allowing the <code>show run</code> command (or equivalent)
+are necessary for configuration storage and configuration management to work properly. Please review <a href="../../../IP_Fabric_Settings/authentication/">Authentication Settings</a>.</p>
+<p><a data-featherlight="../config/config_auth.png" href="#"><img alt="Config Credentials" src="../config/config_auth.png" /></a></p>
+<p>These elevated credentials need <strong>Use for configuration management</strong> box checked.</p>
+<h2 id="trigger">Trigger</h2>
 <p>Trigger archiving can be <a href="../../../IP_Fabric_Settings/advanced/configuration_management/">configured in settings</a> and can be based on a <em>syslog message</em> or a <em>timed event</em>.</p>
-<h2 id="configuration_1">Configuration</h2>
-<p>Configuration can be retrieved in <em>full</em> or <em>sanitized forms</em>. Sanitization
-removes all passwords and network identification information from the
-configuration to prevent sharing of sensitive information.</p>
-<h3 id="configuration-comparison-table">Configuration Comparison Table</h3>
-<p>Stored configurations are displayed in a table that shows information such as
-the serial number of the device, the device host name, the time when
-configuration change was detected ("Last change" column), and the last time a
-particular configuration was saved in the "Last check" column.</p>
-<p>The table can be used to compare between two different configurations directly
-from the user interface. This is done by selecting the "Before" and "After"
-states to compare, and the resulting differences can be displayed side-by-side,
-inline with all rows, or inline with only rows where the changes have occurred.</p>
+<h2 id="configuration-comparison-table">Configuration Comparison Table</h2>
+<p><a data-featherlight="../config/config_table.png" href="#"><img alt="Config Table" src="../config/config_table.png" /></a></p>
+<p>Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (<code>Last Change At</code> column), and the last time a particular configuration was saved in the <code>Last Check At</code> column.</p>
+<h2 id="configuration-comparison">Configuration Comparison</h2>
+<p>The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the <code>Before</code> and <code>After</code> states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.</p>
+<h3 id="side-by-side-diff">Side by Side Diff</h3>
+<p><a data-featherlight="../config/config_side.png" href="#"><img alt="Side by Side" src="../config/config_side.png" /></a></p>
+<h3 id="inline">Inline</h3>
+<p><a data-featherlight="../config/config_inline.png" href="#"><img alt="Inline" src="../config/config_inline.png" /></a></p>
+<h3 id="inline-diff">Inline Diff</h3>
+<p><a data-featherlight="../config/config_inline_diff.png" href="#"><img alt="Inline" src="../config/config_inline_diff.png" /></a></p>
+
+
+
 
               
             </article>
@@ -4530,10 +4555,11 @@ inline with all rows, or inline with only rows where the changes have occurred.<
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
         <script src="../../../vendor/jquery-3.6.0.min.js"></script>
       
