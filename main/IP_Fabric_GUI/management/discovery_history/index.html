@@ -1837,9 +1837,67 @@ differently in you production deployment, than described here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Discovery History
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Discovery History
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-history" class="md-nav__link">
+    Deleting History
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-change" class="md-nav__link">
+    Authentication Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed-list" class="md-nav__link">
+    Seed List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4309,6 +4367,48 @@ differently in you production deployment, than described here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-history" class="md-nav__link">
+    Deleting History
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-change" class="md-nav__link">
+    Authentication Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed-list" class="md-nav__link">
+    Seed List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4322,22 +4422,21 @@ differently in you production deployment, than described here.
 
 
 <h1 id="discovery-history">Discovery History</h1>
-<p>This table shows every device that has ever been discovered in all
-snapshots (their <strong>Hostname</strong>, <strong>IP address</strong>, <strong>Management
-protocol</strong> used for discovery, <strong>Serial Number</strong>, <strong>Username</strong> used
-for discovery and <strong>Last discovery time</strong> filed).</p>
+<h2 id="overview">Overview</h2>
+<p>This table shows every device that has ever been discovered in all snapshots. This includes <code>Hostname</code>, <code>IP address</code>, <code>Management protocol</code>, <code>Serial Number</code> (IP Fabric Unique SN not Hardware SN), <code>Username</code>, and <code>Last discovery time</code> used for discovery.</p>
+<p>Information about these devices are used as a seed list for discovery and in every snapshot in the <code>Connectivity Report</code> which reports a device as <code>previouslyDiscovered</code>.</p>
+<h2 id="deleting-history">Deleting History</h2>
+<p>Sometimes it can be helpful for troubleshooting purposes to delete already discovered devices. All discovered devices
+can be found in this table and any or all of them can be deleted by selection and delete button on the top.
+This will not delete any information in the snapshots but only the history in the IP Fabric system.
+Below is a couple examples why it may be useful to delete history.</p>
+<h3 id="authentication-change">Authentication Change</h3>
+<p>Deleting History is extremely useful when changing authentication on a device as IP Fabric will first try the last successful username that is stored in this table.</p>
+<h3 id="seed-list">Seed List</h3>
+<p>IP Addresses in this list are also used as seed addresses during discovery. <strong>Deleting entries in this list that have not been discovered in a long time will speed up discovery time</strong> as IP Fabric will not try to connect to them.</p>
+<p>Perhaps your team wants to delete all discovery history older than 1 month ago in order to speed up the discovery process. The picture below shows using a
+<code>Last discovery time</code> filter to check for entries <code>&lt;=</code> to a certain date.</p>
 <p><a data-featherlight="../discovery_history.png" href="#"><img alt="Discovery history" src="../discovery_history.png" /></a></p>
-<p>All of this is important for keeping track of all discovered devices.
-Also, information about these devices are used in every snapshot and
-devices from this list are marked in the Connectivity Report as
-previouslyDiscovered devices.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>Sometimes it can be helpful for troubleshooting purposes to delete some
-of the already discovered devices. All discovered devices can be found
-in this table and any or all of them can be deleted by selection and
-delete button on the top.</p>
 
 
 
