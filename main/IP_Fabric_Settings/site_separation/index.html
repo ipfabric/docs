@@ -4534,24 +4534,24 @@ differently in you production deployment, than described here.
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Site distribution cannot be changed manually when regex rules are used. Sites cannot be renamed.</p>
-<p>Alternatively, site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location.</p>
+<p>Alternatively, site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on a portion of a device hostname or SNMP location.</p>
 </div>
 <div class="admonition check">
 <p class="admonition-title">Check</p>
 <p>If you cannot cover the names of the sites with one regex, you can use logical <strong>or</strong>. Use <code>|</code> (pipe) operator between RegEx rules or use the Device Attributes method shown below.</p>
 </div>
 <h3 id="hostname-regex">Hostname Regex</h3>
-<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on hostname</strong> or create a new rule by <strong>Add rule</strong> button.</p>
-<p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
+<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on hostname</strong> or create a new rule by clicking the <strong>Add rule</strong> button.</p>
+<p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
 <ul>
 <li>Upper case (default) - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>PRAGUE</code></li>
-<li>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></li>
+<li>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></li>
 <li>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code></li>
 </ul>
 <p><a data-featherlight="2887417896.png" href="#"><img alt="Hostname Regex" src="2887417896.png" /></a></p>
-<p>In this example the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
+<p>In this example, the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
-<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
+<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
 <p><a data-featherlight="2896297985.png" href="#"><img alt="SNMP Regex" src="2896297985.png" /></a></p>
 <h3 id="testing">Testing</h3>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.</p>
@@ -4560,7 +4560,7 @@ differently in you production deployment, than described here.
 <p><a data-featherlight="2896330753.png" href="#"><img alt="SNMP location" src="2896330753.png" /></a></p>
 <div class="admonition example">
 <p class="admonition-title">RegEx example</p>
-<p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>. Following example will match one of 3 options:</p>
+<p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>. The following example will match one of 3 options:</p>
 <div class="highlight"><pre><span></span><code>^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
 </code></pre></div>
 </div>
@@ -4577,31 +4577,44 @@ differently in you production deployment, than described here.
 <li>Serial Number is IP Fabric’s "Unique Serial Number" (API column <code>sn</code>); this is not the column "Serial Number" which represents the Hardware SN (API column <code>snHw</code>). Devices discovered via API can also be assigned using Device Attributes.</li>
 <li><strong>Hostname</strong> is populated by IP Fabric when a device matching the <strong>Serial Number</strong> is found</li>
 <li><strong>Attribute</strong> is the Device Attribute to assign, since we want to set the Site based on the serial number set it to <strong>Site name</strong></li>
-<li><strong>Value</strong> is the attribute’s value to assign, in this case we want to split site <code>L35</code> into separate sites named <code>35COLO</code>, <code>35PRODUCTION</code>, <code>35HEADOFFICE</code></li>
+<li><strong>Value</strong> is the attribute’s value to assign, in this case, we want to split site <code>L35</code> into separate sites named <code>35COLO</code>, <code>35PRODUCTION</code>, <code>35HEADOFFICE</code></li>
 </ul>
 <h3 id="creating-rules-in-the-ui">Creating Rules In The UI</h3>
-<p>You are able to create rules in the UI by selecting the <strong>Add attribute</strong> button. This will provide you a form to fill out.</p>
+<p>You can create rules in the UI by selecting the <strong>Add attribute</strong> button. This will provide you with a form to fill out.</p>
 <p><a data-featherlight="2888630298.png" href="#"><img alt="Add Attribute" src="2888630298.png" /></a></p>
-<p>The dropdown is intuitive and will let you search based on SN or hostname. Currently there is an issue where IP Fabric will not search for devices discovered via an API in the UI. Even though it appears no devices match the SN it will still perform the site separation correctly on the next snapshot.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Currently, there is an issue where IP Fabric will not search
+for devices discovered via an API in the UI. Even though it seems that no
+device matches the SN, the attribute will still be assigned to the device.</p>
+</div>
 <p><a data-featherlight="2896265219.png" href="#"><img alt="Dropdown" src="2896265219.png" /></a></p>
 <h3 id="creating-rules-via-the-api">Creating Rules Via The API</h3>
-<p>This is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> verb on <code>https://&lt;IPF_URL&gt;/api/v1/attributes/global</code>. Data looks like</p>
+<p>This is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> verb on <code>https://&lt;IPF_URL&gt;/api/v5.0/attributes/global</code>. Data looks like</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">  </span><span class="p">{</span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;IPF SERIAL NUMBER&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;SITE NAME&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;siteName&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h3>
-<p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py">GitHub</a>.</p>
+<p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py">GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
 <p><a data-featherlight="2888597511.png" href="#"><img alt="Add Attribute" src="2888597511.png" /></a></p>
-<p>Rule precedence is defined by the order from top to bottom. So in show example that is</p>
+<p>Rule precedence is defined by the order from top to bottom. So in the example above:</p>
 <ol>
-<li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
-<li>Rules you define. In the example above it will check the following
-     1. If SNMP Location matches <code>IPFABRIC, (LAB01)</code> → Site <code>LAB01</code>
-     2. If Hostname matches <code>^L21</code> → Site <code>MPLS</code>
-     3. If Hostname matches <code>^(L\d{1,2})</code> → Site <code>L2-99</code></li>
-<li><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled)</li>
+<li>
+<p><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on its serial number if a match is found.</p>
+</li>
+<li>
+<p>Rules you define. In the example above it will check the following</p>
+<ol>
+<li>If SNMP Location matches <code>IPFABRIC, (LAB01)</code> → Site <code>LAB01</code></li>
+<li>If Hostname matches <code>^L21</code> → Site <code>MPLS</code></li>
+<li>If Hostname matches <code>^(L\d{1,2})</code> → Site <code>L2-99</code></li>
+</ol>
+</li>
+<li>
+<p><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled)</p>
+</li>
 </ol>
 
 

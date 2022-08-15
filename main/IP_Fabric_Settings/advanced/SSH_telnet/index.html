@@ -4778,16 +4778,14 @@ differently in you production deployment, than described here.
 <h1 id="sshtelnet">SSH/TELNET</h1>
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI Parameters</h2>
 <p>The IP Fabric's discovery is primarily using Command Line Interface
-(CLI) to discover network elements. There are certain default CLI
-parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
+(CLI) to discover network elements. The CLI Parameters can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
 <p><a data-featherlight="../ssh/2396258368.png" href="#"><img alt="CLI Settings" src="../ssh/2396258368.png" /></a></p>
 <h3 id="network-device-login-timeout">Network Device Login Timeout</h3>
 <p>Timeout before the logging prompt is received. It may take longer for
-remote branches over low-speed lines, or destined to overloaded devices.</p>
+remote branches over low-speed lines or overloaded devices to respond.</p>
 <h3 id="network-device-session-timeout">Network Device Session Timeout</h3>
 <p>Too many <strong>Command Timeout</strong> errors during the Discovery process may
-indicate that <strong>Network device session timeout</strong> is too short and it
-may be necessary to expect a delay for a response to arrive.</p>
+indicate that <strong>Network device session timeout</strong> is too short and the session is closed before the response arrives. It may be necessary to increase this timeout.</p>
 <h3 id="maximum-number-of-parallel-sessions">Maximum Number Of Parallel Sessions</h3>
 <p>To prevent flooding your network with too many SSH/TELNET sessions set
 <strong>Maximum number of parallel sessions</strong>. This setting can be also
@@ -4802,10 +4800,10 @@ down to 10 and steadily increase.</p>
 authentication failure.</p>
 <h3 id="authentication-failure">Authentication Failure</h3>
 <p><strong>Authentication failure</strong> can occur even if a user is authorized to
-login but may happen, for example, when an AAA server is overloaded or
+Login. For example, this may happen when an AAA server is overloaded or
 an authentication packet is lost.</p>
 <h3 id="command-authorization-failure-retries">Command Authorization Failure Retries</h3>
-<p>If you see many examples of <strong>Authentication error</strong> during the
+<p>If you see many examples of <strong>Authentication error</strong> during the
 Discovery process, please adjust <strong>Authentication failure</strong> and
 <strong>Command Authorization Failure retries</strong>.</p>
 <h3 id="example-of-error-message-in-connectivity-report">Example Of Error Message In Connectivity Report</h3>
@@ -4822,7 +4820,7 @@ errors and adjustments:</p>
 </thead>
 <tbody>
 <tr>
-<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
+<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
 <td>Connection error</td>
 <td>Received no response from the destination.</td>
 </tr>
@@ -4847,9 +4845,9 @@ errors and adjustments:</p>
 <td>Unable to authenticate to the destination host</td>
 </tr>
 <tr>
-<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$</td>
+<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp | e #^$</td>
 <td>Command timeout</td>
-<td>The command 'show vrrp  | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
+<td>The command 'show vrrp | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
 </tr>
 <tr>
 <td>Can't detect prompt</td>
@@ -4864,7 +4862,7 @@ errors and adjustments:</p>
 </tbody>
 </table>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
+<p><strong>Jumphost</strong> allows to set-up a connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
 <p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
 <table>
 <thead>
@@ -4908,8 +4906,8 @@ errors and adjustments:</p>
 </tr>
 </tbody>
 </table>
-<p>tested – jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues</p>
-<p>supported – jumphost was tested, it works and also underlying project supports it officially</p>
+<p>tested – jumphost was successfully tested, but it is not officially supported by the underlying SSH tunnel project</p>
+<p>supported – jumphost was successfully tested, and it is officially supported by the underlying SSH tunnel project</p>
 <p>We strongly recommend using <strong>python 3.6-3.9</strong> on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4917,11 +4915,11 @@ errors and adjustments:</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.</p>
+<p>In Discovery Seed, at least one IP address behind the Jumphost has to be provided as a starting point.</p>
 </div>
 <h3 id="adding-new-jumphost">Adding New Jumphost</h3>
 <ul>
-<li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
+<li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
 <li>
 <p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
 <p><a data-featherlight="../ssh/1384480773.png" href="#"><img alt="Jump host settings" src="../ssh/1384480773.png" /></a></p>
@@ -4938,15 +4936,15 @@ errors and adjustments:</p>
 <p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes IP address of the IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, IP connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention (on OS level most probably from our support) to fix.</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
 </div>
 </li>
 </ul>
 <ul>
 <li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
 <li><strong>Login type</strong></li>
-<li><strong>Use credentials</strong> - require to provide username and password</li>
-<li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
+<li><strong>Use credentials</strong> - required to provide username and password</li>
+<li><strong>Use SSH keys</strong> - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
 <li><strong>Username</strong> - Username for authentication (mandatory)</li>
 <li><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code>.</li>
 </ul>
@@ -4957,18 +4955,18 @@ errors and adjustments:</p>
 </ul>
 <ul>
 <li>
-<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in Jumphost list</p>
+<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in the Jumphost list</p>
 <p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
 </li>
 </ul>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Adding ssh key to proxy server allows you to avoid using passwords for authentication</p>
+<p>To avoid using a password for authentication, you can add the ssh key to the proxy server.</p>
 </div>
 <ol>
 <li>
-<p>Download ssh key from Jumphost settings</p>
+<p>Download the ssh key from Jumphost settings</p>
 <p><a data-featherlight="../ssh/1384153110.png" href="#"><img alt="Download ssh key" src="../ssh/1384153110.png" /></a></p>
 </li>
 <li>
@@ -4984,7 +4982,7 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>If the key has been copied you can use the option <em>‘Use SSH keys'</em>
-   while adding a new Jumphost server, instead of <em>'Use credentials’</em></p>
+   instead of <em>'Use credentials’</em></p>
 </li>
 </ol>
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
@@ -5004,8 +5002,7 @@ errors and adjustments:</p>
 <h3 id="remove-jumphost-configuration">Remove Jumphost Configuration</h3>
 <ol>
 <li>
-<p>On Jumphost servers list, check configuration that needs to be
-   removed</p>
+<p>On the Jumphost servers list, select the server you want to remove</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
@@ -5016,10 +5013,10 @@ errors and adjustments:</p>
 <h3 id="non-tcp-discovery">Non-TCP Discovery</h3>
 <p>Only TCP connections work through the jumphost.</p>
 <p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
-<p>Because of this you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
+<p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
 <p>If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
-<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, know password for <code>osadmin</code> user account, and do the following:</p>
+<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
 <ol>
 <li>
 <p>Login with <code>osadmin</code> account to the <strong>virtual machine CLI</strong></p>
@@ -5029,7 +5026,7 @@ errors and adjustments:</p>
 <p><a data-featherlight="../systemctl_jumphost.png" href="#"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></a></p>
 </li>
 <li>
-<p><strong>Stop the jumphost service</strong> with command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
+<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
 <p><a data-featherlight="../systemctl_stop_jumphost.png" href="#"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png" /></a></p>
 </li>
 <li>
@@ -5040,7 +5037,7 @@ errors and adjustments:</p>
 <p>IP Fabric GUI should be accessible by now.</p>
 </li>
 <li>
-<p>Login into to the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
+<p>Login into the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
 </li>
 <li>
 <p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
@@ -5058,7 +5055,7 @@ errors and adjustments:</p>
 <h2 id="custom-sshtelnet-ports">Custom SSH/Telnet Ports</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
+<p>Custom SSH/Telnet ports settings enable the discovery process to use different ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
 </div>
 <p>In the following example we configure the discovery process to use port <code>8080</code>
 for SSH connections to <code>192.168.168.10</code>:</p>
@@ -5069,38 +5066,38 @@ new snapshot created by IP Fabric.</p>
 <p><a data-featherlight="../ssh/custom_ssh_telnet_ports.png" href="#"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png" /></a></p>
 <h2 id="telnetssh-url-handler-on-ms-windows-7-and-later">Telnet/SSH URL Handler On MS Windows 7 And Later</h2>
 <p>If you want to be able to connect directly to a device from the IP Fabric web
-interface, you need to register a Telnet/SSH URL handler. You will be touching
-Windows Registry, please be sure, that you know what you are doing, have
-appropriate backups and are comfortable in doing so.</p>
+interface, you need to register a Telnet/SSH URL handler. You will be touching
+Windows Registry, please, be sure that you know what you are doing, have
+appropriate backups, and are comfortable in doing so.</p>
 <h3 id="backup-windows-registry">Backup Windows Registry</h3>
 <ol>
 <li>Click <code>Start</code>, type <code>regedit.exe</code> in the search box, and then press <code>Enter</code></li>
-<li>In Registry Editor, click <strong>File → Export</strong></li>
-<li>In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click <em>Save</em></li>
+<li>In Registry Editor, click <strong>File → Export</strong></li>
+<li>In the Export Registry File box, select the location where you want to save the backup copy, name your backup file, and click <em>Save</em></li>
 </ol>
 <h3 id="putty">Putty</h3>
 <h4 id="download-putty">Download Putty</h4>
 <ol>
-<li>Go to <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
+<li>Go to <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
 <li>Download <code>Putty</code></li>
 <li>This tutorial expects Putty in <code>C:\Program Files (x86)\putty.exe</code></li>
 </ol>
 <h4 id="register-telnetssh-url-handler">Register Telnet/SSH URL Handler</h4>
 <ol>
-<li>Go to <a href="https://gist.github.com/sbiffi/11256316">https://gist.github.com/sbiffi/11256316</a></li>
+<li>Go to <a href="https://gist.github.com/sbiffi/11256316">https://gist.github.com/sbiffi/11256316</a></li>
 <li>Download <code>putty.reg</code> file</li>
-<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
-<li>Download <code>putty.vbs</code> (save it to <code>C:\putty.vbs</code> or change this path in <code>putty.reg</code> above)</li>
-<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
+<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
+<li>Download <code>putty.vbs</code> (save it to <code>C:\putty.vbs</code> or change this path in <code>putty.reg</code> above)</li>
+<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
 <li>Launch <code>putty.reg</code> to associate <code>ssh://</code> and <code>telnet://</code> to this script</li>
 </ol>
 <h3 id="securecrt">SecureCRT</h3>
 <h4 id="download-securecrt">Download SecureCRT</h4>
-<p>SecureCRT is not free software. To obtain SecureCRT license please visit <a href="https://www.vandyke.com/products/securecrt/">https://www.vandyke.com/products/securecrt/</a></p>
+<p>SecureCRT is not free software. To obtain SecureCRT license please visit <a href="https://www.vandyke.com/products/securecrt/">https://www.vandyke.com/products/securecrt/</a></p>
 <h4 id="register-telnetssh-url-handler_1">Register Telnet/SSH URL Handler</h4>
 <ol>
-<li>Download <a href="../ssh/securecrt.reg">securecrt.reg</a></li>
-<li>Edit path to SecureCRT if differs from <code>C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe</code></li>
+<li>Download <a href="../ssh/securecrt.reg">securecrt.reg</a></li>
+<li>Edit path to SecureCRT if differs from <code>C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe</code></li>
 <li>Launch <code>securecrt.reg</code> to associate <code>ssh://</code> and <code>telnet://</code> to this script</li>
 </ol>
 
