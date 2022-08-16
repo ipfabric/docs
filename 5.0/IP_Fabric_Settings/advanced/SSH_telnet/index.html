@@ -1,4775 +1,2024 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
-    
-    
-      
-        <title>SSH/TELNET - IP Fabric Documentation Portal</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="../../../vendor/featherlight-v.1.7.14.min.css">
-    
-      <link rel="stylesheet" href="../../../vendor/featherlight.css">
-    
-      <link rel="stylesheet" href="../../../stylesheets/theme.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+<!DOCTYPE html>
 
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-  
-    
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#sshtelnet" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../assets/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.4.0" name="generator"/>
+<title>SSH/TELNET - IP Fabric Documentation Portal</title>
+<link href="../../../assets/stylesheets/main.69437709.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/theme.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#sshtelnet">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <div data-md-component="outdated" hidden>
-        
-      </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-component="outdated" hidden="">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="IP Fabric Documentation Portal" class="md-header__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
-      
-  <img src="../../../assets/logo.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IP Fabric Documentation Portal" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             IP Fabric Documentation Portal
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               SSH/TELNET
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
       Welcome
     </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../Getting_Started/Overview/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../Getting_Started/Overview/">
         Getting Started
       </a>
-    </li>
-  
-
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../IP_Fabric_API/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../IP_Fabric_API/">
         IP Fabric API
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../IP_Fabric_GUI/Discovery_Snapshot/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../IP_Fabric_GUI/Discovery_Snapshot/">
         IP Fabric GUI
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../api_tokens/" class="md-tabs__link md-tabs__link--active">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../api_tokens/">
         IP Fabric Settings
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../System_Administration/boot_wizard/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../System_Administration/boot_wizard/">
         System Administration
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../releases/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../releases/">
         Releases
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../support/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../support/">
         Support
       </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="IP Fabric Documentation Portal" class="md-nav__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
-      
-  <img src="../../../assets/logo.png" alt="logo">
-
-    </a>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IP Fabric Documentation Portal" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../assets/logo.png"/>
+</a>
     IP Fabric Documentation Portal
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
         Welcome
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
           Getting Started
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Getting Started" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
           Getting Started
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1">
           Overview
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Overview" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Overview" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
           Overview
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/">
         IP Fabric Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/faq/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/faq/">
         Frequently Asked Question - FAQ
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/licensing/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/licensing/">
         Licensing
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/snapshots/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/snapshots/">
         How Snapshots Work
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5" type="checkbox" id="__nav_2_1_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1_5">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5" id="__nav_2_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5">
           How Discovery Works
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="How Discovery Works" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_1_5">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="How Discovery Works" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_5">
+<span class="md-nav__icon md-icon"></span>
           How Discovery Works
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/API_discovery/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/API_discovery/">
         How API Discovery Works
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">
         How CLI Discovery Works
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/">
         Troubleshooting Discovery
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5_4" type="checkbox" id="__nav_2_1_5_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1_5_4">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5_4" id="__nav_2_1_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5_4">
           Common problems
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Common problems" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_1_5_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Common problems" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_1_5_4">
+<span class="md-nav__icon md-icon"></span>
           Common problems
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/connectivity_report/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/connectivity_report/">
         Connectivity Report - Type of Error
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/">
         Fine-Tune SSH/Telnet CLI Parameters
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/no-devices-discovered/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/no-devices-discovered/">
         No Devices Discovered
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/quagga-frr/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/quagga-frr/">
         Configuring Quagga/FRR To Work With IP Fabric
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2">
           Platform First Steps
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Platform First Steps" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Platform First Steps" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
           Platform First Steps
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/01-deployment/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/01-deployment/">
         Deploying the IP Fabric Virtual Machine (VM)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/02-access_ui/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/02-access_ui/">
         Access User Interface And Install License
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/04-initial_discovery/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/04-initial_discovery/">
         Initial Discovery
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2_4">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" id="__nav_2_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_4">
           Configuration Wizard
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Configuration Wizard" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_2_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configuration Wizard" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_4">
+<span class="md-nav__icon md-icon"></span>
           Configuration Wizard
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/01-credentials/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/01-credentials/">
         01 - Configure Credentials
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/02-enable/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/02-enable/">
         02 - Enable Mode Passwords (Optional)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/03-discovery_seed/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/03-discovery_seed/">
         03 - Starting Point For The Discovery (Optional)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/04-include_exclude_nets/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/04-include_exclude_nets/">
         04 - Include Or Exclude Networks In Discovery
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/05-site_separation/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/05-site_separation/">
         05 - Site Separation
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/06-cli_settings/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/06-cli_settings/">
         06 - CLI Settings
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/07-vendors_api/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/07-vendors_api/">
         07 - Vendors API
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/08_-_Configuration_Management/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/08_-_Configuration_Management/">
         08 - Configuration Management
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/09_-_Schedule_System_Backup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/09_-_Schedule_System_Backup/">
         09 - Schedule System Backup
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/10_-_Schedule_System_Maintenance/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/10_-_Schedule_System_Maintenance/">
         10 - Schedule System Maintenance
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/11_-_Configuration_Complete/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/11_-_Configuration_Complete/">
         11 - Configuration Complete
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
           IP Fabric API
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IP Fabric API" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
           IP Fabric API
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/intent_verification_rules/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/intent_verification_rules/">
         Intent Verification Rules
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/retrieving_configurations/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_configurations/">
         Retrieving configurations
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/retrieving_device_log_file/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_device_log_file/">
         Retrieving device log file
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/serial_numbers/">
         Serial Numbers
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3_6">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" id="__nav_3_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_6">
           Path Lookup
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Path Lookup" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Path Lookup" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
           Path Lookup
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Path_Lookup/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/">
         Host to Gateway Path Lookup
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/">
         Multicast Path Lookup
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/">
         Path Lookup ICMP Decoder
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/">
         Unicast Path Lookup
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3_7">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7">
           Tutorials
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Tutorials" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
           Tutorials
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/">
         Simulate Unicast Path Lookup In IP Fabric Using Python
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3_8">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8">
           Snapshots
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Snapshots" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Snapshots" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
           Snapshots
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/">
         Create New Snapshots Via API
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/">
         Refreshing Devices In a Snapshot
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/snapshots/snapshot_table/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/snapshot_table/">
         Snapshot Table
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
           IP Fabric GUI
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IP Fabric GUI" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric GUI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
           IP Fabric GUI
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Discovery_Snapshot/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Discovery_Snapshot/">
         Discovery Snapshot
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/dashboard/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/dashboard/">
         Dashboard
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/inventory/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/inventory/">
         Inventory
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/reports/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/reports/">
         Reports
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_5">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5">
           Technology Tables
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Technology Tables" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_5">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Technology Tables" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
           Technology Tables
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/CDP_LLDP/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/CDP_LLDP/">
         CDP/LLDP
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/DHCP/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/DHCP/">
         DHCP
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/First_hop_redundancy_protocols/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/First_hop_redundancy_protocols/">
         First Hop Redundancy Protocols (FHRP)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/MPLS/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/MPLS/">
         MPLS
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/QoS/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/QoS/">
         QoS
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/SDN/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/SDN/">
         SDN
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/SDWAN/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/SDWAN/">
         SDWAN
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/Security/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/Security/">
         Security
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/addressing/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/addressing/">
         Addressing
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/cloud/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/cloud/">
         Cloud
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/interfaces/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/interfaces/">
         Interfaces
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/ip_telephony/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/ip_telephony/">
         IP Telephony
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/management_table/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/management_table/">
         Management
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/networks/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/networks/">
         Networks
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/platforms/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/platforms/">
         Platforms
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/port-channels/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/port-channels/">
         Port-Channels
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/routing_analysis/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/routing_analysis/">
         Routing Analysis
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/stp/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/stp/">
         Spanning Tree
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/transcievers/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/transcievers/">
         Transceivers
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Technology_Tables/wireless/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Technology_Tables/wireless/">
         Wireless
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_6">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6">
           Diagrams
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Diagrams" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Diagrams" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
           Diagrams
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/diagrams/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/diagrams/compare_snapshot/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/compare_snapshot/">
         Compare Snapshot
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/">
         How To Use Path Lookup
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/diagrams/intent_checks/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/intent_checks/">
         Intent Checks
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/diagrams/network_viewer/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/network_viewer/">
         Network Viewer
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_7">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7">
           Management
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Management" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Management" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
+<span class="md-nav__icon md-icon"></span>
           Management
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/management/changes/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/changes/">
         Changes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/management/configuration/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/configuration/">
         Configuration
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/management/discovery_history/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/discovery_history/">
         Discovery History
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_8">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" id="__nav_4_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_8">
           Tips
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Tips" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Tips" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_8">
+<span class="md-nav__icon md-icon"></span>
           Tips
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/tips/navigate_in_tables/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/navigate_in_tables/">
         Navigate in Tables
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/tips/search/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/search/">
         Searching
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
           IP Fabric Settings
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IP Fabric Settings" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric Settings" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
           IP Fabric Settings
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api_tokens/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api_tokens/">
         API tokens
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../authentication/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../authentication/">
         Authentication
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ca/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ca/">
         Certification Authorities
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../device_attributes/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../device_attributes/">
         Device Attributes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discovery_seed/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../discovery_seed/">
         Discovery Seed
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../organizationally_unique_identifier/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../organizationally_unique_identifier/">
         OUI (Organizationally Unique Identifier)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../site_separation/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../site_separation/">
         Site Separation
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../webhooks/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../webhooks/">
         Webhooks
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_9">
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" id="__nav_5_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9">
           Advanced
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Advanced" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_9">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Advanced" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_9">
+<span class="md-nav__icon md-icon"></span>
           Advanced
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           SSH/TELNET
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         SSH/TELNET
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fine-tune-sshtelnet-cli-parameters" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fine-tune-sshtelnet-cli-parameters">
     Fine-Tune SSH/telnet CLI Parameters
   </a>
-  
-    <nav class="md-nav" aria-label="Fine-Tune SSH/telnet CLI Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#network-device-login-timeout" class="md-nav__link">
+<nav aria-label="Fine-Tune SSH/telnet CLI Parameters" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-device-login-timeout">
     Network Device Login Timeout
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#network-device-session-timeout" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-device-session-timeout">
     Network Device Session Timeout
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#maximum-number-of-parallel-sessions" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#maximum-number-of-parallel-sessions">
     Maximum Number Of Parallel Sessions
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-failure" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-failure">
     Basic Failure
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#authentication-failure" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-failure">
     Authentication Failure
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#command-authorization-failure-retries" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#command-authorization-failure-retries">
     Command Authorization Failure Retries
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#example-of-error-message-in-connectivity-report" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-of-error-message-in-connectivity-report">
     Example Of Error Message In Connectivity Report
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-jumphost" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-jumphost">
     Setting Up Jumphost
   </a>
-  
-    <nav class="md-nav" aria-label="Setting Up Jumphost">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-new-jumphost" class="md-nav__link">
+<nav aria-label="Setting Up Jumphost" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-new-jumphost">
     Adding New Jumphost
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-key-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh-key-configuration">
     SSH Key Configuration
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-jumphost-connection" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disabling-jumphost-connection">
     Disabling Jumphost Connection
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-jumphost-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remove-jumphost-configuration">
     Remove Jumphost Configuration
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#jumphost-known-issues" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jumphost-known-issues">
     Jumphost Known Issues
   </a>
-  
-    <nav class="md-nav" aria-label="Jumphost Known Issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#non-tcp-discovery" class="md-nav__link">
+<nav aria-label="Jumphost Known Issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#non-tcp-discovery">
     Non-TCP Discovery
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration">
     IP Fabric Is Not Accessible After Saving Jumphost Configuration
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-sshtelnet-ports">
     Custom SSH/Telnet Ports
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#telnetssh-url-handler-on-ms-windows-7-and-later" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telnetssh-url-handler-on-ms-windows-7-and-later">
     Telnet/SSH URL Handler On MS Windows 7 And Later
   </a>
-  
-    <nav class="md-nav" aria-label="Telnet/SSH URL Handler On MS Windows 7 And Later">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backup-windows-registry" class="md-nav__link">
+<nav aria-label="Telnet/SSH URL Handler On MS Windows 7 And Later" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup-windows-registry">
     Backup Windows Registry
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#putty">
     Putty
   </a>
-  
-    <nav class="md-nav" aria-label="Putty">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-putty" class="md-nav__link">
+<nav aria-label="Putty" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-putty">
     Download Putty
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#register-telnetssh-url-handler" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-telnetssh-url-handler">
     Register Telnet/SSH URL Handler
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#securecrt" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#securecrt">
     SecureCRT
   </a>
-  
-    <nav class="md-nav" aria-label="SecureCRT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-securecrt" class="md-nav__link">
+<nav aria-label="SecureCRT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-securecrt">
     Download SecureCRT
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#register-telnetssh-url-handler_1" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-telnetssh-url-handler_1">
     Register Telnet/SSH URL Handler
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../configuration_management/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration_management/">
         Configuration Management
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery_tasks/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery_tasks/">
         Discovery Tasks
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ipf_cert/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ipf_cert/">
         IP Fabric Web Certificate
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../snapshots/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../snapshots/">
         Snapshots
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../snmp/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../snmp/">
         SNMP
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_7" type="checkbox" id="__nav_5_9_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_9_7">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_7" id="__nav_5_9_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_7">
           Vendors API
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Vendors API" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_9_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Vendors API" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_7">
+<span class="md-nav__icon md-icon"></span>
           Vendors API
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/AWS_Amazon_Web_Services/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/AWS_Amazon_Web_Services/">
         AWS (Amazon Web Services)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Azure_Networking/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Azure_Networking/">
         Azure Networking
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Check_Point/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Check_Point/">
         Check Point
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Cisco_APIC/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Cisco_APIC/">
         Cisco APIC
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Cisco_FMC/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Cisco_FMC/">
         Cisco FMC (FTD)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Cisco_Meraki/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Cisco_Meraki/">
         Cisco Meraki
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Cisco_Viptela_SD-WAN/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Cisco_Viptela_SD-WAN/">
         Cisco Viptela
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Ruckus_Virtual_SmartZone/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Ruckus_Virtual_SmartZone/">
         Ruckus Virtual SmartZone
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Silver_Peak_SD-WAN/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Silver_Peak_SD-WAN/">
         Silver Peak SD-WAN
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/VMware_NSX-T/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/VMware_NSX-T/">
         VMware NSX-T
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/Versa_Networks_SD-WAN/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/Versa_Networks_SD-WAN/">
         Versa Networks SD-WAN
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vendors_API/junipe_mist/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Vendors_API/junipe_mist/">
         Juniper Mist
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_8" type="checkbox" id="__nav_5_9_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_9_8">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_8" id="__nav_5_9_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_8">
           Discovery
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Discovery" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_9_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Discovery" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_8">
+<span class="md-nav__icon md-icon"></span>
           Discovery
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/Traceroute_settings/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/Traceroute_settings/">
         Traceroute settings
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/discovery_settings/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/discovery_settings/">
         Discovery Tasks Settings
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/dns_resolve/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/dns_resolve/">
         DNS resolve
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/ip_scope/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/ip_scope/">
         IP Scope
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/limit_download_of_bgp_routes/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/limit_download_of_bgp_routes/">
         Limit Download of BGP Routes
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/scanner_settings/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery/scanner_settings/">
         Scanner settings
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_9" type="checkbox" id="__nav_5_9_9" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_9_9">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_9" id="__nav_5_9_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_9">
           System
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="System" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_9_9">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="System" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_9">
+<span class="md-nav__icon md-icon"></span>
           System
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../system/cleardb/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../system/cleardb/">
         Clear DB
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../system/system_backup/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../system/system_backup/">
         Schedule System Backup
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../system/system_maitenance/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../system/system_maitenance/">
         Schedule System Maintenance
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_10">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" id="__nav_5_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_10">
           User management
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="User management" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_10">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="User management" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_10">
+<span class="md-nav__icon md-icon"></span>
           User management
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/ldap/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/ldap/">
         LDAP Authentication
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/policies/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/policies/">
         Policies
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/roles/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/roles/">
         Roles
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/sso/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/sso/">
         Single Sign On (SSO)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_management/users/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../user_management/users/">
         Users
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
           System Administration
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="System Administration" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="System Administration" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
           System Administration
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/boot_wizard/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/boot_wizard/">
         Run System 'Boot Wizard'
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/increase_disk_space/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/increase_disk_space/">
         Increase Disk Space
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6_3">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3">
           Administrative Interface
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Administrative Interface" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Administrative Interface" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
           Administrative Interface
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Administrative_Interface/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Administrative_Interface/System_Update/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/System_Update/">
         System Update
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Administrative_Interface/backup_and_restore/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/backup_and_restore/">
         Backup And Restore
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Administrative_Interface/create_local_administrator/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/create_local_administrator/">
         Create Local Administrator
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Administrative_Interface/system_status/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/system_status/">
         System Status
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6_4">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_4">
           Command Line Interface
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Command Line Interface" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Command Line Interface" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
           Command Line Interface
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Command_Line_Interface/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Command_Line_Interface/Logging/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/Logging/">
         Logging
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../System_Administration/Command_Line_Interface/troubleshooting/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/troubleshooting/">
         Troubleshooting VM Using IP Fabric CLI
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
           Releases
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Releases" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Releases" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
           Releases
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/">
         IP Fabric Releases
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2">
           Known issues
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Known issues" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Known issues" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
           Known issues
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/3com/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/3com/">
         3Com
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/Fortinet_FortiGate/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/Fortinet_FortiGate/">
         Fortinet FortiGate
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/arista/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/arista/">
         Arista
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/brocade/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/brocade/">
         Brocade
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/checkpoint/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/checkpoint/">
         Checkpoint
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/extreme/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/extreme/">
         Extreme Networks
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/f5/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/f5/">
         F5
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/hp/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/hp/">
         HP
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/huawei/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/huawei/">
         Huawei
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/juniper/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/juniper/">
         Juniper
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/meraki/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/meraki/">
         Meraki
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/mikrotik/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/mikrotik/">
         Mikrotik
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/versa/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/versa/">
         Versa
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14" type="checkbox" id="__nav_7_2_14" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_2_14">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14" id="__nav_7_2_14" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_14">
           IP Fabric
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IP Fabric" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_2_14">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_14">
+<span class="md-nav__icon md-icon"></span>
           IP Fabric
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/">
         General
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/Service_passwords/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Service_passwords/">
         Service Passwords
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
         Site Name Can Change To An Obscure UUID Value After Update
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/local_time_inconsistencies/">
         Local Time Inconsistencies
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/transceivers_task/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/transceivers_task/">
         Transceivers Task
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_6" type="checkbox" id="__nav_7_2_14_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_2_14_6">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_14_6" id="__nav_7_2_14_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_14_6">
           Error messages
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Error messages" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_2_14_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Error messages" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_2_14_6">
+<span class="md-nav__icon md-icon"></span>
           Error messages
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/">
         Error: AQL: internal error -- in index
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
         `a request xxx Failed to fetch HTTP status: 504` followed by `Database seems to be overloaded`
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
         Error: Invalid OVF checksum algorithm: SHA256
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/resource_conflict/">
         `Error: Resource Conflict`
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_15" type="checkbox" id="__nav_7_2_15" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_2_15">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_15" id="__nav_7_2_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_15">
           Palo Alto
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Palo Alto" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_2_15">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Palo Alto" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_15">
+<span class="md-nav__icon md-icon"></span>
           Palo Alto
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/Palo_Alto/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/Palo_Alto/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/Palo_Alto/networks_panorama/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/Palo_Alto/networks_panorama/">
         Networks Panorama
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_16" type="checkbox" id="__nav_7_2_16" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_2_16">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_16" id="__nav_7_2_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_16">
           Cisco
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Cisco" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_2_16">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Cisco" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_16">
+<span class="md-nav__icon md-icon"></span>
           Cisco
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/">
         Overview
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Adding_AAA_user_to_Cisco_ACS/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Adding_AAA_user_to_Cisco_ACS/">
         Adding AAA User To Cisco ACS
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Command_cli_whitespace_completion/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Command_cli_whitespace_completion/">
         Command `cli whitespace completion`
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
         Dropping Support For ACL On Cisco Firepower
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Inconsistent_VRF_names_on_Cisco_platforms/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
         Inconsistent VRF Names On Cisco Platforms
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Show_Interface_Transceivers/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Show_Interface_Transceivers/">
         Show Interface Transceivers
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/VRFs_are_not_found_on_IOS-XR/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/VRFs_are_not_found_on_IOS-XR/">
         VRFs Are Not Found On IOS-XR
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/known_issues/cisco/Viptela_CEdge_shows_only_one_next_hop/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/known_issues/cisco/Viptela_CEdge_shows_only_one_next_hop/">
         Viptela CEdge shows only one next-hop
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3">
           Low level release notes
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Low level release notes" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Low level release notes" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
           Low level release notes
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1" type="checkbox" id="__nav_7_3_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1" id="__nav_7_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1">
           4.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="4.x" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_3_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="4.x" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_3_1">
+<span class="md-nav__icon md-icon"></span>
           4.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_1" type="checkbox" id="__nav_7_3_1_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3_1_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_1" id="__nav_7_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1_1">
           4.3.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="4.3.x" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_3_1_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="4.3.x" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_1_1">
+<span class="md-nav__icon md-icon"></span>
           4.3.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.0/">
         LLRN 4.3.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.1/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.1/">
         LLRN 4.3.1
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.2/">
         LLRN 4.3.2
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.3/">
         LLRN 4.3.3
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.4/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.4/">
         LLRN 4.3.4
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.5/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.3.x/4.3.5/">
         LLRN 4.3.5
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_2" type="checkbox" id="__nav_7_3_1_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3_1_2">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_2" id="__nav_7_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1_2">
           4.4.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="4.4.x" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_3_1_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="4.4.x" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_1_2">
+<span class="md-nav__icon md-icon"></span>
           4.4.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.0/">
         LLRN 4.4.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.1/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.1/">
         LLRN 4.4.1
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.2/">
         LLRN 4.4.2
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/4.x/4.4.x/4.4.3/">
         LLRN 4.4.3
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2" type="checkbox" id="__nav_7_3_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3_2">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2" id="__nav_7_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_2">
           5.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="5.x" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_3_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="5.x" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_3_2">
+<span class="md-nav__icon md-icon"></span>
           5.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2_1" type="checkbox" id="__nav_7_3_2_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_3_2_1">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2_1" id="__nav_7_3_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_2_1">
           5.0.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="5.0.x" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_3_2_1">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="5.0.x" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_2_1">
+<span class="md-nav__icon md-icon"></span>
           5.0.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.0/">
         LLRN 5.0.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.1/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/low-level_release_notes/5.x/5.0.x/5.0.1/">
         LLRN 5.0.1
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_4">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" id="__nav_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4">
           Release notes
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Release notes" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Release notes" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
           Release notes
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/5.0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/5.0/">
         IP Fabric v5.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_2" type="checkbox" id="__nav_7_4_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_4_2">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_2" id="__nav_7_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4_2">
           Previous releases
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Previous releases" data-md-level="3">
-        <label class="md-nav__title" for="__nav_7_4_2">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Previous releases" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_4_2">
+<span class="md-nav__icon md-icon"></span>
           Previous releases
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/nimpee_v1/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v1/">
         NIMPEE v1.x.x
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/nimpee_v2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v2/">
         NIMPEE v2.x.x
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/">
         IP Fabric v3.x.x
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_2_4" type="checkbox" id="__nav_7_4_2_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7_4_2_4">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_2_4" id="__nav_7_4_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_4_2_4">
           IP Fabric v4.x.x
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IP Fabric v4.x.x" data-md-level="4">
-        <label class="md-nav__title" for="__nav_7_4_2_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric v4.x.x" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_4_2_4">
+<span class="md-nav__icon md-icon"></span>
           IP Fabric v4.x.x
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
         IP Fabric v4.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
         IP Fabric v4.1
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
         IP Fabric v4.2
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
         IP Fabric v4.3
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
         IP Fabric v4.4
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_8">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
           Support
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Support" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Support" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
           Support
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/">
         Technical Support
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../support/security_incidents/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/security_incidents/">
         Security Incident Response
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../support/support_vpn/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/support_vpn/">
         Support VPN
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../support/techsupport/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/techsupport/">
         Techsupport
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fine-tune-sshtelnet-cli-parameters" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fine-tune-sshtelnet-cli-parameters">
     Fine-Tune SSH/telnet CLI Parameters
   </a>
-  
-    <nav class="md-nav" aria-label="Fine-Tune SSH/telnet CLI Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#network-device-login-timeout" class="md-nav__link">
+<nav aria-label="Fine-Tune SSH/telnet CLI Parameters" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-device-login-timeout">
     Network Device Login Timeout
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#network-device-session-timeout" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-device-session-timeout">
     Network Device Session Timeout
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#maximum-number-of-parallel-sessions" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#maximum-number-of-parallel-sessions">
     Maximum Number Of Parallel Sessions
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-failure" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-failure">
     Basic Failure
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#authentication-failure" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication-failure">
     Authentication Failure
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#command-authorization-failure-retries" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#command-authorization-failure-retries">
     Command Authorization Failure Retries
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#example-of-error-message-in-connectivity-report" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-of-error-message-in-connectivity-report">
     Example Of Error Message In Connectivity Report
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-jumphost" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-jumphost">
     Setting Up Jumphost
   </a>
-  
-    <nav class="md-nav" aria-label="Setting Up Jumphost">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-new-jumphost" class="md-nav__link">
+<nav aria-label="Setting Up Jumphost" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-new-jumphost">
     Adding New Jumphost
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-key-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ssh-key-configuration">
     SSH Key Configuration
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-jumphost-connection" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disabling-jumphost-connection">
     Disabling Jumphost Connection
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-jumphost-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remove-jumphost-configuration">
     Remove Jumphost Configuration
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#jumphost-known-issues" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#jumphost-known-issues">
     Jumphost Known Issues
   </a>
-  
-    <nav class="md-nav" aria-label="Jumphost Known Issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#non-tcp-discovery" class="md-nav__link">
+<nav aria-label="Jumphost Known Issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#non-tcp-discovery">
     Non-TCP Discovery
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip-fabric-is-not-accessible-after-saving-jumphost-configuration">
     IP Fabric Is Not Accessible After Saving Jumphost Configuration
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-sshtelnet-ports" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-sshtelnet-ports">
     Custom SSH/Telnet Ports
   </a>
-  
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#telnetssh-url-handler-on-ms-windows-7-and-later" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telnetssh-url-handler-on-ms-windows-7-and-later">
     Telnet/SSH URL Handler On MS Windows 7 And Later
   </a>
-  
-    <nav class="md-nav" aria-label="Telnet/SSH URL Handler On MS Windows 7 And Later">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backup-windows-registry" class="md-nav__link">
+<nav aria-label="Telnet/SSH URL Handler On MS Windows 7 And Later" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup-windows-registry">
     Backup Windows Registry
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#putty">
     Putty
   </a>
-  
-    <nav class="md-nav" aria-label="Putty">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-putty" class="md-nav__link">
+<nav aria-label="Putty" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-putty">
     Download Putty
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#register-telnetssh-url-handler" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-telnetssh-url-handler">
     Register Telnet/SSH URL Handler
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#securecrt" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#securecrt">
     SecureCRT
   </a>
-  
-    <nav class="md-nav" aria-label="SecureCRT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-securecrt" class="md-nav__link">
+<nav aria-label="SecureCRT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-securecrt">
     Download SecureCRT
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#register-telnetssh-url-handler_1" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-telnetssh-url-handler_1">
     Register Telnet/SSH URL Handler
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-
-
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <h1 id="sshtelnet">SSH/TELNET</h1>
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI Parameters</h2>
 <p>The IP Fabric's discovery is primarily using Command Line Interface
-(CLI) to discover network elements. There are certain default CLI
-parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
-<p><a data-featherlight="../ssh/2396258368.png" href="#"><img alt="CLI Settings" src="../ssh/2396258368.png" /></a></p>
+(CLI) to discover network elements. The CLI Parameters can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
+<p><a class="glightbox" href="../ssh/2396258368.png"><img alt="CLI Settings" src="../ssh/2396258368.png"/></a></p>
 <h3 id="network-device-login-timeout">Network Device Login Timeout</h3>
 <p>Timeout before the logging prompt is received. It may take longer for
-remote branches over low-speed lines, or destined to overloaded devices.</p>
+remote branches over low-speed lines or overloaded devices to respond.</p>
 <h3 id="network-device-session-timeout">Network Device Session Timeout</h3>
 <p>Too many <strong>Command Timeout</strong> errors during the Discovery process may
-indicate that <strong>Network device session timeout</strong> is too short and it
-may be necessary to expect a delay for a response to arrive.</p>
+indicate that <strong>Network device session timeout</strong> is too short and the session is closed before the response arrives. It may be necessary to increase this timeout.</p>
 <h3 id="maximum-number-of-parallel-sessions">Maximum Number Of Parallel Sessions</h3>
 <p>To prevent flooding your network with too many SSH/TELNET sessions set
 <strong>Maximum number of parallel sessions</strong>. This setting can be also
@@ -4784,10 +2033,10 @@ down to 10 and steadily increase.</p>
 authentication failure.</p>
 <h3 id="authentication-failure">Authentication Failure</h3>
 <p><strong>Authentication failure</strong> can occur even if a user is authorized to
-login but may happen, for example, when an AAA server is overloaded or
+Login. For example, this may happen when an AAA server is overloaded or
 an authentication packet is lost.</p>
 <h3 id="command-authorization-failure-retries">Command Authorization Failure Retries</h3>
-<p>If you see many examples of <strong>Authentication error</strong> during the
+<p>If you see many examples of <strong>Authentication error</strong> during the
 Discovery process, please adjust <strong>Authentication failure</strong> and
 <strong>Command Authorization Failure retries</strong>.</p>
 <h3 id="example-of-error-message-in-connectivity-report">Example Of Error Message In Connectivity Report</h3>
@@ -4804,7 +2053,7 @@ errors and adjustments:</p>
 </thead>
 <tbody>
 <tr>
-<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
+<td>connect ETIMEDOUT XX.XX.XX.XX:22</td>
 <td>Connection error</td>
 <td>Received no response from the destination.</td>
 </tr>
@@ -4829,9 +2078,9 @@ errors and adjustments:</p>
 <td>Unable to authenticate to the destination host</td>
 </tr>
 <tr>
-<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp  | e #^$</td>
+<td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp | e #^$</td>
 <td>Command timeout</td>
-<td>The command 'show vrrp  | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
+<td>The command 'show vrrp | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
 </tr>
 <tr>
 <td>Can't detect prompt</td>
@@ -4846,7 +2095,7 @@ errors and adjustments:</p>
 </tbody>
 </table>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set-up connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
+<p><strong>Jumphost</strong> allows to set-up a connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
 <p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
 <table>
 <thead>
@@ -4890,8 +2139,8 @@ errors and adjustments:</p>
 </tr>
 </tbody>
 </table>
-<p>tested – jumphost was tested and it seems to work, but it is not officially supported by underlying project and might have subtle issues</p>
-<p>supported – jumphost was tested, it works and also underlying project supports it officially</p>
+<p>tested – jumphost was successfully tested, but it is not officially supported by the underlying SSH tunnel project</p>
+<p>supported – jumphost was successfully tested, and it is officially supported by the underlying SSH tunnel project</p>
 <p>We strongly recommend using <strong>python 3.6-3.9</strong> on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4899,20 +2148,20 @@ errors and adjustments:</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.</p>
+<p>In Discovery Seed, at least one IP address behind the Jumphost has to be provided as a starting point.</p>
 </div>
 <h3 id="adding-new-jumphost">Adding New Jumphost</h3>
 <ul>
-<li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
+<li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
 <li>
 <p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
-<p><a data-featherlight="../ssh/1384480773.png" href="#"><img alt="Jump host settings" src="../ssh/1384480773.png" /></a></p>
+<p><a class="glightbox" href="../ssh/1384480773.png"><img alt="Jump host settings" src="../ssh/1384480773.png"/></a></p>
 </li>
 </ul>
 <ul>
 <li>
 <p>Fill in all necessary data</p>
-<p><a data-featherlight="../ssh/1384480780.png" href="#"><img alt="Add Jumphost" src="../ssh/1384480780.png" /></a></p>
+<p><a class="glightbox" href="../ssh/1384480780.png"><img alt="Add Jumphost" src="../ssh/1384480780.png"/></a></p>
 <ul>
 <li><strong>Label</strong> - the name for configuration (mandatory)</li>
 <li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
@@ -4920,15 +2169,15 @@ errors and adjustments:</p>
 <p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes IP address of the IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, IP connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention (on OS level most probably from our support) to fix.</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
 </div>
 </li>
 </ul>
 <ul>
 <li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
 <li><strong>Login type</strong></li>
-<li><strong>Use credentials</strong> - require to provide username and password</li>
-<li><strong>Use SSH keys</strong> - if you copied ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
+<li><strong>Use credentials</strong> - required to provide username and password</li>
+<li><strong>Use SSH keys</strong> - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
 <li><strong>Username</strong> - Username for authentication (mandatory)</li>
 <li><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code>.</li>
 </ul>
@@ -4939,19 +2188,19 @@ errors and adjustments:</p>
 </ul>
 <ul>
 <li>
-<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in Jumphost list</p>
-<p><a data-featherlight="../ssh/1384513560.png" href="#"><img alt="Jumphost list" src="../ssh/1384513560.png" /></a></p>
+<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in the Jumphost list</p>
+<p><a class="glightbox" href="../ssh/1384513560.png"><img alt="Jumphost list" src="../ssh/1384513560.png"/></a></p>
 </li>
 </ul>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Adding ssh key to proxy server allows you to avoid using passwords for authentication</p>
+<p>To avoid using a password for authentication, you can add the ssh key to the proxy server.</p>
 </div>
 <ol>
 <li>
-<p>Download ssh key from Jumphost settings</p>
-<p><a data-featherlight="../ssh/1384153110.png" href="#"><img alt="Download ssh key" src="../ssh/1384153110.png" /></a></p>
+<p>Download the ssh key from Jumphost settings</p>
+<p><a class="glightbox" href="../ssh/1384153110.png"><img alt="Download ssh key" src="../ssh/1384153110.png"/></a></p>
 </li>
 <li>
 <p>Save <code>jumphost-public-key.pub</code></p>
@@ -4966,71 +2215,70 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>If the key has been copied you can use the option <em>‘Use SSH keys'</em>
-   while adding a new Jumphost server, instead of <em>'Use credentials’</em></p>
+   instead of <em>'Use credentials’</em></p>
 </li>
 </ol>
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
 <ol>
 <li>
 <p>Edit configuration that needs to be disabled, i.e.\</p>
-<p><a data-featherlight="../ssh/1384972305.png" href="#"><img alt="Jumphost settings" src="../ssh/1384972305.png" /></a></p>
+<p><a class="glightbox" href="../ssh/1384972305.png"><img alt="Jumphost settings" src="../ssh/1384972305.png"/></a></p>
 </li>
 <li>
 <p>Change the setting to <strong>Disabled</strong>,</p>
 </li>
 <li>
 <p>Click the <strong>Update</strong> button</p>
-<p><a data-featherlight="../ssh/1384906766.png" href="#"><img alt="Disable jumphost" src="../ssh/1384906766.png" /></a></p>
+<p><a class="glightbox" href="../ssh/1384906766.png"><img alt="Disable jumphost" src="../ssh/1384906766.png"/></a></p>
 </li>
 </ol>
 <h3 id="remove-jumphost-configuration">Remove Jumphost Configuration</h3>
 <ol>
 <li>
-<p>On Jumphost servers list, check configuration that needs to be
-   removed</p>
+<p>On the Jumphost servers list, select the server you want to remove</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
-<p><a data-featherlight="../ssh/1384939529.png" href="#"><img alt="Delete jumphost" src="../ssh/1384939529.png" /></a></p>
+<p><a class="glightbox" href="../ssh/1384939529.png"><img alt="Delete jumphost" src="../ssh/1384939529.png"/></a></p>
 </li>
 </ol>
 <h2 id="jumphost-known-issues">Jumphost Known Issues</h2>
 <h3 id="non-tcp-discovery">Non-TCP Discovery</h3>
 <p>Only TCP connections work through the jumphost.</p>
 <p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
-<p>Because of this you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
+<p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
 <p>If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
-<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, know password for <code>osadmin</code> user account, and do the following:</p>
+<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
 <ol>
 <li>
 <p>Login with <code>osadmin</code> account to the <strong>virtual machine CLI</strong></p>
 </li>
 <li>
 <p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID.</p>
-<p><a data-featherlight="../systemctl_jumphost.png" href="#"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png" /></a></p>
+<p><a class="glightbox" href="../systemctl_jumphost.png"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png"/></a></p>
 </li>
 <li>
-<p><strong>Stop the jumphost service</strong> with command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
-<p><a data-featherlight="../systemctl_stop_jumphost.png" href="#"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png" /></a></p>
+<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
+<p><a class="glightbox" href="../systemctl_stop_jumphost.png"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png"/></a></p>
 </li>
 <li>
 <p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
-<p><a data-featherlight="../systemctl_status_jumphost.png" href="#"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png" /></a></p>
+<p><a class="glightbox" href="../systemctl_status_jumphost.png"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png"/></a></p>
 </li>
 <li>
 <p>IP Fabric GUI should be accessible by now.</p>
 </li>
 <li>
-<p>Login into to the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
+<p>Login into the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
 </li>
 <li>
 <p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
-<p><a data-featherlight="../jumphost_delete_settings.png" href="#"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png" /></a></p>
+<p><a class="glightbox" href="../jumphost_delete_settings.png"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png"/></a></p>
 </li>
 <li>
 <p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
-<p><a data-featherlight="../jumphost_exclude.png" href="#"><img alt="jumphost_exclude" src="../jumphost_exclude.png" /></a></p>
+<p><a class="glightbox" href="../jumphost_exclude.png"><img alt="jumphost_exclude" src="../jumphost_exclude.png"/></a></p>
 </li>
 </ol>
 <div class="admonition info">
@@ -5040,135 +2288,105 @@ errors and adjustments:</p>
 <h2 id="custom-sshtelnet-ports">Custom SSH/Telnet Ports</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
+<p>Custom SSH/Telnet ports settings enable the discovery process to use different ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
 </div>
 <p>In the following example we configure the discovery process to use port <code>8080</code>
 for SSH connections to <code>192.168.168.10</code>:</p>
-<p><a data-featherlight="../ssh/edit_custom_ssh_telnet_port.png" href="#"><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png" /></a></p>
+<p><a class="glightbox" href="../ssh/edit_custom_ssh_telnet_port.png"><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png"/></a></p>
 <p>As a result of such configuration, we would create a new item under the
 <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every
 new snapshot created by IP Fabric.</p>
-<p><a data-featherlight="../ssh/custom_ssh_telnet_ports.png" href="#"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png" /></a></p>
+<p><a class="glightbox" href="../ssh/custom_ssh_telnet_ports.png"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png"/></a></p>
 <h2 id="telnetssh-url-handler-on-ms-windows-7-and-later">Telnet/SSH URL Handler On MS Windows 7 And Later</h2>
 <p>If you want to be able to connect directly to a device from the IP Fabric web
-interface, you need to register a Telnet/SSH URL handler. You will be touching
-Windows Registry, please be sure, that you know what you are doing, have
-appropriate backups and are comfortable in doing so.</p>
+interface, you need to register a Telnet/SSH URL handler. You will be touching
+Windows Registry, please, be sure that you know what you are doing, have
+appropriate backups, and are comfortable in doing so.</p>
 <h3 id="backup-windows-registry">Backup Windows Registry</h3>
 <ol>
 <li>Click <code>Start</code>, type <code>regedit.exe</code> in the search box, and then press <code>Enter</code></li>
-<li>In Registry Editor, click <strong>File → Export</strong></li>
-<li>In the Export Registry File box, select the location where you want to save the backup copy, name your back up file and click <em>Save</em></li>
+<li>In Registry Editor, click <strong>File → Export</strong></li>
+<li>In the Export Registry File box, select the location where you want to save the backup copy, name your backup file, and click <em>Save</em></li>
 </ol>
 <h3 id="putty">Putty</h3>
 <h4 id="download-putty">Download Putty</h4>
 <ol>
-<li>Go to <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
+<li>Go to <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
 <li>Download <code>Putty</code></li>
 <li>This tutorial expects Putty in <code>C:\Program Files (x86)\putty.exe</code></li>
 </ol>
 <h4 id="register-telnetssh-url-handler">Register Telnet/SSH URL Handler</h4>
 <ol>
-<li>Go to <a href="https://gist.github.com/sbiffi/11256316">https://gist.github.com/sbiffi/11256316</a></li>
+<li>Go to <a href="https://gist.github.com/sbiffi/11256316">https://gist.github.com/sbiffi/11256316</a></li>
 <li>Download <code>putty.reg</code> file</li>
-<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
-<li>Download <code>putty.vbs</code> (save it to <code>C:\putty.vbs</code> or change this path in <code>putty.reg</code> above)</li>
-<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
+<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
+<li>Download <code>putty.vbs</code> (save it to <code>C:\putty.vbs</code> or change this path in <code>putty.reg</code> above)</li>
+<li>Edit path to Putty if differs from <code>C:\Program Files (x86)\putty.exe</code></li>
 <li>Launch <code>putty.reg</code> to associate <code>ssh://</code> and <code>telnet://</code> to this script</li>
 </ol>
 <h3 id="securecrt">SecureCRT</h3>
 <h4 id="download-securecrt">Download SecureCRT</h4>
-<p>SecureCRT is not free software. To obtain SecureCRT license please visit <a href="https://www.vandyke.com/products/securecrt/">https://www.vandyke.com/products/securecrt/</a></p>
+<p>SecureCRT is not free software. To obtain SecureCRT license please visit <a href="https://www.vandyke.com/products/securecrt/">https://www.vandyke.com/products/securecrt/</a></p>
 <h4 id="register-telnetssh-url-handler_1">Register Telnet/SSH URL Handler</h4>
 <ol>
-<li>Download <a href="../ssh/securecrt.reg">securecrt.reg</a></li>
-<li>Edit path to SecureCRT if differs from <code>C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe</code></li>
+<li>Download <a href="../ssh/securecrt.reg">securecrt.reg</a></li>
+<li>Edit path to SecureCRT if differs from <code>C:\Program Files\VanDyke Software\SecureCRT\SecureCRT.exe</code></li>
 <li>Launch <code>securecrt.reg</code> to associate <code>ssh://</code> and <code>telnet://</code> to this script</li>
 </ol>
-
-
-
-
-              
-            </article>
-            
-          </div>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../webhooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Webhooks" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Webhooks" class="md-footer__link md-footer__link--prev" href="../../webhooks/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Previous
               </span>
               Webhooks
             </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../configuration_management/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration Management" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a aria-label="Next: Configuration Management" class="md-footer__link md-footer__link--next" href="../configuration_management/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                 Next
               </span>
               Configuration Management
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      <a href="https://ipfabric.io">IP Fabric</a>
-    </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<a href="https://ipfabric.io">IP Fabric</a>
+</div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
-      
-        <script src="../../../vendor/jquery-3.6.0.min.js"></script>
-      
-        <script src="../../../vendor/featherlight-v.1.7.14.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
