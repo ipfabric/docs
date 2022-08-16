@@ -1869,43 +1869,16 @@ differently in you production deployment, than described here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-comparison-table" class="md-nav__link">
-    Configuration Comparison Table
+  <a href="#how-to-read-configuration-management-data" class="md-nav__link">
+    How to read configuration management data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-comparison" class="md-nav__link">
-    Configuration Comparison
+  <a href="#comparing-configurations" class="md-nav__link">
+    Comparing Configurations
   </a>
-  
-    <nav class="md-nav" aria-label="Configuration Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#side-by-side-diff" class="md-nav__link">
-    Side by Side Diff
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inline" class="md-nav__link">
-    Inline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inline-diff" class="md-nav__link">
-    Inline Diff
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4423,43 +4396,16 @@ differently in you production deployment, than described here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-comparison-table" class="md-nav__link">
-    Configuration Comparison Table
+  <a href="#how-to-read-configuration-management-data" class="md-nav__link">
+    How to read configuration management data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-comparison" class="md-nav__link">
-    Configuration Comparison
+  <a href="#comparing-configurations" class="md-nav__link">
+    Comparing Configurations
   </a>
-  
-    <nav class="md-nav" aria-label="Configuration Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#side-by-side-diff" class="md-nav__link">
-    Side by Side Diff
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inline" class="md-nav__link">
-    Inline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inline-diff" class="md-nav__link">
-    Inline Diff
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4488,17 +4434,59 @@ are necessary for configuration storage and configuration management to work pro
 <p>These elevated credentials need <strong>Use for configuration management</strong> box checked.</p>
 <h2 id="trigger">Trigger</h2>
 <p>Trigger archiving can be <a href="../../../IP_Fabric_Settings/advanced/configuration_management/">configured in settings</a> and can be based on a <em>syslog message</em> or a <em>timed event</em>.</p>
-<h2 id="configuration-comparison-table">Configuration Comparison Table</h2>
+<h2 id="how-to-read-configuration-management-data">How to read configuration management data</h2>
+<p>There are the following properties in the Management configuration table:</p>
+<ul>
+<li><code>Serial Number</code> -- Serial number of the device</li>
+<li><code>Hostname</code> -- Device hostname</li>
+<li><code>Last Change At</code> -- The last time before the very next config change</li>
+<li><code>Last Check At</code> -- The last config file check before the very next configuration change</li>
+<li><code>Status</code> -- Config state indicator that tells us whether:<ul>
+<li><code>changed</code> -- the config changed within the last check (initial value)</li>
+<li><code>no change</code> -- the config did not change within the last check</li>
+</ul>
+</li>
+<li><code>Hash</code> -- Unique ID of the configuration file</li>
+</ul>
+<p>We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to <code>changed</code>. Next time the device's configuration is checked, there are two options:</p>
+<ol>
+<li>the configuration file remains the same, in which case status field of the DB record is set to <code>no change</code>, and <code>Last Check At</code> is set to the current time;</li>
+<li>the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status <code>changed</code> and <code>Last Change At</code> and <code>Last Check At</code> being set to current time, as described above.</li>
+</ol>
+<p>Let's consider following example:</p>
+<p><a data-featherlight="../config/config_l66jfw9.png" href="#"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png" /></a></p>
+<p>Let's go from the bottom of the output:</p>
+<ul>
+<li><code>Last change At</code> is <code>2022-06-11 01:02:11+02</code> and <code>Last Check At</code> is <code>2022-06-14 01:01:17+02</code> with status <code>no change</code><ul>
+<li>it means there were no configuration file changes between these two timestamps</li>
+<li>configuration file was checked multiple times and status transitioned from <code>changed</code> to <code>no change</code></li>
+</ul>
+</li>
+<li><code>Last Change At</code> is <code>2022-06-15 01:02:08+02</code> and <code>Last Check At</code> is <code>2022-06-15 01:02:08+02</code> with status <code>changed</code><ul>
+<li>it means that configuration file changed</li>
+<li>the status is set to <code>changed</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="comparing-configurations">Comparing Configurations</h2>
 <p><a data-featherlight="../config/config_table.png" href="#"><img alt="Config Table" src="../config/config_table.png" /></a></p>
 <p>Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (<code>Last Change At</code> column), and the last time a particular configuration was saved in the <code>Last Check At</code> column.</p>
-<h2 id="configuration-comparison">Configuration Comparison</h2>
 <p>The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the <code>Before</code> and <code>After</code> states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.</p>
-<h3 id="side-by-side-diff">Side by Side Diff</h3>
-<p><a data-featherlight="../config/config_side.png" href="#"><img alt="Side by Side" src="../config/config_side.png" /></a></p>
-<h3 id="inline">Inline</h3>
-<p><a data-featherlight="../config/config_inline.png" href="#"><img alt="Inline" src="../config/config_inline.png" /></a></p>
-<h3 id="inline-diff">Inline Diff</h3>
-<p><a data-featherlight="../config/config_inline_diff.png" href="#"><img alt="Inline" src="../config/config_inline_diff.png" /></a></p>
+<figure>
+<p><a data-featherlight="../config/config_side.png" href="#"><img alt="Side by Side Diff" src="../config/config_side.png" />
+  </a></p>
+<figcaption>Side by Side Diff</figcaption>
+</figure>
+<figure>
+<p><a data-featherlight="../config/config_inline.png" href="#"><img alt="Inline" src="../config/config_inline.png" />
+  </a></p>
+<figcaption>Inline</figcaption>
+</figure>
+<figure>
+<p><a data-featherlight="../config/config_inline_diff.png" href="#"><img alt="Inline Diff" src="../config/config_inline_diff.png" />
+  </a></p>
+<figcaption>Inline Diff</figcaption>
+</figure>
 
 
 
