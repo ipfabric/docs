@@ -17,27 +17,58 @@ These elevated credentials need **Use for configuration management** box checked
 
 ## Trigger
 
-Trigger archiving can be [configured in settings](../../IP_Fabric_Settings/advanced/configuration_management.md) and can be based on a *syslog message* or a *timed event*.
+Trigger archiving can be [configured in settings](../../IP_Fabric_Settings/advanced/configuration_management.md) and can be based on a _syslog message_ or a _timed event_.
 
+## How to read configuration management data
 
-## Configuration Comparison Table
+There are the following properties in the Management configuration table:
+
+- `Serial Number` -- Serial number of the device
+- `Hostname` -- Device hostname
+- `Last Change At` -- The last time before the very next config change
+- `Last Check At` -- The last config file check before the very next configuration change
+- `Status` -- Config state indicator that tells us whether:
+  - `changed` -- the config changed within the last check (initial value)
+  - `no change` -- the config did not change within the last check
+- `Hash` -- Unique ID of the configuration file
+
+We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to `changed`. Next time the device's configuration is checked, there are two options:
+
+1. the configuration file remains the same, in which case status field of the DB record is set to `no change`, and `Last Check At` is set to the current time;
+2. the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status `changed` and `Last Change At` and `Last Check At` being set to current time, as described above.
+
+Let's consider following example:
+
+![Output for L66JFW9](config/config_l66jfw9.png)
+
+Let's go from the bottom of the output:
+
+- `Last change At` is `2022-06-11 01:02:11+02` and `Last Check At` is `2022-06-14 01:01:17+02` with status `no change`
+  - it means there were no configuration file changes between these two timestamps
+  - configuration file was checked multiple times and status transitioned from `changed` to `no change`
+- `Last Change At` is `2022-06-15 01:02:08+02` and `Last Check At` is `2022-06-15 01:02:08+02` with status `changed`
+  - it means that configuration file changed
+  - the status is set to `changed`
+
+## Comparing Configurations
 
 ![Config Table](config/config_table.png)
 
 Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (`Last Change At` column), and the last time a particular configuration was saved in the `Last Check At` column.
 
-## Configuration Comparison
-
 The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the `Before` and `After` states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
 
-### Side by Side Diff
+<figure markdown>
+  ![Side by Side Diff](config/config_side.png)
+  <figcaption>Side by Side Diff</figcaption>
+</figure>
 
-![Side by Side](config/config_side.png)
+<figure markdown>
+  ![Inline](config/config_inline.png)
+  <figcaption>Inline</figcaption>
+</figure>
 
-### Inline
-
-![Inline](config/config_inline.png)
-
-### Inline Diff
-
-![Inline](config/config_inline_diff.png)
+<figure markdown>
+  ![Inline Diff](config/config_inline_diff.png)
+  <figcaption>Inline Diff</figcaption>
+</figure>
