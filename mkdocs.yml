@@ -14,7 +14,6 @@ markdown_extensions:
   - admonition
   - attr_list
   - def_list
-  - featherlight
   - md_in_html
   - pymdownx.snippets:
       check_paths: true
@@ -25,13 +24,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - mdx_truly_sane_lists
 
-extra_javascript:
-  - vendor/jquery-3.6.0.min.js
-  - vendor/featherlight-v.1.7.14.min.js
-
 extra_css:
-  - vendor/featherlight-v.1.7.14.min.css
-  - vendor/featherlight.css
   - stylesheets/theme.css
 
 extra:
@@ -41,6 +34,8 @@ extra:
 plugins:
   - mkdocs-dashomatic:
   - search:
+  - glightbox:
+      zoomable: true
   - mike:
       version_selector: true
       css_dir: css
