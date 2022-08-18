@@ -118,7 +118,9 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
   - **Use credentials** - required to provide username and password
   - **Use SSH keys** - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
   - **Username** - Username for authentication (mandatory)
-  - **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below. Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`.
+  - **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below.
+
+    --8<-- "snippets/username_password_regex.md"
 
 - Click **+ Add** button
 
