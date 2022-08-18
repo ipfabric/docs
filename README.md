@@ -37,6 +37,7 @@ documentation happens as follows:
   parameters, command line arguments etc...
 - Please use regular double quotes - character `"` instead of fancy/curly
   quotes from UTF-8 - `""`
+- Consider using [snippets](snippets) for content repeated / copy-pasted through multiple pages.
 
 TODO: take a look at e.g. https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
 

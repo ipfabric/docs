@@ -6,15 +6,14 @@ Use IP Fabric backup to protect your important data.
 
 There are two types of backup:
 
--   Local backup
+- Local backup
 
--   Remote backup (FTP, sFTP)
+- Remote backup (FTP, sFTP)
 
 !!! tip Security tip
 
     Backups are encrypted with **osadmin** user password configured during the [first boot wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard).
     When you lose **osadmin** user password, backups are also lost!
-
 
 ### Local Backup
 
@@ -24,7 +23,7 @@ on different datastore ideally on different physical storage.
 
 !!! info "Backup Disk"
 
-	The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)
+    The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)
 
 To add a new backup drive and `mount` it as desired, follow instructions in [Increase Disk Space - Local Backup Disk](../../System_Administration/increase_disk_space.md#local-backup-disk).
 
@@ -35,9 +34,9 @@ useful for example before a system upgrade.
 
 !!! Warning
 
-	A directory **has to be specified** for FTP and SFTP backups.
+    A directory **has to be specified** for FTP and SFTP backups.
 
-	Directory path for **SFTP** has to be defined as **an absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
+    Directory path for **SFTP** has to be defined as **an absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
@@ -62,15 +61,13 @@ Manual backup can be triggered from IP Fabric Administrative interface:
     2.  Enter **Username** to access FTP/SFTP server.
 
     3.  Enter **Password** to access FTP/SFTP server.
-		
-	!!! Info
-		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+
+    --8<-- "snippets/username_password_regex.md"
 
     4.  Specify a **Directory** where FTP/SFTP backup should be
         uploaded.
 
 6.  Click **Next**
-
 
 ## Restore
 
@@ -84,7 +81,6 @@ a backup.
 
     The only exception are snapshots which can be restored to any version of
     IP Fabric appliance.
-
 
 ### Restore From Local Hard Drive
 
@@ -123,11 +119,9 @@ a backup.
 
 8.  Click **Restore**.
 
-
 !!! warning
 
     Backups are encrypted with **osadmin** user password configured during the [First Boot Wizard](../../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard). When you lose **osadmin** user password, all backups encrypted by this password are lost.
-
 
 ### Restore From Remote Server
 
@@ -175,6 +169,8 @@ a backup.
     backup file was created in a backup filename.
 
 12. Click **Restore**.
+
+--8<-- "snippets/username_password_regex.md"
 
 !!! warning
 

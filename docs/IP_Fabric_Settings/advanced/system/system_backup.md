@@ -6,8 +6,8 @@ Use IP Fabric backup to protect your important data.
 
 There are two types of backup:
 
--   Local backup
--   Remote backup (FTP, sFTP)
+- Local backup
+- Remote backup (FTP, sFTP)
 
 !!! tip
 
@@ -46,9 +46,9 @@ Remote backup saves database, user and system files remotely using `FTP` or `SFT
 
 !!! warning
 
-	A directory **has to be specified** for FTP and SFTP backups.
+    A directory **has to be specified** for FTP and SFTP backups.
 
-	Directory path for **SFTP** has to be defined as an **absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
+    Directory path for **SFTP** has to be defined as an **absolute path** and for **FTP** as a **relative path**. Directory **has to exist** on the remote side. If it does not exist, you will get an error.
 
 To set up remote backup do the following steps:
 
@@ -56,18 +56,16 @@ To set up remote backup do the following steps:
 1. Go to **Settings → Advanced → System → Schedule system backup**.
 1. Enable backup.
 1. Set a backup schedule. See example for "Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)".
-    ![backup schedule](system_backup/backup_schedule.png)
+   ![backup schedule](system_backup/backup_schedule.png)
 1. Change **Destination** to `FTP` or `SFTP`.
 1. Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.
 1. Enter **Username** to access FTP/SFTP server.
 1. Enter **Password** to access FTP/SFTP server
-
-	!!! Info
-		Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`.
-
 1. Specify a **Directory** where FTP/SFTP backup should be uploaded.
 1. Click **Save**.
 1. IP Fabric tries to reach FTP/SFTP server with configured parameters.
+
+--8<-- "snippets/username_password_regex.md"
 
 !!! warning
 

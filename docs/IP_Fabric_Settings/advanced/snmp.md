@@ -11,9 +11,9 @@ To enable SNMP on IP Fabric appliance do following steps:
 3. Click **disabled** button to enable it
 4. Select **Version** (2c or 3 is supported)
 
-    ![SNMP](snmp/640614407.png)
+![SNMP](snmp/640614407.png)
 
-!!! check Security note
+!!! check "Security note"
 
     Only IP address specified in the **Host IP** field is enabled to have access to SNMP 161/udp.
 
@@ -25,11 +25,11 @@ If you selected **version 2c** please configure:
 4. **Community string** - must match community string configured on monitoring server
 5. Click **Save**
 
-    ![Version 2c](snmp/640286725.png)
+![Version 2c](snmp/640286725.png)
 
 If you selected **version 3** please configure:
 
-!!! info SNMP v3
+!!! info "SNMP v3"
 
     For user authentication only SHA is supported. For data privacy AES is used.
 
@@ -38,10 +38,8 @@ If you selected **version 3** please configure:
 3. **System Contact** - contact to responsible person or department
 4. **Username** - SNMP v3 user
 5. **Passphrase** - authentication and privacy passphrase
-
-	!!! Info
-		Passphrase can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
-
 6. Click **Save**
 
-    ![Version 3](snmp/640516117.png)
+![Version 3](snmp/640516117.png)
+
+--8<-- "snippets/username_password_regex.md"
