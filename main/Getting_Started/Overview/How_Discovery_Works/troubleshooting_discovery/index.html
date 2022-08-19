@@ -304,6 +304,11 @@ differently in you production deployment, than described here.
 <nav aria-label="Troubleshooting Missing Devices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#vendor-specific-troubleshooting">
+    Vendor Specific Troubleshooting
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#technology-tables">
     Technology Tables
   </a>
@@ -1871,6 +1876,11 @@ differently in you production deployment, than described here.
 <nav aria-label="Troubleshooting Missing Devices" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#vendor-specific-troubleshooting">
+    Vendor Specific Troubleshooting
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#technology-tables">
     Technology Tables
   </a>
@@ -1917,74 +1927,73 @@ differently in you production deployment, than described here.
 <h1 id="troubleshooting-discovery">Troubleshooting Discovery</h1>
 <p>Documentation on most commonly seen discovery issues and how to resolve them.</p>
 <h2 id="settings">Settings</h2>
-<p>The below topics will be describing the Global Settings however users
-can make adjustments to specific Snapshots. Making changes to the Global
-Settings and then testing them in a previous snapshot may not apply your
-changes. Here are two methods for testing settings.</p>
+<p>The below topics will be describing the Global Settings however users can make
+adjustments to specific Snapshots. Making changes to the Global Settings and
+then testing them in a previous snapshot may not apply your changes. Here are
+two methods for testing settings.</p>
 <ul>
 <li>
 <p>Make your changes in the Snapshot specific Settings and then
-  <code>Add Devices</code> (or <code>Rediscover timed out devices</code>). If these changes
-  fixed your issue, then apply them globally.</p>
+  <code>Add Devices</code> (or <code>Rediscover timed out devices</code>). If these changes fixed your
+  issue, then apply them globally.</p>
 <p><a class="glightbox" href="../troubleshooting/2953642050.png"><img alt="" src="../troubleshooting/2953642050.png"/></a></p>
 </li>
 </ul>
 <ul>
 <li>
-<p>Make your changes globally and then run a new Snapshot. You could
-  also filter the allowed discovery scope in the Snapshot specific
-  Settings to a subset of /32 addresses to speed up discovery. In the
-  example below I am telling discovery only to test 1 device.</p>
+<p>Make your changes globally and then run a new Snapshot. You could also filter
+  the allowed discovery scope in the Snapshot specific Settings to a subset of
+  <code>/32</code> addresses to speed up discovery. In the example below I am telling
+  discovery only to test 1 device.</p>
 <p><a class="glightbox" href="../troubleshooting/2953314353.png"><img alt="" src="../troubleshooting/2953314353.png"/></a></p>
 </li>
 </ul>
 <h3 id="discovery-seed">Discovery Seed</h3>
 <p><a class="glightbox" href="../troubleshooting/2953281573.png"><img alt="" src="../troubleshooting/2953281573.png"/></a></p>
-<p>These are self-defined IP Addresses that IP Fabric will try to connect
-to and discover. If a device is successfully discovered it will check
-the settings in the Discovery Tasks Settings to see what technologies to
-use to discover neighbors.</p>
-<p>If you have remote locations possibly through a WAN that is not owned by
-you, this would be the location to put the IP Addresses of some of your
-devices so IP Fabric can discover and crawl that site.</p>
+<p>These are self-defined IP Addresses that IP Fabric will try to connect to and
+discover. If a device is successfully discovered it will check the settings in
+the Discovery Tasks Settings to see what technologies to use to discover
+neighbors.</p>
+<p>If you have remote locations possibly through a WAN that is not owned by you,
+this would be the location to put the IP Addresses of some of your devices so IP
+Fabric can discover and crawl that site.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Adding new devices here will only discover them if <code>Limit discovery to already discovered devices</code> is not enabled in the Discovery Tasks Settings.</p>
 </div>
 <h3 id="management-discovery-history">Management &gt; Discovery History</h3>
 <p><a class="glightbox" href="../troubleshooting/2952626286.png"><img alt="" src="../troubleshooting/2952626286.png"/></a></p>
-<p>The Discovery History table is also used by IP Fabric as the seed
-addresses. Once a device is discovered in a snapshot it will be placed
-in this table for use in other snapshots.</p>
+<p>The Discovery History table is also used by IP Fabric as the seed addresses.
+Once a device is discovered in a snapshot it will be placed in this table for
+use in other snapshots.</p>
 <ul>
-<li>The username last successfully used for a device will be recorded
-  here and be the first one tried in a future snapshot. If
-  unsuccessful it will check the <em>Settings &gt; Authentication</em> list and
-  go back through the decision tree. This may cause the next snapshot
-  to take longer due to authentication failures but once this table is
-  updated with the new username the discovery time will return to
-  normal.</li>
+<li>The username last successfully used for a device will be recorded here and be
+  the first one tried in a future snapshot. If unsuccessful it will check the _
+  Settings &gt; Authentication_ list and go back through the decision tree. This
+  may cause the next snapshot to take longer due to authentication failures but
+  once this table is updated with the new username the discovery time will
+  return to normal.</li>
 </ul>
 <ul>
-<li>If you have removed devices from your network IP Fabric will still
-  try to connect to them because the IP addresses are defined as seeds
-  in this Discovery History table. To speed up discovery you could
-  delete stale records. You can also filter on <code>Last discovery time</code>
+<li>If you have removed devices from your network IP Fabric will still try to
+  connect to them because the IP addresses are defined as seeds in this
+  Discovery History table. To speed up discovery you could delete stale records.
+  You can also filter on <code>Last discovery time</code>
   and delete records older than X months.</li>
 </ul>
 <h3 id="settings-advanced">Settings &gt; Advanced</h3>
 <h4 id="discovery-ip-scope">Discovery – IP Scope</h4>
 <p><a class="glightbox" href="../troubleshooting/2952888388.png"><img alt="" src="../troubleshooting/2952888388.png"/></a></p>
-<p>IP Scope tells IP Fabric which networks to include or exclude in the
-discovery process. The default is set to include everything (0.0.0.0/0).
-When IP Fabric discovers a neighbor in this network it will try to log
-in and discover it. If the IP address is not in the include or is in the
-exclude list then it will not try to connect and discover the device.</p>
-<p>The exclude list is a great way to exclude networks managed by a
-different department or perhaps vendors or devices that IPF does not
-currently support. For instance a customer had discovery hanging due to
-it trying to log into a terminal server which IPF could not understand;
-once added to the exclude list the discovery completed successfully.</p>
+<p>IP Scope tells IP Fabric which networks to include or exclude in the discovery
+process. The default is set to include everything (0.0.0.0/0). When IP Fabric
+discovers a neighbor in this network it will try to log in and discover it. If
+the IP address is not in the include or is in the exclude list then it will not
+try to connect and discover the device.</p>
+<p>The exclude list is a great way to exclude networks managed by a different
+department or perhaps vendors or devices that IPF does not currently support.
+For instance a customer had discovery hanging due to it trying to log into a
+terminal server which IPF could not understand; once added to the exclude list
+the discovery completed successfully.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Do not confuse the Include List with the Seed list. Include will only
@@ -1994,97 +2003,100 @@ hosts so having a /16 here will not send massive amounts of pings.</p>
 </div>
 <h4 id="discovery-tasks-settings">Discovery Tasks Settings</h4>
 <p><a class="glightbox" href="../troubleshooting/2953445432.png"><img alt="" src="../troubleshooting/2953445432.png"/></a></p>
-<p>Discovery Tasks Settings is where the magic happens for automated
-discovery of new devices on your network.</p>
+<p>Discovery Tasks Settings is where the magic happens for automated discovery of
+new devices on your network.</p>
 <ul>
 <li>
 <p><strong>If you are not finding new devices in your snapshot ensure</strong>
-<code>Limit discovery to already discovered devices</code> <strong>is not enabled</strong>.
-  If this is enabled then only devices in the <em>Discovery History</em>
-  table will be added to the snapshot and no new devices (<strong>even if
-  those devices are manually added to the Settings &gt; Discovery
-  Seed</strong>).</p>
-<ul>
-<li>If you want to limit to only discovered devices but want to add
-  new devices this is still possible by going to <em>Discovery
-  Snapshot</em> and manually adding devices into a snapshot which it
-  will then be added to the <em>Discovery History</em> table and picked
-  up in future snapshots.</li>
-</ul>
+<code>Limit discovery to already discovered devices</code> <strong>is not enabled</strong>. If this is
+  enabled then only devices in the <em>Discovery History</em>
+  table will be added to the snapshot and no new devices (<strong>even if those
+  devices are manually added to the Settings &gt; Discovery Seed</strong>).</p>
+<p>If you want to limit to only discovered devices but want to add new
+devices this is still possible by going to <em>Discovery Snapshot</em> and
+manually adding devices into a snapshot which it will then be added to
+the <em>Discovery History</em> table and picked up in future snapshots.</p>
 </li>
 </ul>
 <ul>
-<li><code>xDP (neighbors)</code> signifies using CDP or LLDP information to
-  discover devices in your network.</li>
+<li><code>xDP (neighbors)</code> signifies using CDP or LLDP information to discover devices
+  in your network.</li>
 </ul>
 <ul>
-<li><code>ARP</code> uses the ARP and MAC Address OUI information to find devices.
-  If the OUI is set for <code>Enabled for discovery</code> in the <em>Settings &gt;
-  OUI</em> table then IP Fabric will attempt to connect and discover the
-  device.</li>
+<li><code>ARP</code> uses the ARP and MAC Address OUI information to find devices. If the OUI
+  is set for <code>Enabled for discovery</code> in the <em>Settings &gt;
+  OUI</em> table then IP Fabric will attempt to connect and discover the device.</li>
 </ul>
 <ul>
 <li><code>Routing Table</code> will try to connect to next-hop devices.</li>
 </ul>
 <ul>
-<li><code>Trace</code> signifies using traceroute to RFC1918 addresses to help
-  discover your internal network. This is helpful for the VM as IPF
-  might not be able to log into the default gateway (vRouter) but
-  using traceroute it can find some other physical devices in the
-  network to use as starting points.</li>
+<li><code>Trace</code> signifies using traceroute to RFC1918 addresses to help discover your
+  internal network. This is helpful for the VM as IPF might not be able to log
+  into the default gateway (vRouter) but using traceroute it can find some other
+  physical devices in the network to use as starting points.</li>
 </ul>
 <h4 id="sshtelnet">SSH/Telnet</h4>
 <p><a class="glightbox" href="../troubleshooting/2953642017.png"><img alt="" src="../troubleshooting/2953642017.png"/></a></p>
-<p>Please see <a href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">SSH/TELNET</a> for explanation of these settings.</p>
+<p>Please see <a href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">SSH/TELNET</a> for
+explanation of these settings.</p>
 <h4 id="vendors-api">Vendors API</h4>
 <p><a class="glightbox" href="../troubleshooting/2953740315.png"><img alt="" src="../troubleshooting/2953740315.png"/></a></p>
-<p>Please see <a href="../../../../IP_Fabric_Settings/advanced/Vendors_API/">Vendors API</a> as each vendor has different
-requirements.</p>
+<p>Please
+see <a href="../../../../IP_Fabric_Settings/advanced/Vendors_API/">Vendors API</a> as
+each vendor has different requirements.</p>
 <h3 id="settings-authentication">Settings &gt; Authentication</h3>
 <p><a class="glightbox" href="../troubleshooting/2952888380.png"><img alt="" src="../troubleshooting/2952888380.png"/></a></p>
-<p>Authentication is where you define the username and password IP Fabric
-uses to connect a physical device (devices discovered through the API
-are managed through <em>Advanced &gt; Vendors API</em>). Ensure that you have a
-username configured for all scopes of the network you wish to discover
-or set to the default of <code>0.0.0.0/0</code>.</p>
+<p>Authentication is where you define the username and password IP Fabric uses to
+connect a physical device (devices discovered through the API are managed
+through <em>Advanced &gt; Vendors API</em>). Ensure that you have a username configured
+for all scopes of the network you wish to discover or set to the default
+of <code>0.0.0.0/0</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you are having issues with Configuration Backup not pulling data ensure that you have <code>Use for configuration management</code> set on the proper usernames.</p>
+<p>If you are having issues with Configuration Backup not pulling data ensure
+that you have <code>Use for configuration management</code> set on the proper usernames.</p>
 </div>
-<p>Further information can be located at <a href="../../../../IP_Fabric_Settings/authentication/">Authentication</a>.</p>
+<p>Further information can be located
+at <a href="../../../../IP_Fabric_Settings/authentication/">Authentication</a>.</p>
 <h2 id="troubleshooting-missing-devices">Troubleshooting Missing Devices</h2>
-<p>There can been a numerous amount of reason why IP Fabric did not
-discover a device from Day 0 or incorrectly configured devices, AAA
-outage, or insufficient authorization privileges to name a few. First we
-will take a look at some tables to help you find these and then show how
-to use the <em>Connectivity Report</em> to debug them.</p>
+<p>There can been a numerous amount of reason why IP Fabric did not discover a
+device from Day 0 or incorrectly configured devices, AAA outage, or insufficient
+authorization privileges to name a few. First we will take a look at some tables
+to help you find these and then show how to use the <em>Connectivity Report</em> to
+debug them.</p>
+<h3 id="vendor-specific-troubleshooting">Vendor Specific Troubleshooting</h3>
+<p>You may notice that some devices of a certain vendor are not being discovered.
+Please read through the <a href="../../../../releases">Known Issues</a> to ensure a bug has
+not been already raised or a fix suggested. For instance some Firewall vendors
+require elevated or <code>admin</code> profiles in order to pull all data.</p>
 <h3 id="technology-tables">Technology Tables</h3>
 <h4 id="cdplldp-unmanaged-neighbors">CDP/LLDP &gt; Unmanaged neighbors</h4>
 <p><a class="glightbox" href="../troubleshooting/2952560777.png"><img alt="" src="../troubleshooting/2952560777.png"/></a></p>
-<p>This is the best table to start as not only do you see the local host
-and interface names but also the remote hostname, interface name, and
-remote IP. Since devices can connect to multiple other devices it is
-possible of duplicate remote hostnames in this list.</p>
-<p>You are able to export this view to CSV and then remove duplicate
-hostnames to get a unique list of devices. For instance in this demo I
-see a total of 59 unmanaged neighbors but only 40 unique remote
-hostnames.</p>
+<p>This is the best table to start as not only do you see the local host and
+interface names but also the remote hostname, interface name, and remote IP.
+Since devices can connect to multiple other devices it is possible of duplicate
+remote hostnames in this list.</p>
+<p>You are able to export this view to CSV and then remove duplicate hostnames to
+get a unique list of devices. For instance in this demo I see a total of 59
+unmanaged neighbors but only 40 unique remote hostnames.</p>
 <h4 id="interfaces-connectivity-matrix-unmanaged-neighbors-detail">Interfaces &gt; Connectivity matrix &gt; Unmanaged Neighbors Detail</h4>
 <p><a class="glightbox" href="../troubleshooting/2952921141.png"><img alt="" src="../troubleshooting/2952921141.png"/></a></p>
-<p>This table shows you unmanaged neighbors based many protocols and has a
-built-in default Intent Check for you.</p>
+<p>This table shows you unmanaged neighbors based many protocols and has a built-in
+default Intent Check for you.</p>
 <ul>
-<li><span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP neighbors
-  (<code>cdp|lldp|mndp</code>). This does not provide you with the remote
-  hostname which is why it is recommended to look at this table
-  second.</li>
+<li><span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP
+  neighbors
+  (<code>cdp|lldp|mndp</code>). This does not provide you with the remote hostname which is
+  why it is recommended to look at this table second.</li>
 </ul>
 <ul>
 <li>
-<p><span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior Gateway Protocols
-  (<code>eigrp|ospf|rip|isis|pim|vxlan|cef</code>). It is specified as such
-  because if you have a neighbor adjacency with an iGP it is assumed
-  it is under the control of your network.</p>
+<p><span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior
+  Gateway Protocols
+  (<code>eigrp|ospf|rip|isis|pim|vxlan|cef</code>). It is specified as such because if you
+  have a neighbor adjacency with an iGP it is assumed it is under the control of
+  your network.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Check this table for help locating rogue devices in your network.</p>
@@ -2092,17 +2104,18 @@ built-in default Intent Check for you.</p>
 </li>
 </ul>
 <ul>
-<li><span style="color: blue;">BLUE</span>: Is the default rule if the protocol does not match any
-  other regex.</li>
+<li><span style="color: blue;">BLUE</span>: Is the default rule if the protocol
+  does not match any other regex.</li>
 </ul>
 <ul>
-<li><span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway Protocol BGP.</li>
+<li><span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway
+  Protocol BGP.</li>
 </ul>
 <h3 id="auditing-using-an-external-network-management-system">Auditing using an External Network Management System</h3>
-<p>Perhaps you would like to audit IP Fabric (or vice versa) using an NMS.
-This can be done as all the tables can return the data in CSV format via
-the UI or JSON using the API. This would perhaps help you find other
-missing devices IP Fabric could not discover.</p>
+<p>Perhaps you would like to audit IP Fabric (or vice versa) using an NMS. This can
+be done as all the tables can return the data in CSV format via the UI or JSON
+using the API. This would perhaps help you find other missing devices IP Fabric
+could not discover.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Don’t forget to audit your NMS or alarming systems inventory from what IP
@@ -2141,38 +2154,38 @@ vdoms, etc.</p>
 <h3 id="connectivity-report">Connectivity Report</h3>
 <p><a class="glightbox" href="../troubleshooting/2953314341.png"><img alt="" src="../troubleshooting/2953314341.png"/></a>
 <a class="glightbox" href="../troubleshooting/2953642038.png"><img alt="" src="../troubleshooting/2953642038.png"/></a></p>
-<p>The <em>Connectivity Report</em> is a per Snapshot report stating the successes
-or errors of IP addresses that IP Fabric tried to discover. Once you
-have a list of IP Addresses from the unmanaged neighbor tables above or
-perhaps an external Network Management System this is where you would
-start your troubleshooting process.</p>
-<p>The most common reason why a new installation of IP Fabric will not
-connect is due to the <code>connect ECONNREFUSED XX.XX.XX.XX:22</code> error which
-signifies the traffic is being blocked by an ACL or Firewall. This is
-why it is recommend having IP Fabric in your management subnet which is
-already allowed for remote access to devices so you do not have to
-re-configure all your ACLs. Another option is to use a jumphost and
-documentation can be found at <a href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">Jumphost settings</a>.</p>
+<p>The <em>Connectivity Report</em> is a per Snapshot report stating the successes or
+errors of IP addresses that IP Fabric tried to discover. Once you have a list of
+IP Addresses from the unmanaged neighbor tables above or perhaps an external
+Network Management System this is where you would start your troubleshooting
+process.</p>
+<p>The most common reason why a new installation of IP Fabric will not connect is
+due to the <code>connect ECONNREFUSED XX.XX.XX.XX:22</code> error which signifies the
+traffic is being blocked by an ACL or Firewall. This is why it is recommend
+having IP Fabric in your management subnet which is already allowed for remote
+access to devices so you do not have to re-configure all your ACLs. Another
+option is to use a jumphost and documentation can be found
+at <a href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">Jumphost settings</a>.</p>
 <p>Another common error is due to Authentication or Authorization errors. Please
 ensure that the username configured has the correct permissions. There is also
 <a href="https://matrix.ipfabric.io">a list of CLI commands</a> used which can help ensure
 authorization is correct.</p>
-<p>If you find other errors you can refer to this document <a href="../common_problems/connectivity_report/">Connectivity
-report - Type of Error</a> and the CLI
-output of the device is usually helpful as well.</p>
-<p>If you need further assistance please feel free to reach out to your
-Systems Engineer or open a ticket following the <a href="../../../../support/techsupport/">Technical
-Support</a> instructions.</p>
-<p>Finally another option for testing devices is to log into the IP Fabric
-CLI using the <code>osadmin</code> account and manually trying SSH’ing into your
-devices preferably using the username and password the system was
-configured to use. If you cannot open a connection this is due to an
-external reason.</p>
-<p>Further information can be found at <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
+<p>If you find other errors you can refer to this
+document <a href="../common_problems/connectivity_report/">Connectivity report - Type of Error</a>
+and the CLI output of the device is usually helpful as well.</p>
+<p>If you need further assistance please feel free to reach out to your Systems
+Engineer or open a ticket following
+the <a href="../../../../support/techsupport/">Technical Support</a> instructions.</p>
+<p>Finally another option for testing devices is to log into the IP Fabric CLI
+using the <code>osadmin</code> account and manually trying SSH’ing into your devices
+preferably using the username and password the system was configured to use. If
+you cannot open a connection this is due to an external reason.</p>
+<p>Further information can be found
+at <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
 <h2 id="troubleshooting-configuration-management">Troubleshooting Configuration Management</h2>
 <p><a class="glightbox" href="../troubleshooting/2953740355.png"><img alt="" src="../troubleshooting/2953740355.png"/></a></p>
-<p>Configuration Management is a separate process from discovery. First a
-device must be discover in a Snapshot and placed in the <em>Management &gt;
+<p>Configuration Management is a separate process from discovery. First a device
+must be discover in a Snapshot and placed in the <em>Management &gt;
 Discovery History</em> table. Once in this table then next time IP Fabric is
 scheduled to pull configs it should be populated in the list.</p>
 <div class="admonition example">
@@ -2193,9 +2206,9 @@ scheduled to pull configs it should be populated in the list.</p>
 </div>
 <p>Other troubleshooting tips:</p>
 <ul>
-<li>Please ensure that in <em>Settings &gt; Authentication</em> you have enabled
-  the correct usernames to <code>Use for configuration management</code>, if no
-  usernames have this enabled then configs will not be backed up.</li>
+<li>Please ensure that in <em>Settings &gt; Authentication</em> you have enabled the correct
+  usernames to <code>Use for configuration management</code>, if no usernames have this
+  enabled then configs will not be backed up.</li>
 </ul>
 <ul>
 <li>Ensure the users have proper authorization for pulling configs.</li>
