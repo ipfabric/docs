@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.4.0" name="generator"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.4.2" name="generator"/>
 <title>Schedule System Backup - IP Fabric Documentation Portal</title>
 <link href="../../../../assets/stylesheets/main.69437709.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
@@ -1797,21 +1797,20 @@
 <li>Go to <strong>Settings → Advanced → System → Schedule system backup</strong>.</li>
 <li>Enable backup.</li>
 <li>Set a backup schedule. See example for "Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)".
-    <a class="glightbox" href="backup_schedule.png"><img alt="backup schedule" src="backup_schedule.png"/></a></li>
+   <a class="glightbox" href="backup_schedule.png"><img alt="backup schedule" src="backup_schedule.png"/></a></li>
 <li>Change <strong>Destination</strong> to <code>FTP</code> or <code>SFTP</code>.</li>
 <li>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.</li>
 <li>Enter <strong>Username</strong> to access FTP/SFTP server.</li>
-<li>
-<p>Enter <strong>Password</strong> to access FTP/SFTP server</p>
-<p>!!! Info
-      Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code>.</p>
-</li>
-<li>
-<p>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</p>
-</li>
+<li>Enter <strong>Password</strong> to access FTP/SFTP server</li>
+<li>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</li>
 <li>Click <strong>Save</strong>.</li>
 <li>IP Fabric tries to reach FTP/SFTP server with configured parameters.</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Username and Password character restrictions<p>Username must start with <code>A-Za-z</code> and can contain only <code>A-Za-z0-9</code>. </p>
+<p>Password can contain only the following characters <code>A-Za-z0-9.,/-_@%^:=+</code></p>
+</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>FTP/SFTP user needs read, write, list and delete permissions.</p>
