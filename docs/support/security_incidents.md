@@ -5,10 +5,11 @@
 If you have any information about potential security incidents relating to the IP Fabric product, please notify us in one of the following ways:
 
 - email: `security@ipfabric.io` or `support@ipfabric.io`
-- IP Fabric Help Center (IP Fabric Help Center(https://support.ipfabric.io))
+- [IP Fabric Help Center](https://support.ipfabric.io)
 - to the office phone `+420 720 022 997`
 
-In line with industry best practice, we also monitor standard data sources including (but not limited to): 
+In line with industry best practice, we also monitor standard data sources including (but not limited to):
+
 - Mitre CVE database for software vulnerabilities
 - `debian-security` mailing list
 - internal monitoring (doesn’t cover customers’ deployments)
@@ -29,8 +30,7 @@ Timeline and escalation path is as follows
 | 7.0 – 8.9  | High               | High       | Next working day         | CTO, VPE, SRE |
 | 9.0 – 10.0 | Critical           | Critical   | 4h during business hours | CTO, VPE, SRE |
 
- Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third party component on which there may be a dependency).  Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.
-
+Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third party component on which there may be a dependency). Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.
 
 ## Tracking
 
