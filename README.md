@@ -92,13 +92,40 @@ Please, make yourself familiar with [Material Reference Guide](https://squidfunk
 ## Live preview
 
 You can run live preview, which is super helpful when writing / editing the
-documentation. It is simple as equivalent of
+documentation. If you are IPFabric insider, it is simple as (check
+[GitLab container registry](https://docs.gitlab.com/ee/user/packages/container_registry/#authenticate-with-the-container-registry)
+documentation, if you don't have it authenticated)
 
 ```shell
-virtualenv -p python3 .venv && source .venv/bin/activate && pip3 install -r requirements.txt && mkdocs serve
+docker run -it --rm --name mkdocs -p 8000:8000 -v $(pwd):/docs registry.gitlab.com/autoboss/docs
+```
+
+If you don't have access to internal container image, please create your python
+virtual environment manually (use included `requirements.txt`) and run `mkdocs serve`.
+Please, be aware that you will have slightly different results to our production documentation as we
+are using [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
+
+# Docker image
+
+As mentioned in the Live preview section, we have a docker image which is used
+by CI pipeline for building the documentation site, as well as can be leveraged
+during writing the documentation to live preview.
+
+Main motivation behind the image is to allow for leveraging
+[MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/) without
+publishing its sources, while still allowing to publish source-code for our
+`docs`.
+
+## Updating container image
+
+```shell
+make docker-build
+make docker-push
 ```
 
 # `mike` cookbook
+
+You probably don't need to read this section :)
 
 `mike` is a build and version tool for MkDocs. It works by building the current
 checkout locally and then pushing it to appropriate directory under `gh-pages`
