@@ -97,7 +97,7 @@ documentation. If you are IPFabric insider, it is simple as (check
 documentation, if you don't have it authenticated)
 
 ```shell
-docker run -it --rm --name mkdocs -p 8000:8000 -v $(pwd):/docs registry.gitlab.com/autoboss/docs
+make serve
 ```
 
 If you don't have access to internal container image, please create your python

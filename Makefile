@@ -2,7 +2,7 @@ IMAGE=registry.gitlab.com/autoboss/docs
 TAG=8.4.2-insiders-4.22.0
 
 serve:
-	docker run -it --rm --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
+	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
 
 guard-%:
 	@ if [ -z "${${*}}" ]; then \
