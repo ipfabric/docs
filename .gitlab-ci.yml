@@ -15,7 +15,7 @@ build_main_pages:
     - mkdir -pvm 0700 .ssh
     - echo "$ssh_deploy_key" > .ssh/gitlab-ci
     - chmod 0400 .ssh/gitlab-ci
-    - git remote set-url origin "$(echo "$CI_REPOSITORY_URL" | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#')"
+    - git remote set-url origin "$(echo "$CI_REPOSITORY_URL" | sed -E 's#.*@([^/]+?(\:\d+)?)/#git@\1:#'"
   script:
     - git fetch origin gh-pages --depth=1
     - cp -v main_preamble.html overrides/main.html
