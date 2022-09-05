@@ -19,7 +19,7 @@ build_main_pages:
   script:
     - git fetch origin gh-pages --depth=1
     - cp -v main_preamble.html overrides/main.html
-    - mike deploy --push main
+    - mike deploy --config-file mkdocs_insiders.yml --push main
 
 strict_build_mr:
   stage: test
@@ -27,7 +27,7 @@ strict_build_mr:
     - merge_requests
   script:
     - export DOC_TARGET=`mktemp -d`
-    - mkdocs build -d "$DOC_TARGET" --strict
+    - mkdocs build -d "$DOC_TARGET" --strict --config-file mkdocs_insiders.yml
     - rm -rf "$DOC_TARGET"
 
 vale_mr:
