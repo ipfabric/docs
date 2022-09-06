@@ -131,6 +131,13 @@ You probably don't need to read this section :)
 checkout locally and then pushing it to appropriate directory under `gh-pages`
 branch.
 
+BEWARE introduction of MkDocs Material Insiders made things a bit more complicated.
+Make sure, that in case you need to run `mike` you either
+
+- use docker image, which includes insideres
+- use virtual environment created with `make mike`, which replaces `mkdocs-material` with
+  insiders edition.
+
 ## Why do we have `gh-pages` on GitLab?
 
 `mike` expects to be running on GitHub. GitHub uses `gh-pages` branch as a store
