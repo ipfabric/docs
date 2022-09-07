@@ -1,11 +1,10 @@
 # Users
 
-**Users** page enables you to create a new local user or modify existing users including
-default admin, LDAP and SSO accounts.
+**Users** page enables you to create or modify users including default admin, LDAP and SSO accounts.
 
 ## Add Local User
 
-To add new user fill the **Add Local User** form on **Users** page and click on **Save**.
+To add new user, fill the **Add Local User** form on **Users** page and click on **Save**.
 
 To allow user access to system is required to assign user one or more **Roles**.
 
@@ -17,7 +16,7 @@ To **add** or **modify** roles follow instructions at [Roles page](roles.md).
 
 ## List of Users
 
-**Users table** lists all local, LDAP and SSO users including their details and enables you to **modify** or **delete** them _(with exception for a user that is currently logged in. Currently logged user cannot delete her/himself)_.
+**Users table** lists all local, LDAP and SSO users including their details and enables you to **modify** or **delete** them _(exception: a user currently logged in cannot delete her/himself)_.
 
 ![Users Table](users_table.png)
 
@@ -27,8 +26,8 @@ To **add** or **modify** roles follow instructions at [Roles page](roles.md).
 
 	![Users Table Edit Local User](users_table_edit_local.png)
 
-2. Then to modify users details update data in **Edit User** form and click on **Update**.
-3. Or to modify users password fill in passwords in **Update Password** form and click on **Update Password**.
+2. Then to modify users details, update data in **Edit User** form and click on **Update**.
+3. Or to modify users password, fill in passwords in **Update Password** form and click on **Update Password**.
 
 	![Edit Local User](users_edit_local.png)
 
@@ -58,5 +57,5 @@ LDAP/SSO users have **Roles** assigned via LDAP and SSO Configurations, hence it
 
 ## Disable Local User Access
 
-To disable Local Users Access follow the steps in [Edit Local User](#edit-local-user) and remove all **Roles** assigned to that user.
+To disable Local Users Access, follow the steps in [Edit Local User](#edit-local-user) and remove all **Roles** assigned to that user.
 

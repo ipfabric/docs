@@ -3,9 +3,9 @@
 User synchronization or import capabilities **are not supported at
 this time**.
 
-LDAP hence work in an **on-demand** state -- **users are
-added** to the IP Fabric after they **log in for the first time** and **user
-group permissions** are also checked with **every login attempt**.
+LDAP works in an **on-demand** state -- **users are
+added** to IP Fabric after they **log in for the first time** and **user
+group permissions** are checked with **every login attempt**.
 
 ## Supported LDAP Servers Are:
 
@@ -14,7 +14,7 @@ group permissions** are also checked with **every login attempt**.
 
 ## Enable LDAP Authentication
 
-1.  Log in to the IP Fabric as a user with admin rights.
+1.  Log in to IP Fabric as a user with admin rights.
 2.  Go to **Settings → User Management → LDAP** menu.
 3.  Select **+Add Domain**.
 4.  Choose LDAP server type in the **Type** drop-down menu. Only
