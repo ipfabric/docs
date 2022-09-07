@@ -7,7 +7,7 @@ User management is accessible via **Settings → User Management** menu and cont
 - [Policies](policies.md)
 - [Roles](roles.md)
 
-IP Fabric supports also **Single Sign On (SSO)** authentication. However, it uses **Dex** (A Federated OpenID Connect Provider) and configuration requires besides configuration of Dex service access to 3rd party OpenID providers, hence its configuration is not included in UI.
+IP Fabric supports also **Single Sign On (SSO)** authentication. It uses **Dex** (A Federated OpenID Connect Provider) and requires configuration of Dex service to access 3rd party OpenID providers. This is not yet included in UI.
 
 For more information follow [Single Sign On (SSO) Authentication](sso.md).
 

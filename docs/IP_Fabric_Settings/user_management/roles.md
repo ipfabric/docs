@@ -2,7 +2,7 @@
 
 **Roles** enable users to perform actions on system resources (e.g. *user-management* role with assigned *team* policy enables users view, add, update and delete Users, Roles, Policies, LDAP Configuration).
 
-**Roles** page enables you to create a new roles or modify existing roles.
+**Roles** page enables you to create or modify roles.
 
 ## Add Role
 

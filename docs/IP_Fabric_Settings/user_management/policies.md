@@ -2,7 +2,7 @@
 
 **Policies** are sets of resources with their actions (e.g. *discovery* policy allows access to discovery api endpoints).
 
-**Policies** page enables you to create a new policies or modify existing policies.
+**Policies** page enables you to create or modify policies.
 
 ## Add Policy
 
