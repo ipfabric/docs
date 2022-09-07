@@ -1,4 +1,16 @@
 INHERIT: mkdocs.yml
+
 plugins:
-  - meta
-  - tags
+  - meta:
+  - mkdocs-dashomatic:
+  - search:
+  - tags:
+  - glightbox:
+      zoomable: true
+  - mike:
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+      canonical_version:
+        null # the version for <link rel="canonical">; `null`
+        # uses the version specified via `mike deploy`
