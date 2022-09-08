@@ -71,6 +71,9 @@ corresponds to `staticClient` in the Dex configuration).
     ]
     ```
 
+Multiple mappings with the same `groupName` will get merged (so the user will
+receive all corresponding roles on IP Fabric side).
+
 ### Static client
 
 Section `staticClients` contain configuration for the IP Fabric portal, which
