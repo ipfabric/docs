@@ -15,6 +15,8 @@ takes longer than subsequent loads, but all tables were built to handle a large 
 
 You can get a short description of the current table along with API examples via question mark button.
 
+![API Description](table_api_description.png)
+
 ### Export to CSV
 
 ![CSV Export](table_csv.png)
