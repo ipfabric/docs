@@ -1,8 +1,8 @@
 # Overview
 
-The following API endpoints are available in IP Fabric. Descriptions and
-allowed methods are coming soon. For more information about IP Fabric
-API, please visit [generated IP Fabric API documentation](../api/index.html).
+The following API endpoints are available in IP Fabric. Descriptions and allowed
+methods are coming soon. For more information about IP Fabric API, please
+visit [generated IP Fabric API documentation](../api/index.html).
 
 !!! example "API Blog Posts"
 
@@ -59,27 +59,28 @@ calls). But API may break between major releases.
 We call major release a release which introduces some complex functionality.
 This typically means a large code refactoring, changes of data model etc. took
 place. Keeping the backwards compatibility is frequently not feasible in such
-cases (for example v3 brought support for snapshots, v4 brought graphs, v5
-RBAC).
+cases (for example v3 brought support for snapshots, v4 brought graphs, v5 RBAC)
+.
 
 Naturally backwards compatible changes (typically addition of a new attribute)
 don’t need to be gated and can appear in responses even when older API version
 is used within the request.
 
-Changes and depreciations are communicated via API documentation and [Release
-Notes](../releases/index.md). We will mark attributes as `deprecated: true` in
-the OpenAPI schema, when we fully migrate to OpenAPI 3.0+ specification.
+Changes and depreciations are communicated via API documentation
+and [Release Notes](../releases/index.md). We will mark attributes
+as `deprecated: true` in the OpenAPI schema, when we fully migrate to OpenAPI
+3.0+ specification.
 
-Responses made with `minor < release_minor` will contain a custom header
-warning client about use of potentially old API. We leverage the [IETF Draft
-for Deprecation header](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header).
-It is included, and set to `true` (`Deprecation: true`) in every response to
+Responses made with `minor < release_minor` will contain a custom header warning
+client about use of potentially old API. We leverage
+the [IETF Draft for Deprecation header](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
+. It is included, and set to `true` (`Deprecation: true`) in every response to
 call made with older then current API version.
 
 Requests made with `major < release_major` (obsolete version) will be refused
-with HTTP code `410 Gone` (also `406 Not Acceptable` would be reasonable, but
-we explicitly mention this in the apidoc in relationship with `Accept` header,
-so not to confuse these two the `410` was selected).
+with HTTP code `410 Gone` (also `406 Not Acceptable` would be reasonable, but we
+explicitly mention this in the apidoc in relationship with `Accept` header, so
+not to confuse these two the `410` was selected).
 
 Requests made with API version newer than the currently supported version are
 also refused with `410 Gone` (while `404` or `406` would be probably closer
@@ -104,16 +105,6 @@ version when moving to the new major release only. Frequently, the client code
 is actually not going to change except of the API version. Thus we recommend
 using a global constant for it.
 
-## API Authentication
-
-Majority of API calls need to be authenticated. API Token needs to be passed as
-a request header
-
-```http
-Content-Type: application/json
-X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI
-```
-
 ## Technology Table Endpoints
 
 The technology tables use `POST` requests **only** for reading information and
@@ -137,12 +128,14 @@ exposes the endpoints (can be used with filters as well).
 ```
 
 - `columns` -- specifies columns that we request for the endpoint
-- `filters` -- filtering options, for any column or intent
-  verification
-  `{"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}`(optional)
+- `filters` -- filtering options, for any column or intent verification
+  `{"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}`(
+  optional)
 - `pagination` - specifies the pagination and response limits
   `{"limit":26,"start":0}` (optional)
-- `snapshot` -- defines snapshot ID or we can use: `$last`, `$prev`, `$lastlocked`
+- `snapshot` -- defines snapshot ID or we can use: `$last`, `$prev`
+  , `$lastlocked`
 - `reports` -- Intent rules definition (optional)
 
-For more information, please, see [Request payload in generated API documentation](../api/#header-request-payload).
+For more information, please,
+see [Request payload in generated API documentation](../api/#header-request-payload).
