@@ -1,8 +1,19 @@
 # Overview
 
-The following API endpoints are available in IP Fabric. Descriptions and allowed
-methods are coming soon. For more information about IP Fabric API, please
-visit [generated IP Fabric API documentation](../api/index.html).
+IP Fabric is an API first platform; anything that can be accomplished via
+the web GUI can be automated against the API.  The documentation located here
+is meant to get you started working with API and give you a tutorial on how
+it works.  
+
+Many of the tables within IP Fabric have a `?` which provides a description of
+how to interact with the API, the data required in the payload, and the endpoint
+to send the request to.  This is the easiest way to learn how to use the API
+and for more information please see 
+[Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description).
+
+Another option is using the network viewer in
+the web browser's `Developers Tools` which will show you the endpoints and data
+required to make a successful call to the platform.
 
 !!! example "API Blog Posts"
 
