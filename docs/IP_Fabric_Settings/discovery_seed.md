@@ -1,5 +1,7 @@
 # Discovery Seed
 
+A discovery seed is a device from which IP Fabric begins the auto-discovery process. These IPs can be device management IP addresses or networks.
+
 If you know a particular starting point for discovering the network, the
 information can be entered at **Settings → Discovery Seed**. This option
 does not exclude any networks from discovery.

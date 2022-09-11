@@ -1,5 +1,11 @@
 # Site Separation
 
+Sites are separated collections of devices. Rule precedence is defined by the order from top to bottom.
+
+The site can be a branch, a factory, a production floor, a campus, or anything that represents a site from customer’s point of view.
+
+By default, site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at site’s edge is not accessible.
+
 ## Regular Expression Site Separation
 
 !!! info
