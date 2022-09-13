@@ -13,7 +13,7 @@ Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for
 
 For the CLI (SSH/Telnet) discovery, the Login IP represents the IP address that platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore different logic described below is used to assign Login IP parameter for Meraki devices in the main inventory.
 
-``` bash
+```bash
 LAN IP is considered to have the highest priority
 ------- key --> 'lanIp'
 wan1Ip has the 2nd highest priority
@@ -25,6 +25,7 @@ publicIp has the lowest priority
 ```
 
 !!! info
+
     The `publicIp` parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device's public IP in the dashboard.
 
 To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker or Log File from the device:
@@ -33,7 +34,7 @@ To understand what is being sent from Meraki’s Dashboard, we need to look into
 
 The Tasker file contains complete communication between IP Fabric and Meraki Dashboard. We can use the device hostname to locate the JSON source:
 
-``` js
+```js
 {
    "name":"mx01-dl1",
    "serial":"Q2QN-Q6EY-NP7J",
