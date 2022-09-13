@@ -1,11 +1,11 @@
-IP Fabric Documentation Project
+# IP Fabric Documentation Project
 
 We are using [MkDocs](https://www.mkdocs.org/) with an excellent [Material for
 MkDocs](https://squidfunk.github.io/mkdocs-material/). Last, but not least, is
 [mike](https://github.com/jimporter/mike), which is a tool for building and
 publishing different versions of the documentation.
 
-# Release process
+## Release process
 
 One of the main motivations for migration towards Markdown-based documentation
 is ability to follow standard development model. Thus any update to the
@@ -21,9 +21,9 @@ documentation happens as follows:
 - `mike` is then used by repository maintainers to push a new version release to
   the documentation web. (See the `mike` section below.)
 
-# Writing documentation
+## Writing documentation
 
-## Style Guide
+### Style Guide
 
 - Make sure you use relative links, otherwise you'd break versioned links.
 - Make sure your links work - esp. please make sure your internal links are
@@ -41,7 +41,7 @@ documentation happens as follows:
 
 TODO: take a look at e.g. https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
 
-## CI/CD
+### CI/CD
 
 We use [vale](https://github.com/errata-ai/vale) to help you keep consistent
 documentation style. It keeps an eye on your choice of words, tenses, sentence
@@ -53,7 +53,7 @@ during MR to avoid adding new problems.
 We also build the documentation during CI/CD which means that internal links
 are being validated.
 
-## General recommendations
+### General recommendations
 
 There are some great resource on how to write a good documentation out on
 Interwebs. Good starting points:
@@ -61,7 +61,7 @@ Interwebs. Good starting points:
 - [Google's Technical Documentation Style Guide](https://developers.google.com/style)
 - [Google's Technical Writing Course](https://developers.google.com/tech-writing)
 
-## Repository layout
+### Repository layout
 
 All the documents live under `docs` directory. Directories are used to create
 sections. Please, pay attention to naming. We have opted for automated content
@@ -77,7 +77,7 @@ similar in other documentation builders (except Sphinx). You can read more at
 [mkdocs documentation on file
 layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
-## Writing your documents
+### Writing your documents
 
 Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
 with some helpful extensions. List of enabled extensions is at `mkdocs.yml`
@@ -89,7 +89,7 @@ under `markdown_extensions` section.
 
 Please, make yourself familiar with [Material Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/) and [MkDocs Markdown Guide](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown).
 
-## Live preview
+### Live preview
 
 You can run live preview, which is super helpful when writing / editing the
 documentation. If you are IPFabric insider, it is simple as (check
@@ -105,7 +105,7 @@ virtual environment manually (use included `requirements.txt`) and run `mkdocs s
 Please, be aware that you will have slightly different results to our production documentation as we
 are using [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
 
-# Docker image
+## Docker image
 
 As mentioned in the Live preview section, we have a docker image which is used
 by CI pipeline for building the documentation site, as well as can be leveraged
@@ -116,14 +116,14 @@ Main motivation behind the image is to allow for leveraging
 publishing its sources, while still allowing to publish source-code for our
 `docs`.
 
-## Updating container image
+### Updating container image
 
 ```shell
 make docker-build
 make docker-push
 ```
 
-# `mike` cookbook
+## `mike` cookbook
 
 You probably don't need to read this section :)
 
@@ -138,7 +138,7 @@ Make sure, that in case you need to run `mike` you either
 - use virtual environment created with `make mike`, which replaces `mkdocs-material` with
   insiders edition.
 
-## Why do we have `gh-pages` on GitLab?
+### Why do we have `gh-pages` on GitLab?
 
 `mike` expects to be running on GitHub. GitHub uses `gh-pages` branch as a store
 for files being deployed to the static website. GitLab has a different approach
@@ -174,7 +174,7 @@ File `versions.json` contains information about published versions. This is
 consumed by the Material Theme to render version switcher at the top of the
 screen.
 
-## Release a new version of documentation
+### Release a new version of documentation
 
 Please, be careful, running `mike` with `--push` will result in immediate
 changes into the repository (no reviews and such), as described in the taken
@@ -191,7 +191,7 @@ just need to do the following:
   - updates alias `latest` to point to newly created `4.6`
   - push all commits which were made on `gh-pages` to the origin
 
-## Release an update to existing version
+### Release an update to existing version
 
 Let's assume, that our latest version is `4.6`. But we have found a serious
 issue with documentation for version `3.8` and we want to update it.
@@ -199,18 +199,17 @@ issue with documentation for version `3.8` and we want to update it.
 - Create a new branch from the tag, like `git switch -c update_3.8 3.8`.
 - Make all your changes. Push branch to `origin`.
 - Don't merge it into `main`!
-- Mark the new release commit, like `git tag -f 3.8`, you need to delete
-  the remote tag as well (`git push origin :v3.8`).
+- Mark the new release commit, like `git tag -f 3.8-2`
 - Push everything to `origin` (don't forget `git push tags --all`).
 - Update the released documentation with `mike deploy --push 3.8`.
 - agrr, profit!
 
-## Removing old release
+### Removing old release
 
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!
 
-## Updating low-level release notes from JIRA
+### Updating low-level release notes from JIRA
 
 There is a script `jira_release_notes.py` which will refresh all low-level
 release notes from JIRA. There are certain shortcuts, like hard-coded
