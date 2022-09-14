@@ -8,7 +8,7 @@ After logging in as the `osadmin` user, go to **Create admin** menu and set
 
 !!! Info
 
-	No user to the main GUI is present by default on a clean IP Fabric installation. It is mandatory to create a new local administrator account.
+	By default there is no user to present to the main GUI on a clean IP Fabric installation. It is mandatory to create a new local administrator account.
 
 ![Creating new admin user](admin_create_new.png)
 
@@ -16,7 +16,7 @@ With this new account, you will be able to log in to the main IP Fabric user
 interface and change a password to the default `admin` account or delete
 it. This can be done in **Setting → User Management** menu.
 
-Also, other local user accounts can be created here.
+In addition, other local user accounts can be created here.
 
 ![Creating a new user account](modify_local_accounts.png)
 
@@ -36,7 +36,7 @@ If the license installation fails, contact the IP Fabric support team.
 ![IPF License 1](ui_license_1.png)
 ![IPF License 2](ui_license_2.png)
 
-Once the license is valid, the system will present a login screen.
+Once the license is validated, the system will present a login screen.
 
 Login with the account created in [Creating The First IP Fabric User](#creating-the-first-ip-fabric-user)
 
