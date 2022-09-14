@@ -10,6 +10,6 @@ Afterward, choose Ruckus Virtual SmartZone from the list and fill in
 
 - **Username and password** used to log in to the Virtual SmartZone - user account needs to have rights to list zone configurations
 
-- **API Version** -- at the moment we support only version `9.1` which covers Virtual SmartZone v5 and v6
+- **API Version** -- at the moment we support only version `9.1` which covers Virtual SmartZone v5.2.1+ and v6
 
 - **Base URL** of Virtual SmartZone (`https://virtual-smart-zone:8443`)
