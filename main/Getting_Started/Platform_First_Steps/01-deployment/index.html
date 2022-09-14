@@ -440,16 +440,16 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-to-nutanix-virtual-machine">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-to-nutanix">
 <span class="md-ellipsis">
-      Deploying to Nutanix Virtual Machine
+      Deploying a Virtual Machine to Nutanix
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-on-kvm-virtual-machine">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-on-kvm">
 <span class="md-ellipsis">
-      Deploying on KVM Virtual Machine
+      Deploying a Virtual Machine on KVM
     </span>
 </a>
 </li>
@@ -2536,16 +2536,16 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-to-nutanix-virtual-machine">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-to-nutanix">
 <span class="md-ellipsis">
-      Deploying to Nutanix Virtual Machine
+      Deploying a Virtual Machine to Nutanix
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-on-kvm-virtual-machine">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-on-kvm">
 <span class="md-ellipsis">
-      Deploying on KVM Virtual Machine
+      Deploying a Virtual Machine on KVM
     </span>
 </a>
 </li>
@@ -2588,7 +2588,7 @@ differently in you production deployment, than described here.
 <p>The <code>QCOW2</code> disk image file can be converted to different formats.
 Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
 <ol>
-<li>Download <code>ipfabric-*.qcow2</code> from official source.</li>
+<li>Download <code>ipfabric-*.qcow2</code> from the official source.</li>
 <li>Convert <code>QCOW2</code> image to <code>VHDX</code> (Be sure to change the filenames in the command examples below.) <ul>
 <li>Windows instructions:<ol>
 <li>Download <a href="https://cloudbase.it/qemu-img-windows/">qemu-img-windows</a></li>
@@ -2620,18 +2620,18 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <p><a class="glightbox" href="../hyperv_networking.png"><img alt="HyperV Networking" src="../hyperv_networking.png"/></a></p>
 </li>
 <li>
-<p>Connect Virtual Hard Disk</p>
+<p>Connect the Virtual Hard Disk</p>
 <p><a class="glightbox" href="../hyperv_harddisk.png"><img alt="HyperV Hard Disk" src="../hyperv_harddisk.png"/></a></p>
 </li>
 <li>
-<p>Verify Summary and Finish</p>
+<p>Verify the Summary and Finish</p>
 <p><a class="glightbox" href="../hyperv_summary.png"><img alt="HyperV Summary" src="../hyperv_summary.png"/></a></p>
 </li>
 <li>
-<p>Wait for VM to be created</p>
+<p>Wait for the VM to be created</p>
 </li>
 <li>
-<p>Edit VM CPU settings (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>)</p>
+<p>Edit the VM CPU settings (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>)</p>
 <p><a class="glightbox" href="../hyperv_settings.png"><img alt="HyperV Settings" src="../hyperv_settings.png"/></a></p>
 <p><a class="glightbox" href="../hyperv_settings_cpu.png"><img alt="HyperV Settings CPU" src="../hyperv_settings_cpu.png"/></a></p>
 </li>
@@ -2640,25 +2640,25 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
     1. <a href="../../../System_Administration/increase_disk_space/#increase-disk-space-for-hyper-v">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
 </li>
 <li>
-<p>Close VM Settings window</p>
+<p>Close the VM Settings window</p>
 </li>
 <li>
-<p>Start VM.</p>
+<p>Start the VM.</p>
 </li>
 </ol>
-<h2 id="deploying-to-nutanix-virtual-machine">Deploying to Nutanix Virtual Machine</h2>
+<h2 id="deploying-a-virtual-machine-to-nutanix">Deploying a Virtual Machine to Nutanix</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at <a href="#deploying-on-vmware-ova-virtual-machine">VMware deploytment section</a>.</p>
+<p>The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at <a href="#deploying-on-vmware-ova-virtual-machine">VMware deploytment section</a>.</p>
 </div>
 <ol>
-<li>Download <code>ipfabric-*-.OVA</code> file from official source.</li>
+<li>Download the <code>ipfabric-*-.OVA</code> file from official source.</li>
 <li>
-<p>Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below</p>
+<p>Extract the previously downloaded OVA file using 7-zip or any similar software. The structure of extracted files should look like below</p>
 <p><a class="glightbox" href="../unzip_ova.png"><img alt="Unzip OVA" src="../unzip_ova.png"/></a></p>
 </li>
 <li>
-<p>Import <code>.vmdk</code> files to Nutanix hypervisor, following Nutanix official documentation – <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
+<p>Import <code>.vmdk</code> files to Nutanix hypervisor and follow Nutanix' official documentation – <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
 </li>
 <li>
 <p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../Overview/#operational-requirements">operational requirements section</a>).</p>
@@ -2669,28 +2669,28 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </ol>
 </li>
 <li>
-<p>Start VM and check if system starts without any interrupts.</p>
+<p>Start the VM and check if the system starts without any interrupts.</p>
 </li>
 </ol>
-<h2 id="deploying-on-kvm-virtual-machine">Deploying on KVM Virtual Machine</h2>
-<p>We have currently limitation with drives to be <code>/dev/sdx</code>. Usually Linux hypervisors are using <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in guest system. To overcome this limitation use <code>virtio-scsi</code> as drive controller.</p>
+<h2 id="deploying-a-virtual-machine-on-kvm">Deploying a Virtual Machine on KVM</h2>
+<p>We have currently the limitation that drives need to be <code>/dev/sdx</code>. Usually Linux hypervisors are using the <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation use the <code>virtio-scsi</code> as drive controller.</p>
 <ol>
 <li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
-<p>Resize the <code>qcow2</code> disk for data with size that corresponds to <a href="../../Overview/#operational-requirements">your network needs</a> if necessary with the following command:</p>
+<p>Resize the <code>qcow2</code> data-disk that corresponds to <a href="../../Overview/#operational-requirements">your network needs</a> if necessary. Use the following command:</p>
 <div class="highlight"><pre><span></span><code>qemu-img resize ipfabric-disk1.qcow2 100G <span class="c1"># (up to 1000G for 20 000 devices)</span>
 </code></pre></div>
 </li>
 <li>
-<p>Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):</p>
+<p>Deploy the VM to your hypervisor with the virt-install utility by issuing the following command (chose CPU and RAM size according to the size of your network):</p>
 <div class="highlight"><pre><span></span><code>virt-install --name<span class="o">=</span>IP_Fabric --disk <span class="nv">path</span><span class="o">=</span>&lt;path to the disk&gt;.qcow2 --graphics spice --vcpu<span class="o">=</span><span class="m">4</span> --ram<span class="o">=</span><span class="m">16384</span> --network <span class="nv">bridge</span><span class="o">=</span>virbr0 --import
 </code></pre></div>
 </li>
 <li>
-<p>This command deploys a new virtual machine with IP_Fabric name, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change <code>--network</code> parameter).</p>
+<p>This command deploys a new virtual machine with IP_Fabric name, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the <code>--network</code> parameter).</p>
 </li>
 <li>
-<p>This command also starts up just created VM.</p>
+<p>This command also starts up the VM.</p>
 </li>
 <li>
 <p>Additionally, you can <a href="../../../System_Administration/increase_disk_space/">create and add a new empty virtual disk if needed</a>.</p>
