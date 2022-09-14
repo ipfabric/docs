@@ -2688,15 +2688,12 @@ differently in you production deployment, than described here.
 <li><a href="#token-authentication">Token Authentication</a></li>
 </ul>
 <h2 id="api-token">API Token</h2>
-<p>Majority of API calls need to be authenticated. API Token needs to be passed as
-a request header. Please see <a href="../../IP_Fabric_Settings/api_tokens/">API Tokens</a>
-on how to create an API Token in the UI.</p>
+<p>Majority of API calls need to be authenticated. API Token needs to be passed as a request header. Please see <a href="../../IP_Fabric_Settings/api_tokens/">API Tokens</a> on how to create an API Token in the UI.</p>
 <div class="highlight"><pre><span></span><code><span class="err">Content-Type: application/json</span>
 <span class="err">X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI</span>
 </code></pre></div>
 <h2 id="basic-authentication">Basic Authentication</h2>
-<p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and
-passing that into the <code>Authorization</code> header.</p>
+<p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and passing that into the <code>Authorization</code> header.</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$ <span class="nb">echo</span> -n <span class="s2">"username:password"</span> <span class="p">|</span> base64
 <span class="nv">dXNlcm5hbWU6cGFzc3dvcmQ</span><span class="o">=</span>
 osadmin@ipfabric:~$ curl -X GET <span class="s1">'https://demo3.ipfabric.io/api/v5.0/snapshots'</span> <span class="se">\</span>
@@ -2704,15 +2701,11 @@ osadmin@ipfabric:~$ curl -X GET <span class="s1">'https://demo3.ipfabric.io/api/
   -H <span class="s1">'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span> 
 </code></pre></div>
 <h2 id="token-authentication">Token Authentication</h2>
-<p>Token Authentication allows a user to submit their Username and Password to the 
-<code>login</code> endpoint which then returns a JSON Web Token (JWT) for them to use in 
-the <code>Authorization</code> header.</p>
+<p>Token Authentication allows a user to submit their Username and Password to the <code>login</code> endpoint which then returns a JSON Web Token (JWT) for them to use in the <code>Authorization</code> header.</p>
 <h3 id="types-of-tokens">Types of Tokens</h3>
 <h4 id="access-token">Access Token</h4>
-<p>An access token is JSON Web Token (JWT) as per RFC-7519 signed using SHA-256
-with RSA encryption.</p>
-<p>The token expires in 30 minutes since being generated and it can’t be revoked
-during its lifetime. It consists of three parts separated by dots:</p>
+<p>An access token is JSON Web Token (JWT) as per RFC-7519 signed using SHA-256 with RSA encryption.</p>
+<p>The token expires in 30 minutes since being generated and it can’t be revoked during its lifetime. It consists of three parts separated by dots:</p>
 <ul>
 <li>Header</li>
 <li>Payload</li>
@@ -2728,9 +2721,7 @@ during its lifetime. It consists of three parts separated by dots:</p>
 <li>Username - String</li>
 </ul>
 <h4 id="refresh-token">Refresh Token</h4>
-<p>A refresh token is a token that can be used to obtain a renewed access token.
-It can be requested for new access tokens until the refresh token is revoked
-(blacklisted) or expired.</p>
+<p>A refresh token is a token that can be used to obtain a renewed access token. It can be requested for new access tokens until the refresh token is revoked (blacklisted) or expired.</p>
 <div class="admonition warning">
 <p class="admonition-title">Refresh Tokens</p>
 <p><strong>A refresh token expires after 24 hours of not being used for generation
@@ -2739,8 +2730,7 @@ application because they essentially allow a user to
 remain authenticated forever.</strong></p>
 </div>
 <h3 id="login">Login</h3>
-<p>To login and obtain an Access and Refresh token please see the below curl
-example:</p>
+<p>To login and obtain an Access and Refresh token please see the below curl example:</p>
 <div class="highlight"><pre><span></span><code>curl -X POST <span class="s1">'https://demo3.ipfabric.io/api/v5.0/auth/login'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --data-raw <span class="s1">'{"username":"&lt;USERNAME&gt;","password":"&lt;PASSWORD&gt;"}'</span>
@@ -2781,12 +2771,8 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li>accessToken - 30 minutes (1800 seconds)</li>
 <li>refreshToken - 24 hours (86400 seconds)</li>
 </ul>
-<p>If the user does any action in the web GUI or requests a new access token
-using the API within a 24-hour period IP Fabric will keep the user logged in,
-create a new <code>accessToken</code>, and reset the <code>refreshToken</code> expiration timer for
-another 24 hours.</p>
-<p>Many company standards requires shorter expiration times and this can be
-accomplished via the CLI settings.</p>
+<p>If the user does any action in the web GUI or requests a new access token using the API within a 24-hour period IP Fabric will keep the user logged in, create a new <code>accessToken</code>, and reset the <code>refreshToken</code> expiration timer for another 24 hours.</p>
+<p>Many company standards requires shorter expiration times and this can be accomplished via the CLI settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">CLI Root Access</p>
 <p>Any action on the CLI as a <code>root</code> and/or <code>autoboss</code> user may severely 
@@ -2803,11 +2789,11 @@ the <code>/opt/nimpee/conf.d/api.json</code> file.</p>
 <li>Log into IP Fabric CLI as <code>osadmin</code></li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON
-    1. In this example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in 15 minutes.
+    1. In this example the <code>accessToken</code> expires in 10 minutes
+       and <code>refreshToken</code> expires in 15 minutes.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">8100</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost/api"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="nt">"expiresIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
@@ -2817,34 +2803,56 @@ the <code>/opt/nimpee/conf.d/api.json</code> file.</p>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></li>
+</code></pre></div>
+<ol>
 <li>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></li>
 <li>Restart API <code>systemctl restart nimpee-api.service</code></li>
 </ol>
 <h2 id="token-errors">Token Errors</h2>
-<p>The API returns an object with a machine-readable error code and a
-human-readable error message in response body when an error is encountered:</p>
+<p>The API returns an object with a machine-readable error code and a human-readable error message in response body when an error is encountered:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_NOT_FOUND"</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requested Resource Not Found"</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>COMMON ERRORS:</p>
-<ul>
-<li>API_EXPIRED_API_TOKEN - The provided API key expired.</li>
-<li>API_INVALID_API_TOKEN - The provided API key doesn’t exist. It was removed, or
-  it never existed.</li>
-<li>API_MISSING_EULA_APPROVAL - This error occurs when a user hasn’t approved
-  EULA. It is REQUIRED to login using the user’s credentials into the
-  application user interface and accept EULA.</li>
-<li>API_EXPIRED_ACCESS_TOKEN - The provided access token (from Authorization
-  header) is expired.</li>
-<li>API_INVALID_ACCESS_TOKEN - The provided access token (from Authorization
-  header) is invalid.</li>
-<li>API_INVALID_REFRESH_TOKEN - The provided refresh token (typically sent in the
-  request body) is revoked (blacklisted) or expired.</li>
-<li>API_NOT_FOUND - The requested resource does not exist.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API_EXPIRED_API_TOKEN</td>
+<td>The provided API key expired.</td>
+</tr>
+<tr>
+<td>API_INVALID_API_TOKEN</td>
+<td>The provided API key doesn’t exist. It was removed, or it never existed.</td>
+</tr>
+<tr>
+<td>API_MISSING_EULA_APPROVAL</td>
+<td>This error occurs when a user hasn’t approved EULA. It is REQUIRED to login using the user’s credentials into the application user interface and accept EULA.</td>
+</tr>
+<tr>
+<td>API_EXPIRED_ACCESS_TOKEN</td>
+<td>The provided access token (from Authorization header) is expired.</td>
+</tr>
+<tr>
+<td>API_INVALID_ACCESS_TOKEN</td>
+<td>The provided access token (from Authorization header) is invalid.</td>
+</tr>
+<tr>
+<td>API_INVALID_REFRESH_TOKEN</td>
+<td>The provided refresh token (typically sent in the request body) is revoked (blacklisted) or expired.</td>
+</tr>
+<tr>
+<td>API_NOT_FOUND</td>
+<td>The requested resource does not exist.</td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 <script>var input,hash=location.hash.slice(1);hash.startsWith("__tabbed_")&&((input=document.getElementById(hash)).checked=!0)</script>
