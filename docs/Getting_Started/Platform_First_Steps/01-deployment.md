@@ -21,7 +21,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 The `QCOW2` disk image file can be converted to different formats.
 Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
 
-1. Download `ipfabric-*.qcow2` from official source.
+1. Download `ipfabric-*.qcow2` from the official source.
 2. Convert `QCOW2` image to `VHDX` (Be sure to change the filenames in the command examples below.) 
    * Windows instructions:
      1. Download [qemu-img-windows](https://cloudbase.it/qemu-img-windows/)
@@ -46,17 +46,17 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
 
     ![HyperV Networking](hyperv_networking.png)
 
-7. Connect Virtual Hard Disk
+7. Connect the Virtual Hard Disk
 
    ![HyperV Hard Disk](hyperv_harddisk.png)
 
-8. Verify Summary and Finish
+8. Verify the Summary and Finish
 
    ![HyperV Summary](hyperv_summary.png)
 
-9. Wait for VM to be created
+9. Wait for the VM to be created
 
-10. Edit VM CPU settings (check requirements in [operational requirements section](../Overview/index.md#operational-requirements))
+10. Edit the VM CPU settings (check requirements in [operational requirements section](../Overview/index.md#operational-requirements))
 
     ![HyperV Settings](hyperv_settings.png)
 
@@ -65,22 +65,22 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
 11. Optionally increase Hard Disk Size based on [operational requirements section](../Overview/index.md#operational-requirements)
     1. [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md#increase-disk-space-for-hyper-v) if necessary.
 
-12. Close VM Settings window
+12. Close the VM Settings window
 
-13. Start VM.
+13. Start the VM.
 
-## Deploying to Nutanix Virtual Machine
+## Deploying a Virtual Machine to Nutanix
 
 !!! note
 
-    Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at [VMware deploytment section](#deploying-on-vmware-ova-virtual-machine).
+    The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at [VMware deploytment section](#deploying-on-vmware-ova-virtual-machine).
 
-1. Download `ipfabric-*-.OVA` file from official source.
-2. Extract previously downloaded OVA file using 7-zip or any similar software, structure of extracted files should look like below
+1. Download the `ipfabric-*-.OVA` file from official source.
+2. Extract the previously downloaded OVA file using 7-zip or any similar software. The structure of extracted files should look like below
 
     ![Unzip OVA](unzip_ova.png)
 
-3. Import `.vmdk` files to Nutanix hypervisor, following Nutanix official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
+3. Import `.vmdk` files to Nutanix hypervisor and follow Nutanix' official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
 
 4. Edit VM hardware settings and adjust according to the network environment size (check requirements in [operational requirements section](../Overview/index.md#operational-requirements)).
 
@@ -88,28 +88,28 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
    2. Change memory size
    3. [Extend the system disk or add a new empty virtual disk](../../System_Administration/increase_disk_space.md) if necessary.
 
-5. Start VM and check if system starts without any interrupts.
+5. Start the VM and check if the system starts without any interrupts.
 
-## Deploying on KVM Virtual Machine
+## Deploying a Virtual Machine on KVM 
 
-We have currently limitation with drives to be `/dev/sdx`. Usually Linux hypervisors are using `virtio-blk` driver which is represented as `/dev/vdx` in guest system. To overcome this limitation use `virtio-scsi` as drive controller.
+We have currently the limitation that drives need to be `/dev/sdx`. Usually Linux hypervisors are using the `virtio-blk` driver which is represented as `/dev/vdx` in the guest system. To overcome this limitation use the `virtio-scsi` as drive controller.
 
 1.  Download `qcow2` system disk to your KVM hypervisor.
-2.  Resize the `qcow2` disk for data with size that corresponds to [your network needs](../Overview/index.md#operational-requirements) if necessary with the following command:
+2.  Resize the `qcow2` data-disk that corresponds to [your network needs](../Overview/index.md#operational-requirements) if necessary. Use the following command:
 
     ```shell
     qemu-img resize ipfabric-disk1.qcow2 100G # (up to 1000G for 20 000 devices)
     ```
 
-3.  Deploy VM to your hypervisor through virt-install utility by issuing the following command (chose CPU and RAM size according to size of your network):
+3.  Deploy the VM to your hypervisor with the virt-install utility by issuing the following command (chose CPU and RAM size according to the size of your network):
 
     ```shell
     virt-install --name=IP_Fabric --disk path=<path to the disk>.qcow2 --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
     ```
 
-4.  This command deploys a new virtual machine with IP_Fabric name, system `qcow2` disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change `--network` parameter).
+4.  This command deploys a new virtual machine with IP_Fabric name, system `qcow2` disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the `--network` parameter).
 
-5.  This command also starts up just created VM.
+5.  This command also starts up the VM.
 
 6.  Additionally, you can [create and add a new empty virtual disk if needed](../../System_Administration/increase_disk_space.md).
 
