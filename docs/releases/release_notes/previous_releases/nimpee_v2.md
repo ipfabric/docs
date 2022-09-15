@@ -16,11 +16,11 @@
 - Added BGP support for Arista EOS
 - Added NTP support for Arista EOS, ArubaSW, Huawei, F5
 - Added OSPF support for Arista EOS, Check Point Gaia, Cisco ASA,
-  Extreme XOS, Fortinet Fortigate, Huawei VRP, PaloAlto
+  Extreme XOS, Fortinet FortiGate, Huawei VRP, PaloAlto
 - Added Routing table summary for Arista EOS, Extreme XOS, Huawei VRP,
   Checkpoint, Cisco ASA
 - Added VRRP support for Fortinet FortiGate
-- Configuration Management - added support for Fortinet Fortigate,
+- Configuration Management - added support for Fortinet FortiGate,
   Extreme XOS
 - Added overview of local and remote logging targets configured on
   network devices
@@ -58,9 +58,9 @@
 - Juniper ISIS - added support for any other level than 1 or 2
 - Juniper Loopback interfaces lo0.16384, lo0.16385, lo0.32768 are
   internal auxiliary loopbacks and are not included in discovery.
-- Fortinet Fortigate - improved version detection for devices running
+- Fortinet FortiGate - improved version detection for devices running
   with FortiOS6
-- Fortinet Fortigate - improved prompt detection in case that prompt
+- Fortinet FortiGate - improved prompt detection in case that prompt
   ends with $
 - Cisco IOS/XE/XR - Updated next-hop evaluation for CEF/MPLS records
 - Cisco SG300 - Added support for different show version output
@@ -113,9 +113,9 @@
 - Extreme XOS - memory information fixed parsing
 - Checkpoint Gaja - fixed parsing of different output for command fw
   ctl pstat"
-- Fortinet Fortigate - fixed ambiguous command to get info about the
+- Fortinet FortiGate - fixed ambiguous command to get info about the
   routing table
-- Fortinet Fortigate - fixed parsing for different output about memory
+- Fortinet FortiGate - fixed parsing for different output about memory
   information on FortiOS6
 - HP Aruba switch - fixed NTP associations
 - HP Aruba switch - Reported CDP devices without capabilities fix
@@ -897,7 +897,7 @@ Features
 - Wireless access point impact is calculated now only from errors and
   drops on wired interfaces
 - Cisco SG300 spanning-tree is now correctly parsed and saved
-- Fortigate hostname saved when no authorization is allowed
+- FortiGate hostname saved when no authorization is allowed
 
 ### 2.2.1 (21st March 2018)
 

@@ -16,8 +16,8 @@ sequenceDiagram
 
 !!! warning "Complex Configuration"
 
-    Implementation of SSO configuration can be complex, and because of that, it 
-    is recommended to be configured for you by our Solution Architects. If you 
+    Implementation of SSO configuration can be complex, and because of that, it
+    is recommended to be configured for you by our Solution Architects. If you
     are unsure who your Solution Architect is, contact our Support Team.
 
 ## Requirements
@@ -28,7 +28,7 @@ Prior to configuring SSO the IP Fabric server must not be using a self-signed ce
 
 !!! information "Internal CA"
 
-    By default, IP Fabric only trusts certificates issued by CAs listed in the 
+    By default, IP Fabric only trusts certificates issued by CAs listed in the
     node.js. If your company use certificates signed by an internal CA please
     reach out to your Solution Architect or open a Support ticket for further
     configuration in order to properly enable SSO.
@@ -90,7 +90,7 @@ changed. Below is a full example of the `api.json` config file.
 
     In this file you can also change the default token expiration of
     30 minutes for accessToken and 24 hours for refreshToken.
-    If you would like to learn more about this please visit 
+    If you would like to learn more about this please visit
     [API Authentication](../../IP_Fabric_API/authentication.md).
 
 ### URL Configuration
@@ -149,30 +149,30 @@ corresponds to `staticClient` in the Dex configuration).
 }
 ```
 
-* `name` - User defined name of the Identity Provider (IdP) displayed in GUI
-  * Can only contain `a-z0-9_`. **Do not use uppercase.**
-  * Used in [ipf-dex.yaml](#static-clients) for `redirectURIs`
+- `name` - User defined name of the Identity Provider (IdP) displayed in GUI
+  - Can only contain `a-z0-9_`. **Do not use uppercase.**
+  - Used in [ipf-dex.yaml](#static-clients) for `redirectURIs`
     under `staticClients`
-  * This name will be displayed on the login page of the GUI. This name will be
+  - This name will be displayed on the login page of the GUI. This name will be
     capitalized (`sso` -> `Sso`) therefore it is recommended to use names such
     as `azure` or `okta`.
-  * ![SSO Button](sso_button_name.png)
-* `clientId` - User defined value (suggested to leave as `ipfabric`)
-  * Used in [ipf-dex.yaml](#static-clients) for `id` under `staticClients`
-* `clientSecret` - User defined value for a shared secret between IP Fabric and
+  - ![SSO Button](sso_button_name.png)
+- `clientId` - User defined value (suggested to leave as `ipfabric`)
+  - Used in [ipf-dex.yaml](#static-clients) for `id` under `staticClients`
+- `clientSecret` - User defined value for a shared secret between IP Fabric and
   Dex only.
-  * Can be randomly created for instance using
+  - Can be randomly created for instance using
     Python: `python -c "import secrets; print(secrets.token_urlsafe())"`
-  * Used in [ipf-dex.yaml](#static-clients) for `secret` under `staticClients`
-* `roleAssignments` - An array of objects.
-  * Objects are in the format of `{groupName: string, roleId: string | null }`
-    * `groupName` - The name of the group that is configured on the SSO side.
-      * `any` will provide default access to any user.
-      * Multiple mappings with the same `groupName` will get merged (so the user
+  - Used in [ipf-dex.yaml](#static-clients) for `secret` under `staticClients`
+- `roleAssignments` - An array of objects.
+  - Objects are in the format of `{groupName: string, roleId: string | null }`
+    - `groupName` - The name of the group that is configured on the SSO side.
+      - `any` will provide default access to any user.
+      - Multiple mappings with the same `groupName` will get merged (so the user
         will receive all corresponding roles on IP Fabric side).
-    * `roleId` - The ID of the IP Fabric role.
-      * A value of `null` will provide no access.
-      * **Please do not confuse `roleId` with `roleName` as these are different
+    - `roleId` - The ID of the IP Fabric role.
+      - A value of `null` will provide no access.
+      - **Please do not confuse `roleId` with `roleName` as these are different
         values. `roleId` must be retrieved using browser Developer Tools or
         using the API (example below).** Feature has been opened to allow
         for `roleName`.
@@ -196,13 +196,12 @@ issuer: https://<FQDN>/dex
 staticClients:
   - id: ipfabric
     redirectURIs:
-      - 'https://<FQDN>/api/<API_VERSION>/auth/external/<API-DEX-PROVIDERS-NAME>'
+      - "https://<FQDN>/api/<API_VERSION>/auth/external/<API-DEX-PROVIDERS-NAME>"
     name: IP Fabric
     secret: <RANDOM_SECRET>
 
 storage:
-  type:
-    memory
+  type: memory
 
 logger:
   level: debug
@@ -240,21 +239,21 @@ connectors:
 !!! note "Leave Default Values"
 
     The following lines should be left to the default values:
-    
+
     ```yaml
     storage:
       type:
         memory
-    
+
     logger:
       level: debug
-    
+
     web:
       http: 127.0.0.1:5556
-    
+
     telemetry:
       http: 127.0.0.1:5558
-    
+
     grpc:
       addr: 127.0.0.1:5557
     ```
@@ -262,7 +261,7 @@ connectors:
 ### Issuer
 
 Dex configuration has at the very top attribute called `issuer`. This needs to be configured to be equal to the `url` in [api.json](#providers-configuration)
-under `dex` . 
+under `dex` .
 
 For example:
 
@@ -290,7 +289,7 @@ acts as a client to `dex`.
 staticClients:
   - id: ipfabric
     redirectURIs:
-      - 'https://demo.ipfabric.io/api/v5.0/auth/external/sso'
+      - "https://demo.ipfabric.io/api/v5.0/auth/external/sso"
     name: IP Fabric
     secret: jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q
 ```
@@ -305,7 +304,7 @@ staticClients:
     for `name` under `providers`.
     - Can only contain `a-z0-9_`. **Do not use uppercase.**
   - Please, be aware of the `API_VERSION` property.
-    - Updated with every __major__ IPF release (i.e. after IP Fabric is upgraded
+    - Updated with every **major** IPF release (i.e. after IP Fabric is upgraded
       to `v5.5` leaving the URL at `v5.0` will not cause any issues).
     - Unlike other API calls this has to be set with `v{major}.{minor}` and
       cannot use `v{major}` (`/api/v5/auth` will not work; must
@@ -324,7 +323,7 @@ staticClients:
 Here is a nice illustration on how the `/opt/nimpee/conf.d/api.json` values map
 to `/etc/ipf-dex.yaml`:
 
-![JSON YAML Mapping](sso_api_dex_mapping.png)
+![JSON yaml mapping](sso_api_dex_mapping.png)
 
 ### OpenID Connect (OIDC)
 
@@ -332,7 +331,7 @@ Please review the [Dex documentation on OIDC](https://dexidp.io/docs/connectors/
 
 !!! note "Well-known Configuration"
 
-    Many of the variables required can be found in the OIDC well-known 
+    Many of the variables required can be found in the OIDC well-known
     configuration endpoint for example take a look at Google:
     [.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration).
 
@@ -357,37 +356,37 @@ connectors:
         groups: roles
 ```
 
-* `type` - Dex connector type.
-* `id` - User defined arbitrary ID (not used anywhere).
-* `name` - User defined arbitrary name (not used anywhere).
-* `redirectURI` - `issuer` URL with `/callback` appended at the end.
-  * Can be found in [api.json](#url-configuration) under `dex`, OR
-  * Can be found in [ipf-dex.yaml](#issuer).
-* `getUserInfo` - When enabled, the OpenID Connector will query the UserInfo
+- `type` - Dex connector type.
+- `id` - User defined arbitrary ID (not used anywhere).
+- `name` - User defined arbitrary name (not used anywhere).
+- `redirectURI` - `issuer` URL with `/callback` appended at the end.
+  - Can be found in [api.json](#url-configuration) under `dex`, OR
+  - Can be found in [ipf-dex.yaml](#issuer).
+- `getUserInfo` - When enabled, the OpenID Connector will query the UserInfo
   endpoint for additional claims.
-* `insecureEnableGroups` - Groups claims only refresh when the id token is
+- `insecureEnableGroups` - Groups claims only refresh when the id token is
   refreshed meaning the regular refresh flow doesn't update the groups claim. As
   such by default the oidc connector doesn't allow groups claims. If you are
   okay with having potentially stale group claims you can use this option to
   enable groups claims through the oidc connector on a per-connector basis.
-* `clientID` - A client ID configured or generated on the Identity Provider.
-* `clientSecret` - A client secret configured or generated on the Identity.
+- `clientID` - A client ID configured or generated on the Identity Provider.
+- `clientSecret` - A client secret configured or generated on the Identity.
   Provider.
-* `scopes` - A list of scopes to return from the Identity Provider.
-  * The ones listed above are the most common however these can differ provider
+- `scopes` - A list of scopes to return from the Identity Provider.
+  - The ones listed above are the most common however these can differ provider
     to provider.
-  * Scopes are normally found in the `.well-known/openid-configuration` which is
+  - Scopes are normally found in the `.well-known/openid-configuration` which is
     discussed in the [OIDC](#openid-connect-oidc) section.
-* `claimMapping` - Some providers return non-standard claims (i.e. roles) use
+- `claimMapping` - Some providers return non-standard claims (i.e. roles) use
   claimMapping to map those claims to standard claims.
 
 ### Azure
 
 !!! warning "Azure"
 
-    Please review the 
+    Please review the
     [Dex documentation on Azure](https://dexidp.io/docs/connectors/microsoft/)
-    for all configuration options and potential caveats as Azure requires 
+    for all configuration options and potential caveats as Azure requires
     special configuration for proper enablement.
 
 ```yaml
@@ -409,28 +408,28 @@ connectors:
         groups: roles
 ```
 
-* `type` - Dex connector type.
-* `id` - User defined arbitrary ID (not used anywhere).
-* `name` - User defined arbitrary name (not used anywhere).
-* `redirectURI` - `issuer` URL with `/callback` appended at the end.
-  * Can be found in [api.json](#url-configuration) under `dex`, OR
-  * Can be found in [ipf-dex.yaml](#issuer).
-* `tenant` - UUID or Name of specific tenant accounts belong to.
-  * **Required in order to obtain `groups` claim from Azure**
-* `clientID` - A client ID configured or generated on the Identity Provider.
-* `clientSecret` - A client secret configured or generated on the Identity.
+- `type` - Dex connector type.
+- `id` - User defined arbitrary ID (not used anywhere).
+- `name` - User defined arbitrary name (not used anywhere).
+- `redirectURI` - `issuer` URL with `/callback` appended at the end.
+  - Can be found in [api.json](#url-configuration) under `dex`, OR
+  - Can be found in [ipf-dex.yaml](#issuer).
+- `tenant` - UUID or Name of specific tenant accounts belong to.
+  - **Required in order to obtain `groups` claim from Azure**
+- `clientID` - A client ID configured or generated on the Identity Provider.
+- `clientSecret` - A client secret configured or generated on the Identity.
   Provider.
-* `scopes` - A list of scopes to return from the Identity Provider.
-  * The ones listed above are the most common however these can differ provider
+- `scopes` - A list of scopes to return from the Identity Provider.
+  - The ones listed above are the most common however these can differ provider
     to provider.
-  * Scopes are normally found in the `.well-known/openid-configuration` which is
+  - Scopes are normally found in the `.well-known/openid-configuration` which is
     discussed in the [OIDC](#openid-connect-oidc) section.
-* `claimMapping` - Some providers return non-standard claims (i.e. roles) use
+- `claimMapping` - Some providers return non-standard claims (i.e. roles) use
   claimMapping to map those claims to standard claims.
 
 ### SAML Connector
 
-Please review the [Dex documentation on  SAML](https://dexidp.io/docs/connectors/saml/) for all configuration options and potential caveats.
+Please review the [Dex documentation on SAML](https://dexidp.io/docs/connectors/saml/) for all configuration options and potential caveats.
 
 ```yaml
 connectors:
@@ -449,21 +448,21 @@ connectors:
       nameIDPolicyFormat: emailAddress
 ```
 
-* `type` - Dex connector type.
-* `id` - User defined arbitrary ID (not used anywhere).
-* `name` - User defined arbitrary name (not used anywhere).
-* `redirectURI` - `issuer` URL with `/callback` appended at the end.
-  * Can be found in [api.json](#url-configuration) under `dex`, OR
-  * Can be found in [ipf-dex.yaml](#issuer).
-* `ssoURL` - SSO URL used for POST value.
-* `ssoIssuer` - Optional: Issuer value expected in the SAML response.
-* Pick and use one option to validate the signature of the SAML response:
-  * `caData` - Base64 encoded certification chain
-  * `ca` - File location of containing certification chain
-* `usernameAttr` - Maps SAML `name` value to IP Fabric's `username`
-* `emailAttr` - Maps SAML `email` value to IP Fabric's `email`
-* `groupsAttr` - Maps SAML `groups` value to IP Fabric's `groupName`
-* `nameIDPolicyFormat` - The connector uses the value of the NameID element as
+- `type` - Dex connector type.
+- `id` - User defined arbitrary ID (not used anywhere).
+- `name` - User defined arbitrary name (not used anywhere).
+- `redirectURI` - `issuer` URL with `/callback` appended at the end.
+  - Can be found in [api.json](#url-configuration) under `dex`, OR
+  - Can be found in [ipf-dex.yaml](#issuer).
+- `ssoURL` - SSO URL used for POST value.
+- `ssoIssuer` - Optional: Issuer value expected in the SAML response.
+- Pick and use one option to validate the signature of the SAML response:
+  - `caData` - Base64 encoded certification chain
+  - `ca` - File location of containing certification chain
+- `usernameAttr` - Maps SAML `name` value to IP Fabric's `username`
+- `emailAttr` - Maps SAML `email` value to IP Fabric's `email`
+- `groupsAttr` - Maps SAML `groups` value to IP Fabric's `groupName`
+- `nameIDPolicyFormat` - The connector uses the value of the NameID element as
   the user’s unique identifier which dex assumes is both unique and never
   changes. Use the `nameIDPolicyFormat` to ensure this is set to a value which
   satisfies these requirements.
