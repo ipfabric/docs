@@ -2713,7 +2713,7 @@ affected with the change:</p>
 <p>- Cisco ASA with virtual contexts
   - Cisco WLC with system access point
   - Cisco NX-OS with VDC
-  - Fortigate with VDOM</p>
+  - FortiGate with VDOM</p>
 <p>In 4.4.0 we are migrating device attributes that are necessary for manual site separation but we are not able to migrate snapshots from the older versions. Therefore sites in the older snapshots can be wrong if manual site separation was used. Also, if you compare a snapshot in a version higher or equal to 4.4.0 with a snapshot in a lower version than 4.4.0 that includes affected devices then you might encounter false-positive changes in the snapshot comparison.</p>
 </div>
 <div class="admonition important">
@@ -2756,7 +2756,7 @@ Providing a <code>snapshot</code> ID in the POST was also removed from the <code
 <li>Loading a snapshot could sometimes cause an <code>Unexpected end of JSON input</code> error and then the snapshot will get corrupted. The root cause has been fixed.</li>
 <li>Arista EOS – Fixed false positive error emitting from <code>show interfaces vxlan 1</code>.</li>
 <li>Azure – fixed mapping of network interfaces without MAC address.</li>
-<li>Brocade Fastiron – Improved parsing hostname from prompt.</li>
+<li>Brocade FastIron – Improved parsing hostname from prompt.</li>
 <li>Cisco – fixed host table for devices reachable with LISP.</li>
 <li>Cisco – fixed parsing of PIDs containing plus symbol in command <code>show inventory</code>.</li>
 <li>Cisco FTD – <code>commands/cisco/routingTable</code> -- fixed parsing for null summarized routes.</li>
@@ -2770,7 +2770,7 @@ Providing a <code>snapshot</code> ID in the POST was also removed from the <code
 <li>Extreme XOS – fixed parsing of l2Interfaces of missing interfaces.</li>
 <li>Fortinet FortiGate – fixed executing of cmd <code>get system password-policy</code> on VDOM enabled firewalls.</li>
 <li>Fortinet FortiGate – Fixed missing FQDN in firewall policies unless configured in lower case.</li>
-<li>Fortinet Fortigate – fixed parsing of <code>get router info ospf nei detail</code> for NSSA cases.</li>
+<li>Fortinet FortiGate – fixed parsing of <code>get router info ospf nei detail</code> for NSSA cases.</li>
 <li>HP Aruba switch – added parsing of port information.</li>
 <li>HP ArubaCX – fixed parsing of IGMP query interval.</li>
 <li>HP Comware – fixed parsing of <code>display lldp neighbor-information verbose</code></li>

@@ -2743,8 +2743,8 @@ differently in you production deployment, than described here.
   IPF-&gt;&gt;Dex: IPF fetches token from Dex.</code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Complex Configuration</p>
-<p>Implementation of SSO configuration can be complex, and because of that, it 
-is recommended to be configured for you by our Solution Architects. If you 
+<p>Implementation of SSO configuration can be complex, and because of that, it
+is recommended to be configured for you by our Solution Architects. If you
 are unsure who your Solution Architect is, contact our Support Team.</p>
 </div>
 <h2 id="requirements">Requirements</h2>
@@ -2752,7 +2752,7 @@ are unsure who your Solution Architect is, contact our Support Team.</p>
 <p>Prior to configuring SSO the IP Fabric server must not be using a self-signed certificate. To create a new signed TLS certificate please see instructions located at <a href="../../advanced/ipf_cert/">IP Fabric Web Certificate</a>.</p>
 <div class="admonition information">
 <p class="admonition-title">Internal CA</p>
-<p>By default, IP Fabric only trusts certificates issued by CAs listed in the 
+<p>By default, IP Fabric only trusts certificates issued by CAs listed in the
 node.js. If your company use certificates signed by an internal CA please
 reach out to your Solution Architect or open a Support ticket for further
 configuration in order to properly enable SSO.</p>
@@ -2806,7 +2806,7 @@ changed. Below is a full example of the <code>api.json</code> config file.</p>
 <p class="admonition-title">Changing Default Token Expiration</p>
 <p>In this file you can also change the default token expiration of
 30 minutes for accessToken and 24 hours for refreshToken.
-If you would like to learn more about this please visit 
+If you would like to learn more about this please visit
 <a href="../../../IP_Fabric_API/authentication/">API Authentication</a>.</p>
 </div>
 <h3 id="url-configuration">URL Configuration</h3>
@@ -2911,13 +2911,12 @@ overview.</p>
 <span class="nt">staticClients</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span><span class="w"></span>
 <span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/auth/external/&lt;API-DEX-PROVIDERS-NAME&gt;'</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/auth/external/&lt;API-DEX-PROVIDERS-NAME&gt;"</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IP Fabric</span><span class="w"></span>
 <span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;RANDOM_SECRET&gt;</span><span class="w"></span>
 
 <span class="nt">storage</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">memory</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memory</span><span class="w"></span>
 
 <span class="nt">logger</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debug</span><span class="w"></span>
@@ -2973,7 +2972,7 @@ overview.</p>
 </div>
 <h3 id="issuer">Issuer</h3>
 <p>Dex configuration has at the very top attribute called <code>issuer</code>. This needs to be configured to be equal to the <code>url</code> in <a href="#providers-configuration">api.json</a>
-under <code>dex</code> . </p>
+under <code>dex</code> .</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://demo.ipfabric.io/dex</span><span class="w"></span>
 </code></pre></div>
@@ -2989,7 +2988,7 @@ acts as a client to <code>dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span><span class="w"></span>
 <span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'https://demo.ipfabric.io/api/v5.0/auth/external/sso'</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"https://demo.ipfabric.io/api/v5.0/auth/external/sso"</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IP Fabric</span><span class="w"></span>
 <span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q</span><span class="w"></span>
 </code></pre></div>
@@ -3033,12 +3032,12 @@ acts as a client to <code>dex</code>.</p>
 <h3 id="config-file-mapping">Config File Mapping</h3>
 <p>Here is a nice illustration on how the <code>/opt/nimpee/conf.d/api.json</code> values map
 to <code>/etc/ipf-dex.yaml</code>:</p>
-<p><a class="glightbox" href="../sso_api_dex_mapping.png"><img alt="JSON YAML Mapping" src="../sso_api_dex_mapping.png"/></a></p>
+<p><a class="glightbox" href="../sso_api_dex_mapping.png"><img alt="JSON yaml mapping" src="../sso_api_dex_mapping.png"/></a></p>
 <h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
 <p>Please review the <a href="https://dexidp.io/docs/connectors/oidc/">Dex documentation on OIDC</a> for all configuration options and potential caveats.</p>
 <div class="admonition note">
 <p class="admonition-title">Well-known Configuration</p>
-<p>Many of the variables required can be found in the OIDC well-known 
+<p>Many of the variables required can be found in the OIDC well-known
 configuration endpoint for example take a look at Google:
 <a href="https://accounts.google.com/.well-known/openid-configuration">.well-known/openid-configuration</a>.</p>
 </div>
@@ -3093,9 +3092,9 @@ configuration endpoint for example take a look at Google:
 <h3 id="azure">Azure</h3>
 <div class="admonition warning">
 <p class="admonition-title">Azure</p>
-<p>Please review the 
+<p>Please review the
 <a href="https://dexidp.io/docs/connectors/microsoft/">Dex documentation on Azure</a>
-for all configuration options and potential caveats as Azure requires 
+for all configuration options and potential caveats as Azure requires
 special configuration for proper enablement.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="nt">connectors</span><span class="p">:</span><span class="w"></span>
@@ -3142,7 +3141,7 @@ special configuration for proper enablement.</p>
   claimMapping to map those claims to standard claims.</li>
 </ul>
 <h3 id="saml-connector">SAML Connector</h3>
-<p>Please review the <a href="https://dexidp.io/docs/connectors/saml/">Dex documentation on  SAML</a> for all configuration options and potential caveats.</p>
+<p>Please review the <a href="https://dexidp.io/docs/connectors/saml/">Dex documentation on SAML</a> for all configuration options and potential caveats.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">connectors</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">saml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sso_saml</span><span class="w"></span>
