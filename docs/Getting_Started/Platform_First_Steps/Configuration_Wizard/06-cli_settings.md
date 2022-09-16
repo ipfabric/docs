@@ -4,7 +4,7 @@
 
 ## Fine-Tune SSH/telnet CLI parameters
 
-The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in **Settings → Advanced → SSH/TELNET**:
+The IP Fabric's discovery is primarily using the Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in **Settings → Advanced → SSH/TELNET**:
 
 ![CLI](cli_settings.png)
 
@@ -53,13 +53,13 @@ Command Authorization Failure retries
 
 !!! warning
 
-    At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.
+    At least one seed IP address has to be provided as a starting point behind the Jumphost in seed configuration.
 
 ### Set up Jump host
 
-1.  Open jump host settings, using item **Settings → Advanced → SSH/TELNET**
+1.  Open jump host settings, using  **Settings → Advanced → SSH/TELNET**
 
-2.  At the bottom of the page, please select **Add** button
+2.  At the bottom of the page, please select the **Add** button
 
     ![Add jump host](jumphost_add.png)
 
@@ -90,7 +90,7 @@ Command Authorization Failure retries
 
 !!! note
 
-    Adding ssh key to proxy server allows you to avoid using passwords for authentication.
+    Adding a ssh key to the proxy server allows you to avoid using passwords for authentication.
 
 1.  Download ssh key from Jumphost settings
 
@@ -98,7 +98,7 @@ Command Authorization Failure retries
 
 2.  Save `ipf-discovery-public-key.pub`
 
-3.  Copy file content to `~/.ssh/authorized_keys` (or equivalent) file of the user that will authenticate with Jumphost server.
+3.  Copy file content to `~/.ssh/authorized_keys` (or equivalent) file of the user that will authenticate with the Jumphost server.
 
 4.  If the key has been copied you can use the option **Use SSH keys** while adding a new Jumphost server, instead of **Use credentials**.
 
@@ -116,9 +116,9 @@ Command Authorization Failure retries
 
 ### Remove Jumphost configuration
 
-1.  On Jumphost servers list, check configuration that needs to be removed
+1.  On Jumphost servers list, check the configuration that needs to be removed
 
-2.  Click **Delete** button
+2.  Click the **Delete** button
 
     ![Delete jump host](jumphost_delete.png)
 
@@ -131,10 +131,10 @@ Command Authorization Failure retries
 
 Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
 
-In the following example we will configure the discovery process to use port `8080` for SSH connections towards firewall at `192.168.168.10`:
+In the following example we will configure the discovery process to use port `8080` for SSH connections towards a firewall at `192.168.168.10`:
 
 ![Custom SSH port](custom_ssh_port.png)
 
-As a result of such configuration, we would create a new item under the **Custom SSH/Telnet ports** configuration, which will be applied to every new snapshot created by IP Fabric.
+As a result of such a configuration, we would create a new item under the **Custom SSH/Telnet ports** configuration, which will be applied to every new snapshot created by IP Fabric.
 
 ![List of custom SSH port](custom_ssh_port_list.png)

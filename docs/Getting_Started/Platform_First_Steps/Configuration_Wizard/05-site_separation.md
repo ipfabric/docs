@@ -34,7 +34,7 @@ The dropdown is intuitive and will let you search based on SN or hostname. Curre
 
 #### Creating Rules Via The API
 
-This is the preferred method of creating rules as it allows for bulk importing.
+This is the preferred method of creating rules as it allows bulk importing.
 
 | Method | PUT                                                                                           |
 | ------ | --------------------------------------------------------------------------------------------- |
@@ -112,16 +112,16 @@ This option will try to define a device based on its neighbor relationship if a 
 
 #### Creating Rules With `python-ipfabric` Package
 
-Please see example located on [Community Fabric GitHub](https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py).
+Please see the example located on [Community Fabric GitHub](https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py).
 
 ## Rule Priority
 
 ![Site separation rule priority](site_separation_rule_priority.png)
 
-Rule precedence are followed in a top down manner.
+Rule precedences are followed in a top down manner.
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on serial number if a match is found.
-2. Rules you define. In the example above it will check the following
+2. Defined Rules. In the example above it will check the following
    1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
    2. If hostname matches `^L21` → Site `MPLS`
    3. If hostname matches `^(L\d{1,2})` → Site `L2-99`
