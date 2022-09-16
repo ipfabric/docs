@@ -2536,8 +2536,8 @@ differently in you production deployment, than described here.
 <p><a class="glightbox" href="../configuration_management.png"><img alt="Configuration management" src="../configuration_management.png"/></a></p>
 <p>There are two ways to detect configuration changes:</p>
 <h2 id="syslog-triggered">Syslog triggered</h2>
-<p>IP Fabric checks incoming syslog messages for key phrase (for example "<em>Configured from console by admin15 on vty0.</em>"). This option needs proper syslog configuration on the device side.</p>
-<p><strong><em>Syslog</em></strong> server listens on port 514/UDP and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>) or using syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
+<p>IP Fabric checks incoming syslog messages for a key phrase (for example "<em>Configured from console by admin15 on vty0.</em>"). This option needs proper syslog configuration on the device side.</p>
+<p><strong><em>Syslog</em></strong> server listens on port 514/UDP and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>) or use a syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
 <p><strong>Notes:</strong></p>
 <ul>
 <li>The receiving port 514 cannot be modified.</li>
@@ -2548,7 +2548,7 @@ differently in you production deployment, than described here.
 </ul>
 <p>To enable the syslog triggered configuration management go to <strong><em>Settings → Advanced → Configuration Management → Configuration Management Setup</em></strong> and select <strong><em>Syslogtrigger</em></strong>.</p>
 <h2 id="schedule">Schedule</h2>
-<p>Configuration change is checked at regular intervals as configured by user.</p>
+<p>Configuration change is checked at a regular intervals as configured by the user.</p>
 <p>Schedule can be enabled and configured at <strong><em>Settings → Advanced → Configuration Management → Configuration Management Setup</em></strong> and select <strong><em>Schedule</em></strong>.</p>
 <p>Here is an example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.</p>
 <p><a class="glightbox" href="../configuration_schedule.png"><img alt="Configuration schedule" src="../configuration_schedule.png"/></a></p>

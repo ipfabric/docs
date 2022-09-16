@@ -2757,7 +2757,7 @@ differently in you production deployment, than described here.
 <p>The dropdown is intuitive and will let you search based on SN or hostname. Currently there is an issue where IP Fabric will not search for devices discovered via an API in the UI. Even though it appears no devices match the SN it will still perform the site separation correctly on the next snapshot.</p>
 <p><a class="glightbox" href="../site_separation_add_attribute_dropdown.png"><img alt="Site separation add attribute dropdown" src="../site_separation_add_attribute_dropdown.png"/></a></p>
 <h4 id="creating-rules-via-the-api">Creating Rules Via The API</h4>
-<p>This is the preferred method of creating rules as it allows for bulk importing.</p>
+<p>This is the preferred method of creating rules as it allows bulk importing.</p>
 <table>
 <thead>
 <tr>
@@ -2825,13 +2825,13 @@ differently in you production deployment, than described here.
 <p><a class="glightbox" href="../site_separation_device_neighborship.png"><img alt="Site separtion device neighborship" src="../site_separation_device_neighborship.png"/></a></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h4 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h4>
-<p>Please see example located on <a href="https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py">Community Fabric GitHub</a>.</p>
+<p>Please see the example located on <a href="https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py">Community Fabric GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
 <p><a class="glightbox" href="../site_separation_rule_priority.png"><img alt="Site separation rule priority" src="../site_separation_rule_priority.png"/></a></p>
-<p>Rule precedence are followed in a top down manner.</p>
+<p>Rule precedences are followed in a top down manner.</p>
 <ol>
 <li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
-<li>Rules you define. In the example above it will check the following<ol>
+<li>Defined Rules. In the example above it will check the following<ol>
 <li>If SNMP Location matches <code>IPFABRIC, (LAB01)</code> → Site <code>LAB01</code></li>
 <li>If hostname matches <code>^L21</code> → Site <code>MPLS</code></li>
 <li>If hostname matches <code>^(L\d{1,2})</code> → Site <code>L2-99</code></li>

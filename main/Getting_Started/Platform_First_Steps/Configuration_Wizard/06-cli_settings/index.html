@@ -2627,7 +2627,7 @@ differently in you production deployment, than described here.
 <h1 id="06-cli-settings">06 - CLI Settings</h1>
 <p><a class="glightbox" href="../cli.png"><img alt="CLI" src="../cli.png"/></a></p>
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI parameters</h2>
-<p>The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>:</p>
+<p>The IP Fabric's discovery is primarily using the Command Line Interface (CLI) to discover network elements. There are certain default CLI parameters that can be found in <strong>Settings → Advanced → SSH/TELNET</strong>:</p>
 <p><a class="glightbox" href="../cli_settings.png"><img alt="CLI" src="../cli_settings.png"/></a></p>
 <dl>
 <dt>Network device login timeout</dt>
@@ -2707,15 +2707,15 @@ differently in you production deployment, than described here.
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>At least one seed IP address has to be provided as a starting point behind Jumphost in seed configuration.</p>
+<p>At least one seed IP address has to be provided as a starting point behind the Jumphost in seed configuration.</p>
 </div>
 <h3 id="set-up-jump-host">Set up Jump host</h3>
 <ol>
 <li>
-<p>Open jump host settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></p>
+<p>Open jump host settings, using  <strong>Settings → Advanced → SSH/TELNET</strong></p>
 </li>
 <li>
-<p>At the bottom of the page, please select <strong>Add</strong> button</p>
+<p>At the bottom of the page, please select the <strong>Add</strong> button</p>
 <p><a class="glightbox" href="../jumphost_add.png"><img alt="Add jump host" src="../jumphost_add.png"/></a></p>
 </li>
 <li>
@@ -2745,7 +2745,7 @@ differently in you production deployment, than described here.
 <h3 id="ssh-key-configuration">SSH key configuration</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Adding ssh key to proxy server allows you to avoid using passwords for authentication.</p>
+<p>Adding a ssh key to the proxy server allows you to avoid using passwords for authentication.</p>
 </div>
 <ol>
 <li>
@@ -2756,7 +2756,7 @@ differently in you production deployment, than described here.
 <p>Save <code>ipf-discovery-public-key.pub</code></p>
 </li>
 <li>
-<p>Copy file content to <code>~/.ssh/authorized_keys</code> (or equivalent) file of the user that will authenticate with Jumphost server.</p>
+<p>Copy file content to <code>~/.ssh/authorized_keys</code> (or equivalent) file of the user that will authenticate with the Jumphost server.</p>
 </li>
 <li>
 <p>If the key has been copied you can use the option <strong>Use SSH keys</strong> while adding a new Jumphost server, instead of <strong>Use credentials</strong>.</p>
@@ -2779,10 +2779,10 @@ differently in you production deployment, than described here.
 <h3 id="remove-jumphost-configuration">Remove Jumphost configuration</h3>
 <ol>
 <li>
-<p>On Jumphost servers list, check configuration that needs to be removed</p>
+<p>On Jumphost servers list, check the configuration that needs to be removed</p>
 </li>
 <li>
-<p>Click <strong>Delete</strong> button</p>
+<p>Click the <strong>Delete</strong> button</p>
 <p><a class="glightbox" href="../jumphost_delete.png"><img alt="Delete jump host" src="../jumphost_delete.png"/></a></p>
 </li>
 </ol>
@@ -2793,9 +2793,9 @@ differently in you production deployment, than described here.
 </div>
 <h2 id="custom-sshtelnet-ports">Custom SSH/Telnet ports</h2>
 <p>Custom SSH/Telnet ports settings enable the discovery process to use different than standard ports for connecting. The standard for SSH is port 22 and 23 for Telnet.</p>
-<p>In the following example we will configure the discovery process to use port <code>8080</code> for SSH connections towards firewall at <code>192.168.168.10</code>:</p>
+<p>In the following example we will configure the discovery process to use port <code>8080</code> for SSH connections towards a firewall at <code>192.168.168.10</code>:</p>
 <p><a class="glightbox" href="../custom_ssh_port.png"><img alt="Custom SSH port" src="../custom_ssh_port.png"/></a></p>
-<p>As a result of such configuration, we would create a new item under the <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every new snapshot created by IP Fabric.</p>
+<p>As a result of such a configuration, we would create a new item under the <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every new snapshot created by IP Fabric.</p>
 <p><a class="glightbox" href="../custom_ssh_port_list.png"><img alt="List of custom SSH port" src="../custom_ssh_port_list.png"/></a></p>
 </article>
 </div>
