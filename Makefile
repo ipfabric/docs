@@ -1,5 +1,5 @@
 IMAGE=registry.gitlab.com/autoboss/docs
-TAG=8.5.0-insiders-4.23.3
+TAG=8.5.0-insiders-4.23.4
 
 serve:
 	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
@@ -20,6 +20,9 @@ guard-%:
 		echo "Environment variable $* not set"; \
 		exit 1; \
 	fi
+
+insiders-tag:
+	git ls-remote -t git@gitlab.com:ip-fabric/documentation/mkdocs-material-insiders-mirror.git  | tail -2
 
 docker-build: guard-GL_DEPLOY_USER guard-GL_DEPLOY_TOKEN Dockerfile requirements.txt
 	docker build -t $(IMAGE):$(TAG) --build-arg GL_DEPLOY_USER="${GL_DEPLOY_USER}" --build-arg GL_DEPLOY_TOKEN="${GL_DEPLOY_TOKEN}" --build-arg MATERIAL_TAG="$(TAG)" .
