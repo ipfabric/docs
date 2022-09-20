@@ -19,7 +19,7 @@ The device inventory represents all logical managed network infrastructure devic
 - `Switching domain` is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.
 - `Hostname` is the short name of the device.
 - `Hostname original` is the original hostname which was acquired from the device.
-- `Hostname processed` is hostname which we parsed from original hostname (if there isn't any parsing, it's the same as `Hostname original`); when applicable - logical device name - e.g. firewall context or vsys name - can be added as a suffix to the hostname.
+- `Hostname processed` is hostname which we parsed from original hostname (if there isn't any parsing, it's the same as `Hostname original`); when applicable -- logical device name -- e.g. firewall `context` or `vsys` name -- can be added as a suffix to the hostname.
 - `Domain` is the device domain name.
 - `FQDN` is the device fully qualified domain name (`hostnameProcessed.domain`).
 - `Serial Number` is the serial number of the device (API column name is `snHw`).
