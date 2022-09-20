@@ -18,6 +18,10 @@ The device inventory represents all logical managed network infrastructure devic
 - `Routing domain` is an IP Fabric generated separation based upon the contiguous layer 3 routing domain to which the device belongs to.
 - `Switching domain` is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.
 - `Hostname` is the short name of the device.
+- `Hostname original` is the original hostname which was acquired from the device.
+- `Hostname processed` is hostname which we parsed from original hostname (if there isn't any parsing, it's the same as `Hostname processed`).
+- `Domain` is the device domain name.
+- `FQDN` is the device fully qualified domain name (`hostnameProcessed.domain`).
 - `Serial Number` is the serial number of the device (API column name is `snHw`).
 - `Unique serial number` is the serial number IP Fabric assigns to the device this could be different from the Hardware SN especially in cases of virtualized equipment (API column name is `sn`).
 - `Login IP` is the IP address used to connect to the device.
