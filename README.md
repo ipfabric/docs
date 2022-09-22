@@ -15,8 +15,9 @@ documentation happens as follows:
   at the beginning. For example `NIM-5808_readme`.
 - do all you commits in the branch. When ready, open a merge-request in GitLab
   (also make sure, that it starts with your ticket number, correctly formatted).
-- please, set a reviewer to @antonin.kral-ipf for all your MRs (merge-requests)
-  at the moment.
+- set yourself as an assignee (your are the owner of the MR).
+- please, set a reviewer to @antonin.kral-ipf or @zdenek.sindylek-ipf for all your MRs
+  (merge-requests) at the moment.
 - the CI/CD pipeline builds and publishes on every push to `main`.
 - `mike` is then used by repository maintainers to push a new version release to
   the documentation web. (See the `mike` section below.)
