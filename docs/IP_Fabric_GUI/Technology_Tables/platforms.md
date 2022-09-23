@@ -46,3 +46,9 @@ Environment menu provides information about power supplies, power
 supplies fans, chassis fans and modules of network devices.
 
 ![Environment](platforms/environment.png)
+
+## Logical Devices
+
+Logical Devices provides summary of all discovered logical firewalls (contexts, vsys, VDOM) and Cisco Nexus VDCs. For each logical device it provides its name and type and if available even its ID
+
+![Environment](platforms/environment.png)
