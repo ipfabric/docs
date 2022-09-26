@@ -1,4 +1,4 @@
-IMAGE=registry.gitlab.com/autoboss/docs
+IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
 TAG=8.5.3-insiders-4.23.5
 
 serve:
