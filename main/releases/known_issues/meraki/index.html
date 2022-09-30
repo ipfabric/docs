@@ -2525,53 +2525,21 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="meraki">Meraki</h1>
 <p><strong>Known Affected platforms</strong>: All</p>
-<p><strong>Description</strong>: Meraki API has limited functionality and doesn’t
-provide all necessary data for our model. Following issues are known:</p>
+<p><strong>Description</strong>: The Meraki API has limited functionality and doesn’t
+provide all the necessary data for the IP Fabric model. The following are known limitations:</p>
 <ul>
 <li>Multiple Meraki devices can have the same public IP</li>
-</ul>
-<ul>
 <li>CDP/LLDP might be not linked between devices correctly as reported port ID doesn’t allow it</li>
-</ul>
-<ul>
 <li>CDP/LLDP timespan is 2h, so it might not show actual state</li>
-</ul>
-<ul>
 <li>ARP is missing, MAC table is reconstructed from endpoints</li>
-</ul>
-<ul>
 <li>DHCP/STATIC doesn’t provide IP mask</li>
-</ul>
-<ul>
 <li>STP is missing</li>
-</ul>
-<ul>
 <li>Routing table static routes only for Firewalls</li>
-</ul>
-<ul>
-<li>Pathlookup is not working because tables for forwarding are not all provided</li>
-</ul>
-<ul>
+<li>Pathlookup is not working because forwarding tables are not provided</li>
 <li>Can't add Meraki device into snapshot (refresh works)</li>
-</ul>
-<ul>
 <li>Limited snapshot - Meraki tasks will be always downloaded</li>
-</ul>
-<ul>
 <li>MX firewall uplink ports - not possible to determine if traffic load balancing is enabled and/or which port is primary and backup</li>
-</ul>
-<ul>
 <li>Multiple Meraki devices can have the same public IP</li>
-</ul>
-<p>Following issues will be resolved in future IP Fabric releases:</p>
-<ul>
-<li>Can't add Meraki device into snapshot (refresh works)</li>
-</ul>
-<ul>
-<li>Mini snapshot - Meraki will be always downloaded</li>
-</ul>
-<ul>
-<li>All discovered devices from Meraki are licensed (no matter if it's Meraki AP)</li>
 </ul>
 </article>
 </div>
