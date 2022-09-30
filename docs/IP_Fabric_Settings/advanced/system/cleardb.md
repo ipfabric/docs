@@ -11,8 +11,6 @@ Fabric's database. Go to **Settings → Advanced → System** and click
 When running Clear DB, all loaded snapshots are automatically unloaded
 and the database recreated.
 
-!!! info
-    We recommend unloading all your snapshots before running Clear DB.
 
 ![ClearDB](2828599305.png)
 
@@ -20,11 +18,12 @@ There is two-way confirmation.
 
 ![Confirmation](2829352961.png)
 
-In the second screen, you can choose from clear (reset) everything or
-keep settings.
+In the second screen, you can choose from Reset Settings or Keep Settings.
+
+![Confirmation Settings](./confirmation-settings.png)
 
 !!! info
-    We recommend keeping settings.
+    We recommend Keeping Settings.
 
 Discovery settings data will be lost and the system setting will be
 reset to defaults **except**:
@@ -36,3 +35,6 @@ reset to defaults **except**:
 - Custom URL (custom view)
 - Reports settings
 - Dashboard settings
+
+!!! warning
+    New API tokens will have to be created after clearing the DB
