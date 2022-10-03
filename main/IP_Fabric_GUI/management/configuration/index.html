@@ -8,9 +8,9 @@
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
 <link href="https://docs.ipfabric.io/main/IP_Fabric_GUI/management/configuration/" rel="canonical"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5" name="generator"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6+insiders-4.25.0" name="generator"/>
 <title>Configuration - IP Fabric Documentation Portal</title>
-<link href="../../../assets/stylesheets/main.fb3608a7.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.fa1d38d9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -29,7 +29,15 @@
 <meta content="Configuration - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/management/configuration.png" name="twitter:image"/>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2621,7 +2629,7 @@ differently in you production deployment, than described here.
 <h2 id="credential-requirements">Credential Requirements</h2>
 <p>Network access credentials allowing the <code>show run</code> command (or equivalent)
 are necessary for configuration storage and configuration management to work properly. Please review <a href="../../../IP_Fabric_Settings/authentication/">Authentication Settings</a>.</p>
-<p><a class="glightbox" href="../config/config_auth.png"><img alt="Config Credentials" src="../config/config_auth.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_auth.png"><img alt="Config Credentials" src="../config/config_auth.png"/></a></p>
 <p>These elevated credentials need <strong>Use for configuration management</strong> box checked.</p>
 <h2 id="trigger">Trigger</h2>
 <p>Trigger archiving can be <a href="../../../IP_Fabric_Settings/advanced/configuration_management/">configured in settings</a> and can be based on a <em>syslog message</em> or a <em>timed event</em>.</p>
@@ -2645,7 +2653,7 @@ are necessary for configuration storage and configuration management to work pro
 <li>the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status <code>changed</code> and <code>Last Change At</code> and <code>Last Check At</code> being set to current time, as described above.</li>
 </ol>
 <p>Let's consider following example:</p>
-<p><a class="glightbox" href="../config/config_l66jfw9.png"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_l66jfw9.png"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png"/></a></p>
 <p>Let's go from the bottom of the output:</p>
 <ul>
 <li><code>Last change At</code> is <code>2022-06-11 01:02:11+02</code> and <code>Last Check At</code> is <code>2022-06-14 01:01:17+02</code> with status <code>no change</code><ul>
@@ -2660,21 +2668,21 @@ are necessary for configuration storage and configuration management to work pro
 </li>
 </ul>
 <h2 id="comparing-configurations">Comparing Configurations</h2>
-<p><a class="glightbox" href="../config/config_table.png"><img alt="Config Table" src="../config/config_table.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_table.png"><img alt="Config Table" src="../config/config_table.png"/></a></p>
 <p>Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (<code>Last Change At</code> column), and the last time a particular configuration was saved in the <code>Last Check At</code> column.</p>
 <p>The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the <code>Before</code> and <code>After</code> states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.</p>
 <figure>
-<p><a class="glightbox" href="../config/config_side.png"><img alt="Side by Side Diff" src="../config/config_side.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_side.png"><img alt="Side by Side Diff" src="../config/config_side.png"/></a>
 </p>
 <figcaption>Side by Side Diff</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="../config/config_inline.png"><img alt="Inline" src="../config/config_inline.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_inline.png"><img alt="Inline" src="../config/config_inline.png"/></a>
 </p>
 <figcaption>Inline</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="../config/config_inline_diff.png"><img alt="Inline Diff" src="../config/config_inline_diff.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_inline_diff.png"><img alt="Inline Diff" src="../config/config_inline_diff.png"/></a>
 </p>
 <figcaption>Inline Diff</figcaption>
 </figure>
@@ -2747,6 +2755,6 @@ are necessary for configuration storage and configuration management to work pro
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script src="../../../assets/javascripts/bundle.b7e8f764.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

@@ -8,9 +8,9 @@
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
 <link href="https://docs.ipfabric.io/main/Getting_Started/Overview/" rel="canonical"/>
 <link href="../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5" name="generator"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6+insiders-4.25.0" name="generator"/>
 <title>IP Fabric Overview - IP Fabric Documentation Portal</title>
-<link href="../../assets/stylesheets/main.fb3608a7.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.fa1d38d9.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -29,7 +29,15 @@
 <meta content="IP Fabric Overview - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/Getting_Started/Overview/index.png" name="twitter:image"/>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2676,7 +2684,7 @@ differently in you production deployment, than described here.
 <p>The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.</p>
 <h2 id="architecture">Architecture</h2>
 <p>A distributed system of micro-service components resides within IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port 443 of the VM's IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.</p>
-<p><a class="glightbox" href="architecture.png"><img alt="IP Fabric Architecture" src="architecture.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="architecture.png"><img alt="IP Fabric Architecture" src="architecture.png"/></a></p>
 <h2 id="operational-requirements">Operational Requirements</h2>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
 <p>The IP Fabric platform runs on any x64 CPU with following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.</p>
@@ -2978,6 +2986,6 @@ privilege cmd level 1 mode exec command terminal
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script src="../../assets/javascripts/bundle.b7e8f764.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

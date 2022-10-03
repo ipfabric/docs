@@ -8,9 +8,9 @@
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
 <link href="https://docs.ipfabric.io/main/IP_Fabric_GUI/diagrams/how_to_use_path-lookup/" rel="canonical"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5" name="generator"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6+insiders-4.25.0" name="generator"/>
 <title>How To Use Path Lookup - IP Fabric Documentation Portal</title>
-<link href="../../../assets/stylesheets/main.fb3608a7.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.fa1d38d9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -29,7 +29,15 @@
 <meta content="How To Use Path Lookup - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/diagrams/how_to_use_path-lookup.png" name="twitter:image"/>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2744,26 +2752,26 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="how-to-use-path-lookup">How To Use Path Lookup</h1>
 <h2 id="unicast-path-lookup">Unicast Path Lookup</h2>
-<p><a class="glightbox" href="../unicast.png"><img alt="Unicast form" src="../unicast.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../unicast.png"><img alt="Unicast form" src="../unicast.png"/></a></p>
 <h3 id="first-hop-algorithm-and-vrf">First Hop Algorithm And VRF</h3>
 <p>First hop algorithm can be defined - when <strong>Automatic</strong> option is selected,
 source VRF can be automatically detected, or selected manually.</p>
-<p><a class="glightbox" href="../first_hop_algorithm.png"><img alt="First hop algorithm" src="../first_hop_algorithm.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../first_hop_algorithm.png"><img alt="First hop algorithm" src="../first_hop_algorithm.png"/></a></p>
 <p>Also your source network device and its interface can be selected when choosing
 <strong>User defined</strong> First Hop Algorithm.</p>
 <h3 id="sourcedestination-ip-address-and-port">Source/Destination IP Address and Port</h3>
 <p>As a source/destination IP address can be used a plain IP address or a CIDR (Classless Inter-Domain Routing) when for example simulating path lookup from a host to a network.</p>
 <p>By default, ICMP protocol and Echo request is chosen for path lookup.</p>
-<p><a class="glightbox" href="../pathlookup_src_dst.jpeg"><img alt="Source and destination" src="../pathlookup_src_dst.jpeg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_src_dst.jpeg"><img alt="Source and destination" src="../pathlookup_src_dst.jpeg"/></a></p>
 <p>When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is set by default.</p>
-<p><a class="glightbox" href="../pathlookup_http_default.jpeg"><img alt="HTTP default" src="../pathlookup_http_default.jpeg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_http_default.jpeg"><img alt="HTTP default" src="../pathlookup_http_default.jpeg"/></a></p>
 <p>When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.</p>
-<p><a class="glightbox" href="../pathlookup_src_dst_port.png"><img alt="Source and destination ports" src="../pathlookup_src_dst_port.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_src_dst_port.png"><img alt="Source and destination ports" src="../pathlookup_src_dst_port.png"/></a></p>
 <p>Port can be changed to an arbitrary one for TCP/UDP protocols.</p>
 <p>The following flags can be also set for TCP traffic – None/ACK/FIN/SYN/RST/PSH/URG.</p>
 <h3 id="ttl-and-fragment-offset">TTL and Fragment Offset</h3>
 <p>In <strong>More details</strong>, <strong>TTL</strong> (Time to live ) and <strong>Fragment offset</strong> can be set - thus affecting path lookup output - default TTL is 128 and Fragment offset is set to 0</p>
-<p><a class="glightbox" href="../pathlookup_ttl_fragment.png"><img alt="TTL and Fragmentation" src="../pathlookup_ttl_fragment.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_ttl_fragment.png"><img alt="TTL and Fragmentation" src="../pathlookup_ttl_fragment.png"/></a></p>
 <h3 id="application">Application</h3>
 <p>When evaluating security rules and security appliances on the path check traffic on L7, an application can be checked on the path lookup.</p>
 <p>It’s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.</p>
@@ -2771,7 +2779,7 @@ source VRF can be automatically detected, or selected manually.</p>
 <p class="admonition-title">Info</p>
 <p>An application name input is just a string, so it needs to be defined exactly as in a security rule!</p>
 </div>
-<p><a class="glightbox" href="../pathlookup_application.png"><img alt="Application" src="../pathlookup_application.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_application.png"><img alt="Application" src="../pathlookup_application.png"/></a></p>
 <h3 id="sourcedestination-ip-regions">Source/Destination IP Regions</h3>
 <p>When testing access to or from the internet, source or destination IP regions can be set.</p>
 <p>Example: Europe, China, etc.</p>
@@ -2780,7 +2788,7 @@ source VRF can be automatically detected, or selected manually.</p>
 <p class="admonition-title">Info<p>IP regions are just a string, so they need to be defined exactly as they are in a security rule!</p>
 </p>
 </div>
-<p><a class="glightbox" href="../pathlookup_src_dst_regions.png"><img alt="Regions" src="../pathlookup_src_dst_regions.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../pathlookup_src_dst_regions.png"><img alt="Regions" src="../pathlookup_src_dst_regions.png"/></a></p>
 <h3 id="path-lookup-mode">Path Lookup Mode</h3>
 <p>If you’ve used a network CIDR instead of a single IP address, you will have the option between:</p>
 <ul>
@@ -2793,28 +2801,28 @@ limited to 255 hosts, source and destination combined.</li>
 </ul>
 <p>Then click on submit.</p>
 <p>This is how path lookup might look like:</p>
-<p><a class="glightbox" href="../example.png"><img alt="Path lookup example" src="../example.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../example.png"><img alt="Path lookup example" src="../example.png"/></a></p>
 <h2 id="multicast-tree-lookup">Multicast Tree Lookup</h2>
 <p>You want to understand how a certain multicast flow is used, you can use
 the Multicast Tree Lookup. For that, just select the correct option and
 enter the relevant details</p>
-<p><a class="glightbox" href="../multicast.png"><img alt="Multicast form" src="../multicast.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../multicast.png"><img alt="Multicast form" src="../multicast.png"/></a></p>
 <p>You will then see the Multicast Tree:</p>
-<p><a class="glightbox" href="../multicast_example.png"><img alt="Multicast example" src="../multicast_example.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../multicast_example.png"><img alt="Multicast example" src="../multicast_example.png"/></a></p>
 <p>And you will have access to a lot of information regarding the Multicast
 forwarding decision:</p>
-<p><a class="glightbox" href="../multicast_path_inspector.png"><img alt="Multicast path inspector" src="../multicast_path_inspector.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../multicast_path_inspector.png"><img alt="Multicast path inspector" src="../multicast_path_inspector.png"/></a></p>
 <h2 id="host-to-gateway">Host To Gateway</h2>
 <p>To find out more details between a host and its network gateway, you can
 use this menu: Host To Gateway. You only need to provide the host, and
 you will the details:</p>
-<p><a class="glightbox" href="../host_to_gw.png"><img alt="Host to gateway form" src="../host_to_gw.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../host_to_gw.png"><img alt="Host to gateway form" src="../host_to_gw.png"/></a></p>
 <h2 id="inspecting-and-adjusting-path-lookup">Inspecting And Adjusting Path Lookup</h2>
 <h3 id="path-controls">Path Controls</h3>
 <p>With the mouse right-click, more options are enabled:
-<a class="glightbox" href="../path_controls.png"><img alt="Path controls" src="../path_controls.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../path_controls.png"><img alt="Path controls" src="../path_controls.png"/></a></p>
 <p>After opening the details, we can select the destination link to proceed with packet analysis:
-<a class="glightbox" href="../path_detail.png"><img alt="Path detail" src="../path_detail.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../path_detail.png"><img alt="Path detail" src="../path_detail.png"/></a></p>
 <h3 id="understand-the-path-selection">Understand The Path Selection</h3>
 <p>To understand the decision taken by a device, right-click on the device
 and "show detail". You will then be presented with the details. If you
@@ -2823,14 +2831,14 @@ to select the interface you want to look at. Similarly, if you have
 several interfaces that can be used to forward the traffic, you will
 have to choose one. Then in the middle of the table, you will see the
 forwarding decision:</p>
-<p><a class="glightbox" href="../forwarding_decision.png"><img alt="Forwarding decision" src="../forwarding_decision.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../forwarding_decision.png"><img alt="Forwarding decision" src="../forwarding_decision.png"/></a></p>
 <p>In this example, we are looking at the device L21C11, which has 2
 incoming interfaces and one forwarding for this flow:</p>
-<p><a class="glightbox" href="../forwarding_decision_animation.gif"><img alt="Forwarding decision animation" src="../forwarding_decision_animation.gif"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../forwarding_decision_animation.gif"><img alt="Forwarding decision animation" src="../forwarding_decision_animation.gif"/></a></p>
 <h3 id="visualization-setup">Visualization Setup</h3>
 <p>You can set up what you want to prioritize in the view. Just simply move
 the bars up or down.</p>
-<p><a class="glightbox" href="../visualization_setup.png"><img alt="Visualization setup" src="../visualization_setup.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../visualization_setup.png"><img alt="Visualization setup" src="../visualization_setup.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2900,6 +2908,6 @@ the bars up or down.</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script src="../../../assets/javascripts/bundle.b7e8f764.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>

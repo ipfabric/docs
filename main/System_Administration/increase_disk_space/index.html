@@ -8,9 +8,9 @@
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
 <link href="https://docs.ipfabric.io/main/System_Administration/increase_disk_space/" rel="canonical"/>
 <link href="../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5" name="generator"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6+insiders-4.25.0" name="generator"/>
 <title>Increase Disk Space - IP Fabric Documentation Portal</title>
-<link href="../../assets/stylesheets/main.fb3608a7.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.fa1d38d9.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -29,7 +29,15 @@
 <meta content="Increase Disk Space - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/increase_disk_space.png" name="twitter:image"/>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>html.glightbox-open { overflow: initial; height: 100%; }</style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2876,7 +2884,7 @@ how <code>sd[c-z]</code> would be used. The new approach with one disk is more v
     2.  for backup volume is recommended to select different datastore
         ideally on a different physical storage</li>
 <li>Click <strong>OK</strong>
-<a class="glightbox" href="../vmware_virtual_hardware.png"><img alt="VMWare virtual hardware" src="../vmware_virtual_hardware.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../vmware_virtual_hardware.png"><img alt="VMWare virtual hardware" src="../vmware_virtual_hardware.png"/></a></li>
 <li>Launch Remote (Web) Console.</li>
 <li>Reboot(<strong>Send Ctrl+Alt+Delete</strong> function can be also used) or power on IP
    Fabric VM.</li>
@@ -2904,19 +2912,19 @@ how <code>sd[c-z]</code> would be used. The new approach with one disk is more v
 <li>Shutdown VM. (when Started, HyperV won't let you change any
     hardware settings)</li>
 <li>Right click on VM name an select <strong>Settings</strong>.
-   <a class="glightbox" href="../hyperv_settings.png"><img alt="HyperV settings" src="../hyperv_settings.png"/></a></li>
+   <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../hyperv_settings.png"><img alt="HyperV settings" src="../hyperv_settings.png"/></a></li>
 <li>Select IDE Controller 1 - Hard Drive - click <strong>Add</strong>
-<a class="glightbox" href="../hyperv_add_hdd.png"><img alt="HyperV Add hard drive" src="../hyperv_add_hdd.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../hyperv_add_hdd.png"><img alt="HyperV Add hard drive" src="../hyperv_add_hdd.png"/></a></li>
 <li>Select <strong>Virtual hard disk</strong> - click <strong>New</strong> - select <strong>Choose
     Disk Format</strong> - select <strong>VHDX</strong> - click <strong>Next</strong>.
-   <a class="glightbox" href="../hyperv_add_hdd_format.png"><img alt="HyperV Add hard drive - format" src="../hyperv_add_hdd_format.png"/></a></li>
+   <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../hyperv_add_hdd_format.png"><img alt="HyperV Add hard drive - format" src="../hyperv_add_hdd_format.png"/></a></li>
 <li>Select <strong>Dynamically expanding</strong> - click <strong>Next</strong>
-<a class="glightbox" href="../hyperv_add_hdd_type.png"><img alt="HyperV Add hard drive - type" src="../hyperv_add_hdd_type.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../hyperv_add_hdd_type.png"><img alt="HyperV Add hard drive - type" src="../hyperv_add_hdd_type.png"/></a></li>
 <li>Specify name and location of disk.</li>
 <li><strong>Configure Disk</strong> - select <strong>Create a new blank virtual hard
     disk</strong> - change <strong>Size</strong> to required value - click
     <strong>Finish</strong>.
-   <a class="glightbox" href="../hyperv_add_hdd_space.png"><img alt="HyperV Add hard drive - space" src="../hyperv_add_hdd_space.png"/></a></li>
+   <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../hyperv_add_hdd_space.png"><img alt="HyperV Add hard drive - space" src="../hyperv_add_hdd_space.png"/></a></li>
 <li>Apply new disk on Settings window - close <strong>Settings</strong>.</li>
 <li>Start VM.</li>
 <li>Follow <a href="#expanding-system-volume-by-adding-additional-disks">Adding additional disk(s)</a>
@@ -2991,6 +2999,6 @@ how <code>sd[c-z]</code> would be used. The new approach with one disk is more v
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "width": "100%", "height": "auto", "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script src="../../assets/javascripts/bundle.b7e8f764.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
