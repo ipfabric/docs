@@ -63,6 +63,42 @@ For telnet use:
 telnet device-IP-or-Hostname
 ```
 
+Since version 5.0, there is also a new tool called `ipf-connection-tester` for connecting to network devices using the same library that we use in discovery (if `ssh` or `telnet` works with the default Linux client, it does not automatically mean it will also work during the discovery as system clients are not used).
+
+To test SSH connectivity, use:
+
+```shell
+ipf-connection-tester ssh userName@device-IP-or-Hostname
+```
+
+If you are getting timeouts, it is possible to increase the default timeout options:
+
+```shell
+Options:
+  -r, --ready-timeout <timeout>  seconds to wait till connection is ready (default: 30)
+  -d, --data-timeout <timeout>   seconds to wait till data is received (default: 10)
+```
+
+For example:
+
+```shell
+ipf-connection-tester ssh userName@device-IP-or-Hostname -r 60 -d 20
+```
+
+For telnet, simply change `ssh` to `telnet`:
+
+```shell
+ipf-connection-tester telnet userName@device-IP-or-Hostname
+```
+
+Timeout options are the same. However, the telnet connection tester is much less verbose than the SSH one, so for both security and verbosity, prefer SSH whenever possible.
+
+If you wish to run `ipf-connection-tester` from your own automation script, here are possible return values:
+
+* `0` -- Connection success
+* `1` -- Missing or invalid command line arguments
+* `2` -- Connection failed
+
 ## Reboot And Shutdown
 
 IP Fabric VM can be also rebooted or shutdown using CLI.
