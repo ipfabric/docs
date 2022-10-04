@@ -71,3 +71,8 @@ certification authority so check the vendor's documentation.
 
       ----- BEGIN base64root certificate END -----
     ```
+!!! info "Organization name & Department fields forbidden characters"
+    
+    Fields "Organization name" and "Department" can contain only the following characters `A-Za-z0-9`
+
+![Organization_and department_fields](org_dep_fields.png)
