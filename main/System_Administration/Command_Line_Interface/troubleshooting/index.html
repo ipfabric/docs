@@ -2646,6 +2646,28 @@ can use the <code>telnet</code> and <code>ssh</code> client from the command lin
 <p>For telnet use:</p>
 <div class="highlight"><pre><span></span><code>telnet device-IP-or-Hostname
 </code></pre></div>
+<p>Since version 5.0, there is also a new tool called <code>ipf-connection-tester</code> for connecting to network devices using the same library that we use in discovery (if <code>ssh</code> or <code>telnet</code> works with the default Linux client, it does not automatically mean it will also work during the discovery as system clients are not used).</p>
+<p>To test SSH connectivity, use:</p>
+<div class="highlight"><pre><span></span><code>ipf-connection-tester ssh userName@device-IP-or-Hostname
+</code></pre></div>
+<p>If you are getting timeouts, it is possible to increase the default timeout options:</p>
+<div class="highlight"><pre><span></span><code>Options:
+  -r, --ready-timeout &lt;timeout&gt;  seconds to <span class="nb">wait</span> till connection is ready <span class="o">(</span>default: <span class="m">30</span><span class="o">)</span>
+  -d, --data-timeout &lt;timeout&gt;   seconds to <span class="nb">wait</span> till data is received <span class="o">(</span>default: <span class="m">10</span><span class="o">)</span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>ipf-connection-tester ssh userName@device-IP-or-Hostname -r <span class="m">60</span> -d <span class="m">20</span>
+</code></pre></div>
+<p>For telnet, simply change <code>ssh</code> to <code>telnet</code>:</p>
+<div class="highlight"><pre><span></span><code>ipf-connection-tester telnet userName@device-IP-or-Hostname
+</code></pre></div>
+<p>Timeout options are the same. However, the telnet connection tester is much less verbose than the SSH one, so for both security and verbosity, prefer SSH whenever possible.</p>
+<p>If you wish to run <code>ipf-connection-tester</code> from your own automation script, here are possible return values:</p>
+<ul>
+<li><code>0</code> -- Connection success</li>
+<li><code>1</code> -- Missing or invalid command line arguments</li>
+<li><code>2</code> -- Connection failed</li>
+</ul>
 <h2 id="reboot-and-shutdown">Reboot And Shutdown</h2>
 <p>IP Fabric VM can be also rebooted or shutdown using CLI.</p>
 <p>For VM reboot just use <code>reboot</code> command without any parameters.</p>
