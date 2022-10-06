@@ -2661,23 +2661,26 @@ differently in you production deployment, than described here.
 /var/log/nimpee/webng.log                           - web console errors <span class="o">(</span>received by API<span class="o">)</span>
 </code></pre></div>
 <h2 id="snapshot-logs">Snapshot Logs</h2>
-<p>Snapshots are available in <code>/home/autoboss/snapshots</code> directory.</p>
-<p>Each folder inside represents one snapshot.</p>
-<p>Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.</p>
-<p>Snapshot related logs are visible in <code>/home/autoboss/snapshots/&lt;id&gt;/*</code></p>
+<p>Snapshots are available in <code>/home/autoboss/snapshots</code> directory. Each folder inside represents one snapshot. Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.</p>
+<p>Snapshot related logs are located at <code>/home/autoboss/snapshots/&lt;id&gt;/*</code></p>
 <div class="highlight"><pre><span></span><code>/home/autoboss/snapshots/&lt;id&gt;/*                     - snapshot related logs
 
 /home/autoboss/snapshots/&lt;id&gt;/cli/*                 - CLI logs collected during the disocvery
 /home/autoboss/snapshots/&lt;id&gt;/devices/*             - information about devices processed by IP Fabric from the CLI logs
 
-/home/autoboss/snapshots/&lt;id&gt;/services/networker/all.txt    - networker via traceroute looks <span class="k">for</span> other possible next tasks <span class="k">for</span> worker service
-/home/autoboss/snapshots/&lt;id&gt;/services/tasker/all.txt       - tasker prepares <span class="sb">`</span>vTask<span class="sb">`</span> records - connecting into <span class="o">(</span>network<span class="o">)</span> devices
-/home/autoboss/snapshots/&lt;id&gt;/services/updater/all.txt      - updater is transforming device JSON into DB
-/home/autoboss/snapshots/&lt;id&gt;/services/worker/*.txt         - worker does parsing
+<span class="c1"># Following 4 services - Networker, Tasker, Updater, Worker all log in two formats:</span>
+<span class="c1"># /home/autoboss/snapshots/&lt;id&gt;/services/&lt;service&gt;/all.txt          - simple text format, basic information</span>
+<span class="c1"># /home/autoboss/snapshots/&lt;id&gt;/services/&lt;service&gt;/structured.json  - more detailed information in JSON Lines format</span>
+
+<span class="c1"># Service folders and their descriptions:</span>
+/home/autoboss/snapshots/&lt;id&gt;/services/networker/    - networker via traceroute looks <span class="k">for</span> other possible next tasks <span class="k">for</span> worker service
+/home/autoboss/snapshots/&lt;id&gt;/services/tasker/       - tasker prepares <span class="sb">`</span>vTask<span class="sb">`</span> records - connecting into <span class="o">(</span>network<span class="o">)</span> devices
+/home/autoboss/snapshots/&lt;id&gt;/services/updater/      - updater is transforming device JSON into DB
+/home/autoboss/snapshots/&lt;id&gt;/services/worker/       - worker does parsing
 </code></pre></div>
 <h2 id="remote-syslog">Remote Syslog</h2>
-<p>In IP Fabric version &gt;= <code>5.0.0</code> it is now possible to send logs to a remote collector.  This will use a basic example
-using default UDP port of 514.  More advanced examples such as TCP connections please consult the <a href="https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide">syslog-ng Documentation</a></p>
+<p>In IP Fabric version &gt;= <code>5.0.0</code> it is now possible to send logs to a remote collector. This will use a basic example
+using default UDP port of 514. More advanced examples such as TCP connections please consult the <a href="https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide">syslog-ng documentation</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Changes to <code>/etc/*.conf</code> files</p>
 <p>It is important not to touch any <code>*.conf</code> files in the <code>/etc/</code> as this can cause issues during upgrades.
@@ -2694,17 +2697,21 @@ The recommended approach is to create a new file under the service's <code>conf.
 <li>
 <p>Add the following lines (replacing <code>&lt;YOUR_IP&gt;</code> with the IP of your syslog server):</p>
 <ol>
-<li>Forwarding All Syslog Messages (including system messages)<p><div class="highlight"><pre><span></span><code>destination remote { network("&lt;YOUR_IP&gt;" transport("udp") port(514)); }; 
+<li>
+<p>Forwarding All Syslog Messages (including system messages)</p>
+<div class="highlight"><pre><span></span><code>destination remote { network("&lt;YOUR_IP&gt;" transport("udp") port(514)); };
 log { source(s_src); destination(remote); };
 </code></pre></div>
-   2. Forwarding Only IP Fabric Syslog Messages</p>
+</li>
+<li>
+<p>Forwarding Only IP Fabric Syslog Messages</p>
 <div class="highlight"><pre><span></span><code>destination remote { network("&lt;YOUR_IP&gt;" transport("udp") port(514)); };
 
 log {
-source(s_src);
-filter(f_ipf_api);
-parser(p_json);
-destination(remote);
+  source(s_src);
+  filter(f_ipf_api);
+  parser(p_json);
+  destination(remote);
 };
 </code></pre></div>
 </li>
