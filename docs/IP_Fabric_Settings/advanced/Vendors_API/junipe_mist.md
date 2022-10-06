@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports Juniper Mist API. Juniper Mist devices are discovered only through API. Some settings to be applied that we go through on this section.
+---
+
 # Juniper Mist
 
 Starting version **4.4.0** IP Fabric supports Juniper Mist API.

@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes general known affected issues that may occur in the IP Fabric's platform and shows how to fix them.
+---
+
 # General
 
 - Diagram displays device, which is not connected to anything. The

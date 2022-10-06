@@ -1,3 +1,7 @@
+---
+description: API endpoints are available in IP Fabric. You also can take a look at the IP Fabric API Documentation.
+---
+
 # Overview
 
 IP Fabric is an API first platform; anything that can be accomplished via

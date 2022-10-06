@@ -1,3 +1,7 @@
+---
+description: For the final step, we will show you how to start the initial discovery through a couple of steps.
+---
+
 # Initial Discovery
 
 !!! note

@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Juniper and how to fix them.
+---
+
 # Juniper
 
 -   Route leak defined by reference to another VRF is not supported.

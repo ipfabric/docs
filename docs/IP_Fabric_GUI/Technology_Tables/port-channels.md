@@ -1,3 +1,7 @@
+---
+description: The Port-channels section covers information about port channels, which combine multiple physical links for load sharing and redundancy purposes.
+---
+
 # Port-Channels
 
 The Port-channels section covers information about port channels, which

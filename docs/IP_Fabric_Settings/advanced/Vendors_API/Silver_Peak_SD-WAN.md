@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports the discovery of Silver Peak (Aruba) EdgeConnect devices in router mode. EdgeConnect devices are discovered only through API.
+---
+
 # Silver Peak SD-WAN
 
 Starting version **4.3** IP Fabric supports the discovery of Silver Peak (Aruba) EdgeConnect devices in router mode.

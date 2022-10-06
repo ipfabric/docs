@@ -1,3 +1,7 @@
+---
+description: IP Fabric can ingest information about security incident from multiple sources.
+---
+
 # Security Incident Response
 
 ## Initial source of information

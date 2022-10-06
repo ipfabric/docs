@@ -1,3 +1,7 @@
+---
+description: In this section we talk about diagrams and how it helps to visualize the network state information.
+---
+
 # Overview
 
 Diagrams help to visualize the network state information.

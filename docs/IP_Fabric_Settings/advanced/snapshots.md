@@ -1,3 +1,7 @@
+---
+description: In this section we talk about snapshots, scheduling, retention rules and how they work.
+---
+
 ## Snapshots
 
 For [change management](../../IP_Fabric_GUI/management/changes.md), regularly running IP Fabric

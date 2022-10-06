@@ -1,3 +1,7 @@
+---
+description: IP Fabric has a straightforward licensing concept. One license is used for every physical or virtual device in the network, with the exception of wirel...
+---
+
 # Licensing
 
 IP Fabric has a straightforward licensing concept. For every physical or virtual device in the network, with the exception of wireless access points, one license is used.

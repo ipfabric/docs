@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for 3Com and how to fix them.
+---
+
 # 3Com
 
 **Known Affected platforms**: All

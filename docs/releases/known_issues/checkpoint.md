@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Checkpoint and how to fix them.
+---
+
 # Checkpoint
 
 ## `fw ctl pstat` Command Requires Admin Rights

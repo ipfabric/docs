@@ -1,3 +1,7 @@
+---
+description: To ensure the platform’s good health, it’s highly recommended to run the System Maintenance on regular basis that you can configure in the platform.
+---
+
 # 10 - Schedule System Maintenance
 
 To ensure the platform’s good health, it’s highly recommended to run the System Maintenance on a regular basis. The recommended frequency for System Maintenance is once a day.

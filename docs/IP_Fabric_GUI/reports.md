@@ -1,3 +1,7 @@
+---
+description: Report exports provide the facility to export network state information as a word document.
+---
+
 # Reports
 
 ## Overview

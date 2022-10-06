@@ -1,3 +1,7 @@
+---
+description: Most commonly occuring problems while configuring Quagga/FRR to work with IP Fabric.
+---
+
 # Configuring Quagga / FRR To Work With IP Fabric
 
 When running discovery, IP Fabric needs to connect directly to the

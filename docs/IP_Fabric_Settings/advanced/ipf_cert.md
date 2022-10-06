@@ -1,3 +1,7 @@
+---
+description: IP Fabric uses a secure TLS connection to access the user interface. A self-signed certificate is generated during the installation process...
+---
+
 # IP Fabric Web Certificate
 
 !!! important

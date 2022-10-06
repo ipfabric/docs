@@ -1,3 +1,7 @@
+---
+description: To ensure the IP Fabric platform’s good health, it’s highly recommended to run the System Maintenance on regular basis.
+---
+
 # Schedule System Maintenance
 
 To ensure the platform’s good health, it’s highly recommended to run the

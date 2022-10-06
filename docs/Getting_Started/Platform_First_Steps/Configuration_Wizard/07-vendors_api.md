@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports discovery of network devices via a dedicated vendors' APIs that you can setup.
+---
+
 # 07 - Vendors API
 
 IP Fabric supports discovery of network devices via dedicated vendors' APIs.

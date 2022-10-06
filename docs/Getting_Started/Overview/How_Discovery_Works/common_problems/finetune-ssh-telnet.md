@@ -1,3 +1,7 @@
+---
+description: The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements.
+---
+
 # Fine-Tune SSH/Telnet CLI Parameters
 
 The IP Fabric's discovery is primarily using Command Line Interface

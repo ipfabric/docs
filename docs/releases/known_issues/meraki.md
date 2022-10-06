@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Meraki and how to fix them.
+---
+
 # Meraki
 
 **Known Affected platforms**: All

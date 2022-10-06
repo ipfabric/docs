@@ -1,3 +1,7 @@
+---
+description: The discovery process for network device divides into multiple Tasks. The TASK is a data collection related to a specific network protocol or technology
+---
+
 # Discovery Tasks
 
 The discovery process for network devices is divided into multiple Tasks.

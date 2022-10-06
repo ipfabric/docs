@@ -1,3 +1,7 @@
+---
+description: We have a selection of the most frequently asked questions that you can check out here!
+---
+
 # Frequently Asked Question - FAQ
 
 ## Business Goals

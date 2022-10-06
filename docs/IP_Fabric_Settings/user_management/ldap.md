@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports the LDAP authentication where users need to be assigned the appropriate permissions locally or default user permissions for...
+---
+
 # LDAP Authentication
 
 User synchronization or import capabilities **are not supported at

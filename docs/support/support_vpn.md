@@ -1,3 +1,7 @@
+---
+description: With IP Fabric a customer is able to establish remote SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
+---
+
 # Support VPN
 
 Starting IP Fabric version 1.0.3 customer is able to establish remote

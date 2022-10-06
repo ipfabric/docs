@@ -1,3 +1,7 @@
+---
+description: Management section presents some best practice lifecycle compliance checks.
+---
+
 # Management
 
 Management section presents some best practice lifecycle compliance

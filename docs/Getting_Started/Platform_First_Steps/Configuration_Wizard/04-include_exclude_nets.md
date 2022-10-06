@@ -1,3 +1,7 @@
+---
+description: Even though there are no limitations on discovery you can limit the discovery to one or more subnets or specific parts of the network.
+---
+
 # 04 - Include Or Exclude Networks In Discovery
 
 By default, there are no limitations on discovery, and all IP addresses are allowed (i.e. *Include scope* is `0.0.0.0/0`).

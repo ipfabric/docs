@@ -1,3 +1,7 @@
+---
+description: If you know a particular starting point for discovering the network, the information can be entered. This option does not exclude any networks from...
+---
+
 # Discovery Seed
 
 A discovery seed is a device from which IP Fabric begins the auto-discovery process. These IPs can be device management IP addresses or networks.

@@ -1,3 +1,7 @@
+---
+description: This tech note describes how you can retrieve configuration files from IP Fabric’s configuration management capability, to be consumed outside the platform.
+---
+
 # Retrieving configurations
 
 This tech note describes how you can retrieve configuration files from IP Fabric’s configuration management capability, to be consumed outside the platform.

@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports Cisco Firepower Zone Firewall feature which extends (to L7) and improves capabilities of IP Fabric to detect and correctly evaluate...
+---
+
 # Dropping Support For ACL On Cisco Firepower
 
 In IP Fabric v4.3 we are introducing support for Cisco Firepower Zone

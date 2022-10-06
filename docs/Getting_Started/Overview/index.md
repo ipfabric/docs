@@ -1,3 +1,7 @@
+---
+description: The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility.
+---
+
 # IP Fabric Overview
 
 The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.

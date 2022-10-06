@@ -1,3 +1,7 @@
+---
+description: On the IP Fabric portal you can find all relevant product documents and information, including release notes, Documentation and API Documentation amongst others.
+---
+
 # Welcome
 
 On this portal you can find all relevant product documents and information, including release notes, Documentation and API Documentation amongst others. If you are unable to find what you are looking for on this portal, please contact us on [info@ipfabric.io](mailto:info@ipfabric.io) or contact your account representative.

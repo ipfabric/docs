@@ -1,3 +1,7 @@
+---
+description: In rare cases, it may be necessary to delete and recreate the IP Fabric's database.
+---
+
 # Clear DB
 
 !!! warning

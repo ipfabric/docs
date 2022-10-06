@@ -1,3 +1,7 @@
+---
+description: The dashboard provides an overview of the network analysis results, including an aggregated scorecard calculated from the performance, capacity etc...
+---
+
 # Dashboard
 
 ## Overview

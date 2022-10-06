@@ -1,3 +1,7 @@
+---
+description: This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with...
+---
+
 # Create New Snapshots Via API
 
 This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with a different set of settings, if you wanted to have a reduced scope for example.

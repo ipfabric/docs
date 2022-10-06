@@ -1,3 +1,7 @@
+---
+description: No network devices are discovered when you run Discovery for the first time or after system changes.
+---
+
 # No Devices Discovered
 
 ## Problem

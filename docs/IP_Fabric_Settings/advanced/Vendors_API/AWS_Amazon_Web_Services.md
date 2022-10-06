@@ -1,3 +1,7 @@
+---
+description: In order to add AWS to the discovery you will need an access key & secret access key from your AWS account.
+---
+
 # AWS (Amazon Web Services)
 
 Starting version 3.8.0 IP Fabric supports AWS API.
