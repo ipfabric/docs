@@ -37,15 +37,11 @@ Service logs for IP Fabric services are stored in the `/var/log/nimpee` folder:
 /var/log/nimpee/webng.log                           - web console errors (received by API)
 ```
 
-##Snapshot Logs
+## Snapshot Logs
 
-Snapshots are available in `/home/autoboss/snapshots` directory.
+Snapshots are available in `/home/autoboss/snapshots` directory. Each folder inside represents one snapshot. Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.
 
-Each folder inside represents one snapshot.
-
-Even if snapshots can be copied manually using SCP or SFTP it's strongly recommended to use the export feature in web UI.
-
-Snapshot related logs are visible in `/home/autoboss/snapshots/<id>/*`
+Snapshot related logs are located at `/home/autoboss/snapshots/<id>/*`
 
 ```bash
 /home/autoboss/snapshots/<id>/*                     - snapshot related logs
@@ -53,16 +49,21 @@ Snapshot related logs are visible in `/home/autoboss/snapshots/<id>/*`
 /home/autoboss/snapshots/<id>/cli/*                 - CLI logs collected during the disocvery
 /home/autoboss/snapshots/<id>/devices/*             - information about devices processed by IP Fabric from the CLI logs
 
-/home/autoboss/snapshots/<id>/services/networker/all.txt    - networker via traceroute looks for other possible next tasks for worker service
-/home/autoboss/snapshots/<id>/services/tasker/all.txt       - tasker prepares `vTask` records - connecting into (network) devices
-/home/autoboss/snapshots/<id>/services/updater/all.txt      - updater is transforming device JSON into DB
-/home/autoboss/snapshots/<id>/services/worker/*.txt         - worker does parsing
+# Following 4 services - Networker, Tasker, Updater, Worker all log in two formats:
+# /home/autoboss/snapshots/<id>/services/<service>/all.txt          - simple text format, basic information
+# /home/autoboss/snapshots/<id>/services/<service>/structured.json  - more detailed information in JSON Lines format
+
+# Service folders and their descriptions:
+/home/autoboss/snapshots/<id>/services/networker/    - networker via traceroute looks for other possible next tasks for worker service
+/home/autoboss/snapshots/<id>/services/tasker/       - tasker prepares `vTask` records - connecting into (network) devices
+/home/autoboss/snapshots/<id>/services/updater/      - updater is transforming device JSON into DB
+/home/autoboss/snapshots/<id>/services/worker/       - worker does parsing
 ```
 
 ## Remote Syslog
 
-In IP Fabric version >= `5.0.0` it is now possible to send logs to a remote collector.  This will use a basic example
-using default UDP port of 514.  More advanced examples such as TCP connections please consult the [syslog-ng Documentation](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide)
+In IP Fabric version >= `5.0.0` it is now possible to send logs to a remote collector. This will use a basic example
+using default UDP port of 514. More advanced examples such as TCP connections please consult the [syslog-ng documentation](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide)
 
 !!! warning "Changes to `/etc/*.conf` files"
 
@@ -76,24 +77,26 @@ using default UDP port of 514.  More advanced examples such as TCP connections p
 3. Create a new file (filename should be understandable by your team and should not conflict with other files).
    1. `nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf`
 4. Add the following lines (replacing `<YOUR_IP>` with the IP of your syslog server):
+
    1. Forwarding All Syslog Messages (including system messages)
 
-      ```
-      destination remote { network("<YOUR_IP>" transport("udp") port(514)); }; 
+      ```syslog-ng
+      destination remote { network("<YOUR_IP>" transport("udp") port(514)); };
       log { source(s_src); destination(remote); };
       ```
+
    2. Forwarding Only IP Fabric Syslog Messages
-   
-      ```
+
+      ```syslog-ng
       destination remote { network("<YOUR_IP>" transport("udp") port(514)); };
 
       log {
-      source(s_src);
-      filter(f_ipf_api);
-      parser(p_json);
-      destination(remote);
+        source(s_src);
+        filter(f_ipf_api);
+        parser(p_json);
+        destination(remote);
       };
       ```
-   
+
 5. Save the file and exit
 6. Restart syslog-ng: `systemctl restart syslog-ng`
