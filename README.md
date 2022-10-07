@@ -92,6 +92,8 @@ Please, make yourself familiar with [Material Reference Guide](https://squidfunk
 
 ### Live preview
 
+#### Container
+
 You can run live preview, which is super helpful when writing / editing the
 documentation. If you are IPFabric insider, it is simple as (check
 [GitLab container registry](https://docs.gitlab.com/ee/user/packages/container_registry/#authenticate-with-the-container-registry)
@@ -101,10 +103,17 @@ documentation, if you don't have it authenticated)
 make serve
 ```
 
+#### Python Virtual Environment
+
 If you don't have access to internal container image, please create your python
-virtual environment manually (use included `requirements.txt`) and run `mkdocs serve`.
+virtual environment manually (use included `requirements.txt` or `make venv`) and run `mkdocs serve`.
 Please, be aware that you will have slightly different results to our production documentation as we
 are using [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
+
+Windows Users -- If you receive errors related to `cairo` libs/DLL installing
+[GTK](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer)
+will install the necessary packages. Please ensure you specify that it is added
+to your PATH.
 
 ## Docker image
 
