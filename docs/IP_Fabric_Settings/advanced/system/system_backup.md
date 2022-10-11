@@ -1,3 +1,7 @@
+---
+description: You can schedule an IP Fabric backup to protect your important data locally or remotely.
+---
+
 # Schedule System Backup
 
 ## Backup

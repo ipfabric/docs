@@ -1,3 +1,7 @@
+---
+description: The system update is done in the administrative interface where it's possible to either proceed to an online or offline upgrade.
+---
+
 # System Update
 
 !!! fail "Clearing Cache Memory"

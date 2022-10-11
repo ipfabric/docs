@@ -1,3 +1,7 @@
+---
+description: Cisco IOS XR command cli whitespace completion can be enabled for remote sessions which can cause serious problems with data parsing and should be disabled.
+---
+
 # Command `cli whitespace completion`
 
 On Cisco IOS XR command `cli whitespace completion` can be enabled for remote sessions.

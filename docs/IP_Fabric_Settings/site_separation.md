@@ -1,3 +1,7 @@
+---
+description: Site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location.
+---
+
 # Site Separation
 
 Sites are separated collections of devices. Rule precedence is defined by the order from top to bottom.

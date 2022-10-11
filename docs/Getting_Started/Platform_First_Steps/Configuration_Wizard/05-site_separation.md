@@ -1,3 +1,7 @@
+---
+description: The Site distribution is generated automatically after the discovery process ends and is based on the rules described in this step.
+---
+
 # 05 - Site Separation
 
 ## Site separation

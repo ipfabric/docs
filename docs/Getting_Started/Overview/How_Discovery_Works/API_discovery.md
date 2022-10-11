@@ -1,3 +1,7 @@
+---
+description: Starting with version 3.8, the IP Fabric platform can combine the CLI (Command-Line Interface) discovery with API (Application Programming Interface)...
+---
+
 # How API Discovery Works
 
 Starting with version 3.8, the IP Fabric platform can combine the CLI (Command-Line Interface) discovery with API (Application Programming Interface) discovery.

@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
+---
+
 # VMware NSX-T
 
 Starting version **4.3** IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.

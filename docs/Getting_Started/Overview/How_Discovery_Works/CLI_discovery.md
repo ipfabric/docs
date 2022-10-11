@@ -1,3 +1,7 @@
+---
+description: Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and...
+---
+
 # How CLI Discovery Works
 
 ## Overview

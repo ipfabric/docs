@@ -1,3 +1,7 @@
+---
+description: IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple...
+---
+
 # Serial Numbers
 
 IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple elements - for example, clusters, stacks or virtualized platforms) and so the serial number is manipulated in some way - anything from a virtual context name to a simple `_1` might be added for example.

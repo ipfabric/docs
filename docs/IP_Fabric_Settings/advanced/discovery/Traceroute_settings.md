@@ -1,3 +1,7 @@
+---
+description: Traceroute is used when next hop is not available for SSH/telnet. Devices discovered using traceroute are marked as unmanaged in IP Fabric site diagrams.
+---
+
 # Traceroute settings
 
 Traceroute is used when next hop is not available for SSH/telnet.

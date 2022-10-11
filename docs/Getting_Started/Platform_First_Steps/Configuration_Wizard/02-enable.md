@@ -1,3 +1,7 @@
+---
+description: An optional step where you can use the enable mode passwords
+---
+
 # 02 - Enable Mode Passwords (Optional)
 
 These credentials are stored in **Settings → Authentication**. Privileged credentials are generally only necessary for configuration management. However, some platforms require privileged credentials to access basic network state information, such as MST spanning-tree state or 802.1X session information.

@@ -1,3 +1,7 @@
+---
+description: This tech note describes the association between the intent verification rules and the technology tables and how to read those associations through the API.
+---
+
 # Intent Verification Rules
 
 This tech note describes the association between the intent verification rules and the technology tables and how to read those associations through the API.

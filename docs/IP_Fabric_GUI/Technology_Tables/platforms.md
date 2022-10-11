@@ -1,3 +1,7 @@
+---
+description: In this section we give you some useful information about power consumption over the PoE protocol.
+---
+
 # Platforms
 
 ## PoE

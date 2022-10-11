@@ -1,3 +1,7 @@
+---
+description: The Spanning Tree protocol prevents loops and manages redundancy in a layer 2 network. Spanning tree instances and contiguous domains are analyzed...
+---
+
 # Spanning Tree
 
 The Spanning Tree protocol prevents loops and manages redundancy in a

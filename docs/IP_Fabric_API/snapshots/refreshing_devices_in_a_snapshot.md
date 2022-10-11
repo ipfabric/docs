@@ -1,3 +1,7 @@
+---
+description: In this section we explain how you can do the Refreshing Devices In a Snapshot
+---
+
 # Refreshing Devices In a Snapshot
 
 Do this in two stages:

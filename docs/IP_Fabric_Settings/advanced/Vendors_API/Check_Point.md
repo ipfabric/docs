@@ -1,3 +1,7 @@
+---
+description: IP Fabric uses API only to collect information that cannot be retrieved from CLI logs. To discover CheckPoint devices, CLI access also needs to be...
+---
+
 # Check Point
 
 We use API only to collect information that cannot be retrieved from CLI logs. To discover CheckPoint devices, CLI access also needs to be available. Checkpoint requires the following settings to be applied:

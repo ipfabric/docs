@@ -1,3 +1,7 @@
+---
+description: In IP Fabric v4.3.0 a new method for retrieving Snapshot information has been added. This method allows for filtering based on columns.
+---
+
 # Snapshot Table
 
 In IP Fabric v4.3.0 a new method for retrieving Snapshot information has

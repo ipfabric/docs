@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes what The Snapshot Consists Of and how you can operate it.
+---
+
 # Discovery Snapshot
 
 ## Snapshot Overview

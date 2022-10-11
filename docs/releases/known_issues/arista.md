@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Arista and how to fix them.
+---
+
 # Arista
 
 **IP Fabric Version:** All

@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports the discovery of the Azure Cloud infrastructure. Azure devices are discovered only through API. The IP Fabric covers the IaaS part of...
+---
+
 # Azure Networking
 
 Starting version 4.3 IP Fabric supports the discovery of the Azure Cloud

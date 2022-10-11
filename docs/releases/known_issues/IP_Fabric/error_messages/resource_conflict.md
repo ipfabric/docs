@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes the error message "Error: Resource Conflict" that may occur and how to fix it.
+---
+
 # `Error: Resource Conflict`
 
 This error only shows up when a user tries to start a job for the second

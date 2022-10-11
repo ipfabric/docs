@@ -1,3 +1,7 @@
+---
+description: Network snapshots record the state of the network in time, enabling to retrieve historical information, follow network state changes, analyze connectivity
+---
+
 # How Snapshots Work
 
 Network snapshots record the state of the network in time, enabling to retrieve historical information, follow network state changes, analyze connectivity, and more. A network snapshot is a fully functional software copy of the network, including all configuration and state data. Active network view displays information from a network snapshot which can be selected using Snapshot selector drop-down menu in the top left corner of the Main User Interface.

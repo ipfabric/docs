@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issue with the Transceivers Task and how to fix it.
+---
+
 # Transceivers Task
 
 ## Task Execution Control

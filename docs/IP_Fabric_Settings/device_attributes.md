@@ -1,3 +1,7 @@
+---
+description: IP Fabric added the ability to add attributes to a device based on the IP Fabric Unique Serial Number. Currently this supports manually changing a...
+---
+
 # Device Attributes
 
 Version 4.3.X has added the ability to add attributes to a device based

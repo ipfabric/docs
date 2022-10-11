@@ -1,3 +1,7 @@
+---
+description: IP Fabric only trusts certificates issued by CAs listed in the node.js. Because internal systems typically use certificates signed by an internal CA.
+---
+
 # Certification Authorities
 
 By default, IP Fabric only trusts certificates issued by CAs listed

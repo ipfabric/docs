@@ -1,3 +1,7 @@
+---
+description: In IP Fabric platform, you can Limit Download of BGP Routes as the full routing table, including full BGP, may contain fewer than 700K records.
+---
+
 # Limit Download of BGP Routes
 
 The full routing table, including full BGP, may contain fewer than 700K

@@ -1,3 +1,7 @@
+---
+description: The IP Fabric's discovery is primarily using Command Line Interface (CLI) to discover network elements and is part of the configuration process.
+---
+
 # 06 - CLI Settings
 
 ![CLI](cli.png)

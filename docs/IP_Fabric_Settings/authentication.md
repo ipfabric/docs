@@ -1,3 +1,7 @@
+---
+description: Platform interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet. Credentials added in the...
+---
+
 # Authentication
 
 IP Fabric interacts with the network infrastructure devices by running

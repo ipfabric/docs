@@ -1,3 +1,7 @@
+---
+description: This section gives your the list of the Valid types and codes for the Path Lookup ICMP Decoder.
+---
+
 # Path Lookup ICMP Decoder
 
 Please see below for the valid ICMP types and codes.

@@ -1,3 +1,7 @@
+---
+description: Tables enable analysis and correlation of network state information and parameters on the fly. Most of the tables display live snapshot data generated...
+---
+
 # Overview
 
 Tables enable analysis and correlation of network state information and

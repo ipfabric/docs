@@ -1,3 +1,7 @@
+---
+description: The Wireless Technology section provides information about Wireless Controllers, Wireless Access Points, and every individual client connected to...
+---
+
 # Wireless
 
 ## Overview

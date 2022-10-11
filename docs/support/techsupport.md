@@ -1,3 +1,7 @@
+---
+description: The Techsupport file from the IP Fabric is one of many ways how you can share the discovered data with our support team and engineers.
+---
+
 # Techsupport
 
 !!! info

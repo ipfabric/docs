@@ -1,3 +1,7 @@
+---
+description: A description of the Networks Panorama by Palo Alto Networks™ next-generation firewalls.
+---
+
 # Networks Panorama
 
 Panorama is a centralized management system that provides global

@@ -1,3 +1,7 @@
+---
+description: The Boot Wizard needs to be completed during the IP Fabric virtual server deployment before the image installation begins.
+---
+
 # Run System 'Boot Wizard'
 
 The Boot Wizard needs to be completed during the IP Fabric virtual server

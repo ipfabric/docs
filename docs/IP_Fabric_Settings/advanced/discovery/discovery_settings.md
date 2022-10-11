@@ -1,3 +1,7 @@
+---
+description: IP Fabric has the Discovery tasks feature as a fast discovery enablement for large scale networks.
+---
+
 # Discovery Tasks Settings
 
 The Discovery tasks feature was first introduced in **IP Fabric version

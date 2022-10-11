@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes the error message "Error: AQL: internal error - in index" that may occur and how to fix it.
+---
+
 # Error: AQL: internal error -- in index
 
 When any error containing `Error: AQL: internal error - in index` is

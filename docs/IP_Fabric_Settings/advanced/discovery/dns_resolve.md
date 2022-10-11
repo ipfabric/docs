@@ -1,3 +1,7 @@
+---
+description: When this option is enabled, IP Fabric performs the IP address to a DNS name translation. This feature creates many requests to configured DNS servers.
+---
+
 # DNS resolve
 
 When this option is enabled, IP Fabric performs the IP address to a DNS

@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Extreme Networks and how to fix them.
+---
+
 # Extreme Networks
 
 **Known Affected platforms**: Extreme ESR - BOSS (ex Nortel)

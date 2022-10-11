@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports Viptela API. Viptela devices are discovered only through API.
+---
+
 # Cisco Viptela
 
 ## Cisco Viptela SD-WAN

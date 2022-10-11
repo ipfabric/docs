@@ -1,3 +1,7 @@
+---
+description: In the configuration management process there are two ways to detect configuration changes that are described in this section.
+---
+
 # 08 - Configuration Management
 
 ![Configuration management](configuration_management.png)

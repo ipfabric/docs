@@ -1,3 +1,7 @@
+---
+description: SDWAN Sites table contains connectivity matrix between all sites (Controllers, Branches and Hubs).
+---
+
 # SDWAN
 
 ## Sites table

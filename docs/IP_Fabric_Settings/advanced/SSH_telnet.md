@@ -1,3 +1,7 @@
+---
+description: In this section, we go deeper into the Command Line Interface (CLI) to discover network elements that IP Fabric's discovery is primarily using.
+---
+
 # SSH/TELNET
 
 ## Fine-Tune SSH/telnet CLI Parameters

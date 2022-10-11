@@ -1,3 +1,7 @@
+---
+description: Most commonly occuring problems in a connectivity report or a type of error.
+---
+
 # Connectivity Report - Type of Error
 
 | **Error message**                                         | **Type of Error**                              | **Description / mitigation**                        |

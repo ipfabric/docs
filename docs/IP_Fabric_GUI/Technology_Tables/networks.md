@@ -1,3 +1,7 @@
+---
+description: The Network section presents detailed information about the Layer 3 network state and routing convergence.
+---
+
 # Networks
 
 The Network section presents detailed information about the Layer 3

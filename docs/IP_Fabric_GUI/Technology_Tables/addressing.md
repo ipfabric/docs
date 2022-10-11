@@ -1,3 +1,7 @@
+---
+description: The Addressing section provides information about every IP address on every managed network infrastructure device.
+---
+
 # Addressing
 
 The Addressing section provides information about every IP address on

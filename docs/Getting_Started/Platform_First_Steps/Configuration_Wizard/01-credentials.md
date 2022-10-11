@@ -1,3 +1,7 @@
+---
+description: In this step, we will guide you through the configuration of the credentials.
+---
+
 # 01 - Configure Credentials
 
 Network infrastructure credentials are stored in **Settings → Authentication**. IP Fabric uses these credentials to access the CLI of the network devices. Read-only (privilege level 1) credentials are sufficient for the discovery.

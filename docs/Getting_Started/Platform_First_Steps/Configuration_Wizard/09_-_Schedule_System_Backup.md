@@ -1,3 +1,7 @@
+---
+description: To protect your important data IP Fabric has a schedule system backup that you can setup.
+---
+
 # 09 - Schedule System Backup
 
 ![Schedule system backup](schedule_system_backup.png)

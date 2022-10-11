@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports FortiOS version 5.2 and higher. We also give our recommendations regarding setup of administrator profiles and accounts.
+---
+
 # Fortinet FortiGate
 
 Currently, we support FortiOS version 5.2 and higher. In this article, you will find **our recommendations regarding setup of administrator profiles and 
