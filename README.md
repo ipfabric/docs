@@ -206,7 +206,16 @@ just need to do the following:
 Let's assume, that our latest version is `4.6`. But we have found a serious
 issue with documentation for version `3.8` and we want to update it.
 
-- Create a new branch from the tag, like `git switch -c update_3.8 3.8`.
+- Create a new branch from the latest deployed commit / tag, like `git switch -c update_3.8 3.8`.
+  Please, be careful and don't rely solely on tags. Check `gh-pages` branch for the actual commit hashes.
+  For example
+
+  ```
+  52dcc8893 - Deployed 541d97e0d to 5.0 with MkDocs 1.3.1 and mike 1.1.2
+  ```
+
+  Means that the `541d97e0d` was deployed to version `5.0` on the web.
+
 - Make all your changes. Push branch to `origin`.
 - Don't merge it into `main`!
 - Mark the new release commit, like `git tag -f 3.8-2`
