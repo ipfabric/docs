@@ -1,3 +1,7 @@
+---
+description: This section gives your the list of the Request Parameters for the Host to Gateway Path Lookup with an example.
+---
+
 # Host to Gateway Path Lookup
 
 ## Request Parameters

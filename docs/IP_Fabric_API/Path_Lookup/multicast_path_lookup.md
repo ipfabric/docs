@@ -1,3 +1,7 @@
+---
+description: This section gives your the list of the Request Parameters for the Multicast Path Lookup with an example.
+---
+
 # Multicast Path Lookup
 
 ## Request Parameters

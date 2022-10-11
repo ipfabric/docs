@@ -1,3 +1,7 @@
+---
+description: IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table of network device manufacturers and uses it during the discovery process whenever...
+---
+
 # OUI (Organizationally Unique Identifier)
 
 IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table
