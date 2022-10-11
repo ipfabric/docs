@@ -1,5 +1,5 @@
-IMAGE=registry.gitlab.com/autoboss/docs
-TAG=8.5.2-insiders-4.23.5
+IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
+TAG=8.5.6-insiders-4.25.0
 
 serve:
 	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
