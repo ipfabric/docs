@@ -210,7 +210,7 @@ issue with documentation for version `3.8` and we want to update it.
 - Make all your changes. Push branch to `origin`.
 - Don't merge it into `main`!
 - Mark the new release commit, like `git tag -f 3.8-2`
-- Push everything to `origin` (don't forget `git push tags --all`).
+- Push everything to `origin` (don't forget `git push --tags`).
 - Update the released documentation with `mike deploy --push 3.8`.
 - agrr, profit!
 
