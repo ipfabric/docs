@@ -1,3 +1,7 @@
+---
+description: The command-line interface is a secondary service interface in IP Fabric VM which serves troubleshooting and testing purposes.
+---
+
 # Overview
 
 The command-line interface is a secondary service interface in IP Fabric VM which serves troubleshooting and testing purposes. For example, for testing authentication credentials from the specific IP address of IP

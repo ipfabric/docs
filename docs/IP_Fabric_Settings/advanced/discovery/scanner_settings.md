@@ -1,3 +1,7 @@
+---
+description: The Scanner in IP Fabric intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet)...
+---
+
 # Scanner settings
 
 The Scanner intelligently scans the parts of the network which are not

@@ -1,3 +1,7 @@
+---
+description: The discovery history table shows every device that has ever been discovered in all snapshots (their Hostname, IP address, Management protocol...
+---
+
 # Discovery History
 
 This table shows every device that has ever been discovered in all

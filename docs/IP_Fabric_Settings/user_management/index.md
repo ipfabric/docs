@@ -1,3 +1,7 @@
+---
+description: The local user in IP Fabric has administrative privileges to create or manage other users and to perform network management tasks.
+---
+
 # Overview
 
 User management is accessible via **Settings → User Management** menu and contains management of

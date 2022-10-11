@@ -1,3 +1,7 @@
+---
+description: Configuration management backs up the running configuration of managed network devices based on the defined trigger. Downloaded configuration is then...
+---
+
 # Configuration
 
 ## Overview

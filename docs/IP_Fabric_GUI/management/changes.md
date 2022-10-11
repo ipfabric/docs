@@ -1,3 +1,7 @@
+---
+description: Snapshots at different time intervals can be compared to find dynamic changes in the network when a snapshot of the network completes successfully.
+---
+
 # Changes
 
 ## Overview

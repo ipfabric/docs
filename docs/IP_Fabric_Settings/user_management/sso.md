@@ -1,3 +1,7 @@
+---
+description: The IP Fabric system Engineers will setup the SSO configuration as it is complex to implement.
+---
+
 # Single Sign On (SSO)
 
 IP Fabric uses [Dex (A Federated OpenID Connect Provider)](https://dexidp.io/) for **Single Sign On (SSO) Authentication**.

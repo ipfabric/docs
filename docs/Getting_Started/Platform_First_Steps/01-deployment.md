@@ -1,3 +1,7 @@
+---
+description: In this first step we will guide you through the deployment of the IP Fabric virtual machine (VM).
+---
+
 # Deploying the IP Fabric Virtual Machine (VM)
 
 All virtual appliance images are available at  [https://releases.ipfabric.io/ipfabric/#current](https://releases.ipfabric.io/ipfabric/#current). Access is restricted to registered customers only. Please contact our [sales representative](mailto:sales@ipfabric.io) if you are interested in a trial of IP Fabric.

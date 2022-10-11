@@ -1,3 +1,7 @@
+---
+description: This section is intended to explain the use of the IP Fabric Path Lookup API request.
+---
+
 # Overview
 
 ## Python SDK

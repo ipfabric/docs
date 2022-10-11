@@ -1,3 +1,7 @@
+---
+description: The API tokens are a better fit for authenticating API calls originating from systems. They are a bit slower than UI tokens, but they can be revoked easily.
+---
+
 # API tokens
 
 Until release 3.7.0, the only available means of authenticating the API

@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Brocade and how to fix them.
+---
+
 # Brocade
 
 **IP Fabric Version:** 4.3.X and up

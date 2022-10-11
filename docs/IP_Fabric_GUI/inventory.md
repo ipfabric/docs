@@ -1,3 +1,7 @@
+---
+description: The inventory provides a list overview of sites, devices, modules, interfaces, and users discovered within the network.
+---
+
 # Inventory
 
 ## Overview

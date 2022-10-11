@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for HP and how to fix them.
+---
+
 # HP
 
 **Affected platforms**: HP 10508 Comware Software, Version 5.20.105,

@@ -1,3 +1,7 @@
+---
+description: Public or private clouds API provide information about virtual machines. In previous versions, IP Fabric wasn't able to collect any information about...
+---
+
 # Cloud
 
 ## Virtual Machines And Their Interfaces

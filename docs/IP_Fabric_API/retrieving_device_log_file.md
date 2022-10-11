@@ -1,3 +1,7 @@
+---
+description: This tech note describes how you can retrieve log files for a device from IP Fabric’s discovery, to be consumed outside the platform.
+---
+
 # Retrieving device log file
 
 This tech note describes how you can retrieve log files for a device from IP Fabric’s discovery, to be consumed outside the platform.

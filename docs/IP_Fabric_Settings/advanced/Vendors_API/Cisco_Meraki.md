@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports API-based discovery for Cisco Meraki. On this section we go through the required settings that need to be applied.
+---
+
 # Cisco Meraki
 
 Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for Cisco Meraki.

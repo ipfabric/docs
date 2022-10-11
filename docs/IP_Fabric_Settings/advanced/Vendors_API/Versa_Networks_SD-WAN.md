@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports Versa SD-WAN API. API is based on HTTPS authentication. Versa requires some settings to be applied that we go through on this section.
+---
+
 # Versa Networks SD-WAN
 
 Starting version **3.8.0** IP Fabric supports Versa SD-WAN API.

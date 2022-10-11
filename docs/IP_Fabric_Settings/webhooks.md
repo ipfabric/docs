@@ -1,3 +1,7 @@
+---
+description: Webhooks allow you to build or set up integrations, which subscribe to certain events on IP Fabric platform. When one of those events is triggered...
+---
+
 # Webhooks
 
 Webhooks allow you to build or set up integrations, which subscribe to

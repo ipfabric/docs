@@ -1,3 +1,7 @@
+---
+description: The interfaces section provides detailed information about packet counters and undesired network states.
+---
+
 # Interfaces
 
 The interfaces section provides detailed information about packet

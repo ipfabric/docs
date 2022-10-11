@@ -1,3 +1,7 @@
+---
+description: In the second step we will show you how to access the user interface and how to install the IP Fabric license.
+---
+
 # Access User Interface And Install License
 
 ## Creating The First IP Fabric User

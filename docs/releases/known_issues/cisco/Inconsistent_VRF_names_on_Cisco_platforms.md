@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes a known affected issue which is the Inconsistent VRF Names On Cisco Platforms.
+---
+
 # Inconsistent VRF Names On Cisco Platforms
 
 For different Cisco families, the default VRF name may be inconsistent

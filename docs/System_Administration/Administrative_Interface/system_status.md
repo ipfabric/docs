@@ -1,3 +1,7 @@
+---
+description: In the system status section we can monitor the running IP Fabric services, present disk, CPU and memory usage, and top processes run by the system.
+---
+
 # System Status
 
 When you login to the System Administration with the `osadmin` user

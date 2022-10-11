@@ -1,3 +1,7 @@
+---
+description: In the configuration management process there are two ways to detect configuration changes that are described in this step.
+---
+
 # Configuration Management
 
 There are two ways to detect configuration changes:

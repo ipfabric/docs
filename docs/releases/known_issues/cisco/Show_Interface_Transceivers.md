@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes a known affected issue where Executing some commands to get transceiver related information may cause issues on some devices.
+---
+
 # Show Interface Transceivers
 
 Executing some commands to get transceiver related information may cause

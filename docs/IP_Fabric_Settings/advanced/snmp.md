@@ -1,3 +1,7 @@
+---
+description: IP Fabric appliance can be monitored using SNMP protocol. CPU, memory, hard drives and network interfaces can be monitored. Appliance uses standard...
+---
+
 # SNMP
 
 IP Fabric appliance can be monitored using SNMP protocol. CPU, memory,

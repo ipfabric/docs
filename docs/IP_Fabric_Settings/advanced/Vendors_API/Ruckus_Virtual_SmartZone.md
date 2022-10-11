@@ -1,3 +1,7 @@
+---
+description: IP Fabric supports Ruckus Virtual SmartZone API. Ruckus devices are discovered only through API.
+---
+
 # Ruckus Virtual SmartZone
 
 Starting version **4.4.0** IP Fabric supports Ruckus Virtual SmartZone API.

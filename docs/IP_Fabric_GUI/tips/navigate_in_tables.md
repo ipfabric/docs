@@ -1,3 +1,7 @@
+---
+description: In this section, we give you a tip on how to navigate in tables efficiently.
+---
+
 # Navigate in Tables
 
 ## Tables

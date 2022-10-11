@@ -1,3 +1,7 @@
+---
+description: The IP Telephony section provides information about all IP Phones (VoIP) and their clients that are detected on the network. Phone information is...
+---
+
 # IP Telephony
 
 ## Overview

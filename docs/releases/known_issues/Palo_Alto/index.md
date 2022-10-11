@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Palo Alto about the Collection of Security policies.
+---
+
 # Overview
 
 **Description: Collection of Security policies**

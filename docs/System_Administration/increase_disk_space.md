@@ -1,3 +1,7 @@
+---
+description: Appliance disk space can be extended by extending existing virtual disk or by adding new empty virtual hard drive to IP Fabric VM.
+---
+
 # Increase Disk Space
 
 Starting version IP Fabric 5.0.0, appliance is distributed as one hard disk installation instead of two.

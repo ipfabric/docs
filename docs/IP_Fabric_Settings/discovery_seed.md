@@ -1,3 +1,7 @@
+---
+description: If you know a particular starting point for discovering the network, the information can be entered. This option does not exclude any networks from...
+---
+
 # Discovery Seed
 
 If you know a particular starting point for discovering the network, the

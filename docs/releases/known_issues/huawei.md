@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known affected issues for Huawei and how to fix them.
+---
+
 # Huawei
 
 **Known Affected platforms**: Huawei - platforms with bridge domains

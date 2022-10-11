@@ -1,3 +1,7 @@
+---
+description: You have the ability to overlay the Intent Verification Rules on top of any diagrams with the intent checks.
+---
+
 # Intent Checks
 
 You can overlay the Intent Verification Rules on top of any diagrams.

@@ -1,3 +1,7 @@
+---
+description: In this section we go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery.
+---
+
 # IP Scope
 
 ## Including And Excluding Networks From Discovery

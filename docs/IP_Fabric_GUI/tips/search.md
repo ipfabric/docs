@@ -1,3 +1,7 @@
+---
+description: In this section, we give you a tip on how to use the search function efficiently.
+---
+
 # Searching
 
 The user interface includes numerous views which cover a range of technologies.

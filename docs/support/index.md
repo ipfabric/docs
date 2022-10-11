@@ -1,3 +1,7 @@
+---
+description: IP Fabric is provided as a fully managed solution. For any technical support needed you can contact us on support@ipfabric.io.
+---
+
 # Technical Support
 
 IP Fabric is provided as a fully managed solution. In case of an issue,

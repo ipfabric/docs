@@ -1,3 +1,7 @@
+---
+description: In this section, IP Fabric publishes the most recent version releases of the Platform.
+---
+
 # IP Fabric Releases
 
 !!! important "Current release"

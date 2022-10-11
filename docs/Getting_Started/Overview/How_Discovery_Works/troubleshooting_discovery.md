@@ -1,3 +1,7 @@
+---
+description: Documentation on most commonly seen discovery issues and how to resolve them.
+---
+
 # Troubleshooting Discovery
 
 Documentation on most commonly seen discovery issues and how to resolve them.
