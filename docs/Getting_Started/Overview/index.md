@@ -14,6 +14,17 @@ A distributed system of micro-service components resides within IP Fabric VM, al
 
 ## Operational Requirements
 
+### Browser Requirements
+
+To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers as of September 2022:   
+    
+1.  Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge) - **version >** `95.0.4638`
+2.  Mozilla Firefox and maintained forks (e.g. LibreWolf) - **version >** `96`
+3.  Safari - **version >** `14.1.2`
+
+!!! info "Untested browsers"
+    There are other non major browsers which might work but weren't tested, compatibility may vary.
+
 ### Hardware Requirements
 
 The IP Fabric platform runs on any x64 CPU with following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.
