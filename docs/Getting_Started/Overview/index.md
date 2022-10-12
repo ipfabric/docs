@@ -16,14 +16,11 @@ A distributed system of micro-service components resides within IP Fabric VM, al
 
 ### Browser Requirements
 
-To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers as of September 2022:   
-    
-1.  Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge) - **version >** `95.0.4638`
-2.  Mozilla Firefox and maintained forks (e.g. LibreWolf) - **version >** `96`
-3.  Safari - **version >** `14.1.2`
+To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers as of September 2022:
 
-!!! info "Untested browsers"
-    There are other non major browsers which might work but weren't tested, compatibility may vary.
+1. Google Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge) -- version `95.0.4638` and later.
+2. Mozilla Firefox and maintained forks (e.g. LibreWolf) -- version `96` an later.
+3. Safari -- version `14.1.2` and later.
 
 ### Hardware Requirements
 
@@ -37,14 +34,14 @@ Minimum requirements are:
 
 The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.
 
-| Devices | CPU  | RAM    | HDD      |
-| ------: | ---: | -----: | -------: |
-|    500  |  4   |  16 GB |    90 GB |
-|  1 000  |  4   |  32 GB |   100 GB |
-|  2 000  |  8   |  64 GB |   200 GB |
-|  5 000  | 12   |  64 GB |   300 GB |
-| 10 000  | 16   | 128 GB |   550 GB |
-| 20 000  | 18   | 256 GB | 1 000 GB |
+| Devices | CPU |    RAM |      HDD |
+| ------: | --: | -----: | -------: |
+|     500 |   4 |  16 GB |    90 GB |
+|   1 000 |   4 |  32 GB |   100 GB |
+|   2 000 |   8 |  64 GB |   200 GB |
+|   5 000 |  12 |  64 GB |   300 GB |
+|  10 000 |  16 | 128 GB |   550 GB |
+|  20 000 |  18 | 256 GB | 1 000 GB |
 
 !!! info "Additional resources requirements"
 
