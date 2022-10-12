@@ -203,24 +203,35 @@ just need to do the following:
 
 ### Release an update to existing version
 
-Let's assume, that our latest version is `4.6`. But we have found a serious
-issue with documentation for version `3.8` and we want to update it.
+We use "release" branches for tracking release specific (backported) changes.
+Those follow naming `release/x.y`, such as `release/5.0`. Just be aware that
+such branch may not exit yet as the release is fresh enough (e.g. all updates
+from `main` goes to release as well) or there were no changes necessary :)
 
-- Create a new branch from the latest deployed commit / tag, like `git switch -c update_3.8 3.8`.
-  Please, be careful and don't rely solely on tags. Check `gh-pages` branch for the actual commit hashes.
-  For example
+Check `gh-pages` branch for the actual commit hashes used for the release build.
+For example
 
-  ```
-  52dcc8893 - Deployed 541d97e0d to 5.0 with MkDocs 1.3.1 and mike 1.1.2
-  ```
+```
+52dcc8893 - Deployed 541d97e0d to 5.0 with MkDocs 1.3.1 and mike 1.1.2
+```
 
-  Means that the `541d97e0d` was deployed to version `5.0` on the web.
+Means that the `541d97e0d` was deployed to version `5.0` on the website.
 
+- Create a new branch to track your changes. Make sure, that it is based on the
+  appropriate release branch (or create it). In other words, parent of the branch needs to be
+  release branch (e.g. `release/5.0`).
 - Make all your changes. Push branch to `origin`.
-- Don't merge it into `main`!
-- Mark the new release commit, like `git tag -f 3.8-2`
-- Push everything to `origin` (don't forget `git push --tags`).
-- Update the released documentation with `mike deploy --push 3.8`.
+- Create a Merge Request, make sure, that you appropriately set target branch for it
+  (e.g. merging from `my_5.0_update` to `release/5.0`). Never merge it into `main`!
+  Make clear (e.g. title) that you are updating tagged release.
+- When merged, checkout the release branch and deploy with mike
+
+  ```
+  make mike
+  source venv/bin/activate
+  mike deploy --config-file mkdocs_insiders.yml --push 5.0
+  ```
+
 - agrr, profit!
 
 ### Removing old release
