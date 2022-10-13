@@ -25,10 +25,10 @@ regions.
 ![AWS - Create Access Key](aws/2691596307.png)
 
 Copy those keys to the AWS API settings in your IP Fabric and don't
-forget to **fill the region where the devices which you want to discover
-are**.
+forget to **fill the regions where the devices which you want to discover
+are**. Multiple regions can be set for one API key and secret.
 
-![Add Connection](aws/2691596313.png)
+![Add Connection](aws/aws-vendor-api-6.0.png)
 
 !!! info
     To ensure that IP Fabric can retrieve all the required data to model the
@@ -51,4 +51,4 @@ a secret access key, and a security token. Typically, you use
 `AssumeRole` within your account or for cross-account access. For more
 information about AssumeRole see [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
-![Add Connection With AssumeRole](aws/2913828865.png)
+![Add Connection With AssumeRole](aws/aws-vendor-api-6.0-assumerole.png)
