@@ -2693,57 +2693,59 @@ group permissions</strong> are checked with <strong>every login attempt</strong>
 </ul>
 <h2 id="enable-ldap-authentication">Enable LDAP Authentication</h2>
 <ol>
-<li>Log in to IP Fabric as a user with admin rights.</li>
-<li>Go to <strong>Settings → User Management → LDAP</strong> menu.</li>
-<li>Select <strong>+Add Domain</strong>.</li>
-<li>Choose LDAP server type in the <strong>Type</strong> drop-down menu. Only
-    <strong>Microsoft Active Directory</strong> or <strong>Open LDAP</strong> servers are
-    supported.</li>
-<li>Enter all the aliases/suffixes for this domain in the <strong>Account
-    suffixes</strong> field. Each suffix must begin with @. If the same user
-    can log in with other suffixes, for example, <code>joe@europe.domain.com</code>
-    and <code>joe@domain.com</code> then fill in <code>@europe.domain.com</code> and <code>@domain.com</code>.</li>
-<li>Add servers for the domain:
-    1.  as an <strong>explicit list of addresses</strong>
-        1.  Choose <strong>Use pre-configured LDAP servers</strong> in Servers
-            dropdown
-        2.  Specify FQDN or IP address of the LDAP server including the
-            protocol prefix (such as <code>ldap://your.domain.com</code> or
-            <code>ldaps://your.domain.com</code>)
-        3.  Specify the port (default LDAP port is 389 and default LDAPS
-            port is 636)
-        4.  For LDAP over SSL, also upload a CA certificate used for the
-            LDAP certificate signature
-        5.  Click on <strong>+Add Server</strong> if you want to add backup servers
-    2.  using <strong>DNS service records</strong>
-        1.  Choose <strong>Use DNS to find LDAP servers</strong> in Servers
-            dropdown
-        2.  Choose/upload a certificate (recommended in the production
-            environment)
-        3.  Define the DNS address
-        4.  Define Service location name (common names are <code>ldap</code> and
-            <code>ldaps</code>). This is the network service that constructs the
-            final name of the record. The construction is done as
-            follows: <code>\_{{service location name}}.\_tcp.{{dns address}}</code></li>
-<li>Specify service account with LDAP read permissions in the <strong>Bind
-    DN</strong> field. This field must be an <strong>escaped</strong> LDAP-style
-    <strong>distinguished name</strong>. (for example
-    <code>CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com</code> or
-    <code>CN=User,OU=europe,DC=your,DC=domain,DC=com</code>)</li>
-<li>Enter the bind user's password (defined in step 7) in the <strong>Bind
-    credentials</strong> field.</li>
-<li>Enter a whole domain or specific organization unit (container) in
-    <strong>Search base</strong> to specify where users and groups can be found in
-    the LDAP tree. (for example
-    <code>OU=NetworkAdmins,DC=your,DC=domain,DC=com</code>)</li>
-<li>Enter an attribute where email is stored in the LDAP user object
-    into <strong>Search email attribute</strong>.</li>
-<li>Only for <strong>Microsoft Active Directory</strong>: Tick <strong>Allow nested
-    groups</strong> for nested group permission lookup. This uses <a href="https://ldapwiki.com/wiki/ExtensibleMatch">Extensible
-    Match</a> Rule
-    (<a href="https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN">LDAP_MATCHING_RULE_IN_CHAIN</a>)
-    which might be slow in your local setup.</li>
-<li>Click <strong>Confirm</strong>.</li>
+<li>
+<p>Log in to IP Fabric as a user with admin rights.</p>
+</li>
+<li>
+<p>Go to <strong>Settings → User Management → LDAP</strong> menu.</p>
+</li>
+<li>
+<p>Select <strong>+Add Domain</strong>.</p>
+</li>
+<li>
+<p>Choose LDAP server type in the <strong>Type</strong> drop-down menu. Only <strong>Microsoft Active Directory</strong> or <strong>Open LDAP</strong> servers are supported.</p>
+</li>
+<li>
+<p>Enter all the aliases/suffixes for this domain in the <strong>Account suffixes</strong> field. Each suffix must begin with <code>@</code>. If the same user can log in with other suffixes, for example, <code>joe@europe.domain.com</code> and <code>joe@domain.com</code> then fill in <code>@europe.domain.com</code> and <code>@domain.com</code>.</p>
+</li>
+<li>
+<p>Add servers for the domain:</p>
+<ol>
+<li>
+<p>as an <strong>explicit list of addresses</strong></p>
+<p>1. Choose <strong>Use pre-configured LDAP servers</strong> in Servers dropdown</p>
+<p>2. Specify full FQDN (including domain) or IP address of the LDAP server including the protocol prefix (such as <code>ldap://your.domain.com</code> or <code>ldaps://your.domain.com</code>)</p>
+<p>3. Specify the port (default LDAP port is 389 and default LDAPS port is 636)</p>
+<p>4. For LDAP over SSL, also upload a Root CA certificate used for the LDAP certificate signature</p>
+<p>5. Click on <strong>+Add Server</strong> if you want to add backup servers</p>
+</li>
+<li>
+<p>using <strong>DNS service records</strong></p>
+<p>1. Choose <strong>Use DNS to find LDAP servers</strong> in Servers dropdown</p>
+<p>2. Choose/upload a certificate (recommended in the production environment)</p>
+<p>3. Define the DNS address</p>
+<p>4. Define Service location name (common names are <code>ldap</code> and <code>ldaps</code>). This is the network service that constructs the final name of the record. The construction is done as follows: <code>\_{{service location name}}.\_tcp.{{dns address}}</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Specify service account with LDAP read permissions in the <strong>Bind DN</strong> field. This field must be an <strong>escaped</strong> LDAP-style <strong>distinguished name</strong>. (for example <code>CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com</code> or <code>CN=User,OU=europe,DC=your,DC=domain,DC=com</code>)</p>
+</li>
+<li>
+<p>Enter the bind user's password (defined in step 7) in the <strong>Bind credentials</strong> field.</p>
+</li>
+<li>
+<p>Enter a whole domain or specific organization unit (container) in <strong>Search base</strong> to specify where users and groups can be found in the LDAP tree. (for example <code>OU=NetworkAdmins,DC=your,DC=domain,DC=com</code>)</p>
+</li>
+<li>
+<p>Enter an attribute where email is stored in the LDAP user object into <strong>Search email attribute</strong>.</p>
+</li>
+<li>
+<p>Only for <strong>Microsoft Active Directory</strong>: Tick <strong>Allow nested groups</strong> for nested group permission lookup. This uses <a href="https://ldapwiki.com/wiki/ExtensibleMatch">Extensible Match</a> Rule (<a href="https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN">LDAP_MATCHING_RULE_IN_CHAIN</a>) which might be slow in your local setup.</p>
+</li>
+<li>
+<p>Click <strong>Confirm</strong>.</p>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
