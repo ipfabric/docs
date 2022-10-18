@@ -13,61 +13,55 @@ group permissions** are checked with **every login attempt**.
 
 ## Supported LDAP Servers Are:
 
--   Microsoft Active Directory
--   OpenLDAP
+- Microsoft Active Directory
+- OpenLDAP
 
 ## Enable LDAP Authentication
 
-1.  Log in to IP Fabric as a user with admin rights.
-2.  Go to **Settings → User Management → LDAP** menu.
-3.  Select **+Add Domain**.
-4.  Choose LDAP server type in the **Type** drop-down menu. Only
-    **Microsoft Active Directory** or **Open LDAP** servers are
-    supported.
-5.  Enter all the aliases/suffixes for this domain in the **Account
-    suffixes** field. Each suffix must begin with @. If the same user
-    can log in with other suffixes, for example, `joe@europe.domain.com`
-    and `joe@domain.com` then fill in `@europe.domain.com` and `@domain.com`.
-6.  Add servers for the domain:
-    1.  as an **explicit list of addresses**
-        1.  Choose **Use pre-configured LDAP servers** in Servers
-            dropdown
-        2.  Specify FQDN or IP address of the LDAP server including the
-            protocol prefix (such as `ldap://your.domain.com` or
-            `ldaps://your.domain.com`)
-        3.  Specify the port (default LDAP port is 389 and default LDAPS
-            port is 636)
-        4.  For LDAP over SSL, also upload a CA certificate used for the
-            LDAP certificate signature
-        5.  Click on **+Add Server** if you want to add backup servers
-    2.  using **DNS service records**
-        1.  Choose **Use DNS to find LDAP servers** in Servers
-            dropdown
-        2.  Choose/upload a certificate (recommended in the production
-            environment)
-        3.  Define the DNS address
-        4.  Define Service location name (common names are `ldap` and
-            `ldaps`). This is the network service that constructs the
-            final name of the record. The construction is done as
-            follows: ``\_{{service location name}}.\_tcp.{{dns address}}``
-7.  Specify service account with LDAP read permissions in the **Bind
-    DN** field. This field must be an **escaped** LDAP-style
-    **distinguished name**. (for example
-    `CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com` or
-    `CN=User,OU=europe,DC=your,DC=domain,DC=com`)
-8.  Enter the bind user's password (defined in step 7) in the **Bind
-    credentials** field.
-9.  Enter a whole domain or specific organization unit (container) in
-    **Search base** to specify where users and groups can be found in
-    the LDAP tree. (for example
-    `OU=NetworkAdmins,DC=your,DC=domain,DC=com`)
-10. Enter an attribute where email is stored in the LDAP user object
-    into **Search email attribute**.
-11. Only for **Microsoft Active Directory**: Tick **Allow nested
-    groups** for nested group permission lookup. This uses [Extensible
-    Match](https://ldapwiki.com/wiki/ExtensibleMatch) Rule
-    ([LDAP_MATCHING_RULE_IN_CHAIN](https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN))
-    which might be slow in your local setup.
+1. Log in to IP Fabric as a user with admin rights.
+
+2. Go to **Settings → User Management → LDAP** menu.
+
+3. Select **+Add Domain**.
+
+4. Choose LDAP server type in the **Type** drop-down menu. Only **Microsoft Active Directory** or **Open LDAP** servers are supported.
+
+5. Enter all the aliases/suffixes for this domain in the **Account suffixes** field. Each suffix must begin with `@`. If the same user can log in with other suffixes, for example, `joe@europe.domain.com` and `joe@domain.com` then fill in `@europe.domain.com` and `@domain.com`.
+
+6. Add servers for the domain:
+
+   1. as an **explicit list of addresses**
+
+      1. Choose **Use pre-configured LDAP servers** in Servers dropdown
+
+      2. Specify full FQDN (including domain) or IP address of the LDAP server including the protocol prefix (such as `ldap://your.domain.com` or `ldaps://your.domain.com`)
+
+      3. Specify the port (default LDAP port is 389 and default LDAPS port is 636)
+
+      4. For LDAP over SSL, also upload a Root CA certificate used for the LDAP certificate signature
+
+      5. Click on **+Add Server** if you want to add backup servers
+
+   2. using **DNS service records**
+
+      1. Choose **Use DNS to find LDAP servers** in Servers dropdown
+
+      2. Choose/upload a certificate (recommended in the production environment)
+
+      3. Define the DNS address
+
+      4. Define Service location name (common names are `ldap` and `ldaps`). This is the network service that constructs the final name of the record. The construction is done as follows: `\_{{service location name}}.\_tcp.{{dns address}}`
+
+7. Specify service account with LDAP read permissions in the **Bind DN** field. This field must be an **escaped** LDAP-style **distinguished name**. (for example `CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com` or `CN=User,OU=europe,DC=your,DC=domain,DC=com`)
+
+8. Enter the bind user's password (defined in step 7) in the **Bind credentials** field.
+
+9. Enter a whole domain or specific organization unit (container) in **Search base** to specify where users and groups can be found in the LDAP tree. (for example `OU=NetworkAdmins,DC=your,DC=domain,DC=com`)
+
+10. Enter an attribute where email is stored in the LDAP user object into **Search email attribute**.
+
+11. Only for **Microsoft Active Directory**: Tick **Allow nested groups** for nested group permission lookup. This uses [Extensible Match](https://ldapwiki.com/wiki/ExtensibleMatch) Rule ([LDAP_MATCHING_RULE_IN_CHAIN](https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN)) which might be slow in your local setup.
+
 12. Click **Confirm**.
 
 !!! note
@@ -78,7 +72,7 @@ group permissions** are checked with **every login attempt**.
 !!! Info "Two or more LDAP servers"
 
     When two or more LDAP server configurations are present, an email suffix needs to be added to the username when logging in.
-    
+
     Username alone works only in a situation when one LDAP server configuration is present.
 
 ## LDAP Group Permissions
@@ -134,8 +128,7 @@ IP Fabric user interface are correct. This can be done using
 
     The following example doesn’t verify SSL certificate if LDAPS is used
 
-
-``` bash
+```bash
 LDAPTLS_REQCERT=ALLOW ldapsearch \
   -W -H "ldaps://your-ldap-server:636" \
   -D "$LDAP_BIND_DN" \
@@ -148,15 +141,14 @@ Your fields are correctly set when exit-code of your command is zero.
 The use of nested groups can also be tested by adding the following line
 to the CLI example:
 
-``` text
+```text
 (member:1.2.840.113556.1.4.1941:=$USER.DN)
 ```
 
 The CLI example can be followed by a query. Useful LDAP queries to find
 a user follow:
 
-
-``` bash
+```bash
 (uid=$LOGIN_INPUT)
 (|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
 ```
