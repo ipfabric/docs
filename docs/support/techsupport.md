@@ -29,12 +29,9 @@ Select data to be included in a Techsupport file (leave in default when in doubt
 ### WEB / HTTPS
 
 Please, visit [https://upload.ipfabric.io](https://upload.ipfabric.io) with
-your browser. User and password are provided by technical support.
+your browser to upload a generated techsupport for IP Fabric team.
 
-### FTP
-
-Open [ftp://upload.ipfabric.io](ftp://upload.ipfabric.io) with your `ftp`
-client. User and password are provided by technical support.
+User and password are provided by technical support.
 
 ## What Is Included In The Techsupport File?
 
