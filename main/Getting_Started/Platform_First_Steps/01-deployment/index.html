@@ -412,6 +412,14 @@ differently in you production deployment, than described here.
             Platform First Steps
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00-quick_start/">
+<span class="md-ellipsis">
+    Quick Start Installation Guide
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -461,18 +469,19 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#complete-first-time-boot-wizard">
-<span class="md-ellipsis">
-      Complete (first-time) Boot Wizard
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../02-access_ui/">
+<a class="md-nav__link" href="../02-boot_wizard/">
+<span class="md-ellipsis">
+    CLI Boot Wizard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03-access_ui/">
 <span class="md-ellipsis">
     Access User Interface And Install License
     
@@ -488,8 +497,8 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" id="__nav_2_2_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" id="__nav_2_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_6">
 <span class="md-ellipsis">
     Configuration Wizard
     
@@ -497,7 +506,7 @@ differently in you production deployment, than described here.
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Configuration Wizard" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_4">
+<label class="md-nav__title" for="__nav_2_2_6">
 <span class="md-nav__icon md-icon"></span>
             Configuration Wizard
           </label>
@@ -2647,13 +2656,6 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#complete-first-time-boot-wizard">
-<span class="md-ellipsis">
-      Complete (first-time) Boot Wizard
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </div>
@@ -2682,6 +2684,12 @@ differently in you production deployment, than described here.
 </li>
 <li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Invalid OVF checksum algorithm: SHA256</p>
+<p>Importing OVA on older vSphere/ESXi hosts may error stating the OVF checksum
+is invalid.  Please see <a href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">this documentation</a>
+on how to resolve this.</p>
+</div>
 <h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
 <p>The <code>QCOW2</code> disk image file can be converted to different formats.
 Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
@@ -2794,29 +2802,6 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <p>Additionally, you can <a href="../../../System_Administration/increase_disk_space/">create and add a new empty virtual disk if needed</a>.</p>
 </li>
 </ol>
-<hr/>
-<h2 id="complete-first-time-boot-wizard">Complete (first-time) Boot Wizard</h2>
-<p>The <em>First Boot Wizard</em> starts when IP Fabric is run for the first time and configures system options. The wizard can also be re-run later from the service interface to modify basic system parameters.</p>
-<ol>
-<li>Assign hostname.</li>
-<li>Assign domain name.</li>
-<li>Choose IP address acquisition method.</li>
-<li>If a static method is used, configure IP address, netmask, default GW, and DNS servers.</li>
-<li>Configure NTP servers or just click OK to continue if not using NTP.</li>
-<li>Select time zone.</li>
-<li>Configure Internet Proxy if used.</li>
-<li>Set shell user password of <code>osadmin</code> user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the <code>admin</code> username by default, for more information, please, read: <a href="../02-access_ui/">Access User Interface and Install License</a> and also for encrypting system backups.</li>
-<li>Optionally define organization parameters for the local SSL certificate.</li>
-<li>After rebooting, the console login screen will display the assigned IP address of the system and provide a link to access the user interface.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Remember password from step 8! IP Fabric support engineers are able to reset <code>osadmin</code> user passwords but <strong>encrypted backups will be lost</strong>!</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>A trusted certificate can replace a self-signed SSL certificate using IP Fabric web UI.</p>
-</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2824,7 +2809,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Configuring Quagga / FRR To Work With IP Fabric" class="md-footer__link md-footer__link--prev" href="../../Overview/How_Discovery_Works/common_problems/quagga-frr/" rel="prev">
+<a aria-label="Previous: Quick Start Installation Guide" class="md-footer__link md-footer__link--prev" href="../00-quick_start/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2833,17 +2818,17 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <span class="md-footer__direction">
                 Previous
               </span>
-              Configuring Quagga / FRR To Work With IP Fabric
+              Quick Start Installation Guide
             </div>
 </div>
 </a>
-<a aria-label="Next: Access User Interface And Install License" class="md-footer__link md-footer__link--next" href="../02-access_ui/" rel="next">
+<a aria-label="Next: CLI Boot Wizard" class="md-footer__link md-footer__link--next" href="../02-boot_wizard/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Access User Interface And Install License
+              CLI Boot Wizard
             </div>
 </div>
 <div class="md-footer__button md-icon">
