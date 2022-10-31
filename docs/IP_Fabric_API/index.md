@@ -4,15 +4,24 @@ description: API endpoints are available in IP Fabric. You also can take a look 
 
 # Overview
 
-IP Fabric is an API first platform; anything that can be accomplished via
-the web GUI can be automated against the API.  The documentation located here
-is meant to get you started working with API and give you a tutorial on how
-it works.  
+IP Fabric is an API first client, that means that any click in the user interface (UI) has an API call associated with the action of the click.
+
+## Python IP Fabric (SDK)
+
+API first principles allow the IP Fabric team to maintain a Software Development Kit (SDK) that can used for automations. While the IP Fabric main GUI is written in TypeScript, we have chosen to write the SDK in Python as it is the most common language used by Network Engineers.
+
+The SDK documentation can be found at [https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
+
+While using SDK is more straightforward then calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.
+
+## Using API Directly
+
+The following documentation is meant to get you started working with API and give you a tutorial on how it works.
 
 Many of the tables within IP Fabric have a `?` which provides a description of
 how to interact with the API, the data required in the payload, and the endpoint
-to send the request to.  This is the easiest way to learn how to use the API
-and for more information please see 
+to send the request to. This is the easiest way to learn how to use the API
+and for more information please see
 [Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description).
 
 Another option is using the network viewer in
