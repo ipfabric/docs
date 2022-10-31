@@ -57,3 +57,7 @@ The Tasker file contains complete communication between IP Fabric and Meraki Das
    "url":"https://XXX.meraki.com/DevNetLab-applia/n/xaNlkcig/manage/nodes/new_list/456789654858"
 }
 ```
+
+## Known Issues
+
+[Meraki API Limited Functionality](../../../releases/known_issues/meraki.md)

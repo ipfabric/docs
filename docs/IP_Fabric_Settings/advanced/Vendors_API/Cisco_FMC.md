@@ -16,3 +16,7 @@ Afterward, choose Cisco FMC API from the list and fill in
 - **Base URL** of Cisco FMC server, e.g. `https://cisco-fmc-ip-address`
 
 ![Cisco FMC api add](cisco/fmc/ciscoFmcAPIAdd.png)
+
+## Known issues
+
+[FMC REST API Calls Returns HTTP Error Code 500](../../../releases/known_issues/cisco/FMC_REST_API.md)
