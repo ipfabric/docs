@@ -38,3 +38,15 @@ vale_mr:
     - curl --fail -L -o /tmp/vale.tar.gz "$VALE_RELEASE"
     - tar -C /tmp -zxvf /tmp/vale.tar.gz
     - 'find docs -name "*.md" \! -regex ".*/low-level_release_notes/.*" | xargs /tmp/vale'
+
+danger-trigger:
+  stage: test
+  image: ruby:3.0
+  only:
+    - merge_requests
+  script:
+      - printenv
+      - gem install danger-gitlab
+      - "ls -al"
+      - export CI_MERGE_REQUEST_IID=${CI_OPEN_MERGE_REQUESTS#*!}
+      - danger --fail-on-errors=true

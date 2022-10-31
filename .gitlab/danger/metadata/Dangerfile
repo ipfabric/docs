@@ -1,0 +1,37 @@
+# rubocop:disable Style/SignalException
+
+if gitlab.mr_body.size < 5
+  warn "Please provide a proper merge request description."
+end
+
+unless gitlab.mr_json["assignee"]
+  warn "This merge request does not have any assignee yet. Setting an assignee clarifies who needs to take action on the merge request at any given time. Please @#{gitlab.pr_author} rectify asap."
+end
+
+unless gitlab.mr_json["reviewer"]
+  warn "This merge request does not have any reviewer yet. Your MR can get overlooked. @#{gitlab.pr_author}, you can also pick multiple people as reviewers."
+end
+
+if gitlab.mr_json['title'].length > 72
+  warn 'The title of this merge request is longer than 72 characters and ' \
+    'would violate our commit message rules when using the Squash on Merge ' \
+    'feature. Please consider adjusting the title, or rebase the ' \
+    "commits manually and don't use Squash on Merge."
+end
+
+jira_regex = /(DOS|NIM|PM|ST)-\d+/
+unless gitlab.mr_json['title'].match?(jira_regex)
+  warn "🔍 I can't find the Jira ticket number in the PR title. Your team " \
+    "members are going to thank you when they look at the list of MRs on Gitlab " \
+    "and see at a glance which PR belongs to which Jira ticket 🙏. It is tested with `#{jira_regex}`."
+end
+
+if (git.deletions > git.insertions)
+  message '👏 Great job! I see more lines deleted than added. Thanks for keeping us lean!'
+end
+
+if git.lines_of_code > 2_000
+  warn "This merge request is definitely too big (more than #{git.lines_of_code} lines changed), please split it into multiple merge requests."
+elsif git.lines_of_code > 500
+  warn "This merge request is quite big  (more than #{git.lines_of_code} lines changed), please consider splitting it into multiple merge requests."
+end
