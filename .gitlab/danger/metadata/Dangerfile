@@ -19,7 +19,7 @@ if gitlab.mr_json['title'].length > 72
     "commits manually and don't use Squash on Merge."
 end
 
-jira_regex = /(DOS|NIM|PM|ST)-\d+/
+jira_regex = /(DOS|NIM|PM|SA|ST)-\d+/
 unless gitlab.mr_json['title'].match?(jira_regex)
   warn "🔍 I can't find the Jira ticket number in the PR title. Your team " \
     "members are going to thank you when they look at the list of MRs on Gitlab " \
