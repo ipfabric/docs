@@ -20,6 +20,13 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
    3. [Add a new empty virtual disk or resize the main system disk](../../System_Administration/increase_disk_space.md)
 3. Power on VM and [complete Boot Wizard](#complete-first-time-boot-wizard).
 
+!!! note "Invalid OVF checksum algorithm: SHA256"
+
+    Importing OVA on older vSphere/ESXi hosts may error stating the OVF checksum
+    is invalid.  Please see [this documentation](../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md)
+    on how to resolve this.
+
+
 ## Deploying on Hyper-V Virtual Machine
 
 The `QCOW2` disk image file can be converted to different formats.
@@ -116,28 +123,3 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 5.  This command also starts up the VM.
 
 6.  Additionally, you can [create and add a new empty virtual disk if needed](../../System_Administration/increase_disk_space.md).
-
----
-
-## Complete (first-time) Boot Wizard
-
-The *First Boot Wizard* starts when IP Fabric is run for the first time and configures system options. The wizard can also be re-run later from the service interface to modify basic system parameters.
-
-1.  Assign hostname.
-2.  Assign domain name.
-3.  Choose IP address acquisition method.
-4.  If a static method is used, configure IP address, netmask, default GW, and DNS servers.
-5.  Configure NTP servers or just click OK to continue if not using NTP.
-6.  Select time zone.
-7.  Configure Internet Proxy if used.
-8.  Set shell user password of `osadmin` user. The password is used to access the IP Fabric administrative interface and system shell (not for the GUI access, the GUI is accessible with the `admin` username by default, for more information, please, read: [Access User Interface and Install License](02-access_ui.md) and also for encrypting system backups.
-9.  Optionally define organization parameters for the local SSL certificate.
-10. After rebooting, the console login screen will display the assigned IP address of the system and provide a link to access the user interface.
-
-!!! warning
-
-    Remember password from step 8! IP Fabric support engineers are able to reset `osadmin` user passwords but **encrypted backups will be lost**!
-
-!!! info
-
-    A trusted certificate can replace a self-signed SSL certificate using IP Fabric web UI.
