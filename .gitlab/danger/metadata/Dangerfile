@@ -4,11 +4,11 @@ if gitlab.mr_body.size < 5
   warn "Please provide a proper merge request description."
 end
 
-unless gitlab.mr_json["assignee"]
+if gitlab.mr_json["assignees"].empty?
   warn "This merge request does not have any assignee yet. Setting an assignee clarifies who needs to take action on the merge request at any given time. Please @#{gitlab.pr_author} rectify asap."
 end
 
-unless gitlab.mr_json["reviewer"]
+if gitlab.mr_json["reviewers"].empty?
   warn "This merge request does not have any reviewer yet. Your MR can get overlooked. @#{gitlab.pr_author}, you can also pick multiple people as reviewers."
 end
 
