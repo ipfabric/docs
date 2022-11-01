@@ -1594,9 +1594,16 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-policy">
+<a class="md-nav__link" href="#add-attribute-policy">
 <span class="md-ellipsis">
-      Add Policy
+      Add Attribute Policy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-api-endpoint-policy">
+<span class="md-ellipsis">
+      Add API Endpoint Policy
     </span>
 </a>
 </li>
@@ -2652,9 +2659,16 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-policy">
+<a class="md-nav__link" href="#add-attribute-policy">
 <span class="md-ellipsis">
-      Add Policy
+      Add Attribute Policy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-api-endpoint-policy">
+<span class="md-ellipsis">
+      Add API Endpoint Policy
     </span>
 </a>
 </li>
@@ -2697,21 +2711,45 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="policies">Policies</h1>
-<p><strong>Policies</strong> are sets of resources with their actions (e.g. <em>discovery</em> policy allows access to discovery api endpoints).</p>
-<p><strong>Policies</strong> page enables you to create or modify policies.</p>
-<h2 id="add-policy">Add Policy</h2>
+<p><strong>Policies</strong> can contain sets of <strong>attributes or endpoints</strong>.</p>
+<p><strong>Attributes</strong> allow a policy to permit access to specific attributes such as <strong>siteName</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info<p>When configuring granular policies and a user does not have any of the system policies configured, the user must have an attribute policy to be able to view diagrams. The diagram views are protected by a whitelist and will only allow users to view graphs if they have attribute scopes configured.</p>
+</p>
+</div>
+<p><strong>Endpoints</strong> allow a policy to only allow access to <strong>specific API endpoints</strong> within IP Fabric (e.g. <em>discovery</em> policy allows access to discovery api endpoints).</p>
+<p><strong>Policies page</strong> enables you to create or modify policies.</p>
+<h2 id="add-attribute-policy">Add Attribute Policy</h2>
+<ol>
+<li>
+<p>To add a new policy click on <strong>+ Add policy</strong>.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_table.png"><img alt="Add policy button" src="../policies_table.png"/></a></p>
+</li>
+<li>
+<p>By default the <strong>Attributes scope</strong> will be selected.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_attributes_add.png"><img alt="Add attribute policy" src="../policies_attributes_add.png"/></a></p>
+</li>
+<li>
+<p>Set a policy name, add attributes (create a filters), select values and <strong>save</strong> your attribute policy.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_attributes_select.png"><img alt="Select attribute" src="../policies_attributes_select.png"/></a></p>
+</li>
+</ol>
+<h2 id="add-api-endpoint-policy">Add API Endpoint Policy</h2>
 <ol>
 <li>
 <p>To add new policy click on <strong>+ Add policy</strong>.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_table.png"><img alt="Add policy button" src="../policies_table.png"/></a></p>
 </li>
 <li>
-<p>Then fill the <strong>Add policy</strong> form and click on <strong>Save</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_add.png"><img alt="Add policy" src="../policies_add.png"/></a></p>
+<p>Select <strong>Api endpoints scope</strong> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_endpoints_select.png"><img alt="Add endpoint policy" src="../policies_endpoints_select.png"/></a></p>
+</li>
+<li>
+<p>Set a policy name, select API endpoints and <strong>save</strong> your endpoints scope.</p>
 </li>
 </ol>
 <h2 id="list-of-policies">List of Policies</h2>
-<p><strong>Policies</strong> table lists all policies including their details and enables you to <strong>modify</strong> or <strong>delete</strong> them <em>(with exception for built-in policies which cannot be modified or deleted)</em>.</p>
+<p><strong>Policies table</strong> lists all policies including their details and enables you to <strong>modify</strong> or <strong>delete</strong> them <em>(with exception for built-in policies which cannot be modified or deleted)</em>.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_table.png"><img alt="Policies Table" src="../policies_table.png"/></a></p>
 <h2 id="edit-policy">Edit Policy</h2>
 <ol>
@@ -2731,7 +2769,7 @@ differently in you production deployment, than described here.
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_table_copy.png"><img alt="Policies Table Copy" src="../policies_table_copy.png"/></a></p>
 </li>
 <li>
-<p>Then modify policy details in <strong>Edit Policy</strong> form and click on <strong>Save</strong>.</p>
+<p>Then modify policy details in <strong>Copy Policy</strong> form and click on <strong>Save</strong>.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_copy.png"><img alt="Copy Policy" src="../policies_copy.png"/></a></p>
 </li>
 </ol>
@@ -2743,7 +2781,7 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>Then click on <strong>Delete</strong> to confirm action.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../users_table_delete_confirm.png"><img alt="Policies Table Delete Confirm" src="../users_table_delete_confirm.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../policies_table_delete_confirm.png"><img alt="Policies Table Delete Confirm" src="../policies_table_delete_confirm.png"/></a></p>
 </li>
 </ol>
 </article>
