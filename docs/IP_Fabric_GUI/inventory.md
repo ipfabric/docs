@@ -6,11 +6,11 @@ description: The inventory provides a list overview of sites, devices, modules, 
 
 ## Overview
 
-The inventory provides a list overview of sites, devices, modules, interfaces, and users discovered within the network.
+The inventory provides a list overview of sites, devices, modules, interfaces and users discovered within the network.
 
 ## Sites
 
-The site inventory provides an overview of discovered sites, the number of devices and users present at the site, and enables the generation of site-specific reports and diagrams. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and other unmanaged infrastructure. A single, unmanaged `traceroute` hop is not considered a site boundary, so unmanaged infrastructure is reconstructed from the probes. The specific method of site boundary calculation can be changed in the settings.
+The site inventory provides an overview of discovered sites, the number of devices and users present at the site. It enables the generation of site-specific reports and diagrams. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and other unmanaged infrastructure. A single, unmanaged `traceroute` hop is not considered a site boundary, so unmanaged infrastructure is reconstructed from the probes. The specific method of site boundary calculation can be changed in the settings.
 
 An unknown site is either a collection of isolated devices or when a device forms a single-device site.
 
@@ -23,11 +23,11 @@ The device inventory represents all logical managed network infrastructure devic
 - `Switching domain` is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.
 - `Hostname` is the short name of the device.
 - `Hostname original` is the original hostname which was acquired from the device.
-- `Hostname processed` is hostname which we parsed from original hostname (if there isn't any parsing, it's the same as `Hostname original`); when applicable -- logical device name -- e.g. firewall `context` or `vsys` name -- can be added as a suffix to the hostname.
+- `Hostname processed` is hostname which is parsed from the original hostname (if there isn't any parsing, it's the same as `Hostname original`); when applicable -- logical device name -- e.g. firewall `context` or `vsys` name -- can be added as a suffix to the hostname.
 - `Domain` is the device domain name.
 - `FQDN` is the device fully qualified domain name (`hostnameProcessed.domain`).
 - `Serial Number` is the serial number of the device (API column name is `snHw`).
-- `Unique serial number` is the serial number IP Fabric assigns to the device this could be different from the Hardware SN especially in cases of virtualized equipment (API column name is `sn`).
+- `Unique serial number` is the serial number IP Fabric assigns to the device. This can be different from the Hardware SN especially in cases of virtualized equipment (API column name is `sn`).
 - `Login IP` is the IP address used to connect to the device.
 - `Management Protocol` is the protocol used to connect to the device.
 - `Uptime` is the time since the device's last boot.
