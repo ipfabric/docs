@@ -6,11 +6,11 @@ description: This will guide you through installing IP Fabric in your environmen
 
 ## Operational Requirements
 
-Please reference [Operational Requirements](../Overview/#operational-requirements) for important requirements pertaining to:
+Please reference [Operational Requirements](../Overview/index.md#operational-requirements) for important requirements pertaining to:
 
-1. [Hardware Requirements](../Overview/#hardware-requirements)
-2. [Network Connectivity Requirements](../Overview/#network-connectivity-requirements)
-3. [Network Access Credentials Requirements](../Overview/#network-access-credentials-requirements)
+1. [Hardware Requirements](../Overview/index.md#hardware-requirements)
+2. [Network Connectivity Requirements](../Overview/index.md#network-connectivity-requirements)
+3. [Network Access Credentials Requirements](../Overview/index.md#network-access-credentials-requirements)
 
 ## Images
 
@@ -20,7 +20,7 @@ Access is restricted to registered customers only.
 !!! note "Image Access"
 
     If you are a current customer please contact your Solution Architect
-    or [Support](../../support) for access instructions.
+    or [Support](../../support/index.md) for access instructions.
 
     Please contact our [sales representative](mailto:sales@ipfabric.io)
     if you are interested in a trial of IP Fabric.
@@ -32,13 +32,13 @@ instructions.
    1. [Deploying VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
    2. [Deploying Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
 2. QCOW2 can be deployed on:
-   1. [Deploying Hyper-V](01-deployment.md#)
-   2. [Deploying KVM](01-deployment.md#)
+   1. [Deploying Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
+   2. [Deploying KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
 
 !!! important "Hardware Requirements"
 
     Please ensure after deploying the VM you verify it has been configured
-    correctly per the [Hardware Requirements](../Overview/#hardware-requirements).
+    correctly per the [Hardware Requirements](../Overview/index.md#hardware-requirements).
     Importing the OVA will use the base requirements of 4 CPU, 16GB RAM,
     and 90GB HDD.
 
@@ -75,7 +75,7 @@ through the process of adding device authentication, discovery seeds, networks
 to include/exclude in discovery, Vendor API setup, along with other settings.
 
 If after initial configuration you would like to change or edit these settings
-please see [IP Fabric Settings](../../IP_Fabric_Settings). Alternatively there
+please see [IP Fabric Settings](../../IP_Fabric_Settings/api_tokens.md). Alternatively there
 are also
 [Snapshot Specific Settings](../../IP_Fabric_GUI/Discovery_Snapshot.md#snapshot-specific-settings)
 which are useful for testing small changes prior to changing Global Settings.
