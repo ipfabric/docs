@@ -10,7 +10,7 @@
 
 	![Add role button](roles_table.png)
 
-1. Then fill the **Add role** form and click on **Save**.
+1. Then fill the **Add role** form - set name, description and select policies - and click on **Save**.
 
 	![Add role](roles_add.png)
 
@@ -36,7 +36,7 @@
 
 	![Roles Table Copy](roles_table_copy.png)
 
-2. Then modify role details in **Edit Role** form and click on **Save**.
+2. Then modify role details in **Copy Role** form and click on **Save**.
 
 	![Copy Role](roles_copy.png)
 
@@ -48,4 +48,4 @@
 
 2. Then click on **Delete** to confirm action.
 
-	![Roles Table Delete Confirm](users_table_delete_confirm.png)
+	![Roles Table Delete Confirm](roles_table_delete_confirm.png)
