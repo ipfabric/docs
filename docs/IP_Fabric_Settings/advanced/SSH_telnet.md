@@ -138,6 +138,8 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
     To avoid using a password for authentication, you can add the ssh key to the proxy server.
 
+#### Manually Copy
+
 1. Download the ssh key from Jumphost settings
 
    ![Download ssh key](ssh/1384153110.png)
@@ -146,9 +148,28 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 3. Copy file content to `authorized_keys` file of the user that
    will authenticate with Jumphost server. Please follow official
-   documentation at <https://www.ssh.com/ssh/authorized-key>
+   documentation at <https://www.ssh.com/ssh/authorized-key>. You
+   can also use `ssh-copy-id` on your machine to deploy the key
+   (see below).
 
 4. Restart `sshd` service to apply settings
+
+5. If the key has been copied you can use the option _‘Use SSH keys'_
+   instead of _'Use credentials’_
+
+#### ssh-copy-id
+
+1. Log into IP Fabric CLI using `osadmin` account.
+
+2. Change to user `autoboss` by running `sudo su - autoboss`.
+
+3. Run `ssh-copy-id` with specified identity file replacing `<user>` with the
+   jumphost user and `<jumphost-ip>` with the IP or FQDN of the jumphost server:
+
+   1. `ssh-copy-id -i .ssh/ipf-jumphost <user>@<jumphost-ip>`
+   2. When prompted for a password, use the jumphost user's password.
+
+4. To test after copy: `ssh -i .ssh/ipf-jumphost <user>@<jumphost-ip>`
 
 5. If the key has been copied you can use the option _‘Use SSH keys'_
    instead of _'Use credentials’_
