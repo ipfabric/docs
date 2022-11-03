@@ -1357,16 +1357,16 @@ differently in you production deployment, than described here.
 <nav aria-label="SSH Key Configuration" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#manually-copy">
+<a class="md-nav__link" href="#copy-ssh-key-manually">
 <span class="md-ellipsis">
-      Manually Copy
+      Copy SSH Key Manually
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ssh-copy-id">
+<a class="md-nav__link" href="#use-ssh-copy-id">
 <span class="md-ellipsis">
-      ssh-copy-id
+      Use ssh-copy-id
     </span>
 </a>
 </li>
@@ -2925,16 +2925,16 @@ differently in you production deployment, than described here.
 <nav aria-label="SSH Key Configuration" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#manually-copy">
+<a class="md-nav__link" href="#copy-ssh-key-manually">
 <span class="md-ellipsis">
-      Manually Copy
+      Copy SSH Key Manually
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ssh-copy-id">
+<a class="md-nav__link" href="#use-ssh-copy-id">
 <span class="md-ellipsis">
-      ssh-copy-id
+      Use ssh-copy-id
     </span>
 </a>
 </li>
@@ -3264,7 +3264,7 @@ errors and adjustments:</p>
 <p class="admonition-title">Info</p>
 <p>To avoid using a password for authentication, you can add the ssh key to the proxy server.</p>
 </div>
-<h4 id="manually-copy">Manually Copy</h4>
+<h4 id="copy-ssh-key-manually">Copy SSH Key Manually</h4>
 <ol>
 <li>
 <p>Download the ssh key from Jumphost settings</p>
@@ -3274,42 +3274,35 @@ errors and adjustments:</p>
 <p>Save <code>jumphost-public-key.pub</code></p>
 </li>
 <li>
-<p>Copy file content to <code>authorized_keys</code> file of the user that
-   will authenticate with Jumphost server. Please follow official
-   documentation at <a href="https://www.ssh.com/ssh/authorized-key">https://www.ssh.com/ssh/authorized-key</a>. You
-   can also use <code>ssh-copy-id</code> on your machine to deploy the key
-   (see below).</p>
+<p>Insert content of the <code>jumphost-public-key.pub</code> file to the <code>authorized_keys</code> file of the user that will authenticate with Jumphost server. Please follow official documentation at <a href="https://www.ssh.com/academy/ssh/authorized-key">https://www.ssh.com/academy/ssh/authorized-key</a>.</p>
+<p>You can also use <code>ssh-copy-id</code> on your machine to deploy the key (see below).</p>
 </li>
 <li>
-<p>Restart <code>sshd</code> service to apply settings</p>
-</li>
-<li>
-<p>If the key has been copied you can use the option <em>‘Use SSH keys'</em>
-   instead of <em>'Use credentials’</em></p>
+<p>After the key is transferred to the jumphost server, you can use the option <em><code>Use SSH keys</code></em> instead of <em><code>Use credentials</code></em></p>
 </li>
 </ol>
-<h4 id="ssh-copy-id">ssh-copy-id</h4>
+<h4 id="use-ssh-copy-id">Use <code>ssh-copy-id</code></h4>
 <ol>
 <li>
-<p>Log into IP Fabric CLI using <code>osadmin</code> account.</p>
+<p>Login to IP Fabric CLI using <code>osadmin</code> account.</p>
 </li>
 <li>
 <p>Change to user <code>autoboss</code> by running <code>sudo su - autoboss</code>.</p>
 </li>
 <li>
-<p>Run <code>ssh-copy-id</code> with specified identity file replacing <code>&lt;user&gt;</code> with the
+<p>Run <code>ssh-copy-id</code> with specified identity file replacing <code>&lt;jumphost-user&gt;</code> with the
    jumphost user and <code>&lt;jumphost-ip&gt;</code> with the IP or FQDN of the jumphost server:</p>
 <ol>
-<li><code>ssh-copy-id -i .ssh/ipf-jumphost &lt;user&gt;@&lt;jumphost-ip&gt;</code></li>
+<li><code>ssh-copy-id -i ~/.ssh/ipf-jumphost.pub &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></li>
 <li>When prompted for a password, use the jumphost user's password.</li>
 </ol>
 </li>
 <li>
-<p>To test after copy: <code>ssh -i .ssh/ipf-jumphost &lt;user&gt;@&lt;jumphost-ip&gt;</code></p>
+<p>To test, ssh to the jumphost server with: <code>ssh &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
 </li>
 <li>
-<p>If the key has been copied you can use the option <em>‘Use SSH keys'</em>
-   instead of <em>'Use credentials’</em></p>
+<p>If the key has been copied you can use the option <em><code>Use SSH keys</code></em>
+   instead of <em><code>Use credentials</code></em></p>
 </li>
 </ol>
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
@@ -3334,6 +3327,9 @@ errors and adjustments:</p>
 <li>
 <p>Click <strong>Delete</strong> button</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384939529.png"><img alt="Delete jumphost" src="../ssh/1384939529.png"/></a></p>
+</li>
+<li>
+<p>(If SSH key authentication was enabled) Delete inserted IP Fabric public key from the <code>authorized_keys</code> file on the jumphost server added in the <a href="#ssh-key-configuration">SSH Key Configuration</a>.</p>
 </li>
 </ol>
 <h2 id="jumphost-known-issues">Jumphost Known Issues</h2>
