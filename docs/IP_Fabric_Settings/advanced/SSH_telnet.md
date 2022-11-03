@@ -138,7 +138,7 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
     To avoid using a password for authentication, you can add the ssh key to the proxy server.
 
-#### Manually Copy
+#### Copy SSH Key Manually
 
 1. Download the ssh key from Jumphost settings
 
@@ -146,33 +146,28 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 
 2. Save `jumphost-public-key.pub`
 
-3. Copy file content to `authorized_keys` file of the user that
-   will authenticate with Jumphost server. Please follow official
-   documentation at <https://www.ssh.com/ssh/authorized-key>. You
-   can also use `ssh-copy-id` on your machine to deploy the key
-   (see below).
+3. Insert content of the `jumphost-public-key.pub` file to the `authorized_keys` file of the user that will authenticate with Jumphost server. Please follow official documentation at <https://www.ssh.com/academy/ssh/authorized-key>.
 
-4. Restart `sshd` service to apply settings
+   You can also use `ssh-copy-id` on your machine to deploy the key (see below).
 
-5. If the key has been copied you can use the option _‘Use SSH keys'_
-   instead of _'Use credentials’_
+4. After the key is transferred to the jumphost server, you can use the option _`Use SSH keys`_ instead of _`Use credentials`_
 
-#### ssh-copy-id
+#### Use `ssh-copy-id`
 
-1. Log into IP Fabric CLI using `osadmin` account.
+1. Login to IP Fabric CLI using `osadmin` account.
 
 2. Change to user `autoboss` by running `sudo su - autoboss`.
 
-3. Run `ssh-copy-id` with specified identity file replacing `<user>` with the
+3. Run `ssh-copy-id` with specified identity file replacing `<jumphost-user>` with the
    jumphost user and `<jumphost-ip>` with the IP or FQDN of the jumphost server:
 
-   1. `ssh-copy-id -i .ssh/ipf-jumphost <user>@<jumphost-ip>`
+   1. `ssh-copy-id -i ~/.ssh/ipf-jumphost.pub <jumphost-user>@<jumphost-ip>`
    2. When prompted for a password, use the jumphost user's password.
 
-4. To test after copy: `ssh -i .ssh/ipf-jumphost <user>@<jumphost-ip>`
+4. To test, ssh to the jumphost server with: `ssh <jumphost-user>@<jumphost-ip>`
 
-5. If the key has been copied you can use the option _‘Use SSH keys'_
-   instead of _'Use credentials’_
+5. If the key has been copied you can use the option _`Use SSH keys`_
+   instead of _`Use credentials`_
 
 ### Disabling Jumphost Connection
 
@@ -193,6 +188,8 @@ We strongly recommend using **python 3.6-3.9** on the jumphost side as it is off
 2. Click **Delete** button
 
    ![Delete jumphost](ssh/1384939529.png)
+
+3. (If SSH key authentication was enabled) Delete inserted IP Fabric public key from the `authorized_keys` file on the jumphost server added in the [SSH Key Configuration](#ssh-key-configuration).
 
 ## Jumphost Known Issues
 
