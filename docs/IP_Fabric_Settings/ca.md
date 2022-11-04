@@ -1,31 +1,39 @@
 # Certification Authorities
 
-By default, IP Fabric only trusts certificates issued by CAs listed
-in the node.js. Because
-internal systems typically use certificates signed by an internal CA,
-the root certificate of this certification authority needs to be
-uploaded.
+Prior version `6.0` IP Fabric used the CA bundle shipped with `node.js`. This led to confusion as the system utilities were not aware of the new certificates. Starting with release `6.0` we have switched to global cert store as trusted by `openssl`.
 
-For example, establishing a secure connection between IP Fabric and LDAP
-server requires a trusted certificate chain.
+Internally this is achieved with passing `--use-openssl-ca` to `node.js`.
 
-## Upload root CA certificate
+## Adding a custom certificate
 
-1. Go to **Settings → Advanced → System → Certification Authorities**.
-2. Click **Upload CA**.
-3. Enter root CA certificate **Name** (it's only your overview)
-4. **Choose file**
-5. Click **Save**
+You add certificate by placing `.crt` file to `/usr/local/share/ca-certificates` and running `update-ca-certificates`. We recommend creating a subdirectory in case you are planning to have multiple certificates added.
 
-## Delete root CA certificate
+```shell
+mkdir /usr/local/share/ca-certificates/my_custom_ca
+```
 
-1. Go to **Settings → Advanced → System → Certification Authorities**.
-2. Select certificate and click **Delete** on the right.
-3. Confirm delete using the **Delete** button.
+!!! Info
 
-## Rename root CA certificate
+	Certificate has to be in PEM format with `.crt` extension, files with other extensions are omitted.
 
-1. Go to **Settings → Advanced → System → Certification Authorities**.
-2. Select certificate and click **Edit** on the right.
-3. Change **Name**
-4. Click **Save**
+After placing the certificate there, you will need to run `update-ca-certificates` command to link the certificate to the Trusted Root Certificate Store. Running it should give you output similar to the following:
+
+```shell
+Updating certificates in /etc/ssl/certs...
+1 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+```
+
+### Converting to `.crt`
+
+`.crt` is nothing more than a PEM certificate with a custom extension. If you need to convert you certificate, you can use `openssl` command line tool to do so. It is typically pretty clever in guessing input format:
+
+```shell
+openssl x509 -in my_custom_ca.der -out /usr/local/share/ca-certificates/my_custom_ca.crt
+```
+
+## Deleting a custom certificate
+
+1. Delete appropriate files / directories from `/usr/local/share/ca-certificates/`.
+2. Run `update-ca-certificates`.
