@@ -1211,23 +1211,27 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#upload-root-ca-certificate">
+<a class="md-nav__link" href="#adding-a-custom-certificate">
 <span class="md-ellipsis">
-      Upload root CA certificate
+      Adding a custom certificate
+    </span>
+</a>
+<nav aria-label="Adding a custom certificate" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#converting-to-crt">
+<span class="md-ellipsis">
+      Converting to .crt
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#delete-root-ca-certificate">
-<span class="md-ellipsis">
-      Delete root CA certificate
-    </span>
-</a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#rename-root-ca-certificate">
+<a class="md-nav__link" href="#deleting-a-custom-certificate">
 <span class="md-ellipsis">
-      Rename root CA certificate
+      Deleting a custom certificate
     </span>
 </a>
 </li>
@@ -2646,23 +2650,27 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#upload-root-ca-certificate">
+<a class="md-nav__link" href="#adding-a-custom-certificate">
 <span class="md-ellipsis">
-      Upload root CA certificate
+      Adding a custom certificate
+    </span>
+</a>
+<nav aria-label="Adding a custom certificate" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#converting-to-crt">
+<span class="md-ellipsis">
+      Converting to .crt
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#delete-root-ca-certificate">
-<span class="md-ellipsis">
-      Delete root CA certificate
-    </span>
-</a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#rename-root-ca-certificate">
+<a class="md-nav__link" href="#deleting-a-custom-certificate">
 <span class="md-ellipsis">
-      Rename root CA certificate
+      Deleting a custom certificate
     </span>
 </a>
 </li>
@@ -2677,33 +2685,30 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="certification-authorities">Certification Authorities</h1>
-<p>By default, IP Fabric only trusts certificates issued by CAs listed
-in the node.js. Because
-internal systems typically use certificates signed by an internal CA,
-the root certificate of this certification authority needs to be
-uploaded.</p>
-<p>For example, establishing a secure connection between IP Fabric and LDAP
-server requires a trusted certificate chain.</p>
-<h2 id="upload-root-ca-certificate">Upload root CA certificate</h2>
+<p>Prior version <code>6.0</code> IP Fabric used the CA bundle shipped with <code>node.js</code>. This led to confusion as the system utilities were not aware of the new certificates. Starting with release <code>6.0</code> we have switched to global cert store as trusted by <code>openssl</code>.</p>
+<p>Internally this is achieved with passing <code>--use-openssl-ca</code> to <code>node.js</code>.</p>
+<h2 id="adding-a-custom-certificate">Adding a custom certificate</h2>
+<p>You add certificate by placing <code>.crt</code> file to <code>/usr/local/share/ca-certificates</code> and running <code>update-ca-certificates</code>. We recommend creating a subdirectory in case you are planning to have multiple certificates added.</p>
+<div class="highlight"><pre><span></span><code>mkdir /usr/local/share/ca-certificates/my_custom_ca
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Certificate has to be in PEM format with <code>.crt</code> extension, files with other extensions are omitted.</p>
+</div>
+<p>After placing the certificate there, you will need to run <code>update-ca-certificates</code> command to link the certificate to the Trusted Root Certificate Store. Running it should give you output similar to the following:</p>
+<div class="highlight"><pre><span></span><code>Updating certificates <span class="k">in</span> /etc/ssl/certs...
+<span class="m">1</span> added, <span class="m">0</span> removed<span class="p">;</span> <span class="k">done</span>.
+Running hooks <span class="k">in</span> /etc/ca-certificates/update.d...
+<span class="k">done</span>.
+</code></pre></div>
+<h3 id="converting-to-crt">Converting to <code>.crt</code></h3>
+<p><code>.crt</code> is nothing more than a PEM certificate with a custom extension. If you need to convert you certificate, you can use <code>openssl</code> command line tool to do so. It is typically pretty clever in guessing input format:</p>
+<div class="highlight"><pre><span></span><code>openssl x509 -in my_custom_ca.der -out /usr/local/share/ca-certificates/my_custom_ca.crt
+</code></pre></div>
+<h2 id="deleting-a-custom-certificate">Deleting a custom certificate</h2>
 <ol>
-<li>Go to <strong>Settings → Advanced → System → Certification Authorities</strong>.</li>
-<li>Click <strong>Upload CA</strong>.</li>
-<li>Enter root CA certificate <strong>Name</strong> (it's only your overview)</li>
-<li><strong>Choose file</strong></li>
-<li>Click <strong>Save</strong></li>
-</ol>
-<h2 id="delete-root-ca-certificate">Delete root CA certificate</h2>
-<ol>
-<li>Go to <strong>Settings → Advanced → System → Certification Authorities</strong>.</li>
-<li>Select certificate and click <strong>Delete</strong> on the right.</li>
-<li>Confirm delete using the <strong>Delete</strong> button.</li>
-</ol>
-<h2 id="rename-root-ca-certificate">Rename root CA certificate</h2>
-<ol>
-<li>Go to <strong>Settings → Advanced → System → Certification Authorities</strong>.</li>
-<li>Select certificate and click <strong>Edit</strong> on the right.</li>
-<li>Change <strong>Name</strong></li>
-<li>Click <strong>Save</strong></li>
+<li>Delete appropriate files / directories from <code>/usr/local/share/ca-certificates/</code>.</li>
+<li>Run <code>update-ca-certificates</code>.</li>
 </ol>
 </article>
 </div>
