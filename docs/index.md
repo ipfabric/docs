@@ -10,7 +10,7 @@ IP Fabric supports large amount of different network equipment from different ve
 
 Not looking for technical documentation but want to know more about what IP Fabric can do for you? Visit our website on [ipfabric.io](https://ipfabric.io).
 
-Interested in Network Automation? Download our free white paper - [The Road to the Self-Driving Network](https://ipfabric.io/the-road-to-the-self-driving-network/) - where we explain the operational journey to the future of the Self-Driving Network via:
+Interested in Network Automation? Download our free white paper -- [The Road to the Self-Driving Network](https://ipfabric.io/the-road-to-the-self-driving-network/) -- where we explain the operational journey to the future of the Self-Driving Network via:
 
 - Network automation
 - Service orchestration
