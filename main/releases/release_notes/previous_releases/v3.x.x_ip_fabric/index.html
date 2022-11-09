@@ -4315,7 +4315,7 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="ip-fabric-v3xx">IP Fabric v3.x.x</h1>
-<h2 id="382-1st-july-2021">3.8.2 (1st July 2021)</h2>
+<h2 id="382-1st-july-2021">3.8.2 (1<sup>st</sup> July 2021)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: 3E1B73F76140CBE5726129E3133D8022
 OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 </code></pre></div>
@@ -4326,18 +4326,18 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 <h3 id="improvements">Improvements</h3>
 <ul>
 <li>DNS name resolving, changed the way how we recognize if DNS server
-  is available. Don't try to resolve public IP 8.8.8.8 but check if
+  is available. Don’t try to resolve public IP 8.8.8.8 but check if
   any nameserver is set</li>
 <li>Snapshot management / Inventory table - allowed advanced filtering
   option</li>
 <li>Tables help - API endpoint includes full URL including server name</li>
 <li>Updated EoL records for Aruba CX</li>
-<li>System / Advanced settings - Option "Saved configuration check" was
-  removed - it can be controlled now from "Discovery Tasks" in
+<li>System / Advanced settings - Option “Saved configuration check” was
+  removed - it can be controlled now from “Discovery Tasks” in
   advanced settings</li>
 <li>Vendor API setting is part of snapshot settings now</li>
 <li>Cisco IOS, IOS-XE and NX-OS - Added support for access-classes and
-  transport methods on VTY lines to "technology/management/aaa/lines"
+  transport methods on VTY lines to “technology/management/aaa/lines”
   table (as hidden columns Inbound ACL, Outbound ACL, Transport Input,
   Transport Output, Allow VRF login)</li>
 <li>Transceivers statistics table - round delta low value to two decimal
@@ -4345,16 +4345,16 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 </ul>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
-<li>Arista EOS - fixed parsing of different output for command "show ptp
-  masters"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ptp
-  local-clock"</li>
+<li>Arista EOS - fixed parsing of different output for command “show ptp
+  masters”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ptp
+  local-clock”</li>
 <li>Aruba CX - Added support for Aruba OS 10.07 routing table output</li>
 <li>Checkpoint Gaia - fixed API endpoint /show-gateways-and-servers
   errors - VSX clusters &amp; checkpoint host objects</li>
 <li>CheckPoint Gaia - fixed parsing of bandwidth information for command
   <code>show virtual-system all</code></li>
-<li>Cisco IOS - exclude OSPFv3 "authentication/confidentiality" IPSec
+<li>Cisco IOS - exclude OSPFv3 “authentication/confidentiality” IPSec
   tunnels.</li>
 <li>Cisco IOS - fixed parsing for command <code>show subscriber session all</code></li>
 <li>Cisco IOS - fixed parsing of command <code>show ip flow export</code> in case
@@ -4365,7 +4365,7 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
   name</li>
 <li>Cisco IOS-XE - fixed transceiver detection</li>
 <li>Cisco IOS-XE, NX-OS - fixed parsing of command <code>show ptp brief</code> in
-  case of ports in 'INITIALIZING' status</li>
+  case of ports in ‘INITIALIZING’ status</li>
 <li>Cisco IOS-XR - fixed parsing of different output for command <code>show
   isis interface</code></li>
 <li>Cisco IOS, IOS-XE, IOS-XR - fix parsing of command <code>show ip route</code>
@@ -4380,7 +4380,7 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
 <li>Extreme Xos - Fixed parsing of STP ports with asterisk from command
   <code>show stpd &lt;stpDomain&gt; ports detail</code></li>
 <li>Extreme XOS - RIB edges removed for local interfaces</li>
-<li>Fix of bug "Invalid snapshot format" so snapshot wasn't able to load</li>
+<li>Fix of bug “Invalid snapshot format” so snapshot wasn’t able to load</li>
 <li>Fix: Do not download the configuration file multiple times from the
   same IP address.</li>
 <li>FRR - don’t show error if BGP/OSPF daemon is not running</li>
@@ -4426,7 +4426,7 @@ OVA SHA256SUM: D9D71C6BACE7FA8AC9913FDD9B6F2ACBE743AB31218C0357BB7A271D0D1E6DE6
   <code>/vnms/dashboard/appliance/&lt;appliance&gt;/live?command=interfaces?deep</code></li>
 <li>Versa VOS - fixed mapping of interfaces without MAC address.</li>
 </ul>
-<h2 id="381-7th-may-2021">3.8.1 (7th May 2021)</h2>
+<h2 id="381-7th-may-2021">3.8.1 (7<sup>th</sup> May 2021)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: 7788D1E2E6A062F8FE3985A8644E9542
 OVA SHA256SUM: 4E7FBA8DF01A787D93B8E6D0E3FE8AED68E3C9F6EABB3D162F84E1F99DADDD3D
 </code></pre></div>
@@ -4451,7 +4451,7 @@ OVA SHA256SUM: 4E7FBA8DF01A787D93B8E6D0E3FE8AED68E3C9F6EABB3D162F84E1F99DADDD3D
 <li>Palo Alto IPSec - fixed parsing of tunnels with long names and
   multiple proposals</li>
 </ul>
-<h2 id="380-26th-april-2021">3.8.0 (26th April 2021)</h2>
+<h2 id="380-26th-april-2021">3.8.0 (26<sup>th</sup> April 2021)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: 2f693acf59d9f31d28507c7edc58234f
 OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 </code></pre></div>
@@ -4504,9 +4504,9 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <li>Table Inventory / Interfaces - added columns about Transceivers (if
   exist, SN, PN, Type - 3 of them hidden by default)</li>
 <li>Table Technology / Security / IPSec / Tunnels - added column
-  "Interface description"</li>
+  “Interface description”</li>
 <li>Table Technology / Security / IPSec / Gateways - added column
-  "Interface description"</li>
+  “Interface description”</li>
 <li>Table Technology / Platforms / Stacks / Stack Ports - For stack
   technologies that use regular ports for the stack, a new column with
   a list of stack interfaces added.</li>
@@ -4515,7 +4515,7 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <li>System / Settings / Advanced / Vendor API settings - each setting
   can be enabled / disabled</li>
 <li>When the application will lose connection with the server then is
-  shown "Connection lost" overlay</li>
+  shown “Connection lost” overlay</li>
 <li>Juniper JunOS - filter out VRRP backup virtual IP from the managed
   IP list</li>
 <li>Managed duplicate IP table - removed for:<ul>
@@ -4538,13 +4538,13 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   interface names</li>
 <li>Arista EOS - fixed empty ip address of admin shutdown interfaces</li>
 <li>Arista EOS - fixed parsing of bandwidth information for command
-  "show ip igmp snooping group"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces vxlan 1"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  igmp snooping groups"</li>
-<li>Arista EOS - fixed parsing of empty output for command "show ptp
-  local-clock"</li>
+  “show ip igmp snooping group”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces vxlan 1”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  igmp snooping groups”</li>
+<li>Arista EOS - fixed parsing of empty output for command “show ptp
+  local-clock”</li>
 <li>Arista EOS - remove non-existing Router interfaces from Interface
   inventory</li>
 <li>Arista EOS - sometimes show the wrong VRF for admin shutdown
@@ -4554,30 +4554,30 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <li>CheckPoint Gaia - error about missing router ID was shown even if
   BGP was disabled</li>
 <li>Checkpoint Gaia - fixed parsing of different output for command
-  "show cluster members interfaces all"</li>
+  “show cluster members interfaces all”</li>
 <li>Cisco - fix parsing switchport mode dot1q-tunnel</li>
 <li>Cisco - Fixed parsing show running-config command - line password
   with spaces.</li>
 <li>Cisco - remove non-existing Sup-Eth interfaces from Interface
   inventory</li>
-<li>Cisco ACI - fixed parsing of different output for command "show coop
-  internal info ip-db"</li>
+<li>Cisco ACI - fixed parsing of different output for command “show coop
+  internal info ip-db”</li>
 <li>Cisco ACI, NX-OS - fixed parsing of interface description.</li>
 <li>Cisco ASA - fix parsing of not configured tunnels</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  crypto ipsec sa"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  crypto isakmp sa detail"</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  crypto ipsec sa”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  crypto isakmp sa detail”</li>
 <li>Cisco IOS - Allow PIM RP without groups</li>
 <li>Cisco IOS - fix duplex and media type for C1700</li>
-<li>Cisco IOS - fix parsing of command "show ip igmp snooping mrouter"
+<li>Cisco IOS - fix parsing of command “show ip igmp snooping mrouter”
   in case there are no ports configured</li>
-<li>Cisco IOS - fix parsing of large output from "show mac address-table
-  multicast"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show lldp
-  neighbors detail"</li>
-<li>Cisco IOS - fixed parsing of output for command "show ip igmp
-  interface"</li>
+<li>Cisco IOS - fix parsing of large output from “show mac address-table
+  multicast”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show lldp
+  neighbors detail”</li>
+<li>Cisco IOS - fixed parsing of output for command “show ip igmp
+  interface”</li>
 <li>Cisco IOS - HSRP - fixed preemption detection</li>
 <li>Cisco IOS-XE - BGP - fixed address family detection</li>
 <li>Cisco IOS-XE - fixed parsing interfaces without outDrops counter</li>
@@ -4585,42 +4585,42 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
   ap name &lt;apName&gt; wlan dot11 5ghz/24ghz</code></li>
 <li>Cisco IOS-XE fixed STP interface - VLAN mapping (TwoGigabitEthernet
   and AppGigabitEthernet)</li>
-<li>Cisco IOS-XE WLC - Fixed parsing for interfaces with "invalid" as a
+<li>Cisco IOS-XE WLC - Fixed parsing for interfaces with “invalid” as a
   value for speed</li>
 <li>Cisco IOS-XE WLC - fixed parsing of different output for command
-  "show wlan summary"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  mpls forwarding"</li>
+  “show wlan summary”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  mpls forwarding”</li>
 <li>Cisco IOS, IOS-XE and IOS-XR - Routing table parsing fixed</li>
 <li>Cisco IOS, IOS-XE, ASA - fixed interface mapping in IPSec task.</li>
 <li>Cisco IOS, NX-OS - use the full form of commands to avoid ambiguous
-  commands - "show spanning-tree summary", "show spanning-tree
-  detail", "show port-channel summary", "show etherchannel-summary"</li>
+  commands - “show spanning-tree summary”, “show spanning-tree
+  detail”, “show port-channel summary”, “show etherchannel-summary”</li>
 <li>Cisco IOS/IOS-XE - Fixed LLDP neighbors parsing in case output is
   split to 2 lines</li>
 <li>Cisco IOS/IOS-XE - VRF name parsing fixed to disregard ending
   semicolon (if it is present)</li>
 <li>Cisco NX-OS - added FEX info to inventory</li>
-<li>Cisco NX-OS - fixed false-positive error emit in case "show monitor
-  session all" contains information that destination port is in use in
+<li>Cisco NX-OS - fixed false-positive error emit in case “show monitor
+  session all” contains information that destination port is in use in
   other span.</li>
-<li>Cisco NX-OS - fixed parsing for command "show fex detail" for cases
+<li>Cisco NX-OS - fixed parsing for command “show fex detail” for cases
   fabric port for control traffic is not provided.</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  vrrp detail"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  vrrp detail”</li>
 <li>Cisco NX-OS - XDP links for LLDP protocol might have not been
   created in some cases</li>
 <li>Cisco NX-OS- fixed parsing of show running configuration with some
   specific banner configured.</li>
 <li>Cisco SG - fixed interface parsing in ARP table</li>
 <li>Cisco SG - fixed LLDP neighbors detection in multiline output</li>
-<li>Cisco SG - fixed parsing of different output for command "show sflow
-  configuration"</li>
-<li>Cisco SG - fixed parsing of different output for command "show
-  spanning-tree detail"</li>
+<li>Cisco SG - fixed parsing of different output for command “show sflow
+  configuration”</li>
+<li>Cisco SG - fixed parsing of different output for command “show
+  spanning-tree detail”</li>
 <li>Cisco SG 500 - fixed STP interface - vlan mapping (slash format)</li>
 <li>Cisco XE - fixed xSR platforms identification</li>
-<li>Cisco XR - fix parsing for command 'show version' (caused empty
+<li>Cisco XR - fix parsing for command ‘show version’ (caused empty
   hostname)</li>
 <li>Dell Powerconnect - fixed version detection for switches N2048</li>
 <li>Extreme VOSS - fixed LLDP neighbor parsing</li>
@@ -4636,40 +4636,40 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <li>HP Arubasw - Fixed error handling for LLDP neighbor with wrong
   format of Chassis ID</li>
 <li>HP Arubasw - fixed mac-address collecting on some models</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  interface brief"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  interfaces transceiver detail"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  interfaces transceiver"</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  interface brief”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  interfaces transceiver detail”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  interfaces transceiver”</li>
 <li>HP Comware - fix parsing ARP table for platform 5130</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  clock"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  info-center"</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  clock”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  info-center”</li>
 <li>Huawei VRP - Fixed ARP parsing in case (SIP/DIP) is shown</li>
 <li>Huawei VRP - fixed interface clearing time parsing</li>
 <li>Huawei VRP - Fixed parsing for empty mirroring groups</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  mac-address"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  vxlan tunnel"</li>
-<li>Huawei VRP - fixed parsing of empty output for command "display dhcp
-  snooping"</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  mac-address”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  vxlan tunnel”</li>
+<li>Huawei VRP - fixed parsing of empty output for command “display dhcp
+  snooping”</li>
 <li>Huawei VRP - VXLAN Tunnels - command parsing fix when empty output
   is received</li>
-<li>Juniper JunOS - Configuration parsing fix for "protect protocols
-  mstp" command</li>
-<li>Juniper JunOS - fixed parsing of different output for command 'show
-  configuration | display set | except "^deactivate"'</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  chassis environment"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  chassis routing-engine"</li>
-<li>Juniper JunOS - IGMP groups fix mapping of 'never' value for expires
+<li>Juniper JunOS - Configuration parsing fix for “protect protocols
+  mstp” command</li>
+<li>Juniper JunOS - fixed parsing of different output for command ‘show
+  configuration | display set | except “^deactivate”’</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  chassis environment”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  chassis routing-engine”</li>
+<li>Juniper JunOS - IGMP groups fix mapping of ‘never’ value for expires
   for</li>
 <li>Juniper JunOS fix false-positive err-disabled statuses</li>
-<li>Meraki - L2 interfaces, reason "connecting" added</li>
+<li>Meraki - L2 interfaces, reason “connecting” added</li>
 <li>Palo Alto - an interface that wasn’t associated with any VSYS could
   be missing in the interface inventory</li>
 <li>Palo Alto - collect list of VRFs from show commands instead of
@@ -4677,18 +4677,18 @@ OVA SHA256SUM: 2b208eb7584fd5b4708ea56a7f1688f4bf44624c872ef0d6b792576e88f9ff00
 <li>Palo Alto - collect transceivers only for interfaces of the
   currently processed virtual system</li>
 <li>Palo Alto - fixed missing routing tables on single vsys firewalls</li>
-<li>Palo Alto - fixed parsing of command "show vpn gateway" with
+<li>Palo Alto - fixed parsing of command “show vpn gateway” with
   multiple DH groups</li>
-<li>Palo Alto - fixed parsing of different output for command "show
-  routing route"</li>
-<li>Palo Alto - fixed parsing of different output for command "show vpn
-  flow"</li>
+<li>Palo Alto - fixed parsing of different output for command “show
+  routing route”</li>
+<li>Palo Alto - fixed parsing of different output for command “show vpn
+  flow”</li>
 <li>Palo Alto - fixed vendor bug where the sessions keep open even the
-  connection is correctly closed. Using "exit" cmd for disconnection.</li>
+  connection is correctly closed. Using “exit” cmd for disconnection.</li>
 <li>Vlan topology calculation - Virtual mac used in switch ID for Cisco
   Nexus fix</li>
 </ul>
-<h2 id="376-8th-march-2021">3.7.6 (8th March 2021)</h2>
+<h2 id="376-8th-march-2021">3.7.6 (8<sup>th</sup> March 2021)</h2>
 <div class="highlight"><pre><span></span><code>OVA MD5SUM: a47d9983d046f74a34a17f5025cb7bd8
 OVA SHA256SUM: c5972d44b012ff3b3411ea3c6666651e9c6c453a50009c0062df99c11ae29e0b
 </code></pre></div>
@@ -4696,8 +4696,8 @@ OVA SHA256SUM: c5972d44b012ff3b3411ea3c6666651e9c6c453a50009c0062df99c11ae29e0b
 <ul>
 <li>Add support for Cisco Firepower 9000 series SM-24</li>
 <li>Add indexes to speed up several DB queries</li>
-<li>Table Technology / Routing / BGP / Neighbors - added "Local
-  interface" column</li>
+<li>Table Technology / Routing / BGP / Neighbors - added “Local
+  interface” column</li>
 <li>Palo Alto - show also unconfigured ports in IPF</li>
 <li>Cisco Meraki - Zx Teleworker Gateways - extended support for
   interface and routing table discovery (to gather this information Zx
@@ -4714,7 +4714,7 @@ OVA SHA256SUM: c5972d44b012ff3b3411ea3c6666651e9c6c453a50009c0062df99c11ae29e0b
 <li>Cisco FTD - fixed detection of service objects with names matching
   ICMP options keywords</li>
 </ul>
-<h2 id="375-22nd-january-2021">3.7.5 (22nd January 2021)</h2>
+<h2 id="375-22nd-january-2021">3.7.5 (22<sup>nd</sup> January 2021)</h2>
 <p>OVA MD5SUM: b4c940832cbd592f2653553d72f11f33OVA
 SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <h3 id="features-protocol-and-technology-support_2">Features - Protocol and technology support</h3>
@@ -4739,25 +4739,25 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <li>Cisco ACI - an unsupported show run command is no longer downloaded</li>
 <li>Cisco ASA/FTD - L3 interfaces ‘local’ IPs are no longer derived from
   static ARP entries</li>
-<li>Cisco IOS - fixed parsing of bandwidth information for command "show
-  policy-map interface"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  mac-address-table multicast"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  standby"</li>
+<li>Cisco IOS - fixed parsing of bandwidth information for command “show
+  policy-map interface”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  mac-address-table multicast”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  standby”</li>
 <li>Cisco IOS - Fixed showRun parsing for sections aaa, SNMP</li>
-<li>Cisco IOS-XE - command "show wireless client mac-address \<mac>
-  detail" - filter out clients without ap.</mac></li>
+<li>Cisco IOS-XE - command “show wireless client mac-address \<mac>
+  detail” - filter out clients without ap.</mac></li>
 <li>Cisco IOS-XE WLC - improved parsing and overall wireless AP
   processing capabilities to better handle erroneous command outputs</li>
 <li>Cisco IOS, IOS-XE - fixed parsing of source interface for AAA
   servers.</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  interface transceiver details"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  spanning-tree mst"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  interface transceiver details”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  spanning-tree mst”</li>
 <li>Cisco NX-OS, IOS-XE - fixed parsing of different output for command
-  "show version"</li>
+  “show version”</li>
 <li>Cisco NX-OS/ACI - L3 interfaces ‘local’ IPs are no longer derived
   from static ARP entries</li>
 <li>Cisco SG - Fixed ambiguous commands</li>
@@ -4774,16 +4774,16 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <li>Fortinet FortiGate - show only IP addresses from the active
   (virtual) cluster member</li>
 <li>HP Aruba switch fix parsing of hostname</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  vlans"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  lldp info local-device"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  arp"</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  vlans”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  lldp info local-device”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  arp”</li>
 <li>HP Comware 1910 - fixed version detection</li>
 <li>HPE V1910 - Fixed platform detection</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  igmp group"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  igmp group”</li>
 <li>Juniper JunOS - IRB L3 interface correct VLAN ID assignment</li>
 <li>Juniper JunOS - STP - VLAN specific information parsing fixed for
   VSTP</li>
@@ -4793,12 +4793,12 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <li>Pathlookup - Transit search with tunnel fix (tunnel destination IP
   is now used)</li>
 <li>System Administration - allows restarting of Discovery services</li>
-<li>Technology / Addressing / Managed IP - table "DNS name match
-  hostname" and "DNS (A/CNAME record)" columns did have correctly set
+<li>Technology / Addressing / Managed IP - table “DNS name match
+  hostname” and “DNS (A/CNAME record)” columns did have correctly set
   failed status.</li>
 <li>The Discovery process may be stuck when Tacacs is overloaded - fixed</li>
 </ul>
-<h2 id="374-21st-december-2020">3.7.4 (21st December 2020)</h2>
+<h2 id="374-21st-december-2020">3.7.4 (21<sup>st</sup> December 2020)</h2>
 <h3 id="improvements_5">Improvements</h3>
 <ul>
 <li>Topology calculation -  virtual mac calculation optimized</li>
@@ -4806,7 +4806,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
   to prevent DB overload</li>
 <li>Optimized DB queries for Discovery - Summary of issues</li>
 </ul>
-<h2 id="373-17th-december-2020">3.7.3 (17th December 2020)</h2>
+<h2 id="373-17th-december-2020">3.7.3 (17<sup>th</sup> December 2020)</h2>
 <h3 id="features-protocol-and-technology-support_3">Features - Protocol and technology support</h3>
 <ul>
 <li>Cisco ACI - add support for OSPF</li>
@@ -4828,49 +4828,49 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <ul>
 <li>Arista EOS - fix parsing of IP route table when IP routing is
   disabled</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  route vrf \<vrfname>"</vrfname></li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  route vrf \<vrfname>“</vrfname></li>
 <li>CheckPoint Gaia - fixed mapping of different output for API endpoint
-  "/web_api/show-gateways-and-servers"</li>
-<li>Cisco ACI - fixed parsing of different output for command "show coop
-  internal info ip-db"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show mpls
-  forwarding-table detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show vrf
-  detail"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  mpls forwarding"</li>
+  “/web_api/show-gateways-and-servers”</li>
+<li>Cisco ACI - fixed parsing of different output for command “show coop
+  internal info ip-db”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show mpls
+  forwarding-table detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show vrf
+  detail”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  mpls forwarding”</li>
 <li>Cisco IOS-XR - VRF-based routing information parsing fixed</li>
 <li>Cisco NX-OS - ACL with IPV4 syntax added</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  mpls switching"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  mpls switching”</li>
 <li>Cisco NX-OS, IOS-XR - fixed parsing of different output for commands
-  "show hsrp", "show hsrp detail", "show vrrp detail"</li>
+  “show hsrp”, “show hsrp detail”, “show vrrp detail”</li>
 <li>Cisco SG - dot1x related commands parsing fixed</li>
-<li>F5 BigIP - fix "show sys hardware" failure in version detection</li>
+<li>F5 BigIP - fix “show sys hardware” failure in version detection</li>
 <li>Fixed Device type detection - One non-connected route is enough for
   router</li>
 <li>Fortinet FortiGate - fixed missing VIP groups in zone firewall</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show firewall service group"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  trunks"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  device manuinfo"</li>
+  “show firewall service group”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  trunks”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  device manuinfo”</li>
 <li>Huawei - Fixed ambiguous commands for arp, dhcp snooping, sflow,
   port-mirroring</li>
 <li>Huawei - MPLS to RIB transport label mapping - 3 implicit null label
   removed</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vlans detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vlans detail”</li>
 <li>Juniper JunOS - show route active-path command parsing updated and
   fixed</li>
-<li>Palo Alto - fixed parsing of different output for command "show
-  config merged"</li>
+<li>Palo Alto - fixed parsing of different output for command “show
+  config merged”</li>
 <li>Pathlookup - MPLS - nexthop without IP secondary lookup in VRF added</li>
 <li>Pathlookup - Multiple NH with different link type fix</li>
 </ul>
-<h2 id="372-3rd-december-2020">3.7.2 (3rd December 2020)</h2>
+<h2 id="372-3rd-december-2020">3.7.2 (3<sup>rd</sup> December 2020)</h2>
 <h3 id="improvements_7">Improvements</h3>
 <ul>
 <li>Cisco - IP disabled or unconfigured interfaces excluded from saving
@@ -4884,12 +4884,12 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 </ul>
 <h3 id="bugfixes">Bugfixes</h3>
 <ul>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf interface"</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf interface”</li>
 <li>Arista EOS - fixed parsing when the device returns empty string for
-  command "show ip ospf interface"</li>
+  command “show ip ospf interface”</li>
 <li>Arista EOS - fixed parsing when the device returns an empty string
-  for command "show logging"</li>
+  for command “show logging”</li>
 <li>Cisco ACI - Edge switch calculation fix (precedence from endpoint
   table on a leaf over ARP on other devices)</li>
 <li>Cisco ACI - Leaf to switch VLAN topology fix for same access VLAN
@@ -4897,48 +4897,48 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
   on the unique index).</li>
 <li>Cisco ACI - Switch to leaf L2 path VLAN translation from access VLAN
   to PI VLAN fix</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  crypto ikev2 sa detailed"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  standby"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  crypto ikev2 sa detailed”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  standby”</li>
 <li>Cisco SG/NX-OS - power supply &amp; fan information processing fixed</li>
-<li>F5 BigIP - doesn’t run cmd "list /sys management-ip" on vCMP guests,
+<li>F5 BigIP - doesn’t run cmd “list /sys management-ip” on vCMP guests,
   it doesn’t return any value on this platform.</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show firewall address"</li>
+  “show firewall address”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "get system status"</li>
+  “get system status”</li>
 <li>Fortinet FortiGate - fixed processing of policies with service ALL
   in zone firewall</li>
 <li>Fortinet FortiGate - neighbor relationships fixed on VDOM links</li>
-<li>HP Aruba - fixed parsing of different output for command "show ap
-  port status ap-name \<apname>"</apname></li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  sflow"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  transceiver verbose"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  vxlan tunnel"</li>
+<li>HP Aruba - fixed parsing of different output for command “show ap
+  port status ap-name \<apname>“</apname></li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  sflow”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  transceiver verbose”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  vxlan tunnel”</li>
 <li>Huawei VRP - Mac address table, add bridge domain number to
   interface if missing</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration | display set | except "^deactivate""</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration security policies | display set"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ethernet-switching interface"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lldp neighbors interface \<int>"</int></li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  security ipsec security-associations detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  security ipsec security-associations detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vlans detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration | display set | except “^deactivate”“</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration security policies | display set”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ethernet-switching interface”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lldp neighbors interface \<int>“</int></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  security ipsec security-associations detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  security ipsec security-associations detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vlans detail”</li>
 <li>Mikrotik RouterOS - fixed parsing of different output for command
-  "/ip neighbor print detail"</li>
-<li>Palo Alto - transceivers - "show system state filter-pretty
-  sys.s*.p*.phy command" parsing fixed</li>
+  “/ip neighbor print detail”</li>
+<li>Palo Alto - transceivers - “show system state filter-pretty
+  sys.s*.p*.phy command” parsing fixed</li>
 <li>Palo Alto - Zone FW - fix parsing of shared firewall objects on
   multi vsys systems.</li>
 <li>UI - Settings / Discovery Tasks - button Test in Firefox submit a
@@ -4949,7 +4949,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
   addresses limitation</li>
 <li>Bridge domain VLAN topology calculation - fix for recalculation</li>
 </ul>
-<h2 id="371-24th-november-2020">3.7.1 (24th November 2020)</h2>
+<h2 id="371-24th-november-2020">3.7.1 (24<sup>th</sup> November 2020)</h2>
 <h3 id="features-protocol-and-technology-support_4">Features - Protocol and technology support</h3>
 <ul>
 <li>Palo Alto - add support for Syslog</li>
@@ -4961,7 +4961,7 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <li>Rewritten DB query to speedup post-discovery topology calculation</li>
 <li>Technology / Security / Zone firewall / Interfaces - format data in
   Zone column (separate multiple zones by space)</li>
-<li>Cisco IOS-XE - command "show interfaces transceiver detail" - added
+<li>Cisco IOS-XE - command “show interfaces transceiver detail” - added
   handling for Cisco bug CSCuw38988 (version 03.07.05E &amp; platform
   cat3k_caa)</li>
 <li>Fortinet FortiGate - check whether a VDOM still exists before
@@ -4973,26 +4973,26 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <ul>
 <li>Arista - transceivers - parsing fixed and extended</li>
 <li>Aruba, Palo Alto - Fixed NTP server parsing when specified by FQDN</li>
-<li>Checkpoint API data wasn't download on add new devices to the
+<li>Checkpoint API data wasn’t download on add new devices to the
   snapshot - fixed</li>
 <li>CheckPoint Gaia - fixed parsing of different output for command
-  "show ospf neighbors detailed"</li>
-<li>CheckPoint Gaia - run command "show security-gateway memory
-  statistics" (if available) instead of "fw ctl psat" which is
+  “show ospf neighbors detailed”</li>
+<li>CheckPoint Gaia - run command “show security-gateway memory
+  statistics” (if available) instead of “fw ctl psat” which is
   deprecated</li>
 <li>Cisco - IP unnumbered addresses mapped to L3 interfaces</li>
 <li>Cisco ACI - Too long VRF name over multiple lines parsing fix for
-  "show system internal epm vrf all"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  crypto ipsec sa"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  crypto isakmp sa detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  crypto ipsec sa"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ip
-  route"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show vlan
-  brief"</li>
+  “show system internal epm vrf all”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  crypto ipsec sa”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  crypto isakmp sa detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  crypto ipsec sa”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ip
+  route”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show vlan
+  brief”</li>
 <li>Cisco IOS - multicast MAC address table - parsing updated to support
   IOS based routers</li>
 <li>Cisco IOS XR - fixed platform and model detection for NCS series</li>
@@ -5001,49 +5001,49 @@ SHA256SUM: c16cbac6040e7d07d04c42142ddbb42acc0547c912d726efa1bd1138a58f5be4</p>
 <li>Cisco IOS-XR - Device had incorrectly assigned IP addresses from
   EVPN ARP records</li>
 <li>Cisco IOS-XR - routing table next hop with vrf leak parsing fix</li>
-<li>Cisco IOS/XE - fixed parsing of different output for command "show
-  lldp neighbors"</li>
+<li>Cisco IOS/XE - fixed parsing of different output for command “show
+  lldp neighbors”</li>
 <li>Cisco WLC-AIR - allow device discovery even if not possible to
   determine device platform and model</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diagnose firewall fqdn list"</li>
+  “diagnose firewall fqdn list”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diagnose netlink aggregate name \<name>"</name></li>
+  “diagnose netlink aggregate name \<name>“</name></li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diagnose vpn tunnel list"</li>
+  “diagnose vpn tunnel list”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show firewall vip"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show cdp
-  neighbors detail"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  logging server"</li>
+  “show firewall vip”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show cdp
+  neighbors detail”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  logging server”</li>
 <li>Huawei ambiguous commands fix - display mac-address, display
   interface, display device manufacture</li>
 <li>Huawei VRP - ARP - Vlan parsing fix when the record is over multiple
   lines.</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  mpls ldp adjacency verbose"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  mpls lsp verbose"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  vxlan tunnel"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  vxlan vni"</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  mpls ldp adjacency verbose”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  mpls lsp verbose”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  vxlan tunnel”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  vxlan vni”</li>
 <li>Huawei VRP - Task VXLAN - Device without VXLAN configuration error
   fix</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  chassis environment"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  chassis routing-engine"</li>
-<li>Palo Alto - fixed parsing of different output for commands "show vpn
-  *"</li>
-<li>Palo Alto - fixed parsing of different outputs for command "show
-  config pushed-shared-policy vsys \<vsys>"</vsys></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  chassis environment”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  chassis routing-engine”</li>
+<li>Palo Alto - fixed parsing of different output for commands “show vpn
+  *“</li>
+<li>Palo Alto - fixed parsing of different outputs for command “show
+  config pushed-shared-policy vsys \<vsys>“</vsys></li>
 <li>Transceivers statistics table - fixed data for threshold columns</li>
 <li>Transceivers thresholds and errors tables - show only transceivers
   with some data</li>
 </ul>
-<h2 id="370-9th-november-2020">3.7.0 (9th November 2020)</h2>
+<h2 id="370-9th-november-2020">3.7.0 (9<sup>th</sup> November 2020)</h2>
 <p>OVA MD5SUM: 0b44008d783224387c9c894a61a33701OVA
 SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
 <h3 id="features-protocol-and-technology-support_5">Features - Protocol and technology support</h3>
@@ -5135,7 +5135,7 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
   disabled in Discovery tasks settings</li>
 <li>Selected snapshot is remembered, will be automatically selected in
   browser new tabs.</li>
-<li>F5 BigIP - new cmd "|list /sys management-ip" to add management
+<li>F5 BigIP - new cmd “|list /sys management-ip” to add management
   interface to interface list</li>
 <li>HP Comware - collect media for L2 interfaces</li>
 <li>Huawei - L2 STP link added between bridge domain and neighbor switch</li>
@@ -5143,14 +5143,14 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
   into lowest-numbered VSYS)</li>
 <li>Table Technology / Platforms / Environment / Power supplies - add
   column Device Model</li>
-<li>Table Inventory / Devices - Column "Serial number" is renamed to
-  "Unique serial number" (includes virtualization unique identifier -
-  context/vsys/VDC etc). "Serial number" column now contains real SN
+<li>Table Inventory / Devices - Column “Serial number” is renamed to
+  “Unique serial number” (includes virtualization unique identifier -
+  context/vsys/VDC etc). “Serial number” column now contains real SN
   reported by the device.</li>
-<li>Table Technology / Multicast / MRoute table - add "Vendor", "Family"
+<li>Table Technology / Multicast / MRoute table - add “Vendor”, “Family”
   columns (as hidden by default)</li>
-<li>Table Technology / Multicast / MRoute / OIL Detail - add "Vendor",
-  "Family" columns (as hidden by default)</li>
+<li>Table Technology / Multicast / MRoute / OIL Detail - add “Vendor”,
+  “Family” columns (as hidden by default)</li>
 <li>Table Management / Discovery History - the records are updated only
   for new snapshot, not for snapshot load.</li>
 <li>Table Technology / Platform / Stacks / Members - uptime fixed to
@@ -5170,138 +5170,138 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
 </ul>
 <h3 id="bug-fixes_7">Bug Fixes</h3>
 <ul>
-<li>Arista - fixed parsing of different output for command "show lldp
-  neighbors detail"</li>
-<li>Arista - fixed parsing of different output for command "show vrf"</li>
+<li>Arista - fixed parsing of different output for command “show lldp
+  neighbors detail”</li>
+<li>Arista - fixed parsing of different output for command “show vrf”</li>
 <li>CheckPoint Gaia - add cluster virtual IP addresses to the interfaces</li>
 <li>CheckPoint Gaia - fixed parsing of different output for command
-  "show ospf neighbors detailed"</li>
-<li>Cisco 9800 WLC - Fix parsing when wireless client with "excluded"
+  “show ospf neighbors detailed”</li>
+<li>Cisco 9800 WLC - Fix parsing when wireless client with “excluded”
   status is contained in output</li>
-<li>Cisco 9800 WLC - fixed parsing of different output for command "show
-  wireless interface summary"</li>
-<li>Cisco ACI - fixed parsing of different outputs for command "show
-  coop internal info ip-db"</li>
+<li>Cisco 9800 WLC - fixed parsing of different output for command “show
+  wireless interface summary”</li>
+<li>Cisco ACI - fixed parsing of different outputs for command “show
+  coop internal info ip-db”</li>
 <li>Cisco ACI - Some show interfaces have 0000.0000.0000 mac, bia is
   taken instead</li>
-<li>Cisco ASA - fixed parsing of different output for command "show run"</li>
+<li>Cisco ASA - fixed parsing of different output for command “show run”</li>
 <li>Cisco ASA Firepower - Platform detection improvement for 4000 and
   9000 platforms.</li>
 <li>Cisco Cat9K platforms - fixed parsing of show version output without
   stackwise</li>
 <li>Cisco Catalyst 3K &amp; 9K - Total output drops bytes/packets handling
   (CSCve59640).</li>
-<li>Cisco IOS - add correct parameters to the command "show
-  storm-control" on Cat4500 platforms</li>
-<li>Cisco IOS - fixed parsing of different output for command "show lldp
-  neighbors"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show run"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  udld"</li>
+<li>Cisco IOS - add correct parameters to the command “show
+  storm-control” on Cat4500 platforms</li>
+<li>Cisco IOS - fixed parsing of different output for command “show lldp
+  neighbors”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show run”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  udld”</li>
 <li>Cisco IOS - VSS - Current state time not provided for CAT4500 fix
   (removed as required property)</li>
 <li>Cisco IOS - VSS - Four supervisor chassis fix</li>
 <li>Cisco IOS - VSS - VSL link output from both switches fix</li>
 <li>Cisco IOS 6800 - fixed parsing of different outputs for command
-  "show mac address-table multicast"</li>
-<li>Cisco IOS XR - fixed parsing of different outputs for command "show
-  ntp associations"</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  run"</li>
+  “show mac address-table multicast”</li>
+<li>Cisco IOS XR - fixed parsing of different outputs for command “show
+  ntp associations”</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  run”</li>
 <li>Cisco NX-OS - CDP capabilities includes phone, so it was wrongly
   classified as phone.</li>
-<li>Cisco NX-OS - device model is taken from "show inventory"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  ip igmp snooping groups"</li>
+<li>Cisco NX-OS - device model is taken from “show inventory”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  ip igmp snooping groups”</li>
 <li>Cisco NX-OS - OSPF interface fix for unnumbered interface</li>
 <li>Cisco NX-OS - PIM with unnumbered interfaces fix</li>
-<li>Cisco NX-OS fixed parsing of different output for command "show cdp
-  internal global-info"</li>
+<li>Cisco NX-OS fixed parsing of different output for command “show cdp
+  internal global-info”</li>
 <li>Cisco NX-OS fixed parsing of different output for command <code>show ip
   bgp vrf all all nei</code></li>
-<li>Cisco NX1000v - don't execute unsupported cmd "show cdp internal
-  global-info"</li>
+<li>Cisco NX1000v - don’t execute unsupported cmd “show cdp internal
+  global-info”</li>
 <li>Cisco SG - fixed hostname detection</li>
-<li>Cisco SG - fixed parsing of different outputs for command "show
-  interface status"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  arp-table"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  lldp neighbor-mgmt-addr"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  lldp neighbor"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  mac-address-table"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  port-statistics"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  running-config"</li>
-<li>Extreme Boss - fixed parsing of different output for command "show
-  vlan interface info"</li>
-<li>Extreme Boss - fixed parsing of different outputs for command "show
-  ip"</li>
-<li>Extreme Boss - fixed parsing of different outputs for command "show
-  mlt"</li>
-<li>Extreme BOSS - fixed parsing of different outputs for command "show
-  spanning-tree stp \<args> port vlans"</args></li>
+<li>Cisco SG - fixed parsing of different outputs for command “show
+  interface status”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  arp-table”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  lldp neighbor-mgmt-addr”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  lldp neighbor”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  mac-address-table”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  port-statistics”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  running-config”</li>
+<li>Extreme Boss - fixed parsing of different output for command “show
+  vlan interface info”</li>
+<li>Extreme Boss - fixed parsing of different outputs for command “show
+  ip”</li>
+<li>Extreme Boss - fixed parsing of different outputs for command “show
+  mlt”</li>
+<li>Extreme BOSS - fixed parsing of different outputs for command “show
+  spanning-tree stp \<args> port vlans”</args></li>
 <li>Extreme BOSS - mac address table parsing fixed (caused discovery
   stuck). Fix in library common for more vendors, so this was possibly
   affecting more vendors</li>
 <li>Extreme Boss - MSTP port role fix for stack</li>
 <li>Extreme Boss - VLAN interface fix for stack and ports without vlans</li>
-<li>Extreme Voss - fixed parsing of different output for command "show
-  ip vrf"</li>
+<li>Extreme Voss - fixed parsing of different output for command “show
+  ip vrf”</li>
 <li>Fortinet FortiGate - fixed collecting device info</li>
 <li>Fortinet FortiGate - Mac address mapping to aggregate and VLAN
   interfaces (fixes path lookup L2 edge between switch and FortiGate)</li>
 <li>Fortinet FortiGate - Prompt detection for VDOM with more than 11
   characters fix</li>
 <li>Fortinet FortiGate - Zone firewall fixes for load balancing VIP</li>
-<li>HP Aruba - fixed parsing of different output for command "show ap
-  port status ap-name \<apname>"</apname></li>
-<li>HP Aruba - fixed parsing of different output for command "show lldp
-  neighbor interface \<intname> detail"</intname></li>
+<li>HP Aruba - fixed parsing of different output for command “show ap
+  port status ap-name \<apname>“</apname></li>
+<li>HP Aruba - fixed parsing of different output for command “show lldp
+  neighbor interface \<intname> detail”</intname></li>
 <li>HP Arubasw - fixed model detection on stack switches</li>
-<li>HP Arubasw - fixed parsing of different output for command "show ap
-  details ap-name \<apname>"</apname></li>
+<li>HP Arubasw - fixed parsing of different output for command “show ap
+  details ap-name \<apname>“</apname></li>
 <li>Huawei VRP - ARP table entries with L2 interfaces mapped to L3
   interface to fix path lookup issues</li>
 <li>Huawei VRP - BGP - Address family in VRF recognition fix</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  lldp neighbor"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  mac-address"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  memory"</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  lldp neighbor”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  mac-address”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  memory”</li>
 <li>Huawei VRP - Route summary for VPN instances (VRF) fix</li>
 <li>Juniper JunOS - DHCP bindings for private VLANs without VLAN ID</li>
 <li>Juniper JunOS - don’t run discovery on secondary nodes.</li>
 <li>Juniper JunOS - EX3400 sn parsing fix</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ethernet-switching interfaces"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lldp neighbors interface \<intname>"</intname></li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vrrp detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ethernet-switching interfaces”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lldp neighbors interface \<intname>“</intname></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vrrp detail”</li>
 <li>Juniper JunOS - IRB interface support in pathlookup</li>
 <li>Mikrotik RouterOS - fixed showing duplicated L3 interface in case
   that both IPv4 and IPv6 address is configured</li>
-<li>Palo Alto - fixed parsing of different outputs for command "show arp
-  management"</li>
-<li>Palo Alto - fixed parsing of different outputs for command "show
-  interface management"</li>
+<li>Palo Alto - fixed parsing of different outputs for command “show arp
+  management”</li>
+<li>Palo Alto - fixed parsing of different outputs for command “show
+  interface management”</li>
 <li>Palo Alto - Routing table collection in virtual systems fixed</li>
 <li>Power supplies table - Missing SN can be taken from inventory if
   available</li>
-<li>UI - Cron component - Sunday as an initial value wasn't selected</li>
+<li>UI - Cron component - Sunday as an initial value wasn’t selected</li>
 </ul>
-<h3 id="363-10th-september-2020">3.6.3 (10th September 2020)</h3>
+<h3 id="363-10th-september-2020">3.6.3 (10<sup>th</sup> September 2020)</h3>
 <h3 id="improvements_10">Improvements</h3>
 <ul>
 <li>Cisco NX-OS and ACI - show inventory based chassis SN is the
   preferred device SN (otherwise show version based SN is used)</li>
 </ul>
-<h3 id="362-9th-september-2020">3.6.2 (9th September 2020)</h3>
+<h3 id="362-9th-september-2020">3.6.2 (9<sup>th</sup> September 2020)</h3>
 <h3 id="bug-fixes_8">Bug Fixes</h3>
 <ul>
 <li>Configuration Management - fixed getting config file using a
@@ -5310,7 +5310,7 @@ SHA256SUM: 8a3805704b6f4b126d960e3953749f936c67e635d94d387d86ddea6ecf4ea8fc</p>
   used advanced filters in API request</li>
 <li>HP Arubasw - fixed version detection on several platforms.</li>
 </ul>
-<h3 id="361-17th-august-2020">3.6.1 (17th August 2020)</h3>
+<h3 id="361-17th-august-2020">3.6.1 (17<sup>th</sup> August 2020)</h3>
 <p>OVA MD5SUM: B4F8C3DCA72657F8A38205D9B1C66626OVA
 SHA256SUM: 0FBC098CEE58B7A1F14C6D7DAB822E47788ED2ADB0074DBCC9F745CE7BBEF557</p>
 <h3 id="improvements_11">Improvements</h3>
@@ -5318,7 +5318,7 @@ SHA256SUM: 0FBC098CEE58B7A1F14C6D7DAB822E47788ED2ADB0074DBCC9F745CE7BBEF557</p>
 <li>Site Separation - Regex rule - Site Name field as select box where
   user can select already created sites or type a new site name</li>
 <li>Device Explorer - added Model into device detail tab. Also added
-  model column into all tables where exists "platform" column</li>
+  model column into all tables where exists “platform” column</li>
 <li>Table Technology / Management / SNMP / Summary - added columns
   Vendor, Model</li>
 <li>Table Technology / Networks / Managed Networks - added VLAN ID
@@ -5344,34 +5344,34 @@ SHA256SUM: 0FBC098CEE58B7A1F14C6D7DAB822E47788ED2ADB0074DBCC9F745CE7BBEF557</p>
   established</li>
 <li>Router to switch L2 STP connection fixed for port channel interfaces</li>
 <li>Cisco ASA - fix platform detection for FPR models.</li>
-<li>Cisco IOS-XE - fixed parsing of different outputs for command "show
-  ip igmp snooping mrouter"</li>
+<li>Cisco IOS-XE - fixed parsing of different outputs for command “show
+  ip igmp snooping mrouter”</li>
 <li>Cisco IOS, IOS-XE - fixed parsing of different output for command
-  "show udld"</li>
+  “show udld”</li>
 <li>Cisco IOS, IOS-XE - VSS information collecting fix</li>
 <li>Cisco IOS, IOS-XE - ACLs - added support for packet length option</li>
 <li>Cisco IOS - fixed Storm Control for C65xx platforms in case that
   storm control limits are not set</li>
-<li>Cisco IOS - fixed parsing of different outputs for command "show
-  switch virtual redundancy"</li>
+<li>Cisco IOS - fixed parsing of different outputs for command “show
+  switch virtual redundancy”</li>
 <li>Cisco NX-OS - fixed version detection for models NX-OSv</li>
 <li>Cisco NX-OS - MDS switches and Nexus 1k Virtual Services Appliance
-  servers are flagged as "Unsupported devices"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  ip igmp interface"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  ip igmp snooping groups"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  cdp global"</li>
+  servers are flagged as “Unsupported devices”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  ip igmp interface”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  ip igmp snooping groups”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  cdp global”</li>
 <li>Cisco NX-OS - fixed getting Fex Power Supply in fail/shutdown state.</li>
 <li>Cisco IGMP snooping - parsing fixed for disabled IGMP processes on
   NX-OS and ACI</li>
 <li>Fortinet FortiGate - don’t create xDP relation for VDOM links where
   both ends are in the same VDOM</li>
-<li>Riverbed Steelhead - in some cases "show version" cmd did not
-  provide model, in that case model is taken from "show info".</li>
+<li>Riverbed Steelhead - in some cases “show version” cmd did not
+  provide model, in that case model is taken from “show info”.</li>
 </ul>
-<h3 id="360-1st-august-2020">3.6.0 (1st August 2020)</h3>
+<h3 id="360-1st-august-2020">3.6.0 (1<sup>st</sup> August 2020)</h3>
 <p>OVA MD5SUM: 5E260AAA1E88BF4BD8523F0634FC3B4E<br/>
 OVA
 SHA256SUM: 5933E36D0FE6CF8AAD22B8CDCF7EA00A90C0028D6D7CDDF85E005269419A4B34<br/>
@@ -5438,8 +5438,8 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
   switches.</li>
 <li>Table Technology / Addressing / Managed IP - added column Vlan ID</li>
 <li>Table Technology / Platforms / Stack / Members - added column Uptime</li>
-<li>Table Technology / Addressing / Managed duplicate IP - Don't report
-  duplicities for Cisco ACI and for "em%", "bme%", "avs%" interfaces</li>
+<li>Table Technology / Addressing / Managed duplicate IP - Don’t report
+  duplicities for Cisco ACI and for “em%”, “bme%”, “avs%” interfaces</li>
 <li>Table Inventory - Hosts: Added interface description into Edges
   column</li>
 <li>Settings / OUI - added enable/disable for multi rows selection</li>
@@ -5456,8 +5456,8 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 <li>Cisco Firepower FTD - L2 connection to switch fix, pathlookup will
   now show L2 path from/to FTD</li>
 <li>Cisco NX-OS &amp; ACI - local routes /32 are now parsed</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  interface switchport"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  interface switchport”</li>
 <li>Cisco Nexus FEX - support extended to better deal with possibly
   missing SN and model information in show fex detail command outputs</li>
 <li>Cisco IOS-XE WLC - wireless AP MAC derivation changed to prefer
@@ -5502,94 +5502,94 @@ Hyper-V SHA256SUM: 2556A6EB2C7B2DE7318E8FFF1787E5A63D5E5A54BFA1D72F3B416B60DBB
 <li>Arista EOS - fixed version detection on virtual appliance (vEOS)</li>
 <li>Arista EOS - remove duplicate route, route summary and arp records in
   vrf default. Fix missing vrf default in VRF task.</li>
-<li>Arista EOS - fixed parsing of different outputs for command "show ip
-  interface"</li>
+<li>Arista EOS - fixed parsing of different outputs for command “show ip
+  interface”</li>
 <li>Cisco ACI - Endpoint table parsing fix for entries with missing
   flags</li>
 <li>Cisco IOS &amp; IOS-XE - show ip mroute vrf was on some platforms
   shortened and ambiguous.</li>
-<li>Cisco IOS - fixed parsing of different outputs for command "show ip
-  pim interface"</li>
+<li>Cisco IOS - fixed parsing of different outputs for command “show ip
+  pim interface”</li>
 <li>Cisco IOS/IOS-XE - fixed parsing of different outputs for command
-  "show ip pim neighbors", entries without flags</li>
+  “show ip pim neighbors”, entries without flags</li>
 <li>Cisco IOS/IOS-XE - fixed parsing of different outputs for command
-  "show ip mroute"</li>
+  “show ip mroute”</li>
 <li>Cisco IOS/IOS-XE - fixed parsing of different outputs for command
-  "show interfaces"</li>
+  “show interfaces”</li>
 <li>Cisco IOS C3750 - fixed parsing of provisioned member switches in
-  command "show switch detail"</li>
-<li>Cisco IOS-XE - "show version" stack member parsing fixed</li>
-<li>Cisco IOS XR - fixed parsing of different outputs for command "show
-  cef vrf \<instance> detail"</instance></li>
+  command “show switch detail”</li>
+<li>Cisco IOS-XE - “show version” stack member parsing fixed</li>
+<li>Cisco IOS XR - fixed parsing of different outputs for command “show
+  cef vrf \<instance> detail”</instance></li>
 <li>Cisco Meraki - if the proxy is configured then the connection use
   that proxy</li>
 <li>Cisco NX-OS 5000 - fixed parsing of different outputs for command
-  "show nve interface"</li>
+  “show nve interface”</li>
 <li>Cisco NX-OS 5000 - fixed parsing of different outputs for command
-  "show nve vni"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  ip pim rp vrf all"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  ip igmp snooping"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  mac multicast parsing", repeated header in the output</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for command "show
-  vlan brief"</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for commands "show
-  ospfv3 neighbor detail"</li>
+  “show nve vni”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  ip pim rp vrf all”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  ip igmp snooping”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  mac multicast parsing”, repeated header in the output</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for command “show
+  vlan brief”</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for commands “show
+  ospfv3 neighbor detail”</li>
 <li>Cisco NX-OS - Fixed wrong command for IGMP snooping groups</li>
-<li>Cisco SG - fixed parsing of different output for command "show arp"</li>
+<li>Cisco SG - fixed parsing of different output for command “show arp”</li>
 <li>Dell PowerConnect - fixed parsing of different output for command
-  "show interfaces status"</li>
+  “show interfaces status”</li>
 <li>Juniper JunOS - fixed parsing of different outputs for commands
-  "show multicast route extensive"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  connections extensive"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  virtual-chassis"</li>
-<li>Juniper JunOS - fixed parsing of different output for command 'show
-  configuration | display set | except "^deactivate"'</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lldp neighbors interface \<int>"</int></li>
+  “show multicast route extensive”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  connections extensive”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  virtual-chassis”</li>
+<li>Juniper JunOS - fixed parsing of different output for command ‘show
+  configuration | display set | except “^deactivate”’</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lldp neighbors interface \<int>“</int></li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show spantree stats active sid \<id>"</id></li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  edp ports all detail"</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  configuration"</li>
+  “show spantree stats active sid \<id>“</id></li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  edp ports all detail”</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  configuration”</li>
 <li>Fortinet FortiGate - fixed switching between VDOMs</li>
-<li>HP Arubasw - fixed parsing of different output for command "show ip"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  vlans"</li>
-<li>HP Arubasw - fixed parsing of different output for command "show
-  vlans ports all detail"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  arp"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  mac-address"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  stp region-configuration"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  interface"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  fan"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  ip netstream export"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  power"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  interface"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  dhcp snooping statistics"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  eth-trunk"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  device"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  current-configuration"</li>
+<li>HP Arubasw - fixed parsing of different output for command “show ip”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  vlans”</li>
+<li>HP Arubasw - fixed parsing of different output for command “show
+  vlans ports all detail”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  arp”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  mac-address”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  stp region-configuration”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  interface”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  fan”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  ip netstream export”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  power”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  interface”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  dhcp snooping statistics”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  eth-trunk”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  device”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  current-configuration”</li>
 <li>PaloAlto - fixed hardware SN for virtual systems</li>
 </ul>
-<h3 id="354-18th-june-2020">3.5.4 (18th June 2020)</h3>
+<h3 id="354-18th-june-2020">3.5.4 (18<sup>th</sup> June 2020)</h3>
 <p>OVA MD5SUM: 7BB3D18A74F6D36D94330416C8A5E856OVA
 SHA256SUM: 433B2001170341160275044DB430F1EF3F2ED2E1FA9C4E03A68F2A624B677510</p>
 <p><strong>Bug Fixes</strong></p>
@@ -5599,7 +5599,7 @@ SHA256SUM: 433B2001170341160275044DB430F1EF3F2ED2E1FA9C4E03A68F2A624B677510</p>
 <li>HP Arubasw - prompt detection fixed - additional chars allow to
   appear in prompt</li>
 </ul>
-<h3 id="353-9th-june-2020">3.5.3 (9th June 2020)</h3>
+<h3 id="353-9th-june-2020">3.5.3 (9<sup>th</sup> June 2020)</h3>
 <p>OVA MD5SUM: 59D82DDADAD04C5F160D189A55B23B55<br/>
 OVA
 SHA256SUM: 3FBA60725BC7261145759AE79DA8E38B54167141F755140D8F67699B5A7F1525</p>
@@ -5620,41 +5620,41 @@ SHA256SUM: 3FBA60725BC7261145759AE79DA8E38B54167141F755140D8F67699B5A7F1525</p>
 <li>Arista EOS - IGMP snooping groups - flood support added</li>
 <li>Cisco ASA/FTD - ACL evaluation fixed (for cases with inbound global
   ACL only)</li>
-<li>Cisco ASA/FTD - "internal-only" interfaces are not parsed anymore
-  (names like "Internal-Data", "Internal-Control" or "Virtual" with
-  nameif "_internal_loopback")</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ip
-  igmp snooping"</li>
+<li>Cisco ASA/FTD - “internal-only” interfaces are not parsed anymore
+  (names like “Internal-Data”, “Internal-Control” or “Virtual” with
+  nameif “_internal_loopback”)</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ip
+  igmp snooping”</li>
 <li>Cisco IOS - IGMP snooping - parsing fix for EOL comma, multiple
   versions, and different headers</li>
 <li>Cisco IOS - MAC multicast - parsing fix for no ports or no VLAN
   entries, 6500 new header fix</li>
-<li>Cisco IOS - fixed parsing of different outputs for commands "show ip
-  pim rp vrf all" and "show ip pim rp mapping"</li>
+<li>Cisco IOS - fixed parsing of different outputs for commands “show ip
+  pim rp vrf all” and “show ip pim rp mapping”</li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show wlan summary"</li>
+  commands “show wlan summary”</li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show wireless client mac-address \<mac> detail"</mac></li>
+  commands “show wireless client mac-address \<mac> detail”</mac></li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show ap name \<apname> wlan dot11 5ghz"</apname></li>
+  commands “show ap name \<apname> wlan dot11 5ghz”</apname></li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show ap name \<apname> wlan dot11 24ghz"</apname></li>
+  commands “show ap name \<apname> wlan dot11 24ghz”</apname></li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show ap cdp neighbors"</li>
+  commands “show ap cdp neighbors”</li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different outputs for
-  commands "show ap name \<apname> ethernet statistics"</apname></li>
+  commands “show ap name \<apname> ethernet statistics”</apname></li>
 <li>Cisco IOS-XE - show version - stack member parsing fixed to deal
   with missing system sn</li>
-<li>Cisco NX-OS - fixed parsing of different outputs for commands "show
-  ip pim rp vrf all" and "show ip pim rp mapping"</li>
+<li>Cisco NX-OS - fixed parsing of different outputs for commands “show
+  ip pim rp vrf all” and “show ip pim rp mapping”</li>
 <li>Cisco NX-OS - MAC multicast - different platform heading parsing fix</li>
 <li>Cisco NX-OS - MAC address table - VTEP IP parsing fixed</li>
 <li>Cisco Nexus VPC - STP virtual bridge ID mac fix, CDP to establish
   STP links for virtual bridge ID is required.</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show system zone"</li>
+  “show system zone”</li>
 </ul>
-<h3 id="352-1st-june-2020">3.5.2 (1st June 2020)</h3>
+<h3 id="352-1st-june-2020">3.5.2 (1<sup>st</sup> June 2020)</h3>
 <p>OVA MD5SUM: 2985C13C8185B470F4BD65A05826FCA2<br/>
 OVA
 SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
@@ -5687,24 +5687,24 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 <li>The discovery process can be limited only to devices that were
   already discovered in the past.</li>
 <li>The number of tasks for discovery process can be also limited by
-  "What information is used to identify neighbors"</li>
+  “What information is used to identify neighbors”</li>
 </ul>
 </li>
 <li>Pathlookup - Multicast over unreachable transit support added.</li>
 <li>Mikrotik RouterOS - remove syslog messages from command output +
   fixed processing of tunnel interfaces</li>
 <li>Table Technology / Management / AAA / Servers - added columns
-  "Destination hostname", "Config name" - (hidden by default)</li>
-<li>Table Technology / IP Telephony / Phones - added columns "Vendor"</li>
+  “Destination hostname”, “Config name” - (hidden by default)</li>
+<li>Table Technology / IP Telephony / Phones - added columns “Vendor”</li>
 <li>Cisco Nexus - Mroute table counters (incoming packets and avg.
   packet size) added</li>
-<li>Cisco Nexus - routes with "pending only" parameters are not put into
+<li>Cisco Nexus - routes with “pending only” parameters are not put into
   the routing table</li>
 <li>Cisco FTD - uptime parsing fixed for device in failover cluster
   (device uptime is used now)</li>
 <li>Added Voice VLAN parameter from Arista switchports.</li>
-<li>Cisco ASA/FTD - added support for "show interface detail" command to
-  better parse vlan IDs on interfaces (cmd "show interface" still kept
+<li>Cisco ASA/FTD - added support for “show interface detail” command to
+  better parse vlan IDs on interfaces (cmd “show interface” still kept
   as backup cmd)</li>
 <li>Host-to-gateway - STP instance added not only based on ROOT ID (can
   be same for virtual mac) but also STP domain ID.</li>
@@ -5725,54 +5725,54 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
   rules.</li>
 <li>Arista EOS - fixed collecting of multicast routing table for all
   VRFs</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  vlan"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf neighbor detail"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  port-channel summary"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces vxlan 1"</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  vlan”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf neighbor detail”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  port-channel summary”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces vxlan 1”</li>
 <li>Arista EOS - collect PIM commands for all configured VRFs</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  context"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show ip
-  igmp group vrf all"</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  context”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show ip
+  igmp group vrf all”</li>
 <li>Cisco NX-OS 9000 - MTU information is now taken from port
   configuration instead of QoS policy.</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ip
-  vrf"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ip
+  vrf”</li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different output for
-  command "show wireless client summary"</li>
+  command “show wireless client summary”</li>
 <li>Cisco Firepower Threat Defense - fixed mapping of mac address table</li>
 <li>Extreme XOS - get ARP records from all vr</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  dhcp-snooping packet statistics"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  device manuinfo"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  bgp peer"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  bgp peer verbose"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ldp neighbor extensive instance \<vpnname>"</vpnname></li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  spanning-tree bridge detail"</li>
-<li>Juniper JunOS - fixed parsing of various output for command "show
-  interfaces terse"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration | display set"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ethernet-switching interface"</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  dhcp-snooping packet statistics”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  device manuinfo”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  bgp peer”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  bgp peer verbose”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ldp neighbor extensive instance \<vpnname>“</vpnname></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  spanning-tree bridge detail”</li>
+<li>Juniper JunOS - fixed parsing of various output for command “show
+  interfaces terse”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration | display set”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ethernet-switching interface”</li>
 <li>Juniper JunOS - fixed showing of RPs in multicast routing table</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  ospf peer"</li>
-<li>Palo Alto - fixed parsing of different output for command "show arp
-  all"</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  ospf peer”</li>
+<li>Palo Alto - fixed parsing of different output for command “show arp
+  all”</li>
 <li>Cisco IOS-XE WLC 9800 - fixed parsing of different output for
-  command "show ap summary"</li>
+  command “show ap summary”</li>
 </ul>
-<h3 id="351-20th-april-2020">3.5.1 (20th April 2020)</h3>
+<h3 id="351-20th-april-2020">3.5.1 (20<sup>th</sup> April 2020)</h3>
 <p><strong>Features - Protocol and technology support</strong></p>
 <ul>
 <li>New multicast first-hop routers table - all routers which have
@@ -5786,7 +5786,7 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 <li>Progress bar for manual package upload</li>
 </ul>
 </li>
-<li>At the user's request, we increased CLI session timeout to a maximum
+<li>At the user’s request, we increased CLI session timeout to a maximum
   of 600s (Warning: a high timeout can significantly prolong the
   discovery time)</li>
 <li>Cisco ASA - ACLs and object groups - added support for ‘names’</li>
@@ -5808,56 +5808,56 @@ SHA256SUM: 84CF13C1266B0FC690765C2E547C61DF9679DF2B4CEC023CBEB3DEA06F46220F</p>
 <li>Multicast sources table - (*, G) false entries removed</li>
 <li>Mikrotik RouterOS - in some cases getting xDP neighbors could fail
   (fixed)</li>
-<li>Arista EOS - parse transceivers information from command "show
-  inventory"</li>
-<li>Arista EOS - parse transceivers information from command "show
-  port-channel dense"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf interface"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  route"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces vxlan 1"</li>
+<li>Arista EOS - parse transceivers information from command “show
+  inventory”</li>
+<li>Arista EOS - parse transceivers information from command “show
+  port-channel dense”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf interface”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  route”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces vxlan 1”</li>
 <li>Arista EOS - several multicast fixes regarding PIM neighbors &amp;
   interfaces, IGMP</li>
 <li>Cisco - showRun - parsing fixed and extended (ASA AAA, IOS NAT)</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  route summary detail"</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  route summary detail”</li>
 <li>Cisco IOS-XR version 5 - fixed OSPF task mapping, add new commands
-  "show ospf interface", "show ospf vrf all interface"</li>
+  “show ospf interface”, “show ospf vrf all interface”</li>
 <li>Cisco IOS-XR - several multicast fixes regarding PIM neighbors &amp;
   interfaces, IGMP</li>
 <li>Cisco IOS-XE - WLC 9800 - fixed parsing of different output for
-  command "show version"</li>
+  command “show version”</li>
 <li>Cisco Firepower Threat Defense - fixed mapping of L2 management
   interface</li>
 <li>Cisco NX-OS - fixed parsing of different output for command <code>show ip
   bgp vrf all all neighbor</code></li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  nve vni"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  nve vni”</li>
 <li>Cisco NX-OS - several multicast fixes regarding PIM neighbors &amp;
   interfaces, IGMP</li>
-<li>Cisco Nexus - correctly detect "Error: AAA authorization failed for
-  command" as Authentication fail error</li>
-<li>Cisco Meraki - added support for 'failed' interface state, counters
+<li>Cisco Nexus - correctly detect “Error: AAA authorization failed for
+  command” as Authentication fail error</li>
+<li>Cisco Meraki - added support for ‘failed’ interface state, counters
   load parsing extended</li>
-<li>Cisco SG - fixed parsing of different output for command "show
-  system"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  system"</li>
-<li>Cisco WLC - fixed parsing of different output for command "show ap
-  wlan 802.11a \<apname>"</apname></li>
-<li>Cisco WLC - fixed parsing of different output for command "show ap
-  wlan 802.11b \<apname>"</apname></li>
+<li>Cisco SG - fixed parsing of different output for command “show
+  system”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  system”</li>
+<li>Cisco WLC - fixed parsing of different output for command “show ap
+  wlan 802.11a \<apname>“</apname></li>
+<li>Cisco WLC - fixed parsing of different output for command “show ap
+  wlan 802.11b \<apname>“</apname></li>
 <li>Juniper JunOS - several multicast fixes regarding PIM neighbors &amp;
   interfaces, IGMP</li>
 <li>Juniper JunOS - fixed remote IP’s mapping of CCC with long LSP names</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  connections extensive"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  connections extensive”</li>
 <li>Palo Alto - fixed missing routing table on some of devices</li>
 <li>CDP/LLDP - Meraki neighbor parsing fixed</li>
 </ul>
-<h3 id="350-1st-april-2020">3.5.0 (1st April 2020)</h3>
+<h3 id="350-1st-april-2020">3.5.0 (1<sup>st</sup> April 2020)</h3>
 <p>OVA MD5SUM: A129A0FD9359105E9C637ADC332459AE<br/>
 OVA
 SHA256SUM: 9A3713121B9072882F8332618594F4BAB566697D52544FEBB737DAD528321203<br/>
@@ -5871,7 +5871,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 </ul>
 </li>
 <li>Add support for L2VPN technologies: CCC, VPWS and VPLS. (Cisco
-  IOS's, Juniper)<ul>
+  IOS’s, Juniper)<ul>
 <li>Tables in Technology / MPLS / L2 VPN</li>
 </ul>
 </li>
@@ -5890,7 +5890,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 <p><strong>Improvements</strong></p>
 <ul>
 <li>Technology / FHRP tables improved to be VRF aware</li>
-<li>CSV export - removed first line with "sep=;" and escape all value
+<li>CSV export - removed first line with “sep=;” and escape all value
   (stop forcing auto-format in excel</li>
 <li>Pathlookup<ul>
 <li>MPLS explicit null label support added</li>
@@ -5898,7 +5898,7 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 </ul>
 </li>
 <li>Count of total rows for some table can be a big performance problem,
-  so this feature is disabled for some tables. "unknown" is used
+  so this feature is disabled for some tables. “unknown” is used
   instead of total rows.<ul>
 <li>Technology / MPLS / L3 VPN / PE Routes</li>
 </ul>
@@ -5907,160 +5907,160 @@ Hyper-V SHA256SUM: 29E185591D87B327B50D791F8916C6FC08C399984C5AE392902E9EF6418
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>Configuration management - syslogTrigger option didn't work, fixed</li>
+<li>Configuration management - syslogTrigger option didn’t work, fixed</li>
 <li>Tables - fixed updating of rule for Advanced Filters</li>
 <li>Techsupport page - fixed issue when techsupport failed, then the UI
   still displayed that the process is in progress</li>
 <li>Host to gateway - fixed Host in VRF</li>
 <li>Arista EOS - keep domain name in hostname</li>
 <li>Arista EOS - fixed mapping for VXLAN task</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces vxlan 1"</li>
-<li>Arista EOS - fixed parsing of different output for command "sho ip
-  bgp neighbor vrf all"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  bgp neighbor"</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces vxlan 1”</li>
+<li>Arista EOS - fixed parsing of different output for command “sho ip
+  bgp neighbor vrf all”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  bgp neighbor”</li>
 <li>Cisco IOS-XE Catalyst 9000 - fixed parsing of stacking information</li>
-<li>Cisco ASA - fixed parsing of different output for command "show ipv6
-  interface"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show run"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  route", add name alias to IP mapping</li>
-<li>Cisco ASA - fixed parsing of different output for command "show run
-  all object"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show ipv6
-  ospf neighbor detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show vrf
-  detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ip
-  protocols"</li>
+<li>Cisco ASA - fixed parsing of different output for command “show ipv6
+  interface”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show run”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  route”, add name alias to IP mapping</li>
+<li>Cisco ASA - fixed parsing of different output for command “show run
+  all object”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show ipv6
+  ospf neighbor detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show vrf
+  detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ip
+  protocols”</li>
 <li>Cisco IOS/IOS-XE - fixed parsing of capwap interfaces</li>
 <li>Cisco ASR9K/10K - show version parsing fix</li>
 <li>Cisco IOS-XE cat3K - stack member without HW version and empty stack
   parsing fixes</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  monitor detail"</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  authentication sessions"</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  run"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  mpls forwarding-table detail"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  ospfv3 vrf all-inclusive neighbor detail"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  ospf vrf all-inclusive neighbor detail"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  mpls forwarding"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  hsrp"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  isis neighbor detail"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  snmp host"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  run"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  ospfv3 vrf all-inclusive interface"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  ospfv3 vrf all neighbors detail"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  ipv6 interface vrf all"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  fex detail"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  ospfv3 vrf all"</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  monitor detail”</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  authentication sessions”</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  run”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  mpls forwarding-table detail”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  ospfv3 vrf all-inclusive neighbor detail”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  ospf vrf all-inclusive neighbor detail”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  mpls forwarding”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  hsrp”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  isis neighbor detail”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  snmp host”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  run”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  ospfv3 vrf all-inclusive interface”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  ospfv3 vrf all neighbors detail”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  ipv6 interface vrf all”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  fex detail”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  ospfv3 vrf all”</li>
 <li>Cisco NX-OS - keep domain name in hostname</li>
 <li>Cisco NX-OS - try to use 2 different commands for routing table per
   VRF instance</li>
-<li>Cisco SG - fixed parsing of different output for command "show
-  system"</li>
-<li>Cisco SG - fixed parsing of different output for command "show run"</li>
-<li>Cisco SG - fixed parsing of different output for command "show
-  interface switchport \<intname>"</intname></li>
+<li>Cisco SG - fixed parsing of different output for command “show
+  system”</li>
+<li>Cisco SG - fixed parsing of different output for command “show run”</li>
+<li>Cisco SG - fixed parsing of different output for command “show
+  interface switchport \<intname>“</intname></li>
 <li>Cisco SG - Secure access ports - port auth.state fix</li>
-<li>Cisco WLC Air - fixed parsing of different output for command "show
-  wlan \<wlanid>"</wlanid></li>
-<li>Cisco WLC Air - fixed parsing of different output for command "show
-  port detailed-info"</li>
-<li>Cisco WLC Air - fixed parsing of different output for command "show
-  ap wlan 802.11a \<apname>"</apname></li>
-<li>Cisco WLC Air - fixed parsing of different output for command "show
-  ap wlan 802.11b \<apname>"</apname></li>
-<li>Cisco WLC Air - fixed parsing of different output for command "show
-  lag summary"</li>
-<li>Checkpoint Gaia - fixed parsing of different output for command "show
-  ospf interfaces detailed"</li>
+<li>Cisco WLC Air - fixed parsing of different output for command “show
+  wlan \<wlanid>“</wlanid></li>
+<li>Cisco WLC Air - fixed parsing of different output for command “show
+  port detailed-info”</li>
+<li>Cisco WLC Air - fixed parsing of different output for command “show
+  ap wlan 802.11a \<apname>“</apname></li>
+<li>Cisco WLC Air - fixed parsing of different output for command “show
+  ap wlan 802.11b \<apname>“</apname></li>
+<li>Cisco WLC Air - fixed parsing of different output for command “show
+  lag summary”</li>
+<li>Checkpoint Gaia - fixed parsing of different output for command “show
+  ospf interfaces detailed”</li>
 <li>Extreme XOS - fixed mapping for L2 interfaces</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  stpd detail"</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  stpd detail”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diag netl agg name \<aggregate>"</aggregate></li>
-<li>F5 BigIP - fixed parsing of different output for command "show cm
-  device"</li>
+  “diag netl agg name \<aggregate>“</aggregate></li>
+<li>F5 BigIP - fixed parsing of different output for command “show cm
+  device”</li>
 <li>Fortinet FortiOS - fixed parsing BGP neighbors which are in active
   state for a long time</li>
 <li>Fortinet FortiGate - Zone FW - FQDN address object couldn’t be found
   if it was defined with upper case letters</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show ap
-  lldp neighbors"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  stp"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  wlan ap all verbose"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  ospf interface all"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  eth-trunk"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  lldp neighbor"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  snmp-agent community read"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  snmp-agent community write"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  ip routing-table vpn-instance \<name> statistics"</name></li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  ntp sessions"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  observe-port"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  esn"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  vrrp"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  mac-address"</li>
-<li>Huawei VRP - fixed parsing of different output for command "display
-  port-mirroring"</li>
-<li>Huawei VRP - improved parsing for command "display ip vpn-instance"
+<li>HP ArubaSW - fixed parsing of different output for command “show ap
+  lldp neighbors”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  stp”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  wlan ap all verbose”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  ospf interface all”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  eth-trunk”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  lldp neighbor”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  snmp-agent community read”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  snmp-agent community write”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  ip routing-table vpn-instance \<name> statistics”</name></li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  ntp sessions”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  observe-port”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  esn”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  vrrp”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  mac-address”</li>
+<li>Huawei VRP - fixed parsing of different output for command “display
+  port-mirroring”</li>
+<li>Huawei VRP - improved parsing for command “display ip vpn-instance”
   to support long names of VRF</li>
-<li>Huawei VRP - "display device" and "display device manufacture-info"
+<li>Huawei VRP - “display device” and “display device manufacture-info”
   parsing fixed and extended to better support modular chassis</li>
 <li>Checkpoint Gaia - improved OS version detection, support for new
   versions outputs.</li>
 <li>Mikrotik RouterOS - fixed command to get bridge hosts table</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lacp interfaces"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  spanning-tree interface detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration security policies | display set"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lacp interfaces”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  spanning-tree interface detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration security policies | display set”</li>
 <li>Juniper JunOS - fixed getting VRRP group in idle state</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vrrp detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  interfaces statistics detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ldp neighbor extensive instance \<ipv4vpnname>"</ipv4vpnname></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vrrp detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  interfaces statistics detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ldp neighbor extensive instance \<ipv4vpnname>“</ipv4vpnname></li>
 <li>Palo Alto - interfaces: n/a duplex and speed are not parsed as
   unknown but as n/a</li>
-<li>Quagga - fixed parsing of different output for command "show bgp
-  summary"</li>
+<li>Quagga - fixed parsing of different output for command “show bgp
+  summary”</li>
 <li>Quagga - fixed parsing of different output for</li>
 </ul>
-<h3 id="344-11th-march-2020">3.4.4 (11th March 2020)</h3>
+<h3 id="344-11th-march-2020">3.4.4 (11<sup>th</sup> March 2020)</h3>
 <p>OVA MD5SUM: EF151028D7F0DABFC556F87F3696E1C1<br/>
 OVA
 SHA256SUM: 40449CAC066CF91A7934514DE870A86B5CDAD09D486C1863F8578259635E471A</p>
@@ -6068,7 +6068,7 @@ SHA256SUM: 40449CAC066CF91A7934514DE870A86B5CDAD09D486C1863F8578259635E471A</p>
 <ul>
 <li>Maintenance job - fixed memory leak in reading snapshots details.</li>
 </ul>
-<h3 id="343-4th-march-2020">3.4.3 (4th March 2020)</h3>
+<h3 id="343-4th-march-2020">3.4.3 (4<sup>th</sup> March 2020)</h3>
 <p><strong>Improvements</strong></p>
 <ul>
 <li>Removed automatic sanitization for LDAP Settings</li>
@@ -6076,7 +6076,7 @@ SHA256SUM: 40449CAC066CF91A7934514DE870A86B5CDAD09D486C1863F8578259635E471A</p>
   process)</li>
 <li>Added ldap-search tool into image for troubleshooting purposes</li>
 </ul>
-<h3 id="342-27th-february-2020">3.4.2 (27th February 2020)</h3>
+<h3 id="342-27th-february-2020">3.4.2 (27<sup>th</sup> February 2020)</h3>
 <p>OVA MD5SUM: 2B16E83667672944095CEC1BA6FCE92A<br/>
 OVA
 SHA256SUM: 5652274E1678A40ADF03945F95FA174C0F06245CB213DB7CDBF9AD4FFDF65B40<br/>
@@ -6088,44 +6088,44 @@ Hyper-V SHA256SUM: AF8A6B44963C71E7FE28FB08D4D474FD2B18F93E17265C4F3CE5C605198
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>LDAP Groups - the user groups are always determined using "member"
-  and also using "memberOf" attribute, no matter on LDAP server type.</li>
+<li>LDAP Groups - the user groups are always determined using “member”
+  and also using “memberOf” attribute, no matter on LDAP server type.</li>
 <li>User management - fixed fail to create user with any capital letters</li>
-<li>FIX API service isn't restarted when DB service isn't alive - only
+<li>FIX API service isn’t restarted when DB service isn’t alive - only
   message in UI will be displayed</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  crypto session brief"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  crypto session brief”</li>
 <li>Juniper - Add protocol isis parameter to cmd for route summary task
   (protection before downloading full bgp table)</li>
 <li>Fixed several problems with Backup/Restore</li>
 </ul>
-<h3 id="341-5th-february-2020">3.4.1 (5th February 2020)</h3>
+<h3 id="341-5th-february-2020">3.4.1 (5<sup>th</sup> February 2020)</h3>
 <p><strong>Improvements</strong></p>
 <ul>
-<li>Quagga Routing Suite - replaced command "show interfaces vrf all"
-  with "show interfaces"</li>
-<li>Quagga Routing Suite - replaced command "show ip route vrf all" with
-  "show ip route"</li>
-<li>Quagga Routing Suite - replaced command "show ip route summary vrf
-  all" with "show ip route summary"</li>
+<li>Quagga Routing Suite - replaced command “show interfaces vrf all”
+  with “show interfaces”</li>
+<li>Quagga Routing Suite - replaced command “show ip route vrf all” with
+  “show ip route”</li>
+<li>Quagga Routing Suite - replaced command “show ip route summary vrf
+  all” with “show ip route summary”</li>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
 <li>LDAP - fixed sanitization of DN information, improved LDAP logs</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  route \<protocol>"</protocol></li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  bgp neighbors"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  version" - missing hostname in output</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  route \<protocol>“</protocol></li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  bgp neighbors”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  version” - missing hostname in output</li>
 </ul>
-<h3 id="340-28th-january-2020">3.4.0 (28th January 2020)</h3>
+<h3 id="340-28th-january-2020">3.4.0 (28<sup>th</sup> January 2020)</h3>
 <p>OVA MD5SUM: 0eba4cf8e164ce267ce6edd0677f8dda</p>
 <p>OVA
 SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0</p>
 <p><strong>Features - Protocol and technology support</strong></p>
 <ul>
-<li>Added support for Cisco Converged Access WLCs and "Next-Gen" WLCs
+<li>Added support for Cisco Converged Access WLCs and “Next-Gen” WLCs
   9800</li>
 <li>Added support for Quagga Routing Suite</li>
 <li>Added basic support for Virtual Systems on Palo Alto firewalls</li>
@@ -6153,8 +6153,8 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0</p>
 </ul>
 <p><strong>Visualization</strong></p>
 <ul>
-<li>FIX: Positions of FEX's weren't correctly restored for next snapshot
-  (or reloaded snapshot) - all views with FEX's have to be saved again
+<li>FIX: Positions of FEX’s weren’t correctly restored for next snapshot
+  (or reloaded snapshot) - all views with FEX’s have to be saved again
   after rearranging positions.</li>
 <li>Pathlookup - Cisco ACI support added</li>
 <li>Pathlookup - possibility to track packet path in specific VRF,
@@ -6183,100 +6183,100 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0</p>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>Fixed problem with resolving DNS names - some IP didn't have to be
+<li>Fixed problem with resolving DNS names - some IP didn’t have to be
   translated.</li>
 <li>Arista - fixed missing native VRF in OSPF</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces vxlan 1"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf neighbor detail"</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces vxlan 1”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf neighbor detail”</li>
 <li>Cisco ACI - Interface vlan mac address parsing fix</li>
-<li>Cisco ACI - fixed parsing of different output for command "show vlan
-  extended"</li>
+<li>Cisco ACI - fixed parsing of different output for command “show vlan
+  extended”</li>
 <li>Cisco ASA routing table - nexthop IP to outgoing interface mapping
   fixed</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ip
-  cef detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show mpls
-  forwarding-table detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  spanning-tree mst"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  power inline"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show cdp
-  neighbors detail"</li>
-<li>Cisco IOS XE - fixed parsing of different output for command "show
-  vlan brief"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  mpls forwarding"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  nve vni"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  system internal l2fwder mac"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  logging server"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  interface switchport"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  environment fex all"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ip
+  cef detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show mpls
+  forwarding-table detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  spanning-tree mst”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  power inline”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show cdp
+  neighbors detail”</li>
+<li>Cisco IOS XE - fixed parsing of different output for command “show
+  vlan brief”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  mpls forwarding”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  nve vni”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  system internal l2fwder mac”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  logging server”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  interface switchport”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  environment fex all”</li>
 <li>Cisco SG350 - fixed version detection</li>
-<li>Cisco SG - fixed parsing of different output for command "show
-  interface switchport"</li>
+<li>Cisco SG - fixed parsing of different output for command “show
+  interface switchport”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show system"</li>
+  “show system”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show neighbors"</li>
+  “show neighbors”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show lacp"</li>
+  “show lacp”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show port status"</li>
+  “show port status”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show ip route"</li>
+  “show ip route”</li>
 <li>Extreme Enterasys - fixed parsing of different output for command
-  "show port counters"</li>
+  “show port counters”</li>
 <li>Extreme Enterasys - improved version detection</li>
-<li>F5 BigIP - fixed parsing of different output for command "show sys
-  hardware"</li>
+<li>F5 BigIP - fixed parsing of different output for command “show sys
+  hardware”</li>
 <li>FortiGate - fixed missing VIP address objects in FortiGate policies</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "get router info ospf interface"</li>
+  “get router info ospf interface”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "get router info vrrp"</li>
+  “get router info vrrp”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show firewall policy"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  trunks"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show ip"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  spanning-tree instance \<instance>"</instance></li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  interface all"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  interface brief"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  vlans ports all detail"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  mac-authentication"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  isis peer ver \<processid>"</processid></li>
-<li>HP Comware - fixed parsing of different output for command "display
-  clock"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  mirroring-group all"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  link-aggregation verbose"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  route active-path"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  interfaces terse"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration forwarding-options sampling"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration interfaces | match sampling | display set"</li>
-<li>Juniper JunOS - fixed parsing of different output for command 'show
-  configuration | display set | except "^deactivate"'</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  route active-path"</li>
+  “show firewall policy”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  trunks”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show ip”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  spanning-tree instance \<instance>“</instance></li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  interface all”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  interface brief”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  vlans ports all detail”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  mac-authentication”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  isis peer ver \<processid>“</processid></li>
+<li>HP Comware - fixed parsing of different output for command “display
+  clock”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  mirroring-group all”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  link-aggregation verbose”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  route active-path”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  interfaces terse”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration forwarding-options sampling”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration interfaces | match sampling | display set”</li>
+<li>Juniper JunOS - fixed parsing of different output for command ‘show
+  configuration | display set | except “^deactivate”’</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  route active-path”</li>
 <li>Juniper - SNMP &amp; Logging parsing fix when deactivated part was in
   config</li>
 <li>Juniper - fixed getting ACL from device configuration</li>
@@ -6284,7 +6284,7 @@ SHA256SUM: 17d733e041c2726bc0dd74d88573f88525c0a3ba9cfbb65ad4faafe0de4ce7b0</p>
   correctly to number of routes in routing table</li>
 <li>Juniper JunOS - BGP summary parsing fix</li>
 </ul>
-<h3 id="333-10th-december-2019">3.3.3 (10th December 2019)</h3>
+<h3 id="333-10th-december-2019">3.3.3 (10<sup>th</sup> December 2019)</h3>
 <p>OVA MD5SUM: 3849bcf518ac89ea987f70af48ed88fa</p>
 <p>OVA
 SHA256SUM: cf360ee8379b73591a1c7790004e11aa49f02f1da5bdaa101a933d251a71f3b5</p>
@@ -6292,7 +6292,7 @@ SHA256SUM: cf360ee8379b73591a1c7790004e11aa49f02f1da5bdaa101a933d251a71f3b5</p>
 <ul>
 <li>Comparison of routing protocols in the graph was fixed - added links
   were not displayed</li>
-<li>FIX: OSPFv3 edges weren't displayed</li>
+<li>FIX: OSPFv3 edges weren’t displayed</li>
 </ul>
 <p><strong>Improvements</strong></p>
 <ul>
@@ -6304,18 +6304,18 @@ SHA256SUM: cf360ee8379b73591a1c7790004e11aa49f02f1da5bdaa101a933d251a71f3b5</p>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>Discovery didn't work without any configured "enable" password</li>
+<li>Discovery didn’t work without any configured “enable” password</li>
 <li>Snapshot locking / unlocking fix</li>
 <li>Cisco IOS - BDI interface is standardized to BD so all outputs
   provides same interface name</li>
 <li>FIX - Discovery process can be stuck (with enabled DNS resolving)</li>
-<li>Cisco ACI - fixed parsing of different output for command "show vlan
-  extended"</li>
+<li>Cisco ACI - fixed parsing of different output for command “show vlan
+  extended”</li>
 <li>Cisco NX-OS - fixed ambiguous command for show routing table</li>
 <li>Configuration Management worker - if serial number of the device
-  included "/" character then the config file wasn't saved</li>
+  included “/” character then the config file wasn’t saved</li>
 </ul>
-<h3 id="332-28th-november-2019">3.3.2 (28th November 2019)</h3>
+<h3 id="332-28th-november-2019">3.3.2 (28<sup>th</sup> November 2019)</h3>
 <p>OVA MD5SUM: 351f8829c6a6d8106519958b60cc3074</p>
 <p>OVA
 SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
@@ -6331,7 +6331,7 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
 <p><strong>Visualization</strong></p>
 <p><strong>Improvements</strong></p>
 <ul>
-<li>Settings - Advanced - System - Clear DB: Don't delete main inventory
+<li>Settings - Advanced - System - Clear DB: Don’t delete main inventory
   data table on keep settings option.</li>
 <li>Pathlookup - Default GW selection - prefer arp entry over virtual
   address.</li>
@@ -6339,7 +6339,7 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
   improvement</li>
 <li>HP Comware WLC - removed WLAN-DBSS interfaces</li>
 <li>Snapshot Connectivity report - allow rediscover IP addresses what
-  were excluded or weren't included before</li>
+  were excluded or weren’t included before</li>
 <li>Settings / Authentication / credentials list for CLI - added field
   to exclude specific CIDR ranges</li>
 <li>Settings / Authentication / credentials list for enable commands -
@@ -6350,27 +6350,27 @@ SHA256SUM: 422a095b590301074049b489722be1a03729d00401d4d4e73de483c2b12fe82e</p>
 <li>Management / Changes - the changes could be wrong after ADD or
   REFRESH actions in that snapshot</li>
 <li>Diagrams - if the site was opened from network overview diagram then
-  "single point of failure" or "Non-redundant links" didn't work</li>
-<li>System - Backup - backup to FTP/FTPS server didn't work without
+  “single point of failure” or “Non-redundant links” didn’t work</li>
+<li>System - Backup - backup to FTP/FTPS server didn’t work without
   directory specification</li>
 <li>Add devices into snapshot - if the IP addresses were already tried
-  before then it weren't inserted as a new tasks</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  interface status err-disable"</li>
+  before then it weren’t inserted as a new tasks</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  interface status err-disable”</li>
 <li>HP ArubaSW - improved prompt detection</li>
 <li>HP ArubaSW - MSTP fixed to use only enabled vlans on ports</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show cdp
-  neighbors detail"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  lldp info remote-device \<intname>"</intname></li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  lldp info remote-device detail"</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show cdp
+  neighbors detail”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  lldp info remote-device \<intname>“</intname></li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  lldp info remote-device detail”</li>
 <li>HP ArubaSW - L2 interfaces - not all interfaces were correctly
   parsed</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  interfaces statistics detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  interfaces statistics detail”</li>
 </ul>
-<h3 id="331-18th-november-2019">3.3.1 (18th November 2019)</h3>
+<h3 id="331-18th-november-2019">3.3.1 (18<sup>th</sup> November 2019)</h3>
 <p>OVA MD5SUM: 962ebf98db27d514ec993a7e8d2c0735</p>
 <p>OVA
 SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17</p>
@@ -6392,17 +6392,17 @@ SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17</p>
 <li>Allow to save credentials with empty username (for telnet purposes)</li>
 <li>Discovery remember used protocol now and this protocol is preferred
   for next discovery (improved speed of discovery)</li>
-<li>Improved "Save historical data" job which is run after discovery -
+<li>Improved “Save historical data” job which is run after discovery -
   precalculation of data is much faster now<ul>
 <li>WARNING - all snapshots should be reloaded otherwise you will
   get false changes in Management / Changes tables.</li>
 </ul>
 </li>
-<li>Maintenance page is displayed also during job "Clean DB" - during
-  this time API don't responding to any request returns HTTP status
+<li>Maintenance page is displayed also during job “Clean DB” - during
+  this time API don’t responding to any request returns HTTP status
   503</li>
 <li>Device hostname should be never empty - if command for getting
-  hostname will fail, then we're getting hostname from CLI prompt</li>
+  hostname will fail, then we’re getting hostname from CLI prompt</li>
 <li>HP Aruba switches - MSTP mode detection improvement</li>
 <li>WLC HP Comware - Wireless service interfaces WLAN-DBSS removed from
   discovery</li>
@@ -6418,46 +6418,46 @@ SHA256SUM: 18e5df2c5ab44756d790b47ced322a138a62dc075c81c4fbe4ffcfe786909e17</p>
   prompt)</li>
 <li>CDP/LLDP - Parsing fix of some AP and IP Phone reported interface.
   Improved aggregation of multiple CDP &amp; LLDP entries from same device</li>
-<li>Manual site separation - didn't work correctly for already loaded
+<li>Manual site separation - didn’t work correctly for already loaded
   snapshot</li>
 <li>Diagrams - fixed Cisco nx7000 wrong icon</li>
-<li>Fixed cases where UI shown "[object response]" instead of errors</li>
-<li>Settings - Advanced - System - Clear DB: The jobs weren't correctly
+<li>Fixed cases where UI shown “[object response]” instead of errors</li>
+<li>Settings - Advanced - System - Clear DB: The jobs weren’t correctly
   rescheduled</li>
 <li>Arista EOS - fixed Switchport on L2 interfaces</li>
-<li>Arista EOS - fixed parsing of different output for command "show ntp
-  ass"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  dhcp snooping counters debug"</li>
+<li>Arista EOS - fixed parsing of different output for command “show ntp
+  ass”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  dhcp snooping counters debug”</li>
 <li>Cisco IOS &amp; NX-OS - fixed parsing of different output for command
-  "show ip dhcp snooping binding"</li>
+  “show ip dhcp snooping binding”</li>
 <li>Cisco IOS &amp; NX-OS - fixed parsing of different output for command
-  "show ip dhcp snooping statistics"</li>
-<li>Cisco IOS &amp; NX-OS - "show vlan brief" support for long names and
+  “show ip dhcp snooping statistics”</li>
+<li>Cisco IOS &amp; NX-OS - “show vlan brief” support for long names and
   spaces in names added</li>
-<li>Cisco IOS use "show vlan-switch brief" command (instead of show vlan
+<li>Cisco IOS use “show vlan-switch brief” command (instead of show vlan
   which gives ambiguous command).</li>
 <li>Cisco IOS / IOS-XR / IOS-XR - fixed ISIS system type L1/L2</li>
 <li>Enterasys fixed device prompt detection</li>
 <li>Enterasys minor fixes regarding CDP &amp; LLDP bindings</li>
-<li>F5 Big-IP - fixed parsing of different output for command "show cm
-  device"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  dhcp-snooping"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  spanning-tree detail"</li>
+<li>F5 Big-IP - fixed parsing of different output for command “show cm
+  device”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  dhcp-snooping”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  spanning-tree detail”</li>
 <li>HP Comware WLC - client AP mac detection improved so it’s correctly
   tied to AP</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vlans detail"</li>
-<li>Mikrotik - fixed parsing of different output for command "/interface
-  print detail"</li>
-<li>Mikrotik - fixed parsing of different output for command "/ip route
-  print detail"</li>
-<li>Mikrotik - fixed parsing of different output for command "/system
-  ntp client print"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vlans detail”</li>
+<li>Mikrotik - fixed parsing of different output for command “/interface
+  print detail”</li>
+<li>Mikrotik - fixed parsing of different output for command “/ip route
+  print detail”</li>
+<li>Mikrotik - fixed parsing of different output for command “/system
+  ntp client print”</li>
 </ul>
-<h3 id="330-4th-november-2019">3.3.0 (4th November 2019)</h3>
+<h3 id="330-4th-november-2019">3.3.0 (4<sup>th</sup> November 2019)</h3>
 <p>OVA MD5SUM: 5fe5fbba70252dcc60ed76a33ebb9eed</p>
 <p>OVA
 SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
@@ -6495,8 +6495,8 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
 <li>Performance improvements - loading of graph should be faster</li>
 <li>Comparing was improved to display changes for edges pointing into
   transit cloud + changes for interconnected sites edges (If the site
-  have more than 400 unmanaged neighbors then it can't be compared)</li>
-<li>If transit cloud have more than 100 devices then it can't be
+  have more than 400 unmanaged neighbors then it can’t be compared)</li>
+<li>If transit cloud have more than 100 devices then it can’t be
   expanded.</li>
 </ul>
 <p><strong>Improvements</strong></p>
@@ -6517,22 +6517,22 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
   (0.0.0.0/8, 127.0.0.0/8, 224.0.0.0/4, 240.0.0.0/4)</li>
 <li>Pathlookup - Gateway selection algorithm will consider only /8 and
   smaller networks.</li>
-<li>Diagrams - don't navigate into overall network view when leaving or
+<li>Diagrams - don’t navigate into overall network view when leaving or
   entering pathlookup or host2gateway mode</li>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
-<li>Configuration management didn't work correctly from 3.2.0 - the
-  changes in settings wasn't applied without a service restart</li>
-<li>CLI - pagination text wasn't correctly cleared from CLI output (bug
+<li>Configuration management didn’t work correctly from 3.2.0 - the
+  changes in settings wasn’t applied without a service restart</li>
+<li>CLI - pagination text wasn’t correctly cleared from CLI output (bug
   introduced in 3.2.1)</li>
-<li>Diagrams - options "Show edge" wasn't correctly restored for loaded
+<li>Diagrams - options “Show edge” wasn’t correctly restored for loaded
   view</li>
-<li>Diagrams - The saved views with long names couldn't be deleted</li>
+<li>Diagrams - The saved views with long names couldn’t be deleted</li>
 <li>Diagrams - Saved view (including ViewBuilder) keep the position of
   transit cloud</li>
 <li>Discovery could stuck on stop action when scanner was enabled.</li>
-<li>LDAP Authentication - new ldap admin didn't have set privileges
+<li>LDAP Authentication - new ldap admin didn’t have set privileges
   correctly</li>
 <li>LDAP Authentication - case sensitivity issue Fixed</li>
 <li>Certification Authorities - fixed verification if uploaded file is
@@ -6540,84 +6540,84 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
 <li>Snapshot uploading - the second attempt to upload a snapshot leads
   to deleting a snapshot from the hard drive.</li>
 <li>Downloaded snapshot what was later uploaded had a problem that the
-  refresh or add new devices didn't work. Used CLI credentials were
+  refresh or add new devices didn’t work. Used CLI credentials were
   sanitized on download, the user is prompted to set new credentials
   now.</li>
 <li>Inventory - Interfaces table: IP column, preferring virtual IP as
   first (previously virtual IP was not shown).</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  sflow"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ntp
-  ass"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  arp vrf \<vrfname>"</vrfname></li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf nei det"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf interface"</li>
-<li>F5 - Hostname for both devices in cluster was same. Now it's fixed,
+<li>Arista EOS - fixed parsing of different output for command “show
+  sflow”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ntp
+  ass”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  arp vrf \<vrfname>“</vrfname></li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf nei det”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf interface”</li>
+<li>F5 - Hostname for both devices in cluster was same. Now it’s fixed,
   each member has correct hostname.</li>
-<li>F5 Big-IP - fixed parsing of different output for command 'run util
-  bash -c "ntpq -np"'</li>
+<li>F5 Big-IP - fixed parsing of different output for command ‘run util
+  bash -c “ntpq -np”’</li>
 <li>HP Aruba WLC - duplicate client output fixed - it caused that no
   access point was saved (unique index duplicity)</li>
 <li>HP Aruba switch - fixed parsing of different output for command
-  "show mac-address"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show bgp
-  summary"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show run"</li>
+  “show mac-address”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show bgp
+  summary”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show run”</li>
 <li>Cisco IOS - startup config can be empty fix</li>
-<li>Cisco IOS - fixed parsing of different output for command "show isis
-  neighbor detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  dot1x all details"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  interface"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  inventory all"</li>
-<li>Cisco IOS-XR - fixed parsing of different output for command "show
-  run"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show isis
+  neighbor detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  dot1x all details”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  interface”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  inventory all”</li>
+<li>Cisco IOS-XR - fixed parsing of different output for command “show
+  run”</li>
 <li>Cisco IOS-XR NCS - inventory, hostname and SN fixes</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  logging server"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  inventory"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  interface"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  monitor session all"</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  logging server”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  inventory”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  interface”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  monitor session all”</li>
 <li>Cisco NX-OS - RIB HSRP entry removed from RIB edges</li>
-<li>Dell FTOS - fixed parsing of different output for command "show ip
-  interface"</li>
-<li>Dell FTOS - fixed parsing of different output for command "show
-  interface"</li>
-<li>Dell FTOS - fixed parsing of different output for command "show ntp
-  associations"</li>
+<li>Dell FTOS - fixed parsing of different output for command “show ip
+  interface”</li>
+<li>Dell FTOS - fixed parsing of different output for command “show
+  interface”</li>
+<li>Dell FTOS - fixed parsing of different output for command “show ntp
+  associations”</li>
 <li>Dell Powerconnect - fixed parsing of different output for command
-  "show interfaces status"</li>
-<li>Dell Powerconnect - When "show system" hostname is empty, hostname
+  “show interfaces status”</li>
+<li>Dell Powerconnect - When “show system” hostname is empty, hostname
   is taken from prompt</li>
-<li>F5 Big-IP - fixed parsing of different output for command "show sys
-  tmm-info raw"</li>
-<li>F5 Big-IP - fixed parsing of different output for command "list net
-  trunk all-properties"</li>
-<li>F5 Big-IP - fixed parsing of different output for command "list sys
-  snmp all-properties"</li>
+<li>F5 Big-IP - fixed parsing of different output for command “show sys
+  tmm-info raw”</li>
+<li>F5 Big-IP - fixed parsing of different output for command “list net
+  trunk all-properties”</li>
+<li>F5 Big-IP - fixed parsing of different output for command “list sys
+  snmp all-properties”</li>
 <li>F5 Big-IP - Recursive RIB interface lookup fix</li>
 <li>F5 Big-IP - IP on L3 interfaces fix</li>
 <li>F5 Big-IP - Duplicate IP in cluster as RIB nexthop fix (active node
   IP used)</li>
-<li>HP Comware - fixed parsing of different output for command " display
-  ip routing-table verbose"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ldp neighbor extensive instance \<vpnname>"</vpnname></li>
-<li>PaloAlto- fixed parsing of different output for command "show system
-  resources"</li>
+<li>HP Comware - fixed parsing of different output for command ” display
+  ip routing-table verbose”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ldp neighbor extensive instance \<vpnname>“</vpnname></li>
+<li>PaloAlto- fixed parsing of different output for command “show system
+  resources”</li>
 </ul>
 <p><strong>API Changes</strong></p>
 <ul>
-<li>Following endpoints have changed 'vlan' column to 'vlanId', next new
-  column added 'vlanName'<ul>
+<li>Following endpoints have changed ‘vlan’ column to ‘vlanId’, next new
+  column added ‘vlanName’<ul>
 <li>/tables/spanning-tree/ports</li>
 <li>/tables/spanning-tree/instances</li>
 <li>/tables/spanning-tree/topology</li>
@@ -6626,7 +6626,7 @@ SHA256SUM: 2dc27c1de2d3bb664359e9906cec80bf685bff0e6cb25c68f0933dfe29867f1c</p>
 </ul>
 </li>
 </ul>
-<h3 id="321-19th-september-2019">3.2.1 (19th September 2019)</h3>
+<h3 id="321-19th-september-2019">3.2.1 (19<sup>th</sup> September 2019)</h3>
 <p>OVA MD5SUM: 362052f0fc1cecb4c9fefcb0c0cd76e2</p>
 <p>OVA
 SHA256SUM: 237754a2d2594c7ee096c6d90f00a7833bb8f6159e40bb9b5f303b5674d30ce6</p>
@@ -6635,7 +6635,7 @@ SHA256SUM: 237754a2d2594c7ee096c6d90f00a7833bb8f6159e40bb9b5f303b5674d30ce6</p>
 <li>Cisco ACL - added support for more complex rules combining several
   service object-groups</li>
 <li>HP Arubasw - LLDP information gathering extended to support switches
-  not supporting "show lldp info remote-device detail" command</li>
+  not supporting “show lldp info remote-device detail” command</li>
 </ul>
 <p><strong>Bug Fixes</strong></p>
 <ul>
@@ -6644,22 +6644,22 @@ SHA256SUM: 237754a2d2594c7ee096c6d90f00a7833bb8f6159e40bb9b5f303b5674d30ce6</p>
 <li>Cisco IOS/IOS-XE - netflow version mapping fix</li>
 <li>Cisco Nexus - Power supply fans are moved from Fans to Power
   supplies fans tab</li>
-<li>Extreme XOS- fixed parsing of different output for command "show
-  isis neighbors detail"</li>
-<li>Juniper EX4300 - fixed parsing for "show version"</li>
-<li>F5 Big-IP - fixed parsing of different output for command 'run util
-  bash -c "ntpq -np"'</li>
-<li>F5 Big-IP - fixed parsing of different output for command "run util
-  bash -c uptime"</li>
-<li>F5 Big-IP - fixed parsing of different output for command "list sys
-  snmp all-properties"</li>
+<li>Extreme XOS- fixed parsing of different output for command “show
+  isis neighbors detail”</li>
+<li>Juniper EX4300 - fixed parsing for “show version”</li>
+<li>F5 Big-IP - fixed parsing of different output for command ‘run util
+  bash -c “ntpq -np”’</li>
+<li>F5 Big-IP - fixed parsing of different output for command “run util
+  bash -c uptime”</li>
+<li>F5 Big-IP - fixed parsing of different output for command “list sys
+  snmp all-properties”</li>
 <li>Fortinet - NTP task fixed for case when NTP is disabled and command
-  "diagnose sys ntp status" is not available</li>
+  “diagnose sys ntp status” is not available</li>
 <li>HP Aruba switch - fixed parsing of different output for command
-  "show system"</li>
+  “show system”</li>
 <li>HP Comware - Interface with lag down state parsing fix</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  fan"</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  fan”</li>
 <li>FIXED: Riverbed: Uptime does not consider days, parameter is read
   incorrectly</li>
 </ul>
@@ -6724,9 +6724,9 @@ unloaded and loaded again.
 <li>Site separation implemented in graphs - use drag&amp;drop to move
   devices into new site (use CTRL/SHIFT to select multiple)</li>
 <li>ViewBuilder<ul>
-<li>Added "expand" icon to add all devices what are connected to
+<li>Added “expand” icon to add all devices what are connected to
   parent device</li>
-<li>Added "collapse" icon to remove all devices what are connected
+<li>Added “collapse” icon to remove all devices what are connected
   to parent device</li>
 <li>Multiple devices can be also selected with CTRL or SHIFT holding
   and those devices can be then added or removed from ViewBuilder
@@ -6739,103 +6739,103 @@ unloaded and loaded again.
 <li>Snapshot management - new snapshot allows to create snapshot with
   customized global settings</li>
 <li>Snapshot management - Connectivity report - user can select specific
-  IP addresses to rediscover them (only IP with status "stopped",
-  "error")</li>
+  IP addresses to rediscover them (only IP with status “stopped”,
+  “error”)</li>
 <li>Size of loaded or unloaded snapshot was decreased</li>
 <li>Settings - Authentication - Notes can be set per credentials record</li>
 <li>F5 BGP - devices with Virtual Clustered Multiprocessing (vCMP)
   should be correctly discovered (fixing error - Device already in
   queue)</li>
-<li>HPE WLC - Exclude command 'display irf topology' - it may cause high
+<li>HPE WLC - Exclude command ‘display irf topology’ - it may cause high
   CPU</li>
 <li>Host table - removed Juniper’s localhost addresses</li>
 <li>Zone FW policy processing updated to support multi-zone interfaces</li>
 </ul>
 <h4 id="bug-fixes_11">Bug Fixes</h4>
 <ul>
-<li>Snapshot older than 3.1.0 couldn't be loaded</li>
-<li>Visualization - IS-IS edges wasn't correctly restored for saved
+<li>Snapshot older than 3.1.0 couldn’t be loaded</li>
+<li>Visualization - IS-IS edges wasn’t correctly restored for saved
   views, including ViewBuilder</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  vrf"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  bgp neighbors vrf all"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  rout vrf \<vrfname>"</vrfname></li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  vxlan address-table"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show ipv6
-  interface"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  route"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  context"</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  vrf”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  bgp neighbors vrf all”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  rout vrf \<vrfname>“</vrfname></li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  vxlan address-table”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show ipv6
+  interface”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  route”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  context”</li>
 <li>Cisco IOS 2960 NTP sources parsing fix</li>
-<li>Cisco IOS - fixed parsing of different output for command "show snmp
-  host"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show ipv6
-  interface"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  object-group"</li>
-<li>Cisco IOS - do not run "show flow interface" command on devices
+<li>Cisco IOS - fixed parsing of different output for command “show snmp
+  host”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show ipv6
+  interface”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  object-group”</li>
+<li>Cisco IOS - do not run “show flow interface” command on devices
   where is no exporter (ambiguous cmd fix).</li>
 <li>Cisco IOS-XE &amp; IOS-XR MPLS forwarding table parsing fixes</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  ip cef vrf \<instance> detail"</instance></li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  run"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  object-group"</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  ip cef vrf \<instance> detail”</instance></li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  run”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  object-group”</li>
 <li>Cisco NX-OS - fixed Nexus 5000 interface MTU was wrong due to Cisco
   bug.</li>
-<li>Cisco WLC - fixed parsing of different output for command "show
-  run-config commands"</li>
-<li>Cisco - fixed parsing of different output for command "show snmp
-  user"</li>
-<li>Checkpoint GAIA - fixed parsing of different output for command "show
-  ospf neighbors detailed"</li>
-<li>Checkpoint GAIA - fixed parsing of different output for command "fw
-  ctl pstat"</li>
+<li>Cisco WLC - fixed parsing of different output for command “show
+  run-config commands”</li>
+<li>Cisco - fixed parsing of different output for command “show snmp
+  user”</li>
+<li>Checkpoint GAIA - fixed parsing of different output for command “show
+  ospf neighbors detailed”</li>
+<li>Checkpoint GAIA - fixed parsing of different output for command “fw
+  ctl pstat”</li>
 <li>Juniper - Corrected BGP neighbor uptime if the uptime is less than
   60 minutes</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vrrp detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ethernet-switching interfaces"</li>
-<li>F5 Big-IP - fixed parsing of different output for command "show net
-  trunk all-properties" (unsupported counters units)</li>
-<li>F5 Big-IP - fixed parsing of different output for command 'run util
-  bash -c "ntpq -np"'</li>
-<li>F5 Big-IP - fixed parsing of different output for command "show sys
-  hardware"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vrrp detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ethernet-switching interfaces”</li>
+<li>F5 Big-IP - fixed parsing of different output for command “show net
+  trunk all-properties” (unsupported counters units)</li>
+<li>F5 Big-IP - fixed parsing of different output for command ‘run util
+  bash -c “ntpq -np”’</li>
+<li>F5 Big-IP - fixed parsing of different output for command “show sys
+  hardware”</li>
 <li>F5 Big-IP fixed get uptime from TMSH</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diagnose sys ntp status" (IPv6 ntp sources)</li>
+  “diagnose sys ntp status” (IPv6 ntp sources)</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show firewall policy"</li>
+  “show firewall policy”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "show system interface"</li>
+  “show system interface”</li>
 <li>HP Aruba switch - fixed parsing of different output for command
-  "show tech buffers"</li>
+  “show tech buffers”</li>
 <li>HP Aruba switch 2920 modules parsing fix</li>
 <li>HP Aruba switch inventory parsing fix</li>
 <li>HP Aruba switch - MST instance interface parsing updated to better
   detect disabled ports</li>
 <li>HP Aruba - standalone access points are not supported, will be
-  reported as "Can't detect version" - AP can be discovered only via
+  reported as “Can’t detect version” - AP can be discovered only via
   controllers now</li>
-<li>Huawei Vrp - fixed parsing of different output for command "display
-  lldp neighbor"</li>
-<li>Huawei Vrp - fixed parsing of different output for command "display
-  stp"</li>
-<li>Huawei Vrp - fixed parsing of different output for command "display
-  ntp sessions"</li>
-<li>Huawei Vrp - fixed parsing of different output for command "display
-  vrrp"</li>
-<li>Palo Alto - fixed parsing of different output for command "show
-  interface \<intname>"</intname></li>
-<li>Palo Alto - fixed parsing of different output for command "show
-  routing proto ospf interface"</li>
+<li>Huawei Vrp - fixed parsing of different output for command “display
+  lldp neighbor”</li>
+<li>Huawei Vrp - fixed parsing of different output for command “display
+  stp”</li>
+<li>Huawei Vrp - fixed parsing of different output for command “display
+  ntp sessions”</li>
+<li>Huawei Vrp - fixed parsing of different output for command “display
+  vrrp”</li>
+<li>Palo Alto - fixed parsing of different output for command “show
+  interface \<intname>“</intname></li>
+<li>Palo Alto - fixed parsing of different output for command “show
+  routing proto ospf interface”</li>
 <li>Riverbed - fixed collecting information about memory &amp; device
   platform</li>
 <li>STP on portchannel to Cisco VSS fix</li>
@@ -6891,7 +6891,7 @@ new snapshot</li>
 </ul>
 </li>
 </ul>
-<h3 id="312-22nd-july-2019">3.1.2 (22nd July 2019)</h3>
+<h3 id="312-22nd-july-2019">3.1.2 (22<sup>nd</sup> July 2019)</h3>
 <p>OVA MD5SUM: 99e9f0518be8cc3a6bc662df89a91617</p>
 <p>OVA
 SHA256SUM: c32f726930ffd80d9433888510315c8ed1d5509a3f70b2f98f34b3cab472ef50</p>
@@ -6910,13 +6910,13 @@ version 3.4.7.
 <li>User Interface Security - TLSv1.2 is now the only allowed HTTPS
   protocol</li>
 <li>Network Assurance Dashboard loading speedup</li>
-<li>Cisco WLC - Syslog related information is now parsed from "show
-  run-config commands" instead of "show logging" which provided a lot
+<li>Cisco WLC - Syslog related information is now parsed from “show
+  run-config commands” instead of “show logging” which provided a lot
   of unnecessary data</li>
 <li>Fortinet FortiGate - added support for any-any zone firewall
   policies</li>
-<li>Juniper memory information is now taken from "show chassis routing"
-  command instead of "show system memory"</li>
+<li>Juniper memory information is now taken from “show chassis routing”
+  command instead of “show system memory”</li>
 <li>F5 BigIp Improved prompt detection</li>
 <li>Settings - Advanced - SSH/Telnet - Maximum number of parallel
   sessions can be limited to a single session (Warning: Discovery
@@ -6936,8 +6936,8 @@ version 3.4.7.
   Diagrams</li>
 <li>Building network topology - could fail on deadlock in DB</li>
 <li>Cisco ASA – ACL to L3 interface mapping fixed</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  route"</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  route”</li>
 <li>Juniper – L2 interfaces and STP related information parsing fixed
   and updated. Command ‘show ethernet-switching interfaces detail’ is
   no longer used and was substituted by other commands including ‘show
@@ -6946,30 +6946,30 @@ version 3.4.7.
 <li>Juniper VLAN parsing fixed to include even vlans with names starting
   and ending with double underscores.</li>
 <li>Juniper - some platform did not correctly set IP as virtual</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vlans detail"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  lldp neighbors detail"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  interfaces switchport"</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  ospf interface detail enabled"</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  edp ports all detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vlans detail”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  lldp neighbors detail”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  interfaces switchport”</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  ospf interface detail enabled”</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  edp ports all detail”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "get router info bgp neighbors"</li>
+  “get router info bgp neighbors”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diag sys ntp status"</li>
+  “diag sys ntp status”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diag hard dev nic \<intname>"</intname></li>
-<li>Huawei - fixed parsing of different output for command "display bgp
-  \<addressfamily> \<vpninstance> peer verbose'"</vpninstance></addressfamily></li>
-<li>Palo Alto - fixed parsing of different output for command "show ntp"</li>
+  “diag hard dev nic \<intname>“</intname></li>
+<li>Huawei - fixed parsing of different output for command “display bgp
+  \<addressfamily> \<vpninstance> peer verbose’“</vpninstance></addressfamily></li>
+<li>Palo Alto - fixed parsing of different output for command “show ntp”</li>
 <li>Palo Alto - L2 connection to switches fix</li>
 <li>Palo Alto - routing table parsing fix</li>
 <li>Palo Alto - L3 connection on cluster fix</li>
 </ul>
-<h3 id="311-28th-june-2019">3.1.1 (28th June 2019)</h3>
+<h3 id="311-28th-june-2019">3.1.1 (28<sup>th</sup> June 2019)</h3>
 <p>OVA MD5SUM: 1c8a3b4de12d9a2a3c15ceea4005080e</p>
 <p>OVA
 SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
@@ -6978,7 +6978,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 <li>Snapshot Management - fixed cloning of snapshot</li>
 <li>F5 BigIP - improved OS version detection</li>
 </ul>
-<h3 id="310-27th-june-2019">3.1.0 (27th June 2019)</h3>
+<h3 id="310-27th-june-2019">3.1.0 (27<sup>th</sup> June 2019)</h3>
 <h4 id="features-protocol-and-technology-support_8">Features - Protocol and technology support</h4>
 <ul>
 <li>Cisco Firepower Threat Defense - Added basic support</li>
@@ -7023,7 +7023,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <ul>
 <li>The API documentation is now directly in UI<ul>
-<li>Each table has API documentation accessible through the "?"
+<li>Each table has API documentation accessible through the “?”
   button</li>
 </ul>
 </li>
@@ -7063,7 +7063,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <ul>
 <li>Advanced Filtering<ul>
-<li>Added new operators "is empty" and "is not empty" to able to
+<li>Added new operators “is empty” and “is not empty” to able to
   filter for empty values</li>
 <li>Array datatypes is able to specify filtering rules for a
   specific item in the array or for all items in the array.</li>
@@ -7115,95 +7115,95 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 <li>Host to gateway graph - missing RIB L3 edge to gateway added</li>
 <li>Host to the gateway - Host was not visible when connected to Cisco
   FEX</li>
-<li>Path lookup - Connected routes VRF leak to BGP fixes (don't create
+<li>Path lookup - Connected routes VRF leak to BGP fixes (don’t create
   RIB edge to transit, a route to connected network with a leak).</li>
 <li>AP with GLPB gateway - RIB to all forwarders</li>
-<li>Path lookup - ACL &amp; Zone FW icons weren't displayed on the path</li>
+<li>Path lookup - ACL &amp; Zone FW icons weren’t displayed on the path</li>
 <li>Discovery - Summary of Issues - Authentication errors -
   false/positive reports for this error could be displayed when was
   used multiple credentials</li>
 <li>Discovery - Tasker process - fixed include/exclude list, sometime
-  could be discovered IP addresses what wasn't in included or was in
+  could be discovered IP addresses what wasn’t in included or was in
   excluded list.</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  interfaces statistics detail"</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  interfaces statistics detail”</li>
 <li>Arista EOS - fixed mapping for Task STP - when STP is disabled on
   the device</li>
-<li>Arista EOS - fixed parsing of different output for command "show mac
-  address-table"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  lldp neighbors detail"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  interfaces"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ip
-  ospf interface"</li>
-<li>Arista EOS - fixed parsing of different output for command "show ntp
-  ass"</li>
-<li>Arista EOS - fixed parsing of different output for command "show
-  vrf"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show
-  route"</li>
-<li>Cisco IOS-XE - fixed parsing of different output for command "show
-  isis neighbor detail"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  environment all"</li>
-<li>Cisco IOS - fixed parsing of different output for command "show run"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  spa detail"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  flow export"</li>
+<li>Arista EOS - fixed parsing of different output for command “show mac
+  address-table”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  lldp neighbors detail”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  interfaces”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ip
+  ospf interface”</li>
+<li>Arista EOS - fixed parsing of different output for command “show ntp
+  ass”</li>
+<li>Arista EOS - fixed parsing of different output for command “show
+  vrf”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show
+  route”</li>
+<li>Cisco IOS-XE - fixed parsing of different output for command “show
+  isis neighbor detail”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  environment all”</li>
+<li>Cisco IOS - fixed parsing of different output for command “show run”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  spa detail”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  flow export”</li>
 <li>Cisco WLC - fixed mapping for Task WLC Access points lists</li>
-<li>Cisco WLC - fixed parsing of different output for command "show wlan
-  \<wlanid>"</wlanid></li>
-<li>Cisco WLC - fixed parsing of different output for command "show ap
-  stats ethernet summary"</li>
+<li>Cisco WLC - fixed parsing of different output for command “show wlan
+  \<wlanid>“</wlanid></li>
+<li>Cisco WLC - fixed parsing of different output for command “show ap
+  stats ethernet summary”</li>
 <li>Cisco WLC - fixed parsing of NTP</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  stpd"</li>
-<li>Extreme XOS - fixed parsing of different output for command "show
-  log configuration"</li>
-<li>HP Aruba - fixed parsing of different output for command "show ap
-  debug system-status ap-name \<apname>"</apname></li>
-<li>HP Aruba - fixed parsing of different output for command "show
-  system"</li>
-<li>HP Aruba - fixed parsing of different output for command "show ap
-  bss-table"</li>
-<li>HP Comware - fixed parsing of different output for command "display
-  ip interface"</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  stpd”</li>
+<li>Extreme XOS - fixed parsing of different output for command “show
+  log configuration”</li>
+<li>HP Aruba - fixed parsing of different output for command “show ap
+  debug system-status ap-name \<apname>“</apname></li>
+<li>HP Aruba - fixed parsing of different output for command “show
+  system”</li>
+<li>HP Aruba - fixed parsing of different output for command “show ap
+  bss-table”</li>
+<li>HP Comware - fixed parsing of different output for command “display
+  ip interface”</li>
 <li>Checkpoint Gaia - fixed parsing of different output for command
-  "show ospf neighbors detailed"</li>
-<li>HP ArubaSW - fixed parsing of different output for command "show
-  spanning-tree debug-counters instance \<mstpinstanceid> ports all"</mstpinstanceid></li>
-<li>F5 BigIP - fixed parsing of different output for command "show cm
-  device"</li>
+  “show ospf neighbors detailed”</li>
+<li>HP ArubaSW - fixed parsing of different output for command “show
+  spanning-tree debug-counters instance \<mstpinstanceid> ports all”</mstpinstanceid></li>
+<li>F5 BigIP - fixed parsing of different output for command “show cm
+  device”</li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "diag hard dev nic \<intname>"</intname></li>
+  “diag hard dev nic \<intname>“</intname></li>
 <li>Fortinet FortiGate - fixed parsing of different output for command
-  "get system arp"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  spanning-tree interface detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration interfaces | match sampling | display set"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lacp interfaces"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  ethernet-switching interface detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration | display set"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  sflow"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  lldp neighbors interface \<intname>"</intname></li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  interfaces statistics detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration forwarding-options sampling"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  configuration firewall"</li>
+  “get system arp”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  spanning-tree interface detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration interfaces | match sampling | display set”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lacp interfaces”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  ethernet-switching interface detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration | display set”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  sflow”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  lldp neighbors interface \<intname>“</intname></li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  interfaces statistics detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration forwarding-options sampling”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  configuration firewall”</li>
 <li>Site Low-level design report - table Interfaces in the HALF duplex
   was wrongly reported</li>
 </ul>
-<h3 id="307-30th-april-2019">3.0.7 (30th April 2019)</h3>
+<h3 id="307-30th-april-2019">3.0.7 (30<sup>th</sup> April 2019)</h3>
 <h4 id="features-protocol-and-technology-support_9">Features - Protocol and technology support</h4>
 <ul>
 <li>Extreme/Xos - EDP support added</li>
@@ -7225,51 +7225,51 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <h4 id="bug-fixes_15">Bug Fixes</h4>
 <ul>
-<li>Manual site separation fixed, it didn't work in certain diagrams.</li>
+<li>Manual site separation fixed, it didn’t work in certain diagrams.</li>
 <li>MPLS Cisco IOS - Nexthop mapping fix when only VPN label is present</li>
 <li>Cisco Blade FEX modules - parsing of FEX related environment
   information fixed</li>
 <li>Cisco MPLS forwarding with multiple next-hop including route and
   label fixed parsing</li>
-<li>Juniper JunOS - fixed parsing issue for command "show vlans
-  detail" - VPLS VLANs aren't supported</li>
-<li>Juniper JunOS - fixed parsing for command "show sflow" when SFlow
-  isn't configured</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  vrrp detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  virtual-chassis device-topology"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  virtual-chassis vc-port all-members"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  spanning-tree interface detail"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  spanning-tree statistics interface"</li>
-<li>Juniper JunOS - fixed parsing of different output for command "show
-  route active-path"</li>
+<li>Juniper JunOS - fixed parsing issue for command “show vlans
+  detail” - VPLS VLANs aren’t supported</li>
+<li>Juniper JunOS - fixed parsing for command “show sflow” when SFlow
+  isn’t configured</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  vrrp detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  virtual-chassis device-topology”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  virtual-chassis vc-port all-members”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  spanning-tree interface detail”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  spanning-tree statistics interface”</li>
+<li>Juniper JunOS - fixed parsing of different output for command “show
+  route active-path”</li>
 <li>Fixed RIB edges with duplicate GLBP addresses for devices without
   ARP table (AP) or without</li>
 <li>Checkpoint Gaia - fixed parsing of different output for command
-  "show ospf interfaces detailed"</li>
-<li>Cisco ASA - fixed parsing of different output for command "show bgp
-  summary"</li>
+  “show ospf interfaces detailed”</li>
+<li>Cisco ASA - fixed parsing of different output for command “show bgp
+  summary”</li>
 <li>Cisco 6500/7600 routing table parsing fix - some entries were split
   into a new line in CLI output.</li>
-<li>Cisco WLC - fixed parsing of different output for command "show port
-  detailed-info"</li>
-<li>Cisco WLC - fixed parsing of different output for command "show ap
-  config general \<apname>"</apname></li>
-<li>Cisco IOS - fixed parsing of different output for command "show
-  dot1x all details"</li>
+<li>Cisco WLC - fixed parsing of different output for command “show port
+  detailed-info”</li>
+<li>Cisco WLC - fixed parsing of different output for command “show ap
+  config general \<apname>“</apname></li>
+<li>Cisco IOS - fixed parsing of different output for command “show
+  dot1x all details”</li>
 </ul>
-<h3 id="306-10th-april-2019">3.0.6 (10th April 2019)</h3>
+<h3 id="306-10th-april-2019">3.0.6 (10<sup>th</sup> April 2019)</h3>
 <h4 id="features-protocol-and-technology-support_10">Features - Protocol and technology support</h4>
 <ul>
 <li>HP/Aruba switch - STP support added</li>
 </ul>
 <h4 id="improvements_17">Improvements</h4>
 <ul>
-<li>UI - Added "Reload required" notification - when the system is
+<li>UI - Added “Reload required” notification - when the system is
   updated the UI has to be reloaded. (A manual reload is still
   required at the moment, use CTRL+SHIFT+R)</li>
 <li>System and application logs are now available in CLI (/var/log)</li>
@@ -7277,25 +7277,25 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <h4 id="bug-fixes_16">Bug Fixes</h4>
 <ul>
-<li>FIX Critical BUG - when VM doesn't have a DNS server set, the
-  discovery process can get stuck and a new discovery process can't be
+<li>FIX Critical BUG - when VM doesn’t have a DNS server set, the
+  discovery process can get stuck and a new discovery process can’t be
   started.</li>
 <li>Hosts table - Host DNS name column was always empty</li>
-<li>Cisco IOS - fixed parsing of different output for command "show vrrp
-  brief"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  monitor session all"</li>
-<li>Cisco NX-OS - fixed parsing of different output for command "show
-  flow export"</li>
+<li>Cisco IOS - fixed parsing of different output for command “show vrrp
+  brief”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  monitor session all”</li>
+<li>Cisco NX-OS - fixed parsing of different output for command “show
+  flow export”</li>
 <li>HP/Aruba switch - fixed parsing of different output for command
-  "show lldp info remote-device detail"</li>
+  “show lldp info remote-device detail”</li>
 <li>Path lookup - flooding fix for virtual mac</li>
 <li>fixed color report results refreshing when multiple snapshots are
   loaded</li>
 <li>fixed various color reports patching scenarios (removing a rule,
   changing a color column)</li>
 </ul>
-<h3 id="305-2nd-april-2019">3.0.5 (2nd April 2019)</h3>
+<h3 id="305-2nd-april-2019">3.0.5 (2<sup>nd</sup> April 2019)</h3>
 <h4 id="features-protocol-and-technology-support_11">Features - Protocol and technology support</h4>
 <ul>
 <li>Added BGP support for Checkpoint Gaia, Cisco ASA, Extreme XOS,
@@ -7310,7 +7310,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 <li>Path lookup for Wireless clients has been added for Cisco WLC.</li>
 <li>Path lookup now supports Riverbed in path transparent mode with
   CDP/LLDP enabled.</li>
-<li>Protocols menu - added new option "Hide unconnected devices",
+<li>Protocols menu - added new option “Hide unconnected devices”,
   enabled by default.</li>
 <li>Position of transit cloud is now correctly stored for loaded view.</li>
 <li>Path lookup speed has been improved for large networks.</li>
@@ -7340,38 +7340,38 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 <h4 id="bug-fixes_17">Bug Fixes</h4>
 <ul>
-<li>Cisco WLC - fixed parsing of various output for command "show system
-  interfaces"</li>
-<li>HP Aruba - fixed parsing of various output for command "show
-  inventory"</li>
-<li>HP Aruba - fixed parsing of various output for command "show ap lldp
-  neighbors"</li>
-<li>HP Aruba switch - fixed parsing of various output for command "show
-  tech buffers"</li>
-<li>HP Aruba switch - fixed parsing of various output for command "show
-  ip"</li>
-<li>HP Aruba switch - fixed parsing of various output for command "show
-  system"</li>
-<li>HP Aruba switch - fixed parsing of various output for command "show
-  vlans"</li>
-<li>HP Aruba switch - fixed parsing of various output for command "show
-  interface all"</li>
-<li>Cisco - fixed parsing of various output for command "show run"</li>
-<li>Cisco XR - fixed parsing of various output for command "show eigrp
-  vrf all interfaces detail"</li>
-<li>Arista EOS - fixed parsing of various output for command "show bgp
-  neigh vrf all"</li>
-<li>Extreme XOS - fixed parsing of various output for command "show
-  ip-fix"</li>
-<li>Juniper JunOS - fixed parsing of various output for command "show
-  spanning-tree interface detail"</li>
+<li>Cisco WLC - fixed parsing of various output for command “show system
+  interfaces”</li>
+<li>HP Aruba - fixed parsing of various output for command “show
+  inventory”</li>
+<li>HP Aruba - fixed parsing of various output for command “show ap lldp
+  neighbors”</li>
+<li>HP Aruba switch - fixed parsing of various output for command “show
+  tech buffers”</li>
+<li>HP Aruba switch - fixed parsing of various output for command “show
+  ip”</li>
+<li>HP Aruba switch - fixed parsing of various output for command “show
+  system”</li>
+<li>HP Aruba switch - fixed parsing of various output for command “show
+  vlans”</li>
+<li>HP Aruba switch - fixed parsing of various output for command “show
+  interface all”</li>
+<li>Cisco - fixed parsing of various output for command “show run”</li>
+<li>Cisco XR - fixed parsing of various output for command “show eigrp
+  vrf all interfaces detail”</li>
+<li>Arista EOS - fixed parsing of various output for command “show bgp
+  neigh vrf all”</li>
+<li>Extreme XOS - fixed parsing of various output for command “show
+  ip-fix”</li>
+<li>Juniper JunOS - fixed parsing of various output for command “show
+  spanning-tree interface detail”</li>
 </ul>
 <h4 id="known-issues">Known issues</h4>
 <ul>
 <li>Graphs - Link groups which have more than 25 links (edges) can no
   longer be un-grouped due to performance impact on the client.</li>
 </ul>
-<h3 id="304-12th-march-2019">3.0.4 (12th March 2019)</h3>
+<h3 id="304-12th-march-2019">3.0.4 (12<sup>th</sup> March 2019)</h3>
 <h4 id="features-visualization">Features - Visualization</h4>
 <ul>
 <li>Host to the gateway - displays only the path by default</li>
@@ -7393,7 +7393,7 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 </ul>
 </li>
 <li>Tables - sort by color was removed</li>
-<li>Tables - filtering using simple filters isn't triggered
+<li>Tables - filtering using simple filters isn’t triggered
   automatically when you typing, you have to confirm filtering by
   hitting Enter</li>
 <li>Tables - filtering is disabled if data loading is still in progress</li>
@@ -7415,19 +7415,19 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 <h4 id="bug-fixes_18">Bug Fixes</h4>
 <ul>
 <li>Fixed number of total rows in tables</li>
-<li>Fixed Duplicate IP Table - Don't report GLBP virtual addresses</li>
+<li>Fixed Duplicate IP Table - Don’t report GLBP virtual addresses</li>
 <li>Discovery topology build may fail when WLC device data was refreshed</li>
-<li>Wireless clients table didn't display data for the selected snapshot</li>
-<li>Cloned snapshot didn't have wireless clients</li>
+<li>Wireless clients table didn’t display data for the selected snapshot</li>
+<li>Cloned snapshot didn’t have wireless clients</li>
 <li>Changes - Managed IP table was empty</li>
-<li>Cisco NX fixed parsing of different output for command "show
-  interface fex-fabric"</li>
+<li>Cisco NX fixed parsing of different output for command “show
+  interface fex-fabric”</li>
 </ul>
-<h3 id="303-22nd-february-2019">3.0.3 (22nd February 2019)</h3>
+<h3 id="303-22nd-february-2019">3.0.3 (22<sup>nd</sup> February 2019)</h3>
 <h4 id="improvements_20">Improvements</h4>
 <ul>
-<li>Snapshot with 0 devices aren't automatically deleted (revert)</li>
-<li>Fixed issue when server has set a proxy then API server can't be
+<li>Snapshot with 0 devices aren’t automatically deleted (revert)</li>
+<li>Fixed issue when server has set a proxy then API server can’t be
   reached</li>
 <li>DB indexes optimizations</li>
 <li>Discovery - Refresh data for specific devices - access points was
@@ -7438,10 +7438,10 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
 <li>Initial network configuration wizard - Fixed - NTP configuration
   hangs.</li>
 </ul>
-<h3 id="302-19th-february-2019">3.0.2 (19th February 2019)</h3>
+<h3 id="302-19th-february-2019">3.0.2 (19<sup>th</sup> February 2019)</h3>
 <h4 id="improvements_21">Improvements</h4>
 <ul>
-<li>API service can fails, because Redis service wasn't started</li>
+<li>API service can fails, because Redis service wasn’t started</li>
 <li>Snaphosts with 0 devices are automatically deleted</li>
 <li>Automatically remove latest snapshot, when scheduled discovery start
   fails on not enough disk space</li>
@@ -7450,16 +7450,16 @@ SHA256SUM: 138b25ae8b4b1b1f29b6e01a2e15d619a0eddfd610fcbaa042a22a9a8b80f0e0</p>
   included</li>
 <li>Maximum BW limit changed to 10Mbps</li>
 </ul>
-<h3 id="301-12th-february-2019">3.0.1 (12th February 2019)</h3>
+<h3 id="301-12th-february-2019">3.0.1 (12<sup>th</sup> February 2019)</h3>
 <h4 id="improvements_22">Improvements</h4>
 <ul>
 <li>Fixed an error in Site Separation by regex</li>
 <li>Tech Support file now contains CLI logs</li>
 </ul>
-<h3 id="300-release-candidate-1-6th-february-2019">3.0.0 Release Candidate 1 (6th February 2019)</h3>
+<h3 id="300-release-candidate-1-6th-february-2019">3.0.0 Release Candidate 1 (6<sup>th</sup> February 2019)</h3>
 <ul>
 <li>A complete overview of network history through individual network
-  "Snapshots"</li>
+  “Snapshots”</li>
 <li>Visualization and analysis for any point in time</li>
 <li>Discovery page now enables to add devices to a snapshot, refresh
   devices in a snapshot, or to create a new snapshot.</li>

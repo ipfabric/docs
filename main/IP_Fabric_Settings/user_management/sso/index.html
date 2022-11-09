@@ -3041,7 +3041,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <h2 id="sso-configuration-ipf-dexyaml">SSO Configuration <code>ipf-dex.yaml</code></h2>
 <p>While Dex supports various connectors, we strongly recommend using OpenID Connect (OIDC) for SSO integration (Azure uses a special <code>microsoft</code> connector and an example is provided below along with SAML). Please, check <a href="https://dexidp.io/docs/connectors">official Dex documentation</a> for their
 overview.</p>
-<p>Dex configuration is located at <code>/etc/ipf-dex.yaml</code> on the IP Fabric appliance. It has several configuration sections and a full example of the file is located below. Please note that OIDC, SAML, and Azure have different syntax's for the <code>connectors</code> configuration portion, which are covered separately.</p>
+<p>Dex configuration is located at <code>/etc/ipf-dex.yaml</code> on the IP Fabric appliance. It has several configuration sections and a full example of the file is located below. Please note that OIDC, SAML, and Azure have different syntax’s for the <code>connectors</code> configuration portion, which are covered separately.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/ipf-dex.yaml</span><span class="w"></span>
 <span class="c1"># example config in both devOps/etc/ipf-dex.yaml and devOps-install/install/ipf-dex.yaml</span><span class="w"></span>
 <span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://&lt;FQDN&gt;/dex</span><span class="w"></span>
@@ -3115,7 +3115,7 @@ under <code>dex</code> .</p>
 <div class="highlight"><pre><span></span><code><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://demo.ipfabric.io/dex</span><span class="w"></span>
 </code></pre></div>
 <h3 id="skip-approval-screen">Skip Approval Screen</h3>
-<p>The following lines of configuration controls if you would like a "Grant Access" screen to be presented to your users on every login. By setting it to true this will not display the below message.</p>
+<p>The following lines of configuration controls if you would like a “Grant Access” screen to be presented to your users on every login. By setting it to true this will not display the below message.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">oauth2</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">skipApprovalScreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
@@ -3156,7 +3156,7 @@ acts as a client to <code>dex</code>.</p>
 </ul>
 </li>
 <li><code>name</code> - Arbitrary name of the client.<ul>
-<li>This will be displayed in the <a href="#skip-approval-screen">"Grant Access" screen</a>
+<li>This will be displayed in the <a href="#skip-approval-screen">“Grant Access” screen</a>
   .</li>
 </ul>
 </li>
@@ -3210,8 +3210,8 @@ configuration endpoint for example take a look at Google:
 <li><code>getUserInfo</code> - When enabled, the OpenID Connector will query the UserInfo
   endpoint for additional claims.</li>
 <li><code>insecureEnableGroups</code> - Groups claims only refresh when the id token is
-  refreshed meaning the regular refresh flow doesn't update the groups claim. As
-  such by default the oidc connector doesn't allow groups claims. If you are
+  refreshed meaning the regular refresh flow doesn’t update the groups claim. As
+  such by default the oidc connector doesn’t allow groups claims. If you are
   okay with having potentially stale group claims you can use this option to
   enable groups claims through the oidc connector on a per-connector basis.</li>
 <li><code>clientID</code> - A client ID configured or generated on the Identity Provider.</li>
@@ -3311,9 +3311,9 @@ special configuration for proper enablement.</p>
 <li><code>ca</code> - File location of containing certification chain</li>
 </ul>
 </li>
-<li><code>usernameAttr</code> - Maps SAML <code>name</code> value to IP Fabric's <code>username</code></li>
-<li><code>emailAttr</code> - Maps SAML <code>email</code> value to IP Fabric's <code>email</code></li>
-<li><code>groupsAttr</code> - Maps SAML <code>groups</code> value to IP Fabric's <code>groupName</code></li>
+<li><code>usernameAttr</code> - Maps SAML <code>name</code> value to IP Fabric’s <code>username</code></li>
+<li><code>emailAttr</code> - Maps SAML <code>email</code> value to IP Fabric’s <code>email</code></li>
+<li><code>groupsAttr</code> - Maps SAML <code>groups</code> value to IP Fabric’s <code>groupName</code></li>
 <li><code>nameIDPolicyFormat</code> - The connector uses the value of the NameID element as
   the user’s unique identifier which dex assumes is both unique and never
   changes. Use the <code>nameIDPolicyFormat</code> to ensure this is set to a value which

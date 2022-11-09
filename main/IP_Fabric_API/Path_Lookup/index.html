@@ -2787,7 +2787,7 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 </ul>
 <ul>
 <li>
-<p><code>settings</code> <em>[optional]</em> - A nested JSON data structure representing visualisation settings to override the default view in IP Fabric's diagram canvas. In these settings, it is possible to:</p>
+<p><code>settings</code> <em>[optional]</em> - A nested JSON data structure representing visualisation settings to override the default view in IP Fabric’s diagram canvas. In these settings, it is possible to:</p>
 <ul>
 <li>change edge properties like colours and thickness of lines representing protocols and groups</li>
 <li>change labels on the edges and interfaces</li>
@@ -2842,7 +2842,7 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 </code></pre></div>
 </li>
 </ul>
-<p>where <code>nodes</code> contains data relating to the individual nodes in the graph. Each one is assigned a <code>vDevice</code> ID but there is recorded in each its hostname as <code>label</code>, it's <code>position</code>, its serial number in the <code>sn</code> field and the device <code>type</code>. Other key:value pairs relate to the inner workings of the IP Fabric graphing process.</p>
+<p>where <code>nodes</code> contains data relating to the individual nodes in the graph. Each one is assigned a <code>vDevice</code> ID but there is recorded in each its hostname as <code>label</code>, it’s <code>position</code>, its serial number in the <code>sn</code> field and the device <code>type</code>. Other key:value pairs relate to the inner workings of the IP Fabric graphing process.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
@@ -2902,18 +2902,18 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 <p>The <code>pathlookup</code> construct describes the hop-by-hop forwarding and policy decisions that have been taken to get from source to destination. Notable key:value pairs within that construct include:</p>
 <ul>
 <li>
-<p><code>eventSummary</code> -- which highlights the success or failure of the path and the cause of any issues along the way.</p>
+<p><code>eventSummary</code> – which highlights the success or failure of the path and the cause of any issues along the way.</p>
 <ul>
 <li><code>flags</code> will show if any policy has caused the traffic to fail to reach the destination (e.g. <code>acl-deny</code> or <code>zone-deny</code>)</li>
 </ul>
 <ul>
-<li><code>topics</code> is a construct to represent the "Result" tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the "0" key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point</li>
+<li><code>topics</code> is a construct to represent the “Result” tab in the UI - it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behaviour. Positive values for the “0” key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>
-<p><code>decisions</code> -- contains a record for each device in the path and the forwarding and policy decision it has to make in the path. For each device:</p>
+<p><code>decisions</code> – contains a record for each device in the path and the forwarding and policy decision it has to make in the path. For each device:</p>
 <ul>
 <li><code>trafficIn</code> is a representation of the ingress interface and the edge that it is connected to</li>
 <li><code>trafficOut</code> represents the egress interface and the edge that it sends traffic along towards the destination</li>
@@ -2929,7 +2929,7 @@ To ensure working graphs please ensure <code>python-ipfabric-diagrams</code> Maj
 </ul>
 </li>
 </ul>
-<p>I've not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the <code>pathlookup</code> construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behaviour of the path lookup using this guidance.</p>
+<p>I’ve not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the <code>pathlookup</code> construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behaviour of the path lookup using this guidance.</p>
 <p>From this note, you can see just how much thought and detail has gone into the development of the path lookup process. Hopefully it illustrates how closely IP Fabric models the behaviour of the data plane of network devices to give an accurate view of the impact of the network on forwarding behaviour.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

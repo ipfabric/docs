@@ -2518,7 +2518,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#features-protocol-and-technology-support">
 <span class="md-ellipsis">
-      Features – Protocol and Technology Support
+      Features -- Protocol and Technology Support
     </span>
 </a>
 </li>
@@ -2795,7 +2795,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#features-protocol-and-technology-support">
 <span class="md-ellipsis">
-      Features – Protocol and Technology Support
+      Features -- Protocol and Technology Support
     </span>
 </a>
 </li>
@@ -2827,7 +2827,7 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="ip-fabric-v50">IP Fabric v5.0</h1>
-<h2 id="v502-sep-13th-2022">v5.0.2 (Sep 13th, 2022)</h2>
+<h2 id="v502-sep-13th-2022">v5.0.2 (Sep 13<sup>th</sup>, 2022)</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># ipfabric-5-0-2+5.ova</span>
 QCOW SHA256: ebe63a21be1a1a8d0bf5897f8c8887b732505f2c4a1afc94fc779752f4c968b0
 QCOW MD5: c151ad5e9b028c29c88fc67b7007bdaa
@@ -2879,7 +2879,7 @@ This upgrade requires IP Fabric to be on <code>v4.4.3</code> or greater prior to
 <ul>
 <li>Checkpoint <code>Management Data Plane Separation (MDPS)</code> if enabled is now supported in IP Fabric for discovery</li>
 </ul>
-<h2 id="v500-jul-19th-2022">v5.0.0 (Jul 19th, 2022)</h2>
+<h2 id="v500-jul-19th-2022">v5.0.0 (Jul 19<sup>th</sup>, 2022)</h2>
 <div class="highlight"><pre><span></span><code>OVA SHA256: ac8a7e68f97b53e299ce3eecac6bd4ddc56c2c025b1ae48d95fbad925213a7bd
 OVA MD5: 65e979f0ea93ba77c9731cfcc0008fa5
 QCOW SHA256: 1e681e249d69d21feb83cbc62f5e3d2bb80db76d22a3acfd90c840c30506748c
@@ -2897,7 +2897,7 @@ contain <code>api/v5.0</code> rather than <code>api/v1</code>. If you are script
 API or using it to integrate into other systems, you must change the URL to
 the new format. For more information on this please visit the <a href="../../../IP_Fabric_API/">API
 Documentation</a> page.</p>
-<p><code>ipfabric</code> and <code>ipfabric-diagrams</code> Python SDK's have been updated to
+<p><code>ipfabric</code> and <code>ipfabric-diagrams</code> Python SDK’s have been updated to
 support the new changes. Please visit
 <a href="https://github.com/community-fabric/python-ipfabric">python-ipfabric</a> and
 <a href="https://github.com/community-fabric/python-ipfabric-diagrams">python-ipfabric-diagrams</a>
@@ -2976,8 +2976,8 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 </ul>
 <p>Example output of successful <code>/var/log/nimpee/dist_upgrade.log</code> log file:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$ tail -f /var/log/nimpee/dist_upgrade.log
-+ <span class="nb">echo</span> — exit_code: <span class="m">0</span>, cleaning up —
---- exit_code: <span class="m">0</span>, cleaning up —
++ <span class="nb">echo</span> --- exit_code: <span class="m">0</span>, cleaning up ---
+--- exit_code: <span class="m">0</span>, cleaning up ---
 + delete_if_exists /etc/apt/sources.list.d/ipf-update.list /etc/apt/sources.list.d/ipf-update.list.tmp /etc/apt/sources.list.tmp
 + <span class="o">[</span> -e /etc/apt/sources.list.d/ipf-update.list <span class="o">]</span>
 + <span class="o">[</span> -L /etc/apt/sources.list.d/ipf-update.list <span class="o">]</span>
@@ -2997,7 +2997,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 <li>Ruckus Wireless controller</li>
 <li>Dell SmartFabric OS10 Basic Discovery</li>
 <li>Cisco Meraki has been migrated from API <code>v0</code> to API <code>v1</code><ul>
-<li>Following the announcement of Meraki's addition of Cisco Catalyst switches we have ensured that these will be only discoverable via CLI at this time and excluded in the Meraki discovery.</li>
+<li>Following the announcement of Meraki’s addition of Cisco Catalyst switches we have ensured that these will be only discoverable via CLI at this time and excluded in the Meraki discovery.</li>
 </ul>
 </li>
 </ul>
@@ -3051,7 +3051,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 </ul>
 <h3 id="ip-fabric-vm-os-level-changes">IP Fabric VM OS-Level Changes</h3>
 <ul>
-<li>The OS has been updated to Debian 11 "bullseye"<ul>
+<li>The OS has been updated to Debian 11 “bullseye”<ul>
 <li><code>openvpn</code> version has been updated to <code>2.5.1</code><ul>
 <li>This version drops older ciphers, and could have an impact on users utilizing those ciphers</li>
 </ul>
@@ -3079,7 +3079,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 </ul>
 </li>
 <li>Boot Wizard Changes<ul>
-<li>For VM initial deployments where console access is not possible, it's now possible to run the boot wizard via SSH<ul>
+<li>For VM initial deployments where console access is not possible, it’s now possible to run the boot wizard via SSH<ul>
 <li>Boot the VM, determine the IP address assigned to it from DHCP, and SSH to the VM: <code>ssh osadmin@&lt;dhcp-learned-ip-address&gt;</code></li>
 <li>Once logged in, run <code>nimpee-net-config -a</code></li>
 </ul>

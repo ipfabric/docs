@@ -2718,25 +2718,25 @@ are necessary for configuration storage and configuration management to work pro
 <h2 id="how-to-read-configuration-management-data">How to read configuration management data</h2>
 <p>There are the following properties in the Management configuration table:</p>
 <ul>
-<li><code>Serial Number</code> -- Serial number of the device</li>
-<li><code>Hostname</code> -- Device hostname</li>
-<li><code>Last Change At</code> -- The last time before the very next config change</li>
-<li><code>Last Check At</code> -- The last config file check before the very next configuration change</li>
-<li><code>Status</code> -- Config state indicator that tells us whether:<ul>
-<li><code>changed</code> -- the config changed within the last check (initial value)</li>
-<li><code>no change</code> -- the config did not change within the last check</li>
+<li><code>Serial Number</code> – Serial number of the device</li>
+<li><code>Hostname</code> – Device hostname</li>
+<li><code>Last Change At</code> – The last time before the very next config change</li>
+<li><code>Last Check At</code> – The last config file check before the very next configuration change</li>
+<li><code>Status</code> – Config state indicator that tells us whether:<ul>
+<li><code>changed</code> – the config changed within the last check (initial value)</li>
+<li><code>no change</code> – the config did not change within the last check</li>
 </ul>
 </li>
-<li><code>Hash</code> -- Unique ID of the configuration file</li>
+<li><code>Hash</code> – Unique ID of the configuration file</li>
 </ul>
-<p>We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to <code>changed</code>. Next time the device's configuration is checked, there are two options:</p>
+<p>We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to <code>changed</code>. Next time the device’s configuration is checked, there are two options:</p>
 <ol>
 <li>the configuration file remains the same, in which case status field of the DB record is set to <code>no change</code>, and <code>Last Check At</code> is set to the current time;</li>
 <li>the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status <code>changed</code> and <code>Last Change At</code> and <code>Last Check At</code> being set to current time, as described above.</li>
 </ol>
-<p>Let's consider following example:</p>
+<p>Let’s consider following example:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../config/config_l66jfw9.png"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png"/></a></p>
-<p>Let's go from the bottom of the output:</p>
+<p>Let’s go from the bottom of the output:</p>
 <ul>
 <li><code>Last change At</code> is <code>2022-06-11 01:02:11+02</code> and <code>Last Check At</code> is <code>2022-06-14 01:01:17+02</code> with status <code>no change</code><ul>
 <li>it means there were no configuration file changes between these two timestamps</li>

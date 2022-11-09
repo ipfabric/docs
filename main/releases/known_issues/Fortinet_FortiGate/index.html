@@ -2678,7 +2678,7 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="fortinet-fortigate">Fortinet FortiGate</h1>
 <p>Currently, we support FortiOS version 5.2 and higher. In this article, you will find <strong>our recommendations regarding setup of administrator profiles and 
-accounts</strong>. It's very important especially if you use <strong>Virtual Domains</strong> since part of a required configuration can be done only from CLI.</p>
+accounts</strong>. It’s very important especially if you use <strong>Virtual Domains</strong> since part of a required configuration can be done only from CLI.</p>
 <p>If you plan to use a user with full read/write permissions or even with super_admin profile assigned (which is not recommended, except a LAB testing), you can skip the rest of 
 this article.</p>
 <h2 id="create-an-admin-profile">Create an Admin Profile</h2>
@@ -2706,7 +2706,7 @@ set scope global
 end
 end
 </code></pre></div>
-<p>Change the name of the previously created profile in the 3rd line accordingly.</p>
+<p>Change the name of the previously created profile in the 3<sup>rd</sup> line accordingly.</p>
 <h2 id="create-an-administrator-account">Create An Administrator Account</h2>
 <ol>
 <li>Navigate to <strong>System -&gt; Administrators</strong> and click on <strong>+ Create New</strong> and select <strong>Administrator</strong></li>
@@ -2718,7 +2718,7 @@ profile is not global)</li>
 <p class="admonition-title">Warning</p>
 <p>Ensure, that there is at least one interface with SSH or Telnet allowed and this interface is accessible from IP Fabric VM. To do so, navigate to Network &gt; Interfaces and check the <strong>Access</strong> column.</p>
 </div>
-<p>Now it's time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>\&lt;hostname&gt;\_\&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
+<p>Now it’s time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>\&lt;hostname&gt;\_\&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

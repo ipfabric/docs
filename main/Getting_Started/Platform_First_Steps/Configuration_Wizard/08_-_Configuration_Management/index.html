@@ -2666,7 +2666,7 @@ differently in you production deployment, than described here.
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../configuration_management.png"><img alt="Configuration management" src="../configuration_management.png"/></a></p>
 <p>There are two ways to detect configuration changes:</p>
 <h2 id="syslog-triggered">Syslog triggered</h2>
-<p>IP Fabric checks incoming syslog messages for a key phrase (for example "<em>Configured from console by admin15 on vty0.</em>"). This option needs proper syslog configuration on the device side.</p>
+<p>IP Fabric checks incoming syslog messages for a key phrase (for example “<em>Configured from console by admin15 on vty0.</em>”). This option needs proper syslog configuration on the device side.</p>
 <p><strong><em>Syslog</em></strong> server listens on port 514/UDP and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>) or use a syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
 <p><strong>Notes:</strong></p>
 <ul>
@@ -2674,7 +2674,7 @@ differently in you production deployment, than described here.
 </ul>
 <ul>
 <li>The Syslog messages are filtered and are stored in RabbitMQ database
-    apart from the main DB and cannot be observed in IP Fabric's GUI</li>
+    apart from the main DB and cannot be observed in IP Fabric’s GUI</li>
 </ul>
 <p>To enable the syslog triggered configuration management go to <strong><em>Settings → Advanced → Configuration Management → Configuration Management Setup</em></strong> and select <strong><em>Syslogtrigger</em></strong>.</p>
 <h2 id="schedule">Schedule</h2>

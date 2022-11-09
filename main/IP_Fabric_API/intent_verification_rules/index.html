@@ -2650,10 +2650,10 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="intent-verification-rules">Intent Verification Rules</h1>
 <p>This tech note describes the association between the intent verification rules and the technology tables and how to read those associations through the API.</p>
-<p>The results of the intent verification checks are identified as "reports" in the API and are essentially a series of rules by which columns in the technology tables are coloured.</p>
+<p>The results of the intent verification checks are identified as “reports” in the API and are essentially a series of rules by which columns in the technology tables are coloured.</p>
 <h2 id="instructions">Instructions</h2>
 <p>In order to handle the intent verification checks to be able to act on them then, there are a series of steps.:</p>
-<p>First step is to fetch a list of the reports from the snapshot you're interested in. This is a simple GET request to <code>/api/{api_version}/reports?snapshot=&lt;id&gt;</code> where <code>&lt;id&gt;</code> is <code>$last</code> or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:</p>
+<p>First step is to fetch a list of the reports from the snapshot you’re interested in. This is a simple GET request to <code>/api/{api_version}/reports?snapshot=&lt;id&gt;</code> where <code>&lt;id&gt;</code> is <code>$last</code> or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:</p>
 <ul>
 <li>the table they relate to</li>
 <li>the columns coloured by the test</li>
@@ -2706,11 +2706,11 @@ differently in you production deployment, than described here.
 </div>
 <p>Breaking this down, we can see that the report</p>
 <ul>
-<li>is called "DMVPN Tunnel State"</li>
-<li>is presented in the "Stability" group on the dashboard</li>
+<li>is called “DMVPN Tunnel State”</li>
+<li>is presented in the “Stability” group on the dashboard</li>
 <li>relates to the technology table accessed through the API endpoint <code>/api/{api_version}/tables/security/dmvpn</code> or the web UI endpoint <code>/technology/security/dmvpn</code></li>
-<li>sets the color of the "state" column in that table</li>
-<li>sets the color to a value of 0 (which maps to green) if the tunnels are in the <code>UP</code> state, signified by the content of the "state" column having the value <code>UP</code>, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.</li>
+<li>sets the color of the “state” column in that table</li>
+<li>sets the color to a value of 0 (which maps to green) if the tunnels are in the <code>UP</code> state, signified by the content of the “state” column having the value <code>UP</code>, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.</li>
 </ul>
 <p>We can compare that with the Web UI dialogue for the same check:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../intent_verification_rule.png"><img alt="intent verification rule" src="../intent_verification_rule.png"/></a></p>
@@ -2733,7 +2733,7 @@ differently in you production deployment, than described here.
 <span class="w">  </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/technology/security/dmvpn"</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the <code>state</code> column equalling <code>0</code> -- which equates to the colour green from the validation check.</p>
+<p>This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the <code>state</code> column equalling <code>0</code> – which equates to the colour green from the validation check.</p>
 <p>Note that snapshot management is referred to in a separate article - the <code>$last</code> snapshot may not be the best to query on in all cases.</p>
 </article>
 </div>

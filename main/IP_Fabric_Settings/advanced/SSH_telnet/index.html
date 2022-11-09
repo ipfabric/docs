@@ -3070,7 +3070,7 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="sshtelnet">SSH/TELNET</h1>
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI Parameters</h2>
-<p>The IP Fabric's discovery is primarily using Command Line Interface
+<p>The IP Fabric’s discovery is primarily using Command Line Interface
 (CLI) to discover network elements. The CLI Parameters can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/2396258368.png"><img alt="CLI Settings" src="../ssh/2396258368.png"/></a></p>
 <h3 id="network-device-login-timeout">Network Device Login Timeout</h3>
@@ -3140,17 +3140,17 @@ errors and adjustments:</p>
 <tr>
 <td>SSH client not received any data for last 120000 ms! cmd =&gt; show vrrp | e #^$</td>
 <td>Command timeout</td>
-<td>The command 'show vrrp | e #^$' timed out. Increase <strong>device session timeout.</strong></td>
+<td>The command ‘show vrrp | e #^$’ timed out. Increase <strong>device session timeout.</strong></td>
 </tr>
 <tr>
-<td>Can't detect prompt</td>
+<td>Can’t detect prompt</td>
 <td>Command timeout</td>
 <td>Unable to detect CLI prompt. Increase <strong>network device login timeout.</strong></td>
 </tr>
 <tr>
-<td>Command "enable" authorization failed, tried 2x</td>
+<td>Command “enable” authorization failed, tried 2x</td>
 <td>Command authorization failure</td>
-<td>The command wasn't authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms)</td>
+<td>The command wasn’t authorized. <strong>Increase command authorization failure retries</strong> or increase the timer value (ms)</td>
 </tr>
 </tbody>
 </table>
@@ -3229,7 +3229,7 @@ errors and adjustments:</p>
 <p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>"Exclude IPv4 subnet"</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>“Exclude IPv4 subnet”</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
 </div>
 </li>
 </ul>
@@ -3294,7 +3294,7 @@ errors and adjustments:</p>
    jumphost user and <code>&lt;jumphost-ip&gt;</code> with the IP or FQDN of the jumphost server:</p>
 <ol>
 <li><code>ssh-copy-id -i ~/.ssh/ipf-jumphost.pub &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></li>
-<li>When prompted for a password, use the jumphost user's password.</li>
+<li>When prompted for a password, use the jumphost user’s password.</li>
 </ol>
 </li>
 <li>
@@ -3338,7 +3338,7 @@ errors and adjustments:</p>
 <p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
 <p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../discovery_seed/">Discovery seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
-<p>If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
+<p>If you can’t open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
 <p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
 <ol>
 <li>

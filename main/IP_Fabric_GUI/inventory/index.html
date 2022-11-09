@@ -2760,14 +2760,14 @@ differently in you production deployment, than described here.
 <li><code>Switching domain</code> is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.</li>
 <li><code>Hostname</code> is the short name of the device.</li>
 <li><code>Hostname original</code> is the original hostname which was acquired from the device.</li>
-<li><code>Hostname processed</code> is hostname which we parsed from original hostname (if there isn't any parsing, it's the same as <code>Hostname original</code>); when applicable – logical device name – e.g. firewall <code>context</code> or <code>vsys</code> name – can be added as a suffix to the hostname.</li>
+<li><code>Hostname processed</code> is hostname which we parsed from original hostname (if there isn’t any parsing, it’s the same as <code>Hostname original</code>); when applicable – logical device name – e.g. firewall <code>context</code> or <code>vsys</code> name – can be added as a suffix to the hostname.</li>
 <li><code>Domain</code> is the device domain name.</li>
 <li><code>FQDN</code> is the device fully qualified domain name (<code>hostnameProcessed.domain</code>).</li>
 <li><code>Serial Number</code> is the serial number of the device (API column name is <code>snHw</code>).</li>
 <li><code>Unique serial number</code> is the serial number IP Fabric assigns to the device this could be different from the Hardware SN especially in cases of virtualized equipment (API column name is <code>sn</code>).</li>
 <li><code>Login IP</code> is the IP address used to connect to the device.</li>
 <li><code>Management Protocol</code> is the protocol used to connect to the device.</li>
-<li><code>Uptime</code> is the time since the device's last boot.</li>
+<li><code>Uptime</code> is the time since the device’s last boot.</li>
 <li><code>Reload reason</code> is the reason why the device has booted.</li>
 <li><code>Vendor</code> is the vendor of the device.</li>
 <li><code>Platform</code> is the hardware platform of the device.</li>
@@ -2784,12 +2784,12 @@ differently in you production deployment, than described here.
 <h2 id="interfaces">Interfaces</h2>
 <p>The interface inventory provides information about every unique network interface discovered and includes information such as state, description, speed, duplex, and media type.</p>
 <h2 id="hosts">Hosts</h2>
-<p>The hosts' inventory provides information about every discovered host and user utilizing network infrastructure. A host is any unique IP or MAC address, or an IP/MAC tuple, that is not part of the network infrastructure. Following rules may
-prevent the IP addresses from the ARP to be included in the Hosts' inventory:</p>
+<p>The hosts’ inventory provides information about every discovered host and user utilizing network infrastructure. A host is any unique IP or MAC address, or an IP/MAC tuple, that is not part of the network infrastructure. Following rules may
+prevent the IP addresses from the ARP to be included in the Hosts’ inventory:</p>
 <ul>
-<li>There can't be any route pointing to that interface</li>
+<li>There can’t be any route pointing to that interface</li>
 <li>No CDP/LLDP information should be coming from that IP</li>
-<li>The MAC shouldn't be in the OUI flagged as "Enabled for Discovery"</li>
+<li>The MAC shouldn’t be in the OUI flagged as “Enabled for Discovery”</li>
 </ul>
 <h2 id="end-of-life-milestones">End of Life Milestones</h2>
 <p>EoX reports provide an overview of the announced end-of-life milestones. Network infrastructure vendors use end-of-life milestones to communicate stages of the product life cycle, allowing sufficient time to migrate to next-generation products.</p>

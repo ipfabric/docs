@@ -2873,7 +2873,7 @@ differently in you production deployment, than described here.
 <h4 id="device-attributes">Device Attributes</h4>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_device_attributes.png"><img alt="Site separation device attributes" src="../site_separation_device_attributes.png"/></a></p>
 <ul>
-<li><strong>Serial Number</strong> is IP Fabric’s "Unique Serial Number" (API column <code>sn</code>); this is not the column "Serial Number" which represents the Hardware SN (API column <code>snHw</code>)<ul>
+<li><strong>Serial Number</strong> is IP Fabric’s “Unique Serial Number” (API column <code>sn</code>); this is not the column “Serial Number” which represents the Hardware SN (API column <code>snHw</code>)<ul>
 <li>Devices discovered via API can also be assigned using Device Attributes.</li>
 </ul>
 </li>
@@ -2949,8 +2949,8 @@ differently in you production deployment, than described here.
 <p>You can also test SNMP location rules:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_testing_snmp.png"><img alt="Site separation testing snmp" src="../site_separation_testing_snmp.png"/></a></p>
 <h4 id="regex-example">Regex Example</h4>
-<p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as "<strong>^([a-zA-Z]\d{1,3})</strong>". Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>:</p>
-<p><strong>^([a-zA-Z]\d{1,3}|HWLAB|static\d{1})</strong> - 1st option OR 2nd option OR 3rd option</p>
+<p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as “<strong>^([a-zA-Z]\d{1,3})</strong>”. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>:</p>
+<p><strong>^([a-zA-Z]\d{1,3}|HWLAB|static\d{1})</strong> - 1<sup>st</sup> option OR 2<sup>nd</sup> option OR 3<sup>rd</sup> option</p>
 <h3 id="device-neighborship">Device Neighborship</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_device_neighborship.png"><img alt="Site separtion device neighborship" src="../site_separation_device_neighborship.png"/></a></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>

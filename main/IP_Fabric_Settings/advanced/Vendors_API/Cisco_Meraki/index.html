@@ -2680,10 +2680,10 @@ differently in you production deployment, than described here.
 <p>Starting IP Fabric version <strong>3.5.0</strong>, IP Fabric supports API-based discovery for Cisco Meraki.</p>
 <h2 id="meraki-requires-the-following-settings-to-be-applied">Meraki Requires The Following Settings To Be Applied:</h2>
 <ul>
-<li><strong>API key</strong> -- Generated in Meraki dashboard</li>
-<li><strong>Organizations ID</strong> -- You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used</li>
-<li><strong>Version</strong> -- Only <code>v1</code> is supported since IPF v5.0. Similarly to the original <code>v0</code>, even the latest API version has a lot of limitations (Meraki known issues)</li>
-<li><strong>Base URL</strong> -- URL is supported in the following format <code>https://nXYZ.meraki.com/api</code>. Be aware that the dashboard can redirect communication to a different URL</li>
+<li><strong>API key</strong> – Generated in Meraki dashboard</li>
+<li><strong>Organizations ID</strong> – You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used</li>
+<li><strong>Version</strong> – Only <code>v1</code> is supported since IPF v5.0. Similarly to the original <code>v0</code>, even the latest API version has a lot of limitations (Meraki known issues)</li>
+<li><strong>Base URL</strong> – URL is supported in the following format <code>https://nXYZ.meraki.com/api</code>. Be aware that the dashboard can redirect communication to a different URL</li>
 </ul>
 <h2 id="login-ip-for-cisco-meraki">Login IP For Cisco Meraki</h2>
 <p>For the CLI (SSH/Telnet) discovery, the Login IP represents the IP address that platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore different logic described below is used to assign Login IP parameter for Meraki devices in the main inventory.</p>
@@ -2698,7 +2698,7 @@ publicIp has the lowest priority
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The <code>publicIp</code> parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device's public IP in the dashboard.</p>
+<p>The <code>publicIp</code> parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device’s public IP in the dashboard.</p>
 </div>
 <p>To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker or Log File from the device:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../discovery_snapshot.png"><img alt="discovery snapshot" src="../discovery_snapshot.png"/></a></p>
