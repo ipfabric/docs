@@ -2748,9 +2748,9 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="inventory">Inventory</h1>
 <h2 id="overview">Overview</h2>
-<p>The inventory provides a list overview of sites, devices, modules, interfaces, and users discovered within the network.</p>
+<p>The inventory provides a list overview of sites, devices, modules, interfaces and users discovered within the network.</p>
 <h2 id="sites">Sites</h2>
-<p>The site inventory provides an overview of discovered sites, the number of devices and users present at the site, and enables the generation of site-specific reports and diagrams. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and other unmanaged infrastructure. A single, unmanaged <code>traceroute</code> hop is not considered a site boundary, so unmanaged infrastructure is reconstructed from the probes. The specific method of site boundary calculation can be changed in the settings.</p>
+<p>The site inventory provides an overview of discovered sites, the number of devices and users present at the site. It enables the generation of site-specific reports and diagrams. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and other unmanaged infrastructure. A single, unmanaged <code>traceroute</code> hop is not considered a site boundary, so unmanaged infrastructure is reconstructed from the probes. The specific method of site boundary calculation can be changed in the settings.</p>
 <p>An unknown site is either a collection of isolated devices or when a device forms a single-device site.</p>
 <h2 id="devices">Devices</h2>
 <p>The device inventory represents all logical managed network infrastructure devices that have been discovered and analyzed. Each entry provides the following information:</p>
@@ -2760,11 +2760,11 @@ differently in you production deployment, than described here.
 <li><code>Switching domain</code> is an IP Fabric generated separation based upon contiguous layer 2 switching domain the device belongs to.</li>
 <li><code>Hostname</code> is the short name of the device.</li>
 <li><code>Hostname original</code> is the original hostname which was acquired from the device.</li>
-<li><code>Hostname processed</code> is hostname which we parsed from original hostname (if there isn’t any parsing, it’s the same as <code>Hostname original</code>); when applicable – logical device name – e.g. firewall <code>context</code> or <code>vsys</code> name – can be added as a suffix to the hostname.</li>
+<li><code>Hostname processed</code> is hostname which is parsed from the original hostname (if there isn’t any parsing, it’s the same as <code>Hostname original</code>); when applicable – logical device name – e.g. firewall <code>context</code> or <code>vsys</code> name – can be added as a suffix to the hostname.</li>
 <li><code>Domain</code> is the device domain name.</li>
 <li><code>FQDN</code> is the device fully qualified domain name (<code>hostnameProcessed.domain</code>).</li>
 <li><code>Serial Number</code> is the serial number of the device (API column name is <code>snHw</code>).</li>
-<li><code>Unique serial number</code> is the serial number IP Fabric assigns to the device this could be different from the Hardware SN especially in cases of virtualized equipment (API column name is <code>sn</code>).</li>
+<li><code>Unique serial number</code> is the serial number IP Fabric assigns to the device. This can be different from the Hardware SN especially in cases of virtualized equipment (API column name is <code>sn</code>).</li>
 <li><code>Login IP</code> is the IP address used to connect to the device.</li>
 <li><code>Management Protocol</code> is the protocol used to connect to the device.</li>
 <li><code>Uptime</code> is the time since the device’s last boot.</li>
