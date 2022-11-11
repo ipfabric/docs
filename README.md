@@ -103,10 +103,12 @@ documentation, if you don't have it authenticated)
 make serve
 ```
 
+Please note, that it will utilize `--dirtyreload` which can lead to inconsistencies, but is significantly faster to reload, when editing just couple pages.
+
 #### Python Virtual Environment
 
 If you don't have access to internal container image, please create your python
-virtual environment manually (use included `requirements.txt` or `make venv`) and run `mkdocs serve`.
+virtual environment manually (use included `requirements.txt` or `make venv`) and run `mkdocs serve --dirtyreload`.
 Please, be aware that you will have slightly different results to our production documentation as we
 are using [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
 
