@@ -40,8 +40,8 @@ credentials are required).
 
     An online upgrade requires access to:
 
-    - `callhome.ipfabric.io` (194.228.111.170) remote port 443/TCP for upgrade availability check
-    - `releases.ipfabric.io` (194.228.111.172) remote port 443/TCP for upgrade package download
+    - `callhome.ipfabric.io` (95.217.156.217) remote port 443/TCP for upgrade availability check
+    - `releases.ipfabric.io` (95.216.185.152) remote port 443/TCP for upgrade package download
 
 In the following screenshot, the green 3.7.5 button in the right top
 corner indicates that a new version of IP Fabric is available (if the
