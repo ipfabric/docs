@@ -31,16 +31,19 @@ documentation happens as follows:
   relative (usually this means they're starting with `..`, internal links must
   not start with `/` or even `https://` as these would not work correctly when
   deployed).
+- Build a list of unordered items by using a hyphen (`-`), instead of `*`.
 - If you use an abbreviation, make sure you define it before.
   - Abbreviations are always uppercase, unless used in a verbatim text (e.g.
     API call) when they need to be marked as `monotype`.
 - Verbatim strings are to be rendered in monotype (backticks) - e.g. API call
   parameters, command line arguments etc...
-- Please use regular double quotes - character `"` instead of fancy/curly
-  quotes from UTF-8 - `""`
+- Please use regular double quotes - character `"` instead of fancy/curly UTF8 quites.
 - Consider using [snippets](snippets) for content repeated / copy-pasted through multiple pages.
 
-TODO: take a look at e.g. https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
+Take a look at e.g.
+
+- https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
+- https://grafana.com/docs/writers-toolkit/writing-guide/markdown-guide/
 
 ### CI/CD
 
