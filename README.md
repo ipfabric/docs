@@ -37,7 +37,7 @@ documentation happens as follows:
     API call) when they need to be marked as `monotype`.
 - Verbatim strings are to be rendered in monotype (backticks) - e.g. API call
   parameters, command line arguments etc...
-- Please use regular double quotes - character `"` instead of fancy/curly UTF8 quites.
+- Please use regular double quotes - character `"` instead of fancy/curly UTF8 quotes.
 - Consider using [snippets](snippets) for content repeated / copy-pasted through multiple pages.
 
 Take a look at e.g.
