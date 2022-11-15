@@ -27,7 +27,8 @@ select box values.
 
 RegEx can be used in a string filter by adding `=~` **after** the
 expression. An exact match of the value can be achieved by adding `=`
-**before** the expression
+**before** the expression. For more information about supported RegEx,
+check the section below.
 
 Fields containing IP Addresses can be filtered by entering the IP/prefix
 length in the CIDR notation. For example, `10.0.0.0/25` will find
@@ -49,14 +50,13 @@ content to `string` to force the spreadsheet to retain the original
 content.
 
 !!! note
+
     It may take several seconds to prepare an export of large tables.
 
 ## Tooltips
 
 Each table contains built in help with the table description by clicking on the
-question mark
-
-![tooltip](tooltip.png)
+question mark ![tooltip](tooltip.png).
 
 Hover the mouse over the column name for a description of column content.
 
@@ -64,10 +64,7 @@ Hover the mouse over the column name for a description of column content.
 
 Tables can be especially large to facilitate easier information
 correlation, however not all columns need to always be visible. To hide
-or show individual columns, click the
-
-![visibility](visibility.png)
-
+or show individual columns, click the ![visibility](visibility.png)
 (toggle column visibility) button and select which the columns to be
 displayed. The first column can be set as "sticky" to facilitate
 analysis of tables with many columns. Row height can be adjusted by
@@ -77,9 +74,50 @@ selecting small, medium or large font.
 
 To improve usability, each table remembers the settings and filtering for each
 user. To reset a table to it’s original state, click
-the
-
-![restore](restore.png)
-
-(restore table settings) button on the right hand
+the ![restore](restore.png) (restore table settings) button on the right hand
 side of the column header.
+
+## Regular Expression Syntax
+
+A regular expression may consist of literal characters and the following characters and sequences:
+
+- `.` -- the dot matches any single character except line terminators. To include line terminators, use `[\s\S]` instead to simulate `.` with `DOTALL` flag.
+- `\d` -- matches a single digit, equivalent to `[0-9]`
+- `\s` -- matches a single whitespace character
+- `\S` -- matches a single non-whitespace character
+- `\b` -- matches a word boundary. This match is zero-length
+- `\B` -- Negation of `\b`. The match is zero-length
+- `[xyz]` -- set of characters. Matches any of the enclosed characters (here: `x`, `y`, or `z`)
+- `[^xyz]` -- negated set of characters. Matches any other character than the enclosed ones (i.e. anything but `x`, `y`, or `z` in this case)
+- `[x-z]` -- range of characters. Matches any of the characters in the specified range, e.g. `[0-9A-F]` to match any character in `0123456789ABCDEF`
+- `[^x-z]` -- negated range of characters. Matches any other character than the ones specified in the range
+- `(xyz)` -- defines and matches a pattern group. Also defines a capturing group.
+- `(?:xyz)` -- defines and matches a pattern group without capturing the match
+- `(xy|z)` -- matches either `xy` or `z`
+- `^` -- matches the beginning of the string (e.g. `^xyz`)
+- `$` -- matches the end of the string (e.g. `xyz$`)
+
+To literally match one of the characters that have a special meaning in regular expressions (`.`, `*`, `?`, `[`, `]`, `(`, `)`, `{`, `}`, `^`, `$`, and `\`) you may need to escape the character with a backslash, which typically requires escaping itself. The backslash of shorthand character classes like `\d`, `\s`, and `\b` counts as literal backslash. The backslash of JSON escape sequences like `\t` (tabulation), `\r` (carriage return), and `\n` (line feed) does not, however.
+
+!!! note "Literal backlashes require different amounts of escaping depending on the context"
+
+    - `\` in bind variables (Table view mode) in the Web UI (automatically escaped to `\\` unless the value is wrapped in double quotes and already escaped properly)
+    - `\\` in bind variables (JSON view mode) and queries in the Web UI
+    - `\\` in bind variables in arangosh
+    - `\\\\` in queries in arangosh
+    - Double the amount compared to arangosh in shells that use backslashes for escaping (`\\\\` in bind variables and `\\\\\\\\` in queries)
+
+Characters and sequences may optionally be repeated using the following quantifiers:
+
+- `x?` -- matches one or zero occurrences of `x`
+- `x*` -- matches zero or more occurrences of `x` (greedy)
+- `x+` -- matches one or more occurrences of `x` (greedy)
+- `x*?` -- matches zero or more occurrences of `x` (non-greedy)
+- `x+?` -- matches one or more occurrences of `x` (non-greedy)
+- `x{y}` -- matches exactly y occurrences of `x`
+- `x{y,z}` -- matches between y and z occurrences of `x`
+- `x{y,}` -- matches at least y occurrences of `x`
+
+Note that `xyz+` matches `xyzzz`, but if you want to match `xyzxyz` instead, you need to define a pattern group by wrapping the sub-expression in parentheses and place the quantifier right behind it, like `(xyz)+`.
+
+You can use 3rd party services, like [regex101](https://regex101.com/) to fine-tune and troubleshoot your regular expressions.
