@@ -897,6 +897,13 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regular-expression-syntax">
+<span class="md-ellipsis">
+      Regular Expression Syntax
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2752,6 +2759,13 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regular-expression-syntax">
+<span class="md-ellipsis">
+      Regular Expression Syntax
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -2781,7 +2795,8 @@ can be strings, numbers, IP addresses, networks, boolean values, or
 select box values.</p>
 <p>RegEx can be used in a string filter by adding <code>=~</code> <strong>after</strong> the
 expression. An exact match of the value can be achieved by adding <code>=</code>
-<strong>before</strong> the expression</p>
+<strong>before</strong> the expression. For more information about supported RegEx,
+check the section below.</p>
 <p>Fields containing IP Addresses can be filtered by entering the IP/prefix
 length in the CIDR notation. For example, <code>10.0.0.0/25</code> will find
 addresses between and including <code>10.0.0.128</code> and <code>10.0.0.255</code>.</p>
@@ -2803,25 +2818,64 @@ content.</p>
 </div>
 <h2 id="tooltips">Tooltips</h2>
 <p>Each table contains built in help with the table description by clicking on the
-question mark</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="tooltip.png"><img alt="tooltip" src="tooltip.png"/></a></p>
+question mark <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="tooltip.png"><img alt="tooltip" src="tooltip.png"/></a>.</p>
 <p>Hover the mouse over the column name for a description of column content.</p>
 <h2 id="column-visibility">Column Visibility</h2>
 <p>Tables can be especially large to facilitate easier information
 correlation, however not all columns need to always be visible. To hide
-or show individual columns, click the</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="visibility.png"><img alt="visibility" src="visibility.png"/></a></p>
-<p>(toggle column visibility) button and select which the columns to be
+or show individual columns, click the <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="visibility.png"><img alt="visibility" src="visibility.png"/></a>
+(toggle column visibility) button and select which the columns to be
 displayed. The first column can be set as “sticky” to facilitate
 analysis of tables with many columns. Row height can be adjusted by
 selecting small, medium or large font.</p>
 <h2 id="persistent-table-view">Persistent Table View</h2>
 <p>To improve usability, each table remembers the settings and filtering for each
 user. To reset a table to it’s original state, click
-the</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="restore.png"><img alt="restore" src="restore.png"/></a></p>
-<p>(restore table settings) button on the right hand
+the <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="restore.png"><img alt="restore" src="restore.png"/></a> (restore table settings) button on the right hand
 side of the column header.</p>
+<h2 id="regular-expression-syntax">Regular Expression Syntax</h2>
+<p>A regular expression may consist of literal characters and the following characters and sequences:</p>
+<ul>
+<li><code>.</code> – the dot matches any single character except line terminators. To include line terminators, use <code>[\s\S]</code> instead to simulate <code>.</code> with <code>DOTALL</code> flag.</li>
+<li><code>\d</code> – matches a single digit, equivalent to <code>[0-9]</code></li>
+<li><code>\s</code> – matches a single whitespace character</li>
+<li><code>\S</code> – matches a single non-whitespace character</li>
+<li><code>\b</code> – matches a word boundary. This match is zero-length</li>
+<li><code>\B</code> – Negation of <code>\b</code>. The match is zero-length</li>
+<li><code>[xyz]</code> – set of characters. Matches any of the enclosed characters (here: <code>x</code>, <code>y</code>, or <code>z</code>)</li>
+<li><code>[^xyz]</code> – negated set of characters. Matches any other character than the enclosed ones (i.e. anything but <code>x</code>, <code>y</code>, or <code>z</code> in this case)</li>
+<li><code>[x-z]</code> – range of characters. Matches any of the characters in the specified range, e.g. <code>[0-9A-F]</code> to match any character in <code>0123456789ABCDEF</code></li>
+<li><code>[^x-z]</code> – negated range of characters. Matches any other character than the ones specified in the range</li>
+<li><code>(xyz)</code> – defines and matches a pattern group. Also defines a capturing group.</li>
+<li><code>(?:xyz)</code> – defines and matches a pattern group without capturing the match</li>
+<li><code>(xy|z)</code> – matches either <code>xy</code> or <code>z</code></li>
+<li><code>^</code> – matches the beginning of the string (e.g. <code>^xyz</code>)</li>
+<li><code>$</code> – matches the end of the string (e.g. <code>xyz$</code>)</li>
+</ul>
+<p>To literally match one of the characters that have a special meaning in regular expressions (<code>.</code>, <code>*</code>, <code>?</code>, <code>[</code>, <code>]</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>^</code>, <code>$</code>, and <code>\</code>) you may need to escape the character with a backslash, which typically requires escaping itself. The backslash of shorthand character classes like <code>\d</code>, <code>\s</code>, and <code>\b</code> counts as literal backslash. The backslash of JSON escape sequences like <code>\t</code> (tabulation), <code>\r</code> (carriage return), and <code>\n</code> (line feed) does not, however.</p>
+<div class="admonition note">
+<p class="admonition-title">Literal backlashes require different amounts of escaping depending on the context</p>
+<ul>
+<li><code>\</code> in bind variables (Table view mode) in the Web UI (automatically escaped to <code>\\</code> unless the value is wrapped in double quotes and already escaped properly)</li>
+<li><code>\\</code> in bind variables (JSON view mode) and queries in the Web UI</li>
+<li><code>\\</code> in bind variables in arangosh</li>
+<li><code>\\\\</code> in queries in arangosh</li>
+<li>Double the amount compared to arangosh in shells that use backslashes for escaping (<code>\\\\</code> in bind variables and <code>\\\\\\\\</code> in queries)</li>
+</ul>
+</div>
+<p>Characters and sequences may optionally be repeated using the following quantifiers:</p>
+<ul>
+<li><code>x?</code> – matches one or zero occurrences of <code>x</code></li>
+<li><code>x*</code> – matches zero or more occurrences of <code>x</code> (greedy)</li>
+<li><code>x+</code> – matches one or more occurrences of <code>x</code> (greedy)</li>
+<li><code>x*?</code> – matches zero or more occurrences of <code>x</code> (non-greedy)</li>
+<li><code>x+?</code> – matches one or more occurrences of <code>x</code> (non-greedy)</li>
+<li><code>x{y}</code> – matches exactly y occurrences of <code>x</code></li>
+<li><code>x{y,z}</code> – matches between y and z occurrences of <code>x</code></li>
+<li><code>x{y,}</code> – matches at least y occurrences of <code>x</code></li>
+</ul>
+<p>Note that <code>xyz+</code> matches <code>xyzzz</code>, but if you want to match <code>xyzxyz</code> instead, you need to define a pattern group by wrapping the sub-expression in parentheses and place the quantifier right behind it, like <code>(xyz)+</code>.</p>
+<p>You can use 3<sup>rd</sup> party services, like <a href="https://regex101.com/">regex101</a> to fine-tune and troubleshoot your regular expressions.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
