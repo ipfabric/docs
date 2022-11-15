@@ -64,16 +64,16 @@ def collect_issue_type_names(issues):
 
 def generate_release_notes(rn, project_issues):
     types = [
-        ('Epic', 'Epics', '''Epics are high-level features, which may consist
+        ('Epic', 'Epics', '''Epics are high-level features, that may consist
             of many tasks.'''),
-        ('Story', 'Stories', '''Stories are high-level features, which may
-            consist of many tasks. These would typically cover large
+        ('Story', 'Stories', '''Stories are high-level features, that may
+            consist of many tasks. These would typically cover extensive
             functionality in IP Fabric'''),
-        ('Bug', 'Bugs', '''Anything what we considered an incorrect behavior.
-            Something what was not working as intended or turned out that does
-            not meet customers demand.'''),
-        ('Task', 'Tasks', '''A typical unit of work. They may be associated
-            into Epics or Stories to form large features.''')
+        ('Bug', 'Bugs', '''Anything that we considered an incorrect behavior.
+            Something that was not working as expected or turned out that did
+            not meet customers\' demand.'''),
+        ('Task', 'Tasks', '''Task may be associated
+            into Epics or Stories to form complext features.''')
     ]
     for type in types:
         issues = []
@@ -130,11 +130,9 @@ def main():
                 release `{v['name']}`. Please note, that this page contains
                 very low-level information about the actual release, which can
                 lead to false conclusions if you don't have access to the
-                tickets. On the other hand we believe, that it can provide a
-                valuable information, if you are looking for particular detail.
-                This release of IP Fabric contains total of
-                {issues_total} issues. And was internally released
-                on {v['releaseDate']}. """)
+                tickets. On the other, it can provide valuable information,
+                if you are looking for a particular detail. This release of
+                IP Fabric contains total of {issues_total} issues.""")
 
         generate_release_notes(rn, issues)
 
