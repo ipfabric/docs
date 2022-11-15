@@ -2504,6 +2504,34 @@ differently in you production deployment, than described here.
 <nav aria-label="v6.0.0 (UNRELEASED)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+<span class="md-ellipsis">
+      Attributes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rbac">
+<span class="md-ellipsis">
+      RBAC
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assurance-engine">
+<span class="md-ellipsis">
+      Assurance Engine
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changes-to-ip-fabric-appliance-config-wizard">
+<span class="md-ellipsis">
+      Changes to IP Fabric Appliance config wizard
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#network-discovery">
 <span class="md-ellipsis">
       Network Discovery
@@ -2514,6 +2542,13 @@ differently in you production deployment, than described here.
 <a class="md-nav__link" href="#logging">
 <span class="md-ellipsis">
       Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eula">
+<span class="md-ellipsis">
+      EULA
     </span>
 </a>
 </li>
@@ -2702,6 +2737,34 @@ differently in you production deployment, than described here.
 <nav aria-label="v6.0.0 (UNRELEASED)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+<span class="md-ellipsis">
+      Attributes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rbac">
+<span class="md-ellipsis">
+      RBAC
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assurance-engine">
+<span class="md-ellipsis">
+      Assurance Engine
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changes-to-ip-fabric-appliance-config-wizard">
+<span class="md-ellipsis">
+      Changes to IP Fabric Appliance config wizard
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#network-discovery">
 <span class="md-ellipsis">
       Network Discovery
@@ -2712,6 +2775,13 @@ differently in you production deployment, than described here.
 <a class="md-nav__link" href="#logging">
 <span class="md-ellipsis">
       Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eula">
+<span class="md-ellipsis">
+      EULA
     </span>
 </a>
 </li>
@@ -2739,6 +2809,37 @@ OVA MD5: FIXME
 QCOW SHA256: FIXME
 QCOW MD5: FIXME
 </code></pre></div>
+<h3 id="attributes">Attributes</h3>
+<p>You can now configure custom attributes for devices, this can be found under <code>Settings</code> → <code>Device Attributes</code>.</p>
+<h3 id="rbac">RBAC</h3>
+<p>You can now specify the level of access a user has by restricting the ability to use certain API Endpoints, or you can restrict which devices the user has access to via Device Attributes. New settings can be find under:</p>
+<ul>
+<li><code>Settings</code> → <code>User Management</code> → <code>Polices</code></li>
+<li><code>Settings</code> → <code>User Management</code> → <code>Roles</code></li>
+</ul>
+<h3 id="assurance-engine">Assurance Engine</h3>
+<ul>
+<li>Assurance Engine is a new tab found under global and snapshot settings.</li>
+<li>Users can now disable specific task to speed up discovery. You can toggle the following features from the Assurance Engine.<ul>
+<li>Loading Graph Cache</li>
+<li>Save Historical Data</li>
+<li>Compute Intent Verification Rules</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-to-ip-fabric-appliance-config-wizard">Changes to IP Fabric Appliance config wizard</h3>
+<ul>
+<li>Starting in 6.0, when setting the hostname in the config wizard, the hostname will follow <a href="https://www.rfc-editor.org/rfc/rfc1035#section-2.3.1">RFC1035 Section 2.3.1</a> standards.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nc">domain</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">subdomain</span><span class="p">&gt;</span> | " "
+<span class="p">&lt;</span><span class="nc">subdomain</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">label</span><span class="p">&gt;</span> | <span class="p">&lt;</span><span class="nc">subdomain</span><span class="p">&gt;</span> "." <span class="p">&lt;</span><span class="nc">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nc">label</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">letter</span><span class="p">&gt;</span> [ [ <span class="p">&lt;</span><span class="nc">ldh-str</span><span class="p">&gt;</span> ] <span class="p">&lt;</span><span class="nc">let-dig</span><span class="p">&gt;</span> ]
+<span class="p">&lt;</span><span class="nc">ldh-str</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">let-dig-hyp</span><span class="p">&gt;</span> | <span class="p">&lt;</span><span class="nc">let-dig-hyp</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nc">ldh-str</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nc">let-dig-hyp</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">let-dig</span><span class="p">&gt;</span> | "-"
+<span class="p">&lt;</span><span class="nc">let-dig</span><span class="p">&gt;</span> <span class="o">::=</span> <span class="p">&lt;</span><span class="nc">letter</span><span class="p">&gt;</span> | <span class="p">&lt;</span><span class="nc">digit</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nc">letter</span><span class="p">&gt;</span> <span class="o">::=</span> any one of the 52 alphabetic characters A through Z in upper case and a through z in lower case
+<span class="p">&lt;</span><span class="nc">digit</span><span class="p">&gt;</span> <span class="o">::=</span> any one of the ten digits 0 through 9
+</code></pre></div>
 <h3 id="network-discovery">Network Discovery</h3>
 <ul>
 <li>Parallel command loading has been implemented for Cisco Meraki. This will significantly speed up discovery.</li>
@@ -2757,6 +2858,10 @@ QCOW MD5: FIXME
 <h3 id="logging">Logging</h3>
 <ul>
 <li>JSON log files for all discovery services. Please note that these files can be several times (about 6x) larger than existing logs.</li>
+</ul>
+<h3 id="eula">EULA</h3>
+<ul>
+<li>Updated End User Licensing agreement (EULA). Current users may be asked to resign any existing EULA.</li>
 </ul>
 </article>
 </div>
