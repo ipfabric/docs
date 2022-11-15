@@ -60,6 +60,25 @@ You can also test SNMP location rules:
     ^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
     ```
 
+!!! example "RegEx example -- lookahead"
+
+    You can match a part of the string, only if it contains, or not, a specific expression afterwards, by using lookahead (positive or negative). In the example below, we want to match the first 2 letters and 1 number, only if we don't see the pattern `-dev` afterwards. Using this regex:
+
+    ```
+    (^[a-zA-Z]{2}[0-9])(?!.*-dev)
+    ```
+
+    - `BL1-router01` the regex will match and the device will be assigned to the site `BL1`
+    - `PA2-router02-dev` teh regex will not match, as we can see `-dev` in the hostname
+
+Use this link to read more about [Regular Expression and Assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions)
+
+
+The brief explanation:
+
+- `(^[a-zA-Z]{2}[a-zA-Z0-9])` -- We are going to match those first 3 characters: `AP1`, or `LO2`...
+- `(?![a-fA-F0-9]{3}[.][a-fA-F0-9]{4}[.][a-fA-F0-9]{4})` -- ... only if it is NOT followed by what would be a MAC address.
+
 ## Device Neighborship
 
 ![Device Neighborship](site_separation/2896232449.png)
