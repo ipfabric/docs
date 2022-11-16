@@ -206,6 +206,15 @@ just need to do the following:
   - updates alias `latest` to point to newly created `4.6`
   - push all commits which were made on `gh-pages` to the origin
 
+```
+make mike
+source venv/bin/activate
+mike deploy --config-file mkdocs_insiders.yml 5.0
+mike alias --update-aliases 5.0 latest
+
+# if everything looks good push `gh-pages`
+```
+
 ### Release an update to existing version
 
 We use "release" branches for tracking release specific (backported) changes.
