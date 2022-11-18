@@ -4,11 +4,15 @@ description: IP Fabric added the ability to add attributes to a device based on 
 
 # Device Attributes
 
-Version 4.3.X has added the ability to add attributes to a device based
-on the IP Fabric Unique Serial Number. Currently this supports manually
-changing a Device’s Site Name, Routing Domain, or STP Domain. More
-functionality will be released in future versions. Once an attribute is
-assigned a new snapshot is required for it to be applied.
+Version 4.3 has added the ability to add attributes to a device based on the IP Fabric Unique Serial Number. In versions earlier than 6.0.0 this only supported manually changing a Device’s Site Name, Routing Domain, or STP Domain. IP Fabric now supports adding custom attributes. The attribute name may not contain any spaces or special characters.
+
+![attributes_warning](attributes_warning.png)
+
+Attribute names must match the following regex `^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$`.
+
+Attributes can be assigned globally or locally to an individual snapshot.
+To Assign global attributes navigate to `Settings` --> `Device Attributes`.
+Once an attribute is assigned a new snapshot is required for it to be applied.
 
 ![Device attributes](device_attributes.png)
 
@@ -22,8 +26,7 @@ assigned a new snapshot is required for it to be applied.
 - **Hostname** is populated by IP Fabric when a device matching the
   **Serial Number** is found
 
-- **Attribute** is the Device Attribute to assign. Currently supported
-  is Site Name, Routing Domain, or STP Domain
+- **Attribute** is the Device Attribute to assign.
 
 - **Value** is the attribute’s value to assign.
 
@@ -43,7 +46,6 @@ hostname.
     for devices discovered via an API in the UI. Even though it seems that no
     device matches the SN, the attribute will still be assigned to the device.
 
-
 ![Device attributes dropdown](device_attributes_dropdown.png)
 
 ## Creating rules via the API
@@ -51,15 +53,11 @@ hostname.
 This is the preferred method of creating rules as it allows for bulk
 importing.
 
-| Method | Put                                                                                          |
-| :----- | :------------------------------------------------------------------------------------------- |
-| URL    | `https://<IPF_URL>/api/v5.0/attributes/global`                                                 |
-| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<SITE NAME>", "name": "siteName"}]}`|
+| Method | Put                                                                                                         |
+| :----- | :---------------------------------------------------------------------------------------------------------- |
+| URL    | `https://<IPF_URL>/api/v6.0/attributes/global`                                                              |
+| Data   | `{"attributes": [{"sn": "<IPF SERIAL NUMBER>", "value": "<ATTRIBUTE NAME>", "name": "<ATTRIBUTE VALUE>"}]}` |
 
 ## Creating Rules With `python-ipfabric` Package
 
-Please see example at the following GitHub location:
-
-<https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py>
-
-
+Please see example at the [`examples/settings/attributes.py`](https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py).
