@@ -144,4 +144,4 @@ incoming interfaces and one forwarding for this flow:
 You can set up what you want to prioritize in the view. Just simply move
 the bars up or down.
 
-![Visualization setup](visualization_setup.png)
+![Visualization setup](visualization_setup_movable.png)
