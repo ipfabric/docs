@@ -2512,9 +2512,9 @@ differently in you production deployment, than described here.
 <nav aria-label="v6.0.0 (Nov 16th, 2022)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#important-notes">
+<a class="md-nav__link" href="#upgrade-notices">
 <span class="md-ellipsis">
-      Important Notes
+      Upgrade Notices
     </span>
 </a>
 </li>
@@ -2752,9 +2752,9 @@ differently in you production deployment, than described here.
 <nav aria-label="v6.0.0 (Nov 16th, 2022)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#important-notes">
+<a class="md-nav__link" href="#upgrade-notices">
 <span class="md-ellipsis">
-      Important Notes
+      Upgrade Notices
     </span>
 </a>
 </li>
@@ -2832,9 +2832,10 @@ QCOW MD5: 12515e63fbff45ddd40ae24a02a9f13f
 TAR SHA256: 3dad74435f66e26260b47f47616b5a680ab4fb71b535d35e437f868964e4d8b7
 TAR MD5: afbe34c8e97bc66c2af111c1ad3715ac
 </code></pre></div>
-<h3 id="important-notes">Important Notes</h3>
+<h3 id="upgrade-notices">Upgrade Notices</h3>
 <ul>
-<li>Upgrade to <code>v6.0.0</code> will break custom SSO integrations an will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v5.0</code> in this file with <code>v6.0</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance please contact your Solution Architect.</li>
+<li>Upgrade to <code>v6.0</code> is only supported from <code>v5.0</code>. Please, upgrade to the latest <code>v5.0</code> before attempting upgrade to <code>v6.0</code>.</li>
+<li>Upgrade to <code>v6.0</code> will break custom SSO integrations an will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v5.0</code> in this file with <code>v6.0</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance please contact your Solution Architect.</li>
 <li>This release brings changes to IP Fabric data model, snapshots need to be <strong>unloaded and loaded back</strong> to be updated. <strong>The locked snapshots are not unloaded automatically</strong>. You need to reload them manually after upgrade (unlock them, perform unload, load them back and lock them again). Otherwise, you might experience issues with diagrams and you will be missing attributes from the snapshot.</li>
 </ul>
 <h3 id="attributes">Attributes</h3>
