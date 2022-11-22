@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/releases/known_issues/cisco/Adding_AAA_user_to_Cisco_ACS.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2684,60 +2687,60 @@ these devices.</p>
 <p>We can create the ACS components listed above. First, we need to create
 a device group called <strong>RoutersHQ</strong>. To do so, go to <strong>Network Resources &gt;
 Network Device Groups &gt; Device Type &gt; Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs1.png"><img alt="acs1" src="../acs1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs1.png"><img alt="acs1" src="../acs1.png"/></a></p>
 <p>Enter the device group information and click the <strong>Submit</strong> button:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs2.png"><img alt="acs2" src="../acs2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs2.png"><img alt="acs2" src="../acs2.png"/></a></p>
 <p>After the device group has been created, we need to add a router in it.
 To do this, go to <strong>Network Resources &gt; Network Devices and AAA Clients
 &gt; Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs3.png"><img alt="acs1" src="../acs3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs3.png"><img alt="acs1" src="../acs3.png"/></a></p>
 <p>Under <strong>Name</strong>, enter the name for the router (it does not have to match the
 real router’s hostname). Under <strong>Device Type</strong>, select the device group
 you’ve created in the previous step. Under <strong>IP address</strong>, enter the IP
 address of the router. Under <strong>Authentication options</strong>, click the checkbox
 next to the protocol that will be used and type the password.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs4.png"><img alt="acs4" src="../acs4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs4.png"><img alt="acs4" src="../acs4.png"/></a></p>
 <p>Next, we need to create two user groups: <strong>Admin</strong> and <strong>HelpDesk</strong>. To do this,
 go to <strong>Users and Identity Stores &gt; Identity Groups &gt; Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs5.png"><img alt="acs5" src="../acs5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs5.png"><img alt="acs5" src="../acs5.png"/></a></p>
 <p>Enter the group information:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs6.png"><img alt="acs6" src="../acs6.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs6.png"><img alt="acs6" src="../acs6.png"/></a></p>
 <p>Repeat the process to create the second group:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs7.png"><img alt="acs7" src="../acs7.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs7.png"><img alt="acs7" src="../acs7.png"/></a></p>
 <p>Now we need to create two users and place them in the appropriate
 identity groups. To do that, go to <strong>Users and Identity Stores &gt; Internal
 Identity Stores &gt; Users &gt; Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs8.png"><img alt="acs8" src="../acs8.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs8.png"><img alt="acs8" src="../acs8.png"/></a></p>
 <p>Under<strong> Name</strong>, enter <strong>Administrator</strong>. Under <strong>Identity Group</strong>, select
 the <strong>Admin</strong> group. Under <strong>Password</strong>, configure the password for the user.
 When you are done, click <strong>Submit</strong> to create the user:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs9.png"><img alt="acs9" src="../acs9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs9.png"><img alt="acs9" src="../acs9.png"/></a></p>
 <p>Repeat the process for the <strong>Helpdesk</strong> user. Make sure to select
 the <strong>HelpDesk</strong> group:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs10.png"><img alt="acs10" src="../acs10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs10.png"><img alt="acs10" src="../acs10.png"/></a></p>
 <p>The next step is to create authorization policies to give full access to
 users in the <strong>Admin</strong> group and limited access to users in
 the <strong>HelpDesk</strong> group. Go to <strong>Access Policies &gt; Access Services &gt;
 Default Device Admin &gt; Authorization &gt; Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs11.png"><img alt="acs11" src="../acs11.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs11.png"><img alt="acs11" src="../acs11.png"/></a></p>
 <p>Name this policy <strong>AdminRole</strong>. Under <strong>Identity Group</strong>, choose
 the <strong>Admin</strong> group. Under <strong>NDG:Device Type</strong>, choose
 the<strong>RoutersHQ</strong> device group. Click the <strong>Select</strong> button next
 to <strong>Shell Profile</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs12.png"><img alt="acs12" src="../acs12.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs12.png"><img alt="acs12" src="../acs12.png"/></a></p>
 <p>We will not use the preconfigured profiles – we will create our own.
 Click<strong> Create</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs13.png"><img alt="acs13" src="../acs13.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs13.png"><img alt="acs13" src="../acs13.png"/></a></p>
 <p>Name the profile and click the <strong>Common Tasks</strong> tab:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs14.png"><img alt="acs14" src="../acs14.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs14.png"><img alt="acs14" src="../acs14.png"/></a></p>
 <p>Change the <strong>Default privilege </strong>level to <strong>Static</strong>, and assign the
 privilege level of <strong>15</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs15.png"><img alt="acs15" src="../acs15.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs15.png"><img alt="acs15" src="../acs15.png"/></a></p>
 <p>Click <strong>Submit</strong>. We need to repeat the process to create the <strong>HelpDeskRole</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs16.png"><img alt="acs16" src="../acs16.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs17.png"><img alt="acs17" src="../acs17.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs16.png"><img alt="acs16" src="../acs16.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs17.png"><img alt="acs17" src="../acs17.png"/></a></p>
 <p>This time, assign the privilege level of <strong>1</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../acs18.png"><img alt="acs16" src="../acs18.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../acs18.png"><img alt="acs16" src="../acs18.png"/></a></p>
 <p>You can now test the user and then add it to IP Fabric authentication
 list.</p>
 </article>
@@ -2810,5 +2813,5 @@ list.</p>
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

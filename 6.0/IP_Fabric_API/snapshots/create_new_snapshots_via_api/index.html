@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/IP_Fabric_API/snapshots/create_new_snapshots_via_api.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2761,7 +2764,7 @@
 </ul>
 <h2 id="create-a-new-snapshot-with-the-existing-settings">Create a New Snapshot With The Existing Settings</h2>
 <p>If you want to start a discovery, using the existing settings, it is a simple <code>POST</code> request to <code>/api/{api_version}/settings</code>, without a body.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../configure_of_Creating_snapshoot.gif"><img alt="configure of Creating snapshot" src="../configure_of_Creating_snapshoot.gif"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../configure_of_Creating_snapshoot.gif"><img alt="configure of Creating snapshot" src="../configure_of_Creating_snapshoot.gif"/></a></p>
 <h2 id="create-a-new-snapshot-with-different-settings-than-the-default-ones">Create a New Snapshot With Different Settings Than The Default Ones</h2>
 <p>What if you wanted a snapshot for a smaller scope of your network. For this, you can use the API to start a new discovery, with some specific settings used for a specific discovery.</p>
 <p>Here is an example of a body to use to perform a discovery with a new scope (<code>networks</code>), new seed devices (<code>seedList</code>) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,</p>
@@ -2781,7 +2784,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Let’s see how it looks when using Postman:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../create_snapshot.gif"><img alt="create snapshot" src="../create_snapshot.gif"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../create_snapshot.gif"><img alt="create snapshot" src="../create_snapshot.gif"/></a></p>
 <h2 id="what-settings-can-i-use-when-creating-a-new-snapshot">What Settings Can I Use When Creating a New Snapshot?</h2>
 <p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a <code>GET</code> on the endpoint <code>/api/{api_version}/settings</code></p>
 <p>The response will look like this <em>(this is just an extract of the JSON)</em>:</p>
@@ -2916,5 +2919,5 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/IP_Fabric_GUI/Technology_Tables/transcievers.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2750,14 +2753,14 @@ system may not fully reflect it.</p>
 </div>
 <h2 id="how-to-find-transceivers-in-ip-fabric">How To Find Transceivers In IP Fabric</h2>
 <p>Navigate to <strong>Technology → Interfaces → Transceivers</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../transcievers_list.png"><img alt="transcievers in the menu" src="../transcievers_list.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../transcievers_list.png"><img alt="transcievers in the menu" src="../transcievers_list.png"/></a></p>
 <h2 id="how-to-enabledisable-transceivers-task">How To Enable/Disable Transceivers Task</h2>
 <p>This function is <strong>enabled by default</strong> for all vendors and product
 families. This means that <strong>this command is not executed on any
 device</strong>.</p>
 <p>The function can be <strong>Enabled/Disabled</strong> in section <strong>Settings →
 Advanced → Discovery task</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../transcievers_tasks.png"><img alt="transceivers task" src="../transcievers_tasks.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../transcievers_tasks.png"><img alt="transceivers task" src="../transcievers_tasks.png"/></a></p>
 <p>To <strong>disable</strong> this task, you need to <strong>delete the default Transceivers
 task</strong> or <strong>edit</strong> this default task.</p>
 <p>When <strong>editing</strong> this rule, you select by regex expression on which
@@ -2766,7 +2769,7 @@ don’t want to run show interface transceivers command for all CISCO
 devices, put cisco to the Vendor field. More specific device selection
 can be done by Family, Platform, Model and Version fields). You can
 simply test your Regex rules by <strong>Test rules</strong> button.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../transcievers_tasks_edit.png"><img alt="edit transceivers tasks" src="../transcievers_tasks_edit.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../transcievers_tasks_edit.png"><img alt="edit transceivers tasks" src="../transcievers_tasks_edit.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2837,5 +2840,5 @@ simply test your Regex rules by <strong>Test rules</strong> button.</p>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

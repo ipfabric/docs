@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/System_Administration/Command_Line_Interface/How_to/change_hostname.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2661,11 +2664,11 @@
 </li>
 <li>
 <p>Execute command <code>nimpee-net-config -n</code> to launch network configuration wizard.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../change_hostname1.png"><img alt="change_hostname1" src="../change_hostname1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname1.png"><img alt="change_hostname1" src="../change_hostname1.png"/></a></p>
 </li>
 <li>
 <p>After executing <code>nimpee-net-config -n</code>, the first option is to change the hostname.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../change_hostname2.png"><img alt="change_hostname2" src="../change_hostname2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname2.png"><img alt="change_hostname2" src="../change_hostname2.png"/></a></p>
 </li>
 <li>
 <p>Delete the old hostname and change it to a new one and select “OK”.</p>
@@ -2673,14 +2676,14 @@
 <p class="admonition-title">Info</p>
 <p>Valid characters for hostnames are ASCII letters from <strong>a</strong> to <strong>z</strong>, the digits from <strong>0</strong> to <strong>9</strong>, and the hyphen (<strong>−</strong>). A hostname may not start with a hyphen.</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../change_hostname3.png"><img alt="change_hostname3" src="../change_hostname3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname3.png"><img alt="change_hostname3" src="../change_hostname3.png"/></a></p>
 </li>
 <li>
 <p>This wizard changes other Network related configuration items like DNS name, Network Interface configuration, NTP etc. For the sake of changing just the <code>hostname</code> leave everything as is until you reach the <code>"Do you want to reboot now?"</code> screen.</p>
 </li>
 <li>
 <p>When you reach <code>"Do you want to reboot now?"</code> screen, we recommend rebooting the machine to apply all changes.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../change_hostname4.png"><img alt="change_hostname4" src="../change_hostname4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname4.png"><img alt="change_hostname4" src="../change_hostname4.png"/></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This will reboot the IP Fabric machine and the appliance won’t be reachable until it boots and API starts again, it can take several minutes.</p>
@@ -2688,7 +2691,7 @@
 </li>
 <li>
 <p>Connect again to IP Fabric with <code>SSH</code> and verify if the hostname has been correctly changed.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../change_hostname5.png"><img alt="change_hostname5" src="../change_hostname5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname5.png"><img alt="change_hostname5" src="../change_hostname5.png"/></a></p>
 </li>
 </ol>
 </article>
@@ -2761,5 +2764,5 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

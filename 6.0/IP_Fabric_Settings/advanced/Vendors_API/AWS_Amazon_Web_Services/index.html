@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2694,17 +2697,17 @@
 key from your AWS account.</p>
 <p>Those keys can be found/generated under your account in the AWS
 dashboard.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../aws/2691596295.png"><img alt="AWS Management Console" src="../aws/2691596295.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596295.png"><img alt="AWS Management Console" src="../aws/2691596295.png"/></a></p>
 <p>Click on <strong>My Security Credentials</strong> and open <strong>Access keys</strong> tab.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../aws/2691596301.png"><img alt="AWS - Your Security Credentials" src="../aws/2691596301.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596301.png"><img alt="AWS - Your Security Credentials" src="../aws/2691596301.png"/></a></p>
 <p>To generate keys click on <strong>Create New Access Key</strong> and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../aws/2691596307.png"><img alt="AWS - Create Access Key" src="../aws/2691596307.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596307.png"><img alt="AWS - Create Access Key" src="../aws/2691596307.png"/></a></p>
 <p>Copy those keys to the AWS API settings in your IP Fabric and don’t
 forget to <strong>fill the regions where the devices which you want to discover
 are</strong>. Multiple regions can be set for one API key and secret.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../aws/aws-vendor-api-6.0.png"><img alt="Add Connection" src="../aws/aws-vendor-api-6.0.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-vendor-api-6.0.png"><img alt="Add Connection" src="../aws/aws-vendor-api-6.0.png"/></a></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>To ensure that IP Fabric can retrieve all the required data to model the
@@ -2723,7 +2726,7 @@ have access to. These temporary credentials consist of an access key ID,
 a secret access key, and a security token. Typically, you use
 <code>AssumeRole</code> within your account or for cross-account access. For more
 information about AssumeRole see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole - AWS Security Token Service</a>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../aws/aws-vendor-api-6.0-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-vendor-api-6.0-assumerole.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-vendor-api-6.0-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-vendor-api-6.0-assumerole.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2794,5 +2797,5 @@ information about AssumeRole see <a href="https://docs.aws.amazon.com/STS/latest
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

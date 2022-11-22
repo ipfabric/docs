@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/Getting_Started/Platform_First_Steps/Configuration_Wizard/05-site_separation.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2909,9 +2912,9 @@
 <h3 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h3>
 <p>The Manual Site Separation enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
 <p>To configure <strong>Device Attributes</strong> first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_manual_site_separation.png"><img alt="Site separation manual site separtion" src="../site_separation_manual_site_separation.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_manual_site_separation.png"><img alt="Site separation manual site separtion" src="../site_separation_manual_site_separation.png"/></a></p>
 <h4 id="device-attributes">Device Attributes</h4>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_device_attributes.png"><img alt="Site separation device attributes" src="../site_separation_device_attributes.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_device_attributes.png"><img alt="Site separation device attributes" src="../site_separation_device_attributes.png"/></a></p>
 <ul>
 <li><strong>Serial Number</strong> is IP Fabric’s “Unique Serial Number” (API column <code>sn</code>); this is not the column “Serial Number” which represents the Hardware SN (API column <code>snHw</code>)<ul>
 <li>Devices discovered via API can also be assigned using Device Attributes.</li>
@@ -2923,9 +2926,9 @@
 </ul>
 <h4 id="creating-rules-in-the-ui">Creating Rules In The UI</h4>
 <p>You are able to create rules in the UI by selecting the <strong>Add attribute</strong> button. This will provide you a form to fill out.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_add_attribute.png"><img alt="Site separation add attribute" src="../site_separation_add_attribute.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_add_attribute.png"><img alt="Site separation add attribute" src="../site_separation_add_attribute.png"/></a></p>
 <p>The dropdown is intuitive and will let you search based on SN or hostname. Currently there is an issue where IP Fabric will not search for devices discovered via an API in the UI. Even though it appears no devices match the SN it will still perform the site separation correctly on the next snapshot.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_add_attribute_dropdown.png"><img alt="Site separation add attribute dropdown" src="../site_separation_add_attribute_dropdown.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_add_attribute_dropdown.png"><img alt="Site separation add attribute dropdown" src="../site_separation_add_attribute_dropdown.png"/></a></p>
 <h4 id="creating-rules-via-the-api">Creating Rules Via The API</h4>
 <p>This is the preferred method of creating rules as it allows bulk importing.</p>
 <table>
@@ -2955,7 +2958,7 @@
 <p>The default separation is useful for MPLS networks where directly connected routing infrastructure at the site’s edge is not accessible.</p>
 <p>For situations where an inaccessible routed firewall is used at the site (i.e. device under different management team), an option <strong>Firewall at site</strong> can be turned on so the infrastructure before and behind the firewall is not separated into two different sites.</p>
 <p>For networks that have direct routing connectivity between sites, such as DMVPN or Leased Lines (usually over Serial or MFR interfaces), an option to separate the site using <strong>tunnel</strong> and/or <strong>serial</strong> the interface should be selected.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../routing_and_switching.png"><img alt="Routing and switching domain site separation" src="../routing_and_switching.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing_and_switching.png"><img alt="Routing and switching domain site separation" src="../routing_and_switching.png"/></a></p>
 <h3 id="regular-expression-site-separation">Regular Expression Site Separation</h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -2977,27 +2980,27 @@
 </ul>
 <ul>
 <li>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code>
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_hostname_regex.png"><img alt="Site separation hostname regex" src="../site_separation_hostname_regex.png"/></a></li>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_hostname_regex.png"><img alt="Site separation hostname regex" src="../site_separation_hostname_regex.png"/></a></li>
 </ul>
 <p>In this example the regular expression will match items such as PRAGUE-, LONDON-, etc.</p>
 <h4 id="snmp-location-regex">SNMP Location Regex</h4>
 <p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_snmp_regex.png"><img alt="Site separation SNMP regex" src="../site_separation_snmp_regex.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_snmp_regex.png"><img alt="Site separation SNMP regex" src="../site_separation_snmp_regex.png"/></a></p>
 <h4 id="testing">Testing</h4>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_testing.png"><img alt="Site separation testing" src="../site_separation_testing.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_testing.png"><img alt="Site separation testing" src="../site_separation_testing.png"/></a></p>
 <p>You can also test SNMP location rules:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_testing_snmp.png"><img alt="Site separation testing snmp" src="../site_separation_testing_snmp.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_testing_snmp.png"><img alt="Site separation testing snmp" src="../site_separation_testing_snmp.png"/></a></p>
 <h4 id="regex-example">Regex Example</h4>
 <p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as “<strong>^([a-zA-Z]\d{1,3})</strong>”. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>:</p>
 <p><strong>^([a-zA-Z]\d{1,3}|HWLAB|static\d{1})</strong> - 1<sup>st</sup> option OR 2<sup>nd</sup> option OR 3<sup>rd</sup> option</p>
 <h3 id="device-neighborship">Device Neighborship</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_device_neighborship.png"><img alt="Site separtion device neighborship" src="../site_separation_device_neighborship.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_device_neighborship.png"><img alt="Site separtion device neighborship" src="../site_separation_device_neighborship.png"/></a></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h4 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h4>
 <p>Please see the example located on <a href="https://github.com/community-fabric/python-ipfabric/blob/main/examples/settings/attributes.py">Community Fabric GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../site_separation_rule_priority.png"><img alt="Site separation rule priority" src="../site_separation_rule_priority.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../site_separation_rule_priority.png"><img alt="Site separation rule priority" src="../site_separation_rule_priority.png"/></a></p>
 <p>Rule precedences are followed in a top down manner.</p>
 <ol>
 <li><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on serial number if a match is found.</li>
@@ -3079,5 +3082,5 @@
 </div>
 <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

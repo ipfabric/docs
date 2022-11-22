@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/IP_Fabric_GUI/Technology_Tables/SDN.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2801,27 +2804,27 @@
 <p>For instructions how collect APIC related information please check <a href="../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_APIC/">Add Cisco APIC API</a>.</p>
 <h3 id="controllers">Controllers</h3>
 <p>Controllers tab contains list of all discovered controllers, their health and IP addresses.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicControllers.png"><img alt="Controllers" src="cisco/apic/CiscoApicControllers.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicControllers.png"><img alt="Controllers" src="cisco/apic/CiscoApicControllers.png"/></a></p>
 <h3 id="contexts">Contexts</h3>
 <p>Contexts tab contains list of all contexts, to which tenant they belong to, their pcTag and scope, unenforced mode and count of bridge domains which belongs to them.</p>
 <p>By selecting a number in bridge domains column you will be redirected to <strong>Bridge domains</strong> tab with filter applied to show all bridge domains belonging to this context.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicContexts.png"><img alt="Contexts" src="cisco/apic/CiscoApicContexts.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicContexts.png"><img alt="Contexts" src="cisco/apic/CiscoApicContexts.png"/></a></p>
 <h3 id="bridge-domains">Bridge domains</h3>
 <p>Bridge domains tab contains list of all bridge domains, to which tenant and context they belong to. Their pcTag scope, type and list of all their subnets.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicBridgeDomains.png"><img alt="Bridge domains" src="cisco/apic/CiscoApicBridgeDomains.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicBridgeDomains.png"><img alt="Bridge domains" src="cisco/apic/CiscoApicBridgeDomains.png"/></a></p>
 <h3 id="applications">Applications</h3>
 <p>Applications tab contains list of all configured applications, to which tenant they belong to and number of their endpoint groups. By selecting a number you will be redirected to <strong>Endpoint groups</strong> tab with filter applied to show all endpoint groups belonging to this application.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicApplications.png"><img alt="Applications" src="cisco/apic/CiscoApicApplications.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicApplications.png"><img alt="Applications" src="cisco/apic/CiscoApicApplications.png"/></a></p>
 <h3 id="endpoint-groups">Endpoint groups</h3>
 <p>Endpoint groups tab contains list of all endpoint groups, tenant name and application they belong to. If they are members of Preferred group, how many contracts are associated with them and list of all their subnets.
 By selecting a number in a column <strong>Contracts</strong> you will be redirected to <strong>Endpoint groups - Contracts</strong> tab with filter applied to this endpoint group.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicEndpointGroups.png"><img alt="Endpoint groups" src="cisco/apic/CiscoApicEndpointGroups.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicEndpointGroups.png"><img alt="Endpoint groups" src="cisco/apic/CiscoApicEndpointGroups.png"/></a></p>
 <h3 id="endpoint-groups-contracts">Endpoint groups - Contracts</h3>
 <p>Endpoint groups - Contracts tab contains list of all contracts associated to endpoint group and if endpoint group is consumer or provider.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicEpgContract.png"><img alt="Endpoint groups - Contracts" src="cisco/apic/CiscoApicEpgContract.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicEpgContract.png"><img alt="Endpoint groups - Contracts" src="cisco/apic/CiscoApicEpgContract.png"/></a></p>
 <h3 id="contracts">Contracts</h3>
 <p>Contracts tab contains list of all contracts, to which tenant they belong to, their subject’s name, match strategy, if they should reverse filters in opposite direction and names of their filters.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="cisco/apic/CiscoApicContracts.png"><img alt="Contracts" src="cisco/apic/CiscoApicContracts.png"/></a></p>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="cisco/apic/CiscoApicContracts.png"><img alt="Contracts" src="cisco/apic/CiscoApicContracts.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2892,5 +2895,5 @@ By selecting a number in a column <strong>Contracts</strong> you will be redirec
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

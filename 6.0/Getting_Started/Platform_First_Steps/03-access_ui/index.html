@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/Getting_Started/Platform_First_Steps/03-access_ui.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -2710,12 +2713,12 @@
 <p class="admonition-title">Info</p>
 <p>By default there is no user to present to the main GUI on a clean IP Fabric installation. It is mandatory to create a new local administrator account.</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../admin_create_new.png"><img alt="Creating new admin user" src="../admin_create_new.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../admin_create_new.png"><img alt="Creating new admin user" src="../admin_create_new.png"/></a></p>
 <p>With this new account, you will be able to log in to the main IP Fabric user
 interface and change a password to the default <code>admin</code> account or delete
 it. This can be done in <strong>Setting → User Management</strong> menu.</p>
 <p>In addition, other local user accounts can be created here.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../modify_local_accounts.png"><img alt="Creating a new user account" src="../modify_local_accounts.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../modify_local_accounts.png"><img alt="Creating a new user account" src="../modify_local_accounts.png"/></a></p>
 <h2 id="accessing-the-main-user-interface">Accessing The Main User Interface</h2>
 <p>Type IP Fabric VM’s address into a web browser and allow HTTPS exceptions in case of a warning.</p>
 <div class="admonition note">
@@ -2726,11 +2729,11 @@ it. This can be done in <strong>Setting → User Management</strong> menu.</p>
 Keep the license file safe, as the license file is also used as part of the key to encrypt sensitive information.
 Drag the license.key file into the web interface, or click <strong>Select file</strong> and browse to the license file.
 If the license installation fails, contact the IP Fabric support team.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ui_license_1.png"><img alt="IPF License 1" src="../ui_license_1.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ui_license_2.png"><img alt="IPF License 2" src="../ui_license_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ui_license_1.png"><img alt="IPF License 1" src="../ui_license_1.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ui_license_2.png"><img alt="IPF License 2" src="../ui_license_2.png"/></a></p>
 <p>Once the license is validated, the system will present a login screen.</p>
 <p>Login with the account created in <a href="#creating-the-first-ip-fabric-user">Creating The First IP Fabric User</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ui_admin.png"><img alt="IPF admin" src="../ui_admin.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ui_admin.png"><img alt="IPF admin" src="../ui_admin.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2801,5 +2804,5 @@ If the license installation fails, contact the IP Fabric support team.</p>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

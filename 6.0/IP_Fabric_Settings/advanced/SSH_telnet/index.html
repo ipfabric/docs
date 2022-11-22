@@ -31,12 +31,15 @@
 <meta content="https://docs.ipfabric.io/6.0/assets/images/social/IP_Fabric_Settings/advanced/SSH_telnet.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -3112,7 +3115,7 @@
 <h2 id="fine-tune-sshtelnet-cli-parameters">Fine-Tune SSH/telnet CLI Parameters</h2>
 <p>The IP Fabric’s discovery is primarily using Command Line Interface
 (CLI) to discover network elements. The CLI Parameters can be found in <strong>Settings → Advanced → SSH/TELNET</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/2396258368.png"><img alt="CLI Settings" src="../ssh/2396258368.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/2396258368.png"><img alt="CLI Settings" src="../ssh/2396258368.png"/></a></p>
 <h3 id="network-device-login-timeout">Network Device Login Timeout</h3>
 <p>Timeout before the logging prompt is received. It may take longer for
 remote branches over low-speed lines or overloaded devices to respond.</p>
@@ -3255,13 +3258,13 @@ errors and adjustments:</p>
 <li>Open jumphost settings, using item <strong>Settings → Advanced → SSH/TELNET</strong></li>
 <li>
 <p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384480773.png"><img alt="Jump host settings" src="../ssh/1384480773.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384480773.png"><img alt="Jump host settings" src="../ssh/1384480773.png"/></a></p>
 </li>
 </ul>
 <ul>
 <li>
 <p>Fill in all necessary data</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384480780.png"><img alt="Add Jumphost" src="../ssh/1384480780.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384480780.png"><img alt="Add Jumphost" src="../ssh/1384480780.png"/></a></p>
 <ul>
 <li><strong>Label</strong> - the name for configuration (mandatory)</li>
 <li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
@@ -3296,7 +3299,7 @@ errors and adjustments:</p>
 <ul>
 <li>
 <p>If a connection is open, you will see the <strong><em>Running</em></strong> status in the Jumphost list</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384513560.png"><img alt="Jumphost list" src="../ssh/1384513560.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384513560.png"><img alt="Jumphost list" src="../ssh/1384513560.png"/></a></p>
 </li>
 </ul>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
@@ -3308,7 +3311,7 @@ errors and adjustments:</p>
 <ol>
 <li>
 <p>Download the ssh key from Jumphost settings</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384153110.png"><img alt="Download ssh key" src="../ssh/1384153110.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384153110.png"><img alt="Download ssh key" src="../ssh/1384153110.png"/></a></p>
 </li>
 <li>
 <p>Save <code>jumphost-public-key.pub</code></p>
@@ -3349,14 +3352,14 @@ errors and adjustments:</p>
 <ol>
 <li>
 <p>Edit configuration that needs to be disabled, i.e.\</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384972305.png"><img alt="Jumphost settings" src="../ssh/1384972305.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384972305.png"><img alt="Jumphost settings" src="../ssh/1384972305.png"/></a></p>
 </li>
 <li>
 <p>Change the setting to <strong>Disabled</strong>,</p>
 </li>
 <li>
 <p>Click the <strong>Update</strong> button</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384906766.png"><img alt="Disable jumphost" src="../ssh/1384906766.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384906766.png"><img alt="Disable jumphost" src="../ssh/1384906766.png"/></a></p>
 </li>
 </ol>
 <h3 id="remove-jumphost-configuration">Remove Jumphost Configuration</h3>
@@ -3366,7 +3369,7 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> button</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/1384939529.png"><img alt="Delete jumphost" src="../ssh/1384939529.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/1384939529.png"><img alt="Delete jumphost" src="../ssh/1384939529.png"/></a></p>
 </li>
 <li>
 <p>(If SSH key authentication was enabled) Delete inserted IP Fabric public key from the <code>authorized_keys</code> file on the jumphost server added in the <a href="#ssh-key-configuration">SSH Key Configuration</a>.</p>
@@ -3386,15 +3389,15 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../systemctl_jumphost.png"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../systemctl_jumphost.png"><img alt="systemctl_jumphost" src="../systemctl_jumphost.png"/></a></p>
 </li>
 <li>
 <p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../systemctl_stop_jumphost.png"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../systemctl_stop_jumphost.png"><img alt="systemctl_stop_jumphost" src="../systemctl_stop_jumphost.png"/></a></p>
 </li>
 <li>
 <p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../systemctl_status_jumphost.png"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../systemctl_status_jumphost.png"><img alt="systemctl_status_jumphost" src="../systemctl_status_jumphost.png"/></a></p>
 </li>
 <li>
 <p>IP Fabric GUI should be accessible by now.</p>
@@ -3404,11 +3407,11 @@ errors and adjustments:</p>
 </li>
 <li>
 <p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../jumphost_delete_settings.png"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../jumphost_delete_settings.png"><img alt="jumphost_delete_settings" src="../jumphost_delete_settings.png"/></a></p>
 </li>
 <li>
 <p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../jumphost_exclude.png"><img alt="jumphost_exclude" src="../jumphost_exclude.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../jumphost_exclude.png"><img alt="jumphost_exclude" src="../jumphost_exclude.png"/></a></p>
 </li>
 </ol>
 <div class="admonition info">
@@ -3422,11 +3425,11 @@ errors and adjustments:</p>
 </div>
 <p>In the following example we configure the discovery process to use port <code>8080</code>
 for SSH connections to <code>192.168.168.10</code>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/edit_custom_ssh_telnet_port.png"><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/edit_custom_ssh_telnet_port.png"><img alt="edit custom ssh telnet port" src="../ssh/edit_custom_ssh_telnet_port.png"/></a></p>
 <p>As a result of such configuration, we would create a new item under the
 <strong>Custom SSH/Telnet ports</strong> configuration, which will be applied to every
 new snapshot created by IP Fabric.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../ssh/custom_ssh_telnet_ports.png"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ssh/custom_ssh_telnet_ports.png"><img alt="custom ssh telnet ports" src="../ssh/custom_ssh_telnet_ports.png"/></a></p>
 <h2 id="telnetssh-url-handler-on-ms-windows-7-and-later">Telnet/SSH URL Handler On MS Windows 7 And Later</h2>
 <p>If you want to be able to connect directly to a device from the IP Fabric web
 interface, you need to register a Telnet/SSH URL handler. You will be touching
@@ -3533,5 +3536,5 @@ appropriate backups, and are comfortable in doing so.</p>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.b9c29124.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
