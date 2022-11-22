@@ -2674,20 +2674,35 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="global-filter">Global Filter</h1>
-<p>To quickly limit the scope of devices you are viewing in the GUI, apply one of the three attribute filters.</p>
+<p>Applying an <strong>Attribute Filter</strong> in the IP Fabric GUI will quickly limit the
+scope of data that will be displayed in tables. Currently, adding a filter will
+not update Intent Rules or the Dashboard (in development).</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../global_filter.png"><img alt="global_filter" src="../global_filter.png"/></a></p>
 <p>The options for filtering are:</p>
 <ul>
 <li>Site Name</li>
 <li>Routing Domain</li>
 <li>STP Domain</li>
+<li>Any Snapshot Local Attribute<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../attributes_options.png"><img alt="attributes_options" src="../attributes_options.png"/></a></p>
-<p>After Selecting which Attribute to filter on. Select the values you wish to apply.
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../filter_values.png"><img alt="filter_values" src="../filter_values.png"/></a></p>
-<p>View the Device inventory table filtered to show only devices from the site <code>35COLO</code>
-<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../attributes_site.png"><img alt="attributes_site" src="../attributes_site.png"/></a></p>
+<p>For this example we will be filtering on <code>siteName</code> then select the value(s)
+you wish to apply.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../filter_values.png"><img alt="filter_values" src="../filter_values.png"/></a></p>
+<p>View the Device inventory table filtered to show only devices from the
+site <code>35COLO</code>.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../attributes_site.png"><img alt="attributes_site" src="../attributes_site.png"/></a></p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../filtered_devices.png"><img alt="filtered_devices" src="../filtered_devices.png"/></a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Please see <a href="../../IP_Fabric_Settings/device_attributes/">Device Attributes</a>
+documentation. Note that after configuring a new Attribute Globally; a new
+snapshot must be run in order for it to be applied. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

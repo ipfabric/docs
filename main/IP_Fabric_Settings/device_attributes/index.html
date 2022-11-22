@@ -1227,6 +1227,21 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-requirements">
+<span class="md-ellipsis">
+      Attribute Requirements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-attributes">
+<span class="md-ellipsis">
+      Global Attributes
+    </span>
+</a>
+<nav aria-label="Global Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#creating-rules-in-the-ui">
 <span class="md-ellipsis">
       Creating rules in the UI
@@ -1241,11 +1256,32 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#creating-rules-with-python-ipfabric-package">
+<a class="md-nav__link" href="#creating-global-attributes-in-python">
 <span class="md-ellipsis">
-      Creating Rules With python-ipfabric Package
+      Creating Global Attributes in Python
     </span>
 </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-attributes">
+<span class="md-ellipsis">
+      Local Attributes
+    </span>
+</a>
+<nav aria-label="Local Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-local-attributes-in-python">
+<span class="md-ellipsis">
+      Creating Local Attributes in Python
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2706,6 +2742,21 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-requirements">
+<span class="md-ellipsis">
+      Attribute Requirements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-attributes">
+<span class="md-ellipsis">
+      Global Attributes
+    </span>
+</a>
+<nav aria-label="Global Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#creating-rules-in-the-ui">
 <span class="md-ellipsis">
       Creating rules in the UI
@@ -2720,11 +2771,32 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#creating-rules-with-python-ipfabric-package">
+<a class="md-nav__link" href="#creating-global-attributes-in-python">
 <span class="md-ellipsis">
-      Creating Rules With python-ipfabric Package
+      Creating Global Attributes in Python
     </span>
 </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-attributes">
+<span class="md-ellipsis">
+      Local Attributes
+    </span>
+</a>
+<nav aria-label="Local Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-local-attributes-in-python">
+<span class="md-ellipsis">
+      Creating Local Attributes in Python
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2737,21 +2809,28 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="device-attributes">Device Attributes</h1>
-<p>Version 4.3 has added the ability to add attributes to a device based on the IP Fabric Unique Serial Number. In versions earlier than 6.0.0 this only supported manually changing a Device’s Site Name, Routing Domain, or STP Domain. IP Fabric now supports adding custom attributes. The attribute name may not contain any spaces or special characters.</p>
+<p>Version 4.3 has added the ability to add attributes to a device based on the IP
+Fabric Unique Serial Number. In versions earlier than 6.0.0 this only supported
+manually changing a Device’s Site Name, Routing Domain, or STP Domain. IP Fabric
+now supports adding custom attributes. The attribute name may not contain any
+spaces or special characters.</p>
+<h2 id="attribute-requirements">Attribute Requirements</h2>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../attributes_warning.png"><img alt="attributes_warning" src="../attributes_warning.png"/></a></p>
-<p>Attribute names must match the following regex <code>^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$</code>.</p>
-<p>Attributes can be assigned globally or locally to an individual snapshot.
-To Assign global attributes navigate to <code>Settings</code> → <code>Device Attributes</code>.
-Once an attribute is assigned a new snapshot is required for it to be applied.</p>
+<p>Attribute names must match the following
+regex <code>^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$</code>.  Underscore <code>_</code> is valid and will
+later be used to denote Hierarchical Attributes (i.e. REGION_COUNTRY).</p>
+<h2 id="global-attributes">Global Attributes</h2>
+<p>Attributes can be assigned globally or locally to an individual snapshot. To
+Assign global attributes navigate to <code>Settings</code> → <code>Device Attributes</code>. Once an
+attribute is assigned a new snapshot is required for it to be applied.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../device_attributes.png"><img alt="Device attributes" src="../device_attributes.png"/></a></p>
 <ul>
 <li>
 <p><strong>Serial Number</strong> is IP Fabric’s <strong>Unique Serial Number</strong> (API column
-  <code>sn</code>); this is not the column <strong>Serial Number</strong> which represents the
-  Hardware SN (API column <code>snHw</code>)</p>
+  <code>sn</code>); this is not the column <strong>Serial Number</strong> which represents the Hardware
+  SN (API column <code>snHw</code>)</p>
 <ul>
-<li>Devices discovered via API can also be assigned using Device
-  Attributes.</li>
+<li>Devices discovered via API can also be assigned using Device Attributes.</li>
 </ul>
 </li>
 </ul>
@@ -2765,12 +2844,11 @@ Once an attribute is assigned a new snapshot is required for it to be applied.</
 <ul>
 <li><strong>Value</strong> is the attribute’s value to assign.</li>
 </ul>
-<h2 id="creating-rules-in-the-ui">Creating rules in the UI</h2>
-<p>You can create rules in the UI by selecting the <strong>Add
-attribute</strong> button. This will provide you a form to fill out.</p>
+<h3 id="creating-rules-in-the-ui">Creating rules in the UI</h3>
+<p>You can create rules in the UI by selecting the <strong>Add attribute</strong> button. This
+will provide you a form to fill out.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../device_attributes_rules.png"><img alt="Device attributes rules" src="../device_attributes_rules.png"/></a></p>
-<p>The dropdown is intuitive and will let you search based on SN or
-hostname.</p>
+<p>The dropdown is intuitive and will let you search based on SN or hostname.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Currently, there is an issue where IP Fabric will not search
@@ -2778,9 +2856,8 @@ for devices discovered via an API in the UI. Even though it seems that no
 device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../device_attributes_dropdown.png"><img alt="Device attributes dropdown" src="../device_attributes_dropdown.png"/></a></p>
-<h2 id="creating-rules-via-the-api">Creating rules via the API</h2>
-<p>This is the preferred method of creating rules as it allows for bulk
-importing.</p>
+<h3 id="creating-rules-via-the-api">Creating rules via the API</h3>
+<p>This is the preferred method of creating rules as it allows for bulk importing.</p>
 <table>
 <thead>
 <tr>
@@ -2799,8 +2876,19 @@ importing.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h2>
-<p>Please see example at the <a href="https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py"><code>examples/settings/attributes.py</code></a>.</p>
+<h3 id="creating-global-attributes-in-python">Creating Global Attributes in Python</h3>
+<p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py"><code>examples/settings/attributes.py</code></a>.</p>
+<h2 id="local-attributes">Local Attributes</h2>
+<p>Local or ‘Snapshot Specific’ Attributes are applied during discovery and stored
+in the snapshot file separate from the Global Settings.  Currently, there is no 
+UI to view the Local Attributes (in development) and to interact with these
+you are required to either:</p>
+<ul>
+<li>Update the Global Settings and run a new Discovery.</li>
+<li>Use the API (or Python SDK) to view, add, edit attributes.</li>
+</ul>
+<h3 id="creating-local-attributes-in-python">Creating Local Attributes in Python</h3>
+<p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/local_attributes.py"><code>examples/settings/local_attributes.py</code></a>.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
