@@ -73,7 +73,7 @@ def generate_release_notes(rn, project_issues):
             Something that was not working as expected or turned out that did
             not meet customers\' demand.'''),
         ('Task', 'Tasks', '''Task may be associated
-            into Epics or Stories to form complext features.''')
+            into Epics or Stories to form complex features.''')
     ]
     for type in types:
         issues = []
