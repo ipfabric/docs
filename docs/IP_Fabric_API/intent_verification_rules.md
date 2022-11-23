@@ -85,7 +85,6 @@ So once we have found the report we are looking for, we retrieve the technology 
     "id",
     "sn",
     "hostname",
-    "siteKey",
     "siteName",
     "peerNbma",
     "peerTunnel",
