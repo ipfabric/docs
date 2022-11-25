@@ -66,7 +66,7 @@ Manual backup can be triggered from IP Fabric Administrative interface:
 
     3.  Enter **Password** to access FTP/SFTP server.
 
-    --8<-- "snippets/username_password_regex.md"
+  --8<-- "snippets/username_password_regex.md"
 
     4.  Specify a **Directory** where FTP/SFTP backup should be
         uploaded.
