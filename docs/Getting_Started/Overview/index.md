@@ -16,11 +16,13 @@ A distributed system of micro-service components resides within IP Fabric VM, al
 
 ### Browser Requirements
 
-To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers as of September 2022:
+To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:
 
-1. Google Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge) -- version `95.0.4638` and later.
-2. Mozilla Firefox and maintained forks (e.g. LibreWolf) -- version `96` an later.
-3. Safari -- version `14.1.2` and later.
+- Google Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge)
+- Mozilla Firefox and maintained forks (e.g. LibreWolf)
+- Safari
+
+We recommend using browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling for seamless experience.
 
 ### Hardware Requirements
 
