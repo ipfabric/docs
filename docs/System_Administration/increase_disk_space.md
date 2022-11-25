@@ -53,55 +53,69 @@ To do that follow LVM resource:
 When enabling local backups, a [backup](../IP_Fabric_Settings/advanced/system/system_backup.md) tool creates backups to the `/backup` directory.
 The tool first checks if the local backup directory exists and then the backups are created.
 
-Any additional disk or LVM volume (see hypervisor specific configuration on the bottom of this page) of your choice can be mounted as a backup directory.
-We recommend using for local backups an additional disk that is physically located on a different datastore then the root volume.
+Any additional disk (see hypervisor specific configuration on the bottom of this page) of your choice can be mounted as the backup directory.
+We recommend using for local backups an additional disk that is physically located on a different datastore than the root volume.
+
+!!! warning
+
+    The backup disk has to be partitioned with LVM. Specifically, the `/backup` directory has to be on the logical volume `backup` of the volume group `backup-vg`.
 
 ### Example Of A Physical Disk Being Mounted To `/backup` Directory
 
-Find a device which you want to use as a `/backup` directory. In this case `/dev/sdb`.
+Find a device which you want to use as the `/backup` directory. In this case, `vdb`.
 
 ```
-osadmin@ST-105:~$ lsblk
+osadmin@ipfabric:~$ lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda                       8:0    0 19.1G  0 disk
-|-sda1                    8:1    0  487M  0 part /boot
-|-sda2                    8:2    0    1K  0 part
-`-sda5                    8:5    0 18.6G  0 part
-  |-ipfabric--vg-root   254:0    0 17.6G  0 lvm  /
-  `-ipfabric--vg-swap_1 254:1    0  980M  0 lvm  [SWAP]
-sdb                       8:16   0   20G  0 disk             # <- I want to use this device for a /backup directory
-sr0                      11:0    1 1024M  0 rom
+vda                     254:0    0 76,3G  0 disk 
+├─vda1                  254:1    0  487M  0 part /boot
+├─vda2                  254:2    0    1K  0 part 
+└─vda5                  254:5    0 75,8G  0 part 
+  ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+  └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
+vdb                     254:16   0   20G  0 disk             # <- I want to use this device for the /backup directory
 ```
 
-
-Create a filesystem on the new `/dev/sdb` disk (in this example `ext4`)
+Create LVM physical volume on the disk `vdb`:
 
 ```
-osadmin@ST-105:~$ sudo mkfs.ext4 /dev/sdb
+osadmin@ipfabric:~$ sudo pvcreate /dev/vdb
+  Physical volume "/dev/vdb" successfully created.
+```
+
+Create the volume group `backup-vg`:
+
+```
+osadmin@ipfabric:~$ sudo vgcreate backup-vg /dev/vdb
+  Volume group "backup-vg" successfully created
+```
+
+Use the entire size of the volume group `backup-vg` for creating the logical volume `backup`:
+
+```
+osadmin@ipfabric:~$ sudo lvcreate -n backup -l 100%FREE backup-vg
+  Logical volume "backup" created.
+```
+
+Create a filesystem (in this example `ext4`) on the logical volume `backup`:
+
+```
+osadmin@ipfabric:~$ sudo mkfs.ext4 /dev/mapper/backup--vg-backup
 mke2fs 1.46.2 (28-Feb-2021)
-Discarding device blocks: done
-Creating filesystem with 5242880 4k blocks and 1310720 inodes
-Filesystem UUID: beb1625a-7d35-404b-bb05-972a46b8becf
-Superblock backups stored on blocks:
-	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+Discarding device blocks: done                            
+Creating filesystem with 5241856 4k blocks and 1310720 inodes
+Filesystem UUID: 26bf3259-8421-4b67-ad27-71fa55e57af8
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
 	4096000
 
-Allocating group tables: done
-Writing inode tables: done
+Allocating group tables: done                            
+Writing inode tables: done                            
 Creating journal (32768 blocks): done
-Writing superblocks and filesystem accounting information: done
+Writing superblocks and filesystem accounting information: done   
 ```
 
-Note down `Filesystem UUID` from previous example.
-
-If you loose history of terminal output, you can find it later with the following command
-
-```
-osadmin@ST-105:~$ sudo blkid --output value --match-tag UUID /dev/sdb
-beb1625a-7d35-404b-bb05-972a46b8becf
-```
-
-Create a new [fstab](https://wiki.archlinux.org/title/fstab) entry
+Create a new [fstab](https://wiki.archlinux.org/title/fstab) entry (for example with `sudo vi /etc/fstab`):
 
 !!! info
 
@@ -109,28 +123,34 @@ Create a new [fstab](https://wiki.archlinux.org/title/fstab) entry
     [Persistent block device naming](https://wiki.archlinux.org/title/Persistent_block_device_naming).
 
 ```
-UUID=beb1625a-7d35-404b-bb05-972a46b8becf /backup   ext4    defaults        0       0
+/dev/mapper/backup--vg-backup   /backup   ext4   defaults   0   0
 ```
 
-Disk can be now mounted with
+Create the `/backup` directory:
 
 ```
-osadmin@ST-105:~$ sudo mount /backup
+osadmin@ipfabric:~$ sudo mkdir /backup
 ```
 
-Finally check `lsblk`
+The logical volume `backup` on the disk `vdb` can be now mounted with:
 
 ```
-osadmin@ST-105:~$ lsblk
+osadmin@ipfabric:~$ sudo mount /backup
+```
+
+Finally, check the output of `lsblk`:
+
+```
+osadmin@ipfabric:~$ lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda                       8:0    0 19.1G  0 disk
-|-sda1                    8:1    0  487M  0 part /boot
-|-sda2                    8:2    0    1K  0 part
-`-sda5                    8:5    0 18.6G  0 part
-  |-ipfabric--vg-root   254:0    0 17.6G  0 lvm  /
-  `-ipfabric--vg-swap_1 254:1    0  980M  0 lvm  [SWAP]
-sdb                       8:16   0   20G  0 disk /backup
-sr0                      11:0    1 1024M  0 rom
+vda                     254:0    0 76,3G  0 disk 
+├─vda1                  254:1    0  487M  0 part /boot
+├─vda2                  254:2    0    1K  0 part 
+└─vda5                  254:5    0 75,8G  0 part 
+  ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+  └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
+vdb                     254:16   0   20G  0 disk 
+└─backup--vg-backup     253:2    0   20G  0 lvm  /backup
 ```
 
 ## Deprecated Resize Wizard
