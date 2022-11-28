@@ -2855,14 +2855,14 @@ TAR MD5: afbe34c8e97bc66c2af111c1ad3715ac
 <h3 id="upgrade-notices">Upgrade Notices</h3>
 <ul>
 <li>Upgrade to <code>v6.0</code> is only supported from <code>v5.0</code>. Please, upgrade to the latest <code>v5.0</code> before attempting upgrade to <code>v6.0</code>.</li>
-<li>Upgrade to <code>v6.0</code> will break custom SSO integrations an will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v5.0</code> in this file with <code>v6.0</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance please contact your Solution Architect.</li>
+<li>Upgrade to <code>v6.0</code> will break custom SSO integrations and will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v5.0</code> in this file with <code>v6.0</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance please contact your Solution Architect.</li>
 <li>This release brings changes to IP Fabric data model, snapshots need to be <strong>unloaded and loaded back</strong> to be updated. <strong>The locked snapshots are not unloaded automatically</strong>. You need to reload them manually after upgrade (unlock them, perform unload, load them back and lock them again). Otherwise, you might experience issues with diagrams and you will be missing attributes from the snapshot.</li>
 </ul>
 <h3 id="attributes">Attributes</h3>
 <p>You can now configure custom attributes for devices, this can be found under <code>Settings</code> → <code>Device Attributes</code>.</p>
 <p>Site separation is also fully backed by attributes by now. That resulted in API changes, for example <code>siteKey</code> has been removed from inventory calls.</p>
 <h3 id="rbac">RBAC</h3>
-<p>You can now specify the level of access a user has by restricting the ability to use certain API Endpoints, or you can restrict which devices the user has access to via Device Attributes. New settings can be find under:</p>
+<p>You can now specify the level of access a user has by restricting the ability to use certain API Endpoints, or you can restrict which devices the user has access to via Device Attributes. New settings can be found under:</p>
 <ul>
 <li><code>Settings</code> → <code>User Management</code> → <code>Polices</code></li>
 <li><code>Settings</code> → <code>User Management</code> → <code>Roles</code></li>
@@ -2913,7 +2913,7 @@ TAR MD5: afbe34c8e97bc66c2af111c1ad3715ac
 </ul>
 <h3 id="eula">EULA</h3>
 <ul>
-<li>Updated the End User Licensing agreement (EULA). Current users may be asked to resign any existing EULA.</li>
+<li>Updated the End User Licensing agreement (EULA). Current users may be asked to re-sign any existing EULA.</li>
 </ul>
 </article>
 </div>

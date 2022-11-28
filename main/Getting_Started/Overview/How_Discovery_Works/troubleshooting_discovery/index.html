@@ -372,22 +372,22 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#management-discovery-history">
 <span class="md-ellipsis">
-      Management &gt; Discovery History
+      Management --&gt; Discovery History
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings-advanced">
 <span class="md-ellipsis">
-      Settings &gt; Advanced
+      Settings --&gt; Advanced
     </span>
 </a>
-<nav aria-label="Settings &gt; Advanced" class="md-nav">
+<nav aria-label="Settings --&gt; Advanced" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#discovery-ip-scope">
 <span class="md-ellipsis">
-      Discovery -- IP Scope
+      Discovery --&gt; IP Scope
     </span>
 </a>
 </li>
@@ -418,7 +418,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings-authentication">
 <span class="md-ellipsis">
-      Settings &gt; Authentication
+      Settings --&gt; Authentication
     </span>
 </a>
 </li>
@@ -451,14 +451,14 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cdplldp-unmanaged-neighbors">
 <span class="md-ellipsis">
-      CDP/LLDP &gt; Unmanaged neighbors
+      CDP/LLDP --&gt; Unmanaged neighbors
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#interfaces-connectivity-matrix-unmanaged-neighbors-detail">
 <span class="md-ellipsis">
-      Interfaces &gt; Connectivity matrix &gt; Unmanaged Neighbors Detail
+      Interfaces --&gt; Connectivity matrix --&gt; Unmanaged Neighbors Detail
     </span>
 </a>
 </li>
@@ -2845,22 +2845,22 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#management-discovery-history">
 <span class="md-ellipsis">
-      Management &gt; Discovery History
+      Management --&gt; Discovery History
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings-advanced">
 <span class="md-ellipsis">
-      Settings &gt; Advanced
+      Settings --&gt; Advanced
     </span>
 </a>
-<nav aria-label="Settings &gt; Advanced" class="md-nav">
+<nav aria-label="Settings --&gt; Advanced" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#discovery-ip-scope">
 <span class="md-ellipsis">
-      Discovery -- IP Scope
+      Discovery --&gt; IP Scope
     </span>
 </a>
 </li>
@@ -2891,7 +2891,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings-authentication">
 <span class="md-ellipsis">
-      Settings &gt; Authentication
+      Settings --&gt; Authentication
     </span>
 </a>
 </li>
@@ -2924,14 +2924,14 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cdplldp-unmanaged-neighbors">
 <span class="md-ellipsis">
-      CDP/LLDP &gt; Unmanaged neighbors
+      CDP/LLDP --&gt; Unmanaged neighbors
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#interfaces-connectivity-matrix-unmanaged-neighbors-detail">
 <span class="md-ellipsis">
-      Interfaces &gt; Connectivity matrix &gt; Unmanaged Neighbors Detail
+      Interfaces --&gt; Connectivity matrix --&gt; Unmanaged Neighbors Detail
     </span>
 </a>
 </li>
@@ -3009,15 +3009,15 @@ Fabric can discover and crawl that site.</p>
 <p class="admonition-title">Important</p>
 <p>Adding new devices here will only discover them if <code>Limit discovery to already discovered devices</code> is not enabled in the Discovery Tasks Settings.</p>
 </div>
-<h3 id="management-discovery-history">Management &gt; Discovery History</h3>
+<h3 id="management-discovery-history">Management → Discovery History</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2952626286.png"><img alt="" src="../troubleshooting/2952626286.png"/></a></p>
 <p>The Discovery History table is also used by IP Fabric as the seed addresses.
 Once a device is discovered in a snapshot it will be placed in this table for
 use in other snapshots.</p>
 <ul>
 <li>The username last successfully used for a device will be recorded here and be
-  the first one tried in a future snapshot. If unsuccessful it will check the _
-  Settings &gt; Authentication_ list and go back through the decision tree. This
+  the first one tried in a future snapshot. If unsuccessful it will check the
+  <strong>Settings → Authentication</strong> list and go back through the decision tree. This
   may cause the next snapshot to take longer due to authentication failures but
   once this table is updated with the new username the discovery time will
   return to normal.</li>
@@ -3029,8 +3029,8 @@ use in other snapshots.</p>
   You can also filter on <code>Last discovery time</code>
   and delete records older than X months.</li>
 </ul>
-<h3 id="settings-advanced">Settings &gt; Advanced</h3>
-<h4 id="discovery-ip-scope">Discovery – IP Scope</h4>
+<h3 id="settings-advanced">Settings → Advanced</h3>
+<h4 id="discovery-ip-scope">Discovery → IP Scope</h4>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2952888388.png"><img alt="" src="../troubleshooting/2952888388.png"/></a></p>
 <p>IP Scope tells IP Fabric which networks to include or exclude in the discovery
 process. The default is set to include everything (0.0.0.0/0). When IP Fabric
@@ -3057,13 +3057,13 @@ new devices on your network.</p>
 <li>
 <p><strong>If you are not finding new devices in your snapshot ensure</strong>
 <code>Limit discovery to already discovered devices</code> <strong>is not enabled</strong>. If this is
-  enabled then only devices in the <em>Discovery History</em>
+  enabled then only devices in the <strong>Discovery History</strong>
   table will be added to the snapshot and no new devices (<strong>even if those
-  devices are manually added to the Settings &gt; Discovery Seed</strong>).</p>
+  devices are manually added to the Settings → Discovery Seed</strong>).</p>
 <p>If you want to limit to only discovered devices but want to add new
-devices this is still possible by going to <em>Discovery Snapshot</em> and
+devices this is still possible by going to <strong>Discovery Snapshot</strong> and
 manually adding devices into a snapshot which it will then be added to
-the <em>Discovery History</em> table and picked up in future snapshots.</p>
+the <strong>Discovery History</strong> table and picked up in future snapshots.</p>
 </li>
 </ul>
 <ul>
@@ -3072,8 +3072,8 @@ the <em>Discovery History</em> table and picked up in future snapshots.</p>
 </ul>
 <ul>
 <li><code>ARP</code> uses the ARP and MAC Address OUI information to find devices. If the OUI
-  is set for <code>Enabled for discovery</code> in the <em>Settings &gt;
-  OUI</em> table then IP Fabric will attempt to connect and discover the device.</li>
+  is set for <code>Enabled for discovery</code> in the <strong>Settings →
+  OUI</strong> table then IP Fabric will attempt to connect and discover the device.</li>
 </ul>
 <ul>
 <li><code>Routing Table</code> will try to connect to next-hop devices.</li>
@@ -3093,11 +3093,11 @@ explanation of these settings.</p>
 <p>Please
 see <a href="../../../../IP_Fabric_Settings/advanced/Vendors_API/">Vendors API</a> as
 each vendor has different requirements.</p>
-<h3 id="settings-authentication">Settings &gt; Authentication</h3>
+<h3 id="settings-authentication">Settings → Authentication</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2952888380.png"><img alt="" src="../troubleshooting/2952888380.png"/></a></p>
 <p>Authentication is where you define the username and password IP Fabric uses to
 connect a physical device (devices discovered through the API are managed
-through <em>Advanced &gt; Vendors API</em>). Ensure that you have a username configured
+through <strong>Advanced → Vendors API</strong>). Ensure that you have a username configured
 for all scopes of the network you wish to discover or set to the default
 of <code>0.0.0.0/0</code>.</p>
 <div class="admonition tip">
@@ -3111,7 +3111,7 @@ at <a href="../../../../IP_Fabric_Settings/authentication/">Authentication</a>.<
 <p>There can been a numerous amount of reason why IP Fabric did not discover a
 device from Day 0 or incorrectly configured devices, AAA outage, or insufficient
 authorization privileges to name a few. First we will take a look at some tables
-to help you find these and then show how to use the <em>Connectivity Report</em> to
+to help you find these and then show how to use the <strong>Connectivity Report</strong> to
 debug them.</p>
 <h3 id="vendor-specific-troubleshooting">Vendor Specific Troubleshooting</h3>
 <p>You may notice that some devices of a certain vendor are not being discovered.
@@ -3119,7 +3119,7 @@ Please read through the <a href="../../../../releases">Known Issues</a> to ensur
 not been already raised or a fix suggested. For instance some Firewall vendors
 require elevated or <code>admin</code> profiles in order to pull all data.</p>
 <h3 id="technology-tables">Technology Tables</h3>
-<h4 id="cdplldp-unmanaged-neighbors">CDP/LLDP &gt; Unmanaged neighbors</h4>
+<h4 id="cdplldp-unmanaged-neighbors">CDP/LLDP → Unmanaged neighbors</h4>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2952560777.png"><img alt="" src="../troubleshooting/2952560777.png"/></a></p>
 <p>This is the best table to start as not only do you see the local host and
 interface names but also the remote hostname, interface name, and remote IP.
@@ -3128,7 +3128,7 @@ remote hostnames in this list.</p>
 <p>You are able to export this view to CSV and then remove duplicate hostnames to
 get a unique list of devices. For instance in this demo I see a total of 59
 unmanaged neighbors but only 40 unique remote hostnames.</p>
-<h4 id="interfaces-connectivity-matrix-unmanaged-neighbors-detail">Interfaces &gt; Connectivity matrix &gt; Unmanaged Neighbors Detail</h4>
+<h4 id="interfaces-connectivity-matrix-unmanaged-neighbors-detail">Interfaces → Connectivity matrix → Unmanaged Neighbors Detail</h4>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2952921141.png"><img alt="" src="../troubleshooting/2952921141.png"/></a></p>
 <p>This table shows you unmanaged neighbors based many protocols and has a built-in
 default Intent Check for you.</p>
@@ -3181,8 +3181,8 @@ value could be a Loopback, management, physical, or virtual interface.
 Auditing your external NMS will need extra care as in many cases the
 IP’s will not match.</p>
 <p>One solution is to export your NMS inventory to Excel and the
-<em>Technology &gt; Addressing &gt; Managed IP</em> table to CSV and then perform
-vlookups between the two datasets. Since the <em>Managed IP</em> contains all
+<strong>Technology → Addressing → Managed IP</strong> table to CSV and then perform
+vlookups between the two datasets. Since the <strong>Managed IP</strong> contains all
 the IP addresses found on devices the NMS data should find a match.</p>
 <p>Another option is to use the device’s Serial Number. Serial numbers are
 not always unique and there is a chance of overlap so please take this
@@ -3202,7 +3202,7 @@ vdoms, etc.</p>
 <h3 id="connectivity-report">Connectivity Report</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2953314341.png"><img alt="" src="../troubleshooting/2953314341.png"/></a>
 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2953642038.png"><img alt="" src="../troubleshooting/2953642038.png"/></a></p>
-<p>The <em>Connectivity Report</em> is a per Snapshot report stating the successes or
+<p>The <strong>Connectivity Report</strong> is a per Snapshot report stating the successes or
 errors of IP addresses that IP Fabric tried to discover. Once you have a list of
 IP Addresses from the unmanaged neighbor tables above or perhaps an external
 Network Management System this is where you would start your troubleshooting
@@ -3233,17 +3233,17 @@ at <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>
 <h2 id="troubleshooting-configuration-management">Troubleshooting Configuration Management</h2>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="../troubleshooting/2953740355.png"><img alt="" src="../troubleshooting/2953740355.png"/></a></p>
 <p>Configuration Management is a separate process from discovery. First a device
-must be discover in a Snapshot and placed in the <em>Management &gt;
-Discovery History</em> table. Once in this table then next time IP Fabric is
+must be discover in a Snapshot and placed in the <strong>Management →
+Discovery History</strong> table. Once in this table then next time IP Fabric is
 scheduled to pull configs it should be populated in the list.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <ul>
-<li><em>Settings &gt; Advanced &gt; Snapshots</em> is set to periodically create
+<li><strong>Settings → Advanced → Snapshots</strong> is set to periodically create
   snapshots every day at 6AM</li>
 </ul>
 <ul>
-<li><em>Settings &gt; Advanced &gt; Configuration Management</em> is set to
+<li><strong>Settings → Advanced → Configuration Management</strong> is set to
   periodically create snapshots every day at 11PM</li>
 </ul>
 <ul>
@@ -3254,12 +3254,9 @@ scheduled to pull configs it should be populated in the list.</p>
 </div>
 <p>Other troubleshooting tips:</p>
 <ul>
-<li>Please ensure that in <em>Settings &gt; Authentication</em> you have enabled the correct
+<li>Please ensure that in <strong>Settings → Authentication</strong> you have enabled the correct
   usernames to <code>Use for configuration management</code>, if no usernames have this
   enabled then configs will not be backed up.</li>
-</ul>
-<ul>
-<li>Ensure the users have proper authorization for pulling configs.</li>
 </ul>
 </article>
 </div>
