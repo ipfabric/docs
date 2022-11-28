@@ -8,12 +8,7 @@ For example [Splunk](https://docs.splunk.com/Documentation/Splunk/9.0.1/Security
 does not currently support `TLSv1.3` which means any integration where Splunk
 directly talks to an IP Fabric instance an older TLS version must be re-enabled.
 
-!!! warning "Root Actions"
-
-    Any action on the CLI as a `root`, `osadmin` and/or `autoboss` user may
-    severely damage the product and/or the system itself. Such actions taken
-    without direct communication with the IP Fabric Support or Solution
-    Architect teams can render the system unusable.
+--8<-- "snippets/cli_root_access.md"
 
 ## Re-Enabling TLSv1.X
 

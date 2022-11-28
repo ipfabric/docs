@@ -17,6 +17,4 @@ The `osadmin` account has `sudo` rights with `osadmin` password and a standard 5
 
     Password cannot be changed via `cloudinit` or `passwd`, please run command `nimpee-net-config -t` to change `osadmin` password.
 
-!!! warning
-
-    Any action on the CLI as a `root`, `osadmin` and/or `autoboss` user may severely damage the product and/or the system itself. Such actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.
+--8<-- "snippets/cli_root_access.md"

@@ -132,12 +132,7 @@ If the user does any action in the web GUI or requests a new access token using 
 
 Many company standards requires shorter expiration times and this can be accomplished via the CLI settings.
 
-!!! warning "CLI Root Access"
-
-    Any action on the CLI as a `root` and/or `autoboss` user may severely 
-    damage the product and/or the system itself. Such actions taken without 
-    direct communication with the IP Fabric Support or Solution Architect 
-    teams can render the system unusable.
+--8<-- "snippets/cli_root_access.md"
 
 !!! warning "SSO Configuration"
 
