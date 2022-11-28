@@ -36,4 +36,4 @@ Changes in addressing can cause problems, especially if they are not well commun
 
 ### Connectivity Matrix
 
-Loss of connection, redundancy or part of the connection capacity can also cause problems. Changes in the connections between devices can be checked here and status can be added, removed, or not changed.
+Loss of connection, redundancy or part of the connection capacity can also cause problems. Changes in the connections between devices can be checked here (status can be `added`, `removed`, or `not changed`).

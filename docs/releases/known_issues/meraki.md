@@ -20,4 +20,3 @@ provide all the necessary data for the IP Fabric model. The following are known 
 * Can't add Meraki device into snapshot (refresh works)
 * Limited snapshot - Meraki tasks will be always downloaded
 * MX firewall uplink ports - not possible to determine if traffic load balancing is enabled and/or which port is primary and backup
-* Multiple Meraki devices can have the same public IP

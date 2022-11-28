@@ -9,7 +9,7 @@ Fabric VM, in case of address-restricted access. The CLI interface is the main t
 
 Command-line also allows the use of the standard networking tools, such as telnet, ssh, traceroute, ping or tcpdump.
 
-From 5.0 release, `osadmin` account is no longer restricted to `chroot` only and have access to the whole system.
+From 5.0 release, `osadmin` account is no longer restricted to `chroot` only and has access to the whole system.
 
 The `osadmin` account has `sudo` rights with `osadmin` password and a standard 5 minutes retention.
 

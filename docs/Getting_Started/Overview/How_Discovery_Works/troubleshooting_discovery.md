@@ -43,7 +43,7 @@ Fabric can discover and crawl that site.
 
     Adding new devices here will only discover them if `Limit discovery to already discovered devices` is not enabled in the Discovery Tasks Settings.
 
-### Management > Discovery History
+### Management --> Discovery History
 
 ![](troubleshooting/2952626286.png)
 
@@ -52,8 +52,8 @@ Once a device is discovered in a snapshot it will be placed in this table for
 use in other snapshots.
 
 - The username last successfully used for a device will be recorded here and be
-  the first one tried in a future snapshot. If unsuccessful it will check the _
-  Settings > Authentication_ list and go back through the decision tree. This
+  the first one tried in a future snapshot. If unsuccessful it will check the
+  **Settings --> Authentication** list and go back through the decision tree. This
   may cause the next snapshot to take longer due to authentication failures but
   once this table is updated with the new username the discovery time will
   return to normal.
@@ -64,9 +64,9 @@ use in other snapshots.
   You can also filter on `Last discovery time`
   and delete records older than X months.
 
-### Settings > Advanced
+### Settings --> Advanced
 
-#### Discovery -- IP Scope
+#### Discovery --> IP Scope
 
 ![](troubleshooting/2952888388.png)
 
@@ -98,21 +98,21 @@ new devices on your network.
 
 - **If you are not finding new devices in your snapshot ensure**
   `Limit discovery to already discovered devices` **is not enabled**. If this is
-  enabled then only devices in the _Discovery History_
+  enabled then only devices in the **Discovery History**
   table will be added to the snapshot and no new devices (**even if those
-  devices are manually added to the Settings > Discovery Seed**).
+  devices are manually added to the Settings --> Discovery Seed**).
 
   If you want to limit to only discovered devices but want to add new
-  devices this is still possible by going to _Discovery Snapshot_ and
+  devices this is still possible by going to **Discovery Snapshot** and
   manually adding devices into a snapshot which it will then be added to
-  the _Discovery History_ table and picked up in future snapshots.
+  the **Discovery History** table and picked up in future snapshots.
 
 - `xDP (neighbors)` signifies using CDP or LLDP information to discover devices
   in your network.
 
 - `ARP` uses the ARP and MAC Address OUI information to find devices. If the OUI
-  is set for `Enabled for discovery` in the _Settings >
-  OUI_ table then IP Fabric will attempt to connect and discover the device.
+  is set for `Enabled for discovery` in the **Settings -->
+  OUI** table then IP Fabric will attempt to connect and discover the device.
 
 - `Routing Table` will try to connect to next-hop devices.
 
@@ -136,13 +136,13 @@ Please
 see [Vendors API](../../../IP_Fabric_Settings/advanced/Vendors_API/index.md) as
 each vendor has different requirements.
 
-### Settings > Authentication
+### Settings --> Authentication
 
 ![](troubleshooting/2952888380.png)
 
 Authentication is where you define the username and password IP Fabric uses to
 connect a physical device (devices discovered through the API are managed
-through _Advanced > Vendors API_). Ensure that you have a username configured
+through **Advanced --> Vendors API**). Ensure that you have a username configured
 for all scopes of the network you wish to discover or set to the default
 of `0.0.0.0/0`.
 
@@ -159,7 +159,7 @@ at [Authentication](../../../IP_Fabric_Settings/authentication.md).
 There can been a numerous amount of reason why IP Fabric did not discover a
 device from Day 0 or incorrectly configured devices, AAA outage, or insufficient
 authorization privileges to name a few. First we will take a look at some tables
-to help you find these and then show how to use the _Connectivity Report_ to
+to help you find these and then show how to use the **Connectivity Report** to
 debug them.
 
 ### Vendor Specific Troubleshooting
@@ -171,7 +171,7 @@ require elevated or `admin` profiles in order to pull all data.
 
 ### Technology Tables
 
-#### CDP/LLDP > Unmanaged neighbors
+#### CDP/LLDP --> Unmanaged neighbors
 
 ![](troubleshooting/2952560777.png)
 
@@ -184,7 +184,7 @@ You are able to export this view to CSV and then remove duplicate hostnames to
 get a unique list of devices. For instance in this demo I see a total of 59
 unmanaged neighbors but only 40 unique remote hostnames.
 
-#### Interfaces > Connectivity matrix > Unmanaged Neighbors Detail
+#### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail
 
 ![](troubleshooting/2952921141.png)
 
@@ -238,8 +238,8 @@ could not discover.
     IP’s will not match.
 
     One solution is to export your NMS inventory to Excel and the
-    *Technology > Addressing > Managed IP* table to CSV and then perform
-    vlookups between the two datasets. Since the *Managed IP* contains all
+    **Technology --> Addressing --> Managed IP** table to CSV and then perform
+    vlookups between the two datasets. Since the **Managed IP** contains all
     the IP addresses found on devices the NMS data should find a match.
 
     Another option is to use the device’s Serial Number. Serial numbers are
@@ -263,7 +263,7 @@ could not discover.
 ![](troubleshooting/2953314341.png)
 ![](troubleshooting/2953642038.png)
 
-The _Connectivity Report_ is a per Snapshot report stating the successes or
+The **Connectivity Report** is a per Snapshot report stating the successes or
 errors of IP addresses that IP Fabric tried to discover. Once you have a list of
 IP Addresses from the unmanaged neighbor tables above or perhaps an external
 Network Management System this is where you would start your troubleshooting
@@ -303,16 +303,16 @@ at [No Devices Discovered](common_problems/no-devices-discovered.md).
 ![](troubleshooting/2953740355.png)
 
 Configuration Management is a separate process from discovery. First a device
-must be discover in a Snapshot and placed in the _Management >
-Discovery History_ table. Once in this table then next time IP Fabric is
+must be discover in a Snapshot and placed in the **Management -->
+Discovery History** table. Once in this table then next time IP Fabric is
 scheduled to pull configs it should be populated in the list.
 
 !!! example
 
-    - _Settings > Advanced > Snapshots_ is set to periodically create
+    - **Settings --> Advanced --> Snapshots** is set to periodically create
       snapshots every day at 6AM
 
-    - _Settings > Advanced > Configuration Management_ is set to
+    - **Settings --> Advanced --> Configuration Management** is set to
       periodically create snapshots every day at 11PM
 
     - New device will be found at 6AM but since the config mgmt is
@@ -321,8 +321,7 @@ scheduled to pull configs it should be populated in the list.
 
 Other troubleshooting tips:
 
-- Please ensure that in _Settings > Authentication_ you have enabled the correct
+- Please ensure that in **Settings --> Authentication** you have enabled the correct
   usernames to `Use for configuration management`, if no usernames have this
   enabled then configs will not be backed up.
 
-- Ensure the users have proper authorization for pulling configs.

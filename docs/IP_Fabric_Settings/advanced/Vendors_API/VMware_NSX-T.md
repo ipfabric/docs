@@ -16,7 +16,7 @@ To add NSX-T to discovery global settings, go to **Settings → Advanced → Ven
 - IP Fabric is supporting NSX-T from version 3.0 and higher,
   development was done on version 3.1.2, the latest version is 3.2. We
   are not supporting the 2.x version, there are a lot of differences,
-  Vmware’s end of general support was in September 2021. [Product Lifecycle Matrix](https://lifecycle.vmware.com/#/)
+  VMware’s end of general support was in September 2021. [Product Lifecycle Matrix](https://lifecycle.vmware.com/#/)
 
 - NSX-T running as on-premise (there are also cloud versions for AWS
   and Azure, where can NSX-T cloud be deployed on top of AWS/Azure

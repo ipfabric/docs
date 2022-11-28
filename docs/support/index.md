@@ -4,7 +4,7 @@ description: IP Fabric is provided as a fully managed solution. For any technica
 
 # Technical Support
 
-IP Fabric strive to ensure that the power of our Automated Network Assurance Platform is simple to access for every user. 
+IP Fabric strives to ensure that the power of our Automated Network Assurance Platform is simple to access for every user. 
 We want to make sure you find it simple to use and get the results you are looking for, and that you have the support you need to achieve that.
 The IP Fabric licence entitles every paying customer to full customer support so in case of any issue, please contact our support team at
 [support.ipfabric.io](https://support.ipfabric.io):
