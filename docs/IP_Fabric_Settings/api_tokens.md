@@ -4,7 +4,7 @@ description: The API tokens are a better fit for authenticating API calls origin
 
 # API tokens
 
-Until release 3.7.0, the only available means of authenticating the API
+Until release `3.7.0`, the only available means of authenticating the API
 calls from outside were either:
 
 - username and password (to be able to login),
@@ -12,23 +12,23 @@ calls from outside were either:
   requests. There is also a refresh token that is used to renew the
   short-lived UI tokens.
 
-The information about the user, along with user’s permissions, are
+The information about the user, along with the user’s permissions, are
 encoded in the token itself, so once the UI token is issued, it cannot
 be revoked (that’s why the tokens are typically short-lived).
 
-Starting from 3.7.0 the API tokens (long-lived) were introduced for
+Starting from `3.7.0`, the API tokens (long-lived) were introduced for
 authenticating API calls. They are a bit slower than UI tokens as the
 token is verified in DB with each API call, but they can be revoked easily.
 
-To use API tokens, you need to generate them in UI.
+To use API tokens, you need to generate them in the UI.
 
 Please note that the token string is visible / editable only when you
 create the token, you will not see it or be able to modify it later.
 For this reason, please make sure you copy the token string when creating
 the API token in the UI.
 
-To use the token, send it in `X-API-Token` HTTP header along the
-request.
+To use the token, send it in the `X-API-Token` HTTP header along with the
+request:
 
 ```bash
 curl -v -H "X-Api-Token: ${YOUR_TOKEN}" https://${IPF_HOST_PORT}/api/v5.0/api-tokens
