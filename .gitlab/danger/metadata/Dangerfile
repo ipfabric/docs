@@ -1,9 +1,5 @@
 # rubocop:disable Style/SignalException
 
-if gitlab.mr_body.size < 5
-  warn "Please provide a proper merge request description."
-end
-
 if gitlab.mr_json["assignees"].empty?
   warn "This merge request does not have any assignee yet. Setting an assignee clarifies who needs to take action on the merge request at any given time. Please @#{gitlab.pr_author} rectify asap."
 end
