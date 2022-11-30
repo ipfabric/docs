@@ -2520,6 +2520,24 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#v601-tbd">
+<span class="md-ellipsis">
+      v6.0.1 (TBD)
+    </span>
+</a>
+<nav aria-label="v6.0.1 (TBD)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bug-fixes">
+<span class="md-ellipsis">
+      Bug Fixes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#v600-nov-16th-2022">
 <span class="md-ellipsis">
       v6.0.0 (Nov 16th, 2022)
@@ -2760,6 +2778,24 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#v601-tbd">
+<span class="md-ellipsis">
+      v6.0.1 (TBD)
+    </span>
+</a>
+<nav aria-label="v6.0.1 (TBD)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bug-fixes">
+<span class="md-ellipsis">
+      Bug Fixes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#v600-nov-16th-2022">
 <span class="md-ellipsis">
       v6.0.0 (Nov 16th, 2022)
@@ -2837,6 +2873,24 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="ip-fabric-v60-aertex">IP Fabric v6.0 (Aertex)</h1>
+<h2 id="v601-tbd">v6.0.1 (TBD)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>Discovery – <em>discovery</em> was hanging on <code>loadGraphCache</code> causing infinite discovery</li>
+<li>Logs – large logs in <code>/var/log/nimpee/*</code> are now not divided into multiple files and are compressed</li>
+<li>Path Lookup – IP Fabric GUI crashed when running a certain <em>E2E Path Lookup</em></li>
+<li>Path Lookup – MPLS Path lookup displayed a graph incorrectly</li>
+<li>Path Lookup – certain <em>E2E Path lookups</em> were displaying <code>id=null</code></li>
+<li>Diagrams – <code>xDP</code> endpoints were not displayed when viewing a link</li>
+<li>Cisco – when <code>prefix-list</code> with no entries was present, no prefix lists were parsed for a device</li>
+<li>Cisco – <code>static</code> MAC Addresses were not part of MAC address tables</li>
+<li>Cisco – API calls to <code>APIC</code> were getting <code>400/dataset is too big</code> response, data are now requested in smaller chunks</li>
+<li>VMware NSX – <em>Diagram</em> routing view between <code>Tier1</code> and <code>Tier2</code> devices was fixed</li>
+<li>VMware NSX – virtual machines were not parsed into <strong>Technology → Cloud</strong></li>
+<li>Brocade – version detection for Ruckus Switches <code>08.0.70</code> was fixed</li>
+<li>F5 – managed IP addresses had incorrect VRF</li>
+<li>Aruba – operating system for ArubaMM devices was not detected correctly</li>
+</ul>
 <h2 id="v600-nov-16th-2022">v6.0.0 (Nov 16<sup>th</sup>, 2022)</h2>
 <div class="admonition important">
 <p class="admonition-title">Not a GA</p>
