@@ -2682,7 +2682,7 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="api-tokens">API tokens</h1>
-<p>Until release 3.7.0, the only available means of authenticating the API
+<p>Until release <code>3.7.0</code>, the only available means of authenticating the API
 calls from outside were either:</p>
 <ul>
 <li>username and password (to be able to login),</li>
@@ -2690,19 +2690,19 @@ calls from outside were either:</p>
   requests. There is also a refresh token that is used to renew the
   short-lived UI tokens.</li>
 </ul>
-<p>The information about the user, along with user’s permissions, are
+<p>The information about the user, along with the user’s permissions, are
 encoded in the token itself, so once the UI token is issued, it cannot
 be revoked (that’s why the tokens are typically short-lived).</p>
-<p>Starting from 3.7.0 the API tokens (long-lived) were introduced for
+<p>Starting from <code>3.7.0</code>, the API tokens (long-lived) were introduced for
 authenticating API calls. They are a bit slower than UI tokens as the
 token is verified in DB with each API call, but they can be revoked easily.</p>
-<p>To use API tokens, you need to generate them in UI.</p>
+<p>To use API tokens, you need to generate them in the UI.</p>
 <p>Please note that the token string is visible / editable only when you
 create the token, you will not see it or be able to modify it later.
 For this reason, please make sure you copy the token string when creating
 the API token in the UI.</p>
-<p>To use the token, send it in <code>X-API-Token</code> HTTP header along the
-request.</p>
+<p>To use the token, send it in the <code>X-API-Token</code> HTTP header along with the
+request:</p>
 <div class="highlight"><pre><span></span><code>curl -v -H <span class="s2">"X-Api-Token: </span><span class="si">${</span><span class="nv">YOUR_TOKEN</span><span class="si">}</span><span class="s2">"</span> https://<span class="si">${</span><span class="nv">IPF_HOST_PORT</span><span class="si">}</span>/api/v5.0/api-tokens
 </code></pre></div>
 </article>

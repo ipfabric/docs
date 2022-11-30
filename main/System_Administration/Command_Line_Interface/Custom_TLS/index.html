@@ -2731,12 +2731,12 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="custom-tls-settings">Custom TLS Settings</h1>
-<p>Since IP Fabric version <code>v5.0</code> the only supported TLS version was set to <code>v1.3</code>
-for increased security purposes. Some older browser or proxies may not support
+<p>Since IP Fabric version <code>v5.0</code>, the only supported TLS version is set to <code>v1.3</code>
+for increased security. Some older browser or proxies may not support
 this and will require manual intervention to re-enable the older TLS version.</p>
-<p>For example <a href="https://docs.splunk.com/Documentation/Splunk/9.0.1/Security/SetyourSSLversion">Splunk</a>
+<p>For example, <a href="https://docs.splunk.com/Documentation/Splunk/9.0.1/Security/SetyourSSLversion">Splunk</a>
 does not currently support <code>TLSv1.3</code> which means any integration where Splunk
-directly talks to an IP Fabric instance an older TLS version must be re-enabled.</p>
+directly talks to an IP Fabric instance, an older TLS version must be re-enabled.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the CLI as the <code>root</code>, <code>osadmin</code> and/or <code>autoboss</code> user may severely damage the product and/or the system itself. Such actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
@@ -2744,38 +2744,39 @@ directly talks to an IP Fabric instance an older TLS version must be re-enabled.
 <h2 id="re-enabling-tlsv1x">Re-Enabling TLSv1.X</h2>
 <div class="admonition warning">
 <p class="admonition-title">IP Fabric Updates</p>
-<p>Once this file has changed it will not be updated during an IP Fabric
+<p>Once this file has changed, it will not be updated during an IP Fabric
 system upgrade.  A new version of the file named <code>ipf-ssl-params.dpkg-new</code>
 will be placed in that directory.  There may be other changes which could
 affect the usability of the product.  Please follow the
 <a href="#after-ip-fabric-system-update">After Upgrade Instructions</a>.</p>
 </div>
-<p>To re-enable an older version of TLS please perform the following:</p>
+<p>To re-enable an older version of TLS, please perform the following:</p>
 <ol>
-<li>Log into the IP Fabric CLI using <code>osadmin</code> user.</li>
-<li>Elevate to root using <code>sudo -s</code> command.</li>
+<li>Log into the IP Fabric CLI using the <code>osadmin</code> user.</li>
+<li>Elevate to root using the <code>sudo -s</code> command.</li>
 <li>Edit <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with your preferred editor.</li>
-<li>Change the first line of the configuration by added other TLS versions separated by spaces:<ol>
+<li>Change the first line of the configuration by adding other TLS versions separated by spaces:<ol>
 <li>Original: <code>ssl_protocols TLSv1.3;</code></li>
 <li>Updated: <code>ssl_protocols TLSv1.2 TLSv1.3;</code></li>
 </ol>
 </li>
-<li>Save the file and restart the service using <code>systemctl restart nginx</code></li>
+<li>Save the file and restart the <code>nginx</code> service using <code>systemctl restart nginx</code>.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Other TLS Settings</p>
 <p>It is possible to adjust other TLS settings such as ciphers using the same
-instructions however only re-enabling TLSv1.2 has been tested by the
+instructions. However, only re-enabling TLSv1.2 has been tested by the
 Solution Architect team.</p>
 </div>
 <h2 id="after-ip-fabric-system-update">After IP Fabric System Update</h2>
-<p>After an IP Fabric system update it is recommended to check that no new updates
-to this file have been made. Because the file has been customized by the user
-the update will not override it and created a new file with the updated version.</p>
+<p>After an IP Fabric system update, it is recommended to check that no new updates
+to this file have been made. Because the file has been customized by the user,
+the update will not override it and will instead create a new file with the 
+updated version.</p>
 <p>Below you will find an example on how to check if a new version of the
 configuration file is added and how to perform a diff. If changes other than
-your own has been discovered please make the necessary updates and
-restart the <code>nginx</code>.</p>
+your own have been discovered, please make the necessary updates and
+restart the <code>nginx</code> service.</p>
 <div class="highlight"><pre><span></span><code>root@ipfabric:/home/osadmin# ls /etc/nginx/conf.d/ipf-ssl-params.dpkg-new
 /etc/nginx/conf.d/ipf-ssl-params.dpkg-new
 
