@@ -160,6 +160,3 @@ exposes the endpoints (can be used with filters as well).
 - `snapshot` -- defines snapshot ID or we can use: `$last`, `$prev`
   , `$lastlocked`
 - `reports` -- Intent rules definition (optional)
-
-For more information, please,
-see [Request payload in generated API documentation](../api/#header-request-payload).
