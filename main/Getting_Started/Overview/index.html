@@ -2845,22 +2845,22 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="ip-fabric-overview">IP Fabric Overview</h1>
-<p>The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.</p>
+<p>The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or Telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.</p>
 <h2 id="architecture">Architecture</h2>
-<p>A distributed system of micro-service components resides within IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port 443 of the VM’s IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.</p>
+<p>A distributed system of micro-service components resides within the IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port <code>443</code> of the VM’s IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="architecture.png"><img alt="IP Fabric Architecture" src="architecture.png"/></a></p>
 <h2 id="operational-requirements">Operational Requirements</h2>
 <h3 id="browser-requirements">Browser Requirements</h3>
-<p>To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:</p>
+<p>To access your IP Fabric GUI, we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:</p>
 <ul>
-<li>Google Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge)</li>
+<li>Google Chrome and Chromium-based browsers (e.g. Brave, Opera, Vivaldi, Edge)</li>
 <li>Mozilla Firefox and maintained forks (e.g. LibreWolf)</li>
 <li>Safari</li>
 </ul>
-<p>We recommend using browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling for seamless experience.</p>
+<p>For seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.</p>
-<p>Minimum requirements are:</p>
+<p>The IP Fabric platform runs on any x64 CPU with the following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4 GB of RAM when idle, and an additional 12 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
+<p>The minimum requirements are:</p>
 <table>
 <thead>
 <tr>
@@ -2871,9 +2871,9 @@ differently in you production deployment, than described here.
 </thead>
 <tbody>
 <tr>
-<td>4C</td>
+<td>4</td>
 <td>16 GB</td>
-<td>90GB</td>
+<td>90 GB</td>
 </tr>
 </tbody>
 </table>
@@ -2928,9 +2928,9 @@ differently in you production deployment, than described here.
 </table>
 <div class="admonition info">
 <p class="admonition-title">Additional resources requirements</p>
-<p>To make sure you have enough resources, please use the following formulas.</p>
-<p>Data <strong>disk storage</strong> requires 1MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots =&gt; 135 GB data storage).</p>
-<p><strong>Memory</strong> requires 5MB of RAM per device per each <strong>loaded</strong> snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) =&gt; 18 GB RAM).</p>
+<p>To make sure you have enough resources, please use the following formulas:</p>
+<p>Data <strong>disk storage</strong> requires 1 MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots =&gt; 135 GB data storage).</p>
+<p><strong>Memory</strong> requires 5 MB of RAM per device per each <strong>loaded</strong> snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) =&gt; 18 GB RAM).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3040,7 +3040,7 @@ differently in you production deployment, than described here.
 <p>Internet connectivity is used to check product updates, upgrades, setup support VPN, send error reports, and submit support tickets.</p>
 <h3 id="network-access-credentials-requirements">Network Access Credentials Requirements</h3>
 <h4 id="network-device-access">Network Device Access</h4>
-<p>IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or TELNET protocols. All device interaction is accounted on the platform and only “read-only” or “operator” group privilege level 1 credentials are required.</p>
+<p>IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or Telnet. All device interaction is accounted on the platform and only <code>read-only</code> or <code>operator</code> group privilege level 1 credentials are required.</p>
 <p>The following list contains an example of commands used for Cisco IOS:</p>
 <div class="highlight"><pre><span></span><code>terminal length 0
 show version
@@ -3061,7 +3061,7 @@ show standby [brief]
 show vrrp [brief]
 show vlan brief
 </code></pre></div>
-<p>In the beginning, IP Fabric fingerprints the device using the “show version” command (or equivalent) to identify a vendor and a system version. A “terminal length” command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.</p>
+<p>In the beginning, IP Fabric fingerprints the device using the <code>show version</code> command (or equivalent) to identify a vendor and a system version. A <code>terminal length</code> command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.</p>
 <h4 id="additional-device-access">Additional Device Access</h4>
 <p>Since firewalls do not follow privilege levels, it may be necessary to
 explicitly specify the commands allowed for each user. The following list specifies the exec-mode commands needed for firewall discovery.</p>
@@ -3085,7 +3085,7 @@ privilege cmd level 1 mode exec command terminal
 <p>Therefore, we suggest 2-stage deployment of the new IP Fabric releases for complex or critical implementations. The first stage is <em>staging</em> deployment, used to verify the functionality of the new release within the customer’s environment.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You will need a valid license for the staging deployment. Please, contact our sales team to check eligibility for a free complimentary license.</p>
+<p>You will need a valid license for the staging deployment. Please contact our sales team to check eligibility for a free complimentary license.</p>
 </div>
 <p>The second stage is the deployment to the production / live environment. The staging environment’s sizing follows the suggestions mentioned above for a standard deployment. We don’t provide special staging builds. These are regular production builds, which are just deployed separately not to potentially disrupt the day-to-day use of IP Fabric within the organization.</p>
 <p>We suggest that you make staging as close as possible to the final production environment. The staging environment should discover the same devices as the production (e.g., there is only a limited value if the staging environment “sees” only 500 network devices, while the whole network consists of thousands of devices). On the other side, it is perfectly fine to provision the staging environment dynamically if your deployment environment allows it. Also, a typical “acceptance test” on the staging environment lasts only a couple of days to verify overall functionality.</p>
