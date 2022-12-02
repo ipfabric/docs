@@ -2955,11 +2955,21 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="2896265219.png"><img alt="Dropdown" src="2896265219.png"/></a></p>
 <h3 id="creating-rules-via-the-api">Creating Rules Via The API</h3>
-<p>This is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> verb on <code>https://&lt;IPF_URL&gt;/api/v5.0/attributes/global</code>. Data looks like</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="nt">"sn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;IPF SERIAL NUMBER&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;SITE NAME&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"siteName"</span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<p>The API is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> method requested on endpoint <code>https://&lt;IPF_URL&gt;/api/&lt;IPF_API_VERSION&gt;/attributes/global</code>. An example of the payload can be seen below:</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"sn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;DEVICE SERIAL NUMBER01&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;SITE NAME&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"siteName"</span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"sn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;DEVICE SERIAL NUMBER02&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;SITE NAME&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"siteName"</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It’s important to use specifically the <code>siteName</code> attribute to define the Sites in the IP Fabric. You can define other attributes, but site-separation is solely based on <code>siteName</code>.</p>
+</div>
 <h3 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h3>
 <p>Please see example at <a href="https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py">GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
