@@ -4,11 +4,11 @@ description: The IP Fabric network infrastructure management platform provides o
 
 # IP Fabric Overview
 
-The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.
+The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or Telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.
 
 ## Architecture
 
-A distributed system of micro-service components resides within IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port 443 of the VM's IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.
+A distributed system of micro-service components resides within the IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port `443` of the VM's IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.
 
 ![IP Fabric Architecture](architecture.png)
 
@@ -16,23 +16,23 @@ A distributed system of micro-service components resides within IP Fabric VM, al
 
 ### Browser Requirements
 
-To access your IP Fabric GUI we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:
+To access your IP Fabric GUI, we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:
 
-- Google Chrome and Chromium based browsers (e.g. Brave, Opera, Vivaldi, Edge)
+- Google Chrome and Chromium-based browsers (e.g. Brave, Opera, Vivaldi, Edge)
 - Mozilla Firefox and maintained forks (e.g. LibreWolf)
 - Safari
 
-We recommend using browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling for seamless experience.
+For seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4GB of RAM when idle, and an additional 12GB of RAM is required for collected network information. The base installation requires 80GB of HDD space and an additional 50MB per device for the network.
+The IP Fabric platform runs on any x64 CPU with the following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4 GB of RAM when idle, and an additional 12 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.
 
-Minimum requirements are:
+The minimum requirements are:
 
-| CPU | RAM   | HDD  |
-| --- | ----- | ---- |
-| 4C  | 16 GB | 90GB |
+| CPU | RAM   | HDD   |
+| --- | ----- | ----- |
+| 4   | 16 GB | 90 GB |
 
 The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.
 
@@ -47,11 +47,11 @@ The following table represents the recommended hardware requirements for optimal
 
 !!! info "Additional resources requirements"
 
-    To make sure you have enough resources, please use the following formulas.
+    To make sure you have enough resources, please use the following formulas:
 
-    Data **disk storage** requires 1MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots => 135 GB data storage).
+    Data **disk storage** requires 1 MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots => 135 GB data storage).
 
-    **Memory** requires 5MB of RAM per device per each **loaded** snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) => 18 GB RAM).
+    **Memory** requires 5 MB of RAM per device per each **loaded** snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) => 18 GB RAM).
 
 !!! note
 
@@ -91,7 +91,7 @@ Internet connectivity is used to check product updates, upgrades, setup support 
 
 #### Network Device Access
 
-IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or TELNET protocols. All device interaction is accounted on the platform and only "read-only" or "operator" group privilege level 1 credentials are required.
+IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or Telnet. All device interaction is accounted on the platform and only `read-only` or `operator` group privilege level 1 credentials are required.
 
 The following list contains an example of commands used for Cisco IOS:
 
@@ -116,7 +116,7 @@ show vrrp [brief]
 show vlan brief
 ```
 
-In the beginning, IP Fabric fingerprints the device using the "show version" command (or equivalent) to identify a vendor and a system version. A "terminal length" command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.
+In the beginning, IP Fabric fingerprints the device using the `show version` command (or equivalent) to identify a vendor and a system version. A `terminal length` command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.
 
 #### Additional Device Access
 
@@ -152,7 +152,7 @@ Therefore, we suggest 2-stage deployment of the new IP Fabric releases for compl
 
 !!! info
 
-    You will need a valid license for the staging deployment. Please, contact our sales team to check eligibility for a free complimentary license.
+    You will need a valid license for the staging deployment. Please contact our sales team to check eligibility for a free complimentary license.
 
 The second stage is the deployment to the production / live environment. The staging environment's sizing follows the suggestions mentioned above for a standard deployment. We don't provide special staging builds. These are regular production builds, which are just deployed separately not to potentially disrupt the day-to-day use of IP Fabric within the organization.
 
