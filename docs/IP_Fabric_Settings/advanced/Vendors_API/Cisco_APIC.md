@@ -19,3 +19,8 @@ Afterward, choose Cisco APIC from the list and fill in
 - **Base URL** of Cisco APIC e.g. `https://cisco-apic-ip-address`
 
 ![Cisco APIC api add](cisco/apic/ciscoApicAPIAdd.png)
+
+
+## Know issues
+
+[APIC Tables are all empty except Controllers](../../../releases/known_issues/cisco/apic_tables_empty.md)
