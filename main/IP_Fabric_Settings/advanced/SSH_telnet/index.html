@@ -448,126 +448,20 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/04-initial_discovery/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/04-configuration_wizard/">
+<span class="md-ellipsis">
+    Configuration Wizard
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/05-initial_discovery/">
 <span class="md-ellipsis">
     Initial Discovery
     
   </span>
 </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" id="__nav_2_2_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2_6">
-<span class="md-ellipsis">
-    Configuration Wizard
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Configuration Wizard" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_2_2_6">
-<span class="md-nav__icon md-icon"></span>
-            Configuration Wizard
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/">
-<span class="md-ellipsis">
-    Overview
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/01-credentials/">
-<span class="md-ellipsis">
-    01 - Configure Credentials
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/02-enable/">
-<span class="md-ellipsis">
-    02 - Enable Mode Passwords (Optional)
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/03-discovery_seed/">
-<span class="md-ellipsis">
-    03 - Starting Point For The Discovery (Optional)
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/04-include_exclude_nets/">
-<span class="md-ellipsis">
-    04 - Include Or Exclude Networks In Discovery
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/05-site_separation/">
-<span class="md-ellipsis">
-    05 - Site Separation
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/06-cli_settings/">
-<span class="md-ellipsis">
-    06 - CLI Settings
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/07-vendors_api/">
-<span class="md-ellipsis">
-    07 - Vendors API
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/08_-_Configuration_Management/">
-<span class="md-ellipsis">
-    08 - Configuration Management
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/09_-_Schedule_System_Backup/">
-<span class="md-ellipsis">
-    09 - Schedule System Backup
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/10_-_Schedule_System_Maintenance/">
-<span class="md-ellipsis">
-    10 - Schedule System Maintenance
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/Configuration_Wizard/11_-_Configuration_Complete/">
-<span class="md-ellipsis">
-    11 - Configuration Complete
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -3255,7 +3149,7 @@ errors and adjustments:</p>
 <table>
 <thead>
 <tr>
-<th>Python version on the jumphost</th>
+<th>Jumphost Python Version</th>
 <th></th>
 </tr>
 </thead>
@@ -3274,19 +3168,19 @@ errors and adjustments:</p>
 </tr>
 <tr>
 <td>3.6</td>
-<td>supported</td>
+<td><strong>supported</strong></td>
 </tr>
 <tr>
 <td>3.7</td>
-<td>supported</td>
+<td><strong>supported</strong></td>
 </tr>
 <tr>
 <td>3.8</td>
-<td>supported</td>
+<td><strong>supported</strong></td>
 </tr>
 <tr>
 <td>3.9</td>
-<td>supported</td>
+<td><strong>supported</strong></td>
 </tr>
 <tr>
 <td>3.10</td>
@@ -3294,9 +3188,12 @@ errors and adjustments:</p>
 </tr>
 </tbody>
 </table>
-<p>tested – jumphost was successfully tested, but it is not officially supported by the underlying SSH tunnel project</p>
-<p>supported – jumphost was successfully tested, and it is officially supported by the underlying SSH tunnel project</p>
-<p>We strongly recommend using <strong>python 3.6-3.9</strong> on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.</p>
+<div class="admonition note">
+<p class="admonition-title">Tested vs. Supported</p>
+<p><code>tested</code> – Python version was successfully tested on a jumphost however it is not officially supported by the underlying SSH tunnel project.</p>
+<p><code>supported</code> – Python version was successfully tested on a jumphost and it is officially supported by the underlying SSH tunnel project.
+<strong>We strongly recommend using the supported Python versions in your production environment.</strong></p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.</p>
