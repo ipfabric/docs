@@ -1,5 +1,5 @@
 !!! info "Username and Password character restrictions"
 		
-        Username must start with `A-Za-z` and can contain only `A-Za-z0-9`. 
+        Username must match the following `/^[a-zA-Z0-9_][a-zA-Z0-9_-]*\$?$/`.
 
-        Password can contain only the following characters `A-Za-z0-9.,/-_@%^:=+`
+        Password must match the following `[A-Za-z0-9.,/_@%^:=+ -]*`.
