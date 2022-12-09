@@ -73,22 +73,23 @@ errors and adjustments:
 
 We successfully tested IP Fabric against jumphosts with the following python versions:
 
-| Python version on the jumphost |           |
-| ------------------------------ | --------- |
-| 2.7                            | tested    |
-| 3.4                            | tested    |
-| 3.5                            | tested    |
-| 3.6                            | supported |
-| 3.7                            | supported |
-| 3.8                            | supported |
-| 3.9                            | supported |
-| 3.10                           | tested    |
+| Jumphost Python Version |               |
+|-------------------------|---------------|
+| 2.7                     | tested        |
+| 3.4                     | tested        |
+| 3.5                     | tested        |
+| 3.6                     | **supported** |
+| 3.7                     | **supported** |
+| 3.8                     | **supported** |
+| 3.9                     | **supported** |
+| 3.10                    | tested        |
 
-tested -- jumphost was successfully tested, but it is not officially supported by the underlying SSH tunnel project
+!!! Note "Tested vs. Supported"
 
-supported -- jumphost was successfully tested, and it is officially supported by the underlying SSH tunnel project
+    `tested` -- Python version was successfully tested on a jumphost however it is not officially supported by the underlying SSH tunnel project.
 
-We strongly recommend using **python 3.6-3.9** on the jumphost side as it is officially supported by the underlying SSH tunnel tool project.
+    `supported` -- Python version was successfully tested on a jumphost and it is officially supported by the underlying SSH tunnel project.
+    **We strongly recommend using the supported Python versions in your production environment.**
 
 !!! warning
 

@@ -70,7 +70,7 @@ at [Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-i
 ## Configuration
 
 The simplest way for first time configuration of IP Fabric is through the use of
-the [Configuration Wizard](Configuration_Wizard/index.md) which will guide you
+the [Configuration Wizard](04-configuration_wizard.md) which will guide you
 through the process of adding device authentication, discovery seeds, networks
 to include/exclude in discovery, Vendor API setup, along with other settings.
 
