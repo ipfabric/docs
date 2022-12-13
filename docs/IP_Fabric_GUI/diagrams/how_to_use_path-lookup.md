@@ -9,14 +9,35 @@ description: In this section we take you through on how To Use Path Look-Up.
 ![Unicast form](pathlookup/unicast.png)
 
 ### First Hop Algorithm And VRF
-First hop algorithm can be defined - when **Automatic** option is selected,
-source VRF can be automatically detected, or selected manually.
+
+First Hop Algorithm adds possibility to start path lookup simulation from a different device than the closest one.
+
+If **Automatic** option is selected, IP Fabric starts path lookup simulation from the closest device possible, VRF is also automatically selected by default, but can be changed manually.
 
 ![First hop algorithm](pathlookup/first_hop_algorithm.png)
 
+**User defined** First Hop Algorithm can be useful when simulating flow where the source network is not known by IP Fabric.
 
-Also your source network device and its interface can be selected when choosing
-**User defined** First Hop Algorithm.
+To simulate such flow, it is necessary to specify the starting point by entering the name of the device and the interface which will be used to start the path lookup.
+
+Packets will use the source IP indicated.
+
+!!! Example "User Defined First Hop Algorithm"
+    In the example below, the source network `10.25.25.0/24` is not known by IP Fabric. To show the path between a client in this network and a server in a network known by IP Fabric:
+    
+    ![User Defined First hop algorithm example](pathlookup/user_defined_first_hop_algorithm_example_drawing.png){: style="height:150px"}
+    
+    - Select `User Defined` First Hop Algorithm
+    - Search for the device where to start the path: `L43EXR1`
+    - Select the source interface: `Et0/1`
+    - Enter the source IP, from the network outside the scope of IP Fabric: `10.25.25.10`
+    - Finally enter the destination IP: `10.66.122.110`
+
+    ![User Defined First hop algorithm](pathlookup/user_defined_first_hop_algorithm.png){: style="width:400px"}
+
+    This is the result you will get:
+
+    ![User Defined First hop algorithm Result](pathlookup/user_defined_first_hop_algorithm_result.png)
 
 ### Source/Destination IP Address and Port
 
@@ -24,15 +45,15 @@ As a source/destination IP address can be used a plain IP address or a CIDR (Cla
 
 By default, ICMP protocol and Echo request is chosen for path lookup.
 
-![Source and destination](pathlookup/pathlookup_src_dst.jpeg)
+![Source and destination](pathlookup/pathlookup_src_dst.jpeg){: style="width:400px"}
 
 When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is set by default.
 
-![HTTP default](pathlookup/pathlookup_http_default.jpeg)
+![HTTP default](pathlookup/pathlookup_http_default.jpeg){: style="width:400px"}
 
 When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.
 
-![Source and destination ports](pathlookup/pathlookup_src_dst_port.png)
+![Source and destination ports](pathlookup/pathlookup_src_dst_port.png){: style="width:400px"}
 
 Port can be changed to an arbitrary one for TCP/UDP protocols.
 
@@ -42,7 +63,7 @@ The following flags can be also set for TCP traffic -- None/ACK/FIN/SYN/RST/PSH/
 
 In **More details**, **TTL** (Time to live ) and **Fragment offset** can be set - thus affecting path lookup output - default TTL is 128 and Fragment offset is set to 0
 
-![TTL and Fragmentation](pathlookup/pathlookup_ttl_fragment.png)
+![TTL and Fragmentation](pathlookup/pathlookup_ttl_fragment.png){: style="width:400px"}
 
 ### Application
 
@@ -55,7 +76,7 @@ It’s almost impossible to standardize application names across all vendors. Yo
 
 	An application name input is just a string, so it needs to be defined exactly as in a security rule!
 
-![Application](pathlookup/pathlookup_application.png)
+![Application](pathlookup/pathlookup_application.png){: style="width:400px"}
 
 ### Source/Destination IP Regions
 
@@ -69,7 +90,7 @@ By default IP regions are not evaluated.
 
         IP regions are just a string, so they need to be defined exactly as they are in a security rule!
 
-![Regions](pathlookup/pathlookup_src_dst_regions.png)
+![Regions](pathlookup/pathlookup_src_dst_regions.png){: style="width:400px"}
 
 ### Path Lookup Mode
 
