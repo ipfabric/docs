@@ -84,7 +84,7 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
 
 !!! note
 
-    The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at [VMware deploytment section](#deploying-on-vmware-ova-virtual-machine).
+    The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at [VMware deployment section](#deploying-on-vmware-ova-virtual-machine).
 
 1. Download the `ipfabric-*-.OVA` file from official source.
 2. Extract the previously downloaded OVA file using 7-zip or any similar software. The structure of extracted files should look like below
