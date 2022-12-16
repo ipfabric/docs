@@ -1,13 +1,13 @@
 ---
-description: The system update is done in the administrative interface where it's possible to either proceed to an online or offline upgrade.
+description: The system update is conducted in the administrative interface.
 ---
 
 # System Update
 
 !!! fail "Clearing Cache Memory"
 
-    Please force refresh your browser cache after an upgrade!
-    Depending on your operating system all you need to do is the following key combination:
+    Please force refresh your browser cache after an update!
+    Depending on your operating system, all you need to do is the following key combination:
 
     - Windows: Ctrl + F5
     - Mac/Apple: Command + Shift + R
@@ -15,56 +15,52 @@ description: The system update is done in the administrative interface where it'
 
 ## Access Administrative Interface And Backup The System
 
-Access administrative interface by clicking **Support** button at the
-top right of the main user interface and then clicking **System
-Administration**. You can also access administrative interface directly
-by connecting to HTTPS port `8443` of the IP Fabric VM, e.g.
-(`https://ipfabric-ip-address:8443`)
+The best practice is to save the virtual machine's state using your hypervisor or, alternatively, use the IP Fabric backup. To proceed with IP Fabric system backup, do the following:
 
-Use the user **osadmin** with password configured during the first boot
-wizard.
-
-On [Restore and Backup](../backup_and_restore) page perform system backup.
+1. Navigate to **Support** (top right corner of the main user interface).
+2. Navigate to **System Administration** to access the administrative interface (e.g. `https://ipfabric-ip-address:8443`).
+3. Log in with the `osadmin` user and the password configured during the first boot.
+4. Backup the VM by following the instructions on the [Restore or Backup](../backup_and_restore) page.
 
 !!! info "Backup Disk"
 
     Local backup disk is not present by default! Please add a new virtual disk to your VM to enable local backups. (See Restore and Backup page)
 
-## Online Upgrade
+## Online Update
 
-At the **System update** page of the administrative interface, click the
-**Update** button. (In releases earlier than 2.2.6 additional release
-credentials are required).
+The **Online update** is automatically available only when the IP Fabric appliance has connectivity to the servers below:
 
 !!! warning "Network requirements"
 
-    An online upgrade requires access to:
+    - `callhome.ipfabric.io` (95.217.156.217) remote port 443/TCP for update availability check
+    - `releases.ipfabric.io` (95.216.185.152) remote port 443/TCP for update package download
 
-    - `callhome.ipfabric.io` (95.217.156.217) remote port 443/TCP for upgrade availability check
-    - `releases.ipfabric.io` (95.216.185.152) remote port 443/TCP for upgrade package download
+When new IP Fabric version is publicly available, the green interactive button automatically appears in the right top corner.
+The image below shows an example of the new version 3.7.5 available.
 
-In the following screenshot, the green 3.7.5 button in the right top
-corner indicates that a new version of IP Fabric is available (if the
-system has Internet connectivity).
+![New version 3.7.5 available](system_update_new_version.png)
 
-![New version](system_update_new_version.png)
+To proceed with online update:
 
-## Offline Upgrade
+1. Click on the new version indicator (it will navigate you to **System Administration**).
+2. Log in with the `osadmin` user and the password configured during the first boot.
+3. Perform the VM backup as described in the above section.
+4. Navigate to **System update** and proceed (IP Fabric will automatically download the update file, perform the update and reboot itself).
 
-Download the latest upgrade package from the updates folder on the distribution page [https://releases.ipfabric.io/ipfabric/#updates](https://releases.ipfabric.io/ipfabric/#updates)
+## Offline Update
 
-!!! warning
+Offline update is available to IP Fabric VM without direct internet connectivity.
 
-    When performing offline upgrade IP FABRIC v2.2.2 or lower, load the patch for large offline updates first using [https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig](https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig)
+To proceed with offline update:
 
-Go to **Support -> System Administration** (use 'osadmin' user to access). At the **System update** page of the administrative interface, upload the package. The following screenshot depicts the actual upgrade process in the System Administration.
+1. Download the latest update file from [https://releases.ipfabric.io/ipfabric/updates/](https://releases.ipfabric.io/ipfabric/updates/)
+2. Navigate to **Support** (top right corner of the main user interface).
+3. Navigate to **System Administration** to access the administrative interface (e.g. `https://ipfabric-ip-address:8443`).
+4. Log in with the `osadmin` user and the password configured during the first boot.
+5. Perform the VM backup as described in the above section.
+6. Navigate to **System update** and select the update file.
+7. Select or Drag and Drop your downloaded update file.
 
-![Update in progress](system_update_progress.png)
+![IP Fabric System update in progress](system_update.png)
 
-The upgrade will start automatically after a successful package upload,
-after which the IP Fabric VM will reboot. Once the IP Fabric VM is
-rebooted, please run a new discovery so all of the new calculations can
-take place.
-
-Make sure to refresh the browser cache using CTRL+F5 when accessing IP
-Fabric VM user interface after an upgrade.
+The update will start automatically after a successful package upload, after which the IP Fabric VM will reboot. Once the IP Fabric VM reboots, it's recommended to run a discovery process to create a new snapshot on the latest version.

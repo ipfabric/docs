@@ -6,12 +6,9 @@ description: You can schedule an IP Fabric backup to protect your important data
 
 ## Backup
 
-Use IP Fabric backup to protect your important data.
-
-There are two types of backup:
+IP Fabric enables users to backup data it collects with two options:
 
 - Local backup
-
 - Remote backup (FTP, sFTP)
 
 !!! tip Security tip
@@ -21,9 +18,7 @@ There are two types of backup:
 
 ### Local Backup
 
-Local backup saves database, user and system files locally on a
-dedicated backup volume. It's highly recommended placing backup volume
-on different datastore ideally on different physical storage.
+Local backup saves database, user, and system files locally on a dedicated backup volume. It's highly recommended to place the backup volume on a different datastore, ideally on separate physical storage.
 
 !!! info "Backup Disk"
 
@@ -44,34 +39,34 @@ useful for example before a system upgrade.
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
-1.  Login to admin interface (for
-    example `https://ipfabric.example.com:8443`)
+1. Login to admin interface (for
+   example `https://ipfabric.example.com:8443`)
 
-2.  Go to **Restore or Backup**
+2. Go to **Restore or Backup**
 
-3.  Select **Backup** from *Do you wish to proceed with a backup or
-    restore?* drop-down menu.
+3. Select **Backup** from *Do you wish to proceed with a backup or
+   restore?* drop-down menu.
 
-4.  For local backup select **Local hard drive** from the **Backup
-    files destination**.
+4. For local backup select **Local hard drive** from the **Backup
+   files destination**.
 
-5.  For remote backup select **FTP** or **SFTP **from the **Backup
-    files destination**.
+5. For remote backup select **FTP** or **SFTP **from the **Backup
+   files destination**.
 
-    1.  Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure
-        that your DNS client is configured and working properly in the
-        case of FQDN.
+   1. Enter remote FTP/SFTP **Server** FQDN or IP address. Make sure
+      that your DNS client is configured and working properly in the
+      case of FQDN.
 
-    2.  Enter **Username** to access FTP/SFTP server.
+   2. Enter **Username** to access FTP/SFTP server.
 
-    3.  Enter **Password** to access FTP/SFTP server.
+   3. Enter **Password** to access FTP/SFTP server.
 
-  --8<-- "snippets/username_password_regex.md"
+   4. Specify a **Directory** where FTP/SFTP backup should be
+      uploaded.
 
-    4.  Specify a **Directory** where FTP/SFTP backup should be
-        uploaded.
+6. Click **Next**
 
-6.  Click **Next**
+--8<-- "snippets/username_password_regex.md"
 
 ## Restore
 
@@ -88,40 +83,40 @@ a backup.
 
 ### Restore From Local Hard Drive
 
-1.  Login to admin interface (for
-    example `https://ipfabric.example.com:8443`)
+1. Login to admin interface (for
+   example `https://ipfabric.example.com:8443`)
 
-2.  Go to **Restore or Backup**
+2. Go to **Restore or Backup**
 
-3.  Select **Restore** from *Do you wish proceed a backup or
-    restore?* drop down menu.
+3. Select **Restore** from *Do you wish proceed a backup or
+   restore?* drop down menu.
 
-4.  Select **What restore?** There are four options:
+4. Select **What restore?** There are four options:
 
-    1.  **Restore data & all system services** - This option restores
-        database and system files. It's usable for restore from general
-        system failures or upgrade failures.
+  1. **Restore data & all system services** - This option restores
+     database and system files. It's usable for restore from general
+     system failures or upgrade failures.
 
-    2.  **Restore database** - it means that only database data are
-        restored. It can be sufficient in case of database failure or
-        accidental database drop.
+  2. **Restore database** - it means that only database data are
+     restored. It can be sufficient in case of database failure or
+     accidental database drop.
 
-    3.  **Restore syslog data** - it means that only syslog data are
-        restored. It can be sufficient in case of database failure or
-        accidental database drop.
+  3. **Restore syslog data** - it means that only syslog data are
+     restored. It can be sufficient in case of database failure or
+     accidental database drop.
 
-    4.  **Restore snapshot file** - particular snapshot can be
-        restored.
+  4. **Restore snapshot file** - particular snapshot can be
+     restored.
 
-5.  For restore from local backup choose **Local hard drive** from
-    **Backup files source**.
+5. For restore from local backup choose **Local hard drive** from
+   **Backup files source**.
 
-6.  Click **Next**.
+6. Click **Next**.
 
-7.  **Select backup file** - there is year, month, day and time when a
-    backup file was created in a backup filename.
+7. **Select backup file** - there is year, month, day and time when a
+   backup file was created in a backup filename.
 
-8.  Click **Restore**.
+8. Click **Restore**.
 
 !!! warning
 
@@ -139,20 +134,20 @@ a backup.
 
 4.  Select **What restore?** There are four options:
 
-    1.  **Restore data & all system services** - This option restores
-        database and system files. It's usable for restore from general
-        system failures or upgrade failures.
+   1. **Restore data & all system services** - This option restores
+      database and system files. It's usable for restore from general
+      system failures or upgrade failures.
 
-    2.  **Restore database** - it means that only database data are
-        restored. It can be sufficient in case of database failure or
-        accidental database drop.
+   2. **Restore database** - it means that only database data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.
 
-    3.  **Restore syslog data** - it means that only syslog data are
-        restored. It can be sufficient in case of database failure or
-        accidental database drop.
+   3. **Restore syslog data** - it means that only syslog data are
+      restored. It can be sufficient in case of database failure or
+      accidental database drop.
 
-    4.  **Restore snapshot file** - particular snapshot can be
-        restored.
+   4. **Restore snapshot file** - particular snapshot can be
+      restored.
 
 5.  For restore from local backup choose **FTP** or **SFTP** from
     **Backup files source**.

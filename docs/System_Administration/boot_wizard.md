@@ -4,15 +4,21 @@ description: The Boot Wizard needs to be completed during the IP Fabric virtual 
 
 # Run System 'Boot Wizard'
 
-The Boot Wizard needs to be completed during the IP Fabric virtual server
-deployment before the image installation begins. The Boot Wizard introduces the
-configuration of basic network parameters, including time zone, NTP, IP
-address, DNS or Proxy settings. In case some initial parameters need to
-be modified after the installation is complete, the IP Fabric administrator may
-start the Boot Wizard or part of it by running `nimpee-net-config`.
+The Boot Wizard is automatically started during the installation process and must be completed during the IP Fabric virtual server
+deployment before the image installation begins.
+The Boot Wizard introduces the configuration of basic network parameters, including:
 
-Login as `osadmin` and run `nimpee-net-config -h` for detailed help. 
-```
+- IP Fabric's IP address and subnet
+- Time Zone
+- NTP servers
+- DNS servers
+- Proxy server
+
+Suppose some initial parameters need to be modified after the installation is complete. In that case, the IP Fabric administrator may restart the Boot Wizard by running `nimpee-net-config` from the CLI as `osadmin`.
+
+To see more command options, login and run `nimpee-net-config -h`.
+
+```shell
 root@ipfabric:~# nimpee-net-config -h
 IP Fabric network configuration wizard.
 Usage: nimpee-net-config [-a] [-n] [-p] [-s] [-t] [-b] [-h]
@@ -28,7 +34,7 @@ This script is started automatically if "firstrun" parameter is set to "yes" in 
 or user "nimpee" enables it using "nimpee-net-wizard" script.
 ```
 
-Examples:
+Other examples may be:
 
 - `nimpee-net-config -a` runs _full_ Boot Wizard same way as described in [Complete (first-time) Boot Wizard](../Getting_Started/Platform_First_Steps/01-deployment.md#complete-first-time-boot-wizard)
 - `nimpee-net-config -t` sets new password for `osadmin` user
