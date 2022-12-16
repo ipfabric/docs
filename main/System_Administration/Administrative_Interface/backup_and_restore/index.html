@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1704,7 +1704,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/Custom_TLS/">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1712,7 +1712,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1735,7 +1735,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/change_hostname/">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1743,7 +1743,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1759,7 +1759,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/manual_config_backup/">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
@@ -2733,12 +2733,9 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="backup-and-restore">Backup And Restore</h1>
 <h2 id="backup">Backup</h2>
-<p>Use IP Fabric backup to protect your important data.</p>
-<p>There are two types of backup:</p>
+<p>IP Fabric enables users to backup data it collects with two options:</p>
 <ul>
 <li>Local backup</li>
-</ul>
-<ul>
 <li>Remote backup (FTP, sFTP)</li>
 </ul>
 <div class="admonition tip security tip">
@@ -2747,9 +2744,7 @@ differently in you production deployment, than described here.
 When you lose <strong>osadmin</strong> user password, backups are also lost!</p>
 </div>
 <h3 id="local-backup">Local Backup</h3>
-<p>Local backup saves database, user and system files locally on a
-dedicated backup volume. It’s highly recommended placing backup volume
-on different datastore ideally on different physical storage.</p>
+<p>Local backup saves database, user, and system files locally on a dedicated backup volume. It’s highly recommended to place the backup volume on a different datastore, ideally on separate physical storage.</p>
 <div class="admonition info">
 <p class="admonition-title">Backup Disk</p>
 <p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
@@ -2767,39 +2762,49 @@ useful for example before a system upgrade.</p>
 <ol>
 <li>
 <p>Login to admin interface (for
-    example <code>https://ipfabric.example.com:8443</code>)</p>
+   example <code>https://ipfabric.example.com:8443</code>)</p>
 </li>
 <li>
 <p>Go to <strong>Restore or Backup</strong></p>
 </li>
 <li>
 <p>Select <strong>Backup</strong> from <em>Do you wish to proceed with a backup or
-    restore?</em> drop-down menu.</p>
+   restore?</em> drop-down menu.</p>
 </li>
 <li>
 <p>For local backup select <strong>Local hard drive</strong> from the <strong>Backup
-    files destination</strong>.</p>
+   files destination</strong>.</p>
 </li>
 <li>
 <p>For remote backup select <strong>FTP</strong> or <strong>SFTP </strong>from the <strong>Backup
-    files destination</strong>.</p>
-<p>1.  Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure
-      that your DNS client is configured and working properly in the
-      case of FQDN.</p>
-<p>2.  Enter <strong>Username</strong> to access FTP/SFTP server.</p>
-<p>3.  Enter <strong>Password</strong> to access FTP/SFTP server.</p>
-<div class="admonition info">
-<p class="admonition-title">Username and Password character restrictions<p>Username must match the following <code>/^[a-zA-Z0-9_][a-zA-Z0-9_-]*\$?$/</code>.</p>
-<p>Password must match the following <code>[A-Za-z0-9.,/_@%^:=+ -]*</code>.</p>
-</p>
-</div>
-<p>4.  Specify a <strong>Directory</strong> where FTP/SFTP backup should be
-      uploaded.</p>
+   files destination</strong>.</p>
+<ol>
+<li>
+<p>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure
+    that your DNS client is configured and working properly in the
+    case of FQDN.</p>
+</li>
+<li>
+<p>Enter <strong>Username</strong> to access FTP/SFTP server.</p>
+</li>
+<li>
+<p>Enter <strong>Password</strong> to access FTP/SFTP server.</p>
+</li>
+<li>
+<p>Specify a <strong>Directory</strong> where FTP/SFTP backup should be
+    uploaded.</p>
+</li>
+</ol>
 </li>
 <li>
 <p>Click <strong>Next</strong></p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Username and Password character restrictions<p>Username must match the following <code>/^[a-zA-Z0-9_][a-zA-Z0-9_-]*\$?$/</code>.</p>
+<p>Password must match the following <code>[A-Za-z0-9.,/_@%^:=+ -]*</code>.</p>
+</p>
+</div>
 <h2 id="restore">Restore</h2>
 <p>In case of database or system corruption, IP Fabric can be restored from
 a backup.</p>
@@ -2814,39 +2819,49 @@ IP Fabric appliance.</p>
 <ol>
 <li>
 <p>Login to admin interface (for
-    example <code>https://ipfabric.example.com:8443</code>)</p>
+   example <code>https://ipfabric.example.com:8443</code>)</p>
 </li>
 <li>
 <p>Go to <strong>Restore or Backup</strong></p>
 </li>
 <li>
 <p>Select <strong>Restore</strong> from <em>Do you wish proceed a backup or
-    restore?</em> drop down menu.</p>
+   restore?</em> drop down menu.</p>
 </li>
 <li>
 <p>Select <strong>What restore?</strong> There are four options:</p>
-<p>1.  <strong>Restore data &amp; all system services</strong> - This option restores
-      database and system files. It’s usable for restore from general
-      system failures or upgrade failures.</p>
-<p>2.  <strong>Restore database</strong> - it means that only database data are
-      restored. It can be sufficient in case of database failure or
-      accidental database drop.</p>
-<p>3.  <strong>Restore syslog data</strong> - it means that only syslog data are
-      restored. It can be sufficient in case of database failure or
-      accidental database drop.</p>
-<p>4.  <strong>Restore snapshot file</strong> - particular snapshot can be
-      restored.</p>
+<ol>
+<li>
+<p><strong>Restore data &amp; all system services</strong> - This option restores
+   database and system files. It’s usable for restore from general
+   system failures or upgrade failures.</p>
+</li>
+<li>
+<p><strong>Restore database</strong> - it means that only database data are
+   restored. It can be sufficient in case of database failure or
+   accidental database drop.</p>
+</li>
+<li>
+<p><strong>Restore syslog data</strong> - it means that only syslog data are
+   restored. It can be sufficient in case of database failure or
+   accidental database drop.</p>
+</li>
+<li>
+<p><strong>Restore snapshot file</strong> - particular snapshot can be
+   restored.</p>
+</li>
+</ol>
 </li>
 <li>
 <p>For restore from local backup choose <strong>Local hard drive</strong> from
-    <strong>Backup files source</strong>.</p>
+   <strong>Backup files source</strong>.</p>
 </li>
 <li>
 <p>Click <strong>Next</strong>.</p>
 </li>
 <li>
 <p><strong>Select backup file</strong> - there is year, month, day and time when a
-    backup file was created in a backup filename.</p>
+   backup file was created in a backup filename.</p>
 </li>
 <li>
 <p>Click <strong>Restore</strong>.</p>
@@ -2871,17 +2886,27 @@ IP Fabric appliance.</p>
 </li>
 <li>
 <p>Select <strong>What restore?</strong> There are four options:</p>
-<p>1.  <strong>Restore data &amp; all system services</strong> - This option restores
-      database and system files. It’s usable for restore from general
-      system failures or upgrade failures.</p>
-<p>2.  <strong>Restore database</strong> - it means that only database data are
-      restored. It can be sufficient in case of database failure or
-      accidental database drop.</p>
-<p>3.  <strong>Restore syslog data</strong> - it means that only syslog data are
-      restored. It can be sufficient in case of database failure or
-      accidental database drop.</p>
-<p>4.  <strong>Restore snapshot file</strong> - particular snapshot can be
-      restored.</p>
+<ol>
+<li>
+<p><strong>Restore data &amp; all system services</strong> - This option restores
+    database and system files. It’s usable for restore from general
+    system failures or upgrade failures.</p>
+</li>
+<li>
+<p><strong>Restore database</strong> - it means that only database data are
+    restored. It can be sufficient in case of database failure or
+    accidental database drop.</p>
+</li>
+<li>
+<p><strong>Restore syslog data</strong> - it means that only syslog data are
+    restored. It can be sufficient in case of database failure or
+    accidental database drop.</p>
+</li>
+<li>
+<p><strong>Restore snapshot file</strong> - particular snapshot can be
+    restored.</p>
+</li>
+</ol>
 </li>
 <li>
 <p>For restore from local backup choose <strong>FTP</strong> or <strong>SFTP</strong> from

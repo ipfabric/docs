@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1638,7 +1638,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Custom_TLS/">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1646,7 +1646,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1669,7 +1669,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../change_hostname/">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1677,7 +1677,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1750,9 +1750,9 @@ differently in you production deployment, than described here.
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-unstuck-ip-fabric-gui-after-jumphost-misconfiguration">
+<a class="md-nav__link" href="#how-to-restore-access-to-ip-fabrics-gui-after-jumphost-misconfiguration">
 <span class="md-ellipsis">
-      How To Unstuck IP Fabric GUI After jumphost Misconfiguration
+      How To Restore access to IP Fabric's GUI After jumphost misconfiguration
     </span>
 </a>
 </li>
@@ -1762,7 +1762,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../manual_config_backup/">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
@@ -2721,9 +2721,9 @@ differently in you production deployment, than described here.
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-unstuck-ip-fabric-gui-after-jumphost-misconfiguration">
+<a class="md-nav__link" href="#how-to-restore-access-to-ip-fabrics-gui-after-jumphost-misconfiguration">
 <span class="md-ellipsis">
-      How To Unstuck IP Fabric GUI After jumphost Misconfiguration
+      How To Restore access to IP Fabric's GUI After jumphost misconfiguration
     </span>
 </a>
 </li>
@@ -2742,11 +2742,11 @@ differently in you production deployment, than described here.
 <p>Scripts to start jumphosts are located in <code>/opt/nimpee/jumphost</code> folder.</p>
 <p>Script logs are gathered in <code>/var/log/nimpee/net-jumphost-start-one.log</code> files.</p>
 <p>IP Fabric doesn’t work with DNS names that have IPv6 address in addition to IPv4 address. It is always better to use IPv4 address record.</p>
-<p>It is a good practice to always check, after the jumphost is active and running, to ssh from the IP Fabric console to any network device behind the jumphost.</p>
+<p>It is a good practice to test the SSH from IP Fabric’s CLI to any network device that should be discoverable using the jumphost when the jumphost is configured and active.</p>
 <p>Other useful commands:</p>
 <div class="highlight"><span class="filename">Gets Status of sshuttle</span><pre><span></span><code>sudo nimpee-net-jumphost -s
 </code></pre></div>
-<div class="highlight"><span class="filename">Manually Starts a Jumphost</span><pre><span></span><code>sudo nimpee-net-jumphost -1 192.168.11.197 -u autoboss -p password
+<div class="highlight"><span class="filename">Manually Starts a Jumphost</span><pre><span></span><code>sudo nimpee-net-jumphost -1 <span class="m">192</span>.168.11.197 -u autoboss -p password
 </code></pre></div>
 <h2 id="jumphost-status-is-running-but-devices-behind-jumphost-are-not-discovered">Jumphost Status Is Running, But Devices Behind Jumphost Are Not Discovered</h2>
 <h3 id="check-incoming-traffic-from-the-ip-fabric-to-a-jumphost">Check Incoming Traffic From the IP Fabric To a Jumphost</h3>
@@ -2756,29 +2756,27 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>On the IP Fabric instance open ssh/telnet session to any host behind jumphost</p>
-</li>
-</ol>
-<p><div class="highlight"><pre><span></span><code>autoboss@ip-fabric:~$ telnet 10.47.102.104
-Trying 10.47.102.104...
-Connected to 10.47.102.104.
-Escape character is '^]'.
+<p><div class="highlight"><pre><span></span><code>autoboss@ip-fabric:~$ telnet <span class="m">10</span>.47.102.104
+Trying <span class="m">10</span>.47.102.104...
+Connected to <span class="m">10</span>.47.102.104.
+Escape character is <span class="s1">'^]'</span>.
 
-##########################################################################
-##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##
-## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##
-##########################################################################
+<span class="c1">##########################################################################</span>
+<span class="c1">##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##</span>
+<span class="c1">## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##</span>
+<span class="c1">##########################################################################</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
-
-
 12:35:58.065549 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags [P.], seq 1498215736:1498215828, ack 173264556, win 687, options [nop,nop,TS val 542423406 ecr 584899103], length 92
 12:35:58.066759 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags [.], ack 661, win 686, options [nop,nop,TS val 542423406 ecr 584912111], length 0
 12:35:58.068806 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags [.], ack 985, win 686, options [nop,nop,TS val 542423407 ecr 584912111], length 0
-</code></pre></div>
-If there is no incoming traffic, check <strong>outgoing traffic from the IP Fabric to a jumphost</strong></p>
+</code></pre></div></p>
+<p>If there is no incoming traffic, check <strong>outgoing traffic from the IP Fabric to a jumphost</strong></p>
+</li>
+</ol>
 <h3 id="check-outgoing-traffic-from-the-ip-fabric-to-a-jumphost">Check Outgoing Traffic From the IP Fabric To a Jumphost</h3>
 <ol>
 <li>
@@ -2786,17 +2784,15 @@ If there is no incoming traffic, check <strong>outgoing traffic from the IP Fabr
 </li>
 <li>
 <p>On the IP Fabric instance open ssh/telnet session to any host behind jumphost.</p>
+<div class="highlight"><pre><span></span><code>root@ip-fabric:/home/autoboss# tcpdump src <span class="m">10</span>.0.9.13 and dst <span class="m">10</span>.0.9.17
+tcpdump: verbose output suppressed, use -v or -vv <span class="k">for</span> full protocol decode
+listening on eth0, link-type EN10MB <span class="o">(</span>Ethernet<span class="o">)</span>, capture size <span class="m">262144</span> bytes
+
+<span class="m">12</span>:53:25.476825 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags <span class="o">[</span>P.<span class="o">]</span>, seq <span class="m">156</span>:248, ack <span class="m">1657</span>, win <span class="m">687</span>, options <span class="o">[</span>nop,nop,TS val <span class="m">542685257</span> ecr <span class="m">585170204</span><span class="o">]</span>, length <span class="m">92</span>
+<span class="m">12</span>:53:25.477998 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags <span class="o">[</span>.<span class="o">]</span>, ack <span class="m">2317</span>, win <span class="m">686</span>, options <span class="o">[</span>nop,nop,TS val <span class="m">542685257</span> ecr <span class="m">585173962</span><span class="o">]</span>, length <span class="m">0</span>
+</code></pre></div>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code>root@ip-fabric:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
-
-
-
-12:53:25.476825 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags [P.], seq 156:248, ack 1657, win 687, options [nop,nop,TS val 542685257 ecr 585170204], length 92
-12:53:25.477998 IP dev01.ipf.ipfabric.io.20718 &gt; dev03.ipf.ipfabric.io.ssh: Flags [.], ack 2317, win 686, options [nop,nop,TS val 542685257 ecr 585173962], length 0
-</code></pre></div>
 <h3 id="check-outgoing-traffic-from-a-jumphost-to-a-host">Check Outgoing Traffic From a Jumphost To a Host</h3>
 <ol>
 <li>
@@ -2804,17 +2800,15 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 </li>
 <li>
 <p>On the IP Fabric instance open ssh/telnet to any host behind jumphost</p>
+<div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src <span class="m">10</span>.0.9.17 and dst <span class="m">10</span>.47.102.104
+tcpdump: verbose output suppressed, use -v or -vv <span class="k">for</span> full protocol decode
+listening on eth0, link-type EN10MB <span class="o">(</span>Ethernet<span class="o">)</span>, capture size <span class="m">262144</span> bytes
+
+<span class="m">12</span>:44:05.002545 IP dev03.ipf.ipfabric.io.29736 &gt; <span class="m">10</span>.47.102.104.telnet: Flags <span class="o">[</span>S<span class="o">]</span>, seq <span class="m">270942017</span>, win <span class="m">29200</span>, options <span class="o">[</span>mss <span class="m">1460</span>,sackOK,TS val <span class="m">585033845</span> ecr <span class="m">0</span>,nop,wscale <span class="m">9</span><span class="o">]</span>, length <span class="m">0</span>
+<span class="m">12</span>:44:05.004743 IP dev03.ipf.ipfabric.io.29736 &gt; <span class="m">10</span>.47.102.104.telnet: Flags <span class="o">[</span>.<span class="o">]</span>, ack <span class="m">1464937247</span>, win <span class="m">29200</span>, length <span class="m">0</span>
+</code></pre></div>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src 10.0.9.17 and dst 10.47.102.104
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
-
-
-
-12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 &gt; 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
-12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 &gt; 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
-</code></pre></div>
 <h3 id="check-incoming-traffic-from-a-host-to-a-jumphost">Check Incoming Traffic From a Host To a Jumphost</h3>
 <ol>
 <li>
@@ -2822,55 +2816,66 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 </li>
 <li>
 <p>On the IP Fabric instance open ssh/telnet to any host behind jumphost</p>
+<div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src <span class="m">10</span>.47.102.104 and dst <span class="m">10</span>.0.9.17
+tcpdump: verbose output suppressed, use -v or -vv <span class="k">for</span> full protocol decode
+listening on eth0, link-type EN10MB <span class="o">(</span>Ethernet<span class="o">)</span>, capture size <span class="m">262144</span> bytes
+
+<span class="m">12</span>:44:05.002545 IP dev03.ipf.ipfabric.io.29736 &gt; <span class="m">10</span>.47.102.104.telnet: Flags <span class="o">[</span>S<span class="o">]</span>, seq <span class="m">270942017</span>, win <span class="m">29200</span>, options <span class="o">[</span>mss <span class="m">1460</span>,sackOK,TS val <span class="m">585033845</span> ecr <span class="m">0</span>,nop,wscale <span class="m">9</span><span class="o">]</span>, length <span class="m">0</span>
+<span class="m">12</span>:44:05.004743 IP dev03.ipf.ipfabric.io.29736 &gt; <span class="m">10</span>.47.102.104.telnet: Flags <span class="o">[</span>.<span class="o">]</span>, ack <span class="m">1464937247</span>, win <span class="m">29200</span>, length <span class="m">0</span>
+</code></pre></div>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src 10.47.102.104 and dst 10.0.9.17
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
-
-
-
-12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 &gt; 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
-12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 &gt; 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
-</code></pre></div>
-<h2 id="how-to-unstuck-ip-fabric-gui-after-jumphost-misconfiguration">How To Unstuck IP Fabric GUI After <code>jumphost</code> Misconfiguration</h2>
-<p>If you can’t open the main GUI or SSH to the IP Fabric machine after saving the jumphost settings, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
-<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
+<h2 id="how-to-restore-access-to-ip-fabrics-gui-after-jumphost-misconfiguration">How To Restore access to IP Fabric’s GUI After <code>jumphost</code> misconfiguration</h2>
+<p>If you suddenly cannot open the main GUI or SSH to the IP Fabric machine after saving the jumphost settings, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
+<p>To fix this issue, you need a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from your hypervisor, the password for <code>osadmin</code> user account, and do following:</p>
 <ol>
 <li>
 <p>Login with <code>osadmin</code> account to the <strong>virtual machine CLI</strong></p>
 </li>
 <li>
-<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../IP_Fabric_Settings/advanced/systemctl_jumphost.png"><img alt="systemctl_jumphost" src="../../../../IP_Fabric_Settings/advanced/systemctl_jumphost.png"/></a></p>
+<p>Filter <code>systemctl</code> output with <code>jumphost</code>. Each configured jumphost has its own ID.</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric-server:~$ sudo systemctl <span class="p">|</span> grep jumphost
+
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> osadmin: 
+  jumphost@923216920.service                                   loaded activating auto-restart Jumphost <span class="o">(</span><span class="nv">ID</span><span class="o">=</span><span class="m">923216920</span><span class="o">)</span>
+  system-jumphost.slic                                         loaded active     active       system-jumphost.slice
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric-server:~$ systemctl status jumphost@923216920.service
+Failed to connect to bus: No such file or directory
+osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
+● jumphost@923216920.service - Jumphost <span class="o">(</span><span class="nv">ID</span><span class="o">=</span><span class="m">923216920</span><span class="o">)</span>
+     Loaded: loaded <span class="o">(</span>/lib/systemd/system/jumphost@.service<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+     Active: activating <span class="o">(</span>auto-restart<span class="o">)</span> <span class="o">(</span>Result: exit-code<span class="o">)</span> since Wed <span class="m">2022</span>-12-14 <span class="m">14</span>:25:52 UTC<span class="p">;</span> 6s ago
+    Process: <span class="m">682331</span> <span class="nv">ExecStart</span><span class="o">=</span>/opt/nimpee/jumphost/start-one.sh /opt/nimpee/conf.d/jumphost/923216920.conf <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span><span class="m">1</span>/FAILURE<span class="o">)</span>
+</code></pre></div>
 </li>
 <li>
-<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../IP_Fabric_Settings/advanced/systemctl_stop_jumphost.png"><img alt="systemctl_stop_jumphost" src="../../../../IP_Fabric_Settings/advanced/systemctl_stop_jumphost.png"/></a></p>
+<p>Stop the jumphost service with <code>sudo systemctl stop jumphost@xxxx.service</code></p>
 </li>
 <li>
 <p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../IP_Fabric_Settings/advanced/systemctl_status_jumphost.png"><img alt="systemctl_status_jumphost" src="../../../../IP_Fabric_Settings/advanced/systemctl_status_jumphost.png"/></a></p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
+● jumphost@923216920.service - Jumphost <span class="o">(</span><span class="nv">ID</span><span class="o">=</span><span class="m">923216920</span><span class="o">)</span>
+     Loaded: loaded <span class="o">(</span>/lib/systemd/system/jumphost@.service<span class="p">;</span> disabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+     Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server sshuttle<span class="o">[</span><span class="m">682901</span><span class="o">]</span>: ssh: connect to host <span class="m">2</span>.3.2.1 port <span class="m">22</span>: Network is unreachable
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server sshuttle<span class="o">[</span><span class="m">682901</span><span class="o">]</span>: c : fatal: c : failed to establish ssh session <span class="o">(</span><span class="m">2</span><span class="o">)</span>
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server start-one.sh<span class="o">[</span><span class="m">682882</span><span class="o">]</span>: expect: <span class="nb">read</span> eof
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server start-one.sh<span class="o">[</span><span class="m">682882</span><span class="o">]</span>: expect: <span class="nb">set</span> expect_out<span class="o">(</span>spawn_id<span class="o">)</span> <span class="s2">"exp3"</span>
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server start-one.sh<span class="o">[</span><span class="m">682882</span><span class="o">]</span>: expect: <span class="nb">set</span> expect_out<span class="o">(</span>buffer<span class="o">)</span> <span class="s2">""</span>
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server start-one.sh<span class="o">[</span><span class="m">682915</span><span class="o">]</span>: Dec <span class="m">14</span> <span class="m">14</span>:28:55 <span class="o">[</span>ERROR<span class="o">]</span> Jumphost was not started
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: jumphost@923216920.service: Control process exited, <span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span><span class="m">1</span>/FAILURE
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: jumphost@923216920.service: Failed with result <span class="s1">'exit-code'</span>.
+Dec <span class="m">14</span> <span class="m">14</span>:28:55 ipfabric-server systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Failed to start Jumphost <span class="o">(</span><span class="nv">ID</span><span class="o">=</span><span class="m">923216920</span><span class="o">)</span>.
+Dec <span class="m">14</span> <span class="m">14</span>:29:13 ipfabric-server systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Stopped Jumphost <span class="o">(</span><span class="nv">ID</span><span class="o">=</span><span class="m">923216920</span><span class="o">)</span>.
+osadmin@ipfabric-server:~$ 
+</code></pre></div>
 </li>
 <li>
-<p>IP Fabric GUI should be accessible by now.</p>
-</li>
-<li>
-<p>Login into the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings → Advanced → SSH/Telnet</strong>.</p>
-</li>
-<li>
-<p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../IP_Fabric_Settings/advanced/jumphost_delete_settings.png"><img alt="jumphost_delete_settings" src="../../../../IP_Fabric_Settings/advanced/jumphost_delete_settings.png"/></a></p>
-</li>
-<li>
-<p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../../../../IP_Fabric_Settings/advanced/jumphost_exclude.png"><img alt="jumphost_exclude" src="../../../../IP_Fabric_Settings/advanced/jumphost_exclude.png"/></a></p>
+<p>IP Fabric GUI should be accessible by now</p>
 </li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If <strong>IP Fabric</strong> becomes inaccessible via GUI or SSH again, repeat the previous steps and again edit the jumphost configuration.</p>
-</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2878,7 +2883,7 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: How to change `osadmin` password" class="md-footer__link md-footer__link--prev" href="../change_osadmin_pass/" rel="prev">
+<a aria-label="Previous: How to change the `osadmin` password" class="md-footer__link md-footer__link--prev" href="../change_osadmin_pass/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2887,17 +2892,17 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 <span class="md-footer__direction">
                 Previous
               </span>
-              How to change `osadmin` password
+              How to change the `osadmin` password
             </div>
 </div>
 </a>
-<a aria-label="Next: How to trigger manual configuration backup just one device" class="md-footer__link md-footer__link--next" href="../manual_config_backup/" rel="next">
+<a aria-label="Next: How to trigger manual configuration backup for a single device" class="md-footer__link md-footer__link--next" href="../manual_config_backup/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              How to trigger manual configuration backup just one device
+              How to trigger manual configuration backup for a single device
             </div>
 </div>
 <div class="md-footer__button md-icon">

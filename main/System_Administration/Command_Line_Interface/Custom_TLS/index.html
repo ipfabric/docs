@@ -9,7 +9,7 @@
 <link href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/Custom_TLS/" rel="canonical"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
-<title>Custom TLS Settings - IP Fabric Documentation Portal</title>
+<title>Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal</title>
 <link href="../../../assets/stylesheets/main.e9638a90.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +18,7 @@
 <link href="../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Custom TLS Settings - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/Custom_TLS.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +26,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/Custom_TLS/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Custom TLS Settings - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/Custom_TLS.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -46,7 +46,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#custom-tls-settings">
+<a class="md-skip" href="#custom-transport-layer-security-tls-settings">
           Skip to content
         </a>
 </div>
@@ -84,7 +84,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Custom TLS Settings
+              Custom Transport Layer Security (TLS) Settings
             
           </span>
 </div>
@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1639,14 +1639,14 @@ differently in you production deployment, than described here.
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1657,16 +1657,16 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#re-enabling-tlsv1x">
+<a class="md-nav__link" href="#how-to-re-enable-tlsv1x">
 <span class="md-ellipsis">
-      Re-Enabling TLSv1.X
+      How to Re-Enable TLSv1.X
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#after-ip-fabric-system-update">
+<a class="md-nav__link" href="#after-ip-fabric-system-upgrade">
 <span class="md-ellipsis">
-      After IP Fabric System Update
+      After IP Fabric System Upgrade
     </span>
 </a>
 </li>
@@ -1676,7 +1676,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1699,7 +1699,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../How_to/change_hostname/">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1707,7 +1707,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../How_to/change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1723,7 +1723,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../How_to/manual_config_backup/">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
@@ -2636,16 +2636,16 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#re-enabling-tlsv1x">
+<a class="md-nav__link" href="#how-to-re-enable-tlsv1x">
 <span class="md-ellipsis">
-      Re-Enabling TLSv1.X
+      How to Re-Enable TLSv1.X
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#after-ip-fabric-system-update">
+<a class="md-nav__link" href="#after-ip-fabric-system-upgrade">
 <span class="md-ellipsis">
-      After IP Fabric System Update
+      After IP Fabric System Upgrade
     </span>
 </a>
 </li>
@@ -2659,68 +2659,90 @@ differently in you production deployment, than described here.
 <a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/Custom_TLS.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="custom-tls-settings">Custom TLS Settings</h1>
-<p>Since IP Fabric version <code>v5.0</code>, the only supported TLS version is set to <code>v1.3</code>
-for increased security. Some older browser or proxies may not support
-this and will require manual intervention to re-enable the older TLS version.</p>
+<h1 id="custom-transport-layer-security-tls-settings">Custom Transport Layer Security (TLS) Settings</h1>
+<p>Since IP Fabric version <code>v5.0</code>, by default, the only supported TLS version is <code>v1.3</code>. TLS 1.3 brings a number of improvements over TLS 1.2, such as stronger encryption, simplified handshake, perfect forward secrecy, fewer round trips, and improved performance. Some older web browsers or proxies may not support the latest version and older TLS version will need to be re-enabled in IP Fabric.</p>
 <p>For example, <a href="https://docs.splunk.com/Documentation/Splunk/9.0.1/Security/SetyourSSLversion">Splunk</a>
-does not currently support <code>TLSv1.3</code> which means any integration where Splunk
-directly talks to an IP Fabric instance, an older TLS version must be re-enabled.</p>
+does not currently support <code>TLSv1.3</code>, meaning any integration between these systems may not be operational without re-enabling an older TLS version.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Any action on the CLI as the <code>root</code>, <code>osadmin</code> and/or <code>autoboss</code> user may severely damage the product and/or the system itself. Such actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
+<p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
-<h2 id="re-enabling-tlsv1x">Re-Enabling TLSv1.X</h2>
-<div class="admonition warning">
-<p class="admonition-title">IP Fabric Updates</p>
-<p>Once this file has changed, it will not be updated during an IP Fabric
-system upgrade.  A new version of the file named <code>ipf-ssl-params.dpkg-new</code>
-will be placed in that directory.  There may be other changes which could
-affect the usability of the product.  Please follow the
-<a href="#after-ip-fabric-system-update">After Upgrade Instructions</a>.</p>
-</div>
+<h2 id="how-to-re-enable-tlsv1x">How to Re-Enable TLSv1.X</h2>
 <p>To re-enable an older version of TLS, please perform the following:</p>
 <ol>
 <li>Log into the IP Fabric CLI using the <code>osadmin</code> user.</li>
-<li>Elevate to root using the <code>sudo -s</code> command.</li>
-<li>Edit <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with your preferred editor.</li>
-<li>Change the first line of the configuration by adding other TLS versions separated by spaces:<ol>
+<li>Switch to root using the <code>sudo su root</code> command.</li>
+<li>Edit the TLS config file <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with your preferred editor.</li>
+<li>Modify the first line of the configuration file by adding other TLS versions separated by spaces:<ol>
 <li>Original: <code>ssl_protocols TLSv1.3;</code></li>
 <li>Updated: <code>ssl_protocols TLSv1.2 TLSv1.3;</code></li>
 </ol>
 </li>
 <li>Save the file and restart the <code>nginx</code> service using <code>systemctl restart nginx</code>.</li>
+<li>Make sure that nginx is reactivated with <code>systemctl status nginx</code></li>
 </ol>
+<p>Confirming the <code>nginx</code>status after restart</p>
+<div class="highlight"><pre><span></span><code>systemctl status nginx
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>root@ipfabric-server:~# systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded <span class="o">(</span>/lib/systemd/system/nginx.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+     Active: active <span class="o">(</span>running<span class="o">)</span> since Thu <span class="m">2022</span>-12-15 <span class="m">07</span>:40:03 UTC<span class="p">;</span> 5s ago
+       Docs: man:nginx<span class="o">(</span><span class="m">8</span><span class="o">)</span>
+    Process: <span class="m">244197</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/usr/sbin/nginx -t -q -g daemon on<span class="p">;</span> master_process on<span class="p">;</span> <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
+    Process: <span class="m">244198</span> <span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/nginx -g daemon on<span class="p">;</span> master_process on<span class="p">;</span> <span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited, <span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
+   Main PID: <span class="m">244199</span> <span class="o">(</span>nginx<span class="o">)</span>
+      Tasks: <span class="m">9</span> <span class="o">(</span>limit: <span class="m">18709</span><span class="o">)</span>
+     Memory: <span class="m">6</span>.8M
+        CPU: 85ms
+     CGroup: /system.slice/nginx.service
+             ├─244199 nginx: master process /usr/sbin/nginx -g daemon on<span class="p">;</span> master_process on<span class="p">;</span>
+</code></pre></div>
+<p>Updated file to support TLSv1.2<code>/etc/nginx/conf.d/ipf-ssl-params.conf</code></p>
+<div class="highlight"><pre><span></span><code>    ssl_protocols TLSv1.2 TLSv1.3<span class="p">;</span>
+    ssl_prefer_server_ciphers on<span class="p">;</span>
+    ssl_ciphers EECDH+AESGCM:EDH+AESGCM<span class="p">;</span>
+    ssl_ecdh_curve secp384r1<span class="p">;</span>
+    ssl_session_timeout  10m<span class="p">;</span>
+    ssl_session_cache shared:SSL:10m<span class="p">;</span>
+    ssl_session_tickets off<span class="p">;</span>
+    ssl_stapling on<span class="p">;</span>
+    ssl_stapling_verify on<span class="p">;</span>
+    gzip off<span class="p">;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">File changes during IP Fabric upgrade</p>
+<p>The TLS config file will not sustain any changes during the system upgrade. This is because the main configuration file is part of the system image and is overwritten when the upgrade is applied. Therefore, saving any desired changes in a separate configuration file is important before running the upgrade.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Other TLS Settings</p>
-<p>It is possible to adjust other TLS settings such as ciphers using the same
-instructions. However, only re-enabling TLSv1.2 has been tested by the
-Solution Architect team.</p>
+<p>It is possible to adjust other TLS settings, such as ciphers, using the instructions above. However, only re-enabling TLSv1.2 has been tested by the Solution Architect team.</p>
 </div>
-<h2 id="after-ip-fabric-system-update">After IP Fabric System Update</h2>
-<p>After an IP Fabric system update, it is recommended to check that no new updates
-to this file have been made. Because the file has been customized by the user,
-the update will not override it and will instead create a new file with the 
-updated version.</p>
+<h2 id="after-ip-fabric-system-upgrade">After IP Fabric System Upgrade</h2>
+<p>After an IP Fabric system upgrade, it is recommended to check that no new updates to this file have been made. Because the user has customized the file, the update will not override it and instead create a new file with the updated version.</p>
 <p>Below you will find an example on how to check if a new version of the
 configuration file is added and how to perform a diff. If changes other than
 your own have been discovered, please make the necessary updates and
 restart the <code>nginx</code> service.</p>
-<div class="highlight"><pre><span></span><code>root@ipfabric:/home/osadmin# ls /etc/nginx/conf.d/ipf-ssl-params.dpkg-new
-/etc/nginx/conf.d/ipf-ssl-params.dpkg-new
-
-root@ipfabric:/home/osadmin# diff -y /etc/nginx/conf.d/ipf-ssl-params.conf /etc/nginx/conf.d/ipf-ssl-params.dpkg-new
-    ssl_protocols TLSv1.2 TLSv1.3;                            |     ssl_protocols TLSv1.3;
-    ssl_prefer_server_ciphers on;                                   ssl_prefer_server_ciphers on;
-    ssl_ciphers EECDH+AESGCM:EDH+AESGCM;                            ssl_ciphers EECDH+AESGCM:EDH+AESGCM;
-    ssl_ecdh_curve secp384r1;                                       ssl_ecdh_curve secp384r1;
-    ssl_session_timeout  10m;                                       ssl_session_timeout  10m;
-    ssl_session_cache shared:SSL:10m;                               ssl_session_cache shared:SSL:10m;
-    ssl_session_tickets off;                                        ssl_session_tickets off;
-    ssl_stapling on;                                                ssl_stapling on;
-    ssl_stapling_verify on;                                         ssl_stapling_verify on;
-    gzip off;                                                       gzip off;
+<div class="highlight"><pre><span></span><code>ls /etc/nginx/conf.d/ -l <span class="p">|</span> grep ssl
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>root@ipfabric-server:~# ls /etc/nginx/conf.d/ -l <span class="p">|</span> grep ssl
+-rw-r--r-- <span class="m">1</span> root root <span class="m">300</span> Nov  <span class="m">2</span> <span class="m">21</span>:01 ipf-ssl-params.conf
+-rw-r--r-- <span class="m">1</span> root root <span class="m">292</span> Aug <span class="m">31</span> <span class="m">13</span>:17 ipf-ssl-params.conf.29865.2022-11-02@21:01:39~
+</code></pre></div>
+<p>There are two SSL config files in the output above. To see which one is being used by Nginx, run:</p>
+<div class="highlight"><pre><span></span><code>nginx -T <span class="p">|</span> grep ssl
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>root@ipfabric-server:~# nginx -T <span class="p">|</span> grep ssl
+nginx: <span class="o">[</span>warn<span class="o">]</span> the <span class="s2">"ssl"</span> directive is deprecated, use the <span class="s2">"listen ... ssl"</span> directive instead <span class="k">in</span> /etc/nginx/sites-enabled/ipf-nimpee-update:28
+nginx: <span class="o">[</span>warn<span class="o">]</span> the <span class="s2">"ssl"</span> directive is deprecated, use the <span class="s2">"listen ... ssl"</span> directive instead <span class="k">in</span> /etc/nginx/sites-enabled/nimpee-webng:35
+nginx: <span class="o">[</span>warn<span class="o">]</span> <span class="s2">"ssl_stapling"</span> ignored, issuer certificate not found <span class="k">for</span> certificate <span class="s2">"/etc/nginx/ssl/server.crt"</span>
+nginx: <span class="o">[</span>warn<span class="o">]</span> <span class="s2">"ssl_stapling"</span> ignored, issuer certificate not found <span class="k">for</span> certificate <span class="s2">"/etc/nginx/ssl/server.crt"</span>
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf <span class="nb">test</span> is successful
+<span class="c1"># configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:                                                  gzip off;</span>
+</code></pre></div>
+<p>Based on the output above, the configuration file in use is <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code>.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2741,13 +2763,13 @@ root@ipfabric:/home/osadmin# diff -y /etc/nginx/conf.d/ipf-ssl-params.conf /etc/
             </div>
 </div>
 </a>
-<a aria-label="Next: Logging" class="md-footer__link md-footer__link--next" href="../Logging/" rel="next">
+<a aria-label="Next: Understanding System Logs" class="md-footer__link md-footer__link--next" href="../Logging/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Logging
+              Understanding System Logs
             </div>
 </div>
 <div class="md-footer__button md-icon">

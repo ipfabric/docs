@@ -9,7 +9,7 @@
 <link href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/manual_config_backup/" rel="canonical"/>
 <link href="../../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
-<title>How to trigger manual configuration backup just one device - IP Fabric Documentation Portal</title>
+<title>How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal</title>
 <link href="../../../../assets/stylesheets/main.e9638a90.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="How to trigger manual configuration backup just one device - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/manual_config_backup.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +26,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/manual_config_backup/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="How to trigger manual configuration backup just one device - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/manual_config_backup.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -46,7 +46,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#how-to-trigger-manual-configuration-backup-just-one-device">
+<a class="md-skip" href="#how-to-trigger-manual-configuration-backup-for-a-single-device">
           Skip to content
         </a>
 </div>
@@ -84,7 +84,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              How to trigger manual configuration backup just one device
+              How to trigger manual configuration backup for a single device
             
           </span>
 </div>
@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1638,7 +1638,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Custom_TLS/">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1646,7 +1646,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1669,7 +1669,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../change_hostname/">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1677,7 +1677,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1692,12 +1692,41 @@ differently in you production deployment, than described here.
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    How to trigger manual configuration backup for a single device
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-python3-requests-module">
+<span class="md-ellipsis">
+      Use Python3 requests module
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alternatively-use-curl-from-linux-shell">
+<span class="md-ellipsis">
+      Alternatively use cURL from Linux shell
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../troubleshooting/">
@@ -2601,6 +2630,26 @@ differently in you production deployment, than described here.
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-python3-requests-module">
+<span class="md-ellipsis">
+      Use Python3 requests module
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alternatively-use-curl-from-linux-shell">
+<span class="md-ellipsis">
+      Alternatively use cURL from Linux shell
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -2610,73 +2659,42 @@ differently in you production deployment, than described here.
 <a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/How_to/manual_config_backup.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="how-to-trigger-manual-configuration-backup-just-one-device">How to trigger manual configuration backup just one device</h1>
-<p>If you added a new device into your network and the backup job didn’t run yet, you can trigger config backup through API with programs like Postman or tool of your choosing.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For ease of explanation, this example will use Postman</p>
-</div>
-<ol>
-<li>
-<p>Open Postman, select <strong>API</strong> and click on <strong>NEW</strong> then select <strong>HTTP Request</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman1.png"><img alt="postman1" src="../postman1.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman2.png"><img alt="postman2" src="../postman2.png"/></a></p>
-</li>
-<li>
-<p>Select <strong>POST</strong> and put in the this URL:  <br/>
-<div class="highlight"><pre><span></span><code>  https://you-ipfabric-address/api/vX.X/discovery/trigger-config-backup
-</code></pre></div></p>
+<h1 id="how-to-trigger-manual-configuration-backup-for-a-single-device">How to trigger manual configuration backup for a single device</h1>
+<p>After adding a new device to the network, and you don’t want to wait until the next regular configuration backup collection, you can trigger config backup through IP Fabric’s API. Here’s how.</p>
+<h2 id="use-python3-requests-module">Use Python3 <code>requests</code> module</h2>
+<p>The Python3 <a href="https://pypi.org/project/requests/">requests module</a> is simple, yet elegant, HTTP library. To trigger a single config backup, we need to set these parameters:</p>
 <ul>
-<li>put in <code>your-ipfabirc-address</code> and change <code>vX.X</code> to the version you’re currently have installed (e.g. <code>v6.0</code>)</li>
+<li>request resource <code>https://{hostname}/api/{api_version}/discovery/trigger-config-backup</code></li>
+<li>request type <code>POST</code></li>
+<li>define IP address in the request body as <code>{"ip": "ip_address"}</code></li>
 </ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman3.png"><img alt="postman3" src="../postman3.png"/></a></p>
-</li>
-<li>
-<p>Select <strong>Headers</strong> and put <code>X-API-Token</code> in <strong>Key</strong> field and your <em>API Token</em> generated in <a href="../../../../IP_Fabric_Settings/api_tokens/">Settings → API Tokens</a> to the <strong>Value</strong> field.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman4.png"><img alt="postman4" src="../postman4.png"/></a></p>
-<div class="admonition tip">
-<p class="admonition-title">API Token</p>
-<p>If you don’t have an <em>API Token</em> generated, you can generate one in <strong>Settings → API Tokens</strong>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../api_token_config.png"><img alt="api_token_config" src="../api_token_config.png"/></a></p>
-</div>
-</li>
-<li>
-<p>Select <strong>Body</strong> then select <strong>raw</strong> then in dropdown menu select <strong>JSON</strong> format:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman5.png"><img alt="postman5" src="../postman5.png"/></a></p>
-<ul>
-<li>Put the following string in the textbox: </li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"device_login_IP"</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># Set FQDN and version of your IP Fabric installation</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://FQDN/api/API_VERSION/discovery/trigger-config-backup"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span> <span class="s2">"ip"</span><span class="p">:</span> <span class="s2">"IP_OF_DEVICE_TO_BACKUP"</span> <span class="p">})</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="s1">'Accept'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="s1">'X-API-Token'</span><span class="p">:</span> <span class="s1">'YOUR_API_TOKEN'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
-</li>
-<li>
-<p>Connect to your machine via <code>ssh</code> and put in following command:</p>
-<div class="highlight"><pre><span></span><code>tail -f /var/log/nimpee/discovery/syslogWorker/all.txt
+<h2 id="alternatively-use-curl-from-linux-shell">Alternatively use cURL from Linux shell</h2>
+<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">'https://FQDN/api/API_VERSION/discovery/trigger-config-backup'</span> <span class="se">\</span>
+--header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+--header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+--header <span class="s1">'X-API-Token: YOUR_API_TOKEN'</span> <span class="se">\</span>
+--data-raw <span class="s1">'{</span>
+<span class="s1">      "ip": "IP_OF_DEVICE_TO_BACKUP"</span>
+<span class="s1">}'</span>
 </code></pre></div>
-</li>
-<li>
-<p>Hit the <strong>Send</strong> button, if the call was successful you should see the response <code>200 OK</code>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../postman6.png"><img alt="postman6" src="../postman6.png"/></a></p>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>If you can see anything else in response than <code>200 OK</code> there’s something wrong (e.g. expired or wrong <em>API Token</em>).</p>
-</div>
-</li>
-<li>
-<p>Go back to your <code>ssh</code> session, you should see a following message confirming the config management was triggered for the particular device:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../syslogworker_config.png"><img alt="syslog_message_config" src="../syslogworker_config.png"/></a></p>
-</li>
-<li>
-<p>Go to the <strong>IP Fabric</strong> GUI and into <strong>Inventory → Devices</strong> and search for the <code>device IP address</code> you get <code>device hostname</code>, <em>copy</em> the <code>device hostname</code> to clipboard</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ipf_gui_config1.png"><img alt="ipf_gui1" src="../ipf_gui_config1.png"/></a></p>
-</li>
-<li>
-<p>Go to the <strong>Management → Configuration</strong> and <em>paste</em> the <code>device hostname</code> to the <code>hostname</code> table and compare the time with the <code>syslog</code> message from point 7.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ipf_gui_config2.png"><img alt="ipf_gui2" src="../ipf_gui_config2.png"/></a></p>
-</li>
-</ol>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

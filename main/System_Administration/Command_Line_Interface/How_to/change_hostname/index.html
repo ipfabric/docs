@@ -9,7 +9,7 @@
 <link href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/change_hostname/" rel="canonical"/>
 <link href="../../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
-<title>How to change `hostname` - IP Fabric Documentation Portal</title>
+<title>How to change the hostname - IP Fabric Documentation Portal</title>
 <link href="../../../../assets/stylesheets/main.e9638a90.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +18,7 @@
 <link href="../../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="How to change `hostname` - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="How to change the hostname - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/change_hostname.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +26,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/change_hostname/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="How to change `hostname` - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="How to change the hostname - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/change_hostname.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -46,7 +46,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#how-to-change-hostname">
+<a class="md-skip" href="#how-to-change-the-hostname">
           Skip to content
         </a>
 </div>
@@ -84,7 +84,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              How to change `hostname`
+              How to change the hostname
             
           </span>
 </div>
@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1638,7 +1638,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Custom_TLS/">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1646,7 +1646,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1670,7 +1670,7 @@ differently in you production deployment, than described here.
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1678,7 +1678,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1694,7 +1694,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../manual_config_backup/">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
@@ -2610,42 +2610,26 @@ differently in you production deployment, than described here.
 <a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/How_to/change_hostname.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="how-to-change-hostname">How to change <code>hostname</code></h1>
-<p>To change a hostname of your IP Fabric machine, you must</p>
+<h1 id="how-to-change-the-hostname">How to change the hostname</h1>
+<p>To change the hostname of your IP Fabric machine from the CLI, please do the following:</p>
 <ol>
 <li>
-<p><code>SSH</code> to the IP Fabric appliance as an <code>osadmin</code> user</p>
+<p><code>ssh</code> to the IP Fabric appliance as the <code>osadmin</code> user</p>
 </li>
 <li>
 <p>Execute command <code>nimpee-net-config -n</code> to launch network configuration wizard.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname1.png"><img alt="change_hostname1" src="../change_hostname1.png"/></a></p>
 </li>
 <li>
-<p>After executing <code>nimpee-net-config -n</code>, the first option is to change the hostname.</p>
+<p>Modify the <code>hostname</code> – the very first option.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname2.png"><img alt="change_hostname2" src="../change_hostname2.png"/></a></p>
-</li>
-<li>
-<p>Delete the old hostname and change it to a new one and select “OK”.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Valid characters for hostnames are ASCII letters from <strong>a</strong> to <strong>z</strong>, the digits from <strong>0</strong> to <strong>9</strong>, and the hyphen (<strong>−</strong>). A hostname may not start with a hyphen.</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname3.png"><img alt="change_hostname3" src="../change_hostname3.png"/></a></p>
 </li>
 <li>
-<p>This wizard changes other Network related configuration items like DNS name, Network Interface configuration, NTP etc. For the sake of changing just the <code>hostname</code> leave everything as is until you reach the <code>"Do you want to reboot now?"</code> screen.</p>
-</li>
-<li>
-<p>When you reach <code>"Do you want to reboot now?"</code> screen, we recommend rebooting the machine to apply all changes.</p>
+<p>The IP Fabric wizard can modify other configuration items like DNS name, Network Interface configuration, NTP etc. To change only the <code>hostname</code> leave everything as is until you reach the <code>"Do you want to reboot now?"</code> prompt screen. Select <code>Yes</code> to reboot the system.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname4.png"><img alt="change_hostname4" src="../change_hostname4.png"/></a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This will reboot the IP Fabric machine and the appliance won’t be reachable until it boots and API starts again, it can take several minutes.</p>
-</div>
-</li>
-<li>
-<p>Connect again to IP Fabric with <code>SSH</code> and verify if the hostname has been correctly changed.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_hostname5.png"><img alt="change_hostname5" src="../change_hostname5.png"/></a></p>
 </li>
 </ol>
 </article>
@@ -2655,7 +2639,7 @@ differently in you production deployment, than described here.
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Logging" class="md-footer__link md-footer__link--prev" href="../../Logging/" rel="prev">
+<a aria-label="Previous: Understanding System Logs" class="md-footer__link md-footer__link--prev" href="../../Logging/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2664,17 +2648,17 @@ differently in you production deployment, than described here.
 <span class="md-footer__direction">
                 Previous
               </span>
-              Logging
+              Understanding System Logs
             </div>
 </div>
 </a>
-<a aria-label="Next: How to change `osadmin` password" class="md-footer__link md-footer__link--next" href="../change_osadmin_pass/" rel="next">
+<a aria-label="Next: How to change the `osadmin` password" class="md-footer__link md-footer__link--next" href="../change_osadmin_pass/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              How to change `osadmin` password
+              How to change the `osadmin` password
             </div>
 </div>
 <div class="md-footer__button md-icon">

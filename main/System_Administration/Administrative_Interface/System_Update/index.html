@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="The system update is done in the administrative interface where it's possible to either proceed to an online or offline upgrade." name="description"/>
+<meta content="The system update is conducted in the administrative interface." name="description"/>
 <link href="https://docs.ipfabric.io/main/System_Administration/Administrative_Interface/System_Update/" rel="canonical"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.11+insiders-4.26.6" name="generator"/>
@@ -19,7 +19,7 @@
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
 <meta content="System Update - IP Fabric Documentation Portal" property="og:title"/>
-<meta content="The system update is done in the administrative interface where it's possible to either proceed to an online or offline upgrade." property="og:description"/>
+<meta content="The system update is conducted in the administrative interface." property="og:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Administrative_Interface/System_Update.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -27,7 +27,7 @@
 <meta content="https://docs.ipfabric.io/main/System_Administration/Administrative_Interface/System_Update/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="System Update - IP Fabric Documentation Portal" name="twitter:title"/>
-<meta content="The system update is done in the administrative interface where it's possible to either proceed to an online or offline upgrade." name="twitter:description"/>
+<meta content="The system update is conducted in the administrative interface." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Administrative_Interface/System_Update.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -1549,7 +1549,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../increase_disk_space/">
 <span class="md-ellipsis">
-    Increase Disk Space
+    Server Disk Space Summary
     
   </span>
 </a>
@@ -1606,16 +1606,16 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#online-upgrade">
+<a class="md-nav__link" href="#online-update">
 <span class="md-ellipsis">
-      Online Upgrade
+      Online Update
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#offline-upgrade">
+<a class="md-nav__link" href="#offline-update">
 <span class="md-ellipsis">
-      Offline Upgrade
+      Offline Update
     </span>
 </a>
 </li>
@@ -1675,7 +1675,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/Custom_TLS/">
 <span class="md-ellipsis">
-    Custom TLS Settings
+    Custom Transport Layer Security (TLS) Settings
     
   </span>
 </a>
@@ -1683,7 +1683,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/Logging/">
 <span class="md-ellipsis">
-    Logging
+    Understanding System Logs
     
   </span>
 </a>
@@ -1706,7 +1706,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/change_hostname/">
 <span class="md-ellipsis">
-    How to change `hostname`
+    How to change the hostname
     
   </span>
 </a>
@@ -1714,7 +1714,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/change_osadmin_pass/">
 <span class="md-ellipsis">
-    How to change `osadmin` password
+    How to change the `osadmin` password
     
   </span>
 </a>
@@ -1730,7 +1730,7 @@ differently in you production deployment, than described here.
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Command_Line_Interface/How_to/manual_config_backup/">
 <span class="md-ellipsis">
-    How to trigger manual configuration backup just one device
+    How to trigger manual configuration backup for a single device
     
   </span>
 </a>
@@ -2650,16 +2650,16 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#online-upgrade">
+<a class="md-nav__link" href="#online-update">
 <span class="md-ellipsis">
-      Online Upgrade
+      Online Update
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#offline-upgrade">
+<a class="md-nav__link" href="#offline-update">
 <span class="md-ellipsis">
-      Offline Upgrade
+      Offline Update
     </span>
 </a>
 </li>
@@ -2676,8 +2676,8 @@ differently in you production deployment, than described here.
 <h1 id="system-update">System Update</h1>
 <div class="admonition fail">
 <p class="admonition-title">Clearing Cache Memory</p>
-<p>Please force refresh your browser cache after an upgrade!
-Depending on your operating system all you need to do is the following key combination:</p>
+<p>Please force refresh your browser cache after an update!
+Depending on your operating system, all you need to do is the following key combination:</p>
 <ul>
 <li>Windows: Ctrl + F5</li>
 <li>Mac/Apple: Command + Shift + R</li>
@@ -2685,48 +2685,50 @@ Depending on your operating system all you need to do is the following key combi
 </ul>
 </div>
 <h2 id="access-administrative-interface-and-backup-the-system">Access Administrative Interface And Backup The System</h2>
-<p>Access administrative interface by clicking <strong>Support</strong> button at the
-top right of the main user interface and then clicking <strong>System
-Administration</strong>. You can also access administrative interface directly
-by connecting to HTTPS port <code>8443</code> of the IP Fabric VM, e.g.
-(<code>https://ipfabric-ip-address:8443</code>)</p>
-<p>Use the user <strong>osadmin</strong> with password configured during the first boot
-wizard.</p>
-<p>On <a href="../backup_and_restore">Restore and Backup</a> page perform system backup.</p>
+<p>The best practice is to save the virtual machine’s state using your hypervisor or, alternatively, use the IP Fabric backup. To proceed with IP Fabric system backup, do the following:</p>
+<ol>
+<li>Navigate to <strong>Support</strong> (top right corner of the main user interface).</li>
+<li>Navigate to <strong>System Administration</strong> to access the administrative interface (e.g. <code>https://ipfabric-ip-address:8443</code>).</li>
+<li>Log in with the <code>osadmin</code> user and the password configured during the first boot.</li>
+<li>Backup the VM by following the instructions on the <a href="../backup_and_restore">Restore or Backup</a> page.</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">Backup Disk</p>
 <p>Local backup disk is not present by default! Please add a new virtual disk to your VM to enable local backups. (See Restore and Backup page)</p>
 </div>
-<h2 id="online-upgrade">Online Upgrade</h2>
-<p>At the <strong>System update</strong> page of the administrative interface, click the
-<strong>Update</strong> button. (In releases earlier than 2.2.6 additional release
-credentials are required).</p>
+<h2 id="online-update">Online Update</h2>
+<p>The <strong>Online update</strong> is automatically available only when the IP Fabric appliance has connectivity to the servers below:</p>
 <div class="admonition warning">
 <p class="admonition-title">Network requirements</p>
-<p>An online upgrade requires access to:</p>
 <ul>
-<li><code>callhome.ipfabric.io</code> (95.217.156.217) remote port 443/TCP for upgrade availability check</li>
-<li><code>releases.ipfabric.io</code> (95.216.185.152) remote port 443/TCP for upgrade package download</li>
+<li><code>callhome.ipfabric.io</code> (95.217.156.217) remote port 443/TCP for update availability check</li>
+<li><code>releases.ipfabric.io</code> (95.216.185.152) remote port 443/TCP for update package download</li>
 </ul>
 </div>
-<p>In the following screenshot, the green 3.7.5 button in the right top
-corner indicates that a new version of IP Fabric is available (if the
-system has Internet connectivity).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../system_update_new_version.png"><img alt="New version" src="../system_update_new_version.png"/></a></p>
-<h2 id="offline-upgrade">Offline Upgrade</h2>
-<p>Download the latest upgrade package from the updates folder on the distribution page <a href="https://releases.ipfabric.io/ipfabric/#updates">https://releases.ipfabric.io/ipfabric/#updates</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When performing offline upgrade IP FABRIC v2.2.2 or lower, load the patch for large offline updates first using <a href="https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig">https://releases.ipfabric.io/nimpee/updates/nimpee-offline-update-fix.tar.gz.sig</a></p>
-</div>
-<p>Go to <strong>Support -&gt; System Administration</strong> (use ‘osadmin’ user to access). At the <strong>System update</strong> page of the administrative interface, upload the package. The following screenshot depicts the actual upgrade process in the System Administration.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../system_update_progress.png"><img alt="Update in progress" src="../system_update_progress.png"/></a></p>
-<p>The upgrade will start automatically after a successful package upload,
-after which the IP Fabric VM will reboot. Once the IP Fabric VM is
-rebooted, please run a new discovery so all of the new calculations can
-take place.</p>
-<p>Make sure to refresh the browser cache using CTRL+F5 when accessing IP
-Fabric VM user interface after an upgrade.</p>
+<p>When new IP Fabric version is publicly available, the green interactive button automatically appears in the right top corner.
+The image below shows an example of the new version 3.7.5 available.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../system_update_new_version.png"><img alt="New version 3.7.5 available" src="../system_update_new_version.png"/></a></p>
+<p>To proceed with online update:</p>
+<ol>
+<li>Click on the new version indicator (it will navigate you to <strong>System Administration</strong>).</li>
+<li>Log in with the <code>osadmin</code> user and the password configured during the first boot.</li>
+<li>Perform the VM backup as described in the above section.</li>
+<li>Navigate to <strong>System update</strong> and proceed (IP Fabric will automatically download the update file, perform the update and reboot itself).</li>
+</ol>
+<h2 id="offline-update">Offline Update</h2>
+<p>Offline update is available to IP Fabric VM without direct internet connectivity.</p>
+<p>To proceed with offline update:</p>
+<ol>
+<li>Download the latest update file from <a href="https://releases.ipfabric.io/ipfabric/updates/">https://releases.ipfabric.io/ipfabric/updates/</a></li>
+<li>Navigate to <strong>Support</strong> (top right corner of the main user interface).</li>
+<li>Navigate to <strong>System Administration</strong> to access the administrative interface (e.g. <code>https://ipfabric-ip-address:8443</code>).</li>
+<li>Log in with the <code>osadmin</code> user and the password configured during the first boot.</li>
+<li>Perform the VM backup as described in the above section.</li>
+<li>Navigate to <strong>System update</strong> and select the update file.</li>
+<li>Select or Drag and Drop your downloaded update file.</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../system_update.png"><img alt="IP Fabric System update in progress" src="../system_update.png"/></a></p>
+<p>The update will start automatically after a successful package upload, after which the IP Fabric VM will reboot. Once the IP Fabric VM reboots, it’s recommended to run a discovery process to create a new snapshot on the latest version.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
