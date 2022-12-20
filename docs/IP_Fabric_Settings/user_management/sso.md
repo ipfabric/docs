@@ -30,12 +30,11 @@ sequenceDiagram
 
 Prior to configuring SSO the IP Fabric server must not be using a self-signed certificate. To create a new signed TLS certificate please see instructions located at [IP Fabric Web Certificate](../advanced/ipf_cert.md).
 
-!!! information "Internal CA"
+!!! information "Private Certificate Authority (CA)"
 
-    By default, IP Fabric only trusts certificates issued by CAs listed in the
-    node.js. If your company use certificates signed by an internal CA please
-    reach out to your Solution Architect or open a Support ticket for further
-    configuration in order to properly enable SSO.
+    IP Fabric only trusts certificates issued by CAs listed in the system `openssl` trust-store.
+    If your company use certificates signed by an internal CA, please, reach out to your Solution
+    Architect or open a Support ticket for further configuration in order to properly enable SSO.
 
 ### CLI Access
 

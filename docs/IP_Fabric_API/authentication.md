@@ -2,9 +2,9 @@
 
 IP Fabric accepts 3 different methods of Authentication:
 
-* [API Token](#api-token)
-* [Basic Authentication](#basic-authentication)
-* [Token Authentication](#token-authentication)
+- [API Token](#api-token)
+- [Basic Authentication](#basic-authentication)
+- [Token Authentication](#token-authentication)
 
 ## API Token
 
@@ -24,7 +24,7 @@ osadmin@ipfabric:~$ echo -n "username:password" | base64
 dXNlcm5hbWU6cGFzc3dvcmQ=
 osadmin@ipfabric:~$ curl -X GET 'https://demo3.ipfabric.io/api/v5.0/snapshots' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=' 
+  -H 'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='
 ```
 
 ## Token Authentication
@@ -39,29 +39,29 @@ An access token is JSON Web Token (JWT) as per RFC-7519 signed using SHA-256 wit
 
 The token expires in 30 minutes since being generated and it can’t be revoked during its lifetime. It consists of three parts separated by dots:
 
-* Header
-* Payload
-* Signature
+- Header
+- Payload
+- Signature
 
 The payload contains an object with the following fields:
 
-* ID - User ID
-* EULA - A boolean value whether a user approved EULA or not
-* EXP - Token expiration time (in seconds since Unix epoch)
-* IAT - Token issued time (in seconds since Unix epoch)
-* Scope - Array of strings representing granted user access
-* Username - String
+- ID -- User ID
+- EULA -- A boolean value whether a user approved EULA or not
+- EXP -- Token expiration time (in seconds since Unix epoch)
+- IAT -- Token issued time (in seconds since Unix epoch)
+- Scope -- Array of strings representing granted user access
+- Username -- String
 
 #### Refresh Token
 
 A refresh token is a token that can be used to obtain a renewed access token. It can be requested for new access tokens until the refresh token is revoked (blacklisted) or expired.
 
-!!! warning "Refresh Tokens"
+!!! warning "Token expiration"
 
-    **A refresh token expires after 24 hours of not being used for generation
-    of a new access token. Refresh tokens must be stored securely by an 
-    application because they essentially allow a user to 
-    remain authenticated forever.**
+    A refresh token expires after 24 hours of not being used for generation
+    of a new access token. Refresh tokens must be stored securely by an
+    application because they essentially allow a user to
+    remain authenticated forever.
 
 ### Login
 
@@ -90,7 +90,7 @@ Please ensure it is formatted as `Authorization: Bearer <ACCESS_TOKEN>`.
 ```bash
 curl -X GET 'https://demo3.ipfabric.io/api/v5.0/snapshots' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer eyJhbGc...' 
+  -H 'Authorization: Bearer eyJhbGc...'
 ```
 
 ### Using the refreshToken
@@ -118,15 +118,15 @@ To logout of IP Fabric:
 ```bash
 curl -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/logout' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer eyJhbGc...' 
+  -H 'Authorization: Bearer eyJhbGc...'
 ```
 
 ## Changing Default Token Expiration
 
 The default token expiration is as follows:
 
-* accessToken - 30 minutes (1800 seconds)
-* refreshToken - 24 hours (86400 seconds)
+- accessToken - 30 minutes (1800 seconds)
+- refreshToken - 24 hours (86400 seconds)
 
 If the user does any action in the web GUI or requests a new access token using the API within a 24-hour period IP Fabric will keep the user logged in, create a new `accessToken`, and reset the `refreshToken` expiration timer for another 24 hours.
 
@@ -134,30 +134,23 @@ Many company standards requires shorter expiration times and this can be accompl
 
 --8<-- "snippets/cli_root_access.md"
 
-!!! warning "SSO Configuration"
-
-    If you previosuly enabled SSO please only edit the `expiresIn` settings of 
-    the `/opt/nimpee/conf.d/api.json` file.
-
 1. Log into IP Fabric CLI as `osadmin`
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create new file `/opt/nimpee/conf.d/api.json` with the below JSON
-    1. In this example the `accessToken` expires in 10 minutes
-       and `refreshToken` expires in 15 minutes.
+3. Create new file `/opt/nimpee/conf.d/api.json` with the below JSON. In this example the `accessToken` expires in 10 minutes and `refreshToken` expires in 15 minutes.
 
-```json
-{
-  "app": {
-    "accessToken": {
-      "expiresIn": 600
-    },
-    "refreshToken": {
-      "expiresIn": 900,
-      "length": 80
-    }
-  }
-}
-```
+   ```json
+   {
+     "app": {
+       "accessToken": {
+         "expiresIn": 600
+       },
+       "refreshToken": {
+         "expiresIn": 900,
+         "length": 80
+       }
+     }
+   }
+   ```
 
 4. Change file permissions `chmod 644 /opt/nimpee/conf.d/api.json`
 5. Restart API `systemctl restart nimpee-api.service`
@@ -174,7 +167,7 @@ The API returns an object with a machine-readable error code and a human-readabl
 ```
 
 | Code                      | Message                                                                                                                                                       |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | API_EXPIRED_API_TOKEN     | The provided API key expired.                                                                                                                                 |
 | API_INVALID_API_TOKEN     | The provided API key doesn’t exist. It was removed, or it never existed.                                                                                      |
 | API_MISSING_EULA_APPROVAL | This error occurs when a user hasn’t approved EULA. It is REQUIRED to login using the user’s credentials into the application user interface and accept EULA. |
