@@ -2841,7 +2841,7 @@ differently in you production deployment, than described here.
 <span class="nv">dXNlcm5hbWU6cGFzc3dvcmQ</span><span class="o">=</span>
 osadmin@ipfabric:~$ curl -X GET <span class="s1">'https://demo3.ipfabric.io/api/v5.0/snapshots'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span> 
+  -H <span class="s1">'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span>
 </code></pre></div>
 <h2 id="token-authentication">Token Authentication</h2>
 <p>Token Authentication allows a user to submit their Username and Password to the <code>login</code> endpoint which then returns a JSON Web Token (JWT) for them to use in the <code>Authorization</code> header.</p>
@@ -2856,21 +2856,21 @@ osadmin@ipfabric:~$ curl -X GET <span class="s1">'https://demo3.ipfabric.io/api/
 </ul>
 <p>The payload contains an object with the following fields:</p>
 <ul>
-<li>ID - User ID</li>
-<li>EULA - A boolean value whether a user approved EULA or not</li>
-<li>EXP - Token expiration time (in seconds since Unix epoch)</li>
-<li>IAT - Token issued time (in seconds since Unix epoch)</li>
-<li>Scope - Array of strings representing granted user access</li>
-<li>Username - String</li>
+<li>ID – User ID</li>
+<li>EULA – A boolean value whether a user approved EULA or not</li>
+<li>EXP – Token expiration time (in seconds since Unix epoch)</li>
+<li>IAT – Token issued time (in seconds since Unix epoch)</li>
+<li>Scope – Array of strings representing granted user access</li>
+<li>Username – String</li>
 </ul>
 <h4 id="refresh-token">Refresh Token</h4>
 <p>A refresh token is a token that can be used to obtain a renewed access token. It can be requested for new access tokens until the refresh token is revoked (blacklisted) or expired.</p>
 <div class="admonition warning">
-<p class="admonition-title">Refresh Tokens</p>
-<p><strong>A refresh token expires after 24 hours of not being used for generation
-of a new access token. Refresh tokens must be stored securely by an 
-application because they essentially allow a user to 
-remain authenticated forever.</strong></p>
+<p class="admonition-title">Token expiration</p>
+<p>A refresh token expires after 24 hours of not being used for generation
+of a new access token. Refresh tokens must be stored securely by an
+application because they essentially allow a user to
+remain authenticated forever.</p>
 </div>
 <h3 id="login">Login</h3>
 <p>To login and obtain an Access and Refresh token please see the below curl example:</p>
@@ -2889,7 +2889,7 @@ remain authenticated forever.</strong></p>
 Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt;</code>.</p>
 <div class="highlight"><pre><span></span><code>curl -X GET <span class="s1">'https://demo3.ipfabric.io/api/v5.0/snapshots'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer eyJhbGc...'</span> 
+  -H <span class="s1">'Authorization: Bearer eyJhbGc...'</span>
 </code></pre></div>
 <h3 id="using-the-refreshtoken">Using the refreshToken</h3>
 <p>To create a new <code>accessToken</code> from the <code>refreshToken</code>:</p>
@@ -2906,7 +2906,7 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <p>To logout of IP Fabric:</p>
 <div class="highlight"><pre><span></span><code>curl -X POST <span class="s1">'https://demo3.ipfabric.io/api/v5.0/auth/logout'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer eyJhbGc...'</span> 
+  -H <span class="s1">'Authorization: Bearer eyJhbGc...'</span>
 </code></pre></div>
 <h2 id="changing-default-token-expiration">Changing Default Token Expiration</h2>
 <p>The default token expiration is as follows:</p>
@@ -2920,18 +2920,11 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <p class="admonition-title">Warning</p>
 <p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">SSO Configuration</p>
-<p>If you previosuly enabled SSO please only edit the <code>expiresIn</code> settings of 
-the <code>/opt/nimpee/conf.d/api.json</code> file.</p>
-</div>
 <ol>
 <li>Log into IP Fabric CLI as <code>osadmin</code></li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
-<li>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON
-    1. In this example the <code>accessToken</code> expires in 10 minutes
-       and <code>refreshToken</code> expires in 15 minutes.</li>
-</ol>
+<li>
+<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON. In this example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in 15 minutes.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2944,8 +2937,10 @@ the <code>/opt/nimpee/conf.d/api.json</code> file.</p>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<ol>
-<li>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></li>
+</li>
+<li>
+<p>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
+</li>
 <li>Restart API <code>systemctl restart nimpee-api.service</code></li>
 </ol>
 <h2 id="token-errors">Token Errors</h2>

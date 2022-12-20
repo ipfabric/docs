@@ -2894,11 +2894,10 @@ are unsure who your Solution Architect is, contact our Support Team.</p>
 <h3 id="certificate">Certificate</h3>
 <p>Prior to configuring SSO the IP Fabric server must not be using a self-signed certificate. To create a new signed TLS certificate please see instructions located at <a href="../../advanced/ipf_cert/">IP Fabric Web Certificate</a>.</p>
 <div class="admonition information">
-<p class="admonition-title">Internal CA</p>
-<p>By default, IP Fabric only trusts certificates issued by CAs listed in the
-node.js. If your company use certificates signed by an internal CA please
-reach out to your Solution Architect or open a Support ticket for further
-configuration in order to properly enable SSO.</p>
+<p class="admonition-title">Private Certificate Authority (CA)</p>
+<p>IP Fabric only trusts certificates issued by CAs listed in the system <code>openssl</code> trust-store.
+If your company use certificates signed by an internal CA, please, reach out to your Solution
+Architect or open a Support ticket for further configuration in order to properly enable SSO.</p>
 </div>
 <h3 id="cli-access">CLI Access</h3>
 <p>In order to make changes to certain files you must have access to the <code>osadmin</code> account to log into the CLI and gain root access. For more information please see <a href="../../../System_Administration/Command_Line_Interface/">CLI Overview</a>.</p>
