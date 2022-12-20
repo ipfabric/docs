@@ -89,13 +89,6 @@ changed. Below is a full example of the `api.json` config file.
 }
 ```
 
-!!! information "Changing Default Token Expiration"
-
-    In this file you can also change the default token expiration of
-    30 minutes for accessToken and 24 hours for refreshToken.
-    If you would like to learn more about this please visit
-    [API Authentication](../../IP_Fabric_API/authentication.md).
-
 ### URL Configuration
 
 Inside the `app`, `web`, `dex` configuration the `url` field needs to be updated
