@@ -71,6 +71,8 @@ errors and adjustments:
 
 **Jumphost** allows to set-up a connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
 
+The user used for **Jumphost** connection must have access to jumphosts `shell` and must be able to run `pyhton`.
+
 We successfully tested IP Fabric against jumphosts with the following python versions:
 
 | Jumphost Python Version |               |
@@ -117,6 +119,9 @@ We successfully tested IP Fabric against jumphosts with the following python ver
     !!! warning
 
         If you use `0.0.0.0/0` or another subnet that **includes the IP address of IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, the connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention to fix.
+
+        Also if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.
+
 
   - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
   - **Login type**

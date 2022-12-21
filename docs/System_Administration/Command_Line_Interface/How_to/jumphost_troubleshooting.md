@@ -1,11 +1,6 @@
 # Troubleshooting `jumphost`
 
-
 ## Jumphost Troubleshooting Tools
-
-Scripts to start jumphosts are located in `/opt/nimpee/jumphost` folder.
-
-Script logs are gathered in `/var/log/nimpee/net-jumphost-start-one.log` files.
 
 IP Fabric doesn't work with DNS names that have IPv6 address in addition to IPv4 address. It is always better to use IPv4 address record.
 
@@ -13,13 +8,18 @@ It is a good practice to test the SSH from IP Fabric's CLI to any network device
 
 Other useful commands:
 
-```shell title="Gets Status of sshuttle"
-sudo nimpee-net-jumphost -s
+```shell title="Gets the name of the service and latest logs from Jumphost service in real time"
+systemctl | grep jumphost
+
+journalctl -f -u jumphost@xxx.service
 ```
 
 ```shell title="Manually Starts a Jumphost"
-sudo nimpee-net-jumphost -1 192.168.11.197 -u autoboss -p password
+/usr/bin/python3 /usr/sbin/sshuttle -D -vvv -r jumphost-user@jumphost-ip x.x.x.x/yy
 ```
+!!! example
+
+    replace `x.x.x.x/yy` with a subnet which you want to reach through the jumphost e.g. `10.254.63.0/24`
 
 ## Jumphost Status Is Running, But Devices Behind Jumphost Are Not Discovered
 
@@ -29,7 +29,7 @@ sudo nimpee-net-jumphost -1 192.168.11.197 -u autoboss -p password
 
 2.  On the IP Fabric instance open ssh/telnet session to any host behind jumphost
 
-    ```shell
+    ```
     autoboss@ip-fabric:~$ telnet 10.47.102.104
     Trying 10.47.102.104...
     Connected to 10.47.102.104.
