@@ -2755,15 +2755,19 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="troubleshooting-jumphost">Troubleshooting <code>jumphost</code></h1>
 <h2 id="jumphost-troubleshooting-tools">Jumphost Troubleshooting Tools</h2>
-<p>Scripts to start jumphosts are located in <code>/opt/nimpee/jumphost</code> folder.</p>
-<p>Script logs are gathered in <code>/var/log/nimpee/net-jumphost-start-one.log</code> files.</p>
 <p>IP Fabric doesn’t work with DNS names that have IPv6 address in addition to IPv4 address. It is always better to use IPv4 address record.</p>
 <p>It is a good practice to test the SSH from IP Fabric’s CLI to any network device that should be discoverable using the jumphost when the jumphost is configured and active.</p>
 <p>Other useful commands:</p>
-<div class="highlight"><span class="filename">Gets Status of sshuttle</span><pre><span></span><code>sudo nimpee-net-jumphost -s
+<div class="highlight"><span class="filename">Gets the name of the service and latest logs from Jumphost service in real time</span><pre><span></span><code>systemctl <span class="p">|</span> grep jumphost
+
+journalctl -f -u jumphost@xxx.service
 </code></pre></div>
-<div class="highlight"><span class="filename">Manually Starts a Jumphost</span><pre><span></span><code>sudo nimpee-net-jumphost -1 <span class="m">192</span>.168.11.197 -u autoboss -p password
+<div class="highlight"><span class="filename">Manually Starts a Jumphost</span><pre><span></span><code>/usr/bin/python3 /usr/sbin/sshuttle -D -vvv -r jumphost-user@jumphost-ip x.x.x.x/yy
 </code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>replace <code>x.x.x.x/yy</code> with a subnet which you want to reach through the jumphost e.g. <code>10.254.63.0/24</code></p>
+</div>
 <h2 id="jumphost-status-is-running-but-devices-behind-jumphost-are-not-discovered">Jumphost Status Is Running, But Devices Behind Jumphost Are Not Discovered</h2>
 <h3 id="check-incoming-traffic-from-the-ip-fabric-to-a-jumphost">Check Incoming Traffic From the IP Fabric To a Jumphost</h3>
 <ol>
@@ -2772,15 +2776,15 @@ differently in you production deployment, than described here.
 </li>
 <li>
 <p>On the IP Fabric instance open ssh/telnet session to any host behind jumphost</p>
-<p><div class="highlight"><pre><span></span><code>autoboss@ip-fabric:~$ telnet <span class="m">10</span>.47.102.104
-Trying <span class="m">10</span>.47.102.104...
-Connected to <span class="m">10</span>.47.102.104.
-Escape character is <span class="s1">'^]'</span>.
+<p><div class="highlight"><pre><span></span><code>autoboss@ip-fabric:~$ telnet 10.47.102.104
+Trying 10.47.102.104...
+Connected to 10.47.102.104.
+Escape character is '^]'.
 
-<span class="c1">##########################################################################</span>
-<span class="c1">##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##</span>
-<span class="c1">## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##</span>
-<span class="c1">##########################################################################</span>
+##########################################################################
+##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##
+## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##
+##########################################################################
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@jumphost:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode

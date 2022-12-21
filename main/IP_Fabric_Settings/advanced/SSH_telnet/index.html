@@ -3169,6 +3169,7 @@ errors and adjustments:</p>
 </table>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
 <p><strong>Jumphost</strong> allows to set-up a connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
+<p>The user used for <strong>Jumphost</strong> connection must have access to jumphosts <code>shell</code> and must be able to run <code>pyhton</code>.</p>
 <p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
 <table>
 <thead>
@@ -3246,6 +3247,7 @@ errors and adjustments:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>“Exclude IPv4 subnet”</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
+<p>Also if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.</p>
 </div>
 </li>
 </ul>
