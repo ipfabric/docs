@@ -19,4 +19,4 @@ Afterward, choose Cisco FMC API from the list and fill in
 
 ## Known issues
 
-[FMC REST API Calls Returns HTTP Error Code 500](../../../releases/known_issues/cisco/FMC_REST_API.md)
+[FMC REST API Calls Returns HTTP Error Code 500](../../../support/known_issues/Vendors/cisco/FMC_REST_API.md)

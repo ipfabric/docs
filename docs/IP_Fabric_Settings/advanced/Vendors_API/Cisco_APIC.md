@@ -23,4 +23,4 @@ Afterward, choose Cisco APIC from the list and fill in
 
 ## Know issues
 
-[APIC Tables are all empty except Controllers](../../../releases/known_issues/cisco/apic_tables_empty.md)
+[APIC Tables are all empty except Controllers](../../../support/known_issues/Vendors/cisco/apic_tables_empty.md)

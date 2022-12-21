@@ -15,9 +15,9 @@ description: IP Fabric describes general known affected issues that may occur in
 
 - Advanced Filter Visibility. When Advanced filter is applied, and
   then collapsed via advanced filter button
-	![advanced filter button](filter_advanced_btn.png)
+	![advanced filter button](ipf_issues/filter_advanced_btn.png)
   it's not clear that filter is being applied to the table, except for
-  the visible clear filter button. ![clear filter button](filter_clear_btn.png)
+  the visible clear filter button. ![clear filter button](ipf_issues/filter_clear_btn.png)
 
 - Jumphost can be activated only from support console.
 

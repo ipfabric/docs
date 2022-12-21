@@ -23,7 +23,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 !!! note "Invalid OVF checksum algorithm: SHA256"
 
     Importing OVA on older vSphere/ESXi hosts may error stating the OVF checksum
-    is invalid.  Please see [this documentation](../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md)
+    is invalid.  Please see [this documentation](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md)
     on how to resolve this.
 
 

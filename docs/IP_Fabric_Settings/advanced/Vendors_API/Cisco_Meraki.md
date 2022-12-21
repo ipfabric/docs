@@ -60,4 +60,4 @@ The Tasker file contains complete communication between IP Fabric and Meraki Das
 
 ## Known Issues
 
-[Meraki API Limited Functionality](../../../releases/known_issues/meraki.md)
+[Meraki API Limited Functionality](../../../support/known_issues/Vendors/meraki.md)

@@ -44,7 +44,7 @@ When using filters this will change what is displayed in the table, the exported
 Type in what you are looking for in most columns. The example above shows a search for all devices with an IP address starting "10.41.133" throughout all the ARP tables in our infrastructure. Use the below button to clear the search
 results.
 
-![clear filter](../../releases/known_issues/IP_Fabric/filter_clear_btn.png)
+![clear filter](filter_clear_btn.png)
 
 #### Advanced Filtering
 

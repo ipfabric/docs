@@ -21,4 +21,4 @@ Versa requires the following settings to be applied:
 
 ## Known Issues
 
-[HTTP 500 Error `AsyncRequestTimeoutException`](../../../releases/known_issues/versa.md)
+[HTTP 500 Error `AsyncRequestTimeoutException`](../../../support/known_issues/Vendors/versa.md)

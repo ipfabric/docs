@@ -17,15 +17,15 @@ Release 6.0.1 implements a fix for this issue, but you still have to re-upload t
 
 For older releases between 5.0.0 and 6.0.0 it can be fixed manually:
 
-1. change permissions for `autoboss` user for
+1. Change permissions for `autoboss` user for
 
   ```shell
   # chown root:autoboss /opt/nimpee/conf.d/
   # chmod 0775 /opt/nimpee/conf.d/
   ```
 
-1. re-upload license
-1. validate customer name in `/opt/nimpee/conf.d/sys-nimpee.conf`:
+1. Re-upload license
+1. Validate customer name in `/opt/nimpee/conf.d/sys-nimpee.conf`:
 
   ```shell
   # grep custname /opt/nimpee/conf.d/sys-nimpee.conf

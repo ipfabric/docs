@@ -25,4 +25,4 @@ Starting version **4.4.0** IP Fabric supports Viptela on Cisco IOS XE devices in
 
 ## Known Issues
 
-[Viptela CEdge shows only one next-hop](../../../releases/known_issues/cisco/Viptela_CEdge_shows_only_one_next_hop.md)
+[Viptela CEdge shows only one next-hop](../../../support/known_issues/Vendors/cisco/Viptela_CEdge_shows_only_one_next_hop.md)

@@ -14,7 +14,7 @@ Executing some commands to get transceiver related information may cause issues 
 **Note:**
 
 - Transceiver task is disabled by default. A user can enable it in IPF settings (see the steps below).
-- Even if the transceiver task is enabled, IPF still prevents its execution on any device that is classified to be affected by any known bug. It is not possible to disable this feature now. See the list of known bugs and their corresponding [software and hardware versions.](../cisco/Show_Interface_Transceivers.md)
+- Even if the transceiver task is enabled, IPF still prevents its execution on any device that is classified to be affected by any known bug. It is not possible to disable this feature now. See the list of known bugs and their corresponding [software and hardware versions.](../Vendors/cisco/Show_Interface_Transceivers.md)
 
 **Disclaimer**
 
@@ -24,7 +24,7 @@ Although we try to prevent task execution on all software and hardware versions 
 
 Navigate to **Technology → Interfaces → Transceivers**
 
-![IP Fabric menu](transceivers_interfaces.png)
+![IP Fabric menu](ipf_issues/transceivers_interfaces.png)
 
 
 ## How To Enable/Disable Transceivers Task
@@ -33,10 +33,10 @@ This function is **enabled by default** for all vendors and product families. Th
 
 The function can be **Enabled/Disabled** in section **Settings → Advanced → Discovery task**.
 
-![Transceivers settings](transceivers_settings.png)
+![Transceivers settings](ipf_issues/transceivers_settings.png)
 
 To **disable** this task, you need to **delete the default Transceivers task** or **edit** this default task.
 
 When **editing** this rule, you select by regex expression on which devices this command **should not** be executed (so for example if you don't want to run show interface transceivers command for all CISCO devices, put cisco to the Vendor field. More specific device selection can be done by Family, Platform, Model and Version fields). You can simply test your Regex rules by *"Test rules"* button.
 
-![Edit transceivers rule](transceivers_edit.png)
+![Edit transceivers rule](ipf_issues/transceivers_edit.png)
