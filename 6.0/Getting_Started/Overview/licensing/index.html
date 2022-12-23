@@ -41,7 +41,7 @@
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -78,6 +78,17 @@
 </div>
 </div>
 </div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
 <label class="md-header__button md-icon" for="__search">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
@@ -335,7 +346,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5" id="__nav_2_1_5" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_1_5" id="__nav_2_1_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_1_5">
 <span class="md-ellipsis">
     How Discovery Works
@@ -374,7 +385,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_5_4" id="__nav_2_1_5_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_1_5_4" id="__nav_2_1_5_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_1_5_4">
 <span class="md-ellipsis">
     Common problems
@@ -430,7 +441,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2">
 <span class="md-ellipsis">
     Platform First Steps
@@ -499,7 +510,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
 <span class="md-ellipsis">
     IP Fabric API
@@ -562,7 +573,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" id="__nav_3_7" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_7" id="__nav_3_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_7">
 <span class="md-ellipsis">
     Path Lookup
@@ -620,7 +631,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" id="__nav_3_8" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_8" id="__nav_3_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_8">
 <span class="md-ellipsis">
     Tutorials
@@ -654,7 +665,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" id="__nav_3_9" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_9" id="__nav_3_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_9">
 <span class="md-ellipsis">
     Snapshots
@@ -699,7 +710,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
 <span class="md-ellipsis">
     IP Fabric GUI
@@ -754,7 +765,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" id="__nav_4_6" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_6" id="__nav_4_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_6">
 <span class="md-ellipsis">
     Technology Tables
@@ -956,50 +967,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" id="__nav_4_7" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_7" id="__nav_4_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_7">
-<span class="md-ellipsis">
-    Tips
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Tips" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_7">
-<span class="md-nav__icon md-icon"></span>
-            Tips
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../IP_Fabric_GUI/Tips/vague_messages/">
-<span class="md-ellipsis">
-    Troubleshooting Vague Messages
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/navigate_in_tables/">
-<span class="md-ellipsis">
-    Navigate in Tables
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/search/">
-<span class="md-ellipsis">
-    Searching
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" id="__nav_4_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_8">
 <span class="md-ellipsis">
     Diagrams
     
@@ -1007,7 +976,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Diagrams" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_8">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             Diagrams
           </label>
@@ -1056,8 +1025,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9" id="__nav_4_9" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_9">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_8" id="__nav_4_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_8">
 <span class="md-ellipsis">
     Management
     
@@ -1065,7 +1034,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Management" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_9">
+<label class="md-nav__title" for="__nav_4_8">
 <span class="md-nav__icon md-icon"></span>
             Management
           </label>
@@ -1097,11 +1066,53 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_9" id="__nav_4_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_9">
+<span class="md-ellipsis">
+    Tips
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Tips" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_9">
+<span class="md-nav__icon md-icon"></span>
+            Tips
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/navigate_in_tables/">
+<span class="md-ellipsis">
+    Navigate in Tables
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/search/">
+<span class="md-ellipsis">
+    Searching
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/vague_messages/">
+<span class="md-ellipsis">
+    Troubleshooting Vague Messages
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
 <span class="md-ellipsis">
     IP Fabric Settings
@@ -1180,7 +1191,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" id="__nav_5_9" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9" id="__nav_5_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_9">
 <span class="md-ellipsis">
     Advanced
@@ -1251,7 +1262,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_8" id="__nav_5_9_8" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9_8" id="__nav_5_9_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_9_8">
 <span class="md-ellipsis">
     Vendors API
@@ -1373,7 +1384,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_9" id="__nav_5_9_9" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9_9" id="__nav_5_9_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_9_9">
 <span class="md-ellipsis">
     Discovery
@@ -1439,7 +1450,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9_10" id="__nav_5_9_10" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_9_10" id="__nav_5_9_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_9_10">
 <span class="md-ellipsis">
     System
@@ -1484,7 +1495,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" id="__nav_5_10" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_10" id="__nav_5_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_10">
 <span class="md-ellipsis">
     User management
@@ -1553,7 +1564,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
 <span class="md-ellipsis">
     System Administration
@@ -1584,7 +1595,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_3">
 <span class="md-ellipsis">
     Administrative Interface
@@ -1642,7 +1653,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_4">
 <span class="md-ellipsis">
     Command Line Interface
@@ -1681,7 +1692,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4_4" id="__nav_6_4_4" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_4_4" id="__nav_6_4_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_4_4">
 <span class="md-ellipsis">
     How to
@@ -1707,6 +1718,14 @@
 <a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/">
 <span class="md-ellipsis">
     How to change the `osadmin` password
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/custom_ssl_cert/">
+<span class="md-ellipsis">
+    How to add Custom SSL Certificate
     
   </span>
 </a>
@@ -1745,7 +1764,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7">
 <span class="md-ellipsis">
     Releases
@@ -1768,410 +1787,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" id="__nav_7_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2" id="__nav_7_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7_2">
-<span class="md-ellipsis">
-    Known issues
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Known issues" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_2">
-<span class="md-nav__icon md-icon"></span>
-            Known issues
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/3com/">
-<span class="md-ellipsis">
-    3Com
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/Fortinet_FortiGate/">
-<span class="md-ellipsis">
-    Fortinet FortiGate
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/arista/">
-<span class="md-ellipsis">
-    Arista
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/brocade/">
-<span class="md-ellipsis">
-    Brocade
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/checkpoint/">
-<span class="md-ellipsis">
-    Checkpoint
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/dell/">
-<span class="md-ellipsis">
-    Dell
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/extreme/">
-<span class="md-ellipsis">
-    Extreme Networks
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/f5/">
-<span class="md-ellipsis">
-    F5
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/hp/">
-<span class="md-ellipsis">
-    HP
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/huawei/">
-<span class="md-ellipsis">
-    Huawei
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/juniper/">
-<span class="md-ellipsis">
-    Juniper
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/meraki/">
-<span class="md-ellipsis">
-    Meraki
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/mikrotik/">
-<span class="md-ellipsis">
-    Mikrotik
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/versa/">
-<span class="md-ellipsis">
-    Versa
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_15" id="__nav_7_2_15" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_15">
-<span class="md-ellipsis">
-    IP Fabric
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="IP Fabric" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_2_15">
-<span class="md-nav__icon md-icon"></span>
-            IP Fabric
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/">
-<span class="md-ellipsis">
-    General
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Customer_name_in_techsupport/">
-<span class="md-ellipsis">
-    Customer name in techsupport
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Missing_lsof_package/">
-<span class="md-ellipsis">
-    Missing `lsof` Package
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Service_passwords/">
-<span class="md-ellipsis">
-    Service Passwords
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
-<span class="md-ellipsis">
-    Site Name Can Change To An Obscure UUID Value After Update
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/local_time_inconsistencies/">
-<span class="md-ellipsis">
-    Local Time Inconsistencies
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/transceivers_task/">
-<span class="md-ellipsis">
-    Transceivers Task
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_15_8" id="__nav_7_2_15_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_15_8">
-<span class="md-ellipsis">
-    Error messages
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Error messages" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_2_15_8">
-<span class="md-nav__icon md-icon"></span>
-            Error messages
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/aql_internal_error/">
-<span class="md-ellipsis">
-    Aql internal error
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
-<span class="md-ellipsis">
-    Http 504 database overloaded
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
-<span class="md-ellipsis">
-    Error: Invalid OVF checksum algorithm: SHA256
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/IP_Fabric/error_messages/resource_conflict/">
-<span class="md-ellipsis">
-    Resource conflict
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_16" id="__nav_7_2_16" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_16">
-<span class="md-ellipsis">
-    Palo Alto
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Palo Alto" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_2_16">
-<span class="md-nav__icon md-icon"></span>
-            Palo Alto
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/Palo_Alto/">
-<span class="md-ellipsis">
-    Overview
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/Palo_Alto/networks_panorama/">
-<span class="md-ellipsis">
-    Networks Panorama
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_17" id="__nav_7_2_17" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_17">
-<span class="md-ellipsis">
-    Cisco
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Cisco" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_2_17">
-<span class="md-nav__icon md-icon"></span>
-            Cisco
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/">
-<span class="md-ellipsis">
-    Overview
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Adding_AAA_user_to_Cisco_ACS/">
-<span class="md-ellipsis">
-    Adding AAA User To Cisco ACS
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Cisco_ASA_In_Transparent_Mode/">
-<span class="md-ellipsis">
-    Cisco ASA in Transparent Mode
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Command_cli_whitespace_completion/">
-<span class="md-ellipsis">
-    Command `cli whitespace completion`
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
-<span class="md-ellipsis">
-    Dropping Support For ACL On Cisco Firepower
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/FMC_REST_API/">
-<span class="md-ellipsis">
-    FMC REST API Calls Returns HTTP Error Code 500
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
-<span class="md-ellipsis">
-    Inconsistent VRF Names On Cisco Platforms
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Nexus_9k_Show_Version/">
-<span class="md-ellipsis">
-    Nexus 9k Show Version
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Show_Interface_Transceivers/">
-<span class="md-ellipsis">
-    Show Interface Transceivers
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/VRFs_are_not_found_on_IOS-XR/">
-<span class="md-ellipsis">
-    VRFs Are Not Found On IOS-XR
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/Viptela_CEdge_shows_only_one_next_hop/">
-<span class="md-ellipsis">
-    Viptela CEdge shows only one next-hop
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/known_issues/cisco/apic_tables_empty/">
-<span class="md-ellipsis">
-    APIC Tables are all empty except Controllers
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" id="__nav_7_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3">
 <span class="md-ellipsis">
     Low level release notes
     
@@ -2179,14 +1796,14 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Low level release notes" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_3">
+<label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
             Low level release notes
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1" id="__nav_7_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_1">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_1" id="__nav_7_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_1">
 <span class="md-ellipsis">
     4.x
     
@@ -2194,14 +1811,14 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="4.x" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_3_1">
+<label class="md-nav__title" for="__nav_7_2_1">
 <span class="md-nav__icon md-icon"></span>
             4.x
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_1" id="__nav_7_3_1_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_1_1">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_1_1" id="__nav_7_2_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_1_1">
 <span class="md-ellipsis">
     4.3.x
     
@@ -2209,7 +1826,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="4.3.x" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_3_1_1">
+<label class="md-nav__title" for="__nav_7_2_1_1">
 <span class="md-nav__icon md-icon"></span>
             4.3.x
           </label>
@@ -2266,8 +1883,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_1_2" id="__nav_7_3_1_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_1_2">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_1_2" id="__nav_7_2_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_1_2">
 <span class="md-ellipsis">
     4.4.x
     
@@ -2275,7 +1892,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="4.4.x" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_3_1_2">
+<label class="md-nav__title" for="__nav_7_2_1_2">
 <span class="md-nav__icon md-icon"></span>
             4.4.x
           </label>
@@ -2319,8 +1936,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2" id="__nav_7_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_2">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_2" id="__nav_7_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_2">
 <span class="md-ellipsis">
     5.x
     
@@ -2328,14 +1945,14 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="5.x" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_3_2">
+<label class="md-nav__title" for="__nav_7_2_2">
 <span class="md-nav__icon md-icon"></span>
             5.x
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_2_1" id="__nav_7_3_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_2_1">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_2_1" id="__nav_7_2_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_2_1">
 <span class="md-ellipsis">
     5.0.x
     
@@ -2343,7 +1960,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="5.0.x" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_3_2_1">
+<label class="md-nav__title" for="__nav_7_2_2_1">
 <span class="md-nav__icon md-icon"></span>
             5.0.x
           </label>
@@ -2379,8 +1996,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_3" id="__nav_7_3_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_3">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_3" id="__nav_7_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_3">
 <span class="md-ellipsis">
     6.x
     
@@ -2388,14 +2005,14 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="6.x" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_3_3">
+<label class="md-nav__title" for="__nav_7_2_3">
 <span class="md-nav__icon md-icon"></span>
             6.x
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_3_1" id="__nav_7_3_3_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_3_3_1">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2_3_1" id="__nav_7_2_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_3_1">
 <span class="md-ellipsis">
     6.0.x
     
@@ -2403,7 +2020,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="6.0.x" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_3_3_1">
+<label class="md-nav__title" for="__nav_7_2_3_1">
 <span class="md-nav__icon md-icon"></span>
             6.0.x
           </label>
@@ -2434,8 +2051,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" id="__nav_7_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_4">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_3" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3">
 <span class="md-ellipsis">
     Release notes
     
@@ -2443,7 +2060,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Release notes" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_4">
+<label class="md-nav__title" for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
             Release notes
           </label>
@@ -2473,8 +2090,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_4" id="__nav_7_4_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_4_4">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_3_4" id="__nav_7_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_4">
 <span class="md-ellipsis">
     Previous releases
     
@@ -2482,7 +2099,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Previous releases" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_4_4">
+<label class="md-nav__title" for="__nav_7_3_4">
 <span class="md-nav__icon md-icon"></span>
             Previous releases
           </label>
@@ -2512,8 +2129,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4_4_4" id="__nav_7_4_4_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_4_4_4">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_3_4_4" id="__nav_7_3_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_4_4">
 <span class="md-ellipsis">
     IP Fabric v4.x.x
     
@@ -2521,7 +2138,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="IP Fabric v4.x.x" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_4_4_4">
+<label class="md-nav__title" for="__nav_7_3_4_4">
 <span class="md-nav__icon md-icon"></span>
             IP Fabric v4.x.x
           </label>
@@ -2579,7 +2196,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8">
 <span class="md-ellipsis">
     Support
@@ -2624,6 +2241,434 @@
     
   </span>
 </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5" id="__nav_8_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5">
+<span class="md-ellipsis">
+    Known issues
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Known issues" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_5">
+<span class="md-nav__icon md-icon"></span>
+            Known issues
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/">
+<span class="md-ellipsis">
+    Known Issues
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5_2" id="__nav_8_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5_2">
+<span class="md-ellipsis">
+    IP Fabric
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="IP Fabric" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_5_2">
+<span class="md-nav__icon md-icon"></span>
+            IP Fabric
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/">
+<span class="md-ellipsis">
+    General
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/">
+<span class="md-ellipsis">
+    Customer name in techsupport
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Missing_lsof_package/">
+<span class="md-ellipsis">
+    Missing `lsof` Package
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Service_passwords/">
+<span class="md-ellipsis">
+    Service Passwords
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
+<span class="md-ellipsis">
+    Site Name Can Change To An Obscure UUID Value After Update
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/local_time_inconsistencies/">
+<span class="md-ellipsis">
+    Local Time Inconsistencies
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/transceivers_task/">
+<span class="md-ellipsis">
+    Transceivers Task
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5_2_8" id="__nav_8_5_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5_2_8">
+<span class="md-ellipsis">
+    Error messages
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Error messages" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_5_2_8">
+<span class="md-nav__icon md-icon"></span>
+            Error messages
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/aql_internal_error/">
+<span class="md-ellipsis">
+    Aql internal error
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
+<span class="md-ellipsis">
+    Http 504 database overloaded
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
+<span class="md-ellipsis">
+    Error: Invalid OVF checksum algorithm: SHA256
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/resource_conflict/">
+<span class="md-ellipsis">
+    Resource conflict
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5_3" id="__nav_8_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5_3">
+<span class="md-ellipsis">
+    Vendors
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Vendors" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Vendors
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/3com/">
+<span class="md-ellipsis">
+    3Com
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Fortinet_FortiGate/">
+<span class="md-ellipsis">
+    Fortinet FortiGate
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/arista/">
+<span class="md-ellipsis">
+    Arista
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/brocade/">
+<span class="md-ellipsis">
+    Brocade
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/checkpoint/">
+<span class="md-ellipsis">
+    Checkpoint
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/dell/">
+<span class="md-ellipsis">
+    Dell
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/extreme/">
+<span class="md-ellipsis">
+    Extreme Networks
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/f5/">
+<span class="md-ellipsis">
+    F5
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/hp/">
+<span class="md-ellipsis">
+    HP
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/huawei/">
+<span class="md-ellipsis">
+    Huawei
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/juniper/">
+<span class="md-ellipsis">
+    Juniper
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/meraki/">
+<span class="md-ellipsis">
+    Meraki
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/mikrotik/">
+<span class="md-ellipsis">
+    Mikrotik
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/versa/">
+<span class="md-ellipsis">
+    Versa
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5_3_15" id="__nav_8_5_3_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5_3_15">
+<span class="md-ellipsis">
+    Palo Alto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Palo Alto" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_5_3_15">
+<span class="md-nav__icon md-icon"></span>
+            Palo Alto
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Palo_Alto/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Palo_Alto/networks_panorama/">
+<span class="md-ellipsis">
+    Networks Panorama
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_5_3_16" id="__nav_8_5_3_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_5_3_16">
+<span class="md-ellipsis">
+    Cisco
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Cisco" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_5_3_16">
+<span class="md-nav__icon md-icon"></span>
+            Cisco
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/">
+<span class="md-ellipsis">
+    Adding AAA User To Cisco ACS
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/">
+<span class="md-ellipsis">
+    Cisco ASA in Transparent Mode
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/">
+<span class="md-ellipsis">
+    Command `cli whitespace completion`
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
+<span class="md-ellipsis">
+    Dropping Support For ACL On Cisco Firepower
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/FMC_REST_API/">
+<span class="md-ellipsis">
+    FMC REST API Calls Returns HTTP Error Code 500
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
+<span class="md-ellipsis">
+    Inconsistent VRF Names On Cisco Platforms
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/">
+<span class="md-ellipsis">
+    Nexus 9k Show Version
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/">
+<span class="md-ellipsis">
+    Show Interface Transceivers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/">
+<span class="md-ellipsis">
+    VRFs Are Not Found On IOS-XR
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Viptela_CEdge_shows_only_one_next_hop/">
+<span class="md-ellipsis">
+    Viptela CEdge shows only one next-hop
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/apic_tables_empty/">
+<span class="md-ellipsis">
+    APIC Tables are all empty except Controllers
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2702,6 +2747,10 @@
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
@@ -2766,7 +2815,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
 <script src="../../../assets/javascripts/bundle.02d7801c.min.js"></script>
+<link href="../../../assets/stylesheets/extra.6f22df39.min.css" rel="stylesheet"/>
+<script defer="" src="../../../assets/javascripts/extra/bundle.6260e174.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
