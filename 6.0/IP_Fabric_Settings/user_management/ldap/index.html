@@ -1498,9 +1498,9 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#supported-ldap-servers-are">
+<a class="md-nav__link" href="#authentication-flow">
 <span class="md-ellipsis">
-      Supported LDAP Servers Are:
+      Authentication Flow
     </span>
 </a>
 </li>
@@ -1526,13 +1526,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#local-vs-ldap-authentication">
-<span class="md-ellipsis">
-      Local vs LDAP Authentication
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#troubleshooting">
 <span class="md-ellipsis">
       Troubleshooting
@@ -1541,16 +1534,9 @@
 <nav aria-label="Troubleshooting" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cli-example">
+<a class="md-nav__link" href="#using-ldapsearch-to-verify-ldap-configuration">
 <span class="md-ellipsis">
-      CLI Example
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#error-codes">
-<span class="md-ellipsis">
-      Error Codes
+      Using ldapsearch to verify LDAP configuration
     </span>
 </a>
 </li>
@@ -1777,6 +1763,14 @@
 <a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/manual_config_backup/">
 <span class="md-ellipsis">
     How to trigger manual configuration backup for a single device
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/troubleshoot_ldap/">
+<span class="md-ellipsis">
+    How To Troubleshoot LDAP
     
   </span>
 </a>
@@ -2723,9 +2717,9 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#supported-ldap-servers-are">
+<a class="md-nav__link" href="#authentication-flow">
 <span class="md-ellipsis">
-      Supported LDAP Servers Are:
+      Authentication Flow
     </span>
 </a>
 </li>
@@ -2751,13 +2745,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#local-vs-ldap-authentication">
-<span class="md-ellipsis">
-      Local vs LDAP Authentication
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#troubleshooting">
 <span class="md-ellipsis">
       Troubleshooting
@@ -2766,16 +2753,9 @@
 <nav aria-label="Troubleshooting" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cli-example">
+<a class="md-nav__link" href="#using-ldapsearch-to-verify-ldap-configuration">
 <span class="md-ellipsis">
-      CLI Example
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#error-codes">
-<span class="md-ellipsis">
-      Error Codes
+      Using ldapsearch to verify LDAP configuration
     </span>
 </a>
 </li>
@@ -2793,67 +2773,115 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="ldap-authentication">LDAP Authentication</h1>
-<p>User synchronization or import capabilities <strong>are not supported at
-this time</strong>.</p>
-<p>LDAP works in an <strong>on-demand</strong> state – <strong>users are
-added</strong> to IP Fabric after they <strong>log in for the first time</strong> and <strong>user
-group permissions</strong> are checked with <strong>every login attempt</strong>.</p>
-<h2 id="supported-ldap-servers-are">Supported LDAP Servers Are:</h2>
-<ul>
-<li>Microsoft Active Directory</li>
-<li>OpenLDAP</li>
-</ul>
+<p>LDAP (Lightweight Directory Access Protocol) authentication is a secure and reliable method of authenticating users and granting access to network resources. It is a widely used protocol for authentication and authorization in enterprise networks, and is an important component of any secure network infrastructure.</p>
+<p>We regularly test our LDAP implementation against <code>OpenLDAP</code> and <code>Microsoft Active Directory</code>.</p>
+<h2 id="authentication-flow">Authentication Flow</h2>
+<p>Local authentication has a precedence over other authentication methods. This means that LDAP is consulted only if the user doesn’t have a local account. Thus, we recommend to keep number of the local accounts to an absolute minimum in cases when an external authentication method (like an LDAP) is in use.</p>
+<p>IP Fabric implementation authenticates users with LDAP every time they try to log in with username and password to IP Fabric. Accounts are not synchronized or imported in advance. Simplified authentication flow for configured and enabled LDAP is as follows:</p>
+<pre class="mermaid"><code>graph LR
+    LoginStart[User attempts to log in] --&gt; UserLocal{Local account?}
+
+    UserLocal --&gt;|Yes| PswCheck{Correct password?}
+      PswCheck --&gt;|Yes| LoginOk[Successfull login]
+      PswCheck --&gt; |No| LoginFailed[Login failed]
+    UserLocal --&gt;|No| LDAP{LDAP configured?}
+
+    LDAP --&gt;|No| LoginFailed[Login failed]
+    LDAP --&gt;|Yes| LdapSearch[Search for user in LDAP]
+
+    LdapSearch --&gt; |failure| LoginFailed[Login failed]
+    LdapSearch --&gt;|success| LdapBind[Bind as user]
+
+    LdapBind --&gt; |failure| LoginFailed[Login failed]
+    LdapBind --&gt;|success| UserLocalLdap[Create/update non-local account in DB]
+    UserLocalLdap --&gt; FetchGroups[Fetch Groups from LDAP]
+    FetchGroups --&gt; LoginOk[Successfull login]
+
+    style LoginOk fill:#33dd00
+    style LoginFailed fill:#dd3300</code></pre>
+<p>If a user is successfully authenticated through LDAP, basic information about this user is then passed from LDAP and stored in the database as a non-local account. Also information about groups and memberships are fetched and stored within the database.</p>
+<p>Local accounts have <code>isLocal</code> attribute set to <code>true</code>. You may see accounts for external authentication method also being created, but these will have <code>isLocal</code> set to <code>false</code>, and they will not be considered for local authentication. Records are created for housekeeping reasons, primarily to have a consistent mapping to local groups and roles.</p>
 <h2 id="enable-ldap-authentication">Enable LDAP Authentication</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ldap_configuration.png"><img alt="LDAP Configuration" src="../ldap_configuration.png"/></a></p>
 <ol>
 <li>
 <p>Log in to IP Fabric as a user with admin rights.</p>
 </li>
 <li>
-<p>Go to <strong>Settings → User Management → LDAP</strong> menu.</p>
+<p>Go to <strong>Settings → User Management → LDAP</strong> menu.</p>
 </li>
 <li>
-<p>Select <strong>+Add Domain</strong>.</p>
+<p>Select <strong>+ Add Domain</strong>.</p>
 </li>
 <li>
-<p>Choose LDAP server type in the <strong>Type</strong> drop-down menu. Only <strong>Microsoft Active Directory</strong> or <strong>Open LDAP</strong> servers are supported.</p>
+<p>Choose LDAP server type in the <strong>Type</strong> drop-down menu (Microsoft
+   Active Directory or Open LDAP).</p>
 </li>
 <li>
-<p>Enter all the aliases/suffixes for this domain in the <strong>Account suffixes</strong> field. Each suffix must begin with <code>@</code>. If the same user can log in with other suffixes, for example, <code>joe@europe.domain.com</code> and <code>joe@domain.com</code> then fill in <code>@europe.domain.com</code> and <code>@domain.com</code>.</p>
+<p>Enter all the aliases/suffixes for this domain in the <strong>Account suffixes</strong>
+   field.</p>
+<ol>
+<li>Each suffix must begin with <code>@</code>.</li>
+<li>If the same user can log in with other suffixes, for example,
+    <code>joe@europe.domain.com</code> and <code>joe@domain.com</code>
+    then fill in <code>@europe.domain.com</code> and <code>@domain.com</code>.</li>
+</ol>
 </li>
 <li>
 <p>Add servers for the domain:</p>
 <ol>
 <li>
-<p>as an <strong>explicit list of addresses</strong></p>
-<p>1. Choose <strong>Use pre-configured LDAP servers</strong> in Servers dropdown</p>
-<p>2. Specify full FQDN (including domain) or IP address of the LDAP server including the protocol prefix (such as <code>ldap://your.domain.com</code> or <code>ldaps://your.domain.com</code>)</p>
-<p>3. Specify the port (default LDAP port is 389 and default LDAPS port is 636)</p>
-<p>4. For LDAP over SSL, also upload a Root CA certificate used for the LDAP certificate signature</p>
-<p>5. Click on <strong>+Add Server</strong> if you want to add backup servers</p>
+<p>As an <strong>explicit list of addresses</strong>:</p>
+<p>1. Choose <strong>Use pre-configured LDAP servers</strong> in Servers dropdown.</p>
+<p>2. Specify full FQDN (including domain) or IP address of the LDAP server
+     including the protocol prefix (such as <code>ldap://your.domain.com</code>
+     or <code>ldaps://your.domain.com</code>).</p>
+<p>3. Specify the port (default ports are 389 for LDAP and 636 for LDAPS).</p>
+<p>4. For LDAP over SSL, also upload a Root CA certificate used for the LDAP
+     certificate signature.</p>
+<p>5. Click on <strong>+ Add Server</strong> if you want to add backup servers.</p>
 </li>
 <li>
-<p>using <strong>DNS service records</strong></p>
-<p>1. Choose <strong>Use DNS to find LDAP servers</strong> in Servers dropdown</p>
-<p>2. Choose/upload a certificate (recommended in the production environment)</p>
-<p>3. Define the DNS address</p>
-<p>4. Define Service location name (common names are <code>ldap</code> and <code>ldaps</code>). This is the network service that constructs the final name of the record. The construction is done as follows: <code>\_{{service location name}}.\_tcp.{{dns address}}</code></p>
+<p>Using <strong>DNS service records</strong>:</p>
+<p>1. Choose <strong>Use DNS to find LDAP servers</strong> in servers dropdown.</p>
+<p>2. Choose or upload a certificate (recommended in the production
+     environment).</p>
+<p>3. Define the DNS address.</p>
+<p>4. Define Service location name (common names are <code>ldap</code> and <code>ldaps</code>).
+     This is the network service that constructs the final name of the
+     record. The construction is done as follows:
+     <code>\_{{service location name}}.\_tcp.{{dns address}}</code></p>
 </li>
 </ol>
 </li>
 <li>
-<p>Specify service account with LDAP read permissions in the <strong>Bind DN</strong> field. This field must be an <strong>escaped</strong> LDAP-style <strong>distinguished name</strong>. (for example <code>CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com</code> or <code>CN=User,OU=europe,DC=your,DC=domain,DC=com</code>)</p>
+<p>Specify service account with LDAP read permissions in the <strong>Bind DN</strong> field.
+   This field must be an <strong>escaped</strong> LDAP-style <strong>distinguished name</strong>.
+   Examples:</p>
+<ol>
+<li><code>CN=Doe\, Joe,OU=europe,DC=your,DC=domain,DC=com</code></li>
+<li><code>CN=User,OU=europe,DC=your,DC=domain,DC=com</code></li>
+</ol>
 </li>
 <li>
-<p>Enter the bind user’s password (defined in step 7) in the <strong>Bind credentials</strong> field.</p>
+<p>Enter the bind user’s password (defined in step 7) in the
+   <strong>Bind credentials</strong> field.</p>
 </li>
 <li>
-<p>Enter a whole domain or specific organization unit (container) in <strong>Search base</strong> to specify where users and groups can be found in the LDAP tree. (for example <code>OU=NetworkAdmins,DC=your,DC=domain,DC=com</code>)</p>
+<p>Enter a whole domain or specific organization unit (container) in
+   <strong>Search base</strong> to specify where users and groups are found in the LDAP tree,
+   for example: <code>OU=NetworkAdmins,DC=your,DC=domain,DC=com</code>.</p>
 </li>
 <li>
-<p>Enter an attribute where email is stored in the LDAP user object into <strong>Search email attribute</strong>.</p>
+<p>Enter an attribute where email is stored in the LDAP user object into
+    <strong>Search email attribute</strong>.</p>
 </li>
 <li>
-<p>Only for <strong>Microsoft Active Directory</strong>: Tick <strong>Allow nested groups</strong> for nested group permission lookup. This uses <a href="https://ldapwiki.com/wiki/ExtensibleMatch">Extensible Match</a> Rule (<a href="https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN">LDAP_MATCHING_RULE_IN_CHAIN</a>) which might be slow in your local setup.</p>
+<p>Only for <strong>Microsoft Active Directory</strong>: Check <strong>Allow nested groups</strong> for
+    nested group permission lookup. This
+    uses <a href="https://ldapwiki.com/wiki/ExtensibleMatch">Extensible Match</a>
+    Rule (<a href="https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN">LDAP_MATCHING_RULE_IN_CHAIN</a>)
+    which might be slow in your local setup.</p>
 </li>
 <li>
 <p>Click <strong>Confirm</strong>.</p>
@@ -2866,70 +2894,51 @@ account are not correct, LDAP authentication cannot be set.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Two or more LDAP servers</p>
-<p>When two or more LDAP server configurations are present, an email suffix needs to be added to the username when logging in.</p>
-<p>Username alone works only in a situation when one LDAP server configuration is present.</p>
+<p>When two or more LDAP server configurations are present, an email suffix
+needs to be added to the username when logging in.</p>
+<p>Username alone works only in a situation when one LDAP server
+configuration is present.</p>
 </div>
 <h2 id="ldap-group-permissions">LDAP Group Permissions</h2>
-<p>After the LDAP server is added, Group Permissions can be set. All
-authenticated users will get assigned role configured for <code>Authenticated user</code>
-— by leaving this role empty it’s possible to ensure that users logged via LDAP
-will get <code>API_INSUFFICIENT_RIGHTS</code> error upon login / access to API.
-It is recommended to create new LDAP groups (such as <code>IP_FABRIC_ADMINISTRATORS</code>,
-<code>IP_FABRIC_USERS</code>, …) and assign to them users to which you want to
-grand access.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ldap_group_permissions.png"><img alt="LDAP Group Permissions" src="../ldap_group_permissions.png"/></a></p>
+<p>After the LDAP server is added, Group Permissions can be set.</p>
+<p>All authenticated users will get assigned role configured for
+<code>Authenticated user</code>:</p>
+<ul>
+<li>By leaving this role empty it’s possible to ensure that users logged via LDAP
+  will get <code>API_INSUFFICIENT_RIGHTS</code> error upon login / access to API.</li>
+<li>Alternatively this could be set to a <code>read-only</code> role so that any user that
+  authenticates successfully to LDAP will have access to IP Fabric.</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Primary user groups are not supported</p>
 <p>It is recommended to create new
 LDAP groups (such as <code>IP_FABRIC_ADMINISTRATORS</code>, <code>IP_FABRIC_USERS</code>, …) and
 assign them permissions.</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../ldap_group_permissions.png"><img alt="LDAP Group Permissions" src="../ldap_group_permissions.png"/></a></p>
 <h2 id="disable-ldap-authentication">Disable LDAP Authentication</h2>
-<p>Remove all LDAP configuration domains in <strong>Settings → User Management →
-LDAP Settings</strong> to disable LDAP authentication.</p>
-<h2 id="local-vs-ldap-authentication">Local vs LDAP Authentication</h2>
-<p>By default, local authentication (or in other words information stored
-in the local database) is the preferred authentication method, where
-LDAP is used as a backup authentication method.</p>
-<p>If a user is not found in the local database and LDAP authentication is defined, IP Fabric will
-redirect the authentication attempt to an LDAP server.</p>
-<p>If a user is successfully authenticated through LDAP, basic information about this
-user is then passed from LDAP and stored in the local database.</p>
+<p>Delete all LDAP configuration domains in <strong>Settings → User Management → LDAP</strong> to disable LDAP authentication.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p>Before contacting our support, please make sure that inputs entered into
-IP Fabric user interface are correct. This can be done using
-<code>ldapsearch</code> command utility:</p>
-<div class="admonition note">
-<p><code>ldapsearch</code> is present in IP Fabric image (access it via ssh) or it can
-be installed locally as part of <code>ldap-utils</code> Linux package. It is
-recommended to <strong>always test LDAP configuration from the IP Fabric image</strong></p>
-</div>
-<h3 id="cli-example">CLI Example</h3>
+<p>Two most common issues are either incorrectly configured search account (<code>Bind DN</code>, <code>Bind credentials</code>) or incorrect <code>Search base</code>. These will typically result into <code>LDAP Search Failed</code> error being shown.</p>
+<p>Please be aware, that all LDAP errors regarding server connection and user binding are returned as <code>LDAP as provided is not reachable</code> due to security concerns.</p>
+<p>Before contacting our support, please make sure that information entered into IP Fabric user interface are correct.</p>
+<h3 id="using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> to verify LDAP configuration</h3>
+<p>You can use <code>ldapsearch</code> command-line utility to independently query LDAP servers. <code>ldapsearch</code> is present in the IP Fabric appliance (access it via ssh) or it can be installed locally as part of <code>ldap-utils</code> Linux package. It is recommended to <strong>always test LDAP configuration from the IP Fabric appliance</strong> to rule connectivity issues out.</p>
 <div class="admonition warning">
-<p>The following example doesn’t verify SSL certificate if LDAPS is used</p>
+<p>The following example doesn’t verify SSL certificate if LDAPS is used.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW ldapsearch <span class="se">\</span>
+<div class="highlight"><span class="filename">Basic bind as search DN</span><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW ldapsearch <span class="se">\</span>
   -W -H <span class="s2">"ldaps://your-ldap-server:636"</span> <span class="se">\</span>
   -D <span class="s2">"</span><span class="nv">$LDAP_BIND_DN</span><span class="s2">"</span> <span class="se">\</span>
   -b <span class="s2">"</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">"</span> <span class="se">\</span>
   -s sub
 </code></pre></div>
-<p>Your fields are correctly set when exit-code of your command is zero.</p>
-<p>The use of nested groups can also be tested by adding the following line
-to the CLI example:</p>
-<div class="highlight"><pre><span></span><code>(member:1.2.840.113556.1.4.1941:=$USER.DN)
+<p>Exit code of the command above is zero if the <code>ldapsearch</code> was able to establish connection and bind. It will ask for a bind password interactively. LDAP search/filer query can be added to the end of the previous example code.</p>
+<div class="highlight"><span class="filename">Search for a concrete user account</span><pre><span></span><code>(uid=$LOGIN_INPUT)
+(|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
 </code></pre></div>
-<p>The CLI example can be followed by a query. Useful LDAP queries to find
-a user follow:</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="nv">$LOGIN_INPUT</span><span class="o">)</span>
-<span class="o">(</span><span class="p">|</span><span class="o">(</span><span class="nv">sAMAccountName</span><span class="o">=</span><span class="nv">$LOGIN_INPUT</span><span class="o">)(</span><span class="nv">userPrincipalName</span><span class="o">=</span><span class="nv">$LOGIN_INPUT</span><span class="o">))</span>
+<div class="highlight"><span class="filename">Nested groups membership search</span><pre><span></span><code>(member:1.2.840.113556.1.4.1941:=$USER_DN)
 </code></pre></div>
-<h3 id="error-codes">Error Codes</h3>
-<p>All LDAP errors regarding server connection and user binding are
-returned as <strong>LDAP as provided is not reachable</strong> due to security
-concerns.</p>
-<p>Please check your <strong>Search base</strong> and <strong>Search login attribute</strong>
-when <strong>LDAP Search Failed</strong> error is shown.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
