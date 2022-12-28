@@ -1518,9 +1518,9 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-attribute-policy">
+<a class="md-nav__link" href="#add-attributes-scope-policy">
 <span class="md-ellipsis">
-      Add Attribute Policy
+      Add Attributes Scope Policy
     </span>
 </a>
 </li>
@@ -2725,9 +2725,9 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-attribute-policy">
+<a class="md-nav__link" href="#add-attributes-scope-policy">
 <span class="md-ellipsis">
-      Add Attribute Policy
+      Add Attributes Scope Policy
     </span>
 </a>
 </li>
@@ -2778,14 +2778,17 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="policies">Policies</h1>
 <p><strong>Policies</strong> can contain sets of <strong>attributes or endpoints</strong>.</p>
-<p><strong>Attributes</strong> allow a policy to permit access to specific attributes such as <strong>siteName</strong>.</p>
-<div class="admonition info">
-<p class="admonition-title">Info<p>When configuring granular policies and a user does not have any of the system policies configured, the user must have an attribute policy to be able to view diagrams. The diagram views are protected by a whitelist and will only allow users to view graphs if they have attribute scopes configured.</p>
-</p>
-</div>
-<p><strong>Endpoints</strong> allow a policy to only allow access to <strong>specific API endpoints</strong> within IP Fabric (e.g. <em>discovery</em> policy allows access to discovery api endpoints).</p>
+<p><strong>Attributes Scope</strong> defines devices which are available to end users. Access is defined by a specific attribute such as <strong>siteName</strong>.</p>
+<p><strong>API Endpoints Scope</strong> defines actions which are permitted to end users to perform on allowed devices or in the system. Access is defined only to a <strong>specific API endpoint</strong> within the IP Fabric (e.g. <em>discovery</em> policy allows access to discovery API endpoints (actions)).</p>
 <p><strong>Policies page</strong> enables you to create or modify policies.</p>
-<h2 id="add-attribute-policy">Add Attribute Policy</h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Every <code>custom role</code> has to have at least 2 policies configured to see diagrams.</p>
+<p>1. <strong>Attributes Scope</strong> policy defining <code>siteNames</code></p>
+<p>2. <strong>API Endpoints Scope</strong> policy defining access to <strong>Graphs</strong> API calls.</p>
+<p>Users with <code>admin</code> role have access to all attributes and endpoints by default.</p>
+</div>
+<h2 id="add-attributes-scope-policy">Add Attributes Scope Policy</h2>
 <ol>
 <li>
 <p>To add a new policy click on <strong>+ Add policy</strong>.</p>

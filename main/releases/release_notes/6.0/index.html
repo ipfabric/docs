@@ -2930,11 +2930,15 @@ TAR MD5: afbe34c8e97bc66c2af111c1ad3715ac
 <p>You can now configure custom attributes for devices, this can be found under <code>Settings</code> → <code>Device Attributes</code>.</p>
 <p>Site separation is also fully backed by attributes by now. That resulted in API changes, for example <code>siteKey</code> has been removed from inventory calls.</p>
 <h3 id="rbac">RBAC</h3>
-<p>You can now specify the level of access a user has by restricting the ability to use certain API Endpoints, or you can restrict which devices the user has access to via Device Attributes. New settings can be found under:</p>
+<p>You can now specify the level of access a user has by restricting the ability to use only certain <strong>API Endpoints</strong> (API calls), or you can restrict which devices the user has access to via <code>siteName</code> <strong>Attributes scope</strong>. New settings can be found under:</p>
 <ul>
 <li><code>Settings</code> → <code>User Management</code> → <code>Polices</code></li>
 <li><code>Settings</code> → <code>User Management</code> → <code>Roles</code></li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you have defined <code>custom roles</code> in the 5.0 release, create a new <strong>Attributes scope</strong> policy to allow access to sites users need access to. Also define new <strong>API Endpoints Scope</strong> if needed. See, <a href="../../../IP_Fabric_Settings/user_management/policies/">Policies</a>.</p>
+</div>
 <h3 id="assurance-engine">Assurance Engine</h3>
 <ul>
 <li>Assurance Engine is a new tab found under global and snapshot settings.</li>
