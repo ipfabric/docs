@@ -2,16 +2,23 @@
 
 **Policies** can contain sets of **attributes or endpoints**.
 
-**Attributes** allow a policy to permit access to specific attributes such as **siteName**.
+**Attributes Scope** defines devices which are available to end users. Access is defined by a specific attribute such as **siteName**.
 
-!!! Info
-        When configuring granular policies and a user does not have any of the system policies configured, the user must have an attribute policy to be able to view diagrams. The diagram views are protected by a whitelist and will only allow users to view graphs if they have attribute scopes configured.
-
-**Endpoints** allow a policy to only allow access to **specific API endpoints** within IP Fabric (e.g. *discovery* policy allows access to discovery api endpoints).
+**API Endpoints Scope** defines actions which are permitted to end users to perform on allowed devices or in the system. Access is defined only to a **specific API endpoint** within the IP Fabric (e.g. *discovery* policy allows access to discovery API endpoints (actions)).
 
 **Policies page** enables you to create or modify policies.
 
-## Add Attribute Policy
+!!! attention
+
+	Every `custom role` has to have at least 2 policies configured to see diagrams.
+		
+	  1. **Attributes Scope** policy defining `siteNames`
+		
+	  2. **API Endpoints Scope** policy defining access to **Graphs** API calls.
+
+	Users with `admin` role have access to all attributes and endpoints by default.
+
+## Add Attributes Scope Policy
 
 1. To add a new policy click on **+ Add policy**.
 
