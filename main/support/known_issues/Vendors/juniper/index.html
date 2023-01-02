@@ -2674,53 +2674,50 @@ differently in you production deployment, than described here.
 <h1 id="juniper">Juniper</h1>
 <ul>
 <li>Route leak defined by reference to another VRF is not supported.
-    Route leak with the policy is supported.</li>
+  Route leak with the policy is supported.</li>
 </ul>
 <hr/>
 <p><strong><em>Known Affected platforms</em></strong>: Juniper SRX300</p>
-<p><strong><em>Description</em></strong>: <em>show ethernet-switching interface detail</em> can cause
+<p><strong><em>Description</em></strong>: <code>show ethernet-switching interface detail</code> can cause
 infinite loop output</p>
-<p><strong><em>Result</em></strong>: </p>
+<p><strong><em>Result</em></strong>:</p>
 <p>Version 3.1.1 and earlier.</p>
 <ul>
 <li>Endless command execution can cause device control plane
-    overutilization issues that might also affect other control plane
-    protocol operations (e.g. BFD). Further, it increases the time of
-    IPF device/network discovery and can result in not discovering the
-    device and gathering information from it.</li>
+  overutilization issues that might also affect other control plane
+  protocol operations (e.g. BFD). Further, it increases the time of
+  IPF device/network discovery and can result in not discovering the
+  device and gathering information from it.</li>
 <li>We recommend removing such devices from the scope of IPF discovery
-    (putting these devices to discovery exclude list).</li>
+  (putting these devices to discovery exclude list).</li>
 </ul>
 <p>Version 3.1.2 and above</p>
 <ul>
-<li>Command ‘show ethernet-switching interfaces detail’ is no longer
-    used and was substituted by other commands including ‘show
-    ethernet-switching interfaces’. Further ‘show ethernet-switching
-    interfaces’ command is only executed on devices discovered as EX or
-    QFX switches.</li>
+<li>Command <code>show ethernet-switching interfaces detail</code> is no longer
+  used and was substituted by other commands including <code>show ethernet-switching interfaces</code>. Further <code>show ethernet-switching interfaces</code> command is only executed on devices discovered as EX or
+  QFX switches.</li>
 </ul>
 <hr/>
 <p><strong><em>Known Affected platforms</em></strong>: SRX, MX</p>
-<p><strong><em>Description</em></strong>: <em>show ntp associations no-resolve</em> command timeouts</p>
+<p><strong><em>Description</em></strong>: <code>show ntp associations no-resolve</code> command timeouts</p>
 <p><strong><em>Result</em></strong>: <a href="https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436">https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436</a></p>
 <hr/>
 <p><strong><em>Known Affected platforms</em></strong>: ALL - valid for version 3.1.1 and
 earlier</p>
 <p><strong><em>Description</em></strong>: The platform doesn’t discover Juniper devices with the
-‘root’ login. The ‘root’ enters the shell prompt (%) and not the
+<code>root</code> login. The <code>root</code> enters the shell prompt (<code>%</code>) and not the
 operational mode directly.</p>
-<p><strong><em>Result</em></strong>: </p>
-<p>Version 3.1.1 and earlier - the ‘root’ login cannot be used for
+<p><strong><em>Result</em></strong>:</p>
+<p>Version 3.1.1 and earlier - the <code>root</code> login cannot be used for
 discovery.</p>
-<p>Version 3.1.2 and above - the ‘root’ login may be used for discovery.</p>
+<p>Version 3.1.2 and above - the <code>root</code> login may be used for discovery.</p>
 <hr/>
 <p><strong><em>Known Affected platforms</em></strong>: ALL</p>
 <p><strong><em>Description</em></strong>: The Link-Layer Discovery Protocol (LLDP) links are not
 displayed in diagrams.</p>
 <p><strong><em>Result</em></strong>: To display LLDP links in diagrams correctly, the IP address
-of the neighbor has to be present in ‘<strong>shot lldp neighbor interface
-xx-x/x/x</strong>‘ command. The IP address is present only when configured with
-the ‘<strong>set lldp management-address xx.xx.xx.xx</strong>‘ command in the
+of the neighbor has to be present in <code>show lldp neighbor interface xx-x/x/x</code> command. The IP address is present only when configured with
+the <code>set lldp management-address xx.xx.xx.xx</code> command in the
 configuration mode. More
 at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html</a>.</p>
 <hr/>
@@ -2738,11 +2735,16 @@ at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference
 <p><strong><em>Result</em></strong>: Without this command collected no memory utilization will be
 present</p>
 <hr/>
+<p><strong><em>Known Affected platforms</em></strong>: ALL</p>
+<p><strong><em>Description</em></strong>: Routing table doesn’t reflect ECMP settings. Information is gathered with <code>show route active-path</code>. Actual forwarding table can contain less next hops.</p>
+<p><strong><em>Result</em></strong>: E2E path can show more paths when ECMP is disabled.</p>
+<p>Check <a href="https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos">https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos</a> for additional information.</p>
+<hr/>
 <h1 id="discovery-of-security-policies">Discovery of Security Policies</h1>
 <ul>
 <li>Wildcard &amp; Dynamic objects and negated services are not supported</li>
 <li>Settings &gt; Advanced &gt; Vendor API: In case that base URL points to a
-    multi-domain server address, domains have to be specified</li>
+  multi-domain server address, domains have to be specified</li>
 </ul>
 </article>
 </div>
