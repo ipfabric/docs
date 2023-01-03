@@ -39,11 +39,11 @@ The following table represents the recommended hardware requirements for optimal
 | Devices | CPU |    RAM |      HDD |
 | ------: | --: | -----: | -------: |
 |     500 |   4 |  16 GB |    90 GB |
-|   1 000 |   4 |  32 GB |   100 GB |
-|   2 000 |   8 |  64 GB |   200 GB |
-|   5 000 |  12 |  64 GB |   300 GB |
-|  10 000 |  16 | 128 GB |   550 GB |
-|  20 000 |  18 | 256 GB | 1 000 GB |
+|   1 000 |   8 |  32 GB |   100 GB |
+|   2 000 |  12 |  64 GB |   200 GB |
+|   5 000 |  16 |  64 GB |   300 GB |
+|  10 000 |  20 | 128 GB |   550 GB |
+|  20 000 |  24 | 256 GB | 1 000 GB |
 
 !!! info "Additional resources requirements"
 
@@ -56,6 +56,14 @@ The following table represents the recommended hardware requirements for optimal
 !!! note
 
     The recommended hardware resources may not allow running the most demanding graph traversal functions. These functions may require a sizable memory pool to complete successfully.
+
+### Supported Virtualization Platforms
+
+We recommend using VMware ESXi or VSphere platforms to virtualize IP Fabric appliance. 
+
+As our OVAs are hashed with SHA256 algorithm, we recommend deployment of vIC via the vSphere Web Client or ESXi Embedded Host Client because both support SHA256. See [Error: Invalid OVF checksum algorithm: SHA256](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md).
+
+It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.
 
 ### Network Connectivity Requirements
 
