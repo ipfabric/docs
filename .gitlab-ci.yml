@@ -37,7 +37,7 @@ vale_mr:
   script:
     - curl --fail -L -o /tmp/vale.tar.gz "$VALE_RELEASE"
     - tar -C /tmp -zxvf /tmp/vale.tar.gz
-    - 'find docs -name "*.md" \! -regex ".*/low-level_release_notes/.*" | xargs /tmp/vale'
+    - 'find docs -name "*.md" \! -regex ".*/release_notes_low-level/.*" | xargs /tmp/vale'
 
 danger:
   stage: test
