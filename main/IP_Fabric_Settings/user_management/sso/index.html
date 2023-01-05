@@ -4230,6 +4230,10 @@ changed. Below is a full example of the <code>api.json</code> config file.</p>
 <span class="w">          </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read"</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">"roleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2356575453"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read-only-users"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"roleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read-only-users"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
@@ -4276,6 +4280,10 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <span class="w">          </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read"</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">"roleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2356575453"</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read-only-users"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"roleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read-only-users"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
@@ -4306,7 +4314,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 </ul>
 </li>
 <li><code>roleAssignments</code> - An array of objects.<ul>
-<li>Objects are in the format of <code>{groupName: string, roleId: string | null }</code><ul>
+<li>Objects are in the format of <code>{groupName: string, roleId?: string|null, roleName?: string|null }</code><ul>
 <li><code>groupName</code> - The name of the group that is configured on the SSO side.<ul>
 <li><code>any</code> will provide default access to any user.</li>
 <li>Multiple mappings with the same <code>groupName</code> will get merged (so the user
@@ -4315,10 +4323,16 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 </li>
 <li><code>roleId</code> - The ID of the IP Fabric role.<ul>
 <li>A value of <code>null</code> will provide no access.</li>
+<li>Either property <code>roleId</code> or <code>roleName</code> must be specified, not both.</li>
 <li><strong>Please do not confuse <code>roleId</code> with <code>roleName</code> as these are different
   values. <code>roleId</code> must be retrieved using browser Developer Tools or
-  using the API (example below).</strong> Feature has been opened to allow
-  for <code>roleName</code>.</li>
+  using the API (example below).</strong></li>
+</ul>
+</li>
+<li><code>roleName</code> - The name of the IP Fabric role.<ul>
+<li>A value of <code>null</code> will provide no access.</li>
+<li>Either property <code>roleName</code> or <code>roleId</code> must be specified, not both.</li>
+<li><strong>Since version v6.1, you can opt to only use <code>roleName</code> instead of <code>roleId</code> in your configuration.</strong></li>
 </ul>
 </li>
 </ul>
