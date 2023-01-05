@@ -81,6 +81,10 @@ changed. Below is a full example of the `api.json` config file.
           {
             "groupName": "read",
             "roleId": "2356575453"
+          },
+          {
+            "groupName": "read-only-users",
+            "roleName": "read-only-users"
           }
         ]
       }
@@ -137,6 +141,10 @@ corresponds to `staticClient` in the Dex configuration).
           {
             "groupName": "read",
             "roleId": "2356575453"
+          },
+          {
+            "groupName": "read-only-users",
+            "roleName": "read-only-users"
           }
         ]
       }
@@ -161,17 +169,21 @@ corresponds to `staticClient` in the Dex configuration).
     Python: `python -c "import secrets; print(secrets.token_urlsafe())"`
   - Used in [ipf-dex.yaml](#static-clients) for `secret` under `staticClients`
 - `roleAssignments` - An array of objects.
-  - Objects are in the format of `{groupName: string, roleId: string | null }`
+  - Objects are in the format of `{groupName: string, roleId?: string|null, roleName?: string|null }`
     - `groupName` - The name of the group that is configured on the SSO side.
       - `any` will provide default access to any user.
       - Multiple mappings with the same `groupName` will get merged (so the user
         will receive all corresponding roles on IP Fabric side).
     - `roleId` - The ID of the IP Fabric role.
       - A value of `null` will provide no access.
+      - Either property `roleId` or `roleName` must be specified, not both.
       - **Please do not confuse `roleId` with `roleName` as these are different
         values. `roleId` must be retrieved using browser Developer Tools or
-        using the API (example below).** Feature has been opened to allow
-        for `roleName`.
+        using the API (example below).**
+    - `roleName` - The name of the IP Fabric role.
+      - A value of `null` will provide no access.
+      - Either property `roleName` or `roleId` must be specified, not both.
+      - **Since version v6.1, you can opt to only use `roleName` instead of `roleId` in your configuration.**
 
 Example to find `roleId`:
 
