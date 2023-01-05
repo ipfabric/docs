@@ -30,11 +30,11 @@ Analytics of the network will give you the ability to compare past states of th
 
 **Q:** What is needed for IP Fabric deployment?
 
-A: IP Fabric currently operates **as a standalone virtual server** available for VMware 5.0 and later or Hyper-V hypervisors. (Other hypervisors may be available in the future.) It can be easily deployed with the OVA image provided by IP Fabric.
+A: IP Fabric must be deployed to a dedicated virtual machine. See [Overview (operational-requirements)](index.md#operational-requirements).
 
 **Q:** Is the IP Fabric cloud based or on-premise solution?
 
-A: IP Fabric is **in most cases deployed as an on-premise solution**. It doesn’t require any Internet connectivity to operate or verify the license or run discovery. Alternatively, it can be deployed in the cloud and discover networks via private tunnels.
+A: IP Fabric is **in most cases deployed as an on-premise solution**. It does not require any Internet connectivity to operate or verify the license or run discovery. Alternatively, it can be deployed in the cloud and discover networks via private tunnels.
 
 **Q:** Do I need to install any additional virtual machines?
 
@@ -42,7 +42,7 @@ A: No additional supporting servers or licenses are needed for successful deploy
 
 **Q:** Do I need a hardware appliance to install IP Fabric?
 
-A: IP Fabric is a virtual appliance that runs on VMware 6.5 or later. It doesn’t need a standalone hardware appliance by design.
+A: IP Fabric is a virtual appliance that runs on various virtualization platforms. It does not need a standalone hardware appliance by design. See [Overview (operational-requirements)](index.md#operational-requirements) for more details.
 
 **Q:** How's the product licensed?
 

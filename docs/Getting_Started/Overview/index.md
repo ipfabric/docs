@@ -59,9 +59,11 @@ The following table represents the recommended hardware requirements for optimal
 
 ### Supported Virtualization Platforms
 
-We recommend using VMware ESXi or VSphere platforms to virtualize IP Fabric appliance. 
+We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.
 
-As our OVAs are hashed with SHA256 algorithm, we recommend deployment of vIC via the vSphere Web Client or ESXi Embedded Host Client because both support SHA256. See [Error: Invalid OVF checksum algorithm: SHA256](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md).
+As our OVAs use SHA256 cryptographic hashing algorithm, we recommend deployment of IP Fabric via the vSphere Web Client or ESXi Embedded Host Client version 6.5 or newer because both support SHA256.
+
+The 6.0.0 and 5.5.0 versions of ESXi do not support SHA256 and require the OVA to be hashed with SHA1, see [Error: Invalid OVF checksum algorithm: SHA256](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md).
 
 It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.
 
