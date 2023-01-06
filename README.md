@@ -93,6 +93,19 @@ under `markdown_extensions` section.
 
 Please, make yourself familiar with [Material Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/) and [MkDocs Markdown Guide](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown).
 
+### GitHub mirror and public sources
+
+Our documentation is open to public at https://docs.ipfabric.io . We went one step further and also made the source code for documentation open at https://github.com/ipfabric/docs . This allows customers to not only closely follow updates, but also to provide improvements. Every page also has an `Edit this page` button to simplify this process.
+
+#### Handling contribution (Pull Request on GitHub)
+
+Primary source of data is GitLab, where also majority of the reviews takes place. GitLab pushes updates to GitHub (it automatically mirrors all protected branches). This means, that final merge needs to happen on the GitLab side. The rough process for handling contribution is as follows:
+
+- contributor creates a pull-request (PR) at GitHub
+- people, with access to GitHub, do the review with contributor using GitHub's PR interface
+- remote branch is pulled from GitHub and pushed to the GitLab, where a new merge-request (MR) is created. CI runs at this time for the MR on GitLab side.
+- when merged to `main` (or other appropriate branch) on the GitLab side, code is pushed to GitHub. Responsible person needs to go to GitHub and close opened pull-request manually.
+
 ### Live preview
 
 #### Container
