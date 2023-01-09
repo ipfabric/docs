@@ -1781,6 +1781,24 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#configuring-access-to-aws-api">
+<span class="md-ellipsis">
+      
+        Configuring access to AWS API
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#required-iam-policy">
+<span class="md-ellipsis">
+      
+        Required IAM policy
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#aws-assumerole">
 <span class="md-ellipsis">
       
@@ -3872,6 +3890,24 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#configuring-access-to-aws-api">
+<span class="md-ellipsis">
+      
+        Configuring access to AWS API
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#required-iam-policy">
+<span class="md-ellipsis">
+      
+        Required IAM policy
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#aws-assumerole">
 <span class="md-ellipsis">
       
@@ -3891,10 +3927,8 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="aws-amazon-web-services">AWS (Amazon Web Services)</h1>
-<p>Starting version 3.8.0 IP Fabric supports AWS API.</p>
-<p>To add AWS to the discovery you will need an access key &amp; secret access
-key from your AWS account.</p>
-<p>Those keys can be found/generated under your account in the AWS
+<h2 id="configuring-access-to-aws-api">Configuring access to AWS API</h2>
+<p>To add AWS to the discovery you will need an access key &amp; secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596295.png"><img alt="AWS Management Console" src="../aws/2691596295.png"/></a></p>
 <p>Click on <strong>My Security Credentials</strong> and open <strong>Access keys</strong> tab.</p>
@@ -3906,26 +3940,29 @@ regions.</p>
 <p>Copy those keys to the AWS API settings in your IP Fabric and don’t
 forget to <strong>fill the regions where the devices which you want to discover
 are</strong>. Multiple regions can be set for one API key and secret.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-vendor-api-6.0.png"><img alt="Add Connection" src="../aws/aws-vendor-api-6.0.png"/></a></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/vendor-api.png"><img alt="Add Connection" src="../aws/vendor-api.png"/></a></p>
+<dl>
+<dt><code>Slug</code></dt>
+<dd>
+<p>Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as <code>loginIP</code> for API). We recommend using short and descriptive values, such as <code>aws-us</code>, <code>aws-jp</code> etc.</p>
+</dd>
+<dt><code>Comment</code></dt>
+<dd>
+<p>Free text field for you to capture additional information about the API instance.</p>
+</dd>
+</dl>
+<h2 id="required-iam-policy">Required IAM policy</h2>
 <p>To ensure that IP Fabric can retrieve all the required data to model the
 AWS networks, a series of specific policies are required to be applied
 to the user account or role used for the API key. <a href="../aws/IAM-policy-IPF_6.1.json">This file</a>
 contains a JSON description of the required IAM policies.</p>
-</div>
 <h2 id="aws-assumerole">AWS AssumeRole</h2>
-<p>From version 4.3, IP Fabric enables you to add AssumeRole to AWS API
-configuration. AssumeRole basically sets higher permissions that may be
-required for the discovery process in some environments.</p>
-<p>AssumeRole is a standard way how to obtain additional rights when
-talking to AWS API. It returns a set of temporary security credentials
-that you can use to access AWS resources that you might not normally
-have access to. These temporary credentials consist of an access key ID,
-a secret access key, and a security token. Typically, you use
-<code>AssumeRole</code> within your account or for cross-account access. For more
-information about AssumeRole see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole - AWS Security Token Service</a>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-vendor-api-6.0-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-vendor-api-6.0-assumerole.png"/></a></p>
+<p>IP Fabric enables you to add AssumeRole targets to AWS API configuration. AssumeRole is typically used for delegating access to additional resources / account in AWS. IP Fabric will iterate through all listed ARNs, call <code>AssumeRole</code> against those, and do discovery on resources which became accessible.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-assumerole.png"/></a></p>
+<div class="admonition info">
+<p class="admonition-title">How <code>AssumeRole</code> works?</p>
+<p>It returns a set of temporary access credentials that can be used to access AWS resources that original account might not normally have access to. For more information about AssumeRole see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole - AWS Security Token Service</a>.</p>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
