@@ -18,11 +18,10 @@ the known affected platforms/versions.
 
     Collecting Transceivers information from certain Cisco devices and versions
     may cause device reloads on certain Cisco versions.
-    
 
 Vendor bugs can also effect collection of data during the discovery process.
 This can cause downstream issues in the platform effecting not only table data
-but also graphing and path lookup simulations. 
+but also graphing and path lookup simulations.
 
 !!! example "Example: Incomplete Data"
 
@@ -34,7 +33,7 @@ but also graphing and path lookup simulations.
 
 Also documented here are known issues with the IP Fabric platform itself.
 These pages provide a possible explanation on the cause of an issue and if 
-applicable a solution(s) to resolve the problem. 
+applicable a solution(s) to resolve the problem.
 
 !!! example "Example: `Error: AQL: internal error - in index`"
 

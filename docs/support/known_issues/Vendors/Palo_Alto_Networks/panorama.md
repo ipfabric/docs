@@ -1,8 +1,8 @@
 ---
-description: A description of the Networks Panorama by Palo Alto Networks™ next-generation firewalls.
+description: A description of Panorama by Palo Alto Networks next-generation firewalls.
 ---
 
-# Networks Panorama
+# Panorama
 
 Panorama is a centralized management system that provides global
 visibility and control over multiple Palo Alto Networks next-generation
@@ -37,17 +37,17 @@ providing a significant advantage over competitive offerings.
 **Panorama provides centralized policy and device management over a
 network of Palo Alto Networks™ next-generation firewalls.**
 
--   View a graphical summary of the applications on the network, the
-    respective users, and the potential security impact.
+- View a graphical summary of the applications on the network, the
+  respective users, and the potential security impact.
 
--   Deploy corporate policies centrally to be used in conjunction with
-    local policies for maximum flexibility.
+- Deploy corporate policies centrally to be used in conjunction with
+  local policies for maximum flexibility.
 
--   Delegate appropriate levels of administrative control at the device
-    level or globally with role-based management.
+- Delegate appropriate levels of administrative control at the device
+  level or globally with role-based management.
 
--   Centrally analyze, investigate and report on network traffic,
-    security incidents and administrative modifications.
+- Centrally analyze, investigate and report on network traffic,
+  security incidents and administrative modifications.
 
 Source :
 [https://www.paloguard.com/](https://www.paloguard.com/Panorama.asp#:~:text=Panorama%20is%20a%20centralized%20management,to%20use%20web%2Dbased%20interface.&text=From%20a%20central%20location%2C%20administrators,and%20content%20traversing%20the%20firewalls.)
