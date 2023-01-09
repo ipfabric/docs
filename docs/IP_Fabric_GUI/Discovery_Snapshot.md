@@ -14,7 +14,7 @@ Network snapshot records:
 
 - Connectivity issues that had occurred during the retrieval of the snapshot.
 
-A network snapshot is a fully functional software copy of your network, including all configuration and state data. It enables to retrieve historical information, to follow network state changes, analyze connectivity issues, and more.
+A network snapshot is a fully functional software copy of your network, including all configuration and state data. It enables to retrieve historical information, to follow network state changes, analyze connectivity issues and more.
 
 Information about the network displayed in IP Fabric corresponds to the network snapshot selected in the Snapshot selector drop-down menu in the top left corner of the Main User Interface.
 
@@ -38,7 +38,7 @@ Snapshots can be run manually or on a schedule; for creating automatic snapshots
 ![Snapshot settings](snapshots/snapshot_settings.png)
 
 Adjusting the `Settings` for either a new snapshot or previously created snapshot will override the global settings.
-This is useful for example testing different SSH settings, Site Separation, Authentication methods.
+This is useful for example testing different SSH settings, Site Separation or Authentication methods.
 
 ## Inspection of Network Issues
 
@@ -141,7 +141,7 @@ Snapshots can be deleted by the `Delete snapshot` button.
 
 ![Snapshot load from file](snapshots/snapshot_load_from_file.png)
 
-This snapshot can be loaded back to the IP Fabric platform by a `Load From File` button.
+A snapshot can be loaded back to the IP Fabric platform by a `Load From File` button.
 
 ## Related Articles
 
