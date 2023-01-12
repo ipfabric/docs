@@ -1769,6 +1769,15 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#slug-and-comment">
+<span class="md-ellipsis">
+      
+        Slug and Comment
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#system-proxy">
 <span class="md-ellipsis">
       
@@ -3893,6 +3902,15 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#slug-and-comment">
+<span class="md-ellipsis">
+      
+        Slug and Comment
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#system-proxy">
 <span class="md-ellipsis">
       
@@ -3925,6 +3943,25 @@ differently in you production deployment, than described here.
 <p>They are frequently <strong>complementary to CLI</strong> based discovery process for the established networking vendors, but <strong>completely essential</strong> for <strong>SD-WAN</strong> or <strong>cloud vendors</strong>.</p>
 <p>This section describes per-API specific settings for supported APIs.</p>
 <p>For each Vendor API, <strong>additional system settings</strong> can be applied.</p>
+<h2 id="slug-and-comment">Slug and Comment</h2>
+<p>Every instance of vendor API configuration have two additional fields (example shows screenshot of AWS configuration)</p>
+<dl>
+<dt><code>Slug</code></dt>
+<dd>
+<p>Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as <code>loginIP</code> for API). We recommend using short and descriptive values, such as <code>aws-us</code>, <code>aws-jp</code> etc.</p>
+</dd>
+<dd>
+<div class="admonition info">
+<p class="admonition-title">Slug?<p>Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See <a href="https://developer.mozilla.org/en-US/docs/Glossary/Slug">MDN</a> for more information.</p>
+</p>
+</div>
+</dd>
+<dt><code>Comment</code></dt>
+<dd>
+<p>Optional free text field for you to capture additional information about the API instance.</p>
+</dd>
+</dl>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="aws/vendor-api.png"><img alt="Add Connection" src="aws/vendor-api.png"/></a></p>
 <h2 id="system-proxy">System Proxy</h2>
 <p><strong>System proxy</strong> is by default used for communication from IP Fabric to the Internet e.g. IP Fabric and system updates.</p>
 <p>Some Vendor API controllers might be <strong>located on the Internet</strong> or other parts of the network and sending traffic through the System proxy might be required.</p>
