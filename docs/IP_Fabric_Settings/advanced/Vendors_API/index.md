@@ -10,9 +10,25 @@ They are frequently **complementary to CLI** based discovery process for the est
 
 This section describes per-API specific settings for supported APIs.
 
-
-
 For each Vendor API, **additional system settings** can be applied.
+
+## Slug and Comment
+
+Every instance of vendor API configuration have two additional fields (example shows screenshot of AWS configuration)
+
+`Slug`
+
+: Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as `loginIP` for API). We recommend using short and descriptive values, such as `aws-us`, `aws-jp` etc.
+
+: !!! info "Slug?"
+
+          Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Slug) for more information.
+
+`Comment`
+
+: Optional free text field for you to capture additional information about the API instance.
+
+![Add Connection](aws/vendor-api.png)
 
 ## System Proxy
 

@@ -27,14 +27,6 @@ are**. Multiple regions can be set for one API key and secret.
 
 ![Add Connection](aws/vendor-api.png)
 
-`Slug`
-
-: Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as `loginIP` for API). We recommend using short and descriptive values, such as `aws-us`, `aws-jp` etc.
-
-`Comment`
-
-: Free text field for you to capture additional information about the API instance.
-
 ## Required IAM policy
 
 To ensure that IP Fabric can retrieve all the required data to model the
