@@ -3905,24 +3905,39 @@ differently in you production deployment, than described here.
 <h1 id="ip-scope">IP Scope</h1>
 <h2 id="including-and-excluding-networks-from-discovery">Including And Excluding Networks From Discovery</h2>
 <p>By default, there are no limitations on discovery and all IP addresses
-are allowed (i.e. <em>Include scope</em> is <code>0.0.0.0/0</code>)</p>
-<p>Discovery can be limited to one or more subnets using <strong>Settings →
-Advanced → Discovery → IP Scope → IP networks to include in discovery</strong>
-and analysis. Enter one or more subnets to limit the discovery process
+are allowed (i.e. <em>Include scope</em> is <code>0.0.0.0/0</code>).</p>
+<p>The Include and Exclude lists act as an Access Control List for IP Fabric, when
+an IP Address is found during discovery it is then checked against this ACL.</p>
+<pre class="mermaid"><code>graph LR
+    ip[IP Found During Discovery] --&gt; exclude{Is IP in Exclude List?}
+
+    exclude --&gt;|No| include{Is IP in Include List?}
+      include --&gt;|Yes| continue[Continue with Discovery Logic]
+      include --&gt; |No| doNotDiscover[Do Not Discover]
+    exclude --&gt;|Yes| doNotDiscover[Do Not Discover]
+
+    style continue fill:#33dd00
+    style doNotDiscover fill:#dd3300</code></pre>
+<p>Discovery can be limited to one or more subnets using <strong>Settings →
+Advanced → Discovery → IP Scope → IP networks to include in discovery</strong>
+and analysis. Enter one or more subnets to limit the discovery process
 to addresses from particular networks.</p>
 <p>Specific parts of the network can be also excluded from discovery
-using <strong>Settings → Advanced → Discovery →  IP Scope → IP networks to
-exclude from discovery</strong> and analysis.  </p>
+using <strong>Settings → Advanced → Discovery → IP Scope → IP networks to
+exclude from discovery</strong> and analysis.</p>
 <div class="admonition warning">
 <p class="admonition-title">Priority</p>
 <p>Exclude option takes precedence over include.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">API Discovery</p>
 <p>IP Scope settings are not applied to Vendors discovered using API
-(everything is downloaded and used in discovery)</p>
+(everything is downloaded and used in discovery).</p>
 </div>
 <p><strong><em>Example</em></strong>:</p>
 <p><em>IP networks to include in discovery and analysis:</em> <code>10.0.0.0/8</code></p>
 <p><em>IP networks to exclude from discovery and analysis:</em> <code>10.24.0.0/16</code></p>
-<p><em>Result:</em> Only network <code>10.0.0.0/8</code> is scanned excluding <code>10.24.0.0/16</code>
+<p><em>Result:</em> Only network <code>10.0.0.0/8</code> is scanned excluding <code>10.24.0.0/16</code>
 subnet.</p>
 </article>
 </div>
