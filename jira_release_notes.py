@@ -74,7 +74,9 @@ def generate_release_notes(rn, project_issues):
             Something that was not working as expected or turned out that did
             not meet customers\' demand.'''),
         ('Task', 'Tasks', '''Task may be associated
-            into Epics or Stories to form complex features.''')
+            into Epics or Stories to form complex features.'''),
+        ('Sub-task', 'Sub-Tasks', '''Sub-tasks are very well contained
+            work packages, organized under Tasks.''')
     ]
     for type in types:
         issues = []
@@ -126,7 +128,7 @@ def main():
                 response = get_project_issues_from_version(project, v, start_at)
                 response_len = len(response['issues'])
                 print(f"For {project} fetched {response_len}, so far {len(project_issues)}, should be {response['total']} issues")
-                # print(json.dumps(projectIssues, indent=2))
+                # print(json.dumps(response['issues'], indent=2))
 
                 project_issues += response['issues']
                 start_at += response_len
@@ -147,9 +149,9 @@ def main():
                 release `{v['name']}`. Please note, that this page contains
                 very low-level information about the actual release, which can
                 lead to false conclusions if you don't have access to the
-                tickets. On the other, it can provide valuable information,
+                tickets. On the other hand, it can provide valuable information,
                 if you are looking for a particular detail. This release of
-                IP Fabric contains total of {issues_total} issues.""")
+                IP Fabric contains a total of {issues_total} issues.""")
 
         generate_release_notes(rn, issues)
 
