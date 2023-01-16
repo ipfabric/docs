@@ -25,12 +25,13 @@ def get_project_versions(project):
     return versions
 
 
-def get_project_issues_from_version(project, projectVersion):
+def get_project_issues_from_version(project, projectVersion, startAt=0):
     jql = ('project = ' + project + ' AND fixVersion = "'
            + projectVersion['name'] +
            '" AND (resolution IS NOT EMPTY OR statusCategory = Done) ORDER BY key')
     params = {
                 'projectId': projectVersion['projectId'],
+                'startAt': startAt,
                 'maxResults': 1000,
                 'jql': jql,
             }
@@ -118,11 +119,27 @@ def main():
         issues_total = 0
 
         for project in PROJECT_KEYS:
-            project_issues = get_project_issues_from_version(project, v)
-            print(f"For {project} fetched {project_issues['total']} issues")
-            # print(json.dumps(projectIssues, indent=2))
-            issues += project_issues['issues']
-            issues_total += project_issues['total']
+            project_issues = []
+            start_at = 0
+
+            while True:
+                response = get_project_issues_from_version(project, v, start_at)
+                response_len = len(response['issues'])
+                print(f"For {project} fetched {response_len}, so far {len(project_issues)}, should be {response['total']} issues")
+                # print(json.dumps(projectIssues, indent=2))
+
+                project_issues += response['issues']
+                start_at += response_len
+
+                if (response_len == 0 or len(project_issues) == response['total']):
+                    # We have fetched all results or we got empty response
+                    # maybe because we have iterated beyond the end of the list
+                    break
+
+
+            issues += project_issues
+            issues_total += len(project_issues)
+            print(f"For {project} fetched {len(project_issues)} issues")
 
         rn = Document("release_notes")
         rn.add_header(f"LLRN {v['name']}")
