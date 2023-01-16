@@ -108,8 +108,8 @@ def main():
         major = int(version_match[1])
         minor = int(version_match[2])
 
-        # Include only versions 4.3 and later
-        if (major*1000 + minor) < 4003:
+        # Include only versions 5.0 and later
+        if (major*1000 + minor) < 5000:
             print(f"Skipping release {v['name']}")
             continue
 
