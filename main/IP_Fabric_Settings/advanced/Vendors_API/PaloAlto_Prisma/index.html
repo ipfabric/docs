@@ -3904,12 +3904,14 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="palo-alto-prisma-sase">Palo Alto Prisma SASE</h1>
 <p>Starting version <strong>6.1.0</strong> IP Fabric supports Palo Alto Prisma SASE unified API.</p>
-<p>For authentization <a href="https://pan.dev/sase/docs/service-accounts/">service account</a> have to be created with RO role View Only Administrator or higher. Prisma requires the following settings to be applied:</p>
+<p>A <a href="https://pan.dev/sase/docs/service-accounts/">service account</a> has to be created with RO role <code>View Only Administrator</code> or higher.</p>
+<p>In IP Fabric, fill in login details in the Settings → Advanced → Vendors API menu pressing the +Add button:</p>
 <ul>
 <li><strong>Username</strong> – Service account username</li>
 <li><strong>Password</strong> – Service account password</li>
 <li><strong>TSG ID</strong> – <a href="https://docs.paloaltonetworks.com/common-services/subscription-and-tenant-management/manage-multitenants/what-is-a-tenant">Tenant service group ID</a></li>
 </ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../prisma_api_add.png"><img alt="Add Prisma API vendor" src="../prisma_api_add.png"/></a></p>
 <h2 id="known-issues">Known Issues</h2>
 <p>Path lookup isn’t fully supported. Currently Prisma SASE unified API doesn’t have all needed endpoints.</p>
 </article>

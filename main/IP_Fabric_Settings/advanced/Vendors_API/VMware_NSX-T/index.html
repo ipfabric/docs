@@ -1919,6 +1919,15 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+<span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#not-supported-features">
 <span class="md-ellipsis">
       
@@ -3929,6 +3938,15 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#security">
+<span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#not-supported-features">
 <span class="md-ellipsis">
       
@@ -3973,7 +3991,7 @@ differently in you production deployment, than described here.
 <ul>
 <li>NSX-T running as on-premise (there are also cloud versions for AWS
   and Azure, where can NSX-T cloud be deployed on top of AWS/Azure
-  infrastructure ), but we don’t support it now</li>
+  infrastructure ), but we don’t support it now.</li>
 </ul>
 <ul>
 <li>We don’t collect any data from vCenter, as NSX-T is multiplatform
@@ -3989,16 +4007,31 @@ differently in you production deployment, than described here.
 </ul>
 </li>
 </ul>
+<h2 id="security">Security</h2>
+<ul>
+<li>Distributed Firewall</li>
+<li>Gateway / Edge Firewall</li>
+<li>Context profiles</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Source and destination objects for DFW / Gateway Firewall can be defined by:</p>
+<ul>
+<li>IP address or range</li>
+<li>Group</li>
+<li>Virtual Machine</li>
+<li>Segment</li>
+</ul>
+</div>
 <h2 id="not-supported-features">Not Supported Features</h2>
 <ul>
 <li>Load balancing</li>
-<li>All security features (IPS/IDS, Distributed FW, Gateway FW, Network
-  introspection) - planned to add security features in upcoming
-  releases</li>
-<li>Forwarding policies - planned to add in upcoming releases</li>
+<li>Some security features (IPv6, IPS/IDS, Network introspection, Endpoint protection rules,
+  AD identity groups) – planned for upcoming releases</li>
+<li>Forwarding policies – planned for upcoming releases</li>
 <li>VPN services</li>
 <li>NAT</li>
-<li>EVPN Vxlans</li>
+<li>EVPN VxLANs</li>
 </ul>
 <h2 id="external-connectivity">External Connectivity</h2>
 <p>We are supporting both external connectivity protocols, which are
