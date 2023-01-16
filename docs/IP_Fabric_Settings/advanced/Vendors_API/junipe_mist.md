@@ -10,27 +10,27 @@ Juniper Mist devices are discovered only through API.
 
 To add Juniper Mist to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button
 
-##Generate API Token
+## Generate API Token
 
-1) Login to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
+1. Login to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
 
-![login](mist/mist_login.png)
+   ![login](mist/mist_login.png)
 
-![main gui](mist/mist_gui.png)
+   ![main gui](mist/mist_gui.png)
 
-2) Once logged in you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
+2. Once logged in you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
 
-![Mist API token](mist/mist_api_token.png)
+   ![Mist API token](mist/mist_api_token.png)
 
-3) Once generated, the API token can be used in the IP Fabric GUI.
+3. Once generated, the API token can be used in the IP Fabric GUI.
 
-![Create API token](mist/mist_api_create.png)
+   ![Create API token](mist/mist_api_create.png)
 
-4) Fill in login details in the **Settings → Advanced → Vendors API** menu pressing the **+Add** button in the IP Fabric:
+4. Fill in login details in the **Settings → Advanced → Vendors API** menu pressing the **+Add** button in the IP Fabric:
 
-![IP Fabric API settings](mist/mist_ipf_settings.png)
+   ![IP Fabric API settings](mist/mist_ipf_settings.png)
 
-##Known Issues
+## Known Issues
 
 **Routing table** -- In the current setup there is no routing table for API endpoints so it is being created only from directly connected routes.
 

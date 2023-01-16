@@ -20,7 +20,7 @@ To add NSX-T to discovery global settings, go to **Settings → Advanced → Ven
 
 - NSX-T running as on-premise (there are also cloud versions for AWS
   and Azure, where can NSX-T cloud be deployed on top of AWS/Azure
-  infrastructure ), but we don’t support it now
+  infrastructure ), but we don’t support it now.
 
 - We don’t collect any data from vCenter, as NSX-T is multiplatform
   and supports KVM and bare metal servers as well, if those are
@@ -33,16 +33,30 @@ To add NSX-T to discovery global settings, go to **Settings → Advanced → Ven
 - Tier-1 router
   - also supporting VRFs
 
+## Security
+
+- Distributed Firewall
+- Gateway / Edge Firewall
+- Context profiles
+
+!!! note
+
+    Source and destination objects for DFW / Gateway Firewall can be defined by:
+
+     - IP address or range
+     - Group
+     - Virtual Machine
+     - Segment
+
 ## Not Supported Features
 
 - Load balancing
-- All security features (IPS/IDS, Distributed FW, Gateway FW, Network
-  introspection) - planned to add security features in upcoming
-  releases
-- Forwarding policies - planned to add in upcoming releases
+- Some security features (IPv6, IPS/IDS, Network introspection, Endpoint protection rules,
+  AD identity groups) -- planned for upcoming releases
+- Forwarding policies -- planned for upcoming releases
 - VPN services
 - NAT
-- EVPN Vxlans
+- EVPN VxLANs
 
 ## External Connectivity
 

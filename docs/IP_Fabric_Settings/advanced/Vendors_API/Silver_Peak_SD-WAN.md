@@ -10,13 +10,14 @@ EdgeConnect devices are discovered only through API.
 
 To add EdgeConnect to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button
 
-Afterward, choose Silver Peak from the list and fill in
+Afterward, choose Silver Peak from the list and fill in:
 
--   **Username and password** to log in to Unity Orchestrator
+- **Username and password** to log in to Unity Orchestrator
 
-!!! info
-    if a user has just RO rights, ARP table will NOT be downloaded - this is not supported by the orchestrator’s API
+  !!! info
 
--   **Base URL** of Unity Orchestrator (`https://unity-orchestrator-ip`)
+      If the user has just read-only rights, ARP table will **not** be downloaded. This is the know limitation of the orchestrator’s API.
+
+- **Base URL** of Unity Orchestrator (`https://unity-orchestrator-host`)
 
 ![Add Connection](2910552088.png)

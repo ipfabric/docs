@@ -10,8 +10,7 @@ enabled, it will use current ‘Discovery History’ database (in Management
 \> Discovery History) only when creating a new snapshot **without
 detecting any new network devices** during the discovery process.
 
-If limit is disabled and discovery crawl through whole network is
-performed, you can choose which options will be used for new devices
+If this limit is disabled, the discovery process will crawl through the whole network, using the selected method for new devices
 detection (ARP, CDP/LLDP, Routing Table records or a Traceroute).
 Default is to use all available options.
 
