@@ -19,4 +19,4 @@ We recommend to implement "blind iteration" even before mentioned change is impl
     end
     ```
 
-Blind iteration was already introduced into [IP Fabric Python SDK v5.0.1](https://github.com/community-fabric/python-ipfabric/releases/tag/v5.0.1).
+Blind iteration was already introduced into [IP Fabric Python SDK v5.0.1](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/releases/v5.0.1).

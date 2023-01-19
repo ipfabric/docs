@@ -67,7 +67,7 @@ This is the preferred method of creating rules as it allows for bulk importing.
 
 ### Creating Global Attributes in Python
 
-Please see example at [`examples/settings/attributes.py`](https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py).
+Please see example at [`examples/settings/attributes.py`](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/attributes.py).
 
 ## Local Attributes
 
@@ -81,4 +81,4 @@ you are required to either:
 
 ### Creating Local Attributes in Python
 
-Please see example at [`examples/settings/local_attributes.py`](https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/local_attributes.py).
+Please see example at [`examples/settings/local_attributes.py`](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/local_attributes.py).

@@ -10,7 +10,10 @@ IP Fabric is an API first client, that means that any click in the user interfac
 
 API first principles allow the IP Fabric team to maintain a Software Development Kit (SDK) that can used for automations. While the IP Fabric main GUI is written in TypeScript, we have chosen to write the SDK in Python as it is the most common language used by Network Engineers.
 
-The SDK documentation can be found at [https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
+The SDK documentation can be found at [https://gitlab.com/ip-fabric/integrations/python-ipfabric](https://gitlab.com/ip-fabric/integrations/python-ipfabric)
+<!--
+[https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
+-->
 
 While using SDK is more straightforward then calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.
 
@@ -33,9 +36,9 @@ required to make a successful call to the platform.
     Please take a look at the following blog posts about using the IP Fabric API and Python SDK:
 
     - [Part 1: The Basics](https://ipfabric.io/blog/api-programmability-part-1/) Explains creating an API token, finding the API documentation, and retrieving data using Python requests which can be translated into other coding languages.
-    - [Part 2: Python](https://ipfabric.io/blog/api-programmability-python/) Utilizing the official [IP Fabric Python SDK](https://github.com/community-fabric/python-ipfabric) to retrieve data.
+    - [Part 2: Python](https://ipfabric.io/blog/api-programmability-python/) Utilizing the official [IP Fabric Python SDK](https://pypi.org/project/ipfabric/) to retrieve data.
     - [Part 3: Webhooks](https://ipfabric.io/blog/api-programmability-part-3-webhooks/) Creating Webhooks to further your automation journey based on IP Fabric events.
-    - [Part 4: Diagramming](https://ipfabric.io/blog/api-programmability-part-4-diagramming/) Utilizing the official [IP Fabric Python Diagramming SDK](https://github.com/community-fabric/python-ipfabric-diagrams) to automate creation of Network and Path Lookup Diagrams.
+    - [Part 4: Diagramming](https://ipfabric.io/blog/api-programmability-part-4-diagramming/) Utilizing the official [IP Fabric Python Diagramming SDK](https://pypi.org/project/ipfabric-diagrams/) to automate creation of Network and Path Lookup Diagrams.
 
 ## API Versioning
 

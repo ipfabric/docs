@@ -9,7 +9,7 @@ description: This section is intended to explain the use of the IP Fabric Path L
 `python-ipfabric-diagrams` and is the recommended method for graphing via the API.
 To ensure working graphs please ensure `python-ipfabric-diagrams` Major and Minor version matches your IP Fabric version.
 
-- [https://github.com/community-fabric/python-ipfabric-diagrams](https://github.com/community-fabric/python-ipfabric-diagrams)
+- [https://pypi.org/project/ipfabric-diagrams/](https://pypi.org/project/ipfabric-diagrams/)
 - For example when using release `5.0` use `pip install -U ipfabric-diagrams==5.0.*` to install appropriate package.
 
 ## API Endpoints

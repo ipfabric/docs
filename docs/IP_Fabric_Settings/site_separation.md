@@ -136,7 +136,7 @@ The API is the preferred method of creating rules as it allows for bulk importin
 
 ### Creating Rules With `python-ipfabric` Package
 
-Please see example at [GitHub](https://github.com/community-fabric/python-ipfabric/blob/develop/examples/settings/attributes.py).
+Please see example at [GitHub](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/attributes.py).
 
 ## Rule Priority
 
