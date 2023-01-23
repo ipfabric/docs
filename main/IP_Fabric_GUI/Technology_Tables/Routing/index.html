@@ -6,12 +6,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
-<link href="https://docs.ipfabric.io/main/IP_Fabric_GUI/Technology_Tables/Policy/" rel="canonical"/>
-<link href="../MPLS/" rel="prev"/>
-<link href="../QoS/" rel="next"/>
+<link href="https://docs.ipfabric.io/main/IP_Fabric_GUI/Technology_Tables/Routing/" rel="canonical"/>
+<link href="../QoS/" rel="prev"/>
+<link href="../SDN/" rel="next"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.6+insiders-4.28.1" name="generator"/>
-<title>Policy - IP Fabric Documentation Portal</title>
+<title>Routing - IP Fabric Documentation Portal</title>
 <link href="../../../assets/stylesheets/main.c97aee8c.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,17 +20,17 @@
 <link href="../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Policy - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Routing - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Technology_Tables/Policy.png" property="og:image"/>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Technology_Tables/Routing.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://docs.ipfabric.io/main/IP_Fabric_GUI/Technology_Tables/Policy/" property="og:url"/>
+<meta content="https://docs.ipfabric.io/main/IP_Fabric_GUI/Technology_Tables/Routing/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Policy - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Routing - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Technology_Tables/Policy.png" name="twitter:image"/>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Technology_Tables/Routing.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -48,7 +48,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#policy">
+<a class="md-skip" href="#routing">
           Skip to content
         </a>
 </div>
@@ -86,7 +86,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Policy
+              Routing
             
           </span>
 </div>
@@ -1070,13 +1070,25 @@ differently in you production deployment, than described here.
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../QoS/">
+<span class="md-ellipsis">
+    
+  
+    QoS
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     
   
-    Policy
+    Routing
   
 
     
@@ -1087,7 +1099,7 @@ differently in you production deployment, than described here.
 <span class="md-ellipsis">
     
   
-    Policy
+    Routing
   
 
     
@@ -1109,29 +1121,38 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#routing">
+<a class="md-nav__link" href="#routing-policy">
 <span class="md-ellipsis">
       
-        Routing
+        Routing policy
       
     </span>
 </a>
-<nav aria-label="Routing" class="md-nav">
+<nav aria-label="Routing policy" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#policies">
+<a class="md-nav__link" href="#routing-policies">
 <span class="md-ellipsis">
       
-        Policies
+        Routing Policies
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#interfaces">
+<a class="md-nav__link" href="#pbr-interfaces">
 <span class="md-ellipsis">
       
-        Interfaces
+        PBR Interfaces
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-based-routing">
+<span class="md-ellipsis">
+      
+        Policy Based Routing
       
     </span>
 </a>
@@ -1141,18 +1162,6 @@ differently in you production deployment, than described here.
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../QoS/">
-<span class="md-ellipsis">
-    
-  
-    QoS
-  
-
-    
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../SDN/">
@@ -3924,29 +3933,38 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#routing">
+<a class="md-nav__link" href="#routing-policy">
 <span class="md-ellipsis">
       
-        Routing
+        Routing policy
       
     </span>
 </a>
-<nav aria-label="Routing" class="md-nav">
+<nav aria-label="Routing policy" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#policies">
+<a class="md-nav__link" href="#routing-policies">
 <span class="md-ellipsis">
       
-        Policies
+        Routing Policies
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#interfaces">
+<a class="md-nav__link" href="#pbr-interfaces">
 <span class="md-ellipsis">
       
-        Interfaces
+        PBR Interfaces
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#policy-based-routing">
+<span class="md-ellipsis">
+      
+        Policy Based Routing
       
     </span>
 </a>
@@ -3961,20 +3979,31 @@ differently in you production deployment, than described here.
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/IP_Fabric_GUI/Technology_Tables/Policy.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/IP_Fabric_GUI/Technology_Tables/Routing.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<h1 id="policy">Policy</h1>
+<h1 id="routing">Routing</h1>
 <h2 id="prefix-lists">Prefix Lists</h2>
 <p>Prefix lists section contains definitions of all prefix lists. There are 2 tabs according to address family – IPv4 and IPv6</p>
-<h2 id="routing">Routing</h2>
-<p>This section contains information about routing policies, their definition and where they are applied. Currently only route maps are supported and present here.</p>
-<p>There are 2 tabs – Policies and Interfaces.</p>
-<h3 id="policies">Policies</h3>
-<p>Policies tab contains definition of routing policies, their names, sequence numbers, matching conditions, set actions etc.</p>
+<h2 id="routing-policy">Routing policy</h2>
+<p>This section contains information about routing policies, their definitions and where they are applied.</p>
+<p>There are 3 tabs – Routing Policies, PBR Interfaces and Policy Based Routing.</p>
+<h3 id="routing-policies">Routing Policies</h3>
+<p>Routing Policies tab contains definition of routing policies, their names, sequence numbers, matching conditions, set actions etc.</p>
 <p>In case match condition uses reference to ACL or Prefix list, it is a hyperlink to appropriate ACL/Prefix list in its section.</p>
-<h3 id="interfaces">Interfaces</h3>
-<p>Interfaces tab contains information about interfaces which have assigned some routing policy on them (used for policy based routing). Optionally there is also information about used address-family or status of routing policy.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/routingPolicies.png"><img alt="Routing Policies" src="../routing/routingPolicy/routingPolicies.png"/></a></p>
+<h3 id="pbr-interfaces">PBR Interfaces</h3>
+<p>PBR Interfaces tab contains information about interfaces which have assigned some routing policy on them (used for policy based routing). Optionally there is also information about used address-family or status of routing policy.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/pbrInterfaces.png"><img alt="PBR Interfaces" src="../routing/routingPolicy/pbrInterfaces.png"/></a></p>
+<h3 id="policy-based-routing">Policy Based Routing</h3>
+<p>Policy Based Routing (PBR) tab contains matching conditions for traffic and what actions should be applied on packets that match those conditions. All PBR actions are present in a PBR Actions column.</p>
+<p>In case match condition uses reference to ACL, it is a hyperlink to appropriate ACL list in its section.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/policyBasedRouting.png"><img alt="Policy Based Routing" src="../routing/routingPolicy/policyBasedRouting.png"/></a></p>
+<p>Clicking on Policy Name opens tree view.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/pbrTree.png"><img alt="PBR Tree" src="../routing/routingPolicy/pbrTree.png"/></a></p>
+<p>Policy based routing rules are now also applied for packets in End to end path diagrams. Clicking on PBR’s name in a decision table opens a tree view with the highlighted rule that matched the packet and decided that the PBR action should be applied.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/pbrDecisionTable.png"><img alt="PBR Decision Table" src="../routing/routingPolicy/pbrDecisionTable.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../routing/routingPolicy/pbrDecisionTree.png"><img alt="PBR Decision Tree" src="../routing/routingPolicy/pbrDecisionTree.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -3986,7 +4015,7 @@ differently in you production deployment, than described here.
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: MPLS" class="md-footer__link md-footer__link--prev" href="../MPLS/" rel="prev">
+<a aria-label="Previous: QoS" class="md-footer__link md-footer__link--prev" href="../QoS/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -3995,17 +4024,17 @@ differently in you production deployment, than described here.
 <span class="md-footer__direction">
                   Previous
                 </span>
-                MPLS
+                QoS
               </div>
 </div>
 </a>
-<a aria-label="Next: QoS" class="md-footer__link md-footer__link--next" href="../QoS/" rel="next">
+<a aria-label="Next: SDN" class="md-footer__link md-footer__link--next" href="../SDN/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                QoS
+                SDN
               </div>
 </div>
 <div class="md-footer__button md-icon">
