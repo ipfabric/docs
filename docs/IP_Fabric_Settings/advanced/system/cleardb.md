@@ -32,7 +32,3 @@ We recommend selecting "Keep Settings". If you choose to "Reset Settings", all s
 - LDAP settings
 - Reports settings
 - Dashboard settings
-
-!!! warning
-
-    New API tokens will have to be created after clearing the DB.
