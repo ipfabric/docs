@@ -93,6 +93,13 @@ changed. Below is a full example of the `api.json` config file.
 }
 ```
 
+!!! note "roleName"
+
+    In IP Fabric version `v6.1.0` the ability to use `roleName` in the SSO 
+    configuration was added.  It is recommended to migrate 
+    from using `roleId` to `roleName` for consistency and human readability.
+
+
 ### URL Configuration
 
 Inside the `app`, `web`, `dex` configuration the `url` field needs to be updated
