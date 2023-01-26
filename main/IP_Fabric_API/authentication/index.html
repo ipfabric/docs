@@ -4111,22 +4111,31 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="authentication">Authentication</h1>
-<p>Majority of requests to IP Fabric platform need to be authenticated. We provide multiple authentication methods. They differ to each other, please review all of them before committing to any.</p>
+<p>Majority of requests to IP Fabric platform need to be authenticated. We provide
+multiple authentication methods. They differ to each other, please review all of
+them before committing to any.</p>
 <h2 id="api-token">API Token</h2>
-<p>API Token needs to be passed as a request header. Please see <a href="../../IP_Fabric_Settings/api_tokens/">API Tokens</a> on how to create an API Token in the UI.</p>
+<p>API Token needs to be passed as a request header. Please
+see <a href="../../IP_Fabric_Settings/api_tokens/">API Tokens</a> on how to create an API
+Token in the UI.</p>
 <ul>
-<li>Allows for limiting the scope of API calls. This allows for giving <em>less</em> rights than has account creating the token.</li>
+<li>Allows for limiting the scope of API calls. This allows for giving <em>less</em>
+  rights than has account creating the token.</li>
 <li>Long-lived static token (secure storage is important).</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="err">Content-Type: application/json</span>
 <span class="err">X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI</span>
 </code></pre></div>
 <h2 id="basic-authentication">Basic Authentication</h2>
-<p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and passing that into the <code>Authorization</code> header.</p>
+<p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and
+passing that into the <code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may be really unnecessary for many use-cases.</li>
-<li>In case this approach is use, we highly encourage creation of a “bot”/”service” user account with limited access scope.</li>
-<li>Another form of long-lived static token / authentication details (secure storage is important).</li>
+<li>Call will always have the same rights as the user account. This may be really
+  unnecessary for many use-cases.</li>
+<li>In case this approach is use, we highly encourage creation of a “bot”/”
+  service” user account with limited access scope.</li>
+<li>Another form of long-lived static token / authentication details (secure
+  storage is important).</li>
 </ul>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"username:password"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64
 <span class="nv">dXNlcm5hbWU6cGFzc3dvcmQ</span><span class="o">=</span>
@@ -4135,17 +4144,24 @@ osadmin@ipfabric:~$<span class="w"> </span>curl<span class="w"> </span>-X<span c
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ='</span>
 </code></pre></div>
 <h2 id="token-authentication">Token Authentication</h2>
-<p>Token authentication allows to exchange username and password for pair of tokens – access and refresh. Exchange is facilitated via <code>login</code> endpoint. Access token is then passed to the consecutive API calls in the <code>Authorization</code> header.</p>
+<p>Token authentication allows to exchange username and password for pair of tokens
+– access and refresh. Exchange is facilitated via <code>login</code> endpoint. Access
+token is then passed to the consecutive API calls in the <code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may be really unnecessary for many use-cases.</li>
-<li>In case this approach is use, we highly encourage creation of a “bot”/”service” user account with limited access scope.</li>
-<li>Storage of refresh token is important as it allows for maintaining long-term access.</li>
+<li>Call will always have the same rights as the user account. This may be really
+  unnecessary for many use-cases.</li>
+<li>In case this approach is use, we highly encourage creation of a “bot”/”
+  service” user account with limited access scope.</li>
+<li>Storage of refresh token is important as it allows for maintaining long-term
+  access.</li>
 </ul>
 <h3 id="types-of-tokens">Types of Tokens</h3>
 <dl>
 <dt><strong>Access Token</strong></dt>
 <dd>
-<p>An access token is <a href="https://jwt.io/">JSON Web Token (JWT)</a> as per RFC-7519 signed using SHA-256 with RSA encryption. The token expires in 30 minutes since being generated and it can’t be revoked during its lifetime.</p>
+<p>An access token is <a href="https://jwt.io/">JSON Web Token (JWT)</a> as per RFC-7519
+signed using SHA-256 with RSA encryption. The token expires in 30 minutes since
+being generated and it can’t be revoked during its lifetime.</p>
 </dd>
 <dd>
 <details class="info">
@@ -4153,32 +4169,46 @@ osadmin@ipfabric:~$<span class="w"> </span>curl<span class="w"> </span>-X<span c
 <p>Access token is a JWT which concists of three parts separated by dots – Header, Payload, and Signature. You don’t need to parse any of these fields. You can use <a href="https://jwt.io/">https://jwt.io/</a> for inspecting content of JWT. You will not be able to verify its validity as you don’t have access to signing key.</p>
 <p>The payload contains an object with the following fields:</p>
 <ul>
-<li><code>ID</code> – User ID</li>
-<li><code>EULA</code> – A boolean value whether a user approved EULA or not</li>
-<li><code>EXP</code> – Token expiration time (in seconds since Unix epoch)</li>
-<li><code>IAT</code> – Token issued time (in seconds since Unix epoch)</li>
-<li><code>Scope</code> – Array of strings representing granted user access</li>
-<li><code>Username</code> – String containing the username of the user</li>
+<li><code>id</code> – User ID</li>
+<li><code>exp</code> – Token expiration time (in seconds since Unix epoch)</li>
+<li><code>iat</code> – Token issued time (in seconds since Unix epoch)</li>
+<li><code>scope</code> – Array of strings representing granted user access</li>
+<li><code>username</code> – String containing the username of the user</li>
+<li><code>isAdmin</code> – A boolean value whether a user is an admin</li>
+<li><code>aud</code> – String containing the recipient for which the JWT is intended</li>
+<li><code>iss</code> – String containing the issuer of the JWT</li>
 </ul>
 </details>
 </dd>
 <dt><strong>Refresh Token</strong></dt>
 <dd>
-<p>A refresh token is a token that can be used to obtain a renewed access token. It can be requested for new access tokens until the refresh token is revoked or expired.</p>
+<p>A refresh token is a token that can be used to obtain a renewed access token.
+It can be requested for new access tokens until the refresh token is used, 
+revoked, or expired.</p>
 </dd>
 <dd>
-<p>A refresh token expires after 24 hours of not being used for generation of a new access token. Refresh tokens must be stored securely by an application because they essentially allow a user to remain authenticated forever.</p>
+<p>A refresh token expires after 24 hours of not being used for generation of a
+new access token. Refresh tokens must be stored securely by an application
+as it creates a new Access Token and allowing access to the system.</p>
+</dd>
+<dd>
+<p>Starting in IP Fabric version <code>v6.1.0</code> the <code>refreshToken</code> is rotated after 
+every use and a new one is issued.</p>
 </dd>
 </dl>
 <h3 id="token-api">Token API</h3>
 <h4 id="login">Login</h4>
-<p>To login and obtain an Access and Refresh token please see the below curl example:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://demo3.ipfabric.io/api/v5.0/auth/login'</span><span class="w"> </span><span class="se">\</span>
+<p>To login and obtain an Access and Refresh token please see the below curl
+example:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://demo3.ipfabric.io/api/v6.1/auth/login'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">'{"username":"&lt;USERNAME&gt;","password":"&lt;PASSWORD&gt;"}'</span>
 </code></pre></div>
 <p>This returns a JSON response with <code>accessToken</code> and <code>refreshToken</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"eula"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2473545443652"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGc..."</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"refreshToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YvnTNW..."</span>
 <span class="p">}</span>
@@ -4196,9 +4226,14 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">'{"refreshToken":"YvnTNW..."}'</span>
 </code></pre></div>
-<p>Which then returns a new <code>accessToken</code> to use in subsequent calls:</p>
+<p>Which then returns a new <code>accessToken</code> to use in subsequent calls and a new 
+<code>refreshToken</code> to use for request the next <code>accessToken</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOi..."</span>
+<span class="w">  </span><span class="nt">"eula"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2473545443652"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGc..."</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"refreshToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bofZw..."</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="logout">Logout</h4>
@@ -4213,7 +4248,8 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li><code>accessToken</code> – 30 minutes (1800 seconds)</li>
 <li><code>refreshToken</code> – 24 hours (86400 seconds)</li>
 </ul>
-<p>Many company standards requires shorter expiration times and this can be accomplished via the CLI settings.</p>
+<p>Many company standards requires shorter expiration times and this can be
+accomplished via the CLI settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
@@ -4222,7 +4258,9 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li>Log into IP Fabric CLI as <code>osadmin</code></li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
-<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON. In this example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in 15 minutes:</p>
+<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON. In this
+   example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in
+   15 minutes:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -4242,7 +4280,8 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li>Restart API <code>systemctl restart nimpee-api.service</code></li>
 </ol>
 <h3 id="token-errors">Token Errors</h3>
-<p>The API returns an object with a machine-readable error code and a human-readable error message in response body when an error is encountered:</p>
+<p>The API returns an object with a machine-readable error code and a
+human-readable error message in response body when an error is encountered:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_EXPIRED_API_TOKEN"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expired API Token"</span>
@@ -4263,10 +4302,6 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <tr>
 <td>API_INVALID_API_TOKEN</td>
 <td>The provided API key doesn’t exist. It was removed, or it never existed.</td>
-</tr>
-<tr>
-<td>API_MISSING_EULA_APPROVAL</td>
-<td>This error occurs when a user hasn’t approved EULA. It is REQUIRED to login using the user’s credentials into the application user interface and accept EULA.</td>
 </tr>
 <tr>
 <td>API_EXPIRED_ACCESS_TOKEN</td>
