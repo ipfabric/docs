@@ -123,3 +123,50 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 5.  This command also starts up the VM.
 
 6.  Additionally, you can [create and add a new empty virtual disk if needed](../../System_Administration/increase_disk_space.md).
+
+## Deploying a Virtual Machine on VirtualBox
+
+!!! warning
+
+    Deploying IP Fabric on VirtualBox is currently not officially supported -- it is not tested and we cannot guarantee that it will work.
+
+1. Download the `OVA` image.
+
+2. Import the `OVA` image via **File --> Import Appliance...**:
+
+    ![VirtualBox - Import Virtual Appliance](virtualbox_import-virtual-appliance.png)
+
+3. In the next step of the **Import Virtual Appliance** guide:
+   * set CPU and RAM as per the [hardware requirements](../Overview/index.md#hardware-requirements) for your use-case
+   * set the Network Adapter to `Paravirtualized Network (virtio-net)`
+   * keep the `Import hard drives as VDI` option checked for importing the disk image in the default VirtualBox format, otherwise the disk image will be imported as VDMK (the default format of VMware)
+
+    ![VirtualBox - Import Virtual Appliance - Appliance Settings](virtualbox_import-virtual-appliance-2.png)
+
+4. Right-click on the newly-created virtual machine and select its **Settings...**
+
+5. In the **System** section, select `ICH9` as the Chipset:
+
+    ![VirtualBox - VM Settings - System](virtualbox_vm-settings_system.png)
+
+6. In the **Display** section, select `VMSVGA` as the Graphics Controller:
+
+    ![VirtualBox - VM Settings - Display](virtualbox_vm-settings_display.png)
+
+   * or to what VirtualBox suggests when an invalid Graphics Controller is selected:
+
+    ![VirtualBox - VM Settings - Display - Invalid settings detected](virtualbox_vm-settings_display-2.png)
+
+   * !!! warning
+
+         When an invalid Graphics Controller is selected, it can lead to issues in the virtual machine and even on the host machine.
+
+7. In the **Storage** section, select `virtio-scsi` as the Controller Type:
+
+    ![VirtualBox - VM Settings - Storage](virtualbox_vm-settings_storage.png)
+
+8. In the **Network** section, select `Bridged Adapter` and re-check in **Advanced** that the Adapter Type is `Paravirtualized Network (virtio-net)`:
+
+    ![VirtualBox - VM Settings - Network](virtualbox_vm-settings_network.png)
+
+9. Start the virtual machine.

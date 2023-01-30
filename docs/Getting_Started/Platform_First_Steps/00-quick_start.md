@@ -31,6 +31,7 @@ instructions.
 1. OVA can deployed on:
    1. [Deploying VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
    2. [Deploying Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
+   3. [Deploying VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
 2. QCOW2 can be deployed on:
    1. [Deploying Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
    2. [Deploying KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
