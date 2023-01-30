@@ -15,7 +15,7 @@ The SDK documentation can be found at [https://gitlab.com/ip-fabric/integrations
 [https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
 -->
 
-While using SDK is more straightforward then calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.
+While using SDK is more straightforward than calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.
 
 ## Using API Directly
 
@@ -49,7 +49,7 @@ frame.
 
 Design still leverages API version directly in URL over alternative approaches,
 such as extended Accept header. This allows for unambiguous exchange of state
-between IPF and customers, nothing more then URL is needed to identify the
+between IPF and customers, nothing more than URL is needed to identify the
 resource being accessed.
 
 ### URL Schema a Version in URL
@@ -102,7 +102,7 @@ Responses made with `minor < release_minor` will contain a custom header warning
 client about use of potentially old API. We leverage
 the [IETF Draft for Deprecation header](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
 . It is included, and set to `true` (`Deprecation: true`) in every response to
-call made with older then current API version.
+call made with older than current API version.
 
 Requests made with `major < release_major` (obsolete version) will be refused
 with HTTP code `410 Gone` (also `406 Not Acceptable` would be reasonable, but we
