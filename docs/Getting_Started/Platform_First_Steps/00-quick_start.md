@@ -77,7 +77,7 @@ to include/exclude in discovery, Vendor API setup, along with other settings.
 If after initial configuration you would like to change or edit these settings
 please see [IP Fabric Settings](../../IP_Fabric_Settings/api_tokens.md). Alternatively there
 are also
-[Snapshot Specific Settings](../../IP_Fabric_GUI/Discovery_Snapshot.md#snapshot-specific-settings)
+[Snapshot Specific Settings](../../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
 which are useful for testing small changes prior to changing Global Settings.
 
 !!! note "Site Separation"
@@ -94,7 +94,7 @@ which are useful for testing small changes prior to changing Global Settings.
 
 If you followed the Configuration Wizard the last step will ask you to
 "Start Discovery". You can also start discoveries by using the
-[Discovery Snapshot](../../IP_Fabric_GUI/Discovery_Snapshot.md) menu. This is
+[Discovery Snapshot](../../IP_Fabric_GUI/discovery_snapshot.md) menu. This is
 where the magic of IP Fabric happens where it will go out to your devices, find
 neighbors, and collect information.
 

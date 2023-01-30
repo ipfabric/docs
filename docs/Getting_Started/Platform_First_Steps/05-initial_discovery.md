@@ -28,7 +28,7 @@ discovery process
 at [How Discovery Works](../Overview/How_Discovery_Works/CLI_discovery.md).
 
 After the discovery is completed, all of the state data is available and you can
-start exploring [IP Fabric GUI](../../IP_Fabric_GUI/Discovery_Snapshot.md).
+start exploring [IP Fabric GUI](../../IP_Fabric_GUI/discovery_snapshot.md).
 
 **Enjoy using IP Fabric!**
 
