@@ -595,6 +595,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-on-virtualbox">
+<span class="md-ellipsis">
+      
+        Deploying a Virtual Machine on VirtualBox
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -3982,6 +3991,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-a-virtual-machine-on-virtualbox">
+<span class="md-ellipsis">
+      
+        Deploying a Virtual Machine on VirtualBox
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -4126,6 +4144,67 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </li>
 <li>
 <p>Additionally, you can <a href="../../../System_Administration/increase_disk_space/">create and add a new empty virtual disk if needed</a>.</p>
+</li>
+</ol>
+<h2 id="deploying-a-virtual-machine-on-virtualbox">Deploying a Virtual Machine on VirtualBox</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deploying IP Fabric on VirtualBox is currently not officially supported – it is not tested and we cannot guarantee that it will work.</p>
+</div>
+<ol>
+<li>
+<p>Download the <code>OVA</code> image.</p>
+</li>
+<li>
+<p>Import the <code>OVA</code> image via <strong>File → Import Appliance…</strong>:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_import-virtual-appliance.png"><img alt="VirtualBox - Import Virtual Appliance" src="../virtualbox_import-virtual-appliance.png"/></a></p>
+</li>
+<li>
+<p>In the next step of the <strong>Import Virtual Appliance</strong> guide:</p>
+<ul>
+<li>set CPU and RAM as per the <a href="../../Overview/#hardware-requirements">hardware requirements</a> for your use-case</li>
+<li>set the Network Adapter to <code>Paravirtualized Network (virtio-net)</code></li>
+<li>
+<p>keep the <code>Import hard drives as VDI</code> option checked for importing the disk image in the default VirtualBox format, otherwise the disk image will be imported as VDMK (the default format of VMware)</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_import-virtual-appliance-2.png"><img alt="VirtualBox - Import Virtual Appliance - Appliance Settings" src="../virtualbox_import-virtual-appliance-2.png"/></a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Right-click on the newly-created virtual machine and select its <strong>Settings…</strong></p>
+</li>
+<li>
+<p>In the <strong>System</strong> section, select <code>ICH9</code> as the Chipset:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_vm-settings_system.png"><img alt="VirtualBox - VM Settings - System" src="../virtualbox_vm-settings_system.png"/></a></p>
+</li>
+<li>
+<p>In the <strong>Display</strong> section, select <code>VMSVGA</code> as the Graphics Controller:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_vm-settings_display.png"><img alt="VirtualBox - VM Settings - Display" src="../virtualbox_vm-settings_display.png"/></a></p>
+<ul>
+<li>
+<p>or to what VirtualBox suggests when an invalid Graphics Controller is selected:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_vm-settings_display-2.png"><img alt="VirtualBox - VM Settings - Display - Invalid settings detected" src="../virtualbox_vm-settings_display-2.png"/></a></p>
+</li>
+</ul>
+<ul>
+<li>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When an invalid Graphics Controller is selected, it can lead to issues in the virtual machine and even on the host machine.</p>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>In the <strong>Storage</strong> section, select <code>virtio-scsi</code> as the Controller Type:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_vm-settings_storage.png"><img alt="VirtualBox - VM Settings - Storage" src="../virtualbox_vm-settings_storage.png"/></a></p>
+</li>
+<li>
+<p>In the <strong>Network</strong> section, select <code>Bridged Adapter</code> and re-check in <strong>Advanced</strong> that the Adapter Type is <code>Paravirtualized Network (virtio-net)</code>:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../virtualbox_vm-settings_network.png"><img alt="VirtualBox - VM Settings - Network" src="../virtualbox_vm-settings_network.png"/></a></p>
+</li>
+<li>
+<p>Start the virtual machine.</p>
 </li>
 </ol>
 </article>
