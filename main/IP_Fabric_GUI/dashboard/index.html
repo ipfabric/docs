@@ -8,7 +8,7 @@
 <meta content="The dashboard provides an overview of the network analysis results, including an aggregated scorecard calculated from the performance, capacity etc..." name="description"/>
 <link href="https://docs.ipfabric.io/main/IP_Fabric_GUI/dashboard/" rel="canonical"/>
 <link href="../Global_Filter/" rel="prev"/>
-<link href="../inventory/" rel="next"/>
+<link href="../discovery_snapshot/" rel="next"/>
 <link href="../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.8+insiders-4.29.0" name="generator"/>
 <title>Dashboard - IP Fabric Documentation Portal</title>
@@ -181,7 +181,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../Discovery_Snapshot/">
+<a class="md-tabs__link md-tabs__link--active" href="../Global_Filter/">
           
   
   IP Fabric GUI
@@ -916,18 +916,6 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../Discovery_Snapshot/">
-<span class="md-ellipsis">
-    
-  
-    Discovery Snapshot
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../Global_Filter/">
 <span class="md-ellipsis">
     
@@ -977,8 +965,29 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-information-to-the-dashboard">
+<span class="md-ellipsis">
+      
+        Adding Information To The Dashboard
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../discovery_snapshot/">
+<span class="md-ellipsis">
+    
+  
+    Discovery Snapshot
+  
+
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../inventory/">
@@ -1010,7 +1019,7 @@ differently in you production deployment, than described here.
 <span class="md-ellipsis">
     
   
-    Technology Tables
+    Diagrams
   
 
     
@@ -1019,308 +1028,6 @@ differently in you production deployment, than described here.
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_6">
-<span class="md-nav__icon md-icon"></span>
-            
-  
-    Technology Tables
-  
-
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/">
-<span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/CDP_LLDP/">
-<span class="md-ellipsis">
-    
-  
-    CDP/LLDP
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/DHCP/">
-<span class="md-ellipsis">
-    
-  
-    DHCP
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/Fabric_Path/">
-<span class="md-ellipsis">
-    
-  
-    Fabric Path
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/First_hop_redundancy_protocols/">
-<span class="md-ellipsis">
-    
-  
-    First Hop Redundancy Protocols (FHRP)
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/MPLS/">
-<span class="md-ellipsis">
-    
-  
-    MPLS
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/QoS/">
-<span class="md-ellipsis">
-    
-  
-    QoS
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/Routing/">
-<span class="md-ellipsis">
-    
-  
-    Routing
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/SDN/">
-<span class="md-ellipsis">
-    
-  
-    SDN
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/SDWAN/">
-<span class="md-ellipsis">
-    
-  
-    SDWAN
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/Security/">
-<span class="md-ellipsis">
-    
-  
-    Security
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/addressing/">
-<span class="md-ellipsis">
-    
-  
-    Addressing
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/cloud/">
-<span class="md-ellipsis">
-    
-  
-    Cloud
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/interfaces/">
-<span class="md-ellipsis">
-    
-  
-    Interfaces
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/ip_telephony/">
-<span class="md-ellipsis">
-    
-  
-    IP Telephony
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/management_table/">
-<span class="md-ellipsis">
-    
-  
-    Management
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/networks/">
-<span class="md-ellipsis">
-    
-  
-    Networks
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/platforms/">
-<span class="md-ellipsis">
-    
-  
-    Platforms
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/port-channels/">
-<span class="md-ellipsis">
-    
-  
-    Port-Channels
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/routing_analysis/">
-<span class="md-ellipsis">
-    
-  
-    Routing Analysis
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/stp/">
-<span class="md-ellipsis">
-    
-  
-    Spanning Tree
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/transcievers/">
-<span class="md-ellipsis">
-    
-  
-    Transceivers
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Technology_Tables/wireless/">
-<span class="md-ellipsis">
-    
-  
-    Wireless
-  
-
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
-<span class="md-ellipsis">
-    
-  
-    Diagrams
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1393,8 +1100,8 @@ differently in you production deployment, than described here.
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -1405,8 +1112,8 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_8">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1455,6 +1162,308 @@ differently in you production deployment, than described here.
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Technology tables
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Technology tables
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/CDP_LLDP/">
+<span class="md-ellipsis">
+    
+  
+    CDP/LLDP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/DHCP/">
+<span class="md-ellipsis">
+    
+  
+    DHCP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/Fabric_Path/">
+<span class="md-ellipsis">
+    
+  
+    Fabric Path
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/First_hop_redundancy_protocols/">
+<span class="md-ellipsis">
+    
+  
+    First Hop Redundancy Protocols (FHRP)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/MPLS/">
+<span class="md-ellipsis">
+    
+  
+    MPLS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/QoS/">
+<span class="md-ellipsis">
+    
+  
+    QoS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/SDN/">
+<span class="md-ellipsis">
+    
+  
+    SDN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/SDWAN/">
+<span class="md-ellipsis">
+    
+  
+    SDWAN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/Security/">
+<span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/addressing/">
+<span class="md-ellipsis">
+    
+  
+    Addressing
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/cloud/">
+<span class="md-ellipsis">
+    
+  
+    Cloud
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/interfaces/">
+<span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/ip_telephony/">
+<span class="md-ellipsis">
+    
+  
+    IP Telephony
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/management_table/">
+<span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/networks/">
+<span class="md-ellipsis">
+    
+  
+    Networks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/platforms/">
+<span class="md-ellipsis">
+    
+  
+    Platforms
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/port-channels/">
+<span class="md-ellipsis">
+    
+  
+    Port-Channels
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/routing/">
+<span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/routing_analysis/">
+<span class="md-ellipsis">
+    
+  
+    Routing Analysis
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/stp/">
+<span class="md-ellipsis">
+    
+  
+    Spanning Tree
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/transcievers/">
+<span class="md-ellipsis">
+    
+  
+    Transceivers
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../technology_tables/wireless/">
+<span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_9" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
 <span class="md-ellipsis">
@@ -1477,6 +1486,18 @@ differently in you production deployment, than described here.
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips/intent_rules/">
+<span class="md-ellipsis">
+    
+  
+    Intent Verification Rule
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../tips/navigate_in_tables/">
 <span class="md-ellipsis">
@@ -3916,6 +3937,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-information-to-the-dashboard">
+<span class="md-ellipsis">
+      
+        Adding Information To The Dashboard
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -3930,6 +3960,29 @@ differently in you production deployment, than described here.
 <h2 id="overview">Overview</h2>
 <p>The dashboard provides an overview of the network analysis results, including an aggregated scorecard calculated from the performance, capacity, and risk metrics. Issues covered by the radar charts and compliance tables link to the detailed reports.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../dashboard_view.png"><img alt="dashboard view" src="../dashboard_view.png"/></a></p>
+<h2 id="adding-information-to-the-dashboard">Adding Information To The Dashboard</h2>
+<p>You can add any Intent Verification Rule to the Dashboard.</p>
+<ol>
+<li>Go to <strong>Dashboard</strong>.</li>
+<li>Click Edit in the upper right corner.</li>
+<li>Click <strong>+Add row</strong>.</li>
+<li>Choose row style what you would like to add.</li>
+<li>Click on <strong>Untitled</strong> and enter some name for example <strong>Port
+   channels</strong>.</li>
+<li>Click <strong>+Add Widget</strong>.</li>
+<li>Select widget type in our case it’s <strong>Intent Verifications</strong>.</li>
+<li>Name widget for example <strong>Port channels</strong>.</li>
+<li>Look for <strong>Table color rules</strong> and add it to Widget. For example
+   <strong>Technology → Port channels → Member status table → Protocol check</strong>.
+   We created this rule it the previous steps.</li>
+<li>Switch <strong>Select Widget View</strong> to percentage (default) or absolute
+    numbers.</li>
+<li>Select view type (graph or summary table)<br/>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="1878327396.png"><img alt="new coloring view" src="1878327396.png"/></a></li>
+<li>Click <strong>Save</strong> in the upper right corner.</li>
+</ol>
+<p>And here is our new Dashboard widget:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="1878327393.png"><img alt="new dashboard widget" src="1878327393.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -3954,13 +4007,13 @@ differently in you production deployment, than described here.
               </div>
 </div>
 </a>
-<a aria-label="Next: Inventory" class="md-footer__link md-footer__link--next" href="../inventory/" rel="next">
+<a aria-label="Next: Discovery Snapshot" class="md-footer__link md-footer__link--next" href="../discovery_snapshot/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Inventory
+                Discovery Snapshot
               </div>
 </div>
 <div class="md-footer__button md-icon">
