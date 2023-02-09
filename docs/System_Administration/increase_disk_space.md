@@ -148,6 +148,82 @@ vdb                     254:16   0   20G  0 disk             # <- I want to use 
    └─backup--vg-backup     253:2    0   20G  0 lvm  /backup
    ```
 
+### Increase Size of Backup Disk
+
+Suppose you prepared a backup disk with size of 20 GB with the instructions above and you would like to increase its size (for example to 40 GB).
+
+1. Shutdown the IP Fabric appliance.
+
+2. Increase the backup disk's size at the VM-level (for example to 40 GB).
+
+3. Start the IP Fabric appliance.
+
+4. Log in to the CLI as the `osadmin` user.
+
+5. Check the status with `lsblk` -- notice that the disk `vdb` in this case has 40 GB, but the LVM logical volume `backup` still has only 20 GB:
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76,3G  0 disk 
+   ├─vda1                  254:1    0  487M  0 part /boot
+   ├─vda2                  254:2    0    1K  0 part 
+   └─vda5                  254:5    0 75,8G  0 part 
+     ├─ipfabric--vg-swap_1 253:1    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:2    0 59,8G  0 lvm  /
+   vdb                     254:16   0   40G  0 disk 
+   └─backup--vg-backup     253:0    0   20G  0 lvm  /backup
+   ```
+
+6. Resize the LVM physical volume:
+
+   ```shell
+   osadmin@ipfabric:~$ sudo pvresize /dev/vdb
+     Physical volume "/dev/vdb" changed
+     1 physical volume(s) resized or updated / 0 physical volume(s) not resized
+   ```
+
+7. Resize the LVM logical volume:
+
+   ```shell
+   osadmin@ipfabric:~$ sudo lvextend -l +100%FREE /dev/backup-vg/backup
+     Size of logical volume backup-vg/backup changed from <20,00 GiB (5119 extents) to <40,00 GiB (10239 extents).
+     Logical volume backup-vg/backup successfully resized.
+   ```
+
+8. Resize the filesystem:
+
+   ```shell
+   osadmin@ipfabric:~$ sudo resize2fs /dev/mapper/backup--vg-backup
+   resize2fs 1.46.2 (28-Feb-2021)
+   Filesystem at /dev/mapper/backup--vg-backup is mounted on /backup; on-line resizing required
+   old_desc_blocks = 3, new_desc_blocks = 5
+   The filesystem on /dev/mapper/backup--vg-backup is now 10484736 (4k) blocks long.
+   ```
+
+9. Re-check the status with `lsblk`:
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76,3G  0 disk 
+   ├─vda1                  254:1    0  487M  0 part /boot
+   ├─vda2                  254:2    0    1K  0 part 
+   └─vda5                  254:5    0 75,8G  0 part 
+     ├─ipfabric--vg-swap_1 253:1    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:2    0 59,8G  0 lvm  /
+   vdb                     254:16   0   40G  0 disk 
+   └─backup--vg-backup     253:0    0   40G  0 lvm  /backup
+   ```
+
+10. Also check the size of the filesystem:
+
+   ```shell
+   osadmin@ipfabric:~$ df -h /backup
+   Filesystem                     Size  Used Avail Use% Mounted on
+   /dev/mapper/backup--vg-backup   40G   19M   38G   1% /backup
+   ```
+
 ## Deprecated Resize Wizard
 
 IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. `ipfabic-vg/root` for system and data, `backup-vg/backup` for `/backup`.
