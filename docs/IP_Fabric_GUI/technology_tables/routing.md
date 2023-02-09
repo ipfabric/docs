@@ -36,7 +36,13 @@ Clicking on Policy Name opens tree view.
 
 ![PBR Tree](routing/routingPolicy/pbrTree.png)
 
-Policy based routing rules are now also applied for packets in End to end path diagrams. Clicking on PBR's name in a decision table opens a tree view with the highlighted rule that matched the packet and decided that the PBR action should be applied.
+Policy based routing rules are now also applied for packets in end-to-end path diagrams.
+
+Selecting PBR's name in a decision table opens a tree view with the highlighted rule that matched the packet and decided that the PBR action should be applied.
+
+!!! Note
+
+	Currently are supported only IP based policy based routing nexthops.
 
 ![PBR Decision Table](routing/routingPolicy/pbrDecisionTable.png)
 
