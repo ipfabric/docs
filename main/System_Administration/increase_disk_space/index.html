@@ -2312,6 +2312,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#increase-size-of-backup-disk">
+<span class="md-ellipsis">
+      
+        Increase Size of Backup Disk
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4084,6 +4093,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#increase-size-of-backup-disk">
+<span class="md-ellipsis">
+      
+        Increase Size of Backup Disk
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4293,6 +4311,80 @@ vda<span class="w">                     </span><span class="m">254</span>:0<span
 <span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
 vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
 └─backup--vg-backup<span class="w">     </span><span class="m">253</span>:2<span class="w">    </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/backup
+</code></pre></div>
+</li>
+</ol>
+<h3 id="increase-size-of-backup-disk">Increase Size of Backup Disk</h3>
+<p>Suppose you prepared a backup disk with size of 20 GB with the instructions above and you would like to increase its size (for example to 40 GB).</p>
+<ol>
+<li>
+<p>Shutdown the IP Fabric appliance.</p>
+</li>
+<li>
+<p>Increase the backup disk’s size at the VM-level (for example to 40 GB).</p>
+</li>
+<li>
+<p>Start the IP Fabric appliance.</p>
+</li>
+<li>
+<p>Log in to the CLI as the <code>osadmin</code> user.</p>
+</li>
+<li>
+<p>Check the status with <code>lsblk</code> – notice that the disk <code>vdb</code> in this case has 40 GB, but the LVM logical volume <code>backup</code> still has only 20 GB:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
+NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
+vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w"> </span>
+├─vda1<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>487M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot
+├─vda2<span class="w">                  </span><span class="m">254</span>:2<span class="w">    </span><span class="m">0</span><span class="w">    </span>1K<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>
+└─vda5<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>
+<span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
+<span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:2<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
+vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>40G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w"> </span>
+└─backup--vg-backup<span class="w">     </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/backup
+</code></pre></div>
+</li>
+<li>
+<p>Resize the LVM physical volume:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>pvresize<span class="w"> </span>/dev/vdb
+<span class="w">  </span>Physical<span class="w"> </span>volume<span class="w"> </span><span class="s2">"/dev/vdb"</span><span class="w"> </span>changed
+<span class="w">  </span><span class="m">1</span><span class="w"> </span>physical<span class="w"> </span>volume<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>resized<span class="w"> </span>or<span class="w"> </span>updated<span class="w"> </span>/<span class="w"> </span><span class="m">0</span><span class="w"> </span>physical<span class="w"> </span>volume<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>not<span class="w"> </span>resized
+</code></pre></div>
+</li>
+<li>
+<p>Resize the LVM logical volume:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/backup-vg/backup
+<span class="w">  </span>Size<span class="w"> </span>of<span class="w"> </span>logical<span class="w"> </span>volume<span class="w"> </span>backup-vg/backup<span class="w"> </span>changed<span class="w"> </span>from<span class="w"> </span>&lt;<span class="m">20</span>,00<span class="w"> </span>GiB<span class="w"> </span><span class="o">(</span><span class="m">5119</span><span class="w"> </span>extents<span class="o">)</span><span class="w"> </span>to<span class="w"> </span>&lt;<span class="m">40</span>,00<span class="w"> </span>GiB<span class="w"> </span><span class="o">(</span><span class="m">10239</span><span class="w"> </span>extents<span class="o">)</span>.
+<span class="w">  </span>Logical<span class="w"> </span>volume<span class="w"> </span>backup-vg/backup<span class="w"> </span>successfully<span class="w"> </span>resized.
+</code></pre></div>
+</li>
+<li>
+<p>Resize the filesystem:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/mapper/backup--vg-backup
+resize2fs<span class="w"> </span><span class="m">1</span>.46.2<span class="w"> </span><span class="o">(</span><span class="m">28</span>-Feb-2021<span class="o">)</span>
+Filesystem<span class="w"> </span>at<span class="w"> </span>/dev/mapper/backup--vg-backup<span class="w"> </span>is<span class="w"> </span>mounted<span class="w"> </span>on<span class="w"> </span>/backup<span class="p">;</span><span class="w"> </span>on-line<span class="w"> </span>resizing<span class="w"> </span>required
+<span class="nv">old_desc_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="nv">new_desc_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+The<span class="w"> </span>filesystem<span class="w"> </span>on<span class="w"> </span>/dev/mapper/backup--vg-backup<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span><span class="m">10484736</span><span class="w"> </span><span class="o">(</span>4k<span class="o">)</span><span class="w"> </span>blocks<span class="w"> </span>long.
+</code></pre></div>
+</li>
+<li>
+<p>Re-check the status with <code>lsblk</code>:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
+NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
+vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w"> </span>
+├─vda1<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>487M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot
+├─vda2<span class="w">                  </span><span class="m">254</span>:2<span class="w">    </span><span class="m">0</span><span class="w">    </span>1K<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>
+└─vda5<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>
+<span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
+<span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:2<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
+vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>40G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w"> </span>
+└─backup--vg-backup<span class="w">     </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>40G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/backup
+</code></pre></div>
+</li>
+<li>
+<p>Also check the size of the filesystem:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>df<span class="w"> </span>-h<span class="w"> </span>/backup
+Filesystem<span class="w">                     </span>Size<span class="w">  </span>Used<span class="w"> </span>Avail<span class="w"> </span>Use%<span class="w"> </span>Mounted<span class="w"> </span>on
+/dev/mapper/backup--vg-backup<span class="w">   </span>40G<span class="w">   </span>19M<span class="w">   </span>38G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/backup
 </code></pre></div>
 </li>
 </ol>
