@@ -3253,7 +3253,7 @@ differently in you production deployment, than described here.
 <span class="md-ellipsis">
     
   
-    Known Issues
+    Overview
   
 
     
@@ -3976,25 +3976,30 @@ differently in you production deployment, than described here.
 </a>
 <h1 id="fortinet-fortigate">Fortinet FortiGate</h1>
 <p>Currently, we support FortiOS version 5.2 and higher. In this article, you will find <strong>our recommendations regarding setup of administrator profiles and 
-accounts</strong>. It’s very important especially if you use <strong>Virtual Domains</strong> since part of a required configuration can be done only from CLI.</p>
+accounts</strong>. It’s very important, especially if you use <strong>Virtual Domains</strong>, since part of a required configuration can be done only from CLI.</p>
 <p>If you plan to use a user with full read/write permissions or even with super_admin profile assigned (which is not recommended, except a LAB testing), you can skip the rest of 
 this article.</p>
 <h2 id="create-an-admin-profile">Create an Admin Profile</h2>
-<p>First you need to create an admin profile with read-only permissions.</p>
+<p>First, you need to create an admin profile with read-only permissions.</p>
 <p>Follow these steps:</p>
 <ol>
 <li>Login to your FortiGate. In case you have VDOMs enabled, ensure 
-you have switched to the global scope (relevant drop-down menu is at the top left corner)</li>
-<li>Navigate to <strong>System -&gt; Admin Profiles</strong> and click on <strong>+ Create New</strong></li>
-<li>Fill in a name and set all permissions to Read (you can do it by clicking on <strong>Set All</strong> dropdown menu). The only exception is <strong>System -&gt; Management</strong> permission, 
-which has to be set to <strong>Read/Write</strong> (especially if VDOMs are enabled). See the picture below from FortiOS version 6.0.<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../admin_profile.png"><img alt="Admin Profile" src="../admin_profile.png" title="Admin Profile"/></a></p>
+you have switched to the global scope (relevant drop-down menu is in the top left corner)</li>
+<li>Navigate to <strong>System → Admin Profiles</strong> and click on <strong>+ Create New</strong></li>
+<li>Fill in a name and set all permissions to Read (you can do it by clicking on <strong>Set All</strong> dropdown menu). The only exception is <strong>System → Maintenance</strong> permission, 
+which has to be set to <strong>Read/Write</strong> (especially if VDOMs are enabled). See the picture below from FortiOS versions 6.0 and 7.0<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../fortinet/fortios-60-admin-profile.png"><img alt="Admin Profile, FortiOS 6.0" src="../fortinet/fortios-60-admin-profile.png" title="Admin Profile, FortiOS 6.0"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../fortinet/fortios-70-admin-profile.png"><img alt="Admin Profile, FortiOS 7.0" src="../fortinet/fortios-70-admin-profile.png" title="Admin Profile, FortiOS 7.0"/></a></p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FortiOS version 7.0 and higher - “permit usage of CLI diagnostic commands” have to be enabled.</p>
+</div>
 <h2 id="make-the-created-admin-profile-global-vdoms-only">Make The Created Admin Profile Global (VDOMs Only)</h2>
 <p>If you have Virtual Domains (VDOMs) enabled, you have to follow this procedure to make the created admin profile global. It means that administrators having 
 this profile will be able to work with all VDOMs. By default, only the default <em>prof_admin</em> profile is set as global.</p>
 <ol>
-<li>Connect to the FortiGate via SSH or Telnet or use the console at the top right corner (version 5.6 and above) or at the dashboard (version 5.4 and below)</li>
+<li>Connect to the FortiGate via SSH or Telnet or use the console in the top right corner (version 5.6 and above) or at the dashboard (version 5.4 and below)</li>
 <li>Run the following commands to change the profile:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>config global
@@ -4007,16 +4012,15 @@ end
 <p>Change the name of the previously created profile in the 3<sup>rd</sup> line accordingly.</p>
 <h2 id="create-an-administrator-account">Create An Administrator Account</h2>
 <ol>
-<li>Navigate to <strong>System -&gt; Administrators</strong> and click on <strong>+ Create New</strong> and select <strong>Administrator</strong></li>
-<li>Fill in its name, select a type of authentication and finally select the previously created Administrator profile. If you have VDOMs enabled, the Virtual Domains section bellow should disappear (if not, the selected 
-profile is not global)</li>
+<li>Navigate to <strong>System → Administrators</strong> and click on <strong>+ Create New</strong> and select <strong>Administrator</strong></li>
+<li>Fill in its name, select a type of authentication, and finally select the previously created Administrator profile. If you have VDOMs enabled, the Virtual Domains section below should disappear (if not, the selected profile is not global)</li>
 <li>Apply other restrictions if needed and click OK.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Ensure, that there is at least one interface with SSH or Telnet allowed and this interface is accessible from IP Fabric VM. To do so, navigate to Network &gt; Interfaces and check the <strong>Access</strong> column.</p>
+<p>Ensure, that there is at least one interface with SSH or Telnet allowed, and this interface is accessible from IP Fabric VM. To do so, navigate to <strong>Network → Interfaces</strong> and check the <strong>Access</strong> column.</p>
 </div>
-<p>Now it’s time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>\&lt;hostname&gt;\_\&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
+<p>Now it’s time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>&lt;hostname&gt;/&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
