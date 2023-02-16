@@ -14,3 +14,13 @@ The Addressing section provides information about every IP address on every mana
 - IPv6 Neighbor discovery: list of the IPv6 neighbors
 
 ![main menu](addressing/menu.png)
+
+## NAT
+
+This section contains information about NAT policies and rules configured on a device. Currently, only IPv4 NAT is supported -- tab NAT44.
+
+![NAT 44 table](addressing/nat44-table.png)
+
+A graphical representation (as shown below) of the policy chain can be access by clicking on a "Policy Name" or a "Sequence number".
+
+![natPostRouting chain on Forcepoint](addressing/forcepoint-natPostRouting.png)
