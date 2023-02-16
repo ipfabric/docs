@@ -2,7 +2,7 @@
 description: In this section, IP Fabric publishes Known Issues with specific vendors or the IP Fabric platform itself.
 ---
 
-# Known Issues
+# Overview
 
 **Using the Search at the top of the page can assist
 your team in finding the most relevant information to your inquiries.**
