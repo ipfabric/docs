@@ -5,13 +5,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="A quick tutorial about how to use IP Fabric’s API with python-ipfabric-diagrams Python module." name="description"/>
-<link href="https://docs.ipfabric.io/main/IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/" rel="canonical"/>
-<link href="../interating_over_large_collections/" rel="prev"/>
-<link href="../../snapshots/create_new_snapshots_via_api/" rel="next"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
+<link href="https://docs.ipfabric.io/main/releases/release_notes/6.2/" rel="canonical"/>
+<link href="../6.1/" rel="prev"/>
+<link href="../previous_releases/nimpee_v1/" rel="next"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.32.0" name="generator"/>
-<title>Simulate Unicast Path Lookup In IP Fabric Using Python - IP Fabric Documentation Portal</title>
+<title>IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal</title>
 <link href="../../../assets/stylesheets/main.22245cb8.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,17 +20,17 @@
 <link href="../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Simulate Unicast Path Lookup In IP Fabric Using Python - IP Fabric Documentation Portal" property="og:title"/>
-<meta content="A quick tutorial about how to use IP Fabric’s API with python-ipfabric-diagrams Python module." property="og:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python.png" property="og:image"/>
+<meta content="IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/releases/release_notes/6.2.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://docs.ipfabric.io/main/IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/" property="og:url"/>
+<meta content="https://docs.ipfabric.io/main/releases/release_notes/6.2/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Simulate Unicast Path Lookup In IP Fabric Using Python - IP Fabric Documentation Portal" name="twitter:title"/>
-<meta content="A quick tutorial about how to use IP Fabric’s API with python-ipfabric-diagrams Python module." name="twitter:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python.png" name="twitter:image"/>
+<meta content="IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/releases/release_notes/6.2.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -48,7 +48,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#simulate-unicast-path-lookup-in-ip-fabric-using-python">
+<a class="md-skip" href="#ip-fabric-v62-camlet">
           Skip to content
         </a>
 </div>
@@ -86,7 +86,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Simulate Unicast Path Lookup In IP Fabric Using Python
+              IP Fabric v6.2 (Camlet)
             
           </span>
 </div>
@@ -171,7 +171,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../../IP_Fabric_API/">
           
   
     
@@ -205,7 +205,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../releases/">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
           
   
     
@@ -596,8 +596,8 @@ differently in you production deployment, than described here.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -609,7 +609,7 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
             
@@ -620,7 +620,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../IP_Fabric_API/">
 <span class="md-ellipsis">
     
   
@@ -632,7 +632,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../authentication/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/authentication/">
 <span class="md-ellipsis">
     
   
@@ -644,7 +644,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intent_verification_rules/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/intent_verification_rules/">
 <span class="md-ellipsis">
     
   
@@ -656,7 +656,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../retrieving_configurations/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_configurations/">
 <span class="md-ellipsis">
     
   
@@ -668,7 +668,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../retrieving_device_log_file/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_device_log_file/">
 <span class="md-ellipsis">
     
   
@@ -680,7 +680,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../serial_numbers/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/serial_numbers/">
 <span class="md-ellipsis">
     
   
@@ -715,7 +715,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Path_Lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/">
 <span class="md-ellipsis">
     
   
@@ -727,7 +727,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Path_Lookup/host_to_gateway_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -739,7 +739,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Path_Lookup/multicast_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -751,7 +751,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Path_Lookup/path_lookup_ICMP_decoder/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/">
 <span class="md-ellipsis">
     
   
@@ -763,7 +763,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Path_Lookup/unicast_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -777,8 +777,8 @@ differently in you production deployment, than described here.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -790,7 +790,7 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_8">
 <span class="md-nav__icon md-icon"></span>
             
@@ -801,7 +801,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../interating_over_large_collections/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Tutorials/interating_over_large_collections/">
 <span class="md-ellipsis">
     
   
@@ -812,20 +812,8 @@ differently in you production deployment, than described here.
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Simulate Unicast Path Lookup In IP Fabric Using Python
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/">
 <span class="md-ellipsis">
     
   
@@ -835,32 +823,6 @@ differently in you production deployment, than described here.
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prerequisites">
-<span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#code-snippet">
-<span class="md-ellipsis">
-      
-        Code Snippet
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -889,7 +851,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../snapshots/create_new_snapshots_via_api/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/">
 <span class="md-ellipsis">
     
   
@@ -901,7 +863,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../snapshots/refreshing_devices_in_a_snapshot/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/">
 <span class="md-ellipsis">
     
   
@@ -913,7 +875,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../snapshots/snapshot_table/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/snapshot_table/">
 <span class="md-ellipsis">
     
   
@@ -2544,8 +2506,8 @@ differently in you production deployment, than described here.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -2557,7 +2519,7 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             
@@ -2568,7 +2530,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     
   
@@ -2579,8 +2541,8 @@ differently in you production deployment, than described here.
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -2592,7 +2554,7 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -2603,7 +2565,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/5.0/">
+<a class="md-nav__link" href="../5.0/">
 <span class="md-ellipsis">
     
   
@@ -2615,7 +2577,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/6.0/">
+<a class="md-nav__link" href="../6.0/">
 <span class="md-ellipsis">
     
   
@@ -2627,7 +2589,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/6.1/">
+<a class="md-nav__link" href="../6.1/">
 <span class="md-ellipsis">
     
   
@@ -2638,8 +2600,20 @@ differently in you production deployment, than described here.
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/6.2/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v6.2 (Camlet)
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
   
@@ -2649,6 +2623,54 @@ differently in you production deployment, than described here.
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v620-tbd">
+<span class="md-ellipsis">
+      
+        v6.2.0 (TBD)
+      
+    </span>
+</a>
+<nav aria-label="v6.2.0 (TBD)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#noticeable-changes">
+<span class="md-ellipsis">
+      
+        Noticeable changes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-discovery">
+<span class="md-ellipsis">
+      
+        Network Discovery
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upgrade-notices">
+<span class="md-ellipsis">
+      
+        Upgrade Notices
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_5" type="checkbox"/>
@@ -2674,7 +2696,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v1/">
+<a class="md-nav__link" href="../previous_releases/nimpee_v1/">
 <span class="md-ellipsis">
     
   
@@ -2686,7 +2708,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v2/">
+<a class="md-nav__link" href="../previous_releases/nimpee_v2/">
 <span class="md-ellipsis">
     
   
@@ -2698,7 +2720,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/">
+<a class="md-nav__link" href="../previous_releases/v3.x.x_ip_fabric/">
 <span class="md-ellipsis">
     
   
@@ -2733,7 +2755,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
+<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.0/">
 <span class="md-ellipsis">
     
   
@@ -2745,7 +2767,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
+<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.1/">
 <span class="md-ellipsis">
     
   
@@ -2757,7 +2779,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
+<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.2/">
 <span class="md-ellipsis">
     
   
@@ -2769,7 +2791,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
+<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.3/">
 <span class="md-ellipsis">
     
   
@@ -2781,7 +2803,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
+<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.4/">
 <span class="md-ellipsis">
     
   
@@ -2871,7 +2893,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.0/">
 <span class="md-ellipsis">
     
   
@@ -2883,7 +2905,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.1/">
 <span class="md-ellipsis">
     
   
@@ -2895,7 +2917,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.2/">
 <span class="md-ellipsis">
     
   
@@ -2907,7 +2929,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.3/">
 <span class="md-ellipsis">
     
   
@@ -2919,7 +2941,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.4/">
 <span class="md-ellipsis">
     
   
@@ -2931,7 +2953,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.5/">
 <span class="md-ellipsis">
     
   
@@ -2969,7 +2991,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.0/">
 <span class="md-ellipsis">
     
   
@@ -2981,7 +3003,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.1/">
 <span class="md-ellipsis">
     
   
@@ -2993,7 +3015,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.2/">
 <span class="md-ellipsis">
     
   
@@ -3005,7 +3027,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/">
+<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.3/">
 <span class="md-ellipsis">
     
   
@@ -3069,7 +3091,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/">
+<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3081,7 +3103,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/">
+<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3093,7 +3115,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/">
+<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.2/">
 <span class="md-ellipsis">
     
   
@@ -3157,7 +3179,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/">
+<a class="md-nav__link" href="../../release_notes_low-level/6.x/6.0.x/6.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3169,7 +3191,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/">
+<a class="md-nav__link" href="../../release_notes_low-level/6.x/6.0.x/6.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3941,22 +3963,44 @@ differently in you production deployment, than described here.
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prerequisites">
+<a class="md-nav__link" href="#v620-tbd">
 <span class="md-ellipsis">
       
-        Prerequisites
+        v6.2.0 (TBD)
+      
+    </span>
+</a>
+<nav aria-label="v6.2.0 (TBD)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#noticeable-changes">
+<span class="md-ellipsis">
+      
+        Noticeable changes
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#code-snippet">
+<a class="md-nav__link" href="#network-discovery">
 <span class="md-ellipsis">
       
-        Code Snippet
+        Network Discovery
       
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#upgrade-notices">
+<span class="md-ellipsis">
+      
+        Upgrade Notices
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3965,56 +4009,31 @@ differently in you production deployment, than described here.
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/releases/release_notes/6.2.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<h1 id="simulate-unicast-path-lookup-in-ip-fabric-using-python">Simulate Unicast Path Lookup In IP Fabric Using Python</h1>
-<p>A quick tutorial about how to use IP Fabric’s API with <a href="https://pypi.org/project/ipfabric-diagrams/">python-ipfabric-diagrams</a> Python module.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h1 id="ip-fabric-v62-camlet">IP Fabric v6.2 (Camlet)</h1>
+<div class="admonition danger">
+<p class="admonition-title">Unreleased version</p>
+<p>This is an upcoming IP Fabric version, which has not been released yet and is not available for download.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Clearing Browser Cache</p>
+<p>Please force refresh your browser cache after an upgrade.
+Depending on your operating system use the following key combination in your browser window:</p>
 <ul>
-<li>we strongly recommend using a virtual environment for development testing</li>
-<li>install the Python package in your environment:</li>
+<li>Windows: <code>CTRL + F5</code></li>
+<li>Mac/Apple: <code>Apple + R</code> or <code>⌘ + R</code></li>
+<li>Linux: <code>CTRL + F5</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric-diagrams
-</code></pre></div>
-<h2 id="code-snippet">Code Snippet</h2>
-<p>There are more examples in our Git, but we will test unicast path simulation with the following code snippet:</p>
-<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
-<span class="sd">Unicast path simulation with IP Fabric's Python package (valid for version 4.3 and later</span>
-<span class="sd">"""</span>
-<span class="kn">from</span> <span class="nn">ipfabric_diagrams</span> <span class="kn">import</span> <span class="n">IPFDiagram</span><span class="p">,</span> <span class="n">PathLookupSettings</span><span class="p">,</span> <span class="n">Unicast</span><span class="p">,</span> <span class="n">Algorithm</span><span class="p">,</span> <span class="n">EntryPoint</span><span class="p">,</span> <span class="n">OtherOptions</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-    <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFDiagram</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s1">'https://ipfabric_fqdn/'</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s1">'api_token'</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'  </span><span class="se">\n</span><span class="s1">Starting with path simulation..'</span><span class="p">)</span>
-    <span class="n">uni</span> <span class="o">=</span> <span class="n">Unicast</span><span class="p">(</span>
-        <span class="n">startingPoint</span><span class="o">=</span><span class="s1">'10.38.115.1'</span><span class="p">,</span>
-        <span class="n">destinationPoint</span><span class="o">=</span><span class="s1">'10.66.126.1'</span><span class="p">,</span>
-        <span class="n">protocol</span><span class="o">=</span><span class="s1">'tcp'</span><span class="p">,</span>
-        <span class="n">srcPorts</span><span class="o">=</span><span class="s1">'10000'</span><span class="p">,</span>
-        <span class="n">dstPorts</span><span class="o">=</span><span class="s1">'80'</span><span class="p">,</span>
-        <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-        <span class="n">fragmentOffset</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">)</span>
-
-    <span class="n">json_data</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">diagram_json</span><span class="p">(</span><span class="n">uni</span><span class="p">)</span>
-
-    <span class="n">path_result</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="s1">'pathlookup'</span><span class="p">][</span><span class="s1">'passingTraffic'</span><span class="p">]</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">    Simulation finished. Legend:</span>
-<span class="s2">    - all = all traffic is reaching destination</span>
-<span class="s2">    - part = some traffic is reaching destination</span>
-<span class="s2">    - none = some traffic is reaching destination</span>
-<span class="s2">    """</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'  Result is : </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_result</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">()</span>
-
-    <span class="n">ipf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<p>More examples at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric-diagrams/-/tree/develop/examples">this link</a></p>
+</div>
+<h2 id="v620-tbd">v6.2.0 (TBD)</h2>
+<h3 id="noticeable-changes">Noticeable changes</h3>
+<h3 id="network-discovery">Network Discovery</h3>
+<h3 id="upgrade-notices">Upgrade Notices</h3>
+<ul>
+<li>Forcepoint – NAT support was added (see our <a href="https://matrix.ipfabric.io">feature matrix</a> for more details).</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -4026,7 +4045,7 @@ differently in you production deployment, than described here.
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Iterating Over Large Collections" class="md-footer__link md-footer__link--prev" href="../interating_over_large_collections/" rel="prev">
+<a aria-label="Previous: IP Fabric v6.1 (Burlap)" class="md-footer__link md-footer__link--prev" href="../6.1/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -4035,17 +4054,17 @@ differently in you production deployment, than described here.
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Iterating Over Large Collections
+                IP Fabric v6.1 (Burlap)
               </div>
 </div>
 </a>
-<a aria-label="Next: Create New Snapshots Via API" class="md-footer__link md-footer__link--next" href="../../snapshots/create_new_snapshots_via_api/" rel="next">
+<a aria-label="Next: NIMPEE v1.x.x" class="md-footer__link md-footer__link--next" href="../previous_releases/nimpee_v1/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Create New Snapshots Via API
+                NIMPEE v1.x.x
               </div>
 </div>
 <div class="md-footer__button md-icon">
