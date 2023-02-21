@@ -14,6 +14,27 @@
 
   ![Input_new_osadmin_password](osadmin_password_change3.png)
 
+  ![Input_new_osadmin_password](osadmin_password_change4.png)
+
+  Password setup contains password complexity check, simple passwords are rejected.
+
+  Password requirements as follows:
+  - max password length is 256
+  - single character class passwords are not supported
+  - two character class must be at least 24 characters long
+  - minimal length of passphrase is 24 characters
+  - three character class must be at least 16 characters long
+  - four character class must be at least 12 characters long
+  - passphrase must have at least five words
+
+  The character classes are:
+  - digits
+  - lower-case letters
+  - upper-case letters
+  - and other characters
+
+  There is also a special class for non-ASCII characters, which could not be classified, but are assumed to be non-digits.
+
 4. Select `Yes` to reboot the system.
 
   ![Reboot](osadmin_password_change5.png)
