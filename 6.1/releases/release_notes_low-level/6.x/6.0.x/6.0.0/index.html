@@ -1,0 +1,4728 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
+<link href="https://docs.ipfabric.io/6.1/releases/release_notes_low-level/6.x/6.0.x/6.0.0/" rel="canonical"/>
+<link href="../../../5.x/5.0.x/5.0.2/" rel="prev"/>
+<link href="../6.0.1/" rel="next"/>
+<link href="../../../../../assets/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.32.0" name="generator"/>
+<title>LLRN 6.0.0 - IP Fabric Documentation Portal</title>
+<link href="../../../../../assets/stylesheets/main.22245cb8.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../../stylesheets/theme.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<meta content="website" property="og:type"/>
+<meta content="LLRN 6.0.0 - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
+<meta content="https://docs.ipfabric.io/6.1/assets/images/social/releases/release_notes_low-level/6.x/6.0.x/6.0.0.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://docs.ipfabric.io/6.1/releases/release_notes_low-level/6.x/6.0.x/6.0.0/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="LLRN 6.0.0 - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
+<meta content="https://docs.ipfabric.io/6.1/assets/images/social/releases/release_notes_low-level/6.x/6.0.x/6.0.0.png" name="twitter:image"/>
+<link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#llrn-600">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IP Fabric Documentation Portal" class="md-header__button md-logo" data-md-component="logo" href="../../../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IP Fabric Documentation Portal
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              LLRN 6.0.0
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ipfabric/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ipfabric/docs
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../..">
+        
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../Getting_Started/Overview/">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../IP_Fabric_API/">
+          
+  
+    
+  
+  IP Fabric API
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../IP_Fabric_GUI/Global_Filter/">
+          
+  
+  IP Fabric GUI
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../IP_Fabric_Settings/api_tokens/">
+          
+  
+  IP Fabric Settings
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../System_Administration/boot_wizard/">
+          
+  
+  System Administration
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../../../../">
+          
+  
+    
+  
+  Releases
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../../support/">
+          
+  
+    
+  
+  Support
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IP Fabric Documentation Portal" class="md-nav__button md-logo" data-md-component="logo" href="../../../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../../../assets/logo.png"/>
+</a>
+    IP Fabric Documentation Portal
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ipfabric/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ipfabric/docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/faq/">
+<span class="md-ellipsis">
+    
+  
+    Frequently Asked Question - FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/licensing/">
+<span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/snapshots/">
+<span class="md-ellipsis">
+    
+  
+    How Snapshots Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How Discovery Works
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_1_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How Discovery Works
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/API_discovery/">
+<span class="md-ellipsis">
+    
+  
+    How API Discovery Works
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">
+<span class="md-ellipsis">
+    
+  
+    How CLI Discovery Works
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting Discovery
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_1_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1_5_4" id="__nav_2_1_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Common problems
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_5_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_1_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Common problems
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/connectivity_report/">
+<span class="md-ellipsis">
+    
+  
+    Connectivity Report - Type of Error
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/">
+<span class="md-ellipsis">
+    
+  
+    Fine-Tune SSH/Telnet CLI Parameters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/no-devices-discovered/">
+<span class="md-ellipsis">
+    
+  
+    No Devices Discovered
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/quagga-frr/">
+<span class="md-ellipsis">
+    
+  
+    Configuring Quagga / FRR To Work With IP Fabric
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Platform First Steps
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Platform First Steps
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/00-quick_start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start Installation Guide
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/01-deployment/">
+<span class="md-ellipsis">
+    
+  
+    Deploying the IP Fabric Virtual Machine (VM)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/02-boot_wizard/">
+<span class="md-ellipsis">
+    
+  
+    CLI Boot Wizard
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/03-access_ui/">
+<span class="md-ellipsis">
+    
+  
+    Access User Interface And Install License
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/04-configuration_wizard/">
+<span class="md-ellipsis">
+    
+  
+    Configuration Wizard
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../Getting_Started/Platform_First_Steps/05-initial_discovery/">
+<span class="md-ellipsis">
+    
+  
+    Initial Discovery
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric API
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    IP Fabric API
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/authentication/">
+<span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/intent_verification_rules/">
+<span class="md-ellipsis">
+    
+  
+    Intent Verification Rules
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/retrieving_configurations/">
+<span class="md-ellipsis">
+    
+  
+    Retrieving configurations
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/retrieving_device_log_file/">
+<span class="md-ellipsis">
+    
+  
+    Retrieving device log file
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/serial_numbers/">
+<span class="md-ellipsis">
+    
+  
+    Serial Numbers
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Path Lookup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Path Lookup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Path_Lookup/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/">
+<span class="md-ellipsis">
+    
+  
+    Host to Gateway Path Lookup
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/">
+<span class="md-ellipsis">
+    
+  
+    Multicast Path Lookup
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/">
+<span class="md-ellipsis">
+    
+  
+    Path Lookup ICMP Decoder
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/">
+<span class="md-ellipsis">
+    
+  
+    Unicast Path Lookup
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Tutorials/interating_over_large_collections/">
+<span class="md-ellipsis">
+    
+  
+    Iterating Over Large Collections
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/">
+<span class="md-ellipsis">
+    
+  
+    Simulate Unicast Path Lookup In IP Fabric Using Python
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Snapshots
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Snapshots
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/">
+<span class="md-ellipsis">
+    
+  
+    Create New Snapshots Via API
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/">
+<span class="md-ellipsis">
+    
+  
+    Refreshing Devices In a Snapshot
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_API/snapshots/snapshot_table/">
+<span class="md-ellipsis">
+    
+  
+    Snapshot Table
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric GUI
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    IP Fabric GUI
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/Global_Filter/">
+<span class="md-ellipsis">
+    
+  
+    Global Filter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/dashboard/">
+<span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/discovery_snapshot/">
+<span class="md-ellipsis">
+    
+  
+    Discovery Snapshot
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/inventory/">
+<span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/reports/">
+<span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Diagrams
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Diagrams
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/diagrams/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/diagrams/compare_snapshot/">
+<span class="md-ellipsis">
+    
+  
+    Compare Snapshot
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/">
+<span class="md-ellipsis">
+    
+  
+    How To Use Path Lookup
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/diagrams/intent_checks/">
+<span class="md-ellipsis">
+    
+  
+    Intent Checks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/diagrams/network_viewer/">
+<span class="md-ellipsis">
+    
+  
+    Network Viewer
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Management
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/management/changes/">
+<span class="md-ellipsis">
+    
+  
+    Changes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/management/configuration/">
+<span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/management/discovery_history/">
+<span class="md-ellipsis">
+    
+  
+    Discovery History
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Technology tables
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Technology tables
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/CDP_LLDP/">
+<span class="md-ellipsis">
+    
+  
+    CDP/LLDP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/DHCP/">
+<span class="md-ellipsis">
+    
+  
+    DHCP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/Fabric_Path/">
+<span class="md-ellipsis">
+    
+  
+    Fabric Path
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/First_hop_redundancy_protocols/">
+<span class="md-ellipsis">
+    
+  
+    First Hop Redundancy Protocols (FHRP)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/MPLS/">
+<span class="md-ellipsis">
+    
+  
+    MPLS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/QoS/">
+<span class="md-ellipsis">
+    
+  
+    QoS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/SDN/">
+<span class="md-ellipsis">
+    
+  
+    SDN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/SDWAN/">
+<span class="md-ellipsis">
+    
+  
+    SDWAN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/Security/">
+<span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/addressing/">
+<span class="md-ellipsis">
+    
+  
+    Addressing
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/cloud/">
+<span class="md-ellipsis">
+    
+  
+    Cloud
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/interfaces/">
+<span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/ip_telephony/">
+<span class="md-ellipsis">
+    
+  
+    IP Telephony
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/management_table/">
+<span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/networks/">
+<span class="md-ellipsis">
+    
+  
+    Networks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/platforms/">
+<span class="md-ellipsis">
+    
+  
+    Platforms
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/port-channels/">
+<span class="md-ellipsis">
+    
+  
+    Port-Channels
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/routing/">
+<span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/routing_analysis/">
+<span class="md-ellipsis">
+    
+  
+    Routing Analysis
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/stp/">
+<span class="md-ellipsis">
+    
+  
+    Spanning Tree
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/transcievers/">
+<span class="md-ellipsis">
+    
+  
+    Transceivers
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/technology_tables/wireless/">
+<span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tips
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/tips/intent_rules/">
+<span class="md-ellipsis">
+    
+  
+    Intent Verification Rule
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/tips/navigate_in_tables/">
+<span class="md-ellipsis">
+    
+  
+    Navigate in Tables
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/tips/search/">
+<span class="md-ellipsis">
+    
+  
+    Searching
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_GUI/tips/vague_messages/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting Vague Messages
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric Settings
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    IP Fabric Settings
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/api_tokens/">
+<span class="md-ellipsis">
+    
+  
+    API tokens
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/authentication/">
+<span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/ca/">
+<span class="md-ellipsis">
+    
+  
+    Certification Authorities
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/device_attributes/">
+<span class="md-ellipsis">
+    
+  
+    Device Attributes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/discovery_seed/">
+<span class="md-ellipsis">
+    
+  
+    Discovery Seed
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/organizationally_unique_identifier/">
+<span class="md-ellipsis">
+    
+  
+    OUI (Organizationally Unique Identifier)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/site_separation/">
+<span class="md-ellipsis">
+    
+  
+    Site Separation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/webhooks/">
+<span class="md-ellipsis">
+    
+  
+    Webhooks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/SSH_telnet/">
+<span class="md-ellipsis">
+    
+  
+    SSH/TELNET
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/assurance_engine/">
+<span class="md-ellipsis">
+    
+  
+    Assurance Engine
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/configuration_management/">
+<span class="md-ellipsis">
+    
+  
+    Configuration Management
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery_tasks/">
+<span class="md-ellipsis">
+    
+  
+    Discovery Tasks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/ipf_cert/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric Web Certificate
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/snapshots/">
+<span class="md-ellipsis">
+    
+  
+    Snapshots
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/snmp/">
+<span class="md-ellipsis">
+    
+  
+    SNMP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_8" id="__nav_5_9_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Vendors API
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_8_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Vendors API
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services/">
+<span class="md-ellipsis">
+    
+  
+    AWS (Amazon Web Services)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Azure_Networking/">
+<span class="md-ellipsis">
+    
+  
+    Azure Networking
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Check_Point/">
+<span class="md-ellipsis">
+    
+  
+    Check Point
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_APIC/">
+<span class="md-ellipsis">
+    
+  
+    Cisco APIC
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_FMC/">
+<span class="md-ellipsis">
+    
+  
+    Cisco FMC (FTD)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Meraki/">
+<span class="md-ellipsis">
+    
+  
+    Cisco Meraki
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Viptela_SD-WAN/">
+<span class="md-ellipsis">
+    
+  
+    Cisco Viptela
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/PaloAlto_Prisma/">
+<span class="md-ellipsis">
+    
+  
+    Palo Alto Prisma SASE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Ruckus_Virtual_SmartZone/">
+<span class="md-ellipsis">
+    
+  
+    Ruckus Virtual SmartZone
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Silver_Peak_SD-WAN/">
+<span class="md-ellipsis">
+    
+  
+    Silver Peak SD-WAN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/VMware_NSX-T/">
+<span class="md-ellipsis">
+    
+  
+    VMware NSX-T
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/Versa_Networks_SD-WAN/">
+<span class="md-ellipsis">
+    
+  
+    Versa Networks SD-WAN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/forcepoint/">
+<span class="md-ellipsis">
+    
+  
+    Forcepoint
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/Vendors_API/junipe_mist/">
+<span class="md-ellipsis">
+    
+  
+    Juniper Mist
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_9" id="__nav_5_9_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Discovery
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_9_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Discovery
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/Traceroute_settings/">
+<span class="md-ellipsis">
+    
+  
+    Traceroute settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/discovery_settings/">
+<span class="md-ellipsis">
+    
+  
+    Discovery Tasks Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/dns_resolve/">
+<span class="md-ellipsis">
+    
+  
+    DNS resolve
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/ip_scope/">
+<span class="md-ellipsis">
+    
+  
+    IP Scope
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/limit_download_of_bgp_routes/">
+<span class="md-ellipsis">
+    
+  
+    Limit Download of BGP Routes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/discovery/scanner_settings/">
+<span class="md-ellipsis">
+    
+  
+    Scanner settings
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9_10" id="__nav_5_9_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_10_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_9_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    System
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/system/cleardb/">
+<span class="md-ellipsis">
+    
+  
+    Clear DB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/system/system_backup/">
+<span class="md-ellipsis">
+    
+  
+    Schedule System Backup
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/advanced/system/system_maitenance/">
+<span class="md-ellipsis">
+    
+  
+    Schedule System Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    User management
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_10">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    User management
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/ldap/">
+<span class="md-ellipsis">
+    
+  
+    LDAP Authentication
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/policies/">
+<span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/roles/">
+<span class="md-ellipsis">
+    
+  
+    Roles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/sso/">
+<span class="md-ellipsis">
+    
+  
+    Single Sign On (SSO)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../IP_Fabric_Settings/user_management/users/">
+<span class="md-ellipsis">
+    
+  
+    Users
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    System Administration
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    System Administration
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/boot_wizard/">
+<span class="md-ellipsis">
+    
+  
+    Run System 'Boot Wizard'
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/increase_disk_space/">
+<span class="md-ellipsis">
+    
+  
+    Server Disk Space Summary
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Administrative Interface
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Administrative Interface
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Administrative_Interface/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Administrative_Interface/System_Update/">
+<span class="md-ellipsis">
+    
+  
+    System Update
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Administrative_Interface/backup_and_restore/">
+<span class="md-ellipsis">
+    
+  
+    Backup And Restore
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Administrative_Interface/create_local_administrator/">
+<span class="md-ellipsis">
+    
+  
+    Create Local Administrator
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Administrative_Interface/system_status/">
+<span class="md-ellipsis">
+    
+  
+    System Status
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Command Line Interface
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Command Line Interface
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/Custom_TLS/">
+<span class="md-ellipsis">
+    
+  
+    Custom Transport Layer Security (TLS) Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/Logging/">
+<span class="md-ellipsis">
+    
+  
+    Understanding System Logs
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/change_hostname/">
+<span class="md-ellipsis">
+    
+  
+    How to change the hostname
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/">
+<span class="md-ellipsis">
+    
+  
+    How to change the `osadmin` password
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/custom_ssl_cert/">
+<span class="md-ellipsis">
+    
+  
+    How to add Custom SSL Certificate
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/jumphost_troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting `jumphost`
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/manual_config_backup/">
+<span class="md-ellipsis">
+    
+  
+    How to trigger manual configuration backup for a single device
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/troubleshoot_ldap/">
+<span class="md-ellipsis">
+    
+  
+    How To Troubleshoot LDAP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    How to troubleshoot IP Fabric VM
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric Releases
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Release notes
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/5.0/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v5.0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/6.0/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v6.0 (Aertex)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/6.1/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v6.1 (Burlap)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/6.2/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v6.2 (Camlet)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_5" id="__nav_7_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Previous releases
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Previous releases
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/nimpee_v1/">
+<span class="md-ellipsis">
+    
+  
+    NIMPEE v1.x.x
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/nimpee_v2/">
+<span class="md-ellipsis">
+    
+  
+    NIMPEE v2.x.x
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/v3.x.x_ip_fabric/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v3.x.x
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_5_4" id="__nav_7_2_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.x.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_5_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_2_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    IP Fabric v4.x.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric v4.4
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Release notes low level
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes low level
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1" id="__nav_7_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    4.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_3_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    4.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_1_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1_1" id="__nav_7_3_1_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    4.3.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_1_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_1_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    4.3.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.0/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.1/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.2/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.3/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.3
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.4/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.4
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.3.x/4.3.5/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.3.5
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_1_2" id="__nav_7_3_1_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    4.4.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_1_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    4.4.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.4.x/4.4.0/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.4.0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.4.x/4.4.1/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.4.1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.4.x/4.4.2/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.4.2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.x/4.4.x/4.4.3/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 4.4.3
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    5.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    5.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_2_1" id="__nav_7_3_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    5.0.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_2_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    5.0.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../5.x/5.0.x/5.0.0/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 5.0.0
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../5.x/5.0.x/5.0.1/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 5.0.1
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../5.x/5.0.x/5.0.2/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 5.0.2
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    6.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    6.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_3_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_3_1" id="__nav_7_3_3_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    6.0.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_3_3_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_3_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    6.0.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    LLRN 6.0.0
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    LLRN 6.0.0
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epics">
+<span class="md-ellipsis">
+      
+        Epics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stories">
+<span class="md-ellipsis">
+      
+        Stories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bugs">
+<span class="md-ellipsis">
+      
+        Bugs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tasks">
+<span class="md-ellipsis">
+      
+        Tasks
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sub-tasks">
+<span class="md-ellipsis">
+      
+        Sub-Tasks
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6.0.1/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 6.0.1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_3_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_3_3_2" id="__nav_7_3_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    6.1.x
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_3_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_3_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    6.1.x
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6.1.x/6.1.0/">
+<span class="md-ellipsis">
+    
+  
+    LLRN 6.1.0
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Support
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/">
+<span class="md-ellipsis">
+    
+  
+    Technical Support
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/security_bulletins/">
+<span class="md-ellipsis">
+    
+  
+    Security Bulletin
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/security_incidents/">
+<span class="md-ellipsis">
+    
+  
+    Security Incident Response
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/support_vpn/">
+<span class="md-ellipsis">
+    
+  
+    Support VPN
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/techsupport/">
+<span class="md-ellipsis">
+    
+  
+    Techsupport
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6" id="__nav_8_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Known issues
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Known issues
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6_2" id="__nav_8_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    IP Fabric
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    IP Fabric
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/">
+<span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/">
+<span class="md-ellipsis">
+    
+  
+    Customer name in techsupport
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/Missing_lsof_package/">
+<span class="md-ellipsis">
+    
+  
+    Missing `lsof` Package
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/Service_passwords/">
+<span class="md-ellipsis">
+    
+  
+    Service Passwords
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
+<span class="md-ellipsis">
+    
+  
+    Site Name Can Change To An Obscure UUID Value After Update
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/local_time_inconsistencies/">
+<span class="md-ellipsis">
+    
+  
+    Local Time Inconsistencies
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/transceivers_task/">
+<span class="md-ellipsis">
+    
+  
+    Transceivers Task
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6_2_8" id="__nav_8_6_2_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Error messages
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_2_8_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_6_2_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Error messages
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/error_messages/aql_internal_error/">
+<span class="md-ellipsis">
+    
+  
+    Aql internal error
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
+<span class="md-ellipsis">
+    
+  
+    Http 504 database overloaded
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
+<span class="md-ellipsis">
+    
+  
+    Error: Invalid OVF checksum algorithm: SHA256
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/IP_Fabric/error_messages/resource_conflict/">
+<span class="md-ellipsis">
+    
+  
+    Resource conflict
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6_3" id="__nav_8_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/3com/">
+<span class="md-ellipsis">
+    
+  
+    3Com
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/Fortinet_FortiGate/">
+<span class="md-ellipsis">
+    
+  
+    Fortinet FortiGate
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/arista/">
+<span class="md-ellipsis">
+    
+  
+    Arista
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/brocade/">
+<span class="md-ellipsis">
+    
+  
+    Brocade
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/checkpoint/">
+<span class="md-ellipsis">
+    
+  
+    Checkpoint
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/dell/">
+<span class="md-ellipsis">
+    
+  
+    Dell
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/extreme/">
+<span class="md-ellipsis">
+    
+  
+    Extreme Networks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/f5/">
+<span class="md-ellipsis">
+    
+  
+    F5
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/forcepoint/">
+<span class="md-ellipsis">
+    
+  
+    Forcepoint
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/hp/">
+<span class="md-ellipsis">
+    
+  
+    HP
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/huawei/">
+<span class="md-ellipsis">
+    
+  
+    Huawei
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/juniper/">
+<span class="md-ellipsis">
+    
+  
+    Juniper
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/meraki/">
+<span class="md-ellipsis">
+    
+  
+    Meraki
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/mikrotik/">
+<span class="md-ellipsis">
+    
+  
+    Mikrotik
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/versa/">
+<span class="md-ellipsis">
+    
+  
+    Versa
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6_3_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6_3_16" id="__nav_8_6_3_16_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Palo Alto Networks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_3_16_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_6_3_16">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Palo Alto Networks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/Palo_Alto_Networks/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/Palo_Alto_Networks/panorama/">
+<span class="md-ellipsis">
+    
+  
+    Panorama
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8_6_3_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_6_3_17" id="__nav_8_6_3_17_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Cisco
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_6_3_17_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_8_6_3_17">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Cisco
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/">
+<span class="md-ellipsis">
+    
+  
+    Adding AAA User To Cisco ACS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/">
+<span class="md-ellipsis">
+    
+  
+    Cisco ASA in Transparent Mode
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/">
+<span class="md-ellipsis">
+    
+  
+    Command `cli whitespace completion`
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
+<span class="md-ellipsis">
+    
+  
+    Dropping Support For ACL On Cisco Firepower
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/FMC_REST_API/">
+<span class="md-ellipsis">
+    
+  
+    FMC REST API Calls Returns HTTP Error Code 500
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
+<span class="md-ellipsis">
+    
+  
+    Inconsistent VRF Names On Cisco Platforms
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/">
+<span class="md-ellipsis">
+    
+  
+    Nexus 9k Show Version
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/">
+<span class="md-ellipsis">
+    
+  
+    Show Interface Transceivers
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/">
+<span class="md-ellipsis">
+    
+  
+    VRFs Are Not Found On IOS-XR
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/Viptela_CEdge_shows_only_one_next_hop/">
+<span class="md-ellipsis">
+    
+  
+    Viptela CEdge shows only one next-hop
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../support/known_issues/Vendors/cisco/apic_tables_empty/">
+<span class="md-ellipsis">
+    
+  
+    APIC Tables are all empty except Controllers
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epics">
+<span class="md-ellipsis">
+      
+        Epics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stories">
+<span class="md-ellipsis">
+      
+        Stories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bugs">
+<span class="md-ellipsis">
+      
+        Bugs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tasks">
+<span class="md-ellipsis">
+      
+        Tasks
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sub-tasks">
+<span class="md-ellipsis">
+      
+        Sub-Tasks
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/releases/release_notes_low-level/6.x/6.0.x/6.0.0.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<h1 id="llrn-600">LLRN 6.0.0</h1>
+<p>These are low-level release notes for IP Fabric release <code>6.0.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don’t have access to the tickets. On the other hand, it can provide valuable information, if you are looking for a particular detail. This release of IP Fabric contains a total of 580 issues.</p>
+<h2 id="epics">Epics</h2>
+<p>Epics are high-level features, that may consist of many tasks.</p>
+<ul>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4425">NIM-4425</a> – Medium – cisco sg commands fixing (mother of all cisco sg fixes)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6801">NIM-6801</a> – Medium – Zero-trust for virtual instances in cloud environments</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7949">NIM-7949</a> – High – Role-based access control (RBAC) - Phase 2</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8254">NIM-8254</a> – Medium – NAE-to-Backend-5.1</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8567">NIM-8567</a> – Medium – Improve support for VLANs on L2 interfaces</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8706">NIM-8706</a> – Medium – Attributes — Phase I — end of Sept 22</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8727">NIM-8727</a> – Medium – Cisco FabricPath Support</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8743">NIM-8743</a> – Medium – API Tables in 6.0.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-682">DOS-682</a> – Medium – Release 6.0</li>
+</ul>
+<h2 id="stories">Stories</h2>
+<p>Stories are high-level features, that may consist of many tasks. These would typically cover extensive functionality in IP Fabric</p>
+<ul>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4433">NIM-4433</a> – Medium – Virtual contexts table (initial implementation)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-5648">NIM-5648</a> – Medium – Route Maps on Cisco</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-5826">NIM-5826</a> – High – Policy-Based Routing on Cisco</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6680">NIM-6680</a> – High – Implement NAT Model for Firewall Vendors For Future NAT Support</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7411">NIM-7411</a> – Medium – Handling of hostname and domains</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7530">NIM-7530</a> – High – Cleanup handling of custom CA / system certificates</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7688">NIM-7688</a> – High – Forcepoint - Basic discovery [ Mother ticket]</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8062">NIM-8062</a> – High – AWS AssumeRole – multiple regions and targets</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8175">NIM-8175</a> – Medium – Device attributes - plan of basic implementation on FE</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8177">NIM-8177</a> – Medium – RBAC - plan Phase 2 on FE</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8492">NIM-8492</a> – High – Specify how API will work with custom device attributes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8542">NIM-8542</a> – Medium – Fix &amp; unify path-lookup CIDR validations</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8735">NIM-8735</a> – Medium – NAT - save data to DB</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9285">NIM-9285</a> – Medium – Update EULA</li>
+</ul>
+<h2 id="bugs">Bugs</h2>
+<p>Anything that we considered an incorrect behavior. Something that was not working as expected or turned out that did not meet customers’ demand.</p>
+<ul>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-5522">NIM-5522</a> – Medium – Bugfix: commands/aws/_ec2/describeVpnConnections</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-5864">NIM-5864</a> – Medium – AWS routingTable - add support for routes with prefix lists</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6164">NIM-6164</a> – Medium – commands/cisco/mac - nxos</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6178">NIM-6178</a> – Medium – commands/hp/_comware/ipVpnInstance - wrong parsing of vrf names with spaces</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6479">NIM-6479</a> – Medium – FHRP table - group Members - different VRF for same VIP</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7320">NIM-7320</a> – Medium – MultiTextInput copy/paste has unexpected behavior</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7333">NIM-7333</a> – Medium – Internal EM interface with 10/8 still considered as routing interface on Junos MX</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7457">NIM-7457</a> – Medium – React select bug in styling active item</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7553">NIM-7553</a> – Medium – Escape closes snapshot settings with open dialog</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7577">NIM-7577</a> – Medium – Network Analysis report is available for non-complete snapshot</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7653">NIM-7653</a> – Medium – Clarify generated Site name in regex based site separation rules</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7736">NIM-7736</a> – Medium – Cloud is misaligned in available node types</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7769">NIM-7769</a> – Medium – Calculating reports fails on Error: Converting circular structure to JSON</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7809">NIM-7809</a> – Medium – lldp connections between HP Aruba AP &amp; HP Arubasw are pointed to the transit</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8108">NIM-8108</a> – Medium – Mikrotik cmd active/remote IPsec peers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8113">NIM-8113</a> – Medium – Cisco ASA - broken pathlookup - error in output chain validation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8267">NIM-8267</a> – Medium – Bugfix: commands/dell/_ftos/interfacesSwitchport</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8302">NIM-8302</a> – Medium – License page design is broken</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8316">NIM-8316</a> – Medium – Always true statement in _prepareTracePrefix()</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8353">NIM-8353</a> – Medium – CGI - E2E Issue Found: UNHANDLED ERROR: Unknown device view entity</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8363">NIM-8363</a> – High – getIpLongs needs to be fixed</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8404">NIM-8404</a> – Medium – Snapshots in error state are not unloaded</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8429">NIM-8429</a> – High – Incorrect running discovery content</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8467">NIM-8467</a> – Medium – Bugfix: tasks/ipsec (develop)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8487">NIM-8487</a> – Medium – Default user privilege’s values for cisco ASA/IOS</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8488">NIM-8488</a> – Medium – Settings - Advanced - missing initial values</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8490">NIM-8490</a> – Low – Jumphost ssh key unprintable chars when dowloading over API</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8525">NIM-8525</a> – Medium – AWS pathlookup - host to gateway</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8526">NIM-8526</a> – Medium – Snapshot load - API vendors are initialised</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8550">NIM-8550</a> – Medium – Attributes Table not searching correctly</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8557">NIM-8557</a> – Medium – Posting Intent Rule with Incorrect Endpoints via API returns 200 OK</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8558">NIM-8558</a> – Medium – Junos EX2200 - Unexpected interfaces created - parsing error</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8590">NIM-8590</a> – Low – E2E - fallback to OID if forwarding to IP fails</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8620">NIM-8620</a> – Medium – Cannot detect Cisco CBS switches</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8622">NIM-8622</a> – Medium – Brocade: fix superUser(enableMode) detection</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8653">NIM-8653</a> – Medium – Typo in error message: “Can’t get trafic shaper settings”</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8667">NIM-8667</a> – High – nimpeeUpdate has insufficient rights to create admin</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8677">NIM-8677</a> – Highest – Snapshot needs re-entering credentials to be downloaded</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8683">NIM-8683</a> – High – IOS-XR l3interfaces task is empty</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8684">NIM-8684</a> – High – Cannot destructure property ‘isAdmin’ of ‘user’ as it is undefined. on worker call OPTIONS /v5.0/os/logs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8685">NIM-8685</a> – Medium – SNMPv3 ACL parsing error for Cisco NXOS</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8691">NIM-8691</a> – Medium – Cisco ASR 9K - Long discovery time</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8692">NIM-8692</a> – Medium – Duplicities in sysDevInventory</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8696">NIM-8696</a> – High – Typo in the shaper</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8707">NIM-8707</a> – Medium – Bugfix: commands/juniper/_junos/route</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8709">NIM-8709</a> – High – Graphs - incorrect state for “All network” group</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8710">NIM-8710</a> – Medium – Bugfix: commands/cisco/showVersion (4.2.0)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8723">NIM-8723</a> – Medium – Bugfix: commands/cisco/_asa/bgp/neighbors</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8729">NIM-8729</a> – Medium – Managed IP not found on Meraki stack</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8730">NIM-8730</a> – Medium – EoL is not correct for Viptela without any PID property</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8747">NIM-8747</a> – Medium – Cisco ACI - tasks/l3Interfaces validation fails - missing VRF on tunnel interfaces</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8764">NIM-8764</a> – Medium – Bugfix: commands/hp/_arubacx/interfaceMgmt</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8765">NIM-8765</a> – Medium – Bugfix: commands/hp/_arubasw/interfaceBrief - BP Dev Instance (5.0.0+47)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8785">NIM-8785</a> – High – Cannot detect prompt during discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8851">NIM-8851</a> – Lowest – Unresolved MAC vendor for MAC/ARP tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8875">NIM-8875</a> – Highest – Pathlookup parameters validation fails</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8906">NIM-8906</a> – Medium – AWS client to mask assume role in logs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8914">NIM-8914</a> – Medium – Tasks/prefixLists fix defaultReturn value</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8921">NIM-8921</a> – Medium – Center loader when table content is wider than viewport</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8928">NIM-8928</a> – High – Error in handling empty ref</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8931">NIM-8931</a> – Medium – Table is not visible after page load</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8932">NIM-8932</a> – Medium – MIkrotk ipsec policy output</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8934">NIM-8934</a> – Medium – Bugfix: commands/hp/_comware/linkAggregationVerbose (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8935">NIM-8935</a> – Medium – Bugfix: commands/cisco/ipv6NeighborVrfAll (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8936">NIM-8936</a> – Medium – Bugfix: commands/vmware/_nsx-t/ospfNeighbors - Tesco (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8937">NIM-8937</a> – High – Left menu gets lost instead of expanded</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8939">NIM-8939</a> – Medium – Bugfix: commands/f5/_big-ip/listLtmVirtual (4.4.1+1)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8940">NIM-8940</a> – Medium – Scroll glitch on api table page with device explorer and advanced filter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8941">NIM-8941</a> – Medium – Bugfix: commands/f5/_big-ip/showLtmPoolDetail (4.4.2+1)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8942">NIM-8942</a> – Medium – failled command detection not working properly for Mikrotik routers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8944">NIM-8944</a> – Medium – Bugfix: commands/paloalto/showLldpNeiAll - Tesco (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8946">NIM-8946</a> – High – Bugfix: commands/juniper/_junos/configurationDisplaySet (5.0.0+47)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8947">NIM-8947</a> – Medium – RBAC for Webhooks</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8951">NIM-8951</a> – Highest – Invalid number of parameters in saveFabricPath function</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8955">NIM-8955</a> – High – Fix NAE testing tool after upgrade to Winston 3</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8963">NIM-8963</a> – Highest – Device attribute is not listed in options</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8967">NIM-8967</a> – Medium – Jupee spooky state</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8971">NIM-8971</a> – High – MDPS - discovery unexpected prompt</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8977">NIM-8977</a> – Medium – Dell powerconnect detection</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8985">NIM-8985</a> – High – Error is logged as undefined</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8991">NIM-8991</a> – Medium – Cisco IOS-XE - Carrier supporting Carrier (CsC) - RFC 4364</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8994">NIM-8994</a> – Highest – Bad setState call error thrown when clearing up path lookup</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8995">NIM-8995</a> – High – Multiple issues after clean install</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8996">NIM-8996</a> – Medium – Huawei software version handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9005">NIM-9005</a> – Medium – StackWise virtual SN and fabric/control state is missing for ios-xe 17.6.2</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9006">NIM-9006</a> – Medium – Bugfix: commands/arista/_eos/poe</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9019">NIM-9019</a> – Medium – TypeError when computing historical changes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9020">NIM-9020</a> – High – Remove AttributeFilter type</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9021">NIM-9021</a> – Medium – Cisco APIC - show controllers fails</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9023">NIM-9023</a> – Highest – API TOKEN SECURITY VULNERABILITY - Elevated RBAC Access</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9030">NIM-9030</a> – Medium – Top bar is broken into two rows</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9031">NIM-9031</a> – Medium – Bugfix: commands/cisco/ipv6RoutingTable (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9033">NIM-9033</a> – Medium – Bugfix: commands/checkpoint/_gaia/_mgmtIntMac (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9034">NIM-9034</a> – Medium – Bugfix: commands/cisco/_meraki/v1/devices/switch/ports (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9035">NIM-9035</a> – Medium – Bugfix: commands/cisco/_meraki/v1/devices/switch/ports/statuses (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9036">NIM-9036</a> – Medium – Bugfix: commands/cisco/_wlcIosxe/wireless/clientSummary (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9037">NIM-9037</a> – Medium – Bugfix: commands/fortinet/_fortigate/showFirewallVip (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9039">NIM-9039</a> – Medium – Cisco XR - Missing PTP information in tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9041">NIM-9041</a> – Medium – ProCurve operation system version 13 and older does not support | like commands</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9042">NIM-9042</a> – High – Handle error in useInfiniteScrollItems</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9043">NIM-9043</a> – Medium – Bugfix: commands/cisco/_apic/fvTenant (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9045">NIM-9045</a> – Medium – Bugfix: commands/cisco/showInterfaces (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9048">NIM-9048</a> – High – Advanced filters under EoL menu are not working for date</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9050">NIM-9050</a> – Medium – Bugfix: commands/juniper/_junos/interfacesDiagnosticsOptics (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9069">NIM-9069</a> – High – AWS device discovery end with <code>Error: Discovery returned an error, check the logs</code></li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9070">NIM-9070</a> – High – Tables help doesn’t include API docs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9072">NIM-9072</a> – Medium – Bugfix: commands/hp/_arubasw/interfacesTransceiverDetail (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9076">NIM-9076</a> – High – Multicast (S, G) URL Does not work</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9084">NIM-9084</a> – Medium – NSX-T missing API endpoints for BGP commands</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9087">NIM-9087</a> – Medium – Bugfix: commands/cisco/ptp/platformServo (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9089">NIM-9089</a> – Medium – Bugfix: commands/hp/_arubasw/dhcp/relay (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9090">NIM-9090</a> – Medium – Bugfix: commands/cisco/ipv6NeighborVrfAll (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9091">NIM-9091</a> – Medium – Bugfix: commands/arista/_eos/ipHelperAddress (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9092">NIM-9092</a> – Medium – Problem with report Parsing issues to callhome server</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9093">NIM-9093</a> – Medium – BGP task - fix loading routeMaps dependency + fix IOS assignment parsing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9094">NIM-9094</a> – Highest – Graphs attribute filter does not work for all network</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9102">NIM-9102</a> – Highest – Intent checks summary for built in rules fails when attribute filter is applied</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9105">NIM-9105</a> – Medium – Bugfix: commands/cisco/showRun (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9107">NIM-9107</a> – Medium – Bugfix: tasks/l2Interfaces, tasks/l3Interfaces (AWS IGW)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9109">NIM-9109</a> – Medium – Bugfix: commands/aws/_ec2/describeRouteTables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9114">NIM-9114</a> – Medium – Bugfix: tasks/pbr</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9119">NIM-9119</a> – Medium – Truncated api version in error log</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9123">NIM-9123</a> – Medium – Bugfix: commands/hp/_aruba/interface (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9124">NIM-9124</a> – Medium – Empty paths object in openapi after bump to 6.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9127">NIM-9127</a> – Medium – Bugfix: commands/cisco/vrfInterfaces (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9129">NIM-9129</a> – Medium – Bugfix: commands/cisco/lldp/lldpNeiDetail (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9130">NIM-9130</a> – Medium – Bugfix: commands/hp/_arubaIap/aps (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9131">NIM-9131</a> – Medium – Bugfix: commands/cisco/acl (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9132">NIM-9132</a> – High – Empty site name in policy/routing tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9137">NIM-9137</a> – High – Broken UI page: Settings / Advanced / Configuration Management</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9138">NIM-9138</a> – Medium – Invalid link to graph</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9140">NIM-9140</a> – Medium – nsx-t bgpNeighborsStatus different output for vrf routers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9141">NIM-9141</a> – Medium – Bugfix: commands/dell/_powerconnect/interfacesStatus (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9142">NIM-9142</a> – Medium – Bugfix: commands/dell/_powerconnect/spanningTreeSummary (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9144">NIM-9144</a> – Medium – Bugfix: tasks/dhcp/relay (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9145">NIM-9145</a> – Medium – Bugfix: tasks/dhcp/server (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9146">NIM-9146</a> – Medium – Bugfix: tasks/dhcp/server (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9147">NIM-9147</a> – Highest – function cidrContains - args are wrong after refactor</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9154">NIM-9154</a> – Medium – Bugfix: commands/fortinet/_fortigate/showFirewallVip (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9155">NIM-9155</a> – Medium – Bugfix: commands/vmware/_nsx-t/tier0s (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9158">NIM-9158</a> – Medium – Bugfix: commands/fortinet/_fortigate/getRouterInfo6/routingTable (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9162">NIM-9162</a> – Medium – Bugfix: commands/cisco/showRun (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9168">NIM-9168</a> – Medium – Bugfix: commands/juniper/_junos/multicast/routeExtensive (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9169">NIM-9169</a> – Medium – Bugfix: tasks/aci (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9170">NIM-9170</a> – Medium – Bugfix: tasks/license (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9171">NIM-9171</a> – Medium – /tables/attributes issues with null keyName, undefined attributeKeys</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9172">NIM-9172</a> – Medium – Bugfix: commands/arista/_eos/vxlan/interfaceVxlan (4.4.3+2)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9173">NIM-9173</a> – Medium – Bugfix: commands/checkpoint/_gaia/managementInterface (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9177">NIM-9177</a> – Medium – Validation for character <code>-</code> in password fails even though we should support it</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9181">NIM-9181</a> – Medium – Bugfix: tasks/ospf (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9182">NIM-9182</a> – Medium – Bugfix: tasks/fhrp (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9183">NIM-9183</a> – High – Add policy: apiScopeIds contains an invalid value</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9186">NIM-9186</a> – Medium – Bugfix: commands/aws/_ec2/describeVpnConnections</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9189">NIM-9189</a> – Medium – Cisco ASA hostname/context issues</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9190">NIM-9190</a> – Medium – New Aruba Instant device detection</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9192">NIM-9192</a> – Medium – Bugfix: tasks/wireless/wlcApList (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9198">NIM-9198</a> – Highest – Typo in collection name when removing devices</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9199">NIM-9199</a> – Highest – Privilege Escalation via Admin portal – READ user can create Admin Accounts</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9200">NIM-9200</a> – Highest – Snapshot unload overrides vCollect from the DB</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9204">NIM-9204</a> – Medium – cisco C3750G show license ambiguous command</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9208">NIM-9208</a> – Medium – Bugfix: commands/hp/_comware/currentConfiguration (5.0.0+47)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9211">NIM-9211</a> – Medium – Bugfix: tasks/arp (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9216">NIM-9216</a> – Medium – First hop detections broken for some hosts when Edge is empty</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9218">NIM-9218</a> – Medium – Total number of devices in snapshots doesn’t get updated after device removal</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9222">NIM-9222</a> – Medium – Bugfix: Cisco APIC - Missing controllers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9223">NIM-9223</a> – Medium – Bugfix: commands/hp/_aruba/inventory (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9225">NIM-9225</a> – Medium – Missing Zone firewall rules for Palo devices</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9232">NIM-9232</a> – Highest – Cloned loaded snapshot isn’t unloaded</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9233">NIM-9233</a> – Medium – Cisco FTD/FMC zoneFw - assigned policies fix</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9234">NIM-9234</a> – Medium – Bugfix: commands/arista/_eos/ntp (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9235">NIM-9235</a> – Medium – Bugfix: commands/arista/_eos/poe (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9236">NIM-9236</a> – Medium – Bugfix: commands/arista/_eos/ipv6RouteVrfAll (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9238">NIM-9238</a> – High – NAT/Rule table - Real addresses redirect - filter error (invalid input)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9243">NIM-9243</a> – Medium – Bugfix: commands/cisco/_viptela/v1/arp (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9246">NIM-9246</a> – Medium – Bugfix: commands/cisco/_viptela/v1/interface (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9258">NIM-9258</a> – Medium – STP Portfast parsing borken on Catalyst 9500</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9263">NIM-9263</a> – Medium – commands/cisco/mcast/ipMroute - nxos - fix oilList parsing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9269">NIM-9269</a> – High – 5.0.X slow discovery (from 5+ to 12h)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9275">NIM-9275</a> – Medium – AWS merged security rules</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9284">NIM-9284</a> – Medium – Bugfix: commands/fortinet/_fortigate/diagnoseSys/haMac (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9288">NIM-9288</a> – Medium – Bugfix: commands/cisco/igmp/group (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9289">NIM-9289</a> – Medium – Bugfix: commands/cisco/showInterfaces (5.0.2+5)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9290">NIM-9290</a> – Medium – Palo Alto MAC address from interface parsing issues</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9293">NIM-9293</a> – Highest – Fix Windows eslint errors</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9297">NIM-9297</a> – Medium – Since API 5.0.2+7 (maybe sooner?) API does not generate /etc/nginx/sites-enabled/nginx-api-dynamic and thus nginx fails to route requests to API</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9301">NIM-9301</a> – High – Fix EULA buttons</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9302">NIM-9302</a> – Medium – AWS Regions does not like Copy/Paste multiple regions</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9305">NIM-9305</a> – Highest – Reports - Site Low Level Design - can’t be generated</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9311">NIM-9311</a> – Medium – Parsing of ACL info for NX-OS is broken</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9312">NIM-9312</a> – Medium – Cisco ACI discovery bug: session times out after 20 seconds - ver 5.0.2+5</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9313">NIM-9313</a> – Medium – Jumphost configuration does not allow port in address specification</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9316">NIM-9316</a> – High – Fabricpath updater doesn’t work properly</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9319">NIM-9319</a> – Medium – Dell FTOS, cant detect OS version on some switches</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9321">NIM-9321</a> – Low – Multiple redirects between login and logout</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9322">NIM-9322</a> – High – Missing EULA Accept button</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9330">NIM-9330</a> – Highest – /oas/openapi-extended.json is broken</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9331">NIM-9331</a> – High – Please rename setup wizard menu item to configuration wizard</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9335">NIM-9335</a> – High – MAC table Fabricpath column shows wrong values</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9336">NIM-9336</a> – High – Queue “syslogWorkerManualTrigger” definition is missing shared Rabbit configuration</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9338">NIM-9338</a> – Medium – Fabricpath routes table doesn’t show ID columns properly</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9339">NIM-9339</a> – Medium – Bugfix: commands/cisco/ptp/localClock (5.0.1+10)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9342">NIM-9342</a> – High – Fix text &amp; styling issues in assurance engine</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9361">NIM-9361</a> – High – Filtering over multiple attributes does not work in graphs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9362">NIM-9362</a> – Highest – Number of all records in /inventory/devices table does not match with attribute scope policy</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9364">NIM-9364</a> – Medium – QA - errors on juniper NAT</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9372">NIM-9372</a> – Medium – Attributes with not selected value are applied to table filter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9374">NIM-9374</a> – Highest – Attribute filter ignored in hosts v4 table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9375">NIM-9375</a> – High – /os/logs should always be allowed by RBAC</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9381">NIM-9381</a> – Medium – Snapshot job name has extra bracket</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9390">NIM-9390</a> – Highest – Adding RBAC for Fabric Path Inventory Fails</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9397">NIM-9397</a> – High – SyslogWorker - cron trigger - config isn’t downloaded for all devices</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9399">NIM-9399</a> – Low – EoL table is missing URL and other parameters</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9402">NIM-9402</a> – Highest – Missing Portchannel members</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9413">NIM-9413</a> – Highest – Table intent verification rule not updated</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9415">NIM-9415</a> – Medium – Attributes Filter component - wrong snapshot id</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9416">NIM-9416</a> – Medium – Endpoint /tables/attributes/summary isn’t filtered using attributes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9430">NIM-9430</a> – High – Can’t search endpoints in Policies by endpoint url, only name</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9432">NIM-9432</a> – Medium – Users with dashboard write scope unable to edit dashboard.</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9442">NIM-9442</a> – Medium – commands/arista/_eos/ipv6Neighbors - refactoring</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9444">NIM-9444</a> – Medium – Listing graph clouds doesn’t consider active attribute filters</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9449">NIM-9449</a> – Medium – Attributes keys or values are not sorted</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9452">NIM-9452</a> – Highest – Insufficient Rights error (default permissions)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9453">NIM-9453</a> – High – Policies component - API endpoint - search using API endpoint url doesn’t work</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9471">NIM-9471</a> – Medium – ACI pathlookup routing issue</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9483">NIM-9483</a> – High – Meraki URL validation is to strict</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9491">NIM-9491</a> – Medium – RBAC - API Scopes tree - Device Invetory bad location</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9493">NIM-9493</a> – Highest – Table does not work with no access to settings and reports</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9499">NIM-9499</a> – Medium – Cisco IOS - commands/cisco/showInterfaces fix mapping ipv6 address</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9524">NIM-9524</a> – Medium – Fix hostname reference in <code>powerAndFan</code> task</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9539">NIM-9539</a> – Highest – Snapshot Management - Download Snapshot - doesn’t work</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9540">NIM-9540</a> – Medium – remoteSn column in XDP neighbor table returns full vDevice record</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9541">NIM-9541</a> – Medium – Documentation for callhome and releases not accurate</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-721">DOS-721</a> – Medium – broken nimpeeMigrate while server using ipv6</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-774">DOS-774</a> – Highest – nimpee-2.0: lsof is missing in ova</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-806">DOS-806</a> – Medium – Install wget to ova image</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-807">DOS-807</a> – Medium – Upgrade from 5.0.2+8 to 6.0.0+10 error</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-808">DOS-808</a> – Medium – Upgrade 4.4.3 -&gt; 5.0.2 -&gt; 6.0.0 failure</li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<p>Task may be associated into Epics or Stories to form complex features.</p>
+<ul>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-56">NIM-56</a> – Low – UI Dashboard - Add widget / Intent verifications - Add placeholder</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-2473">NIM-2473</a> – High – Interface Tunnels</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4115">NIM-4115</a> – Low – Add support for OSPF for HP Aruba Switch</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4219">NIM-4219</a> – Medium – Add graph errors into utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4307">NIM-4307</a> – Medium – Task mpls/table - nexthopList[*].action must be standardized</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4412">NIM-4412</a> – Medium – Palo Alto - add support for operational statistics - commands/paloalto/showSystemStateFilterPrettySysPhy</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4778">NIM-4778</a> – Medium – AWS - IPsec improvements for Virtual Private Gateway</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4800">NIM-4800</a> – Medium – AWS - wrong OIDs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-4959">NIM-4959</a> – Medium – ADD Name to VSYS# on PaloAltos</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6140">NIM-6140</a> – Medium – Refactor HP Comware AAA mapping</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6341">NIM-6341</a> – Medium – commands/cisco/authentication/authenticationSessionsInterface - remove unneeded properties</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6343">NIM-6343</a> – Medium – commands/cisco/routingTable - nx-os - nexthop interface parsing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6599">NIM-6599</a> – Highest – vendor API client tests: viptela</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-6943">NIM-6943</a> – Medium – show patchlevel for Huawei-Equipmnet</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7077">NIM-7077</a> – Highest – Remove vSite and vDevice.ad</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7177">NIM-7177</a> – High – vmware NSX-T implement security</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7249">NIM-7249</a> – Medium – Add frequency to wireless clients table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7253">NIM-7253</a> – Medium – tasks/devInfo</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7386">NIM-7386</a> – High – Filter table records by attributes - wireframing UX</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7399">NIM-7399</a> – Medium – Structured logging in discovery repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7410">NIM-7410</a> – Medium – Link Part Numbers and EoL table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7451">NIM-7451</a> – Medium – Port mirroring not working on IOS-XE</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7455">NIM-7455</a> – High – Faceted filter/search component</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7564">NIM-7564</a> – Medium – Cisco Meraki APIv1 - parallel load of dependencies</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7593">NIM-7593</a> – Medium – Snapshot version in Discovery snapshot only shows the current version (not the one used to create the snapshot)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7600">NIM-7600</a> – Medium – Standardize format of cmd array in task documentation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7761">NIM-7761</a> – Medium – Implement table settings</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7763">NIM-7763</a> – Medium – Improve design when content width &lt; table width</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7822">NIM-7822</a> – Medium – Implement sorting on table column</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7853">NIM-7853</a> – Medium – Aruba CX - Environment - empty tables - no “show env” command</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7856">NIM-7856</a> – Medium – Aruba CX - device CX 10K - recent HW - model parsing incorrect</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7861">NIM-7861</a> – Medium – Aruba CX - part number - incomplete list</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7957">NIM-7957</a> – Medium – Update README in @ipfabric/utils repo</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7958">NIM-7958</a> – Medium – Update README in @ipfabric/backend-utils repo</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8013">NIM-8013</a> – High – Dell OS10 - add support for show inventory</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8076">NIM-8076</a> – Medium – Update dependencies in API repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8077">NIM-8077</a> – Medium – Update dependencies in utils repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8078">NIM-8078</a> – Medium – Update dependencies in discovery repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8079">NIM-8079</a> – Medium – Update dependencies in backend-utils repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8080">NIM-8080</a> – Medium – Update dependencies in webhookWorker repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8081">NIM-8081</a> – Medium – Update dependencies in nimpeeMigrate repository</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8130">NIM-8130</a> – Medium – Rework DB + snapshot migrations</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8138">NIM-8138</a> – Medium – tasks/l2Interfaces - remove vlans property</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8178">NIM-8178</a> – Medium – Design Filter Scope policy type page</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8179">NIM-8179</a> – Medium – Design Access Scope picker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8199">NIM-8199</a> – Medium – technology/load-balancing/virtual-servers - add column “vrf”</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8211">NIM-8211</a> – Medium – Implement faceted filter/search component</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8222">NIM-8222</a> – Medium – Implement “get URL for current view” table feature</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8234">NIM-8234</a> – Medium – Implement Table Description modal</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8265">NIM-8265</a> – Medium – Implement attribute scope into policy edit page</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8266">NIM-8266</a> – High – Extend policy endpoints with filter scopes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8308">NIM-8308</a> – Medium – Implement command <code>show lldp remote-device all</code> to get LLDP information</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8326">NIM-8326</a> – Medium – RabbitMQ config to @ipfabric/backend-utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8383">NIM-8383</a> – Medium – LAG/Po not visible in Port-Channel Member State Table if no interface associated</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8440">NIM-8440</a> – High – ACI - pathlookup security</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8479">NIM-8479</a> – High – Refactor ipf-table-help modal</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8485">NIM-8485</a> – Medium – Colorize columns by intent check results</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8489">NIM-8489</a> – Medium – Implement auto sizing columns</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8493">NIM-8493</a> – Medium – F5: Routing Table - missing routes - (routes vs partitions)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8494">NIM-8494</a> – Medium – Upgrade winston library in discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8495">NIM-8495</a> – Medium – Structured logging in discovery Tasker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8496">NIM-8496</a> – Medium – Structured logging in discovery updater</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8497">NIM-8497</a> – Medium – Structured logged in discovery main worker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8498">NIM-8498</a> – Medium – Structured logged in discovery scan worker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8499">NIM-8499</a> – Medium – Structured logging in discovery syslog worker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8500">NIM-8500</a> – Medium – Structured logging in discovery net worker</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8501">NIM-8501</a> – Medium – Enable security evaluation on ACI devices</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8531">NIM-8531</a> – Medium – Change default passwords to pass VALID_PASSWORD_REGEX in utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8532">NIM-8532</a> – Medium – Remove ! from VALID_PASSWORD_REGEX in utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8541">NIM-8541</a> – Medium – Take path-lookup CIDR settings from utils in webng</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8559">NIM-8559</a> – Medium – Route maps tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8566">NIM-8566</a> – Medium – Update texts in the platform</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8571">NIM-8571</a> – Medium – Transform guardScope to openapi tags</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8572">NIM-8572</a> – Medium – Update api README</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8584">NIM-8584</a> – High – Document for release testing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8595">NIM-8595</a> – Highest – Vendor API client tests: AWS</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8603">NIM-8603</a> – Medium – Vendor API client tests: Ruckus VSZ</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8610">NIM-8610</a> – Medium – Scalability - Business Logic</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8614">NIM-8614</a> – Medium – Add new JSON transport to discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8619">NIM-8619</a> – Medium – Discovery with Only Known devices - some contexts are not discovered</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8625">NIM-8625</a> – High – Dependency vulnerability report for webng</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8638">NIM-8638</a> – Medium – Implement tree picker features for RBAC phase 2</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8639">NIM-8639</a> – High – Provide list of endpoints to frontend</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8640">NIM-8640</a> – Medium – Implement assigning custom access scopes for RBAC phase 2</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8656">NIM-8656</a> – High – Improve tree picker mouse interaction</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8659">NIM-8659</a> – Medium – Add support for Object &amp; ArrayObject columns with custom render function to new tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8668">NIM-8668</a> – Highest – Implement /scopes/attributes endpoints</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8669">NIM-8669</a> – Medium – api log file contains clear text password</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8686">NIM-8686</a> – Medium – tasks/stp Dell os10 - filter out disabled ports</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8687">NIM-8687</a> – Medium – Business logic separation – Add options to disable discovery jobs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8688">NIM-8688</a> – High – Add options to disable discovery tasks - frontend</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8690">NIM-8690</a> – Medium – Implement custom attribute filter on frontend</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8694">NIM-8694</a> – Medium – Fetch attributes from backend into faceted filter component</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8699">NIM-8699</a> – Medium – Allow configuring worker instances manually (workers scaling)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8702">NIM-8702</a> – Medium – Increase shaper options</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8704">NIM-8704</a> – Medium – Implement API Endpoints for attributes filter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8705">NIM-8705</a> – Medium – Implement attributes filter in /graphs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8708">NIM-8708</a> – Medium – Implement attributes filter in /tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8711">NIM-8711</a> – Medium – BPT - (API) - AWS AssumeRole – multiple regions and targets</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8713">NIM-8713</a> – High – FT - AWS AssumeRole – multiple regions and targets</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8714">NIM-8714</a> – Medium – BCT - (Discovery) - AWS AssumeRole – multiple regions and targets</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8715">NIM-8715</a> – Medium – IPv6 starting configuration</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8718">NIM-8718</a> – Medium – contexts - new table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8726">NIM-8726</a> – Medium – Cisco FabricPath updater</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8728">NIM-8728</a> – Highest – Cisco FabricPath tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8737">NIM-8737</a> – Medium – Hostnames &amp; domain name - new table columns</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8742">NIM-8742</a> – High – Versa routing issues</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8759">NIM-8759</a> – High – Make SSO callbacks unversioned</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8778">NIM-8778</a> – Medium – Cisco FabricPath - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8787">NIM-8787</a> – Medium – Add rule UID to security model</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8817">NIM-8817</a> – Medium – IPv4 - fix model for eigrp</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8821">NIM-8821</a> – Medium – IPv4 - fix model for l2vpn</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8824">NIM-8824</a> – Medium – IPv4 - fix model for mpls</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8828">NIM-8828</a> – Medium – IPv4 - fix model for ospf</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8830">NIM-8830</a> – Medium – IPv4 - fix model for rip</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8839">NIM-8839</a> – Medium – fix localID property for Quagga</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8842">NIM-8842</a> – Medium – Allow adding any device attribute</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8843">NIM-8843</a> – Medium – Implement VALID_ATTRIBUTE_KEY_NAME_REGEX in /attributes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8845">NIM-8845</a> – Medium – Make first column of API table sticky</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8855">NIM-8855</a> – Medium – Refactor Mikrotik bgp cmd/task</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8861">NIM-8861</a> – Medium – Allow creating links on basic column types</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8862">NIM-8862</a> – Medium – Integrate device view into new Table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8863">NIM-8863</a> – High – pathlookup support for NSX-T cloud routers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8865">NIM-8865</a> – Medium – Prepare route abstraction for new Table component</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8867">NIM-8867</a> – Medium – Integrate ApiTable to Device explorer</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8868">NIM-8868</a> – Medium – Pass filters from URL to a table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8887">NIM-8887</a> – Medium – Add deprecation middleware</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8888">NIM-8888</a> – High – Bump API_VERSION_MINOR in API constants</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8890">NIM-8890</a> – Medium – Graphs on small viewports</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8894">NIM-8894</a> – Medium – Save data for Prefix list table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8895">NIM-8895</a> – Medium – Provide data for Prefix list table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8896">NIM-8896</a> – Medium – Show Prefix list table in UI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8901">NIM-8901</a> – Medium – Route Maps - save data to DB</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8902">NIM-8902</a> – Medium – Route Maps - provide data in API</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8903">NIM-8903</a> – Medium – Route Maps - show data in UI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8908">NIM-8908</a> – High – FabricPath - verify model and parsing based on customer data</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8911">NIM-8911</a> – Medium – Update upgrade scripts to reflect changes in minpeeMigrate</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8912">NIM-8912</a> – High – FabricPath - Add feature-set support for cisco nexus.</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8915">NIM-8915</a> – Medium – Move common logging types &amp; functions from API to backend-utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8916">NIM-8916</a> – High – Palo Alto - port channel appearing in all vsys</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8919">NIM-8919</a> – High – Add button to toggle side panel in graphs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8920">NIM-8920</a> – Medium – Collect transceiver information for HA interfaces on Palo Alto firewalls</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8922">NIM-8922</a> – Medium – Replace deep-equal with fast-deep-equal</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8924">NIM-8924</a> – Medium – Document RBAC configuration examples</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8926">NIM-8926</a> – Medium – Make ApiTable load only visible columns</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8929">NIM-8929</a> – Medium – Implement rbac attribute filters in /tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8930">NIM-8930</a> – High – Replace deep-equal with fast-deep-equal [webng]</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8933">NIM-8933</a> – Medium – Import OUI script should update records when upserting</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8953">NIM-8953</a> – Medium – FE - Implement attributes filter in /tables endpoints</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8954">NIM-8954</a> – Medium – FE - Implement attributes filter in /graphs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8956">NIM-8956</a> – Medium – Add new security test evaluating another rule chain and picking its “permit” part</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8957">NIM-8957</a> – Medium – Enable by default OUI EC9B8B</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8959">NIM-8959</a> – Medium – Logical devices - show data in UI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8973">NIM-8973</a> – Medium – Update BGP neighbors table with route-map info</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8974">NIM-8974</a> – Medium – Refactor apiScopes assignments under system policies</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8986">NIM-8986</a> – Highest – Adapt FE to changes in attribute endpoints</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8987">NIM-8987</a> – Medium – Implement rbac attribute filters in /graphs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8990">NIM-8990</a> – High – Azure routing fixes to 6.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8992">NIM-8992</a> – High – Issue with userflow - not starting flows</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8993">NIM-8993</a> – Medium – Extend roleIdsToScope to contain scopes based on custom policies</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9007">NIM-9007</a> – Medium – Format PolicyApplied Flag in VxLan Header</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9009">NIM-9009</a> – Medium – Cisco SG - commands/cisco/_sg/dot1xUsers add support for mac in xxxx.yyyy.zzzz format</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9010">NIM-9010</a> – Medium – Add missing summary, description, x-tags to api endpoints</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9011">NIM-9011</a> – Medium – Adopt openapi-types in api</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9028">NIM-9028</a> – Medium – Add “load all unloaded snapshots” command to nimpee migrate standalone script</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9038">NIM-9038</a> – Highest – FT - Remove AttributeFilter type</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9044">NIM-9044</a> – Medium – Create new accordion component</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9046">NIM-9046</a> – Medium – Use other commands to get DHCP relay/server info for Cisco other than <code>sh run</code></li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9047">NIM-9047</a> – High – Change User-Agent for all Meraki API requests</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9055">NIM-9055</a> – Medium – Discovery leaks username / password in logs</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9061">NIM-9061</a> – High – Allow copying built in policies</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9062">NIM-9062</a> – Medium – Move vSiteManualDevices.json to vCollectAttribute.json migration to nimpeeMigrate</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9067">NIM-9067</a> – High – Enable additional OUI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9082">NIM-9082</a> – Medium – UI: Hostnames &amp; domain name - new table columns</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9083">NIM-9083</a> – Medium – Add vrf column into Load Balancing/Virtual Servers table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9085">NIM-9085</a> – Medium – Cisco SG - ACLs parsing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9086">NIM-9086</a> – Medium – doc_6.0 - Cisco Meraki parallel discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9088">NIM-9088</a> – Medium – Cisco SG - fix intName parsing to support slashes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9096">NIM-9096</a> – Medium – Move migrations from 5.1.0 to 6.0.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9098">NIM-9098</a> – Medium – Run NimpeeMigrate Tests in Gitlab Pipeline</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9104">NIM-9104</a> – Medium – Fix parsing of table action in juniper/_junos/route</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9106">NIM-9106</a> – Medium – Bump api version to v6.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9110">NIM-9110</a> – Medium – Add Initial Version to Old Snapshots</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9116">NIM-9116</a> – Medium – Cisco FabricPath tables in UI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9118">NIM-9118</a> – Medium – Add policy routing columns into BGP neighbors table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9122">NIM-9122</a> – High – Export table SN columns into utils</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9125">NIM-9125</a> – Medium – Update AWS docs - IAM policy for 6.0</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9136">NIM-9136</a> – Medium – Cisco commands/cisco/_nxos/systemInternalL2FwderMac empty table</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9139">NIM-9139</a> – Medium – fix OS Detection function for Forcepoint</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9150">NIM-9150</a> – Medium – Refactor api endpoints x-tags, update summaries</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9175">NIM-9175</a> – Medium – Change description of others policy</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9176">NIM-9176</a> – High – Add extra log messages to discovery to allow better performance analysis</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9179">NIM-9179</a> – Medium – commands/cisco/hostname - refactor old command</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9191">NIM-9191</a> – Medium – icmpTypesCodes - duplicity in declaration</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9202">NIM-9202</a> – Medium – Minor tweaks for nimpeeMigrate</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9205">NIM-9205</a> – Medium – JunOs system messages handling (# commit confirmed…)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9209">NIM-9209</a> – Medium – Document structured logging in discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9221">NIM-9221</a> – High – Change naming “Business Logic” to “Assurance Engine”</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9224">NIM-9224</a> – Medium – Test before match for regular expressions</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9226">NIM-9226</a> – Medium – Implement tmp and showback url parameters</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9240">NIM-9240</a> – Medium – UI Table improvement</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9241">NIM-9241</a> – Medium – Missing VRF and routes in the PBR routers</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9256">NIM-9256</a> – Medium – Skip null in history[*].settings during vSettings migrations</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9257">NIM-9257</a> – Medium – UI Contained list</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9272">NIM-9272</a> – High – ipv6 vrf routing tables - add support for cisco ios, ios-xe and ios-xr</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9282">NIM-9282</a> – Medium – Disable Button in loading state</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9286">NIM-9286</a> – Highest – Update EULA text on frontend</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9294">NIM-9294</a> – Highest – Reject EULA for all users with new EULA incoming</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9314">NIM-9314</a> – High – Jumphost address validation doesn’t allow port (5.0.2+7)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9337">NIM-9337</a> – High – Fabricpath tables doesn’t have any indexes (except primary)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9446">NIM-9446</a> – High – UX - No attributes avaiable</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9448">NIM-9448</a> – Medium – Redesign attributes filter in header</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9473">NIM-9473</a> – Highest – Improve UX where user has limited access scope</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9475">NIM-9475</a> – Highest – Allow “Content-Disposition” in “Access-Control-Expose-Headers”</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9484">NIM-9484</a> – High – Add <code>vDeviceId</code> index on recently added DB collections</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9495">NIM-9495</a> – Medium – Handle no available attributes in attr filter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-634">DOS-634</a> – Medium – nimpee-install-2.0 - revert hiding locale error</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-676">DOS-676</a> – Medium – net-config.sh accepts invalid hostname</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-704">DOS-704</a> – Medium – fix grub-pc upgrade issues</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-739">DOS-739</a> – Medium – nimpee-2.0: nimpeeMigrate - re-introduce package installation failure on DB migration failure</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-750">DOS-750</a> – Medium – nimpee-2.0: update sshd_config to enable includes from sshd_config.d</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-781">DOS-781</a> – Highest – Prepare 6.0.0 build</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-785">DOS-785</a> – Medium – Include cloud-init logs into techsupport pacakges</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-789">DOS-789</a> – Medium – Remove any pre-existing sources.list(.d) entries in upgrade script</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-802">DOS-802</a> – High – Prepare 6.0.0+10 build</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-850">DOS-850</a> – Medium – Prepare 6.0.0+19 build</li>
+<li><a href="https://ipfabric.atlassian.net/browse/DOS-853">DOS-853</a> – High – Prepare 6.0.0+21 build</li>
+</ul>
+<h2 id="sub-tasks">Sub-Tasks</h2>
+<p>Sub-tasks are very well contained work packages, organized under Tasks.</p>
+<ul>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7175">NIM-7175</a> – High – PBR - FortiGate support</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7629">NIM-7629</a> – Medium – Cisco Viptela - acl</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7728">NIM-7728</a> – Medium – Juniper Junos - add l3Interface.tunnel property</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7729">NIM-7729</a> – Medium – F5 - add l3Interface.tunnel property</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7733">NIM-7733</a> – Medium – Palo Alto - add l3Interface.tunnel property</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7803">NIM-7803</a> – Medium – Add ipv6 tunnel support for Cisco/Arista</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7913">NIM-7913</a> – Medium – Implement simple table filter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-7971">NIM-7971</a> – Medium – Implement ArrayObjectFilter</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8069">NIM-8069</a> – Medium – Silverpeak</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8434">NIM-8434</a> – High – Cisco ACI E2E - swap groupPolicyId</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8456">NIM-8456</a> – High – Checkpoint - Rule Number appears when Rule Name is empty</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8543">NIM-8543</a> – High – Take E2E CIDR settings from utils in webng</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8544">NIM-8544</a> – Medium – Change max. network mode mask from /8 to /16</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8548">NIM-8548</a> – Medium – Large path-lookup is neither canceled nor returned to on leaving path-lookup page</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8634">NIM-8634</a> – Medium – IPv4 - fix model for bgp</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8635">NIM-8635</a> – Medium – Route Maps - Cisco implementation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8637">NIM-8637</a> – Medium – Prefixlists - Cisco implementation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8645">NIM-8645</a> – Medium – Save parsed frequency data (wlcApList, clientList)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8671">NIM-8671</a> – Medium – Cisco security - ipv6 - IOS/IOS-XE</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8689">NIM-8689</a> – Medium – New tables for Cisco FabricPath</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8703">NIM-8703</a> – Medium – Discovery Workers scaling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8716">NIM-8716</a> – Medium – tasks/devInfo - update validation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8717">NIM-8717</a> – Medium – cisco asa - devInfo.context</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8719">NIM-8719</a> – Medium – palo alto - devInfo.context</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8720">NIM-8720</a> – Medium – fortigate - devInfo.context</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8721">NIM-8721</a> – Medium – checkpoint - devInfo.context</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8722">NIM-8722</a> – Medium – cisco nx-os - vdc - devInfo.context</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8732">NIM-8732</a> – Medium – Forcepoint - basic discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8736">NIM-8736</a> – Medium – PBR - save data to DB</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8738">NIM-8738</a> – Medium – tasks/devInfo - tables update (hostname/domain improvements)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8739">NIM-8739</a> – Medium – Cisco ACI Security evaluation - add evaluation on node containing information about destination</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8740">NIM-8740</a> – Medium – New hostname/domain handling - validation schema</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8760">NIM-8760</a> – Medium – prefix list tables</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8763">NIM-8763</a> – Medium – Prefixlists - model</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8767">NIM-8767</a> – Medium – Arista EOS - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8768">NIM-8768</a> – Medium – task/devInfo - make the new hostname and domain name props required</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8770">NIM-8770</a> – High – NAT - Palo Alto</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8771">NIM-8771</a> – High – NAT - Fortinet</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8772">NIM-8772</a> – High – NAT - Juniper</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8773">NIM-8773</a> – High – NAT - model</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8774">NIM-8774</a> – Medium – Forcepoint - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8776">NIM-8776</a> – Medium – NAT - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8779">NIM-8779</a> – Medium – Hostname &amp; domain name - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8780">NIM-8780</a> – Medium – NSX-T security - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8781">NIM-8781</a> – Medium – Virtual contexts - add executive summary, update documentation and release notes</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8788">NIM-8788</a> – Medium – Implement rule UID - Fortinet FortiGate</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8789">NIM-8789</a> – Medium – Implement rule UID - Cisco FMC</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8790">NIM-8790</a> – Medium – Implement rule UID - Palo Alto</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8792">NIM-8792</a> – Medium – AWS - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8793">NIM-8793</a> – Medium – Azure - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8794">NIM-8794</a> – Medium – Brocade - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8795">NIM-8795</a> – Medium – Checkpoint - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8796">NIM-8796</a> – Medium – Cisco - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8797">NIM-8797</a> – Medium – Dell - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8798">NIM-8798</a> – Medium – Extreme - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8799">NIM-8799</a> – Medium – F5 - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8800">NIM-8800</a> – Medium – Fortinet - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8801">NIM-8801</a> – Medium – Frr - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8802">NIM-8802</a> – Medium – HP - hostname &amp; domain handling (all families)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8803">NIM-8803</a> – Medium – Huawei - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8804">NIM-8804</a> – Medium – Juniper - Junos - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8805">NIM-8805</a> – Medium – Mikrotik - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8806">NIM-8806</a> – Medium – PaloAlto - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8807">NIM-8807</a> – Medium – Quagga - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8808">NIM-8808</a> – Medium – Riverbed - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8809">NIM-8809</a> – Medium – Ruckus - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8810">NIM-8810</a> – Medium – SilverPeak - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8811">NIM-8811</a> – Medium – Versa - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8812">NIM-8812</a> – Medium – VmWare - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8877">NIM-8877</a> – Medium – Implement advanced filter presets</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8884">NIM-8884</a> – Medium – Juniper - Mist - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8885">NIM-8885</a> – Medium – Cisco - ASA/FTD - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8886">NIM-8886</a> – Medium – Cisco - WLC-AIR - hostname &amp; domain handling</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8897">NIM-8897</a> – High – IPv4 type standardization - Palo Alto</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8898">NIM-8898</a> – High – IPv4 type standardization - Fortinet</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8899">NIM-8899</a> – High – IPv4 type standardization - Juniper</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8900">NIM-8900</a> – High – IPv4 type standardization - Checkpoint</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8910">NIM-8910</a> – High – PBR - Cisco IOS/IOS-XE/NX-OS</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8952">NIM-8952</a> – Medium – Tasks/bgb - add route-maps</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8978">NIM-8978</a> – Medium – Fix documentation and cmd default return</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8981">NIM-8981</a> – High – Update the table definition on API (wlcApList, clientList)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8982">NIM-8982</a> – Highest – Update the UI (wlcApList, clientList)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-8989">NIM-8989</a> – Medium – Cisco ACI - add intraEpg rules for L2 traffic (bdVnid in vxlan header)</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9015">NIM-9015</a> – Medium – Azure - wrong VRF for subnets in routingTable</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9018">NIM-9018</a> – Medium – Azure - fix routes between network gateways in the same gateway subnet</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9051">NIM-9051</a> – Medium – Forcepoint - update NAE lab doc &amp; bitwarden</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9063">NIM-9063</a> – Medium – MDPS - environment detection workaround to re-enable Checkpoint discovery</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9075">NIM-9075</a> – Highest – Handle new SecurityType in UI</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9097">NIM-9097</a> – High – appSyslogWorker - update hostname processing</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9112">NIM-9112</a> – Medium – RoutePolicies documentation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9113">NIM-9113</a> – Medium – Prefixlists documentation</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9315">NIM-9315</a> – Medium – Route Maps - remove “Is used” column</li>
+<li><a href="https://ipfabric.atlassian.net/browse/NIM-9477">NIM-9477</a> – Medium – Log exception and continue migrations</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: LLRN 5.0.2" class="md-footer__link md-footer__link--prev" href="../../../5.x/5.0.x/5.0.2/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                LLRN 5.0.2
+              </div>
+</div>
+</a>
+<a aria-label="Next: LLRN 6.0.1" class="md-footer__link md-footer__link--next" href="../6.0.1/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                LLRN 6.0.1
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+<a href="https://ipfabric.io">IP Fabric</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs Insiders
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.facebook.com/ipfabric.io" rel="noopener" target="_blank" title="www.facebook.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.youtube.com/channel/UCLztlukjD9RKFGkrKgxMT1w/featured" rel="noopener" target="_blank" title="www.youtube.com">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/IPFabric" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/company/ip-fabric/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../../../../assets/javascripts/bundle.542a4128.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
