@@ -4107,6 +4107,7 @@ MD5<span class="o">(</span>ipfabric-update-6_1_0+11.tar.gz.sig<span class="o">)<
 <li>Removed “Technology &gt; Spanning Tree &gt; STP Stability” table from frontend and marked API endpoint <code>/tables/spanning-tree/topology</code> deprecated.
   “STP instances” table can be used instead.</li>
 <li>Clarified <a href="../../../System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/">password requirements and complexity checks</a> for the <code>osadmin</code> user.</li>
+<li>Added a hard limit on number of retries for all http based vendor API discovery (except AWS). These are triggered when vendor API server is assumed to be overloaded.</li>
 </ul>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
