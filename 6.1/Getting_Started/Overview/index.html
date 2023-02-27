@@ -10,9 +10,9 @@
 <link href="../.." rel="prev"/>
 <link href="faq/" rel="next"/>
 <link href="../../assets/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.32.0" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15+insiders-4.32.1" name="generator"/>
 <title>IP Fabric Overview - IP Fabric Documentation Portal</title>
-<link href="../../assets/stylesheets/main.22245cb8.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.17f92d59.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -4248,8 +4248,10 @@
 </div>
 <h3 id="supported-virtualization-platforms">Supported Virtualization Platforms</h3>
 <p>We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.</p>
-<p>As our OVAs use SHA256 cryptographic hashing algorithm, we recommend deployment of IP Fabric via the vSphere Web Client or ESXi Embedded Host Client version 6.5 or newer because both support SHA256.</p>
-<p>The 6.0.0 and 5.5.0 versions of ESXi do not support SHA256 and require the OVA to be hashed with SHA1, see <a href="../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>.</p>
+<p>Appliance is built on the top of Debian 11 which is officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. In order to get the best performance we strongly recommend using latest ESXi with <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
+<p>It might be possible to deploy OVAs on earlier versions of ESXi with some effort. As our OVAs use SHA256 cryptographic
+hashing algorithm, we recommend deployment of IP Fabric via the vSphere Web Client or ESXi Embedded Host Client version
+6.5 or newer because both support SHA256. The 6.0.0 and 5.5.0 versions of ESXi do not support SHA256 and require the OVA to be hashed with SHA1, see <a href="../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>.</p>
 <p>It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.</p>
 <h3 id="network-connectivity-requirements">Network Connectivity Requirements</h3>
 <p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
@@ -4477,6 +4479,6 @@ privilege cmd level 1 mode exec command terminal
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.542a4128.min.js"></script>
+<script src="../../assets/javascripts/bundle.b7178837.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
