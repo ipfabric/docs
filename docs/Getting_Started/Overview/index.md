@@ -61,9 +61,11 @@ The following table represents the recommended hardware requirements for optimal
 
 We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.
 
-As our OVAs use SHA256 cryptographic hashing algorithm, we recommend deployment of IP Fabric via the vSphere Web Client or ESXi Embedded Host Client version 6.5 or newer because both support SHA256.
+Appliance is built on the top of Debian 11 which is officially supported since [ESXi 7.0](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16). In order to get the best performance we strongly recommend using latest ESXi with [`pvscsi`](https://kb.vmware.com/s/article/1010398) storage driver and [`VMXNET 3`](https://kb.vmware.com/s/article/1001805) networking driver.
 
-The 6.0.0 and 5.5.0 versions of ESXi do not support SHA256 and require the OVA to be hashed with SHA1, see [Error: Invalid OVF checksum algorithm: SHA256](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md).
+It might be possible to deploy OVAs on earlier versions of ESXi with some effort. As our OVAs use SHA256 cryptographic
+hashing algorithm, we recommend deployment of IP Fabric via the vSphere Web Client or ESXi Embedded Host Client version
+6.5 or newer because both support SHA256. The 6.0.0 and 5.5.0 versions of ESXi do not support SHA256 and require the OVA to be hashed with SHA1, see [Error: Invalid OVF checksum algorithm: SHA256](../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md).
 
 It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.
 
