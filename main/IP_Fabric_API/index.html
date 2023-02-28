@@ -4105,24 +4105,30 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="overview">Overview</h1>
-<p>IP Fabric is an API first client, that means that any click in the user interface (UI) has an API call associated with the action of the click.</p>
+<p>IP Fabric is an API first client, that means that any click in the user
+interface (UI) has an API call associated with the action of the click.</p>
 <h2 id="python-ip-fabric-sdk">Python IP Fabric (SDK)</h2>
-<p>API first principles allow the IP Fabric team to maintain a Software Development Kit (SDK) that can used for automations. While the IP Fabric main GUI is written in TypeScript, we have chosen to write the SDK in Python as it is the most common language used by Network Engineers.</p>
-<p>The SDK documentation can be found at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric">https://gitlab.com/ip-fabric/integrations/python-ipfabric</a></p>
-<!--
-[https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
--->
-<p>While using SDK is more straightforward than calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.</p>
+<p>API first principles allow the IP Fabric team to maintain a Software Development
+Kit (SDK) that can used for automations. While the IP Fabric main GUI is written
+in TypeScript, we have chosen to write the SDK in Python as it is the most
+common language used by Network Engineers.</p>
+<p>The SDK documentation can be found
+at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric">https://gitlab.com/ip-fabric/integrations/python-ipfabric</a></p>
+<p>While using SDK is more straightforward than calling API directly, we recommend
+making yourself familiar with the rest of the documentation as many SDK calls
+map directly to API calls.</p>
 <h2 id="using-api-directly">Using API Directly</h2>
-<p>The following documentation is meant to get you started working with API and give you a tutorial on how it works.</p>
+<p>The following documentation is meant to get you started working with API and
+give you a tutorial on how it works.</p>
 <p>Many of the tables within IP Fabric have a <code>?</code> which provides a description of
 how to interact with the API, the data required in the payload, and the endpoint
-to send the request to. This is the easiest way to learn how to use the API
-and for more information please see
-<a href="../IP_Fabric_GUI/tips/navigate_in_tables/#table-description">Table Description</a>.</p>
-<p>Another option is using the network viewer in
-the web browser’s <code>Developers Tools</code> which will show you the endpoints and data
-required to make a successful call to the platform.</p>
+to send the request to. This is the easiest way to learn how to use the API and
+for more information please see
+<a href="../IP_Fabric_GUI/tips/navigate_in_tables/#table-description">Table Description</a>
+.</p>
+<p>Another option is using the network viewer in the web
+browser’s <code>Developers Tools</code> which will show you the endpoints and data required
+to make a successful call to the platform.</p>
 <div class="admonition example">
 <p class="admonition-title">API Blog Posts</p>
 <p>Please take a look at the following blog posts about using the IP Fabric API and Python SDK:</p>
@@ -4214,23 +4220,46 @@ exposes the endpoints (can be used with filters as well).</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="endpoint_inline_description.png"><img alt="API Endpoint inline description" src="endpoint_inline_description.png"/></a></p>
 <h2 id="payload-definition">Payload definition</h2>
 <div class="highlight"><pre><span></span><code>{
-  columns:[],
-  filters:{},
-  pagination:{},
-  snapshot:"snapshotID",
-  reports:""
+  "attributeFilters": {},
+  "columns": ["id", ...],
+  "filters": {},
+  "pagination": {},
+  "snapshot": "&lt;UUID|$last|$prev|$lastLocked&gt;",
+  "reports": "&lt;FRONTEND_URL&gt;" | ["REPORT_ID"]
 }
 </code></pre></div>
 <ul>
-<li><code>columns</code> – specifies columns that we request for the endpoint</li>
-<li><code>filters</code> – filtering options, for any column or intent verification
-  <code>{"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}</code>(
-  optional)</li>
-<li><code>pagination</code> - specifies the pagination and response limits
-  <code>{"limit":26,"start":0}</code> (optional)</li>
-<li><code>snapshot</code> – defines snapshot ID or we can use: <code>$last</code>, <code>$prev</code>
-  , <code>$lastlocked</code></li>
-<li><code>reports</code> – Intent rules definition (optional)</li>
+<li><code>columns</code> – Specifies columns that we request for the endpoint.</li>
+<li><code>filters</code> – (Optional) Filtering options, for any column or intent
+  verification.<ul>
+<li>Example: <code>"filters": {"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}</code></li>
+</ul>
+</li>
+<li><code>pagination</code> – (Recommended) Specifies the pagination and response limits.<ul>
+<li>Example: <code>{"limit":1000,"start":0}</code></li>
+<li>It is currently recommended querying 1,000 rows or fewer at a time.</li>
+</ul>
+</li>
+<li><code>snapshot</code> – Specify snapshot ID or use: <code>$last</code>, <code>$prev</code>
+  , <code>$lastlocked</code><ul>
+<li>Note: some tables (i.e. settings) do not allow the <code>snapshot</code> parameter.</li>
+</ul>
+</li>
+<li><code>reports</code> – (Optional) Frontend URL where the reports are displayed or an
+  array of report IDs as strings.<ul>
+<li>Examples:<ul>
+<li><code>"reports": "/inventory/devices"</code></li>
+<li><code>"reports": ["304796641"]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>attributeFilters</code> – (Optional) Applies an attribute filter to the table.<ul>
+<li>Example: <code>"attributeFilters": {"siteName": ["LAB01"]}</code></li>
+<li>Note: some tables (i.e. settings) do not allow the <code>attributeFilters</code>
+  parameter.</li>
+</ul>
+</li>
 </ul>
 </article>
 </div>
