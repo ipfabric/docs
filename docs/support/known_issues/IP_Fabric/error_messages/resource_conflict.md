@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes the error message "Error: Resource Conflict" that may occur and how to fix it.
+description: 'IP Fabric describes the error message "Error: Resource Conflict" that may occur and how to fix it.'
 ---
 
 # `Error: Resource Conflict`
