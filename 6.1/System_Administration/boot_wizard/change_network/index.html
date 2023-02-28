@@ -6,12 +6,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
-<link href="https://docs.ipfabric.io/6.1/releases/release_notes/6.2/" rel="canonical"/>
-<link href="../6.1/" rel="prev"/>
-<link href="../previous_releases/nimpee_v1/" rel="next"/>
+<link href="https://docs.ipfabric.io/6.1/System_Administration/boot_wizard/change_network/" rel="canonical"/>
+<link href="../change_hostname/" rel="prev"/>
+<link href="../change_osadmin_pass/" rel="next"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.15+insiders-4.32.1" name="generator"/>
-<title>IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal</title>
+<title>Update Network Config - IP Fabric Documentation Portal</title>
 <link href="../../../assets/stylesheets/main.17f92d59.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,17 +20,17 @@
 <link href="../../../stylesheets/theme.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Update Network Config - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
-<meta content="https://docs.ipfabric.io/6.1/assets/images/social/releases/release_notes/6.2.png" property="og:image"/>
+<meta content="https://docs.ipfabric.io/6.1/assets/images/social/System_Administration/boot_wizard/change_network.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://docs.ipfabric.io/6.1/releases/release_notes/6.2/" property="og:url"/>
+<meta content="https://docs.ipfabric.io/6.1/System_Administration/boot_wizard/change_network/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="IP Fabric v6.2 (Camlet) - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Update Network Config - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
-<meta content="https://docs.ipfabric.io/6.1/assets/images/social/releases/release_notes/6.2.png" name="twitter:image"/>
+<meta content="https://docs.ipfabric.io/6.1/assets/images/social/System_Administration/boot_wizard/change_network.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -48,7 +48,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#ip-fabric-v62-camlet">
+<a class="md-skip" href="#update-network-config">
           Skip to content
         </a>
 </div>
@@ -74,7 +74,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              IP Fabric v6.2 (Camlet)
+              Update Network Config
             
           </span>
 </div>
@@ -185,7 +185,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../System_Administration/boot_wizard/">
+<a class="md-tabs__link md-tabs__link--active" href="../../increase_disk_space/">
           
   
   System Administration
@@ -193,7 +193,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../../releases/">
           
   
     
@@ -535,7 +535,7 @@
 <span class="md-ellipsis">
     
   
-    CLI Boot Wizard
+    First Boot Wizard
   
 
     
@@ -2186,8 +2186,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -2199,7 +2199,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             
@@ -2210,19 +2210,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/boot_wizard/">
-<span class="md-ellipsis">
-    
-  
-    Run System 'Boot Wizard'
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/increase_disk_space/">
+<a class="md-nav__link" href="../../increase_disk_space/">
 <span class="md-ellipsis">
     
   
@@ -2234,8 +2222,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2246,8 +2234,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_3">
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2257,7 +2245,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/">
+<a class="md-nav__link" href="../../Administrative_Interface/">
 <span class="md-ellipsis">
     
   
@@ -2269,7 +2257,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/System_Update/">
+<a class="md-nav__link" href="../../Administrative_Interface/System_Update/">
 <span class="md-ellipsis">
     
   
@@ -2281,7 +2269,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/backup_and_restore/">
+<a class="md-nav__link" href="../../Administrative_Interface/backup_and_restore/">
 <span class="md-ellipsis">
     
   
@@ -2293,7 +2281,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/create_local_administrator/">
+<a class="md-nav__link" href="../../Administrative_Interface/create_local_administrator/">
 <span class="md-ellipsis">
     
   
@@ -2305,7 +2293,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Administrative_Interface/system_status/">
+<a class="md-nav__link" href="../../Administrative_Interface/system_status/">
 <span class="md-ellipsis">
     
   
@@ -2320,8 +2308,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2332,8 +2320,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2343,7 +2331,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/">
+<a class="md-nav__link" href="../../Command_Line_Interface/">
 <span class="md-ellipsis">
     
   
@@ -2355,7 +2343,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/Custom_TLS/">
+<a class="md-nav__link" href="../../Command_Line_Interface/Custom_TLS/">
 <span class="md-ellipsis">
     
   
@@ -2367,7 +2355,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/Logging/">
+<a class="md-nav__link" href="../../Command_Line_Interface/Logging/">
 <span class="md-ellipsis">
     
   
@@ -2379,8 +2367,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_4_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3_4" id="__nav_6_3_4_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2391,8 +2379,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_4_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_4_4">
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_3_4">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2402,31 +2390,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/change_hostname/">
-<span class="md-ellipsis">
-    
-  
-    How to change the hostname
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/">
-<span class="md-ellipsis">
-    
-  
-    How to change the `osadmin` password
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/custom_ssl_cert/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/custom_ssl_cert/">
 <span class="md-ellipsis">
     
   
@@ -2438,7 +2402,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/jumphost_troubleshooting/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/jumphost_troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -2450,7 +2414,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/manual_config_backup/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/manual_config_backup/">
 <span class="md-ellipsis">
     
   
@@ -2462,7 +2426,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/troubleshoot_ldap/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/troubleshoot_ldap/">
 <span class="md-ellipsis">
     
   
@@ -2474,7 +2438,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -2491,11 +2455,86 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Boot wizard
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Boot wizard
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    System 'Boot Wizard'
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../change_hostname/">
+<span class="md-ellipsis">
+    
+  
+    Update hostname or domain name
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Update Network Config
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../change_osadmin_pass/">
+<span class="md-ellipsis">
+    
+  
+    Update `osadmin` password
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -2507,7 +2546,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             
@@ -2518,7 +2557,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../releases/">
 <span class="md-ellipsis">
     
   
@@ -2529,8 +2568,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -2542,7 +2581,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -2553,7 +2592,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../5.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/5.0/">
 <span class="md-ellipsis">
     
   
@@ -2565,7 +2604,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/6.0/">
 <span class="md-ellipsis">
     
   
@@ -2577,7 +2616,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6.1/">
+<a class="md-nav__link" href="../../../releases/release_notes/6.1/">
 <span class="md-ellipsis">
     
   
@@ -2588,81 +2627,9 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    IP Fabric v6.2 (Camlet)
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    
-  
-    IP Fabric v6.2 (Camlet)
-  
-
-    
-  </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#v620-tbd">
-<span class="md-ellipsis">
-      
-        v6.2.0 (TBD)
-      
-    </span>
-</a>
-<nav aria-label="v6.2.0 (TBD)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#noticeable-changes">
-<span class="md-ellipsis">
-      
-        Noticeable changes
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#network-discovery">
-<span class="md-ellipsis">
-      
-        Network Discovery
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-notices">
-<span class="md-ellipsis">
-      
-        Upgrade Notices
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_5" id="__nav_7_2_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_4" id="__nav_7_2_4_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2673,8 +2640,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_2_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_7_2_5">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_7_2_4">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2684,7 +2651,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/nimpee_v1/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v1/">
 <span class="md-ellipsis">
     
   
@@ -2696,7 +2663,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/nimpee_v2/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v2/">
 <span class="md-ellipsis">
     
   
@@ -2708,7 +2675,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/v3.x.x_ip_fabric/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/">
 <span class="md-ellipsis">
     
   
@@ -2720,8 +2687,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_5_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7_2_5_4" id="__nav_7_2_5_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7_2_4_4" id="__nav_7_2_4_4_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2732,8 +2699,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_2_5_4_label" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_7_2_5_4">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_4_4_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_7_2_4_4">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2743,7 +2710,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
 <span class="md-ellipsis">
     
   
@@ -2755,7 +2722,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.1/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
 <span class="md-ellipsis">
     
   
@@ -2767,7 +2734,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.2/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
 <span class="md-ellipsis">
     
   
@@ -2779,7 +2746,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.3/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
 <span class="md-ellipsis">
     
   
@@ -2791,7 +2758,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../previous_releases/IP_Fabric_v4.x.x/4.4/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
 <span class="md-ellipsis">
     
   
@@ -2881,7 +2848,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/">
 <span class="md-ellipsis">
     
   
@@ -2893,7 +2860,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/">
 <span class="md-ellipsis">
     
   
@@ -2905,7 +2872,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/">
 <span class="md-ellipsis">
     
   
@@ -2917,7 +2884,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.3/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/">
 <span class="md-ellipsis">
     
   
@@ -2929,7 +2896,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.4/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/">
 <span class="md-ellipsis">
     
   
@@ -2941,7 +2908,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.3.x/4.3.5/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/">
 <span class="md-ellipsis">
     
   
@@ -2979,7 +2946,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/">
 <span class="md-ellipsis">
     
   
@@ -2991,7 +2958,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/">
 <span class="md-ellipsis">
     
   
@@ -3003,7 +2970,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/">
 <span class="md-ellipsis">
     
   
@@ -3015,7 +2982,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/4.x/4.4.x/4.4.3/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/">
 <span class="md-ellipsis">
     
   
@@ -3079,7 +3046,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3091,7 +3058,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3103,7 +3070,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/5.x/5.0.x/5.0.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/">
 <span class="md-ellipsis">
     
   
@@ -3167,7 +3134,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/6.x/6.0.x/6.0.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3179,7 +3146,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/6.x/6.0.x/6.0.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3217,7 +3184,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../release_notes_low-level/6.x/6.1.x/6.1.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.1.x/6.1.0/">
 <span class="md-ellipsis">
     
   
@@ -3493,7 +3460,7 @@
 <span class="md-ellipsis">
     
   
-    Aql internal error
+    Error: AQL: internal error -- in index
   
 
     
@@ -3505,7 +3472,7 @@
 <span class="md-ellipsis">
     
   
-    Http 504 database overloaded
+    `a request xxx Failed to fetch HTTP status: 504` followed by `Database seems to be overloaded`
   
 
     
@@ -3529,7 +3496,7 @@
 <span class="md-ellipsis">
     
   
-    Resource conflict
+    `Error: Resource Conflict`
   
 
     
@@ -3983,83 +3950,59 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#v620-tbd">
-<span class="md-ellipsis">
-      
-        v6.2.0 (TBD)
-      
-    </span>
-</a>
-<nav aria-label="v6.2.0 (TBD)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#noticeable-changes">
-<span class="md-ellipsis">
-      
-        Noticeable changes
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#network-discovery">
-<span class="md-ellipsis">
-      
-        Network Discovery
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-notices">
-<span class="md-ellipsis">
-      
-        Upgrade Notices
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/releases/release_notes/6.2.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/boot_wizard/change_network.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<h1 id="ip-fabric-v62-camlet">IP Fabric v6.2 (Camlet)</h1>
-<div class="admonition danger">
-<p class="admonition-title">Unreleased version</p>
-<p>This is an upcoming IP Fabric version, which has not been released yet and is not available for download.</p>
+<h1 id="update-network-config">Update Network Config</h1>
+<p>To change the IP Address, Subnet, Gateway, NTP, DNS, or Proxy configuration of 
+your IP Fabric VM from the CLI, please do the following:</p>
+<ol>
+<li>
+<p><code>ssh</code> to the IP Fabric appliance as the <code>osadmin</code> user</p>
+</li>
+<li>
+<p>Execute command <code>nimpee-net-config -n</code> to launch network configuration
+   wizard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To keep current configuration for any item highlight <code>OK</code> and press enter.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Clearing Browser Cache</p>
-<p>Please force refresh your browser cache after an upgrade.
-Depending on your operating system use the following key combination in your browser window:</p>
+</li>
+<li>
+<p>First options are to modify the <code>hostname</code> and <code>DNS domain name</code> (detailed 
+   docs at <a href="../change_hostname/">Update hostname or domain name</a>).</p>
+</li>
+<li>
+<p>Next select DHCP or Static IP Address Assignment. (Use the up/down arrow and 
+   space bar to change <code>()</code> to <code>(*)</code>)</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_ip_assignment.png"><img alt="change_ip_assignment_" src="../change_ip_assignment.png"/></a></p>
+</li>
+<li>
+<p>If you selected Static IP Address Assignment then enter </p>
 <ul>
-<li>Windows: <code>CTRL + F5</code></li>
-<li>Mac/Apple: <code>Apple + R</code> or <code>⌘ + R</code></li>
-<li>Linux: <code>CTRL + F5</code></li>
+<li>IP Address</li>
+<li>Netmask</li>
+<li>Gateway</li>
+<li>Primary DNS</li>
+<li>Secondary DNS</li>
 </ul>
-</div>
-<h2 id="v620-tbd">v6.2.0 (TBD)</h2>
-<h3 id="noticeable-changes">Noticeable changes</h3>
-<h3 id="network-discovery">Network Discovery</h3>
-<h3 id="upgrade-notices">Upgrade Notices</h3>
-<ul>
-<li>Forcepoint – NAT support was added (see our <a href="https://matrix.ipfabric.io">feature matrix</a> for more details).</li>
-</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_static_ip.png"><img alt="change_static_ip" src="../change_static_ip.png"/></a></p>
+</li>
+<li>
+<p>Update NTP servers using comma separated list.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../change_ntp.png"><img alt="change_ntp" src="../change_ntp.png"/></a></p>
+</li>
+<li>
+<p>Select <code>Yes</code> to reboot the system.</p>
+</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../reboot.png"><img alt="reboot" src="../reboot.png"/></a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -4071,7 +4014,7 @@ Depending on your operating system use the following key combination in your bro
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: IP Fabric v6.1 (Burlap)" class="md-footer__link md-footer__link--prev" href="../6.1/" rel="prev">
+<a aria-label="Previous: Update hostname or domain name" class="md-footer__link md-footer__link--prev" href="../change_hostname/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -4080,17 +4023,17 @@ Depending on your operating system use the following key combination in your bro
 <span class="md-footer__direction">
                   Previous
                 </span>
-                IP Fabric v6.1 (Burlap)
+                Update hostname or domain name
               </div>
 </div>
 </a>
-<a aria-label="Next: NIMPEE v1.x.x" class="md-footer__link md-footer__link--next" href="../previous_releases/nimpee_v1/" rel="next">
+<a aria-label="Next: Update `osadmin` password" class="md-footer__link md-footer__link--next" href="../change_osadmin_pass/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                NIMPEE v1.x.x
+                Update `osadmin` password
               </div>
 </div>
 <div class="md-footer__button md-icon">
