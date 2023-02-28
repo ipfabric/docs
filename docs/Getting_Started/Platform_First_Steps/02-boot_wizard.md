@@ -1,9 +1,9 @@
-# CLI Boot Wizard
+# First Boot Wizard
 
 The *First Boot Wizard* starts when IP Fabric is run for the first time and
 configures system options. The wizard can also be re-run later from the cli
 to modify basic system parameters. Documentation can be found at
-[Run System 'Boot Wizard'](../../System_Administration/boot_wizard.md).
+[System 'Boot Wizard'](../../System_Administration/boot_wizard/index.md).
 
 1. Assign hostname.
 2. Assign domain name.
@@ -31,4 +31,5 @@ to modify basic system parameters. Documentation can be found at
 !!! info
 
     A trusted certificate can replace a self-signed SSL certificate using IP 
-    Fabric web UI. Please see [IP Fabric Web Certificate](../../IP_Fabric_Settings/advanced/ipf_cert.md)
+    Fabric web UI. Please see 
+    [IP Fabric Web Certificate](../../IP_Fabric_Settings/advanced/ipf_cert.md)
