@@ -4033,7 +4033,25 @@ network devices.</p>
 <p>If more credentials are specified, a top-down algorithm is used when trying to
 login to a network device or the credentials priority can be changed using drag
 and drop.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../login_diagram.jpg"><img alt="IP Fabric login diagram" src="../login_diagram.jpg"/></a></p>
+<pre class="mermaid"><code>flowchart TD
+    A([Start]) --&gt; discoveryHistory{Is IP in&lt;br/&gt;`Management &gt;&lt;br/&gt;Discovery History`&lt;br/&gt;table?}
+    discoveryHistory --&gt; |Yes|previousUsername[Try previously discovered username.]
+    discoveryHistory --&gt; |No|configuredAuth{Does IP fall within&lt;br/&gt;'Use in subnets' range in&lt;br/&gt;`Settings &gt; Authentication`&lt;br/&gt;table?}
+    configuredAuth --&gt; |Yes|tryAuth[Try configured Authentications&lt;br/&gt;starting from top to bottom.]
+    configuredAuth --&gt; |No|loginFailed([&lt;b&gt;Login Failed.&lt;/b&gt;])
+    tryAuth --&gt; |Login Success|loginSuccess([&lt;b&gt;Login Success.&lt;/b&gt;])
+    tryAuth --&gt; |Login Failed|otherCreds{Are there other&lt;br/&gt;credentials to try?}
+    previousUsername --&gt; |Login Success|loginSuccess
+    previousUsername --&gt; |Login Failed|configuredAuth
+    otherCreds --&gt; |Yes|tryNext[Try next credential.]
+    otherCreds --&gt; |No|loginFailed
+    tryNext --&gt; |Login Success|loginSuccess
+    tryNext --&gt; |Login Failed|otherCreds
+
+    style loginFailed fill:#dd3300
+    style loginSuccess fill:#33dd00
+    linkStyle 2,4,6,8,10,12 stroke:red;
+    linkStyle 1,3,5,7,9,11 stroke:green;</code></pre>
 <h2 id="configure-network-infrastructure-access">Configure Network Infrastructure Access</h2>
 <p>Read-only (Privilege 1) credentials are sufficient for basic functionality.
 Security sensitive operations and advanced functionality might require higher
@@ -4044,7 +4062,7 @@ for a part of your network using <strong>Use in subnets</strong>
 and <strong>Don’t use in subnets</strong> fields.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../1935310852.png"><img alt="Add new CLI credential" src="../1935310852.png"/></a></p>
 <p>Provided credentials can be used for configuration change tracking and saved
-configuration consistency (i.e. they allow commands such as <strong>show run</strong> and 
+configuration consistency (i.e. they allow commands such as <strong>show run</strong> and
 <strong>show start</strong>).</p>
 <p>To use this credentials for configuration change tracking, please
 check <a href="../advanced/configuration_management/">Use for configuration management</a>
