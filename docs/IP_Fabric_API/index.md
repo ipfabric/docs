@@ -4,32 +4,38 @@ description: API endpoints are available in IP Fabric. You also can take a look 
 
 # Overview
 
-IP Fabric is an API first client, that means that any click in the user interface (UI) has an API call associated with the action of the click.
+IP Fabric is an API first client, that means that any click in the user
+interface (UI) has an API call associated with the action of the click.
 
 ## Python IP Fabric (SDK)
 
-API first principles allow the IP Fabric team to maintain a Software Development Kit (SDK) that can used for automations. While the IP Fabric main GUI is written in TypeScript, we have chosen to write the SDK in Python as it is the most common language used by Network Engineers.
+API first principles allow the IP Fabric team to maintain a Software Development
+Kit (SDK) that can used for automations. While the IP Fabric main GUI is written
+in TypeScript, we have chosen to write the SDK in Python as it is the most
+common language used by Network Engineers.
 
-The SDK documentation can be found at [https://gitlab.com/ip-fabric/integrations/python-ipfabric](https://gitlab.com/ip-fabric/integrations/python-ipfabric)
-<!--
-[https://community-fabric.github.io/python-ipfabric/](https://community-fabric.github.io/python-ipfabric/)
--->
+The SDK documentation can be found
+at [https://gitlab.com/ip-fabric/integrations/python-ipfabric](https://gitlab.com/ip-fabric/integrations/python-ipfabric)
 
-While using SDK is more straightforward than calling API directly, we recommend making yourself familiar with the rest of the documentation as many SDK calls map directly to API calls.
+While using SDK is more straightforward than calling API directly, we recommend
+making yourself familiar with the rest of the documentation as many SDK calls
+map directly to API calls.
 
 ## Using API Directly
 
-The following documentation is meant to get you started working with API and give you a tutorial on how it works.
+The following documentation is meant to get you started working with API and
+give you a tutorial on how it works.
 
 Many of the tables within IP Fabric have a `?` which provides a description of
 how to interact with the API, the data required in the payload, and the endpoint
-to send the request to. This is the easiest way to learn how to use the API
-and for more information please see
-[Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description).
+to send the request to. This is the easiest way to learn how to use the API and
+for more information please see
+[Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description)
+.
 
-Another option is using the network viewer in
-the web browser's `Developers Tools` which will show you the endpoints and data
-required to make a successful call to the platform.
+Another option is using the network viewer in the web
+browser's `Developers Tools` which will show you the endpoints and data required
+to make a successful call to the platform.
 
 !!! example "API Blog Posts"
 
@@ -146,20 +152,31 @@ exposes the endpoints (can be used with filters as well).
 
 ```jscript
 {
-  columns:[],
-  filters:{},
-  pagination:{},
-  snapshot:"snapshotID",
-  reports:""
+  "attributeFilters": {},
+  "columns": ["id", ...],
+  "filters": {},
+  "pagination": {},
+  "snapshot": "<UUID|$last|$prev|$lastLocked>",
+  "reports": "<FRONTEND_URL>" | ["REPORT_ID"]
 }
 ```
 
-- `columns` -- specifies columns that we request for the endpoint
-- `filters` -- filtering options, for any column or intent verification
-  `{"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}`(
-  optional)
-- `pagination` - specifies the pagination and response limits
-  `{"limit":26,"start":0}` (optional)
-- `snapshot` -- defines snapshot ID or we can use: `$last`, `$prev`
+- `columns` -- Specifies columns that we request for the endpoint.
+- `filters` -- (Optional) Filtering options, for any column or intent
+  verification.
+  - Example: `"filters": {"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}`
+- `pagination` -- (Recommended) Specifies the pagination and response limits.
+  - Example: `{"limit":1000,"start":0}`
+  - It is currently recommended querying 1,000 rows or fewer at a time.
+- `snapshot` -- Specify snapshot ID or use: `$last`, `$prev`
   , `$lastlocked`
-- `reports` -- Intent rules definition (optional)
+  - Note: some tables (i.e. settings) do not allow the `snapshot` parameter.
+- `reports` -- (Optional) Frontend URL where the reports are displayed or an
+  array of report IDs as strings.
+  - Examples:
+    - `"reports": "/inventory/devices"`
+    - `"reports": ["304796641"]`
+- `attributeFilters` -- (Optional) Applies an attribute filter to the table.
+  - Example: `"attributeFilters": {"siteName": ["LAB01"]}`
+  - Note: some tables (i.e. settings) do not allow the `attributeFilters`
+    parameter.
