@@ -15,7 +15,27 @@ If more credentials are specified, a top-down algorithm is used when trying to
 login to a network device or the credentials priority can be changed using drag
 and drop.
 
-![IP Fabric login diagram](login_diagram.jpg)
+```mermaid
+flowchart TD
+    A([Start]) --> discoveryHistory{Is IP in<br/>`Management ><br/>Discovery History`<br/>table?}
+    discoveryHistory --> |Yes|previousUsername[Try previously discovered username.]
+    discoveryHistory --> |No|configuredAuth{Does IP fall within<br/>'Use in subnets' range in<br/>`Settings > Authentication`<br/>table?}
+    configuredAuth --> |Yes|tryAuth[Try configured Authentications<br/>starting from top to bottom.]
+    configuredAuth --> |No|loginFailed([<b>Login Failed.</b>])
+    tryAuth --> |Login Success|loginSuccess([<b>Login Success.</b>])
+    tryAuth --> |Login Failed|otherCreds{Are there other<br/>credentials to try?}
+    previousUsername --> |Login Success|loginSuccess
+    previousUsername --> |Login Failed|configuredAuth
+    otherCreds --> |Yes|tryNext[Try next credential.]
+    otherCreds --> |No|loginFailed
+    tryNext --> |Login Success|loginSuccess
+    tryNext --> |Login Failed|otherCreds
+
+    style loginFailed fill:#dd3300
+    style loginSuccess fill:#33dd00
+    linkStyle 2,4,6,8,10,12 stroke:red;
+    linkStyle 1,3,5,7,9,11 stroke:green;
+```
 
 ## Configure Network Infrastructure Access
 
@@ -31,7 +51,7 @@ and **Don't use in subnets** fields.
 ![Add new CLI credential](1935310852.png)
 
 Provided credentials can be used for configuration change tracking and saved
-configuration consistency (i.e. they allow commands such as **show run** and 
+configuration consistency (i.e. they allow commands such as **show run** and
 **show start**).
 
 To use this credentials for configuration change tracking, please
