@@ -6,32 +6,32 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="description"/>
-<link href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/" rel="canonical"/>
-<link href="../change_hostname/" rel="prev"/>
-<link href="../custom_ssl_cert/" rel="next"/>
-<link href="../../../../assets/favicon.png" rel="icon"/>
+<link href="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_osadmin_pass/" rel="canonical"/>
+<link href="../change_network/" rel="prev"/>
+<link href="../../../releases/" rel="next"/>
+<link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.15+insiders-4.32.1" name="generator"/>
-<title>How to change the `osadmin` password - IP Fabric Documentation Portal</title>
-<link href="../../../../assets/stylesheets/main.17f92d59.min.css" rel="stylesheet"/>
-<link href="../../../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
+<title>Update `osadmin` password - IP Fabric Documentation Portal</title>
+<link href="../../../assets/stylesheets/main.17f92d59.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.6932e648.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../../stylesheets/theme.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../stylesheets/theme.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="How to change the `osadmin` password - IP Fabric Documentation Portal" property="og:title"/>
+<meta content="Update `osadmin` password - IP Fabric Documentation Portal" property="og:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." property="og:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/change_osadmin_pass.png" property="og:image"/>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_osadmin_pass.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/change_osadmin_pass/" property="og:url"/>
+<meta content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_osadmin_pass/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="How to change the `osadmin` password - IP Fabric Documentation Portal" name="twitter:title"/>
+<meta content="Update `osadmin` password - IP Fabric Documentation Portal" name="twitter:title"/>
 <meta content="Official documentation of the IP Fabric Network Assurance Platform." name="twitter:description"/>
-<meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/change_osadmin_pass.png" name="twitter:image"/>
-<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<meta content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_osadmin_pass.png" name="twitter:image"/>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -42,13 +42,13 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#how-to-change-the-osadmin-password">
+<a class="md-skip" href="#update-osadmin-password">
           Skip to content
         </a>
 </div>
@@ -70,8 +70,8 @@ differently in you production deployment, than described here.
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="IP Fabric Documentation Portal" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="IP Fabric Documentation Portal">
-<img alt="logo" src="../../../../assets/logo.png"/>
+<a aria-label="IP Fabric Documentation Portal" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -86,7 +86,7 @@ differently in you production deployment, than described here.
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              How to change the `osadmin` password
+              Update `osadmin` password
             
           </span>
 </div>
@@ -151,7 +151,7 @@ differently in you production deployment, than described here.
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../..">
+<a class="md-tabs__link" href="../../..">
         
   
     
@@ -161,7 +161,7 @@ differently in you production deployment, than described here.
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../Getting_Started/Overview/">
+<a class="md-tabs__link" href="../../../Getting_Started/Overview/">
           
   
     
@@ -171,7 +171,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../IP_Fabric_API/">
+<a class="md-tabs__link" href="../../../IP_Fabric_API/">
           
   
     
@@ -181,7 +181,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../IP_Fabric_GUI/Global_Filter/">
+<a class="md-tabs__link" href="../../../IP_Fabric_GUI/Global_Filter/">
           
   
   IP Fabric GUI
@@ -189,7 +189,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../IP_Fabric_Settings/api_tokens/">
+<a class="md-tabs__link" href="../../../IP_Fabric_Settings/api_tokens/">
           
   
   IP Fabric Settings
@@ -197,7 +197,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../../boot_wizard/">
+<a class="md-tabs__link md-tabs__link--active" href="../../increase_disk_space/">
           
   
   System Administration
@@ -205,7 +205,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../releases/">
+<a class="md-tabs__link" href="../../../releases/">
           
   
     
@@ -215,7 +215,7 @@ differently in you production deployment, than described here.
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../../support/">
+<a class="md-tabs__link" href="../../../support/">
           
   
     
@@ -234,8 +234,8 @@ differently in you production deployment, than described here.
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="IP Fabric Documentation Portal" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="IP Fabric Documentation Portal">
-<img alt="logo" src="../../../../assets/logo.png"/>
+<a aria-label="IP Fabric Documentation Portal" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="IP Fabric Documentation Portal">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
     IP Fabric Documentation Portal
   </label>
@@ -251,7 +251,7 @@ differently in you production deployment, than described here.
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     
   
@@ -309,7 +309,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/">
 <span class="md-ellipsis">
     
   
@@ -321,7 +321,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/faq/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/faq/">
 <span class="md-ellipsis">
     
   
@@ -333,7 +333,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/licensing/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/licensing/">
 <span class="md-ellipsis">
     
   
@@ -345,7 +345,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/snapshots/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/snapshots/">
 <span class="md-ellipsis">
     
   
@@ -380,7 +380,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/API_discovery/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/API_discovery/">
 <span class="md-ellipsis">
     
   
@@ -392,7 +392,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">
 <span class="md-ellipsis">
     
   
@@ -404,7 +404,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/">
 <span class="md-ellipsis">
     
   
@@ -439,7 +439,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/connectivity_report/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/connectivity_report/">
 <span class="md-ellipsis">
     
   
@@ -451,7 +451,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/">
 <span class="md-ellipsis">
     
   
@@ -463,7 +463,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/no-devices-discovered/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/no-devices-discovered/">
 <span class="md-ellipsis">
     
   
@@ -475,7 +475,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Overview/How_Discovery_Works/common_problems/quagga-frr/">
+<a class="md-nav__link" href="../../../Getting_Started/Overview/How_Discovery_Works/common_problems/quagga-frr/">
 <span class="md-ellipsis">
     
   
@@ -519,7 +519,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/00-quick_start/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/00-quick_start/">
 <span class="md-ellipsis">
     
   
@@ -531,7 +531,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/01-deployment/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/01-deployment/">
 <span class="md-ellipsis">
     
   
@@ -543,11 +543,11 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/02-boot_wizard/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/02-boot_wizard/">
 <span class="md-ellipsis">
     
   
-    CLI Boot Wizard
+    First Boot Wizard
   
 
     
@@ -555,7 +555,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/03-access_ui/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/03-access_ui/">
 <span class="md-ellipsis">
     
   
@@ -567,7 +567,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/04-configuration_wizard/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/04-configuration_wizard/">
 <span class="md-ellipsis">
     
   
@@ -579,7 +579,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../Getting_Started/Platform_First_Steps/05-initial_discovery/">
+<a class="md-nav__link" href="../../../Getting_Started/Platform_First_Steps/05-initial_discovery/">
 <span class="md-ellipsis">
     
   
@@ -620,7 +620,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/">
 <span class="md-ellipsis">
     
   
@@ -632,7 +632,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/authentication/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/authentication/">
 <span class="md-ellipsis">
     
   
@@ -644,7 +644,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/intent_verification_rules/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/intent_verification_rules/">
 <span class="md-ellipsis">
     
   
@@ -656,7 +656,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/retrieving_configurations/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_configurations/">
 <span class="md-ellipsis">
     
   
@@ -668,7 +668,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/retrieving_device_log_file/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/retrieving_device_log_file/">
 <span class="md-ellipsis">
     
   
@@ -680,7 +680,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/serial_numbers/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/serial_numbers/">
 <span class="md-ellipsis">
     
   
@@ -715,7 +715,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Path_Lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/">
 <span class="md-ellipsis">
     
   
@@ -727,7 +727,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -739,7 +739,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -751,7 +751,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/">
 <span class="md-ellipsis">
     
   
@@ -763,7 +763,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/">
 <span class="md-ellipsis">
     
   
@@ -801,7 +801,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Tutorials/interating_over_large_collections/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Tutorials/interating_over_large_collections/">
 <span class="md-ellipsis">
     
   
@@ -813,7 +813,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/">
 <span class="md-ellipsis">
     
   
@@ -851,7 +851,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/">
 <span class="md-ellipsis">
     
   
@@ -863,7 +863,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/">
 <span class="md-ellipsis">
     
   
@@ -875,7 +875,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_API/snapshots/snapshot_table/">
+<a class="md-nav__link" href="../../../IP_Fabric_API/snapshots/snapshot_table/">
 <span class="md-ellipsis">
     
   
@@ -916,7 +916,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/Global_Filter/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/Global_Filter/">
 <span class="md-ellipsis">
     
   
@@ -928,7 +928,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/dashboard/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/dashboard/">
 <span class="md-ellipsis">
     
   
@@ -940,7 +940,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/discovery_snapshot/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/discovery_snapshot/">
 <span class="md-ellipsis">
     
   
@@ -952,7 +952,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/inventory/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/inventory/">
 <span class="md-ellipsis">
     
   
@@ -964,7 +964,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/reports/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/reports/">
 <span class="md-ellipsis">
     
   
@@ -999,7 +999,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/diagrams/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/">
 <span class="md-ellipsis">
     
   
@@ -1011,7 +1011,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/diagrams/compare_snapshot/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/compare_snapshot/">
 <span class="md-ellipsis">
     
   
@@ -1023,7 +1023,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/">
 <span class="md-ellipsis">
     
   
@@ -1035,7 +1035,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/diagrams/intent_checks/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/intent_checks/">
 <span class="md-ellipsis">
     
   
@@ -1047,7 +1047,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/diagrams/network_viewer/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/diagrams/network_viewer/">
 <span class="md-ellipsis">
     
   
@@ -1085,7 +1085,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/management/changes/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/changes/">
 <span class="md-ellipsis">
     
   
@@ -1097,7 +1097,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/management/configuration/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/configuration/">
 <span class="md-ellipsis">
     
   
@@ -1109,7 +1109,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/management/discovery_history/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/management/discovery_history/">
 <span class="md-ellipsis">
     
   
@@ -1147,7 +1147,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/">
 <span class="md-ellipsis">
     
   
@@ -1159,7 +1159,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/CDP_LLDP/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/CDP_LLDP/">
 <span class="md-ellipsis">
     
   
@@ -1171,7 +1171,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/DHCP/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/DHCP/">
 <span class="md-ellipsis">
     
   
@@ -1183,7 +1183,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/Fabric_Path/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/Fabric_Path/">
 <span class="md-ellipsis">
     
   
@@ -1195,7 +1195,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/First_hop_redundancy_protocols/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/First_hop_redundancy_protocols/">
 <span class="md-ellipsis">
     
   
@@ -1207,7 +1207,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/MPLS/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/MPLS/">
 <span class="md-ellipsis">
     
   
@@ -1219,7 +1219,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/QoS/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/QoS/">
 <span class="md-ellipsis">
     
   
@@ -1231,7 +1231,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/SDN/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/SDN/">
 <span class="md-ellipsis">
     
   
@@ -1243,7 +1243,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/SDWAN/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/SDWAN/">
 <span class="md-ellipsis">
     
   
@@ -1255,7 +1255,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/Security/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/Security/">
 <span class="md-ellipsis">
     
   
@@ -1267,7 +1267,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/addressing/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/addressing/">
 <span class="md-ellipsis">
     
   
@@ -1279,7 +1279,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/cloud/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/cloud/">
 <span class="md-ellipsis">
     
   
@@ -1291,7 +1291,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/interfaces/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/interfaces/">
 <span class="md-ellipsis">
     
   
@@ -1303,7 +1303,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/ip_telephony/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/ip_telephony/">
 <span class="md-ellipsis">
     
   
@@ -1315,7 +1315,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/management_table/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/management_table/">
 <span class="md-ellipsis">
     
   
@@ -1327,7 +1327,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/networks/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/networks/">
 <span class="md-ellipsis">
     
   
@@ -1339,7 +1339,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/platforms/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/platforms/">
 <span class="md-ellipsis">
     
   
@@ -1351,7 +1351,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/port-channels/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/port-channels/">
 <span class="md-ellipsis">
     
   
@@ -1363,7 +1363,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/routing/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/routing/">
 <span class="md-ellipsis">
     
   
@@ -1375,7 +1375,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/routing_analysis/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/routing_analysis/">
 <span class="md-ellipsis">
     
   
@@ -1387,7 +1387,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/stp/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/stp/">
 <span class="md-ellipsis">
     
   
@@ -1399,7 +1399,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/transcievers/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/transcievers/">
 <span class="md-ellipsis">
     
   
@@ -1411,7 +1411,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/technology_tables/wireless/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/technology_tables/wireless/">
 <span class="md-ellipsis">
     
   
@@ -1449,7 +1449,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/tips/intent_rules/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/intent_rules/">
 <span class="md-ellipsis">
     
   
@@ -1461,7 +1461,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/tips/navigate_in_tables/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/navigate_in_tables/">
 <span class="md-ellipsis">
     
   
@@ -1473,7 +1473,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/tips/search/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/search/">
 <span class="md-ellipsis">
     
   
@@ -1485,7 +1485,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_GUI/tips/vague_messages/">
+<a class="md-nav__link" href="../../../IP_Fabric_GUI/tips/vague_messages/">
 <span class="md-ellipsis">
     
   
@@ -1526,7 +1526,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/api_tokens/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/api_tokens/">
 <span class="md-ellipsis">
     
   
@@ -1538,7 +1538,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/authentication/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/authentication/">
 <span class="md-ellipsis">
     
   
@@ -1550,7 +1550,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/ca/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/ca/">
 <span class="md-ellipsis">
     
   
@@ -1562,7 +1562,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/device_attributes/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/device_attributes/">
 <span class="md-ellipsis">
     
   
@@ -1574,7 +1574,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/discovery_seed/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/discovery_seed/">
 <span class="md-ellipsis">
     
   
@@ -1586,7 +1586,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/organizationally_unique_identifier/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/organizationally_unique_identifier/">
 <span class="md-ellipsis">
     
   
@@ -1598,7 +1598,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/site_separation/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/site_separation/">
 <span class="md-ellipsis">
     
   
@@ -1610,7 +1610,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/webhooks/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/webhooks/">
 <span class="md-ellipsis">
     
   
@@ -1645,7 +1645,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/SSH_telnet/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/SSH_telnet/">
 <span class="md-ellipsis">
     
   
@@ -1657,7 +1657,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/assurance_engine/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/assurance_engine/">
 <span class="md-ellipsis">
     
   
@@ -1669,7 +1669,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/configuration_management/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/configuration_management/">
 <span class="md-ellipsis">
     
   
@@ -1681,7 +1681,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery_tasks/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery_tasks/">
 <span class="md-ellipsis">
     
   
@@ -1693,7 +1693,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/ipf_cert/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/ipf_cert/">
 <span class="md-ellipsis">
     
   
@@ -1705,7 +1705,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/snapshots/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/snapshots/">
 <span class="md-ellipsis">
     
   
@@ -1717,7 +1717,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/snmp/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/snmp/">
 <span class="md-ellipsis">
     
   
@@ -1752,7 +1752,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/">
 <span class="md-ellipsis">
     
   
@@ -1764,7 +1764,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/AWS_Amazon_Web_Services/">
 <span class="md-ellipsis">
     
   
@@ -1776,7 +1776,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Azure_Networking/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Azure_Networking/">
 <span class="md-ellipsis">
     
   
@@ -1788,7 +1788,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Check_Point/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Check_Point/">
 <span class="md-ellipsis">
     
   
@@ -1800,7 +1800,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_APIC/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_APIC/">
 <span class="md-ellipsis">
     
   
@@ -1812,7 +1812,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_FMC/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_FMC/">
 <span class="md-ellipsis">
     
   
@@ -1824,7 +1824,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Meraki/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Meraki/">
 <span class="md-ellipsis">
     
   
@@ -1836,7 +1836,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Viptela_SD-WAN/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_Viptela_SD-WAN/">
 <span class="md-ellipsis">
     
   
@@ -1848,7 +1848,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/PaloAlto_Prisma/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/PaloAlto_Prisma/">
 <span class="md-ellipsis">
     
   
@@ -1860,7 +1860,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Ruckus_Virtual_SmartZone/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Ruckus_Virtual_SmartZone/">
 <span class="md-ellipsis">
     
   
@@ -1872,7 +1872,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Silver_Peak_SD-WAN/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Silver_Peak_SD-WAN/">
 <span class="md-ellipsis">
     
   
@@ -1884,7 +1884,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/VMware_NSX-T/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/VMware_NSX-T/">
 <span class="md-ellipsis">
     
   
@@ -1896,7 +1896,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/Versa_Networks_SD-WAN/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/Versa_Networks_SD-WAN/">
 <span class="md-ellipsis">
     
   
@@ -1908,7 +1908,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/forcepoint/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/forcepoint/">
 <span class="md-ellipsis">
     
   
@@ -1920,7 +1920,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/Vendors_API/junipe_mist/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/Vendors_API/junipe_mist/">
 <span class="md-ellipsis">
     
   
@@ -1958,7 +1958,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/Traceroute_settings/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/Traceroute_settings/">
 <span class="md-ellipsis">
     
   
@@ -1970,7 +1970,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/discovery_settings/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/discovery_settings/">
 <span class="md-ellipsis">
     
   
@@ -1982,7 +1982,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/dns_resolve/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/dns_resolve/">
 <span class="md-ellipsis">
     
   
@@ -1994,7 +1994,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/ip_scope/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/ip_scope/">
 <span class="md-ellipsis">
     
   
@@ -2006,7 +2006,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/limit_download_of_bgp_routes/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/limit_download_of_bgp_routes/">
 <span class="md-ellipsis">
     
   
@@ -2018,7 +2018,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/discovery/scanner_settings/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/discovery/scanner_settings/">
 <span class="md-ellipsis">
     
   
@@ -2056,7 +2056,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/system/cleardb/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/system/cleardb/">
 <span class="md-ellipsis">
     
   
@@ -2068,7 +2068,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/system/system_backup/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/system/system_backup/">
 <span class="md-ellipsis">
     
   
@@ -2080,7 +2080,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/advanced/system/system_maitenance/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/advanced/system/system_maitenance/">
 <span class="md-ellipsis">
     
   
@@ -2121,7 +2121,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/">
 <span class="md-ellipsis">
     
   
@@ -2133,7 +2133,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/ldap/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/ldap/">
 <span class="md-ellipsis">
     
   
@@ -2145,7 +2145,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/policies/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/policies/">
 <span class="md-ellipsis">
     
   
@@ -2157,7 +2157,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/roles/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/roles/">
 <span class="md-ellipsis">
     
   
@@ -2169,7 +2169,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/sso/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/sso/">
 <span class="md-ellipsis">
     
   
@@ -2181,7 +2181,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../IP_Fabric_Settings/user_management/users/">
+<a class="md-nav__link" href="../../../IP_Fabric_Settings/user_management/users/">
 <span class="md-ellipsis">
     
   
@@ -2222,19 +2222,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../boot_wizard/">
-<span class="md-ellipsis">
-    
-  
-    Run System 'Boot Wizard'
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../increase_disk_space/">
+<a class="md-nav__link" href="../../increase_disk_space/">
 <span class="md-ellipsis">
     
   
@@ -2246,8 +2234,8 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2258,8 +2246,8 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_3">
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2269,7 +2257,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Administrative_Interface/">
+<a class="md-nav__link" href="../../Administrative_Interface/">
 <span class="md-ellipsis">
     
   
@@ -2281,7 +2269,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Administrative_Interface/System_Update/">
+<a class="md-nav__link" href="../../Administrative_Interface/System_Update/">
 <span class="md-ellipsis">
     
   
@@ -2293,7 +2281,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Administrative_Interface/backup_and_restore/">
+<a class="md-nav__link" href="../../Administrative_Interface/backup_and_restore/">
 <span class="md-ellipsis">
     
   
@@ -2305,7 +2293,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Administrative_Interface/create_local_administrator/">
+<a class="md-nav__link" href="../../Administrative_Interface/create_local_administrator/">
 <span class="md-ellipsis">
     
   
@@ -2317,7 +2305,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../Administrative_Interface/system_status/">
+<a class="md-nav__link" href="../../Administrative_Interface/system_status/">
 <span class="md-ellipsis">
     
   
@@ -2331,9 +2319,9 @@ differently in you production deployment, than described here.
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2344,8 +2332,8 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2355,7 +2343,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../Command_Line_Interface/">
 <span class="md-ellipsis">
     
   
@@ -2367,7 +2355,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Custom_TLS/">
+<a class="md-nav__link" href="../../Command_Line_Interface/Custom_TLS/">
 <span class="md-ellipsis">
     
   
@@ -2379,7 +2367,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Logging/">
+<a class="md-nav__link" href="../../Command_Line_Interface/Logging/">
 <span class="md-ellipsis">
     
   
@@ -2390,9 +2378,9 @@ differently in you production deployment, than described here.
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_4_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3_4" id="__nav_6_3_4_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -2403,8 +2391,8 @@ differently in you production deployment, than described here.
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_4_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_6_4_4">
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_3_4">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -2414,32 +2402,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../change_hostname/">
-<span class="md-ellipsis">
-    
-  
-    How to change the hostname
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    
-  
-    How to change the `osadmin` password
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../custom_ssl_cert/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/custom_ssl_cert/">
 <span class="md-ellipsis">
     
   
@@ -2451,7 +2414,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../jumphost_troubleshooting/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/jumphost_troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -2463,7 +2426,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../manual_config_backup/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/manual_config_backup/">
 <span class="md-ellipsis">
     
   
@@ -2475,7 +2438,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../troubleshoot_ldap/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/troubleshoot_ldap/">
 <span class="md-ellipsis">
     
   
@@ -2487,7 +2450,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../troubleshooting/">
+<a class="md-nav__link" href="../../Command_Line_Interface/How_to/troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -2500,6 +2463,81 @@ differently in you production deployment, than described here.
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Boot wizard
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Boot wizard
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    System 'Boot Wizard'
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../change_hostname/">
+<span class="md-ellipsis">
+    
+  
+    Update hostname or domain name
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../change_network/">
+<span class="md-ellipsis">
+    
+  
+    Update Network Config
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Update `osadmin` password
+  
+
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -2531,7 +2569,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/">
+<a class="md-nav__link" href="../../../releases/">
 <span class="md-ellipsis">
     
   
@@ -2566,7 +2604,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/5.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/5.0/">
 <span class="md-ellipsis">
     
   
@@ -2578,7 +2616,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/6.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/6.0/">
 <span class="md-ellipsis">
     
   
@@ -2590,7 +2628,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/6.1/">
+<a class="md-nav__link" href="../../../releases/release_notes/6.1/">
 <span class="md-ellipsis">
     
   
@@ -2602,7 +2640,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/6.2/">
+<a class="md-nav__link" href="../../../releases/release_notes/6.2/">
 <span class="md-ellipsis">
     
   
@@ -2637,7 +2675,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/nimpee_v1/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v1/">
 <span class="md-ellipsis">
     
   
@@ -2649,7 +2687,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/nimpee_v2/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/nimpee_v2/">
 <span class="md-ellipsis">
     
   
@@ -2661,7 +2699,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/">
 <span class="md-ellipsis">
     
   
@@ -2696,7 +2734,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/">
 <span class="md-ellipsis">
     
   
@@ -2708,7 +2746,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/">
 <span class="md-ellipsis">
     
   
@@ -2720,7 +2758,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/">
 <span class="md-ellipsis">
     
   
@@ -2732,7 +2770,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/">
 <span class="md-ellipsis">
     
   
@@ -2744,7 +2782,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
+<a class="md-nav__link" href="../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/">
 <span class="md-ellipsis">
     
   
@@ -2834,7 +2872,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/">
 <span class="md-ellipsis">
     
   
@@ -2846,7 +2884,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/">
 <span class="md-ellipsis">
     
   
@@ -2858,7 +2896,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/">
 <span class="md-ellipsis">
     
   
@@ -2870,7 +2908,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/">
 <span class="md-ellipsis">
     
   
@@ -2882,7 +2920,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/">
 <span class="md-ellipsis">
     
   
@@ -2894,7 +2932,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/">
 <span class="md-ellipsis">
     
   
@@ -2932,7 +2970,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/">
 <span class="md-ellipsis">
     
   
@@ -2944,7 +2982,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/">
 <span class="md-ellipsis">
     
   
@@ -2956,7 +2994,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/">
 <span class="md-ellipsis">
     
   
@@ -2968,7 +3006,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/">
 <span class="md-ellipsis">
     
   
@@ -3032,7 +3070,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3044,7 +3082,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3056,7 +3094,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/">
 <span class="md-ellipsis">
     
   
@@ -3120,7 +3158,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/">
 <span class="md-ellipsis">
     
   
@@ -3132,7 +3170,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/">
 <span class="md-ellipsis">
     
   
@@ -3170,7 +3208,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../releases/release_notes_low-level/6.x/6.1.x/6.1.0/">
+<a class="md-nav__link" href="../../../releases/release_notes_low-level/6.x/6.1.x/6.1.0/">
 <span class="md-ellipsis">
     
   
@@ -3217,7 +3255,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/">
+<a class="md-nav__link" href="../../../support/">
 <span class="md-ellipsis">
     
   
@@ -3229,7 +3267,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/security_bulletins/">
+<a class="md-nav__link" href="../../../support/security_bulletins/">
 <span class="md-ellipsis">
     
   
@@ -3241,7 +3279,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/security_incidents/">
+<a class="md-nav__link" href="../../../support/security_incidents/">
 <span class="md-ellipsis">
     
   
@@ -3253,7 +3291,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/support_vpn/">
+<a class="md-nav__link" href="../../../support/support_vpn/">
 <span class="md-ellipsis">
     
   
@@ -3265,7 +3303,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/techsupport/">
+<a class="md-nav__link" href="../../../support/techsupport/">
 <span class="md-ellipsis">
     
   
@@ -3300,7 +3338,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/">
+<a class="md-nav__link" href="../../../support/known_issues/">
 <span class="md-ellipsis">
     
   
@@ -3335,7 +3373,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/">
 <span class="md-ellipsis">
     
   
@@ -3347,7 +3385,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/">
 <span class="md-ellipsis">
     
   
@@ -3359,7 +3397,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/Missing_lsof_package/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Missing_lsof_package/">
 <span class="md-ellipsis">
     
   
@@ -3371,7 +3409,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/Service_passwords/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Service_passwords/">
 <span class="md-ellipsis">
     
   
@@ -3383,7 +3421,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/Site_name_can_change_to_an_obscure_UUID_value_after_update/">
 <span class="md-ellipsis">
     
   
@@ -3395,7 +3433,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/local_time_inconsistencies/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/local_time_inconsistencies/">
 <span class="md-ellipsis">
     
   
@@ -3407,7 +3445,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/transceivers_task/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/transceivers_task/">
 <span class="md-ellipsis">
     
   
@@ -3442,7 +3480,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/error_messages/aql_internal_error/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/aql_internal_error/">
 <span class="md-ellipsis">
     
   
@@ -3454,7 +3492,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/">
 <span class="md-ellipsis">
     
   
@@ -3466,7 +3504,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">
 <span class="md-ellipsis">
     
   
@@ -3478,7 +3516,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/IP_Fabric/error_messages/resource_conflict/">
+<a class="md-nav__link" href="../../../support/known_issues/IP_Fabric/error_messages/resource_conflict/">
 <span class="md-ellipsis">
     
   
@@ -3519,7 +3557,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/3com/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/3com/">
 <span class="md-ellipsis">
     
   
@@ -3531,7 +3569,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/Fortinet_FortiGate/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Fortinet_FortiGate/">
 <span class="md-ellipsis">
     
   
@@ -3543,7 +3581,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/arista/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/arista/">
 <span class="md-ellipsis">
     
   
@@ -3555,7 +3593,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/brocade/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/brocade/">
 <span class="md-ellipsis">
     
   
@@ -3567,7 +3605,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/checkpoint/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/checkpoint/">
 <span class="md-ellipsis">
     
   
@@ -3579,7 +3617,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/dell/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/dell/">
 <span class="md-ellipsis">
     
   
@@ -3591,7 +3629,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/extreme/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/extreme/">
 <span class="md-ellipsis">
     
   
@@ -3603,7 +3641,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/f5/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/f5/">
 <span class="md-ellipsis">
     
   
@@ -3615,7 +3653,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/forcepoint/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/forcepoint/">
 <span class="md-ellipsis">
     
   
@@ -3627,7 +3665,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/hp/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/hp/">
 <span class="md-ellipsis">
     
   
@@ -3639,7 +3677,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/huawei/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/huawei/">
 <span class="md-ellipsis">
     
   
@@ -3651,7 +3689,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/juniper/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/juniper/">
 <span class="md-ellipsis">
     
   
@@ -3663,7 +3701,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/meraki/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/meraki/">
 <span class="md-ellipsis">
     
   
@@ -3675,7 +3713,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/mikrotik/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/mikrotik/">
 <span class="md-ellipsis">
     
   
@@ -3687,7 +3725,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/versa/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/versa/">
 <span class="md-ellipsis">
     
   
@@ -3722,7 +3760,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/Palo_Alto_Networks/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Palo_Alto_Networks/">
 <span class="md-ellipsis">
     
   
@@ -3734,7 +3772,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/Palo_Alto_Networks/panorama/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/Palo_Alto_Networks/panorama/">
 <span class="md-ellipsis">
     
   
@@ -3772,7 +3810,7 @@ differently in you production deployment, than described here.
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/">
 <span class="md-ellipsis">
     
   
@@ -3784,7 +3822,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/">
 <span class="md-ellipsis">
     
   
@@ -3796,7 +3834,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/">
 <span class="md-ellipsis">
     
   
@@ -3808,7 +3846,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/">
 <span class="md-ellipsis">
     
   
@@ -3820,7 +3858,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Dropping_support_for_ACL_on_Cisco_Firepower/">
 <span class="md-ellipsis">
     
   
@@ -3832,7 +3870,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/FMC_REST_API/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/FMC_REST_API/">
 <span class="md-ellipsis">
     
   
@@ -3844,7 +3882,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/">
 <span class="md-ellipsis">
     
   
@@ -3856,7 +3894,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/">
 <span class="md-ellipsis">
     
   
@@ -3868,7 +3906,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/">
 <span class="md-ellipsis">
     
   
@@ -3880,7 +3918,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/">
 <span class="md-ellipsis">
     
   
@@ -3892,7 +3930,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/Viptela_CEdge_shows_only_one_next_hop/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/Viptela_CEdge_shows_only_one_next_hop/">
 <span class="md-ellipsis">
     
   
@@ -3904,7 +3942,7 @@ differently in you production deployment, than described here.
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../support/known_issues/Vendors/cisco/apic_tables_empty/">
+<a class="md-nav__link" href="../../../support/known_issues/Vendors/cisco/apic_tables_empty/">
 <span class="md-ellipsis">
     
   
@@ -3942,45 +3980,54 @@ differently in you production deployment, than described here.
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/How_to/change_osadmin_pass.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/boot_wizard/change_osadmin_pass.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<h1 id="how-to-change-the-osadmin-password">How to change the <code>osadmin</code> password</h1>
+<h1 id="update-osadmin-password">Update <code>osadmin</code> password</h1>
 <ol>
 <li>
-<p>Login to your IP Fabric via SSH with the <code>osadmin</code> user and type in the <code>nimpee-net-config -t</code> command, that is going to launch the configuration wizard.</p>
+<p>Login to your IP Fabric via SSH with the <code>osadmin</code> user and run the
+   <code>nimpee-net-config -t</code> command to launch the configuration wizard.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../osadmin_password_change2.png"><img alt="Change_osadmin_pass_TUI_!" src="../osadmin_password_change2.png"/></a></p>
 </li>
 <li>
 <p>Select <code>Yes</code> to proceed.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Changing the <code>osadmin</code> password will affect: CLI access, System administration access and the backup encryption! Backups created before the password change will no longer be restorable.</p>
+<p>Changing the <code>osadmin</code> password will affect: CLI access, System 
+administration access and the backup encryption! Backups created before 
+the password change will no longer be restorable.</p>
 </div>
 </li>
 <li>
 <p>Input the new <code>osadmin</code> password twice.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../osadmin_password_change3.png"><img alt="Input_new_osadmin_password" src="../osadmin_password_change3.png"/></a></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../osadmin_password_change4.png"><img alt="Input_new_osadmin_password" src="../osadmin_password_change4.png"/></a></p>
-<p>Password setup contains password complexity check, simple passwords are rejected.</p>
-<p>Password requirements as follows:
-- max password length is 256
-- single character class passwords are not supported
-- two character class must be at least 24 characters long
-- minimal length of passphrase is 24 characters
-- three character class must be at least 16 characters long
-- four character class must be at least 12 characters long
-- passphrase must have at least five words</p>
-<p>The character classes are:
-- digits
-- lower-case letters
-- upper-case letters
-- and other characters</p>
-<p>There is also a special class for non-ASCII characters, which could not be classified, but are assumed to be non-digits.</p>
+<p>Password setup contains password complexity check, 
+simple passwords are rejected.</p>
+<p>Password requirements as follows:</p>
+<ul>
+<li>max password length is 256</li>
+<li>single character class passwords are not supported</li>
+<li>two character class must be at least 24 characters long</li>
+<li>minimal length of passphrase is 24 characters</li>
+<li>three character class must be at least 16 characters long</li>
+<li>four character class must be at least 12 characters long</li>
+<li>passphrase must have at least five words</li>
+</ul>
+<p>The character classes are:</p>
+<ul>
+<li>digits</li>
+<li>lower-case letters</li>
+<li>upper-case letters</li>
+<li>and other characters</li>
+</ul>
+<p>There is also a special class for non-ASCII characters, which could not be 
+classified, but are assumed to be non-digits.</p>
 </li>
 <li>
 <p>Select <code>Yes</code> to reboot the system.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../osadmin_password_change5.png"><img alt="Reboot" src="../osadmin_password_change5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../reboot.png"><img alt="Reboot" src="../reboot.png"/></a></p>
 </li>
 </ol>
 </article>
@@ -3994,7 +4041,7 @@ differently in you production deployment, than described here.
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: How to change the hostname" class="md-footer__link md-footer__link--prev" href="../change_hostname/" rel="prev">
+<a aria-label="Previous: Update Network Config" class="md-footer__link md-footer__link--prev" href="../change_network/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -4003,17 +4050,17 @@ differently in you production deployment, than described here.
 <span class="md-footer__direction">
                   Previous
                 </span>
-                How to change the hostname
+                Update Network Config
               </div>
 </div>
 </a>
-<a aria-label="Next: How to add Custom SSL Certificate" class="md-footer__link md-footer__link--next" href="../custom_ssl_cert/" rel="next">
+<a aria-label="Next: IP Fabric Releases" class="md-footer__link md-footer__link--next" href="../../../releases/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                How to add Custom SSL Certificate
+                IP Fabric Releases
               </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -4055,7 +4102,7 @@ differently in you production deployment, than described here.
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../../../assets/javascripts/bundle.b7178837.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.b7178837.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
