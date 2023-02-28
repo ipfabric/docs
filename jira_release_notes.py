@@ -41,13 +41,9 @@ def get_project_issues_from_version(project, projectVersion, startAt=0):
     return response.json()
 
 
-def issue_browse_url(issue):
-    return(JIRA_BASE_URL + 'browse/' + issue['key'])
-
-
 def format_issue(issue):
     i = f"""
-    [{issue['key']}]({issue_browse_url(issue)}) --
+    `{issue['key']}` --
     {issue['fields']['priority']['name']} -- {issue['fields']['summary']}
     """
     return(i)
