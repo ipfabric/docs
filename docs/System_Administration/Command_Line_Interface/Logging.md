@@ -74,6 +74,8 @@ In IP Fabric version greater than `5.0.0`, it is possible to send logs to a remo
     It is important not to modify any `*.conf` files in the `/etc/` directory as this can cause issues during upgrades.
     The recommended approach is to create a new file under the service's `conf.d` directory.
 
+--8<-- "snippets/cli_root_access.md"
+
 ### Forwarding Syslog Messages
 
 1. Log into the IP Fabric CLI with the `osadmin` user.
