@@ -319,12 +319,12 @@ staticClients:
     for `name` under `providers`.
     - Can only contain `a-z0-9_`. **Do not use uppercase.**
   - Please, be aware of the `API_VERSION` property.
-    - Updated with every **major** IPF release (i.e. after IP Fabric is upgraded
-      to `v5.5` leaving the URL at `v5.0` will not cause any issues).
+    - Updated with **every IPF release** (i.e. after IP Fabric is upgraded
+      to `v6.1` leaving the URL at `v6.0` will no longer work).
     - Unlike other API calls this has to be set with `v{major}.{minor}` and
-      cannot use `v{major}` (`/api/v5/auth` will not work; must
-      be `/api/v5.0/auth`)
-    - This will require manual changes when going from `v5.0` -> `v6.0`.
+      cannot use `v{major}` (`/api/v6/auth` will not work; must
+      be `/api/v6.0/auth`)
+    - This will require manual changes when going from `v6.0` -> `v6.1` -> `6.2`.
 - `name` - Arbitrary name of the client.
   - This will be displayed in the ["Grant Access" screen](#skip-approval-screen)
     .
