@@ -1,59 +1,69 @@
 # How to add Custom SSL Certificate
 
-If a custom SSL certificate for HTTPS traffic (IP Fabric main GUI) is required, follow this guide to change the certificate manually:
+If a custom SSL certificate for HTTPS traffic (IP Fabric main GUI) is required, follow this guide to change the certificate manually.
 
-1.  Make a backup of your previous server certificate and key:
+!!! important
+
+    Please ensure that the FQDN (DNS name) of the IP Fabric appliance is set as your custom certificate's `Subject Alternative Name`. Having the FQDN as the certificate's `Subject` or `Common Name` is not sufficient.
+
+1. Login to the IP Fabric appliance's CLI as `osadmin` and change to `root`:
+
+  ```shell
+  sudo su
+  ```
+
+2.  Backup the previous server certificate and its private key:
 
   ```shell
   mv /etc/nginx/ssl/server.crt /etc/nginx/ssl/server.crt.bkp
   mv /etc/nginx/ssl/server.key /etc/nginx/ssl/server.key.bkp
   ```
 
-2.  Upload new certificate chain and private key to the `/etc/nginx/ssl/` folder
+3.  Upload the new certificate chain and private key to the `/etc/nginx/ssl/` directory
 
-  1.  It has to have the same name `server.crt` and `server.key`
-  2.  `server.crt` file needs to contain a new SSL certificate and full certificate chain in PEM format
-  3.  `server.key` file needs to contain server certificate's private key in decrypted PEM format
+  1.  They have to have the same names as those previous ones -- `server.crt` and `server.key`
+  2.  `server.crt` needs to contain the new SSL certificate and full certificate chain in PEM format
+  3.  `server.key` needs to contain the new SSL certificate's private key in decrypted PEM format
 
-3.  The certificate chain in `server.crt` must have the following sequence:
+4.  The certificate chain in `server.crt` must have the following sequence:
 
   1.  Server Certificate
   2.  Intermediate Certificate(s)
   3.  Root Certificate
 
-4.  Make sure that files have correct owner and group `root:autoboss`
+5.  Make sure that the new `server.key` has the same owner and group (`root:autoboss`) and permissions (`-rw-r-----`) as the old one:
 
-  1.  Make sure your current working directory is `/etc/nginx/ssl` you can use `pwd` command to be sure, if you're somewhere else then use this command:
   ```shell
-  cd /etc/nginx/ssl
+  chown root:autoboss /etc/nginx/ssl/server.key
+  chmod 0640 /etc/nginx/ssl/server.key
   ```
-  2.  You can check the owner of the files with `ls -l` command
-  3.  If current owner and group are `root:root` then execute following command:
-  ```shell
-  chown root:autoboss server.crt server.key
-  ```
-5.  Check if the `MD5` hashes for the `server.crt` and `server.key` files are the same:
+
+6.  Check if the `MD5` hashes for `server.crt` and `server.key` are identical:
 
   !!! example
 
       ```shell hl_lines="2 4"
-      root@ipfabric:/etc/nginx/ssl# openssl x509 -noout -modulus -in server.crt | openssl md5
+      root@ipfabric:~# openssl x509 -noout -modulus -in /etc/nginx/ssl/server.crt | openssl md5
       (stdin)= 9dcfd46578b9dffe06ca0146607f6153
-      root@ipfabric:/etc/nginx/ssl# openssl rsa -noout -modulus -in server.key | openssl md5
+      root@ipfabric:~# openssl rsa -noout -modulus -in /etc/nginx/ssl/server.key | openssl md5
       (stdin)= 9dcfd46578b9dffe06ca0146607f6153
       ```
   !!! danger
 
-      Do not proceed with the next steps if the `MD5` hashes don't match!
+      Do not proceed with the next step if the `MD5` hashes don't match!
 
-6.  Restart `nginx` with the following command:
+      If `MD5` hashes do not match, check if the certificate chain is in the correct order, or if the server private key corresponds to the server certificate. 
+
+7.  Restart `nginx` with the following command:
 
   ```shell
   systemctl restart nginx
   ```
 
-7.  Check if `nginx` runs correctly with:
+8.  Check if `nginx` is running:
 
   ```shell
   systemctl status nginx
   ```
+
+9. Verify that the new certificate works correctly by visiting the IP Fabric main GUI in the browser.
