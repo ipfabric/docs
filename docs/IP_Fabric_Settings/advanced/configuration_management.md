@@ -43,7 +43,7 @@ Multiple values from the lists can be selected with `CTRL` or `SHIFT` keys.
 A config collection can be triggered for a single device via an API call, the following is a `curl` call which can be executed directly in the IP Fabric machine's shell:
 
 ```shell
-curl -X POST "<https://localhost/api/v<VERSION>/discovery/trigger-config-backup"> \
+curl -X POST "https://localhost/api/v<VERSION>/discovery/trigger-config-backup" \
 -H "X-API-Token: <TOKEN>" \
 -H "Content-Type: application/json" \
 -d '{"ip":"<LOGIN_IP>"}' \
