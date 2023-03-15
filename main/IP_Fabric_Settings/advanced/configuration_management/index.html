@@ -4117,7 +4117,7 @@ or using syslog forwarder (<a href="https://support.symantec.com/en_US/article.T
 <p>Multiple values from the lists can be selected with <code>CTRL</code> or <code>SHIFT</code> keys.</p>
 <h3 id="single-device-config-collection">Single device config collection</h3>
 <p>A config collection can be triggered for a single device via an API call, the following is a <code>curl</code> call which can be executed directly in the IP Fabric machine’s shell:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"&lt;https://localhost/api/v&lt;VERSION&gt;/discovery/trigger-config-backup"</span>&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://localhost/api/v&lt;VERSION&gt;/discovery/trigger-config-backup"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"X-API-Token: &lt;TOKEN&gt;"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 -d<span class="w"> </span><span class="s1">'{"ip":"&lt;LOGIN_IP&gt;"}'</span><span class="w"> </span><span class="se">\</span>
