@@ -45,6 +45,13 @@ The following table represents the recommended hardware requirements for optimal
 |  10 000 |  20 | 128 GB |   550 GB |
 |  20 000 |  24 | 256 GB | 1 000 GB |
 
+!!! warning
+
+    If you are planning to use FTP/SFTP IP Fabric backup option, recommended disk space has to be doubled.
+
+    For 500 devices 180 GB, for 1 000 devices 200 GB and so on.
+    
+
 !!! info "Additional resources requirements"
 
     To make sure you have enough resources, please use the following formulas:

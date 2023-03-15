@@ -3,6 +3,11 @@ description: You can schedule an IP Fabric backup to protect your important data
 ---
 
 # Schedule System Backup
+!!! warning
+
+    If you're about to perform a backup, there needs to be > 50 % of the drive space free on the `root` filesystem.
+    
+    You can check in the IP Fabric's VM shell with command `df -h`.
 
 ## Backup
 
