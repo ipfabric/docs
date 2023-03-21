@@ -4113,7 +4113,7 @@ differently in you production deployment, than described here.
 <li>sets the color to a value of 0 (which maps to green) if the tunnels are in the <code>UP</code> state, signified by the content of the “state” column having the value <code>UP</code>, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.</li>
 </ul>
 <p>We can compare that with the Web UI dialogue for the same check:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../intent_verification_rule.png"><img alt="intent verification rule" src="../intent_verification_rule.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../intent_verification_rule.png"><img alt="intent verification rule" src="../intent_verification_rule.png"/></a></p>
 <p>So once we have found the report we are looking for, we retrieve the technology table from the <code>apiEndpoint</code> field in the report dictionary, filtered for the colour that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an <code>UP</code> state, we make a POST request to <code>/api/{api_version}/tables/security/dmvpn</code> with the following request payload:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>

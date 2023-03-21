@@ -4366,9 +4366,9 @@ differently in you production deployment, than described here.
 </ul>
 <p>A network snapshot is a fully functional software copy of your network, including all configuration and state data. It enables to retrieve historical information, to follow network state changes, analyze connectivity issues and more.</p>
 <p>Information about the network displayed in IP Fabric corresponds to the network snapshot selected in the Snapshot selector drop-down menu in the top left corner of the Main User Interface.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/current_snapshot.png"><img alt="Current snapshot" src="../snapshots/current_snapshot.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/current_snapshot.png"><img alt="Current snapshot" src="../snapshots/current_snapshot.png"/></a></p>
 <h2 id="new-snapshot">New Snapshot</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/new_snapshot.png"><img alt="New snapshot" src="../snapshots/new_snapshot.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/new_snapshot.png"><img alt="New snapshot" src="../snapshots/new_snapshot.png"/></a></p>
 <p>To access the Snapshot Operations click the <code>Discovery Snapshot</code> menu entry (boxed in yellow). This will display all Loaded and Unloaded snapshots and allow the user to create new snapshots or perform operations against existing
 snapshots.</p>
 <p>A new snapshot can be taken at any time by clicking the <code>New Snapshot</code>button (boxed in red). After pressing the green <code>Start discovery</code> button, the system will then automatically start a new snapshot of the network with globally set
@@ -4376,20 +4376,20 @@ parameters in the <code>Settings</code> menu entry. If you need to make some cha
 globally or in the <a href="#snapshot-specific-settings">snapshot specific settings</a> (boxed in blue).</p>
 <p>Snapshots can be run manually or on a schedule; for creating automatic snapshots follow the instructions located at <a href="../../IP_Fabric_Settings/advanced/snapshots/">Automatic Snapshots</a>.</p>
 <h2 id="snapshot-specific-settings">Snapshot Specific Settings</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_settings.png"><img alt="Snapshot settings" src="../snapshots/snapshot_settings.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_settings.png"><img alt="Snapshot settings" src="../snapshots/snapshot_settings.png"/></a></p>
 <p>Adjusting the <code>Settings</code> for either a new snapshot or previously created snapshot will override the global settings.
 This is useful for example testing different SSH settings, Site Separation or Authentication methods.</p>
 <h2 id="inspection-of-network-issues">Inspection of Network Issues</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/connectivity_report.png"><img alt="Connectivity report and summary of issues" src="../snapshots/connectivity_report.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/connectivity_report.png"><img alt="Connectivity report and summary of issues" src="../snapshots/connectivity_report.png"/></a></p>
 <p>Initial snapshot of the network may not include all information about your network. This could be due to a variety of
 reasons including authorization or firewall issues; please take a look at
 <a href="../../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery/">Troubleshooting Discovery</a>.</p>
 <p>Each successful or unsuccessful connection attempt is logged (see the following picture). Log for each device can be found in the Snapshot <code>Connectivity Report</code> (boxed in red). These logs are especially helpful when an error occurs. By
 examining them you can find the reason why the device wasn’t correctly or fully discovered or what led to a connection failure.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/discovery_connectivity_report.png"><img alt="Discovery connectivity report" src="../snapshots/discovery_connectivity_report.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/discovery_connectivity_report.png"><img alt="Discovery connectivity report" src="../snapshots/discovery_connectivity_report.png"/></a></p>
 <h2 id="modifying-snapshot-devices">Modifying Snapshot Devices</h2>
 <h3 id="adding-devices">Adding Devices</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_add_device.png"><img alt="Snapshot add device" src="../snapshots/snapshot_add_device.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_add_device.png"><img alt="Snapshot add device" src="../snapshots/snapshot_add_device.png"/></a></p>
 <p>A new device can be added to an already existing snapshot by selecting the <code>Add Devices</code> button (boxed in red). You are then able to add a list of IP addresses or subnets to be tried in discovery and added to the current selected snapshot.
 This might be desirable if you performed almost a full snapshot of the network but only a few devices were not included or had connectivity issues that were resolved (for example wrong AAA configuration, firewall rules, forgot to include a
 network seed, etc).</p>
@@ -4401,25 +4401,25 @@ to only rediscover devices this is also possible by not entering in any new devi
 <p>Finally, it is also possible to add new vendors (boxed in green) or enable previously disabled vendors (boxed in yellow) in the current selected snapshot. Please note that toggling a Vendor from <code>on</code> to <code>off</code> will not remove those devices
 from the snapshot. However, toggling all the Vendors to <code>off</code> will prevent IP Fabric from rediscovering those devices thus speeding up the addition of new devices similarly to disabling <code>Rediscover timed out devices</code>.</p>
 <h3 id="refresh-devices">Refresh Devices</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_refresh_device.png"><img alt="Snapshot refresh device" src="../snapshots/snapshot_refresh_device.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_refresh_device.png"><img alt="Snapshot refresh device" src="../snapshots/snapshot_refresh_device.png"/></a></p>
 <p>Using the <code>Refresh Devices</code> action will have the snapshot rediscover the selected devices and update the data models. You are able to manually select certain devices or in the example filter on a site and refresh all devices in a site.
 Please note changes in those devices might have affected other devices for instance if a routing change propagated throughout the network. A good example of using refresh device is for a Firewall change and ensuring the new rules are
 allowing or denying traffic in Path Lookup Simulations.</p>
 <h3 id="delete-devices">Delete Devices</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_delete_device.png"><img alt="Snapshot delete device" src="../snapshots/snapshot_delete_device.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_delete_device.png"><img alt="Snapshot delete device" src="../snapshots/snapshot_delete_device.png"/></a></p>
 <p>Similarly to <code>Refresh Devices</code> the <code>Delete Devices</code> allows you to manually select certain devices for deletion in the snapshot. When devices are removed and were previously being displayed in Network Diagrams or Path Lookups, IP Fabric
 will then show a <code>transit</code> cloud indicating it does not have information about the next destination or connected device.</p>
 <h2 id="snapshot-actions">Snapshot Actions</h2>
 <p>Because of database maintenance, only up to 5 snapshots can be loaded into the memory. The default installation is to allow only 3 loaded snapshots but this can be changed by visiting <a href="../../IP_Fabric_Settings/advanced/snapshots/">Snapshot Settings</a></p>
 <h3 id="lock-snapshot">Lock Snapshot</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_lock.png"><img alt="Snapshot lock" src="../snapshots/snapshot_lock.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_lock.png"><img alt="Snapshot lock" src="../snapshots/snapshot_lock.png"/></a></p>
 <p>By locking a snapshot, IP Fabric won’t unload the selected snapshot automatically to the hard disk and it will keep it in the memory. The default installation is to allow only 1 locked snapshots but this can be changed by visiting <a href="../../IP_Fabric_Settings/advanced/snapshots/">Snapshot Settings</a></p>
 <h3 id="loaded-snapshots">Loaded Snapshots</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_unload.png"><img alt="Snapshot unload" src="../snapshots/snapshot_unload.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_unload.png"><img alt="Snapshot unload" src="../snapshots/snapshot_unload.png"/></a></p>
 <p>If the maximum number of loaded snapshot is 5 and 6<sup>th</sup> snapshot is created, the IP Fabric will automatically unload the oldest snapshot from the memory and save it to the hard drive. This can be done also manually on a selected snapshot by
 the <code>Unload snapshot</code> button.</p>
 <h3 id="unloaded-snapshots">Unloaded Snapshots</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_load.png"><img alt="Snapshot load" src="../snapshots/snapshot_load.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_load.png"><img alt="Snapshot load" src="../snapshots/snapshot_load.png"/></a></p>
 <p>When a snapshot is unloaded, it’s safely stored on your hard drive, but the data from a snapshot cannot be accessed directly through the IP Fabric user interface. To browse an unloaded snapshot, it needs to be loaded again to the memory
 by <code>Load snapshot</code>.</p>
 <div class="admonition important">
@@ -4430,16 +4430,16 @@ after the hard drive reaches a certain threshold.  For more information please v
 <a href="../../IP_Fabric_Settings/advanced/system/system_backup/">Schedule System Backup</a>.</p>
 </div>
 <h3 id="download-snapshots">Download Snapshots</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_download.png"><img alt="Snapshot download" src="../snapshots/snapshot_download.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_download.png"><img alt="Snapshot download" src="../snapshots/snapshot_download.png"/></a></p>
 <p>If needed, a selected snapshot can be downloaded directly from IP Fabric to your hard drive by the <code>Download snapshot</code> button.</p>
 <h3 id="clone-snapshot">Clone Snapshot</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_clone.png"><img alt="Snapshot clone" src="../snapshots/snapshot_clone.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_clone.png"><img alt="Snapshot clone" src="../snapshots/snapshot_clone.png"/></a></p>
 <p>Loaded as well as unloaded snapshots can be cloned by the <code>Clone snapshot</code> button. This is handy in case you want to make some changes to the snapshot (adding a device etc.) but you want to keep the original file as a backup.</p>
 <h3 id="delete-snapshot">Delete Snapshot</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_delete.png"><img alt="Snapshot delete" src="../snapshots/snapshot_delete.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_delete.png"><img alt="Snapshot delete" src="../snapshots/snapshot_delete.png"/></a></p>
 <p>Snapshots can be deleted by the <code>Delete snapshot</code> button.</p>
 <h2 id="load-snapshot-from-file">Load Snapshot from File</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../snapshots/snapshot_load_from_file.png"><img alt="Snapshot load from file" src="../snapshots/snapshot_load_from_file.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../snapshots/snapshot_load_from_file.png"><img alt="Snapshot load from file" src="../snapshots/snapshot_load_from_file.png"/></a></p>
 <p>A snapshot can be loaded back to the IP Fabric platform by a <code>Load From File</code> button.</p>
 <h2 id="related-articles">Related Articles</h2>
 <p>If you want to learn more about how network discovery works from a technical point of view, <a href="../../Getting_Started/Overview/How_Discovery_Works/CLI_discovery/">read this article</a>.</p>

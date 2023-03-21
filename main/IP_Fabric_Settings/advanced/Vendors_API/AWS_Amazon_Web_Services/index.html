@@ -4088,17 +4088,17 @@ differently in you production deployment, than described here.
 <h2 id="configuring-access-to-aws-api">Configuring access to AWS API</h2>
 <p>To add AWS to the discovery you will need an access key &amp; secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596295.png"><img alt="AWS Management Console" src="../aws/2691596295.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../aws/2691596295.png"><img alt="AWS Management Console" src="../aws/2691596295.png"/></a></p>
 <p>Click on <strong>My Security Credentials</strong> and open <strong>Access keys</strong> tab.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596301.png"><img alt="AWS - Your Security Credentials" src="../aws/2691596301.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../aws/2691596301.png"><img alt="AWS - Your Security Credentials" src="../aws/2691596301.png"/></a></p>
 <p>To generate keys click on <strong>Create New Access Key</strong> and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/2691596307.png"><img alt="AWS - Create Access Key" src="../aws/2691596307.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../aws/2691596307.png"><img alt="AWS - Create Access Key" src="../aws/2691596307.png"/></a></p>
 <p>Copy those keys to the AWS API settings in your IP Fabric and don’t
 forget to <strong>fill the regions where the devices which you want to discover
 are</strong>. Multiple regions can be set for one API key and secret.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/vendor-api.png"><img alt="Add Connection" src="../aws/vendor-api.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../aws/vendor-api.png"><img alt="Add Connection" src="../aws/vendor-api.png"/></a></p>
 <h2 id="required-iam-policy">Required IAM policy</h2>
 <p>To ensure that IP Fabric can retrieve all the required data to model the
 AWS networks, a series of specific policies are required to be applied
@@ -4106,7 +4106,7 @@ to the user account or role used for the API key. <a href="../aws/IAM-policy-IPF
 contains a JSON description of the required IAM policies.</p>
 <h2 id="aws-assumerole">AWS AssumeRole</h2>
 <p>IP Fabric enables you to add AssumeRole targets to AWS API configuration. AssumeRole is typically used for delegating access to additional resources / account in AWS. IP Fabric will iterate through all listed ARNs, call <code>AssumeRole</code> against those, and do discovery on resources which became accessible.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../aws/aws-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-assumerole.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../aws/aws-assumerole.png"><img alt="Add Connection With AssumeRole" src="../aws/aws-assumerole.png"/></a></p>
 <div class="admonition info">
 <p class="admonition-title">How <code>AssumeRole</code> works?</p>
 <p>It returns a set of temporary access credentials that can be used to access AWS resources that original account might not normally have access to. For more information about AssumeRole see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole - AWS Security Token Service</a>.</p>

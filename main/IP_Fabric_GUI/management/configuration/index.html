@@ -4127,7 +4127,7 @@ differently in you production deployment, than described here.
 <h2 id="credential-requirements">Credential Requirements</h2>
 <p>Network access credentials allowing the <code>show run</code> command (or equivalent)
 are necessary for configuration storage and configuration management to work properly. Please review <a href="../../../IP_Fabric_Settings/authentication/">Authentication Settings</a>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_auth.png"><img alt="Config Credentials" src="../config/config_auth.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_auth.png"><img alt="Config Credentials" src="../config/config_auth.png"/></a></p>
 <p>These elevated credentials need <strong>Use for configuration management</strong> box checked.</p>
 <h2 id="trigger">Trigger</h2>
 <p>Trigger archiving can be <a href="../../../IP_Fabric_Settings/advanced/configuration_management/">configured in settings</a> and can be based on a <em>syslog message</em> or a <em>timed event</em>.</p>
@@ -4151,7 +4151,7 @@ are necessary for configuration storage and configuration management to work pro
 <li>the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status <code>changed</code> and <code>Last Change At</code> and <code>Last Check At</code> being set to current time, as described above.</li>
 </ol>
 <p>Let’s consider following example:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_l66jfw9.png"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_l66jfw9.png"><img alt="Output for L66JFW9" src="../config/config_l66jfw9.png"/></a></p>
 <p>Let’s go from the bottom of the output:</p>
 <ul>
 <li><code>Last change At</code> is <code>2022-06-11 01:02:11+02</code> and <code>Last Check At</code> is <code>2022-06-14 01:01:17+02</code> with status <code>no change</code><ul>
@@ -4166,21 +4166,21 @@ are necessary for configuration storage and configuration management to work pro
 </li>
 </ul>
 <h2 id="comparing-configurations">Comparing Configurations</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_table.png"><img alt="Config Table" src="../config/config_table.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_table.png"><img alt="Config Table" src="../config/config_table.png"/></a></p>
 <p>Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (<code>Last Change At</code> column), and the last time a particular configuration was saved in the <code>Last Check At</code> column.</p>
 <p>The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the <code>Before</code> and <code>After</code> states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_side.png"><img alt="Side by Side Diff" src="../config/config_side.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_side.png"><img alt="Side by Side Diff" src="../config/config_side.png"/></a>
 </p>
 <figcaption>Side by Side Diff</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_inline.png"><img alt="Inline" src="../config/config_inline.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_inline.png"><img alt="Inline" src="../config/config_inline.png"/></a>
 </p>
 <figcaption>Inline</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../config/config_inline_diff.png"><img alt="Inline Diff" src="../config/config_inline_diff.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../config/config_inline_diff.png"><img alt="Inline Diff" src="../config/config_inline_diff.png"/></a>
 </p>
 <figcaption>Inline Diff</figcaption>
 </figure>
