@@ -1093,7 +1093,7 @@ Features
   device, including DNS reverse lookup))*
 - **Technology - Management - Saved config consistency** *(check if a
   device have unsaved configuration)*
-- **Technology - Security - IPSec**
+- **Technology - Security - IPsec**
 - **Technology - Security - DMVPN**
 - **Technology - Platforms - Environment** (Power Supplies & Fans)
 - **Technology - Interfaces - Switchport**
