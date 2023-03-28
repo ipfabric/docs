@@ -90,15 +90,15 @@ description: In this section, IP Fabric publishes previous version releases of N
   record can be broke to more lines
 - Cisco IOS, IOS-XE w/o routing table - default gw entry adds
   interface now
-- Cisco IOS - fixed parsing "show environment all" command
+- Cisco IOS - fixed parsing `show environment all` command
 - Cisco IOS - ACL - role based trustsec entries are ignored until
   trustsec support will be added.
 - Cisco IOS-XR duplicate hsrp virtual addresses fixed
 - Cisco NX - improved parsing "show environment fex all" when it
   returns "FEX is not present"
 - Cisco ASA - routing table fixed parsing
-- Cisco XR - improved parsing for "show mpls ldp vrf \<instance>
-  neighbor detail" command
+- Cisco XR - improved parsing for `show mpls ldp vrf \<instance>
+  neighbor detail` command
 - Cisco IOS-XE OSPF interfaces fixed parsing for the unnumbered tunnel
   interface
 - Cisco MPLS LDP - updated parsing for LDP neighbor with no source
@@ -115,8 +115,8 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Arista vEOS - interfaces MTU parsing fix
 - Arista vEOS - parsing fix when NTP is disabled
 - Extreme XOS - memory information fixed parsing
-- Checkpoint Gaja - fixed parsing of different output for command fw
-  ctl pstat"
+- Checkpoint Gaja - fixed parsing of different output for command `fw
+  ctl pstat`
 - Fortinet FortiGate - fixed ambiguous command to get info about the
   routing table
 - Fortinet FortiGate - fixed parsing for different output about memory
@@ -146,9 +146,9 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Cisco ASA serial number detection updated to better support
   virtualized devices
 - Cisco NX - improved parsing for FEX information
-- Cisco IOS/IOS-XE - improved parsing for "show monitor detail"
+- Cisco IOS/IOS-XE - improved parsing for `show monitor detail`
   command
-- Cisco NX - improved parsing for "show monitor session all" command
+- Cisco NX - improved parsing for `show monitor session all` command
 
 #### Bug Fixes
 
@@ -222,7 +222,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Cisco NX - LLDP - capabilities 'not advertised' were not parsed
   correctly, some server entries without destination port were added
   incorrectly.
-- Cisco NX - fixed parsing of "show fex detail" command
+- Cisco NX - fixed parsing of `show fex detail` command
 - Cisco NX 5000 - power supply failure from environment fix
 - Cisco NX ACL options - generic support for 'divert' option added
 - Cisco EIGRP - Ambiguous command fixed on ASR9000
@@ -239,7 +239,7 @@ description: In this section, IP Fabric publishes previous version releases of N
   parsing
 - HP Comware - Ethernet 100Mbps interface parsing fix
 - HP Comware - Routing table inactive next-hop removed
-- F5 BigIP - VLAN interfaces state is now used from 'list net self'
+- F5 BigIP - VLAN interfaces state is now used from `list net self`
   command only
 - xDP - if capability contains IGMP, then the neighbor is recognized
   as a network device
@@ -431,48 +431,48 @@ description: In this section, IP Fabric publishes previous version releases of N
   \< 16 as check for reach-ability
 - Cisco Nexus 7000 admin vdc NTP copy to other vdc (system clock is
   controlled only from one vdc)
-- Cisco IOS - fixed reported parsing bugs for command "show ip
-  access-list"
-- Cisco IOS - fixed reported parsing bugs for command "show bgp all
-  neighbor"
-- Cisco IOS - fixed reported parsing bugs for command "show bgp all
-  summary"
+- Cisco IOS - fixed reported parsing bugs for command `show ip
+  access-list`
+- Cisco IOS - fixed reported parsing bugs for command `show bgp all
+  neighbor`
+- Cisco IOS - fixed reported parsing bugs for command `show bgp all
+  summary`
 - Cisco IOS - parsing fix dynamic cluster-HSRP/NAT acl rules
-- Cisco IOS - fixed reported parsing bugs for command "show ip ospf
-  neighbor detail"
+- Cisco IOS - fixed reported parsing bugs for command `show ip ospf
+  neighbor detail`
 - Cisco IOS - auth session parsing fix when no output is available
 - Cisco WLC - fixed processing of pagination
-- Cisco WLC - fixed reported parsing bugs for command "show ap config
-  802.11a summary"
-- Cisco WLC - fixed reported parsing bugs for command "show ap config
-  802.11b summary"
-- Cisco WLC - fixed reported parsing bugs for command "show ap wlan
-  802.11a \<apName>"
-- Cisco WLC - fixed reported parsing bugs for command "show ap wlan
-  802.11b \<apName>"
-- Cisco WLC - fixed reported parsing bugs for command "show ap
-  inventory \<apName>"
-- Cisco WLC - fixed reported parsing bugs for command "show network
-  summary"
-- Cisco NX-OS - fixed reported parsing bugs for command "show
-  interface status err-disabled"
-- Cisco NX-OS - fixed reported parsing bugs for command "show ip ospf
-  interface vrf all"
-- Cisco NX-OS - fixed reported parsing bugs for command "show
-  access-list summary" (IPv6 entries).
-- Cisco NX-OS - fixed reported parsing bugs for command "show ip ospf
-  interface vrf all"
-- Cisco IOS-XE (Catalyst) - fixed parsing of "show version" when stack
+- Cisco WLC - fixed reported parsing bugs for command `show ap config
+  802.11a summary`
+- Cisco WLC - fixed reported parsing bugs for command `show ap config
+  802.11b summary`
+- Cisco WLC - fixed reported parsing bugs for command `show ap wlan
+  802.11a \<apName>`
+- Cisco WLC - fixed reported parsing bugs for command `show ap wlan
+  802.11b \<apName>`
+- Cisco WLC - fixed reported parsing bugs for command `show ap
+  inventory \<apName>`
+- Cisco WLC - fixed reported parsing bugs for command `show network
+  summary`
+- Cisco NX-OS - fixed reported parsing bugs for command `show
+  interface status err-disabled`
+- Cisco NX-OS - fixed reported parsing bugs for command `show ip ospf
+  interface vrf all`
+- Cisco NX-OS - fixed reported parsing bugs for command `show
+  access-list summary` (IPv6 entries).
+- Cisco NX-OS - fixed reported parsing bugs for command `show ip ospf
+  interface vrf all`
+- Cisco IOS-XE (Catalyst) - fixed parsing of `show version` when stack
   switch has "Unknown" uptime
-- Cisco fixed parsing of command 'show ospf neighbor detail'. OSPF
+- Cisco fixed parsing of command `show ospf neighbor detail`. OSPF
   areas can be represented by either number or CIDR
 - Cisco ASA parsing fix for routing table - age and interface for
   dynamic routing protocols
 - Cisco IOS - LLDP/CDP neighbor interface for phone fix
-- HP Aruba - fixed reported parsing bugs for command "show ap
-  bss-table"
-- HP Comware - fixed reported parsing bugs for command "display ospf
-  peer verbose"
+- HP Aruba - fixed reported parsing bugs for command `show ap
+  bss-table`
+- HP Comware - fixed reported parsing bugs for command `display ospf
+  peer verbose`
 
 ### 2.2.7 (31st July 2018)
 
@@ -545,14 +545,14 @@ description: In this section, IP Fabric publishes previous version releases of N
   version higher than 15.2
 - Cisco IOS - fixed mapping of state for HSRP output
 - Cisco ASA - fixed parsing of a routing table
-- Cisco ASA - fixed parsing of "show version" command, missing SN for
+- Cisco ASA - fixed parsing of `show version` command, missing SN for
   the particular switch in stacking information
 - Cisco ASA - ACL is now read from configuration (using regular
   commands was too expensive)
 - Cisco NX-OS - the fixed end to end path lookup for routes with
   default VRF
 - Cisco NX-OS - fixed system version parsing
-- Cisco NX-OS - fixed parsing of 'show access-list summary' command
+- Cisco NX-OS - fixed parsing of `show access-list summary` command
 - Extreme switch SN - if not present chassis or switch in inventory,
   then SN is taken from the first available slot
 - FIX: If the server was restarted during the discovery process then
@@ -716,23 +716,18 @@ description: In this section, IP Fabric publishes previous version releases of N
 
 - Removed duplicate tables that served as dedicated checks, since now
   each table can have any number of checks using table colors
-  (reports)./dashboard/risk/device-stability (now a color in
-  /inventory/devices)/dashboard/risk/eox (duplicate of
-  /inventory/end-of-life-milestones)/dashboard/risk/err-disabled
-  (duplicate of
-  /technology/interfaces/errdisabled)/dashboard/risk/outbound-balancing
-  (duplicate of
-  /technology/port-channels/outbound-balancing-table)/dashboard/risk/routing-stability
-  (duplicate of
-  /technology/routing/route-stability)/dashboard/risk/stp-stability
-  (now a color in
-  /technology/spanning-tree/stp-instances)/technology/addressing/host-ip
-  (duplicate of
-  /inventory/hosts)/technology/management/config-register (now a color
-  in /inventory/devices)/technology/management/os-version-consistency
-  (duplicate of
-  /inventory/os-versions)/technology/management/unexpected-reloads
-  (now a color in /inventory/devices)
+  (reports)
+  
+  - /dashboard/risk/device-stability (now a color in /inventory/devices)
+  - /dashboard/risk/eox (duplicate of /inventory/end-of-life-milestones)
+  - /dashboard/risk/err-disabled (duplicate of /technology/interfaces/errdisabled)
+  - /dashboard/risk/outbound-balancing (duplicate of /technology/port-channels/outbound-balancing-table)
+  - /dashboard/risk/routing-stability (duplicate of /technology/routing/route-stability)
+  - /dashboard/risk/stp-stability (now a color in /technology/spanning-tree/stp-instances)
+  - /technology/addressing/host-ip (duplicate of /inventory/hosts)
+  - /technology/management/config-register (now a color in /inventory/devices)
+  - /technology/management/os-version-consistency (duplicate of /inventory/os-versions)
+  - /technology/management/unexpected-reloads (now a color in /inventory/devices)
 
 - Fixed Cisco ASA parsing of empty localL4connections
 
@@ -770,16 +765,8 @@ description: In this section, IP Fabric publishes previous version releases of N
 
 ### 2.2.4 (14th May 2018)
 
-<div>
-
-<div>
-
 Migration to this version can take a long time, depending on the amount
 of history collected.
-
-</div>
-
-</div>
 
 **Features - Analytics**
 
@@ -829,11 +816,9 @@ of history collected.
 - Fixed inventory parsing of certain Catalyst 4500 Sup8 IOS-XE
   variants
 
-<div class="section">
-
 ### 2.2.3 (10th April 2018)
 
-Features
+**Features**
 
 - Tacacs Authentication failure retries settings -
   SettingsAdvancedSSH-Telnet
@@ -1111,10 +1096,10 @@ Features
 
 - SSH & Telnet clients - fixed false prompts detection *(Cisco ASA
   timeouted on \<—More—>)*
-- Cisco WLC - **show client summary** command timeout fix *(reply "y"
+- Cisco WLC - `show client summary` command timeout fix *(reply "y"
   on display more entries? y/n)*
-- Cisco WLC - **show port detailed info** fixed parsing
-- Cisco **show spanning-tree detail** STP instances with no interfaces
+- Cisco WLC - `show port detailed info` fixed parsing
+- Cisco `show spanning-tree detail` STP instances with no interfaces
   removed
 - IP Phones - fixed LLDP & CDP different destination interfaces
 - L2 edge port & user mac address detection improvement
