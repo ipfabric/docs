@@ -266,7 +266,7 @@ Means that the `541d97e0d` was deployed to version `5.0` on the website.
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!
 
-### Updating low-level release notes from JIRA
+### Updating low-level release notes (LLRN) from JIRA
 
 There is a script `jira_release_notes.py` which will refresh all low-level
 release notes from JIRA. There are certain shortcuts, like hard-coded
