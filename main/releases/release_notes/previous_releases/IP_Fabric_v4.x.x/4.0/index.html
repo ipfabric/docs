@@ -4264,7 +4264,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 </ul>
 <h4 id="other-improvements">Other improvements</h4>
 <ul>
-<li>Cisco ASA/FTD - added support for ‘show DNS’ command and use it for
+<li>Cisco ASA/FTD - added support for <code>show DNS</code> command and use it for
   translation of FQDNs in objects/ACLs</li>
 <li>Cisco WLC IOS-XE - Added parsing of wireless client IP address.</li>
 <li>CheckPoint Gaia - added support for Link Aggregation (Bond
@@ -4321,7 +4321,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 <li>Arista EOS - fixed parsing of different output for command <code>show mlag detail</code></li>
 <li>Arista EOS - fixed parsing of different output for command <code>show ntp ass</code></li>
 <li>Arista EOS - Syslog - information is parsed from <code>show running-config</code> instead of <code>show logging</code></li>
-<li>Aruba CX - commands/arubacx/interface - fixed parsing for ip address
+<li>Aruba CX - <code>commands/arubacx/interface</code> - fixed parsing for ip address
   / mask</li>
 <li>Aruba switch - standardize port speed units with other vendors</li>
 <li>Checkpoint Gaia -
@@ -4349,19 +4349,19 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
   case power supply’s column model is empty</li>
 <li>Cisco HSRP - fixed preemption</li>
 <li>Cisco IOS - add stacking support for catalyst 2960-s platform</li>
-<li>Cisco IOS - commands/cisco/mcast/macMulticast - add parsing support
+<li>Cisco IOS - <code>commands/cisco/mcast/macMulticast</code> - add parsing support
   for MAC table records with multiple interfaces per row</li>
-<li>Cisco IOS - commands/cisco/mcast/pimNeighbor - fixed missing PIM
+<li>Cisco IOS - <code>commands/cisco/mcast/pimNeighbor</code> - fixed missing PIM
   version &amp; different output structure on old IOS version</li>
-<li>Cisco IOS - commands/cisco/vrrp - fixed parsing of preempt parameter</li>
+<li>Cisco IOS - <code>commands/cisco/vrrp</code> - fixed parsing of preempt parameter</li>
 <li>Cisco IOS - Fixed parsing for AAA section from running config.</li>
 <li>Cisco IOS - fixed parsing of <code>show power inline</code> command for cases
   of empty device name</li>
-<li>Cisco IOS - fixed parsing of “show version” command in case of
+<li>Cisco IOS - fixed parsing of <code>show version</code> command in case of
   faulty master switch</li>
 <li>Cisco IOS - Fixed parsing of command <code>sh ip mroute vrf \&lt;vrfName&gt;</code>
   that would get translated by the DNS server</li>
-<li>Cisco IOS - fixed parsing of command “show ip igmp snooping groups”
+<li>Cisco IOS - fixed parsing of command <code>show ip igmp snooping groups</code>
   in case port list does not contain any interface for a group</li>
 <li>Cisco IOS - fixed parsing of the different output for command <code>show ip flow export command</code></li>
 <li>Cisco IOS - fixed parsing of the different output format of command
@@ -4371,7 +4371,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
   when device return it</li>
 <li>Cisco IOS + IOS-XE - fixed false-positive error detection in command
   <code>show dot1x all details</code> in case of Tacacs session expiration.</li>
-<li>Cisco IOS cat9300 - commands/cisco/vxlan/nveVni - fixed parsing for
+<li>Cisco IOS cat9300 - <code>commands/cisco/vxlan/nveVni</code> - fixed parsing for
   new command output format</li>
 <li>Cisco IOS-XE - added parsing of another format of <code>show env all</code> and
   <code>show env status</code></li>
@@ -4392,9 +4392,9 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 <li>Cisco Meraki - <code>commands/cisco/_meraki/v0/devices/switch/ports</code> -
   Unexpected stp guard value: root guard.</li>
 <li>Cisco Meraki - fixed parsing of Meraki device clients.</li>
-<li>Cisco Nexus - commands/cisco/mac - Added support for FabricPath MAC
+<li>Cisco Nexus - <code>commands/cisco/mac</code> - Added support for FabricPath MAC
   entries</li>
-<li>Cisco Nexus - commands/cisco/switchport - fix parsing for VLAN ID
+<li>Cisco Nexus - <code>commands/cisco/switchport</code> - fix parsing for VLAN ID
   ranges that are split over multiple lines</li>
 <li>Cisco Nexus - fixed parsing of <code>show policy-map system type network-qos</code> command to support another output format</li>
 <li>Cisco Nexus - <code>show environment fex all</code> cmd - added support of
@@ -4418,12 +4418,12 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 <li>Extreme XOS - <code>show ports transceiver information detail</code> fixed
   parsing of <code>-infinity</code> value</li>
 <li>Extreme XOS - fixed parsing of port names for <code>show stpd &lt;stpdDomain&gt; ports counters</code> command</li>
-<li>Extreme Enterasys - tasks/portChannel - port state fix</li>
-<li>Extreme XOS - Fixed parsing of command ‘show ip-security
-  dhcp-snooping vlan’ to allow more or none ports in Trusted ports
+<li>Extreme Enterasys - <code>tasks/portChannel</code> - port state fix</li>
+<li>Extreme XOS - Fixed parsing of command <code>show ip-security
+  dhcp-snooping vlan</code> to allow more or none ports in Trusted ports
   section</li>
 <li>Extreme XOS - fixed parsing of command <code>show ports transceiver information detail</code> to allow transceivers without any statistics</li>
-<li>F5 - commands/f5/_big-ip/listNetSelf - add support of ipv6
+<li>F5 - <code>commands/f5/\_big-ip/listNetSelf</code> - add support of ipv6
   addresses</li>
 <li>F5 BigIP - fixed parsing of Cluster members if they don’t have
   Failover Unicast configured.</li>
@@ -4476,9 +4476,9 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
   any area</li>
 <li>HP Comware - fixed parsing of commands with large output (added cli
   clearing for Comware 3 format)</li>
-<li>HP Comware - tasks/l2Interfaces - fixed mapping of interfaces in
+<li>HP Comware - <code>tasks/l2Interfaces</code> - fixed mapping of interfaces in
   case trunk doesn’t contain any permitted vlans</li>
-<li>HP Comware 5130 - commands/hp/_comware/currentConfiguration - AAA
+<li>HP Comware 5130 - <code>commands/hp/\_comware/currentConfiguration</code> - AAA
   scheme fixed parsing for test-profile in aaa server configuration</li>
 <li>Juniper Junes - fixed parsing of different output for command <code>show configuration | display set</code></li>
 <li>Juniper JunOS - added parsing for another output format of command
@@ -4500,7 +4500,7 @@ OVA SHA256SUM: 045123c5ccfeeb0f89eb1af8fb6a1dd3de1d91a109f0024a281da2d788db6c40
 <li>Juniper JunOS - removed duplicates in the routing table</li>
 <li>Mikrotik RB1100 - Fixed parsing for command <code>ip ipsec installed-sa print detail</code></li>
 <li>Mikrotik RouterOS - fixed parsing of IP addresses of
-  actual-interface in command ‘ip address print detail’</li>
+  actual-interface in command <code>ip address print detail</code></li>
 <li>Palo Alto - fixed parsing of different output for command <code>show routing route</code></li>
 <li>Palo Alto, F5 clusters - Fix for establishing routing protocol edges</li>
 <li>Palo Alto - fixed parsing for the routing table.</li>
