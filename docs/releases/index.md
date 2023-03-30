@@ -25,3 +25,7 @@ components of the version are `major.minor.patch+build`:
   packages.
 
 --8<-- "snippets/clear_browser_cache.md"
+
+### Update process
+
+Our update process is based on Debian apt package resolving. As a result, we remove any configured apt repositories during the update. If you have manually configured any repositories, the update process will remove them. Please note that we are trying to keep the appliance as small and thin as possible, so any unwanted packages may be automatically removed.
