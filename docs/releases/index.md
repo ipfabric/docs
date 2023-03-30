@@ -4,6 +4,8 @@ description: In this section, IP Fabric publishes the most recent version releas
 
 # IP Fabric Releases
 
+--8<-- "snippets/upgrade_version_policy.md"
+
 !!! important "Current release"
 
     The current major release is `6.1` please check the [detailed release
