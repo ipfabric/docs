@@ -26,9 +26,12 @@ def get_project_versions(project):
 
 
 def get_project_issues_from_version(project, projectVersion, startAt=0):
+    additional_conditions = ''
+    if project == "NIM":
+        additional_conditions = ' AND (resolution = Done) '
     jql = ('project = ' + project + ' AND fixVersion = "'
-           + projectVersion['name'] +
-           '" AND (resolution IS NOT EMPTY OR statusCategory = Done) AND (labels NOT IN (skip_LLRN) OR labels IS EMPTY) ORDER BY key')
+           + projectVersion['name'] + '"' + additional_conditions +
+           ' AND (resolution IS NOT EMPTY OR statusCategory = Done) AND (labels NOT IN (skip_LLRN) OR labels IS EMPTY) ORDER BY key')
     params = {
                 'projectId': projectVersion['projectId'],
                 'startAt': startAt,
