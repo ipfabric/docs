@@ -4121,7 +4121,7 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="llrn-430">LLRN 4.3.0</h1>
-<p>These are low-level release notes for IP Fabric release <code>4.3.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don’t have access to the tickets. On the other hand, it can provide valuable information, if you are looking for a particular detail. This release of IP Fabric contains a total of 496 issues.</p>
+<p>These are low-level release notes for IP Fabric release <code>4.3.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don’t have access to the tickets. On the other hand, it can provide valuable information, if you are looking for a particular detail. This release of IP Fabric contains a total of 328 issues.</p>
 <h2 id="epics">Epics</h2>
 <p>Epics are high-level features, that may consist of many tasks.</p>
 <ul>
@@ -4132,112 +4132,55 @@ differently in you production deployment, than described here.
 <h2 id="stories">Stories</h2>
 <p>Stories are high-level features, that may consist of many tasks. These would typically cover extensive functionality in IP Fabric</p>
 <ul>
-<li><code>NIM-271</code> – Low – Improve diagrams by allowing custom edges and description boxes</li>
-<li><code>NIM-345</code> – Medium – Enable user to search for a specific ACL/Zone/Object rule</li>
-<li><code>NIM-677</code> – High – Enrich information shown in diagrams</li>
-<li><code>NIM-794</code> – Medium – Command timeout of a single command does not discover device</li>
 <li><code>NIM-6507</code> – Medium – Site Separation via Device Attributes</li>
-<li><code>NIM-6600</code> – High – AWS Authentication - AssumeRole</li>
 <li><code>NIM-6720</code> – Medium – Change date/time to ISO in CSV exports</li>
-<li><code>NIM-6741</code> – Medium – Change format of date/time fields to ISO8601</li>
 <li><code>NIM-7067</code> – Medium – UX/UI issues in SiteSeparation UI</li>
-<li><code>NIM-7143</code> – Low – Add NOTES/COMMENTS to vendors API settings.</li>
 </ul>
 <h2 id="bugs">Bugs</h2>
 <p>Anything that we considered an incorrect behavior. Something that was not working as expected or turned out that did not meet customers’ demand.</p>
 <ul>
-<li><code>NIM-587</code> – Medium – Graph - walk save</li>
-<li><code>NIM-770</code> – Lowest – Empty Filter if Site column not visible</li>
-<li><code>NIM-805</code> – Medium – DATE_NOW in AQL replace with UTC?</li>
-<li><code>NIM-837</code> – Medium – Snapshot RC1 issues</li>
-<li><code>NIM-879</code> – Medium – Pathlookup - no arp on connected network</li>
-<li><code>NIM-1368</code> – High – E2E path tests</li>
-<li><code>NIM-1481</code> – High – Diagrams: Working E2E path breaks after looking up the reverse path.</li>
-<li><code>NIM-1857</code> – Medium – Func/Diagrams - Hosts without edge device don’t expand</li>
-<li><code>NIM-1926</code> – Medium – Host to gateway path selection box disappears when switching snapshots</li>
-<li><code>NIM-1942</code> – Low – Links disappear in the diagram when devices are close</li>
-<li><code>NIM-2139</code> – High – Graph - vDevice.devType can’t be never HOST</li>
 <li><code>NIM-2240</code> – Medium – Read User - Rename site</li>
-<li><code>NIM-2316</code> – Lowest – KNOWN ISSUE?: Diagram does not respect saved position for all of the devices</li>
-<li><code>NIM-2339</code> – High – Grouped links do not provide sensible data</li>
-<li><code>NIM-2341</code> – High – Multiple issues with view builder</li>
-<li><code>NIM-2465</code> – Medium – Unable to write name of advanced filter in the diagram</li>
-<li><code>NIM-2497</code> – Highest – RIB link exists but not shown</li>
 <li><code>NIM-2549</code> – Medium – Junos Configuration - Resolve ‘deactivated’ parts in the config</li>
-<li><code>NIM-3572</code> – Medium – LDAP - Group permissions - merge result should include “Authenticated user”</li>
-<li><code>NIM-3603</code> – Lowest – Rename production error file in API to something more specific</li>
-<li><code>NIM-4098</code> – Lowest – We need to clarify incorrect settings response</li>
-<li><code>NIM-4954</code> – High – Pathlookup - external network</li>
-<li><code>NIM-4958</code> – Low – To investigate if we can get NTP from virtual F5s</li>
-<li><code>NIM-4964</code> – Medium – Include list should be allowed to be empty</li>
-<li><code>NIM-5005</code> – High – F5 Big-ip add partition support</li>
-<li><code>NIM-5025</code> – Lowest – Missing MAC addresses and switchports</li>
 <li><code>NIM-5046</code> – Medium – Discovery - virtual context switching</li>
-<li><code>NIM-5255</code> – Lowest – diagram 4.0 - shift + scroll down =&gt; should move to the right?</li>
 <li><code>NIM-5339</code> – Medium – Diagram 4.0 - Non redundant link not displayed correctly - issue with protocol displayed</li>
 <li><code>NIM-5345</code> – Medium – StormControl States are displaying the state twice</li>
 <li><code>NIM-5364</code> – Low – Transceivers Stats - DeltaValueLow exceptions</li>
-<li><code>NIM-5442</code> – Medium – Can’t determine routing domain according logs</li>
 <li><code>NIM-5463</code> – Low – UX: Intent check vs applied report</li>
 <li><code>NIM-5490</code> – Medium – Checkpoint rules not being parsed correctly</li>
 <li><code>NIM-5510</code> – High – Versa router appears to be a server (default icon wanted)</li>
-<li><code>NIM-5525</code> – Low – Missing ZoneFW rules on Checkpoint</li>
 <li><code>NIM-5576</code> – Low – Transceivers cmds on FortiGate likely don’t work on VDOM enabled firewalls</li>
 <li><code>NIM-5599</code> – Medium – Add warning into CSR page that new CSR invalidates old certificates</li>
 <li><code>NIM-5673</code> – Medium – Bugfix: commands/versa/_vos/vnms/dashboard/appliance/sdWanSites</li>
-<li><code>NIM-5681</code> – Low – Table columns with bind flag allow operators despite not using them</li>
 <li><code>NIM-5713</code> – Medium – API build fails to run worker threads</li>
-<li><code>NIM-5738</code> – Medium – Include newly displayed nodes in user-defined saved layout</li>
-<li><code>NIM-5781</code> – High – Versa - commands/versa/_vos/vnms/dashboard/appliance/rib - Error: Request failed with status code 500</li>
 <li><code>NIM-5915</code> – Medium – OSPF link missing on nx9000</li>
-<li><code>NIM-5924</code> – Medium – Bugfix: commands/cisco/showRun</li>
-<li><code>NIM-5956</code> – Medium – Bugfix: tasks/portChannel - Home Credit International (3.8.2)</li>
-<li><code>NIM-5964</code> – Medium – ArubaCX platform not parsed correctly</li>
-<li><code>NIM-5982</code> – Medium – Bugfix: commands/extreme/xos/vlanDetail</li>
+<li><code>NIM-5956</code> – Medium – Bugfix: tasks/portChannel (3.8.2)</li>
 <li><code>NIM-6025</code> – Medium – Refactor commands/juniper/_junos/configurationDisplaySet</li>
-<li><code>NIM-6041</code> – Medium – Bugfix: commands/checkpoint/_gaia/cluster/members/interfacesAll</li>
-<li><code>NIM-6123</code> – Medium – Pathlookup - L2 transit improvement</li>
 <li><code>NIM-6146</code> – High – FTP utility checks if FTPS is available</li>
-<li><code>NIM-6214</code> – Medium – discovery snapshot / refresh device - credential settings not displayed correctly due to number of network</li>
-<li><code>NIM-6229</code> – High – Routing to VARP IP</li>
 <li><code>NIM-6244</code> – Highest – Pathlookup - tunnel with IPsec applied</li>
 <li><code>NIM-6299</code> – Medium – APs are discoverd via WLC, but showing as unmanaged neighbours</li>
-<li><code>NIM-6306</code> – Medium – Confusing Security Rules when using Continue</li>
 <li><code>NIM-6322</code> – Medium – EoL dates for Meraki are incorrect in 4.0.2 release and EoL update</li>
-<li><code>NIM-6326</code> – Medium – Bugfix: commands/cisco/acl</li>
-<li><code>NIM-6331</code> – Medium – Bugfix: commands/arista/_eos/lldpNeighbors - Tesco (4.0.1)</li>
+<li><code>NIM-6331</code> – Medium – Bugfix: commands/arista/_eos/lldpNeighbors (4.0.1)</li>
 <li><code>NIM-6345</code> – High – Bugfix: commands/juniper/_junos/interfacesStatisticsDetail</li>
-<li><code>NIM-6355</code> – High – CRITICAL discovery issue with FG VDOMS</li>
 <li><code>NIM-6356</code> – High – Bugfix: commands/cisco/environment/status</li>
 <li><code>NIM-6374</code> – Medium – HP Aruba CX IGMP/PIM implementation</li>
 <li><code>NIM-6375</code> – Medium – Bugfix: commands/cisco/dhcp/ipDhcpSnoopingStatistics</li>
-<li><code>NIM-6377</code> – High – Fortigate - MAC missing on emac interface</li>
 <li><code>NIM-6383</code> – Medium – Incorrect Interfaces Parsing for devices inside a Fabric Path environment</li>
-<li><code>NIM-6388</code> – Medium – Duplicate VLAN table in device explorer</li>
-<li><code>NIM-6389</code> – Medium – Bugfix: commands/cisco/flowExport</li>
-<li><code>NIM-6399</code> – Medium – Bugfix: commands/f5/_big-ip/showSysClusterAllProperties</li>
 <li><code>NIM-6400</code> – Medium – Bugfix: commands/f5/_big-ip/showSysHardware</li>
 <li><code>NIM-6417</code> – Medium – Bugfix: tasks/l3Interfaces</li>
 <li><code>NIM-6422</code> – Medium – Path inspector - ACI endpoint mac search error</li>
 <li><code>NIM-6425</code> – High – Pathlookup - path inspector route search link with empty VRF</li>
 <li><code>NIM-6491</code> – High – Snapshot creation children not preselected</li>
-<li><code>NIM-6521</code> – Medium – Cannot move new Site Separation rule in rule table</li>
 <li><code>NIM-6532</code> – High – E2E showing multiple dead ends for VXLAN</li>
 <li><code>NIM-6535</code> – Medium – We are not evaluating rules on Palo correctly</li>
 <li><code>NIM-6540</code> – Medium – Device explorer - FEX modules table is empty</li>
-<li><code>NIM-6576</code> – Medium – Discovery stops with Error:Resource Conflict</li>
 <li><code>NIM-6610</code> – Low – Add snapshot devices returns 404 when ID of vendor API settings is changed</li>
-<li><code>NIM-6650</code> – Highest – Fortigate ZoneFW infinite output command [Discovery taking too long (8 - 24Hrs)]</li>
 <li><code>NIM-6657</code> – High – Snapshot Creation - Add Vendor (in Add action) doens’t work</li>
 <li><code>NIM-6662</code> – Highest – Multiple context ASA discovery issues</li>
-<li><code>NIM-6665</code> – High – DROP: Route for destination IP(s) not found. (192.168.40.36) on path trace</li>
 <li><code>NIM-6667</code> – Medium – Detail for CDP links exposes details of CDP to Transit link</li>
 <li><code>NIM-6674</code> – Medium – Missing IP and MTU for Tunnel interfaces on ASA</li>
 <li><code>NIM-6681</code> – Medium – Use tunnel interface description for IPsec tunnels, not of the source interface</li>
 <li><code>NIM-6718</code> – Medium – Snapshot Upload vs maximum of loaded snapshots</li>
-<li><code>NIM-6730</code> – Medium – ARP table on Checkpoint devices is not fully collected</li>
 <li><code>NIM-6733</code> – High – MPLS forwarding error - reverse E2E works fine</li>
-<li><code>NIM-6734</code> – High – Device explorer - add ACL int tables error</li>
 <li><code>NIM-6740</code> – Highest – Invalid Input Error - when trying to export csv file from “changes” table</li>
 <li><code>NIM-6766</code> – Medium – Settings / Advanced / Settings / System - false/positive leave dialog</li>
 <li><code>NIM-6770</code> – High – Invalid input when exporting the Management &gt; Changes results</li>
@@ -4246,35 +4189,27 @@ differently in you production deployment, than described here.
 <li><code>NIM-6776</code> – Lowest – No sense text in confirmation dialog</li>
 <li><code>NIM-6781</code> – Low – Snapshot Management - running discovery - non unique key</li>
 <li><code>NIM-6784</code> – Medium – git client call fails in syslogWorkerBuild due to unsafe argument passing and/or strange file name scheme</li>
-<li><code>NIM-6787</code> – Medium – “The form data is not saved” pop-ups everytime when leaving System menu</li>
 <li><code>NIM-6799</code> – Medium – MPLS forwarding table - next hop label 0 is not shown</li>
-<li><code>NIM-6802</code> – Medium – Bugfix: commands/cisco/ospf/interface - Telemach Croatia (4.0.2)</li>
-<li><code>NIM-6803</code> – Medium – Bugfix: commands/cisco/environment/status - Telemach Croatia (4.0.2)</li>
-<li><code>NIM-6804</code> – Medium – Bugfix: commands/cisco/routingProtocols/ipRouteSummaryVrf - Telemach Croatia (4.0.2)</li>
-<li><code>NIM-6805</code> – Medium – Bugfix: commands/cisco/isis/neighborsDetail - Telemach Croatia (4.0.2)</li>
-<li><code>NIM-6813</code> – Medium – Bugfix: commands/juniper/_junos/interfacesDiagnosticsOptics - CRA cz (4.0.2)</li>
-<li><code>NIM-6814</code> – Medium – Bugfix: commands/cisco/l2vpn/xconnect/detail - Telemach Croatia (4.0.2)</li>
-<li><code>NIM-6815</code> – Medium – Bugfix: commands/cisco/_wlcIosxe/wireless/clientMacAddressDetail - Raiffeisenbank (4.0.2)</li>
-<li><code>NIM-6820</code> – Medium – Bugfix: commands/f5/_big-ip/listSysMgmtIp - S&amp;P (4.2.0)</li>
-<li><code>NIM-6821</code> – Medium – Bugfix: commands/f5/_big-ip/listSysSflowReceiver - S&amp;P (4.2.0)</li>
-<li><code>NIM-6822</code> – Medium – Bugfix: commands/fortinet/getRouterInfoBgpNeighbors - S&amp;P (4.2.0)</li>
-<li><code>NIM-6823</code> – Medium – Bugfix: commands/cisco/environment/status - S&amp;P (4.2.0)</li>
+<li><code>NIM-6802</code> – Medium – Bugfix: commands/cisco/ospf/interface (4.0.2)</li>
+<li><code>NIM-6804</code> – Medium – Bugfix: commands/cisco/routingProtocols/ipRouteSummaryVrf (4.0.2)</li>
+<li><code>NIM-6805</code> – Medium – Bugfix: commands/cisco/isis/neighborsDetail (4.0.2)</li>
+<li><code>NIM-6813</code> – Medium – Bugfix: commands/juniper/_junos/interfacesDiagnosticsOptics (4.0.2)</li>
+<li><code>NIM-6814</code> – Medium – Bugfix: commands/cisco/l2vpn/xconnect/detail (4.0.2)</li>
+<li><code>NIM-6815</code> – Medium – Bugfix: commands/cisco/_wlcIosxe/wireless/clientMacAddressDetail (4.0.2)</li>
+<li><code>NIM-6820</code> – Medium – Bugfix: commands/f5/_big-ip/listSysMgmtIp (4.2.0)</li>
+<li><code>NIM-6821</code> – Medium – Bugfix: commands/f5/_big-ip/listSysSflowReceiver (4.2.0)</li>
+<li><code>NIM-6822</code> – Medium – Bugfix: commands/fortinet/getRouterInfoBgpNeighbors (4.2.0)</li>
 <li><code>NIM-6824</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
 <li><code>NIM-6828</code> – High – IPF App administration (:8443) - timezone needed when creating local admin account</li>
 <li><code>NIM-6830</code> – Medium – Do not refresh snapshot meta when slave is disabled</li>
-<li><code>NIM-6831</code> – Medium – Bugfix: commands/cisco/mcast/ipMrouteVrfCount - S&amp;P (4.2.0)</li>
+<li><code>NIM-6831</code> – Medium – Bugfix: commands/cisco/mcast/ipMrouteVrfCount (4.2.0)</li>
 <li><code>NIM-6837</code> – Medium – Bugfix: commands/checkpoint/_gaia/cluster/members/interfacesAll</li>
-<li><code>NIM-6839</code> – Medium – Advanced Settings/System - always prompt to save settings before leaving</li>
-<li><code>NIM-6840</code> – Medium – Bugfix: commands/cisco/_meraki/v0/devices/switch/portStatusesPackets - Major League Baseball (4.1.0)</li>
+<li><code>NIM-6840</code> – Medium – Bugfix: commands/cisco/_meraki/v0/devices/switch/portStatusesPackets (4.1.0)</li>
 <li><code>NIM-6841</code> – High – Unloaded snapshots vs number of discovered devices</li>
-<li><code>NIM-6844</code> – Low – Built API doesn’t work due to missing libvips/vips dependency</li>
 <li><code>NIM-6848</code> – Low – Do not fail snapshot migration when invalid snapshot format is found</li>
-<li><code>NIM-6852</code> – High – System administration - can’t create new user</li>
-<li><code>NIM-6854</code> – Medium – Cisco ACI - OSPF task empty output (but cmds are executed)</li>
-<li><code>NIM-6856</code> – Medium – Bugfix: commands/cisco/vlanBrief - CGI (4.1.0)</li>
+<li><code>NIM-6856</code> – Medium – Bugfix: commands/cisco/vlanBrief (4.1.0)</li>
 <li><code>NIM-6858</code> – Medium – Bugfix: commands/cisco/bgp/allNeighbors</li>
 <li><code>NIM-6859</code> – Medium – Bugfix: commands/cisco/subscriber/sessionAll</li>
-<li><code>NIM-6860</code> – Low – Resource conflict when trying to start maintenance on DEMO4</li>
 <li><code>NIM-6861</code> – Medium – L3 gateway table missing information</li>
 <li><code>NIM-6863</code> – Medium – Bugfix: commands/checkpoint/_gaia/ospf/interfacesDetailed</li>
 <li><code>NIM-6864</code> – Medium – Bugfix: commands/f5/_big-ip/showCmDevice</li>
@@ -4282,22 +4217,12 @@ differently in you production deployment, than described here.
 <li><code>NIM-6868</code> – Medium – Bugfix: commands/cisco/routingTable</li>
 <li><code>NIM-6873</code> – Medium – Bugfix: commands/arista/_eos/ipRouteVrf</li>
 <li><code>NIM-6881</code> – Medium – Bugfix: commands/fortinet/_fortigate/showSystemHa</li>
-<li><code>NIM-6882</code> – Medium – Bugfix: commands/arista/_eos/lldpNeighbors</li>
 <li><code>NIM-6883</code> – High – Disabled IP addresses are considered as valid during discovery</li>
-<li><code>NIM-6884</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6885</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6886</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6887</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6888</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6889</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
-<li><code>NIM-6890</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
 <li><code>NIM-6891</code> – Medium – Bugfix: commands/cisco/_nxos/passwordStrengthCheck</li>
 <li><code>NIM-6893</code> – Medium – SNMP users not being identified on NX-OS Devices</li>
 <li><code>NIM-6895</code> – Medium – Request body needs to be updated for Management | Changes table descriptions</li>
-<li><code>NIM-6896</code> – Medium – Intent Verification Rules not working</li>
 <li><code>NIM-6897</code> – Medium – Bugfix: commands/juniper/_junos/interfacesDiagnosticsOptics</li>
 <li><code>NIM-6898</code> – Medium – Bugfix: commands/cisco/ptp/clockDatasetParentDomain</li>
-<li><code>NIM-6899</code> – Medium – Bugfix: commands/cisco/ptp/clockRunningDomain</li>
 <li><code>NIM-6900</code> – Medium – Bugfix: commands/juniper/_junos/configurationDisplaySet</li>
 <li><code>NIM-6901</code> – Medium – Bugfix: <code>commands/juniper/_junos/securityIpsecSecurityAssociationsDetail</code></li>
 <li><code>NIM-6902</code> – Medium – Bugfix: commands/f5/_big-ip/ntp</li>
@@ -4306,7 +4231,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-6909</code> – Medium – Bugfix: commands/paloalto/showDnsProxyFqdnAll</li>
 <li><code>NIM-6910</code> – Medium – Bugfix: commands/paloalto/showConfigMerged</li>
 <li><code>NIM-6911</code> – Medium – Bugfix: commands/paloalto/showConfigPushedSharedPolicyVsys</li>
-<li><code>NIM-6912</code> – Medium – Discovery fails and all data are lost</li>
 <li><code>NIM-6914</code> – Highest – Bugfix: commands/checkpoint/_gaia/interfacesAll</li>
 <li><code>NIM-6916</code> – High – Dashboard - remove row button - broken confirmation dialog</li>
 <li><code>NIM-6920</code> – Medium – Bugfix: commands/juniper/_junos/interfacesStatisticsDetail</li>
@@ -4331,40 +4255,29 @@ differently in you production deployment, than described here.
 <li><code>NIM-6953</code> – Medium – Bugfix: commands/juniper/_junos/route</li>
 <li><code>NIM-6954</code> – Medium – ACLs without any action are denied on JunOS</li>
 <li><code>NIM-6960</code> – Medium – Bugfix: commands/cisco/dhcp/ipDhcpSnoopingStatistics</li>
-<li><code>NIM-6961</code> – Medium – Bugfix: commands/juniper/_junos/sflow</li>
 <li><code>NIM-6963</code> – Medium – Bugfix: commands/hp/_comware/ipRoutingTableVerbose</li>
-<li><code>NIM-6967</code> – Medium – Bugfix: commands/cisco/routingTable</li>
 <li><code>NIM-6971</code> – High – Telnet access without Username prompt - username still required in IP Fabric?</li>
 <li><code>NIM-6972</code> – Medium – Bugfix: commands/juniper/_junos/sflow</li>
 <li><code>NIM-6973</code> – Medium – Bugfix: commands/hp/_comware/bgp/peersInstance</li>
 <li><code>NIM-6974</code> – Medium – Bugfix: commands/checkpoint/_gaia/managementInterface</li>
 <li><code>NIM-6975</code> – Medium – Bugfix: commands/fortinet/_fortigate/showFirewallVip</li>
 <li><code>NIM-6976</code> – Medium – Factory preset not saved when save clicked in leave dialog</li>
-<li><code>NIM-6982</code> – Medium – Bugfix: commands/arista/_eos/showVrf</li>
-<li><code>NIM-6983</code> – Medium – Bugfix: commands/hp/_arubacx/lldpNeiInfoInt</li>
-<li><code>NIM-6984</code> – Medium – Bugfix: commands/hp/_comware/arpVpnInstance</li>
 <li><code>NIM-6985</code> – Medium – Bugfix: commands/hp/_comware/power</li>
-<li><code>NIM-6987</code> – High – Inventory / Sites / Manual Site Separation - very slow reaction UI</li>
-<li><code>NIM-6988</code> – Medium – Bugfix: commands/hp/_comware/ipRoutingTableVpnInstanceVerbose</li>
 <li><code>NIM-6994</code> – Medium – Bugfix: commands/aws/_ec2/describeVpnConnections</li>
 <li><code>NIM-6995</code> – High – Outbound ACLs are not processed on VLAN interfaces in E2E - on connected networks</li>
 <li><code>NIM-6997</code> – Medium – AWS a lot of problems</li>
-<li><code>NIM-7001</code> – Medium – Bugfix: commands/juniper/_junos/vlansDetail</li>
 <li><code>NIM-7003</code> – Medium – IPsec - ESP - VRF not taken into account on the next hop</li>
 <li><code>NIM-7004</code> – Medium – Bugfix: tasks/fhrp</li>
 <li><code>NIM-7006</code> – Medium – Bugfix: tasks/bgp</li>
 <li><code>NIM-7007</code> – Highest – Can’t start discovery from Snapshot Settings</li>
-<li><code>NIM-7022</code> – Medium – CDP hangs disco on SG300</li>
 <li><code>NIM-7025</code> – Highest – Silverpeak API Client - destroy promise never finish</li>
 <li><code>NIM-7026</code> – Highest – Snaphost Lock doesn’t work</li>
 <li><code>NIM-7028</code> – Highest – Check migration for pathlookup check</li>
 <li><code>NIM-7030</code> – High – Job for pathlookup check calculation fails</li>
 <li><code>NIM-7034</code> – High – Broken Secret field in Settings/Webhooks</li>
-<li><code>NIM-7035</code> – Medium – VRF selection in path lookup fails - API error UNHANDLED PROMISE REJECTION: API_VALIDATION_FAILED</li>
 <li><code>NIM-7036</code> – Medium – Bugfix: commands/juniper/_junos/chassisEnvironment</li>
 <li><code>NIM-7039</code> – Highest – Table Path lookup verifications - can’t delete record</li>
 <li><code>NIM-7040</code> – High – Path lookup form UX probem</li>
-<li><code>NIM-7047</code> – Medium – CheckPoint Gaia - showInterfacesAll - speed / duplex missing</li>
 <li><code>NIM-7048</code> – Medium – HP Comware - wrong routing relation</li>
 <li><code>NIM-7065</code> – Highest – Path lookup request issue with VRF - request fails</li>
 <li><code>NIM-7070</code> – Medium – Manual Site Separation - triger form save on Enter</li>
@@ -4372,7 +4285,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-7072</code> – Low – Misalignment in checkbox and label</li>
 <li><code>NIM-7073</code> – Medium – Change validation of BGP threshold</li>
 <li><code>NIM-7076</code> – Medium – Intermittent schonfeld test failure</li>
-<li><code>NIM-7078</code> – High – Duplicities in vSnmp collection</li>
 <li><code>NIM-7087</code> – High – Management - Changes - incorrect response</li>
 <li><code>NIM-7094</code> – Medium – tasks/routingTable - hp 3com - remove local ip from nexthops of directly connected routes</li>
 <li><code>NIM-7104</code> – High – UI sends wrong AWS assumeRole in POST /v1/snapshots/:id/devices</li>
@@ -4383,21 +4295,15 @@ differently in you production deployment, than described here.
 <li><code>NIM-7118</code> – High – Cisco FMC &amp; Silverpeak api settings - wrong url help &amp; other changes</li>
 <li><code>NIM-7121</code> – Medium – Bugfix: tasks/l3Interfaces/cisco</li>
 <li><code>NIM-7122</code> – Highest – Fuckup nimpeeMigrate</li>
-<li><code>NIM-7123</code> – High – Wizard - first step broken</li>
 <li><code>NIM-7124</code> – Highest – Unable to load older snapshot on DEV14</li>
 <li><code>NIM-7125</code> – High – Snapshot Settings for new snapshot vs Update from global settings</li>
-<li><code>NIM-7127</code> – Medium – Losing devices in snapshots (300+)</li>
-<li><code>NIM-7129</code> – High – Routing domain link fails</li>
 <li><code>NIM-7131</code> – High – Old (and stretched) buttons in Path Lookup checks</li>
 <li><code>NIM-7133</code> – High – Device view - children with the same key console error</li>
 <li><code>NIM-7134</code> – Highest – Misleading UI for Site Separation - SNMP Location rule</li>
-<li><code>NIM-7136</code> – Medium – L2 connection to the router is missing</li>
 <li><code>NIM-7146</code> – High – Old UDP fields are not removed from migrated path lookup settings</li>
 <li><code>NIM-7151</code> – Medium – Diagrams API Documentation is incorrect.</li>
-<li><code>NIM-7152</code> – Medium – v4.3 Diagrams API Documentation firstHopAlgorithm</li>
 <li><code>NIM-7153</code> – High – Fix site Separation UI glitches in narrow window / too long text</li>
 <li><code>NIM-7160</code> – Highest – New snaphost can’t be started - from snapshot settings</li>
-<li><code>NIM-7163</code> – Highest – Graphs for routing domain doesn’t work</li>
 <li><code>NIM-7165</code> – High – WLC ends up in different site than all its APs</li>
 <li><code>NIM-7172</code> – Highest – Migration failed</li>
 <li><code>NIM-7173</code> – Highest – Discovery refresh fail</li>
@@ -4412,45 +4318,10 @@ differently in you production deployment, than described here.
 <h2 id="tasks">Tasks</h2>
 <p>Task may be associated into Epics or Stories to form complex features.</p>
 <ul>
-<li><code>NIM-16</code> – Medium – Table reports display the results as radar chart or bar chart</li>
-<li><code>NIM-256</code> – Medium – Configure email settings</li>
-<li><code>NIM-385</code> – Medium – Fix H2G &amp; E2E views</li>
-<li><code>NIM-435</code> – Medium – Replace toLong with AQL implementation</li>
-<li><code>NIM-460</code> – Medium – zoneFw policy processing - add support for TCP flags</li>
-<li><code>NIM-502</code> – Medium – Pathlookup - loop detection</li>
-<li><code>NIM-509</code> – Medium – Refactoring API endpoints</li>
-<li><code>NIM-554</code> – Low – Site Separation 2.0</li>
-<li><code>NIM-680</code> – High – Consistent timezones in API and WEBNG</li>
-<li><code>NIM-715</code> – High – Add demo machines to monitoring</li>
-<li><code>NIM-832</code> – Medium – Snaphost loading BC</li>
-<li><code>NIM-966</code> – Medium – Graph - Center</li>
-<li><code>NIM-985</code> – Medium – Graph - refactor - Duplicated Protocols</li>
-<li><code>NIM-1049</code> – Low – Graph - Detail overflow</li>
-<li><code>NIM-1243</code> – Medium – Graph UI Redesign</li>
-<li><code>NIM-1731</code> – Medium – Rediscover from diagram</li>
-<li><code>NIM-2213</code> – Medium – Set name for new snapshot</li>
-<li><code>NIM-2337</code> – Medium – Speed up per array-item based Joi validation</li>
-<li><code>NIM-2350</code> – Medium – validation speed-up (vol. II)</li>
-<li><code>NIM-2723</code> – Medium – Make fhrp task IPv6 ready</li>
-<li><code>NIM-3392</code> – High – API - lint only touched files</li>
-<li><code>NIM-3472</code> – Medium – Add/Standardize table descriptions &amp; boxHelpText data</li>
-<li><code>NIM-3560</code> – Medium – API - update vCollect time once all jobs are done</li>
-<li><code>NIM-3679</code> – Medium – Use Joi.validateAsync instead of the blocking one</li>
 <li><code>NIM-4099</code> – Medium – Create TABLES/SNAPSHOTS endpoint for easy filtering</li>
-<li><code>NIM-4559</code> – Medium – Switch ArangoDB to rockdb engine</li>
-<li><code>NIM-4651</code> – Medium – technology/interfaces/errdisabled</li>
-<li><code>NIM-4720</code> – Low – API tables - remove filter for site</li>
-<li><code>NIM-4783</code> – Medium – Cumulus vendor - add support</li>
 <li><code>NIM-4801</code> – Medium – Remove vDevice stats?</li>
-<li><code>NIM-4836</code> – Low – API Documentation Adjustment - feature request</li>
-<li><code>NIM-4875</code> – Lowest – Security model: “sequence” field in new vZonePolicies schema not needed</li>
 <li><code>NIM-5011</code> – High – F5 - Virtual Servers, Pools, Partitions</li>
-<li><code>NIM-5012</code> – Medium – F5 - add Pools</li>
-<li><code>NIM-5050</code> – Medium – Prepare Radius testing environment + IPF settings</li>
-<li><code>NIM-5215</code> – Medium – E2E path testing for external networks</li>
 <li><code>NIM-5299</code> – Highest – Resolve circular dependencies across repositories</li>
-<li><code>NIM-5314</code> – Medium – Update typescript for frontend</li>
-<li><code>NIM-5422</code> – Medium – Grammar check our API generated docs (tables and graphs)</li>
 <li><code>NIM-5500</code> – Medium – Cache E2E request</li>
 <li><code>NIM-5556</code> – High – Add vpc keepalive status to MLAG tables</li>
 <li><code>NIM-5636</code> – High – Silverpeak - Discovery</li>
@@ -4461,28 +4332,17 @@ differently in you production deployment, than described here.
 <li><code>NIM-5792</code> – Lowest – Split types for topology and path lookup preset</li>
 <li><code>NIM-5830</code> – Highest – SilverPeak - api client</li>
 <li><code>NIM-5831</code> – High – Silverpeak - advanced discovery tasks</li>
-<li><code>NIM-5857</code> – Low – VoIP solution for sales</li>
 <li><code>NIM-5867</code> – Low – Better msgs in Decision Table</li>
 <li><code>NIM-5900</code> – Medium – Security eval: E2E to FortiGate local interface should fail</li>
-<li><code>NIM-5912</code> – Lowest – Consider typing for redux sagas</li>
 <li><code>NIM-5989</code> – Medium – Remove not used collections</li>
 <li><code>NIM-6003</code> – High – SilverPeak - create lab environment</li>
-<li><code>NIM-6190</code> – Low – DB Optimalization - Host Table</li>
 <li><code>NIM-6192</code> – High – E2E path for AWS networks</li>
-<li><code>NIM-6193</code> – Medium – Pathlookup - routing loop is not detected as fail</li>
-<li><code>NIM-6196</code> – Medium – Pathlookup - incomplete data improvements</li>
-<li><code>NIM-6201</code> – Medium – src/lib/sshClient cuts off the first line of command output</li>
 <li><code>NIM-6206</code> – High – F5 - Virtual server and others - new tables</li>
 <li><code>NIM-6212</code> – Medium – Option to hide all Cloud is no longer available on v4</li>
 <li><code>NIM-6235</code> – Medium – Pathlookup - Packet definition extension (applications and others)</li>
-<li><code>NIM-6255</code> – Medium – Consider if current implementation of intent checks in path lookup is reasonable</li>
 <li><code>NIM-6265</code> – Medium – Forms and UI components (input fields,radio,checkboxes,toogles,pills etc)</li>
-<li><code>NIM-6286</code> – Medium – Security model - regions</li>
-<li><code>NIM-6298</code> – Medium – Intent checks on F5 tables</li>
 <li><code>NIM-6308</code> – Highest – Security model - Syntax search</li>
-<li><code>NIM-6340</code> – Medium – Overlapping IPs in different VRF may not be correctly handled</li>
 <li><code>NIM-6353</code> – Medium – Add L1/L2 state into the Managed IP table</li>
-<li><code>NIM-6414</code> – Medium – E2E Network Mode - no limit on subnet size could cause “failed to load graph”</li>
 <li><code>NIM-6481</code> – Medium – F5 EoX (lifecycle milestones)</li>
 <li><code>NIM-6494</code> – High – Surpress Juniper backplane IP address and route</li>
 <li><code>NIM-6498</code> – Medium – Security Syntax Search form</li>
@@ -4490,8 +4350,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-6502</code> – Medium – Allow manual upgrade if connectivity to callhome exists</li>
 <li><code>NIM-6519</code> – Highest – Staging1 - update intent verification rules - target: v4.3</li>
 <li><code>NIM-6527</code> – Highest – Implement cache/shared memory for API discovered devices</li>
-<li><code>NIM-6533</code> – Low – Document API config and make use of types</li>
-<li><code>NIM-6537</code> – Medium – Port Channels - Member (Status) is currently a single entry, regardless of the number of ports</li>
 <li><code>NIM-6561</code> – Medium – Fix problematic spots discovered during branding IDs - DeviceView</li>
 <li><code>NIM-6563</code> – Medium – Path-lookup: add ICMP packet header</li>
 <li><code>NIM-6564</code> – Medium – Path-lookup: support for TTL field in IP header</li>
@@ -4501,9 +4359,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-6568</code> – Medium – Path-lookup: support for application tags</li>
 <li><code>NIM-6569</code> – Medium – Path-lookup: support for “tracked” flag</li>
 <li><code>NIM-6570</code> – Medium – Pathlookup - Support for “external networks”</li>
-<li><code>NIM-6572</code> – Medium – HP Aruba CX AAA</li>
-<li><code>NIM-6611</code> – Medium – Techsupport notifications</li>
-<li><code>NIM-6623</code> – Medium – Visualization setup - add Nexus 5k, as we have for Nexus 7k</li>
 <li><code>NIM-6626</code> – Medium – Filter out non standard Cisco transceivers from EoL database</li>
 <li><code>NIM-6628</code> – Medium – Add virtual IP addresses of external IPs to Fortigate devices</li>
 <li><code>NIM-6639</code> – Medium – Timeout session for IP Fabric user - 24 hours is too long</li>
@@ -4511,14 +4366,11 @@ differently in you production deployment, than described here.
 <li><code>NIM-6661</code> – Medium – Pathlookup - Packet tracing</li>
 <li><code>NIM-6664</code> – Medium – Path-lookup advanced options: migration of existing path-checks</li>
 <li><code>NIM-6670</code> – Medium – Update graph api documentation to comprehend pathlookup advanced options</li>
-<li><code>NIM-6679</code> – Medium – Juniper vQFX - wrong Model in IP Fabric</li>
 <li><code>NIM-6690</code> – Medium – Pathlookup - swap 0 label results in empty mpls header</li>
 <li><code>NIM-6693</code> – High – Webng - Cisco FMC API - GUI</li>
 <li><code>NIM-6694</code> – Medium – API - Cisco FMC vendor API</li>
 <li><code>NIM-6697</code> – Medium – Pathlookup - Detect traffic loops</li>
 <li><code>NIM-6699</code> – Medium – Code template for site separation table component</li>
-<li><code>NIM-6700</code> – Medium – Code form for editing regex-based rule type</li>
-<li><code>NIM-6701</code> – Medium – Code form for editing routing and switching domain rule type</li>
 <li><code>NIM-6702</code> – Medium – Fill site separation table with data from API</li>
 <li><code>NIM-6703</code> – Medium – Implement adding a rule</li>
 <li><code>NIM-6704</code> – Medium – Implement rule search in rules table</li>
@@ -4537,22 +4389,14 @@ differently in you production deployment, than described here.
 <li><code>NIM-6761</code> – Highest – UI Switch component: disabled state vs selected option</li>
 <li><code>NIM-6764</code> – Medium – OUI - enable brocade in nimpeeMigrate</li>
 <li><code>NIM-6783</code> – Medium – CheckPoint - collect static ARP</li>
-<li><code>NIM-6796</code> – Medium – No new devices found while running discovery</li>
 <li><code>NIM-6797</code> – Medium – Enable API Debugging</li>
 <li><code>NIM-6798</code> – Medium – UI for enabling/disabling packet coloring for detected path lookup loops</li>
 <li><code>NIM-6812</code> – Medium – API client for vmware NSX</li>
 <li><code>NIM-6817</code> – Medium – Cisco IOS-XE BDI interface L3 missing vlanId</li>
-<li><code>NIM-6819</code> – Medium – Viptela in lab35 (+ prgdc-lab01.ipf.ipfabric.io upgrade)</li>
-<li><code>NIM-6825</code> – Medium – S&amp;P - discovery time check 3h 2500 devices</li>
 <li><code>NIM-6827</code> – Medium – Adjust form inputs sizing</li>
 <li><code>NIM-6833</code> – High – AWS discovery - switch client</li>
-<li><code>NIM-6838</code> – Low – nimpee api without config.json crashes w/o any message</li>
-<li><code>NIM-6842</code> – High – Cisco ASA - l3 interface tunnel</li>
-<li><code>NIM-6847</code> – Medium – Migrate old wiki lab doc to confluence</li>
 <li><code>NIM-6849</code> – Medium – When snmp3 only is configured, ignore all other snmp version configurations</li>
 <li><code>NIM-6851</code> – Medium – Findings from path-lookup advanced options testing</li>
-<li><code>NIM-6866</code> – Medium – Unify VRF for routes in the default routing table</li>
-<li><code>NIM-6874</code> – Medium – Secondary buttons update</li>
 <li><code>NIM-6875</code> – High – Integrate new Site Separation into wizard and snapshot settings</li>
 <li><code>NIM-6876</code> – High – SilverPeak API - update client for version 9.x</li>
 <li><code>NIM-6905</code> – Medium – Pathlookup - improve ports validation</li>
@@ -4565,13 +4409,10 @@ differently in you production deployment, than described here.
 <li><code>NIM-6959</code> – High – Pathlookup - Azure via IPsec to on-prem</li>
 <li><code>NIM-6977</code> – High – Change limit of downloaded BGP routes to be per VRF</li>
 <li><code>NIM-6980</code> – Medium – Add the <code>virtualServer</code> task to the exclusion task list.</li>
-<li><code>NIM-6981</code> – Medium – Update site separation buttons to new design</li>
 <li><code>NIM-6996</code> – Medium – add emitErrorInstance function to src/lib/error.js</li>
 <li><code>NIM-7008</code> – Medium – Run linting in gitlab pipeline for utils repositories</li>
 <li><code>NIM-7018</code> – Medium – vmware NSX-T add support for tasks/virtualMachines</li>
-<li><code>NIM-7021</code> – Medium – Get gitlab ipfabric access from Pavel</li>
 <li><code>NIM-7023</code> – Medium – Cisco Viptela - add cEdge to our lab</li>
-<li><code>NIM-7029</code> – Medium – Script to clean ghost sites from the DB</li>
 <li><code>NIM-7031</code> – Medium – Add updatePathLookupChecksResults job translations</li>
 <li><code>NIM-7043</code> – High – Purge code of old site separation</li>
 <li><code>NIM-7046</code> – High – Replace manual site separation with attributes requests</li>
@@ -4587,32 +4428,24 @@ differently in you production deployment, than described here.
 <li><code>NIM-7128</code> – Medium – Revert path lookup test graph image dump</li>
 <li><code>NIM-7148</code> – Medium – Device Attributes table - allow select multiple rows and delete them</li>
 <li><code>NIM-7149</code> – Highest – Update graph-utils with new tables</li>
-<li><code>NIM-7158</code> – Medium – Correct calculated path-lookup resulting score in BET365 stored result</li>
+<li><code>NIM-7158</code> – Medium – Correct calculated path-lookup resulting score in stored result</li>
 <li><code>NIM-7164</code> – Highest – vmware NSX-T missing some connected routes</li>
 <li><code>NIM-7168</code> – High – Snapshot loading ends with error on dev02</li>
-<li><code>NIM-7169</code> – Highest – Calculating “security syntax search” data on dev fails for CGI-4.0.2 snapshot</li>
+<li><code>NIM-7169</code> – Highest – Calculating “security syntax search” data on dev fails for 4.0.2 snapshot</li>
 <li><code>NIM-7174</code> – Medium – Builtin Device Attributes as string value</li>
 <li><code>NIM-7176</code> – Medium – Add Outbound ACL Path Lookup Test</li>
 <li><code>NIM-7178</code> – Medium – API config refactoring</li>
 <li><code>NIM-7189</code> – Highest – Reorganize buttons in snapshot management</li>
 <li><code>NIM-7190</code> – High – Swap regions along with IPs</li>
-<li><code>NIM-7203</code> – Medium – Revise design of buttons in snapshot management</li>
 <li><code>NIM-7220</code> – Medium – Site Separation - Manual Site separation (first rule) enable by default</li>
-<li><code>NIM-7222</code> – Highest – Drop build version from displayed version in UI</li>
-<li><code>NIM-7227</code> – Medium – NIM-7177</li>
 </ul>
 <h2 id="sub-tasks">Sub-Tasks</h2>
 <p>Sub-tasks are very well contained work packages, organized under Tasks.</p>
 <ul>
-<li><code>NIM-1160</code> – Lowest – Graph - Undo/Redo options do not work as expected.</li>
-<li><code>NIM-1161</code> – High – Graph - Hard to move objects when many edges are in the way</li>
-<li><code>NIM-4776</code> – Medium – Path lookup over SD-WAN</li>
 <li><code>NIM-5237</code> – High – Azure - discovery</li>
-<li><code>NIM-6224</code> – Low – Integrate option to build IP Fabric with userflow to devops scripts</li>
 <li><code>NIM-6249</code> – Medium – API add new endpoint <code>tables/security/aaa/password-strength</code></li>
 <li><code>NIM-6284</code> – Medium – UI - More options in path lookup form</li>
 <li><code>NIM-6289</code> – Medium – DevOps - add vips library</li>
-<li><code>NIM-6392</code> – Medium – Extreme XOS/EXOS SNMP support</li>
 <li><code>NIM-6393</code> – Medium – Extreme state reason ‘mostly’ missing - let’s investigate</li>
 <li><code>NIM-6395</code> – Medium – Extreme PoE support</li>
 <li><code>NIM-6447</code> – Medium – Path lookup - CRUD for advanced options</li>
@@ -4636,7 +4469,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-7032</code> – High – Can’t open path lookup check with invalid settings</li>
 <li><code>NIM-7054</code> – Medium – DMVPN - Add intName to table</li>
 <li><code>NIM-7088</code> – Low – Resolve network.ts related circular dependencies</li>
-<li><code>NIM-7191</code> – Medium – Discus how ipv6 should be saved</li>
 </ul>
 </article>
 </div>

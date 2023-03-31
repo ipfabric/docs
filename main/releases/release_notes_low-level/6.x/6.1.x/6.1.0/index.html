@@ -4121,11 +4121,10 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="llrn-610">LLRN 6.1.0</h1>
-<p>These are low-level release notes for IP Fabric release <code>6.1.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don’t have access to the tickets. On the other hand, it can provide valuable information, if you are looking for a particular detail. This release of IP Fabric contains a total of 519 issues.</p>
+<p>These are low-level release notes for IP Fabric release <code>6.1.0</code>. Please note, that this page contains very low-level information about the actual release, which can lead to false conclusions if you don’t have access to the tickets. On the other hand, it can provide valuable information, if you are looking for a particular detail. This release of IP Fabric contains a total of 486 issues.</p>
 <h2 id="epics">Epics</h2>
 <p>Epics are high-level features, that may consist of many tasks.</p>
 <ul>
-<li><code>NIM-7091</code> – Medium – AWS revision to 4.4 and then 4.5</li>
 <li><code>NIM-9586</code> – Highest – End of life into 6.1.0</li>
 </ul>
 <h2 id="stories">Stories</h2>
@@ -4136,7 +4135,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-7623</code> – High – Alcatel OmniSwitch - Discovery RATP and CNES on AOS</li>
 <li><code>NIM-8231</code> – High – Add token an loginType into SilverPeak vendor API</li>
 <li><code>NIM-8753</code> – High – Forcepoint - firewall, IPsec, version auto detect (umbrella ticket)</li>
-<li><code>NIM-8997</code> – Medium – PBR (Policy Based Routing)</li>
 <li><code>NIM-9196</code> – High – Rethink where we store access token for web</li>
 <li><code>NIM-9230</code> – Medium – Case insensitive Regex (ireg)</li>
 <li><code>NIM-9300</code> – High – Refactor app to process license/login at root component</li>
@@ -4160,15 +4158,11 @@ differently in you production deployment, than described here.
 <li><code>NIM-8650</code> – Medium – AWS - VPC Endpoints</li>
 <li><code>NIM-8698</code> – Medium – Cisco Viptela - missing seconday IP</li>
 <li><code>NIM-8836</code> – Medium – AWS - fix route from vgw to VPC</li>
-<li><code>NIM-8850</code> – Medium – Incorrect source interface for BGP neighbors</li>
 <li><code>NIM-8878</code> – High – Unable to get details on CDP links in maps</li>
-<li><code>NIM-8909</code> – High – Viptela causing stuck discovery process</li>
-<li><code>NIM-9074</code> – High – Rediscovery of devices with hostname filter, also looks for SNs of historical devices inside <code>vHistoricalData</code></li>
 <li><code>NIM-9111</code> – Low – Fix CLI arguments of yarn simulate:api script</li>
 <li><code>NIM-9151</code> – Medium – Bugfix: commands/cisco/showRun (5.0.1+10)</li>
 <li><code>NIM-9188</code> – Medium – Bugfix: tasks/routingTable (5.0.1+10)</li>
 <li><code>NIM-9219</code> – Highest – yarn simulate:api stopped working for almost all vendors</li>
-<li><code>NIM-9229</code> – Medium – Host cannot reach gateway: nexthop not found</li>
 <li><code>NIM-9268</code> – High – Cannot remove tab in device explorer</li>
 <li><code>NIM-9287</code> – Medium – Cisco - Completing CsC support - SWAP operation for multiple labels</li>
 <li><code>NIM-9291</code> – High – OAS: Colon in file name is a potential source of problems</li>
@@ -4184,13 +4178,11 @@ differently in you production deployment, than described here.
 <li><code>NIM-9392</code> – Medium – nsx-t wrong mapping of empty routing/forwarding tables</li>
 <li><code>NIM-9396</code> – High – Layout glitches when you try add attribute in policies</li>
 <li><code>NIM-9400</code> – Low – Change in HSRP Virtual IPs</li>
-<li><code>NIM-9407</code> – Medium – Unidirectional CDP/LLDP neighbor hostname mismatch</li>
 <li><code>NIM-9408</code> – Low – Change error message when Loading Graph Cache is disabled</li>
 <li><code>NIM-9410</code> – Low – BGP neighbors inconsistencies for Versa and Cisco</li>
 <li><code>NIM-9418</code> – Medium – Bugfix: commands/brocade/_fastiron/fdpNeighborsDetail (5.0.2+5)</li>
 <li><code>NIM-9420</code> – High – User can’t leave unsaved changes</li>
 <li><code>NIM-9447</code> – Medium – Power supplies are not detected for devices in VSS</li>
-<li><code>NIM-9460</code> – Medium – APIC API replies are too big</li>
 <li><code>NIM-9466</code> – Medium – Cisco APIC API - handle IPv6 subnets</li>
 <li><code>NIM-9469</code> – Medium – Cisco ACI - hostname tasks uses wrong dependency</li>
 <li><code>NIM-9476</code> – High – Columns are omitted in new Table when missing in orderedColumns in settings</li>
@@ -4244,7 +4236,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9655</code> – High – Cannot clear messages in header</li>
 <li><code>NIM-9663</code> – Lowest – Cisco HSRP pipe missing in ‘show standby’ command</li>
 <li><code>NIM-9665</code> – Lowest – node testing is not caching commands that finish with withespace</li>
-<li><code>NIM-9668</code> – Medium – Broken Port-Channel Calculation</li>
 <li><code>NIM-9673</code> – Medium – Cisco APIC tables all empty except <code>Controllers</code></li>
 <li><code>NIM-9674</code> – Medium – First level menu not working if initialized as compact</li>
 <li><code>NIM-9675</code> – Medium – Bugfix: tasks/nat44 (Check Point)</li>
@@ -4256,15 +4247,12 @@ differently in you production deployment, than described here.
 <li><code>NIM-9736</code> – Medium – HA Active/Active Palo Alto parsing issue</li>
 <li><code>NIM-9741</code> – High – Error caused by intent rules without descriptions created with old component</li>
 <li><code>NIM-9744</code> – Medium – Bugfix: commands/vmware/_nsx-t/firewallSectionsRules (6.0.0-24)</li>
-<li><code>NIM-9762</code> – Highest – Login logs user out</li>
 <li><code>NIM-9766</code> – High – LicenseLimitExceeded page is broken</li>
 <li><code>NIM-9768</code> – Highest – Sockets not authenticated after login</li>
 <li><code>NIM-9776</code> – High – Job arguments can get rewritten</li>
 <li><code>NIM-9796</code> – Medium – defineDocTest add test to check for ‘n/a’ or ‘n/i’ states with non-empty cmdList</li>
-<li><code>NIM-9797</code> – Medium – Investigate inconsistences in # of records between MMFILES and RocksDB</li>
 <li><code>NIM-9798</code> – High – Device Explorer - SN filter is not applied on device tables</li>
 <li><code>NIM-9818</code> – Highest – When emoji is part of site name, inventory fails to load</li>
-<li><code>NIM-9819</code> – Medium – Matrix - support BGP for ArubaCX is showing as not yet integrated</li>
 <li><code>NIM-9820</code> – Highest – Advanced filter Network Analysis Report [6.0.1 testing]</li>
 <li><code>NIM-9825</code> – Medium – tunnel routes are not parsed on FortiGate</li>
 <li><code>NIM-9827</code> – High – Login button not disabled when login is in progress</li>
@@ -4291,7 +4279,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9892</code> – Medium – Bugfix: commands/hp/_arubasw/stp/stpVlan (6.0.0-24)</li>
 <li><code>NIM-9894</code> – Medium – Bugfix: commands/hp/_arubacx/vrrp (6.0.0-24)</li>
 <li><code>NIM-9895</code> – Medium – Bugfix: commands/brocade/_fastiron/chassis (6.0.0-24)</li>
-<li><code>NIM-9897</code> – Medium – Sites manual separation error</li>
 <li><code>NIM-9898</code> – Medium – Change <code>major</code> version condition for huawei</li>
 <li><code>NIM-9899</code> – Medium – RSVP enabled but no ip addrss configured and it’s shutdown</li>
 <li><code>NIM-9903</code> – Medium – Support Matrix - fix documentation for HP &amp; task ACL and AWS &amp; task SD-WAN sites</li>
@@ -4320,14 +4307,11 @@ differently in you production deployment, than described here.
 <li><code>NIM-9959</code> – Medium – QA - Quick discovery stop will cause error snapshot</li>
 <li><code>NIM-9960</code> – Medium – Unable to load old snapshots</li>
 <li><code>NIM-9961</code> – Highest – Request fails on expired access token</li>
-<li><code>NIM-9967</code> – High – Snapshot load - lock.release not function</li>
 <li><code>NIM-9971</code> – Medium – hp comware v7 pbr continue in last sequence</li>
 <li><code>NIM-9972</code> – Medium – Bugfix: commands/cisco/_meraki/v1/devices/switch/ports (6.0.0-24)</li>
 <li><code>NIM-9973</code> – Medium – Bugfix: commands/cisco/_meraki/v1/organizations/appliance/uplink/statuses (6.0.0-24)</li>
-<li><code>NIM-9977</code> – High – User logged-out when full page refresh is performed</li>
 <li><code>NIM-9980</code> – Medium – Cisco ASA - E2EPL ends on “DROP: Callback execution threw an exception.”</li>
 <li><code>NIM-9981</code> – High – E2E does not continue - ACI VFR leak issue</li>
-<li><code>NIM-9983</code> – High – ForcePoint - Vendor API setting - Invalid data</li>
 <li><code>NIM-9984</code> – Highest – Forcepoint doesn’t encrypt authenticationKey in the DB</li>
 <li><code>NIM-9987</code> – Medium – Bugfix: commands/cisco/_meraki/v1/networks/clients (6.0.0-24)</li>
 <li><code>NIM-9988</code> – High – Viptela API Client - reauthentication and destroy issues</li>
@@ -4345,8 +4329,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-10030</code> – Medium – Packets not really dropped during NAT</li>
 <li><code>NIM-10036</code> – Medium – Invalid credentials are not communicated well due to redirect</li>
 <li><code>NIM-10040</code> – Medium – Hybrid IP notation for IPv6</li>
-<li><code>NIM-10053</code> – Medium – HTTP error 502 - no error shown in UI</li>
-<li><code>NIM-10054</code> – Medium – PBR - Decision table does not contain information about PBR evaluation in case of no match</li>
 <li><code>NIM-10055</code> – Medium – PBR - action pbrIpv4NexthopsDefault does not work as expected</li>
 <li><code>NIM-10057</code> – High – Forbidden pagination fields in request body for Check Point API client</li>
 <li><code>NIM-10059</code> – Medium – Cisco - getting “Switching Domain” is fluctuating from snapshot to snapshot</li>
@@ -4372,7 +4354,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-10144</code> – Medium – “Deprecation: true” header is missing when using an older minor version</li>
 <li><code>NIM-10145</code> – Medium – Security service rules failed parsing Fortinet</li>
 <li><code>NIM-10146</code> – Medium – Bugfix: commands/cisco/_meraki/v1/networks/appliance/vlans (6.0.0-24)</li>
-<li><code>NIM-10148</code> – Medium – wrong links in PBR table</li>
 <li><code>NIM-10150</code> – Medium – BGP routing policy not showing for IOS, IOS-XE when using inherit peer-session</li>
 <li><code>NIM-10161</code> – Medium – Fix app loading issues for 6.1</li>
 <li><code>NIM-10162</code> – Medium – Bugfix: commands/cisco/_viptela/v1/interface (6.0.0-24)</li>
@@ -4451,7 +4432,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-8274</code> – Medium – Update webng to Webpack 5</li>
 <li><code>NIM-8409</code> – Medium – Proccessing optimalization of multi-context devices</li>
 <li><code>NIM-8455</code> – High – CheckPoint - Disabled policies appear with enabled policies</li>
-<li><code>NIM-8561</code> – High – Pathlookup support for NAT &amp; PBR</li>
 <li><code>NIM-8563</code> – Medium – Cisco FabricPath pathlookup</li>
 <li><code>NIM-8596</code> – Medium – Vendor API client tests: Azure</li>
 <li><code>NIM-8597</code> – Medium – Vendor API client tests: Check Point</li>
@@ -4466,24 +4446,17 @@ differently in you production deployment, than described here.
 <li><code>NIM-8829</code> – Medium – IPv4 - fix model for pppoe</li>
 <li><code>NIM-8833</code> – Medium – IPv4 - fix model for vxlan</li>
 <li><code>NIM-8866</code> – High – Ignore unknown options in API config instead of not starting API at all</li>
-<li><code>NIM-8893</code> – Medium – Add new phases to path lookup</li>
 <li><code>NIM-8969</code> – Medium – FE - Implement PBR</li>
 <li><code>NIM-8983</code> – Medium – Admin user in blank dev image has empty timezone</li>
 <li><code>NIM-9000</code> – Medium – Adopt eslint-plugin-jira-ticket-todo-comment</li>
 <li><code>NIM-9024</code> – Medium – UI Accordion</li>
 <li><code>NIM-9052</code> – High – Add roleName option to SSO mapping</li>
 <li><code>NIM-9056</code> – Medium – Versa - reconstruct MPLS table for label to VRF entries</li>
-<li><code>NIM-9057</code> – Medium – UI/UX Policy Based Routing - Security tree</li>
-<li><code>NIM-9058</code> – Medium – UI/UX PBR / NAT- Path inspector</li>
-<li><code>NIM-9059</code> – Medium – UI/UX NAT - Security tree</li>
-<li><code>NIM-9060</code> – Medium – UI/UX NAT - Path inspector</li>
 <li><code>NIM-9065</code> – Medium – Configuration Saved task - Default to Enable</li>
 <li><code>NIM-9066</code> – Medium – Vendor api clients to cancel ongoing requests on destroy</li>
 <li><code>NIM-9068</code> – Medium – Vendor api clients structured logging</li>
-<li><code>NIM-9078</code> – Medium – UI/UX Zone Firewall Policies</li>
 <li><code>NIM-9152</code> – High – Juniper - NAT - add namedValues and namedTests to result</li>
 <li><code>NIM-9153</code> – Highest – Handle linux signals in backend services properly</li>
-<li><code>NIM-9184</code> – Medium – Set in nginx config http cache of /oas/*.json,yaml endpoints</li>
 <li><code>NIM-9193</code> – Medium – UI/UX Network Viewer</li>
 <li><code>NIM-9194</code> – High – Update/get rid of JQuery and Bootstrap</li>
 <li><code>NIM-9197</code> – High – Inject Content Security Policy (CSP) and related headers on nginx</li>
@@ -4510,7 +4483,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9360</code> – Medium – Import Brocade and Ruckus EoL Information</li>
 <li><code>NIM-9368</code> – Medium – CheckPoint vendor API client refactorization</li>
 <li><code>NIM-9370</code> – Medium – FT - Case insensitive regex</li>
-<li><code>NIM-9385</code> – Medium – Add next L3 device to E2E even if we are not able to determine L2 interface</li>
 <li><code>NIM-9386</code> – Medium – technology/load-balancing/virtual-server pool members - add column “vrf”</li>
 <li><code>NIM-9389</code> – Medium – Run yaml lint in pipeline</li>
 <li><code>NIM-9411</code> – High – FT - Adopt typescript-eslint rule member-delimiter-style</li>
@@ -4541,7 +4513,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9514</code> – Medium – Arista EoL update to 6.1.0</li>
 <li><code>NIM-9531</code> – Medium – HP EoL update to 6.1.0</li>
 <li><code>NIM-9533</code> – Medium – UI to process empty graph when graph cache is disabled</li>
-<li><code>NIM-9536</code> – Medium – Pathlookup MCAST IGMP snooping forwarding is doubled in Path inspector</li>
 <li><code>NIM-9537</code> – Medium – Extreme, Fortinet, PaloAlto EoL update for 6.1.0</li>
 <li><code>NIM-9544</code> – High – Add proxy</li>
 <li><code>NIM-9548</code> – Medium – pass cmd args to worker processes</li>
@@ -4574,7 +4545,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9696</code> – High – BE - Remove EULA acceptance from first user login &amp; code logic</li>
 <li><code>NIM-9700</code> – Medium – Implement 2022-12 IPF Color Scheme in Product</li>
 <li><code>NIM-9708</code> – Medium – Brocade stack 6.1 - add release notes</li>
-<li><code>NIM-9710</code> – High – Add brand colors to design system</li>
 <li><code>NIM-9731</code> – Medium – Improve display of intent results above table</li>
 <li><code>NIM-9734</code> – Highest – Implement minimum unresponsive width</li>
 <li><code>NIM-9767</code> – High – Refactor flow of redirects after unauthorised request</li>
@@ -4626,8 +4596,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-8750</code> – Medium – Route-map - HP Comware</li>
 <li><code>NIM-8754</code> – Medium – Forcepoint - <code>tasks/ipsec</code></li>
 <li><code>NIM-8758</code> – Medium – Forcepoint - l3Int.tunnel</li>
-<li><code>NIM-8998</code> – Medium – PBR - security-tree-like diagram</li>
-<li><code>NIM-9025</code> – Medium – PBR - path inspector</li>
 <li><code>NIM-9393</code> – Medium – Alcatel - l2Interfaces, l3interfaces and Portchannel task</li>
 <li><code>NIM-9401</code> – High – Prisma API client</li>
 <li><code>NIM-9423</code> – High – Polish current state of OAS</li>
@@ -4636,7 +4604,6 @@ differently in you production deployment, than described here.
 <li><code>NIM-9485</code> – Medium – Generate ApiTable routes from OAS</li>
 <li><code>NIM-9515</code> – Medium – Generate table pages menu structure from OAS</li>
 <li><code>NIM-9637</code> – Medium – Alcatel - deviceConfig task</li>
-<li><code>NIM-9659</code> – Medium – Forcepoint - Add support for more API references</li>
 <li><code>NIM-9701</code> – Medium – Forcepoint - Add more features to security (zoneFw)</li>
 <li><code>NIM-9707</code> – Medium – Forcepoint - Add documentation</li>
 <li><code>NIM-9711</code> – Medium – Forcepoint - Add POST method for the API client</li>
