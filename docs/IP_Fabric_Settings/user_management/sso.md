@@ -95,10 +95,41 @@ changed. Below is a full example of the `api.json` config file.
 
 !!! note "roleName"
 
-    In IP Fabric version `v6.1.0` the ability to use `roleName` in the SSO 
-    configuration was added.  It is recommended to migrate 
+    In IP Fabric version `v6.1.0` the ability to use `roleName` in the SSO
+    configuration was added.  It is recommended to migrate
     from using `roleId` to `roleName` for consistency and human readability.
 
+??? example "JSON Validation"
+
+    The below example is malformed JSON due to the comma after the "app.url":
+
+    ```json
+    {
+      "app": {
+        "url": "https://demo.ipfabric.io/api",
+      },
+      "web": {
+        "url": "https://demo.ipfabric.io"
+      },
+      "dex": {
+        "url": "https://demo.ipfabric.io/dex",
+        "providers": []
+      }
+    }
+    ```
+
+    Using the `jq` command it is easy to discover JSON errors instead of searching through log files or journalctl output.
+
+    ```bash
+    root@demo:~$ jq . /opt/nimpee/conf.d/api.json
+    parse error: Expected another key-value pair at line 4, column 3
+    ```
+    
+    You can reformat and prettify the JSON file by running:
+    
+    ```commandline
+    echo "$(jq < /opt/nimpee/conf.d/api.json)" > /opt/nimpee/conf.d/api.json
+    ```
 
 ### URL Configuration
 
@@ -481,6 +512,89 @@ connectors:
   the user’s unique identifier which dex assumes is both unique and never
   changes. Use the `nameIDPolicyFormat` to ensure this is set to a value which
   satisfies these requirements.
+
+### YAML Validation
+
+While the validity of the actual configuration is determined by the `dex` itself. It can be handy to verify parsing of the configuration YAML. You can use the following to get a JSON representation of the `/etc/ipf-dex.yml`.
+
+```commandline
+python3 -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))' < /etc/ipf-dex.yaml  | jq .
+```
+
+??? example "Correct YAML"
+
+    Let's assume the following YAML fragment as an input
+
+    ```yaml
+    connectors:
+      - type: microsoft
+        id: sso_azure
+        config:
+          scopes:
+            - openid
+            - profile
+            - email
+            - groups
+    ```
+
+    output of the command will be
+
+    ```json
+    {
+      "connectors": [
+        {
+          "type": "microsoft",
+          "id": "sso_azure",
+          "config": {
+            "scopes": [
+              "openid",
+              "profile",
+              "email",
+              "groups"
+            ]
+          }
+        }
+      ]
+    }
+    ```
+
+    as you can see `scopes` being correctly parsed as a list.
+
+??? example "Incorrect YAML"
+
+    Let's assume the following YAML fragment as an input
+
+    ```yaml
+    connectors:
+      - type: microsoft
+        id: sso_azure
+        config:
+          scopes:
+          - openid
+            - profile
+            - email
+            - groups
+    ```
+
+    output of the command will be
+
+    ```json
+    {
+      "connectors": [
+        {
+          "type": "microsoft",
+          "id": "sso_azure",
+          "config": {
+            "scopes": [
+              "openid - profile - email - groups"
+            ]
+          }
+        }
+      ]
+    }
+    ```
+
+    as you can see `scopes` has been completely incorrectly parsed as a multiline string.
 
 ## Restarting Services
 
