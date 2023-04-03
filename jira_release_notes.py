@@ -10,7 +10,7 @@ AUTH = None  # Assigned in main()
 JIRA_BASE_URL = 'https://ipfabric.atlassian.net/'
 OUT_DIR = os.path.dirname(__file__)+'/docs/releases/release_notes_low-level/'
 # Make sure, that project keys don't need any escaping!
-# Firs project is used as a source of releases
+# First project is used as a source of releases
 PROJECT_KEYS = ('NIM', 'DOS')
 
 
