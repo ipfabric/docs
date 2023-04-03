@@ -2344,6 +2344,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#yaml-validation">
+<span class="md-ellipsis">
+      
+        YAML Validation
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4304,6 +4313,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#yaml-validation">
+<span class="md-ellipsis">
+      
+        YAML Validation
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4403,10 +4421,34 @@ changed. Below is a full example of the <code>api.json</code> config file.</p>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">roleName</p>
-<p>In IP Fabric version <code>v6.1.0</code> the ability to use <code>roleName</code> in the SSO 
-configuration was added.  It is recommended to migrate 
+<p>In IP Fabric version <code>v6.1.0</code> the ability to use <code>roleName</code> in the SSO
+configuration was added.  It is recommended to migrate
 from using <code>roleId</code> to <code>roleName</code> for consistency and human readability.</p>
 </div>
+<details class="example">
+<summary>JSON Validation</summary>
+<p>The below example is malformed JSON due to the comma after the “app.url”:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"app"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.ipfabric.io/api"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"web"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.ipfabric.io"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"dex"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demo.ipfabric.io/dex"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"providers"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Using the <code>jq</code> command it is easy to discover JSON errors instead of searching through log files or journalctl output.</p>
+<div class="highlight"><pre><span></span><code>root@demo:~$<span class="w"> </span>jq<span class="w"> </span>.<span class="w"> </span>/opt/nimpee/conf.d/api.json
+parse<span class="w"> </span>error:<span class="w"> </span>Expected<span class="w"> </span>another<span class="w"> </span>key-value<span class="w"> </span>pair<span class="w"> </span>at<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span>column<span class="w"> </span><span class="m">3</span>
+</code></pre></div>
+<p>You can reformat and prettify the JSON file by running:</p>
+<div class="highlight"><pre><span></span><code>echo "$(jq &lt; /opt/nimpee/conf.d/api.json)" &gt; /opt/nimpee/conf.d/api.json
+</code></pre></div>
+</details>
 <h3 id="url-configuration">URL Configuration</h3>
 <p>Inside the <code>app</code>, <code>web</code>, <code>dex</code> configuration the <code>url</code> field needs to be updated
 with the FQDN of the IP Fabric system.</p>
@@ -4789,6 +4831,73 @@ special configuration for proper enablement.</p>
   changes. Use the <code>nameIDPolicyFormat</code> to ensure this is set to a value which
   satisfies these requirements.</li>
 </ul>
+<h3 id="yaml-validation">YAML Validation</h3>
+<p>While the validity of the actual configuration is determined by the <code>dex</code> itself. It can be handy to verify parsing of the configuration YAML. You can use the following to get a JSON representation of the <code>/etc/ipf-dex.yml</code>.</p>
+<div class="highlight"><pre><span></span><code>python3 -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))' &lt; /etc/ipf-dex.yaml  | jq .
+</code></pre></div>
+<details class="example">
+<summary>Correct YAML</summary>
+<p>Let’s assume the following YAML fragment as an input</p>
+<div class="highlight"><pre><span></span><code><span class="nt">connectors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sso_azure</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">scopes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openid</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">profile</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">groups</span>
+</code></pre></div>
+<p>output of the command will be</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"connectors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"microsoft"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sso_azure"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"openid"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"profile"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"email"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"groups"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>as you can see <code>scopes</code> being correctly parsed as a list.</p>
+</details>
+<details class="example">
+<summary>Incorrect YAML</summary>
+<p>Let’s assume the following YAML fragment as an input</p>
+<div class="highlight"><pre><span></span><code><span class="nt">connectors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">microsoft</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sso_azure</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">scopes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openid</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">- profile</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">- email</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">- groups</span>
+</code></pre></div>
+<p>output of the command will be</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"connectors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"microsoft"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sso_azure"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"openid - profile - email - groups"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>as you can see <code>scopes</code> has been completely incorrectly parsed as a multiline string.</p>
+</details>
 <h2 id="restarting-services">Restarting Services</h2>
 <p>After making changes to the <code>/opt/nimpee/conf.d/api.json</code> it is required to restart the API service:</p>
 <div class="highlight"><pre><span></span><code>systemctl restart nimpee-api.service
