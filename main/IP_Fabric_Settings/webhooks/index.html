@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="Webhooks allow you to build or set up integrations, which subscribe to certain events on IP Fabric platform. When one of those events is triggered..." name="description"/>
+<meta content="Webhooks allow you to build or set up integrations which subscribe to certain events on the IP Fabric platform." name="description"/>
 <link href="https://docs.ipfabric.io/main/IP_Fabric_Settings/webhooks/" rel="canonical"/>
 <link href="../site_separation/" rel="prev"/>
 <link href="../advanced/SSH_telnet/" rel="next"/>
@@ -21,7 +21,7 @@
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
 <meta content="Webhooks - IP Fabric Documentation Portal" property="og:title"/>
-<meta content="Webhooks allow you to build or set up integrations, which subscribe to certain events on IP Fabric platform. When one of those events is triggered..." property="og:description"/>
+<meta content="Webhooks allow you to build or set up integrations which subscribe to certain events on the IP Fabric platform." property="og:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/webhooks.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -29,7 +29,7 @@
 <meta content="https://docs.ipfabric.io/main/IP_Fabric_Settings/webhooks/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Webhooks - IP Fabric Documentation Portal" name="twitter:title"/>
-<meta content="Webhooks allow you to build or set up integrations, which subscribe to certain events on IP Fabric platform. When one of those events is triggered..." name="twitter:description"/>
+<meta content="Webhooks allow you to build or set up integrations which subscribe to certain events on the IP Fabric platform." name="twitter:description"/>
 <meta content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/webhooks.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -4113,35 +4113,35 @@ differently in you production deployment, than described here.
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
 <h1 id="webhooks">Webhooks</h1>
-<p>Webhooks allow you to build or set up integrations, which subscribe to
-certain events on IP Fabric platform. When one of those events is
+<p>Webhooks allow you to build or set up integrations which subscribe to
+certain events on the IP Fabric platform. When one of those events is
 triggered, we’ll send an HTTP POST payload to the webhook’s configured
 URL. Webhooks can be used to send notifications to messaging tools of
 your choice or update an external issue tracker. You’re only limited by
 your imagination.</p>
-<p>To setup a webhook, please navigate to <code>Settings / Webhooks</code></p>
+<p>To setup a webhook, please navigate to <strong>Settings → Webhooks</strong>.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../webhooks.png"><img alt="Webhooks Settings" src="../webhooks.png"/></a></p>
 <h2 id="events">Events</h2>
 <p>Whenever IP Fabric generates an event, we check the list of active
-webhooks and determine, which of them (if any) are subscribed to the
+webhooks and determine which of them (if any) are subscribed to the
 event that has just occurred. Then we send the webhook payload to
 corresponding URLs. The receiving party should confirm the payload with
-HTTP Status 2xx in response and can process the payload as needed. In
+HTTP status <code>2xx</code> in response and can process the payload as needed. In
 case the receiving party doesn’t confirm the payload (because it is not
 reachable, it returns a bad status code, or the delivery times out), we
 retry delivering the webhook payload again in 1, 2, 5, and 10 minutes
 since the initial delivery. In case we cannot deliver the webhook in
 these five attempts, we give up. All delivery attempts are recorded in
-the webhook delivery history (in the webhook edit view).</p>
+the webhook’s delivery history (in the webhook’s edit view).</p>
 <h2 id="payload-hash">Payload Hash</h2>
 <p>Since the webhook payload might be delivered over untrusted networks,
-each webhook message is accompanied by a SHA256 HMAC payload hash
+each webhook message is accompanied by an SHA256 HMAC payload hash
 signature. You configure the HMAC secret when configuring the webhook in
-UI. To validate the webhook payload (i.e. to make sure the webhook
-payload is sent from IP Fabric platform and was not altered in
+the UI. To validate the webhook payload (i.e. to make sure the webhook
+payload is sent from the IP Fabric platform and was not altered in
 transit), calculate the hash signature of the raw webhook payload on the
 receiving end (with the same password), and compare it with the hash
-calculated by the server (sent in <code>X-IPF-Signature</code> HTTP header of the
+calculated by the server (sent in the <code>X-IPF-Signature</code> HTTP header of the
 webhook message).</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// JavaScript validation code</span>
 
@@ -4149,12 +4149,12 @@ webhook message).</p>
 <span class="nx">hmac</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">bodyString</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">verified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hmac</span><span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="s2">"hex"</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s2">"x-ipf-signature"</span><span class="p">];</span>
 </code></pre></div>
-<p>To test your webhook (even an inactive one), use the Test button in UI.
+<p>To test your webhook (even an inactive one), use the <strong>Test</strong> button in the UI.
 Pick the webhook type and action and confirm the popup dialog. We’ll
 send a dummy payload corresponding to the selected webhook. To be able to
-distinguish the testing payloads from the real ones, we add <code>test: true</code>
+distinguish the testing payloads from the real ones, we add the <code>test: true</code>
 property to the testing messages.</p>
-<p>Currently, the following webhook types are triggered by IP Fabric platform:</p>
+<p>Currently, the following webhook types are triggered by the IP Fabric platform:</p>
 <h3 id="snapshot">Snapshot</h3>
 <p>The event is triggered upon network discovery and when manipulating
 snapshots.</p>
@@ -4174,17 +4174,17 @@ snapshots.</p>
 <span class="w">  </span><span class="s2">"test"</span><span class="o">?:</span><span class="w"> </span><span class="kr">boolean</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>In case the action has <code>failed</code>, the payload includes top-level <code>reason</code>
+<p>In case the action has <code>failed</code>, the payload includes a top-level <code>reason</code>
 field with a string describing why the action has failed.</p>
-<p><code>snapshot</code> object is missing completely when the snapshot is not known
+<p>The <code>snapshot</code> object is missing completely when the snapshot is not known
 yet, e.g. when network discovery has just <code>started</code>.</p>
-<p>When <code>clone</code> action is <code>completed</code>, the <code>snapshot</code> object contains also
-<code>cloneId</code> field with the id of the newly created (cloned) snapshot.</p>
-<p>When <code>download</code> action is <code>completed</code>, the <code>snapshot</code> object includes
-also <code>file</code> field with the filename of the created snapshot archive.</p>
+<p>When the <code>clone</code> action is <code>completed</code>, the <code>snapshot</code> object contains also
+a <code>cloneId</code> field with the ID of the newly created (cloned) snapshot.</p>
+<p>When the <code>download</code> action is <code>completed</code>, the <code>snapshot</code> object includes
+also a <code>file</code> field with the filename of the created snapshot archive.</p>
 <p>In case you are testing the webhook, the <code>test</code> field is set to <code>true</code>.</p>
 <h3 id="intent-verification">intent-verification</h3>
-<p>The event is triggered when intent verification is calculated.</p>
+<p>The event is triggered when an intent verification is calculated.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"intent-verification"</span><span class="p">,</span>
 <span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"calculate"</span><span class="p">,</span>
@@ -4197,14 +4197,14 @@ also <code>file</code> field with the filename of the created snapshot archive.<
 <span class="w">  </span><span class="s2">"test"</span><span class="o">?:</span><span class="w"> </span><span class="kr">boolean</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>In case the action has <code>failed</code>, the payload includes top-level <code>reason</code>
+<p>In case the action has <code>failed</code>, the payload includes a top-level <code>reason</code>
 field with a string describing why the action has failed.</p>
 <p>When the intent verification is related to:</p>
 <ul>
-<li>a report, its id is available as <code>reportId</code>,</li>
+<li>a report, its ID is available as <code>reportId</code></li>
 </ul>
 <ul>
-<li>a snapshot, its id is available as <code>snapshotId</code>.</li>
+<li>a snapshot, its ID is available as <code>snapshotId</code></li>
 </ul>
 <p>In case you are testing the webhook, the <code>test</code> field is set to <code>true</code>.</p>
 </article>
