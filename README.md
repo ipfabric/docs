@@ -13,11 +13,11 @@ documentation happens as follows:
 
 - Create your "feature" branch. It is a good practice to include a ticket number
   at the beginning. For example `NIM-5808_readme`.
-- Do all your commits in the branch. When ready, open a merge request (MR) on 
-  GitLab (also make sure that it starts with your ticket number, correctly 
+- Do all your commits in the branch. When ready, open a merge request (MR) on
+  GitLab (also make sure that it starts with your ticket number, correctly
   formatted).
 - Set yourself as the assignee (as your are the owner of the MR).
-- At the moment, please set the reviewer to @antonin.kral-ipf and/or 
+- At the moment, please set the reviewer to @antonin.kral-ipf and/or
   @zdenek.sindylek-ipf for all your MRs.
 - The CI/CD pipeline builds and publishes on every push to `main`.
 - `mike` is then used by repository maintainers to push a new version release to
@@ -38,9 +38,9 @@ documentation happens as follows:
     in an API call) when they need to be marked as `monotype`.
 - Verbatim strings are to be rendered in `monotype` (backticks) -- e.g. API call
   parameters, command-line arguments etc.
-- Please use regular double quotes -- the `"` character instead of fancy/curly 
+- Please use regular double quotes -- the `"` character instead of fancy/curly
   UTF-8 quotes.
-- Consider using [snippets](snippets) for content repeated / copy-pasted through 
+- Consider using [snippets](snippets) for content repeated / copy-pasted through
   multiple pages.
 
 Take a look at e.g.
@@ -70,8 +70,8 @@ Interwebs. Good starting points:
 
 ### Repository layout
 
-All the documents live under the `docs` directory. Directories are used to 
-create sections. Please pay attention to naming. We have opted for automated 
+All the documents live under the `docs` directory. Directories are used to
+create sections. Please pay attention to naming. We have opted for automated
 content discovery which honors alphabetical order.
 
 - Directory names are translated directly to chapter names. Please use English
@@ -90,40 +90,40 @@ Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
 with some helpful extensions. List of enabled extensions is in `mkdocs.yml`
 under the `markdown_extensions` section.
 
-- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/) 
+- [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
   for call-outs like "example", "note", "warning" etc.
-- [attr_list](https://squidfunk.github.io/mkdocs-material/reference/buttons/) 
+- [attr_list](https://squidfunk.github.io/mkdocs-material/reference/buttons/)
   for nice buttons
-- [def_list](https://squidfunk.github.io/mkdocs-material/reference/lists/#using-definition-lists) 
+- [def_list](https://squidfunk.github.io/mkdocs-material/reference/lists/#using-definition-lists)
   for definition lists
 
-Please make yourself familiar with 
-[Material Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/) 
-and 
+Please make yourself familiar with
+[Material Reference Guide](https://squidfunk.github.io/mkdocs-material/reference/abbreviations/)
+and
 [MkDocs Markdown Guide](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown).
 
 ### GitHub mirror and public sources
 
-Our documentation is open to public at https://docs.ipfabric.io . We went one 
-step further and also made the source code for the documentation open at 
-https://github.com/ipfabric/docs . This allows customers to not only closely 
-follow updates, but also to provide improvements. Every page also has an 
+Our documentation is open to public at https://docs.ipfabric.io . We went one
+step further and also made the source code for the documentation open at
+https://github.com/ipfabric/docs . This allows customers to not only closely
+follow updates, but also to provide improvements. Every page also has an
 `Edit this page` button to simplify this process.
 
 #### Handling contribution (Pull Request on GitHub)
 
-Primary source of data is GitLab, where also the majority of reviews takes 
-place. GitLab pushes updates to GitHub (it automatically mirrors all protected 
-branches). This means that the final merge needs to happen on the GitLab side. 
+Primary source of data is GitLab, where also the majority of reviews takes
+place. GitLab pushes updates to GitHub (it automatically mirrors all protected
+branches). This means that the final merge needs to happen on the GitLab side.
 The rough process for handling contribution is as follows:
 
 - A contributor creates a pull request (PR) on GitHub.
-- People with access to GitHub do the review with the contributor using GitHub's 
+- People with access to GitHub do the review with the contributor using GitHub's
   PR interface.
-- Remote branch is pulled from GitHub and pushed to GitLab, where a new merge 
+- Remote branch is pulled from GitHub and pushed to GitLab, where a new merge
   request (MR) is created. CI runs at this time for the MR on the GitLab side.
-- When merged to `main` (or other appropriate branch) on the GitLab side, code 
-  is pushed to GitHub. A responsible person needs to go to GitHub and close the 
+- When merged to `main` (or other appropriate branch) on the GitLab side, code
+  is pushed to GitHub. A responsible person needs to go to GitHub and close the
   opened pull request manually.
 
 ### Live preview
@@ -131,7 +131,7 @@ The rough process for handling contribution is as follows:
 #### Container
 
 You can run a live preview, which is super helpful when writing / editing the
-documentation. If you are an IP Fabric insider, it is as simple as (check the 
+documentation. If you are an IP Fabric insider, it is as simple as (check the
 [GitLab container registry](https://docs.gitlab.com/ee/user/packages/container_registry/#authenticate-with-the-container-registry)
 documentation, if you don't have it authenticated):
 
@@ -139,17 +139,17 @@ documentation, if you don't have it authenticated):
 make serve
 ```
 
-Please note that it will utilize `--dirtyreload` which can lead to 
-inconsistencies, but is significantly faster to reload, when editing just couple 
+Please note that it will utilize `--dirtyreload` which can lead to
+inconsistencies, but is significantly faster to reload, when editing just couple
 pages.
 
 #### Python Virtual Environment
 
-If you don't have access to the internal container image, please create your 
-Python virtual environment manually (use the included `requirements.txt` or 
+If you don't have access to the internal container image, please create your
+Python virtual environment manually (use the included `requirements.txt` or
 `make venv`) and run `mkdocs serve --dirtyreload`.
-Please be aware that you will have slightly different results compared to our 
-production documentation which is using 
+Please be aware that you will have slightly different results compared to our
+production documentation which is using
 [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
 
 Windows users -- If you receive errors related to `cairo` libs/DLL installing
@@ -160,12 +160,12 @@ to your PATH.
 ## Docker image
 
 As mentioned in the Live preview section, we have a Docker image which is used
-by the CI pipeline for building the documentation site, as well as can be 
+by the CI pipeline for building the documentation site, as well as can be
 leveraged during writing the documentation for live preview.
 
 The main motivation behind the image is to allow leveraging
-[MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/) 
-without publishing its sources, while still allowing to publish the source code 
+[MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)
+without publishing its sources, while still allowing to publish the source code
 of our documentation.
 
 ### Updating container image
@@ -180,27 +180,27 @@ make docker-push
 You probably don't need to read this section. :)
 
 `mike` is a build and version tool for MkDocs. It works by building the current
-checkout locally and then pushing it to the appropriate directory under 
+checkout locally and then pushing it to the appropriate directory under
 the `gh-pages` branch.
 
-BEWARE that incorporating MkDocs Material Insiders made things a bit more 
+BEWARE that incorporating MkDocs Material Insiders made things a bit more
 complicated.
 Make sure that in case you need to run `mike`, you either:
 
 - use the Docker image, which includes MkDocs Material Insiders
-- use a virtual environment created with `make mike`, which replaces 
+- use a virtual environment created with `make mike`, which replaces
   `mkdocs-material` with the Insiders edition.
 
 ### Why do we have `gh-pages` on GitLab?
 
-`mike` expects to be running on GitHub. GitHub uses the `gh-pages` branch as a 
-store for files being deployed to the static website. GitLab has a different 
-approach and uses an artifact called `public` to achieve the same. To allow 
-`mike` function normally, we have:
+`mike` expects to be running on GitHub. GitHub uses the `gh-pages` branch as a
+store for files being deployed to the static website. GitLab has a different
+approach and uses an artifact called `public` to achieve the same. To allow
+`mike` function normally:
 
-- kept the `gh-pages` branch
-- there is a CD/CI job in the branch, which copies content to the `public` 
-  artifact when pushed to the `gh-pages` branch.
+- we have kept the `gh-pages` branch
+- there is a CD/CI job in the branch, which copies content to the `public`
+  artifact when pushed to the `gh-pages` branch
 
 You can see the previous versions being saved in the `gh-pages` branch. It looks
 something like this:
@@ -217,11 +217,11 @@ something like this:
 ```
 
 The directories `0.0.1`, `0.0.2`, `0.0.3` and `main` contain full builds of the
-appropriate versions of the documentation. The `latest` directory contains a 
-redirect to the latest named version, which we have aliased as being the latest 
+appropriate versions of the documentation. The `latest` directory contains a
+redirect to the latest named version, which we have aliased as being the latest
 (it is `0.0.3` in our example).
 
-The `index.html` file in the root directory redirects to the default version 
+The `index.html` file in the root directory redirects to the default version
 (which is `latest`).
 
 The `versions.json` file contains information about published versions. This is
@@ -230,12 +230,12 @@ page.
 
 ### Release a new version of documentation
 
-Please be careful -- running `mike` with `--push` will result in immediate 
-changes in the repository (no reviews and such), as described in the taken 
+Please be careful -- running `mike` with `--push` will result in immediate
+changes in the repository (no reviews and such), as described in the taken
 steps.
 
 Let's assume that we are on version `4.5` and want to release a brand new `4.6`.
-The current `main` corresponds to the content of the `4.6` release. To release 
+The current `main` corresponds to the content of the `4.6` release. To release
 it, we just need to do the following:
 
 - tag `main` with `4.6` to mark the point in time when we have made the cut
@@ -261,7 +261,7 @@ Those follow the `release/x.y` naming, such as `release/5.0`. Just be aware that
 such a branch may not exist yet as the release is fresh enough (e.g. all updates
 from `main` goes to the release as well) or there were no changes necessary. :)
 
-Check the `gh-pages` branch for the actual commit hashes used for the release 
+Check the `gh-pages` branch for the actual commit hashes used for the release
 build.
 
 For example:
@@ -273,12 +273,12 @@ For example:
 means that the `541d97e0d` was deployed to version `5.0` on the website.
 
 - Create a new branch to track your changes. Make sure that it is based on the
-  appropriate release branch (or create it). In other words, the parent of the 
+  appropriate release branch (or create it). In other words, the parent of the
   branch needs to be a release branch (e.g. `release/5.0`).
 - Make all your changes. Push the branch to `origin`.
-- Create a merge request, make sure that you appropriately set the target branch 
-  for it (e.g. merging from `my_5.0_update` to `release/5.0`). Never merge it 
-  into `main`! Make clear (e.g. in the title) that you are updating a tagged 
+- Create a merge request, make sure that you appropriately set the target branch
+  for it (e.g. merging from `my_5.0_update` to `release/5.0`). Never merge it
+  into `main`! Make clear (e.g. in the title) that you are updating a tagged
   release.
 - When merged, checkout the release branch and deploy it with `mike`:
 
@@ -299,12 +299,12 @@ website. Use with caution!
 
 There is a script `jira_release_notes.py` which will refresh all low-level
 release notes from Jira. There are certain shortcuts, like hard-coded
-configuration values. Also check your release filtering in there to limit which 
+configuration values. Also check your release filtering in there to limit which
 releases are actually refreshed.
 
 To use this script, you need to export two environment variables:
 
 - `JIRA_USER` -- your username (e.g. `pavel.bykov@ipfabric.io`)
-- `JIRA_PASS` -- a token you can get from the 
-  [Jira API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens) 
+- `JIRA_PASS` -- a token you can get from the
+  [Jira API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
