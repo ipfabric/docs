@@ -12,6 +12,10 @@ This section describes per-API specific settings for supported APIs.
 
 For each Vendor API, **additional system settings** can be applied.
 
+!!! info "Multi-Factor Authentication"
+
+    When configuring login credentials for Vendor API, please note that IP Fabric does not support multi-factor authentication (MFA). Please use a user account without MFA enabled (you may have option to generate "application access token").
+
 ## Slug and Comment
 
 Every instance of vendor API configuration have two additional fields (example shows screenshot of AWS configuration)
