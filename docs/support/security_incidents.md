@@ -6,7 +6,7 @@ description: IP Fabric can ingest information about security incident from multi
 
 ## Initial source of information
 
-If you have any information about potential security incidents relating to the IP Fabric product, please notify us in one of the following ways:
+If you have any information about potential security events or incidents relating to the IP Fabric, please notify us in one of the following ways:
 
 - email: `security@ipfabric.io` or `support@ipfabric.io`
 - [IP Fabric Help Center](https://support.ipfabric.io)
@@ -45,8 +45,6 @@ Every security incident has a tracking ticket, which contains:
 - Affected customers (if specific)
 - `security` tag assigned
 
-Also the IP Fabric internal security Slack channel will be notified, with a dedicated channel created for a specific incident as necesssary.
+Also, the IP Fabric internal security Slack channel will be notified, with a dedicated channel created for a specific incident as necessary.
 
-We select one person to be responsible for coordinating internal communication and serve as an
-interface to the teams communicating directly with customers. Typical candidates: DevOps TL,
-Head of Development, VPE, CTO.
+We select one person to be responsible for coordinating internal communication and serve as an interface to the teams communicating directly with customers. Typical candidates: DevOps TL, Head of Development, VPE, CTO.
