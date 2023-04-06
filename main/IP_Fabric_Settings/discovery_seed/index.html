@@ -4034,6 +4034,12 @@ current default gateway.</p>
 <p>It is recommended to provide multiple IP addresses of core routers as a
 starting point for discovery.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Maximum prefix length</p>
+<p>When you add a network to the discovery seed, IP Fabric attempts to connect
+to all IP addresses in that network. Due to this, the <strong>maximum prefix length</strong>
+you can add into the <strong>Discovery Seed</strong> is <code>/23</code>.</p>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
