@@ -3370,6 +3370,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#curl">
+<span class="md-ellipsis">
+      
+        curl
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4102,6 +4111,15 @@ differently in you production deployment, than described here.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#curl">
+<span class="md-ellipsis">
+      
+        curl
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4127,15 +4145,15 @@ differently in you production deployment, than described here.
 <h1 id="techsupport">Techsupport</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The Techsupport file from the IP Fabric is one of many ways how you can
+<p>The techsupport file from the IP Fabric is one of many ways how you can
 share the discovered data with our support team and engineers. This
 quick tutorial demonstrates how to generate the file and share it with
-us. The Techsupport file is encrypted. Only IP Fabric support staff is
+us. The techsupport file is encrypted. Only IP Fabric support staff is
 able to decrypt the data.</p>
 </div>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/SJZAzYAuXrE" title="YouTube video player" width="560"></iframe>
 <h2 id="generating-techsupport-file">Generating Techsupport File</h2>
-<p>Go to <strong>Support -&gt; Generate Techsupport</strong></p>
+<p>Go to <strong>Support → Generate Techsupport</strong></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="generate.png"><img alt="Generate techsupport" src="generate.png"/></a></p>
 <p>Select data to be included in a Techsupport file (leave in default when in doubt)</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="config.png"><img alt="Configure techsupport" src="config.png"/></a></p>
@@ -4143,7 +4161,12 @@ able to decrypt the data.</p>
 <h3 id="web-https">WEB / HTTPS</h3>
 <p>Please, visit <a href="https://upload.ipfabric.io">https://upload.ipfabric.io</a> with
 your browser to upload a generated techsupport for IP Fabric team.</p>
-<p>User and password are provided by technical support.</p>
+<h3 id="curl"><code>curl</code></h3>
+<p>If your IP Fabric machine has direct internet access, you can upload techsupport
+directly from it using the following <code>curl</code> command:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--user<span class="w"> </span>username:password<span class="w"> </span>-f<span class="w"> </span>-T<span class="w"> </span><span class="s2">"/home/autoboss/files/techsupport-xxx.tar"</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://upload.eu.ipfabric.io/upload
+</code></pre></div>
+<p>Generated techsupport files are located in <code>/home/autoboss/files/</code> folder. Username and password are provided by technical support.</p>
 <h2 id="what-is-included-in-the-techsupport-file">What Is Included In The Techsupport File?</h2>
 <ol>
 <li><strong>System logs</strong> – Includes <code>syslog</code>, <code>dmesg</code>, RabbitMQ, MongoDB, ArangoDB and IP Fabric API service logs. Customer data are <strong>not</strong> included.</li>
