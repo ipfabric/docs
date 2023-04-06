@@ -6,17 +6,17 @@ description: The Techsupport file from the IP Fabric is one of many ways how you
 
 !!! info
 
-    The Techsupport file from the IP Fabric is one of many ways how you can
+    The techsupport file from the IP Fabric is one of many ways how you can
     share the discovered data with our support team and engineers. This
     quick tutorial demonstrates how to generate the file and share it with
-    us. The Techsupport file is encrypted. Only IP Fabric support staff is
+    us. The techsupport file is encrypted. Only IP Fabric support staff is
     able to decrypt the data.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SJZAzYAuXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Generating Techsupport File
 
-Go to **Support -> Generate Techsupport**
+Go to **Support --> Generate Techsupport**
 
 ![Generate techsupport](techsupport/generate.png)
 
@@ -31,7 +31,16 @@ Select data to be included in a Techsupport file (leave in default when in doubt
 Please, visit [https://upload.ipfabric.io](https://upload.ipfabric.io) with
 your browser to upload a generated techsupport for IP Fabric team.
 
-User and password are provided by technical support.
+### `curl`
+
+If your IP Fabric machine has direct internet access, you can upload techsupport
+directly from it using the following `curl` command:
+
+```shell
+curl --user username:password -f -T "/home/autoboss/files/techsupport-xxx.tar" -X POST https://upload.eu.ipfabric.io/upload
+```
+
+Generated techsupport files are located in `/home/autoboss/files/` folder. Username and password are provided by technical support.
 
 ## What Is Included In The Techsupport File?
 
