@@ -7,7 +7,7 @@ description: If you know a particular starting point for discovering the network
 A discovery seed is a device from which IP Fabric begins the auto-discovery process. These IPs can be device management IP addresses or networks.
 
 If you know a particular starting point for discovering the network, the
-information can be entered at **Settings → Discovery Seed**. This option
+information can be entered at **Settings --> Discovery Seed**. This option
 does not exclude any networks from discovery.
 
 The starting points can be management IP addresses of network devices or
@@ -19,5 +19,12 @@ current default gateway.
 ![Discovery seed](discovery_seed.png)
 
 !!! note
+    
     It is recommended to provide multiple IP addresses of core routers as a
     starting point for discovery.
+
+!!! warning "Maximum prefix length"
+
+    When you add a network to the discovery seed, IP Fabric attempts to connect
+    to all IP addresses in that network. Due to this, the **maximum prefix length**
+    you can add into the **Discovery Seed** is `/23`.
