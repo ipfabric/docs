@@ -4075,18 +4075,20 @@ differently in you production deployment, than described here.
 <h1 id="simulate-unicast-path-lookup-in-ip-fabric-using-python">Simulate Unicast Path Lookup In IP Fabric Using Python</h1>
 <p>A quick tutorial about how to use IP Fabric’s API with <a href="https://pypi.org/project/ipfabric-diagrams/">python-ipfabric-diagrams</a> Python module.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>we strongly recommend using a virtual environment for development testing</li>
-<li>install the Python package in your environment:</li>
-</ul>
+<p>We strongly recommend using a virtual environment for development. To Install the Python package in your environment:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric-diagrams
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">SDK Changes coming in v7.0</p>
+<p>In SDK version v7.0 <code>ipfabric-diagrams</code> will be moved back into <code>ipfabric</code> which will remove the requirement for installing separate packages.</p>
+</div>
 <h2 id="code-snippet">Code Snippet</h2>
 <p>There are more examples in our Git, but we will test unicast path simulation with the following code snippet:</p>
 <div class="highlight"><pre><span></span><code><span class="sd">"""</span>
-<span class="sd">Unicast path simulation with IP Fabric's Python package (valid for version 4.3 and later</span>
+<span class="sd">Unicast path simulation with IP Fabric's Python package (valid for version 4.3 and later)</span>
 <span class="sd">"""</span>
-<span class="kn">from</span> <span class="nn">ipfabric_diagrams</span> <span class="kn">import</span> <span class="n">IPFDiagram</span><span class="p">,</span> <span class="n">PathLookupSettings</span><span class="p">,</span> <span class="n">Unicast</span><span class="p">,</span> <span class="n">Algorithm</span><span class="p">,</span> <span class="n">EntryPoint</span><span class="p">,</span> <span class="n">OtherOptions</span>
+<span class="c1"># from ipfabric_diagrams import IPFDiagram, PathLookupSettings, Unicast, Algorithm, EntryPoint, OtherOptions  # SDK &lt; v6.2</span>
+<span class="kn">from</span> <span class="nn">ipfabric.diagrams</span> <span class="kn">import</span> <span class="n">IPFDiagram</span><span class="p">,</span> <span class="n">PathLookupSettings</span><span class="p">,</span> <span class="n">Unicast</span><span class="p">,</span> <span class="n">Algorithm</span><span class="p">,</span> <span class="n">EntryPoint</span><span class="p">,</span> <span class="n">OtherOptions</span>  <span class="c1"># SDK &gt;= v6.2</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFDiagram</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s1">'https://ipfabric_fqdn/'</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s1">'api_token'</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
