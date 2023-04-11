@@ -8,12 +8,15 @@ A quick tutorial about how to use IP Fabric’s API with [python-ipfabric-diagra
 
 ## Prerequisites
 
-- we strongly recommend using a virtual environment for development testing
-- install the Python package in your environment:
+We strongly recommend using a virtual environment for development. To Install the Python package in your environment:
 
 ```bash
 pip install ipfabric-diagrams
 ```
+
+!!! note "SDK Changes coming in v7.0"
+
+    In SDK version v7.0 `ipfabric-diagrams` will be moved back into `ipfabric` which will remove the requirement for installing separate packages.
 
 ## Code Snippet
 
@@ -21,9 +24,10 @@ There are more examples in our Git, but we will test unicast path simulation wit
 
 ```py
 """
-Unicast path simulation with IP Fabric's Python package (valid for version 4.3 and later
+Unicast path simulation with IP Fabric's Python package (valid for version 4.3 and later)
 """
-from ipfabric_diagrams import IPFDiagram, PathLookupSettings, Unicast, Algorithm, EntryPoint, OtherOptions
+# from ipfabric_diagrams import IPFDiagram, PathLookupSettings, Unicast, Algorithm, EntryPoint, OtherOptions  # SDK < v6.2
+from ipfabric.diagrams import IPFDiagram, PathLookupSettings, Unicast, Algorithm, EntryPoint, OtherOptions  # SDK >= v6.2
 
 if __name__ == '__main__':
     ipf = IPFDiagram(base_url='https://ipfabric_fqdn/', token='api_token', verify=False, timeout=15)
