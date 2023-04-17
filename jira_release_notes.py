@@ -84,7 +84,7 @@ def generate_release_notes(rn, project_issues):
                 issues.append(format_issue(issue))
 
         if len(issues) > 0:
-            rn.add_header(type[1], 2)
+            rn.add_heading(type[1], 2)
             rn.add_paragraph(type[2])
             rn.add_unordered_list(issues)
 
@@ -142,8 +142,8 @@ def main():
             issues_total += len(project_issues)
             print(f"For {project} fetched {len(project_issues)} issues")
 
-        rn = Document("release_notes")
-        rn.add_header(f"LLRN {v['name']}")
+        rn = Document()
+        rn.add_heading(f"LLRN {v['name']}")
         rn.add_paragraph(f""" These are low-level release notes for IP Fabric
                 release `{v['name']}`. Please note, that this page contains
                 very low-level information about the actual release, which can
