@@ -4128,9 +4128,8 @@ at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference
 <p><strong><em>Known Affected platforms</em></strong>: ALL</p>
 <p><strong><em>Description</em></strong>: Information gathered from running-config doesn’t
 reflect apply-groups.</p>
-<p><strong><em>Result</em></strong>: Some information gathered from running-config can be
-missing. It affect all tasks using running config - for example firewall
-filters, snmp, syslog.<br/>
+<p><strong><em>Result</em></strong>: Some information gathered from running-config might be
+missing. Since version 6.3 tasks Zone Firewall, NAT44 and ACL aren’t affected, other tasks like SNMP and Syslog are still affected.
 More
 at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html</a></p>
 <hr/>
@@ -4147,7 +4146,7 @@ present</p>
 <h1 id="discovery-of-security-policies">Discovery of Security Policies</h1>
 <ul>
 <li>Wildcard &amp; Dynamic objects and negated services are not supported</li>
-<li>Settings &gt; Advanced &gt; Vendor API: In case that base URL points to a
+<li>Settings → Advanced → Vendor API: In case that base URL points to a
   multi-domain server address, domains have to be specified</li>
 </ul>
 </article>
