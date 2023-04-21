@@ -76,9 +76,8 @@ at: <https://www.juniper.net/documentation/en_US/junos/topics/reference/configu
 **_Description_**: Information gathered from running-config doesn't
 reflect apply-groups.
 
-**_Result_**: Some information gathered from running-config can be
-missing. It affect all tasks using running config - for example firewall
-filters, snmp, syslog.  
+**_Result_**: Some information gathered from running-config might be
+missing. Since version 6.3 tasks Zone Firewall, NAT44 and ACL aren't affected, other tasks like SNMP and Syslog are still affected.
 More
 at: <https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html>
 
@@ -106,5 +105,5 @@ Check <https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos> fo
 # Discovery of Security Policies
 
 - Wildcard & Dynamic objects and negated services are not supported
-- Settings > Advanced > Vendor API: In case that base URL points to a
+- Settings --> Advanced --> Vendor API: In case that base URL points to a
   multi-domain server address, domains have to be specified
