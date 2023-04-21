@@ -3775,6 +3775,15 @@ documentation.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#snmp-passphrases-appear-to-change-each-time-during-config-backup">
+<span class="md-ellipsis">
+      
+        SNMP passphrases appear to change each time during config backup
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -4144,6 +4153,15 @@ documentation.
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#snmp-passphrases-appear-to-change-each-time-during-config-backup">
+<span class="md-ellipsis">
+      
+        SNMP passphrases appear to change each time during config backup
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -4170,6 +4188,15 @@ documentation.
 <p><strong>Description</strong>: <code>show ltm virtual details</code> command may cause the <code>restjavad</code> daemon on F5 to restart, causing long or infinite discovery time.</p>
 <p><strong>Result</strong>: Some F5 devices might not be discovered.</p>
 <p><strong>Fix</strong>: Increase device memory for <code>restjavad</code> process, see <a href="https://cdn.f5.com/product/bugtracker/ID776393.html">F5 Bug ID 776393</a>.</p>
+<h2 id="snmp-passphrases-appear-to-change-each-time-during-config-backup">SNMP passphrases appear to change each time during config backup</h2>
+<p><strong>Affected Versions:</strong> all below 14.1.0 version</p>
+<p><strong>Description:</strong> When SNMPv3 users are configured with authentication and privacy passwords, the TMSH display of encrypted passwords appears to change at each redisplay. Same applies for getting the configuration file with <code>cd /;show running-config recursive</code> command.</p>
+<p><strong>Environment:</strong>
+- TMSH
+- SNMPv3
+- Encrypted passwords</p>
+<p><strong>Result:</strong> IP Fabric considers every new F5 configuration file as <code>changed</code>.</p>
+<p><strong>Fix:</strong> Upgrade to a fixed version as noted in <a href="https://cdn.f5.com/product/bugtracker/ID532181.html">Bug ID 532181</a>.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
