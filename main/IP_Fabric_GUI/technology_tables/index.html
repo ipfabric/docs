@@ -2481,6 +2481,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Table Filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-simple-column-filter-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegEx simple column filter examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -8780,6 +8797,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Table Filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-simple-column-filter-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegEx simple column filter examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -8881,11 +8915,15 @@ top left.</p>
 filtering is available above each column, and accepted filtering values
 can be strings, numbers, IP addresses, networks, boolean values, or
 select box values.</p>
-<p>RegEx can be used in a string filter by adding <code>=~</code> <strong>after</strong> the
-expression. An exact match of the value can be achieved by adding <code>=</code>
-<strong>before</strong> the expression. For more information about supported RegEx,
-check the section below.</p>
-<p>Fields containing IP Addresses can be filtered by entering the IP/prefix
+<h3 id="regex-simple-column-filter-examples">RegEx simple column filter examples</h3>
+<ul>
+<li><code>=~(cis|ari)</code> &ndash; RegEx matches also <code>cisco</code> or <code>arista</code> values (not exact match)</li>
+<li><code>=~^(cisco|arista)$</code> &ndash; RegEx matches <code>cisco</code> or <code>arista</code> values only (exact match)</li>
+<li><code>=cisco</code> &ndash; matches only <code>cisco</code> values (exact match)</li>
+<li><code>cis</code> &ndash; matches <code>cis</code> or <code>cisco</code> (prefix match)</li>
+<li><code>=~^(?!cisco)</code> &ndash; RegEx negative lookahead &ndash; matches all except value starting with <code>cisco</code> </li>
+</ul>
+<p>Some columns containing IP Addresses can be filtered by entering the IP/prefix
 length in the CIDR notation. For example, <code>10.0.0.0/25</code> will find
 addresses between and including <code>10.0.0.128</code> and <code>10.0.0.255</code>.</p>
 <p>Advanced filters can be used to construct arbitrary complex expressions
