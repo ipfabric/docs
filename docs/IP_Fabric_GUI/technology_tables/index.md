@@ -25,12 +25,15 @@ filtering is available above each column, and accepted filtering values
 can be strings, numbers, IP addresses, networks, boolean values, or
 select box values.
 
-RegEx can be used in a string filter by adding `=~` **after** the
-expression. An exact match of the value can be achieved by adding `=`
-**before** the expression. For more information about supported RegEx,
-check the section below.
+### RegEx simple column filter examples
 
-Fields containing IP Addresses can be filtered by entering the IP/prefix
+- `=~(cis|ari)` -- RegEx matches also `cisco` or `arista` values (not exact match)
+- `=~^(cisco|arista)$` -- RegEx matches `cisco` or `arista` values only (exact match)
+- `=cisco` -- matches only `cisco` values (exact match)
+- `cis` -- matches `cis` or `cisco` (prefix match)
+- `=~^(?!cisco)` -- RegEx negative lookahead -- matches all except value starting with `cisco` 
+
+Some columns containing IP Addresses can be filtered by entering the IP/prefix
 length in the CIDR notation. For example, `10.0.0.0/25` will find
 addresses between and including `10.0.0.128` and `10.0.0.255`.
 
