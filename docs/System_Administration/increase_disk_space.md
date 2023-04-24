@@ -264,7 +264,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 8. Reboot(**Send Ctrl+Alt+Delete** function can be also used) or power on IP
    Fabric VM.
 9. Follow [Adding additional disk(s)](#expanding-system-volume-by-adding-additional-disks)
-   or [Example adding disk to backup](#example-of-a-physical-disk-being-mounted-to-backup-directory)
+   or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory)
 
 ## Increase Disk Space For Hyper-V
 
@@ -304,4 +304,4 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 9. Apply new disk on Settings window - close **Settings**.
 10. Start VM.
 11. Follow [Adding additional disk(s)](#expanding-system-volume-by-adding-additional-disks)
-    or [Example adding disk to backup](#example-of-a-physical-disk-being-mounted-to-backup-directory)
+    or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory)
