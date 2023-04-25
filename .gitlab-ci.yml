@@ -5,6 +5,10 @@ variables:
 
 image: registry.gitlab.com/ip-fabric/documentation/docs
 
+default:
+  tags:
+    - lowperf
+
 build_main_pages:
   stage: deploy
   only:
@@ -45,8 +49,8 @@ danger:
   only:
     - merge_requests
   script:
-      - printenv
-      - gem install danger-gitlab
-      - "ls -al"
-      - export CI_MERGE_REQUEST_IID=${CI_OPEN_MERGE_REQUESTS#*!}
-      - danger --fail-on-errors=true
+    - printenv
+    - gem install danger-gitlab
+    - "ls -al"
+    - export CI_MERGE_REQUEST_IID=${CI_OPEN_MERGE_REQUESTS#*!}
+    - danger --fail-on-errors=true
