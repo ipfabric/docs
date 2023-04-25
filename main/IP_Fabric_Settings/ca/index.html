@@ -130,8 +130,8 @@
 <div class="admonition warning">
 <p class="admonition-title">Unreleased content!</p>
 You are viewing a build based on the latest commit on the <code>main</code>
-branch. This means that the content of this site is subject to change. Some
-features can behave differently in your production deployment than described
+branch. This means that the content of this site is subject to change. In your
+productin deployment, some features may behave differently than described
 here.
 
 <br/>Please visit <a href="/latest">/latest</a> for the latest released
@@ -8817,29 +8817,43 @@ documentation.
 
 
 <h1 id="certification-authorities">Certification Authorities</h1>
-<p>Prior version <code>6.0</code> IP Fabric used the CA bundle shipped with <code>node.js</code>. This led to confusion as the system utilities were not aware of the new certificates. Starting with release <code>6.0</code> we have switched to global cert store as trusted by <code>openssl</code>.</p>
-<p>Internally this is achieved with passing <code>--use-openssl-ca</code> to <code>node.js</code>.</p>
+<p>Before version <code>6.0</code>, IP Fabric used the CA bundle shipped with <code>node.js</code>. This
+led to confusion as system utilities were not aware of new certificates.</p>
+<p>Since version <code>6.0</code>, we have switched to global cert store trusted by <code>openssl</code>.
+Internally, this is achieved by passing <code>--use-openssl-ca</code> to <code>node.js</code>.</p>
 <h2 id="adding-a-custom-certificate">Adding a custom certificate</h2>
-<p>You add certificate by placing <code>.crt</code> file to <code>/usr/local/share/ca-certificates</code> and running <code>update-ca-certificates</code>. We recommend creating a subdirectory in case you are planning to have multiple certificates added.</p>
+<p>You can add a certificate by placing its <code>.crt</code> file in the
+<code>/usr/local/share/ca-certificates</code> directory and running the following command:</p>
+<div class="highlight"><pre><span></span><code>update-ca-certificates
+</code></pre></div>
+<p>We recommend creating a subdirectory in case you are going to add multiple
+certificates:</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/usr/local/share/ca-certificates/my_custom_ca
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Certificate has to be in PEM format with <code>.crt</code> extension, files with other extensions are omitted.</p>
+<p>The certificate has to be in PEM format with <code>.crt</code> extension. Files with
+other extensions are omitted.</p>
 </div>
-<p>After placing the certificate there, you will need to run <code>update-ca-certificates</code> command to link the certificate to the Trusted Root Certificate Store. Running it should give you output similar to the following:</p>
+<p>After placing the certificate in the directory, you will need to run the
+<code>update-ca-certificates</code> command to link the certificate to the <code>Trusted Root
+Certificate Store</code>. Running it should give you an output similar to the
+following:</p>
 <div class="highlight"><pre><span></span><code>Updating<span class="w"> </span>certificates<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/ssl/certs...
 <span class="m">1</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed<span class="p">;</span><span class="w"> </span><span class="k">done</span>.
 Running<span class="w"> </span>hooks<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/ca-certificates/update.d...
 <span class="k">done</span>.
 </code></pre></div>
 <h3 id="converting-to-crt">Converting to <code>.crt</code></h3>
-<p><code>.crt</code> is nothing more than a PEM certificate with a custom extension. If you need to convert you certificate, you can use <code>openssl</code> command line tool to do so. It is typically pretty clever in guessing input format:</p>
+<p><code>.crt</code> is nothing more than a PEM certificate with a custom extension.
+If you need to convert your certificate, you can use the <code>openssl</code> command-line
+tool to do so:</p>
 <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>my_custom_ca.der<span class="w"> </span>-out<span class="w"> </span>/usr/local/share/ca-certificates/my_custom_ca.crt
 </code></pre></div>
+<p><code>openssl</code> is typically pretty good at guessing the input format.</p>
 <h2 id="deleting-a-custom-certificate">Deleting a custom certificate</h2>
 <ol>
-<li>Delete appropriate files / directories from <code>/usr/local/share/ca-certificates/</code>.</li>
+<li>Remove relevant files/subdirectories from <code>/usr/local/share/ca-certificates</code>.</li>
 <li>Run <code>update-ca-certificates</code>.</li>
 </ol>
 
