@@ -71,7 +71,7 @@ errors and adjustments:
 
 **Jumphost** allows to set-up a connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
 
-The user used for **Jumphost** connection must have access to jumphosts `shell` and must be able to run `pyhton`.
+The user used for **Jumphost** connection must have access to jumphosts `shell` and must be able to run `python`.
 
 We successfully tested IP Fabric against jumphosts with the following python versions:
 
