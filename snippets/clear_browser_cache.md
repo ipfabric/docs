@@ -1,8 +1,9 @@
 !!! warning "Clearing Browser Cache"
 
-    Please force refresh your browser cache after an upgrade.
-    Depending on your operating system use the following key combination in your browser window:
+    Hard refresh your browser cache after each upgrade. Depending on your
+    operating system, use one of the following key combinations in your browser
+    window:
 
-    - Windows: `CTRL + F5`
-    - Mac/Apple: `Apple + R` or `⌘ + R`
-    - Linux: `CTRL + F5`
+    - Windows: `Ctrl` + `F5`
+    - macOS: `Command` + `Shift` + `R`
+    - Linux: `Ctrl` + `F5`
