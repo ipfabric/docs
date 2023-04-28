@@ -24,3 +24,8 @@ This section contains information about NAT policies and rules configured on a d
 A graphical representation (as shown below) of the policy chain can be access by clicking on a "Policy Name" or a "Sequence number".
 
 ![natPostRouting chain on Forcepoint](addressing/forcepoint-natPostRouting.png)
+
+
+!!! Note
+
+    NAT policies collection for Cisco Firepower 7000 & 8000 Series devices is not supported. To learn more about this limitation, see [Known Issues](../../support/known_issues/Vendors/cisco/FMC_Firepower_NAT.md).
