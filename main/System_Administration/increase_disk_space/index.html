@@ -131,7 +131,7 @@
 <p class="admonition-title">Unreleased content!</p>
 You are viewing a build based on the latest commit on the <code>main</code>
 branch. This means that the content of this site is subject to change. In your
-productin deployment, some features may behave differently than described
+production deployment, some features may behave differently than described
 here.
 
 <br/>Please visit <a href="/latest">/latest</a> for the latest released
@@ -9144,6 +9144,12 @@ The tool first checks if the local backup directory exists and then the backups 
 <p>The backup disk has to be partitioned with LVM. Specifically, the <code>/backup</code> directory must be on the logical volume <code>backup</code> of the volume group <code>backup-vg</code>.</p>
 </div>
 <h3 id="instructions-to-mount-a-physical-disk-to-backup-directory">Instructions To Mount a Physical Disk To <code>/backup</code> Directory</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the <code>lsblk</code> command. In the following steps 2 and 3, we will use <code>vdb</code> as an example of a backup disk name. If your backup disk has a different name, please replace <code>vdb</code> with the correct name in steps 2 and 3.</p>
+</div>
+<ol>
+<li>
 <p>Find a device which you want to use as the <code>/backup</code> directory. In this case, <code>vdb</code>.</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
 NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
@@ -9155,7 +9161,7 @@ vda<span class="w">                     </span><span class="m">254</span>:0<span
 <span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
 vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w">             </span><span class="c1"># &lt;- I want to use this device for the /backup directory</span>
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Create LVM physical volume on the disk <code>vdb</code>:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>pvcreate<span class="w"> </span>/dev/vdb
@@ -9207,7 +9213,7 @@ Writing<span class="w"> </span>superblocks<span class="w"> </span>and<span class
 </code></pre></div>
 </li>
 <li>
-<p>The logical volume <code>backup</code> on the disk <code>vdb</code> can be now mounted with:</p>
+<p>The logical volume <code>backup</code> can be now mounted with:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>/backup
 </code></pre></div>
 </li>
@@ -9227,6 +9233,10 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </li>
 </ol>
 <h3 id="increase-size-of-backup-disk">Increase Size of Backup Disk</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the <code>lsblk</code> command. In the following step 5, we will use <code>vdb</code> as an example of a backup disk name. If your backup disk has a different name, please replace <code>vdb</code> with the correct name in step 5.</p>
+</div>
 <p>Suppose you prepared a backup disk with size of 20 GB with the instructions above and you would like to increase its size (for example to 40 GB).</p>
 <ol>
 <li>
