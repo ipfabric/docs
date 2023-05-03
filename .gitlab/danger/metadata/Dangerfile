@@ -16,8 +16,9 @@ if gitlab.mr_json['title'].length > 72
 end
 
 jira_regex = /(DOS|NIM|SA|SD|SK|ST)-\d+/
-unless gitlab.mr_json['title'].match?(jira_regex)
-  warn "🔍 I can't find the Jira ticket number in the PR title. Your team " \
+unless gitlab.mr_title.match?(jira_regex) ||
+       gitlab.mr_body.match?(jira_regex)
+  warn "🔍 I can't find the Jira ticket number in the PR title or description. Your team " \
     "members are going to thank you when they look at the list of MRs on Gitlab " \
     "and see at a glance which PR belongs to which Jira ticket 🙏. It is tested with `#{jira_regex}`."
 end
