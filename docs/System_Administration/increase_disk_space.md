@@ -57,42 +57,46 @@ Any additional disk (see hypervisor-specific configuration at the bottom of this
 
 ### Instructions To Mount a Physical Disk To `/backup` Directory
 
-Find a device which you want to use as the `/backup` directory. In this case, `vdb`.
+!!! warning
 
-```shell
-osadmin@ipfabric:~$ lsblk
-NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-vda                     254:0    0 76,3G  0 disk
-├─vda1                  254:1    0  487M  0 part /boot
-├─vda2                  254:2    0    1K  0 part
-└─vda5                  254:5    0 75,8G  0 part
-  ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
-  └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
-vdb                     254:16   0   20G  0 disk             # <- I want to use this device for the /backup directory
-```
+    The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the `lsblk` command. In the following steps 2 and 3, we will use `vdb` as an example of a backup disk name. If your backup disk has a different name, please replace `vdb` with the correct name in steps 2 and 3.
 
-1. Create LVM physical volume on the disk `vdb`:
+1. Find a device which you want to use as the `/backup` directory. In this case, `vdb`.
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76,3G  0 disk
+   ├─vda1                  254:1    0  487M  0 part /boot
+   ├─vda2                  254:2    0    1K  0 part
+   └─vda5                  254:5    0 75,8G  0 part
+     ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
+   vdb                     254:16   0   20G  0 disk             # <- I want to use this device for the /backup directory
+   ```
+
+2. Create LVM physical volume on the disk `vdb`:
 
    ```shell
    osadmin@ipfabric:~$ sudo pvcreate /dev/vdb
      Physical volume "/dev/vdb" successfully created.
    ```
 
-2. Create the volume group `backup-vg`:
+3. Create the volume group `backup-vg`:
 
    ```shell
    osadmin@ipfabric:~$ sudo vgcreate backup-vg /dev/vdb
      Volume group "backup-vg" successfully created
    ```
 
-3. Use the entire size of the volume group `backup-vg` for creating the logical volume `backup`:
+4. Use the entire size of the volume group `backup-vg` for creating the logical volume `backup`:
 
    ```shell
    osadmin@ipfabric:~$ sudo lvcreate -n backup -l 100%FREE backup-vg
      Logical volume "backup" created.
    ```
 
-4. Create a filesystem (in this example `ext4`) on the logical volume `backup`:
+5. Create a filesystem (in this example `ext4`) on the logical volume `backup`:
 
    ```shell
    osadmin@ipfabric:~$ sudo mkfs.ext4 /dev/mapper/backup--vg-backup
@@ -110,7 +114,7 @@ vdb                     254:16   0   20G  0 disk             # <- I want to use 
    Writing superblocks and filesystem accounting information: done
    ```
 
-5. Create a new [fstab](https://wiki.archlinux.org/title/fstab) entry (for example with `sudo vi /etc/fstab`):
+6. Create a new [fstab](https://wiki.archlinux.org/title/fstab) entry (for example with `sudo vi /etc/fstab`):
 
   !!! info
 
@@ -121,19 +125,19 @@ vdb                     254:16   0   20G  0 disk             # <- I want to use 
       /dev/mapper/backup--vg-backup   /backup   ext4   defaults   0   0
       ```
 
-6. Create the `/backup` directory:
+7. Create the `/backup` directory:
 
    ```shell
    sudo mkdir /backup
    ```
 
-7. The logical volume `backup` on the disk `vdb` can be now mounted with:
+8. The logical volume `backup` can be now mounted with:
 
    ```shell
    sudo mount /backup
    ```
 
-8. Finally, check the output of `lsblk`:
+9. Finally, check the output of `lsblk`:
 
    ```shell
    osadmin@ipfabric:~$ lsblk
@@ -149,6 +153,10 @@ vdb                     254:16   0   20G  0 disk             # <- I want to use 
    ```
 
 ### Increase Size of Backup Disk
+
+!!! warning
+
+    The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the `lsblk` command. In the following step 5, we will use `vdb` as an example of a backup disk name. If your backup disk has a different name, please replace `vdb` with the correct name in step 5.
 
 Suppose you prepared a backup disk with size of 20 GB with the instructions above and you would like to increase its size (for example to 40 GB).
 
