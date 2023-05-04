@@ -1206,6 +1206,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deploying-a-virtual-machine-on-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying a Virtual Machine on Microsoft Azure
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8849,6 +8860,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deploying-a-virtual-machine-on-microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying a Virtual Machine on Microsoft Azure
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8907,13 +8929,13 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <li>Download <code>ipfabric-*.qcow2</code> from the official source.</li>
 <li>Convert <code>QCOW2</code> image to <code>VHDX</code> (Be sure to change the filenames in the command examples below.) <ul>
 <li>Windows instructions:<ol>
-<li>Download <a href="https://cloudbase.it/qemu-img-windows/">qemu-img-windows</a></li>
+<li>Download <a href="https://cloudbase.it/qemu-img-windows/">QEMU disk image utility for Windows</a></li>
 <li>Unzip <code>qemu-img-windows</code></li>
 <li>Run <code>qemu-img.exe convert ipfabric-&lt;*&gt;.qcow2 -O vhdx -o subformat=dynamic ipfabric-&lt;*&gt;.vhdx</code></li>
 </ol>
 </li>
 <li>Linux instructions:<ol>
-<li>Install qemu-utils <code>sudo apt install qemu-utils</code></li>
+<li>Install <code>qemu-utils</code> <code>sudo apt install qemu-utils</code></li>
 <li>Convert file: <code>qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-&lt;*&gt;.qcow2 ipfabric-&lt;*&gt;.vhdx</code></li>
 </ol>
 </li>
@@ -9071,6 +9093,45 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </li>
 <li>
 <p>Start the virtual machine.</p>
+</li>
+</ol>
+<h2 id="deploying-a-virtual-machine-on-microsoft-azure">Deploying a Virtual Machine on Microsoft Azure</h2>
+<ol>
+<li>
+<p>Log in and create Resource groups</p>
+<p><strong>What is a resource group</strong></p>
+<p>A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.</p>
+<p>Please follow the instructions at <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups+">Creating Resource group</a>.</p>
+<p><a class="glightbox" href="../azure-imgs/azure-01-Create-resource-group.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create a Resource group" src="../azure-imgs/azure-01-Create-resource-group.png" /></a></p>
+</li>
+<li>
+<p>Create a storage account for IP Fabric</p>
+<p>A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure.</p>
+<p>For more information, see <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager overview</a> and <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1">Creating Storage Account</a>.</p>
+<p><a class="glightbox" href="../azure-imgs/azure-02-Create-storage-account.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage account" src="../azure-imgs/azure-02-Create-storage-account.png" /></a></p>
+</li>
+<li>
+<p>Create a Storage Blob Container</p>
+<p>Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Introduction to Azure Blob storage</a>.</p>
+<p><a class="glightbox" href="../azure-imgs/azure-03-storage-blob-container.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage blob container" src="../azure-imgs/azure-03-storage-blob-container.png" /></a></p>
+</li>
+<li>
+<p>Upload VHD image to Storage Account</p>
+<p>IP Fabric provides the QCOW image. For converting QCOW to VHD, you may for instance use a utility from <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image is then:</p>
+<p><div class="highlight"><pre><span></span><code>qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-5_0_1+6.qcow2 ipfabric-5_0_1+6.vhd
+</code></pre></div>
+  To <a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">upload the VHD image</a>, one need to download and install the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.
+  The image need to be uploaded to the previously created Blob container. </p>
+<p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
+</li>
+<li>
+<p>Create Image from VHD</p>
+<p>Creating a managed image in Azure is as simple as loading the necessary files. The <a href="https://learn.microsoft.com/en-gb/azure/virtual-machines/capture-image-resource">Create a legacy managed image of a generalized VM in Azure</a> documentation section contains all the needed clues.</p>
+<p><a class="glightbox" href="../azure-imgs/azure-05-create-image.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create an Image from VHD" src="../azure-imgs/azure-05-create-image.png" /></a></p>
+</li>
+<li>
+<p>Deploy VM from image</p>
+<p>Ensure that you follow the <a href="../../Overview/#hardware-requirements">resource requirements matrix</a> when sizing the Virtual machine on Azure.</p>
 </li>
 </ol>
 
