@@ -35,11 +35,11 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
 1. Download `ipfabric-*.qcow2` from the official source.
 2. Convert `QCOW2` image to `VHDX` (Be sure to change the filenames in the command examples below.) 
    * Windows instructions:
-     1. Download [qemu-img-windows](https://cloudbase.it/qemu-img-windows/)
+     1. Download [QEMU disk image utility for Windows](https://cloudbase.it/qemu-img-windows/)
      2. Unzip `qemu-img-windows`
      3. Run `qemu-img.exe convert ipfabric-<*>.qcow2 -O vhdx -o subformat=dynamic ipfabric-<*>.vhdx`
    * Linux instructions:
-     1. Install qemu-utils `sudo apt install qemu-utils`
+     1. Install `qemu-utils` `sudo apt install qemu-utils`
      2. Convert file: `qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-<*>.qcow2 ipfabric-<*>.vhdx`
 3. Create New Hyper-V Virtual Machine and Specify Name and Location
 
@@ -170,3 +170,52 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
     ![VirtualBox - VM Settings - Network](virtualbox_vm-settings_network.png)
 
 9. Start the virtual machine.
+
+## Deploying a Virtual Machine on Microsoft Azure
+
+1. Log in and create Resource groups
+    
+    **What is a resource group**
+    
+    A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.
+    
+    Please follow the instructions at [Creating Resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups+).
+    
+    ![Create a Resource group](azure-imgs/azure-01-Create-resource-group.png)
+    
+2. Create a storage account for IP Fabric
+    
+    A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure.
+    
+    For more information, see [Azure Resource Manager overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and [Creating Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1).
+    
+    ![Create a Storage account](azure-imgs/azure-02-Create-storage-account.png)
+    
+3. Create a Storage Blob Container
+    
+    Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the [Introduction to Azure Blob storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
+    
+    ![Create a Storage blob container](azure-imgs/azure-03-storage-blob-container.png)
+    
+4. Upload VHD image to Storage Account
+    
+    IP Fabric provides the QCOW image. For converting QCOW to VHD, you may for instance use a utility from [QEMU](https://www.qemu.org/download/). The recommended way to convert the image is then:
+    
+    ```
+    qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-5_0_1+6.qcow2 ipfabric-5_0_1+6.vhd
+    ```
+    To [upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure), one need to download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
+    The image need to be uploaded to the previously created Blob container. 
+    
+    ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
+    
+5. Create Image from VHD
+    
+    Creating a managed image in Azure is as simple as loading the necessary files. The [Create a legacy managed image of a generalized VM in Azure](https://learn.microsoft.com/en-gb/azure/virtual-machines/capture-image-resource) documentation section contains all the needed clues.
+    
+    ![Create an Image from VHD](azure-imgs/azure-05-create-image.png)
+    
+6. Deploy VM from image
+    
+    Ensure that you follow the [resource requirements matrix](../Overview/index.md#hardware-requirements) when sizing the Virtual machine on Azure.
+
