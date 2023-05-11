@@ -9159,6 +9159,18 @@ documentation.
 
 
 <h1 id="single-sign-on-sso">Single Sign On (SSO)</h1>
+<div class="admonition warning">
+<p class="admonition-title">Outdated SSO user records in IP Fabric might cause login issues</p>
+<p>With SSO configured, each sign-in of a new user into IP Fabric via SSO will
+create a new (non-local) user record in <strong>Settings &rarr; User Management &rarr;
+Users</strong> &ndash; with the user&rsquo;s current username and email from the Identity
+Provider (IdP).</p>
+<p>If the user&rsquo;s username or email change on the IdP side, the user will
+encounter <code>Authentication Failure</code> while logging into IP Fabric via SSO &ndash;
+due to username/email mismatch between the IdP and IP Fabric.</p>
+<p>In that case, please remove the outdated user record of that user in
+<strong>Settings &rarr; User Management &rarr; Users</strong>.</p>
+</div>
 <p>IP Fabric includes support for single sign-on. We have opted for
 <a href="https://dexidp.io/">Dex (A Federated OpenID Connect Provider)</a> as a key
 building block to allow a broader set of Identity Providers (IdP).</p>
