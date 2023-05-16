@@ -248,6 +248,10 @@ corresponds to `staticClient` in the Dex configuration).
       - Either `roleName` or `roleId` property must be specified, not both.
       - **Since version `6.1`, you can opt to only use `roleName` instead of 
         `roleId` in your configuration.**
+      - **Since version `6.3`, `roleName` can only contain `a-zA-Z0-9_-`.
+        Previously created roles will be automatically modified by removing 
+        not-allowed characters from role name according to the new validation rules.
+        Make sure specified `roleName` refers to the existing role in the system.**
 
 Example how to find `roleId`:
 

@@ -24,6 +24,8 @@ Every instance of vendor API configuration have two additional fields (example s
 
 : Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as `loginIP` for API). We recommend using short and descriptive values, such as `aws-us`, `aws-jp` etc.
 
+: **Since version `6.3`, `Slug` can only contain `a-zA-Z0-9_-`. Previously created configurations will be automatically modified by removing not-allowed characters from `Slug` according to the new validation rules.**
+
 : !!! info "Slug?"
 
           Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Slug) for more information.
