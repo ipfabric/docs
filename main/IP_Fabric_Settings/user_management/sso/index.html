@@ -9391,6 +9391,10 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <li>Either <code>roleName</code> or <code>roleId</code> property must be specified, not both.</li>
 <li><strong>Since version <code>6.1</code>, you can opt to only use <code>roleName</code> instead of 
   <code>roleId</code> in your configuration.</strong></li>
+<li><strong>Since version <code>6.3</code>, <code>roleName</code> can only contain <code>a-zA-Z0-9_-</code>.
+  Previously created roles will be automatically modified by removing 
+  not-allowed characters from role name according to the new validation rules.
+  Make sure specified <code>roleName</code> refers to the existing role in the system.</strong></li>
 </ul>
 </li>
 </ul>

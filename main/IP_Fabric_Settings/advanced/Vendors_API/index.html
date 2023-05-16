@@ -8865,6 +8865,9 @@ documentation.
 <p>Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as <code>loginIP</code> for API). We recommend using short and descriptive values, such as <code>aws-us</code>, <code>aws-jp</code> etc.</p>
 </dd>
 <dd>
+<p><strong>Since version <code>6.3</code>, <code>Slug</code> can only contain <code>a-zA-Z0-9_-</code>. Previously created configurations will be automatically modified by removing not-allowed characters from <code>Slug</code> according to the new validation rules.</strong></p>
+</dd>
+<dd>
 <div class="admonition info">
 <p class="admonition-title">Slug?<p>Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See <a href="https://developer.mozilla.org/en-US/docs/Glossary/Slug">MDN</a> for more information.</p>
 </p>
