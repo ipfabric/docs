@@ -31,7 +31,7 @@ A new snapshot can be taken at any time by clicking the `New Snapshot`button (bo
 parameters in the `Settings` menu entry. If you need to make some changes to the discovery process (add a new network seed, change login credentials, etc.) it needs to be done before a new snapshot is taken. This can either be adjusted
 globally or in the [snapshot specific settings](#snapshot-specific-settings) (boxed in blue).
 
-Snapshots can be run manually or on a schedule; for creating automatic snapshots follow the instructions located at [Automatic Snapshots](../IP_Fabric_Settings/advanced/snapshots.md).
+Snapshots can be run manually or on a schedule; for creating automatic snapshots follow the instructions located at [Automatic Snapshots](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md).
 
 ## Snapshot Specific Settings
 
@@ -90,13 +90,13 @@ will then show a `transit` cloud indicating it does not have information about t
 
 ## Snapshot Actions
 
-Because of database maintenance, only up to 5 snapshots can be loaded into the memory. The default installation is to allow only 3 loaded snapshots but this can be changed by visiting [Snapshot Settings](../IP_Fabric_Settings/advanced/snapshots.md)
+Because of database maintenance, only up to 5 snapshots can be loaded into the memory. The default installation is to allow only 3 loaded snapshots but this can be changed by visiting [Snapshot Settings](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md)
 
 ### Lock Snapshot
 
 ![Snapshot lock](snapshots/snapshot_lock.png)
 
-By locking a snapshot, IP Fabric won’t unload the selected snapshot automatically to the hard disk and it will keep it in the memory. The default installation is to allow only 1 locked snapshots but this can be changed by visiting [Snapshot Settings](../IP_Fabric_Settings/advanced/snapshots.md)
+By locking a snapshot, IP Fabric won’t unload the selected snapshot automatically to the hard disk and it will keep it in the memory. The default installation is to allow only 1 locked snapshots but this can be changed by visiting [Snapshot Settings](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md)
 
 ### Loaded Snapshots
 
@@ -115,9 +115,9 @@ by `Load snapshot`.
 !!! important "Snapshot Retention"
 
     It is important to note that there are Snapshot Retention rules in place that will delete snapshots
-    after the hard drive reaches a certain threshold.  For more information please visit
-    [IP Fabric Settings > Advanced > Snapshots](../IP_Fabric_Settings/advanced/snapshots.md) and 
-    [Schedule System Backup](../IP_Fabric_Settings/advanced/system/system_backup.md).
+    after the hard drive reaches a certain threshold.  For more information, please visit
+    [Snapshot Retention](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md) and 
+    [Schedule System Backup](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.md).
 
 ### Download Snapshots
 

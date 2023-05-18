@@ -74,7 +74,7 @@ following information (`Human Readable Name (apiColumnName)`):
   device (i.e a Firewall is labeled `fw` and a Wireless Access Point as `ap`).
   This is used for internal decisions such as the device icon to display in
   diagrams and cannot be changed. To set a custom type please
-  see [Device Attributes](../IP_Fabric_Settings/device_attributes.md).
+  see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
 - `Object Id (objectId)` is a Unique ID for API devices used during discovery.
 
 API only Columns:

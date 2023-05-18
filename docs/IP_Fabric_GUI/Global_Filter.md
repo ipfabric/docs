@@ -14,7 +14,7 @@ The options for filtering are:
 - Any Snapshot Local Attribute[^1]
 
 [^1]:
-    Please see [Device Attributes](../IP_Fabric_Settings/device_attributes.md)
+    Please see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md)
     documentation. Note that after configuring a new Attribute Globally; a new
     snapshot must be run in order for it to be applied.
 

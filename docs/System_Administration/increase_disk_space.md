@@ -46,7 +46,7 @@ To do that follow LVM resource:
 
     Backup disk is not present by default! Please add a new virtual disk to enable local backups.
 
-When enabling local backups, a [backup](../IP_Fabric_Settings/advanced/system/system_backup.md) tool creates backups to the `/backup` directory.
+When enabling local backups, a [backup](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.md) tool creates backups to the `/backup` directory.
 The tool first checks if the local backup directory exists and then the backups are created.
 
 Any additional disk (see hypervisor-specific configuration at the bottom of this page) can be mounted as the backup directory. We recommend using an additional disk located on a different datastore than the `root` volume for the local backups.

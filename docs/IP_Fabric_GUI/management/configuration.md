@@ -13,7 +13,7 @@ Configuration can be retrieved in `full` or `sanitized` forms. Sanitization remo
 ## Credential Requirements
 
 Network access credentials allowing the `show run` command (or equivalent)
-are necessary for configuration storage and configuration management to work properly. Please review [Authentication Settings](../../IP_Fabric_Settings/authentication.md).
+are necessary for configuration storage and configuration management to work properly. Please review [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
 ![Config Credentials](config/config_auth.png)
 
@@ -21,7 +21,7 @@ These elevated credentials need **Use for configuration management** box checked
 
 ## Trigger
 
-Trigger archiving can be [configured in settings](../../IP_Fabric_Settings/advanced/configuration_management.md) and can be based on a _syslog message_ or a _timed event_.
+Trigger archiving can be [configured in settings](../../IP_Fabric_Settings/configuration_management.md) and can be based on a _syslog message_ or a _timed event_.
 
 ## How to read configuration management data
 

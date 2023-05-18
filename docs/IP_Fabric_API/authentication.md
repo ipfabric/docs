@@ -7,7 +7,7 @@ them before committing to any.
 ## API Token
 
 API Token needs to be passed as a request header. Please
-see [API Tokens](../IP_Fabric_Settings/api_tokens.md) on how to create an API
+see [API Tokens](../IP_Fabric_Settings/integration/api_tokens.md) on how to create an API
 Token in the UI.
 
 - Allows for limiting the scope of API calls. This allows for giving _less_

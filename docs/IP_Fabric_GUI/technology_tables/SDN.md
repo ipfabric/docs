@@ -6,7 +6,7 @@ APIC section contains information about Controllers, Tenants, Contexts, Bridge d
 
 Information about endpoints is not part of this section as it is present in ACI table.
 
-For instructions how collect APIC related information please check [Add Cisco APIC API](../../IP_Fabric_Settings/advanced/Vendors_API/Cisco_APIC.md).
+For instructions how collect APIC related information please check [Add Cisco APIC API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_APIC.md).
 
 ### Controllers
 

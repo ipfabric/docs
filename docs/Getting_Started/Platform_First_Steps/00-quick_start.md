@@ -76,7 +76,7 @@ through the process of adding device authentication, discovery seeds, networks
 to include/exclude in discovery, Vendor API setup, along with other settings.
 
 If after initial configuration you would like to change or edit these settings
-please see [IP Fabric Settings](../../IP_Fabric_Settings/api_tokens.md). Alternatively there
+please see [IP Fabric Settings](../../IP_Fabric_Settings/integration/api_tokens.md). Alternatively there
 are also
 [Snapshot Specific Settings](../../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
 which are useful for testing small changes prior to changing Global Settings.
@@ -89,7 +89,7 @@ which are useful for testing small changes prior to changing Global Settings.
     and using the "regex tester" that will show you to which site a
     device would belong to.
 
-    Please see documentation located at [Site Separation](../../IP_Fabric_Settings/site_separation.md).
+    Please see documentation located at [Site Separation](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
 
 ## Discovery
 

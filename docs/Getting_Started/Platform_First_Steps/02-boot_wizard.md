@@ -32,4 +32,4 @@ to modify basic system parameters. Documentation can be found at
 
     A trusted certificate can replace a self-signed SSL certificate using IP 
     Fabric web UI. Please see 
-    [IP Fabric Web Certificate](../../IP_Fabric_Settings/advanced/ipf_cert.md)
+    [IPF Certificates](../../IP_Fabric_Settings/system/ipf_cert.md)

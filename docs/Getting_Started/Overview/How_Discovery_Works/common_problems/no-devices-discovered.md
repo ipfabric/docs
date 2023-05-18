@@ -19,8 +19,8 @@ time or after system changes
         with [Troubleshooting VM network problems using IP Fabric
         CLI](../../../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md).
     2.  If the reason reports authentication failure, IP Fabric was not
-        able to login to the device. Check [Authentication -
-        Settings](../../../../IP_Fabric_Settings/authentication.md).
+        able to login to the device. Check [Device
+        Credentials](../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
     3.  Check the "CLI output" file in the Action column of the
         Connectivity Report to see the full interaction log to help you
         troubleshoot the issue. Check [Fine-Tune SSH/TELNET
@@ -31,8 +31,8 @@ time or after system changes
         gateway of IP Fabric VM is not discoverable, you need to specify
         an IP address or a network to start the discovery. It is
         recommended to provide IP address of a router as a starting
-        point for discovery. Check [Discovery Seed -
-        Settings](../../../../IP_Fabric_Settings/discovery_seed.md).
+        point for discovery. Check [Discovery
+        Seeds](../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds.md).
 3.  Test the connection manually using IP Fabric CLI
     1.  Connect to IP Fabric using SSH and attempt to connect to the
         device using SSH or TELNET using the credentials entered on the
