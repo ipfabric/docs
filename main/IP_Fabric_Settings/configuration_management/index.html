@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In the configuration management process there are two ways to detect configuration changes that are described in this step.">
+        <meta name="description" content="In the configuration management process, there are two ways to detect configuration changes.">
       
       
       
@@ -61,7 +61,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Configuration Management - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In the configuration management process there are two ways to detect configuration changes that are described in this step." />
+<meta property="og:description" content="In the configuration management process, there are two ways to detect configuration changes." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/configuration_management.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -69,7 +69,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/configuration_management/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Configuration Management - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In the configuration management process there are two ways to detect configuration changes that are described in this step." />
+<meta property="twitter:description" content="In the configuration management process, there are two ways to detect configuration changes." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/configuration_management.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9104,21 +9104,23 @@ documentation.
 
 <h1 id="configuration-management">Configuration Management</h1>
 <p>There are two ways to detect configuration changes:</p>
-<p><strong>Syslog Triggered</strong></p>
-<p><strong>Scheduled</strong></p>
+<ul>
+<li><strong>Syslog Triggered</strong></li>
+<li><strong>Scheduled</strong></li>
+</ul>
 <h2 id="syslog-triggered">Syslog Triggered</h2>
 <p>IP Fabric checks incoming syslog messages for key phrases (for example <code>Configured from console by admin15 on vty0.</code>). This option needs the appropriate <code>syslog</code> configuration on the device side.</p>
 <p>Syslog server listens on the port <code>514/UDP</code> and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>)
 or using syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
-<p>Please, note</p>
+<p>Please note:</p>
 <ul>
 <li>The receiving port <code>514</code> cannot be modified.</li>
-<li>The syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric&rsquo;s GUI</li>
+<li>The syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric&rsquo;s GUI.</li>
 </ul>
-<p>To enable the syslog triggered configuration management, go to <strong>Settings &rarr; Advanced &rarr; Configuration  Management &rarr; Configuration Management Setup</strong> and select <strong>Syslog Triggered</strong>.</p>
+<p>To enable the syslog triggered configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Syslog Triggered</strong>.</p>
 <h2 id="schedule">Schedule</h2>
 <p>Configuration change is checked at regular intervals as configured by user.</p>
-<p>Schedule can be enabled and configured at <strong>Settings &rarr; Advanced &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Schedule</strong>.</p>
+<p>To enable the scheduled configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Schedule</strong>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.</p>
