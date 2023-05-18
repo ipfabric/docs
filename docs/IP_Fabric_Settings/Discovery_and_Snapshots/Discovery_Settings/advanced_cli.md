@@ -6,8 +6,9 @@ description: In this section, we go deeper into the Command Line Interface (CLI)
 
 ## Fine-Tune SSH/telnet CLI Parameters
 
-The IP Fabric's discovery is primarily using Command Line Interface
-(CLI) to discover network elements. The CLI Parameters can be found in **Settings → Advanced → SSH/TELNET**.
+The IP Fabric's discovery is primarily using Command-Line Interface
+(CLI) to discover network elements. The CLI parameters can be found in
+**Settings --> Discovery & Snapshots --> Discovery Settings --> Advanced CLI**.
 
 ![CLI Settings](advanced_cli/2396258368.png)
 

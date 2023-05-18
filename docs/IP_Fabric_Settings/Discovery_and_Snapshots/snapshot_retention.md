@@ -8,7 +8,7 @@ description: In this section we talk about snapshots, scheduling, retention rule
 
 For [change management](../../IP_Fabric_GUI/management/changes.md), regularly running IP Fabric
 discovery is necessary. A periodic discovery run can be scheduled
-at **Settings → Advanced → Snapshots → Timed Snapshots.**
+in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create Snapshots Periodically**.
 
 Here is an example for an automatic discovery run at **10 minutes past
 every hour** (0:10; 1:10; 2:10; 3:10, etc.).
@@ -24,12 +24,12 @@ the next possible period according to the cron setup.
 
 ![Timed Snapshots](snapshot_retention/1405059074.jpg)
 
-##  Snapshot Retention Rules (from version 4.1)
+##  Snapshot Retention Rules
 
-We added support for various snapshot retention policies in IP Fabric
+In version 4.1, we added support for various snapshot retention policies in IP Fabric
 version 4.1.
 
-![Timed Snapshots](snapshot_retention/2790883329.png)
+![Snapshot Retention Rules](snapshot_retention/snapshot_retention_rules.png)
 
 ### How Does the Snapshot Retention Work
 
