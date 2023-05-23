@@ -9351,13 +9351,13 @@ documentation.
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In Discovery Seed, at least one IP address behind the Jumphost has to be provided as a starting point.</p>
+<p>In the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings, at least one IP address behind the Jumphost has to be provided as a starting point.</p>
 </div>
 <h3 id="adding-new-jumphost">Adding New Jumphost</h3>
 <ul>
-<li>Open jumphost settings, using item <strong>Settings &rarr; Advanced &rarr; SSH/TELNET</strong></li>
+<li>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</li>
 <li>
-<p>At the bottom of the page, please select <strong>+ Add</strong> button</p>
+<p>On the page, click on the <strong>+ Add</strong> button:</p>
 <p><a class="glightbox" href="1384480773.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jump host settings" src="1384480773.png" /></a></p>
 </li>
 </ul>
@@ -9381,7 +9381,7 @@ documentation.
 <li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
 <li><strong>Login type</strong></li>
 <li><strong>Use credentials</strong> - required to provide username and password</li>
-<li><strong>Use SSH keys</strong> - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
+<li><strong>Use SSH keys</strong> - if you copied the SSH public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
 <li><strong>Username</strong> - Username for authentication (mandatory)</li>
 <li>
 <p><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below.</p>
@@ -9395,7 +9395,7 @@ documentation.
 </li>
 </ul>
 <ul>
-<li>Click <strong>+ Add</strong> button</li>
+<li>Click on the <strong>Add</strong> button to save the configuration.</li>
 </ul>
 <ul>
 <li>
@@ -9406,13 +9406,13 @@ documentation.
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>To avoid using a password for authentication, you can add the ssh key to the proxy server.</p>
+<p>To avoid using a password for authentication, you can add the SSH key to the proxy server.</p>
 </div>
 <h4 id="copy-ssh-key-manually">Copy SSH Key Manually</h4>
 <ol>
 <li>
-<p>Download the ssh key from Jumphost settings</p>
-<p><a class="glightbox" href="1384153110.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download ssh key" src="1384153110.png" /></a></p>
+<p>Download the SSH key from Jumphost settings</p>
+<p><a class="glightbox" href="1384153110.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download SSH key" src="1384153110.png" /></a></p>
 </li>
 <li>
 <p>Save <code>jumphost-public-key.pub</code></p>
@@ -9452,7 +9452,7 @@ documentation.
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
 <ol>
 <li>
-<p>Edit configuration that needs to be disabled, i.e.\</p>
+<p>Edit configuration that needs to be disabled, i.e.:</p>
 <p><a class="glightbox" href="1384972305.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings" src="1384972305.png" /></a></p>
 </li>
 <li>
@@ -9482,7 +9482,7 @@ documentation.
 <p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
 <p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
-<p>If you can&rsquo;t open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
+<p>If you can&rsquo;t open the main GUI or ssh to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
 <p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
 <ol>
 <li>
@@ -9504,7 +9504,7 @@ documentation.
 <p>IP Fabric GUI should be accessible by now.</p>
 </li>
 <li>
-<p>Login into the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings &rarr; Advanced &rarr; SSH/Telnet</strong>.</p>
+<p>Login into the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</p>
 </li>
 <li>
 <p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
