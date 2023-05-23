@@ -15,14 +15,15 @@ spaces or special characters.
 ![attributes_warning](device_attributes/device_attributes_warning.png)
 
 Attribute names must match the following
-regex `^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$`.  Underscore `_` is valid and will
+regex `^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$`. Underscore `_` is valid and will
 later be used to denote Hierarchical Attributes (i.e. REGION_COUNTRY).
 
 ## Global Attributes
 
 Attributes can be assigned globally or locally to an individual snapshot. To
-Assign global attributes navigate to `Settings` --> `Device Attributes`. Once an
-attribute is assigned a new snapshot is required for it to be applied.
+assign global attributes, navigate to **Settings --> Discovery & Snapshots -->
+Global Configuration --> Device Attributes**. Once an attribute is assigned a
+new snapshot is required for it to be applied.
 
 ![Device attributes](device_attributes/device_attributes.png)
 
@@ -72,7 +73,7 @@ Please see example at [`examples/settings/attributes.py`](https://gitlab.com/ip-
 ## Local Attributes
 
 Local or 'Snapshot Specific' Attributes are applied during discovery and stored
-in the snapshot file separate from the Global Settings.  Currently, there is no 
+in the snapshot file separate from the Global Settings. Currently, there is no 
 UI to view the Local Attributes (in development) and to interact with these
 you are required to either:
 

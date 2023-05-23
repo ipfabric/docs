@@ -36,12 +36,12 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 !!! important
 
-    In Discovery Seed, at least one IP address behind the Jumphost has to be provided as a starting point.
+    In the [Discovery Seeds](../Discovery_Settings/discovery_seeds.md) settings, at least one IP address behind the Jumphost has to be provided as a starting point.
 
 ### Adding New Jumphost
 
-- Open jumphost settings, using item **Settings --> Advanced --> SSH/TELNET**
-- At the bottom of the page, please select **+ Add** button
+- Go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
+- On the page, click on the **+ Add** button:
 
   ![Jump host settings](jumphost/1384480773.png)
 
@@ -63,13 +63,13 @@ We successfully tested IP Fabric against jumphosts with the following python ver
   - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
   - **Login type**
   - **Use credentials** - required to provide username and password
-  - **Use SSH keys** - if you copied the ssh public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
+  - **Use SSH keys** - if you copied the SSH public key to the proxy server, it won’t require providing a password (please jump to the _SSH key configuration_ section)
   - **Username** - Username for authentication (mandatory)
   - **Password** - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below.
 
     --8<-- "snippets/username_password_regex.md"
 
-- Click **+ Add** button
+- Click on the **Add** button to save the configuration.
 
 - If a connection is open, you will see the **_Running_** status in the Jumphost list
 
@@ -79,13 +79,13 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 !!! info
 
-    To avoid using a password for authentication, you can add the ssh key to the proxy server.
+    To avoid using a password for authentication, you can add the SSH key to the proxy server.
 
 #### Copy SSH Key Manually
 
-1. Download the ssh key from Jumphost settings
+1. Download the SSH key from Jumphost settings
 
-   ![Download ssh key](jumphost/1384153110.png)
+   ![Download SSH key](jumphost/1384153110.png)
 
 2. Save `jumphost-public-key.pub`
 
@@ -114,7 +114,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 ### Disabling Jumphost Connection
 
-1. Edit configuration that needs to be disabled, i.e.\
+1. Edit configuration that needs to be disabled, i.e.:
 
    ![Jumphost settings](jumphost/1384972305.png)
 
@@ -146,7 +146,7 @@ Because of this, you will have to add at least one IP address of a network devic
 
 ### IP Fabric Is Not Accessible After Saving Jumphost Configuration
 
-If you can't open the main GUI or SSH to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
+If you can't open the main GUI or ssh to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
 
 To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, the password for `osadmin` user account, and do the following:
 
@@ -166,7 +166,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 5. IP Fabric GUI should be accessible by now.
 
-6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings --> Advanced --> SSH/Telnet**.
+6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
 
 7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
 
