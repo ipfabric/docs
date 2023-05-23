@@ -4096,39 +4096,13 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../discovery/Traceroute_settings/" class="md-nav__link">
+      <a href="../discovery/discovery_tasks_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Traceroute settings
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/discovery_settings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Discovery Tasks Settings
+    Discovery tasks settings
   
 
     
@@ -4206,7 +4180,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Limit Download of BGP Routes
+    Limit download of BGP routes
   
 
     
@@ -4233,6 +4207,32 @@ documentation.
     
   
     Scanner settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/traceroute_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Traceroute settings
   
 
     
@@ -9104,9 +9104,9 @@ documentation.
 
 <h1 id="device-credentials">Device Credentials</h1>
 <p>IP Fabric interacts with the network infrastructure devices by running show
-commands through CLI using SSH or Telnet. Credentials added in the
-Authentication section will be used by IP Fabric to access the CLI of the
-network devices.</p>
+commands through CLI using SSH or Telnet. Credentials added in <strong>Settings &rarr;
+Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Device Credentials</strong> will be
+used by IP Fabric to access the CLI of the network devices.</p>
 <h2 id="credential-selection-logic">Credential Selection Logic</h2>
 <p>If more credentials are specified, a top-down algorithm is used when trying to
 login to a network device or the credentials priority can be changed using drag
@@ -9114,8 +9114,8 @@ and drop.</p>
 <pre class="mermaid"><code>flowchart TD
     A([Start]) --&gt; discoveryHistory{Is IP in&lt;br/&gt;`Management &gt;&lt;br/&gt;Discovery History`&lt;br/&gt;table?}
     discoveryHistory --&gt; |Yes|previousUsername[Try previously discovered username.]
-    discoveryHistory --&gt; |No|configuredAuth{Does IP fall within&lt;br/&gt;'Use in subnets' range in&lt;br/&gt;`Settings &gt; Authentication`&lt;br/&gt;table?}
-    configuredAuth --&gt; |Yes|tryAuth[Try configured Authentications&lt;br/&gt;starting from top to bottom.]
+    discoveryHistory --&gt; |No|configuredAuth{Does IP fall within&lt;br/&gt;'Use in subnets' range in&lt;br/&gt;`Settings &gt; Discovery and Snapshots &gt;&lt;br/&gt;Discovery Settings &gt; Device Credentials`&lt;br/&gt;table?}
+    configuredAuth --&gt; |Yes|tryAuth[Try configured Device Credentials&lt;br/&gt;starting from top to bottom.]
     configuredAuth --&gt; |No|loginFailed([&lt;b&gt;Login Failed.&lt;/b&gt;])
     tryAuth --&gt; |Login Success|loginSuccess([&lt;b&gt;Login Success.&lt;/b&gt;])
     tryAuth --&gt; |Login Failed|otherCreds{Are there other&lt;br/&gt;credentials to try?}

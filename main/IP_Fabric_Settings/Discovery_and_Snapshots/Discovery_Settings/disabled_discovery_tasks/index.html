@@ -4027,39 +4027,13 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../discovery/Traceroute_settings/" class="md-nav__link">
+      <a href="../discovery/discovery_tasks_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Traceroute settings
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../discovery/discovery_settings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Discovery Tasks Settings
+    Discovery tasks settings
   
 
     
@@ -4137,7 +4111,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Limit Download of BGP Routes
+    Limit download of BGP routes
   
 
     
@@ -4164,6 +4138,32 @@ documentation.
     
   
     Scanner settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery/traceroute_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Traceroute settings
   
 
     
@@ -8998,10 +8998,10 @@ The TASK is a data collection related to a specific network protocol or
 technology (MPLS, Transceivers, ARP Table, Spanning-Tree Protocol,
 Multicast, or VXLAN). Each task consists of 1 or more operational
 commands (CLI or API). You can find the list of all Discovery Tasks
-in <a href="https://matrix.ipfabric.io">the Feature matrix</a>.</p>
+in the <a href="https://matrix.ipfabric.io">Feature matrix</a>.</p>
 <p>Some fundamental TASKS are critical for discovery and topology calculations (Neighbors, ARP, Mac, RIB, etc.).</p>
-<p>The Discovery Tasks settings are introduced in version 3.7.0. Since
-then, the user can manipulate specific tasks for the discovery process
+<p>The <strong>Disabled Discovery Tasks</strong> settings were introduced in version <code>3.7.0</code>.
+Since then, the user can manipulate specific tasks for the discovery process
 to avoid extra data collection (when particular protocols are not
 present on the network) or avoid specific operational commands to be
 executed on specific hardware platforms.</p>
@@ -9009,7 +9009,7 @@ executed on specific hardware platforms.</p>
 <p class="admonition-title">Warning</p>
 <p>Disabling TASKS will reduce the level of information collected by IP Fabric. If some fundamental TASKS are disabled, it can affect the topology or Path Lookup results.</p>
 </div>
-<p>By default, there are <strong>three main Discovery Task rules</strong> in the
+<p>By default, there are <strong>four main Disabled Discovery Task rules</strong> in the
 platform:</p>
 <table>
 <thead>
@@ -9025,18 +9025,22 @@ platform:</p>
 </tr>
 <tr>
 <td><strong>Transceivers</strong></td>
-<td>By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at <a href="../../../../support/known_issues/Vendors/cisco/">Known Issues > Cisco</a></td>
+<td>By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at <a href="../../../../support/known_issues/Vendors/cisco/">Known Issues > Cisco</a>.</td>
 </tr>
 <tr>
 <td><strong>NTP</strong></td>
-<td>By default disabled for Cisco Firepower - on some versions a Firepower bug may freeze the CLI session</td>
+<td>By default disabled for Cisco Firepower - on some versions a Firepower bug may freeze the CLI session.</td>
+</tr>
+<tr>
+<td><strong>Configuration saved</strong></td>
+<td>By default enabled for all vendors.</td>
 </tr>
 </tbody>
 </table>
 <p>In the following example, we are creating a rule to disable OSPFv3 on
 Juniper EX. The test for the rule reveals one match, the
-HWLAB-JEX2200-SW1 switch:</p>
-<p><a class="glightbox" href="../1936130053.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Discovery Tasks settings in IP Fabric" src="../1936130053.png" title="Discovery Tasks settings in IP Fabric" /></a></p>
+<code>HWLAB-JEX2200-SW1</code> switch:</p>
+<p><a class="glightbox" href="../disabled_discovery_tasks_example.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Example" src="../disabled_discovery_tasks_example.png" /></a></p>
 
   
   
