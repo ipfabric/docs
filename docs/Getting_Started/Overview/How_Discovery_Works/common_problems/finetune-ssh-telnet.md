@@ -6,7 +6,7 @@ description: The IP Fabric's discovery is primarily using Command Line Interface
 
 The IP Fabric's discovery is primarily using Command Line Interface
 (CLI) to discover network elements. There are certain default CLI
-parameters that can be found in ***Settings → Advanced → SSH/TELNET:***
+parameters that can be found in ***Settings --> Advanced --> SSH/TELNET:***
 
 ![Fine-Tune SSH/telnet CLI parameters](2844262446.png)
 

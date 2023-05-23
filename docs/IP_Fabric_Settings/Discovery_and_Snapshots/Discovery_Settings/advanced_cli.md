@@ -95,7 +95,7 @@ appropriate backups, and are comfortable in doing so.
 ### Backup Windows Registry
 
 1. Click `Start`, type `regedit.exe` in the search box, and then press `Enter`
-2. In Registry Editor, click **File → Export**
+2. In Registry Editor, click **File --> Export**
 3. In the Export Registry File box, select the location where you want to save the backup copy, name your backup file, and click _Save_
 
 ### Putty

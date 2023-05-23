@@ -152,8 +152,8 @@ Rule precedence is defined by the order from top to bottom. So in the example ab
 
 2. Rules you define. In the example above it will check the following
 
-   1. If SNMP Location matches `IPFABRIC, (LAB01)` → Site `LAB01`
-   2. If Hostname matches `^L21` → Site `MPLS`
-   3. If Hostname matches `^(L\d{1,2})` → Site `L2-99`
+   1. If SNMP Location matches `IPFABRIC, (LAB01)` --> Site `LAB01`
+   2. If Hostname matches `^L21` --> Site `MPLS`
+   3. If Hostname matches `^(L\d{1,2})` --> Site `L2-99`
 
 3. **Try to assign devices without sites based on device neighborship** (if enabled)

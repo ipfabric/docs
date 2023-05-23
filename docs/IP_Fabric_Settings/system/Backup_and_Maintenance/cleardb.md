@@ -9,7 +9,7 @@ description: In rare cases, it may be necessary to delete and recreate the IP Fa
     Before erasing databases, make sure that you have access to a recent backup!
 
 In rare cases, it may be necessary to delete and recreate the IP
-Fabric's database. Go to **Settings → Advanced → System** and click
+Fabric's database. Go to **Settings --> Advanced --> System** and click
 **Clear DB**.
 
 When running Clear DB, all loaded snapshots are automatically unloaded

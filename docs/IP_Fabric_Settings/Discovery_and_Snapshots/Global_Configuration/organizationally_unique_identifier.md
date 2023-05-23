@@ -10,7 +10,7 @@ whenever there is a network device discovered through the ARP table.
 
 ![OUI table](OUI.png)
 
-This table can be found in the **Settings → OUI** menu.
+This table can be found in the **Settings --> OUI** menu.
 
 It contains OUI (start of a MAC address of a device), vendor to whom
 this OUI belongs and if it is enabled (can be used) during the discovery

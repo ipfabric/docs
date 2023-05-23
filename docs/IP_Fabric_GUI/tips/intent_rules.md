@@ -36,7 +36,7 @@ You can also add new set of coloring rules. For example, if you want to check th
 
 Let's take an example using the Port Channels > Member status table.
 
-1. Go to **Technology → Port Channels → Member status table**.
+1. Go to **Technology --> Port Channels --> Member status table**.
 2. Click to **Intent Verification Rules** button in the right toolbox menu.  
    ![intent_verification_rules](intent_rules/1878327405.png)
 3. Specify **Rule name**, for example **Check protocol**.

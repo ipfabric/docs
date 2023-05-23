@@ -6,7 +6,7 @@ description: Configuration management backs up the running configuration of mana
 
 ## Overview
 
-Configuration management can be found at **Management → Configuration** and **backs up the running configuration** of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. **Only changed configurations** are stored, and these report both the time of the last change and the time of the last configuration check for a change.
+Configuration management can be found at **Management --> Configuration** and **backs up the running configuration** of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. **Only changed configurations** are stored, and these report both the time of the last change and the time of the last configuration check for a change.
 
 Configuration can be retrieved in `full` or `sanitized` forms. Sanitization removes all passwords and network identification information from the configuration to prevent sharing of sensitive information.
 

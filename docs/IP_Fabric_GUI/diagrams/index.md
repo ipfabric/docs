@@ -26,7 +26,7 @@ Check this page [Network Viewer](network_viewer.md) for more details on using th
 
 Site diagrams display all devices discovered per site. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and unmanaged infrastructure. Site boundary calculation can be [configured in settings](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
 
-The site name can be changed. To rename a site, go to **Inventory → Sites**, choose the site you would like to rename, click ***Rename site***, enter a new name, and click ***Rename***.
+The site name can be changed. To rename a site, go to **Inventory --> Sites**, choose the site you would like to rename, click ***Rename site***, enter a new name, and click ***Rename***.
 
 ![Site Diagrams](diagrams_sites.png)
 
@@ -52,7 +52,7 @@ endpoints or networks. Only the actual network path is displayed, and
 missing parts denote unavailable network information necessary for
 completing the routing process.
 
-The End to end path can be found in ***Diagrams → End to end path*** or
+The End to end path can be found in ***Diagrams --> End to end path*** or
 on any diagram using the "Path Look-Up" menu on the left (see picture
 below)
 
@@ -65,7 +65,7 @@ Check this page for more details [How to use Path Look-Up](how_to_use_path-looku
 The host to Gateway path diagram displays the Layer 2 path from every
 identified endpoint in the network to its active gateway router.
 
-The Host to Gateway path can be found in ***Diagrams → Host to gateway
+The Host to Gateway path can be found in ***Diagrams --> Host to gateway
 path*** or any diagram using the "Path Look-Up" menu on the left and
 selecting "Host To Gateway"(see picture below)
 

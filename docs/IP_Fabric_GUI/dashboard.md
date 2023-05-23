@@ -24,7 +24,7 @@ You can add any Intent Verification Rule to the Dashboard.
 7. Select widget type in our case it's **Intent Verifications**.
 8. Name widget for example **Port channels**.
 9. Look for **Table color rules** and add it to Widget. For example
-   **Technology → Port channels → Member status table → Protocol check**.
+   **Technology --> Port channels --> Member status table --> Protocol check**.
    We created this rule it the previous steps.
 10. Switch **Select Widget View** to percentage (default) or absolute
     numbers.

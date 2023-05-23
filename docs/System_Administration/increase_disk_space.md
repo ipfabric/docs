@@ -259,7 +259,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 
 1. Open VMware vSphere web console.
 2. Right click on VM name and select **Edit Settings**.
-3. Click **Add New Device → Hard Disk**
+3. Click **Add New Device --> Hard Disk**
 4. Select new size
 5. Specify **Location**:
    1. for system disk expansion is recommended to select **Store with

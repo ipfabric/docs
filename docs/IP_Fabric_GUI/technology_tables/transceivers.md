@@ -35,7 +35,7 @@ Notes:
 
 ## How To Find Transceivers In IP Fabric
 
-Navigate to **Technology → Interfaces → Transceivers**.
+Navigate to **Technology --> Interfaces --> Transceivers**.
 
 ![transceivers in the menu](transceivers_list.png)
 
@@ -45,8 +45,8 @@ This function is **enabled by default** for all vendors and product
 families. This means that **this command is not executed on any
 device**.
 
-The function can be **Enabled/Disabled** in section **Settings →
-Advanced → Discovery task**.
+The function can be **Enabled/Disabled** in section **Settings -->
+Advanced --> Discovery task**.
 
 ![transceivers task](transceivers_tasks.png)
 

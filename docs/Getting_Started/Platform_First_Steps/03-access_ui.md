@@ -18,7 +18,7 @@ After logging in as the `osadmin` user, go to **Create admin** menu and set
 
 With this new account, you will be able to log in to the main IP Fabric user
 interface and change a password to the default `admin` account or delete
-it. This can be done in **Setting → User Management** menu.
+it. This can be done in **Setting --> User Management** menu.
 
 In addition, other local user accounts can be created here.
 

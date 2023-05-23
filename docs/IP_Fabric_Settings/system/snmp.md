@@ -11,7 +11,7 @@ standard Linux OS OIDs.
 To enable SNMP on IP Fabric appliance do following steps:
 
 1. Login to IP Fabric web interface
-2. Go to **Settings → Advanced → SNMP**
+2. Go to **Settings --> Advanced --> SNMP**
 3. Click **disabled** button to enable it
 4. Select **Version** (2c or 3 is supported)
 

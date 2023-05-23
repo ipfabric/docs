@@ -4,7 +4,7 @@ description: In the network viewer, all networks are displayed and the relations
 
 # Network Viewer
 
-When you go to the page **Diagrams → Network**, all networks are
+When you go to the page **Diagrams --> Network**, all networks are
 displayed and the relationships between them. They are grouped into
 sites represented by a cloud for better visibility. You can double-click
 on a cloud to explore further that specific site.

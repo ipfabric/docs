@@ -40,7 +40,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 ### Adding New Jumphost
 
-- Open jumphost settings, using item **Settings → Advanced → SSH/TELNET**
+- Open jumphost settings, using item **Settings --> Advanced --> SSH/TELNET**
 - At the bottom of the page, please select **+ Add** button
 
   ![Jump host settings](jumphost/1384480773.png)
@@ -166,7 +166,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 5. IP Fabric GUI should be accessible by now.
 
-6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings → Advanced → SSH/Telnet**.
+6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings --> Advanced --> SSH/Telnet**.
 
 7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
 
