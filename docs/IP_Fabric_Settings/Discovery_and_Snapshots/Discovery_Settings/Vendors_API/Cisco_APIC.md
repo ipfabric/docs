@@ -6,20 +6,21 @@ Information about controller is collected via SSH.
 
 Tenants, applications, contracts etc. data are collected via API.
 
-To successfully collect data from Cisco APIC it is necessary to configure Cisco APIC in global Vendor API settings and to add Cisco APIC IP address to the discovery seed.
+To successfully collect data from Cisco APIC it is necessary to configure Cisco APIC in global Vendor API settings and to add Cisco APIC IP address to the discovery seeds.
 
-Go to **Settings → Discovery Seed** and add Cisco APIC IP address
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
+Seeds** and add Cisco APIC IP address.
 
-Go to **Settings → Advanced → Vendors API** and press the **+Add** button
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
+API** and press the **+Add** button.
 
-Afterward, choose Cisco APIC from the list and fill in
+Afterwards, choose **Cisco APIC** from the list and fill in:
 
 - **Username and password** used to log in to Cisco APIC
 
-- **Base URL** of Cisco APIC e.g. `https://cisco-apic-ip-address`
+- **Base URL** of Cisco APIC, e.g. `https://cisco-apic-ip-address`
 
 ![Cisco APIC api add](cisco/apic/ciscoApicAPIAdd.png)
-
 
 ## Know issues
 

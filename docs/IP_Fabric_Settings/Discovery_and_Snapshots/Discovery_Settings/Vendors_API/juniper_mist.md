@@ -8,8 +8,6 @@ Starting version **4.4.0** IP Fabric supports Juniper Mist API.
 
 Juniper Mist devices are discovered only through API.
 
-To add Juniper Mist to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button
-
 ## Generate API Token
 
 1. Login to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
@@ -26,7 +24,7 @@ To add Juniper Mist to discovery global settings, go to **Settings → Advanced 
 
    ![Create API token](mist/mist_api_create.png)
 
-4. Fill in login details in the **Settings → Advanced → Vendors API** menu pressing the **+Add** button in the IP Fabric:
+4. In the IP Fabric GUI, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**, press the **+Add** button, select **Juniper Mist** from the list and fill in the fields:
 
    ![IP Fabric API settings](mist/mist_ipf_settings.png)
 

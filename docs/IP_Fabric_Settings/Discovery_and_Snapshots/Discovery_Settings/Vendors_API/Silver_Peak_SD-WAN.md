@@ -8,9 +8,9 @@ Starting version **4.3** IP Fabric supports the discovery of Silver Peak (Aruba)
 
 EdgeConnect devices are discovered only through API.
 
-To add EdgeConnect to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button
+To add EdgeConnect to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the **+Add** button.
 
-Afterward, choose Silver Peak from the list and fill in:
+Afterwards, choose **Silver Peak** from the list and fill in:
 
 - **Username and password** to log in to Unity Orchestrator
 

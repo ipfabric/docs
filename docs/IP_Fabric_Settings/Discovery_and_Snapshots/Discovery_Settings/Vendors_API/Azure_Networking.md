@@ -22,8 +22,9 @@ We want to bring support for The plan is to add support of [Load Balancer](https
 
 ## Azure Setup
 
-To add Azure devices to discovery global settings, go to **Settings →
-Advanced → Vendors API** and press the **+Add** button
+To add Azure devices to discovery global settings, go to **Settings -->
+Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the
+**+Add** button.
 
 IP Fabric needs the following data in order to connect to the Azure API
 -- Tenant ID, Subscription ID, Application ID, and Application secret.

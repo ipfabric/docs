@@ -6,7 +6,7 @@ description: IP Fabric supports NSX-T API. NSX-T devices are discovered only thr
 
 Starting version **4.3** IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
 
-To add NSX-T to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button. Afterward, choose NSX-T API from the list and fill in
+To add NSX-T to discovery global settings, go to **Settings --> Discovery & Snaphosts --> Discovery Settings --> Vendors API** and press the **+Add** button. Afterwards, choose **VMware NSX-T** from the list and fill in:
 
 - **Username and password** used to log in to NSX Manager
 - **Base URL** of NSX Manager server (`https://nsx-manager-ip-address`)

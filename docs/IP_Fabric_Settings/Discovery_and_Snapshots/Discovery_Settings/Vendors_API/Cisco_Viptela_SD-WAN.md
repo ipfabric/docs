@@ -8,11 +8,11 @@ description: IP Fabric supports Viptela API. Viptela devices are discovered only
 
 Starting version **4.1.0** IP Fabric supports Viptela API. Viptela devices are discovered only through API. Both CLI and vManage modes are supported. Some tasks, which get information from templates are supported only for devices in vManage mode (see our [feature matrix](https://matrix.ipfabric.io) for more details).
 
-1. To add Viptela to discovery global settings, go to **Settings → Advanced → Vendors API** and press the **+Add** button
+1. To add Viptela to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the **+Add** button:
 
    ![vendor api add](vendor_api_add.png)
 
-2. Afterward, choose Viptela API from the list and fill in
+2. Afterwards, choose **Viptela** from the list and fill in:
 
    ![viptela api add](viptela_api_add.png)
 

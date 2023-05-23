@@ -24,7 +24,7 @@ By default, site is comprised of topology of all contiguously interconnected pro
 
 ### Hostname Regex
 
-Go to **Settings → Site separation** and change **Routing & Switching Domain** to **RegEx based on hostname** or create a new rule by clicking the **Add rule** button.
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation** and change **Routing & Switching Domain** to **RegEx based on hostname** or create a new rule by clicking the **Add rule** button.
 
 **Transform hostname** is used to normalize site names based on hostname:
 
@@ -38,7 +38,7 @@ In this example, the regular expression matches items such as `PRAGUE-`, `LONDON
 
 ### SNMP Location Regex
 
-Go to **Settings → Site separation** and change **Routing & Switching Domain** to **RegEx based on SNMP location** or create a new rule by **Add rule** button.
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation** and change **Routing & Switching Domain** to **RegEx based on SNMP location** or create a new rule by **Add rule** button.
 
 ![SNMP Regex](site_separation/2896297985.png)
 
@@ -87,11 +87,15 @@ This option will try to define a device based on its neighbor relationship if a 
 
 ## Manual Site Separation (Device Attributes)
 
-The Manual Site Separation enables the **Device Attributes** feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.
+**Manual site separation** enables the **Device Attributes** feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.
 
-To configure **Device Attributes** first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.
+To configure **Device Attributes**, first enable the **Manual site separation** toggle in **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation** and then select **Configure device attributes**:
 
-![Device Attributes](site_separation/2888728582.png)
+![Configure device attributes](site_separation/configure_device_attributes.png)
+
+or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Device Attributes**:
+
+![Device Attributes menu](site_separation/device_attributes_menu.png)
 
 ### Device Attributes
 
