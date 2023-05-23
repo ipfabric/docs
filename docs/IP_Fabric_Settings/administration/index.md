@@ -4,16 +4,16 @@ description: The local user in IP Fabric has administrative privileges to create
 
 # Overview
 
-User management is accessible via **Settings → User Management** menu and contains management of
+**Settings --> Administration** contains the management of:
 
-- [Users / Local Users](users.md)
-- [LDAP Configuration](ldap.md)
-- [Policies](policies.md)
+- [Local Users](users.md)
+- [LDAP](ldap.md)
 - [Roles](roles.md)
+- [Policies](policies.md)
 
-IP Fabric supports also **Single Sign On (SSO)** authentication. It uses **Dex** (A Federated OpenID Connect Provider) and requires configuration of Dex service to access 3rd party OpenID providers. This is not yet included in UI.
+IP Fabric also supports **Single Sign-On (SSO)** authentication. It uses **Dex** (A Federated OpenID Connect Provider) and requires configuration of Dex service to access 3rd party OpenID providers. This is not yet included in the UI.
 
-For more information follow [Single Sign On (SSO) Authentication](sso.md).
+For more information, follow [Single Sign-On (SSO) Authentication](sso.md).
 
 ## Role Based Access Control (RBAC)
 

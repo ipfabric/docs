@@ -2,21 +2,21 @@
 description: The IP Fabric Solution Architects will setup the SSO configuration as it is complex to implement.
 ---
 
-# Single Sign On (SSO)
+# Single Sign-On (SSO)
 
 !!! warning "Outdated SSO user records in IP Fabric might cause login issues"
 
     With SSO configured, each sign-in of a new user into IP Fabric via SSO will
-    create a new (non-local) user record in **Settings --> User Management -->
-    Users** -- with the user's current username and email from the Identity
-    Provider (IdP).
+    create a new (non-local) user record in **Settings --> Administration -->
+    Local Users** -- with the user's current username and email from the
+    Identity Provider (IdP).
 
     If the user's username or email change on the IdP side, the user will
     encounter `Authentication Failure` while logging into IP Fabric via SSO --
     due to username/email mismatch between the IdP and IP Fabric.
 
     In that case, please remove the outdated user record of that user in
-    **Settings --> User Management --> Users**.
+    **Settings --> Administration --> Local Users**.
 
 IP Fabric includes support for single sign-on. We have opted for
 [Dex (A Federated OpenID Connect Provider)](https://dexidp.io/) as a key

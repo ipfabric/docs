@@ -48,7 +48,7 @@ Local accounts have `isLocal` attribute set to `true`. You may see accounts for 
 
 1. Log in to IP Fabric as a user with admin rights.
 
-2. Go to **Settings → User Management → LDAP** menu.
+2. Go to **Settings --> Administration --> LDAP**.
 
 3. Select **+ Add Domain**.
 
@@ -154,7 +154,7 @@ All authenticated users will get assigned role configured for
 
 ## Disable LDAP Authentication
 
-Delete all LDAP configuration domains in **Settings → User Management → LDAP** to disable LDAP authentication.
+Delete all LDAP configuration domains in **Settings --> Administration --> LDAP** to disable LDAP authentication.
 
 ## Troubleshooting
 
