@@ -22,8 +22,8 @@ until all of the addresses in the `10.0.0.0/24` network have been
 attempted.  
 Turn on the Scanner to increase the number of discovered devices.
 
-Go to **Settings → Advanced → Discovery → Scanner settings** and turn
-on the **Use scanner in discovery** switch.
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
+--> Scanner settings** and turn on the **Use scanner in discovery** switch.
 
 **Shortest mask of the network to scan** - defines maximum size of the
 networks in a routing table to be scanned. A smaller prefix length means

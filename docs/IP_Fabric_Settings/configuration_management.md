@@ -33,7 +33,7 @@ To enable the scheduled configuration management, go to **Settings --> Configura
 
     Example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.
 
-    ![configuration managment setup](configuration_managment_setup.png)
+    ![Configuration Management Setup](configuration_management_setup.png)
 
 Multiple values from the lists can be selected with `CTRL` or `SHIFT` keys.
 

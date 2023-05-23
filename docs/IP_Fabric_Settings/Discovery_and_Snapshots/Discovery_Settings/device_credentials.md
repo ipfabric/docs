@@ -5,9 +5,9 @@ description: Platform interacts with the network infrastructure devices by runni
 # Device Credentials
 
 IP Fabric interacts with the network infrastructure devices by running show
-commands through CLI using SSH or Telnet. Credentials added in the
-Authentication section will be used by IP Fabric to access the CLI of the
-network devices.
+commands through CLI using SSH or Telnet. Credentials added in **Settings -->
+Discovery & Snapshots --> Discovery Settings --> Device Credentials** will be
+used by IP Fabric to access the CLI of the network devices.
 
 ## Credential Selection Logic
 
@@ -19,8 +19,8 @@ and drop.
 flowchart TD
     A([Start]) --> discoveryHistory{Is IP in<br/>`Management ><br/>Discovery History`<br/>table?}
     discoveryHistory --> |Yes|previousUsername[Try previously discovered username.]
-    discoveryHistory --> |No|configuredAuth{Does IP fall within<br/>'Use in subnets' range in<br/>`Settings > Authentication`<br/>table?}
-    configuredAuth --> |Yes|tryAuth[Try configured Authentications<br/>starting from top to bottom.]
+    discoveryHistory --> |No|configuredAuth{Does IP fall within<br/>'Use in subnets' range in<br/>`Settings > Discovery and Snapshots ><br/>Discovery Settings > Device Credentials`<br/>table?}
+    configuredAuth --> |Yes|tryAuth[Try configured Device Credentials<br/>starting from top to bottom.]
     configuredAuth --> |No|loginFailed([<b>Login Failed.</b>])
     tryAuth --> |Login Success|loginSuccess([<b>Login Success.</b>])
     tryAuth --> |Login Failed|otherCreds{Are there other<br/>credentials to try?}

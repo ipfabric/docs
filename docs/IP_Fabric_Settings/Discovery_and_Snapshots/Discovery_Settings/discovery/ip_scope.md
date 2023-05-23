@@ -25,14 +25,14 @@ graph LR
     style doNotDiscover fill:#dd3300
 ```
 
-Discovery can be limited to one or more subnets using **Settings →
-Advanced → Discovery → IP Scope → IP networks to include in discovery**
-and analysis. Enter one or more subnets to limit the discovery process
-to addresses from particular networks.
+Discovery can be limited to one or more subnets using **Settings --> Discovery
+& Snapshots --> Discovery Settings --> Discovery --> IP Scope --> IP networks to
+include in discovery and analysis**. Enter one or more subnets to limit the
+discovery process to addresses from particular networks.
 
-Specific parts of the network can be also excluded from discovery
-using **Settings → Advanced → Discovery → IP Scope → IP networks to
-exclude from discovery** and analysis.
+Specific parts of the network can be also excluded from discovery using
+**Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery --> IP
+Scope --> IP networks to exclude from discovery and analysis**.
 
 !!! warning "Priority"
 
