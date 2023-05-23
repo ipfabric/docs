@@ -4116,7 +4116,7 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../Vendors_API/junipe_mist/" class="md-nav__link">
+      <a href="../Vendors_API/juniper_mist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -9317,7 +9317,7 @@ documentation.
 <p>If you cannot cover the names of the sites with one regex, you can use logical <strong>or</strong>. Use <code>|</code> (pipe) operator between RegEx rules or use the Device Attributes method shown below.</p>
 </div>
 <h3 id="hostname-regex">Hostname Regex</h3>
-<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on hostname</strong> or create a new rule by clicking the <strong>Add rule</strong> button.</p>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on hostname</strong> or create a new rule by clicking the <strong>Add rule</strong> button.</p>
 <p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
 <ul>
 <li>Upper case (default) - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>PRAGUE</code></li>
@@ -9327,7 +9327,7 @@ documentation.
 <p><a class="glightbox" href="2887417896.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Hostname Regex" src="2887417896.png" /></a></p>
 <p>In this example, the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
-<p>Go to <strong>Settings → Site separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
 <p><a class="glightbox" href="2896297985.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="SNMP Regex" src="2896297985.png" /></a></p>
 <h3 id="testing">Testing</h3>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.</p>
@@ -9360,9 +9360,11 @@ documentation.
 <p><a class="glightbox" href="2896232449.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Neighborship" src="2896232449.png" /></a></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h2 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h2>
-<p>The Manual Site Separation enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
-<p>To configure <strong>Device Attributes</strong> first enable the toggle in the Site Separation Menu and select Configure or the Device Attributes menu under settings.</p>
-<p><a class="glightbox" href="2888728582.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes" src="2888728582.png" /></a></p>
+<p><strong>Manual site separation</strong> enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
+<p>To configure <strong>Device Attributes</strong>, first enable the <strong>Manual site separation</strong> toggle in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and then select <strong>Configure device attributes</strong>:</p>
+<p><a class="glightbox" href="configure_device_attributes.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Configure device attributes" src="configure_device_attributes.png" /></a></p>
+<p>or go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Device Attributes</strong>:</p>
+<p><a class="glightbox" href="device_attributes_menu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes menu" src="device_attributes_menu.png" /></a></p>
 <h3 id="device-attributes">Device Attributes</h3>
 <p><a class="glightbox" href="2888663043.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes" src="2888663043.png" /></a></p>
 <ul>
