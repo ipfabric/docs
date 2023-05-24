@@ -8996,31 +8996,29 @@ documentation.
 <p>IP Fabric appliance can be monitored using SNMP protocol. CPU, memory,
 hard drives and network interfaces can be monitored. Appliance uses
 standard Linux OS OIDs.</p>
-<p>To enable SNMP on IP Fabric appliance do following steps:</p>
-<ol>
-<li>Login to IP Fabric web interface</li>
-<li>Go to <strong>Settings &rarr; Advanced &rarr; SNMP</strong></li>
-<li>Click <strong>disabled</strong> button to enable it</li>
-<li>Select <strong>Version</strong> (2c or 3 is supported)</li>
-</ol>
-<p><a class="glightbox" href="640614407.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="SNMP" src="640614407.png" /></a></p>
+<p>To enable SNMP on IP Fabric, go to <strong>Settings &rarr; System &rarr; SNMP</strong>, click on
+the <strong>on/off</strong> toggle and select <code>2c</code>, or <code>3</code> from the <strong>Version</strong> list:</p>
+<p><a class="glightbox" href="enable_snmp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="SNMP" src="enable_snmp.png" /></a></p>
 <div class="admonition check">
 <p class="admonition-title">Security note</p>
-<p>Only IP address specified in the <strong>Host IP</strong> field is enabled to have access to SNMP 161/udp.</p>
+<p>Only IP address specified in the <strong>Host IP</strong> field is enabled to have access
+to SNMP 161/udp.</p>
 </div>
-<p>If you selected <strong>version 2c</strong> please configure:</p>
+<p>If you selected version <code>2c</code>, please configure:</p>
 <ol>
 <li><strong>Host IP</strong> - IP address of remote monitoring server</li>
 <li><strong>Locality</strong> - location of IP Fabric appliance</li>
 <li><strong>System Contact</strong> - contact to responsible person or department</li>
-<li><strong>Community string</strong> - must match community string configured on monitoring server</li>
+<li><strong>Community string</strong> - must match community string configured on monitoring
+   server</li>
 <li>Click <strong>Save</strong></li>
 </ol>
 <p><a class="glightbox" href="640286725.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Version 2c" src="640286725.png" /></a></p>
-<p>If you selected <strong>version 3</strong> please configure:</p>
+<p>If you selected version <code>3</code>, please configure:</p>
 <div class="admonition info">
 <p class="admonition-title">SNMP v3</p>
-<p>For user authentication only SHA is supported. For data privacy AES is used.</p>
+<p>For user authentication, only SHA is supported. For data privacy, AES is
+used.</p>
 </div>
 <ol>
 <li><strong>Host IP</strong> - IP address of remote monitoring server</li>
