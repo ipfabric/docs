@@ -36,7 +36,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Assurance Engine**
 
-: this phase takes the database data from the model, applies business logic to create insight from the data and prepares enhanced topology views. A recent introduction to IPF is the option to optionally disable elements of this phase to speed the release of data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../../IP_Fabric_Settings/advanced/assurance_engine/).
+: this phase takes the database data from the model, applies business logic to create insight from the data and prepares enhanced topology views. A recent introduction to IPF is the option to optionally disable elements of this phase to speed the release of data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
 
   !!! note
 
