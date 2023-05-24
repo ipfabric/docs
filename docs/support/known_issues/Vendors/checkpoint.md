@@ -20,8 +20,9 @@ description: IP Fabric describes known affected issues for Checkpoint and how to
 
 -   Wildcard & Dynamic objects and negated services are not supported
 
--   Settings > Advanced > Vendor API: In case that base URL points to a
-    multi-domain server address, domains have to be specified
+-   **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
+    API** in the IP Fabric GUI: In case that base URL points to a multi-domain
+    server address, domains have to be specified
 
 ## Required Permissions For Successful Discovery Over CLI
 

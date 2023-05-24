@@ -8,4 +8,6 @@ description: IP Fabric describes known affected issues for Mikrotik and how to f
 
 **Description**: Mikrotik requires longer session timeout otherwise it will be not discovered
 
-**Fix**: **Settings -> Advanced -> SSH/Telnet -> Network device session timeout** set to 20s
+**Fix**: In **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Advanced CLI --> CLI Settings**, set **Network device session timeout** to `20`
+seconds.

@@ -31,7 +31,7 @@ Navigate to **Technology --> Interfaces --> Transceivers**
 
 This function is **enabled by default** for all vendors and product families. This means that **this command is not executed on any device**.
 
-The function can be **Enabled/Disabled** in section **Settings --> Advanced --> Discovery task**.
+The function can be **Enabled/Disabled** in **Settings --> Discovery & Snapshots --> Discovery Settings --> Disabled Discovery Tasks**.
 
 ![Transceivers settings](ipf_issues/transceivers_settings.png)
 

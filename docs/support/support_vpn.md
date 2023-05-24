@@ -22,22 +22,21 @@ SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
     VPN is always established and teared down by customer. VPN connection
     cannot be triggered externally!
 
-1.  Login to IP Fabric web GUI.
-2.  At top right corner click **Support**.
-3.  Select **Remote support VPN**.
+1.  Click on **Support** in the top right corner of the IP Fabric GUI.
+2.  Select **Remote support VPN**:
 
     ![VPN Menu](vpn/menu.png)
 
-4.  On newly opened page click the _Connect_ button.
+3.  On the newly opened page, click the **Connect** button:
 
     ![VPN Connect](vpn/connect.png)
 
-5.  VPN status should change to connected and also you should see assigned IP address.
+4.  VPN status should change to connected and also you should see assigned IP address.
 
 ## How To Tear Down Support VPN
 
-1.  Repeat steps 1 - 3 from **How To Establish Support VPN** part from above
-2.  On newly opened page click the **Disconnect** button.
+1.  Repeat steps 1 and 2 from the **How To Establish Support VPN** section above.
+2.  On newly opened page click the **Disconnect** button:
 
     ![VPN Disconnect](vpn/disconnect.png)
 
