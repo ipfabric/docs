@@ -4,6 +4,11 @@ description: System Administration also offers the ability to create a new local
 
 # Create Local Administrator
 
-The last thing **System Administration** offers is the ability to create a new local administrator account (changing the password of an already existing user is not possible on this page). Creation of a new user and password recovery is possible only in the **Setting --> User Management** menu in the main IP Fabric interface.
+**System Administration --> Create admin** offers the ability to create a new
+local administrator account (changing the password of an already existing
+account is not possible on this page).
 
-![create local administrator](create_local_administrator.png)
+![Create local administrator](create_local_administrator.png)
+
+Creation of new non-admin users and password changes are only possible in the
+IP Fabric main GUI -- in **Settings --> Administration --> Local Users**.

@@ -28,10 +28,9 @@ The **Online update** is automatically available only when the IP Fabric applian
     - `callhome.ipfabric.io` (95.217.156.217) remote port 443/TCP for update availability check
     - `releases.ipfabric.io` (95.216.185.152) remote port 443/TCP for update package download
 
-When new IP Fabric version is publicly available, the green interactive button automatically appears in the right top corner.
-The image below shows an example of the new version 3.7.5 available.
+When new IP Fabric version is publicly available, the green interactive button automatically appears in the right top corner. The image below shows an example of the new version `6.2.2` being available:
 
-![New version 3.7.5 available](system_update_new_version.png)
+![New version 6.2.2 available](system_update_new_version.png)
 
 To proceed with online update:
 
