@@ -1,5 +1,5 @@
 ---
-description: This will guide you through installing IP Fabric in your environment
+description: This will guide you through installing IP Fabric in your environment.
 ---
 
 # Quick Start Installation Guide
@@ -53,14 +53,14 @@ Follow instructions at [CLI Boot Wizard](02-boot_wizard.md)
 
 ## Accessing User Interface
 
-Prior to accessing the main IP Fabric UI you will need to create an `admin`
+Prior to accessing the main IP Fabric UI, you will need to create an `admin`
 account in the System Administration
 page: [Creating The First IP Fabric User](03-access_ui.md#accessing-the-main-user-interface)
 
 ## Applying IP Fabric License
 
-In order to access the Main IP Fabric User Interface a License must be uploaded
-to IP Fabric. Please contact your salesperson for the license key and follow
+In order to access the main IP Fabric user interface, a license must be uploaded
+to IP Fabric. Please contact your salesperson for the license key and follow the
 instructions
 at [Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
 
@@ -72,18 +72,18 @@ at [Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-i
 
 The simplest way for first time configuration of IP Fabric is through the use of
 the [Configuration Wizard](04-configuration_wizard.md) which will guide you
-through the process of adding device authentication, discovery seeds, networks
-to include/exclude in discovery, Vendor API setup, along with other settings.
+through the process of adding device credentials, discovery seeds, networks
+to include/exclude in discovery and Advanced CLI settings.
 
-If after initial configuration you would like to change or edit these settings
-please see [IP Fabric Settings](../../IP_Fabric_Settings/integration/api_tokens.md). Alternatively there
+If you would like to change or edit these settings after initial configuration,
+please see [IP Fabric Settings](../../IP_Fabric_Settings/integration/api_tokens.md). Alternatively, there
 are also
 [Snapshot Specific Settings](../../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
 which are useful for testing small changes prior to changing Global Settings.
 
 !!! note "Site Separation"
 
-    During the Configuration Wizard it will also ask you to set up Site
+    During the **Configuration Wizard**, it will also ask you to set up Site
     Separation rules. This can be done during the setup or alternatively after
     the first discovery. Some customers find it easier after a discovery
     and using the "regex tester" that will show you to which site a
@@ -93,8 +93,8 @@ which are useful for testing small changes prior to changing Global Settings.
 
 ## Discovery
 
-If you followed the Configuration Wizard the last step will ask you to
-"Start Discovery". You can also start discoveries by using the
+If you followed the **Configuration Wizard**, the last step will ask you to
+**Start Discovery**. You can also start discoveries by using the
 [Discovery Snapshot](../../IP_Fabric_GUI/discovery_snapshot.md) menu. This is
 where the magic of IP Fabric happens where it will go out to your devices, find
 neighbors, and collect information.

@@ -4,32 +4,37 @@ description: Documentation on most commonly seen discovery issues and how to res
 
 # Troubleshooting Discovery
 
-## Settings
+## Discovery Settings
 
 This section describes the Global Settings. You can also make adjustments to specific snapshots.
-Changes made to the Global Settings do not apply to previously run snapshots. Here are
+Changes made to the Global Settings do not apply to previously-run snapshots. Here are
 two methods for testing snapshot settings:
 
-1. Make your changes in the snapshot `Settings` and then try to
-  `Add Devices` (or `Rediscover timed out devices`). If these changes fixed your
+1. Make your changes in the snapshot **Settings** and then try to
+  **Add Devices** (or `Rediscover timed out devices`). If these changes fixed your
   issue, then apply them globally.
 
-  ![](troubleshooting/2953642050.png)
+  ![Add devices](troubleshooting/add_devices.png)
 
-1. Make your changes globally and then run a new snapshot. You can also filter the allowed 
-   discovery scope (`IP networks to include in discovery and analysis`) in the snapshot
-   `Settings` to a subset of `/32` addresses to lower the discovery time. In the example below,
-   we allow only one subnet to be part of the discovery.
+2. Make your changes globally and then run a new snapshot. In **Settings -->
+   Discovery & Snapshots --> Discovery Settings --> Discovery --> IP Scope -->
+   IP networks to include in discovery and analysis**, you can also filter the
+   allowed discovery scope to a subset of `/32` addresses to lower the discovery
+   time. In the example below, we allow only one subnet to be part of the
+   discovery:
 
-  ![](troubleshooting/2953314353.png)
+  ![Limit discovery to subnet](troubleshooting/limit_discovery_to_subnet.png)
 
-### Discovery Seed
+### Discovery Seeds
 
-![](troubleshooting/2953281573.png)
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Discovery Seeds**
+
+![Discovery Seeds](troubleshooting/discovery_seeds.png)
 
 These are **user-defined** IP addresses that IP Fabric will try to connect to and
 discover. If a device is successfully discovered, it will check the settings in
-the **Discovery Tasks Settings** to see what technologies to use to discover
+the **Discovery tasks settings** to see what technologies to use to discover
 neighbors.
 
 If you have remote locations possibly accessed through a WAN that is not owned by you,
@@ -39,19 +44,23 @@ Fabric can discover and crawl those.
 !!! important
 
     Adding new devices here will only discover them if `Limit discovery to
-    already discovered devices` is not enabled in the Discovery Tasks Settings.
+    already discovered devices` is not enabled in the **Discovery tasks
+    settings**.
 
-### Management --> Discovery History
+### Discovery History
 
-![](troubleshooting/2952626286.png)
+Location: **Management --> Discovery History**
 
-The **Discovery History table** is also used by IP Fabric as seed addresses.
+![Discovery History](troubleshooting/discovery_history.png)
+
+The **Discovery History** table is also used by IP Fabric as seed addresses.
 Once a device is discovered in a snapshot, it will be placed in this table for
 use in other snapshots.
 
 - The **username last successfully used** for a device will be recorded here and be
-  the first one tried in a future snapshot. If unsuccessful, IP Fabric will check the
-  **Settings --> Authentication** list and go back through the decision tree. This
+  the first one tried in a future snapshot. If unsuccessful, IP Fabric will check
+  the list in **Settings --> Discovery & Snapshots --> Discovery Settings -->
+  Device Credentials** and go back through the decision tree. This
   may cause the next snapshot to take longer due to authentication failures, but
   once this table is updated with the new username, the discovery time will
   return to normal.
@@ -62,11 +71,12 @@ use in other snapshots.
   You can also filter on **Last discovery time** and delete records older than X
   months.
 
-### Settings --> Advanced
+### IP Scope
 
-#### Discovery --> IP Scope
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Discovery --> IP Scope**
 
-![](troubleshooting/2952888388.png)
+![IP Scope](troubleshooting/ip_scope.png)
 
 **IP Scope** tells IP Fabric which networks to include or exclude in the discovery
 process. The default is set to include everything (`0.0.0.0/0`). When IP Fabric
@@ -87,18 +97,22 @@ the discovery completed successfully.
     IP is in the seeds. Also note IP Fabric does not do any ICMP pings to find
     hosts, so having a `/16` here will not send massive amounts of pings.
 
-#### Discovery Tasks Settings
+### Discovery tasks settings
 
-![](troubleshooting/2953445432.png)
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Discovery --> Discovery tasks settings**
 
-**Discovery Tasks Settings** is where the magic happens for automated discovery of
+![Discovery tasks settings](troubleshooting/discovery_tasks_settings.png)
+
+**Discovery tasks settings** is where the magic happens for automated discovery of
 new devices on your network.
 
 - If you are not finding new devices in your snapshot, check if
   `Limit discovery to already discovered devices` is not enabled. If this is
   enabled, then only devices in the **Discovery History**
   table will be added to the snapshot, but not new devices (even if those
-  devices are manually added to global **Settings --> Discovery Seed**).
+  devices are manually added to the global discovery seeds in **Settings -->
+  Discovery & Snapshots --> Discovery Settings --> Discovery Seeds**).
 
   If you want to limit to only discovered devices but want to add new
   devices, this is still possible by going to **Discovery Snapshot** and
@@ -109,8 +123,9 @@ new devices on your network.
   in your network.
 
 - **ARP** uses the ARP and MAC address OUI information to find devices. If the OUI
-  is set to `Enabled for discovery` in the **Settings -->
-  OUI** table, then IP Fabric will attempt to connect to and discover the device.
+  is set to `Enabled for discovery` in the table in **Settings --> Discovery &
+  Snapshots --> Global Configuration --> OUI**, then IP Fabric will attempt to
+  connect to and discover the device.
 
 - **Routing Table** will try to connect to next-hop devices.
 
@@ -119,23 +134,32 @@ new devices on your network.
   into the default gateway (vRouter), but using traceroute it can find some other
   physical devices in the network to use as starting points.
 
-#### SSH/Telnet
+### Advanced CLI
 
-![](troubleshooting/2953642017.png)
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Advanced CLI**
+
+![Advanced CLI](troubleshooting/advanced_cli.png)
 
 See [Advanced CLI](../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli.md) for
 the explanation of these settings.
 
-#### Vendors API
+### Vendors API
 
-![](troubleshooting/2953740315.png)
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Vendors API**
+
+![Vendors API](troubleshooting/vendors_api.png)
 
 See [Vendors API](../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) as
 each vendor has different requirements.
 
-### Settings --> Authentication
+### Device Credentials
 
-![](troubleshooting/2952888380.png)
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings --> Device
+Credentials**
+
+![Device Credentials](troubleshooting/device_credentials.png)
 
 **Authentication** is where you define the username and password IP Fabric uses to
 connect to a physical device (devices discovered through the API are managed
@@ -170,7 +194,7 @@ require elevated or `admin` profiles in order to pull all data.
 
 #### CDP/LLDP --> Unmanaged neighbors
 
-![](troubleshooting/2952560777.png)
+![Unmanaged Neighbors](troubleshooting/unmanaged_neighbors.png)
 
 This is the best table to start as not only you see the local host and
 interface names, but also the remote hostname, interface name, and remote IP.
@@ -183,7 +207,7 @@ unmanaged neighbors, but only 40 unique remote hostnames.
 
 #### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail
 
-![](troubleshooting/2952921141.png)
+![Unmanaged Neighbors Detail](troubleshooting/unmanaged_neighbors_detail.png)
 
 This table shows you unmanaged neighbors based on many protocols and has a built-in
 default intent check for you.
@@ -257,8 +281,8 @@ could not discover.
 
 ### Connectivity Report
 
-![](troubleshooting/2953314341.png)
-![](troubleshooting/2953642038.png)
+![Connectivity Report button](troubleshooting/connectivity_report_button.png)
+![Discovery Connectivity Report](troubleshooting/discovery_connectivity_report.png)
 
 The **Connectivity Report** is a per-snapshot report stating successes or
 errors for IP addresses that IP Fabric tried to discover. Once you have a list of
@@ -297,26 +321,29 @@ at [No Devices Discovered](common_problems/no-devices-discovered.md).
 
 ## Troubleshooting Configuration Management
 
-![](troubleshooting/2953740355.png)
+![Configuration Management](troubleshooting/configuration_management.png)
 
 **Configuration Management** is a separate process from discovery. First, a device
 must be discovered in a snapshot and placed in the **Management -->
-Discovery History** table. Once in this table, then next time IP Fabric is
-scheduled to pull configs, it should be populated in the list.
+Discovery History** table. Once in this table, next time IP Fabric is scheduled
+to pull configs, the device should be populated in the **Configuration
+Management** list.
 
 !!! example
 
-    - **Settings --> Advanced --> Snapshots** is set to periodically create
-      snapshots every day at 6AM.
+    - **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create
+      Snapshots Periodically** is set to create snapshots every day at 6AM.
 
-    - **Settings --> Advanced --> Configuration Management** is set to
-      periodically create snapshots every day at 11PM.
+    - **Settings --> Configuration Management --> Schedule** is set to
+      create device configuration backups every day at 11PM.
 
-    - New device will be found at 6AM, but since the config mgmt is
-      scheduled for 11PM, you will need to wait until the next day to
-      ensure it was pulled.
+    - New device will be found at 6AM, but since the its configuration backup is
+      scheduled for 11PM, you will need to wait until the next day to ensure its
+      configuration is pulled.
 
-Other troubleshooting tips:
+!!! tip
 
-- Please ensure that in **Settings --> Authentication**, you have enabled the correct
-  usernames to `Use for configuration management`. If no usernames have been enabled for configuration management, then configurations will not be backed up.
+    Please ensure that in **Settings --> Discovery & Snapshots --> Discovery
+    Settings --> Device Credentials**, you have enabled the correct usernames to
+    `Use for configuration management`. If no usernames have been enabled for
+    configuration management, then configurations will not be backed up.

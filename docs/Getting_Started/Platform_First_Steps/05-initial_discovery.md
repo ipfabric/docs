@@ -15,8 +15,8 @@ the [Configuration Wizard](04-configuration_wizard.md).
 
 ## Option 2 -- via the Discovery Snapshot page
 
-At the **Discovery Snapshot** page, click on **New snapshot** and start the
-discovery:
+On the **Discovery Snapshot** page, click on the **New snapshot** button and
+start the discovery:
 
 ![Start discovery](start_discovery.png)
 
