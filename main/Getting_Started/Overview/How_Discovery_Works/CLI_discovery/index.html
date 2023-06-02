@@ -9157,7 +9157,10 @@ documentation.
 <p>Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.</p>
 <p>The process is controlled from the discovery tab of the web user interface using the (start) and (stop) buttons.</p>
 <p><a class="glightbox" href="../cli_discovery/start.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="start" src="../cli_discovery/start.png" /></a> <a class="glightbox" href="../cli_discovery/stop.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="stop" src="../cli_discovery/stop.png" /></a></p>
-<p>The timing of the network discovery snapshots can be automated in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention</strong> to collect data in periodic intervals or at a specific time. It is recommended to do a network discovery at least once a day to record all network changes.</p>
+<p>You may configure <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention
+&rarr; Create Snapshots Periodically</strong> to automatically run a network discovery in
+periodic intervals or at a specific time. We recommended doing a network
+discovery at least once a day in order to capture any network changes.</p>
 <h2 id="connectivity-report">Connectivity Report</h2>
 <p>A connection to every attempted address either succeeds or is recorded in the Connectivity Report</p>
 <p><a class="glightbox" href="../cli_discovery/connectivity_report.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Connectivity Report" src="../cli_discovery/connectivity_report.png" /></a></p>
@@ -9178,7 +9181,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
 <p>IP Fabric tries to connect to a next-hop device from the routing table</p>
 </li>
 <li>
-<p>IP Fabric use the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of OUI table in IP Fabric (<strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>)</p>
+<p>IP Fabric uses the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of the OUI table (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>)</p>
 </li>
 <li>Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.</li>
 </ol>
