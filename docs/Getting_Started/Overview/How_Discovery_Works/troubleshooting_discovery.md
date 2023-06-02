@@ -337,9 +337,9 @@ Management** list.
     - **Settings --> Configuration Management --> Schedule** is set to
       create device configuration backups every day at 11PM.
 
-    - New device will be found at 6AM, but since the its configuration backup is
-      scheduled for 11PM, you will need to wait until the next day to ensure its
-      configuration is pulled.
+    - New device will be found at 6AM, but since its configuration backup is
+      scheduled for 11PM, you will need to wait until the next day to be sure
+      that its configuration is pulled.
 
 !!! tip
 

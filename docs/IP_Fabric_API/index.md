@@ -143,8 +143,13 @@ using a global constant for it.
 The technology tables use `POST` requests **only** for reading information and
 the payload is used to specify or filter requested data from listed tables. The
 `POST` & `DELETE` request can be used for Intent verification rules at each
-endpoint. At every technology table, search for the question mark button that
-exposes the endpoints (can be used with filters as well).
+endpoint.
+
+At a technology table, click on `...` (3-dot button in the top right corner of
+the table) and select the `Table description` option that exposes the endpoints
+(can be used with filters as well):
+
+![Table description option](table_description_option.png)
 
 ![API Endpoint inline description](endpoint_inline_description.png)
 

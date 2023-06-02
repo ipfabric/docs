@@ -83,11 +83,13 @@ which are useful for testing small changes prior to changing Global Settings.
 
 !!! note "Site Separation"
 
-    During the **Configuration Wizard**, it will also ask you to set up Site
-    Separation rules. This can be done during the setup or alternatively after
-    the first discovery. Some customers find it easier after a discovery
-    and using the "regex tester" that will show you to which site a
-    device would belong to.
+    After completing the steps in the **Configuration Wizard**, you may also set
+    **Site Separation** rules (in **Settings --> Discovery & Snapshots -->
+    Discovery Settings --> Site Separation**). This can be done before, or after
+    the first discovery. Some customers find it easier to set that up after a
+    discovery -- as it will be possible to check to which Site an already
+    discovered device would belong to using the "regex tester" on the **Site
+    Separation** page.
 
     Please see documentation located at [Site Separation](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
 
