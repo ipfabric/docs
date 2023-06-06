@@ -10,11 +10,11 @@ description: For the final step, we will show you how to start the initial disco
 
 ## Option 1 -- via the Configuration Wizard
 
-You can click on the **Start Discovery** button in step 4 of the [Configuration Wizard](04-configuration_wizard.md).
+You can click the **Start Discovery** button in step 4 of the [Configuration Wizard](04-configuration_wizard.md).
 
 ## Option 2 -- via the Discovery Snapshot page
 
-On the **Discovery Snapshot** page, click on the **New snapshot** button and
+On the **Discovery Snapshot** page, click the **New snapshot** button and
 start the discovery:
 
 ![Start discovery](start_discovery.png)

@@ -11,11 +11,11 @@ dashboard.
 
 ![AWS Management Console](aws/2691596295.png)
 
-Click on **My Security Credentials** and open **Access keys** tab.
+Click **My Security Credentials** and open **Access keys** tab.
 
 ![AWS - Your Security Credentials](aws/2691596301.png)
 
-To generate keys click on **Create New Access Key** and your keys will be
+To generate keys, click **Create New Access Key** and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.
 

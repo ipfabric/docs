@@ -249,7 +249,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 ### Extend Existing Virtual Disk (For System And Data)
 
 1.  Open VMware vSphere web console.
-2.  Right click on VM name and select **Edit Settings**.
+2.  Right click VM name and select **Edit Settings**.
 3.  Select **Hard disk** and change its size.
 4.  Click **OK**.
 5.  Restart VM (using CLI or web UI).
@@ -258,7 +258,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 ### Add New Virtual Disk (As An Additional Backup Disk)
 
 1. Open VMware vSphere web console.
-2. Right click on VM name and select **Edit Settings**.
+2. Right click VM name and select **Edit Settings**.
 3. Click **Add New Device --> Hard Disk**
 4. Select new size
 5. Specify **Location**:
@@ -281,7 +281,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 1.  Open Hyper-V Manager.
 2.  Shutdown VM. (when Started, HyperV won't let you change any
     hardware settings)
-3.  Right click on VM name and select **Settings**.
+3.  Right click VM name and select **Settings**.
 4.  Select **IDE Controller - Hard Drive -
     ipfabric-x-x-x-disk1.vhdx **
 5.  Click **Edit** - **Choose Action** - select option **Expand**,
@@ -295,7 +295,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 1. Open HyperV Manager.
 2. Shutdown VM. (when Started, HyperV won't let you change any
    hardware settings)
-3. Right click on VM name an select **Settings**.
+3. Right click VM name an select **Settings**.
    ![HyperV settings](hyperv_settings.png)
 4. Select IDE Controller 1 - Hard Drive - click **Add**
    ![HyperV Add hard drive](hyperv_add_hdd.png)

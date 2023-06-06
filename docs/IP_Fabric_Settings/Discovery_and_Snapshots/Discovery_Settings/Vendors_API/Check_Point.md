@@ -14,7 +14,7 @@ We use API only to collect information that cannot be retrieved from CLI logs. T
 
 Don't forget to add IPF appliance to the list of allowed clients.
 
-In SmartConsole, go to **Manage & Settings -> Blades** and click on **Advanced Settings** in the **Management API** section to verify, from where are API calls allowed.
+In SmartConsole, go to **Manage & Settings -> Blades** and click **Advanced Settings** in the **Management API** section to verify, from where are API calls allowed.
 
 In case that you use setting **All IP addresses that can be used for GUI clients**, don't forget to add IPF appliance address to **Manage & Settings -> Permissions** and **Administrators -> Trusted Clients**.
 

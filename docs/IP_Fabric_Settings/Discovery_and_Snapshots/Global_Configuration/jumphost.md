@@ -41,7 +41,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 ### Adding New Jumphost
 
 - Go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
-- On the page, click on the **+ Add** button:
+- On the page, click the **+ Add** button:
 
   ![Jump host settings](jumphost/1384480773.png)
 
@@ -69,7 +69,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
     --8<-- "snippets/username_password_regex.md"
 
-- Click on the **Add** button to save the configuration.
+- Click the **Add** button to save the configuration.
 
 - If a connection is open, you will see the **_Running_** status in the Jumphost list
 

@@ -24,7 +24,7 @@ description: This section contains information about RBAC policies, how they wor
 
 ## Add Attributes Scope Policy
 
-1. To add a new policy click on **+ Add policy**.
+1. To add a new policy click **+ Add policy**.
 
 	![Add policy button](policies_table.png)
 
@@ -38,7 +38,7 @@ description: This section contains information about RBAC policies, how they wor
 
 ## Add API Endpoint Policy
 
-1. To add new policy click on **+ Add policy**.
+1. To add new policy click **+ Add policy**.
 
 	![Add policy button](policies_table.png)
 
@@ -56,30 +56,30 @@ description: This section contains information about RBAC policies, how they wor
 
 ## Edit Policy
 
-1. To modify policy details, click on **edit icon** in policies table.
+1. To modify policy details, click **edit icon** in policies table.
 
 	![Policies Table Edit](policies_table_edit.png)
 
-2. Then to modify policy details update data in **Edit Policy** form and click on **Save**.
+2. Then to modify policy details update data in **Edit Policy** form and click **Save**.
 
 	![Edit Policy](policies_edit.png)
 
 ## Copy Policy
 
-1. To copy policy, click on **copy icon** in policies table.
+1. To copy policy, click **copy icon** in policies table.
 
 	![Policies Table Copy](policies_table_copy.png)
 
-2. Then modify policy details in **Copy Policy** form and click on **Save**.
+2. Then modify policy details in **Copy Policy** form and click **Save**.
 
 	![Copy Policy](policies_copy.png)
 
 ## Delete Policy
 
-1. To delete policy, click on **delete icon** in table.
+1. To delete policy, click **delete icon** in table.
 
 	![Policies Table Delete](policies_table_delete.png)
 
-2. Then click on **Delete** to confirm action.
+2. Then click **Delete** to confirm action.
 
 	![Policies Table Delete Confirm](policies_table_delete_confirm.png)

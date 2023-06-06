@@ -15,9 +15,9 @@ information via the API, where it wasn't possible before.
 
 ### Network
 
-By default, when you click on Network, all networks are displayed and
+By default, when you click Network, all networks are displayed and
 the relationships between them. They are grouped into sites represented
-by a cloud for better visibility. You can double-click on a cloud to
+by a cloud for better visibility. You can double-click a cloud to
 explore further that specific site.
 
 Check this page [Network Viewer](network_viewer.md) for more details on using the diagrams.

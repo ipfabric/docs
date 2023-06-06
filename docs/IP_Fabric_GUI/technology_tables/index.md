@@ -58,7 +58,7 @@ content.
 
 ## Tooltips
 
-Each table contains built in help with the table description by clicking on the
+Each table contains built in help with the table description by clicking the
 question mark ![tooltip](tooltip.png).
 
 Hover the mouse over the column name for a description of column content.

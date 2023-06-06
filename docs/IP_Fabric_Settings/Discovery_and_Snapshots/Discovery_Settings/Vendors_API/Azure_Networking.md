@@ -36,10 +36,10 @@ First login to the Azure portal (<https://portal.azure.com/>)
 
 Search for **Active Directory**.
 
-1. From the left menu, click on **App registrations**, then click on **+New registration**.
+1. From the left menu, click **App registrations**, then click **+New registration**.
 2. Fill in the name of the application (e.g. `IP Fabric`). From the **Supported account types**, select the first option **Single Tenant**. Leave other options blank
-3. Once you click on **Register**, you’ll be redirected to the App overview page. Note the **Application (client) ID** and **Directory (tenant) ID**
-4. Click on **Certificates & Secrets** and select the **Client secrets (0)** tab, click **+ New secret**, select Expiration and then click **Add**.
+3. Once you click **Register**, you’ll be redirected to the App overview page. Note the **Application (client) ID** and **Directory (tenant) ID**
+4. Click **Certificates & Secrets** and select the **Client secrets (0)** tab, click **+ New secret**, select Expiration and then click **Add**.
 5. Copy the created **client secret** to the clipboard (column Value). **You won’t be able to see it again**.
 
 ### Subscription & Access Control
@@ -47,17 +47,17 @@ Search for **Active Directory**.
 Search for **Subscriptions** and select the subscription you like to add to IPF (IPF can do discovery per subscription)
 
 1. On the overview page note the **Subscription ID**.
-2. From the left menu, click on Access control (IAM), click on **+ Add** and **Add custom role**. Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select **Start from JSON** and upload JSON file with the required permissions (find it at the very bottom of this page). Click on the Next button to continue.
+2. From the left menu, click Access control (IAM), click **+ Add** and **Add custom role**. Fill in the role name. IP Fabric requires specific permissions in order to make API calls. Select **Start from JSON** and upload JSON file with the required permissions (find it at the very bottom of this page). Click the Next button to continue.
 
    ![Creating Custom Role](azure/create_custom_role.png)
 
-3. Review the permissions and click Next. Now you have to assign a scope for this role. Click on **Add assignable scopes** and from the right panel select Type: Subscription and than click on the Subscription you want to assign
+3. Review the permissions and click Next. Now you have to assign a scope for this role. Click **Add assignable scopes** and from the right panel select Type: Subscription and than click the Subscription you want to assign
 
    ![Assigning Scopes](azure/assign_scopes.png)
 
-4. Click on **Review + Create**
+4. Click **Review + Create**
 5. Now you have to assign the newly created Role to the Registered App. From the left menu, select again **Access control (IAM)** and then click **+ New** and **Add role assignment**.
-6. Find the previously created role, click **Next** and then click on **+ Select members**. Find the app you created before. Click **Review + Assign**
+6. Find the previously created role, click **Next** and then click **+ Select members**. Find the app you created before. Click **Review + Assign**
 
    ![Add Role assignment](azure/add_role_assignment.png)
 

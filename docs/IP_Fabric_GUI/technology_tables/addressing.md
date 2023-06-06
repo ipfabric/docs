@@ -21,7 +21,7 @@ This section contains information about NAT policies and rules configured on a d
 
 ![NAT 44 table](addressing/nat44-table.png)
 
-A graphical representation (as shown below) of the policy chain can be access by clicking on a "Policy Name" or a "Sequence number".
+A graphical representation (as shown below) of the policy chain can be access by clicking a "Policy Name" or a "Sequence number".
 
 ![natPostRouting chain on Forcepoint](addressing/forcepoint-natPostRouting.png)
 

@@ -78,7 +78,7 @@ Local accounts have `isLocal` attribute set to `true`. You may see accounts for 
       4. For LDAP over SSL, also upload a Root CA certificate used for the LDAP
          certificate signature.
 
-      5. Click on **+ Add Server** if you want to add backup servers.
+      5. Click **+ Add Server** if you want to add backup servers.
 
    2. Using **DNS service records**:
 

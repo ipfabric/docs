@@ -18,7 +18,7 @@ You can add any Intent Verification Rule to the Dashboard.
 2. Click Edit in the upper right corner.
 3. Click **+Add row**.
 4. Choose row style what you would like to add.
-5. Click on **Untitled** and enter some name for example **Port
+5. Click **Untitled** and enter some name for example **Port
    channels**.
 6. Click **+Add Widget**.
 7. Select widget type in our case it's **Intent Verifications**.

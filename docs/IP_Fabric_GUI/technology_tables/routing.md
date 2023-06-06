@@ -36,7 +36,7 @@ In case match condition uses reference to ACL, it is a hyperlink to appropriate 
 
 ![Policy Based Routing](routing/routingPolicy/policyBasedRouting.png)
 
-Clicking on Policy Name opens tree view.
+Clicking Policy Name opens tree view.
 
 ![PBR Tree](routing/routingPolicy/pbrTree.png)
 

@@ -144,7 +144,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
     ![VirtualBox - Import Virtual Appliance - Appliance Settings](virtualbox_import-virtual-appliance-2.png)
 
-4.  Right-click on the newly-created virtual machine and select its **Settings...**
+4.  Right-click the newly-created virtual machine and select its **Settings...**
 
 5.  In the **System** section, select `ICH9` as the Chipset:
 

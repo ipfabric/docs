@@ -34,7 +34,7 @@ When new IP Fabric version is publicly available, the green interactive button a
 
 To proceed with online update:
 
-1. Click on the new version indicator (it will navigate you to **System Administration**).
+1. Click the new version indicator (it will navigate you to **System Administration**).
 2. Log in with the `osadmin` user and the password configured during the first boot.
 3. Perform the VM backup as described in the above section.
 4. Navigate to **System update** and proceed (IP Fabric will automatically download the update file, perform the update and reboot itself).

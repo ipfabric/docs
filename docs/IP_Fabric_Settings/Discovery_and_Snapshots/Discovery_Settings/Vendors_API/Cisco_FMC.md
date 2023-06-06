@@ -14,7 +14,7 @@ in IP Fabric it is necessary to control Cisco Firepower through Cisco FMC
 (Firewall Management Center) and add Cisco FMC in global vendor API settings.
 
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
-API** and click on the **+Add** button.
+API** and click the **+Add** button.
 
 Afterwards, choose **Cisco FMC** from the list and fill in:
 

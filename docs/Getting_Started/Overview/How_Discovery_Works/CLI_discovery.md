@@ -14,7 +14,7 @@ The process is controlled from the discovery tab of the web user interface using
 
 You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
 --> Create Snapshots Periodically** to automatically run a network discovery in
-periodic intervals or at a specific time. We recommended doing a network
+periodic intervals or at a specific time. We recommend doing a network
 discovery at least once a day in order to capture any network changes.
 
 ## Connectivity Report

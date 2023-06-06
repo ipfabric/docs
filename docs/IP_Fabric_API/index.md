@@ -145,9 +145,9 @@ the payload is used to specify or filter requested data from listed tables. The
 `POST` & `DELETE` request can be used for Intent verification rules at each
 endpoint.
 
-At a technology table, click on `...` (3-dot button in the top right corner of
-the table) and select the `Table description` option that exposes the endpoints
-(can be used with filters as well):
+At a technology table, click `...` (3-dot button in the top right corner of the
+table) and select the `Table description` option that exposes the endpoints (can
+be used with filters as well):
 
 ![Table description option](table_description_option.png)
 

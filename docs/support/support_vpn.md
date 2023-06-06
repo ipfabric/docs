@@ -22,7 +22,7 @@ SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
     VPN is always established and teared down by customer. VPN connection
     cannot be triggered externally!
 
-1.  Click on **Support** in the top right corner of the IP Fabric GUI.
+1.  Click **Support** in the top right corner of the IP Fabric GUI.
 2.  Select **Remote support VPN**:
 
     ![VPN Menu](vpn/menu.png)

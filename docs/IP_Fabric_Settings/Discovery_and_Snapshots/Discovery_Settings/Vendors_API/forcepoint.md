@@ -16,7 +16,7 @@ Starting version **6.1.0** IP Fabric supports Forcepoint SMC API. Forcepoint dev
 
 2. Generate API tokens
 
-   - Click on **Configuration**.
+   - Click **Configuration**.
    - Open **Configuration --> Administration --> Access Rights --> API Clients** and select **New**.
 
    ![location where to find the API key generation](forcepoint/smc/forcepoint_generate_api_token.png)
@@ -27,7 +27,7 @@ Starting version **6.1.0** IP Fabric supports Forcepoint SMC API. Forcepoint dev
 
 4. API end-point needs to be enabled explicitly, as it is disabled by default.
 
-   - Click on **Home**
+   - Click **Home**
    - Go to **Other** section on the left sidebar.
    - Find your management server that you will used to query the data.
    - Go to **SMC API** section where in the tab you have to enable it and also you can specify other parameters.

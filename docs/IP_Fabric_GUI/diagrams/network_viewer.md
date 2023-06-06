@@ -7,7 +7,7 @@ description: In the network viewer, all networks are displayed and the relations
 When you go to the page **Diagrams --> Network**, all networks are
 displayed and the relationships between them. They are grouped into
 sites represented by a cloud for better visibility. You can double-click
-on a cloud to explore further that specific site.
+a cloud to explore further that specific site.
 
 Top-level view with all network:
 
@@ -16,7 +16,7 @@ Top-level view with all network:
 ## Adding Networks To The View
 
 To display the required information, select on the left side the site
-you want to visualize and click on **_Submit_**.
+you want to visualize and click **_Submit_**.
 
 One or more sites can be displayed at a time.
 
@@ -78,9 +78,9 @@ them:
 ### Save User-defined Layout
 
 After editing the layout, you will see the green box, this allows you to
-save the changes as the default view. Click on the green box, this will
+save the changes as the default view. Click the green box, this will
 open a menu **_Select Diagram Layout Settings_** and the last entry is
-the **User-Defined Layout**. By clicking on the floppy disk icon you
+the **User-Defined Layout**. By clicking the floppy disk icon you
 will update the default view (see below). Please, be aware that only
 position of the visible nodes will be saved.
 
@@ -91,7 +91,7 @@ position of the visible nodes will be saved.
 ### Use User-defined Layout As The Default Layout
 
 Once you have created a user-defined layout, you probably want to use
-this as the default layout. For this, click on the icon of the site you
+this as the default layout. For this, click the icon of the site you
 want to update, then select the User-Defined layout and click **Save**
 
 ![set default user layout](network_viewer/set_user_defined_layout_as_default.png)
@@ -150,7 +150,7 @@ other users, and they will be able to see this view.
 ### Export Current View To SVG/PNG
 
 The view can be exported in the form of a SVG or PNG image by clicking
-on **_Export_** and selecting the format you want
+**_Export_** and selecting the format you want
 
 ![Export View to SVG/PNG](network_viewer/button_export_view.gif)
 
@@ -162,7 +162,7 @@ on **_Export_** and selecting the format you want
 ### Search
 
 Search looks up any text currently present on the diagram. Typing query
-filters the view and clicking on the search button focuses and zooms in
+filters the view and clicking the search button focuses and zooms in
 on the item.
 
 ![Search diagram](network_viewer/button_search_diagram.png)
@@ -189,13 +189,13 @@ group/ungroup
 
 By default, all discovered protocols will be grouped based on the layer
 they belong to. This is the **System** view. You can edit this, which
-means you are able to ungroup certain protocols. For this click on the
+means you are able to ungroup certain protocols. For this click the
 Settings icon:
 
 ![Configure visualization setup](network_viewer/visualization_setup_settings.png)
 
 Drag and drop protocols you want to put to a custom group to the **Other
-Protocols**, click on Save as and give a name to the new protocol view.
+Protocols**, click Save as and give a name to the new protocol view.
 
 ![Drag & drop protocol](network_viewer/protocols_drag_drop.png)
 
@@ -228,7 +228,7 @@ diagram.
 
 ### Device Information Deep Dive
 
-After right-clicking on the device, it is possible to display additional
+After right-clicking the device, it is possible to display additional
 information about it by selecting **Show detail**:
 
 ![Device - Show detail](network_viewer/device_show_detail.png)

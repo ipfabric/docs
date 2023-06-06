@@ -102,7 +102,7 @@ individual hosts are not considered
 - **Host Mode** -- simulation starts and ends with each host. It is
 limited to 255 hosts, source and destination combined.
 
-Then click on submit.
+Then click submit.
 
 This is how path lookup might look like:
 
@@ -157,7 +157,7 @@ After opening the details, we can select the destination link to proceed with pa
 
 ### Understand The Path Selection
 
-To understand the decision taken by a device, right-click on the device
+To understand the decision taken by a device, right-click the device
 and "show detail". You will then be presented with the details. If you
 have more than one interface where the flow can come from, you will need
 to select the interface you want to look at. Similarly, if you have
