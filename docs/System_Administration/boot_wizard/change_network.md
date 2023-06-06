@@ -1,3 +1,7 @@
+---
+description: This section contains information how to change network configuration of the IP Fabric machine using our Boot Wizard.
+---
+
 # Update Network Config
 
 To change the IP Address, Subnet, Gateway, NTP, DNS, or Proxy configuration of 

@@ -1,3 +1,7 @@
+---
+description: Information of what settings you can change in our Boot Wizard.
+---
+
 # First Boot Wizard
 
 The *First Boot Wizard* starts when IP Fabric is run for the first time and

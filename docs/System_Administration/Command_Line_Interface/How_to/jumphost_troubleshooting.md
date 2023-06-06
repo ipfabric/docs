@@ -1,3 +1,7 @@
+---
+description: This section contains information on how to troubleshoot jumphost-related problems.
+---
+
 # Troubleshooting `jumphost`
 
 ## Jumphost Troubleshooting Tools

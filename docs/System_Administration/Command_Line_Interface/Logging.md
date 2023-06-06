@@ -1,3 +1,7 @@
+---
+description: This section contains information about different logs IP Fabric keeps and where you can find them.
+---
+
 # Understanding System Logs
 
 System logs are important because they provide a record of all activities that have occurred on a system. They can be used to track core system or snapshot activity and help with troubleshooting issues. 

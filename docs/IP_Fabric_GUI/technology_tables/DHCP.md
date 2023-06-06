@@ -1,3 +1,7 @@
+---
+description: This section provides information for configuring both DHCP (Dynamic Host Configuration Protocol) server and relay. 
+---
+
 # DHCP
 
 This section provide information for configuration both of **DHCP** (Dynamic Host Configuration Protocol) **server** and **relay**.

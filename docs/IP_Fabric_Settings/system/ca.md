@@ -1,3 +1,7 @@
+---
+description: This section contains information how to add CA certificates to IP Fabric.
+---
+
 # Certification Authorities
 
 Before version `6.0`, IP Fabric used the CA bundle shipped with `node.js`. This

@@ -1,3 +1,7 @@
+---
+description: This section contains information how to set up API discovery for Cisco APIC.
+---
+
 # Cisco APIC
 
 Starting version 5.0 IP Fabric collects information from APIC controller and provides information about Tenants (including Contexts/VRFs, Applications, Endpoint groups and Contracts) and APIC cluster members.

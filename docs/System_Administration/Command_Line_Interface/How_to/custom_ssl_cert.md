@@ -1,3 +1,7 @@
+---
+description: This section contains information on how to implement your own custom TLS certificate for the web GUI.
+---
+
 # How to add Custom SSL Certificate
 
 If a custom SSL certificate for HTTPS traffic (IP Fabric main GUI) is required, follow this guide to change the certificate manually.

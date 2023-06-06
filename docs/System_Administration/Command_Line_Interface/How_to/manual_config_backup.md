@@ -1,3 +1,7 @@
+---
+description: This section contains information how to trigger a manual configuration backup for a single device using an API call.
+---
+
 # How to trigger manual configuration backup for a single device
 
 After adding a new device to the network, and you don't want to wait until the next regular configuration backup collection, you can trigger config backup through IP Fabric's API. Here's how.

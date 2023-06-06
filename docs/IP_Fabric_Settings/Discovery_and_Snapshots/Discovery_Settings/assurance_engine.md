@@ -1,3 +1,7 @@
+---
+description: This section contains information how to skip some discovery features to decrease discovery time.
+---
+
 # Assurance Engine
 
 Since version 6.0, IP Fabric is able to skip some of the discovery features in order to decrease discovery time.

@@ -1,3 +1,7 @@
+---
+description: This table contains information about MPLS.
+---
+
 # MPLS
 
 ## RSVP

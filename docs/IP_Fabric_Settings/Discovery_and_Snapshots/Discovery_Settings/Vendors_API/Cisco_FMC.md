@@ -1,3 +1,7 @@
+---
+description: This section contains information how to set up API discovery for Cisco FMC.
+---
+
 # Cisco FMC (FTD)
 
 Starting version 4.3 IP Fabric collects zone-firewall related data for Cisco

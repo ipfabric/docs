@@ -1,3 +1,7 @@
+---
+description: This page contains information on how to fix a problem where APIC tables are empty.
+---
+
 # APIC Tables are all empty except Controllers
 
 Even though APIC Vendor API setting are set correctly, you are not able to see anything in ACI related tables, except **Controllers** table.

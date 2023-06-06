@@ -1,3 +1,7 @@
+---
+description: Information about how you can authenticate your API calls towards IP Fabric so you can fetch the data from your snapshots.
+---
+
 # Authentication
 
 Majority of requests to IP Fabric platform need to be authenticated. We provide

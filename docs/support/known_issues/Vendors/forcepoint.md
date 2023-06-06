@@ -1,3 +1,7 @@
+---
+description: IP Fabric describes known issues affecting Forcepoint and how to fix them.
+---
+
 # Forcepoint
 
 ## Forcepoint NGFW CLI discovery

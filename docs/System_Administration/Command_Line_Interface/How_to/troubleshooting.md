@@ -1,3 +1,7 @@
+---
+description: This section contains information how to troubleshoot common problems with IP Fabric's VM setup.
+---
+
 # How to troubleshoot IP Fabric VM
 
 In the event of a VM network connection problem, DNS issues, network devices connectivity issue, IP Fabric CLI is a useful helper.

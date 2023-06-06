@@ -1,3 +1,7 @@
+---
+description: This section contains information how to manage IP Fabric users.
+---
+
 # Local Users
 
 **Local Users** page enables you to create or modify users including default admin, LDAP and SSO accounts.

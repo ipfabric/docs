@@ -1,3 +1,7 @@
+---
+description: If the FTP backup is not working, this is how to get it back up again.
+---
+
 # FTP backup and restore are not working
 
 Suppose you have the FTP root directory on the FTP server in `/ftp` and you would like to store backup in `/ftp/backup`.

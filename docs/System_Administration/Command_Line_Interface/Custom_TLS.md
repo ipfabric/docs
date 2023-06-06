@@ -1,3 +1,7 @@
+---
+description: This section contains information how to re-enable TLS older than `v1.3`.
+---
+
 # Custom Transport Layer Security (TLS) Settings
 
 Since IP Fabric version `v5.0`, by default, the only supported TLS version is `v1.3`. TLS 1.3 brings a number of improvements over TLS 1.2, such as stronger encryption, simplified handshake, perfect forward secrecy, fewer round trips, and improved performance. Some older web browsers or proxies may not support the latest version and older TLS version will need to be re-enabled in IP Fabric.

@@ -1,3 +1,7 @@
+---
+description: This section contains information how to change the hostname using IP Fabric Boot Wizard.
+---
+
 # Update hostname or domain name
 
 To change the hostname or the DNS domain name of your IP Fabric machine from the

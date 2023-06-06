@@ -1,3 +1,7 @@
+---
+description: This section contains information about RBAC roles you can assign policies to and then assign those roles to IP Fabric users.
+---
+
 # Roles
 
 **Roles** enable users to perform actions on system resources (e.g. *user-management* role with assigned *team* policy enables users view, add, update and delete Users, Roles, Policies, LDAP Configuration).

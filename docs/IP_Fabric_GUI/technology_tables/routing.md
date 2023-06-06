@@ -1,3 +1,7 @@
+---
+description: This section is about Routing technology tables in IP Fabric GUI.
+---
+
 # Routing
 
 ## Prefix Lists

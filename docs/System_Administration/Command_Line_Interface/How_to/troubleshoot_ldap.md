@@ -1,3 +1,7 @@
+---
+description: This section contains information about how to troubleshoot LDAP-related issues.
+---
+
 # How To Troubleshoot LDAP
 
 ## Users Are Not Able To Login

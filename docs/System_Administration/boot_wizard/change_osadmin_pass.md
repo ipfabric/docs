@@ -1,3 +1,7 @@
+---
+description: This section contains instructions how to change the `osadmin` password using the IP Fabric Boot Wizard.
+---
+
 # Update `osadmin` password
 
 1. Login to your IP Fabric via SSH with the `osadmin` user and run the

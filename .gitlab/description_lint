@@ -1,0 +1,27 @@
+#! /bin/sh
+
+set -e
+
+PROJECT_ROOT=$(realpath "$(dirname "$0")/..")
+EXCEPTIONS="$PROJECT_ROOT/.description_exceptions"
+
+if [ ! -f "$EXCEPTIONS" ] || grep -q '^&' "$EXCEPTIONS"; then
+	echo "$0: WARN: missing exception file or has empty lines: $EXCEPTIONS"
+  exit 1
+fi
+
+fail=false
+
+for i in $(find "$PROJECT_ROOT/docs/" -name "*.md"); do
+  if ! head -2 "$i" | tail -1 | grep -q '^description:'; then
+    file_wo_project_root=$(echo "$i" | sed -es"#^$PROJECT_ROOT/##")
+    if ! echo "$file_wo_project_root" | grep -q -f "$EXCEPTIONS"; then
+      echo "missing SEO description in $i"
+      fail=true
+    fi
+  fi
+done
+
+if [ "$fail" = true ]; then
+  exit 1
+fi

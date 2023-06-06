@@ -173,6 +173,7 @@ def main():
             print(f"For {project} fetched {len(project_issues)} issues")
 
         rn = Document()
+        rn.add_raw(f"---\ndescription: IP Fabric automatically generated low-level release notes for version {v['name']}.\n---")
         rn.add_heading(f"LLRN {v['name']}")
         rn.add_paragraph(
             f""" These are low-level release notes for IP Fabric

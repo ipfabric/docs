@@ -1,3 +1,7 @@
+---
+description: This section defines problems with Dell devices and how to fix them.
+---
+
 # Dell
 
 **IP Fabric Version:** All

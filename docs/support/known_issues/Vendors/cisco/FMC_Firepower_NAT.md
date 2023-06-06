@@ -1,3 +1,7 @@
+---
+description: Current NAT implementation for Firepower appliances supports only **Threat Defense NAT** policies. 
+---
+
 # NAT Support for Cisco FMC Firepower
 
 ## 7000 & 8000 Series Are Not Supported

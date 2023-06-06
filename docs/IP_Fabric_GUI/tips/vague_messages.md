@@ -1,3 +1,7 @@
+---
+description: This section contains information how to troubleshoot errors with vague description in IP Fabric's GUI.
+---
+
 # Troubleshooting Vague Messages
 
 IP Fabric error messages are not always eloquent and vague message like **Invalid Input** can be displayed:

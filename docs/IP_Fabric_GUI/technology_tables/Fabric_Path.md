@@ -1,3 +1,7 @@
+---
+description: The Fabric Path section contains information about summaries, neighbors, switch identifications and routes. 
+---
+
 # Fabric Path
 
 The **Fabric Path** section contains information about summaries, neighbors, switch identifications and routes.

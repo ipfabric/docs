@@ -1,3 +1,7 @@
+---
+description: This section contains information about RBAC policies, how they work and how to set them.
+---
+
 # Policies
 
 **Policies** can contain sets of **attributes or endpoints**.

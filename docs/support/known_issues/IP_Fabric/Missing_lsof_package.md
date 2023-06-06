@@ -1,3 +1,7 @@
+---
+description: This page contains information how to repair non-starting jumphost even if you set everything correctly.
+---
+
 # Missing `lsof` Package
 
 IP Fabric OVA images version 5.0.x are missing `lsof` diagnostic tool package causing jumpshot startup issues.

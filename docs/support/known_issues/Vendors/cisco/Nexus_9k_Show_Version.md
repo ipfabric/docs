@@ -1,3 +1,7 @@
+---
+description: This section contains information about `show version` command hanging on specific version of NX-OS.
+---
+
 # Nexus 9k Show Version
 
 **IP Fabric Version:** All

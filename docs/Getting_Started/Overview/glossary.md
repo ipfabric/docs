@@ -1,3 +1,7 @@
+---
+description: This is a glossary of terms used throughout the documentation.
+---
+
 # IP Fabric Glossary
 
 _An explanation of terms used in the IP Fabric documentation and product interface_

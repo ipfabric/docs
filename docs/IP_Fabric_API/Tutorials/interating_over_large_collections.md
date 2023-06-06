@@ -1,3 +1,7 @@
+---
+description: Current API may return an arbitrary `count` of `100000000` for large collections (tables). 
+---
+
 # Iterating Over Large Collections
 
 Current API may return an arbitrary `count` of `100000000` for large collections (tables). This doesn't mean that collection doesn't contain more records. We have an open change request to augment this behavior and return `null` in such cases (as returned value cannot be trusted).

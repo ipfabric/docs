@@ -1,3 +1,7 @@
+---
+description: Internal - If you'd see the customer name in "#techsupport-updates" channel as "IPF-<techsupport_metadata>", this is how you can mitigate that.
+---
+
 # Customer name in techsupport
 
 !!! info
