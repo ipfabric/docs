@@ -9121,7 +9121,17 @@ Seeds</strong> and add Cisco APIC IP address.</p>
 API</strong> and press the <strong>+Add</strong> button.</p>
 <p>Afterwards, choose <strong>Cisco APIC</strong> from the list and fill in:</p>
 <ul>
-<li><strong>Username and password</strong> used to log in to Cisco APIC</li>
+<li>
+<p><strong>Username and password</strong> used to log in to Cisco APIC</p>
+<details class="info">
+<summary>Username if Local Domain is set on the APIC</summary>
+<p>If local domain is set on your APIC controller the format of the <code>username</code> for IP Fabric settings is</p>
+<div class="highlight"><pre><span></span><code>apic:LOCAL-DOMAIN-NAME\\username
+</code></pre></div>
+<p><a class="glightbox" href="../apic_local_domain.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="APIC login screen" src="../apic_local_domain.png" /></a>
+<a class="glightbox" href="../local_domain_apic_ipf_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="IPF Settings screen" src="../local_domain_apic_ipf_settings.png" /></a></p>
+</details>
+</li>
 </ul>
 <ul>
 <li><strong>Base URL</strong> of Cisco APIC, e.g. <code>https://cisco-apic-ip-address</code></li>
