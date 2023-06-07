@@ -9520,18 +9520,18 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 <li>Requires 10GB of free disk space.</li>
 <li>Estimated upgrade time is around 20 minutes however depending on the resources of your VM it could take longer than an hour.</li>
 <li>During update to <code>5.0.0</code> no message about the update being finished is shown and a refresh of the Admin page is required to check if the API and services are back online.</li>
-<li>After approximately 5-10 minutes after the update file has finished uploading to the server you should be able to log into the IPF CLI as <code>osadmin</code> and run the following command to track installation progress<ul>
+<li>After approximately 5-10 minutes after the update file has finished uploading to the server you should be able to log in to the IPF CLI as <code>osadmin</code> and run the following command to track installation progress<ul>
 <li><code>tail -f /var/log/nimpee/dist_upgrade.log</code></li>
-<li>If <code>tail</code> command is not found wait a few minutes and log out and back into the CLI.</li>
+<li>If <code>tail</code> command is not found wait a few minutes and log out and back in to the CLI.</li>
 </ul>
 </li>
 <li>Once upgrade has finished the system will reboot (see below the example output of the <code>dist_upgrade.log</code> file).</li>
 <li>After all updates, please <a href="../../"><strong>Clear Browser Cache</strong></a>.</li>
 <li>Not all new features will be available until a new snapshot is created on the updated version.</li>
-<li>If after the upgrade you experience issues with <code>AQL: internal error</code>, Dashboards, or Topology please first try restarting the <code>ArangoDB</code> service from the System Administrator page prior to contacting support.<ul>
-<li>Log into the System Administrator Page located or port <code>443</code></li>
-<li>In the <code>System Status</code> page under <code>System Services</code> you will find <code>ArangoDB</code></li>
-<li>Next to the status color is a <code>restart</code> button which will restart the service</li>
+<li>If after the upgrade you experience issues with <code>AQL: internal error</code>, Dashboards, or Topology, please first try restarting the <code>ArangoDB</code> service from the <strong>System Administration</strong> page prior to contacting support.<ul>
+<li>Log in to the <strong>System Administration</strong> page located on port <code>8443</code>.</li>
+<li>In the <code>System Status</code> page under <code>System Services</code>, you will find <code>ArangoDB</code>.</li>
+<li>Next to the status color is a <code>restart</code> button which will restart the service.</li>
 </ul>
 </li>
 <li>If you run into any other issues during or after the upgrade please open a <a href="http://support.ipfabric.io/">support ticket</a>.</li>
