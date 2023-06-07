@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section is about applying an Attribute Filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables.">
+        <meta name="description" content="This section is about applying an Attribute filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Global Filter - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section is about applying an Attribute Filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables." />
+<meta property="og:description" content="This section is about applying an Attribute filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Global_Filter.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_GUI/Global_Filter/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Global Filter - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section is about applying an Attribute Filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables." />
+<meta property="twitter:description" content="This section is about applying an Attribute filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/Global_Filter.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9045,10 +9045,10 @@ documentation.
 
 
 <h1 id="global-filter">Global Filter</h1>
-<p>Applying an <strong>Attribute Filter</strong> in the IP Fabric GUI will quickly limit the
+<p>Applying an <strong>Attribute filter</strong> in the IP Fabric GUI will quickly limit the
 scope of data that will be displayed in tables. Currently, adding a filter will
-not update Intent Rules or the Dashboard (in development).</p>
-<p><a class="glightbox" href="../global_filter.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="global_filter" src="../global_filter.png" /></a></p>
+not update Intent Rules or the <strong>Dashboard</strong> (in development).</p>
+<p><a class="glightbox" href="../global_filter/attribute_filter.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Attribute filter" src="../global_filter/attribute_filter.png" /></a></p>
 <p>The options for filtering are:</p>
 <ul>
 <li>Site Name</li>
@@ -9056,21 +9056,20 @@ not update Intent Rules or the Dashboard (in development).</p>
 <li>STP Domain</li>
 <li>Any Snapshot Local Attribute<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 </ul>
-<p><a class="glightbox" href="../attributes_options.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="attributes_options" src="../attributes_options.png" /></a></p>
-<p>For this example we will be filtering on <code>siteName</code> then select the value(s)
-you wish to apply.</p>
-<p><a class="glightbox" href="../filter_values.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="filter_values" src="../filter_values.png" /></a></p>
-<p>View the Device inventory table filtered to show only devices from the
-site <code>35COLO</code>.</p>
-<p><a class="glightbox" href="../attributes_site.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="attributes_site" src="../attributes_site.png" /></a></p>
-<p><a class="glightbox" href="../filtered_devices.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="filtered_devices" src="../filtered_devices.png" /></a></p>
+<p><a class="glightbox" href="../global_filter/select_attribute.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Select attribute" src="../global_filter/select_attribute.png" /></a></p>
+<p>In this example, we will be filtering on <code>siteName</code> with the value <code>35COLO</code>.</p>
+<p><a class="glightbox" href="../global_filter/select_values_for_sitename.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Select value(s) for siteName" src="../global_filter/select_values_for_sitename.png" /></a></p>
+<p>View the <strong>Device Inventory</strong> table (in <strong>Inventory &rarr; Devices</strong>) filtered to
+show only devices from the Site <code>35COLO</code>.</p>
+<p><a class="glightbox" href="../global_filter/sitename_selected.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="siteName 35COLO selected" src="../global_filter/sitename_selected.png" /></a></p>
+<p><a class="glightbox" href="../global_filter/attribute_filter_applied.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Attribute filter for siteName 35COLO applied" src="../global_filter/attribute_filter_applied.png" /></a></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>Please see <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes/">Device Attributes</a>
-documentation. Note that after configuring a new Attribute Globally; a new
-snapshot must be run in order for it to be applied.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>See <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes/">Device Attributes</a>.
+Please note that after configuring a new <strong>Device Attribute</strong> globally, a
+new snapshot must be run for applying it.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
