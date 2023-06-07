@@ -1,14 +1,14 @@
 ---
-description: This section is about applying an Attribute Filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables.
+description: This section is about applying an Attribute filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables.
 ---
 
 # Global Filter
 
-Applying an **Attribute Filter** in the IP Fabric GUI will quickly limit the
+Applying an **Attribute filter** in the IP Fabric GUI will quickly limit the
 scope of data that will be displayed in tables. Currently, adding a filter will
-not update Intent Rules or the Dashboard (in development).
+not update Intent Rules or the **Dashboard** (in development).
 
-![global_filter](global_filter.png)
+![Attribute filter](global_filter/attribute_filter.png)
 
 The options for filtering are:
 
@@ -18,20 +18,19 @@ The options for filtering are:
 - Any Snapshot Local Attribute[^1]
 
 [^1]:
-    Please see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md)
-    documentation. Note that after configuring a new Attribute Globally; a new
-    snapshot must be run in order for it to be applied.
+    See [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
+    Please note that after configuring a new **Device Attribute** globally, a
+    new snapshot must be run for applying it.
 
-![attributes_options](attributes_options.png)
+![Select attribute](global_filter/select_attribute.png)
 
-For this example we will be filtering on `siteName` then select the value(s)
-you wish to apply.
+In this example, we will be filtering on `siteName` with the value `35COLO`.
 
-![filter_values](filter_values.png)
+![Select value(s) for siteName](global_filter/select_values_for_sitename.png)
 
-View the Device inventory table filtered to show only devices from the
-site `35COLO`.
+View the **Device Inventory** table (in **Inventory --> Devices**) filtered to
+show only devices from the Site `35COLO`.
 
-![attributes_site](attributes_site.png)
+![siteName 35COLO selected](global_filter/sitename_selected.png)
 
-![filtered_devices](filtered_devices.png)
+![Attribute filter for siteName 35COLO applied](global_filter/attribute_filter_applied.png)

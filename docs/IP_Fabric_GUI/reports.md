@@ -1,19 +1,21 @@
 ---
-description: Report exports provide the facility to export network state information as a word document.
+description: The Reports section allows to download network state information as Word documents.
 ---
 
 # Reports
 
 ## Overview
 
-Report exports provide the facility to export network state information as a Microsoft Word document.
+The **Reports** section allows to download network state information as Word documents.
 
 ## Network Analysis Report
 
-Network Analysis report documents provide an overview of the current network performance, capacity and risks. They also provide the technical details of the top issues in each category.
+**Reports --> Network Analysis Report** documents provide an overview of the current network performance, capacity and risks. They also provide the technical details of the top issues in each category.
+
+![Network Analysis Report](reports/network_analysis_report.png)
 
 ## Site Low Level Design
 
-Site low-level design documents provide a snapshot of the network state from the selected site and provide sufficient information for reconstruction. All reports are downloadable.
+**Reports --> Site Low Level Design** documents provide a snapshot of the network state from the selected Site and provide sufficient information for reconstruction.
 
-![](reports.png)
+![Site Low Level Design](reports/site_low_level_design.png)
