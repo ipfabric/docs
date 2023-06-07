@@ -22,6 +22,17 @@ Afterwards, choose **Cisco APIC** from the list and fill in:
 
 - **Username and password** used to log in to Cisco APIC
 
+  ??? info "Username if Local Domain is set on the APIC"
+
+      If local domain is set on your APIC controller the format of the `username` for IP Fabric settings is
+
+      ```text
+      apic:LOCAL-DOMAIN-NAME\\username
+      ```
+
+      ![APIC login screen](apic_local_domain.png)
+      ![IPF Settings screen](local_domain_apic_ipf_settings.png)
+
 - **Base URL** of Cisco APIC, e.g. `https://cisco-apic-ip-address`
 
 ![Cisco APIC api add](cisco/apic/ciscoApicAPIAdd.png)
