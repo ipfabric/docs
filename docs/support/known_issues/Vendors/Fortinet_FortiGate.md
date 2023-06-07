@@ -16,11 +16,14 @@ First, you need to create an admin profile with read-only permissions.
 
 Follow these steps:
 
-1.  Login to your FortiGate. In case you have VDOMs enabled, ensure 
-you have switched to the global scope (relevant drop-down menu is in the top left corner)
+1.  Log in to your FortiGate. In case you have VDOMs enabled, ensure you have
+    switched to the global scope (relevant drop-down menu is in the top left
+    corner)
 2.  Navigate to **System --> Admin Profiles** and click **+ Create New**
-3.  Fill in a name and set all permissions to Read (you can do it by clicking **Set All** dropdown menu). The only exception is **System --> Maintenance** permission, 
-which has to be set to **Read/Write** (especially if VDOMs are enabled). See the picture below from FortiOS versions 6.0 and 7.0
+3.  Fill in a name and set all permissions to Read (you can do it by clicking
+    **Set All** dropdown menu). The only exception is **System --> Maintenance**
+    permission, which has to be set to **Read/Write** (especially if VDOMs are
+    enabled). See the picture below from FortiOS versions 6.0 and 7.0:
 
     ![Admin Profile, FortiOS 6.0](fortinet/fortios-60-admin-profile.png "Admin Profile, FortiOS 6.0")
 

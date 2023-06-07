@@ -12,8 +12,8 @@ used by IP Fabric to access the CLI of the network devices.
 ## Credential Selection Logic
 
 If more credentials are specified, a top-down algorithm is used when trying to
-login to a network device or the credentials priority can be changed using drag
-and drop.
+logging in to a network device or the credentials priority can be changed using
+drag and drop.
 
 ```mermaid
 flowchart TD

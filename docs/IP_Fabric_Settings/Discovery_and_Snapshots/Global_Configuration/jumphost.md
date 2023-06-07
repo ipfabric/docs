@@ -97,7 +97,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 #### Use `ssh-copy-id`
 
-1. Login to IP Fabric CLI using `osadmin` account.
+1. Log in to the IP Fabric CLI using the `osadmin` account.
 
 2. Change to user `autoboss` by running `sudo su - autoboss`.
 
@@ -150,7 +150,7 @@ If you can't open the main GUI or ssh to the IP Fabric machine, the subnet/IP ad
 
 To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, the password for `osadmin` user account, and do the following:
 
-1. Login with `osadmin` account to the **virtual machine CLI**
+1. Log in to the **virtual machine CLI** with the `osadmin` account.
 
 2. Filter out the **jumphost** services with `systemctl | grep jumphost` command. Each configured jumphost has its own ID.
 
@@ -166,7 +166,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 5. IP Fabric GUI should be accessible by now.
 
-6. Login into the **IP Fabric main GUI** with your regular account and go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
+6. Log in to the **IP Fabric main GUI** with your regular account and go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
 
 7. Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.
 

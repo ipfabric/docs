@@ -16,7 +16,7 @@ the already attempted addresses).
 
 For example, if after standard intelligent discovery, there is a network
 `10.0.0.0/24` in a routing table which does not belong to any of the
-interfaces discovered, the scanner will attempt to login to `10.0.0.1`,
+interfaces discovered, the scanner will attempt to log in to `10.0.0.1`,
 then to `10.0.0.254`, then to `10.0.0.126`, then to `10.0.0.129`, and so on,
 until all of the addresses in the `10.0.0.0/24` network have been
 attempted.  

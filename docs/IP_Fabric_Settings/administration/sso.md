@@ -12,7 +12,7 @@ description: The IP Fabric Solution Architects will setup the SSO configuration 
     Identity Provider (IdP).
 
     If the user's username or email change on the IdP side, the user will
-    encounter `Authentication Failure` while logging into IP Fabric via SSO --
+    encounter `Authentication Failure` while logging in to IP Fabric via SSO --
     due to username/email mismatch between the IdP and IP Fabric.
 
     In that case, please remove the outdated user record of that user in
@@ -58,7 +58,7 @@ located at [IPF Certificates](../system/ipf_cert.md).
 ### CLI Access
 
 In order to make changes to certain files, you must have access to the `osadmin`
-account to log into the CLI and gain root access. For more information, please
+account to log in to the CLI and gain root access. For more information, please
 see [CLI Overview](../../System_Administration/Command_Line_Interface/index.md).
 
 ```bash

@@ -4,7 +4,7 @@ description: In the system status section we can monitor the running IP Fabric s
 
 # System Status
 
-When you login to the System Administration with the `osadmin` user, you will find yourself in **System status** interface. It displays information such as the current CPU load, RAM usage, HDD storage space, and the running services.
+When you log in to the System Administration with the `osadmin` user, you will find yourself in **System status** interface. It displays information such as the current CPU load, RAM usage, HDD storage space, and the running services.
 
 Top system processes are also available.
 

@@ -174,7 +174,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
 ## Deploying a Virtual Machine on Microsoft Azure
 
-1. Log into the Microsoft Azure portal and create a resource group
+1. Log in to the Microsoft Azure portal and create a resource group
 
    In the [Microsoft Azure documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group), a **resource group** is defined as:
 

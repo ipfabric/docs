@@ -4,7 +4,7 @@ description: This section contains information about how to troubleshoot LDAP-re
 
 # How To Troubleshoot LDAP
 
-## Users Are Not Able To Login
+## Users Are Not Able To Log In
 
 The `ldapsearch` is the best tool to troubleshoot LDAP issues. Sometimes groups or users are not found and LDAP needs to be troubleshot.
 

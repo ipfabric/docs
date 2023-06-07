@@ -83,7 +83,7 @@ In IP Fabric version greater than `5.0.0`, it is possible to send logs to a remo
 
 ### Forwarding Syslog Messages
 
-1. Log into the IP Fabric CLI with the `osadmin` user.
+1. Log in to the IP Fabric CLI with the `osadmin` user.
 2. Switch to root account using `sudo su` and enter the `osadmin` password.
 3. Create a new configuration file in the `/etc/syslog-ng/conf.d/` folder
 

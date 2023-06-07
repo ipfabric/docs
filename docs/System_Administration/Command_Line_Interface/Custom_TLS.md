@@ -15,7 +15,7 @@ does not currently support `TLSv1.3`, meaning any integration between these syst
 
 To re-enable an older version of TLS, please perform the following:
 
-1. Log into the IP Fabric CLI using the `osadmin` user.
+1. Log in to the IP Fabric CLI using the `osadmin` user.
 2. Switch to root using the `sudo su root` command.
 3. Edit the TLS config file `/etc/nginx/conf.d/ipf-ssl-params.conf` with your preferred editor.
 4. Modify the first line of the configuration file by adding other TLS versions separated by spaces:

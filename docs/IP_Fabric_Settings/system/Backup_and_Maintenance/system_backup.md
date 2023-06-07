@@ -37,7 +37,7 @@ To add a new backup drive and `mount` it as desired, follow instructions in [Inc
 To schedule automatic local backups do the following steps:
 
 1. Add dedicated backup volume if not available -- see steps above.
-1. Login to the main user interface.
+1. Log in to the main user interface.
 1. Go to **Settings --> System --> Backup & Maintenance --> Schedule system backup**.
 1. Change **Destination** to **Local hard drive**.
 1. Set a backup schedule. See example for "Every day at 3:00".
@@ -61,7 +61,7 @@ Remote backup saves database, user and system files remotely using `FTP` or `SFT
 
 To set up remote backup do the following steps:
 
-1. Login to the user interface.
+1. Log in to the user interface.
 1. Go to **Settings --> System --> Backup & Maintenance --> Schedule system backup**.
 1. Enable backup.
 1. Set a backup schedule. See example for "Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)".

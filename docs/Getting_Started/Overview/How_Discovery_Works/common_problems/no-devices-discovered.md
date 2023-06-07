@@ -21,7 +21,7 @@ time or after system changes
         CLI](../../../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md).
         
     2.  If the reason reports authentication failure, IP Fabric was not
-        able to login to the device. Check [Device
+        able to log in to the device. Check [Device
         Credentials](../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
         
     3.  Check the "CLI output" file in the Action column of the

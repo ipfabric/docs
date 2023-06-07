@@ -89,7 +89,7 @@ The table view can be shared with other users.
 ![Add intent verification rule](navigate_in_tables/table_colorize.png)
 
 The table column can be colored based on pre-defined rules. The existing (as
-well as the default rules) are visible above the table and can be edited or
+well as the default) rules are visible above the table and can be edited or
 removed.
 
 To create a new rule, you need to specify its `Rule name` and select a
@@ -103,7 +103,7 @@ Finally, specify a filter rule to colorize the selected column:
 2. Add rules based on the same logic as described in
    [Advanced Filtering](#advanced-filtering).
 3. A color can be designated as the `Default color` which means that it will be
-   used no other rules are matched.
+   used if no other rules are matched.
 4. Click **Update rule** or **Create rule** to save your changes.
 
 ![Intent Rule Detail](navigate_in_tables/table_colorize_rules.png)

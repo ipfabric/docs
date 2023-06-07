@@ -23,7 +23,7 @@ by running `nimpee-net-config` from the CLI as `osadmin`.
 
 ## Documentation
 
-To see more command options, login and run `nimpee-net-config -h`.
+To see more command options, log in and run `nimpee-net-config -h`.
 
 ```shell
 osadmin@ipfabric:~# nimpee-net-config -h

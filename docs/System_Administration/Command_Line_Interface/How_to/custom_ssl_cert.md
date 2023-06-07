@@ -10,7 +10,7 @@ If a custom SSL certificate for HTTPS traffic (IP Fabric main GUI) is required, 
 
     Please ensure that the FQDN (DNS name) of the IP Fabric appliance is set as your custom certificate's `Subject Alternative Name`. Having the FQDN as the certificate's `Subject` or `Common Name` is not sufficient.
 
-1. Login to the IP Fabric appliance's CLI as `osadmin` and change to `root`:
+1. Log in to the IP Fabric appliance's CLI as `osadmin` and change to `root`:
 
   ```shell
   sudo su

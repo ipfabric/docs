@@ -10,13 +10,13 @@ Juniper Mist devices are discovered only through API.
 
 ## Generate API Token
 
-1. Login to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
+1. Log in to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin)
 
    ![login](mist/mist_login.png)
 
    ![main gui](mist/mist_gui.png)
 
-2. Once logged in you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
+2. Once logged in, you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
 
    ![Mist API token](mist/mist_api_token.png)
 

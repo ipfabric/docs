@@ -45,7 +45,7 @@ useful for example before a system upgrade.
 
 Manual backup can be triggered from IP Fabric Administrative interface:
 
-1. Login to admin interface (for
+1. Log in to the admin interface (for
    example `https://ipfabric.example.com:8443`)
 
 2. Go to **Restore or Backup**
@@ -89,7 +89,7 @@ a backup.
 
 ### Restore From Local Hard Drive
 
-1. Login to admin interface (for
+1. Log in to the admin interface (for
    example `https://ipfabric.example.com:8443`)
 
 2. Go to **Restore or Backup**
@@ -130,7 +130,7 @@ a backup.
 
 ### Restore From Remote Server
 
-1.  Login to admin interface (for
+1.  Log in to the admin interface (for
     example `https://ipfabric.example.com:8443`)
 
 2.  Go to **Restore or Backup**

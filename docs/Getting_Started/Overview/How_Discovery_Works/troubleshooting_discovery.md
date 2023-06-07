@@ -80,13 +80,13 @@ Discovery --> IP Scope**
 
 **IP Scope** tells IP Fabric which networks to include or exclude in the discovery
 process. The default is set to include everything (`0.0.0.0/0`). When IP Fabric
-discovers a neighbor in this network, it will try to log into and discover it. If
+discovers a neighbor in this network, it will try to log in to and discover it. If
 the IP address is not in the **include list**, or is in the **exclude list**, then IP
 Fabric will not try to connect to and discover the device.
 
 The **exclude list** is a great way to exclude networks managed by a different
 department or perhaps vendors or devices that IP Fabric does not currently support.
-For instance, a customer had discovery hanging due to it trying to log into a
+For instance, a customer had discovery hanging due to it trying to log in to a
 terminal server which IP Fabric could not understand; once added to the exclude list,
 the discovery completed successfully.
 
@@ -131,7 +131,7 @@ new devices on your network.
 
 - **Trace** signifies using traceroute to RFC1918 addresses to help discover your
   internal network. This is helpful for the VM as IP Fabric might not be able to log
-  into the default gateway (vRouter), but using traceroute it can find some other
+  in to the default gateway (vRouter), but using traceroute it can find some other
   physical devices in the network to use as starting points.
 
 ### Advanced CLI
@@ -253,7 +253,7 @@ could not discover.
     the API column name `loginIp`.
 
     Since IP Fabric is an automated discovery process, it will try to log
-    into any IP address found during the discovery tasks processes. This
+    in to any IP address found during the discovery tasks processes. This
     value could be a loopback, management, physical, or virtual interface.
     Auditing your external NMS will need extra care as in many cases, the
     IPs will not match.
@@ -311,7 +311,7 @@ If you need further assistance, please feel free to reach out to your IP Fabric 
 Architect or open a ticket following
 the [Technical Support](../../../support/techsupport.md) instructions.
 
-Finally, another option for testing devices is to log into the IP Fabric CLI
+Finally, another option for testing devices is to log in to the IP Fabric CLI
 using the `osadmin` account and manually trying SSH'ing into your devices,
 preferably using the username and password the system was configured to use. If
 you cannot open a connection, this is due to an external reason.

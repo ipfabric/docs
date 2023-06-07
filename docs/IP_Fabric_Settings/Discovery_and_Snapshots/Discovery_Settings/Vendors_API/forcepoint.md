@@ -10,7 +10,7 @@ Starting version **6.1.0** IP Fabric supports Forcepoint SMC API. Forcepoint dev
 
 ### Generate API Token
 
-1. Login to the Forcepoint SMC Web UI.
+1. Log in to the Forcepoint SMC Web UI.
 
    ![Forcepoint login page](forcepoint/smc/forcepoint_login_page.png)
 

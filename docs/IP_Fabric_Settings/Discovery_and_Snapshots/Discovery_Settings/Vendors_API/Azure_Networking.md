@@ -30,7 +30,7 @@ IP Fabric needs the following data in order to connect to the Azure API
 -- Tenant ID, Subscription ID, Application ID, and Application secret.
 Follow these steps to get the required data.
 
-First login to the Azure portal (<https://portal.azure.com/>)
+First, log in to the [Azure portal](https://portal.azure.com/).
 
 ### Register an App
 

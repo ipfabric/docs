@@ -60,7 +60,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Crawl**
 
-: this is the process of logging into network devices, discovering which devices are connected, then subsequently logging into those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.
+: this is the process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.
 
 **OUI**
 

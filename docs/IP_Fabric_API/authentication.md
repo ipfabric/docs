@@ -96,7 +96,7 @@ every use and a new one is issued.
 
 #### Login
 
-To login and obtain an Access and Refresh token please see the below curl
+To log in and obtain an Access and Refresh token, please see the below curl
 example:
 
 ```bash
@@ -153,7 +153,7 @@ Which then returns a new `accessToken` to use in subsequent calls and a new
 
 #### Logout
 
-To logout of IP Fabric:
+To log out of IP Fabric:
 
 ```bash
 curl -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/logout' \
@@ -173,7 +173,7 @@ accomplished via the CLI settings.
 
 --8<-- "snippets/cli_root_access.md"
 
-1. Log into IP Fabric CLI as `osadmin`
+1. Log in to IP Fabric CLI as `osadmin`
 2. Elevate to root using `sudo -s` and `osadmin` password.
 3. Create new file `/opt/nimpee/conf.d/api.json` with the below JSON. In this
    example the `accessToken` expires in 10 minutes and `refreshToken` expires in

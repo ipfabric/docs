@@ -12,7 +12,7 @@ Communications Systems LLC" and "Ruckus Wireless" in the Settings \> OUI
 table.
 
 **Issue for networks that contain Ruckus Wireless Equipment:** Because
-we have enabled the OUI IP Fabric will try logging into all the Access
+we have enabled the OUI IP Fabric will try logging in to all the Access
 Points which has caused discovery to hang in our lab network.
 
 **Fix for Ruckus Wireless environments that DO NOT have Brocade

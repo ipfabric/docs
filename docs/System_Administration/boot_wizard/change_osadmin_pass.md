@@ -4,7 +4,7 @@ description: This section contains instructions how to change the `osadmin` pass
 
 # Update `osadmin` password
 
-1. Login to your IP Fabric via SSH with the `osadmin` user and run the
+1. Log in to your IP Fabric via SSH with the `osadmin` user and run the
    `nimpee-net-config -t` command to launch the configuration wizard.
 
   ![Change_osadmin_pass_TUI_!](osadmin_password_change2.png)

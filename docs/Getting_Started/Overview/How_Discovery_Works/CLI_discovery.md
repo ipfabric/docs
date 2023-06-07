@@ -36,7 +36,7 @@ The selected number of megabits per second also controls the number of simultane
 
 ## Discovery Process
 
-Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to login to the default gateway and to responders of ICMP probes returning from the traceroute to the `10.0.0.0` network address.
+Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to log in to the default gateway and to responders of ICMP probes returning from the traceroute to the `10.0.0.0` network address.
 
 ![discovery process](cli_discovery/discovery.png)
 

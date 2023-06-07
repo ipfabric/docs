@@ -18,7 +18,7 @@ Security notifications affecting the IP Fabric solution published according to o
 
 A read-only user can create an escalated privilege account by taking advantage of token validation.
 
-Tokens issued in the web app are accepted without proper validation. Using that, users of any privilege level can call an API endpoint for creating a new admin user account using their token. Then it is possible to escalate their privilege by logging into the new account.
+Tokens issued in the web app are accepted without proper validation. Using that, users of any privilege level can call an API endpoint for creating a new admin user account using their token. Then it is possible to escalate their privilege by logging in to the new account.
 
 ## NIM-9023: API Token privilege escalation
 

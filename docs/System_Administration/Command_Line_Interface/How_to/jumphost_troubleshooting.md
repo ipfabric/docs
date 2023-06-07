@@ -107,7 +107,7 @@ If you suddenly cannot open the main GUI or SSH to the IP Fabric machine after s
 
 To fix this issue, you need a **direct access** to the **virtual machine CLI** from your hypervisor, the password for `osadmin` user account, and do following:
 
-1. Login with `osadmin` account to the **virtual machine CLI**
+1. Log in to the **virtual machine CLI** with the `osadmin` account.
 
 2. Filter `systemctl` output with `jumphost`. Each configured jumphost has its own ID.
 
