@@ -1,5 +1,5 @@
 ---
-description: In this section IPF uses a transceiver task execution control system to prevent disruptions of your network…
+description: In this section, we explain why the Transceivers task is disabled by default, how to enable it and where to find the Transceivers technology table.
 ---
 
 # Transceivers
@@ -45,8 +45,8 @@ This function is **enabled by default** for all vendors and product
 families. This means that **this command is not executed on any
 device**.
 
-The function can be **Enabled/Disabled** in section **Settings -->
-Advanced --> Discovery task**.
+The function can be **Enabled/Disabled** in **Settings --> Discovery & Snapshots
+--> Discovery Settings --> Disabled Discovery Tasks**.
 
 ![transceivers task](transceivers_tasks.png)
 
