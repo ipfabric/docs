@@ -58,27 +58,42 @@ content.
 
 ## Tooltips
 
-Each table contains built in help with the table description by clicking the
-question mark ![tooltip](tooltip.png).
+Each table contains built-in help in `Table description` under the `...` menu
+(in the top-right corner of the table):
 
-Hover the mouse over the column name for a description of column content.
+![Table description](table_description_option.png).
+
+Hover the mouse cursor over a column header for the column's description:
+
+![On-hover tooltip](table_onhover.png)
 
 ## Column Visibility
 
-Tables can be especially large to facilitate easier information
-correlation, however not all columns need to always be visible. To hide
-or show individual columns, click the ![visibility](visibility.png)
-(toggle column visibility) button and select which the columns to be
-displayed. The first column can be set as "sticky" to facilitate
-analysis of tables with many columns. Row height can be adjusted by
-selecting small, medium or large font.
+Tables can be especially large to facilitate easier information correlation,
+however not all columns need to always be visible.
+
+Select `Display settings` under the `...` menu and choose which columns to show
+or hide:
+
+![Display settings](table_display_settings_option.png)
+
+## Column Size
+
+Use the `Auto size` toggle to either automatically size columns to fit their
+current content (when enabled), or let columns remember user-defined widths
+(when disabled):
+
+![Auto size](table_auto_size.png)
 
 ## Persistent Table View
 
 To improve usability, each table remembers the settings and filtering for each
-user. To reset a table to it’s original state, click
-the ![restore](restore.png) (restore table settings) button on the right hand
-side of the column header.
+user.
+
+To reset a table to its original state, select `Restore table settings` under
+the `...` menu:
+
+![Restore table settings](table_restore.png)
 
 ## Regular Expression Syntax
 

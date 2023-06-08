@@ -8,24 +8,24 @@ The **Fabric Path** section contains information about summaries, neighbors, swi
 
 ## Summary
 
-**Summary** tab contains information about summary of the number of neighbors, number of switch ID's and the number of routes.
+The **Summary** tab contains the summary of neighbors, switch IDs and routes.
 
-![Summary](fabricPathSummary.png)
+![Summary table](fabricPathSummary.png)
 
 ## IS-IS Neighbors
 
-**IS-IS Neighbors** tab contains information about adjacency of devices that are contributing in Fabric Path.
+The **IS-IS neighbors** tab contains information about adjacency of devices that are contributing in Fabric Path.
 
-![Summary](fabricPathIsisNeighbors.png)
+![IS-IS Neighbors table](fabricPathIsisNeighbors.png)
 
-## Switch ID's
+## Switch IDs
 
-**Switch ID's** tab contains information about a list of Switch ID's that the current device knows about.
+The **Switch IDs** tab contains information about a list of Switch IDs that the current device knows about.
 
-![Summary](fabricPathSwitchIds.png)
+![Switch IDs table](fabricPathSwitchIds.png)
 
 ## Routes
 
-**Routes** tab contains information about routes from the specific device contributing in Fabric Path.
+The **Routes** tab contains information about routes from the specific device contributing in Fabric Path.
 
-![Summary](fabricPathRoutes.png)
+![Routes table](fabricPathRoutes.png)
