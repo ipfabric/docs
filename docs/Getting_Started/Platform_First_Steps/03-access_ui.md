@@ -24,7 +24,7 @@ interface.
 In **Settings --> Administration --> Local Users** of the main interface, you
 can change the password of the new account.
 
-In **Settings --> Administration --> Local Users**, you can also create or delete new local users and change their passwords.
+In **Settings --> Administration --> Local Users**, you can also create or delete local users and change their passwords.
 
 ![Creating a new user account](modify_local_accounts.png)
 

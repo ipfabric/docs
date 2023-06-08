@@ -26,8 +26,7 @@ the next possible period according to the cron setup.
 
 ##  Snapshot Retention Rules
 
-In version 4.1, we added support for various snapshot retention policies in IP Fabric
-version 4.1.
+In version `4.1`, we added support for various snapshot retention policies.
 
 ![Snapshot Retention Rules](snapshot_retention/snapshot_retention_rules.png)
 
