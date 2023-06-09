@@ -1,33 +1,42 @@
 ---
-description: This section contains information how to troubleshoot errors with vague description in IP Fabric's GUI.
+description: This section suggests how to troubleshoot vague errors shown in the IP Fabric GUI.
 ---
 
 # Troubleshooting Vague Messages
 
-IP Fabric error messages are not always eloquent and vague message like **Invalid Input** can be displayed:
+IP Fabric error messages are not always eloquent and vague ones like `Invalid
+Input` can be displayed:
 
-![invalid input](invalid_input.png)
+![Invalid Input](vague_messages/invalid_input.png)
 
-If you do not know what exactly went wrong, more descriptive messages can be excerpt from API response received on the background.
+If you do not know what exactly went wrong, you can get more descriptive
+messages from API responses received in the background.
 
-These messages can be found in developer console of the browser.
+These messages can be found in the developer console of your browser.
 
-Hit `F12` or click in top right corner on hamburger menu in your browser, go to **More tools --> Web Developer Tools** and something similar will appear:
+Press `F12` or click the hamburger menu in the top-right corner of your browser
+and go to **More tools --> Web Developer Tools**. Something similar should
+appear:
 
-![f12_console](f12_firefox.png)
+![Web Developer Tools in Firefox](vague_messages/f12_firefox.png)
 
 !!! info
 
-    The console may look differently in your browser but functionality and tabs should be the same. This example is from Mozilla Firefox.
+    The console may look differently in your browser, but the functionality and
+    tabs should be the same. This example is from Mozilla Firefox.
 
-Go to the `Network` tab and repeat the action which raised the error message, the API calls from your browser should be visible.
+Go to the `Network` tab and repeat the action which raised the error message,
+API calls should appear in the tab.
 
-When selecting a response from the server with `error code` (usually ones in red colors) go to tab **Response** and in the **errors** section should be an explanation why the **Invalid input** message was displayed:
+After clicking a response from IP Fabric with an error code (usually the ones in
+red color), go to the `Response` tab and in the `errors` section, you should
+find an explanation why the `Invalid Input` message appeared:
 
-![response](response.png)
+![Response tab](vague_messages/response.png)
 
 !!! example
 
-    In the example above the error message was thrown because restrictred characters were present in Jumphost's `password` field:
+    In our example, the error message was thrown because restricted characters
+    were present in the jumphost's `Password` field:
 
-    ![example](example.png)
+    ![Jumphost example](vague_messages/example.png)

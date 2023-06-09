@@ -44,10 +44,9 @@ After a successful login, discovery reads the network protocol state tables and 
 
 This is how the discovery process continues after a successful connection to a network device:
 
-1.  IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices
-2.  IP Fabric tries to connect to a next-hop device from the routing table
-
-3.  IP Fabric uses the device's ARP table to find hosts and other network devices it can connect to with the help of the OUI table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**)
+1.  IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.
+2.  IP Fabric tries to connect to a next-hop device from the routing table.
+3.  IP Fabric uses the device's ARP table to find hosts and other network devices it can connect to with the help of the **OUI** table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**).
 4.  Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.
 
 Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data is timestamped at the reading time and the timestamps are used to calculate the rate of change for each element.

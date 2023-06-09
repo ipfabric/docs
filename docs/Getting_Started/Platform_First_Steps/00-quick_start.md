@@ -75,10 +75,10 @@ the [Configuration Wizard](04-configuration_wizard.md) which will guide you
 through the process of adding device credentials, discovery seeds, networks
 to include/exclude in discovery and Advanced CLI settings.
 
-If you would like to change or edit these settings after initial configuration,
-please see [IP Fabric Settings](../../IP_Fabric_Settings/integration/api_tokens.md). Alternatively, there
+If you would like to change these settings after initial configuration,
+please see [IP Fabric Settings](../../IP_Fabric_Settings/configuration_management.md). Alternatively, there
 are also
-[Snapshot Specific Settings](../../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
+[snapshot-specific settings](../../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
 which are useful for testing small changes prior to changing Global Settings.
 
 !!! note "Site Separation"

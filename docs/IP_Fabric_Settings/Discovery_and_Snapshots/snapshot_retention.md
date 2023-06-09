@@ -13,24 +13,24 @@ in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create Snap
 Here is an example for an automatic discovery run at **10 minutes past
 every hour** (0:10; 1:10; 2:10; 3:10, etc.).
 
-![Timed Snapshots](snapshot_retention/102564017.png)
+![Create Snapshots Periodically](snapshot_retention/create_snapshots_periodically.png)
 
-### How Scheduling Work In IPF
+### How Scheduling Works In IPF
 
 Let's assume that snapshot is scheduled for every hour and snapshot
 takes 4h:20min to be created, then the next snapshot will be scheduled
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.
 
-![Timed Snapshots](snapshot_retention/1405059074.jpg)
+![Cron Setup](snapshot_retention/cron_setup.jpg)
 
-##  Snapshot Retention Rules
+## Snapshot Retention Rules
 
 In version `4.1`, we added support for various snapshot retention policies.
 
 ![Snapshot Retention Rules](snapshot_retention/snapshot_retention_rules.png)
 
-### How Does the Snapshot Retention Work
+### How Snapshot Retention Works
 
 It works in two steps:
 
@@ -60,4 +60,5 @@ Please note:
     actions will be added in coming releases
 
 !!! info
-    At the moment, snapshot retention runs everyday at 0:00 UTC time
+
+    At the moment, snapshot retention runs everyday at 0:00 UTC time.

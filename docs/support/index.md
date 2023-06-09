@@ -39,9 +39,11 @@ To send that diagnostic data to the IP Fabric team, select **Send Diagnostics** 
 
 ![Diagnostics](diagnostics.png)
 
-Then check the **Parsing Errors** option and hit **Send**:
+and click **Send**:
 
 ![Parsing Errors](parsing.png)
+
+(the `Parsing errors` option should be selected by default)
 
 ## Contact
 

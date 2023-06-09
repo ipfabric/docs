@@ -24,12 +24,12 @@ The options for filtering are:
 
 ![Select attribute](global_filter/select_attribute.png)
 
-In this example, we will be filtering on `siteName` with the value `35COLO`.
+In this example, we are filtering on `siteName` with the value `35COLO`.
 
 ![Select value(s) for siteName](global_filter/select_values_for_sitename.png)
 
-View the **Device Inventory** table (in **Inventory --> Devices**) filtered to
-show only devices from the Site `35COLO`.
+In **Inventory --> Devices**, we can see that the **Device Inventory** table is
+filtered to show only devices from the Site `35COLO`.
 
 ![siteName 35COLO selected](global_filter/sitename_selected.png)
 

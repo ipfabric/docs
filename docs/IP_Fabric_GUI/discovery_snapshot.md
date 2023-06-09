@@ -62,7 +62,7 @@ A new device can be added to an already-existing snapshot by clicking the `Add D
 This might be desirable if you performed almost a full snapshot of the network, but only few devices were not included or had connectivity issues that were later resolved (for example wrong AAA configuration, firewall rules, forgot to include a
 network seed, etc).
 
-When adding a new device to an existing snapshot, the [snapshot-specific setting](#snapshot-specific-settings)
+When adding a new device to an existing snapshot, the [snapshot-specific settings](#snapshot-specific-settings)
 will be applied. If you need to change some settings (for example add a new network seed, login credentials, etc.) in order to add a new device to an existing snapshot, you will need to first change the settings for that particular snapshot and
 then add a new device.
 
