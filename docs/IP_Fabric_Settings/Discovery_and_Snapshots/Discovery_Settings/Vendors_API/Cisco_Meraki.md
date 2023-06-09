@@ -11,7 +11,7 @@ Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for
 - **API key** -- Generated in Meraki dashboard
 - **Organizations ID** -- You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used
 - **Version** -- Only `v1` is supported since IPF v5.0. Similarly to the original `v0`, even the latest API version has a lot of limitations (Meraki known issues)
-- **Base URL** -- URL is supported in the following format `https://nXYZ.meraki.com/api`. Be aware that the dashboard can redirect communication to a different URL
+- **Base URL** -- URL of the Meraki Dashboard API, e.g. `https://api.meraki.com/api` or `https://nXYZ.meraki.com/api`. For organizations hosted in the China Dashboard, please use `.cn` instead of `.com`
 
 ## Login IP For Cisco Meraki
 
