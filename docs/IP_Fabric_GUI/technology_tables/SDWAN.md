@@ -1,17 +1,17 @@
 ---
-description: SDWAN Sites table contains connectivity matrix between all sites (Controllers, Branches and Hubs).
+description: This section explains SDWAN technology tables (Sites and Transport Links).
 ---
 
 # SDWAN
 
-## Sites table
+## Sites
 
-SDWAN Sites table contains connectivity matrix between all sites (Controllers, Branches and Hubs).
+The **Sites** tab contains connectivity matrix between all sites (Controllers, Branches and Hubs).
 
-![SDWAN sites](SDWAN_sites.png)
+![Sites table](SDWAN_sites.png)
 
 ## Transport Links
 
-Transport links table shows underlay connections between these sites.
+The **Transport Links** tab shows underlay connections between these sites.
 
-![SDWAN transport links](SDWAN_transport_links.png)
+![Transport links table](SDWAN_transport_links.png)

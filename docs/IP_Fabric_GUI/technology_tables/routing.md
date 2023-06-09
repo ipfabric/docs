@@ -6,17 +6,26 @@ description: This section is about Routing technology tables in IP Fabric GUI.
 
 ## Prefix Lists
 
-Prefix lists section contains definitions of all prefix lists. There are 2 tabs according to address family -- IPv4 and IPv6
+The **Prefix lists** section contains definitions of all prefix lists.
+
+There are 2 tabs according to address family:
+
+- **IPv4**
+- **IPv6**
 
 ## Routing policy
 
-This section contains information about routing policies, their definitions and where they are applied.
+The **Routing policy** section contains information about routing policies, their definitions and where they are applied.
 
-There are 3 tabs -- Routing Policies, PBR Interfaces and Policy Based Routing.
+There are 3 tabs:
+
+- **Routing Policies**
+- **PBR Interfaces**
+- **Policy Based Routing**
 
 ### Routing Policies
 
-Routing Policies tab contains definition of routing policies, their names, sequence numbers, matching conditions, set actions etc.
+The **Routing Policies** tab contains definition of routing policies, their names, sequence numbers, matching conditions, set actions etc.
 
 In case match condition uses reference to ACL or Prefix list, it is a hyperlink to appropriate ACL/Prefix list in its section.
 
@@ -24,19 +33,19 @@ In case match condition uses reference to ACL or Prefix list, it is a hyperlink 
 
 ### PBR Interfaces
 
-PBR Interfaces tab contains information about interfaces which have assigned some routing policy on them (used for policy based routing). Optionally there is also information about used address-family or status of routing policy.
+The **PBR Interfaces** tab contains information about interfaces which have assigned some routing policy on them (used for policy based routing). Optionally there is also information about used address-family or status of routing policy.
 
 ![PBR Interfaces](routing/routingPolicy/pbrInterfaces.png)
 
 ### Policy Based Routing
 
-Policy Based Routing (PBR) tab contains matching conditions for traffic and what actions should be applied on packets that match those conditions. All PBR actions are present in a PBR Actions column.
+The **Policy Based Routing (PBR)** tab contains matching conditions for traffic and what actions should be applied on packets that match those conditions. All PBR actions are present in a PBR Actions column.
 
 In case match condition uses reference to ACL, it is a hyperlink to appropriate ACL list in its section.
 
 ![Policy Based Routing](routing/routingPolicy/policyBasedRouting.png)
 
-Clicking Policy Name opens tree view.
+Clicking `Policy Name` opens tree view.
 
 ![PBR Tree](routing/routingPolicy/pbrTree.png)
 

@@ -55,4 +55,4 @@ supplies fans, chassis fans and modules of network devices.
 
 Logical Devices provides summary of all discovered logical firewalls (contexts, vsys, VDOM) and Cisco Nexus VDCs. For each logical device it provides its name and type and if available even its ID
 
-![Environment](platforms/environment.png)
+![Logical Devices](platforms/logical_devices.png)
