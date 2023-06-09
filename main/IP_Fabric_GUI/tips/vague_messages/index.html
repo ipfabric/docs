@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information how to troubleshoot errors with vague description in IP Fabric's GUI.">
+        <meta name="description" content="This section suggests how to troubleshoot vague errors shown in the IP Fabric GUI.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Troubleshooting Vague Messages - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information how to troubleshoot errors with vague description in IP Fabric's GUI." />
+<meta property="og:description" content="This section suggests how to troubleshoot vague errors shown in the IP Fabric GUI." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/vague_messages.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_GUI/tips/vague_messages/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Troubleshooting Vague Messages - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information how to troubleshoot errors with vague description in IP Fabric's GUI." />
+<meta property="twitter:description" content="This section suggests how to troubleshoot vague errors shown in the IP Fabric GUI." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/vague_messages.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -346,7 +346,7 @@ documentation.
     
     
       <li class="md-tabs__item">
-        <a href="../../Global_Filter/" class="md-tabs__link md-tabs__link--active">
+        <a href="../../dashboard/" class="md-tabs__link md-tabs__link--active">
           
   
   IP Fabric GUI
@@ -1918,32 +1918,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../Global_Filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Filter
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../dashboard/" class="md-nav__link">
         
   
@@ -1977,6 +1951,32 @@ documentation.
     
   
     Discovery Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../global_filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Filter
   
 
     
@@ -9045,23 +9045,32 @@ documentation.
 
 
 <h1 id="troubleshooting-vague-messages">Troubleshooting Vague Messages</h1>
-<p>IP Fabric error messages are not always eloquent and vague message like <strong>Invalid Input</strong> can be displayed:</p>
-<p><a class="glightbox" href="../invalid_input.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="invalid input" src="../invalid_input.png" /></a></p>
-<p>If you do not know what exactly went wrong, more descriptive messages can be excerpt from API response received on the background.</p>
-<p>These messages can be found in developer console of the browser.</p>
-<p>Hit <code>F12</code> or click in top right corner on hamburger menu in your browser, go to <strong>More tools &rarr; Web Developer Tools</strong> and something similar will appear:</p>
-<p><a class="glightbox" href="../f12_firefox.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="f12_console" src="../f12_firefox.png" /></a></p>
+<p>IP Fabric error messages are not always eloquent and vague ones like <code>Invalid
+Input</code> can be displayed:</p>
+<p><a class="glightbox" href="invalid_input.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Invalid Input" src="invalid_input.png" /></a></p>
+<p>If you do not know what exactly went wrong, you can get more descriptive
+messages from API responses received in the background.</p>
+<p>These messages can be found in the developer console of your browser.</p>
+<p>Press <code>F12</code> or click the hamburger menu in the top-right corner of your browser
+and go to <strong>More tools &rarr; Web Developer Tools</strong>. Something similar should
+appear:</p>
+<p><a class="glightbox" href="f12_firefox.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Web Developer Tools in Firefox" src="f12_firefox.png" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The console may look differently in your browser but functionality and tabs should be the same. This example is from Mozilla Firefox.</p>
+<p>The console may look differently in your browser, but the functionality and
+tabs should be the same. This example is from Mozilla Firefox.</p>
 </div>
-<p>Go to the <code>Network</code> tab and repeat the action which raised the error message, the API calls from your browser should be visible.</p>
-<p>When selecting a response from the server with <code>error code</code> (usually ones in red colors) go to tab <strong>Response</strong> and in the <strong>errors</strong> section should be an explanation why the <strong>Invalid input</strong> message was displayed:</p>
-<p><a class="glightbox" href="../response.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="response" src="../response.png" /></a></p>
+<p>Go to the <code>Network</code> tab and repeat the action which raised the error message,
+API calls should appear in the tab.</p>
+<p>After clicking a response from IP Fabric with an error code (usually the ones in
+red color), go to the <code>Response</code> tab and in the <code>errors</code> section, you should
+find an explanation why the <code>Invalid Input</code> message appeared:</p>
+<p><a class="glightbox" href="response.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Response tab" src="response.png" /></a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>In the example above the error message was thrown because restrictred characters were present in Jumphost&rsquo;s <code>password</code> field:</p>
-<p><a class="glightbox" href="../example.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="example" src="../example.png" /></a></p>
+<p>In our example, the error message was thrown because restricted characters
+were present in the jumphost&rsquo;s <code>Password</code> field:</p>
+<p><a class="glightbox" href="example.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jumphost example" src="example.png" /></a></p>
 </div>
 
   

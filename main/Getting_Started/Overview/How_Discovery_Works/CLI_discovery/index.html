@@ -348,7 +348,7 @@ documentation.
     
     
       <li class="md-tabs__item">
-        <a href="../../../../IP_Fabric_GUI/Global_Filter/" class="md-tabs__link">
+        <a href="../../../../IP_Fabric_GUI/dashboard/" class="md-tabs__link">
           
   
   IP Fabric GUI
@@ -2010,32 +2010,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../../../IP_Fabric_GUI/Global_Filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Filter
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../IP_Fabric_GUI/dashboard/" class="md-nav__link">
         
   
@@ -2069,6 +2043,32 @@ documentation.
     
   
     Discovery Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../IP_Fabric_GUI/global_filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Filter
   
 
     
@@ -9202,13 +9202,9 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
 <p>After a successful login, discovery reads the network protocol state tables and looks for known neighbours, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbour information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.</p>
 <p>This is how the discovery process continues after a successful connection to a network device:</p>
 <ol>
-<li>IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices</li>
-<li>
-<p>IP Fabric tries to connect to a next-hop device from the routing table</p>
-</li>
-<li>
-<p>IP Fabric uses the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of the OUI table (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>)</p>
-</li>
+<li>IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.</li>
+<li>IP Fabric tries to connect to a next-hop device from the routing table.</li>
+<li>IP Fabric uses the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of the <strong>OUI</strong> table (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>).</li>
 <li>Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.</li>
 </ol>
 <p>Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data is timestamped at the reading time and the timestamps are used to calculate the rate of change for each element.</p>

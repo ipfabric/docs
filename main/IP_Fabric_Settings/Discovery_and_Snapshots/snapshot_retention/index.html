@@ -344,7 +344,7 @@ documentation.
     
     
       <li class="md-tabs__item">
-        <a href="../../../IP_Fabric_GUI/Global_Filter/" class="md-tabs__link">
+        <a href="../../../IP_Fabric_GUI/dashboard/" class="md-tabs__link">
           
   
   IP Fabric GUI
@@ -1918,32 +1918,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../../IP_Fabric_GUI/Global_Filter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Filter
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../IP_Fabric_GUI/dashboard/" class="md-nav__link">
         
   
@@ -1977,6 +1951,32 @@ documentation.
     
   
     Discovery Snapshot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IP_Fabric_GUI/global_filter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Filter
   
 
     
@@ -3395,10 +3395,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-scheduling-work-in-ipf" class="md-nav__link">
+  <a href="#how-scheduling-works-in-ipf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Scheduling Work In IPF
+        How Scheduling Works In IPF
       
     </span>
   </a>
@@ -3423,10 +3423,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-does-the-snapshot-retention-work" class="md-nav__link">
+  <a href="#how-snapshot-retention-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Does the Snapshot Retention Work
+        How Snapshot Retention Works
       
     </span>
   </a>
@@ -9130,10 +9130,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-scheduling-work-in-ipf" class="md-nav__link">
+  <a href="#how-scheduling-works-in-ipf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Scheduling Work In IPF
+        How Scheduling Works In IPF
       
     </span>
   </a>
@@ -9158,10 +9158,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-does-the-snapshot-retention-work" class="md-nav__link">
+  <a href="#how-snapshot-retention-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Does the Snapshot Retention Work
+        How Snapshot Retention Works
       
     </span>
   </a>
@@ -9207,17 +9207,17 @@ discovery is necessary. A periodic discovery run can be scheduled
 in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention &rarr; Create Snapshots Periodically</strong>.</p>
 <p>Here is an example for an automatic discovery run at <strong>10 minutes past
 every hour</strong> (0:10; 1:10; 2:10; 3:10, etc.).</p>
-<p><a class="glightbox" href="102564017.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Timed Snapshots" src="102564017.png" /></a></p>
-<h3 id="how-scheduling-work-in-ipf">How Scheduling Work In IPF</h3>
+<p><a class="glightbox" href="create_snapshots_periodically.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create Snapshots Periodically" src="create_snapshots_periodically.png" /></a></p>
+<h3 id="how-scheduling-works-in-ipf">How Scheduling Works In IPF</h3>
 <p>Let&rsquo;s assume that snapshot is scheduled for every hour and snapshot
 takes 4h:20min to be created, then the next snapshot will be scheduled
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.</p>
-<p><a class="glightbox" href="1405059074.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Timed Snapshots" src="1405059074.jpg" /></a></p>
+<p><a class="glightbox" href="cron_setup.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cron Setup" src="cron_setup.jpg" /></a></p>
 <h2 id="snapshot-retention-rules">Snapshot Retention Rules</h2>
 <p>In version <code>4.1</code>, we added support for various snapshot retention policies.</p>
 <p><a class="glightbox" href="snapshot_retention_rules.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshot Retention Rules" src="snapshot_retention_rules.png" /></a></p>
-<h3 id="how-does-the-snapshot-retention-work">How Does the Snapshot Retention Work</h3>
+<h3 id="how-snapshot-retention-works">How Snapshot Retention Works</h3>
 <p>It works in two steps:</p>
 <ol>
 <li>
@@ -9255,7 +9255,7 @@ the next possible period according to the cron setup.</p>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>At the moment, snapshot retention runs everyday at 0:00 UTC time</p>
+<p>At the moment, snapshot retention runs everyday at 0:00 UTC time.</p>
 </div>
 
   
