@@ -64,7 +64,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **OUI**
 
-: the fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the Organizationally Unique Identifier" and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.
+: the fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the `Organizationally Unique Identifier` and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.
 
 **Excluded subnets**
 

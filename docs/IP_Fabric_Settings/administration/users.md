@@ -39,7 +39,7 @@ The **Users** table lists all local and non-local (LDAP and SSO) users including
 
 LDAP/SSO users have **Roles** assigned via the LDAP/SSO configuration, hence it's not possible to modify their **Roles** in the UI (unlike local users).
 
-1. To edit a LDAP/SSO user, find the user in the **Users** table and click the **Edit** icon. (Optionally, you may select `No` in the `Local user` column header to show only non-local users.)
+1. To edit an LDAP/SSO user, find the user in the **Users** table and click the **Edit** icon. (Optionally, you may select `No` in the `Local user` column header to show only non-local users.)
 
 	![Users Table Edit LDAP/SSO User](users_table_edit_ldap.png)
 

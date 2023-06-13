@@ -15,7 +15,7 @@ every hour** (0:10; 1:10; 2:10; 3:10, etc.).
 
 ![Create Snapshots Periodically](snapshot_retention/create_snapshots_periodically.png)
 
-### How Scheduling Works In IPF
+### How Scheduling Works In IP Fabric
 
 Let's assume that snapshot is scheduled for every hour and snapshot
 takes 4h:20min to be created, then the next snapshot will be scheduled
@@ -36,7 +36,7 @@ It works in two steps:
 
 1.  If any of the **keep** rules are enabled, IP Fabric goes through
     unloaded snapshots and based on enabled **keep** rules it marks
-    snapshots that will retain and those that will be deleted.
+    snapshots to be retained or deleted.
 
 2.  HDD utilization and a number of unloaded snapshots are checked. If
     any of these rules are exceeded, the oldest unloaded snapshots are

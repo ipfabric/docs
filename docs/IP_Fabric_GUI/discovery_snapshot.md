@@ -24,11 +24,11 @@ The network information displayed in IP Fabric corresponds to the network snapsh
 
 ![New snapshot](snapshots/new_snapshot.png)
 
-To work with snapshots, click the **Discovery Snapshot** menu entry (boxed in yellow). This will display all loaded and unloaded snapshots and allow you to create new snapshots or perform operations on existing snapshots.
+To work with snapshots, click the **Discovery Snapshot** menu entry (highlighted in yellow box). This will display all loaded and unloaded snapshots and allow you to create new snapshots or perform operations on existing snapshots.
 
-A new snapshot can be taken at any time by clicking the **+ New Snapshot** button (boxed in red). After pressing the green **Start discovery** button, the system will automatically start a new snapshot of the network with globally-set
+A new snapshot can be taken at any time by clicking the **+ New Snapshot** button (highlighted in red box). After pressing the green **Start discovery** button, the system will automatically start a new snapshot of the network with globally-set
 parameters in the **Settings** menu entry. If you need to make some changes to the discovery process (add a new network seed, change login credentials, etc.), you may do so in the global **Settings**
-or in the [snapshot-specific settings](#snapshot-specific-settings) (boxed in blue).
+or in the [snapshot-specific settings](#snapshot-specific-settings) (highlighted in blue box).
 
 For creating automatic snapshots, follow the instructions at [Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
 
@@ -47,7 +47,7 @@ Initial snapshot of the network may not include all information about your netwo
 reasons including authorization or firewall issues; please take a look at
 [Troubleshooting Discovery](../Getting_Started/Overview/How_Discovery_Works/troubleshooting_discovery.md).
 
-Each successful or unsuccessful connection attempt is logged (see the following picture). Logs for each device can be found in the snapshot's **Connectivity Report** (boxed in red). These logs are especially helpful when an error occurs. By
+Each successful or unsuccessful connection attempt is logged (see the following picture). Logs for each device can be found in the snapshot's **Connectivity Report** (highlighted in red box). These logs are especially helpful when an error occurs. By
 examining them, you can find the reason why a device wasn't correctly or fully discovered or what led to a connection failure.
 
 ![Discovery Connectivity Report](snapshots/discovery_connectivity_report.png)
@@ -58,7 +58,7 @@ examining them, you can find the reason why a device wasn't correctly or fully d
 
 ![Add Devices](snapshots/snapshot_add_device.png)
 
-A new device can be added to an already-existing snapshot by clicking the `Add Devices` button (boxed in red). You are then able to add a list of IP addresses or subnets to be tried in discovery and added to the currently-selected snapshot.
+A new device can be added to an already-existing snapshot by clicking the `Add Devices` button (highlighted in red box). You are then able to add a list of IP addresses or subnets to be tried in discovery and added to the currently-selected snapshot.
 This might be desirable if you performed almost a full snapshot of the network, but only few devices were not included or had connectivity issues that were later resolved (for example wrong AAA configuration, firewall rules, forgot to include a
 network seed, etc).
 
@@ -66,10 +66,10 @@ When adding a new device to an existing snapshot, the [snapshot-specific setting
 will be applied. If you need to change some settings (for example add a new network seed, login credentials, etc.) in order to add a new device to an existing snapshot, you will need to first change the settings for that particular snapshot and
 then add a new device.
 
-If the `Rediscover timed out devices` checkbox is selected (boxed in blue), the discovery will try to rediscover any devices that previously timed out. To speed up the addition of new devices, it is recommended to unselect this checkbox. If you would like
+If the `Rediscover timed out devices` checkbox is selected (highlighted in blue box), the discovery will try to rediscover any devices that previously timed out. To speed up the addition of new devices, it is recommended to unselect this checkbox. If you would like
 to only rediscover devices, that is also possible by not entering any new device IP addresses and clicking the green **Start Discovery** button.
 
-Finally, it is also possible to **+ Add Vendor** (for discovery via API; boxed in green) or enable a previously-disabled Vendor (boxed in yellow) in the currently-selected snapshot. Please note that toggling a Vendor from `on` to `off` will not remove that Vendor's devices
+Finally, it is also possible to **+ Add Vendor** (for discovery via API; highlighted in green box) or enable a previously-disabled Vendor (highlighted in yellow box) in the currently-selected snapshot. Please note that toggling a Vendor from `on` to `off` will not remove that Vendor's devices
 from the snapshot. However, toggling all the Vendors to `off` will prevent IP Fabric from rediscovering those devices, thus speeding up the addition of new devices (similarly to disabling `Rediscover timed out devices`).
 
 ### Refresh Devices

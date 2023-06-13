@@ -14,7 +14,7 @@ messages from API responses received in the background.
 
 These messages can be found in the developer console of your browser.
 
-Press `F12` or click the hamburger menu in the top-right corner of your browser
+In your browser, press `F12` or click the hamburger menu in the top-right corner
 and go to **More tools --> Web Developer Tools**. Something similar should
 appear:
 
