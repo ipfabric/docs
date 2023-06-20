@@ -40,7 +40,7 @@ Service logs for IP Fabric services are stored in the `/var/log/nimpee` director
 /var/log/nimpee/sys-update.log                      - IP Fabric new version update logs
 /var/log/nimpee/webhook-worker-errors.log           - webhook errors logs
 /var/log/nimpee/webhook-worker.log                  - webhook worker logs
-/var/log/nimpee/webng.log                           - web console errors (received by API)
+/var/log/nimpee/frontend.log                        - web console errors (received by API)
 /var/log/nimpee/discovery/syslogWorker/*            - Configuration management logs
 ```
 
