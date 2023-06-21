@@ -16,24 +16,24 @@ Users with no assigned **Roles** will get the `API_INSUFFICIENT_RIGHTS` error up
 
 To add or modify **Roles**, follow the instructions at [Roles](roles.md).
 
-![Add Local User](users_add_local.png)
+![Add Local User](users/users_add_local.png)
 
 ## List of Users
 
 The **Users** table lists all local and non-local (LDAP and SSO) users including their details and allows you to modify or delete them. _(Exception: A currently logged-in user cannot delete their account.)_
 
-![Users Table](users_table.png)
+![Users Table](users/users_table.png)
 
 ## Edit Local User
 
 1. To modify a local user's details or password, find the user in the **Users** table and click the **Edit** icon. (Optionally, you may select `Yes` in the `Local user` column header to show only local users.)
 
-	![Users Table Edit Local User](users_table_edit_local.png)
+	![Users Table Edit Local User](users/users_table_edit_local.png)
 
 2. Then to modify the user's details, update data in the **Edit User** form and click **Update**.
 3. Or to modify the user's password, fill the **Update Password** form and click **Update Password**.
 
-	![Edit Local User](users_edit_local.png)
+	![Edit Local User](users/users_edit_local.png)
 
 ## Edit LDAP/SSO User
 
@@ -41,21 +41,21 @@ LDAP/SSO users have **Roles** assigned via the LDAP/SSO configuration, hence it'
 
 1. To edit an LDAP/SSO user, find the user in the **Users** table and click the **Edit** icon. (Optionally, you may select `No` in the `Local user` column header to show only non-local users.)
 
-	![Users Table Edit LDAP/SSO User](users_table_edit_ldap.png)
+	![Users Table Edit LDAP/SSO User](users/users_table_edit_ldap.png)
 
 2. Then to modify the user's details, update data in the **Edit User** form and click **Update**.
 
-	![Edit LDAP/SSO User](users_edit_ldap.png)
+	![Edit LDAP/SSO User](users/users_edit_ldap.png)
 
 ## Delete User
 
 1. To delete a user, find the user in the **Users** table and click the **Delete** icon.
 
-	![Users Table Delete](users_table_delete.png)
+	![Users Table Delete](users/users_table_delete.png)
 
 2. In the confirmation dialog, click the **Delete** button.
 
-	![Users Table Delete Confirmation](users_table_delete_confirm.png)
+	![Users Table Delete Confirmation](users/users_table_delete_confirm.png)
 
 Deleting a user is also possible by clicking the **Delete User** button when editing that user.
 

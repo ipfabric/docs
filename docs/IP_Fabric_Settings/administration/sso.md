@@ -221,7 +221,7 @@ corresponds to `staticClient` in the Dex configuration).
   - This name will be displayed on the login page of the GUI. This name will be
     capitalized (`sso` --> `Sso`), therefore it is recommended to use names such
     as `azure` or `okta`.
-  - ![SSO Button](sso_button_name.png)
+  - ![SSO Button](sso/sso_button_name.png)
 - `clientId` -- User-defined value (suggested to keep `ipfabric`).
   - Used in [`ipf-dex.yaml`](#static-clients) for `id` under `staticClients`.
 - `clientSecret` -- User-defined value for a shared secret between IP Fabric and
@@ -255,7 +255,7 @@ corresponds to `staticClient` in the Dex configuration).
 
 Example how to find `roleId`:
 
-![Role ID](roles_id.png)
+![Role ID](roles/roles_id.png)
 
 ## SSO Configuration `ipf-dex.yaml`
 
@@ -363,7 +363,7 @@ oauth2:
   skipApprovalScreen: true
 ```
 
-![Grant Access](sso_approval.png)
+![Grant Access](sso/sso_approval.png)
 
 ### Static Clients
 
@@ -409,7 +409,7 @@ staticClients:
 Here is a nice illustration of how the `/opt/nimpee/conf.d/api.json` values map
 to `/etc/ipf-dex.yaml`:
 
-![JSON yaml mapping](sso_api_dex_mapping.png)
+![JSON yaml mapping](sso/sso_api_dex_mapping.png)
 
 ### OpenID Connect (OIDC)
 
@@ -477,6 +477,8 @@ connectors:
     for all configuration options and potential caveats as Azure requires
     special configuration for proper enablement.
 
+#### Dex Config
+
 ```yaml
 connectors:
   - type: microsoft
@@ -491,7 +493,6 @@ connectors:
         - openid
         - profile
         - email
-        - groups
       claimMapping:
         groups: roles
 ```
@@ -514,6 +515,31 @@ connectors:
     discussed in the [OIDC](#openid-connect-oidc) section.
 - `claimMapping` -- Some providers return non-standard claims (i.e. roles), use
   claimMapping to map those claims to standard claims.
+
+#### Azure AD App Registration Auth using OIDC
+
+1. From the `Azure Active Directory` > `App registrations` menu, choose `+ New registration`
+2. Enter a `Name` for the application (e.g. `IP Fabric SSO`).
+3. Specify who can use the application (e.g. `Accounts in this organizational directory only`).
+4. Enter Redirect URI (optional) as follows (replacing `IP_FABRIC_FQDN` with your IP Fabric URL), then choose `Add`.
+  - **Platform:** `Web`
+  - **Redirect URI:** https://`<IP_FABRIC_FQDN>`/dex/callback
+5. When registration finishes, the Azure portal displays the app registration's Overview pane. You see the Application (client) ID.
+   ![Azure App registration's Overview](sso/azure-app-registration-overview.png "Azure App registration's Overview")
+6. From the `Certificates & secrets` menu, choose `+ New client secret`
+7. Enter a `Name` for the secret (e.g. `clientSecret`). **Make sure to copy and save generated value for the `clientSecret`.**
+    ![Azure App registration's Secret](sso/azure-app-registration-secret.png "Azure App registration's Secret")
+8. From the `API permissions` menu, choose `+ Add a permission`
+9. Find `User.Read` permission (under `Microsoft Graph`) and grant it to the created application:
+   ![Azure AD API permissions](sso/azure-api-permissions.png "Azure AD API permissions")
+10. From the `Token Configuration` menu, choose `+ Add groups claim`
+   ![Azure AD token configuration](sso/azure-token-configuration.png "Azure AD token configuration")
+  1. `All groups`: Emits security groups and distribution lists and roles.
+  2. `Security groups`: Emits security groups that the user is a member of in the groups claim.
+  3. `Directory roles`: If the user is assigned directory roles, they're emitted as a `wids` claim. (The group's claim won't be emitted.)
+  4. `Groups assigned to the application`: Emits only the groups that are explicitly assigned to the application and that the user is a member of. **Recommended for large organizations due to the group number limit in token.**
+    1. From the `Azure Active Directory` > `Enterprise applications` menu, search the App that you created (e.g. `IP Fabric SSO`).  
+    2. From the `Users and groups` menu of the app, add any users or groups requiring access to the service.
 
 ### SAML Connector
 
