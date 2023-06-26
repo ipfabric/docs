@@ -1,5 +1,5 @@
 IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
-TAG=9.1.16-insiders-4.36.0
+TAG=9.1.17-insiders-4.36.1
 
 serve:
 	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
@@ -22,7 +22,7 @@ guard-%:
 	fi
 
 insiders-tag:
-	git ls-remote -t --sort="version:refname" git@gitlab.com:ip-fabric/documentation/mkdocs-material-insiders-mirror.git | sed -e 's#refs/tags/##' | tail -2
+	git ls-remote -t --sort="version:refname" git@gitlab.com:ip-fabric/documentation/mkdocs-material-insiders-mirror.git | grep -v 'master' | sed -e 's#refs/tags/##' | tail -2
 
 docker-build: guard-GL_DEPLOY_USER guard-GL_DEPLOY_TOKEN Dockerfile requirements.txt
 	docker build -t $(IMAGE):$(TAG) --build-arg GL_DEPLOY_USER="${GL_DEPLOY_USER}" --build-arg GL_DEPLOY_TOKEN="${GL_DEPLOY_TOKEN}" --build-arg MATERIAL_TAG="$(TAG)" .
