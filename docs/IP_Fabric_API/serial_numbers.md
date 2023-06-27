@@ -1,39 +1,55 @@
 ---
-description: IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple...
+description: IP Fabric uses the serial number field as a key in its tables for a device.
 ---
 
 # Serial Numbers
 
-IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple elements - for example, clusters, stacks or virtualized platforms) and so the serial number is manipulated in some way - anything from a virtual context name to a simple `_1` might be added for example.
+IP Fabric uses the serial number field as a key in its tables for a device. In
+some cases, the same serial number may be required to be used for multiple
+elements (for example, clusters, stacks or virtualized platforms).
 
-This makes it potentially more difficult to match the serial number with other platforms outside IP Fabric.
+Thus, the serial number is manipulated by IP Fabric in some way - anything from
+a virtual context name to a simple `_1` might be added.
 
-We have added a new column to the device inventory table in `v3.7.0`, and renamed the previous one to allow us to work around this issue.
+This makes it potentially more difficult to match the serial number with other
+platforms outside IP Fabric.
 
-!!! example
+To work around the issue, we did the following in version `3.7.0`:
 
-    This is now the default view: ![device inventory](device_inventory.png)
+- renamed the previous `Serial Number` column in the **Device Inventory** table
+  (in **Inventory --> Devices**) to `Unique serial number` (including
+  virtualization unique identifier such as context, vsys, VDC etc.)
+- introduced a new `Serial Number` column (containing real serial numbers as
+  reported by devices themselves)
 
-    Showing the "Unique serial number" column which has been renamed. This has now been augmented with a new "serial number" column which is the serial number from the captured state of the device itself:
+By default, only the new `Serial Number` column (with serial numbers as captured
+on devices / as seen on other platforms) is shown in the **Device Inventory**
+table:
 
-    ![device inventory serial number selection](device_inventory_serial_number_selection.png)
+![Default view of Device Inventory table](serial_numbers/device_inventory_default_view.png)
 
-    Note when that is enabled, the difference between the two columns:
+The `Unique serial number` column can be additionally enabled (click `...` in
+the top-right corner of the table and select `Display settings`):
 
-    ![device inventory unique serial focus](device_inventory_unique_serial_focus.png)
+![Enable Unique serial number column](serial_numbers/enable_unique_serial_number_column.png)
 
-    The "Serial number" column is the one that will match other external captures of the serial number in other platforms.
+As expected, some devices have different values in their `Unique serial number`
+and `Serial Number` columns:
+
+![Comparison of Unique serial number and Serial Number columns](serial_numbers/comparison_of_columns.png)
 
 !!! info
 
-    In the API, these columns are defined in the request body as
+    In the API, these columns are defined in the request body as:
 
     ```json
     {
-      "columns": ["sn","snHw"]
+      "columns": [
+        "sn",
+        "snHw"
+      ]
     }
     ```
 
-!!! attention
-
-    Where `sn` is the "Unique Serial Number" field and snHw is the "Serial Number" field.
+    where `sn` is the `Unique serial number` field and `snHw` is the `Serial
+    Number` field.
