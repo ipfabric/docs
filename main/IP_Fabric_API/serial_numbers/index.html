@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple...">
+        <meta name="description" content="IP Fabric uses the serial number field as a key in its tables for a device.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Serial Numbers - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple..." />
+<meta property="og:description" content="IP Fabric uses the serial number field as a key in its tables for a device." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_API/serial_numbers.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_API/serial_numbers/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Serial Numbers - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple..." />
+<meta property="twitter:description" content="IP Fabric uses the serial number field as a key in its tables for a device." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_API/serial_numbers.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9045,29 +9045,43 @@ documentation.
 
 
 <h1 id="serial-numbers">Serial Numbers</h1>
-<p>IP Fabric uses the serial number field as a key in its tables for a device. In some cases, the same serial number may be required to be used for multiple elements - for example, clusters, stacks or virtualized platforms) and so the serial number is manipulated in some way - anything from a virtual context name to a simple <code>_1</code> might be added for example.</p>
-<p>This makes it potentially more difficult to match the serial number with other platforms outside IP Fabric.</p>
-<p>We have added a new column to the device inventory table in <code>v3.7.0</code>, and renamed the previous one to allow us to work around this issue.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>This is now the default view: <a class="glightbox" href="../device_inventory.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="device inventory" src="../device_inventory.png" /></a></p>
-<p>Showing the &ldquo;Unique serial number&rdquo; column which has been renamed. This has now been augmented with a new &ldquo;serial number&rdquo; column which is the serial number from the captured state of the device itself:</p>
-<p><a class="glightbox" href="../device_inventory_serial_number_selection.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="device inventory serial number selection" src="../device_inventory_serial_number_selection.png" /></a></p>
-<p>Note when that is enabled, the difference between the two columns:</p>
-<p><a class="glightbox" href="../device_inventory_unique_serial_focus.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="device inventory unique serial focus" src="../device_inventory_unique_serial_focus.png" /></a></p>
-<p>The &ldquo;Serial number&rdquo; column is the one that will match other external captures of the serial number in other platforms.</p>
-</div>
+<p>IP Fabric uses the serial number field as a key in its tables for a device. In
+some cases, the same serial number may be required to be used for multiple
+elements (for example, clusters, stacks or virtualized platforms).</p>
+<p>Thus, the serial number is manipulated by IP Fabric in some way - anything from
+a virtual context name to a simple <code>_1</code> might be added.</p>
+<p>This makes it potentially more difficult to match the serial number with other
+platforms outside IP Fabric.</p>
+<p>To work around the issue, we did the following in version <code>3.7.0</code>:</p>
+<ul>
+<li>renamed the previous <code>Serial Number</code> column in the <strong>Device Inventory</strong> table
+  (in <strong>Inventory &rarr; Devices</strong>) to <code>Unique serial number</code> (including
+  virtualization unique identifier such as context, vsys, VDC etc.)</li>
+<li>introduced a new <code>Serial Number</code> column (containing real serial numbers as
+  reported by devices themselves)</li>
+</ul>
+<p>By default, only the new <code>Serial Number</code> column (with serial numbers as captured
+on devices / as seen on other platforms) is shown in the <strong>Device Inventory</strong>
+table:</p>
+<p><a class="glightbox" href="device_inventory_default_view.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Default view of Device Inventory table" src="device_inventory_default_view.png" /></a></p>
+<p>The <code>Unique serial number</code> column can be additionally enabled (click <code>...</code> in
+the top-right corner of the table and select <code>Display settings</code>):</p>
+<p><a class="glightbox" href="enable_unique_serial_number_column.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enable Unique serial number column" src="enable_unique_serial_number_column.png" /></a></p>
+<p>As expected, some devices have different values in their <code>Unique serial number</code>
+and <code>Serial Number</code> columns:</p>
+<p><a class="glightbox" href="comparison_of_columns.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Comparison of Unique serial number and Serial Number columns" src="comparison_of_columns.png" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>In the API, these columns are defined in the request body as</p>
+<p>In the API, these columns are defined in the request body as:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sn&quot;</span><span class="p">,</span><span class="s2">&quot;snHw&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;sn&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;snHw&quot;</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Where <code>sn</code> is the &ldquo;Unique Serial Number&rdquo; field and snHw is the &ldquo;Serial Number&rdquo; field.</p>
+<p>where <code>sn</code> is the <code>Unique serial number</code> field and <code>snHw</code> is the <code>Serial
+Number</code> field.</p>
 </div>
 
   
