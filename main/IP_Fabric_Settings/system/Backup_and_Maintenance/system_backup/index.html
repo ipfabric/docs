@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="You can schedule an IP Fabric backup to protect your important data locally or remotely.">
+        <meta name="description" content="You can schedule a local or remote backup to protect your IP Fabric data.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Schedule System Backup - IP Fabric Documentation Portal" />
-<meta property="og:description" content="You can schedule an IP Fabric backup to protect your important data locally or remotely." />
+<meta property="og:description" content="You can schedule a local or remote backup to protect your IP Fabric data." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Schedule System Backup - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="You can schedule an IP Fabric backup to protect your important data locally or remotely." />
+<meta property="twitter:description" content="You can schedule a local or remote backup to protect your IP Fabric data." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -4951,28 +4951,6 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Backup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9106,28 +9084,6 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Backup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#automatic-local-backups" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9179,63 +9135,78 @@ documentation.
 <h1 id="schedule-system-backup">Schedule System Backup</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you&rsquo;re about to perform a backup, there needs to be &gt; 50 % of the drive space free on the <code>root</code> filesystem.</p>
-<p>You can check in the IP Fabric&rsquo;s VM shell with command <code>df -h</code>.</p>
+<p>For performing a backup, there needs to be &gt; 50 % free space on the <code>root</code>
+filesystem.</p>
+<p>You can check the free space with the <code>df -h</code> command in the IP Fabric VM&rsquo;s
+shell.</p>
 </div>
-<h2 id="backup">Backup</h2>
-<p>Use IP Fabric backup to protect your important data.</p>
+<p>Use backup to protect your IP Fabric data.</p>
 <p>There are two types of backup:</p>
 <ul>
-<li>Local backup</li>
-<li>Remote backup (FTP, sFTP)</li>
+<li>local backup</li>
+<li>remote backup (FTP, SFTP)</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Backups are encrypted with <code>osadmin</code> user password configured during the <strong>first boot wizard</strong>. When you lose <code>osadmin</code> user password, backups are also lost!</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Backups are encrypted with the <code>osadmin</code> user password configured during the
+<strong>First Boot Wizard</strong>. When you lose the <code>osadmin</code> user password, backups
+are also lost!</p>
 </div>
-<h2 id="local-backup">Local Backup</h2>
-<p>Local backup saves database, user and system files locally on a dedicated backup volume. It&rsquo;s highly recommended placing backup volume on different datastore ideally on different physical storage.</p>
+<h2 id="automatic-local-backups">Automatic Local Backups</h2>
+<p>Local backup saves database, user and system files locally on a dedicated backup
+volume. It&rsquo;s highly recommended placing the backup volume on a different
+datastore, ideally on a separate physical storage.</p>
 <div class="admonition info">
 <p class="admonition-title">Backup Disk</p>
-<p>The backup disk is not present by default! Please add a new virtual disk to enable local backups. (See below)</p>
+<p>The backup disk is not present by default! Please add a new virtual disk to
+enable local backups.</p>
 </div>
-<p>To add a new backup drive and <code>mount</code> it as desired, follow instructions in <a href="../../../../System_Administration/increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
-<h2 id="automatic-local-backups">Automatic Local Backups</h2>
-<p>To schedule automatic local backups do the following steps:</p>
+<p>To add a new backup drive, follow the instructions in
+<a href="../../../../System_Administration/increase_disk_space/#local-backup-disk">Increase Disk Space - Local Backup Disk</a>.</p>
+<p>To schedule automatic local backups, do the following steps:</p>
 <ol>
-<li>Add dedicated backup volume if not available &ndash; see steps above.</li>
+<li>Add a dedicated backup volume (if not done yet).</li>
 <li>Log in to the main user interface.</li>
-<li>Go to <strong>Settings &rarr; System &rarr; Backup &amp; Maintenance &rarr; Schedule system backup</strong>.</li>
-<li>Change <strong>Destination</strong> to <strong>Local hard drive</strong>.</li>
-<li>Set a backup schedule. See example for &ldquo;Every day at 3:00&rdquo;.</li>
+<li>Go to <strong>Settings &rarr; System &rarr; Backup &amp; Maintenance &rarr; Schedule system
+   backup</strong>.</li>
 <li>Enable backup.</li>
+<li>Set a backup schedule. See the example for <code>Every day at 13:25</code>.</li>
+<li>Change the <strong>Destination</strong> to <code>Local hard drive</code>.</li>
+<li>Click <strong>Save</strong>.</li>
 </ol>
 <p><a class="glightbox" href="schedule_local_backup.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Schedule local backup" src="schedule_local_backup.png" /></a></p>
 <h2 id="automatic-remote-backups">Automatic Remote Backups</h2>
-<p>Remote backup saves database, user and system files remotely using <code>FTP</code> or <code>SFTP</code> protocol.</p>
+<p>Remote backup saves database, user and system files remotely using the FTP or
+SFTP protocol.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a recommended type of backup.</p>
+<p>This is the recommended type of backup.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>A directory <strong>has to be specified</strong> for FTP and SFTP backups.</p>
-<p>Directory path for <strong>SFTP</strong> has to be defined as an <strong>absolute path</strong> and for <strong>FTP</strong> as a <strong>relative path</strong>. Directory <strong>has to exist</strong> on the remote side. If it does not exist, you will get an error.</p>
+<p>For FTP and SFTP backups, a directory <strong>has to be specified</strong> . It <strong>has to
+exist</strong> on the remote side. If it does not, you will get an error.</p>
+<p>For <strong>FTP</strong>, the directory path has to be specified as a <strong>relative path</strong>.</p>
+<p>For <strong>SFTP</strong>, the directory path has to be specified as an <strong>absolute
+path</strong>.</p>
 </div>
-<p>To set up remote backup do the following steps:</p>
+<p>To set up remote backup, do the following steps:</p>
 <ol>
 <li>Log in to the user interface.</li>
-<li>Go to <strong>Settings &rarr; System &rarr; Backup &amp; Maintenance &rarr; Schedule system backup</strong>.</li>
+<li>Go to <strong>Settings &rarr; System &rarr; Backup &amp; Maintenance &rarr; Schedule system
+   backup</strong>.</li>
 <li>Enable backup.</li>
-<li>Set a backup schedule. See example for &ldquo;Every day at 5:15 and 17:15 (for setting more options, please, hold SHIFT during selection)&rdquo;.
-   <a class="glightbox" href="backup_schedule.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="backup schedule" src="backup_schedule.png" /></a></li>
-<li>Change <strong>Destination</strong> to <code>FTP</code> or <code>SFTP</code>.</li>
-<li>Enter remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that your DNS client is configured and working properly in case of FQDN.</li>
-<li>Enter <strong>Username</strong> to access FTP/SFTP server.</li>
-<li>Enter <strong>Password</strong> to access FTP/SFTP server</li>
-<li>Specify a <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</li>
+<li>Set a backup schedule. See the example for <code>Every day at 5:15 and 17:15</code> (for
+   selecting multiple values, hold <code>Ctrl</code> or <code>Shift</code> during the selection).
+   <a class="glightbox" href="backup_schedule.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Backup schedule" src="backup_schedule.png" /></a></li>
+<li>Change the <strong>Destination</strong> to <code>FTP</code> or <code>SFTP</code>.</li>
+<li>Enter the remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that your
+   DNS client is configured and working properly in case of FQDN.</li>
+<li>Enter <strong>Username</strong> and <strong>Password</strong> for accessing the FTP/SFTP server.</li>
+<li>Specify the <strong>Directory</strong> where FTP/SFTP backup should be uploaded.</li>
 <li>Click <strong>Save</strong>.</li>
-<li>IP Fabric tries to reach FTP/SFTP server with configured parameters.</li>
+<li>IP Fabric will try to reach the FTP/SFTP server with the configured
+    parameters.</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Username and Password character restrictions<p>Username must match the following <code>/^[a-zA-Z0-9_][a-zA-Z0-9_-]*\$?$/</code>.</p>
@@ -9244,11 +9215,13 @@ documentation.
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>FTP/SFTP user needs read, write, list and delete permissions.</p>
+<p>The FTP/SFTP user needs the <code>read</code>, <code>write</code>, <code>list</code> and <code>delete</code>
+permissions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>From version 4.1.1 onward we do not check validity of SSL certificates during FTP backups.</p>
+<p>Since version <code>4.1.1</code>, we do not check the validity of SSL certificates
+during FTP backups.</p>
 </div>
 
   
