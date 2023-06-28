@@ -54,7 +54,7 @@ Please note:
     utilization or snapshots count limits.
 
 3.  Loaded snapshots are not affected by these rules. It affects only
-    unloaded snapshots
+    unloaded unlocked snapshots
 
 4.  IP Fabric only supports delete action at the moment. Additional
     actions will be added in coming releases
