@@ -2,7 +2,7 @@
 description: This section is about the LISP technology tables in the IP Fabric GUI.
 ---
 
-# LISP
+# Locator/ID Separation Protocol (LISP)
 
 LISP, which stands for Locator/ID Separation Protocol, is a network protocol designed to address scalability and flexibility challenges in large-scale networks. It separates the location and identification functions of IP addresses, providing numerous benefits for network architectures.
 
