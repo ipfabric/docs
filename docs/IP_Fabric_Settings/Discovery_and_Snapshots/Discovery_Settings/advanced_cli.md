@@ -1,16 +1,16 @@
 ---
-description: In this section, we go deeper into the Command Line Interface (CLI) to discover network elements that IP Fabric's discovery is primarily using.
+description: In this section, we go deeper into the Command-Line Interface (CLI) to discover network elements that IP Fabric's discovery is primarily using.
 ---
 
 # Advanced CLI
 
-## Fine-Tune SSH/telnet CLI Parameters
+## Fine-Tune SSH/Telnet CLI Parameters
 
-The IP Fabric's discovery is primarily using Command-Line Interface
+IP Fabric's discovery is primarily using the Command-Line Interface
 (CLI) to discover network elements. The CLI parameters can be found in
 **Settings --> Discovery & Snapshots --> Discovery Settings --> Advanced CLI**.
 
-![CLI Settings](advanced_cli/2396258368.png)
+![CLI Settings](advanced_cli/cli_settings.png)
 
 ### Network Device Login Timeout
 
@@ -74,16 +74,16 @@ errors and adjustments:
 
     Custom SSH/Telnet ports settings enable the discovery process to use different ports for connecting. The standard for SSH is port 22 and 23 for Telnet.
 
-In the following example we configure the discovery process to use port `8080`
+In the following example, we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
 
-![edit custom ssh telnet port](advanced_cli/edit_custom_ssh_telnet_port.png)
+![Add custom SSH/Telnet port](advanced_cli/add_custom_ssh_telnet_port.png)
 
-As a result of such configuration, we would create a new item under the
-**Custom SSH/Telnet ports** configuration, which will be applied to every
-new snapshot created by IP Fabric.
+As a result of such a configuration, we would create a new item in the **Custom
+SSH/Telnet ports** table, which will be applied to every new snapshot created by
+IP Fabric.
 
-![custom ssh telnet ports](advanced_cli/custom_ssh_telnet_ports.png)
+![Custom SSH/Telnet ports](advanced_cli/custom_ssh_telnet_ports.png)
 
 ## Telnet/SSH URL Handler On MS Windows 7 And Later
 
