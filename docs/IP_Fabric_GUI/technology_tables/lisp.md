@@ -16,11 +16,11 @@ In contrast, **Routing Locators (RLOCs)** represent the current network location
 
 The **Routes** tab contains a list of EID/RLOC mappings where `hostname` is the RLOC and the `EID prefix` is the EID.
 
-![LISP IPv4 Routes table](LISP/lisp-routes-ipv4.png)
+![LISP IPv4 Routes table](lisp/lisp-routes-ipv4.png)
 
 The **Map Resolvers** tab contains a list of references to database servers which houses the `EID/RLOC` mappings.
 
-![LISP IPv4 Map Resolvers table](LISP/lisp-routes-mapResolver-ipv4.png)
+![LISP IPv4 Map Resolvers table](lisp/lisp-routes-mapResolver-ipv4.png)
 
 ## Mapping System
 
@@ -51,4 +51,4 @@ LISP provides several benefits for large-scale networks:
 To learn more about LISP and its implementation, refer to the following resources:
 
 - [LISP References](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_lisp/configuration/xe-3s/irl-xe-3s-book/irl-overview.html)
-- [Basic Lisp configuration of deployment](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_lisp/configuration/xe-3s/irl-xe-3s-book/irl-cfg-lisp.html)
+- [Basic LISP configuration](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_lisp/configuration/xe-3s/irl-xe-3s-book/irl-cfg-lisp.html)

@@ -1,50 +1,64 @@
 ---
-description: In this section, we give you a tip on how to use the search function efficiently.
+description: In this section, we explain how to edit an intent verification rule or create a new one.
 ---
 
-# Intent Verification Rule
+# Intent Verification Rules
 
 ## Edit Intent Verification Rule
 
-Intent verification coloring rules can be fully customized. To do that click the pencil next to the rule name in the box above the technology table, which is **Port-Channel Members State** in our case.
+Intent verification coloring rules can be fully customized. To do that, click
+the **Pencil** icon next to a rule in the **Intent Verification Rules** box
+above a technology table.
 
-![port members state](intent_rules/1878327423.png)
+In our example, we will use the **Port-Channel Members State** rule above the
+**Link Aggregation (LAG)/Portchannel/Etherchannel Member status table** (in
+**Technology --> Port channels --> Member status table**).
 
-Now you can check and change predefined colorization rules.
+![Port-Channel Members State intent rule](intent_rules/port-channel_members_state_intent_rule.png)
 
-![change colorization](intent_rules/1878327420.png)
+Now we can check and change the predefined coloring rules:
 
-Let's change coloring from blue to red when port in port-channel is
-down:
+![Intent Rule Detail](intent_rules/intent_rule_detail.png)
 
-1. Remove rules from blue color. Click blue color and then trash
-   icon:  
-    ![and or](intent_rules/1878327417.png)
-2. Click red color and **Add rule**.
-3. Select logical **OR** because we want mark member red if any of
+Let's change the coloring from yellow to red for `Aggregated interfaces with
+membership status '(S)', '(F)', or '(I)'.`:
+
+1. Remove rules from the yellow color. Click the **yellow color** and then the
+   **Trash** icon next to each rule (the **Description** can be also removed):  
+   ![Remove rules from color/state](intent_rules/remove_rules_from_color_state.png)
+2. Click the **red color**.
+3. Set the **Description** to `Aggregated interfaces with membership status
+   '(S)', '(F)', or '(I)'.`
+4. Use **+ Add rule** to add each of these rules regarding the `Member (Status)`
+   column:
+   - "`Members (Status)` contains `(s)`"
+   - "`Members (Status)` contains `(f)`"
+   - "`Members (Status)` contains `(i)`"
+   - "`Members (Status)` contains `(d)`"
+   - "`Members (Status)` contains `(DOWN)`"
+5. Select logical `Or` because we want to mark a member red if any of the
    defined rules apply.
-4. We are interested in **Members (Status)** table row.
-5. We would like to check if this row **contains** specific string.
-6. Specify string we are looking for like **(D)** or **(DOWN)**  
-   ![rule details](intent_rules/1878327402.png)
-7. Click **Preview** to see if you rule works
-8. If you are satisfied with the result click **Update rule**.
-
-You can also add new set of coloring rules. For example, if you want to check the aggregation protocol used.
+6. Click **Preview** to see if the rule works.
+7. If it works as expected, click **Update**.
+   ![Add rules in color/state](intent_rules/add_rules_in_color_state.png)
 
 ## Create Intent Verification Rule
 
-Let's take an example using the Port Channels > Member status table.
+You can also add a new set of coloring rules.
 
-1. Go to **Technology --> Port Channels --> Member status table**.
-2. Click **Intent Verification Rules** button in the right toolbox menu.  
-   ![intent_verification_rules](intent_rules/1878327405.png)
-3. Specify **Rule name**, for example **Check protocol**.
-4. Select **Colorized column**, it's **Protocol** in our case.
-5. Leave **Widgets** empty for now.
-6. Click **blue**.
-7. Create rule **Protocol insensitive equal `lacp`**
-8. Click **yellow**.
-9. Create rule **Protocol equal static**.
-10. Click **Create rule**.  
-    ![create rule process](intent_rules/1878327399.png)
+For example, if you want to check the aggregation protocol used in the **Link
+Aggregation (LAG)/Portchannel/Etherchannel Member status table**:
+
+1. Go to **Technology --> Port channels --> Member status table**.
+2. Click `...` in the top-right corner of the table and select `Add intent
+   verification rule`:  
+   ![Add intent verification rule option](intent_rules/add_intent_verification_rule_option.png)
+3. Specify the **Rule name**, for example `Protocol Check`.
+4. Select **Colorized column**, it's `Protocol` in our case.
+5. Leave **Dashboard Widgets** empty for now.
+6. Click the **blue color**.
+7. Create a rule "`Protocol` insensitive equal `lacp`".
+8. Click the **yellow color**.
+9. Create a rule "`Protocol` equal `static`".
+10. Click **Create**.  
+    ![Create intent verification rule](intent_rules/create_intent_verification_rule.png)
