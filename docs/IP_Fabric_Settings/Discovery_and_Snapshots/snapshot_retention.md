@@ -24,6 +24,21 @@ the next possible period according to the cron setup.
 
 ![Cron Setup](snapshot_retention/cron_setup.jpg)
 
+## Maximum Number of Loaded/Locked Snapshots
+
+In **Settings --> Discovery & Snapshots --> Snapshot Retention**, you can change these parameters:
+
+- **Maximum number of loaded snapshots**
+  - maximum number of snapshots that can be loaded in **Discovery Snapshot**
+  - default value: 3
+  - possible values: 1-5
+- **Maximum number of locked snapshots**
+  - maximum number of loaded snapshots that can be locked in **Discovery Snapshot** to prevent them from being unloaded
+  - default value: 1
+  - possible values: 0-4
+
+![Maximum number of loaded/locked snapshots](snapshot_retention/maximum_number_of_loaded_or_locked_snapshots.png)
+
 ## Snapshot Retention Rules
 
 In version `4.1`, we added support for various snapshot retention policies.
