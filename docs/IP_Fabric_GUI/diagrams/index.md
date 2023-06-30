@@ -26,11 +26,7 @@ Check this page [Network Viewer](network_viewer.md) for more details on using th
 
 Site diagrams display all devices discovered per site. Sites are automatically calculated based on the administrative domain boundaries, such as carrier networks and unmanaged infrastructure. Site boundary calculation can be [configured in settings](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
 
-The site name can be changed. To rename a site, go to **Inventory --> Sites**, choose the site you would like to rename, click ***Rename site***, enter a new name, and click ***Rename***.
-
-![Site Diagrams](diagrams_sites.png)
-
-Check this page [Network Viewer](network_viewer.md) for more details on using the diagrams.
+For more details on using the diagrams, check [Network Viewer](network_viewer.md).
 
 ### Routing
 
