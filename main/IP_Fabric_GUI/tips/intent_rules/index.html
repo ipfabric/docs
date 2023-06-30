@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section, we give you a tip on how to use the search function efficiently.">
+        <meta name="description" content="In this section, we explain how to edit an intent verification rule or create a new one.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Intent Verification Rule - IP Fabric Documentation Portal</title>
+        <title>Intent Verification Rules - IP Fabric Documentation Portal</title>
       
     
     
@@ -72,16 +72,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Intent Verification Rule - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In this section, we give you a tip on how to use the search function efficiently." />
+<meta property="og:title" content="Intent Verification Rules - IP Fabric Documentation Portal" />
+<meta property="og:description" content="In this section, we explain how to edit an intent verification rule or create a new one." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/intent_rules.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_GUI/tips/intent_rules/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Intent Verification Rule - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In this section, we give you a tip on how to use the search function efficiently." />
+<meta property="twitter.title" content="Intent Verification Rules - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="In this section, we explain how to edit an intent verification rule or create a new one." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/intent_rules.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -113,7 +113,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intent-verification-rule" class="md-skip">
+        <a href="#intent-verification-rules" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intent Verification Rule
+              Intent Verification Rules
             
           </span>
         </div>
@@ -2540,32 +2540,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../technology_tables/Lisp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Locator/ID Separation Protocol (LISP)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../technology_tables/MPLS/" class="md-nav__link">
         
   
@@ -2781,6 +2755,32 @@ documentation.
     
   
     IP Telephony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technology_tables/lisp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Locator/ID Separation Protocol (LISP)
   
 
     
@@ -3129,7 +3129,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Intent Verification Rule
+    Intent Verification Rules
   
 
     
@@ -3146,7 +3146,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Intent Verification Rule
+    Intent Verification Rules
   
 
     
@@ -9132,44 +9132,59 @@ documentation.
   
 
 
-<h1 id="intent-verification-rule">Intent Verification Rule</h1>
+<h1 id="intent-verification-rules">Intent Verification Rules</h1>
 <h2 id="edit-intent-verification-rule">Edit Intent Verification Rule</h2>
-<p>Intent verification coloring rules can be fully customized. To do that click the pencil next to the rule name in the box above the technology table, which is <strong>Port-Channel Members State</strong> in our case.</p>
-<p><a class="glightbox" href="1878327423.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="port members state" src="1878327423.png" /></a></p>
-<p>Now you can check and change predefined colorization rules.</p>
-<p><a class="glightbox" href="1878327420.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change colorization" src="1878327420.png" /></a></p>
-<p>Let&rsquo;s change coloring from blue to red when port in port-channel is
-down:</p>
+<p>Intent verification coloring rules can be fully customized. To do that, click
+the <strong>Pencil</strong> icon next to a rule in the <strong>Intent Verification Rules</strong> box
+above a technology table.</p>
+<p>In our example, we will use the <strong>Port-Channel Members State</strong> rule above the
+<strong>Link Aggregation (LAG)/Portchannel/Etherchannel Member status table</strong> (in
+<strong>Technology &rarr; Port channels &rarr; Member status table</strong>).</p>
+<p><a class="glightbox" href="port-channel_members_state_intent_rule.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Port-Channel Members State intent rule" src="port-channel_members_state_intent_rule.png" /></a></p>
+<p>Now we can check and change the predefined coloring rules:</p>
+<p><a class="glightbox" href="intent_rule_detail.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Intent Rule Detail" src="intent_rule_detail.png" /></a></p>
+<p>Let&rsquo;s change the coloring from yellow to red for <code>Aggregated interfaces with
+membership status '(S)', '(F)', or '(I)'.</code>:</p>
 <ol>
-<li>Remove rules from blue color. Click blue color and then trash
-   icon:<br />
-<a class="glightbox" href="1878327417.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="and or" src="1878327417.png" /></a></li>
-<li>Click red color and <strong>Add rule</strong>.</li>
-<li>Select logical <strong>OR</strong> because we want mark member red if any of
+<li>Remove rules from the yellow color. Click the <strong>yellow color</strong> and then the
+   <strong>Trash</strong> icon next to each rule (the <strong>Description</strong> can be also removed):<br />
+<a class="glightbox" href="remove_rules_from_color_state.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Remove rules from color/state" src="remove_rules_from_color_state.png" /></a></li>
+<li>Click the <strong>red color</strong>.</li>
+<li>Set the <strong>Description</strong> to <code>Aggregated interfaces with membership status
+   '(S)', '(F)', or '(I)'.</code></li>
+<li>Use <strong>+ Add rule</strong> to add each of these rules regarding the <code>Member (Status)</code>
+   column:<ul>
+<li>&ldquo;<code>Members (Status)</code> contains <code>(s)</code>&ldquo;</li>
+<li>&ldquo;<code>Members (Status)</code> contains <code>(f)</code>&ldquo;</li>
+<li>&ldquo;<code>Members (Status)</code> contains <code>(i)</code>&ldquo;</li>
+<li>&ldquo;<code>Members (Status)</code> contains <code>(d)</code>&ldquo;</li>
+<li>&ldquo;<code>Members (Status)</code> contains <code>(DOWN)</code>&ldquo;</li>
+</ul>
+</li>
+<li>Select logical <code>Or</code> because we want to mark a member red if any of the
    defined rules apply.</li>
-<li>We are interested in <strong>Members (Status)</strong> table row.</li>
-<li>We would like to check if this row <strong>contains</strong> specific string.</li>
-<li>Specify string we are looking for like <strong>(D)</strong> or <strong>(DOWN)</strong><br />
-<a class="glightbox" href="1878327402.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="rule details" src="1878327402.png" /></a></li>
-<li>Click <strong>Preview</strong> to see if you rule works</li>
-<li>If you are satisfied with the result click <strong>Update rule</strong>.</li>
+<li>Click <strong>Preview</strong> to see if the rule works.</li>
+<li>If it works as expected, click <strong>Update</strong>.
+   <a class="glightbox" href="add_rules_in_color_state.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add rules in color/state" src="add_rules_in_color_state.png" /></a></li>
 </ol>
-<p>You can also add new set of coloring rules. For example, if you want to check the aggregation protocol used.</p>
 <h2 id="create-intent-verification-rule">Create Intent Verification Rule</h2>
-<p>Let&rsquo;s take an example using the Port Channels &gt; Member status table.</p>
+<p>You can also add a new set of coloring rules.</p>
+<p>For example, if you want to check the aggregation protocol used in the <strong>Link
+Aggregation (LAG)/Portchannel/Etherchannel Member status table</strong>:</p>
 <ol>
-<li>Go to <strong>Technology &rarr; Port Channels &rarr; Member status table</strong>.</li>
-<li>Click <strong>Intent Verification Rules</strong> button in the right toolbox menu.<br />
-<a class="glightbox" href="1878327405.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="intent_verification_rules" src="1878327405.png" /></a></li>
-<li>Specify <strong>Rule name</strong>, for example <strong>Check protocol</strong>.</li>
-<li>Select <strong>Colorized column</strong>, it&rsquo;s <strong>Protocol</strong> in our case.</li>
-<li>Leave <strong>Widgets</strong> empty for now.</li>
-<li>Click <strong>blue</strong>.</li>
-<li>Create rule <strong>Protocol insensitive equal <code>lacp</code></strong></li>
-<li>Click <strong>yellow</strong>.</li>
-<li>Create rule <strong>Protocol equal static</strong>.</li>
-<li>Click <strong>Create rule</strong>.<br />
-<a class="glightbox" href="1878327399.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="create rule process" src="1878327399.png" /></a></li>
+<li>Go to <strong>Technology &rarr; Port channels &rarr; Member status table</strong>.</li>
+<li>Click <code>...</code> in the top-right corner of the table and select <code>Add intent
+   verification rule</code>:<br />
+<a class="glightbox" href="add_intent_verification_rule_option.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add intent verification rule option" src="add_intent_verification_rule_option.png" /></a></li>
+<li>Specify the <strong>Rule name</strong>, for example <code>Protocol Check</code>.</li>
+<li>Select <strong>Colorized column</strong>, it&rsquo;s <code>Protocol</code> in our case.</li>
+<li>Leave <strong>Dashboard Widgets</strong> empty for now.</li>
+<li>Click the <strong>blue color</strong>.</li>
+<li>Create a rule &ldquo;<code>Protocol</code> insensitive equal <code>lacp</code>&rdquo;.</li>
+<li>Click the <strong>yellow color</strong>.</li>
+<li>Create a rule &ldquo;<code>Protocol</code> equal <code>static</code>&rdquo;.</li>
+<li>Click <strong>Create</strong>.<br />
+<a class="glightbox" href="create_intent_verification_rule.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create intent verification rule" src="create_intent_verification_rule.png" /></a></li>
 </ol>
 
   
