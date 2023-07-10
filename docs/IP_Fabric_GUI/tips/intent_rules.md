@@ -58,7 +58,8 @@ Aggregation (LAG)/Portchannel/Etherchannel Member status table**:
 5. Leave **Dashboard Widgets** empty for now.
 6. Click the **blue color**.
 7. Create a rule "`Protocol` insensitive equal `lacp`".
+   ![Create intent verification rule](intent_rules/create_intent_verification_rule.png)
 8. Click the **yellow color**.
 9. Create a rule "`Protocol` equal `static`".
 10. Click **Create**.  
-    ![Create intent verification rule](intent_rules/create_intent_verification_rule.png)
+    ![Create intent verification rule - remaining steps](intent_rules/create_intent_verification_rule_2.png)
