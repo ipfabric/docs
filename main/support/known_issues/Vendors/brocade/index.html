@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric describes known affected issues for Brocade and how to fix them.">
+        <meta name="description" content="IP Fabric describes known issues affecting Brocade and how to fix them.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Brocade - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric describes known affected issues for Brocade and how to fix them." />
+<meta property="og:description" content="IP Fabric describes known issues affecting Brocade and how to fix them." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/Vendors/brocade.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/Vendors/brocade/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Brocade - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric describes known affected issues for Brocade and how to fix them." />
+<meta property="twitter:description" content="IP Fabric describes known issues affecting Brocade and how to fix them." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/Vendors/brocade.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9045,26 +9045,28 @@ documentation.
 
 
 <h1 id="brocade">Brocade</h1>
-<p><strong>IP Fabric Version:</strong> 4.3.X and up</p>
-<p><strong>Description</strong>: Brocade purchased Ruckus Wireless and uses the same MAC
-OUI. In order to discover Brocade devices we have enabled &ldquo;Brocade
-Communications Systems LLC&rdquo; and &ldquo;Ruckus Wireless&rdquo; in the Settings > OUI
-table.</p>
-<p><strong>Issue for networks that contain Ruckus Wireless Equipment:</strong> Because
-we have enabled the OUI IP Fabric will try logging in to all the Access
-Points which has caused discovery to hang in our lab network.</p>
-<p><strong>Fix for Ruckus Wireless environments that DO NOT have Brocade
-devices</strong>: Disable &ldquo;Ruckus Wireless&rdquo; in Settings > OUI table.</p>
-<p><strong>Fix for Ruckus Wireless environments that DO have Brocade devices
-(either option should work)</strong>:</p>
+<p><strong>IP Fabric version:</strong> <code>4.3.x</code> and newer</p>
+<p><strong>Description:</strong> Brocade purchased Ruckus Wireless and uses the same MAC OUI. In
+order to discover Brocade devices, we have enabled <code>Brocade Communications
+Systems LLC</code> and <code>Ruckus Wireless</code> in the <strong>OUI</strong> table (in <strong>Settings &rarr;
+Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>).</p>
+<p><strong>Issue for networks that contain Ruckus Wireless equipment:</strong> Because we have
+enabled the OUI, IP Fabric will try logging in to all the Access Points which
+has caused discovery to hang in our lab network.</p>
+<p><strong>Fix for Ruckus Wireless environments that DO NOT have Brocade devices</strong>:
+Disable <code>Ruckus Wireless</code> in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global
+Configuration &rarr; OUI</strong>.</p>
+<p><strong>Fix for Ruckus Wireless environments that DO have Brocade devices (either
+option should work)</strong>:</p>
 <ul>
-<li>Disable &ldquo;Ruckus Wireless&rdquo; in Settings &gt; OUI table and add Brocade IP
-    addresses to Settings &gt; Discovery Seed</li>
+<li>Disable <code>Ruckus Wireless</code> in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global
+  Configuration &rarr; OUI</strong> and add Brocade IP addresses to <strong>Settings &rarr;
+  Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery Seeds</strong>.</li>
 </ul>
 <ul>
-<li>Add Ruckus Wireless IP addresses (must include /32 at the end of the
-    address) in the Settings &gt; Advanced &gt; &ldquo;IP networks to exclude from
-    discovery and analysis&rdquo;</li>
+<li>Add Ruckus Wireless IP addresses (must include <code>/32</code> at the end) in <strong>Settings
+  &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery &rarr; IP Scope
+  &rarr; IP networks to exclude from discovery and analysis</strong>.</li>
 </ul>
 
   
