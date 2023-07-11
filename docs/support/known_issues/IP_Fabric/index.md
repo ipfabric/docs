@@ -13,12 +13,6 @@ description: IP Fabric describes general known affected issues that may occur in
   information, which is not available through drill-downs. More
   drill-down capabilities are planned for future releases.
 
-- Advanced Filter Visibility. When Advanced filter is applied, and
-  then collapsed via advanced filter button
-	![advanced filter button](ipf_issues/filter_advanced_btn.png)
-  it's not clear that filter is being applied to the table, except for
-  the visible clear filter button. ![clear filter button](ipf_issues/filter_clear_btn.png)
-
 - Jumphost can be activated only from support console.
 
 - TACACS may be limited to the specific maximum number of simultaneous
@@ -36,7 +30,7 @@ description: IP Fabric describes general known affected issues that may occur in
 - Site separation - Changing "Firewall in site" and new
   discovery/recalculation can change site names.
 
-## Snapshots (Release Candidate)
+## Snapshots
 
 - When Discovery is stopped mid way, and then Refresh is executed, the
   refresh does not consider IPs with status "STOP" for the next
