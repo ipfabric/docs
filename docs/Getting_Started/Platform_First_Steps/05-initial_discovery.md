@@ -4,9 +4,7 @@ description: For the final step, we will show you how to start the initial disco
 
 # Initial Discovery
 
-!!! note
-
-    Now that you have entered the essential details, you can start the discovery!
+Now that you have entered the essential details, you can start the discovery!
 
 ## Option 1 -- via the Configuration Wizard
 
@@ -14,8 +12,8 @@ You can click the **Start Discovery** button in step 4 of the [Configuration Wiz
 
 ## Option 2 -- via the Discovery Snapshot page
 
-On the **Discovery Snapshot** page, click the **New snapshot** button and
-start the discovery:
+On the **Discovery Snapshot** page, click **+ New snapshot** and then **Start
+discovery**:
 
 ![Start discovery](start_discovery.png)
 

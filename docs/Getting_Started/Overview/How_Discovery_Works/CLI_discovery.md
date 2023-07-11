@@ -8,9 +8,9 @@ description: Discovery creates a snapshot of the network, finding all active net
 
 Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.
 
-The process is controlled from the discovery tab of the web user interface using the (start) and (stop) buttons.
+The process is controlled with the **Start discovery** and **Stop discovery** buttons in the **Discovery Snapshot** section of the IP Fabric web UI.
 
-![start](cli_discovery/start.png) ![stop](cli_discovery/stop.png)
+![Start discovery](cli_discovery/start.png) ![Stop discovery](cli_discovery/stop.png)
 
 You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
 --> Create Snapshots Periodically** to automatically run a network discovery in
