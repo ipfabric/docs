@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The discovery process for network device divides into multiple Tasks. The TASK is a data collection related to a specific network protocol or technology">
+        <meta name="description" content="This section explains Disabled Discovery Tasks and describes those default ones.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Disabled Discovery Tasks - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The discovery process for network device divides into multiple Tasks. The TASK is a data collection related to a specific network protocol or technology" />
+<meta property="og:description" content="This section explains Disabled Discovery Tasks and describes those default ones." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Disabled Discovery Tasks - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The discovery process for network device divides into multiple Tasks. The TASK is a data collection related to a specific network protocol or technology" />
+<meta property="twitter:description" content="This section explains Disabled Discovery Tasks and describes those default ones." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -3510,6 +3510,23 @@ documentation.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Disabled Discovery Tasks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3525,6 +3542,47 @@ documentation.
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-disabled-discovery-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Disabled Discovery Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-adding-new-disabled-discovery-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of Adding New Disabled Discovery Task
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9019,6 +9077,36 @@ documentation.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-disabled-discovery-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Disabled Discovery Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-adding-new-disabled-discovery-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of Adding New Disabled Discovery Task
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -9051,7 +9139,8 @@ technology (MPLS, Transceivers, ARP Table, Spanning-Tree Protocol,
 Multicast, or VXLAN). Each task consists of 1 or more operational
 commands (CLI or API). You can find the list of all Discovery Tasks
 in the <a href="https://matrix.ipfabric.io">Feature matrix</a>.</p>
-<p>Some fundamental TASKS are critical for discovery and topology calculations (Neighbors, ARP, Mac, RIB, etc.).</p>
+<p>Some fundamental TASKS are critical for discovery and topology calculations
+(Neighbors, ARP, Mac, RIB, etc.).</p>
 <p>The <strong>Disabled Discovery Tasks</strong> settings were introduced in version <code>3.7.0</code>.
 Since then, the user can manipulate specific tasks for the discovery process
 to avoid extra data collection (when particular protocols are not
@@ -9059,36 +9148,40 @@ present on the network) or avoid specific operational commands to be
 executed on specific hardware platforms.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Disabling TASKS will reduce the level of information collected by IP Fabric. If some fundamental TASKS are disabled, it can affect the topology or Path Lookup results.</p>
+<p>Disabling TASKS will reduce the level of information collected by IP Fabric.
+If some fundamental TASKS are disabled, it can affect the topology or Path
+Lookup results.</p>
 </div>
-<p>By default, there are <strong>four main Disabled Discovery Task rules</strong> in the
-platform:</p>
+<h2 id="default-disabled-discovery-tasks">Default Disabled Discovery Tasks</h2>
+<p>Since version <code>6.3.0</code>, <strong>Disabled Discovery Tasks</strong> contain the following three
+predefined rules:</p>
 <table>
 <thead>
 <tr>
-<th><strong>Rule Name</strong></th>
-<th><strong>Rule Description</strong></th>
+<th align="left"><strong>Rule Name</strong></th>
+<th align="left"><strong>Rule Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Disable Pagination</strong></td>
-<td>By default disabled for F5 devices - command is modifying the configuration and can break cluster synchronization.</td>
+<td align="left"><code>Disable Pagination</code></td>
+<td align="left">By default disabled for F5 devices - the command is modifying the configuration and can break cluster synchronization.</td>
 </tr>
 <tr>
-<td><strong>Transceivers</strong></td>
-<td>By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More at <a href="../../../../support/known_issues/Vendors/cisco/">Known Issues > Cisco</a>.</td>
+<td align="left"><code>Transceivers</code></td>
+<td align="left">By default disabled for all vendors - certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More in <a href="../../../../support/known_issues/Vendors/cisco/">Known Issues &rarr; Cisco</a>.</td>
 </tr>
 <tr>
-<td><strong>NTP</strong></td>
-<td>By default disabled for Cisco Firepower - on some versions a Firepower bug may freeze the CLI session.</td>
-</tr>
-<tr>
-<td><strong>Configuration saved</strong></td>
-<td>By default enabled for all vendors.</td>
+<td align="left"><code>NTP</code></td>
+<td align="left">By default disabled for Cisco Firepower - on some versions, a Firepower bug may freeze the CLI session.</td>
 </tr>
 </tbody>
 </table>
+<p>Prior to version <code>6.3.0</code>, the <code>Configuration saved</code> rule (disabling for all
+vendors) was also present by default. New deployments of version <code>6.3.0</code> or
+newer do not have the rule predefined anymore. Upgrading from version <code>6.2.2</code>
+or older does not automatically remove the previously predefined rule.</p>
+<h2 id="example-of-adding-new-disabled-discovery-task">Example of Adding New Disabled Discovery Task</h2>
 <p>In the following example, we are creating a rule to disable OSPFv3 on
 Juniper EX. The test for the rule reveals one match, the
 <code>HWLAB-JEX2200-SW1</code> switch:</p>
