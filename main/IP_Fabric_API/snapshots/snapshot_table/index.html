@@ -9045,7 +9045,7 @@ documentation.
 
 
 <h1 id="snapshot-table">Snapshot Table</h1>
-<p>In IP Fabric v4.3.0 a new method for retrieving Snapshot information has
+<p>In IP Fabric 4.3.0 a new method for retrieving Snapshot information has
 been added. This is a <code>POST</code> method to <code>tables/management/snapshots</code> which
 allows for filtering based on columns.</p>
 <h1 id="columns">Columns</h1>
@@ -9168,95 +9168,203 @@ allows for filtering based on columns.</p>
 <td>int</td>
 <td>Timestamp in milliseconds when the snapshot was last changed</td>
 </tr>
+<tr>
+<td><code>creatorUsername</code></td>
+<td>str</td>
+<td>Username who created the Snapshot (New in <code>v6.3.0</code>)</td>
+</tr>
 </tbody>
 </table>
 <h1 id="v430-examples">v4.3.0 Examples</h1>
 <h2 id="get-last">Get <code>($last)</code></h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
-    &quot;filters&quot;: {
-        &quot;and&quot;: [{
-                &quot;isLastSnapshot&quot;: [
-                    &quot;eq&quot;,
-                    true
-                ]
-            }
-        ]
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;finishStatus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unloadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;note&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sites&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fromArchive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;locked&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceAddedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceRemovedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceActiveCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceEdgeCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;totalDevCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;isLastSnapshot&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsChange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsEnd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsStart&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;userCount&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;and&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;isLastSnapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="get-valid-snapshots-newest-to-oldest">Get Valid Snapshots Newest to Oldest</h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
-    &quot;filters&quot;: {
-        &quot;and&quot;: [{
-                &quot;finishStatus&quot;: [
-                    &quot;neq&quot;,
-                    &quot;error&quot;
-                ]
-            }
-        ]
-    },
-    &quot;sort&quot;: {
-        &quot;order&quot;: &quot;desc&quot;,
-        &quot;column&quot;: &quot;tsEnd&quot;
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;finishStatus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unloadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;note&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sites&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fromArchive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;locked&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceAddedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceRemovedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceActiveCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceEdgeCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;totalDevCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;isLastSnapshot&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsChange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsEnd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsStart&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;userCount&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;and&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;finishStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;neq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tsEnd&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="get-loaded-snapshots-newest-to-oldest">Get Loaded Snapshots Newest to Oldest</h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
-    &quot;filters&quot;: {
-        &quot;and&quot;: [{
-                &quot;status&quot;: [
-                    &quot;eq&quot;,
-                    &quot;done&quot;
-                ]
-            }, {
-                &quot;finishStatus&quot;: [
-                    &quot;eq&quot;,
-                    &quot;done&quot;
-                ]
-            }
-        ]
-    },
-    &quot;sort&quot;: {
-        &quot;order&quot;: &quot;desc&quot;,
-        &quot;column&quot;: &quot;tsEnd&quot;
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;finishStatus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unloadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;note&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sites&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fromArchive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;locked&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceAddedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceRemovedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceActiveCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceEdgeCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;totalDevCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;isLastSnapshot&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsChange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsEnd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsStart&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;userCount&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;and&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;done&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;finishStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;done&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tsEnd&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="get-locked-snapshots-oldest-to-newest">Get Locked Snapshots Oldest to Newest</h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
-    &quot;filters&quot;: {
-        &quot;and&quot;: [{
-                &quot;locked&quot;: [
-                    &quot;eq&quot;,
-                    true
-                ]
-            }
-        ]
-    },
-    &quot;sort&quot;: {
-        &quot;order&quot;: &quot;asc&quot;,
-        &quot;column&quot;: &quot;tsEnd&quot;
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;finishStatus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unloadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;note&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sites&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fromArchive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;locked&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceAddedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceRemovedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceActiveCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceEdgeCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;totalDevCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;isLastSnapshot&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsChange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsEnd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsStart&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;userCount&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;and&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;locked&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;sort&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;column&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tsEnd&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="get-running-snapshot">Get Running Snapshot</h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;columns&quot;: [&quot;id&quot;, &quot;status&quot;, &quot;finishStatus&quot;, &quot;loadedSize&quot;, &quot;unloadedSize&quot;, &quot;name&quot;, &quot;note&quot;, &quot;sites&quot;, &quot;fromArchive&quot;, &quot;loading&quot;, &quot;locked&quot;, &quot;deviceAddedCount&quot;, &quot;deviceRemovedCount&quot;, &quot;interfaceActiveCount&quot;, &quot;interfaceCount&quot;, &quot;interfaceEdgeCount&quot;, &quot;totalDevCount&quot;, &quot;isLastSnapshot&quot;, &quot;tsChange&quot;, &quot;tsEnd&quot;, &quot;tsStart&quot;, &quot;userCount&quot;],
-    &quot;filters&quot;: {
-        &quot;and&quot;: [{
-                &quot;tsEnd&quot;: [
-                    &quot;empty&quot;,
-                    true
-                ]
-            }
-        ]
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;finishStatus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;unloadedSize&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;note&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;sites&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fromArchive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;locked&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceAddedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;deviceRemovedCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceActiveCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;interfaceEdgeCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;totalDevCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;isLastSnapshot&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsChange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsEnd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;tsStart&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;userCount&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;and&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;tsEnd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;empty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
   
