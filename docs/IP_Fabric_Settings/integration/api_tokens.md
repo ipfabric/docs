@@ -20,12 +20,17 @@ Starting from `3.7.0`, the API tokens (long-lived) were introduced for
 authenticating API calls. They are a bit slower than UI tokens as the
 token is verified in DB with each API call, but they can be revoked easily.
 
-To use API tokens, you need to generate them in the UI.
+To use API tokens, you need to generate them in the UI or using the API.
 
-Please note that the token string is visible / editable only when you
-create the token, you will not see it or be able to modify it later.
+Please note that the token string is only visible when you
+create the token in the UI or in the returned API JSON response.
 For this reason, please make sure you copy the token string when creating
 the API token in the UI.
+
+Starting from `6.3.0` the API Token must be auto-generated from IP Fabric and
+cannot be a custom string. This is a breaking change when posting to
+`/api/v6.3/api-tokens` which no longer accepts the `token` argument when 
+creating a new token using the API.
 
 To use the token, send it in the `X-API-Token` HTTP header along with the
 request:
