@@ -4,7 +4,7 @@ description: This section contains information how to set up API discovery for C
 
 # Cisco APIC
 
-Starting version 5.0 IP Fabric collects information from APIC controller and provides information about Tenants (including Contexts/VRFs, Applications, Endpoint groups and Contracts) and APIC cluster members.
+Starting version `5.0`, IP Fabric collects information from APIC controller and provides information about Tenants (including Contexts/VRFs, Applications, Endpoint groups and Contracts) and APIC cluster members.
 
 Information about controller is collected via SSH.
 
@@ -16,7 +16,7 @@ Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
 Seeds** and add Cisco APIC IP address.
 
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
-API** and press the **+Add** button.
+API** and press the **+ Add** button.
 
 Afterwards, choose **Cisco APIC** from the list and fill in:
 
@@ -34,6 +34,8 @@ Afterwards, choose **Cisco APIC** from the list and fill in:
       ![IPF Settings screen](local_domain_apic_ipf_settings.png)
 
 - **Base URL** of Cisco APIC, e.g. `https://cisco-apic-ip-address`
+
+- [**Slug**](index.md#slug-and-comment)
 
 ![Cisco APIC api add](cisco/apic/ciscoApicAPIAdd.png)
 

@@ -4,11 +4,11 @@ description: IP Fabric supports the discovery of Silver Peak (Aruba) EdgeConnect
 
 # Silver Peak SD-WAN
 
-Starting version **4.3** IP Fabric supports the discovery of Silver Peak (Aruba) EdgeConnect devices in router mode.
+Starting version `4.3`, IP Fabric supports the discovery of Silver Peak (Aruba) EdgeConnect devices in router mode.
 
 EdgeConnect devices are discovered only through API.
 
-To add EdgeConnect to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the **+Add** button.
+To add EdgeConnect to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the **+ Add** button.
 
 Afterwards, choose **Silver Peak** from the list and fill in:
 
@@ -20,4 +20,8 @@ Afterwards, choose **Silver Peak** from the list and fill in:
 
 - **Base URL** of Unity Orchestrator (`https://unity-orchestrator-host`)
 
-![Add Connection](2910552088.png)
+- **Login Type** - select `Local`, `RADIUS`, or `TACACS+`
+
+- [**Slug**](index.md#slug-and-comment)
+
+![Add Silver Peak API](silver_peak_api_add.png)

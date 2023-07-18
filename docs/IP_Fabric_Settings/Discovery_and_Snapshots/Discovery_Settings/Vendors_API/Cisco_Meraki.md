@@ -4,7 +4,7 @@ description: IP Fabric supports API-based discovery for Cisco Meraki. On this se
 
 # Cisco Meraki
 
-Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for Cisco Meraki.
+Since version `3.5.0`, IP Fabric supports API-based discovery for Cisco Meraki.
 
 ## Meraki Requires The Following Settings To Be Applied:
 
@@ -12,6 +12,7 @@ Starting IP Fabric version **3.5.0**, IP Fabric supports API-based discovery for
 - **Organizations ID** -- You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used
 - **Version** -- Only `v1` is supported since IPF v5.0. Similarly to the original `v0`, even the latest API version has a lot of limitations (Meraki known issues)
 - **Base URL** -- URL of the Meraki Dashboard API, e.g. `https://api.meraki.com/api` or `https://nXYZ.meraki.com/api`. For organizations hosted in the China Dashboard, please use `.cn` instead of `.com`
+- [**Slug**](index.md#slug-and-comment)
 
 ## Login IP For Cisco Meraki
 

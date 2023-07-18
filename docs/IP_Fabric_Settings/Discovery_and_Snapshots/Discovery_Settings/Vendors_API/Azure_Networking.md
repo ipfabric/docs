@@ -4,7 +4,7 @@ description: IP Fabric supports the discovery of the Azure Cloud infrastructure.
 
 # Azure Networking
 
-Starting version 4.3 IP Fabric supports the discovery of the Azure Cloud
+Starting version `4.3`, IP Fabric supports the discovery of the Azure Cloud
 infrastructure. Azure devices are discovered only through API. The IP
 Fabric covers the IaaS (Infrastructure as a Service) part of the cloud.
 Azure Cloud Compute provides an abstract view of the Azure physical
@@ -24,7 +24,7 @@ We want to bring support for The plan is to add support of [Load Balancer](https
 
 To add Azure devices to discovery global settings, go to **Settings -->
 Discovery & Snapshots --> Discovery Settings --> Vendors API** and press the
-**+Add** button.
+**+ Add** button.
 
 IP Fabric needs the following data in order to connect to the Azure API
 -- Tenant ID, Subscription ID, Application ID, and Application secret.
@@ -63,7 +63,7 @@ Search for **Subscriptions** and select the subscription you like to add to IPF 
 
 ### Role Definitions For IP Fabric
 
-Following JSON format applies for IP Fabric version 4.3 and above:
+The following JSON format applies to IP Fabric version `4.3` and above:
 
 ```json title="azure-role-4_3.json"
 --8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-4_3.json"

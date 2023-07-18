@@ -4,18 +4,19 @@ description: IP Fabric supports NSX-T API. NSX-T devices are discovered only thr
 
 # VMware NSX-T
 
-Starting version **4.3** IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
+Starting version `4.3`, IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
 
-To add NSX-T to discovery global settings, go to **Settings --> Discovery & Snaphosts --> Discovery Settings --> Vendors API** and press the **+Add** button. Afterwards, choose **VMware NSX-T** from the list and fill in:
+To add NSX-T to discovery global settings, go to **Settings --> Discovery & Snaphosts --> Discovery Settings --> Vendors API** and press the **+ Add** button. Afterwards, choose **VMware NSX-T** from the list and fill in:
 
 - **Username and password** used to log in to NSX Manager
 - **Base URL** of NSX Manager server (`https://nsx-manager-ip-address`)
+- [**Slug**](index.md#slug-and-comment)
 
 ## General Support Information
 
-- IP Fabric is supporting NSX-T from version 3.0 and higher,
-  development was done on version 3.1.2, the latest version is 3.2. We
-  are not supporting the 2.x version, there are a lot of differences,
+- IP Fabric is supporting NSX-T from version `3.0` and higher,
+  development was done on version `3.1.2`, the latest version is `3.2`. We
+  are not supporting the `2.x` versions, there are a lot of differences,
   VMware’s end of general support was in September 2021. [Product Lifecycle Matrix](https://lifecycle.vmware.com/#/)
 
 - NSX-T running as on-premise (there are also cloud versions for AWS

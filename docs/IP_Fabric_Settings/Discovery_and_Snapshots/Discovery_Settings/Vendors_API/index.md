@@ -20,7 +20,7 @@ For each Vendor API, **additional system settings** can be applied.
 
 Every instance of vendor API configuration have two additional fields (example shows screenshot of AWS configuration)
 
-`Slug`
+**Slug**
 
 : Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as `loginIP` for API). We recommend using short and descriptive values, such as `aws-us`, `aws-jp` etc.
 
@@ -30,13 +30,13 @@ Every instance of vendor API configuration have two additional fields (example s
 
           Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Slug) for more information.
 
-`Comment`
+**Comment**
 
 : Optional free text field for you to capture additional information about the API instance.
 
-![Add Connection](aws/vendor-api.png)
+![Slug and Comment](slug_and_comment.png)
 
-## System Proxy
+## Use System Proxy Configuration
 
 **System proxy** is by default used for communication from IP Fabric to the Internet e.g. IP Fabric and system updates.
 
@@ -50,4 +50,4 @@ Due to **security reasons**, accepting unauthorized certificates might be undesi
 
 This setting can be enabled/disabled per Vendor API.
 
-![proxy_and_certificates settings](proxy_and_certificates settings.png)
+![Proxy and certificates settings](proxy_and_certificates settings.png)

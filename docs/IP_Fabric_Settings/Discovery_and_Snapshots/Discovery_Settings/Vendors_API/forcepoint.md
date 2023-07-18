@@ -4,7 +4,7 @@ description: IP Fabric supports Forcepoint SMC API. Forcepoint devices are disco
 
 # Forcepoint
 
-Starting version **6.1.0** IP Fabric supports Forcepoint SMC API. Forcepoint devices are discovered though CLI and only configuration references like security rules are downloaded via the SMC API.
+Starting version `6.1.0`, IP Fabric supports Forcepoint SMC API. Forcepoint devices are discovered though CLI and only configuration references like security rules are downloaded via the SMC API.
 
 ## How To Add Forcepoint SMC To IP Fabric
 
@@ -36,11 +36,11 @@ Starting version **6.1.0** IP Fabric supports Forcepoint SMC API. Forcepoint dev
 
 ### Add Forcepoint To Vendors API In IP Fabric
 
-To add Forcepoint to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** in IP Fabric, press the **+Add** button, select **Forcepoint** from the list and fill in:
+To add Forcepoint to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** in IP Fabric, press the **+ Add** button, select **Forcepoint** from the list and fill in:
 
 - **Base URL** -- URL which you specified when enabling the SMC API, for example `http://X.X.X.X:8082`.
 - **Authentication Key** -- generated authentication API key from the SMC.
-- **Slug** -- a unique descriptive identifier of the configuration instance.
+- [**Slug**](index.md#slug-and-comment)
 
   ![adding vendor](forcepoint/smc/forcepoint_ipf_add_vendor.png)
 

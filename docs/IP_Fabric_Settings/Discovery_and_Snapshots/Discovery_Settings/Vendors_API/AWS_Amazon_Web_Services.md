@@ -25,7 +25,7 @@ Copy those keys to the AWS API settings in your IP Fabric and don't
 forget to **fill the regions where the devices which you want to discover
 are**. Multiple regions can be set for one API key and secret.
 
-![Add Connection](aws/vendor-api.png)
+![Add Connection](aws/aws-vendor-api.png)
 
 ## Required IAM policy
 
