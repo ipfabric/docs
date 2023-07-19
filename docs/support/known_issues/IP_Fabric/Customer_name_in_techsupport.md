@@ -1,38 +1,50 @@
 ---
-description: Internal - If you'd see the customer name in "#techsupport-updates" channel as "IPF-<techsupport_metadata>", this is how you can mitigate that.
+description: On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page exlains how to fix that.
 ---
 
 # Customer name in techsupport
 
 !!! info
 
-    This issue was fixed in release `6.0.1` of IP Fabric.
+    This issue was fixed in IP Fabric version `6.0.1`.
 
-Customer name is stored in `/opt/nimpee/conf.d/sys-nimpee.conf`. Its default value is `IPF` after installation and
-updated to real customer name upon license upload. When license upload fails, customer name is not updated and generated
-techsupport contains `IPF` as a customer name.
+The customer name is stored in `/opt/nimpee/conf.d/sys-nimpee.conf`. Its default
+value is `IPF` after the initial deployment and it is updated to the real
+customer name upon license upload. When license upload fails, the customer name
+is not updated and generated techsupports would contain `IPF` as the customer
+name.
 
-Affects only new installations, not upgrades.
+Affects only new deployments of versions between `5.0.0` and `6.0.0`, not
+upgrades.
 
-User `autoboss` has to be able to create new files in `/opt/nimpee/conf.d/` directory in order to update customer name.
-This directory is not writable for user `autoboss` in appliance between versions 5.0.0 and 6.0.1.
+The `autoboss` user has to be able to create new files in the
+`/opt/nimpee/conf.d/` directory in order to update the customer name. Between
+versions `5.0.0` and `6.0.0`, this directory was not writable for the `autoboss`
+user.
 
-Release 6.0.1 implements a fix for this issue, but you still have to re-upload the license.
+Version `6.0.1` implements a fix for this issue, but you still have to re-upload
+your license.
 
-For older releases between 5.0.0 and 6.0.0 it can be fixed manually:
+On older versions between `5.0.0` and `6.0.0`, the issue can be fixed manually
+(`#` denotes a root prompt):
 
-1. Change permissions for `autoboss` user for
+1. Log in to the IP Fabric CLI as the `osadmin` user.
 
-  ```shell
-  # chown root:autoboss /opt/nimpee/conf.d/
-  # chmod 0775 /opt/nimpee/conf.d/
-  ```
+1. Change to the `root` user with the `sudo su` command.
 
-1. Re-upload license
-1. Validate customer name in `/opt/nimpee/conf.d/sys-nimpee.conf`:
+1. Change the ownership and permissions of the `/opt/nimpee/conf.d/` directory:
 
-  ```shell
-  # grep custname /opt/nimpee/conf.d/sys-nimpee.conf
-  custname="IPF"
-  #
-  ```
+   ```shell
+   # chown root:autoboss /opt/nimpee/conf.d/
+   # chmod 0775 /opt/nimpee/conf.d/
+   ```
+
+1. Re-upload your license.
+
+1. Validate that the customer name was updated in
+   `/opt/nimpee/conf.d/sys-nimpee.conf`:
+
+   ```shell
+   # grep custname /opt/nimpee/conf.d/sys-nimpee.conf
+   custname="<your_company_name>"
+   ```
