@@ -34,7 +34,7 @@ allows for filtering based on columns.
 | `tsStart`              | int  | Timestamp in milliseconds when the snapshot started                                                                                                                                                                                                                                                |
 | `tsEnd`                | int  | Timestamp in milliseconds when the snapshot completed                                                                                                                                                                                                                                              |
 | `tsChange`             | int  | Timestamp in milliseconds when the snapshot was last changed                                                                                                                                                                                                                                       |
-| `creatorUsername`      | str  | Username who created the Snapshot (New in `v6.3.0`)                                                                                                                                                                                                                                                |
+| `creatorUsername`      | str  | Username who created the Snapshot (New in `6.3.0`)                                                                                                                                                                                                                                                 |
 
 # v4.3.0 Examples
 

@@ -89,7 +89,7 @@ revoked, or expired.
 new access token. Refresh tokens must be stored securely by an application
 as it creates a new Access Token and allowing access to the system.
 
-: Starting in IP Fabric version `v6.1.0` the `refreshToken` is rotated after 
+: Starting in IP Fabric version `6.1.0` the `refreshToken` is rotated after 
 every use and a new one is issued.
 
 ### Token API
