@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Internal - If you'd see the customer name in "#techsupport-updates" channel as "IPF-<techsupport_metadata>", this is how you can mitigate that.">
+        <meta name="description" content="On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page exlains how to fix that.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Customer name in techsupport - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Internal - If you'd see the customer name in "#techsupport-updates" channel as "IPF-<techsupport_metadata>", this is how you can mitigate that." />
+<meta property="og:description" content="On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page exlains how to fix that." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/Customer_name_in_techsupport.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/IP_Fabric/Customer_name_in_techsupport/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Customer name in techsupport - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Internal - If you'd see the customer name in "#techsupport-updates" channel as "IPF-<techsupport_metadata>", this is how you can mitigate that." />
+<meta property="twitter:description" content="On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page exlains how to fix that." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/Customer_name_in_techsupport.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9047,31 +9047,44 @@ documentation.
 <h1 id="customer-name-in-techsupport">Customer name in techsupport</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>This issue was fixed in release <code>6.0.1</code> of IP Fabric.</p>
+<p>This issue was fixed in IP Fabric version <code>6.0.1</code>.</p>
 </div>
-<p>Customer name is stored in <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>. Its default value is <code>IPF</code> after installation and
-updated to real customer name upon license upload. When license upload fails, customer name is not updated and generated
-techsupport contains <code>IPF</code> as a customer name.</p>
-<p>Affects only new installations, not upgrades.</p>
-<p>User <code>autoboss</code> has to be able to create new files in <code>/opt/nimpee/conf.d/</code> directory in order to update customer name.
-This directory is not writable for user <code>autoboss</code> in appliance between versions 5.0.0 and 6.0.1.</p>
-<p>Release 6.0.1 implements a fix for this issue, but you still have to re-upload the license.</p>
-<p>For older releases between 5.0.0 and 6.0.0 it can be fixed manually:</p>
+<p>The customer name is stored in <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>. Its default
+value is <code>IPF</code> after the initial deployment and it is updated to the real
+customer name upon license upload. When license upload fails, the customer name
+is not updated and generated techsupports would contain <code>IPF</code> as the customer
+name.</p>
+<p>Affects only new deployments of versions between <code>5.0.0</code> and <code>6.0.0</code>, not
+upgrades.</p>
+<p>The <code>autoboss</code> user has to be able to create new files in the
+<code>/opt/nimpee/conf.d/</code> directory in order to update the customer name. Between
+versions <code>5.0.0</code> and <code>6.0.0</code>, this directory was not writable for the <code>autoboss</code>
+user.</p>
+<p>Version <code>6.0.1</code> implements a fix for this issue, but you still have to re-upload
+your license.</p>
+<p>On older versions between <code>5.0.0</code> and <code>6.0.0</code>, the issue can be fixed manually
+(<code>#</code> denotes a root prompt):</p>
 <ol>
 <li>
-<p>Change permissions for <code>autoboss</code> user for</p>
+<p>Log in to the IP Fabric CLI as the <code>osadmin</code> user.</p>
+</li>
+<li>
+<p>Change to the <code>root</code> user with the <code>sudo su</code> command.</p>
+</li>
+<li>
+<p>Change the ownership and permissions of the <code>/opt/nimpee/conf.d/</code> directory:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># chown root:autoboss /opt/nimpee/conf.d/</span>
 <span class="c1"># chmod 0775 /opt/nimpee/conf.d/</span>
 </code></pre></div>
 </li>
 <li>
-<p>Re-upload license</p>
+<p>Re-upload your license.</p>
 </li>
 <li>
-<p>Validate customer name in <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>:</p>
+<p>Validate that the customer name was updated in
+   <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># grep custname /opt/nimpee/conf.d/sys-nimpee.conf</span>
-<span class="nv">custname</span><span class="o">=</span><span class="s2">&quot;IPF&quot;</span>
-<span class="c1">#</span>
+<span class="nv">custname</span><span class="o">=</span><span class="s2">&quot;&lt;your_company_name&gt;&quot;</span>
 </code></pre></div>
 </li>
 </ol>
