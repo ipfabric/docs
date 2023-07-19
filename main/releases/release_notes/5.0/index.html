@@ -9403,7 +9403,7 @@ TAR<span class="w"> </span>MD5:<span class="w"> </span>62518242728b95c08f5362ebc
 <div class="admonition warning">
 <p class="admonition-title">Read All Upgrade Notices</p>
 <p>Please read all v5.0.0 UPGRADE NOTICES, WARNINGS, and IMPORTANT messages prior to beginning installation.
-This upgrade requires IP Fabric to be on <code>v4.4.3</code> or greater prior to upgrading to <code>v5.0.1</code>.</p>
+This upgrade requires IP Fabric to be on <code>4.4.3</code> or greater prior to upgrading to <code>5.0.1</code>.</p>
 </div>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
@@ -9431,11 +9431,11 @@ TAR<span class="w"> </span>MD5:<span class="w"> </span>0f79000974e0e5c60590e1617
 <div class="admonition warning">
 <p class="admonition-title">Read All Upgrade Notices</p>
 <p>Please read all v5.0.0 UPGRADE NOTICES, WARNINGS, and IMPORTANT messages prior to beginning installation.
-This upgrade requires IP Fabric to be on <code>v4.4.3</code> or greater prior to upgrading to <code>v5.0.1</code>.</p>
+This upgrade requires IP Fabric to be on <code>4.4.3</code> or greater prior to upgrading to <code>5.0.1</code>.</p>
 </div>
 <h3 id="bug-fixes_1">Bug Fixes</h3>
 <ul>
-<li><code>v5.0.0</code> was unpublished as a race condition in Palo Alto discovery was reported; this has been fixed in <code>v5.0.1</code>.</li>
+<li><code>5.0.0</code> was unpublished as a race condition in Palo Alto discovery was reported; this has been fixed in <code>5.0.1</code>.</li>
 </ul>
 <h3 id="features_1">Features</h3>
 <ul>
@@ -9450,7 +9450,7 @@ QCOW<span class="w"> </span>MD5:<span class="w"> </span>0204de624001d1dfe8067e68
 <div class="admonition warning">
 <p class="admonition-title">Read All Upgrade Notices</p>
 <p>Please read all UPGRADE NOTICES, WARNINGS, and IMPORTANT messages prior to beginning installation.
-This upgrade requires IP Fabric to be on <code>v4.4.3</code> prior to upgrading to <code>v5.0.0</code>.</p>
+This upgrade requires IP Fabric to be on <code>4.4.3</code> prior to upgrading to <code>5.0.0</code>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">API Versioning</p>
@@ -9467,7 +9467,7 @@ for more information.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">SSO and API versioning</p>
-<p>Upgrade to <code>v5.0.0</code> will break custom SSO integrations an will require
+<p>Upgrade to <code>5.0.0</code> will break custom SSO integrations an will require
 changes to your files prior to re-enabling. Before upgrading and if you have
 SSO deployed please contact your Solution Architect to copy your custom
 settings and and re-deploy them after the update.</p>
@@ -9513,7 +9513,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 </div>
 <h3 id="upgrade-notices"><strong>UPGRADE NOTICES</strong></h3>
 <ul>
-<li>This upgrade requires IP Fabric to be on <code>v4.4.3</code> prior to upgrade to <code>v5.0.0</code>. IP Fabric <code>v4.4.2</code> or lower will not work &ndash; please upgrade to <code>4.4.3</code> using the normal method before carrying out the <code>5.0.0</code> upgrade process.</li>
+<li>This upgrade requires IP Fabric to be on <code>4.4.3</code> prior to upgrade to <code>5.0.0</code>. IP Fabric <code>4.4.2</code> or lower will not work &ndash; please upgrade to <code>4.4.3</code> using the normal method before carrying out the <code>5.0.0</code> upgrade process.</li>
 <li>Due to the major changes stated above, automatic updates will be disabled for this release and will require manual upgrade.</li>
 <li>Prior to update please ensure you perform a <a href="../../../System_Administration/Administrative_Interface/backup_and_restore/">backup of your system</a> or it is highly recommend to create a VM snapshot</li>
 <li>It is recommended (for all updates) to unload all snapshots prior to performing the upgrade.</li>
@@ -9587,11 +9587,11 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 <li>Cisco ASA Interface Aliases</li>
 </ul>
 <h3 id="role-based-access-control-phase-1">Role-Based Access Control Phase 1</h3>
-<p>IP Fabric <code>v5.0.0</code> includes Phase 1 of RBAC. The most significant change is that Users are now assigned to a Role(s) and not given specific permissions. During the upgrade process your users will be migrated to the appropriate roles. For more information see the documentation at the links below.</p>
+<p>IP Fabric <code>5.0.0</code> includes Phase 1 of RBAC. The most significant change is that Users are now assigned to a Role(s) and not given specific permissions. During the upgrade process your users will be migrated to the appropriate roles. For more information see the documentation at the links below.</p>
 <ul>
 <li><a href="../../../IP_Fabric_Settings/administration/policies/">Policies</a><ul>
 <li>This is where you define the endpoints users have access to.</li>
-<li>There are 5 built-in Policies in <code>v5.0.0</code><ul>
+<li>There are 5 built-in Policies in <code>5.0.0</code><ul>
 <li><code>settings</code>: Access to snapshot and product settings endpoints</li>
 <li><code>discovery</code>: Access to discovery endpoints</li>
 <li><code>team</code>: Access to user management endpoints</li>
@@ -9635,7 +9635,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 <p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ul>
-<li>All TLS version less than <code>v1.3</code> have been deprecated.<ul>
+<li>All TLS version less than <code>1.3</code> have been deprecated.<ul>
 <li>Some older browsers, proxies, or systems may have issues connecting to IP Fabric after this change.</li>
 <li>To re-enable an older version please see <a href="../../../System_Administration/Command_Line_Interface/Custom_TLS/">Custom TLS Settings</a> or contact your Solution Architect.</li>
 </ul>
