@@ -36,7 +36,7 @@ Starting version `6.1.0`, IP Fabric supports Forcepoint SMC API. Forcepoint devi
 
 ### Add Forcepoint To Vendors API In IP Fabric
 
-To add Forcepoint to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** in IP Fabric, press the **+ Add** button, select **Forcepoint** from the list and fill in:
+To add Forcepoint to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** in IP Fabric, click **+ Add**, select `Forcepoint` from the list and fill in:
 
 - **Base URL** -- URL which you specified when enabling the SMC API, for example `http://X.X.X.X:8082`.
 - **Authentication Key** -- generated authentication API key from the SMC.

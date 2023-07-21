@@ -1,5 +1,5 @@
 ---
-description: On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page exlains how to fix that.
+description: On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page explains how to fix that.
 ---
 
 # Customer name in techsupport

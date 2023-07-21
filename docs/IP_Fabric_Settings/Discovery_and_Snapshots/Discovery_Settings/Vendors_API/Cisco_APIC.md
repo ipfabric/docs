@@ -16,9 +16,9 @@ Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
 Seeds** and add Cisco APIC IP address.
 
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
-API** and press the **+ Add** button.
+API** and click **+ Add**.
 
-Afterwards, choose **Cisco APIC** from the list and fill in:
+Afterwards, choose `Cisco APIC` from the list and fill in:
 
 - **Username and password** used to log in to Cisco APIC
 

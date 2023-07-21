@@ -8,7 +8,7 @@ Starting version `6.1.0`, IP Fabric supports Palo Alto Prisma SASE unified API.
 
 A [service account](https://pan.dev/sase/docs/service-accounts/) has to be created with RO role `View Only Administrator` or higher.
 
-In IP Fabric, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**, press the **+ Add** button, select **Prisma** from the list and fill in the following login details:
+In IP Fabric, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**, select `Prisma` from the list and fill in the following login details:
 
 - **Username** -- Service account username
 - **Password** -- Service account password

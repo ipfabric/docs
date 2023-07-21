@@ -24,7 +24,7 @@ Juniper Mist devices are discovered only through API.
 
    ![Create API token](mist/mist_api_create.png)
 
-4. In the IP Fabric GUI, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**, press the **+ Add** button, select **Juniper Mist** from the list and fill in the fields:
+4. In the IP Fabric GUI, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**, select `Juniper Mist` from the list and fill in the fields:
 
    ![IP Fabric API settings](mist/mist_ipf_settings.png)
 
