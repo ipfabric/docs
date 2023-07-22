@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Boot Wizard needs to be completed during the IP Fabric virtual server deployment before the image installation begins.">
+        <meta name="description" content="This page provides an overview of the System 'Boot Wizard'.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="System 'Boot Wizard' - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The Boot Wizard needs to be completed during the IP Fabric virtual server deployment before the image installation begins." />
+<meta property="og:description" content="This page provides an overview of the System 'Boot Wizard'." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="System 'Boot Wizard' - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The Boot Wizard needs to be completed during the IP Fabric virtual server deployment before the image installation begins." />
+<meta property="twitter:description" content="This page provides an overview of the System 'Boot Wizard'." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/index.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9156,10 +9156,10 @@ documentation.
 
 <h1 id="system-boot-wizard">System &lsquo;Boot Wizard&rsquo;</h1>
 <h2 id="overview">Overview</h2>
-<p>The Boot Wizard is automatically started during the installation process and
-must be completed during the IP Fabric virtual server deployment before the
-image installation begins. The Boot Wizard introduces the configuration of basic
-network parameters, including:</p>
+<p>The <strong>Boot Wizard</strong> is automatically started during the initial boot of the IP
+Fabric appliance and must be completed in order to proceed with the appliance&rsquo;s
+deployment.</p>
+<p>It introduces the configuration of basic network parameters, including:</p>
 <ul>
 <li>IP Fabric&rsquo;s IP address and subnet</li>
 <li>Time Zone</li>
@@ -9167,11 +9167,12 @@ network parameters, including:</p>
 <li>DNS servers</li>
 <li>Proxy server</li>
 </ul>
-<p>Suppose some initial parameters need to be modified after the installation is
-complete. In that case, the IP Fabric administrator may restart the Boot Wizard
-by running <code>nimpee-net-config</code> from the CLI as <code>osadmin</code>.</p>
+<p>Suppose some initial parameters need to be modified after the deployment is
+completed. In that case, you may re-run the Boot Wizard with the
+<code>sudo nimpee-net-config</code> command (with one or more options) in the CLI as
+<code>osadmin</code>.</p>
 <h2 id="documentation">Documentation</h2>
-<p>To see more command options, log in and run <code>nimpee-net-config -h</code>.</p>
+<p>To see more command options, log in to the CLI and run <code>nimpee-net-config -h</code>.</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~#<span class="w"> </span>nimpee-net-config<span class="w"> </span>-h
 IP<span class="w"> </span>Fabric<span class="w"> </span>network<span class="w"> </span>configuration<span class="w"> </span>wizard.
 Usage:<span class="w"> </span>nimpee-net-config<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span>
@@ -9187,12 +9188,15 @@ This<span class="w"> </span>script<span class="w"> </span>is<span class="w"> </s
 or<span class="w"> </span>user<span class="w"> </span><span class="s2">&quot;osadmin&quot;</span><span class="w"> </span>enables<span class="w"> </span>it<span class="w"> </span>using<span class="w"> </span><span class="s2">&quot;nimpee-net-wizard&quot;</span><span class="w"> </span>script.
 </code></pre></div>
 <h2 id="run-full-boot-wizard">Run Full Boot Wizard</h2>
-<p>To rerun the <em>full</em> Boot Wizard as described
-in <a href="../Getting_Started/Platform_First_Steps/02-boot_wizard">First Boot Wizard</a>:</p>
+<p>To re-run the <em>full</em> Boot Wizard as described
+in <a href="../../Getting_Started/Platform_First_Steps/02-boot_wizard/">First Boot Wizard</a>,
+you may use one of these options:</p>
 <ul>
-<li>Run <code>nimpee-net-config -a</code></li>
-<li>Edit <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>, change <code>firstrun="yes"</code>, and reboot.
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>grep<span class="w"> </span>firstrun<span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
+<li>Run <code>sudo nimpee-net-config -a</code></li>
+<li>Change <code>firstrun="no"</code> in <code>/opt/nimpee/conf.d/sys-nimpee.conf</code> to
+  <code>firstrun="yes"</code> (for example with
+  <code>sudo vi /opt/nimpee/conf.d/sys-nimpee.conf</code>), and reboot.
+  <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>grep<span class="w"> </span>firstrun<span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
 <span class="nv">firstrun</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
 </code></pre></div></li>
 </ul>

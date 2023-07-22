@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains instructions how to change the `osadmin` password using the IP Fabric Boot Wizard.">
+        <meta name="description" content="This section explains how to change the 'osadmin' password in the IP Fabric Boot Wizard.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Update `osadmin` password - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains instructions how to change the `osadmin` password using the IP Fabric Boot Wizard." />
+<meta property="og:description" content="This section explains how to change the 'osadmin' password in the IP Fabric Boot Wizard." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_osadmin_pass.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_osadmin_pass/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Update `osadmin` password - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains instructions how to change the `osadmin` password using the IP Fabric Boot Wizard." />
+<meta property="twitter:description" content="This section explains how to change the 'osadmin' password in the IP Fabric Boot Wizard." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_osadmin_pass.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9047,26 +9047,26 @@ documentation.
 <h1 id="update-osadmin-password">Update <code>osadmin</code> password</h1>
 <ol>
 <li>
-<p>Log in to your IP Fabric via SSH with the <code>osadmin</code> user and run the
-   <code>nimpee-net-config -t</code> command to launch the configuration wizard.</p>
-<p><a class="glightbox" href="../osadmin_password_change2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Change_osadmin_pass_TUI_!" src="../osadmin_password_change2.png" /></a></p>
+<p>Connect to your IP Fabric appliance via SSH as the <code>osadmin</code> user and run the
+   <code>sudo nimpee-net-config -t</code> command to launch the configuration wizard:</p>
+<p><a class="glightbox" href="../osadmin_password_change2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Do you want to change osadmin user password?" src="../osadmin_password_change2.png" /></a></p>
 </li>
 <li>
 <p>Select <code>Yes</code> to proceed.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Changing the <code>osadmin</code> password will affect: CLI access, System 
-administration access and the backup encryption! Backups created before 
+<p>Changing the <code>osadmin</code> password will affect: CLI access, System
+Administration access and the backup encryption! Backups created before
 the password change will no longer be restorable.</p>
 </div>
 </li>
 <li>
-<p>Input the new <code>osadmin</code> password twice.</p>
-<p><a class="glightbox" href="../osadmin_password_change3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Input_new_osadmin_password" src="../osadmin_password_change3.png" /></a></p>
-<p><a class="glightbox" href="../osadmin_password_change4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Input_new_osadmin_password" src="../osadmin_password_change4.png" /></a></p>
-<p>Password setup contains password complexity check, 
-simple passwords are rejected.</p>
-<p>Password requirements as follows:</p>
+<p>Enter the new <code>osadmin</code> password twice:</p>
+<p><a class="glightbox" href="../osadmin_password_change3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enter osadmin shell user password" src="../osadmin_password_change3.png" /></a></p>
+<p><a class="glightbox" href="../osadmin_password_change4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Repeat osadmin user password" src="../osadmin_password_change4.png" /></a></p>
+<p>Password setup contains password complexity check, simple passwords are
+ rejected.</p>
+<p>Password requirements are as follows:</p>
 <ul>
 <li>max password length is 256</li>
 <li>single character class passwords are not supported</li>
@@ -9084,11 +9084,11 @@ simple passwords are rejected.</p>
 <li>and other characters</li>
 </ul>
 <p>There is also a special class for non-ASCII characters, which could not be 
-classified, but are assumed to be non-digits.</p>
+ classified, but are assumed to be non-digits.</p>
 </li>
 <li>
-<p>Select <code>Yes</code> to reboot the system.</p>
-<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reboot" src="../reboot.png" /></a></p>
+<p>Select <code>Yes</code> to reboot the system:</p>
+<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reboot system" src="../reboot.png" /></a></p>
 </li>
 </ol>
 

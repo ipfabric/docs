@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information how to change the hostname using IP Fabric Boot Wizard.">
+        <meta name="description" content="This section explains how to change the hostname in the IP Fabric Boot Wizard.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Update hostname or domain name - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information how to change the hostname using IP Fabric Boot Wizard." />
+<meta property="og:description" content="This section explains how to change the hostname in the IP Fabric Boot Wizard." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_hostname.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_hostname/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Update hostname or domain name - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information how to change the hostname using IP Fabric Boot Wizard." />
+<meta property="twitter:description" content="This section explains how to change the hostname in the IP Fabric Boot Wizard." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_hostname.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9049,39 +9049,38 @@ documentation.
 CLI, please do the following:</p>
 <ol>
 <li>
-<p><code>ssh</code> to the IP Fabric appliance as the <code>osadmin</code> user</p>
+<p>Connect to the IP Fabric appliance via SSH as the <code>osadmin</code> user.</p>
 </li>
 <li>
-<p>Execute command <code>nimpee-net-config -n</code> to launch network configuration
-   wizard.</p>
+<p>Run the <code>sudo nimpee-net-config -n</code> command to launch the network
+   configuration wizard.</p>
 </li>
 <li>
-<p>Modify the <code>hostname</code> &ndash; the very first option.</p>
-<p><a class="glightbox" href="../change_hostname2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_hostname2" src="../change_hostname2.png" /></a></p>
+<p>Modify the <code>hostname</code> &ndash; the very first option:</p>
+<p><a class="glightbox" href="../change_hostname2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enter the short hostname" src="../change_hostname2.png" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">Valid Hostnames</p>
-<p>Valid characters for hostnames are ASCII letters from <strong>a</strong> to <strong>z</strong>, the 
-digits from <strong>0</strong> to <strong>9</strong>, and the hyphen (<strong>−</strong>). A hostname may not 
-start with a hyphen.</p>
+<p>Valid characters for hostnames are ASCII letters from <code>a</code> to <code>z</code>, the
+digits from <code>0</code> to <code>9</code>, and the hyphen (<code>−</code>). A hostname may not start
+with a hyphen.</p>
 </div>
 </li>
 <li>
-<p>Modify the <code>DNS domain name</code>  &ndash; second option.</p>
-<p><a class="glightbox" href="../change_dns_domain_name.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_domain_name" src="../change_dns_domain_name.png" /></a></p>
+<p>Modify the <code>DNS domain name</code> &ndash; the second option:</p>
+<p><a class="glightbox" href="../change_dns_domain_name.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enter the DNS domain name" src="../change_dns_domain_name.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The IP Fabric wizard can modify other configuration items like
+<p>The IP Fabric Boot Wizard can modify other configuration items like
 Network Interface configuration, NTP etc.</p>
-<p>To change only the <code>hostname</code> or <code>DNS domain name</code> leave
-everything as is until you reach the <code>"Do you want to reboot now?"</code> prompt
-screen.</p>
+<p>To change only the <code>hostname</code> or <code>DNS domain name</code>, leave everything as is
+until you reach the <code>Reboot system</code> prompt screen.</p>
 </div>
 </li>
 <li>
-<p>Select <code>Yes</code> to reboot the system.</p>
+<p>Select <code>Yes</code> to reboot the system:</p>
+<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reboot system" src="../reboot.png" /></a></p>
 </li>
 </ol>
-<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_hostname4" src="../reboot.png" /></a></p>
 
   
   

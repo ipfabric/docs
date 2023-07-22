@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information how to change network configuration of the IP Fabric machine using our Boot Wizard.">
+        <meta name="description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard.">
       
       
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Update Network Config - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information how to change network configuration of the IP Fabric machine using our Boot Wizard." />
+<meta property="og:description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_network.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_network/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Update Network Config - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information how to change network configuration of the IP Fabric machine using our Boot Wizard." />
+<meta property="twitter:description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_network.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -9049,14 +9049,15 @@ documentation.
 your IP Fabric VM from the CLI, please do the following:</p>
 <ol>
 <li>
-<p><code>ssh</code> to the IP Fabric appliance as the <code>osadmin</code> user</p>
+<p>Connect to the IP Fabric appliance via SSH as the <code>osadmin</code> user.</p>
 </li>
 <li>
-<p>Execute command <code>nimpee-net-config -n</code> to launch network configuration
-   wizard.</p>
+<p>Run the <code>sudo nimpee-net-config -n</code> command to launch the network
+   configuration wizard.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To keep current configuration for any item highlight <code>OK</code> and press enter.</p>
+<p>To keep the current configuration for any item, select <code>OK</code> and press
+<code>Enter</code>.</p>
 </div>
 </li>
 <li>
@@ -9064,12 +9065,12 @@ your IP Fabric VM from the CLI, please do the following:</p>
    docs at <a href="../change_hostname/">Update hostname or domain name</a>).</p>
 </li>
 <li>
-<p>Next select DHCP or Static IP Address Assignment. (Use the up/down arrow and 
-   space bar to change <code>()</code> to <code>(*)</code>)</p>
-<p><a class="glightbox" href="../change_ip_assignment.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_ip_assignment_" src="../change_ip_assignment.png" /></a></p>
+<p>Next, select DHCP or Static IP Address Assignment. (Use the up/down and
+   <code>Space</code> keys to change <code>()</code> to <code>(*)</code>.)</p>
+<p><a class="glightbox" href="../change_ip_assignment.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Use DHCP or Static IP Address" src="../change_ip_assignment.png" /></a></p>
 </li>
 <li>
-<p>If you selected Static IP Address Assignment then enter </p>
+<p>If you selected Static IP Address Assignment, then enter:</p>
 <ul>
 <li>IP Address</li>
 <li>Netmask</li>
@@ -9077,17 +9078,17 @@ your IP Fabric VM from the CLI, please do the following:</p>
 <li>Primary DNS</li>
 <li>Secondary DNS</li>
 </ul>
-<p><a class="glightbox" href="../change_static_ip.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_static_ip" src="../change_static_ip.png" /></a></p>
+<p><a class="glightbox" href="../change_static_ip.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Configure a static IP" src="../change_static_ip.png" /></a></p>
 </li>
 <li>
-<p>Update NTP servers using comma separated list.</p>
-<p><a class="glightbox" href="../change_ntp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="change_ntp" src="../change_ntp.png" /></a></p>
+<p>Update NTP servers using the comma-separated list:</p>
+<p><a class="glightbox" href="../change_ntp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NTP servers" src="../change_ntp.png" /></a></p>
 </li>
 <li>
-<p>Select <code>Yes</code> to reboot the system.</p>
+<p>Select <code>Yes</code> to reboot the system:</p>
+<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reboot system" src="../reboot.png" /></a></p>
 </li>
 </ol>
-<p><a class="glightbox" href="../reboot.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="reboot" src="../reboot.png" /></a></p>
 
   
   
