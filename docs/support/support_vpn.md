@@ -9,8 +9,7 @@ SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.
 
 !!! warning "Network requirements"
 
-    Support VPN requires access to
-    [remote.ipfabric.io](http://remote.ipfabric.io) remote port 443/TCP. IP
+    Support VPN requires access to `remote.ipfabric.io` remote port 443/TCP. IP
     Fabric image must be also configured with functional DNS server.
 
     Connection through proxy servers should work, but not guaranteed.

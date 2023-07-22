@@ -24,13 +24,21 @@ The network information displayed in IP Fabric corresponds to the network snapsh
 
 ![New snapshot](snapshots/new_snapshot.png)
 
-To work with snapshots, click the **Discovery Snapshot** menu entry (highlighted in yellow box). This will display all loaded and unloaded snapshots and allow you to create new snapshots or perform operations on existing snapshots.
+To work with snapshots, click the **Discovery Snapshot** menu entry (highlighted
+in yellow box). This will display all loaded and unloaded snapshots and allow
+you to create new snapshots or perform operations on existing snapshots.
 
-A new snapshot can be taken at any time by clicking the **+ New Snapshot** button (highlighted in red box). After pressing the green **Start discovery** button, the system will automatically start a new snapshot of the network with globally-set
-parameters in the **Settings** menu entry. If you need to make some changes to the discovery process (add a new network seed, change login credentials, etc.), you may do so in the global **Settings**
-or in the [snapshot-specific settings](#snapshot-specific-settings) (highlighted in blue box).
+A new snapshot can be taken at any time by clicking **+ New Snapshot**
+(highlighted in red box) and then **Start discovery** (green button). This will
+start a new snapshot of the network with globally-set parameters in the
+**Settings** menu entry. If you need to make some changes to the discovery
+process (add a new network seed, change login credentials, etc.), you may do so
+in the global **Settings** or in the
+[snapshot-specific settings](#snapshot-specific-settings) (highlighted in blue
+box).
 
-For creating automatic snapshots, follow the instructions at [Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
+For creating automatic snapshots, follow the instructions at
+[Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
 
 ## Snapshot-specific Settings
 

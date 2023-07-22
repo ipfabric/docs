@@ -15,7 +15,7 @@ Starting version `4.1.0`, IP Fabric supports Viptela API. Viptela devices are di
 2. Afterwards, choose `Viptela` from the list and fill in:
 
    - **Username and password** used to log in to vManage
-   - **Base URL** of vManage server ([https://vmanage-ip-address](https://vmanage-ip-address))
+   - **Base URL** of vManage server (`https://vmanage-ip-address`)
    - [**Slug**](index.md#slug-and-comment)
 
    ![viptela api add](viptela_api_add.png)

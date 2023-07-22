@@ -1,5 +1,5 @@
 ---
-description: This section contains information how to change network configuration of the IP Fabric machine using our Boot Wizard.
+description: This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard.
 ---
 
 # Update Network Config
@@ -7,24 +7,25 @@ description: This section contains information how to change network configurati
 To change the IP Address, Subnet, Gateway, NTP, DNS, or Proxy configuration of 
 your IP Fabric VM from the CLI, please do the following:
 
-1. `ssh` to the IP Fabric appliance as the `osadmin` user
+1. Connect to the IP Fabric appliance via SSH as the `osadmin` user.
 
-2. Execute command `nimpee-net-config -n` to launch network configuration
-   wizard.
+2. Run the `sudo nimpee-net-config -n` command to launch the network
+   configuration wizard.
 
   !!! note
 
-      To keep current configuration for any item highlight `OK` and press enter.
+      To keep the current configuration for any item, select `OK` and press
+      `Enter`.
 
 3. First options are to modify the `hostname` and `DNS domain name` (detailed 
    docs at [Update hostname or domain name](change_hostname.md)).
 
-4. Next select DHCP or Static IP Address Assignment. (Use the up/down arrow and 
-   space bar to change `()` to `(*)`)
+4. Next, select DHCP or Static IP Address Assignment. (Use the up/down and
+   `Space` keys to change `()` to `(*)`.)
 
-   ![change_ip_assignment_](change_ip_assignment.png)
+   ![Use DHCP or Static IP Address](change_ip_assignment.png)
 
-5. If you selected Static IP Address Assignment then enter 
+5. If you selected Static IP Address Assignment, then enter:
 
    - IP Address
    - Netmask
@@ -32,12 +33,12 @@ your IP Fabric VM from the CLI, please do the following:
    - Primary DNS
    - Secondary DNS
 
-  ![change_static_ip](change_static_ip.png)
+   ![Configure a static IP](change_static_ip.png)
 
-6. Update NTP servers using comma separated list.
+6. Update NTP servers using the comma-separated list:
 
-  ![change_ntp](change_ntp.png)
+   ![NTP servers](change_ntp.png)
 
-7. Select `Yes` to reboot the system.
+7. Select `Yes` to reboot the system:
 
-![reboot](reboot.png)
+   ![Reboot system](reboot.png)

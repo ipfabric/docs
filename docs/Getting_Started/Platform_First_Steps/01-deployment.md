@@ -158,9 +158,9 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
     ![VirtualBox - VM Settings - Display - Invalid settings detected](virtualbox_vm-settings_display-2.png)
 
-    - !!! warning
+  !!! warning
 
-          When an invalid Graphics Controller is selected, it can lead to issues in the virtual machine and even on the host machine.
+      When an invalid Graphics Controller is selected, it can lead to issues in the virtual machine and even on the host machine.
 
 7.  In the **Storage** section, select `virtio-scsi` as the Controller Type:
 

@@ -35,7 +35,7 @@ To enable the scheduled configuration management, go to **Settings --> Configura
 
     ![Configuration Management Setup](configuration_management_setup.png)
 
-Multiple values from the lists can be selected with `CTRL` or `SHIFT` keys.
+Multiple values from the lists can be selected while holding the `Ctrl` or `Shift` keys.
 
 ### Single device config collection
 
