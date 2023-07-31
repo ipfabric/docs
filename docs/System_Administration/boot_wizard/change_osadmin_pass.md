@@ -4,12 +4,12 @@ description: This section explains how to change the 'osadmin' password in the I
 
 # Update `osadmin` password
 
-1. Connect to your IP Fabric appliance via SSH as the `osadmin` user and run the
-   `sudo nimpee-net-config -t` command to launch the configuration wizard:
+1. Connect to your IP Fabric appliance via SSH as the `osadmin` user.
+
+2. Run the `sudo nimpee-net-config -t` command to launch the configuration
+   wizard and select `Yes` to proceed:
 
   ![Do you want to change osadmin user password?](osadmin_password_change2.png)
-
-2. Select `Yes` to proceed.
 
   !!! attention
 

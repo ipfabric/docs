@@ -6,7 +6,7 @@ description: The Techsupport file from the IP Fabric is one of many ways how you
 
 !!! info
 
-    The techsupport file from the IP Fabric is one of many ways how you can
+    The techsupport file from IP Fabric is one of many ways how you can
     share the discovered data with our support team and engineers. This
     quick tutorial demonstrates how to generate the file and share it with
     us. The techsupport file is encrypted. Only IP Fabric support staff is

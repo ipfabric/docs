@@ -51,4 +51,4 @@ curl -X POST "https://localhost/api/v<VERSION>/discovery/trigger-config-backup" 
 
 !!! tip
 
-    You can also execute this command on a remote machine with `curl` installed, just change the `localhost` address to the **FQDN** or **IP address** of your IP Fabric's machine.
+    You can also execute this command on a remote machine with `curl` installed, just change the `localhost` address to the **FQDN** or **IP address** of your IP Fabric appliance.

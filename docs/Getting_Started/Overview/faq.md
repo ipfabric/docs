@@ -32,7 +32,7 @@ Analytics of the network will give you the ability to compare past states of th
 
 A: IP Fabric must be deployed to a dedicated virtual machine. See [Operational Requirements](index.md#operational-requirements).
 
-**Q:** Is IP Fabric cloud-based or on-premises solution?
+**Q:** Is IP Fabric a cloud-based or on-premises solution?
 
 A: IP Fabric is **in most cases deployed as an on-premises solution**. It does not require any Internet connectivity to operate or verify the license or run discovery. Alternatively, it can be deployed in the cloud and discover networks via private tunnels.
 
