@@ -12,7 +12,7 @@ description: IP Fabric describes known affected issues for Checkpoint and how to
 
 ## ARP table contains only master `VSYS 0` entries
 
-** Known Affected Software Versions**: R80.30 and R80.40
+**Known Affected Software Versions**: R80.30 and R80.40
 
 **Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Checkpoint firewalls.
 

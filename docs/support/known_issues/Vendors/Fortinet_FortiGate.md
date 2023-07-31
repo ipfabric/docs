@@ -10,7 +10,9 @@ accounts**. It's very important, especially if you use **Virtual Domains**, sinc
 If you plan to use a user with full read/write permissions or even with super_admin profile assigned (which is not recommended, except a LAB testing), you can skip the rest of 
 this article.
 
-## Create an Admin Profile
+## User and Profile Creation
+
+### Create an Admin Profile
 
 First, you need to create an admin profile with read-only permissions.
 
@@ -32,7 +34,7 @@ Follow these steps:
 !!! Note
     FortiOS version 7.0 and higher - "permit usage of CLI diagnostic commands" have to be enabled.
 
-## Make The Created Admin Profile Global (VDOMs Only)
+### Make The Created Admin Profile Global (VDOMs Only)
 
 If you have Virtual Domains (VDOMs) enabled, you have to follow this procedure to make the created admin profile global. It means that administrators having 
 this profile will be able to work with all VDOMs. By default, only the default *prof_admin* profile is set as global.
@@ -51,7 +53,7 @@ end
 
 Change the name of the previously created profile in the 3rd line accordingly.
 
-## Create An Administrator Account
+### Create An Administrator Account
 
 1.  Navigate to **System --> Administrators** and click **+ Create New** and select **Administrator**
 2.  Fill in its name, select a type of authentication, and finally select the previously created Administrator profile. If you have VDOMs enabled, the Virtual Domains section below should disappear (if not, the selected profile is not global)
@@ -61,3 +63,14 @@ Change the name of the previously created profile in the 3rd line accordingly.
 	Ensure, that there is at least one interface with SSH or Telnet allowed, and this interface is accessible from IP Fabric VM. To do so, navigate to **Network --> Interfaces** and check the **Access** column.
 
 Now it's time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as `<hostname>/<VDOM_name>`.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.
+
+## Known Bugs
+
+### FortiGate 300D Interface Flap
+
+**Known Affected platforms**: 6.0.*
+
+**Description**: Running `get system interface transceiver` command on FortiGate 300D running version `6.0.*` can cause some interfaces to flap.
+This has been confirmed by Fortinet however no bug ID has been received. Transceiver task has been disabled for any device matching this vendor, model, and version.
+
+**Fix**: Upgrade to newer version of FortiGate.
