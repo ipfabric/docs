@@ -9259,7 +9259,10 @@ your browser to upload a generated techsupport for IP Fabric team.</p>
 <h3 id="curl"><code>curl</code></h3>
 <p>If your IP Fabric machine has direct internet access, you can upload techsupport
 directly from it using the following <code>curl</code> command:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--user<span class="w"> </span>username:password<span class="w"> </span>-f<span class="w"> </span>-T<span class="w"> </span><span class="s2">&quot;/home/autoboss/files/techsupport-xxx.tar&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://upload.eu.ipfabric.io/upload
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--user<span class="w"> </span>username:password<span class="w"> </span><span class="se">\</span>
+-T<span class="w"> </span><span class="s2">&quot;/home/autoboss/files/techsupport-xxx.tar&quot;</span><span class="w"> </span><span class="se">\</span>
+-X<span class="w"> </span>POST<span class="w"> </span>https://upload.eu.ipfabric.io/upload<span class="w"> </span><span class="se">\</span>
+-f
 </code></pre></div>
 <p>Generated techsupport files are located in <code>/home/autoboss/files/</code> folder. Username and password are provided by technical support.</p>
 <h2 id="what-is-included-in-the-techsupport-file">What Is Included In The Techsupport File?</h2>
