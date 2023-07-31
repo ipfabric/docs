@@ -124,16 +124,17 @@ You can create rules in the UI by selecting the **Add attribute** button. This w
 
 The API is the preferred method of creating rules as it allows for bulk importing. Via `PUT` method requested on endpoint `https://<IPF_URL>/api/<IPF_API_VERSION>/attributes/global`. An example of the payload can be seen below:
 
-!!!info
+!!! example
 
-```json
-{
-    "attributes": [
-        {"sn": "<DEVICE SERIAL NUMBER01>", "value": "<SITE NAME>", "name": "siteName"},
-        {"sn": "<DEVICE SERIAL NUMBER02>", "value": "<SITE NAME>", "name": "siteName"}
-    ]
-}
-```
+    ```json
+    {
+        "attributes": [
+            {"sn": "<DEVICE SERIAL NUMBER01>", "value": "<SITE NAME>", "name": "siteName"},
+            {"sn": "<DEVICE SERIAL NUMBER02>", "value": "<SITE NAME>", "name": "siteName"}
+        ]
+    }
+    ```
+
 !!! info
 
     It's important to use specifically the `siteName` attribute to define the Sites in the IP Fabric. You can define other attributes, but site-separation is solely based on `siteName`.

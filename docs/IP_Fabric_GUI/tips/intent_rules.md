@@ -20,10 +20,10 @@ Now we can check and change the predefined coloring rules:
 
 ![Intent Rule Detail](intent_rules/intent_rule_detail.png)
 
-Let's change the coloring from yellow to red for `Aggregated interfaces with
+Let's change the coloring from amber to red for `Aggregated interfaces with
 membership status '(S)', '(F)', or '(I)'.`:
 
-1. Remove rules from the yellow color. Click the **yellow color** and then the
+1. Remove rules from the amber color. Click the **amber color** and then the
    **Trash** icon next to each rule (the **Description** can be also removed):  
    ![Remove rules from color/state](intent_rules/remove_rules_from_color_state.png)
 2. Click the **red color**.
@@ -59,7 +59,7 @@ Aggregation (LAG)/Portchannel/Etherchannel Member status table**:
 6. Click the **blue color**.
 7. Create a rule "`Protocol` insensitive equal `lacp`".
    ![Create intent verification rule](intent_rules/create_intent_verification_rule.png)
-8. Click the **yellow color**.
+8. Click the **amber color**.
 9. Create a rule "`Protocol` equal `static`".
 10. Click **Create**.  
     ![Create intent verification rule - remaining steps](intent_rules/create_intent_verification_rule_2.png)

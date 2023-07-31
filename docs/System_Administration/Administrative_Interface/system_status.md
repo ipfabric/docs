@@ -10,7 +10,7 @@ Top system processes are also available.
 
 ![system status](system_status.png)
 
-Additionally, you can use the interface to **restart** specific system services or **reboot/shutdown** the whole virtual server.
+Additionally, you can use the interface to **restart** specific system services or **reboot/shutdown** the whole virtual machine.
 
 !!! info
 

@@ -17,4 +17,4 @@ IP Fabric has a lot predefined intent rules. In our particular case, port channe
 
 You can also filter colors by clicking them above in the **Intent Verfication Rules** box. When clicked, a small **eye** icon is displayed and items are filtered only to the selected color. Click again the same color to clear the filter.
 
-![Port-Channel Members State - yellow](port-channels/port-channel_members_state_yellow.png)
+![Port-Channel Members State - amber](port-channels/port-channel_members_state_amber.png)

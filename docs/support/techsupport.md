@@ -37,7 +37,10 @@ If your IP Fabric machine has direct internet access, you can upload techsupport
 directly from it using the following `curl` command:
 
 ```shell
-curl --user username:password -f -T "/home/autoboss/files/techsupport-xxx.tar" -X POST https://upload.eu.ipfabric.io/upload
+curl --user username:password \
+-T "/home/autoboss/files/techsupport-xxx.tar" \
+-X POST https://upload.eu.ipfabric.io/upload \
+-f
 ```
 
 Generated techsupport files are located in `/home/autoboss/files/` folder. Username and password are provided by technical support.

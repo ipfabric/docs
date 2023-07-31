@@ -45,7 +45,7 @@ instructions.
 
 ## First Time Boot Wizard
 
-The Boot Wizard needs to be completed during the IP Fabric virtual server
+The Boot Wizard needs to be completed during the IP Fabric virtual machine's
 initial deployment. The Boot Wizard introduces the configuration of basic
 network parameters, including time zone, NTP, IP address, DNS or Proxy settings.
 
