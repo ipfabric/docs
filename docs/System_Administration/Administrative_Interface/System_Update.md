@@ -13,7 +13,7 @@ The best practice is to save the virtual machine's state using your hypervisor o
 1. Navigate to **Support** (top right corner of the main user interface).
 2. Navigate to **System Administration** to access the administrative interface (e.g. `https://ipfabric-ip-address:8443`).
 3. Log in with the `osadmin` user and the password configured during the first boot.
-4. Backup the VM by following the instructions on the [Restore or Backup](../backup_and_restore) page.
+4. Backup the VM by following the instructions on the [Restore or Backup](backup_and_restore.md) page.
 
 !!! info "Backup Disk"
 

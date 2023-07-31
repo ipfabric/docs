@@ -27,7 +27,7 @@ time or after system changes
     3.  Check the "CLI output" file in the Action column of the
         Connectivity Report to see the full interaction log to help you
         troubleshoot the issue. Check [Fine-Tune SSH/TELNET
-        parameters](../finetune-ssh-telnet).
+        parameters](finetune-ssh-telnet.md).
 
 2.  Provide discovery seed address in **Settings --> Discovery & Snapshots -->
     Discovery Settings --> Discovery Seeds**.

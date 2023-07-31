@@ -186,7 +186,7 @@ debug them.
 ### Vendor Specific Troubleshooting
 
 You may notice that some devices of a certain vendor are not being discovered.
-Please read through the [Known Issues](../../../../releases) to ensure a bug has
+Please read through the [Known Issues](../../../releases/index.md) to ensure a bug has
 not been already raised or a fix suggested. For instance, some firewall vendors
 require elevated or `admin` profiles in order to pull all data.
 
