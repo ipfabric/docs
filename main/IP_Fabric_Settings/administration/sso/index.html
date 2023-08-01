@@ -10021,10 +10021,7 @@ which acts as a client to <code>dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
 <span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># IPF version `&lt;6.3.0` URL must contain `v&lt;Major&gt;.&lt;Minor&gt;`</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://demo.ipfabric.io/api/v5.0/auth/external/sso&quot;</span>
-<span class="w">      </span><span class="c1"># IPF version `&gt;=6.3.0` URL can be set to `v&lt;Major&gt;` only</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://demo.ipfabric.io/api/v6/auth/external/sso&quot;</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IP Fabric</span>
 <span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q</span>
 </code></pre></div>
@@ -10042,8 +10039,16 @@ which acts as a client to <code>dex</code>.</p>
 <li>Can only contain <code>a-z0-9_</code>. <strong>Do not use uppercase.</strong></li>
 </ul>
 </li>
-<li>Please be aware of the <code>API_VERSION</code> property which needs to be updated with
-  <strong>every major version IPF release</strong> (i.e. <code>v6</code> &rarr; <code>v7</code>).</li>
+<li>Please be aware of the <code>API_VERSION</code> property.<ul>
+<li>Needs to be updated with <strong>every IPF release</strong> (i.e. after IP Fabric is
+  upgraded to <code>v6.1</code>, leaving the URL at <code>v6.0</code> will no longer work).</li>
+<li>Unlike other API calls, this has to be set with <code>v{major}.{minor}</code> and
+  cannot use <code>v{major}</code> (i.e. <code>/api/v6/auth</code> will not work, it must be
+  <code>/api/v6.0/auth</code>).</li>
+<li>This will require manual changes when going from <code>v6.0</code> &rarr; <code>v6.1</code> &rarr;
+  <code>v6.2</code>.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>name</code> &ndash; Arbitrary name of the client.<ul>
@@ -10058,15 +10063,6 @@ which acts as a client to <code>dex</code>.</p>
 </ul>
 </li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">IP Fabric <code>&gt;=6.3.0</code> SSO redirectURI Fix</p>
-<p>In IP Fabric versions <code>&lt;6.3.0</code> users were required to change the
-<code>redirectURIs</code> after every upgrade. Starting in version <code>6.3.0</code> a fix has
-been added to ensure that this is only required after upgrading to a new
-major release version.</p>
-<p>It is recommended after upgrading to <code>6.3.0</code> to change the URI to only 
-include the major version: <code>https://&lt;FQDN&gt;/api/v6/auth/external/sso</code>.</p>
-</div>
 <h3 id="config-file-mapping">Config File Mapping</h3>
 <p>Here is a nice illustration of how the <code>/opt/nimpee/conf.d/api.json</code> values map
 to <code>/etc/ipf-dex.yaml</code>:</p>
