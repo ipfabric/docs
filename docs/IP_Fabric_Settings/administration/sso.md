@@ -374,10 +374,7 @@ which acts as a client to `dex`.
 staticClients:
   - id: ipfabric
     redirectURIs:
-      # IPF version `<6.3.0` URL must contain `v<Major>.<Minor>`
       - "https://demo.ipfabric.io/api/v5.0/auth/external/sso"
-      # IPF version `>=6.3.0` URL can be set to `v<Major>` only
-      - "https://demo.ipfabric.io/api/v6/auth/external/sso"
     name: IP Fabric
     secret: jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q
 ```
@@ -391,8 +388,14 @@ staticClients:
   - `API-DEX-PROVIDERS-NAME` is found in [`api.json`](#providers-configuration)
     for `name` under `providers`.
     - Can only contain `a-z0-9_`. **Do not use uppercase.**
-  - Please be aware of the `API_VERSION` property which needs to be updated with
-    **every major version IPF release** (i.e. `v6` --> `v7`).
+  - Please be aware of the `API_VERSION` property.
+    - Needs to be updated with **every IPF release** (i.e. after IP Fabric is
+      upgraded to `v6.1`, leaving the URL at `v6.0` will no longer work).
+    - Unlike other API calls, this has to be set with `v{major}.{minor}` and
+      cannot use `v{major}` (i.e. `/api/v6/auth` will not work, it must be
+      `/api/v6.0/auth`).
+    - This will require manual changes when going from `v6.0` --> `v6.1` -->
+      `v6.2`.
 - `name` -- Arbitrary name of the client.
   - This will be displayed in the
     [`Grant Access` screen](#skip-approval-screen).
@@ -400,16 +403,6 @@ staticClients:
   - Found in [`api.json`](#providers-configuration) for `clientSecret` under
     `providers`.
   - It is a shared secret between IP Fabric and Dex only.
-
-!!! important "IP Fabric `>=6.3.0` SSO redirectURI Fix"
-
-    In IP Fabric versions `<6.3.0` users were required to change the
-    `redirectURIs` after every upgrade. Starting in version `6.3.0` a fix has
-    been added to ensure that this is only required after upgrading to a new
-    major release version.
-
-    It is recommended after upgrading to `6.3.0` to change the URI to only 
-    include the major version: `https://<FQDN>/api/v6/auth/external/sso`.
 
 ### Config File Mapping
 
