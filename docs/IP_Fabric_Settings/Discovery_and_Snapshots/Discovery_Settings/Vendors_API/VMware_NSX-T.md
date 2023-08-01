@@ -67,3 +67,36 @@ can be done only on Tier-0 routers.
 
 - OSPF
 - BGP
+
+## API Rate Limiting
+
+According to the
+[NSX-T Data Center API Guide](https://vdc-download.vmware.com/vmwb-repository/dcr-public/d6de7a5e-636f-4677-8dbd-6f4ba91fa5e0/36b4881c-41cd-4c46-81d1-b2ca3a6c693b/api.html#mainFrame):
+
+> The NSX-T API service has three settings that control the rate of incoming API
+> requests:
+>
+> 1) A per-client rate limit, in requests per second. If a client makes more
+> requests than this limit in one second, the API server will refuse to service
+> the API request and will return an HTTP 429 Too Many Requests Error. By
+> default, this limit is 100 requests per second.
+>
+> 2) A per-client concurrency limit. This is the maximum number of outstanding
+> requests that a client can have. For example, a client can open multiple
+> connections to NSX-T and submit operations on each connection. When this limit
+> is exceeded, the server returns a 429 Too Many Requests error to the client.
+> By default, this limit is 40 concurrent requests.
+>
+> 3) An overall maximum number of concurrent requests. This is the maximum
+> number of API requests that can be in process on the server. If the server is
+> at this limit, additional requests will be refused and the HTTP error 503
+> Service Unavailable will be returned to the client. By default, this limit is
+> 199 concurrent requests.
+
+The default settings for API rate limiting in IP Fabric are based on 0.75 times
+the VMware values, which means 75 requests per second and 30 concurrent
+requests. If you need to modify these settings, please reach out to IP Fabric
+Support or Solution Architect team.
+
+We recommend using a dedicated NSX-T user for discovery in IP Fabric and running
+discovery at a time when no other automation is accessing the NSX-T controller.
