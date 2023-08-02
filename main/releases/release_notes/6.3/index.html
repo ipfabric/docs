@@ -6154,6 +6154,34 @@ documentation.
 </li>
       
         <li class="md-nav__item">
+  <a href="#v631-unreleased" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v6.3.1 (UNRELEASED)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v6.3.1 (UNRELEASED)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backward-incompatible-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward incompatible changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v630-july-31st-2023" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6166,7 +6194,7 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#backward-incompatible-changes" class="md-nav__link">
+  <a href="#backward-incompatible-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Backward incompatible changes
@@ -9442,6 +9470,34 @@ documentation.
 </li>
       
         <li class="md-nav__item">
+  <a href="#v631-unreleased" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v6.3.1 (UNRELEASED)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v6.3.1 (UNRELEASED)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backward-incompatible-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward incompatible changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v630-july-31st-2023" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9454,7 +9510,7 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#backward-incompatible-changes" class="md-nav__link">
+  <a href="#backward-incompatible-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Backward incompatible changes
@@ -9590,6 +9646,11 @@ following key combinations:</p>
 <p>For more information, please refer to the <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>. If you would like assistance please contact your Solution Architect.</p>
 </li>
 </ul>
+<h2 id="v631-unreleased">v6.3.1 (UNRELEASED)</h2>
+<h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
+<ul>
+<li>All version related HTTP errors have aligned with <a href="../../../IP_Fabric_API/#api-versioning">documentation</a>. Improperly set version in request will result in an error response with <code>410 Gone</code> HTTP code and current product and API versions in its response body.</li>
+</ul>
 <h2 id="v630-july-31st-2023">v6.3.0 (July 31<sup>st</sup>, 2023)</h2>
 <div class="highlight"><pre><span></span><code>SHA256<span class="w"> </span><span class="o">(</span>ipfabric-update-6-3-0+4.tar.gz.sig<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>a51ea5af4de03ce2765c92876e78b7c214391180dee8ad1bf3dfc719af6d7f5e
 MD5<span class="w"> </span><span class="o">(</span>ipfabric-update-6-3-0+4.tar.gz.sig<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>3c5b5ef71b91dd87d2005576ba80c9f2
@@ -9599,7 +9660,7 @@ SHA256<span class="w"> </span><span class="o">(</span>ipfabric-6-3-0+4.ova<span 
 MD5<span class="w"> </span><span class="o">(</span>ipfabric-6-3-0+4.ova<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ccac181a8c17a3f82cd14a0cdfa49b6f
 </code></pre></div>
 <p>For the list of delivered tickets, please consult the <a href="../../release_notes_low-level/6.x/6.3.x/6.3.0/">Low-Level Release Notes for 6.3.0</a>.</p>
-<h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
+<h3 id="backward-incompatible-changes_1">Backward incompatible changes</h3>
 <ul>
 <li>API Tokens and Webhook Secrets become auto-generated and non-editable by a user. They are available to view only once after creation, and the user won&rsquo;t be able to view or edit them any further. From now, both tokens and secrets will always be 32 characters long and generated randomly. If API Token or Webhook secret values are lost, they should be recreated.</li>
 <li>Column type of <code>selectorLocalAddress</code> and <code>selectorRemoteAddress</code> columns in IPsec tunnels table was changed to a string. We no longer allow <code>ip</code> filter operator with the given columns.</li>
