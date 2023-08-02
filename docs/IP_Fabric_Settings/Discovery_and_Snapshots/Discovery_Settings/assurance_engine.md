@@ -31,4 +31,4 @@ The **Assurance Engine** section allows you to disable the following features to
 
 For new snapshots, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Assurance Engine** and make desired changes.
 
-For existing snaphots, update the **Assurance Engine** settings in the snapshot settings.
+For existing snapshots, update the **Assurance Engine** settings in the snapshot settings.
