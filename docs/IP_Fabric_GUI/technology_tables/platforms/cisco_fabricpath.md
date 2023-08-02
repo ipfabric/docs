@@ -16,7 +16,7 @@ The **Summary** tab contains the summary of neighbors, switch IDs and routes.
 ## IS-IS Neighbors
 
 The **IS-IS neighbors** tab contains information about adjacency of devices that
-are contributing in Fabric Path.
+are contributing in FabricPath.
 
 ![IS-IS Neighbors table](fabricPathIsisNeighbors.png)
 
