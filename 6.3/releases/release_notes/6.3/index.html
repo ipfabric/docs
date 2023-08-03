@@ -9770,6 +9770,13 @@ If you need assistance please contact your Solution Architect.</p>
 <li>Affected version: 6.3.0</li>
 </ul>
 </li>
+<li>CSV exports blank file when Intent Filter is applied (any filter with a <code>color</code>)<ul>
+<li>Root cause: CSV export does not support exporting <code>reports</code> (intent) information with the data causing the filter returning no data.</li>
+<li>ID: <code>NIM-12011</code></li>
+<li>Workaround: Use IP Fabric API to download the filter data and convert to CSV</li>
+<li>Affected versions: 6.3.0</li>
+</ul>
+</li>
 <li>Routing table parsing and validation may restart discovery workers and stop discovery<ul>
 <li>Root cause: Parsing and validation of large BGP routing tables can stuck discovery workers for more than allowed 1 minute. Discovery workers may be disconnected from the discovery process and restarted. If too many restarts of discovery workers are performed, discovery process will stop.</li>
 <li>ID: <code>NIM-11490</code></li>
