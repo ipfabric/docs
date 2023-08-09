@@ -9891,6 +9891,30 @@ If you need assistance please contact your Solution Architect.</p>
 <li>Affected versions: 6.2.0 and later</li>
 </ul>
 </li>
+<li>Product stopped respecting system&rsquo;s OpenSSL CA store<ul>
+<li>Root cause: product build doesn&rsquo;t include a respective flag <code>use-openssl-ca</code> for runtime</li>
+<li>ID: <code>NIM-12047</code></li>
+<li>Workaround (shown on <code>nimpee-update</code>):<ul>
+<li>log in to your machine as <code>osadmin</code> user via SSH</li>
+<li>execute <code>sudo su -</code> and put in your password to get root privileges</li>
+<li>put int <code>systemctl edit nimpee-update</code> which should open a unit file for <code>nimpee-update</code> in editor</li>
+<li>add following line under <code>[Service]</code> settings, un-comment (remove <code>#</code> character) if needed
+  <div class="highlight"><pre><span></span><code>[Service]
+Environment=&quot;NODE_OPTIONS=--use-openssl-ca&quot;
+</code></pre></div></li>
+<li>restart nimpeeUpdate service using <code>systemctl restart nimpee-update</code></li>
+</ul>
+</li>
+<li>Affected versions: 6.3.0</li>
+</ul>
+</li>
+<li>Lowered maximum memory for discovery worker process (from 6GB to 4GB)<ul>
+<li>Root cause: product build doesn&rsquo;t include a respective flag <code>max-old-space-size</code> for runtime</li>
+<li>ID: <code>NIM-12047</code></li>
+<li>Workaround: no workaround</li>
+<li>Affected versions: 6.3.0</li>
+</ul>
+</li>
 </ul>
 
   
