@@ -8163,6 +8163,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../support/known_issues/IP_Fabric/data_not_received/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectivity Report &ndash; SSH client not received any data for last xx ms!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../support/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
         
   
@@ -8251,9 +8277,9 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_6_2_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_6_2_11" >
         
-          <label class="md-nav__link" for="__nav_8_6_2_10" id="__nav_8_6_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_6_2_11" id="__nav_8_6_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -8270,8 +8296,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_6_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_6_2_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_6_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_6_2_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9806,6 +9832,13 @@ Environment=&quot;NODE_OPTIONS=--use-openssl-ca&quot;
 <li>ID: <code>NIM-12047</code></li>
 <li>Workaround: no workaround</li>
 <li>Affected versions: 6.3.0</li>
+</ul>
+</li>
+<li>Tasker does not follow restart stop limit<ul>
+<li>ID <code>NIM-12058</code></li>
+<li>Root cause: Tasker service does not follow limit of 3 restarts: If during the hybrid Vendor API discovery (APIC, FTD, Checkpoint, etc.) <code>tasker</code> process encounters an issue, it is restarted and discovery is started anew. This can lead to infinite discovery and filling the system disk with logs.</li>
+<li>Workaround: no workaround</li>
+<li>Affected versions: 6.2.0</li>
 </ul>
 </li>
 </ul>
