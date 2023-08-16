@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric has a straightforward licensing concept. One license is used for every physical or virtual device in the network, with the exception of wirel...">
+        <meta name="description" content="On this page, we explain the IP Fabric licensing concept.">
       
       
       
@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21+insiders-4.38.1">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21+insiders-4.37.1">
     
     
       
@@ -73,7 +73,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Licensing - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric has a straightforward licensing concept. One license is used for every physical or virtual device in the network, with the exception of wirel..." />
+<meta property="og:description" content="On this page, we explain the IP Fabric licensing concept." />
 <meta property="og:image" content="https://docs.ipfabric.io/6.3/assets/images/social/Getting_Started/Overview/licensing.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/6.3/Getting_Started/Overview/licensing/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter.title" content="Licensing - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric has a straightforward licensing concept. One license is used for every physical or virtual device in the network, with the exception of wirel..." />
+<meta property="twitter:description" content="On this page, we explain the IP Fabric licensing concept." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/6.3/assets/images/social/Getting_Started/Overview/licensing.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
@@ -740,7 +740,7 @@
   <a href="#releases-43x" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Releases &lt;= 4.3.X
+        Releases &lt;= 4.3.x
       
     </span>
   </a>
@@ -749,6 +749,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expired-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expired License
+      
+    </span>
+  </a>
   
 </li>
       
@@ -7612,6 +7623,32 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release_notes_low-level/6.x/6.3.x/6.3.1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    LLRN 6.3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -9399,7 +9436,7 @@
   <a href="#releases-43x" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Releases &lt;= 4.3.X
+        Releases &lt;= 4.3.x
       
     </span>
   </a>
@@ -9408,6 +9445,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expired-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expired License
+      
+    </span>
+  </a>
   
 </li>
       
@@ -9442,23 +9490,35 @@
 <p>IP Fabric has a straightforward licensing concept. For every physical or virtual device in the network, with the exception of wireless access points, one license is used.</p>
 <p>For example:</p>
 <ul>
-<li>A router with multiple VRFs counts as only one device in the license count</li>
-<li>Each virtual instance on a firewall (VSYS, VDOM, etc.) counts as one license each. If you have one firewall with 80 virtual instances, it will count as 80 devices in the license count</li>
-<li>A stack of switches (StackWise, etc.) count as one device in the license, regardless of the number of switches in the stack</li>
-<li>For wireless access points, a single license is consumed by the centralized controller, regardless of the number of APs controlled by it</li>
-<li>For cloud infrastructure providers, every construct (VPC, gateway, etc.) counts as one license</li>
+<li>A router with multiple VRFs counts as only one device in the license count.</li>
+<li>Each virtual instance on a firewall (VSYS, VDOM, etc.) counts as one license each. If you have one firewall with 80 virtual instances, it will count as 80 devices in the license count.</li>
+<li>A stack of switches (StackWise, etc.) count as one device in the license, regardless of the number of switches in the stack.</li>
+<li>For wireless access points, a single license is consumed by the centralized controller, regardless of the number of APs controlled by it.</li>
+<li>For cloud infrastructure providers, every construct (VPC, gateway, etc.) counts as one license.</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If IP Fabric cannot detect the device type of a discovered device (due to missing information from the CLI or API calls), the device will be counted as unlicensed.</p>
+</div>
 <h2 id="changes">Changes</h2>
 <h3 id="release-440">Release 4.4.0</h3>
-<p>From <strong>4.4.0</strong> every device (virtual or physical) will consume one license. This now applies to devices where information is collected via CLI or API. The only exception is wireless access points, which don&rsquo;t consume any licenses.</p>
+<p>From version <code>4.4.0</code>, every device (virtual or physical) will consume one license. This now applies to devices where information is collected via CLI or API. The only exception is wireless access points, which don&rsquo;t consume any licenses.</p>
 <p>This change in licensing will affect the following vendors:</p>
 <ul>
 <li>SD-WAN &ndash; Versa, Viptela, Silver Peak</li>
 <li>Wireless access points &ndash; Meraki, Juniper MIST</li>
 <li>Cloud Infrastructure &ndash; AWS, Azure</li>
 </ul>
-<h3 id="releases-43x">Releases &lt;= 4.3.X</h3>
-<p>For any release <strong>4.3.X</strong> or older, every device (virtual or physical) with information collected via CLI will consume one license. Any devices with information collected via API would <em>not</em> consume a license. Examples of API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless (Meraki) and cloud infrastructure (AWS).</p>
+<h3 id="releases-43x">Releases &lt;= 4.3.x</h3>
+<p>For versions <code>4.3.x</code> or older, every device (virtual or physical) with information collected via CLI will consume one license. Any devices with information collected via API would <em>not</em> consume a license. Examples of API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless (Meraki) and cloud infrastructure (AWS).</p>
+<h2 id="expired-license">Expired License</h2>
+<p>When your license expires:</p>
+<ul>
+<li>You will not be able to log in to the IP Fabric main GUI.</li>
+<li>New snapshots will not be created, and automatic snapshots will stop.</li>
+<li>API calls may still work.</li>
+<li>Configuration management will run in the background.</li>
+</ul>
 
   
   
