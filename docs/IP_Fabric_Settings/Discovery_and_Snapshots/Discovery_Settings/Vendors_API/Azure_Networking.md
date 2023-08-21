@@ -18,7 +18,7 @@ infrastructure.
   - VPN Gateway (the same functionality as VNGw type VPN)
   - ExpressRoute Gateway (the same functionality as VNGw type ExpressRoute)
 
-We want to bring support for The plan is to add support of [Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) in one of next releases.
+The plan is to add support of the [Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) in one of the upcoming releases.
 
 ## Azure Setup
 
