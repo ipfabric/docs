@@ -8,7 +8,7 @@ Security notifications affecting the IP Fabric solution published according to o
 
 !!! info "Upgrade information"
 
-    Upgrade information can be found in the [System Update](../System_Administration/Administrative_Interface/System_Update.md) section.
+    Upgrade information can be found in the [System Update](../admin/Administrative_Interface/System_Update.md) section.
 
 ## NIM-9199: Privilege escalation via Admin portal
 
