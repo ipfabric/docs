@@ -83,7 +83,7 @@ It is also possible to run IP Fabric on any other virtualization platform using 
 
 During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.
 
-IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md#setting-up-jumphost) can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)
+IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md#setting-up-jumphost) can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)
 
 Inbound flows:
 

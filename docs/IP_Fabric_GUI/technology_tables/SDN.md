@@ -1,0 +1,61 @@
+---
+description: This section is about the SDN technology tables in the IP Fabric GUI.
+---
+
+# SDN
+
+## Cisco APIC
+
+The **APIC** section contains information about controllers, tenants, contexts, bridge domains, applications, endpoint groups, and contracts.
+
+Information about endpoints is not part of this section as it is present in the **ACI** table.
+
+For instructions how to collect APIC-related information, please check [Add Cisco APIC API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_APIC.md).
+
+### Controllers
+
+The **Controllers** tab contains list of all discovered controllers, their health and IP addresses.
+
+![Controllers table](SDN/cisco/apic/CiscoApicControllers.png)
+
+### Contexts
+
+The **Contexts** tab contains list of all contexts, to which tenant they belong to, their pcTag and scope, unenforced mode and count of bridge domains which belongs to them.
+
+By selecting a number in the `Bridge domains` column, you will be redirected to the **Bridge Domains** tab with a filter applied to show all bridge domains belonging to this context.
+
+![Contexts table](SDN/cisco/apic/CiscoApicContexts.png)
+
+### Bridge Domains
+
+The **Bridge Domains** tab contains list of all bridge domains, to which tenant and context they belong to, their pcTag scope, type and list of all their subnets.
+
+![Bridge Domains table](SDN/cisco/apic/CiscoApicBridgeDomains.png)
+
+### Applications
+
+The **Applications** tab contains list of all configured applications, to which tenant they belong to and number of their endpoint groups.
+
+By selecting a number in the `Endpoint groups` column, you will be redirected to the **Endpoint Groups** tab with a filter applied to show all endpoint groups belonging to this application.
+
+![Applications table](SDN/cisco/apic/CiscoApicApplications.png)
+
+### Endpoint Groups
+
+The **Endpoint Groups** tab contains list of all endpoint groups, tenant name and application they belong to. If they are members of Preferred group, how many contracts are associated with them and list of all their subnets.
+
+By selecting a number in the `Contracts` column, you will be redirected to the **Endpoint Groups - Contracts** tab with a filter applied to show this endpoint group.
+
+![Endpoint Groups table](SDN/cisco/apic/CiscoApicEndpointGroups.png)
+
+### Endpoint Groups - Contracts
+
+The **Endpoint Groups - Contracts** tab contains list of all contracts associated to endpoint group and if endpoint group is consumer or provider.
+
+![Endpoint Groups - Contracts table](SDN/cisco/apic/CiscoApicEpgContract.png)
+
+### Contracts
+
+The **Contracts** tab contains list of all contracts, to which tenant they belong to, their subject's name, match strategy, if they should reverse filters in the opposite direction and names of their filters.
+
+![Contracts table](SDN/cisco/apic/CiscoApicContracts.png)

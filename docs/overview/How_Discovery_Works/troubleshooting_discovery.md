@@ -141,7 +141,7 @@ Advanced CLI**
 
 ![Advanced CLI](troubleshooting/advanced_cli.png)
 
-See [Advanced CLI](../../settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli.md) for
+See [Advanced CLI](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli.md) for
 the explanation of these settings.
 
 ### Vendors API
@@ -151,7 +151,7 @@ Vendors API**
 
 ![Vendors API](troubleshooting/vendors_api.png)
 
-See [Vendors API](../../settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) as
+See [Vendors API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) as
 each vendor has different requirements.
 
 ### Device Credentials
@@ -173,7 +173,7 @@ of `0.0.0.0/0`.
     that you have `Use for configuration management` set on the proper usernames.
 
 Further information can be located
-at [Device Credentials](../../settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
+at [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
 ## Troubleshooting Missing Devices
 
@@ -296,7 +296,7 @@ traffic is being blocked by an ACL or firewall. This is why it is recommended
 having IP Fabric in your management subnet which is already allowed for remote
 access to devices, so you do not have to re-configure all your ACLs. Another
 option is to use a jumphost as described
-at [Jumphost](../../settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md).
+at [Jumphost](../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md).
 
 Another common error is due to authentication or authorization errors. Please
 ensure that the configured username has the correct permissions. There is also

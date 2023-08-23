@@ -12,8 +12,8 @@ The database got corrupted (no worries all of your data are safely
 stored) and is necessary to run maintenance.
 
 This can be done in **Settings --> System --> Backup & Maintenance** in the main GUI.
-For more information see [Schedule System Maintenance](../../../../settings/system/Backup_and_Maintenance/system_maintenance.md).
+For more information see [Schedule System Maintenance](../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 If this does not help, we recommend restarting ArangoDB process in
-System Administration (port `8443`) [System Status](../../../../admin/Administrative_Interface/system_status.md) and
+System Administration (port `8443`) [System Status](../../../../System_Administration/Administrative_Interface/system_status.md) and
 running maintenance -- see the previous step.

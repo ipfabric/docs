@@ -40,7 +40,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Assurance Engine**
 
-: this phase takes the database data from the model, applies business logic to create insight from the data and prepares enhanced topology views. A recent introduction to IPF is the option to optionally disable elements of this phase to speed the release of data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
+: this phase takes the database data from the model, applies business logic to create insight from the data and prepares enhanced topology views. A recent introduction to IPF is the option to optionally disable elements of this phase to speed the release of data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
 
   !!! note
 
@@ -56,7 +56,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
   !!! note
 
-      a seed is not necessary for snapshot discovery. If IP Fabric has successfully discovered a snapshot previously, it will use its discovery history to provide seeds for future discovery. If there is no discovery history and no other seeds are provided, IP Fabric will start at its default gateway.
+      a seed is not necessary for snapshot discovery. If IP Fabric has successfully discovered a snapshot previously, it will use its discovery history to provide seeds for future discovery. If there is no discovery history and no other seeds are provided, IP Fabric will start at its default gateway._
 
 **Crawl**
 

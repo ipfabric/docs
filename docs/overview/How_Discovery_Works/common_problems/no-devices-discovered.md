@@ -18,11 +18,11 @@ time or after system changes
         that cannot reach the device. The route may not be present or
         the traffic may be filtered. Check IP Fabric connectivity
         with [Troubleshooting VM network problems using IP Fabric
-        CLI](../../../admin/Command_Line_Interface/How_to/troubleshooting.md).
+        CLI](../../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md).
         
     2.  If the reason reports authentication failure, IP Fabric was not
         able to log in to the device. Check [Device
-        Credentials](../../../settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
+        Credentials](../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
         
     3.  Check the "CLI output" file in the Action column of the
         Connectivity Report to see the full interaction log to help you
@@ -37,7 +37,7 @@ time or after system changes
     an IP address or a network to start the discovery. It is
     recommended to provide IP address of a router as a starting
     point for discovery. Check [Discovery
-    Seeds](../../../settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds.md).
+    Seeds](../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds.md).
 
 3.  Test the connection manually using IP Fabric CLI.
 
@@ -45,7 +45,7 @@ time or after system changes
     device using SSH or TELNET using the credentials entered on the
     authentication page. Check IP Fabric connectivity
     with [Troubleshooting VM Network Problems Using IP Fabric
-    CLI](../../../admin/Command_Line_Interface/How_to/troubleshooting.md).
+    CLI](../../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md).
 
 4.  If no devices are discovered after checking the Connectivity Report
     and after entering the Seed addresses, contact support for

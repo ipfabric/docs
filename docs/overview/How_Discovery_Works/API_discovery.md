@@ -10,4 +10,4 @@ Please take into consideration connectivity requirements for the platform when p
 
 The API discovery is not automated and requires manually adding all necessary HTTP endpoints to initiate connection to in the **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**.
 
-Please visit the [Vendors API](../../settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) section of the documentation.
+Please visit the [Vendors API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) section of the documentation.
