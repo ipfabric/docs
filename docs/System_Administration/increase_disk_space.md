@@ -234,7 +234,7 @@ Suppose you prepared a backup disk with size of 20 GB with the instructions abov
 
 ## Deprecated Resize Wizard
 
-IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. `ipfabic-vg/root` for system and data, `backup-vg/backup` for `/backup`.
+IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. `ipfabric-vg/root` for system and data, `backup-vg/backup` for `/backup`.
 System and data volume was extended over two disks (usually first two). For additional drives, one could choose to extend _root_ or _backup_ volume. This option was discontinued in favor of one system/data disk with the possibility of adding a backup disk.
 The original script is still present in the system, but it is discouraged to use it as it expects only the boot disk to be `sda`, `sdb` as extended `ipfabic-vg/root`, and one could choose how `sd[c-z]` would be used. The new approach with one disk is more versatile and is not limited to `sd[a-z]` disks.
 

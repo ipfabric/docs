@@ -186,9 +186,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
 2. Create a storage account for IP Fabric
 
-   A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure.
-
-   For more information, see [Azure Resource Manager overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and [Creating Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1).
+   A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see [Azure Resource Manager overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and [Creating Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1).
 
    ![Create a Storage account](azure-imgs/azure-02-Create-storage-account.png)
 
@@ -198,25 +196,53 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
    ![Create a Storage blob container](azure-imgs/azure-03-storage-blob-container.png)
 
-4. Upload VHD image to storage account
+4. Convert qcow2 image to VHD
 
-   IP Fabric provides the QCOW image. For converting QCOW to VHD, you may for instance use a utility from [QEMU](https://www.qemu.org/download/). The recommended way to convert the image is then:
+   IP Fabric provides the qcow2 image. For converting qcow2 to VHD, you may for instance use a utility from [QEMU](https://www.qemu.org/download/). The recommended way to convert the image is then:
 
    ```
-   qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-5_0_1+6.qcow2 ipfabric-5_0_1+6.vhd
+   qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-6-3-1+1.qcow2 ipfabric-6-3-1+1.vhd
    ```
+
+  !!! important
+
+      Please use `qemu-img` version `2.6` or higher. According to the [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic#resizing-vhds):
+
+      > There is a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend using either qemu-img 2.2.0 or lower, or 2.6 or higher.
+      
+      You may check the `qemu-img` version that you are using with:
+      
+      ```
+      qemu-img --version
+      ```
+
+5. Upload VHD image to storage account
 
    To [upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure), one need to download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
    The image needs to be uploaded to the previously created Blob container.
 
    ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
 
-5. Create image from VHD
+  !!! important
+
+      For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:
+      
+      > The specified cookie value in VHD footer indicates that disk 'ipfabric-6-3-1+1.vhd' with blob https://.../vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
+
+6. Create image from VHD
 
    Creating a managed image in Azure is as simple as loading the necessary files. The [Create a legacy managed image of a generalized VM in Azure](https://learn.microsoft.com/en-gb/azure/virtual-machines/capture-image-resource) documentation section contains all the needed clues.
 
    ![Create an Image from VHD](azure-imgs/azure-05-create-image.png)
 
-6. Deploy VM from image
+7. Deploy VM from image
 
    Ensure that you follow the [resource requirements matrix](../overview/index.md#hardware-requirements) when sizing the virtual machine on Azure.
+
+  !!! important
+
+      Please note that the Azure serial console might be not accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md). In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:
+      
+      ```
+      sudo nimpee-net-config -a
+      ```
