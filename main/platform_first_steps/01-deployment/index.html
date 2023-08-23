@@ -9785,8 +9785,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </li>
 <li>
 <p>Create a storage account for IP Fabric</p>
-<p>A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure.</p>
-<p>For more information, see <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager overview</a> and <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1">Creating Storage Account</a>.</p>
+<p>A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager overview</a> and <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1">Creating Storage Account</a>.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-02-Create-storage-account.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage account" src="../azure-imgs/azure-02-Create-storage-account.png" /></a></p>
 </li>
 <li>
@@ -9795,13 +9794,33 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <p><a class="glightbox" href="../azure-imgs/azure-03-storage-blob-container.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage blob container" src="../azure-imgs/azure-03-storage-blob-container.png" /></a></p>
 </li>
 <li>
-<p>Upload VHD image to storage account</p>
-<p>IP Fabric provides the QCOW image. For converting QCOW to VHD, you may for instance use a utility from <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image is then:</p>
-<div class="highlight"><pre><span></span><code>qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-5_0_1+6.qcow2 ipfabric-5_0_1+6.vhd
+<p>Convert qcow2 image to VHD</p>
+<p>IP Fabric provides the qcow2 image. For converting qcow2 to VHD, you may for instance use a utility from <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image is then:</p>
+<div class="highlight"><pre><span></span><code>qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-6-3-1+1.qcow2 ipfabric-6-3-1+1.vhd
 </code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please use <code>qemu-img</code> version <code>2.6</code> or higher. According to the <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic#resizing-vhds">Azure documentation</a>:</p>
+<blockquote>
+<p>There is a known bug in qemu-img versions &gt;=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend using either qemu-img 2.2.0 or lower, or 2.6 or higher.</p>
+</blockquote>
+<p>You may check the <code>qemu-img</code> version that you are using with:</p>
+<div class="highlight"><pre><span></span><code>qemu-img --version
+</code></pre></div>
+</div>
+</li>
+<li>
+<p>Upload VHD image to storage account</p>
 <p>To <a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">upload the VHD image</a>, one need to download and install the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.
  The image needs to be uploaded to the previously created Blob container.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:</p>
+<blockquote>
+<p>The specified cookie value in VHD footer indicates that disk &lsquo;ipfabric-6-3-1+1.vhd&rsquo; with blob https://&hellip;/vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value &lsquo;conectix&rsquo;.</p>
+</blockquote>
+</div>
 </li>
 <li>
 <p>Create image from VHD</p>
@@ -9811,6 +9830,12 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <li>
 <p>Deploy VM from image</p>
 <p>Ensure that you follow the <a href="../../overview/#hardware-requirements">resource requirements matrix</a> when sizing the virtual machine on Azure.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please note that the Azure serial console might be not accessible for setting the <code>osadmin</code> password in the <a href="../02-boot_wizard/">First Boot Wizard</a>. In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory <code>osadmin</code> password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:</p>
+<div class="highlight"><pre><span></span><code>sudo nimpee-net-config -a
+</code></pre></div>
+</div>
 </li>
 </ol>
 

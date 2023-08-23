@@ -9961,7 +9961,7 @@ Filesystem<span class="w">                     </span>Size<span class="w">  </sp
 </li>
 </ol>
 <h2 id="deprecated-resize-wizard">Deprecated Resize Wizard</h2>
-<p>IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. <code>ipfabic-vg/root</code> for system and data, <code>backup-vg/backup</code> for <code>/backup</code>.
+<p>IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. <code>ipfabric-vg/root</code> for system and data, <code>backup-vg/backup</code> for <code>/backup</code>.
 System and data volume was extended over two disks (usually first two). For additional drives, one could choose to extend <em>root</em> or <em>backup</em> volume. This option was discontinued in favor of one system/data disk with the possibility of adding a backup disk.
 The original script is still present in the system, but it is discouraged to use it as it expects only the boot disk to be <code>sda</code>, <code>sdb</code> as extended <code>ipfabic-vg/root</code>, and one could choose how <code>sd[c-z]</code> would be used. The new approach with one disk is more versatile and is not limited to <code>sd[a-z]</code> disks.</p>
 <div class="admonition error">
