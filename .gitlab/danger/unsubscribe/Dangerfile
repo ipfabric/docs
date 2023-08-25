@@ -1,0 +1,8 @@
+# rubocop:disable Style/SignalException
+
+# This, slight hackish, code is to unsubscribe from a merge request.
+# We do it to lower the amount of notifications we get from GitLab
+# via email.
+
+client = gitlab.instance_variable_get(:@gitlab).instance_variable_get(:@client)
+client.unsubscribe_from_merge_request(gitlab.mr_json['project_id'], gitlab.mr_json['iid'])
