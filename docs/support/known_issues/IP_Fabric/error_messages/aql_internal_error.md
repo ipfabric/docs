@@ -15,5 +15,5 @@ This can be done in **Settings --> System --> Backup & Maintenance** in the mai
 For more information see [Schedule System Maintenance](../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 If this does not help, we recommend restarting ArangoDB process in
-System Administration (port `8443`) [System Status](../../../../System_Administration/Administrative_Interface/system_status.md) and
+System Administration (port `8443`) [System Status](../../../../System_Administration/System_Administration_UI/system_status.md) and
 running maintenance -- see the previous step.
