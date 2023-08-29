@@ -47,7 +47,7 @@ header text or a table icon.
 Filters will change what is displayed in the table, the exported CSV data, and
 the API documentation found in the [Table Description](#table-description).
 
-####  Simple Filtering
+#### Simple Filtering
 
 ![Table filter](navigate_in_tables/table_filter.png)
 
@@ -77,6 +77,26 @@ interface `Et7/2` as well as devices with hostname `L43SD73` AND interface
 `Et13/0`. In other words: "Show me all devices with hostname `L47AC8` which have
 interface `Et7/2`, plus all devices with hostname `L43SD73` with interface
 `Et13/0`.
+
+### Using The Standard Metric Notation On Filtering
+
+Trying to filter the values in the number columns using `Simple Filtering` or in the `Advanced Filters`, you can type not only numbers to filter, but some measure prefixes (like `10 k`, `15M`, etc.):
+
+![Clear filter](navigate_in_tables/table_number_simple_filter.png)
+
+or
+
+![Clear filter](navigate_in_tables/table_number_advanced_filter.png)
+
+You can find the table with available prefixes below:
+
+| **Symbol** | **Name** | **Base 10** | **Decimal**      |
+| ---------- | -------- | ----------- | ---------------- |
+| `P`        | `peta`   | 10^15^      | 1000000000000000 |
+| `T`        | `tera`   | 10^12^      | 1000000000000    |
+| `G`        | `giga`   | 10^9^       | 1000000000       |
+| `M`        | `mega`   | 10^6^       | 1000000          |
+| `k`        | `kilo`   | 10^3^       | 1000             |
 
 ### Share Table View
 
