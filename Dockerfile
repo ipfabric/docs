@@ -15,6 +15,7 @@ RUN \
   apk upgrade --update-cache -a \
   && \
   apk add --no-cache \
+  bash \
   cairo \
   curl \
   freetype-dev \

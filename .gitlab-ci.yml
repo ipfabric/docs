@@ -1,5 +1,5 @@
 variables:
-  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i .ssh/gitlab-ci"
+  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i \"${CI_PROJECT_DIR}/.ssh/gitlab-ci\""
   GIT_STRATEGY: clone
   VALE_RELEASE: "https://github.com/errata-ai/vale/releases/download/v2.15.5/vale_2.15.5_Linux_64-bit.tar.gz"
 
@@ -15,9 +15,9 @@ build_main_pages:
     - main
   before_script:
     - git config --global user.email "devops+gl_ci_bot@ipfabric.io"
-    - git config --global user.name "ci_bot"
+    - git config --global user.name "docs_ci_bot"
     - mkdir -pvm 0700 .ssh
-    - echo "$ssh_deploy_key" > .ssh/gitlab-ci
+    - echo "$ssh_deploy_key" > "$CI_PROJECT_DIR/.ssh/gitlab-ci"
     - chmod 0400 .ssh/gitlab-ci
     - git remote set-url origin "$(echo "$CI_REPOSITORY_URL" | sed -E 's#.*@([^/]+?(\:\d+)?)/#git@\1:#')"
   script:
@@ -26,22 +26,35 @@ build_main_pages:
     - mike deploy --config-file mkdocs_insiders.yml --push main
 
 strict_build_mr:
-  stage: test
+  stage: build
   only:
     - merge_requests
+  before_script:
+    - env
+    - pwd
+    - git config --global user.email "devops+gl_ci_bot@ipfabric.io"
+    - git config --global user.name "docs_ci_bot"
+    - mkdir -pvm 0700 .ssh
+    - echo "$ssh_deploy_key" > "$CI_PROJECT_DIR/.ssh/gitlab-ci"
+    - chmod 0400 .ssh/gitlab-ci
   script:
     - export DOC_TARGET=`mktemp -d`
     - mkdocs build -d "$DOC_TARGET" --strict --config-file mkdocs_insiders.yml
     - rm -rf "$DOC_TARGET"
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - temp_multirepo/
 
 vale_mr:
   stage: test
   only:
     - merge_requests
   script:
+    - ls -al
     - curl --fail -L -o /tmp/vale.tar.gz "$VALE_RELEASE"
     - tar -C /tmp -zxvf /tmp/vale.tar.gz
-    - 'find docs -name "*.md" \! -regex ".*/release_notes_low-level/.*" | xargs /tmp/vale'
+    - 'find docs temp_multirepo -name "*.md" \! -regex ".*/release_notes_low-level/.*" | xargs /tmp/vale'
 
 seo_lint_mr:
   stage: test
@@ -51,7 +64,7 @@ seo_lint_mr:
     - ./.gitlab/description_lint
 
 danger:
-  stage: test
+  stage: build
   image: ruby:3.0
   only:
     - merge_requests

@@ -12,7 +12,7 @@ fi
 
 fail=false
 
-for i in $(find "$PROJECT_ROOT/docs/" -name "*.md"); do
+for i in $(find "$PROJECT_ROOT/docs/" "$PROJECT_ROOT/temp_multirepo" -name "*.md"); do
   if ! head -2 "$i" | tail -1 | grep -q '^description:'; then
     file_wo_project_root=$(echo "$i" | sed -es"#^$PROJECT_ROOT/##")
     if ! echo "$file_wo_project_root" | grep -q -f "$EXCEPTIONS"; then

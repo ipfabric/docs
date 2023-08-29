@@ -45,8 +45,8 @@ documentation happens as follows:
 
 Take a look at e.g.
 
-- https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft
-- https://grafana.com/docs/writers-toolkit/writing-guide/markdown-guide/
+- <https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft>
+- <https://grafana.com/docs/writers-toolkit/writing-guide/markdown-guide/>
 
 ### CI/CD
 
@@ -84,6 +84,42 @@ similar in other documentation builders (except Sphinx). You can read more at
 [MkDocs documentation on file
 layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
+Instead, we have opted for `awesome-pages` plugin, which allows for a
+combination of manual navigation entries as well as automated (based on
+filename). Check `.pages.yml` file in the directories.
+
+### Including documentation from other repositories
+
+You can include content from other repositories. This is especially useful
+for integrations. We have opted for [`mkdocs-multirepo-plugin`](https://github.com/jdoiro3/mkdocs-multirepo-plugin).
+
+Basic configuration looks like
+
+```yaml
+plugins:
+  - multirepo:
+      cleanup: false
+      temp_dir: temp_multirepo
+      repos:
+        - section: 'pokus'
+          section_path: 'integrations'
+          import_url: 'https://gitea.bobek.cc/bobek/pokus_docs.git?branch=main'
+        - section: 'monorepo'
+          section_path: 'integrations'
+          import_url: 'git@gitlab.com:ip-fabric/development/product/ipfabric-product.git?branch=main&docs_dir=doc/*'
+```
+
+This will bring two repositories under `integrations/` path and name them as
+`pokus` and `monorepo`. First one is a public repository, second one is a
+private one. For private, you need to add `docs_ci_bot` deploy key to your
+repository (read-only access).
+
+It also demonstrates use of `docs_dir` to pick a custom directory from
+within the repository.
+
+`temp_multirepo` is a temporary directory used for cloning the repositories.
+It contains pulled pages in a correct structure. It's also used for linters.
+
 ### Writing your documents
 
 Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
@@ -104,9 +140,9 @@ and
 
 ### GitHub mirror and public sources
 
-Our documentation is open to public at https://docs.ipfabric.io . We went one
+Our documentation is open to public at <https://docs.ipfabric.io> . We went one
 step further and also made the source code for the documentation open at
-https://github.com/ipfabric/docs . This allows customers to not only closely
+<https://github.com/ipfabric/docs> . This allows customers to not only closely
 follow updates, but also to provide improvements. Every page also has an
 `Edit this page` button to simplify this process.
 
@@ -295,10 +331,10 @@ means that the `541d97e0d` was deployed to version `5.0` on the website.
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!
 
-### Updating low-level release notes (LLRN) from Jira
+### Updating low-level release notes (LLRN) from JIRA
 
-There is a script `jira_release_notes.py` which will refresh all low-level
-release notes from Jira. There are certain shortcuts, like hard-coded
+Script `jira_release_notes.py` will refresh all low-level
+release notes from JIRA. There are certain shortcuts, like hard-coded
 configuration values. Also check your release filtering in there to limit which
 releases are actually refreshed.
 
@@ -306,5 +342,5 @@ To use this script, you need to export two environment variables:
 
 - `JIRA_USER` -- your username (e.g. `pavel.bykov@ipfabric.io`)
 - `JIRA_PASS` -- a token you can get from the
-  [Jira API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
+  [JIRA API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
