@@ -20,6 +20,10 @@ plugins:
   - multirepo:
       cleanup: false
       temp_dir: temp_multirepo
+      repos:
+        - section: 'splunk'
+          section_path: 'integrations'
+          import_url: 'https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric.git?branch=main'
   - mike:
       version_selector: true
       css_dir: css
