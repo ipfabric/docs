@@ -56,6 +56,12 @@ The **Endpoint Groups - Contracts** tab contains list of all contracts associate
 
 ### Contracts
 
-The **Contracts** tab contains list of all contracts, to which tenant they belong to, their subject's name, match strategy, if they should reverse filters in the opposite direction and names of their filters.
+The **Contracts** tab contains list of all contracts, to which tenant they belong to, their subject's name, match strategy, if they should reverse filters in the opposite direction and names of their filters. There is also information about applied Service Graph.
 
 ![Contracts table](SDN/cisco/apic/CiscoApicContracts.png)
+
+### Service Graphs
+
+The **Service Graphs** tab contains list of all Service Graphs templates including their type, list of nodes and devices.
+
+![Service Graphs table](SDN/cisco/apic/CiscoApicServiceGraphs.png)
