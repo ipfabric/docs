@@ -9677,49 +9677,49 @@ documentation.
 
 
 <h1 id="ip-fabric-glossary">IP Fabric Glossary</h1>
-<p><em>An explanation of terms used in the IP Fabric documentation and product interface</em></p>
+<p><em>An explanation of terms used in the IP Fabric documentation and product interface.</em></p>
 <h2 id="behavior">Behavior</h2>
 <dl>
 <dt><strong>Snapshot</strong></dt>
 <dd>
-<p>the data stored on an IPF appliance that represents the inventory, configuration, state and topology of a group of network devices within a given time window. Can be:</p>
+<p>The data stored on an IPF appliance that represents the inventory, configuration, state and topology of a group of network devices within a given time window. It can be:</p>
 <p>- <strong>Scheduled</strong> or <strong>ad hoc</strong> &ndash; settings in the IPF UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.</p>
 <p>- <strong>Full</strong> or <strong>partial</strong> &ndash; the snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a <strong>full</strong> snapshot. If a <strong>partial</strong> snapshot is required, only containing certain devices &ndash; perhaps to validate a change outcome &ndash; it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.</p>
 <p>- <strong>Refreshed</strong> &ndash; if the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config and state data from that device by selecting it/them and refreshing the snapshot.</p>
 </dd>
 <dt><strong>Model</strong></dt>
 <dd>
-<p>Can refer to:</p>
+<p>Model can refer to:</p>
 <p>- (n) the database representation of network object inventory, configuration, state and topology that is contained within an IP Fabric snapshot</p>
 <p>- (v) the actions involved in the second phase of Snapshot Creation</p>
 </dd>
 <dt><strong>Snapshot Creation</strong></dt>
 <dd>
-<p>IP Fabric&rsquo;s uniquely accurate process of discovering and documenting the network behavior. It has three phases</p>
+<p>IP Fabric&rsquo;s uniquely accurate process of discovering and documenting the network behavior. It has three phases: Discovery, Modelling, and Assurance Engine.</p>
 </dd>
 <dt><strong>Discovery</strong></dt>
 <dd>
-<p>the process of crawling out through the network &ndash; device by device or using APIs to gather from a controller &ndash; collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of device then assemble data ready for use in the second stage;</p>
+<p>The process of crawling out through the network &ndash; device by device or using APIs to gather from a controller &ndash; collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of device then assemble data ready for use in the second stage.</p>
 </dd>
 <dt><strong>Modelling</strong></dt>
 <dd>
-<p>the mechanism of processing the device data from the Discovery phase to insert it into the database model, and to uncover and document groupings, classifications and relationships between devices.</p>
+<p>The mechanism of processing the device data from the Discovery phase to insert it into the database model, and to uncover and document groupings, classifications and relationships between devices.</p>
 </dd>
 <dt><strong>Assurance Engine</strong></dt>
 <dd>
-<p>this phase takes the database data from the model, applies business logic to create insight from the data and prepares enhanced topology views. A recent introduction to IPF is the option to optionally disable elements of this phase to speed the release of data to the API. Settings to enable and disable Assurance Engine processes are described in <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/">the Assurance Engine documentation section</a>.</p>
+<p>Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently IPF introduced an option to disable elements of this phase in order to speed up release of the data to the API. Settings to enable and disable Assurance Engine processes are described in <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/">the Assurance Engine documentation section</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>disabling these options will affect the UI display of data in IP Fabric &ndash; diagrams, path lookups, changes between snapshots and/or intent rules may not be displayed as a result._</p>
+<p>Disabling these options will affect the UI display of data in IP Fabric &ndash; diagrams, path lookups, changes between snapshots and/or intent rules may not be displayed as a result.</p>
 </div>
 </dd>
 <dt><strong>Device Authentication</strong></dt>
 <dd>
-<p>the only mandatory configuration setting that IP Fabric needs to begin discovery. The user configures IP Fabric to use one or more sets of credentials, and it will then use them in turn to attempt to log in to devices it discovers, recording the username it successfully uses in its discovery history.</p>
+<p>The only mandatory configuration setting that IP Fabric needs to begin discovery. The user configures IP Fabric to use one or more sets of credentials, and it will then use them in turn to attempt to log in to devices it discovers, recording the username it successfully uses in its discovery history.</p>
 </dd>
 <dt><strong>Seed</strong></dt>
 <dd>
-<p>the IP address of a device to be used as a starting point for the discovery process. It may be necessary to have more than one seed to fully discover a segmented network.</p>
+<p>IP address of a device to be used as a starting point for the discovery process. It may be necessary to have more than one seed to fully discover a segmented network.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>a seed is not necessary for snapshot discovery. If IP Fabric has successfully discovered a snapshot previously, it will use its discovery history to provide seeds for future discovery. If there is no discovery history and no other seeds are provided, IP Fabric will start at its default gateway._</p>
@@ -9727,52 +9727,52 @@ documentation.
 </dd>
 <dt><strong>Crawl</strong></dt>
 <dd>
-<p>this is the process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.</p>
+<p>The process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.</p>
 </dd>
 <dt><strong>OUI</strong></dt>
 <dd>
-<p>the fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the <code>Organizationally Unique Identifier</code> and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.</p>
+<p>The fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the <code>Organizationally Unique Identifier</code> and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.</p>
 </dd>
 <dt><strong>Excluded subnets</strong></dt>
 <dd>
-<p>the network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet it will not be accessed, but highlighted in the platform as an &ldquo;unmanaged device&rdquo;.</p>
+<p>The network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet it will not be accessed, but highlighted in the platform as an &ldquo;unmanaged device&rdquo;.</p>
 </dd>
 <dt><strong>Included subnets</strong></dt>
 <dd>
-<p>the network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound discovery.</p>
+<p>The network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound discovery.</p>
 </dd>
 <dt><strong>Scan</strong></dt>
 <dd>
-<p>this is a &ldquo;brute force&rdquo; process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery but it is extremely inefficient, often resulting in triggering security alerts in a customer&rsquo;s network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.</p>
+<p>This is a &ldquo;brute force&rdquo; process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery but it is extremely inefficient, often resulting in triggering security alerts in a customer&rsquo;s network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.</p>
 </dd>
 <dt><strong>Jumphosts</strong></dt>
 <dd>
-<p>when a group of network devices are not directly accessible from the IP Fabric appliance, the snapshot creation process can use one or more SSH jumphosts to access a range of subnets using SSH tunneling.</p>
+<p>When a group of network devices are not directly accessible from the IP Fabric appliance, the snapshot creation process can use one or more SSH jumphosts to access a range of subnets using SSH tunneling.</p>
 </dd>
 <dt><strong>Attributes</strong></dt>
 <dd>
-<p>these are additional pieces of custom context data that users can associate with their network devices. They will be used to group and filter data in the platform and provide ways of enhancing existing UI capability with data from outside of the platform. They can be classed as:</p>
+<p>Additional pieces of custom context data that users can associate with their network devices. They will be used to group and filter data in the platform and provide ways of enhancing existing UI capability with data from outside of the platform. They can be classed as:</p>
 <p>- <strong>Global</strong> &ndash; A settings table for attributes to be deployed to snapshots as they are created.</p>
 <p>- <strong>Local</strong> &ndash; A localized table in each snapshot that contains the attributes mapped to each device in that snapshot when that snapshot was created or last updated.</p>
 </dd>
 <dt><strong>Site Separation</strong></dt>
 <dd>
-<p>is a special use case for IP Fabric attributes. It is possible to create rules to assign devices with a <code>siteName</code> attribute (based for example on a regex search of the <code>hostname</code>). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.</p>
+<p>This is a special use case for IP Fabric attributes &ndash; it is possible to create rules to assign devices with a <code>siteName</code> attribute (based for example on a regex search of <code>hostname</code>). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.</p>
 </dd>
 </dl>
 <h2 id="user-interface">User Interface</h2>
 <dl>
 <dt><strong>Inventory</strong> and <strong>Technology Tables</strong></dt>
 <dd>
-<p>the area of the product UI that presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.</p>
+<p>The area of the product UI that presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.</p>
 </dd>
 <dt><strong>Intent Rules</strong> (aka Intent Verification Rules, Intent Checks)</dt>
 <dd>
-<p>user-configurable rules to provide a measure of compliance for values in the database with customer&rsquo;s intent. For example &ndash; NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. Displayed above the related table in the UI.</p>
+<p>User-configurable rules to provide a measure of compliance for values in the database with customer&rsquo;s intent. For example &ndash; NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. Displayed above the related table in the UI.</p>
 </dd>
 <dt><strong>Dashboard</strong></dt>
 <dd>
-<p>user-configurable reporting view of the collection of intent rules &ndash; includes the RAG representation, radar graphs, bar charts or graphs representing change over time.</p>
+<p>User-configurable reporting view of the collection of intent rules &ndash; includes the RAG representation, radar graphs, bar charts or graphs representing change over time.</p>
 </dd>
 <dt><strong>Device Explorer</strong></dt>
 <dd>
@@ -9788,7 +9788,7 @@ documentation.
 </dd>
 <dt><strong>Management Tables</strong></dt>
 <dd>
-<p>are used to present three areas of the product:</p>
+<p>Management tables present three areas of the product:</p>
 <p>- Device <strong>configuration</strong> collection and diffs between them</p>
 <p>- <strong>Changes</strong> &ndash; allowing the user to compare inventory, managed IP addresses and connectivity matrix between snapshots</p>
 <p>- <strong>Discovery History</strong> &ndash; information about devices that have been previously discovered in earlier snapshots</p>
