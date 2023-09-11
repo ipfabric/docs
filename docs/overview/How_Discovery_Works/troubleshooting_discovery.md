@@ -309,7 +309,7 @@ and the CLI output of the device is usually helpful as well.
 
 If you need further assistance, please feel free to reach out to your IP Fabric Solution
 Architect or open a ticket following
-the [Technical Support](../../support/techsupport.md) instructions.
+the [Technical Support](../../support/index.md) instructions.
 
 Finally, another option for testing devices is to log in to the IP Fabric CLI
 using the `osadmin` account and manually trying SSH'ing into your devices,
