@@ -9970,17 +9970,17 @@ documentation.
 <ul>
 <li>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</li>
 <li>
-<p>On the page, click the <strong>+ Add</strong> button:</p>
-<p><a class="glightbox" href="1384480773.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jump host settings" src="1384480773.png" /></a></p>
+<p>On the page, click <strong>+ Add</strong>:</p>
+<p><a class="glightbox" href="add_button.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add button" src="add_button.png" /></a></p>
 </li>
 </ul>
 <ul>
 <li>
-<p>Fill in all necessary data</p>
-<p><a class="glightbox" href="1384480780.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add Jumphost" src="1384480780.png" /></a></p>
+<p>Fill in all necessary data:</p>
+<p><a class="glightbox" href="add_jumphost_form.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add Jumphost form" src="add_jumphost_form.png" /></a></p>
 <ul>
 <li><strong>Label</strong> - the name for configuration (mandatory)</li>
-<li><strong>Jump host Address</strong> - IP address of FQDN name (mandatory)</li>
+<li><strong>Jumphost Address</strong> - IP address of FQDN name (mandatory)</li>
 <li>
 <p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
 <div class="admonition warning">
@@ -10008,12 +10008,12 @@ documentation.
 </li>
 </ul>
 <ul>
-<li>Click the <strong>Add</strong> button to save the configuration.</li>
+<li>Click the green <strong>Add</strong> button to save the configuration.</li>
 </ul>
 <ul>
 <li>
-<p>If a connection is open, you will see the <strong><em>Running</em></strong> status in the Jumphost list</p>
-<p><a class="glightbox" href="1384513560.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jumphost list" src="1384513560.png" /></a></p>
+<p>If the connection is open, you will see <code>Yes</code> in the <code>Status</code> column in the <code>Jumphost settings</code> table:</p>
+<p><a class="glightbox" href="jumphost_settings_table.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings table" src="jumphost_settings_table.png" /></a></p>
 </li>
 </ul>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
@@ -10024,18 +10024,18 @@ documentation.
 <h4 id="copy-ssh-key-manually">Copy SSH Key Manually</h4>
 <ol>
 <li>
-<p>Download the SSH key from Jumphost settings</p>
-<p><a class="glightbox" href="1384153110.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download SSH key" src="1384153110.png" /></a></p>
+<p>Download the SSH key from Jumphost settings:</p>
+<p><a class="glightbox" href="download_public_key_button.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Download public key button" src="download_public_key_button.png" /></a></p>
 </li>
 <li>
-<p>Save <code>jumphost-public-key.pub</code></p>
+<p>Save <code>jumphost-public-key.pub</code>.</p>
 </li>
 <li>
 <p>Insert content of the <code>jumphost-public-key.pub</code> file to the <code>authorized_keys</code> file of the user that will authenticate with Jumphost server. Please follow official documentation at <a href="https://www.ssh.com/academy/ssh/authorized-key">https://www.ssh.com/academy/ssh/authorized-key</a>.</p>
 <p>You can also use <code>ssh-copy-id</code> on your machine to deploy the key (see below).</p>
 </li>
 <li>
-<p>After the key is transferred to the jumphost server, you can use the option <em><code>Use SSH keys</code></em> instead of <em><code>Use credentials</code></em></p>
+<p>After the key is transferred to the jumphost server, you can use the <code>Use SSH keys</code> option instead of <code>Use credentials</code>.</p>
 </li>
 </ol>
 <h4 id="use-ssh-copy-id">Use <code>ssh-copy-id</code></h4>
@@ -10055,35 +10055,35 @@ documentation.
 </ol>
 </li>
 <li>
-<p>To test, ssh to the jumphost server with: <code>ssh &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
+<p>To test, connect to the jumphost server via SSH with: <code>ssh &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
 </li>
 <li>
-<p>If the key has been copied you can use the option <em><code>Use SSH keys</code></em>
-   instead of <em><code>Use credentials</code></em></p>
+<p>If the key has been copied you can use the <code>Use SSH keys</code> option instead of
+   <code>Use credentials</code>.</p>
 </li>
 </ol>
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
 <ol>
 <li>
 <p>Edit configuration that needs to be disabled, i.e.:</p>
-<p><a class="glightbox" href="1384972305.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings" src="1384972305.png" /></a></p>
+<p><a class="glightbox" href="edit_icon.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Edit icon" src="edit_icon.png" /></a></p>
 </li>
 <li>
-<p>Change the setting to <strong>Disabled</strong>,</p>
+<p>Change the setting to <code>Disabled</code>.</p>
 </li>
 <li>
-<p>Click the <strong>Update</strong> button</p>
-<p><a class="glightbox" href="1384906766.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Disable jumphost" src="1384906766.png" /></a></p>
+<p>Click <strong>Update</strong>.</p>
+<p><a class="glightbox" href="disable_jumphost.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Disable jumphost" src="disable_jumphost.png" /></a></p>
 </li>
 </ol>
 <h3 id="remove-jumphost-configuration">Remove Jumphost Configuration</h3>
 <ol>
 <li>
-<p>On the Jumphost servers list, select the server you want to remove</p>
+<p>In the <code>Jumphost settings</code> table, select the server you want to remove.</p>
 </li>
 <li>
-<p>Click <strong>Delete</strong> button</p>
-<p><a class="glightbox" href="1384939529.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Delete jumphost" src="1384939529.png" /></a></p>
+<p>Click <strong>Delete</strong>.</p>
+<p><a class="glightbox" href="delete_jumphost.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Delete jumphost" src="delete_jumphost.png" /></a></p>
 </li>
 <li>
 <p>(If SSH key authentication was enabled) Delete inserted IP Fabric public key from the <code>authorized_keys</code> file on the jumphost server added in the <a href="#ssh-key-configuration">SSH Key Configuration</a>.</p>
@@ -10102,15 +10102,15 @@ documentation.
 <p>Log in to the <strong>virtual machine CLI</strong> with the <code>osadmin</code> account.</p>
 </li>
 <li>
-<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID.</p>
+<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID:</p>
 <p><a class="glightbox" href="systemctl_jumphost.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="systemctl_jumphost" src="systemctl_jumphost.png" /></a></p>
 </li>
 <li>
-<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password</p>
+<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password:</p>
 <p><a class="glightbox" href="systemctl_stop_jumphost.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="systemctl_stop_jumphost" src="systemctl_stop_jumphost.png" /></a></p>
 </li>
 <li>
-<p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command</p>
+<p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command:</p>
 <p><a class="glightbox" href="systemctl_status_jumphost.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="systemctl_status_jumphost" src="systemctl_status_jumphost.png" /></a></p>
 </li>
 <li>
@@ -10124,7 +10124,7 @@ documentation.
 <p><a class="glightbox" href="jumphost_delete_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="jumphost_delete_settings" src="jumphost_delete_settings.png" /></a></p>
 </li>
 <li>
-<p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>.</p>
+<p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>:</p>
 <p><a class="glightbox" href="jumphost_exclude.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="jumphost_exclude" src="jumphost_exclude.png" /></a></p>
 </li>
 </ol>
