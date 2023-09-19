@@ -99,7 +99,7 @@ or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Devic
 
 ### Device Attributes
 
-![Device Attributes](site_separation/2888663043.png)
+![Device Attributes table](site_separation/device_attributes_table.png)
 
 - Serial Number is IP Fabric’s "Unique Serial Number" (API column `sn`); this is not the column "Serial Number" which represents the Hardware SN (API column `snHw`). Devices discovered via API can also be assigned using Device Attributes.
 - **Hostname** is populated by IP Fabric when a device matching the **Serial Number** is found

@@ -41,16 +41,16 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 ### Adding New Jumphost
 
 - Go to **Settings --> Discovery & Snapshots --> Global Configuration --> Jumphost**.
-- On the page, click the **+ Add** button:
+- On the page, click **+ Add**:
 
-  ![Jump host settings](jumphost/1384480773.png)
+  ![Add button](jumphost/add_button.png)
 
-- Fill in all necessary data
+- Fill in all necessary data:
 
-  ![Add Jumphost](jumphost/1384480780.png)
+  ![Add Jumphost form](jumphost/add_jumphost_form.png)
 
   - **Label** - the name for configuration (mandatory)
-  - **Jump host Address** - IP address of FQDN name (mandatory)
+  - **Jumphost Address** - IP address of FQDN name (mandatory)
   - **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
 
     !!! warning
@@ -69,11 +69,11 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
     --8<-- "snippets/username_password_regex.md"
 
-- Click the **Add** button to save the configuration.
+- Click the green **Add** button to save the configuration.
 
-- If a connection is open, you will see the **_Running_** status in the Jumphost list
+- If the connection is open, you will see `Yes` in the `Status` column in the `Jumphost settings` table:
 
-  ![Jumphost list](jumphost/1384513560.png)
+  ![Jumphost settings table](jumphost/jumphost_settings_table.png)
 
 ### SSH Key Configuration
 
@@ -83,17 +83,17 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 #### Copy SSH Key Manually
 
-1. Download the SSH key from Jumphost settings
+1. Download the SSH key from Jumphost settings:
 
-   ![Download SSH key](jumphost/1384153110.png)
+   ![Download public key button](jumphost/download_public_key_button.png)
 
-2. Save `jumphost-public-key.pub`
+2. Save `jumphost-public-key.pub`.
 
 3. Insert content of the `jumphost-public-key.pub` file to the `authorized_keys` file of the user that will authenticate with Jumphost server. Please follow official documentation at <https://www.ssh.com/academy/ssh/authorized-key>.
 
    You can also use `ssh-copy-id` on your machine to deploy the key (see below).
 
-4. After the key is transferred to the jumphost server, you can use the option _`Use SSH keys`_ instead of _`Use credentials`_
+4. After the key is transferred to the jumphost server, you can use the `Use SSH keys` option instead of `Use credentials`.
 
 #### Use `ssh-copy-id`
 
@@ -107,30 +107,30 @@ We successfully tested IP Fabric against jumphosts with the following python ver
    1. `ssh-copy-id -i ~/.ssh/ipf-jumphost.pub <jumphost-user>@<jumphost-ip>`
    2. When prompted for a password, use the jumphost user's password.
 
-4. To test, ssh to the jumphost server with: `ssh <jumphost-user>@<jumphost-ip>`
+4. To test, connect to the jumphost server via SSH with: `ssh <jumphost-user>@<jumphost-ip>`
 
-5. If the key has been copied you can use the option _`Use SSH keys`_
-   instead of _`Use credentials`_
+5. If the key has been copied you can use the `Use SSH keys` option instead of
+   `Use credentials`.
 
 ### Disabling Jumphost Connection
 
 1. Edit configuration that needs to be disabled, i.e.:
 
-   ![Jumphost settings](jumphost/1384972305.png)
+   ![Edit icon](jumphost/edit_icon.png)
 
-2. Change the setting to **Disabled**,
+2. Change the setting to `Disabled`.
 
-3. Click the **Update** button
+3. Click **Update**.
 
-   ![Disable jumphost](jumphost/1384906766.png)
+   ![Disable jumphost](jumphost/disable_jumphost.png)
 
 ### Remove Jumphost Configuration
 
-1. On the Jumphost servers list, select the server you want to remove
+1. In the `Jumphost settings` table, select the server you want to remove.
 
-2. Click **Delete** button
+2. Click **Delete**.
 
-   ![Delete jumphost](jumphost/1384939529.png)
+   ![Delete jumphost](jumphost/delete_jumphost.png)
 
 3. (If SSH key authentication was enabled) Delete inserted IP Fabric public key from the `authorized_keys` file on the jumphost server added in the [SSH Key Configuration](#ssh-key-configuration).
 
@@ -152,15 +152,15 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
 1. Log in to the **virtual machine CLI** with the `osadmin` account.
 
-2. Filter out the **jumphost** services with `systemctl | grep jumphost` command. Each configured jumphost has its own ID.
+2. Filter out the **jumphost** services with `systemctl | grep jumphost` command. Each configured jumphost has its own ID:
 
    ![systemctl_jumphost](jumphost/systemctl_jumphost.png)
 
-3. **Stop the jumphost service** with the command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password
+3. **Stop the jumphost service** with the command `sudo systemctl stop jumphost@xxxx.service`, confirm the `osadmin` password:
 
    ![systemctl_stop_jumphost](jumphost/systemctl_stop_jumphost.png)
 
-4. Check that the **jumphost process is inactive** with `systemctl status jumphost@xxxx.service` command
+4. Check that the **jumphost process is inactive** with `systemctl status jumphost@xxxx.service` command:
 
    ![systemctl_status_jumphost](jumphost/systemctl_status_jumphost.png)
 
@@ -172,7 +172,7 @@ To fix this issue, you have to have a **direct access** to the **virtual machine
 
    ![jumphost_delete_settings](jumphost/jumphost_delete_settings.png)
 
-8. Put **IP address/subnet of the IP Fabric** machine to the **exclude IPv4 subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP address of IP Fabric**.
+8. Put **IP address/subnet of the IP Fabric** machine to the **exclude IPv4 subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP address of IP Fabric**:
 
    ![jumphost_exclude](jumphost/jumphost_exclude.png)
 
