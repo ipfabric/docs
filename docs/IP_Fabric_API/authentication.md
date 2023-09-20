@@ -175,7 +175,7 @@ accomplished via the CLI settings.
 
 1. Log in to IP Fabric CLI as `osadmin`
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create new file `/opt/nimpee/conf.d/api.json` with the below JSON. In this
+3. Create new file `/opt/nimpee/conf.d/api.json` or extend existing one with the below JSON. In this
    example the `accessToken` expires in 10 minutes and `refreshToken` expires in
    15 minutes:
 
@@ -189,6 +189,27 @@ accomplished via the CLI settings.
          "expiresIn": 900,
          "length": 80
        }
+     }
+   }
+   ```
+
+4. Change file permissions `chmod 644 /opt/nimpee/conf.d/api.json`
+5. Restart API `systemctl restart nimpee-api.service`
+
+### Disabling local authentication
+
+In case you don't want to use local authentication (username/password) and log in only via SSO or LDAP, you can disable it via the CLI settings (both token and basic authentication will be disabled). Please note that [API Tokens](../IP_Fabric_Settings/integration/api_tokens.md) will still work.
+
+--8<-- "snippets/cli_root_access.md"
+
+1. Log in to IP Fabric CLI as `osadmin`
+2. Elevate to root using `sudo -s` and `osadmin` password.
+3. Create new file `/opt/nimpee/conf.d/api.json` or extend existing one with the below JSON:
+
+   ```json
+   {
+     "app": {
+       "enableLocalAuthentication": false
      }
    }
    ```
