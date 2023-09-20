@@ -1487,6 +1487,17 @@ documentation.
 </li>
         
           <li class="md-nav__item">
+  <a href="#disabling-local-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling local authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#token-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9812,6 +9823,17 @@ documentation.
 </li>
         
           <li class="md-nav__item">
+  <a href="#disabling-local-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling local authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#token-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10005,7 +10027,7 @@ accomplished via the CLI settings.</p>
 <li>Log in to IP Fabric CLI as <code>osadmin</code></li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
-<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> with the below JSON. In this
+<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> or extend existing one with the below JSON. In this
    example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in
    15 minutes:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -10017,6 +10039,29 @@ accomplished via the CLI settings.</p>
 <span class="w">      </span><span class="nt">&quot;expiresIn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
 <span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
+</li>
+<li>Restart API <code>systemctl restart nimpee-api.service</code></li>
+</ol>
+<h3 id="disabling-local-authentication">Disabling local authentication</h3>
+<p>In case you don&rsquo;t want to use local authentication (username/password) and log in only via SSO or LDAP, you can disable it via the CLI settings (both token and basic authentication will be disabled). Please note that <a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> will still work.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
+</div>
+<ol>
+<li>Log in to IP Fabric CLI as <code>osadmin</code></li>
+<li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
+<li>
+<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> or extend existing one with the below JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enableLocalAuthentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
