@@ -3,7 +3,9 @@ variables:
   GIT_STRATEGY: clone
   VALE_RELEASE: "https://github.com/errata-ai/vale/releases/download/v2.15.5/vale_2.15.5_Linux_64-bit.tar.gz"
 
-image: registry.gitlab.com/ip-fabric/documentation/docs
+image: 
+  name: registry.gitlab.com/ip-fabric/documentation/docs
+  pull_policy: always
 
 default:
   tags:
