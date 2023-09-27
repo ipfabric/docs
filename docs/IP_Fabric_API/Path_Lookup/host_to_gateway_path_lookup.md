@@ -16,7 +16,7 @@ description: This section gives your the list of the Request Parameters for the 
 
   - `vrf` *\[optional\]* - A quoted string of the VRF (Not supplying this will default to _auto-detect_)
 
-!!! example Example minimal request body
+!!! example "Example minimal request body"
 
     ``` js
     {

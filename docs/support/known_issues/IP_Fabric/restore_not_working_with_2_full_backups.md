@@ -26,7 +26,7 @@ To restore the newer full backup (in this example, `20230418T090633Z`), it is ne
 Before restoring the backup, please ensure that the backup directory contains only files of one full backup and its related incremental backups. You can sort the files from oldest to newest with this command:
 
 ```
-ls -latr <path_to_backup_directory>
+ls -lahtr <path_to_backup_directory>
 ```
 
 By default, two full backups are kept in the backup directory. A possible hot fix is to keep only one full backup (and its incremental backups) by changing the following line in `/opt/nimpee/conf.d/backup/duplicity-backup.conf` script (as a root):

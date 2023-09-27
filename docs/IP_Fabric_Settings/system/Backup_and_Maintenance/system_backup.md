@@ -100,3 +100,76 @@ To set up remote backup, do the following steps:
 
     Since version `4.1.1`, we do not check the validity of SSL certificates
     during FTP backups.
+
+## Full vs Incremental Backups
+
+The first backup is a full backup. Additional backups are incremental backups.
+Incremental backup 1 depends on the full backup, incremental backup 2 depends on
+incremental backup 1 and the full backup etc.
+
+By default, a new full backup is created after 14 days since the previous full
+backup. You may change this behavior by changing `--full-if-older-than 14D` in
+the following line in `/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for
+example with `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
+
+```
+STATIC_OPTIONS="--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-certificate"
+```
+
+- possible time values: `s` (seconds), `m` (minutes), `h` (hours), `D` (days),
+  `W` (weeks), `M` (months), `Y` (years)
+
+By default, only 2 full backups are kept in the backup directory. You may change
+this behavior by amending the value in the following line in
+`/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example with
+`sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
+
+```
+CLEAN_UP_VARIABLE="2"
+```
+
+!!! tip
+
+    Due to
+    [Restore is not working when 2 full backups are present](../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
+    you may consider setting `CLEAN_UP_VARIABLE="1"` (i.e. keeping only 1 full
+    backup and its increments).
+
+    Please note that this has a downside -- when a new full backup is created,
+    all previous backup files will be removed from the backup directory.
+
+If unsure, please contact IP Fabric Support for assistance.
+
+!!! example "Examples"
+
+    First full backup's files (depending on the backup's size, you may have
+    `vol1`, `vol2` ... `volX` instead of just `vol1`):
+
+    ```shell
+    -rw-r--r-- 1 root root  54M Sep 27 11:14 ipfabric-94c370c9-duplicity-full.20230927T111440Z.vol1.difftar.gpg
+    -rw-r--r-- 1 root root 3.3M Sep 27 11:14 ipfabric-94c370c9-duplicity-full-signatures.20230927T111440Z.sigtar.gpg
+    -rw-r--r-- 1 root root  62K Sep 27 11:14 ipfabric-94c370c9-duplicity-full.20230927T111440Z.manifest.gpg
+    ```
+
+    First incremental backup's files (they refer to/depend on the full backup):
+
+    ```shell
+    -rw-r--r-- 1 root root  28M Sep 27 11:17 ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.vol1.difftar.gpg
+    -rw-r--r-- 1 root root 1.6M Sep 27 11:17 ipfabric-94c370c9-duplicity-new-signatures.20230927T111440Z.to.20230927T111735Z.sigtar.gpg
+    -rw-r--r-- 1 root root  11K Sep 27 11:17 ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.manifest.gpg
+    ```
+
+    Second incremental backup's files (they refer to/depend on the first
+    incremental backup and also depend on the full backup):
+
+    ```shell
+    -rw-r--r-- 1 root root  28M Sep 27 11:20 ipfabric-94c370c9-duplicity-inc.20230927T111735Z.to.20230927T112005Z.vol1.difftar.gpg
+    -rw-r--r-- 1 root root 1.6M Sep 27 11:20 ipfabric-94c370c9-duplicity-new-signatures.20230927T111735Z.to.20230927T112005Z.sigtar.gpg
+    -rw-r--r-- 1 root root  11K Sep 27 11:20 ipfabric-94c370c9-duplicity-inc.20230927T111735Z.to.20230927T112005Z.manifest.gpg
+    ```
+
+    The recommended command for sorting all backup files from oldest to newest:
+
+    ```shell
+    ls -lahtr <path_to_backup_directory>
+    ```

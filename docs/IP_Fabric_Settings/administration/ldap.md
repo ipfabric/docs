@@ -168,7 +168,7 @@ Before contacting our support, please make sure that information entered into IP
 
 You can use `ldapsearch` command-line utility to independently query LDAP servers. `ldapsearch` is present in the IP Fabric appliance (access it via ssh) or it can be installed locally as part of `ldap-utils` Linux package. It is recommended to **always test LDAP configuration from the IP Fabric appliance** to rule connectivity issues out.
 
-!!! warning ""
+!!! warning
 
     The following example doesn’t verify SSL certificate if LDAPS is used.
 

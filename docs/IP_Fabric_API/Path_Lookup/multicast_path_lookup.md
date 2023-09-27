@@ -43,7 +43,7 @@ description: This section gives your the list of the Request Parameters for the 
       - `type` _\[mandatory\]_ - An integer representing the ICMP type
       - `code` _\[mandatory\]_ - An integer representing the ICMP code
 
-!!! example Example minimal request body
+!!! example "Example minimal request body"
 
     ``` jscript
     {

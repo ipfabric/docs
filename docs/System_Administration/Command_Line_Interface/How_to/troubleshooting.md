@@ -121,7 +121,7 @@ With `nslookup` one can achieve similar results.
 
 IP Fabric CLI provides access to standard Unix tools for network testing, such as `ping`, `traceroute`, `telnet`, `ssh`, `netstat` etc.
 
-!!! warning ICMP
+!!! warning "ICMP"
 
     Please bear in mind that ICMP packets used by `ping` and `traceroute` can be blocked by other devices in the network. It does not mean that a device cannot be reached using SSH or Telnet.
 

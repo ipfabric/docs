@@ -32,7 +32,7 @@ What if you wanted a snapshot for a smaller scope of your network. For this, you
 
 Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`) and not taking into account the Vendor API (Checkpoint, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,
 
-!!! info The value from your settings will be used
+!!! info "The value from your settings will be used"
 
 ```js
 {
