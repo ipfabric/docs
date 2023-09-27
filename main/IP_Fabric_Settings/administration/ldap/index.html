@@ -10051,6 +10051,7 @@ assign them permissions.</p>
 <h3 id="using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> to verify LDAP configuration</h3>
 <p>You can use <code>ldapsearch</code> command-line utility to independently query LDAP servers. <code>ldapsearch</code> is present in the IP Fabric appliance (access it via ssh) or it can be installed locally as part of <code>ldap-utils</code> Linux package. It is recommended to <strong>always test LDAP configuration from the IP Fabric appliance</strong> to rule connectivity issues out.</p>
 <div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>The following example doesn’t verify SSL certificate if LDAPS is used.</p>
 </div>
 <div class="highlight"><span class="filename">Basic bind as search DN</span><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span><span class="se">\</span>

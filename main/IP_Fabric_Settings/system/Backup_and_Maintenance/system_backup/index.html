@@ -5182,6 +5182,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#full-vs-incremental-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full vs Incremental Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -9727,6 +9738,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#full-vs-incremental-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full vs Incremental Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -9905,6 +9927,59 @@ permissions.</p>
 <p class="admonition-title">Note</p>
 <p>Since version <code>4.1.1</code>, we do not check the validity of SSL certificates
 during FTP backups.</p>
+</div>
+<h2 id="full-vs-incremental-backups">Full vs Incremental Backups</h2>
+<p>The first backup is a full backup. Additional backups are incremental backups.
+Incremental backup 1 depends on the full backup, incremental backup 2 depends on
+incremental backup 1 and the full backup etc.</p>
+<p>By default, a new full backup is created after 14 days since the previous full
+backup. You may change this behavior by changing <code>--full-if-older-than 14D</code> in
+the following line in <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> (for
+example with <code>sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf</code>):</p>
+<div class="highlight"><pre><span></span><code>STATIC_OPTIONS=&quot;--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-certificate&quot;
+</code></pre></div>
+<ul>
+<li>possible time values: <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>D</code> (days),
+  <code>W</code> (weeks), <code>M</code> (months), <code>Y</code> (years)</li>
+</ul>
+<p>By default, only 2 full backups are kept in the backup directory. You may change
+this behavior by amending the value in the following line in
+<code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> (for example with
+<code>sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf</code>):</p>
+<div class="highlight"><pre><span></span><code>CLEAN_UP_VARIABLE=&quot;2&quot;
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Due to
+<a href="../../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups/">Restore is not working when 2 full backups are present</a>,
+you may consider setting <code>CLEAN_UP_VARIABLE="1"</code> (i.e. keeping only 1 full
+backup and its increments).</p>
+<p>Please note that this has a downside &ndash; when a new full backup is created,
+all previous backup files will be removed from the backup directory.</p>
+</div>
+<p>If unsure, please contact IP Fabric Support for assistance.</p>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<p>First full backup&rsquo;s files (depending on the backup&rsquo;s size, you may have
+<code>vol1</code>, <code>vol2</code> &hellip; <code>volX</code> instead of just <code>vol1</code>):</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:14<span class="w"> </span>ipfabric-94c370c9-duplicity-full.20230927T111440Z.vol1.difftar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">3</span>.3M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:14<span class="w"> </span>ipfabric-94c370c9-duplicity-full-signatures.20230927T111440Z.sigtar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>62K<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:14<span class="w"> </span>ipfabric-94c370c9-duplicity-full.20230927T111440Z.manifest.gpg
+</code></pre></div>
+<p>First incremental backup&rsquo;s files (they refer to/depend on the full backup):</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>28M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:17<span class="w"> </span>ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.vol1.difftar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1</span>.6M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:17<span class="w"> </span>ipfabric-94c370c9-duplicity-new-signatures.20230927T111440Z.to.20230927T111735Z.sigtar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>11K<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:17<span class="w"> </span>ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.manifest.gpg
+</code></pre></div>
+<p>Second incremental backup&rsquo;s files (they refer to/depend on the first
+incremental backup and also depend on the full backup):</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>28M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:20<span class="w"> </span>ipfabric-94c370c9-duplicity-inc.20230927T111735Z.to.20230927T112005Z.vol1.difftar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">1</span>.6M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:20<span class="w"> </span>ipfabric-94c370c9-duplicity-new-signatures.20230927T111735Z.to.20230927T112005Z.sigtar.gpg
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>11K<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:20<span class="w"> </span>ipfabric-94c370c9-duplicity-inc.20230927T111735Z.to.20230927T112005Z.manifest.gpg
+</code></pre></div>
+<p>The recommended command for sorting all backup files from oldest to newest:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lahtr<span class="w"> </span>&lt;path_to_backup_directory&gt;
+</code></pre></div>
 </div>
 
   

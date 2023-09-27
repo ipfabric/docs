@@ -9743,7 +9743,7 @@ drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </spa
 <p>restoring will fail with an error message: <code>No backups files exists for given source</code>.</p>
 <p>To restore the newer full backup (in this example, <code>20230418T090633Z</code>), it is necessary to delete or move the files of the older full backup (<code>20230418T090304Z</code>).</p>
 <p>Before restoring the backup, please ensure that the backup directory contains only files of one full backup and its related incremental backups. You can sort the files from oldest to newest with this command:</p>
-<div class="highlight"><pre><span></span><code>ls -latr &lt;path_to_backup_directory&gt;
+<div class="highlight"><pre><span></span><code>ls -lahtr &lt;path_to_backup_directory&gt;
 </code></pre></div>
 <p>By default, two full backups are kept in the backup directory. A possible hot fix is to keep only one full backup (and its incremental backups) by changing the following line in <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> script (as a root):</p>
 <div class="highlight"><pre><span></span><code>CLEAN_UP_VARIABLE=&quot;2&quot;
