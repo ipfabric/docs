@@ -10370,7 +10370,7 @@ documentation.
 
 
 <h1 id="sources">Sources</h1>
-<p>Sources are a key part of the plugin, they are used to define the connection to IP Fabric. Once configured sources will be used by background tasks to syncronize data from IP Fabric to Netbox. Multiple sources can be configured if multiple IP Fabric instances are being used such as a production and development instance.</p>
+<p>Sources are a key part of the plugin, they are used to define the connection to IP Fabric. Once configured sources will be used by background tasks to synchronize data from IP Fabric to Netbox. Multiple sources can be configured if multiple IP Fabric instances are being used such as a production and development instance.</p>
 <h2 id="pre-requisites">Pre-requisites</h2>
 <p>Before creating a source you will need to have the following information to hand:</p>
 <ul>
@@ -10382,13 +10382,13 @@ documentation.
 <p>To create a source navigate to <strong>Plugins &gt; IP Fabric &gt; Sources &gt; Add</strong>. This will bring up a form to enter the details of the IP Fabric instance.
 <a class="glightbox" href="../../images/user_guide/source_new.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.png" /></a></p>
 <h2 id="syncing-a-source">Syncing a source</h2>
-<p>Once a source has been added to Netbox it does not mean that data will be syncronized. Netbox does not know what snapshots to syncronize from IP Fabric. So first the snapshots must be syncronized.</p>
-<p>Navigate to your source and click the <strong>Sync</strong> button. This will create a background task to syncronize the snapshots from IP Fabric.</p>
+<p>Once a source has been added to Netbox it does not mean that data will be synchronized. Netbox does not know what snapshots to synchronize from IP Fabric. So first the snapshots must be synchronized.</p>
+<p>Navigate to your source and click the <strong>Sync</strong> button. This will create a background task to synchronize the snapshots from IP Fabric.</p>
 <p><a class="glightbox" href="../../images/user_guide/source_sync.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Sync Source" src="../../images/user_guide/source_sync.png" /></a></p>
-<p>Once the syncronization has completed you will see the number of snapshots shown within the <strong>Related Objects</strong> section.</p>
+<p>Once the synchronization has completed you will see the number of snapshots shown within the <strong>Related Objects</strong> section.</p>
 <p><a class="glightbox" href="../../images/user_guide/source_snapshots.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Source Snapshots" src="../../images/user_guide/source_snapshots.png" /></a></p>
 <h2 id="snapshots">Snapshots</h2>
-<p>Clicking through to the snapshots will show you all the snapshots that have been syncronized from IP Fabric into Netbox. There will be one snapshot created with the <code>snapshot_id</code> of <code>$last</code> this is IP Fabrics way of getting information from the API for the latest snapshot.</p>
+<p>Clicking through to the snapshots will show you all the snapshots that have been synchronized from IP Fabric into Netbox. There will be one snapshot created with the <code>snapshot_id</code> of <code>$last</code> this is IP Fabrics way of getting information from the API for the latest snapshot.</p>
 <p><a class="glightbox" href="../../images/user_guide/snapshots.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="../../images/user_guide/snapshots.png" /></a></p>
 <p>Each snapshot will show the following information:</p>
 <ul>
@@ -10400,7 +10400,7 @@ documentation.
 <li>Interface Count</li>
 <li>Note</li>
 </ul>
-<p>This information is used when creating an <a href="../05_ingestion/">ingestion</a> to determine the snapshot and site to syncronize from IP Fabric to Netbox. this page also contains the raw JSON for the snapshot that is returned via the IP Fabric API.</p>
+<p>This information is used when creating an <a href="../05_ingestion/">ingestion</a> to determine the snapshot and site to synchronize from IP Fabric to Netbox. this page also contains the raw JSON for the snapshot that is returned via the IP Fabric API.</p>
 <p><a class="glightbox" href="../../images/user_guide/snapshot_detail.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshot Detail" src="../../images/user_guide/snapshot_detail.png" /></a></p>
 
   
