@@ -10449,7 +10449,7 @@ documentation.
 
 <h1 id="data-ingestion">Data Ingestion</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Data ingestion is a fundamental process in the plugin, enabling synchronization between IP Fabric and Netbox. This process involves configuring various parameters to define how data is synchronized. Let&rsquo;s delve into the key components of data ingestion:</p>
+<p>Data ingestion is a fundamental process in the plugin, enabling synchronization between IP Fabric and NetBox. This process involves configuring various parameters to define how data is synchronized. Let&rsquo;s delve into the key components of data ingestion:</p>
 <h2 id="configuration-parameters">Configuration Parameters</h2>
 <p>A data ingestion configuration consists of several crucial parameters:</p>
 <table>
@@ -10468,12 +10468,12 @@ documentation.
 </tr>
 <tr>
 <td>Source</td>
-<td>The IP Fabric instance used for data synchronization with Netbox.</td>
+<td>The IP Fabric instance used for data synchronization with NetBox.</td>
 <td><code>ForeignKey</code></td>
 </tr>
 <tr>
 <td>Snapshot</td>
-<td>The snapshot chosen for data synchronization with Netbox.</td>
+<td>The snapshot chosen for data synchronization with NetBox.</td>
 <td><code>ForeignKey</code></td>
 </tr>
 <tr>
@@ -10511,8 +10511,8 @@ documentation.
 <p><a class="glightbox" href="../../images/user_guide/ingestion_new.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Ingestion Configuration" src="../../images/user_guide/ingestion_new.png" /></a></p>
 <p><strong>Note:</strong> When scheduling recurring ingestions using the <code>Recurs Every</code> field, it&rsquo;s recommended to use the <code>$last</code> snapshot. This ensures that the ingestion always runs against the latest snapshot in IP Fabric, maintaining data consistency.</p>
 <h2 id="data-ingestion-types-and-synchronization-parameters">Data Ingestion Types and Synchronization Parameters</h2>
-<p>There are three distinct types of data ingestion configurations, each with specific synchronization parameters. These parameters act as toggles, allowing you to control whether models in Netbox should be created or updated, or if the ingestion should merely execute queries without making changes.</p>
-<p>Even if a model is disabled, we continue processing the transformation map to utilize the data for querying an object. This is essential because there may be a need to update or create another object based on the information. For example, even if device types are already present in Netbox, they must still be fetched during ingestion since they are mandatory for creating a device.</p>
+<p>There are three distinct types of data ingestion configurations, each with specific synchronization parameters. These parameters act as toggles, allowing you to control whether models in NetBox should be created or updated, or if the ingestion should merely execute queries without making changes.</p>
+<p>Even if a model is disabled, we continue processing the transformation map to utilize the data for querying an object. This is essential because there may be a need to update or create another object based on the information. For example, even if device types are already present in NetBox, they must still be fetched during ingestion since they are mandatory for creating a device.</p>
 <p>Here&rsquo;s a breakdown of data ingestion types and their associated synchronization parameters:</p>
 <ul>
 <li><strong>DCIM (Data Center Infrastructure Management)</strong><ul>

@@ -10657,7 +10657,7 @@ documentation.
 <li>Transform Map Relationship Fields: This is the mapping between the source fields and destination fields for relationships.</li>
 </ul>
 <h2 id="transform-map">Transform Map</h2>
-<p>This model serves as the parent for both Transform Map Fields and Transform Map Relationship Fields. It empowers users to select a supported source IP Fabric table and a supported target Netbox model.</p>
+<p>This model serves as the parent for both Transform Map Fields and Transform Map Relationship Fields. It empowers users to select a supported source IP Fabric table and a supported target NetBox model.</p>
 <h3 id="parameters">Parameters</h3>
 <table>
 <thead>
@@ -10680,7 +10680,7 @@ documentation.
 </tr>
 <tr>
 <td>Target Model</td>
-<td>Netbox Model</td>
+<td>NetBox Model</td>
 <td><code>ChoiceField</code></td>
 </tr>
 </tbody>
@@ -10702,7 +10702,7 @@ documentation.
 </details>
 <details class="info">
 <summary>Target Model Choices</summary>
-<p>The follow list is shown in the following format: <code>Netbox Model (app)</code></p>
+<p>The follow list is shown in the following format: <code>NetBox Model (app)</code></p>
 <ul>
 <li>site (dcim)</li>
 <li>manufacturer (dcim)</li>
@@ -10720,7 +10720,7 @@ documentation.
 </ul>
 </details>
 <h2 id="transform-field">Transform Field</h2>
-<p>Transform fields belong to a transform map and are used to map the source fields to the destination fields. The source fields are the fields from the IP Fabric table and the destination fields are the fields from the Netbox model.</p>
+<p>Transform fields belong to a transform map and are used to map the source fields to the destination fields. The source fields are the fields from the IP Fabric table and the destination fields are the fields from the NetBox model.</p>
 <h3 id="parameters_1">Parameters</h3>
 <table>
 <thead>
@@ -10743,7 +10743,7 @@ documentation.
 </tr>
 <tr>
 <td>Target Field</td>
-<td>Netbox Model</td>
+<td>NetBox Model</td>
 <td><code>CharField</code></td>
 </tr>
 <tr>
@@ -10761,11 +10761,11 @@ documentation.
 <h3 id="source-field">Source Field</h3>
 <p>While the source field is defined as a <code>CharField</code>, it&rsquo;s important to note that the form restricts your selection to fields that are supported by the IP Fabric API. The list of available choices can be found in the <a href="https://docs.ipfabric.io/latest/IP_Fabric_API/#technology-table-endpoints">table description</a> within your IP Fabric instance, and it&rsquo;s limited to the models mentioned above.</p>
 <h3 id="target-field">Target Field</h3>
-<p>The target field is a <code>CharField</code> and the form will only allow you to select fields that are supported by the Netbox Model and are dynamically generated based on the target model selected in the transform map.</p>
+<p>The target field is a <code>CharField</code> and the form will only allow you to select fields that are supported by the NetBox Model and are dynamically generated based on the target model selected in the transform map.</p>
 <h3 id="coalesce">Coalesce</h3>
 <p>This term, also employed in <a href="https://developer.servicenow.com/dev.do#!/learn/learning-plans/utah/new_to_servicenow/app_store_learnv2_importingdata_utah_coalescing">ServiceNow</a>, refers to a field that determines whether it should be utilized for identifying and matching existing objects. For instance, when importing a device and aiming to match it based on the hostname, you would set the &ldquo;coalesce&rdquo; parameter to true. This would enable the matching process based on the hostname and, if a device with the same hostname already exists, it would be updated accordingly.</p>
 <h3 id="template">Template</h3>
-<p>This field provides the capability to employ a <a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja Template</a> for data transformation during the ingestion process. It proves valuable when you wish to modify the data before inserting it into Netbox. For instance, you can use it to alter the data format or combine multiple fields into a single field, depending on your specific requirements.</p>
+<p>This field provides the capability to employ a <a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja Template</a> for data transformation during the ingestion process. It proves valuable when you wish to modify the data before inserting it into NetBox. For instance, you can use it to alter the data format or combine multiple fields into a single field, depending on your specific requirements.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>If template is used the source field is ignored.</p>
@@ -10796,7 +10796,7 @@ documentation.
 </li>
 </ul>
 <h2 id="transform-relationship-field">Transform Relationship Field</h2>
-<p>Transform Relationship fields are an integral part of a transform map, designed to establish connections between various objects within Netbox. These fields encompass source fields, which originate from the IP Fabric table, and destination fields, which correspond to the fields within the Netbox model. For instance, in the context of importing a device and desiring to establish a relationship with a specific site, a transform relationship field becomes essential to achieve this linkage.</p>
+<p>Transform Relationship fields are an integral part of a transform map, designed to establish connections between various objects within NetBox. These fields encompass source fields, which originate from the IP Fabric table, and destination fields, which correspond to the fields within the NetBox model. For instance, in the context of importing a device and desiring to establish a relationship with a specific site, a transform relationship field becomes essential to achieve this linkage.</p>
 <h3 id="parameters_2">Parameters</h3>
 <table>
 <thead>
@@ -10814,12 +10814,12 @@ documentation.
 </tr>
 <tr>
 <td>Source Model</td>
-<td>Netbox model that will be mapped.</td>
+<td>NetBox model that will be mapped.</td>
 <td><code>ForeignKey</code></td>
 </tr>
 <tr>
 <td>Target Field</td>
-<td>Field where the Netbox model will be placed.</td>
+<td>Field where the NetBox model will be placed.</td>
 <td><code>CharField</code></td>
 </tr>
 <tr>
@@ -10846,9 +10846,9 @@ documentation.
 </ul>
 <p>When we create or query for each of these objects, we store them in a cache to facilitate their use by the relationship field for creating connections. For instance, when importing a device and aiming to establish a relationship with a site, you would employ a transform relationship field. In this scenario, the source model would be &lsquo;site,&rsquo; and the target field would also be &lsquo;site.&rsquo;</p>
 <h3 id="target-field_1">Target Field</h3>
-<p>This field is a <code>CharField</code> and the form will only allow you to select fields that are relationship fields on the Netbox model. This is dynamically generated based on the target model selected in the transform map.</p>
+<p>This field is a <code>CharField</code> and the form will only allow you to select fields that are relationship fields on the NetBox model. This is dynamically generated based on the target model selected in the transform map.</p>
 <h3 id="coalesce_1">Coalesce</h3>
-<p>This field, also referred to in <a href="https://developer.servicenow.com/dev.do#!/learn/learning-plans/utah/new_to_servicenow/app_store_learnv2_importingdata_utah_coalescing">ServiceNow</a>, signifies whether the field should be utilized to identify and match existing objects. For instance, if you&rsquo;re importing a device and wish to match it based on the hostname, you would set the &ldquo;coalesce&rdquo; parameter to true. This proves valuable when you need to retrieve or create an object in Netbox, especially when a standard field lacks the uniqueness required for matching. For example, an interface like <code>GE-1/0/1</code> may not be unique to just one device; it could exist on multiple devices. To uniquely identify and query, you must specify that you are searching for <code>GE-1/0/1</code> specifically on <code>device1</code>.</p>
+<p>This field, also referred to in <a href="https://developer.servicenow.com/dev.do#!/learn/learning-plans/utah/new_to_servicenow/app_store_learnv2_importingdata_utah_coalescing">ServiceNow</a>, signifies whether the field should be utilized to identify and match existing objects. For instance, if you&rsquo;re importing a device and wish to match it based on the hostname, you would set the &ldquo;coalesce&rdquo; parameter to true. This proves valuable when you need to retrieve or create an object in NetBox, especially when a standard field lacks the uniqueness required for matching. For example, an interface like <code>GE-1/0/1</code> may not be unique to just one device; it could exist on multiple devices. To uniquely identify and query, you must specify that you are searching for <code>GE-1/0/1</code> specifically on <code>device1</code>.</p>
 <h3 id="template_1">Template</h3>
 <p>Much like the transform field, this field enables the utilization of a <a href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja Template</a> to manipulate data during the ingestion process. This proves valuable when you prefer not to rely on cached objects related to devices and need to execute a more intricate query. The template query is required to return an <code>integer</code>, and when combined with the <code>source_model</code>, it facilitates the establishment of a relationship between the resulting object and the target model.</p>
 <div class="admonition info">

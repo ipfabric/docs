@@ -10309,33 +10309,22 @@ documentation.
 <p>Follow these steps to install the transform maps:</p>
 <ol>
 <li>
-<p>Clone the repository:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/ip-fabric/integrations/ipfabric-netbox-sync.git
+<p>Download the script using <code>wget</code>:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>update_tm.sh<span class="w"> </span><span class="s2">&quot;https://gitlab.com/ip-fabric/integrations/ipfabric-netbox-sync/-/raw/main/scripts/update_tm.sh&quot;</span>
 </code></pre></div>
 </li>
 <li>
-<p>Navigate to the scripts directory:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ipfabric-netbox-sync/scripts/
+<p>Make the script executable:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>update_tm.sh
 </code></pre></div>
 </li>
 <li>
-<p>Activate your NetBox virtual environment:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/opt/netbox/venv/bin/activate
-</code></pre></div>
-</li>
-<li>
-<p>Run the NetBox shell:</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>/opt/netbox/netbox/manage.py<span class="w"> </span>nbshell
-</code></pre></div>
-</li>
-<li>
-<p>In the NetBox shell, paste the following code to import the transform maps:</p>
-<div class="highlight"><pre><span></span><code><span class="n">exec</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;import_tm.py&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="n">exit</span><span class="p">()</span>
+<p>Run the script to install the transform maps:</p>
+<div class="highlight"><pre><span></span><code>./update_tm.sh
 </code></pre></div>
 </li>
 </ol>
-<p>Now, when you access the NetBox user interface, you should see some default transform maps available.</p>
+<p>After completing these steps, the transform maps will be installed and ready to use in NetBox.</p>
 
   
   
