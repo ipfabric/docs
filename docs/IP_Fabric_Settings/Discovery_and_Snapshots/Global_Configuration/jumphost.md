@@ -50,7 +50,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
   ![Add Jumphost form](jumphost/add_jumphost_form.png)
 
   - **Label** - the name for configuration (mandatory)
-  - **Jumphost Address** - IP address of FQDN name (mandatory)
+  - **Jumphost Address** - IP address or FQDN name (mandatory)
   - **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
 
     !!! warning
