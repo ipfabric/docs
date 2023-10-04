@@ -6637,6 +6637,17 @@ documentation.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#certificate_verify_failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CERTIFICATE_VERIFY_FAILED
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -10300,6 +10311,17 @@ documentation.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#certificate_verify_failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CERTIFICATE_VERIFY_FAILED
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -10400,6 +10422,8 @@ documentation.
 <h2 id="errors-and-warnings">Errors and Warnings</h2>
 <h3 id="branch-timeout-error">Branch Timeout Error</h3>
 <p>If you get the following error message <code>Branch Failed: Task exceeded maximum timeout value (300 seconds)</code> it is due to the default timeout value for the background task being exceeded. This can be resolved by increasing the timeout value for the background task. This can be done by setting the <code>RQ_DEFAULT_TIMEOUT</code> value in the NetBox <code>configuration.py</code> file. The default value is <code>300</code> seconds.</p>
+<h3 id="certificate_verify_failed">CERTIFICATE_VERIFY_FAILED</h3>
+<p>If you get the following error message <code>CERTIFICATE_VERIFY_FAILED</code> it is due to the certificate not being trusted. This can be resolved by setting the <code>Verify</code> field to <code>false</code> when creating the source. This will disable the validation of the certificate. Currently there is no way to validate custom certificates, we are currently working on that but disabling the validation is a temporary way to get around this issue.</p>
 
   
   

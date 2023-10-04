@@ -6491,6 +6491,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -10246,6 +10263,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -10378,6 +10412,57 @@ documentation.
 <li>IP Fabric API Token</li>
 </ul>
 <p>To create an API Token please see the <a href="../../../../IP_Fabric_API/authentication/">IP Fabric Documentation</a>.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the source</td>
+<td><code>CharField</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td>IP Fabric URL</td>
+<td><code>CharField</code></td>
+</tr>
+<tr>
+<td>API Token</td>
+<td>IP Fabric API Token</td>
+<td><code>CharField</code></td>
+</tr>
+<tr>
+<td>Verify</td>
+<td>Validate HTTPS Certificate (use false if using a self signed certificate)</td>
+<td><code>Boolean</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description for the source</td>
+<td><code>CharField</code></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>Provide additional comments for the source</td>
+<td><code>CharField</code></td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>Apply tags to the source</td>
+<td><code>ForeignKey</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If your IP Fabric instance is using a self signed certificate you will need to set the <code>Verify</code> field to <code>false</code>. This will disable the validation of the certificate. Currently there is no way to validate custom certificates, we are working on that.</p>
+</div>
 <h2 id="creating-a-source">Creating a source</h2>
 <p>To create a source navigate to <strong>Plugins &gt; IP Fabric &gt; Sources &gt; Add</strong>. This will bring up a form to enter the details of the IP Fabric instance.
 <a class="glightbox" href="../../images/user_guide/source_new.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.png" /></a></p>
