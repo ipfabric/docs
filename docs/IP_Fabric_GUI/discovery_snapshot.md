@@ -40,6 +40,25 @@ box).
 For creating automatic snapshots, follow the instructions at
 [Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
 
+### Resource Checks before Creating a New Snapshot
+
+Before creating a new snapshot, IP Fabric performs the following resource
+checks (if any of them fails, a new snapshot won't be created):
+
+1. the size of the largest loaded snapshot plus 5 GB is lower than the available
+   disk space
+   - if this condition is not met, `Not Enough Disk Space` is thrown
+
+2. the average in-memory size of loaded snapshots plus 3 GB is lower than the
+   available RAM
+   - if this condition is not met, `Not Enough System Memory` is thrown
+
+3. even if the new snapshot would have the size of the largest loaded snapshot,
+   any locked snapshots would not be automatically deleted based on the `Delete
+   Snapshots: If HDD utilization reaches ... percent` value (default 80) set in
+   **Settings --> Discovery & Snapshots --> Snapshot Retention**
+   - if this condition is not met, `Not Enough Disk Space` is thrown
+
 ## Snapshot-specific Settings
 
 ![Snapshot-specific settings](snapshots/snapshot_settings.png)
