@@ -2066,6 +2066,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="New Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-checks-before-creating-a-new-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Checks before Creating a New Snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -10412,6 +10429,23 @@ documentation.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="New Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-checks-before-creating-a-new-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Checks before Creating a New Snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -10651,6 +10685,34 @@ in the global <strong>Settings</strong> or in the
 box).</p>
 <p>For creating automatic snapshots, follow the instructions at
 <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention/#create-snapshots-periodically">Create Snapshots Periodically</a>.</p>
+<h3 id="resource-checks-before-creating-a-new-snapshot">Resource Checks before Creating a New Snapshot</h3>
+<p>Before creating a new snapshot, IP Fabric performs the following resource
+checks (if any of them fails, a new snapshot won&rsquo;t be created):</p>
+<ol>
+<li>
+<p>the size of the largest loaded snapshot plus 5 GB is lower than the available
+   disk space</p>
+<ul>
+<li>if this condition is not met, <code>Not Enough Disk Space</code> is thrown</li>
+</ul>
+</li>
+<li>
+<p>the average in-memory size of loaded snapshots plus 3 GB is lower than the
+   available RAM</p>
+<ul>
+<li>if this condition is not met, <code>Not Enough System Memory</code> is thrown</li>
+</ul>
+</li>
+<li>
+<p>even if the new snapshot would have the size of the largest loaded snapshot,
+   any locked snapshots would not be automatically deleted based on the <code>Delete
+   Snapshots: If HDD utilization reaches ... percent</code> value (default 80) set in
+   <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention</strong></p>
+<ul>
+<li>if this condition is not met, <code>Not Enough Disk Space</code> is thrown</li>
+</ul>
+</li>
+</ol>
 <h2 id="snapshot-specific-settings">Snapshot-specific Settings</h2>
 <p><a class="glightbox" href="../snapshots/snapshot_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshot-specific settings" src="../snapshots/snapshot_settings.png" /></a></p>
 <p>Adjusting the settings for either a new snapshot or a previously-created snapshot will override the global <strong>Settings</strong>.
