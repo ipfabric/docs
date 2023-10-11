@@ -1,5 +1,5 @@
 ---
-description: This section contains information about qvknown issue with Viptela cEdge showing only one next-hop.
+description: This section contains information about a known issue with Viptela cEdge showing only one next-hop.
 ---
 
 # Viptela cEdge shows only one next-hop
