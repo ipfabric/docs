@@ -6648,6 +6648,17 @@ documentation.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vlan-name-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VLAN name too long
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -10348,6 +10359,17 @@ documentation.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vlan-name-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VLAN name too long
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -10450,6 +10472,8 @@ documentation.
 <p>If you get the following error message <code>Branch Failed: Task exceeded maximum timeout value (300 seconds)</code> it is due to the default timeout value for the background task being exceeded. This can be resolved by increasing the timeout value for the background task. This can be done by setting the <code>RQ_DEFAULT_TIMEOUT</code> value in the NetBox <code>configuration.py</code> file. The default value is <code>300</code> seconds.</p>
 <h3 id="certificate_verify_failed">CERTIFICATE_VERIFY_FAILED</h3>
 <p>If you get the following error message <code>CERTIFICATE_VERIFY_FAILED</code> it is due to the certificate not being trusted. This can be resolved by setting the <code>Verify</code> field to <code>false</code> when creating the source. This will disable the validation of the certificate. Currently there is no way to validate custom certificates, we are currently working on that but disabling the validation is a temporary way to get around this issue.</p>
+<h3 id="vlan-name-too-long">VLAN name too long</h3>
+<p>If you encounter the error message <code>value too long for the type character varying(64)</code>, it means that the string you are using is longer than the maximum value allowed by NetBox. This can occur when the <code>vlanName</code> contains more than 64 characters. The error message will display the name of the transform map. You can edit it and restrict the input to the necessary number of characters using <code>{{ object.vlanName[:64] }}</code>.</p>
 
   
   
