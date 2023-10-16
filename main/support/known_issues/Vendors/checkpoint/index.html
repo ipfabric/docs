@@ -27,7 +27,7 @@
     
     
       
-        <title>Checkpoint - IP Fabric Documentation Portal</title>
+        <title>Check Point - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,7 +73,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Checkpoint - IP Fabric Documentation Portal" />
+<meta property="og:title" content="Check Point - IP Fabric Documentation Portal" />
 <meta property="og:description" content="Official documentation of the IP Fabric Network Assurance Platform." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/Vendors/checkpoint.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,7 +81,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/Vendors/checkpoint/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter.title" content="Checkpoint - IP Fabric Documentation Portal" />
+<meta property="twitter.title" content="Check Point - IP Fabric Documentation Portal" />
 <meta property="twitter:description" content="Official documentation of the IP Fabric Network Assurance Platform." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/Vendors/checkpoint.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#checkpoint" class="md-skip">
+        <a href="#check-point" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +171,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Checkpoint
+              Check Point
             
           </span>
         </div>
@@ -9279,7 +9279,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Checkpoint
+    Check Point
   
 
     
@@ -9296,7 +9296,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Checkpoint
+    Check Point
   
 
     
@@ -9348,6 +9348,17 @@ documentation.
     <span class="md-ellipsis">
       
         Discovery of Security Policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-awareness-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Awareness support
       
     </span>
   </a>
@@ -10314,6 +10325,17 @@ documentation.
 </li>
       
         <li class="md-nav__item">
+  <a href="#identity-awareness-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Awareness support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#required-permissions-for-successful-discovery-over-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10429,13 +10451,13 @@ documentation.
   
 
 
-<h1 id="checkpoint">Checkpoint</h1>
+<h1 id="check-point">Check Point</h1>
 <h2 id="fw-ctl-pstat-command-requires-admin-rights"><code>fw ctl pstat</code> Command Requires Admin Rights</h2>
 <p><strong>Known Affected platforms</strong>: All</p>
 <p><strong>Result</strong>: Without this command collected no memory utilization will be present</p>
 <h2 id="arp-table-contains-only-master-vsys-0-entries">ARP table contains only master <code>VSYS 0</code> entries</h2>
 <p><strong>Known Affected Software Versions</strong>: R80.30 and R80.40</p>
-<p><strong>Result</strong>: Command <code>show arp dynamic all</code> on VSx always (by mistake) shows ARP only for the <code>master VSYS 0</code> regardless of active <code>VSYS</code>. It is a confirmed bug on the Checkpoint firewalls.</p>
+<p><strong>Result</strong>: Command <code>show arp dynamic all</code> on VSx always (by mistake) shows ARP only for the <code>master VSYS 0</code> regardless of active <code>VSYS</code>. It is a confirmed bug on the Check Point firewalls.</p>
 <h2 id="discovery-of-security-policies">Discovery of Security Policies</h2>
 <ul>
 <li>Dynamic objects and negated services are not supported</li>
@@ -10445,8 +10467,23 @@ documentation.
     API</strong> in the IP Fabric GUI: In case that base URL points to a multi-domain
     server address, domains have to be specified</li>
 </ul>
+<h2 id="identity-awareness-support">Identity Awareness support</h2>
+<p>Starting with version <code>6.5</code>, IP Fabric supports collecting data from the <code>pdpd</code> daemon. As the <code>pdp</code> command isn&rsquo;t by default available from CLISH, an extended command has to be defined first.</p>
+<p>The extended command can be defined from CLISH, but the path depends on the OS version currently installed. For example, if the OS version is <code>R80.40</code>, the command would be:</p>
+<div class="highlight"><pre><span></span><code>&gt; add command ipf_pdp path /opt/CPsuite-R80.40/fw1/bin/pdp description &quot;PDP for IP Fabric&quot;
+&gt; save config
+</code></pre></div>
+<p>Alternatively, you can define the extended command from the expert mode by using the environment variable <code>$FWDIR</code>. The parameter <code>-s</code> saves the configuration:</p>
+<div class="highlight"><pre><span></span><code># clish -s -c &quot;add command ipf_pdp path $FWDIR/bin/pdp description \&quot;PDP for IP Fabric\&quot;&quot;
+</code></pre></div>
+<p>Don&rsquo;t forget to update the related role and add the <code>ipf_pdp</code> extended command to it if needed. See the <a href="https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_ScalablePlatforms_Gaia_AdminGuide/Topics-SP-Gaia/User-Defined-Extended-Commands.htm?tocpath=Introduction%20to%20the%20Command%20Line%20Interface%7C_____8">official Check Point documentation</a>.</p>
+<p>IP Fabric uses the <code>ipf_pdp monitor all</code> command to collect information about active users. Log in to the Check Point management server with the credentials used by IP Fabric discovery and run the command to verify the configuration.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that the predefined <code>fwm</code> extended command is also enabled for discovery. For more information, see the section below.</p>
+</div>
 <h2 id="required-permissions-for-successful-discovery-over-cli">Required Permissions For Successful Discovery Over CLI</h2>
-<p>To successfully discover a CheckPoint Gateway, correct role have to be
+<p>To successfully discover a Check Point Gateway, correct role have to be
 assigned to a user. IPF requires role features set as read-only, except
 of &ldquo;Virtual-System&rdquo; where read-write is needed (only if VSX firewalls
 are in your network, otherwise read-only is enough).</p>
@@ -10461,8 +10498,7 @@ are in your network, otherwise read-only is enough).</p>
 </li>
 <li>
 <p>Click <strong>Add</strong>, fill in the name. In the <strong>Features</strong> tab select all items
-    and mark them as <strong>Read-Only</strong>. No permissions from <strong>Extended
-    Commands</strong> tab are needed.</p>
+    and mark them as <strong>Read-Only</strong>. These permissions from the <strong>Extended Commands</strong> tab are needed (only if Gaia acts as a management server): <code>fwm</code> and <code>ipf_pdp</code>.</p>
 </li>
 <li>
 <p>If you have VSX firewall in your network, you have to set
@@ -10485,7 +10521,7 @@ Management Interface, Netflow Export, Network Interfaces, Network
 Management, NTP, OSPF, Route, Routing Monitor, SNMP, System
 Configuration, Virtual-System, VRRP, VSX</em>
 Find the list of features with corresponding commands in the official <a href="https://sc1.checkpoint.com/documents/R81/WebAdminGuides/E
-N/CP_R81_Gaia_AdminGuide/Topics-GAG/Roles-Available-Features.htm?tocpath=User%20Management%7CRoles%7C_____3">CheckPoint documentation</a></p>
+N/CP_R81_Gaia_AdminGuide/Topics-GAG/Roles-Available-Features.htm?tocpath=User%20Management%7CRoles%7C_____3">Check Point documentation</a></p>
 </div>
 
   
