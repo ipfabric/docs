@@ -1,8 +1,8 @@
 ---
-description: IP Fabric describes known affected issues for Checkpoint and how to fix them.
+description: IP Fabric describes known affected issues for Check Point and how to fix them.
 ---
 
-# Checkpoint
+# Check Point
 
 ## `fw ctl pstat` Command Requires Admin Rights
 
@@ -14,7 +14,7 @@ description: IP Fabric describes known affected issues for Checkpoint and how to
 
 **Known Affected Software Versions**: R80.30 and R80.40
 
-**Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Checkpoint firewalls.
+**Result**: Command `show arp dynamic all` on VSx always (by mistake) shows ARP only for the `master VSYS 0` regardless of active `VSYS`. It is a confirmed bug on the Check Point firewalls.
 
 ## Discovery of Security Policies
 
@@ -24,9 +24,34 @@ description: IP Fabric describes known affected issues for Checkpoint and how to
     API** in the IP Fabric GUI: In case that base URL points to a multi-domain
     server address, domains have to be specified
 
+## Identity Awareness support
+
+Starting with version `6.5`, IP Fabric supports collecting data from the `pdpd` daemon. As the `pdp` command isn't by default available from CLISH, an extended command has to be defined first.
+
+The extended command can be defined from CLISH, but the path depends on the OS version currently installed. For example, if the OS version is `R80.40`, the command would be:
+
+```
+> add command ipf_pdp path /opt/CPsuite-R80.40/fw1/bin/pdp description "PDP for IP Fabric"
+> save config
+```
+
+Alternatively, you can define the extended command from the expert mode by using the environment variable `$FWDIR`. The parameter `-s` saves the configuration:
+
+```
+# clish -s -c "add command ipf_pdp path $FWDIR/bin/pdp description \"PDP for IP Fabric\""
+```
+
+Don't forget to update the related role and add the `ipf_pdp` extended command to it if needed. See the [official Check Point documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_ScalablePlatforms_Gaia_AdminGuide/Topics-SP-Gaia/User-Defined-Extended-Commands.htm?tocpath=Introduction%20to%20the%20Command%20Line%20Interface%7C_____8).
+
+IP Fabric uses the `ipf_pdp monitor all` command to collect information about active users. Log in to the Check Point management server with the credentials used by IP Fabric discovery and run the command to verify the configuration.
+
+!!! warning
+
+    Ensure that the predefined `fwm` extended command is also enabled for discovery. For more information, see the section below.
+
 ## Required Permissions For Successful Discovery Over CLI
 
-To successfully discover a CheckPoint Gateway, correct role have to be
+To successfully discover a Check Point Gateway, correct role have to be
 assigned to a user. IPF requires role features set as read-only, except
 of "Virtual-System" where read-write is needed (only if VSX firewalls
 are in your network, otherwise read-only is enough).
@@ -40,8 +65,7 @@ are in your network, otherwise read-only is enough).
 2.  Navigate to **User Management -> Roles** in the left menu
 
 3.  Click **Add**, fill in the name. In the **Features** tab select all items
-    and mark them as **Read-Only**. No permissions from **Extended
-    Commands** tab are needed.
+    and mark them as **Read-Only**. These permissions from the **Extended Commands** tab are needed (only if Gaia acts as a management server): `fwm` and `ipf_pdp`.
 
 4.  If you have VSX firewall in your network, you have to set
     **Virtual-System** feature to **Read-Write** (we call `set
@@ -59,5 +83,5 @@ are in your network, otherwise read-only is enough).
 	Management Interface, Netflow Export, Network Interfaces, Network
 	Management, NTP, OSPF, Route, Routing Monitor, SNMP, System
 	Configuration, Virtual-System, VRRP, VSX*
-	Find the list of features with corresponding commands in the official [CheckPoint documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/E
+	Find the list of features with corresponding commands in the official [Check Point documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/E
 	N/CP_R81_Gaia_AdminGuide/Topics-GAG/Roles-Available-Features.htm?tocpath=User%20Management%7CRoles%7C_____3)
