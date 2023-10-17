@@ -8,8 +8,8 @@ description: In this section, IP Fabric publishes the most recent version releas
 
 !!! important "Current release"
 
-    The current major release is `6.3`. Please check the [detailed release
-    notes](release_notes/6.3.md) for this release.
+    The current major release is `6.4`. Please check the [detailed release
+    notes](release_notes/6.4.md) for this release.
 
 Our release naming follows [semantic versioning](https://semver.org/). Where
 components of the version are `major.minor.patch+build`:
