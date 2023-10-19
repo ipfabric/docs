@@ -10,6 +10,55 @@ Security notifications affecting the IP Fabric solution published according to o
 
     Upgrade information can be found in the [System update](../System_Administration/System_Administration_UI/system_update.md) section.
 
+## SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)
+
+| Severity | Affected Versions | Fix Version |
+| -------- | ----------------- | ----------- |
+| High     | 6.2.0 or newer    | N/A         |
+
+The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.
+
+This affects particularly customer having an internet facing IP Fabric instance.
+
+### Workaround
+
+The issue lies in the configuration of `http2` on the line `listen 443 ssl http2;` within the nginx configuration files. To resolve this problem, you can remove `http2`, restart nginx, and the issue will be resolved.
+Currently, upgrading IP Fabric will overwrite the nginx files, leading to the problem recurring.
+
+- Connect via SSH to IP Fabric VM and check which files contain `http2`:
+
+    ```bash
+    sudo grep "http2" /etc/nginx/sites-enabled/*
+    ```
+
+    The output should look like this:
+
+    ```bash
+    osadmin@ipfabric-632:~$ sudo grep "http2" /etc/nginx/sites-enabled/*
+    /etc/nginx/sites-enabled/ipf-frontend:    listen 443 ssl http2;
+    /etc/nginx/sites-enabled/ipf-nimpee-update:	listen 8443 ssl http2;
+    ```
+
+- Edit each file to remove the `http2`. You can either do this manually or use the following command:
+
+    ```bash
+    sudo sed -i 's/ http2//' /etc/nginx/sites-enabled/*
+    ```
+
+    You can verify that the `http2` has been removed by running the `grep` command:
+
+    ```bash
+    osadmin@ipfabric-632:~$ sudo grep "443" /etc/nginx/sites-enabled/*
+    /etc/nginx/sites-enabled/ipf-frontend:    listen 443 ssl;
+    /etc/nginx/sites-enabled/ipf-nimpee-update:	listen 8443 ssl;
+    ```
+
+- Restart nginx:
+
+    ```bash
+    sudo systemctl restart nginx
+    ```
+
 ## NIM-9199: Privilege escalation via Admin portal
 
 | Severity | Affected Versions | Fix Version |
