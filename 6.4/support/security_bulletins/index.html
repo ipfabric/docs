@@ -8708,6 +8708,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sa-495-decoding-http2-rapid-reset-cve-2023-44487" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workaround" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workaround
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nim-9199-privilege-escalation-via-admin-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10434,6 +10462,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sa-495-decoding-http2-rapid-reset-cve-2023-44487" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workaround" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workaround
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nim-9199-privilege-escalation-via-admin-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10491,6 +10547,53 @@
 <p class="admonition-title">Upgrade information</p>
 <p>Upgrade information can be found in the <a href="../../System_Administration/System_Administration_UI/system_update/">System update</a> section.</p>
 </div>
+<h2 id="sa-495-decoding-http2-rapid-reset-cve-2023-44487">SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)</h2>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Affected Versions</th>
+<th>Fix Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>6.2.0 or newer</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.</p>
+<p>This affects particularly customer having an internet facing IP Fabric instance.</p>
+<h3 id="workaround">Workaround</h3>
+<p>The issue lies in the configuration of <code>http2</code> on the line <code>listen 443 ssl http2;</code> within the nginx configuration files. To resolve this problem, you can remove <code>http2</code>, restart nginx, and the issue will be resolved.
+Currently, upgrading IP Fabric will overwrite the nginx files, leading to the problem recurring.</p>
+<ul>
+<li>Connect via SSH to IP Fabric VM and check which files contain <code>http2</code>:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+</code></pre></div>
+<p>The output should look like this:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+/etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>Edit each file to remove the <code>http2</code>. You can either do this manually or use the following command:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/ http2//&#39;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+</code></pre></div>
+<p>You can verify that the <code>http2</code> has been removed by running the <code>grep</code> command:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+/etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="p">;</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>Restart nginx:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
+</code></pre></div>
+</li>
+</ul>
 <h2 id="nim-9199-privilege-escalation-via-admin-portal">NIM-9199: Privilege escalation via Admin portal</h2>
 <table>
 <thead>
