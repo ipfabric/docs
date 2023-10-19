@@ -22,7 +22,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Added OSPF support for Arista EOS, Check Point Gaia, Cisco ASA,
   Extreme XOS, Fortinet FortiGate, Huawei VRP, PaloAlto
 - Added Routing table summary for Arista EOS, Extreme XOS, Huawei VRP,
-  Checkpoint, Cisco ASA
+  Check Point, Cisco ASA
 - Added VRRP support for Fortinet FortiGate
 - Configuration Management - added support for Fortinet FortiGate,
   Extreme XOS
@@ -115,7 +115,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Arista vEOS - interfaces MTU parsing fix
 - Arista vEOS - parsing fix when NTP is disabled
 - Extreme XOS - memory information fixed parsing
-- Checkpoint Gaja - fixed parsing of different output for command `fw
+- Check Point Gaia - fixed parsing of different output for command `fw
   ctl pstat`
 - Fortinet FortiGate - fixed ambiguous command to get info about the
   routing table
@@ -1066,7 +1066,7 @@ of history collected.
 
 **Platforms**
 
-- Checkpoint Gaia
+- Check Point Gaia
 - HP Aruba (Wireless)
 
 **Features**

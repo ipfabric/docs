@@ -122,7 +122,7 @@ IP Fabric currently collects EoL information on the following Vendors:
 
 - Arista
 - Aruba Networks
-- Checkpoint
+- Check Point
 - Cisco
 - Cisco Meraki
 - Extreme

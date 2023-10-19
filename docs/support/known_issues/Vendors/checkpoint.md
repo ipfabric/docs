@@ -18,11 +18,11 @@ description: IP Fabric describes known affected issues for Check Point and how t
 
 ## Discovery of Security Policies
 
--   Dynamic objects and negated services are not supported
+- Dynamic objects and negated services are not supported
 
--   **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
-    API** in the IP Fabric GUI: In case that base URL points to a multi-domain
-    server address, domains have to be specified
+- **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
+  API** in the IP Fabric GUI: In case that base URL points to a multi-domain
+  server address, domains have to be specified
 
 ## Identity Awareness support
 
@@ -60,7 +60,7 @@ are in your network, otherwise read-only is enough).
 
 ### How To Setup a Role From Web GUI
 
-1.  Open CheckPoint Gaia web interface
+1.  Open Check Point Gaia web interface
 
 2.  Navigate to **User Management -> Roles** in the left menu
 
@@ -69,19 +69,14 @@ are in your network, otherwise read-only is enough).
 
 4.  If you have VSX firewall in your network, you have to set
     **Virtual-System** feature to **Read-Write** (we call `set
-    virtual-system \<ID>` to switch to proper virtual system). This
+virtual-system \<ID>` to switch to proper virtual system). This
     allows IPF just to change context and can’t be used for anything
     else.
 
 5.  Assign the role to the user used for IPF discovery
 
 !!! info
-	\* Currently, not all the features are needed for IPF. But as we will
-	add support of new features, it can change. List of currently required
-	features for minimal working setup (IPF 4.0, Gaia R81): *Advanced VRRP,
-	ARP, BGP, Cluster, Display Configuration, Domain Name, Host Name,
-	Management Interface, Netflow Export, Network Interfaces, Network
-	Management, NTP, OSPF, Route, Routing Monitor, SNMP, System
-	Configuration, Virtual-System, VRRP, VSX*
-	Find the list of features with corresponding commands in the official [Check Point documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/E
-	N/CP_R81_Gaia_AdminGuide/Topics-GAG/Roles-Available-Features.htm?tocpath=User%20Management%7CRoles%7C_____3)
+
+    Not all the features are needed for IPF. But as we will add support of new features, it can change. List of currently required features for minimal working setup (IPF 4.0, Gaia R81):
+
+    > Advanced VRRP, ARP, BGP, Cluster, Display Configuration, Domain Name, Host Name, Management Interface, Netflow Export, Network Interfaces, Network Management, NTP, OSPF, Route, Routing Monitor, SNMP, System Configuration, Virtual-System, VRRP, VSX.
