@@ -37,8 +37,7 @@ description: In order to add GCP to discovery, you will need an access to privat
 
 8. Navigate to the **KEYS** tab, click **ADD KEY** and select `Create new key`.
    (You can use your own key, but the properties have to be the same as when you
-   generate it. So it is highly recommended to use the `Create a new key`
-   option.)
+   generate it. So it is highly recommended to use the `Create new key` option.)
 
    ![Create a new private key](gcp/selectToCreateANewKey.png)
 
