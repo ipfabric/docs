@@ -3913,6 +3913,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -10523,6 +10534,17 @@ documentation.
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -10629,45 +10651,93 @@ documentation.
 
 
 <h1 id="overview">Overview</h1>
-<p>IP Fabric supports discovery of network devices via <strong>dedicated Vendors&rsquo; APIs</strong>.</p>
-<p>They are frequently <strong>complementary to CLI</strong> based discovery process for the established networking vendors, but <strong>completely essential</strong> for <strong>SD-WAN</strong> or <strong>cloud vendors</strong>.</p>
+<p>IP Fabric supports discovery of network devices via <strong>dedicated Vendor APIs</strong>.</p>
+<p>Currently, the following Vendor APIs are supported (as listed in <strong>Settings &rarr;
+Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Vendors API &rarr; + Add &rarr;
+Type</strong>):</p>
+<ul>
+<li><a href="AWS_Amazon_Web_Services/">AWS</a></li>
+<li><a href="Azure_Networking/">Azure</a></li>
+<li><a href="Check_Point/">Check Point Management</a></li>
+<li><a href="Cisco_APIC/">Cisco APIC</a></li>
+<li><a href="Cisco_FMC/">Cisco FMC</a></li>
+<li><a href="forcepoint/">Forcepoint</a></li>
+<li><a href="GCP_Google_Cloud_Platform/">Google Cloud Platform</a></li>
+<li><a href="juniper_mist/">Juniper Mist</a></li>
+<li><a href="Cisco_Meraki/">Meraki REST</a></li>
+<li><a href="PaloAlto_Prisma/">Prisma</a></li>
+<li><a href="Ruckus_Virtual_SmartZone/">Ruckus Virtual SmartZone</a></li>
+<li><a href="Silver_Peak_SD-WAN/">Silver Peak</a></li>
+<li><a href="Versa_Networks_SD-WAN/">Versa</a></li>
+<li><a href="Cisco_Viptela_SD-WAN/">Viptela</a></li>
+<li><a href="VMware_NSX-T/">VMware NSX-T</a></li>
+</ul>
+<p>They are frequently <strong>complementary to CLI-based</strong> discovery process for
+established networking vendors, but <strong>completely essential</strong> for <strong>SD-WAN</strong> or
+<strong>cloud vendors</strong>.</p>
 <p>This section describes per-API specific settings for supported APIs.</p>
 <p>For each Vendor API, <strong>additional system settings</strong> can be applied.</p>
 <div class="admonition info">
 <p class="admonition-title">Multi-Factor Authentication</p>
-<p>When configuring login credentials for Vendor API, please note that IP Fabric does not support multi-factor authentication (MFA). Please use a user account without MFA enabled (you may have option to generate &ldquo;application access token&rdquo;).</p>
+<p>When configuring login credentials for Vendor API, please note that IP
+Fabric does not support multi-factor authentication (MFA). Please use a user
+account without MFA enabled (you may have the option to generate
+<code>application access token</code>).</p>
 </div>
 <h2 id="slug-and-comment">Slug and Comment</h2>
-<p>Every instance of vendor API configuration have two additional fields (example shows screenshot of AWS configuration)</p>
+<p>Every instance of Vendor API configuration has two additional fields (the
+example screenshot shows the AWS configuration).</p>
 <dl>
 <dt><strong>Slug</strong></dt>
 <dd>
-<p>Slug has to be unique and not empty. It is included in logs and other places to distinguish among potentially multiple API instances (think about it as <code>loginIP</code> for API). We recommend using short and descriptive values, such as <code>aws-us</code>, <code>aws-jp</code> etc.</p>
+<p>Slug has to be unique and not empty. It is included in logs and other places
+to distinguish among potentially multiple API instances (think about it as
+<code>loginIP</code> for API). We recommend using short and descriptive values, such as
+<code>aws-us</code>, <code>aws-jp</code> etc.</p>
 </dd>
 <dd>
-<p><strong>Since version <code>6.3</code>, <code>Slug</code> can only contain <code>a-zA-Z0-9_-</code>. Previously created configurations will be automatically modified by removing not-allowed characters from <code>Slug</code> according to the new validation rules.</strong></p>
+<p><strong>Since version <code>6.3</code>, <code>Slug</code> can only contain <code>a-zA-Z0-9_-</code>. Previously
+created configurations will be automatically modified by removing not-allowed
+characters from <code>Slug</code> according to the new validation rules.</strong></p>
 </dd>
 <dd>
 <div class="admonition info">
 <p class="admonition-title">Slug?</p>
-<pre><code>Slug has many meanings, but in the computer world, it became a name for the unique identifying part of a web address, typically at the end of the URL. See [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Slug) for more information.
-</code></pre>
+<p>Slug has many meanings, but in the computer world, it became a name for
+the unique identifying part of a web address, typically at the end of the
+URL. For more information, see
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Slug">MDN</a>.</p>
 </div>
 </dd>
 <dt><strong>Comment</strong></dt>
 <dd>
-<p>Optional free text field for you to capture additional information about the API instance.</p>
+<p>Optional free text field for you to capture additional information about the
+API instance.</p>
 </dd>
 </dl>
 <p><a class="glightbox" href="slug_and_comment.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Slug and Comment" src="slug_and_comment.png" /></a></p>
 <h2 id="use-system-proxy-configuration">Use System Proxy Configuration</h2>
-<p><strong>System proxy</strong> is by default used for communication from IP Fabric to the Internet e.g. IP Fabric and system updates.</p>
-<p>Some Vendor API controllers might be <strong>located on the Internet</strong> or other parts of the network and sending traffic through the System proxy might be required.</p>
+<p><strong>System proxy</strong> is by default used for communication from IP Fabric to the
+Internet (e.g., IP Fabric and system updates).</p>
+<p>Some Vendor API controllers might be <strong>located on the Internet</strong> or other parts
+of the network and sending traffic through the System proxy might be required.</p>
 <p>This setting can be enabled/disabled per Vendor API.</p>
 <h2 id="reject-unauthorized-certificates">Reject Unauthorized Certificates</h2>
-<p>Due to <strong>security reasons</strong>, accepting unauthorized certificates might be undesired.</p>
+<p>Due to <strong>security reasons</strong>, accepting unauthorized certificates might be
+undesired.</p>
 <p>This setting can be enabled/disabled per Vendor API.</p>
-<p><a class="glightbox" href="proxy_and_certificates%20settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proxy and certificates settings" src="proxy_and_certificates%20settings.png" /></a></p>
+<p><a class="glightbox" href="proxy_and_certificates_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Proxy and certificates settings" src="proxy_and_certificates_settings.png" /></a></p>
+<h2 id="advanced-settings">Advanced Settings</h2>
+<p>Since version <code>6.5</code>, it is possible to fine-tune the following advanced settings
+for each Vendor API in the GUI (without going directly to the database):</p>
+<ul>
+<li>maximum concurrent requests</li>
+<li><code>maxCapacity</code> (number of requests)</li>
+<li><code>refillRate</code> (number of requests per specified milliseconds)</li>
+</ul>
+<p><a class="glightbox" href="show_advanced_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Show advanced settings" src="show_advanced_settings.png" /></a></p>
+<p>These are the default values for <code>Meraki REST</code>:</p>
+<p><a class="glightbox" href="advanced_settings_for_meraki_rest.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Advanced settings for Meraki REST" src="advanced_settings_for_meraki_rest.png" /></a></p>
 
   
   
