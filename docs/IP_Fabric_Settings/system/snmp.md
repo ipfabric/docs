@@ -27,7 +27,7 @@ If you selected version `2c`, please configure:
    server
 5. Click **Save**
 
-![Version 2c](snmp/640286725.png)
+![Version 2c](snmp/version_2c.png)
 
 If you selected version `3`, please configure:
 
@@ -43,6 +43,6 @@ If you selected version `3`, please configure:
 5. **Passphrase** - authentication and privacy passphrase
 6. Click **Save**
 
-![Version 3](snmp/640516117.png)
+![Version 3](snmp/version_3.png)
 
 --8<-- "snippets/username_password_regex.md"

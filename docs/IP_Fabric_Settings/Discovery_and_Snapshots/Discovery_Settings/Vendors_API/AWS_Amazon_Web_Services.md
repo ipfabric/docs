@@ -9,17 +9,17 @@ description: In order to add AWS to the discovery you will need an access key & 
 To add AWS to the discovery you will need an access key & secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.
 
-![AWS Management Console](aws/2691596295.png)
+![AWS Management Console](aws/aws-management-console.png)
 
 Click **My Security Credentials** and open **Access keys** tab.
 
-![AWS - Your Security Credentials](aws/2691596301.png)
+![AWS - Your Security Credentials](aws/aws-your-security-credentials.png)
 
 To generate keys, click **Create New Access Key** and your keys will be
 generated. These access keys are available globally for all of yours AWS
 regions.
 
-![AWS - Create Access Key](aws/2691596307.png)
+![AWS - Create Access Key](aws/aws-create-access-key.png)
 
 Copy those keys to the AWS API settings in your IP Fabric and don't
 forget to **fill the regions where the devices which you want to discover

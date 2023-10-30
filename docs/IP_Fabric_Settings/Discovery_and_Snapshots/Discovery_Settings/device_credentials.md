@@ -48,7 +48,7 @@ When adding new credentials, you can limit the validity of the credentials just
 for a part of your network using **Use in subnets**
 and **Don't use in subnets** fields.
 
-![Add new CLI credential](1935310852.png)
+![Add new CLI credential](add-new-cli-credential.png)
 
 Provided credentials can be used for configuration change tracking and saved
 configuration consistency (i.e. they allow commands such as **show run** and
@@ -65,4 +65,4 @@ management. However, some platforms require privileged credentials to access
 basic network state information, such as MST spanning-tree state or 802.1X
 session information.
 
-![Privileges](1935245322.png)
+![Passwords for enable mode](passwords-for-enable-mode.png)

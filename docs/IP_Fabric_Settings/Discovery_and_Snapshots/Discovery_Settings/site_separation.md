@@ -32,7 +32,7 @@ Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separ
 - Lower case - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that both devices in one site named `prague`
 - No transformation - first hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` => result is that each device has its own site named `PRAGUE` and `prague`
 
-![Hostname Regex](site_separation/2887417896.png)
+![Hostname Regex](site_separation/hostname_regex.png)
 
 In this example, the regular expression matches items such as `PRAGUE-`, `LONDON-`, etc.
 
@@ -40,17 +40,17 @@ In this example, the regular expression matches items such as `PRAGUE-`, `LONDON
 
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation** and change **Routing & Switching Domain** to **RegEx based on SNMP location** or create a new rule by **Add rule** button.
 
-![SNMP Regex](site_separation/2896297985.png)
+![SNMP Regex](site_separation/snmp_regex.png)
 
 ### Testing
 
 The UI now allows you to edit and test your rules directly in the browser when selecting the **Test rule** option. Here you can see a live preview of devices that will match the regex you created.
 
-![Testing](site_separation/2888859659.png)
+![Testing](site_separation/testing.png)
 
 You can also test SNMP location rules:
 
-![SNMP location](site_separation/2896330753.png)
+![SNMP location](site_separation/snmp_location.png)
 
 !!! example "RegEx example"
 
@@ -81,7 +81,7 @@ The brief explanation:
 
 ## Device Neighborship
 
-![Device Neighborship](site_separation/2896232449.png)
+![Device Neighborship](site_separation/device_neighborship.png)
 
 This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.
 
@@ -110,7 +110,7 @@ or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Devic
 
 You can create rules in the UI by selecting the **Add attribute** button. This will provide you with a form to fill out.
 
-![Add Attribute](site_separation/2888630298.png)
+![Add Attribute](site_separation/add_attribute.png)
 
 !!! Info
 
@@ -118,7 +118,7 @@ You can create rules in the UI by selecting the **Add attribute** button. This w
     for devices discovered via an API in the UI. Even though it seems that no
     device matches the SN, the attribute will still be assigned to the device.
 
-![Dropdown](site_separation/2896265219.png)
+![Dropdown](site_separation/dropdown.png)
 
 ### Creating Rules Via The API
 
@@ -145,7 +145,7 @@ Please see example at [GitHub](https://gitlab.com/ip-fabric/integrations/python-
 
 ## Rule Priority
 
-![Add Attribute](site_separation/2888597511.png)
+![Rule priority](site_separation/rule_priority.png)
 
 Rule precedence is defined by the order from top to bottom. So in the example above:
 
