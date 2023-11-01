@@ -6,11 +6,11 @@ description: This section is intended to explain the use of the IP Fabric Path L
 
 ## Python SDK
 
-`python-ipfabric-diagrams` and is the recommended method for graphing via the API.
-To ensure working graphs please ensure `python-ipfabric-diagrams` Major and Minor version matches your IP Fabric version.
+`python-ipfabric` and is the recommended method for graphing via the API.
+To ensure working graphs please ensure `python-ipfabric` Major and Minor version matches your IP Fabric version.
 
-- [https://pypi.org/project/ipfabric-diagrams/](https://pypi.org/project/ipfabric-diagrams/)
-- For example when using release `5.0` use `pip install -U ipfabric-diagrams==5.0.*` to install appropriate package.
+- [https://pypi.org/project/ipfabric/](https://pypi.org/project/ipfabric/)
+- For example when using release `6.4` use `pip install -U ipfabric==6.4.*` to install appropriate package.
 
 ## API Endpoints
 
