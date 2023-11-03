@@ -96,8 +96,11 @@ Since version `6.5`, it is possible to fine-tune the following advanced settings
 for each Vendor API in the GUI (without going directly to the database):
 
 - maximum concurrent requests
+  - maximum amount of API calls to a device that can run in parallel
 - `maxCapacity` (number of requests)
+  - see [How API Discovery Works - Rate Limitation](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limitation)
 - `refillRate` (number of requests per specified milliseconds)
+  - see [How API Discovery Works - Rate Limitation](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limitation)
 
 ![Show advanced settings](show_advanced_settings.png)
 
