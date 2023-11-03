@@ -10731,9 +10731,18 @@ undesired.</p>
 <p>Since version <code>6.5</code>, it is possible to fine-tune the following advanced settings
 for each Vendor API in the GUI (without going directly to the database):</p>
 <ul>
-<li>maximum concurrent requests</li>
-<li><code>maxCapacity</code> (number of requests)</li>
-<li><code>refillRate</code> (number of requests per specified milliseconds)</li>
+<li>maximum concurrent requests<ul>
+<li>maximum amount of API calls to a device that can run in parallel</li>
+</ul>
+</li>
+<li><code>maxCapacity</code> (number of requests)<ul>
+<li>see <a href="../../../../overview/How_Discovery_Works/API_discovery/#rate-limitation">How API Discovery Works - Rate Limitation</a></li>
+</ul>
+</li>
+<li><code>refillRate</code> (number of requests per specified milliseconds)<ul>
+<li>see <a href="../../../../overview/How_Discovery_Works/API_discovery/#rate-limitation">How API Discovery Works - Rate Limitation</a></li>
+</ul>
+</li>
 </ul>
 <p><a class="glightbox" href="show_advanced_settings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Show advanced settings" src="show_advanced_settings.png" /></a></p>
 <p>These are the default values for <code>Meraki REST</code>:</p>
