@@ -18,7 +18,8 @@ missing route using
 endpoint.
 
 This can generate a large number of API requests. To prevent long discovery
-time, there is a default limit of **100 OMP API requests** since version `6.5`.
+time, there is a default limit of **100 OMP API requests** since version `6.5`
+(`ompRoutesReceivedPrefixRequestLimit`).
 
 If you need to increase the default limit, contact the IP Fabric Support or
 Solution Architect team.
