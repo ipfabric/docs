@@ -7,6 +7,9 @@ description: IP Fabric describes known affected issues for Juniper and how to fi
 - Route leak defined by reference to another VRF is not supported.
   Route leak with the policy is supported.
 
+- Juniper devices cannot be discovered using a root account. Such an account
+  does not go straight to the CLI prompt. Please use a non-root account instead.
+
 ---
 
 **_Known Affected platforms_**: Juniper SRX300
