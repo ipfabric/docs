@@ -138,8 +138,8 @@ def main():
         major = int(version_match[1])
         minor = int(version_match[2])
 
-        # Include only versions 5.0 and later
-        if (major * 1000 + minor) < 5000:
+        # Include only versions 6.0 and later
+        if (major * 1000 + minor) < 6000:
             print(f"Skipping release {v['name']}")
             continue
 
@@ -173,7 +173,9 @@ def main():
             print(f"For {project} fetched {len(project_issues)} issues")
 
         rn = Document()
-        rn.add_raw(f"---\ndescription: IP Fabric automatically generated low-level release notes for version {v['name']}.\n---")
+        rn.add_raw(
+            f"---\ndescription: IP Fabric automatically generated low-level release notes for version {v['name']}.\n---"
+        )
         rn.add_heading(f"LLRN {v['name']}")
         rn.add_paragraph(
             f""" These are low-level release notes for IP Fabric
