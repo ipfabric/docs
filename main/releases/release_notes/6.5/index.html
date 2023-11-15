@@ -6994,12 +6994,12 @@ documentation.
   <a href="#important-product-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important product changes
+        Important Product Changes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Important product changes">
+    <nav class="md-nav" aria-label="Important Product Changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7019,6 +7019,17 @@ documentation.
 </li>
         
           <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#network-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7033,7 +7044,7 @@ documentation.
   <a href="#other-minor-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other minor changes
+        Other Minor Changes
       
     </span>
   </a>
@@ -10707,12 +10718,12 @@ documentation.
   <a href="#important-product-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important product changes
+        Important Product Changes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Important product changes">
+    <nav class="md-nav" aria-label="Important Product Changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -10732,6 +10743,17 @@ documentation.
 </li>
         
           <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#network-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -10746,7 +10768,7 @@ documentation.
   <a href="#other-minor-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Other minor changes
+        Other Minor Changes
       
     </span>
   </a>
@@ -10893,7 +10915,7 @@ MD5 (ipfabric-6-5-1+0.qcow2) = b419855b077a0e85791ca4275f22dfbf
 SHA256 (ipfabric-6-5-1+0.ova) = cf6dd27630087154657bfd926fd8ea1b6fb2bdd6916ead77907012edcec9f122
 MD5 (ipfabric-6-5-1+0.ova) = 1113c4c4ea684651414bfa307b0ca149
 </code></pre></div>
-<h3 id="important-product-changes">Important product changes</h3>
+<h3 id="important-product-changes">Important Product Changes</h3>
 <h4 id="forcing-defaultseclevel0">Forcing <code>DEFAULT@SECLEVEL=0</code></h4>
 <p>All secure (read &ldquo;encrypted with OpenSSL&rdquo;) connections made by IP Fabric have
 forced <code>DEFAULT@SECLEVEL=0</code> to allow connections to devices with older OpenSSL
@@ -10901,6 +10923,15 @@ versions (which leads to the use of ciphers that are now considered weak). This
 is just a temporary solution and will be removed in the future. We are working
 on a solution to allow OpenSSL being configured by the user from the outside of
 the <code>node.js</code> process.</p>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>LDAP authentication is not working if local authentication is enabled<ul>
+<li>We are working on a fix. The hotfix is to disable local authentication
+  (<code>"enableLocalAuthentication": false</code>). If you are interested in the hotfix,
+  please contact IP Fabric Support.</li>
+</ul>
+</li>
+</ul>
 <h3 id="network-discovery">Network Discovery</h3>
 <ul>
 <li>AWS &ndash; Support for Direct Connect Gateway (DXGW)<ul>
@@ -10947,7 +10978,7 @@ the <code>node.js</code> process.</p>
 </ul>
 </li>
 </ul>
-<h3 id="other-minor-changes">Other minor changes</h3>
+<h3 id="other-minor-changes">Other Minor Changes</h3>
 <p>When a user uploads a snapshot archive, they are set as the creator of the
 snapshot (discarding the information about the original creator).</p>
 <h3 id="experimental-features">Experimental Features</h3>
