@@ -10655,19 +10655,59 @@ documentation.
 <h1 id="viptela-cedge-details-of-omp-routes-might-be-missing">Viptela cEdge details of OMP routes might be missing</h1>
 <p>To properly model path lookup, information about OMP routes needs to be
 downloaded with API endpoint
-<code>/dataservice/device/omp/routes/received?deviceId=\&lt;id\&gt;</code>.</p>
+<code>/dataservice/device/omp/routes/received?deviceId=&lt;id&gt;</code>.</p>
 <p>Cisco SD-WAN has a limitation of 3999 objects per
 <a href="https://community.cisco.com/t5/sd-wan-and-cloud-networking/cisco-sd-wan-vmanage-api-omp-route-not-in-omp-received-api/m-p/4919774">API response</a>,
 but this can vary depending on the vManage load.</p>
 <p>If some routes are missing, IP Fabric will download OMP information for every
 missing route using
-<code>/dataservice/device/omp/routes/received?deviceId=\&lt;id\&gt;&amp;prefix=\&lt;prefix\&gt;</code> API
+<code>/dataservice/device/omp/routes/received?deviceId=&lt;id&gt;&amp;prefix=&lt;prefix&gt;</code> API
 endpoint.</p>
 <p>This can generate a large number of API requests. To prevent long discovery
 time, there is a default limit of <strong>100 OMP API requests</strong> since version <code>6.5</code>
-(<code>ompRoutesReceivedPrefixRequestLimit</code>).</p>
-<p>If you need to increase the default limit, contact the IP Fabric Support or
-Solution Architect team.</p>
+(<code>ompRoutesReceivedPrefixRequestLimit</code>). If you need to increase the default
+limit, contact the IP Fabric Support or Solution Architect team.</p>
+<div class="admonition quote">
+<p class="admonition-title">Cisco TAC comment on this issue</p>
+<p>For omp received or advertised routes API issues, he confirmed that this is limitation up to 4K only.</p>
+<p>From the lab repro, I increased the prefix scale to 1K but the DE advised
+that the router also includes TLOCs and others and my lab is exceeding 4K limit
+so this is why API doesn&rsquo;t return all routes and they get truncated:</p>
+<blockquote>
+<p>4000 is the max limit for routes via NetConf.</p>
+</blockquote>
+<p><code>cEdge1#show sdwan omp summary | inc routes-</code> this command confirms if the
+ router exceeded the limit:</p>
+<div class="highlight"><pre><span></span><code>routes-received 4144
+routes-installed 40
+routes-sent 4084
+mcast-routes-received 0
+mcast-routes-installed 0
+mcast-routes-sent 0
+</code></pre></div>
+<p>And the 4000 number is not just for prefixes, but incl. children RIB-INs as
+well. routes are counted per rib-ins, not prefixes, prefixes will be lesser,
+but with tlocs it will become 4000</p>
+<p>it’s a limitation via Netconf per the engineering team ; because of system
+cpu/memory limits because of which we have seen ConfD crashes in the field
+previously with too large number of routes, below is the reference defect by
+which DE added this 4K limit:</p>
+<blockquote>
+<p>Type of behavior change: vManage real-time omp received and advertised routes limit</p>
+<p>Release introduced: for 17.6 right now, will keep backporting to old releases.</p>
+<p>Old behavior: There is no limit to vManage real-time omp received and advertised routes. But when the total number/setup scale is large, ConfD might crash.</p>
+<p>New behavior( starting from 17.3.5 onwards): Added a limit to vManage real-time omp received and advertised routes. The limit total routes, more specifically, the row number in vManage UI is 4001.</p>
+<p>Impact on customer: To avoid ConfD crash, only the first 4001 route entries will be shown in vManage UI.</p>
+</blockquote>
+<p>To solve this, they need to add pagination support from vManage to device.
+There is a Sev6 present for this requirement &ndash; <code>`CSCvu59961</code>:</p>
+<blockquote>
+<p>Need to add pagination support so that vManage can pull the large amount of API data in batches.”</p>
+</blockquote>
+<p>So, you need to track this enhancement request <code>CSCvu59961</code> with your Cisco
+account team to expedite its progress so the development team can enhance this
+limit.</p>
+</div>
 
 
 
