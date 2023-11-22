@@ -146,9 +146,9 @@ changed. Below is a full example of the `api.json` config file:
     root@demo:~$ jq . /opt/nimpee/conf.d/api.json
     parse error: Expected another key-value pair at line 4, column 3
     ```
-    
+
     You can reformat and prettify the JSON file by running:
-    
+
     ```commandline
     echo "$(jq < /opt/nimpee/conf.d/api.json)" > /opt/nimpee/conf.d/api.json
     ```
@@ -246,10 +246,10 @@ corresponds to `staticClient` in the Dex configuration).
     - `roleName` -- The name of the IP Fabric role.
       - A value of `null` will provide no access.
       - Either `roleName` or `roleId` property must be specified, not both.
-      - **Since version `6.1`, you can opt to only use `roleName` instead of 
+      - **Since version `6.1`, you can opt to only use `roleName` instead of
         `roleId` in your configuration.**
       - **Since version `6.3`, `roleName` can only contain `a-zA-Z0-9_-`.
-        Previously created roles will be automatically modified by removing 
+        Previously created roles will be automatically modified by removing
         not-allowed characters from role name according to the new validation rules.
         Make sure specified `roleName` refers to the existing role in the system.**
 
@@ -355,7 +355,7 @@ issuer: https://demo.ipfabric.io/dex
 ### Skip Approval Screen
 
 The following lines of the configuration control if you would like a `Grant
-Access` screen to be presented to your users on every login. By setting it to 
+Access` screen to be presented to your users on every login. By setting it to
 true, the message below won't be displayed.
 
 ```yaml
@@ -386,6 +386,7 @@ staticClients:
   - Found in [`api.json`](#providers-configuration) for `clientId` under
     `providers`.
 - `redirectURIs` -- Full path to the callback endpoint of the IP Fabric client.
+
   - It is in the format of
     `https://<FQDN>/api/<API_MAJOR_VERSION>/auth/external/<API-DEX-PROVIDERS-NAME>`
   - `API-DEX-PROVIDERS-NAME` is found in [`api.json`](#providers-configuration)
@@ -413,7 +414,7 @@ staticClients:
 Here is a nice illustration of how the `/opt/nimpee/conf.d/api.json` values map
 to `/etc/ipf-dex.yaml`:
 
-![JSON yaml mapping](sso/sso_api_dex_mapping.png)
+![JSON YAML mapping](sso/sso_api_dex_mapping.png)
 
 ### OpenID Connect (OIDC)
 
@@ -511,7 +512,7 @@ connectors:
   - **Required in order to obtain `groups` claim from Azure.**
 - `clientID` -- A client ID configured or generated on the Identity Provider.
 - `clientSecret` -- A client secret configured or generated on the Identity
-   Provider.
+  Provider.
 - `scopes` -- A list of scopes to be returned from the Identity Provider.
   - The ones listed above are the most common. However, these can differ from
     provider to provider.
@@ -526,24 +527,26 @@ connectors:
 2. Enter a `Name` for the application (e.g. `IP Fabric SSO`).
 3. Specify who can use the application (e.g. `Accounts in this organizational directory only`).
 4. Enter Redirect URI (optional) as follows (replacing `IP_FABRIC_FQDN` with your IP Fabric URL), then choose `Add`.
-  - **Platform:** `Web`
-  - **Redirect URI:** https://`<IP_FABRIC_FQDN>`/dex/callback
+
+- **Platform:** `Web`
+- **Redirect URI:** https://`<IP_FABRIC_FQDN>`/dex/callback
+
 5. When registration finishes, the Azure portal displays the app registration's Overview pane. You see the Application (client) ID.
    ![Azure App registration's Overview](sso/azure-app-registration-overview.png "Azure App registration's Overview")
 6. From the `Certificates & secrets` menu, choose `+ New client secret`
 7. Enter a `Name` for the secret (e.g. `clientSecret`). **Make sure to copy and save generated value for the `clientSecret`.**
-    ![Azure App registration's Secret](sso/azure-app-registration-secret.png "Azure App registration's Secret")
+   ![Azure App registration's Secret](sso/azure-app-registration-secret.png "Azure App registration's Secret")
 8. From the `API permissions` menu, choose `+ Add a permission`
 9. Find `User.Read` permission (under `Microsoft Graph`) and grant it to the created application:
    ![Azure AD API permissions](sso/azure-api-permissions.png "Azure AD API permissions")
 10. From the `Token Configuration` menu, choose `+ Add groups claim`
-   ![Azure AD token configuration](sso/azure-token-configuration.png "Azure AD token configuration")
-  1. `All groups`: Emits security groups and distribution lists and roles.
-  2. `Security groups`: Emits security groups that the user is a member of in the groups claim.
-  3. `Directory roles`: If the user is assigned directory roles, they're emitted as a `wids` claim. (The group's claim won't be emitted.)
-  4. `Groups assigned to the application`: Emits only the groups that are explicitly assigned to the application and that the user is a member of. **Recommended for large organizations due to the group number limit in token.**
-    1. From the `Azure Active Directory` > `Enterprise applications` menu, search the App that you created (e.g. `IP Fabric SSO`).  
-    2. From the `Users and groups` menu of the app, add any users or groups requiring access to the service.
+    ![Azure AD token configuration](sso/azure-token-configuration.png "Azure AD token configuration")
+11. `All groups`: Emits security groups and distribution lists and roles.
+12. `Security groups`: Emits security groups that the user is a member of in the groups claim.
+13. `Directory roles`: If the user is assigned directory roles, they're emitted as a `wids` claim. (The group's claim won't be emitted.)
+14. `Groups assigned to the application`: Emits only the groups that are explicitly assigned to the application and that the user is a member of. **Recommended for large organizations due to the group number limit in token.**
+15. From the `Azure Active Directory` > `Enterprise applications` menu, search the App that you created (e.g. `IP Fabric SSO`).
+16. From the `Users and groups` menu of the app, add any users or groups requiring access to the service.
 
 ### SAML Connector
 

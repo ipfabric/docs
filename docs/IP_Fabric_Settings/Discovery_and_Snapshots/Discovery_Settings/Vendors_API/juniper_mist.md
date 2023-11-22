@@ -14,7 +14,7 @@ Juniper Mist devices are discovered only through API.
 
    ![login](mist/mist_login.png)
 
-   ![main gui](mist/mist_gui.png)
+   ![main GUI](mist/mist_gui.png)
 
 2. Once logged in, you may proceed to open a new tab in the same browser and go to [API token generation.](https://api.mist.com/api/v1/self/apitokens)
 

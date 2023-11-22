@@ -31,7 +31,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - NX-OS ACL matches statement fix
 - /32 routes to discovery
 - NX-OS error-disabled parsing
-- Bridge-groups stp parsing
+- Bridge-groups STP parsing
 - C890 WLAN interface parsing
 
 ## Version 1.0.4
@@ -59,7 +59,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 
 ### System Features
 
-- Improved MOTD for "nimpee" troubleshooting user
+- Improved MOTD for NIMPEE troubleshooting user
 - HTTPS access.
 - HTTPS certificate wizard is now part of the initial configuration
 - Image hardening
@@ -121,7 +121,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 
 - Routing domain diagrams
 - End to End Path lookup diagram
-  - added vrf support
+  - added VRF support
   - added RPF
   - added neighboring domains
 

@@ -98,7 +98,7 @@ description: In this section, IP Fabric publishes previous version releases of N
   returns "FEX is not present"
 - Cisco ASA - routing table fixed parsing
 - Cisco XR - improved parsing for `show mpls ldp vrf \<instance>
-  neighbor detail` command
+neighbor detail` command
 - Cisco IOS-XE OSPF interfaces fixed parsing for the unnumbered tunnel
   interface
 - Cisco MPLS LDP - updated parsing for LDP neighbor with no source
@@ -107,7 +107,7 @@ description: In this section, IP Fabric publishes previous version releases of N
   command output
 - Cisco IOS-XE 3560 - show version stack inventory parsing fix.
 - Cisco SG - fixed parsing of different output for STP detail command
-- Extreme XOS - MTU wasn't parsed on extreme xos 22.5.1.7
+- ExtremeXOS - MTU wasn't parsed on ExtremeXOS 22.5.1.7
 - Path lookup - FEX on access fixed
 - Arista vEOS - missing SN is replaced by system mac address
 - Arista vEOS - interface unconfigured speed parsing fix
@@ -116,7 +116,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Arista vEOS - parsing fix when NTP is disabled
 - Extreme XOS - memory information fixed parsing
 - Check Point Gaia - fixed parsing of different output for command `fw
-  ctl pstat`
+ctl pstat`
 - Fortinet FortiGate - fixed ambiguous command to get info about the
   routing table
 - Fortinet FortiGate - fixed parsing for different output about memory
@@ -133,7 +133,7 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Juniper - SRX firewall/router mode detection, the default is
   firewall when no relevant output is available
 - Tables - FIX filtering in columns where is able to switch property
-  for filtering i.e. Nat - Rules
+  for filtering i.e. NAT - Rules
 - Tables - Filter rules were inserted randomly after the seventh rule
 - Tables - some tables had wrong values for export into CSV (Object
   Object)
@@ -250,9 +250,9 @@ description: In this section, IP Fabric publishes previous version releases of N
 - System backup - FTP directory was transformed to lowercase it could
   be a problem when the directory on FTP server was in uppercase.
 - Dashboard - fixed Snapshot History widget for MAC's
-- Dlink and Enterasys wrongly recognized as Aruba switch. Version
+- D-Link and Enterasys wrongly recognized as Aruba switch. Version
   parsing fixed.
-- Routing table - recursive lookup for vrf leak fix
+- Routing table - recursive lookup for VRF leak fix
 - Graphs - Host to gateway and path lookup default gateway selection
   fix (the mask is considered in calculation now)
 - 802.1x interface authentication port control mode is now parsed from
@@ -429,39 +429,35 @@ description: In this section, IP Fabric publishes previous version releases of N
   weren't decrypted
 - Fixed NTP information - Correct parsing of GNSS reference, stratum
   \< 16 as check for reach-ability
-- Cisco Nexus 7000 admin vdc NTP copy to other vdc (system clock is
-  controlled only from one vdc)
-- Cisco IOS - fixed reported parsing bugs for command `show ip
-  access-list`
-- Cisco IOS - fixed reported parsing bugs for command `show bgp all
-  neighbor`
-- Cisco IOS - fixed reported parsing bugs for command `show bgp all
-  summary`
+- Cisco Nexus 7000 admin VDC NTP copy to other VDC (system clock is
+  controlled only from one VDC)
+- Cisco IOS - fixed reported parsing bugs for command `show ip access-list`
+- Cisco IOS - fixed reported parsing bugs for command `show bgp all neighbor`
+- Cisco IOS - fixed reported parsing bugs for command `show bgp all summary`
 - Cisco IOS - parsing fix dynamic cluster-HSRP/NAT acl rules
-- Cisco IOS - fixed reported parsing bugs for command `show ip ospf
-  neighbor detail`
+- Cisco IOS - fixed reported parsing bugs for command `show ip ospf neighbor detail`
 - Cisco IOS - auth session parsing fix when no output is available
 - Cisco WLC - fixed processing of pagination
 - Cisco WLC - fixed reported parsing bugs for command `show ap config
-  802.11a summary`
+802.11a summary`
 - Cisco WLC - fixed reported parsing bugs for command `show ap config
-  802.11b summary`
+802.11b summary`
 - Cisco WLC - fixed reported parsing bugs for command `show ap wlan
-  802.11a \<apName>`
+802.11a \<apName>`
 - Cisco WLC - fixed reported parsing bugs for command `show ap wlan
-  802.11b \<apName>`
+802.11b \<apName>`
 - Cisco WLC - fixed reported parsing bugs for command `show ap
-  inventory \<apName>`
+inventory \<apName>`
 - Cisco WLC - fixed reported parsing bugs for command `show network
-  summary`
+summary`
 - Cisco NX-OS - fixed reported parsing bugs for command `show
-  interface status err-disabled`
+interface status err-disabled`
 - Cisco NX-OS - fixed reported parsing bugs for command `show ip ospf
-  interface vrf all`
+interface vrf all`
 - Cisco NX-OS - fixed reported parsing bugs for command `show
-  access-list summary` (IPv6 entries).
+access-list summary` (IPv6 entries).
 - Cisco NX-OS - fixed reported parsing bugs for command `show ip ospf
-  interface vrf all`
+interface vrf all`
 - Cisco IOS-XE (Catalyst) - fixed parsing of `show version` when stack
   switch has "Unknown" uptime
 - Cisco fixed parsing of command `show ospf neighbor detail`. OSPF
@@ -470,9 +466,9 @@ description: In this section, IP Fabric publishes previous version releases of N
   dynamic routing protocols
 - Cisco IOS - LLDP/CDP neighbor interface for phone fix
 - HP Aruba - fixed reported parsing bugs for command `show ap
-  bss-table`
+bss-table`
 - HP Comware - fixed reported parsing bugs for command `display ospf
-  peer verbose`
+peer verbose`
 
 ### 2.2.7 (31st July 2018)
 
@@ -717,17 +713,17 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Removed duplicate tables that served as dedicated checks, since now
   each table can have any number of checks using table colors
   (reports)
-  
-  - /dashboard/risk/device-stability (now a color in /inventory/devices)
-  - /dashboard/risk/eox (duplicate of /inventory/end-of-life-milestones)
-  - /dashboard/risk/err-disabled (duplicate of /technology/interfaces/errdisabled)
-  - /dashboard/risk/outbound-balancing (duplicate of /technology/port-channels/outbound-balancing-table)
-  - /dashboard/risk/routing-stability (duplicate of /technology/routing/route-stability)
-  - /dashboard/risk/stp-stability (now a color in /technology/spanning-tree/stp-instances)
-  - /technology/addressing/host-ip (duplicate of /inventory/hosts)
-  - /technology/management/config-register (now a color in /inventory/devices)
-  - /technology/management/os-version-consistency (duplicate of /inventory/os-versions)
-  - /technology/management/unexpected-reloads (now a color in /inventory/devices)
+
+  - `/dashboard/risk/device-stability` (now a color in `/inventory/devices`)
+  - `/dashboard/risk/eox` (duplicate of `/inventory/end-of-life-milestones`)
+  - `/dashboard/risk/err-disabled` (duplicate of `/technology/interfaces/errdisabled`)
+  - `/dashboard/risk/outbound-balancing` (duplicate of `/technology/port-channels/outbound-balancing-table`)
+  - `/dashboard/risk/routing-stability` (duplicate of `/technology/routing/route-stability`)
+  - `/dashboard/risk/stp-stability` (now a color in `/technology/spanning-tree/stp-instances`)
+  - `/technology/addressing/host-ip` (duplicate of `/inventory/hosts`)
+  - `/technology/management/config-register` (now a color in `/inventory/devices`)
+  - `/technology/management/os-version-consistency` (duplicate of `/inventory/os-versions`)
+  - `/technology/management/unexpected-reloads` (now a color in `/inventory/devices`)
 
 - Fixed Cisco ASA parsing of empty localL4connections
 
@@ -792,7 +788,7 @@ of history collected.
 - Individual STP instances can now be hidden through Objects diagram
   menu
 - L2/L3 boundary is now enhanced through MAC lookup between router and
-  switch using VLAN, ARP, and MAC (now still marked as stp)
+  switch using VLAN, ARP, and MAC (now still marked as `stp`)
 
 **Features - System**
 
@@ -820,7 +816,7 @@ of history collected.
 
 **Features**
 
-- Tacacs Authentication failure retries settings -
+- TACACS Authentication failure retries settings -
   SettingsAdvancedSSH-Telnet
 - The sites can be separated from the diagram (requires site detection
   using Routing & Switching)
@@ -848,7 +844,7 @@ of history collected.
 - Routing domains are now separated by sites
 - Switches with one default route are not calculated into the routing
   domain
-- Port-channel members with stp are not considered network edge
+- Port-channel members with STP are not considered network edge
 - Phone and AP ports are considered network edge
 - EOL reports for Juniper had incorrect data
 - IP Phones are now detected using MAC in addition to LLDP/CDP
@@ -877,7 +873,7 @@ of history collected.
 
 - Predefined Advanced Filters was deleted by next Discovery start
 - Filtering any tables for the selected site
-- Diagrams - export png for end2end path lookup and host2gateway
+- Diagrams - export PNG for end2end path lookup and host2gateway
   didn’t work
 - Diagrams - the tooltips for ACL/QoS were not showing
 - Fixed an error when manually uploading an update package
@@ -901,7 +897,7 @@ of history collected.
 - TechSupport file - download doesn’t work
 - TechSupport file doesn’t contain discovery and CLI logs
 - TechSupport file doesn’t contain the most recent archived CLI logs
-- TechSupport file doesn’t contain nimpee system logs
+- TechSupport file doesn’t contain NIMPEE system logs
 
 ### 2.2.0 (19th March 2018)
 
@@ -1115,7 +1111,7 @@ of history collected.
 
 **System BugFixes**
 
-- Fex parsing when description includes non-alphanumeric characters
+- FEX parsing when description includes non-alphanumeric characters
 - OS Versions VDC fix (the only chassis are included)
 - STP parsing logic fix
 - Duplicate IP not reported for /30-32 networks

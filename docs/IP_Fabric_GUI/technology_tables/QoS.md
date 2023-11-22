@@ -1,5 +1,5 @@
 ---
-description: The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between... 
+description: The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between...
 ---
 
 # QoS
@@ -30,21 +30,20 @@ through the class; Drop rate is the bitrate of dropped traffic.
 
 ### Shaping
 
-The shaping table details every class that has shaping action and the
-specific parameters of that class. Site is the site where devices with
-the applied policy is located at; Hostname is the short name of the
-device with the applied policy; Policy is the applied service policy
-name; Type is the type of applied service policy depending on the
-direction or hierarchy; Interface is the interface the policy-map is
-applied to; Class is the specific class name of the policy map the
-detailed information is displayed for; Child Policy is the policy-map
-name applied as a child to the class if present; Parent Policy is the
-policy-map name of a parent policy-map for this specific class if
-present; Match is the match parameters of the class; Shape Type is the
-Shaper bucket calculation type, Average (bc) or Peak (bc+be); CIR is the
-Committed Information Rate; BC is the Burst Committed (or bucket size);
-BE is the Burst Excess (or burst size); Target Rate is the maximum rate
-traffic is expected to leave the shaper over prolonged intervals.
+The shaping table details every class that has shaping action and the specific
+parameters of that class. Site is the site where devices with the applied
+policy is located at; Hostname is the short name of the device with the applied
+policy; Policy is the applied service policy name; Type is the type of applied
+service policy depending on the direction or hierarchy; Interface is the
+interface the policy-map is applied to; Class is the specific class name of the
+policy map the detailed information is displayed for; Child Policy is the
+policy-map name applied as a child to the class if present; Parent Policy is
+the policy-map name of a parent policy-map for this specific class if present;
+Match is the match parameters of the class; Shape Type is the Shaper bucket
+calculation type, Average (`bc`) or Peak (`bc+be`); CIR is the Committed
+Information Rate; BC is the Burst Committed (or bucket size); BE is the Burst
+Excess (or burst size); Target Rate is the maximum rate traffic is expected to
+leave the shaper over prolonged intervals.
 
 ### Queuing
 

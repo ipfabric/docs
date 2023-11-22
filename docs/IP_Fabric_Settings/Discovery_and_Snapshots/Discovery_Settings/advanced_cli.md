@@ -57,16 +57,16 @@ According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common
 errors and adjustments:
 
-| Error                                                                          | Error Type                    | How To Mitigate                                                                                                    |
-| ------------------------------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| connect ETIMEDOUT XX.XX.XX.XX:22                                               | Connection error              | Received no response from the destination.                                                                         |
-| connect ECONNREFUSED XX.XX.XX.XX:22                                            | Connection error              | The connection to the destination is being blocked by an access-list or firewall.                                  |
-| All configured authentication methods failed                                   | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| Authentication failed                                                          | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| Authentication failed - login prompt appeared again                            | Authentication error          | Unable to authenticate to the destination host                                                                     |
-| SSH client not received any data for last 120000 ms! cmd => show vrrp \| e #^$ | Command timeout               | The command 'show vrrp \| e #^$' timed out. Increase **device session timeout.**                                   |
-| Can't detect prompt                                                            | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
-| Command "enable" authorization failed, tried 2x                                | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
+| Error                                                                            | Error Type                    | How To Mitigate                                                                                                    |
+| -------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| connect ETIMEDOUT XX.XX.XX.XX:22                                                 | Connection error              | Received no response from the destination.                                                                         |
+| connect ECONNREFUSED XX.XX.XX.XX:22                                              | Connection error              | The connection to the destination is being blocked by an access-list or firewall.                                  |
+| All configured authentication methods failed                                     | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| Authentication failed                                                            | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| Authentication failed - login prompt appeared again                              | Authentication error          | Unable to authenticate to the destination host                                                                     |
+| SSH client not received any data for last 120000 ms! `cmd => show vrrp \| e #^$` | Command timeout               | The command `show vrrp \| e #^$` timed out. Increase **device session timeout.**                                   |
+| Can't detect prompt                                                              | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
+| Command "enable" authorization failed, tried 2x                                  | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
 
 ## Custom SSH/Telnet Ports
 

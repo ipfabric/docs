@@ -18,7 +18,7 @@ To work around the issue, we did the following in version `3.7.0`:
 
 - renamed the previous `Serial Number` column in the **Device Inventory** table
   (in **Inventory --> Devices**) to `Unique serial number` (including
-  virtualization unique identifier such as context, vsys, VDC etc.)
+  virtualization unique identifier such as context, VSYS, VDC etc.)
 - introduced a new `Serial Number` column (containing real serial numbers as
   reported by devices themselves)
 
