@@ -11325,10 +11325,10 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <li><code>roleName</code> &ndash; The name of the IP Fabric role.<ul>
 <li>A value of <code>null</code> will provide no access.</li>
 <li>Either <code>roleName</code> or <code>roleId</code> property must be specified, not both.</li>
-<li><strong>Since version <code>6.1</code>, you can opt to only use <code>roleName</code> instead of 
+<li><strong>Since version <code>6.1</code>, you can opt to only use <code>roleName</code> instead of
   <code>roleId</code> in your configuration.</strong></li>
 <li><strong>Since version <code>6.3</code>, <code>roleName</code> can only contain <code>a-zA-Z0-9_-</code>.
-  Previously created roles will be automatically modified by removing 
+  Previously created roles will be automatically modified by removing
   not-allowed characters from role name according to the new validation rules.
   Make sure specified <code>roleName</code> refers to the existing role in the system.</strong></li>
 </ul>
@@ -11425,7 +11425,7 @@ to be configured to be equal to the <code>url</code> under <code>dex</code> in
 </code></pre></div>
 <h3 id="skip-approval-screen">Skip Approval Screen</h3>
 <p>The following lines of the configuration control if you would like a <code>Grant
-Access</code> screen to be presented to your users on every login. By setting it to 
+Access</code> screen to be presented to your users on every login. By setting it to
 true, the message below won&rsquo;t be displayed.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">oauth2</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">skipApprovalScreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -11450,7 +11450,9 @@ which acts as a client to <code>dex</code>.</p>
   <code>providers</code>.</li>
 </ul>
 </li>
-<li><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.<ul>
+<li>
+<p><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.</p>
+<ul>
 <li>It is in the format of
   <code>https://&lt;FQDN&gt;/api/&lt;API_MAJOR_VERSION&gt;/auth/external/&lt;API-DEX-PROVIDERS-NAME&gt;</code></li>
 <li><code>API-DEX-PROVIDERS-NAME</code> is found in <a href="#providers-configuration"><code>api.json</code></a>
@@ -11486,7 +11488,7 @@ which acts as a client to <code>dex</code>.</p>
 <h3 id="config-file-mapping">Config File Mapping</h3>
 <p>Here is a nice illustration of how the <code>/opt/nimpee/conf.d/api.json</code> values map
 to <code>/etc/ipf-dex.yaml</code>:</p>
-<p><a class="glightbox" href="sso_api_dex_mapping.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="JSON yaml mapping" src="sso_api_dex_mapping.png" /></a></p>
+<p><a class="glightbox" href="sso_api_dex_mapping.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="JSON YAML mapping" src="sso_api_dex_mapping.png" /></a></p>
 <h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
 <p>Please review the
 <a href="https://dexidp.io/docs/connectors/oidc/">Dex documentation on OIDC</a> for all
@@ -11585,7 +11587,7 @@ special configuration for proper enablement.</p>
 </li>
 <li><code>clientID</code> &ndash; A client ID configured or generated on the Identity Provider.</li>
 <li><code>clientSecret</code> &ndash; A client secret configured or generated on the Identity
-   Provider.</li>
+  Provider.</li>
 <li><code>scopes</code> &ndash; A list of scopes to be returned from the Identity Provider.<ul>
 <li>The ones listed above are the most common. However, these can differ from
   provider to provider.</li>
@@ -11601,31 +11603,29 @@ special configuration for proper enablement.</p>
 <li>From the <code>Azure Active Directory</code> &gt; <code>App registrations</code> menu, choose <code>+ New registration</code></li>
 <li>Enter a <code>Name</code> for the application (e.g. <code>IP Fabric SSO</code>).</li>
 <li>Specify who can use the application (e.g. <code>Accounts in this organizational directory only</code>).</li>
-<li>Enter Redirect URI (optional) as follows (replacing <code>IP_FABRIC_FQDN</code> with your IP Fabric URL), then choose <code>Add</code>.<ul>
+<li>Enter Redirect URI (optional) as follows (replacing <code>IP_FABRIC_FQDN</code> with your IP Fabric URL), then choose <code>Add</code>.</li>
+</ol>
+<ul>
 <li><strong>Platform:</strong> <code>Web</code></li>
 <li><strong>Redirect URI:</strong> https://<code>&lt;IP_FABRIC_FQDN&gt;</code>/dex/callback</li>
 </ul>
-</li>
+<ol>
 <li>When registration finishes, the Azure portal displays the app registration&rsquo;s Overview pane. You see the Application (client) ID.
    <a class="glightbox" href="azure-app-registration-overview.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="azure-app-registration-overview.png" title="Azure App registration's Overview" /></a></li>
 <li>From the <code>Certificates &amp; secrets</code> menu, choose <code>+ New client secret</code></li>
 <li>Enter a <code>Name</code> for the secret (e.g. <code>clientSecret</code>). <strong>Make sure to copy and save generated value for the <code>clientSecret</code>.</strong>
-    <a class="glightbox" href="azure-app-registration-secret.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.png" title="Azure App registration's Secret" /></a></li>
+   <a class="glightbox" href="azure-app-registration-secret.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.png" title="Azure App registration's Secret" /></a></li>
 <li>From the <code>API permissions</code> menu, choose <code>+ Add a permission</code></li>
 <li>Find <code>User.Read</code> permission (under <code>Microsoft Graph</code>) and grant it to the created application:
    <a class="glightbox" href="azure-api-permissions.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure AD API permissions" src="azure-api-permissions.png" title="Azure AD API permissions" /></a></li>
 <li>From the <code>Token Configuration</code> menu, choose <code>+ Add groups claim</code>
-   <a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" title="Azure AD token configuration" /></a><ol>
+    <a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" title="Azure AD token configuration" /></a></li>
 <li><code>All groups</code>: Emits security groups and distribution lists and roles.</li>
 <li><code>Security groups</code>: Emits security groups that the user is a member of in the groups claim.</li>
 <li><code>Directory roles</code>: If the user is assigned directory roles, they&rsquo;re emitted as a <code>wids</code> claim. (The group&rsquo;s claim won&rsquo;t be emitted.)</li>
-<li><code>Groups assigned to the application</code>: Emits only the groups that are explicitly assigned to the application and that the user is a member of. <strong>Recommended for large organizations due to the group number limit in token.</strong><ol>
-<li>From the <code>Azure Active Directory</code> &gt; <code>Enterprise applications</code> menu, search the App that you created (e.g. <code>IP Fabric SSO</code>).  </li>
+<li><code>Groups assigned to the application</code>: Emits only the groups that are explicitly assigned to the application and that the user is a member of. <strong>Recommended for large organizations due to the group number limit in token.</strong></li>
+<li>From the <code>Azure Active Directory</code> &gt; <code>Enterprise applications</code> menu, search the App that you created (e.g. <code>IP Fabric SSO</code>).</li>
 <li>From the <code>Users and groups</code> menu of the app, add any users or groups requiring access to the service.</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 <h3 id="saml-connector">SAML Connector</h3>
 <p>Please review the
