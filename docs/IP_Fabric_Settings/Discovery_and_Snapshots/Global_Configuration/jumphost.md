@@ -51,6 +51,11 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
   - **Label** - the name for configuration (mandatory)
   - **Jumphost Address** - IP address or FQDN name (mandatory)
+
+    !!! tip "Custom Port"
+        If you want to use a custom port for the jumphost connection, please use the following format: `IP/FQDN:PORT` 
+
+        ![Custom Port](jumphost/jumphost_custom_port.png)
   - **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
 
     !!! warning
@@ -58,6 +63,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
         If you use `0.0.0.0/0` or another subnet that **includes the IP address of IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, the connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention to fix.
 
         Also if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.
+            
 
 
   - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
