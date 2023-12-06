@@ -44,7 +44,7 @@ but could possibly affect other versions.
 
 **IP Fabric Version:** All
 
-**Known Affected platforms**: Arista EOS
+**Known Affected platforms**: `Arista DCS-7504N`, `4.28.6M-30705735.4286M`, `DCS-7280SR-48C6-F`, `4.26.4M-25280047.4264M`
 
 **Description**: Arista is assigning the same STP ID to different ports. To serve its purpose spanning tree port ID needs to be unique in a L2 domain. Under some circumstances, e.g. when device operational requirements break its maximum scalability limits or due to a bug in device operating system, a device may assign the same spanning tree port ID to more ports in a single L2 domain. This situation was observed e.g. on `Arista DCS-7504N` running software image with internal build version `4.28.6M-30705735.4286M`. In IP Fabric this has resulted in wrong STP topology calculation and consequent issues in path lookup.
 
