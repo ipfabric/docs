@@ -8,8 +8,9 @@ IP Fabric's integrations streamline network management by merging with existing 
 
 | Integration Name | Documentation                                                 | Location(s)                                                  |
 | ---------------- | ------------------------------------------------------------- | ------------------------------------------------------------ |
-| Python SDK       |                                                               | <https://gitlab.com/ip-fabric/integrations/python-ipfabric>  |
+| Python SDK       | [IP Fabric Python SDK](ip-fabric-python-sdk/index.md)         | <https://gitlab.com/ip-fabric/integrations/python-ipfabric>  |
 | Splunk           | [IP Fabric Splunk TA](splunk/index.md)                        | <https://splunkbase.splunk.com/app/6707>                     |
 | Grafana          |                                                               | <https://gitlab.com/ip-fabric/integrations/ipfabric-grafana> |
 | Ansible          | [Ansible](https://ipfabric-ansible.readthedocs.io/en/latest/) | <https://gitlab.com/ip-fabric/integrations/ipfabric-ansible> |
 | NetBox           | [NetBox](netbox-plugin/index.md)                              | <https://gitlab.com/ip-fabric/integrations/ipfabric-netbox>  |
+| Service Now      | [Service Now Integration](service-now-integration/index.md)   | <https://gitlab.com/ip-fabric/integrations/ipfabric-snow>    |
