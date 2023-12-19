@@ -8,6 +8,12 @@ description: In rare cases, it may be necessary to delete and recreate the IP Fa
 
     Before erasing databases, make sure that you have access to a recent backup!
 
+!!! important
+
+    After clearing the DB, we highly recommend rebooting the IP Fabric
+    appliance. It is especially important when you had issues with low amount of
+    available RAM and a lot of memory data were moved to the disk swap.
+
 In rare cases, it may be necessary to delete and recreate the IP Fabric
 database. Go to **Settings --> System --> Backup & Maintenance** and click **Clear DB**.
 
