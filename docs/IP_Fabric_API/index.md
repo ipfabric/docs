@@ -21,6 +21,13 @@ While using SDK is more straightforward than calling API directly, we recommend
 making yourself familiar with the rest of the documentation as many SDK calls
 map directly to API calls.
 
+## Postman Collection
+
+An IP Fabric Postman Collection is also available to use for testing API calls.
+The collection can be found at [IP Fabric Public Workspace](
+https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview) and documentation can be here at
+[Postman Collection](../integrations/postman/index.md).
+
 ## Using API Directly
 
 The following documentation is meant to get you started working with API and
