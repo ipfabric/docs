@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2+insiders-4.47.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.0">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.78d85e4f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.67c3bdf0.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -11666,6 +11666,7 @@ documentation.
                 
                   
 
+
   
     <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-netbox.git/edit/main/docs/user_guide/03_sources.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -11737,16 +11738,16 @@ documentation.
 </div>
 <h2 id="creating-a-source">Creating a source</h2>
 <p>To create a source navigate to <strong>Plugins &gt; IP Fabric &gt; Sources &gt; Add</strong>. This will bring up a form to enter the details of the IP Fabric instance.
-<a class="glightbox" href="../../images/user_guide/source_new.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.png" /></a></p>
+<a class="glightbox" href="../../images/user_guide/source_new.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.png" /></a></p>
 <h2 id="syncing-a-source">Syncing a source</h2>
 <p>Once a source has been added to NetBox it does not mean that data will be synchronized. NetBox does not know what snapshots to synchronize from IP Fabric. So first the snapshots must be synchronized.</p>
 <p>Navigate to your source and click the <strong>Sync</strong> button. This will create a background task to synchronize the snapshots from IP Fabric.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_sync.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Sync Source" src="../../images/user_guide/source_sync.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_sync.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sync Source" src="../../images/user_guide/source_sync.png" /></a></p>
 <p>Once the synchronization has completed you will see the number of snapshots shown within the <strong>Related Objects</strong> section.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_snapshots.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Source Snapshots" src="../../images/user_guide/source_snapshots.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_snapshots.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source Snapshots" src="../../images/user_guide/source_snapshots.png" /></a></p>
 <h2 id="snapshots">Snapshots</h2>
 <p>Clicking through to the snapshots will show you all the snapshots that have been synchronized from IP Fabric into NetBox. There will be one snapshot created with the <code>snapshot_id</code> of <code>$last</code> this is IP Fabrics way of getting information from the API for the latest snapshot.</p>
-<p><a class="glightbox" href="../../images/user_guide/snapshots.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="../../images/user_guide/snapshots.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/snapshots.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="../../images/user_guide/snapshots.png" /></a></p>
 <p>Each snapshot will show the following information:</p>
 <ul>
 <li>IP Fabric Version</li>
@@ -11758,7 +11759,7 @@ documentation.
 <li>Note</li>
 </ul>
 <p>This information is used when creating an <a href="../05_ingestion/">ingestion</a> to determine the snapshot and site to synchronize from IP Fabric to NetBox. this page also contains the raw JSON for the snapshot that is returned via the IP Fabric API.</p>
-<p><a class="glightbox" href="../../images/user_guide/snapshot_detail.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Snapshot Detail" src="../../images/user_guide/snapshot_detail.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/snapshot_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshot Detail" src="../../images/user_guide/snapshot_detail.png" /></a></p>
 
 
 
@@ -11779,7 +11780,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 3, 2024</span>
   </span>
 
     

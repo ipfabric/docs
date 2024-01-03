@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2+insiders-4.47.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3+insiders-4.49.0">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.78d85e4f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.67c3bdf0.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -11810,6 +11810,7 @@ documentation.
                 
                   
 
+
   
     <a href="https://github.com/ipfabric/docs/edit/main/docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -11841,16 +11842,16 @@ documentation.
 <li>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></li>
 <li>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code></li>
 </ul>
-<p><a class="glightbox" href="hostname_regex.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Hostname Regex" src="hostname_regex.png" /></a></p>
+<p><a class="glightbox" href="hostname_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hostname Regex" src="hostname_regex.png" /></a></p>
 <p>In this example, the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
 <p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
-<p><a class="glightbox" href="snmp_regex.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="SNMP Regex" src="snmp_regex.png" /></a></p>
+<p><a class="glightbox" href="snmp_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP Regex" src="snmp_regex.png" /></a></p>
 <h3 id="testing">Testing</h3>
 <p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.</p>
-<p><a class="glightbox" href="testing.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Testing" src="testing.png" /></a></p>
+<p><a class="glightbox" href="testing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Testing" src="testing.png" /></a></p>
 <p>You can also test SNMP location rules:</p>
-<p><a class="glightbox" href="snmp_location.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="SNMP location" src="snmp_location.png" /></a></p>
+<p><a class="glightbox" href="snmp_location.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP location" src="snmp_location.png" /></a></p>
 <div class="admonition example">
 <p class="admonition-title">RegEx example</p>
 <p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>. The following example will match one of 3 options:</p>
@@ -11874,16 +11875,16 @@ documentation.
 <li><code>(?![a-fA-F0-9]{3}[.][a-fA-F0-9]{4}[.][a-fA-F0-9]{4})</code> &ndash; &hellip; only if it is NOT followed by what would be a MAC address.</li>
 </ul>
 <h2 id="device-neighborship">Device Neighborship</h2>
-<p><a class="glightbox" href="device_neighborship.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Neighborship" src="device_neighborship.png" /></a></p>
+<p><a class="glightbox" href="device_neighborship.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Neighborship" src="device_neighborship.png" /></a></p>
 <p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
 <h2 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h2>
 <p><strong>Manual site separation</strong> enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
 <p>To configure <strong>Device Attributes</strong>, first enable the <strong>Manual site separation</strong> toggle in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and then select <strong>Configure device attributes</strong>:</p>
-<p><a class="glightbox" href="configure_device_attributes.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Configure device attributes" src="configure_device_attributes.png" /></a></p>
+<p><a class="glightbox" href="configure_device_attributes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure device attributes" src="configure_device_attributes.png" /></a></p>
 <p>or go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Device Attributes</strong>:</p>
-<p><a class="glightbox" href="device_attributes_menu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes menu" src="device_attributes_menu.png" /></a></p>
+<p><a class="glightbox" href="device_attributes_menu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes menu" src="device_attributes_menu.png" /></a></p>
 <h3 id="device-attributes">Device Attributes</h3>
-<p><a class="glightbox" href="device_attributes_table.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes table" src="device_attributes_table.png" /></a></p>
+<p><a class="glightbox" href="device_attributes_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes table" src="device_attributes_table.png" /></a></p>
 <ul>
 <li>Serial Number is IP Fabric’s &ldquo;Unique Serial Number&rdquo; (API column <code>sn</code>); this is not the column &ldquo;Serial Number&rdquo; which represents the Hardware SN (API column <code>snHw</code>). Devices discovered via API can also be assigned using Device Attributes.</li>
 <li><strong>Hostname</strong> is populated by IP Fabric when a device matching the <strong>Serial Number</strong> is found</li>
@@ -11892,14 +11893,14 @@ documentation.
 </ul>
 <h3 id="creating-rules-in-the-ui">Creating Rules In The UI</h3>
 <p>You can create rules in the UI by selecting the <strong>Add attribute</strong> button. This will provide you with a form to fill out.</p>
-<p><a class="glightbox" href="add_attribute.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Add Attribute" src="add_attribute.png" /></a></p>
+<p><a class="glightbox" href="add_attribute.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Attribute" src="add_attribute.png" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Currently, there is an issue where IP Fabric will not search
 for devices discovered via an API in the UI. Even though it seems that no
 device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
-<p><a class="glightbox" href="dropdown.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Dropdown" src="dropdown.png" /></a></p>
+<p><a class="glightbox" href="dropdown.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dropdown" src="dropdown.png" /></a></p>
 <h3 id="creating-rules-via-the-api">Creating Rules Via The API</h3>
 <p>The API is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> method requested on endpoint <code>https://&lt;IPF_URL&gt;/api/&lt;IPF_API_VERSION&gt;/attributes/global</code>. An example of the payload can be seen below:</p>
 <div class="admonition example">
@@ -11919,7 +11920,7 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 <h3 id="creating-rules-with-python-ipfabric-package">Creating Rules With <code>python-ipfabric</code> Package</h3>
 <p>Please see example at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/attributes.py">GitHub</a>.</p>
 <h2 id="rule-priority">Rule Priority</h2>
-<p><a class="glightbox" href="rule_priority.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Rule priority" src="rule_priority.png" /></a></p>
+<p><a class="glightbox" href="rule_priority.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Rule priority" src="rule_priority.png" /></a></p>
 <p>Rule precedence is defined by the order from top to bottom. So in the example above:</p>
 <ol>
 <li>
