@@ -45,7 +45,7 @@ Contains a JSON data structure with the keys
 
 - `settings` _[optional]_ - A nested JSON data structure representing visualisation settings to override the default view in IP Fabric's diagram canvas. In these settings, it is possible to:
 
-  - change edge properties like colours and thickness of lines representing protocols and groups
+  - change edge properties like colors and thickness of lines representing protocols and groups
   - change labels on the edges and interfaces
   - hide certain device types.
 
@@ -90,7 +90,7 @@ Using the /graphs endpoint, a successful request returns a JSON response of the 
 
 The `graphResult` construct describes the detail of the topology of the end to end path through the network. It consists of three sections:
 
-- `settings` - echoes the settings from the request body or the system settings as they apply to line styles, colours, weights and labels; hidden device types and groupings
+- `settings` - echoes the settings from the request body or the system settings as they apply to line styles, colors, weights and labels; hidden device types and groupings
 - `boxLabels` - text labels for each of the groups
 - `graphData` - a JSON construct containing a list of nodes and edges in the topological view of the path. Takes the form:
 
@@ -123,7 +123,7 @@ where `nodes` contains data relating to the individual nodes in the graph. Each 
     }
     ```
 
-`edges` contains data relating to the connections between the nodes along the data path. Each one is assigned an ID consisting of a combination of the node ID and interface at each end of the edge. The JSON construct also includes labels for the ends and the centre of the line, graphical details like (x,y) positions of the line and arrowheads and the colours and style of the lines. The `severity_info` key:value pair contains the information about how the edge conforms to applied intent checks; and the `packet` subtree contains a list of the layered packet headers in the simulation as it passes through the edge.
+`edges` contains data relating to the connections between the nodes along the data path. Each one is assigned an ID consisting of a combination of the node ID and interface at each end of the edge. The JSON construct also includes labels for the ends and the centre of the line, graphical details like (x,y) positions of the line and arrowheads and the colors and style of the lines. The `severity_info` key:value pair contains the information about how the edge conforms to applied intent checks; and the `packet` subtree contains a list of the layered packet headers in the simulation as it passes through the edge.
 
 !!! example
 

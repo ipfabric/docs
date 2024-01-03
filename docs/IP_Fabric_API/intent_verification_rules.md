@@ -6,7 +6,7 @@ description: This tech note describes the association between the intent verific
 
 This tech note describes the association between the intent verification rules and the technology tables and how to read those associations through the API.
 
-The results of the intent verification checks are identified as "reports" in the API and are essentially a series of rules by which columns in the technology tables are coloured.
+The results of the intent verification checks are identified as "reports" in the API and are essentially a series of rules by which columns in the technology tables are colored.
 
 ## Instructions
 
@@ -15,7 +15,7 @@ In order to handle the intent verification checks to be able to act on them then
 First step is to fetch a list of the reports from the snapshot you're interested in. This is a simple GET request to `/api/{api_version}/reports?snapshot=<id>` where `<id>` is `$last` or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:
 
 - the table they relate to
-- the columns coloured by the test
+- the columns colored by the test
 - the conditions for each color
 - the values used to mark the columns
 
@@ -73,11 +73,11 @@ Breaking this down, we can see that the report
 - sets the color of the "state" column in that table
 - sets the color to a value of 0 (which maps to green) if the tunnels are in the `UP` state, signified by the content of the "state" column having the value `UP`, otherwise resorting the default of 20 (which maps to amber) if the tunnels are in any other state.
 
-We can compare that with the Web UI dialogue for the same check:
+We can compare that with the Web UI dialog for the same check:
 
 ![intent verification rule](intent_verification_rule.png)
 
-So once we have found the report we are looking for, we retrieve the technology table from the `apiEndpoint` field in the report dictionary, filtered for the colour that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an `UP` state, we make a POST request to `/api/{api_version}/tables/security/dmvpn` with the following request payload:
+So once we have found the report we are looking for, we retrieve the technology table from the `apiEndpoint` field in the report dictionary, filtered for the color that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an `UP` state, we make a POST request to `/api/{api_version}/tables/security/dmvpn` with the following request payload:
 
 ```json
 {
@@ -98,6 +98,6 @@ So once we have found the report we are looking for, we retrieve the technology 
 }
 ```
 
-This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the `state` column equalling `0` -- which equates to the colour green from the validation check.
+This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the `state` column equalling `0` -- which equates to the color green from the validation check.
 
 Note that snapshot management is referred to in a separate article - the `$last` snapshot may not be the best to query on in all cases.
