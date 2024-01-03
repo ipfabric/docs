@@ -1,6 +1,6 @@
-FROM python:3.9.2-alpine3.13
+FROM python:3.11-alpine
 
-ENV PACKAGES=/usr/local/lib/python3.9/site-packages
+ENV PACKAGES=/usr/local/lib/python3.11/site-packages
 ENV PYTHONDONTWRITEBYTECODE=1
 
 ARG GL_DEPLOY_USER
