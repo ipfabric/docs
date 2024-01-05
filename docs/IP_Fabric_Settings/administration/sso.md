@@ -272,7 +272,7 @@ below. Please note that OIDC, SAML, and Azure have different syntaxes for the
 
 ```yaml
 # /etc/ipf-dex.yaml
-# example config in both devOps/etc/ipf-dex.yaml and devOps-install/install/ipf-dex.yaml
+
 issuer: https://<FQDN>/dex
 
 staticClients:
