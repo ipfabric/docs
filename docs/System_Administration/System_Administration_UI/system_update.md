@@ -37,9 +37,9 @@ Online update is automatically available only when the IP Fabric appliance has c
 
 When a new IP Fabric version is available, a green indicator will appear in the
 top-right corner of the main GUI. The image below shows an example of the new
-version `6.2.2` being available:
+version `6.5.2+0` being available:
 
-![New version 6.2.2 available](system_update_new_version.png)
+![New version 6.5.2+0 available](system_update_new_version.png)
 
 To proceed with online update:
 
