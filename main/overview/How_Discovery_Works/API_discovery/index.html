@@ -865,10 +865,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rate-limitation" class="md-nav__link">
+  <a href="#rate-limiting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rate Limitation
+        Rate Limiting
       
     </span>
   </a>
@@ -11549,10 +11549,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rate-limitation" class="md-nav__link">
+  <a href="#rate-limiting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rate Limitation
+        Rate Limiting
       
     </span>
   </a>
@@ -11751,16 +11751,16 @@ vendor):</p>
 <li><a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/VMware_NSX-T/">VMware NSX-T</a></li>
 </ul>
 <p>All Vendor API clients share the same behaviors described below.</p>
-<h2 id="rate-limitation">Rate Limitation</h2>
-<p>When a Vendor API client requires to apply a rate limitation, it instantiates
-its own rate limiter. Then any request is sent only when the rate limiter has a
-free capacity. The rate limitation is determined by:</p>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>When a Vendor API client requires to apply a rate limiting, it instantiates its
+own rate limiter. Then any request is sent only when the rate limiter has a free
+capacity. The rate limiting is determined by:</p>
 <ul>
 <li>capacity</li>
 <li>refill rate</li>
 <li>refill rate interval</li>
 </ul>
-<p>The rate limitation algorithm is based around the standard
+<p>The rate limiting algorithm is based around the standard
 <a href="https://en.wikipedia.org/wiki/Token_bucket">token bucket</a> rate limiting
 algorithm. The bucket fills up with permissions to send a request at a constant
 rate (the refill rate each refill rate interval). When a client wants to make a
@@ -11785,14 +11785,14 @@ expiration. The Vendor API client is aware of that and it can detect that. When
 such a situation is detected, the session is immediately renewed and the
 discovery continues.</p>
 <h2 id="overloaded-server-detection-and-handling">Overloaded Server Detection and Handling</h2>
-<p>Although the discovery process respects the configured rate limitation
-parameters, the discovery traffic is not the only traffic the Vendor API server
-has to serve, so the server can get overloaded. The Vendor API clients are aware
-of it and detect it. When the overloaded server situation is detected, the
-Vendor API client waits some time and sends all unanswered requests again.
-Vendor API clients apply exponential backoff for the wait time. If the
-overloaded server situation is not mitigated for some time, the Vendor API
-discovery is terminated.</p>
+<p>Although the discovery process respects the configured rate limiting parameters,
+the discovery traffic is not the only traffic the Vendor API server has to
+serve, so the server can get overloaded. The Vendor API clients are aware of it
+and detect it. When the overloaded server situation is detected, the Vendor API
+client waits some time and sends all unanswered requests again. Vendor API
+clients apply exponential backoff for the wait time. If the overloaded server
+situation is not mitigated for some time, the Vendor API discovery is
+terminated.</p>
 <h2 id="recoverable-network-errors">Recoverable Network Errors</h2>
 <p>Vendor API clients are aware of some recoverable network errors (e.g.,
 <code>ECONNRESET</code>, <code>ECONNABORTED</code>, <code>ECONNREFUSED</code>). When a recoverable network error
@@ -11829,7 +11829,7 @@ Whenever that happens, the discovery of other devices can continue.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
   </span>
 
     
