@@ -39,17 +39,17 @@ vendor):
 
 All Vendor API clients share the same behaviors described below.
 
-## Rate Limitation
+## Rate Limiting
 
-When a Vendor API client requires to apply a rate limitation, it instantiates
-its own rate limiter. Then any request is sent only when the rate limiter has a
-free capacity. The rate limitation is determined by:
+When a Vendor API client requires to apply a rate limiting, it instantiates its
+own rate limiter. Then any request is sent only when the rate limiter has a free
+capacity. The rate limiting is determined by:
 
 - capacity
 - refill rate
 - refill rate interval
 
-The rate limitation algorithm is based around the standard
+The rate limiting algorithm is based around the standard
 [token bucket](https://en.wikipedia.org/wiki/Token_bucket) rate limiting
 algorithm. The bucket fills up with permissions to send a request at a constant
 rate (the refill rate each refill rate interval). When a client wants to make a
@@ -81,14 +81,14 @@ discovery continues.
 
 ## Overloaded Server Detection and Handling
 
-Although the discovery process respects the configured rate limitation
-parameters, the discovery traffic is not the only traffic the Vendor API server
-has to serve, so the server can get overloaded. The Vendor API clients are aware
-of it and detect it. When the overloaded server situation is detected, the
-Vendor API client waits some time and sends all unanswered requests again.
-Vendor API clients apply exponential backoff for the wait time. If the
-overloaded server situation is not mitigated for some time, the Vendor API
-discovery is terminated.
+Although the discovery process respects the configured rate limiting parameters,
+the discovery traffic is not the only traffic the Vendor API server has to
+serve, so the server can get overloaded. The Vendor API clients are aware of it
+and detect it. When the overloaded server situation is detected, the Vendor API
+client waits some time and sends all unanswered requests again. Vendor API
+clients apply exponential backoff for the wait time. If the overloaded server
+situation is not mitigated for some time, the Vendor API discovery is
+terminated.
 
 ## Recoverable Network Errors
 
