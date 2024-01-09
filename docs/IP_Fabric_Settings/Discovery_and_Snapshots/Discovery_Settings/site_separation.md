@@ -108,7 +108,7 @@ or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Devic
 
 ### Creating Rules In The UI
 
-You can create rules in the UI by selecting the **Add attribute** button. This will provide you with a form to fill out.
+You can create rules in the UI by clicking **+ Add attribute**. This will provide you with a form to fill out.
 
 ![Add Attribute](site_separation/add_attribute.png)
 

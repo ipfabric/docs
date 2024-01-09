@@ -44,8 +44,7 @@ or older does not automatically remove the previously predefined rule.
 
 ## Example of Adding New Disabled Discovery Task
 
-In the following example, we are creating a rule to disable OSPFv3 on
-Juniper EX. The test for the rule reveals one match, the
-`HWLAB-JEX2200-SW1` switch:
+In the following example, we are creating a rule for disabling OSPFv3 on Arista
+vEOS. The test for the rule reveals 4 matches.
 
 ![Example](disabled_discovery_tasks_example.png)

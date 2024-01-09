@@ -17,7 +17,7 @@ It contains OUI (start of a MAC address of a device), vendor to whom
 this OUI belongs and if it is enabled (can be used) during the discovery
 process.
 
-Custom OUIs can be added via the **Add OUI** button.
+Custom OUIs can be added with the **+ Add OUI** button.
 
 All OUIs can be enabled or disabled for discovery through the **Edit** button.
 
