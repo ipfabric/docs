@@ -17,7 +17,8 @@ are necessary for configuration storage and configuration management to work pro
 
 ![Config Credentials](config/config_auth.png)
 
-These elevated credentials need **Use for configuration management** box checked.
+These credentials need to have the **Use for configuration management** box
+checked.
 
 ## Trigger
 
@@ -41,30 +42,32 @@ We need to realize that every table row, once we filter output for a specific ho
 1. the configuration file remains the same, in which case status field of the DB record is set to `no change`, and `Last Check At` is set to the current time;
 2. the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status `changed` and `Last Change At` and `Last Check At` being set to current time, as described above.
 
-Let's consider following example:
+Let's consider the following example:
 
-![Output for L66JFW9](config/config_l66jfw9.png)
+![Output for L45EXR2](config/config_L45EXR2.png)
 
 Let's go from the bottom of the output:
 
-- `Last change At` is `2022-06-11 01:02:11+02` and `Last Check At` is `2022-06-14 01:01:17+02` with status `no change`
+- `Last change At` is `2024-01-02, 16:13:53 Z` and `Last Check At` is `2024-01-08, 12:33:21 Z` with status `no change`
   - it means there were no configuration file changes between these two timestamps
   - configuration file was checked multiple times and status transitioned from `changed` to `no change`
-- `Last Change At` is `2022-06-15 01:02:08+02` and `Last Check At` is `2022-06-15 01:02:08+02` with status `changed`
+- `Last Change At` is `2024-01-08, 12:43:55 Z` and `Last Check At` is `2024-01-08, 12:43:55 Z` with status `changed`
   - it means that configuration file changed
   - the status is set to `changed`
 
 ## Comparing Configurations
 
-![Config Table](config/config_table.png)
+![Selecting older config](config/older_config.png)
+
+![Selecting newer config](config/newer_config.png)
 
 Stored configurations are displayed in a table that shows information such as the serial number of the device, the device host name, the time when configuration change was detected (`Last Change At` column), and the last time a particular configuration was saved in the `Last Check At` column.
 
 The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the `Before` and `After` states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
 
 <figure markdown>
-  ![Side by Side Diff](config/config_side.png)
-  <figcaption>Side by Side Diff</figcaption>
+  ![Side by side](config/config_side_by_side.png)
+  <figcaption>Side by side</figcaption>
 </figure>
 
 <figure markdown>
@@ -73,6 +76,6 @@ The table can be used to compare between two different configurations directly f
 </figure>
 
 <figure markdown>
-  ![Inline Diff](config/config_inline_diff.png)
-  <figcaption>Inline Diff</figcaption>
+  ![Inline diff](config/config_inline_diff.png)
+  <figcaption>Inline diff</figcaption>
 </figure>
