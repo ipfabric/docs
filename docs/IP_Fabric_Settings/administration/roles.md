@@ -16,7 +16,7 @@ The **Roles** page allows you to create or modify roles.
 
    ![Add role button](roles/roles_table.png)
 
-1. Fill out the **Add role** form -- set a name, description, and select
+2. Fill out the **Add role** form -- set a name, description, and select
    policies -- and click **Save**:
 
    ![Add role form](roles/roles_add.png)
