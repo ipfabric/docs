@@ -4,52 +4,59 @@ description: This section contains information about RBAC roles you can assign p
 
 # Roles
 
-**Roles** enable users to perform actions on system resources (e.g. *user-management* role with assigned *team* policy enables users view, add, update and delete Users, Roles, Policies, LDAP Configuration).
+**Roles** allow users to perform actions on system resources (e.g., a
+_user-management_ role with the _team_ policy assigned allows users to view,
+add, update or delete `users`, `roles`, `policies`, and `LDAP configuration`).
 
-**Roles** page enables you to create or modify roles.
+The **Roles** page allows you to create or modify roles.
 
 ## Add Role
 
-1. To add new role click **+ Add role**.
+1. To add a new role, click **+ Add role**:
 
-	![Add role button](roles/roles_table.png)
+   ![Add role button](roles/roles_table.png)
 
-1. Then fill the **Add role** form - set name, description and select policies - and click **Save**.
+1. Fill out the **Add role** form -- set a name, description, and select
+   policies -- and click **Save**:
 
-	![Add role](roles/roles_add.png)
+   ![Add role form](roles/roles_add.png)
 
 ## List of Roles
 
-**Roles** table lists all roles including their details and enables you to **modify** or **delete** them _(with exception for built-in ***admin*** role which cannot be modified nor deleted)_.
+The **Roles** table lists all roles including their details and allows you to
+**modify** or **delete** them _(with the exception of the built-in **admin**
+role which cannot be modified nor deleted)_.
 
-![Roles Table](roles/roles_table.png)
+![Roles table](roles/roles_table.png)
 
 ## Edit Role
 
-1. To modify role details, click **edit icon** in roles table.
+1. To modify the details of a role, click the **Edit** icon next to it in the
+   **Roles** table:
 
-	![Roles Table Edit](roles/roles_table_edit.png)
+   ![Roles table - edit](roles/roles_table_edit.png)
 
-2. Then to modify role details update data in **Edit Role** form and click **Save**.
+2. Update the data in the **Edit role** form and click **Save**:
 
-	![Edit Role](roles/roles_edit.png)
+   ![Edit role form](roles/roles_edit.png)
 
 ## Copy Role
 
-1. To copy role, click **copy icon** in roles table.
+1. To copy a role, click the **Copy** icon next to it in the **Roles** table:
 
-	![Roles Table Copy](roles/roles_table_copy.png)
+   ![Roles table - copy](roles/roles_table_copy.png)
 
-2. Then modify role details in **Copy Role** form and click **Save**.
+2. Update the data in the **Copy role** form and click **Save**:
 
-	![Copy Role](roles/roles_copy.png)
+   ![Copy role form](roles/roles_copy.png)
 
 ## Delete Role
 
-1. To delete role, click **delete icon** in table.
+1. To delete a role, click the **Delete** icon next to it in the **Roles**
+   table:
 
-	![Roles Table Delete](roles/roles_table_delete.png)
+   ![Roles table - delete](roles/roles_table_delete.png)
 
-2. Then click **Delete** to confirm action.
+2. Click **Delete** to confirm the action:
 
-	![Roles Table Delete Confirm](roles/roles_table_delete_confirm.png)
+   ![Confirm deletion](roles/roles_table_delete_confirm.png)
