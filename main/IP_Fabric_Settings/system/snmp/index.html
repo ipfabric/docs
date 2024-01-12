@@ -11521,23 +11521,23 @@ documentation.
 
 
 <h1 id="snmp">SNMP</h1>
-<p>IP Fabric appliance can be monitored using SNMP protocol. CPU, memory,
-hard drives and network interfaces can be monitored. Appliance uses
-standard Linux OS OIDs.</p>
-<p>To enable SNMP on IP Fabric, go to <strong>Settings &rarr; System &rarr; SNMP</strong>, click
-the <strong>on/off</strong> toggle and select <code>2c</code>, or <code>3</code> from the <strong>Version</strong> list:</p>
+<p>The IP Fabric appliance can be monitored using the SNMP protocol. CPU, memory,
+hard drives, and network interfaces can be monitored. The IP Fabric appliance
+uses standard Linux OS OIDs.</p>
+<p>To enable SNMP on IP Fabric, go to <strong>Settings &rarr; System &rarr; SNMP</strong>, click the
+<strong>on/off</strong> toggle and select <code>2c</code> or <code>3</code> from the <strong>Version</strong> list:</p>
 <p><a class="glightbox" href="enable_snmp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP" src="enable_snmp.png" /></a></p>
 <div class="admonition check">
 <p class="admonition-title">Security note</p>
-<p>Only IP address specified in the <strong>Host IP</strong> field is enabled to have access
-to SNMP 161/udp.</p>
+<p>Only IP addresses specified in the <strong>NMS IPs</strong> field are enabled to have
+access to SNMP port <code>161/udp</code>.</p>
 </div>
 <p>If you selected version <code>2c</code>, please configure:</p>
 <ol>
-<li><strong>Host IP</strong> - IP address of remote monitoring server</li>
-<li><strong>Locality</strong> - location of IP Fabric appliance</li>
-<li><strong>System Contact</strong> - contact to responsible person or department</li>
-<li><strong>Community string</strong> - must match community string configured on monitoring
+<li><strong>NMS IPs</strong> &ndash; IP addresses of remote monitoring servers</li>
+<li><strong>Locality</strong> &ndash; location of IP Fabric appliance</li>
+<li><strong>System Contact</strong> &ndash; contact details (e.g. email) of a responsible person or department</li>
+<li><strong>Community string</strong> &ndash; must match community string configured on monitoring
    server</li>
 <li>Click <strong>Save</strong></li>
 </ol>
@@ -11549,11 +11549,12 @@ to SNMP 161/udp.</p>
 used.</p>
 </div>
 <ol>
-<li><strong>Host IP</strong> - IP address of remote monitoring server</li>
-<li><strong>Locality</strong> - location of IP Fabric appliance</li>
-<li><strong>System Contact</strong> - contact to responsible person or department</li>
-<li><strong>Username</strong> - SNMP v3 user</li>
-<li><strong>Passphrase</strong> - authentication and privacy passphrase</li>
+<li><strong>NMS IPs</strong> &ndash; IP addresses of remote monitoring servers</li>
+<li><strong>Locality</strong> &ndash; location of IP Fabric appliance</li>
+<li><strong>System Contact</strong> &ndash; contact details (e.g. email) of a responsible person or department</li>
+<li><strong>Username</strong> &ndash; SNMPv3 user</li>
+<li><strong>Passphrase</strong> &ndash; authentication passphrase</li>
+<li><strong>Encryption Passphrase</strong> &ndash; privacy passphrase</li>
 <li>Click <strong>Save</strong></li>
 </ol>
 <p><a class="glightbox" href="version_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Version 3" src="version_3.png" /></a></p>
@@ -11592,7 +11593,7 @@ used.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2024</span>
   </span>
 
     
