@@ -34,7 +34,8 @@ instructions.
    3. [Deploying VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
 2. QCOW2 can be deployed on:
    1. [Deploying Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
-   2. [Deploying KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
+   2. [Deploying Azure](01-deployment.md#deploying-a-virtual-machine-on-microsoft-azure)
+   3. [Deploying KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
 
 !!! important "Hardware Requirements"
 
