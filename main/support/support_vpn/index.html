@@ -6763,6 +6763,33 @@ documentation.
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/netbox/administration/release_notes/version_2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6950,6 +6977,33 @@ documentation.
     
   
     Branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/netbox/user_guide/07_extras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Extras
   
 
     
@@ -11568,43 +11622,49 @@ documentation.
 
 
 <h1 id="support-vpn">Support VPN</h1>
-<p>Starting IP Fabric version 1.0.3 customer is able to establish remote
-SSL VPN to IP Fabric DC. Support VPN uses OpenVPN.</p>
+<p>Starting with IP Fabric <code>1.0.3</code>, you can establish remote SSL VPN to IP Fabric&rsquo;s
+DC. Support VPN uses OpenVPN.</p>
 <div class="admonition warning">
 <p class="admonition-title">Network requirements</p>
 <p>Support VPN requires access to <code>remote.ipfabric.io</code> remote port 443/TCP. IP
 Fabric image must be also configured with functional DNS server.</p>
-<p>Connection through proxy servers should work, but not guaranteed.</p>
+<p>Connection through proxy servers should work, but it is not guaranteed.</p>
 </div>
 <h2 id="how-to-establish-support-vpn">How To Establish Support VPN</h2>
 <div class="admonition info">
-<p class="admonition-title">Security tip</p>
-<p>VPN is always established and teared down by customer. VPN connection
-cannot be triggered externally!</p>
+<p class="admonition-title">Security info</p>
+<p>VPN is always established and teared down by you. VPN connection cannot be
+triggered externally.</p>
 </div>
 <ol>
-<li>Click <strong>Support</strong> in the top right corner of the IP Fabric GUI.</li>
+<li>
+<p>Click <strong>Support</strong> in the top-right corner of the IP Fabric GUI.</p>
+</li>
 <li>
 <p>Select <strong>Remote support VPN</strong>:</p>
-<p><a class="glightbox" href="../vpn/menu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VPN Menu" src="../vpn/menu.png" /></a></p>
+<p><a class="glightbox" href="../vpn/menu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Select Remote support VPN in Support menu" src="../vpn/menu.png" /></a></p>
 </li>
 <li>
-<p>On the newly opened page, click the <strong>Connect</strong> button:</p>
-<p><a class="glightbox" href="../vpn/connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VPN Connect" src="../vpn/connect.png" /></a></p>
+<p>On the newly opened page, click <strong>Connect</strong>:</p>
+<p><a class="glightbox" href="../vpn/connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Remote support over VPN - Connect" src="../vpn/connect.png" /></a></p>
 </li>
 <li>
-<p>VPN status should change to connected and also you should see assigned IP address.</p>
+<p><code>VPN status</code> should change to <code>connected</code> and you should also see the
+    assigned IP address.</p>
 </li>
 </ol>
 <h2 id="how-to-tear-down-support-vpn">How To Tear Down Support VPN</h2>
 <ol>
-<li>Repeat steps 1 and 2 from the <strong>How To Establish Support VPN</strong> section above.</li>
 <li>
-<p>On newly opened page click the <strong>Disconnect</strong> button:</p>
-<p><a class="glightbox" href="../vpn/disconnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VPN Disconnect" src="../vpn/disconnect.png" /></a></p>
+<p>Repeat steps 1 and 2 from the
+    <a href="#how-to-establish-support-vpn">How To Establish Support VPN</a> section above.</p>
 </li>
 <li>
-<p>VPN status should change to disconnected.</p>
+<p>On the newly opened page, click <strong>Disconnect</strong>:</p>
+<p><a class="glightbox" href="../vpn/disconnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Remote support over VPN - Connect" src="../vpn/disconnect.png" /></a></p>
+</li>
+<li>
+<p><code>VPN status</code> should change to <code>disconnected</code>.</p>
 </li>
 </ol>
 
@@ -11627,7 +11687,7 @@ cannot be triggered externally!</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
   </span>
 
     

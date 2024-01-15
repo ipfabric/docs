@@ -16,7 +16,7 @@
         <link rel="prev" href="../05_ingestion/">
       
       
-        <link rel="next" href="../10_FAQ/">
+        <link rel="next" href="../07_extras/">
       
       
         
@@ -6763,6 +6763,33 @@ documentation.
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/release_notes/version_2.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7226,6 +7253,33 @@ documentation.
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_extras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Extras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -12028,6 +12082,10 @@ documentation.
 <h1 id="branches">Branches</h1>
 <h2 id="overview">Overview</h2>
 <p>This plugin relies heavily on a feature within NetBox known as <strong>Staged Changes</strong>, which, while still experimental, is a crucial component for the proper functioning of the plugin. We&rsquo;ve found significant success using this feature to address various use cases. For a more comprehensive explanation of Staged Changes, please refer to the <a href="https://docs.netbox.dev/en/stable/plugins/development/staged-changes/">official NetBox documentation</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If the ingestion job is configured to automatically merge staged changes, the plugin will automatically merge the changes into the NetBox database once the branch reaches the <strong><code>completed</code></strong> state.</p>
+</div>
 <h2 id="staged-changes-in-netbox">Staged Changes in NetBox</h2>
 <p><strong>Staged Changes</strong> is a feature in NetBox that provides a programmatic API for staging the creation, modification, and deletion of objects within the system. Importantly, these changes are not immediately committed to the active database. This feature is especially valuable for scenarios like conducting &ldquo;dry runs&rdquo; of bulk operations or preparing a set of changes for administrative review before they are applied.</p>
 <h2 id="branches-a-conceptual-overview">Branches: A Conceptual Overview</h2>
@@ -12127,7 +12185,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
   </span>
 
     
@@ -12222,13 +12280,13 @@ documentation.
         
         
           
-          <a href="../10_FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
+          <a href="../07_extras/" class="md-footer__link md-footer__link--next" aria-label="Next: Extras">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                FAQ
+                Extras
               </div>
             </div>
             <div class="md-footer__button md-icon">
