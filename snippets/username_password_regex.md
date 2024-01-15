@@ -10,4 +10,4 @@
     Password must match the following regular expression:
     `/^[A-Za-z0-9.,\/_@%^:=+ -]*$/`
 
-    - it must contain only these characters: `A-Z` `a-z` `0-9` `/_@%^:=+ -`
+    - it must contain only these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`

@@ -42,11 +42,10 @@ System --> IPF Certificates** on its own is not sufficient.
 !!! warning "Only some characters allowed in fields" 
 
     The fields **Organization name**, **Department**, **City**,
-    **State / Province** can contain only the following characters:
-
-    ```
-    A-Za-z0-9.,/-_@%^:=+
-    ```
+    **State / Province** must match the following regular expression:
+    `/^[A-Za-z0-9.,\/_@%^:=+ -]*$/`
+    
+    - it must contain only these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`
 
     This is for security reasons.
 

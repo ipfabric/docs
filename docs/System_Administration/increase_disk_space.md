@@ -267,7 +267,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
    2. for backup volume is recommended to select different datastore
       ideally on a different physical storage
 6. Click **OK**
-   ![VMWare virtual hardware](vmware_virtual_hardware.png)
+   ![VMware virtual hardware](vmware_virtual_hardware.png)
 7. Launch Remote (Web) Console.
 8. Reboot(**Send Ctrl+Alt+Delete** function can be also used) or power on IP
    Fabric VM.

@@ -28,11 +28,11 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 
 ## Deploying on Hyper-V Virtual Machine
 
-The `QCOW2` disk image file can be converted to different formats.
+The `qcow2` disk image file can be converted to different formats.
 Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
 
 1. Download `ipfabric-*.qcow2` from the official source.
-2. Convert `QCOW2` image to `VHDX` (Be sure to change the filenames in the command examples below.)
+2. Convert `qcow2` image to `VHDX` (Be sure to change the filenames in the command examples below.)
    - Windows instructions:
      1. Download [QEMU disk image utility for Windows](https://cloudbase.it/qemu-img-windows/)
      2. Unzip `qemu-img-windows`

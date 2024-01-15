@@ -29,20 +29,20 @@ We provide two different images listed below along with links to installation
 instructions.
 
 1. OVA can deployed on:
-   1. [Deploying VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
-   2. [Deploying Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
-   3. [Deploying VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
-2. QCOW2 can be deployed on:
-   1. [Deploying Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
-   2. [Deploying Azure](01-deployment.md#deploying-a-virtual-machine-on-microsoft-azure)
-   3. [Deploying KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
+   1. [VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
+   2. [Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
+   3. [VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
+2. qcow2 can be deployed on:
+   1. [Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
+   2. [Azure](01-deployment.md#deploying-a-virtual-machine-on-microsoft-azure)
+   3. [KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)
 
 !!! important "Hardware Requirements"
 
-    Please ensure after deploying the VM you verify it has been configured
-    correctly per the [Hardware Requirements](../overview/index.md#hardware-requirements).
-    Importing the OVA will use the base requirements of 4 CPU, 16GB RAM,
-    and 90GB HDD.
+    After deploying the VM, please ensure that it has been configured correctly
+    per the [Hardware Requirements](../overview/index.md#hardware-requirements).
+    Importing the OVA will use the base requirements of 4 CPUs, 16 GB RAM, and
+    90 GB HDD.
 
 ## First Time Boot Wizard
 

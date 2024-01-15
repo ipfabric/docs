@@ -39,6 +39,6 @@ Afterwards, choose `Cisco APIC` from the list and fill in:
 
 ![Cisco APIC api add](cisco/apic/ciscoApicAPIAdd.png)
 
-## Know issues
+## Known Issue
 
 [APIC Tables are all empty except Controllers](../../../../support/known_issues/Vendors/cisco/apic_tables_empty.md)
