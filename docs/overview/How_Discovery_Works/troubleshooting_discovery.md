@@ -11,10 +11,10 @@ Changes made to the Global Settings do not apply to previously-run snapshots. He
 two methods for testing snapshot settings:
 
 1. Make your changes in the snapshot **Settings** and then try to
-  **Add Devices** (or `Rediscover timed out devices`). If these changes fixed your
-  issue, then apply them globally.
+   **Add Devices** (or `Rediscover timed out devices`). If these changes fixed your
+   issue, then apply them globally.
 
-  ![Add devices](troubleshooting/add_devices.png)
+![Add devices](troubleshooting/add_devices.png)
 
 2. Make your changes globally and then run a new snapshot. In **Settings -->
    Discovery & Snapshots --> Discovery Settings --> Discovery --> IP Scope -->
@@ -23,7 +23,7 @@ two methods for testing snapshot settings:
    time. In the example below, we allow only one subnet to be part of the
    discovery:
 
-  ![Limit discovery to subnet](troubleshooting/limit_discovery_to_subnet.png)
+![Limit discovery to subnet](troubleshooting/limit_discovery_to_subnet.png)
 
 ### Discovery Seeds
 
@@ -202,7 +202,7 @@ Since devices can connect to multiple other devices, there can be duplicate
 remote hostnames in this list.
 
 You are able to export this view to CSV and then remove duplicate hostnames to
-get a unique list of devices. For instance in this demo, I see a total of 59
+get a unique list of devices. For instance in this demo, we see a total of 59
 unmanaged neighbors, but only 40 unique remote hostnames.
 
 #### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail

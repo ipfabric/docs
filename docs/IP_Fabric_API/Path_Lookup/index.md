@@ -182,7 +182,7 @@ The `pathlookup` construct describes the hop-by-hop forwarding and policy decisi
     - an `ip-routing` decision in a zone-based firewall will add in a security check to validate that policy allows the packet to pass;
     - an `mpls-switching` decision will validate the VRF, MPLS labels and push/pop behaviour in the label stack; and so on.
 
-I've not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the `pathlookup` construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behaviour of the path lookup using this guidance.
+We've not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the `pathlookup` construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behaviour of the path lookup using this guidance.
 
 From this note, you can see just how much thought and detail has gone into the development of the path lookup process. Hopefully it illustrates how closely IP Fabric models the behaviour of the data plane of network devices to give an accurate view of the impact of the network on forwarding behaviour.
 

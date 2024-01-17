@@ -23,7 +23,6 @@ Headers must contain:
 
 If you want to start a discovery, using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
 
-
 ![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 
 ## Create a New Snapshot With Different Settings Than The Default Ones
@@ -52,7 +51,7 @@ Let’s see how it looks when using Postman:
 
 ![create snapshot](create_snapshot.gif)
 
-## What Settings Can I Use When Creating a New Snapshot?
+## Settings for creating a new snapshot
 
 There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `/api/{api_version}/settings`
 

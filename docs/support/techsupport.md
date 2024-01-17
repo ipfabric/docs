@@ -13,7 +13,7 @@ description: This page explains how to generate and upload a techsupport file fo
     location. The file in the permanent location has configured strict RBAC
     rules allowing access to people at IP Fabric who need it for their work
     (such as support team, Network Automation Engineers etc.).
-    
+
 !!! info "Video tutorial"
 
     A techsupport file from the IP Fabric appliance is one of many ways how you
@@ -66,7 +66,7 @@ In the command, you may change `https://upload.EU.ipfabric.io/upload` to
 `https://upload.US.ipfabric.io/upload`. The username and password are provided
 IP Fabric Support.
 
-## What Is Included in Techsupport File?
+## What is included in techsupport file
 
 1. **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, MongoDB, ArangoDB
    and IP Fabric API service logs. Customer data are **not** included.
@@ -76,6 +76,7 @@ IP Fabric Support.
    discovery and serial numbers of devices are included.
 
 3. **Current Snapshot** -- Includes the currently-selected snapshot.
+
    - **Remove CLI logs from snapshot** -- Removes devices' CLI logs from
      the currently-selected snapshot.
    - **Database dump** -- Includes the database dump of the currently-selected

@@ -10,7 +10,7 @@ description: We have a selection of the most frequently asked questions that you
 
 A: IP Fabric is a **network analytics platform** for multi-vendor environments that automates network discovery, network topology diagrams at a protocol level, network security compliance audit and network documentation. The platform **enables an intent-based approach to network management **and instant application path simulation over large-scale networks.
 
-**Q:** Why should I use IP Fabric?
+**Q:** Why should we use IP Fabric?
 
 A: IP Fabric serves as a **single point of truth** for all network inventory and protocol data and provides up-to-date network topology diagrams. It speeds up the **troubleshooting** and **root-cause analysis** processes with simple network search and end-to-end application path testing.
 
@@ -20,7 +20,7 @@ Apart from significant benefits to network administrators, it elevates collabora
 
 A: The IP Fabric platform collects data from the network on a regular basis to provide in-depth analytics. The output of the data collection is a digital snapshot of the entire network at the time of discovery. But IP Fabric does not monitor the network in real-time.
 
-**Q:** Why use an analytical platform, isn't my monitoring suite enough?
+**Q:** Why use an analytical platform, isn't our monitoring suite enough?
 
 A: Monitoring tools are still crucial to your network operations processes; raised alerts and alarms will let engineers know there is something to be assessed or investigated.
 
@@ -36,11 +36,11 @@ A: IP Fabric must be deployed to a dedicated virtual machine. See [Operational R
 
 A: IP Fabric is **in most cases deployed as an on-premises solution**. It does not require any Internet connectivity to operate or verify the license or run discovery. Alternatively, it can be deployed in the cloud and discover networks via private tunnels.
 
-**Q:** Do I need to install any additional virtual machines?
+**Q:** Do we need to install any additional virtual machines?
 
 A: No additional supporting servers or licenses are needed for successful deployment.
 
-**Q:** Do I need a hardware appliance to install IP Fabric?
+**Q:** Do we need a hardware appliance to install IP Fabric?
 
 A: IP Fabric is a virtual appliance that runs on various virtualization platforms. It does not need a standalone hardware appliance by design. See [Operational Requirements](index.md#operational-requirements) for more details.
 
@@ -50,11 +50,11 @@ A: The product is licensed on a subscription basis (including support). The on
 
 ## Operation & Maintenance
 
-**Q:** How many engineers should I allocate to test your solution?
+**Q:** How many engineers should we allocate to test your solution?
 
 A: One engineer is enough to handle the task of deployment and testing.
 
-**Q:** How should I prepare my network for successful discovery?
+**Q:** How should we prepare our network for successful discovery?
 
 A: IP Fabric collects data via Command-Line Interface (CLI) with SSH/Telnet directly from each network device individually. The best location for virtual machine installation is in the management part of the network with enabled security path over SSH/Telnet protocol from the server’s IP address as a source IP for all session requests. Access-Lists, Firewall filters or related Security policies should be adjusted to enable the connection.
 
@@ -94,7 +94,7 @@ A: IP Fabric can discover **all supported IP-based active network devices**. In
 
 A: IP Fabric is a powerful tool for multi-vendor, large-scale networks. The network vendor list is ever-expanding with new items added each release and can be found at [matrix.ipfabric.io](https://matrix.ipfabric.io).
 
-**Q:** What if I have an unsupported vendor in my network?
+**Q:** What if we have an unsupported vendor in our network?
 
 A: If there is a vendor in your network that is currently not included in the supported matrix, it won’t be discovered and will be listed as unmanaged neighbor in the platform. We are implementing new vendors with almost every release, so feel free to ask your IP Fabric sales or technical representative about the road-map priorities for the next phase. Support for the vendor in question may have already been road-mapped.
 

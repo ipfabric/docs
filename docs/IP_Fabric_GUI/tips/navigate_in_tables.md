@@ -74,7 +74,7 @@ logical `Or` for group 1 and logical `And` for groups 2 and 3.
 
 What does the example above do? It shows all devices with hostname `L47AC8` AND
 interface `Et7/2` as well as devices with hostname `L43SD73` AND interface
-`Et13/0`. In other words: "Show me all devices with hostname `L47AC8` which have
+`Et13/0`. In other words: "Show all devices with hostname `L47AC8` which have
 interface `Et7/2`, plus all devices with hostname `L43SD73` with interface
 `Et13/0`.
 
