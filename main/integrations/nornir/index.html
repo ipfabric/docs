@@ -11643,10 +11643,9 @@ documentation.
 <h1 id="overview">Overview</h1>
 <p>The IP Fabric Nornir Plugin allows you to use your IP Fabric instance for your Nornir Inventory.</p>
 <h2 id="special-thanks">Special Thanks</h2>
-<p>This project is an IP Fabric officially supported fork of 
-<a href="https://github.com/routetonull/nornir_ipfabric">nornir_ipfabric</a> by <a href="https://github.com/routetonull/"><code>routetonull</code></a>.  Thank you for your work!</p>
+<p>This project is an IP Fabric officially supported fork of <a href="https://github.com/routetonull/nornir_ipfabric">nornir_ipfabric</a> by <a href="https://github.com/routetonull/"><code>routetonull</code></a>. Thank you for your work!</p>
 <h1 id="install">Install</h1>
-<p>The recommended way to install <code>ipfabric_nornir</code> is via pip</p>
+<p>The recommended way to install <code>ipfabric_nornir</code> is via <code>pip</code></p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric_nornir
 </code></pre></div>
 <h1 id="requirements">Requirements</h1>
@@ -11663,18 +11662,17 @@ documentation.
 <span class="nb">export</span><span class="w"> </span><span class="nv">IPF_PASSWORD</span><span class="o">=</span>mySecretPassword
 </code></pre></div>
 <h3 id="using-env-file">Using <code>.env</code> file</h3>
-<p>The easiest way to use this package is with a <code>.env</code> file.  You can copy the sample and edit it with your environment variables. 
-An example file can be found at <a href="https://gitlab.com/ip-fabric/integrations/ipfabric_nornir/-/blob/main/sample.env">sample.env</a></p>
-<p>This contains the following variables which can also be set as environment variables instead of a <code>.env</code> file.
-<div class="highlight"><pre><span></span><code>IPF_URL=&quot;https://demo3.ipfabric.io&quot;
-IPF_TOKEN=TOKEN
-IPF_VERIFY=true
-</code></pre></div></p>
-<p>Or if using Username/Password:
-<div class="highlight"><pre><span></span><code>IPF_URL=&quot;https://demo3.ipfabric.io&quot;
-IPF_USERNAME=USER
-IPF_PASSWORD=PASS
-</code></pre></div></p>
+<p>The easiest way to use this package is with a <code>.env</code> file. You can copy the sample and edit it with your environment variables. An example file can be found at <a href="https://gitlab.com/ip-fabric/integrations/ipfabric_nornir/-/blob/main/sample.env">sample.env</a>.</p>
+<p>This contains the following variables which can also be set as environment variables instead of a <code>.env</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">IPF_URL</span><span class="o">=</span><span class="s2">&quot;https://demo3.ipfabric.io&quot;</span>
+<span class="nv">IPF_TOKEN</span><span class="o">=</span>TOKEN
+<span class="nv">IPF_VERIFY</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>Or if using Username/Password:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">IPF_URL</span><span class="o">=</span><span class="s2">&quot;https://demo3.ipfabric.io&quot;</span>
+<span class="nv">IPF_USERNAME</span><span class="o">=</span>USER
+<span class="nv">IPF_PASSWORD</span><span class="o">=</span>PASS
+</code></pre></div>
 <h2 id="running">Running</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">nornir</span> <span class="kn">import</span> <span class="n">InitNornir</span>
 <span class="n">nr</span> <span class="o">=</span> <span class="n">InitNornir</span><span class="p">(</span><span class="n">inventory</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;plugin&quot;</span><span class="p">:</span> <span class="s2">&quot;IPFabricInventory&quot;</span><span class="p">})</span>
@@ -11706,10 +11704,10 @@ IPF_PASSWORD=PASS
 <span class="w">    </span><span class="c1"># username: &quot;admin&quot;</span>
 <span class="w">    </span><span class="c1"># password: &quot;mySecretPassword&quot;</span>
 <span class="w">    </span><span class="nt">verify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">platform_map</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netmiko</span><span class="w">  </span><span class="c1"># &quot;netmiko&quot;, &quot;napalm&quot;, or &quot;genie&quot;</span>
+<span class="w">    </span><span class="nt">platform_map</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">netmiko</span><span class="w"> </span><span class="c1"># &quot;netmiko&quot;, &quot;napalm&quot;, or &quot;genie&quot;</span>
 <span class="w">    </span><span class="nt">default</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;device_username&#39;</span>
-<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;device_password&#39;</span>
+<span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;device_username&quot;</span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;device_password&quot;</span>
 </code></pre></div>
 <p>Usage:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">nornir</span> <span class="kn">import</span> <span class="n">InitNornir</span>
@@ -11735,7 +11733,7 @@ IPF_PASSWORD=PASS
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2024</span>
   </span>
 
     
