@@ -39,9 +39,6 @@ description: IP Fabric describes general known affected issues that may occur in
   a "insufficient resources" failure. In such a case, verify resources
   on the status page and retry in several minutes.
 
-- Visualization does not work properly in Internet Explorer. Use
-  Firefox or Chrome.
-
 - Switching site separation to RegEx can cause issues.
 
 ## Duplicate IP detection
