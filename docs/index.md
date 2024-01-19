@@ -10,8 +10,8 @@ you are unable to find what you are looking for on this portal, please contact
 us at [info@ipfabric.io](mailto:info@ipfabric.io) or contact your account
 representative.
 
-IP Fabric supports a wide range of different network equipments from various
-vendors. For a complete overview of supported devices and features, please visit
+IP Fabric supports a wide range of network equipments from various vendors. For
+a complete overview of supported devices and features, please visit
 [matrix.ipfabric.io](https://matrix.ipfabric.io).
 
 Not looking for technical documentation but want to know more about what IP

@@ -9,8 +9,9 @@ DC. Support VPN uses OpenVPN.
 
 !!! warning "Network requirements"
 
-    Support VPN requires access to `remote.ipfabric.io` remote port 443/TCP. IP
-    Fabric image must be also configured with functional DNS server.
+    Support VPN requires access to `remote.ipfabric.io` remote port `443/tcp`.
+    The IP Fabric appliance must be also configured with a functional DNS
+    server.
 
     Connection through proxy servers should work, but it is not guaranteed.
 
@@ -41,6 +42,6 @@ DC. Support VPN uses OpenVPN.
 
 2.  On the newly opened page, click **Disconnect**:
 
-    ![Remote support over VPN - Connect](vpn/disconnect.png)
+    ![Remote support over VPN - Disconnect](vpn/disconnect.png)
 
 3.  `VPN status` should change to `disconnected`.
