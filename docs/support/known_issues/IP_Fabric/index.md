@@ -13,8 +13,6 @@ description: IP Fabric describes general known affected issues that may occur in
   information, which is not available through drill-downs. More
   drill-down capabilities are planned for future releases.
 
-- Jumphost can be activated only from support console.
-
 - TACACS may be limited to the specific maximum number of simultaneous
   authentication sessions, preventing discovery of all of the devices in the
   network. If fewer than expected number of devices are discovered, decrease
