@@ -58,3 +58,36 @@ A managed network is considered to consist of every discovered device under a co
 The spanning-tree domain is a topology of contiguously connected spanning-tree instances and signifies a Layer 2 failure domain in the case of a cascading Layer 2 failure.
 
 The routing domain is a topology of contiguously connected forwarding hops and signifies a Layer 3 failure domain in the case of a cascading Layer 3 failure.
+
+
+## Already discovered IP address behaviour
+
+If IP Fabric discovery process resolves an IP address which is an interface of already discovered device, it won't even attempt to connect to the IP address resolved.
+
+There's another check in the flow, which connects to the IP address and starts to collect basic data, it executes `show inventory` and its variants on other vendors, collects the serial number and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, and stops the device discovery in its tracks.
+
+
+```mermaid
+flowchart TD
+    IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an inteface \non already discovered device?}
+    
+    AlreadyDiscoveredDevice -->|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
+    AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
+    CollectsSN --> ComparesSN[[IP Fabric compares the \nserial number with devices\nalready in queue.]]
+
+    ComparesSN --> AlreadyInQueue{Is the device already\nin Discovery queue?}
+    AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
+    AlreadyInQueue -->|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
+    
+    style IPFDiscovers fill:#33dd00
+    style IPFStops fill:#dd3300
+    style IPFWontConnect fill:#dd3300
+```
+
+You can see the results of the process in "**Discovery Snapshot --> Connectivity Report**".
+
+![Connectivity Report](cli_discovery/already_discovered_or_in_queue.png)
+
+!!! Tip "Deliberate duplicate IPs"
+
+    You can override this behavior with a feature flag (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) if you use the same IP ranges in different VRFs within your management network. Contact [Support](../../support/index.md) for more information.
