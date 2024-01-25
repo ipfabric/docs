@@ -42,10 +42,21 @@ IP Fabric enables you to add AssumeRole targets to AWS API configuration. Assume
 
 !!! info "How `AssumeRole` works?"
 
-    It returns a set of temporary access credentials that can be used to access AWS resources that original account might not normally have access to. For more information about AssumeRole see [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
+    It returns a set of temporary access credentials that can be used to access
+    AWS resources that original account might not normally have access to. For
+    more information about AssumeRole see
+    [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
 !!! warning "Connection testing limitation"
-AWS configuration allows you to configure multiple roles and regions. However, the connectivity testing has a limit on the number of tests you can perform. This is to prevent the testing from taking too much time. You can test up to 3 regions and 3 roles at a time, which means 9 tests in total. The AWS library also has a restriction on the number of parallel requests, which is 2.
 
-    When trying to add more regions and roles, the test will fail with the following error:
+    AWS configuration allows you to configure multiple roles and regions.
+    However, the connectivity testing has a limit on the number of tests you can
+    perform. This is to prevent the testing from taking too much time. You can
+    test up to 3 regions and 3 roles at a time, which means 9 tests in total.
+    The AWS library also has a restriction on the number of parallel requests,
+    which is 2.
+
+    When trying to add more regions and roles, the test will fail with the
+    following error:
+
     ![AWS - Connection testing limitation](aws/aws_connection_test_limit.png)

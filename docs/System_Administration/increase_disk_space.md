@@ -72,7 +72,7 @@ Any additional disk (see hypervisor-specific configuration at the bottom of this
    └─vda5                  254:5    0 75,8G  0 part
      ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
      └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
-   vdb                     254:16   0   20G  0 disk             # <- I want to use this device for the /backup directory
+   vdb                     254:16   0   20G  0 disk             # <- We want to use this device for the /backup directory.
    ```
 
 2. Create LVM physical volume on the disk `vdb`:
