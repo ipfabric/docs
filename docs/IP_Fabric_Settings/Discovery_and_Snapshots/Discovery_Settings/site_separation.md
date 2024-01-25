@@ -139,10 +139,6 @@ The API is the preferred method of creating rules as it allows for bulk importin
 
     It's important to use specifically the `siteName` attribute to define the Sites in the IP Fabric. You can define other attributes, but site-separation is solely based on `siteName`.
 
-### Creating Rules With `python-ipfabric` Package
-
-Please see example at [GitHub](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/attributes.py).
-
 ## Rule Priority
 
 ![Rule priority](site_separation/rule_priority.png)
@@ -158,3 +154,7 @@ Rule precedence is defined by the order from top to bottom. So in the example ab
    3. If Hostname matches `^(L\d{1,2})` --> Site `L2-99`
 
 3. **Try to assign devices without sites based on device neighborship** (if enabled)
+
+### Reporting Rule matches With `python-ipfabric` Package
+
+Please see example at [GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py).

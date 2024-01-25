@@ -4,19 +4,15 @@ description: A quick tutorial about how to use IP Fabric’s API with python-ipf
 
 # Simulate Unicast Path Lookup In IP Fabric Using Python
 
-A quick tutorial about how to use IP Fabric’s API with [python-ipfabric-diagrams](https://pypi.org/project/ipfabric-diagrams/) Python module.
+A quick tutorial about how to use IP Fabric’s API with [python-ipfabric](https://pypi.org/project/ipfabric/) Python module.
 
 ## Prerequisites
 
 We strongly recommend using a virtual environment for development. To Install the Python package in your environment:
 
 ```bash
-pip install ipfabric-diagrams
+pip install ipfabric
 ```
-
-!!! note "SDK Changes coming in v7.0"
-
-    In SDK version v7.0 `ipfabric-diagrams` will be moved back into `ipfabric` which will remove the requirement for installing separate packages.
 
 ## Code Snippet
 
@@ -60,4 +56,4 @@ if __name__ == '__main__':
     ipf.close()
 ```
 
-More examples at [this link](https://gitlab.com/ip-fabric/integrations/python-ipfabric-diagrams/-/tree/develop/examples)
+More examples at [this link](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/tree/develop/examples/graphs)
