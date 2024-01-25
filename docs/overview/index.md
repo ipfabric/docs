@@ -26,7 +26,7 @@ For seamless experience, we recommend using a browser at Full HD (1920 × 1080 p
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with the following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4 GB of RAM when idle, and an additional 12 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.
+The IP Fabric platform runs on any x64 CPU with the following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.
 
 The minimum requirements are:
 
@@ -34,23 +34,44 @@ The minimum requirements are:
 | --- | ----- | ----- |
 | 4   | 16 GB | 90 GB |
 
-The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.
+Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and a disk space overhead for IP Fabric and system logs.
+
+For networks with medium complexity and many access points (>50%) or networks with basic complexity (simple dynamic routing, few or no VRFs, small sites):
 
 | Devices | CPU |    RAM |      HDD |
 | ------: | --: | -----: | -------: |
 |     500 |   4 |  16 GB |    90 GB |
-|   1 000 |   8 |  32 GB |   100 GB |
-|   2 000 |  12 |  64 GB |   200 GB |
-|   5 000 |  16 |  64 GB |   300 GB |
-|  10 000 |  20 | 128 GB |   550 GB |
-|  20 000 |  24 | 256 GB | 1 000 GB |
+|   1 000 |   8 |  16 GB |    90 GB |
+|   2 000 |  12 |  32 GB |   250 GB |
+|   5 000 |  16 |  64 GB |   350 GB |
+|  10 000 |  20 | 100 GB |   700 GB |
+|  20 000 |  24 | 190 GB | 1 000 GB |
+
+For networks with complex configurations (large routing tables, many VRFs, many STP domains, large MAC and ARP tables, etc.) and few or no access points (<20%):
+
+| Devices | CPU |    RAM |      HDD |
+| ------: | --: | -----: | -------: |
+|     500 |   4 |  24 GB |    90 GB |
+|   1 000 |   8 |  36 GB |   100 GB |
+|   2 000 |  12 |  64 GB |   160 GB |
+|   5 000 |  16 | 150 GB |   400 GB |
+|  10 000 |  20 | 280 GB |   750 GB |
+|  20 000 |  24 | 560 GB | 1 500 GB |
+
+For managed service provider (MSP) networks:
+
+| Devices | CPU |    RAM |     HDD |
+| ------: | --: | -----: | ------: |
+|     500 |   8 |  40 GB |  150 GB |
+|   1 000 |  12 |  70 GB |  250 GB |
+|   2 000 |  16 | 128 GB |  500 GB |
+|   5 000 |  20 | 300 GB | 1200 GB |
 
 !!! warning
 
     If you are planning to use FTP/SFTP IP Fabric backup option, recommended disk space has to be doubled.
 
     For 500 devices 180 GB, for 1 000 devices 200 GB and so on.
-    
 
 !!! info "Additional resources requirements"
 
