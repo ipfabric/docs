@@ -11877,7 +11877,7 @@ documentation.
 </ul>
 <p>For seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with the following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses less than 4 GB of RAM when idle, and an additional 12 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
+<p>The IP Fabric platform runs on any x64 CPU with the following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
 <p>The minimum requirements are:</p>
 <table>
 <thead>
@@ -11895,7 +11895,8 @@ documentation.
 </tr>
 </tbody>
 </table>
-<p>The following table represents the recommended hardware requirements for optimal performance of the platform based on the number of network infrastructure devices in the network.</p>
+<p>Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and a disk space overhead for IP Fabric and system logs.</p>
+<p>For networks with medium complexity and many access points (&gt;50%) or networks with basic complexity (simple dynamic routing, few or no VRFs, small sites):</p>
 <table>
 <thead>
 <tr>
@@ -11915,32 +11916,118 @@ documentation.
 <tr>
 <td style="text-align: right;">1 000</td>
 <td style="text-align: right;">8</td>
+<td style="text-align: right;">16 GB</td>
+<td style="text-align: right;">90 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">2 000</td>
+<td style="text-align: right;">12</td>
 <td style="text-align: right;">32 GB</td>
+<td style="text-align: right;">250 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">5 000</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">64 GB</td>
+<td style="text-align: right;">350 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">10 000</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100 GB</td>
+<td style="text-align: right;">700 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">20 000</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">190 GB</td>
+<td style="text-align: right;">1 000 GB</td>
+</tr>
+</tbody>
+</table>
+<p>For networks with complex configurations (large routing tables, many VRFs, many STP domains, large MAC and ARP tables, etc.) and few or no access points (&lt;20%):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Devices</th>
+<th style="text-align: right;">CPU</th>
+<th style="text-align: right;">RAM</th>
+<th style="text-align: right;">HDD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">24 GB</td>
+<td style="text-align: right;">90 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 000</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">36 GB</td>
 <td style="text-align: right;">100 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">2 000</td>
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">64 GB</td>
-<td style="text-align: right;">200 GB</td>
+<td style="text-align: right;">160 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">5 000</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">64 GB</td>
-<td style="text-align: right;">300 GB</td>
+<td style="text-align: right;">150 GB</td>
+<td style="text-align: right;">400 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">10 000</td>
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">128 GB</td>
-<td style="text-align: right;">550 GB</td>
+<td style="text-align: right;">280 GB</td>
+<td style="text-align: right;">750 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">20 000</td>
 <td style="text-align: right;">24</td>
-<td style="text-align: right;">256 GB</td>
-<td style="text-align: right;">1 000 GB</td>
+<td style="text-align: right;">560 GB</td>
+<td style="text-align: right;">1 500 GB</td>
+</tr>
+</tbody>
+</table>
+<p>For managed service provider (MSP) networks:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Devices</th>
+<th style="text-align: right;">CPU</th>
+<th style="text-align: right;">RAM</th>
+<th style="text-align: right;">HDD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">40 GB</td>
+<td style="text-align: right;">150 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 000</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">70 GB</td>
+<td style="text-align: right;">250 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">2 000</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">128 GB</td>
+<td style="text-align: right;">500 GB</td>
+</tr>
+<tr>
+<td style="text-align: right;">5 000</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">300 GB</td>
+<td style="text-align: right;">1200 GB</td>
 </tr>
 </tbody>
 </table>
@@ -12140,7 +12227,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2024</span>
   </span>
 
     
