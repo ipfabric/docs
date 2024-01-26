@@ -11582,7 +11582,7 @@ documentation.
 <h1 id="installing-python-ip-fabric">Installing Python IP Fabric</h1>
 <h2 id="minimum-requirements">Minimum Requirements</h2>
 <ul>
-<li>Python 3.7+</li>
+<li>Python 3.8.1+</li>
 <li>Access to an Instance of IP Fabric</li>
 <li>API Token or Username and password to IP Fabric</li>
 </ul>
@@ -11622,13 +11622,13 @@ Since Poetry manages all our required packages, we only have to run one command 
 <td><code>IPF_URL</code></td>
 <td style="text-align: center;"><code>base_url</code></td>
 <td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">IP Fabric instance</td>
+<td style="text-align: right;">IP Fabric URL</td>
 </tr>
 <tr>
 <td><code>IPF_TOKEN</code></td>
-<td style="text-align: center;"><code>token</code></td>
+<td style="text-align: center;"><code>auth</code></td>
 <td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">API token</td>
+<td style="text-align: right;">API Token</td>
 </tr>
 <tr>
 <td><code>IPF_VERIFY</code></td>
@@ -11644,8 +11644,11 @@ Since Poetry manages all our required packages, we only have to run one command 
 
 <h2 id="inventory">Inventory</h2>
 <p>to quickly get an inventory of devices or interfaces: 
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div></p>
 <h2 id="technology">Technology</h2>
 <p>For each Technology Table in IP Fabric, we have a way to quickly gather the data</p>
@@ -11688,7 +11691,7 @@ For example to view NTP configurations:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 26, 2024</span>
   </span>
 
     
