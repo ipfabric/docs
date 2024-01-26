@@ -20,8 +20,8 @@ you want to visualize and click **_Submit_**.
 
 One or more sites can be displayed at a time.
 
-For example, to see a diagram of particular sites called `66 Ostrava DC`
-and `47 Brno Warehouse`:
+For example, to see a diagram of particular sites called `35HEADOFFICE`
+and `35COLO`:
 
 1.  Select **_Site name_** from **_Group Devices by_** drop-down menu
 
@@ -94,7 +94,9 @@ Once you have created a user-defined layout, you probably want to use
 this as the default layout. For this, click the icon of the site you
 want to update, then select the User-Defined layout and click **Save**
 
-![set default user layout](network_viewer/set_user_defined_layout_as_default.png)
+![set default user layout](network_viewer/set_user_defined_layout_as_default_1.png)
+
+![set default user layout](network_viewer/set_user_defined_layout_as_default_2.png)
 
 From now on, this will be the default layout for this site:
 
@@ -150,14 +152,16 @@ other users, and they will be able to see this view.
 ### Export Current View To SVG/PNG
 
 The view can be exported in the form of a SVG or PNG image by clicking
-**_Export_** and selecting the format you want
+**_Export_** and selecting the format you want.
 
-![Export View to SVG/PNG](network_viewer/button_export_view.gif)
+![Export button](network_viewer/button_export.png)
+
+![Expanded Export menu](network_viewer/export_menu_expanded.png)
 
 !!! info
 
     The SVG file can be imported into a Visio diagram, or on other drawing
-    application
+    application.
 
 ### Search
 
@@ -183,7 +187,7 @@ Visualization Setup / Protocols_** menu.
 ![Protocols - Visualization setup](network_viewer/protocols_visualization_setup.png)
 
 You can decide which layer/protocol you want to display/hide and
-group/ungroup
+group/ungroup.
 
 ### Default Protocols View
 
@@ -229,6 +233,6 @@ diagram.
 ### Device Information Deep Dive
 
 After right-clicking the device, it is possible to display additional
-information about it by selecting **Show detail**:
+information about it by selecting **Explore**:
 
-![Device - Show detail](network_viewer/device_show_detail.png)
+![Device - Explore](network_viewer/device_explore.png)
