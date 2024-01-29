@@ -27,13 +27,13 @@ Packets will use the source IP indicated.
     
     ![User Defined First hop algorithm example](pathlookup/user_defined_first_hop_algorithm_example_drawing.png){: style="height:150px"}
     
-    - Select `User Defined` First Hop Algorithm
+    - Select `User defined` First Hop Algorithm
     - Search for the device where to start the path: `L43EXR1`
     - Select the source interface: `Et0/1`
     - Enter the source IP, from the network outside the scope of IP Fabric: `10.25.25.10`
     - Finally enter the destination IP: `10.66.122.110`
 
-    ![User Defined First hop algorithm](pathlookup/user_defined_first_hop_algorithm.png){: style="width:400px"}
+    ![User Defined First hop algorithm](pathlookup/user_defined_first_hop_algorithm.png)
 
     This is the result you will get:
 
@@ -45,15 +45,15 @@ As a source/destination IP address can be used a plain IP address or a CIDR (Cla
 
 By default, ICMP protocol and Echo request is chosen for path lookup.
 
-![Source and destination](pathlookup/pathlookup_src_dst.jpeg){: style="width:400px"}
+![Source and destination](pathlookup/pathlookup_src_dst.png)
 
 When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is set by default.
 
-![HTTP default](pathlookup/pathlookup_http_default.jpeg){: style="width:400px"}
+![HTTP default](pathlookup/pathlookup_http_default.png)
 
 When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.
 
-![Source and destination ports](pathlookup/pathlookup_src_dst_port.png){: style="width:400px"}
+![Source and destination ports](pathlookup/pathlookup_src_dst_port.png)
 
 Port can be changed to an arbitrary one for TCP/UDP protocols.
 
@@ -61,22 +61,23 @@ The following flags can be also set for TCP traffic -- None/ACK/FIN/SYN/RST/PSH/
 
 ### TTL and Fragment Offset
 
-In **More details**, **TTL** (Time to live ) and **Fragment offset** can be set - thus affecting path lookup output - default TTL is 128 and Fragment offset is set to 0
+In **More details**, **TTL** (Time to live) and **Fragment offset** can be set -- thus affecting path lookup output - default TTL is 128 and Fragment offset is set to 0
 
-![TTL and Fragmentation](pathlookup/pathlookup_ttl_fragment.png){: style="width:400px"}
+![TTL and Fragmentation](pathlookup/pathlookup_ttl_fragment.png)
 
 ### Application
 
-When evaluating security rules and security appliances on the path check traffic on L7, an application can be checked on the path lookup.
+When evaluating security rules and security appliances on the path check traffic on `L7`, an application can be checked on the path lookup.
 
 It’s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.
 
 
 !!! Info
 
-	An application name input is just a string, so it needs to be defined exactly as in a security rule!
+    An application name input is just a string, so it needs to be defined
+    exactly as in a security rule!
 
-![Application](pathlookup/pathlookup_application.png){: style="width:400px"}
+![Application](pathlookup/pathlookup_application.png)
 
 ### Source/Destination IP Regions
 
@@ -88,9 +89,10 @@ By default IP regions are not evaluated.
 
 !!! Info
 
-        IP regions are just a string, so they need to be defined exactly as they are in a security rule!
+    IP regions are just a string, so they need to be defined exactly as they are
+    in a security rule!
 
-![Regions](pathlookup/pathlookup_src_dst_regions.png){: style="width:400px"}
+![Regions](pathlookup/pathlookup_src_dst_regions.png)
 
 ### Path Lookup Mode
 
@@ -150,15 +152,17 @@ you will the details:
 ### Path Controls
 
 With the mouse right-click, more options are enabled:
+
 ![Path controls](pathlookup/path_controls.png)
 
-After opening the details, we can select the destination link to proceed with packet analysis:
+After opening the details with `Explore`, we can select the destination link to proceed with packet analysis:
+
 ![Path detail](pathlookup/path_detail.png)
 
 ### Understand The Path Selection
 
 To understand the decision taken by a device, right-click the device
-and "show detail". You will then be presented with the details. If you
+and click `Explore`. You will then be presented with the details. If you
 have more than one interface where the flow can come from, you will need
 to select the interface you want to look at. Similarly, if you have
 several interfaces that can be used to forward the traffic, you will
@@ -167,7 +171,7 @@ forwarding decision:
 
 ![Forwarding decision](pathlookup/forwarding_decision.png)
 
-In this example, we are looking at the device L21C11, which has 2
+In this example, we are looking at the device `L21C11`, which has 2
 incoming interfaces and one forwarding for this flow:
 
 ![Forwarding decision animation](pathlookup/forwarding_decision_animation.gif)
