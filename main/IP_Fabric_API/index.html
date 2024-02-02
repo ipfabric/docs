@@ -1462,7 +1462,7 @@ documentation.
   <a href="#api-version-deprecation-and-allowed-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API version deprecation and allowed changes
+        API Version Deprecation and Allowed Changes
       
     </span>
   </a>
@@ -1489,7 +1489,7 @@ documentation.
   <a href="#payload-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Payload definition
+        Payload Definition
       
     </span>
   </a>
@@ -1572,7 +1572,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving configurations
+    Retrieving Configurations
   
 
     
@@ -1599,7 +1599,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving device log file
+    Retrieving Device Log File
   
 
     
@@ -1729,7 +1729,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Host to Gateway Path Lookup
+    Host-to-Gateway Path Lookup
   
 
     
@@ -1921,7 +1921,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Simulate Unicast Path Lookup In IP Fabric Using Python
+    Simulate Unicast Path Lookup in IP Fabric Using Python
   
 
     
@@ -2005,7 +2005,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Create New Snapshots Via API
+    Create New Snapshots via API
   
 
     
@@ -2032,7 +2032,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Refreshing Devices In a Snapshot
+    Refreshing Devices in a Snapshot
   
 
     
@@ -11917,7 +11917,7 @@ documentation.
   <a href="#api-version-deprecation-and-allowed-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API version deprecation and allowed changes
+        API Version Deprecation and Allowed Changes
       
     </span>
   </a>
@@ -11944,7 +11944,7 @@ documentation.
   <a href="#payload-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Payload definition
+        Payload Definition
       
     </span>
   </a>
@@ -11986,8 +11986,8 @@ documentation.
 <p>IP Fabric is an API first client, that means that any click in the user
 interface (UI) has an API call associated with the action of the click.</p>
 <h2 id="python-ip-fabric-sdk">Python IP Fabric (SDK)</h2>
-<p>API first principles allow the IP Fabric team to maintain a Software Development
-Kit (SDK) that can used for automations. While the IP Fabric main GUI is written
+<p>API-first principles allow the IP Fabric team to maintain a Software Development
+Kit (SDK) that can be used for automation. While the IP Fabric main GUI is written
 in TypeScript, we have chosen to write the SDK in Python as it is the most
 common language used by Network Engineers.</p>
 <p>The SDK documentation can be found
@@ -12002,12 +12002,12 @@ The collection can be found at <a href="https://www.postman.com/ipfabric/workspa
 <h2 id="using-api-directly">Using API Directly</h2>
 <p>The following documentation is meant to get you started working with API and
 give you a tutorial on how it works.</p>
-<p>Many of the tables within IP Fabric have a <code>?</code> which provides a description of
-how to interact with the API, the data required in the payload, and the endpoint
-to send the request to. This is the easiest way to learn how to use the API and
-for more information please see
-<a href="../IP_Fabric_GUI/tips/navigate_in_tables/#table-description">Table Description</a>
-.</p>
+<p>Most of the tables within IP Fabric have a <code>Table description</code> option under the
+<code>...</code> (3-dot menu) in their top-right corner. It describes how to interact with
+the API, the data required in the payload, and the endpoint to send the request
+to. This is the easiest way to learn how to use the API. For more information,
+please see
+<a href="../IP_Fabric_GUI/tips/navigate_in_tables/#table-description">Table Description</a>.</p>
 <p>Another option is using the network viewer in the web
 browser&rsquo;s <code>Developers Tools</code> which will show you the endpoints and data required
 to make a successful call to the platform.</p>
@@ -12050,7 +12050,7 @@ resource being accessed.</p>
 <li><code>{api_version}</code> stands for the complete version string, for example <code>v5.1</code>.
   Please, mind the <code>v</code> prefix.</li>
 </ul>
-<h3 id="api-version-deprecation-and-allowed-changes">API version deprecation and allowed changes</h3>
+<h3 id="api-version-deprecation-and-allowed-changes">API Version Deprecation and Allowed Changes</h3>
 <p>IPF commits to keep support for all <code>minor</code> versions within the particular
 <code>major</code> version (so for example in release <code>5.4.3</code> we allow <code>/api/v5.1/</code>
 calls). But API may break between major releases.</p>
@@ -12091,8 +12091,8 @@ as the current API version:</p>
 changed with every update, as to keep track with all small changes and updates
 we bring. But in reality, clients would be typically fine, if they update API
 version when moving to the new major release only. Frequently, the client code
-is actually not going to change except of the API version. Thus we recommend
-using a global constant for it.</p>
+will not change, except for the API version. Thus, we recommend using a global
+constant for it.</p>
 <h2 id="technology-table-endpoints">Technology Table Endpoints</h2>
 <p>The technology tables use <code>POST</code> requests <strong>only</strong> for reading information and
 the payload is used to specify or filter requested data from listed tables. The
@@ -12103,7 +12103,7 @@ table) and select the <code>Table description</code> option that exposes the end
 be used with filters as well):</p>
 <p><a class="glightbox" href="table_description_option.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Table description option" src="table_description_option.png" /></a></p>
 <p><a class="glightbox" href="endpoint_inline_description.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="API Endpoint inline description" src="endpoint_inline_description.png" /></a></p>
-<h2 id="payload-definition">Payload definition</h2>
+<h2 id="payload-definition">Payload Definition</h2>
 <div class="highlight"><pre><span></span><code>{
   &quot;attributeFilters&quot;: {},
   &quot;columns&quot;: [&quot;id&quot;, ...],
@@ -12122,7 +12122,7 @@ be used with filters as well):</p>
 </li>
 <li><code>pagination</code> &ndash; (Recommended) Specifies the pagination and response limits.<ul>
 <li>Example: <code>{"limit":1000,"start":0}</code></li>
-<li>It is currently recommended querying 1,000 rows or fewer at a time.</li>
+<li>It is currently recommended to query 1,000 rows or fewer at a time.</li>
 </ul>
 </li>
 <li><code>snapshot</code> &ndash; Specify snapshot ID or use: <code>$last</code>, <code>$prev</code>
@@ -12166,7 +12166,7 @@ be used with filters as well):</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     

@@ -1498,10 +1498,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-accesstoken" class="md-nav__link">
+  <a href="#using-accesstoken" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the accessToken
+        Using accessToken
       
     </span>
   </a>
@@ -1509,10 +1509,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-refreshtoken" class="md-nav__link">
+  <a href="#using-refreshtoken" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the refreshToken
+        Using refreshToken
       
     </span>
   </a>
@@ -1550,7 +1550,7 @@ documentation.
   <a href="#disabling-local-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disabling local authentication
+        Disabling Local Authentication
       
     </span>
   </a>
@@ -1622,7 +1622,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving configurations
+    Retrieving Configurations
   
 
     
@@ -1649,7 +1649,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving device log file
+    Retrieving Device Log File
   
 
     
@@ -1779,7 +1779,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Host to Gateway Path Lookup
+    Host-to-Gateway Path Lookup
   
 
     
@@ -1971,7 +1971,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Simulate Unicast Path Lookup In IP Fabric Using Python
+    Simulate Unicast Path Lookup in IP Fabric Using Python
   
 
     
@@ -2055,7 +2055,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Create New Snapshots Via API
+    Create New Snapshots via API
   
 
     
@@ -2082,7 +2082,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Refreshing Devices In a Snapshot
+    Refreshing Devices in a Snapshot
   
 
     
@@ -11976,10 +11976,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-accesstoken" class="md-nav__link">
+  <a href="#using-accesstoken" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the accessToken
+        Using accessToken
       
     </span>
   </a>
@@ -11987,10 +11987,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-refreshtoken" class="md-nav__link">
+  <a href="#using-refreshtoken" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the refreshToken
+        Using refreshToken
       
     </span>
   </a>
@@ -12028,7 +12028,7 @@ documentation.
   <a href="#disabling-local-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disabling local authentication
+        Disabling Local Authentication
       
     </span>
   </a>
@@ -12083,9 +12083,9 @@ documentation.
 
 
 <h1 id="authentication">Authentication</h1>
-<p>Majority of requests to IP Fabric platform need to be authenticated. We provide
-multiple authentication methods. They differ to each other, please review all of
-them before committing to any.</p>
+<p>The majority of requests to the IP Fabric platform need to be authenticated. We
+provide multiple authentication methods. They differ from each other, please
+review all of them before committing to any.</p>
 <h2 id="api-token">API Token</h2>
 <p>API Token needs to be passed as a request header. Please
 see <a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> on how to create an API
@@ -12102,8 +12102,8 @@ Token in the UI.</p>
 <p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and
 passing that into the <code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may be really
-  unnecessary for many use-cases.</li>
+<li>Call will always have the same rights as the user account. This may not be
+  necessary for many use-cases.</li>
 <li>In case this approach is use, we highly encourage creation of a &ldquo;bot&rdquo;/&rdquo;
   service&rdquo; user account with limited access scope.</li>
 <li>Another form of long-lived static token / authentication details (secure
@@ -12120,11 +12120,11 @@ osadmin@ipfabric:~$<span class="w"> </span>curl<span class="w"> </span>-X<span c
 &ndash; access and refresh. Exchange is facilitated via <code>login</code> endpoint. Access
 token is then passed to the consecutive API calls in the <code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may be really
-  unnecessary for many use-cases.</li>
-<li>In case this approach is use, we highly encourage creation of a &ldquo;bot&rdquo;/&rdquo;
-  service&rdquo; user account with limited access scope.</li>
-<li>Storage of refresh token is important as it allows for maintaining long-term
+<li>Call will always have the same rights as the user account. This may not be
+  necessary for many use-cases.</li>
+<li>In case this approach is used, we highly encourage creation of a
+  <code>bot</code>/<code>service</code> user account with limited access scope.</li>
+<li>Storage of refresh token is important as it allows to maintain long-term
   access.</li>
 </ul>
 <h3 id="types-of-tokens">Types of Tokens</h3>
@@ -12159,9 +12159,9 @@ It can be requested for new access tokens until the refresh token is used,
 revoked, or expired.</p>
 </dd>
 <dd>
-<p>A refresh token expires after 24 hours of not being used for generation of a
+<p>A refresh token expires 24 hours after not being used for generation of a
 new access token. Refresh tokens must be stored securely by an application
-as it creates a new Access Token and allowing access to the system.</p>
+as it creates a new Access Token and allows access to the system.</p>
 </dd>
 <dd>
 <p>Starting in IP Fabric version <code>6.1.0</code> the <code>refreshToken</code> is rotated after 
@@ -12185,21 +12185,21 @@ example:</p>
 <span class="w">  </span><span class="nt">&quot;refreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YvnTNW...&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="using-the-accesstoken">Using the accessToken</h4>
+<h4 id="using-accesstoken">Using <code>accessToken</code></h4>
 <p>The <code>accessToken</code> is then placed in the <code>Authorization</code> header as seen below.
 Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt;</code>.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v5.0/snapshots&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer eyJhbGc...&#39;</span>
 </code></pre></div>
-<h4 id="using-the-refreshtoken">Using the refreshToken</h4>
+<h4 id="using-refreshtoken">Using <code>refreshToken</code></h4>
 <p>To create a new <code>accessToken</code> from the <code>refreshToken</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v5.0/auth/token&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">&#39;{&quot;refreshToken&quot;:&quot;YvnTNW...&quot;}&#39;</span>
 </code></pre></div>
 <p>Which then returns a new <code>accessToken</code> to use in subsequent calls and a new 
-<code>refreshToken</code> to use for request the next <code>accessToken</code>:</p>
+<code>refreshToken</code> to use for requesting the next <code>accessToken</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;eula&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">],</span>
@@ -12220,7 +12220,7 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li><code>accessToken</code> &ndash; 30 minutes (1800 seconds)</li>
 <li><code>refreshToken</code> &ndash; 24 hours (86400 seconds)</li>
 </ul>
-<p>Many company standards requires shorter expiration times and this can be
+<p>Many company standards require shorter expiration times and this can be
 accomplished via the CLI settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -12251,7 +12251,7 @@ accomplished via the CLI settings.</p>
 </li>
 <li>Restart API <code>systemctl restart nimpee-api.service</code></li>
 </ol>
-<h3 id="disabling-local-authentication">Disabling local authentication</h3>
+<h3 id="disabling-local-authentication">Disabling Local Authentication</h3>
 <p>In case you don&rsquo;t want to use local authentication (username/password) and log in only via SSO or LDAP, you can disable it via the CLI settings (both token and basic authentication will be disabled). Please note that <a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> will still work.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -12332,7 +12332,7 @@ human-readable error message in response body when an error is encountered:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     

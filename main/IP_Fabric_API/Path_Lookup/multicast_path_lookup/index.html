@@ -1432,7 +1432,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving configurations
+    Retrieving Configurations
   
 
     
@@ -1459,7 +1459,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving device log file
+    Retrieving Device Log File
   
 
     
@@ -1589,7 +1589,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Host to Gateway Path Lookup
+    Host-to-Gateway Path Lookup
   
 
     
@@ -1838,7 +1838,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Simulate Unicast Path Lookup In IP Fabric Using Python
+    Simulate Unicast Path Lookup in IP Fabric Using Python
   
 
     
@@ -1922,7 +1922,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Create New Snapshots Via API
+    Create New Snapshots via API
   
 
     
@@ -1949,7 +1949,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Refreshing Devices In a Snapshot
+    Refreshing Devices in a Snapshot
   
 
     
@@ -11860,54 +11860,54 @@ documentation.
 <h1 id="multicast-path-lookup">Multicast Path Lookup</h1>
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
-<li><code>parameters</code> <em>[mandatory]</em> - A nested JSON data structure with keys<ul>
-<li><code>type</code> <em>[mandatory]</em> - A quoted string with a value of <code>pathLookup</code> for an E2E path simulation output</li>
-<li><code>pathLookupType</code> <em>[mandatory]</em> - A quoted string containing the word <code>multicast</code></li>
-<li><code>protocol</code> <em>[mandatory]</em> - A quoted string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
-<li><code>source</code> <em>[mandatory]</em> - A quoted string containing the source IP address</li>
-<li><code>group</code> <em>[mandatory]</em> - A quoted string containing the group IP address</li>
-<li><code>receiver</code> <em>[optional]</em> - A quoted string containing the receiver’s IP address</li>
-<li><code>groupBy</code> <em>[mandatory]</em> - A quoted string representing the grouping of devices in the output - at this time one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code></li>
-<li><code>securedPath</code> <em>[mandatory]</em> - A boolean - when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and simply highlight the policy enforcement point (<code>false</code>)</li>
-<li><code>ttl</code> <em>[mandatory]</em> - integer - Time-to-live value (default is <code>128</code>)</li>
-<li><code>fragmentOffset</code> <em>[mandatory]</em> - integer - Fragment offset value (default is <code>0</code>)</li>
-<li><code>enableRegions</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</li>
-<li><code>srcRegions</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</li>
-<li><code>dstRegions</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</li>
-<li><code>otherOptions</code> <em>[mandatory]</em> - nested JSON data<ul>
-<li><code>applications</code> <em>[mandatory]</em> - string - (default <code>.\*</code>)</li>
-<li><code>tracked</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</li>
+<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; A quoted string with a value of <code>pathLookup</code> for an E2E path simulation output</li>
+<li><code>pathLookupType</code> <em>[mandatory]</em> &ndash; A quoted string containing the word <code>multicast</code></li>
+<li><code>protocol</code> <em>[mandatory]</em> &ndash; A quoted string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
+<li><code>source</code> <em>[mandatory]</em> &ndash; A quoted string containing the source IP address</li>
+<li><code>group</code> <em>[mandatory]</em> &ndash; A quoted string containing the group IP address</li>
+<li><code>receiver</code> <em>[optional]</em> &ndash; A quoted string containing the receiver’s IP address</li>
+<li><code>groupBy</code> <em>[mandatory]</em> &ndash; A quoted string representing the grouping of devices in the output &ndash; currently, one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code></li>
+<li><code>securedPath</code> <em>[mandatory]</em> &ndash; A boolean &ndash; when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and simply highlight the policy enforcement point (<code>false</code>)</li>
+<li><code>ttl</code> <em>[mandatory]</em> &ndash; integer &ndash; Time-to-live value (default is <code>128</code>)</li>
+<li><code>fragmentOffset</code> <em>[mandatory]</em> &ndash; integer &ndash; Fragment offset value (default is <code>0</code>)</li>
+<li><code>enableRegions</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
+<li><code>srcRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.\*</code>)</li>
+<li><code>dstRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.\*</code>)</li>
+<li><code>otherOptions</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
+<li><code>applications</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.\*</code>)</li>
+<li><code>tracked</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
 </ul>
 </li>
-<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> - nested JSON data<ul>
-<li><code>type</code> <em>[mandatory]</em> - Either <code>automatic</code> or <code>userDefined</code></li>
+<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; Either <code>automatic</code> or <code>userDefined</code></li>
 <li><code>vrf</code> <em>[Optional and if type == <code>automatic</code>]</em></li>
-<li><code>entryPoints</code> <em>[mandatory]</em> - if type == <code>userDefined</code> it is nested array of JSON data<ul>
-<li><code>hostname</code> <em>[mandatory]</em> - Hostname string</li>
-<li><code>sn</code> <em>[mandatory]</em> - IP Fabric Unique Serial Number string</li>
-<li><code>iface</code> <em>[mandatory]</em> - Interface name</li>
+<li><code>entryPoints</code> <em>[mandatory]</em> &ndash; if type == <code>userDefined</code> it is nested array of JSON data<ul>
+<li><code>hostname</code> <em>[mandatory]</em> &ndash; Hostname string</li>
+<li><code>sn</code> <em>[mandatory]</em> &ndash; IP Fabric Unique Serial Number string</li>
+<li><code>iface</code> <em>[mandatory]</em> &ndash; Interface name</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>l4Options</code> <em>[mandatory]</em> - nested JSON data<ul>
+<li><code>l4Options</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
 <li>If <code>protocol</code> is <code>tcp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>flags</code> <em>[mandatory]</em> - An array of TCP flags to be set in the simulated path or empty array<ul>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>flags</code> <em>[mandatory]</em> &ndash; An array of TCP flags to be set in the simulated path or empty array<ul>
 <li>Valid flags: [<code>ack</code>, <code>fin</code>, <code>psh</code>, <code>rst</code>, <code>syn</code>, <code>urg</code>]</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>If <code>protocol</code> is <code>udp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> - An integer representing the destination port</li>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; An integer representing the destination port</li>
 </ul>
 </li>
 <li>If <code>protocol</code> is <code>icmp</code> refer to: <a href="../path_lookup_ICMP_decoder/">Path Lookup ICMP Decoder</a><ul>
-<li><code>type</code> <em>[mandatory]</em> - An integer representing the ICMP type</li>
-<li><code>code</code> <em>[mandatory]</em> - An integer representing the ICMP code</li>
+<li><code>type</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP type</li>
+<li><code>code</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP code</li>
 </ul>
 </li>
 </ul>
@@ -11967,7 +11967,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     
@@ -12045,7 +12045,7 @@ documentation.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../host_to_gateway_path_lookup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Host to Gateway Path Lookup">
+          <a href="../host_to_gateway_path_lookup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Host-to-Gateway Path Lookup">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12055,7 +12055,7 @@ documentation.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Host to Gateway Path Lookup
+                Host-to-Gateway Path Lookup
               </div>
             </div>
           </a>

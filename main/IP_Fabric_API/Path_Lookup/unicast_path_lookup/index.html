@@ -1432,7 +1432,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving configurations
+    Retrieving Configurations
   
 
     
@@ -1459,7 +1459,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Retrieving device log file
+    Retrieving Device Log File
   
 
     
@@ -1589,7 +1589,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Host to Gateway Path Lookup
+    Host-to-Gateway Path Lookup
   
 
     
@@ -1732,17 +1732,6 @@ documentation.
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#example-minimal-request-body" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example minimal request body
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1849,7 +1838,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Simulate Unicast Path Lookup In IP Fabric Using Python
+    Simulate Unicast Path Lookup in IP Fabric Using Python
   
 
     
@@ -1933,7 +1922,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Create New Snapshots Via API
+    Create New Snapshots via API
   
 
     
@@ -1960,7 +1949,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Refreshing Devices In a Snapshot
+    Refreshing Devices in a Snapshot
   
 
     
@@ -11796,17 +11785,6 @@ documentation.
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#example-minimal-request-body" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example minimal request body
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -11882,54 +11860,54 @@ documentation.
 <h1 id="unicast-path-lookup">Unicast Path Lookup</h1>
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
-<li><code>parameters</code> <em>[mandatory]</em> - A nested JSON data structure with keys<ul>
-<li><code>type</code> <em>[mandatory]</em> - A string with a value of <code>pathLookup</code> for an E2E path simulation output</li>
-<li><code>pathLookupType</code> <em>[mandatory]</em> - A string containing the word <code>unicast</code></li>
-<li><code>protocol</code> <em>[mandatory]</em> - A string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
-<li><code>startingPoint</code> <em>[mandatory]</em> - A string containing the source IP address or subnet</li>
-<li><code>destinationPoint</code> <em>[mandatory]</em> - A string containing the destination IP address or subnet</li>
-<li><code>groupBy</code> <em>[mandatory]</em> - A quoted string representing the grouping of devices in the output - at this time one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code>.</li>
-<li><code>networkMode</code> <em>[mandatory]</em> - A boolean - the new version of IP Fabric allows you to simulate paths between subnets. Setting this key to <code>true</code> means that you will create a single result representing the subnets; <code>false</code> means that IP Fabric will create a separate path for each source or destination in the range of addresses up to a maximum of 255.</li>
-<li><code>securedPath</code> <em>[mandatory]</em> - A boolean - when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and highlight the policy enforcement point (<code>false</code>)</li>
-<li><code>ttl</code> <em>[mandatory]</em> - integer - Time-to-live value (default is <code>128</code>)</li>
-<li><code>fragmentOffset</code> <em>[mandatory]</em> - integer - Fragment offset value (default is <code>0</code>)</li>
-<li><code>enableRegions</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</li>
-<li><code>srcRegions</code> <em>[mandatory]</em> - string - (default <code>.*</code>)</li>
-<li><code>dstRegions</code> <em>[mandatory]</em> - string - (default <code>.*</code>)</li>
-<li><code>otherOptions</code> <em>[mandatory]</em> - nested JSON data<ul>
-<li><code>applications</code> <em>[mandatory]</em> - string - (default <code>.*</code>)</li>
-<li><code>tracked</code> <em>[mandatory]</em> - boolean - (default <code>false</code>)</li>
+<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; A string with a value of <code>pathLookup</code> for an E2E path simulation output</li>
+<li><code>pathLookupType</code> <em>[mandatory]</em> &ndash; A string containing the word <code>unicast</code></li>
+<li><code>protocol</code> <em>[mandatory]</em> &ndash; A string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
+<li><code>startingPoint</code> <em>[mandatory]</em> &ndash; A string containing the source IP address or subnet</li>
+<li><code>destinationPoint</code> <em>[mandatory]</em> &ndash; A string containing the destination IP address or subnet</li>
+<li><code>groupBy</code> <em>[mandatory]</em> &ndash; A quoted string representing the grouping of devices in the output &ndash; currently, one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code>.</li>
+<li><code>networkMode</code> <em>[mandatory]</em> &ndash; A boolean &ndash; the new version of IP Fabric allows you to simulate paths between subnets. Setting this key to <code>true</code> means that you will create a single result representing the subnets; <code>false</code> means that IP Fabric will create a separate path for each source or destination in the range of addresses up to a maximum of 255.</li>
+<li><code>securedPath</code> <em>[mandatory]</em> &ndash; A boolean &ndash; when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and highlight the policy enforcement point (<code>false</code>)</li>
+<li><code>ttl</code> <em>[mandatory]</em> &ndash; integer &ndash; Time-to-live value (default is <code>128</code>)</li>
+<li><code>fragmentOffset</code> <em>[mandatory]</em> &ndash; integer &ndash; Fragment offset value (default is <code>0</code>)</li>
+<li><code>enableRegions</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
+<li><code>srcRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
+<li><code>dstRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
+<li><code>otherOptions</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
+<li><code>applications</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
+<li><code>tracked</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
 </ul>
 </li>
-<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> - nested JSON data<ul>
-<li><code>type</code> <em>[mandatory]</em> - Either <code>automatic</code> or <code>userDefined</code></li>
+<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; Either <code>automatic</code> or <code>userDefined</code></li>
 <li><code>vrf</code> <em>[Optional and if type == <code>automatic</code>]</em></li>
-<li><code>entryPoints</code> <em>[mandatory and if type == <code>userDefined</code>]</em> - nested array of JSON data<ul>
-<li><code>hostname</code> <em>[mandatory]</em> - Hostname string</li>
-<li><code>sn</code> <em>[mandatory]</em> - IP Fabric Unique Serial Number string</li>
-<li><code>iface</code> <em>[mandatory]</em> - Interface name</li>
+<li><code>entryPoints</code> <em>[mandatory and if type == <code>userDefined</code>]</em> &ndash; nested array of JSON data<ul>
+<li><code>hostname</code> <em>[mandatory]</em> &ndash; Hostname string</li>
+<li><code>sn</code> <em>[mandatory]</em> &ndash; IP Fabric Unique Serial Number string</li>
+<li><code>iface</code> <em>[mandatory]</em> &ndash; Interface name</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>l4Options</code> <em>[mandatory]</em> - nested JSON data<ul>
+<li><code>l4Options</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
 <li>If <code>protocol = tcp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>flags</code> <em>[mandatory]</em> - An array of TCP flags to be set in the simulated path or empty array<ul>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>flags</code> <em>[mandatory]</em> &ndash; An array of TCP flags to be set in the simulated path or empty array<ul>
 <li>Valid flags: [<code>ack</code>, <code>fin</code>, <code>psh</code>, <code>rst</code>, <code>syn</code>, <code>urg</code>]</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>If <code>protocol = udp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> - A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> - An integer representing the destination port</li>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; An integer representing the destination port</li>
 </ul>
 </li>
 <li>If <code>protocol = icmp</code><ul>
-<li><code>type</code> <em>[mandatory]</em> - An integer representing the ICMP type</li>
-<li><code>code</code> <em>[mandatory]</em> - An integer representing the ICMP code</li>
+<li><code>type</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP type</li>
+<li><code>code</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP code</li>
 </ul>
 </li>
 </ul>
@@ -11937,37 +11915,39 @@ documentation.
 </ul>
 </li>
 </ul>
-<h2 id="example-minimal-request-body">Example minimal request body</h2>
-<div class="highlight"><pre><span></span><code>{
-    &quot;snapshot&quot;: &quot;$last&quot;,
-    parameters&quot;: {
-    &quot;destinationPoint&quot;: &quot;10.35.253.58/32&quot;,
-    &quot;groupBy&quot;: &quot;siteName&quot;,
-    &quot;networkMode&quot;: false,
-    &quot;pathLookupType&quot;: &quot;unicast&quot;,
-    &quot;securedPath&quot;: false,
-    &quot;startingPoint&quot;: &quot;10.241.1.203&quot;,
-    &quot;type&quot;: &quot;pathLookup&quot;,
-    &quot;firstHopAlgorithm&quot;: {
-      &quot;type&quot;: &quot;automatic&quot;
-    },
-    &quot;protocol&quot;: &quot;tcp&quot;,
-    &quot;enableRegions&quot;: false,
-    &quot;srcRegions&quot;: &quot;.*&quot;,
-    &quot;dstRegions&quot;: &quot;.*&quot;,
-    &quot;ttl&quot;: 128,
-    &quot;fragmentOffset&quot;: 0,
-    &quot;otherOptions&quot;: {
-      &quot;applications&quot;: &quot;(.*)&quot;,
-      &quot;tracked&quot;: false
-    },
-    &quot;l4Options&quot;: {
-      &quot;dstPorts&quot;: &quot;80,443&quot;,
-      &quot;srcPorts&quot;: &quot;1024&quot;,
-      &quot;flags&quot;: []
-    }
-}
+<div class="admonition example">
+<p class="admonition-title">Minimal Request Body Example</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;snapshot&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$last&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">parameters</span><span class="s2">&quot;: {</span>
+<span class="s2">    &quot;</span><span class="nx">destinationPoint</span><span class="s2">&quot;: &quot;</span><span class="mf">10.35.253.58</span><span class="o">/</span><span class="mf">32</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">groupBy</span><span class="s2">&quot;: &quot;</span><span class="nx">siteName</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">networkMode</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="nx">pathLookupType</span><span class="s2">&quot;: &quot;</span><span class="nx">unicast</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">securedPath</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="nx">startingPoint</span><span class="s2">&quot;: &quot;</span><span class="mf">10.241.1.203</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">type</span><span class="s2">&quot;: &quot;</span><span class="nx">pathLookup</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">firstHopAlgorithm</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="nx">type</span><span class="s2">&quot;: &quot;</span><span class="nx">automatic</span><span class="s2">&quot;</span>
+<span class="s2">    },</span>
+<span class="s2">    &quot;</span><span class="nx">protocol</span><span class="s2">&quot;: &quot;</span><span class="nx">tcp</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">enableRegions</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="nx">srcRegions</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="o">*</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">dstRegions</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="o">*</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="nx">ttl</span><span class="s2">&quot;: 128,</span>
+<span class="s2">    &quot;</span><span class="nx">fragmentOffset</span><span class="s2">&quot;: 0,</span>
+<span class="s2">    &quot;</span><span class="nx">otherOptions</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="nx">applications</span><span class="s2">&quot;: &quot;</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="nx">tracked</span><span class="s2">&quot;: false</span>
+<span class="s2">    },</span>
+<span class="s2">    &quot;</span><span class="nx">l4Options</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="nx">dstPorts</span><span class="s2">&quot;: &quot;</span><span class="mf">80</span><span class="p">,</span><span class="mf">443</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="nx">srcPorts</span><span class="s2">&quot;: &quot;</span><span class="mf">1024</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="nx">flags</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+</div>
 
 
 
@@ -11988,7 +11968,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     
