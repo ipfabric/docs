@@ -25,7 +25,7 @@ There are 3 tabs:
 
 ### Routing Policies
 
-The **Routing Policies** tab contains definition of routing policies, their names, sequence numbers, matching conditions, set actions etc.
+The **Routing Policies** tab contains definitions of routing policies, their names, sequence numbers, matching conditions, set actions etc.
 
 In case match condition uses reference to ACL or Prefix list, it is a hyperlink to appropriate ACL/Prefix list in its section.
 
@@ -33,7 +33,7 @@ In case match condition uses reference to ACL or Prefix list, it is a hyperlink 
 
 ### PBR Interfaces
 
-The **PBR Interfaces** tab contains information about interfaces which have assigned some routing policy on them (used for policy based routing). Optionally there is also information about used address-family or status of routing policy.
+The **PBR Interfaces** tab contains information about interfaces which have assigned some routing policy on them (used for policy-based routing). Optionally, there is also information about used address family or status of routing policy.
 
 ![PBR Interfaces](routing/routingPolicy/pbrInterfaces.png)
 
@@ -55,7 +55,7 @@ Selecting PBR's name in a decision table opens a tree view with the highlighted 
 
 !!! Note
 
-	Currently are supported only IP based policy based routing nexthops.
+    Currently, only IP-based policy-based routing nexthops are supported.
 
 ![PBR Decision Table](routing/routingPolicy/pbrDecisionTable.png)
 

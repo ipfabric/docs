@@ -4,7 +4,7 @@ description: The Stacks section contains information about stacks in your networ
 
 # Stacks
 
-The **Stacks** section contains information about stacks in your network - stack
-members, stack ports, their uptime, role in the stack, status and more.
+The **Stacks** section contains information about stacks in your network --
+stack members, stack ports, their uptime, role in the stack, status, and more.
 
 ![Stacks](stacks.png)

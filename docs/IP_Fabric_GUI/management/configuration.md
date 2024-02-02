@@ -6,7 +6,7 @@ description: Configuration management backs up the running configuration of mana
 
 ## Overview
 
-Configuration management can be found at **Management --> Configuration** and **backs up the running configuration** of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. **Only changed configurations** are stored, and these report both the time of the last change and the time of the last configuration check for a change.
+Configuration management can be found in **Management --> Configuration** and **backs up the running configuration** of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. **Only changed configurations** are stored, and these report both the time of the last change and the time of the last configuration check for a change.
 
 Configuration can be retrieved in `full` or `sanitized` forms. Sanitization removes all passwords and network identification information from the configuration to prevent sharing of sensitive information.
 
@@ -37,7 +37,7 @@ There are the following properties in the Management configuration table:
   - `no change` -- the config did not change within the last check
 - `Hash` -- Unique ID of the configuration file
 
-We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to `changed`. Next time the device's configuration is checked, there are two options:
+We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When a new configuration is found (either brand new, or different from previous) for a given device, it is committed to git and the new record is entered to the DB, with status set to `changed`. Next time the device's configuration is checked, there are two options:
 
 1. the configuration file remains the same, in which case status field of the DB record is set to `no change`, and `Last Check At` is set to the current time;
 2. the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status `changed` and `Last Change At` and `Last Check At` being set to current time, as described above.

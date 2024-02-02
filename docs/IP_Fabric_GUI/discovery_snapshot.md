@@ -8,7 +8,7 @@ description: IP Fabric describes what The Snapshot Consists Of and how you can o
 
 A network snapshot records:
 
-- The state of the network at the moment of the initialization of the snapshot.
+- The state of the network at the time the snapshot was taken.
 
 - All service logs; logs used internally by the IP Fabric system as well as a log of commands issued to every network device.
 
@@ -30,7 +30,7 @@ you to create new snapshots or perform operations on existing snapshots.
 
 A new snapshot can be taken at any time by clicking **+ New Snapshot**
 (highlighted in red box) and then **Start discovery** (green button). This will
-start a new snapshot of the network with globally-set parameters in the
+start a new snapshot of the network with globally set parameters in the
 **Settings** menu entry. If you need to make some changes to the discovery
 process (add a new network seed, change login credentials, etc.), you may do so
 in the global **Settings** or in the
@@ -40,7 +40,7 @@ box).
 For creating automatic snapshots, follow the instructions at
 [Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
 
-### Resource Checks before Creating a New Snapshot
+### Resource Checks Before Creating a New Snapshot
 
 Before creating a new snapshot, IP Fabric performs the following resource
 checks (if any of them fails, a new snapshot won't be created):
@@ -63,11 +63,11 @@ In case of ongoing issues, it is possible to disable these resource checks in
 `/opt/nimpee/conf.d/api.json`. Please contact IP Fabric Support for such a
 change.
 
-## Snapshot-specific Settings
+## Snapshot-Specific Settings
 
 ![Snapshot-specific settings](snapshots/snapshot_settings.png)
 
-Adjusting the settings for either a new snapshot or a previously-created snapshot will override the global **Settings**.
+Adjusting the settings for either a new snapshot or a previously created snapshot will override the global **Settings**.
 This is useful for example for testing different SSH settings, Site Separation rules or authentication methods.
 
 ## Inspection of Network Issues
@@ -89,25 +89,24 @@ examining them, you can find the reason why a device wasn't correctly or fully d
 
 ![Add Devices](snapshots/snapshot_add_device.png)
 
-A new device can be added to an already-existing snapshot by clicking the `Add Devices` button (highlighted in red box). You are then able to add a list of IP addresses or subnets to be tried in discovery and added to the currently-selected snapshot.
+A new device can be added to an already-existing snapshot by clicking the `Add Devices` button (highlighted in red box). You are then able to add a list of IP addresses or subnets to be tried in discovery and added to the currently selected snapshot.
 This might be desirable if you performed almost a full snapshot of the network, but only few devices were not included or had connectivity issues that were later resolved (for example wrong AAA configuration, firewall rules, forgot to include a
 network seed, etc).
 
 When adding a new device to an existing snapshot, the [snapshot-specific settings](#snapshot-specific-settings)
-will be applied. If you need to change some settings (for example add a new network seed, login credentials, etc.) in order to add a new device to an existing snapshot, you will need to first change the settings for that particular snapshot and
-then add a new device.
+will be applied. To add a new device to an existing snapshot, you need to first change the settings (for example, add a new network seed, login credentials, etc.) for that snapshot and then add the device.
 
 If the `Rediscover timed out devices` checkbox is selected (highlighted in blue box), the discovery will try to rediscover any devices that previously timed out. To speed up the addition of new devices, it is recommended to unselect this checkbox. If you would like
 to only rediscover devices, that is also possible by not entering any new device IP addresses and clicking the green **Start Discovery** button.
 
-Finally, it is also possible to **+ Add Vendor** (for discovery via API; highlighted in green box) or enable a previously-disabled Vendor (highlighted in yellow box) in the currently-selected snapshot. Please note that toggling a Vendor from `on` to `off` will not remove that Vendor's devices
+Finally, it is also possible to **+ Add Vendor** (for discovery via API; highlighted in green box) or enable a previously disabled Vendor (highlighted in yellow box) in the currently selected snapshot. Please note that toggling a Vendor from `on` to `off` will not remove that Vendor's devices
 from the snapshot. However, toggling all the Vendors to `off` will prevent IP Fabric from rediscovering those devices, thus speeding up the addition of new devices (similarly to disabling `Rediscover timed out devices`).
 
 ### Refresh Devices
 
 ![Refresh Devices](snapshots/snapshot_refresh_device.png)
 
-The **Refresh Devices** action will make the snapshot rediscover the selected devices and update the data models. You are able to manually select certain devices or in the example above filter by the Site `L77` and refresh all devices in that Site.
+The **Refresh Devices** action will make the snapshot rediscover the selected devices and update the data models. You can manually select certain devices or in the example above, filter by the Site `L77` and refresh all devices in that Site.
 
 Please note that changes in those devices might affect other devices. For instance, if a routing change propagated throughout the network. A good example of using **Refresh Devices** is for a firewall change - for ensuring the new rules are allowing or denying traffic in Path Lookup Simulations.
 
@@ -132,7 +131,7 @@ By selecting `Lock snapshot`, IP Fabric won’t automatically unload the snapsho
 
 ![Unload snapshot](snapshots/snapshot_unload.png)
 
-If the maximum number of loaded snapshot is set to 5, there are already 5 loaded snapshots **and** 6th snapshot is created (or loaded), IP Fabric will automatically unload the oldest loaded snapshot from the memory and save it to the hard disk. This can be also done manually on a selected snapshot by clicking **Unload snapshot**.
+If the maximum number of loaded snapshots is set to 5, there are already 5 loaded snapshots **and** 6th snapshot is created (or loaded), IP Fabric will automatically unload the oldest loaded snapshot from the memory and save it to the hard disk. This can be also done manually on a selected snapshot by clicking **Unload snapshot**.
 
 ### Unloaded Snapshots
 
@@ -165,7 +164,7 @@ Loaded as well as unloaded snapshots can be cloned with `Clone snapshot`. This i
 
 Snapshots can be deleted with `Delete snapshot`.
 
-## Load Snapshot from File
+## Load Snapshot From File
 
 ![Load From File](snapshots/snapshot_load_from_file.png)
 

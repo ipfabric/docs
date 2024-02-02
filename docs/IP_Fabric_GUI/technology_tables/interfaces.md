@@ -1,10 +1,10 @@
 ---
-description: The interfaces section provides detailed information about packet counters and undesired network states.
+description: The Interfaces section provides detailed information about packet counters and undesired network states.
 ---
 
 # Interfaces
 
-The interfaces section provides detailed information about packet
+The Interfaces section provides detailed information about packet
 counters and undesired network states.
 
 ## Interface Transmission Rates
@@ -25,8 +25,8 @@ presented for each interface and device in each direction.
 
 The Half-Duplex table presents interfaces in the Half-Duplex mode. Most
 network equipment supports and prefers the full duplex setting. There
-are some exceptions when half duplex operation is necessary, and in such
-a cases all sides must be consistently set for half-duplex operations.
+are some exceptions when half duplex operation is necessary, and in such cases,
+all sides must be consistently set for half-duplex operations.
 
 The ErrDisabled table presents information about interfaces disabled due
 to violations of operational parameters. Interfaces in an error state
@@ -35,8 +35,8 @@ manually, to ensure no future repeats of the same violation.
 
 ## Connectivity Matrix
 
-The connectivity matrix maps connection information between devices for
+The Connectivity matrix maps connection information between devices for
 the network protocols to form dynamic neighbor relationships. Each
-direction of the connection is represented on a separate line, therefore
+direction of the connection is represented on a separate line. Therefore,
 a bidirectional connection will be represented by two lines. The table
 can be filtered by protocol, interface, or hostname.

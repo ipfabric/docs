@@ -32,8 +32,7 @@ following information (`Human Readable Name (apiColumnName)`):
 - `Hostname original (hostnameOriginal)` is the original hostname which was
   acquired from the device.
 - `Hostname processed (hostnameProcessed)` is hostname which is parsed from the
-  original hostname (
-  if there isn't any parsing, it's the same as `hostnameOriginal`); when
+  original hostname (if there isn't any parsing, it's the same as `hostnameOriginal`); when
   applicable -- logical device name -- e.g. firewall `context` or `vsys` name --
   can be added as a suffix to the hostname.
 - `FQDN (fqdn)` is the device fully qualified domain

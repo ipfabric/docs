@@ -6,7 +6,7 @@ description: The routing analysis give you two options, a Detailed analysis of i
 
 ## Individual routes
 
-Detailed analysis of individual routes can performed through a
+Detailed analysis of individual routes can be performed through a
 cumulative routing table for parameters, such as route presence in a
 routing instance, next hop redundancy, route source and metrics, or next
 hop interfaces. Cumulative routing table contains all entries from all

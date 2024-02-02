@@ -20,10 +20,10 @@ class available on the device
 The PoE interface tab lists all interfaces that support PoE protocol. Filters
 can be used to check PoE interface status on a particular device. The `Admin
 status` column shows the administrative status of an interface. It can be
-enabled/auto or admin-down, shutdown or disabled. Operation status lists status
-of every enabled PoE port. Type/PID of powered devices are available in the
-`Powered Device` column if available. The last four columns describe PoE class
-and power usage.
+enabled/auto or admin-down, shutdown or disabled. Operation status lists the
+status of every enabled PoE port. Type/PID of powered devices are available in
+the `Powered Device` column if available. The last four columns describe PoE
+class and power usage.
 
 ![PoE Interfaces table](poe_interfaces.png)
 

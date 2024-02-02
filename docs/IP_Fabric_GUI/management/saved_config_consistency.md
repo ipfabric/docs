@@ -5,8 +5,8 @@ description: This page explains the Saved config consistency table in the Manage
 # Saved Config Consistency
 
 **Management --> Saved Config Consistency** allows you to download the `Startup`
-and `Current` configurations of network devices and also to compare the
-differences (if any) between these two configurations.
+and `Current` configurations of network devices and to compare the differences
+(if any) between these two configurations.
 
 ![Saved config consistency table](saved_config_consistency.png)
 

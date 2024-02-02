@@ -1,15 +1,15 @@
 ---
-description: Management section presents some best practice lifecycle compliance checks.
+description: The Management section presents some best practice lifecycle compliance checks.
 ---
 
 # Management
 
-Management section presents some best practice lifecycle compliance
+The **Management** section presents some best practice lifecycle compliance
 checks.
 
 ## AAA
 
-**AAA** section provides information about devices and configured AAA servers, information about configured AAA lines, primary Authentication, Authorization and Accounting methods, local users information and Password Strength check.
+The **AAA** section provides information about devices and configured AAA servers, information about configured AAA lines, primary Authentication, Authorization and Accounting methods, local users' information and Password Strength check.
 
 ## Telnet access
 
@@ -19,7 +19,7 @@ checks.
 
 **DNS resolver** provides information about essential device DNS settings - timeout, retry & supported protocols.
 
-It also provides detailed settings per each configured server -- IP address, type, search domains, VRF and source interface.
+It also provides detailed settings for each configured server -- IP address, type, search domains, VRF and source interface.
 
 ## Banner
 

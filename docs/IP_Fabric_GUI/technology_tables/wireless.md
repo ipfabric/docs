@@ -12,7 +12,7 @@ connected to the access point.
 
 ## Wireless Controllers
 
-The Wireless Controllers table provides an overview of all of the
+The Wireless Controllers table provides an overview of all the
 Wireless Controllers in the network, including the site where the
 controller is located, the short name of each controller, the number of
 access points registered to the controller, and the total number of
@@ -25,15 +25,15 @@ to the access points.
 
 ## Wireless Access Points
 
-**Site** shows the name of the site where access point is located.
+**Site** shows the name of the site where the access point is located.
 
 **Controller** shows the name of the controller where the AP was found to be
 connected to.
 
 **AP Name** shows the host name of the Wireless Access Point.
 
-**AP Port** is the name of the interface on the Wireless Access Point which
-is used to connect to the wired network infrastructure.
+**AP Port** is the name of the interface on the Wireless Access Point used to
+connect to the wired network infrastructure.
 
 **Switch Hostname** is the name of an edge wired device an AP is connected to.
 
@@ -58,7 +58,7 @@ tablet, phone, or wireless device.
 
 **Client IP** is the IP address of the wireless host, such as a PC, tablet, phone, or a wireless device.
 
-**In/Out/Bidir bps** is the wireless traffic rate for particular client in bits per second for inbound/outbound directions or combined for both
+**In/Out/Bidir bps** is the wireless traffic rate for a particular client in bits per second for inbound/outbound directions or combined for both
 directions.
 
 **In/Out/Bidir pps** is the wireless traffic rate for a client in packets per second for inbound and outbound directions or combined

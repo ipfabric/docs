@@ -22,7 +22,7 @@ appear:
 
 !!! info
 
-    The console may look differently in your browser, but the functionality and
+    The console may look different in your browser, but the functionality and
     tabs should be the same. This example is from Mozilla Firefox.
 
 Go to the `Network` tab and repeat the action which raised the error message,

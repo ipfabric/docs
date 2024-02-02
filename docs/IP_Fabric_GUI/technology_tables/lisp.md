@@ -14,7 +14,7 @@ In contrast, **Routing Locators (RLOCs)** represent the current network location
 
 ## Tabs in Technology --> LISP
 
-The **Routes** tab contains a list of EID/RLOC mappings where `hostname` is the RLOC and the `EID prefix` is the EID.
+The **Routes** tab contains a list of EID/RLOC mappings where `hostname` is the RLOC, and the `EID prefix` is the EID.
 
 ![LISP IPv4 Routes table](lisp/lisp-routes-ipv4.png)
 
@@ -42,7 +42,7 @@ The ETR receives the encapsulated packet, removes the LISP header, and delivers 
 
 LISP provides several benefits for large-scale networks:
 
-- Improved scalability: LISP reduces the size of routing tables, enhancing scalability in networks with a large number of devices.
+- Improved scalability: LISP reduces the size of routing tables, enhancing scalability in networks with many devices.
 - Simplified network design: By separating the EID space from the routing infrastructure, LISP simplifies network design and enables flexibility in managing IP addresses.
 - Enhanced mobility support: LISP allows devices to change locations without requiring IP address renumbering, offering better support for mobility in networks.
 

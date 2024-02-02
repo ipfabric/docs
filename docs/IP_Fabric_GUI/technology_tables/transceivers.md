@@ -9,11 +9,11 @@ description: In this section, we explain why the Transceivers task is disabled b
 Executing some commands to get transceiver related information may cause
 issues on some devices. In the worst case, a device may crash and
 reload. To prevent disruptions of your network, IPF uses a transceiver
-task execution control system. The task is only executed on a device if
+task execution control system. The task is only executed on a device if:
 
-- The transceiver task is enabled
+- The transceiver task is enabled.
 
-- IPF doesn’t classify the device to be affected by any known bug
+- IPF doesn’t classify the device to be affected by any known bug.
 
 Notes:
 
@@ -27,19 +27,20 @@ Notes:
   versions.
 
 !!! note
+
     Although we try to prevent task execution on all software and hardware
     versions that are known to be affected by any bug, we cannot guarantee
     that all bugs are patched. For example, a device manufacturer may update
     their list of devices affected by a certain bug in time, but IP Fabric
     system may not fully reflect it.
 
-## How To Find Transceivers In IP Fabric
+## How to Find Transceivers in IP Fabric
 
 Navigate to **Technology --> Interfaces --> Transceivers**.
 
 ![transceivers in the menu](transceivers_list.png)
 
-## How To Enable/Disable Transceivers Task
+## How to Enable/Disable Transceivers Task
 
 This function is **enabled by default** for all vendors and product
 families. This means that **this command is not executed on any
@@ -58,6 +59,6 @@ devices this command **should not** be executed (so for example if you
 don't want to run show interface transceivers command for all CISCO
 devices, put cisco to the Vendor field. More specific device selection
 can be done by Family, Platform, Model and Version fields). You can
-simply test your Regex rules by **Test rules** button.
+simply test your Regex rules by using the **Test rules** button.
 
 ![edit transceivers tasks](transceivers_tasks_edit.png)

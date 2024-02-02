@@ -20,7 +20,7 @@ the relationships between them. They are grouped into sites represented
 by a cloud for better visibility. You can double-click a cloud to
 explore further that specific site.
 
-Check this page [Network Viewer](network_viewer.md) for more details on using the diagrams.
+For more details on using the diagrams, check [Network Viewer](network_viewer.md) .
 
 ### Sites Diagrams
 
@@ -41,30 +41,30 @@ instances. The switching Domain is composed of contiguously connected
 spanning-tree instances, representing the maximum possible fault
 propagation in a Layer 2 failure domain.
 
-### End to End path
+### End-to-End path
 
-End to End path diagram displays a complete path between any two network
+End-to-End path diagram displays a complete path between any two network
 endpoints or networks. Only the actual network path is displayed, and
 missing parts denote unavailable network information necessary for
 completing the routing process.
 
-The End to end path can be found in ***Diagrams --> End to end path*** or
-on any diagram using the "Path Look-Up" menu on the left (see picture
-below)
+The End-to-End path can be found in ***Diagrams --> End to end path*** or
+on any diagram using the **Path Lookup** menu on the left (see picture
+below).
 
 ![End to end](diagrams_end_end.png)
 
-Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup.md)
+For more details, check [How to use Path Lookup](how_to_use_path-lookup.md).
 
-### Host to Gateway path
+### Host-to-Gateway path
 
-The host to Gateway path diagram displays the Layer 2 path from every
+The Host-to-Gateway path diagram displays the Layer 2 path from every
 identified endpoint in the network to its active gateway router.
 
 The Host to Gateway path can be found in ***Diagrams --> Host to gateway
-path*** or any diagram using the "Path Look-Up" menu on the left and
-selecting "Host To Gateway"(see picture below)
+path*** or any diagram using the **Path Lookup** menu on the left and
+selecting **Host To Gateway** (see picture below).
 
 ![Host to gateway](diagrams_host_gateway.png)
 
-Check this page for more details [How to use Path Look-Up](how_to_use_path-lookup.md)
+For more details, check [How to use Path Lookup](how_to_use_path-lookup.md).

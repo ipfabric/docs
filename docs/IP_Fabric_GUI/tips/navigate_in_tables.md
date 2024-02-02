@@ -78,7 +78,7 @@ interface `Et7/2` as well as devices with hostname `L43SD73` AND interface
 interface `Et7/2`, plus all devices with hostname `L43SD73` with interface
 `Et13/0`.
 
-### Using The Standard Metric Notation On Filtering
+### Using the Standard Metric Notation on Filtering
 
 Trying to filter the values in the number columns using `Simple Filtering` or in the `Advanced Filters`, you can type not only numbers to filter, but some measure prefixes (like `10 k`, `15M`, etc.):
 
@@ -122,14 +122,14 @@ Finally, specify a filter rule to colorize the selected column:
 1. Choose a color to apply rules to.
 2. Add rules based on the same logic as described in
    [Advanced Filtering](#advanced-filtering).
-3. A color can be designated as the `Default color` which means that it will be
-   used if no other rules are matched.
+3. A color can be designated as the `Default color`, meaning it will be used if
+   no other rules are matched.
 4. Click **Update rule** or **Create rule** to save your changes.
 
 ![Intent Rule Detail](navigate_in_tables/table_colorize_rules.png)
 
 In the example above, all items in the `VRF` column which are named `VRF1` will
-be colored red. A summary number of items which matches this rule will also be
+be colored red. A summary number of items which match this rule will also be
 displayed in the `Interfaces` widget on the **Dashboard**.
 
 ### Display settings

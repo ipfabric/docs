@@ -12,7 +12,7 @@ description: In this section we take you through on how To Use Path Look-Up.
 
 First Hop Algorithm adds possibility to start path lookup simulation from a different device than the closest one.
 
-If **Automatic** option is selected, IP Fabric starts path lookup simulation from the closest device possible, VRF is also automatically selected by default, but can be changed manually.
+If the **Automatic** option is selected, IP Fabric starts path lookup simulation from the closest device possible, VRF is also automatically selected by default, but can be changed manually.
 
 ![First hop algorithm](pathlookup/first_hop_algorithm.png)
 
@@ -43,7 +43,7 @@ Packets will use the source IP indicated.
 
 As a source/destination IP address can be used a plain IP address or a CIDR (Classless Inter-Domain Routing) when for example simulating path lookup from a host to a network.
 
-By default, ICMP protocol and Echo request is chosen for path lookup.
+By default, the `ICMP` protocol and the `Echo request` option are chosen for path lookup.
 
 ![Source and destination](pathlookup/pathlookup_src_dst.png)
 
@@ -51,7 +51,7 @@ When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|
 
 ![HTTP default](pathlookup/pathlookup_http_default.png)
 
-When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the pathlookup.
+When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the path lookup.
 
 ![Source and destination ports](pathlookup/pathlookup_src_dst_port.png)
 
@@ -85,7 +85,7 @@ When testing access to or from the internet, source or destination IP regions ca
 
 Example: Europe, China, etc.
 
-By default IP regions are not evaluated.
+By default, IP regions are not evaluated.
 
 !!! Info
 
@@ -114,17 +114,17 @@ This is how path lookup might look like:
 
 ![Path lookup drop](pathlookup/pathlookup_drop.png)
 
-If **Drop** is selected the path lookup will stop when a security rule denies
+If **Drop** is selected, the path lookup will stop when a security rule denies
 traffic.
 
 ![Path lookup continue](pathlookup/pathlookup_continue.png)
 
-If **Continue** is selected the path lookup continues and does not apply the 
+If **Continue** is selected, the path lookup continues and does not apply the 
 policy's deny; in the detail pane it is labeled as `(not applied)`.
 
 ## Multicast Tree Lookup
 
-You want to understand how a certain multicast flow is used, you can use
+If you want to understand how a certain multicast flow is used, you can use
 the Multicast Tree Lookup. For that, just select the correct option and
 enter the relevant details
 

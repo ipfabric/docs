@@ -9,19 +9,19 @@ displayed and the relationships between them. They are grouped into
 sites represented by a cloud for better visibility. You can double-click
 a cloud to explore further that specific site.
 
-Top-level view with all network:
+Top-level view with all networks:
 
 ![Network Viewer -> All network](network_viewer/all_network.png)
 
-## Adding Networks To The View
+## Adding Networks to the View
 
 To display the required information, select on the left side the site
 you want to visualize and click **_Submit_**.
 
 One or more sites can be displayed at a time.
 
-For example, to see a diagram of particular sites called `35HEADOFFICE`
-and `35COLO`:
+For example, to see a diagram of the particular sites `35HEADOFFICE` and
+`35COLO`:
 
 1.  Select **_Site name_** from **_Group Devices by_** drop-down menu
 
@@ -36,7 +36,7 @@ and `35COLO`:
 In a very similar way as to add a site/network to a diagram, to hide it,
 just unselect the network and click **_Submit_**.
 
-## Manipulating Objects And Nodes
+## Manipulating Objects and Nodes
 
 Diagrams are generated automatically, and the following supported
 operations can change their layout:
@@ -63,7 +63,7 @@ The **_Center View_** button can also center the screen view.
 
 ![Center view button](network_viewer/button_center_view.png)
 
-## Hide/Collapse Items In The View
+## Hide/Collapse Items in the View
 
 After selecting a set of devices, or cloud, if you do a right-click, you
 have the option to collapse the selected items into a new cloud, or hide
@@ -80,7 +80,7 @@ them:
 After editing the layout, you will see the green box, this allows you to
 save the changes as the default view. Click the green box, this will
 open a menu **_Select Diagram Layout Settings_** and the last entry is
-the **User-Defined Layout**. By clicking the floppy disk icon you
+the **User-Defined Layout**. By clicking the floppy disk icon, you
 will update the default view (see below). Please, be aware that only
 position of the visible nodes will be saved.
 
@@ -88,7 +88,7 @@ position of the visible nodes will be saved.
 
 ![Save user-defined layout](network_viewer/button_save_user_defined_2.png)
 
-### Use User-defined Layout As The Default Layout
+### Use User-defined Layout as the Default Layout
 
 Once you have created a user-defined layout, you probably want to use
 this as the default layout. For this, click the icon of the site you
@@ -102,13 +102,13 @@ From now on, this will be the default layout for this site:
 
 ![default user defined layout](network_viewer/network_default_user_defined_layout.png)
 
-### Choose a Specific Layout For a Selection Of Devices
+### Choose a Specific Layout for a Selection of Devices
 
 You can now specify which layout you want to use for a set of devices:
 
 ![Use specific layout for selected devices](network_viewer/specific_layout_for_selected_devices.gif)
 
-### Choose a Layout To Apply For The Whole Site
+### Choose a Layout to Apply for the Whole Site
 
 Similarly, you can select a layout for the whole site, using the layout
 selection.
@@ -146,7 +146,7 @@ Select the desired view and click to load.
 
 ![Share View](network_viewer/button_share_view.png)
 
-By clicking here, an URL will be displayed, which you can share with
+By clicking here, a URL will be displayed, which you can share with
 other users, and they will be able to see this view.
 
 ### Export Current View To SVG/PNG
@@ -193,7 +193,7 @@ group/ungroup.
 
 By default, all discovered protocols will be grouped based on the layer
 they belong to. This is the **System** view. You can edit this, which
-means you are able to ungroup certain protocols. For this click the
+means you are able to ungroup certain protocols. For this, click the
 Settings icon:
 
 ![Configure visualization setup](network_viewer/visualization_setup_settings.png)
@@ -232,7 +232,7 @@ diagram.
 
 ### Device Information Deep Dive
 
-After right-clicking the device, it is possible to display additional
+After right clicking the device, it is possible to display additional
 information about it by selecting **Explore**:
 
 ![Device - Explore](network_viewer/device_explore.png)

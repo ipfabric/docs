@@ -15,14 +15,14 @@ in external applications like Excel.
 ## Network Or Site View
 
 Tables display data for the whole network by default. To only display
-data for a specific site, select "site" from the drop down menu on the
+data for a specific site, select "site" from the drop-down menu on the
 top left.
 
 ## Table Filtering
 
 Simple or advanced filters can be applied to each table. By default,
 filtering is available above each column, and accepted filtering values
-can be strings, numbers, IP addresses, networks, boolean values, or
+can be strings, numbers, IP addresses, networks, Boolean values, or
 select box values.
 
 ### RegEx simple column filter examples

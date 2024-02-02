@@ -11,10 +11,10 @@ their members, alongside current rates and balancing ratios.
 
 As an example, let's have a look at the **Member status table**.
 
-IP Fabric has a lot predefined intent rules. In our particular case, port channels are colored green if everything is OK and other color is used when some malfunction are detected.
+IP Fabric has a lot of predefined intent rules. In our particular case, port channels are colored green if everything is OK, and another color is used when some malfunctions are detected.
 
 ![Port-Channel Members State](port-channels/port-channel_members_state.png)
 
-You can also filter colors by clicking them above in the **Intent Verfication Rules** box. When clicked, a small **eye** icon is displayed and items are filtered only to the selected color. Click again the same color to clear the filter.
+You can also filter colors by clicking them in the **Intent Verification Rules** box above. When clicked, a small **eye** icon is displayed, and items are filtered only to the selected color. Click the same color again to clear the filter.
 
 ![Port-Channel Members State - amber](port-channels/port-channel_members_state_amber.png)

@@ -25,7 +25,7 @@ You can add any Intent Verification rule to the Dashboard.
 6. Click **+ Add Widget**.
 7. Select a widget type. In our case, it is **Intent Verifications**.
 8. Name the widget, for example `Port Channels`.
-9. Find an intent verification rule and add it to the widget. For example
+9. Find an intent verification rule and add it to the widget. For example,
    **Technology --> Port channels --> Member status table --> Link Aggregation
    (LAG)/Portchannel/Etherchannel Member status table --> Port-Channel Members
    State**.

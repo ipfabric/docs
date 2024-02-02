@@ -9,7 +9,7 @@ neighbors, switch identifications, and routes.
 
 ## Summary
 
-The **Summary** tab contains the summary of neighbors, switch IDs and routes.
+The **Summary** tab contains the summary of neighbors, switch IDs, and routes.
 
 ![Summary table](fabricPathSummary.png)
 
