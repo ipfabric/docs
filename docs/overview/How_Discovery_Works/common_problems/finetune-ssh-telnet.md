@@ -27,18 +27,18 @@ errors and adjustments:
 | Can't detect prompt                                                               | Command timeout               | Unable to detect CLI prompt. Increase **network device login timeout.**                                            |
 | Command "enable" authorization failed, tried 2x                                   | Command authorization failure | The command wasn't authorized. **Increase command authorization failure retries** or increase the timer value (ms) |
 
-### Network device login timeout
+### Network Device Login Timeout
 
 Timeout before the logging prompt is received. It may take longer for
-remote branches over low-speed lines, or destined to overloaded devices.
+remote branches over low-speed lines or destined to overloaded devices.
 
-### Network device session timeout
+### Network Device Session Timeout
 
 Too many **_Command Timeout_** errors during the Discovery process may
-indicate that **_Network device session timeout_** is too short and it
+indicate that **_Network device session timeout_** is too short, and it
 may be necessary to expect a delay for a response to arrive.
 
-### Maximum number of parallel sessions
+### Maximum Number of Parallel Sessions
 
 To prevent flooding your network with too many SSH/TELNET sessions set
 **_Maximum number of parallel sessions_**. This setting can be also
@@ -50,18 +50,18 @@ command authorization. When there are too many authorization failures
 and Cisco ISE is in place, try to limit the number of parallel sessions
 down to 10 and steadily increase.
 
-### Basic failure
+### Basic Failure
 
 How many times to retry a connection for any error, except
 authentication failure.
 
-### Authentication failure
+### Authentication Failure
 
 **_Authentication failure_** can occur even if a user is authorized to
-login but may happen, for example, when an AAA server is overloaded or
+login but may happen, for example, when an AAA server is overloaded, or
 an authentication packet is lost.
 
-### Command Authorization Failure retries
+### Command Authorization Failure Retries
 
 If you see many examples of **_Authentication error_** during the
 Discovery process, please adjust **_Authentication failure_** and

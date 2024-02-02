@@ -8,8 +8,8 @@ Starting with version `3.8`, the IP Fabric platform can combine CLI
 (Command-Line Interface) discovery with API (Application Programming Interface)
 discovery.
 
-Please take into consideration connectivity requirements for the platform when
-planning to add cloud or SD-WAN vendors for API discovery.
+Please consider connectivity requirements for the platform when planning to add
+cloud or SD-WAN vendors for API discovery.
 
 The API discovery is not automated and requires manually adding all necessary
 HTTP endpoints to initiate connection to in **Settings --> Discovery & Snapshots
@@ -75,8 +75,8 @@ until the session expires.
 If the Vendor API requires the client to log-in, or to create a session, the
 Vendor API client creates it and takes care about its timely renewal. Please
 note that there are also some cases when the session can get invalid before its
-expiration. The Vendor API client is aware of that and it can detect that. When
-such a situation is detected, the session is immediately renewed and the
+expiration. The Vendor API client is aware of that, and it can detect that. When
+such a situation is detected, the session is immediately renewed, and the
 discovery continues.
 
 ## Overloaded Server Detection and Handling
@@ -99,7 +99,7 @@ exponential backoff. If the network error is not mitigated for some time, then
 the request is rejected -- but the Vendor API discovery can continue by
 additional requests.
 
-## Vendor-specific Cases
+## Vendor-Specific Cases
 
 Some Vendor APIs have specific situations that are detected and handled to
 increase the probability of a successful discovery.

@@ -10,11 +10,11 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Snapshot**
 
-: The data stored on an IPF appliance that represents the inventory, configuration, state and topology of a group of network devices within a given time window. It can be:
+: The data stored on an IPF appliance represents the inventory, configuration, state and topology of a group of network devices within a given time window. It can be:
 
     - **Scheduled** or **ad hoc** -- settings in the IPF UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.
 
-    - **Full** or **partial** -- the snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a **full** snapshot. If a **partial** snapshot is required, only containing certain devices -- perhaps to validate a change outcome -- it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.
+    - **Full** or **partial** -- the snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted, and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a **full** snapshot. If a **partial** snapshot is required, only containing certain devices -- perhaps to validate a change outcome -- it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.
 
     - **Refreshed** -- if the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config and state data from that device by selecting it/them and refreshing the snapshot.
 
@@ -28,19 +28,19 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Snapshot Creation**
 
-: IP Fabric's uniquely accurate process of discovering and documenting the network behavior. It has three phases: Discovery, Modelling, and Assurance Engine.
+: IP Fabric's uniquely accurate process of discovering and documenting the network's behavior. It has three phases: Discovery, Modelling, and Assurance Engine.
 
 **Discovery**
 
-: The process of crawling out through the network -- device by device or using APIs to gather from a controller -- collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of device then assemble data ready for use in the second stage.
+: The process of crawling out through the network -- device by device or using APIs to gather from a controller -- collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of devices then assemble data ready for use in the second stage.
 
 **Modelling**
 
-: The mechanism of processing the device data from the Discovery phase to insert it into the database model, and to uncover and document groupings, classifications and relationships between devices.
+: The mechanism of processing the device data from the Discovery phase is to insert them into the database model, and to uncover and document groupings, classifications and relationships between devices.
 
 **Assurance Engine**
 
-: Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently IPF introduced an option to disable elements of this phase in order to speed up release of the data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
+: Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently, IPF introduced an option to disable elements of this phase to speed up release of the data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
 
   !!! note
 
@@ -56,7 +56,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
   !!! note
 
-      a seed is not necessary for snapshot discovery. If IP Fabric has successfully discovered a snapshot previously, it will use its discovery history to provide seeds for future discovery. If there is no discovery history and no other seeds are provided, IP Fabric will start at its default gateway._
+      A seed is not necessary for snapshot discovery. If IP Fabric has successfully discovered a snapshot previously, it will use its discovery history to provide seeds for future discovery. If there is no discovery history and no other seeds are provided, IP Fabric will start at its default gateway.
 
 **Crawl**
 
@@ -68,7 +68,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Excluded subnets**
 
-: The network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet it will not be accessed, but highlighted in the platform as an "unmanaged device".
+: The network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet, it will not be accessed but highlighted in the platform as an "unmanaged device".
 
 **Included subnets**
 
@@ -76,7 +76,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Scan**
 
-: This is a "brute force" process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery but it is extremely inefficient, often resulting in triggering security alerts in a customer's network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.
+: This is a "brute force" process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery, but it is extremely inefficient, often resulting in triggering security alerts in a customer's network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.
 
 **Jumphosts**
 
@@ -118,7 +118,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Diagram Canvas**
 
-: The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes are able to be placed according to user preference, and the Visualisation Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapse or hide certain nodes and further layout options, the ability to save and load layouts to be shared with other users of the platform, refresh snapshots for selected nodes, export the output to SVG or PNG, and display the API information used to generate the output on the canvas.
+: The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes are able to be placed according to user preference, and the Visualization Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapse or hide certain nodes and further layout options, the ability to save and load layouts to be shared with other users of the platform, refresh snapshots for selected nodes, export the output to SVG or PNG, and display the API information used to generate the output on the canvas.
 
 **Management Tables**
 
@@ -134,6 +134,6 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 : The Reports menu houses two sample report types which are created by the Assurance Engine phase of snapshot creation:
 
-    - **Network Analysis Report** -- A Word document that contains all the detail from the intent check dashboard.
+    - **Network Analysis Report** -- A Word document that contains all the details from the intent check dashboard.
 
     - **Site Low Level Design** -- a Word document created for each site in a snapshot containing connectivity matrix, VLANs, IP addressing, diagrams and so on.

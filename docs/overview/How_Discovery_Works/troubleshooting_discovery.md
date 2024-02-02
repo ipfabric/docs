@@ -7,7 +7,7 @@ description: Documentation on most commonly seen discovery issues and how to res
 ## Discovery Settings
 
 This section describes the Global Settings. You can also make adjustments to specific snapshots.
-Changes made to the Global Settings do not apply to previously-run snapshots. Here are
+Changes made to the Global Settings do not apply to previously run snapshots. Here are
 two methods for testing snapshot settings:
 
 1. Make your changes in the snapshot **Settings** and then try to
@@ -54,7 +54,7 @@ Location: **Management --> Discovery History**
 ![Discovery History](troubleshooting/discovery_history.png)
 
 The **Discovery History** table is also used by IP Fabric as seed addresses.
-Once a device is discovered in a snapshot, it will be placed in this table for
+Once a device is discovered in a snapshot, it will be added to this table for
 use in other snapshots.
 
 - The **username last successfully used** for a device will be recorded here and be
@@ -104,7 +104,7 @@ Discovery --> Discovery tasks settings**
 
 ![Discovery tasks settings](troubleshooting/discovery_tasks_settings.png)
 
-**Discovery tasks settings** is where the magic happens for automated discovery of
+**Discovery tasks settings** are where the magic happens for automated discovery of
 new devices on your network.
 
 - If you are not finding new devices in your snapshot, check if
@@ -131,7 +131,7 @@ new devices on your network.
 
 - **Trace** signifies using traceroute to RFC1918 addresses to help discover your
   internal network. This is helpful for the VM as IP Fabric might not be able to log
-  in to the default gateway (vRouter), but using traceroute it can find some other
+  in to the default gateway (vRouter), but using traceroute, it can find some other
   physical devices in the network to use as starting points.
 
 ### Advanced CLI
@@ -179,16 +179,16 @@ at [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discove
 
 There can be numerous reasons why IP Fabric did not discover a
 device from Day 0: incorrectly configured devices, AAA outage, insufficient
-authorization privileges, just to name a few. First, we will take a look at some tables
+authorization privileges, just to name a few. First, we will look at some tables
 to help you find these and then show how to use the **Connectivity Report** to
 debug them.
 
-### Vendor Specific Troubleshooting
+### Vendor-Specific Troubleshooting
 
 You may notice that some devices of a certain vendor are not being discovered.
 Please read through the [Known Issues](../../releases/index.md) to ensure a bug has
 not been already raised or a fix suggested. For instance, some firewall vendors
-require elevated or `admin` profiles in order to pull all data.
+require elevated or `admin` profiles to pull all data.
 
 ### Technology Tables
 
@@ -201,9 +201,9 @@ interface names, but also the remote hostname, interface name, and remote IP.
 Since devices can connect to multiple other devices, there can be duplicate
 remote hostnames in this list.
 
-You are able to export this view to CSV and then remove duplicate hostnames to
-get a unique list of devices. For instance in this demo, we see a total of 59
-unmanaged neighbors, but only 40 unique remote hostnames.
+You can export this view to CSV and remove duplicate hostnames to get a unique
+list of devices. For instance, in this demo, we see a total of 59 unmanaged
+neighbors, but only 40 unique remote hostnames.
 
 #### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail
 
@@ -233,7 +233,7 @@ default intent check for you.
 - <span style="color: green;">GREEN</span>: Is defined for the Exterior Gateway
   Protocol BGP.
 
-### Auditing using an External Network Management System
+### Auditing Using an External Network Management System
 
 Perhaps you would like to audit IP Fabric with an NMS (or vice versa). This can
 be done as all the tables can return the data in CSV format via the UI or JSON
@@ -264,8 +264,7 @@ could not discover.
     the IP addresses found on devices, the NMS data should find a match.
 
     Another option is to use the device's Serial Number. Serial numbers are
-    not always unique and there is a chance of overlap, so please take this
-    into account.
+    not always unique and there is a chance of overlap, so please consider this.
 
 !!! Note "Note on Serial Numbers"
 
@@ -275,7 +274,7 @@ could not discover.
 
     The column named `Unique serial number` is an IP Fabric-unique identifier
     and primary key for the device. This column is labeled as `sn` in the API, so it is
-    easy to confuse the two if you were not aware. The main occasion there are
+    easy to confuse the two if you are not aware. The main occasion there are
     differences between the two is seen in firewalls with virtual contexts,
     vdoms, etc.
 
@@ -293,7 +292,7 @@ process.
 The most common reason why a new installation of IP Fabric will not connect is
 due to the `connect ECONNREFUSED XX.XX.XX.XX:22` error which signifies the
 traffic is being blocked by an ACL or firewall. This is why it is recommended
-having IP Fabric in your management subnet which is already allowed for remote
+to have IP Fabric in your management subnet, which is already allowed for remote
 access to devices, so you do not have to re-configure all your ACLs. Another
 option is to use a jumphost as described
 at [Jumphost](../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md).
@@ -337,7 +336,7 @@ Management** list.
     - **Settings --> Configuration Management --> Schedule** is set to
       create device configuration backups every day at 11PM.
 
-    - New device will be found at 6AM, but since its configuration backup is
+    - The new device will be found at 6AM, but since its configuration backup is
       scheduled for 11PM, you will need to wait until the next day to be sure
       that its configuration is pulled.
 

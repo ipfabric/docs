@@ -19,8 +19,8 @@ first time and configures basic system parameters:
    IP Fabric System Administration interface and CLI (not for the GUI access,
    the GUI is accessible with a local administrator account configured in
    in System Administration - see
-   [Access User Interface and Install License](03-access_ui.md)) and also to
-   encrypt system backups.
+   [Access User Interface and Install License](03-access_ui.md)) and to encrypt
+   system backups.
 9. Optionally define organization parameters for the local SSL certificate.
 10. After rebooting, the console login screen will display the assigned IP
     address of the system and provide a link to access the user interface.

@@ -16,7 +16,7 @@ A distributed system of micro-service components resides within the IP Fabric VM
 
 ### Browser Requirements
 
-To access your IP Fabric GUI, we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:
+To access your IP Fabric GUI, we recommend using a browser version that is no older than one year. We support most major browsers, including:
 
 - Google Chrome and Chromium-based browsers (e.g. Brave, Opera, Vivaldi, Edge)
 - Mozilla Firefox and maintained forks (e.g. LibreWolf)
@@ -26,7 +26,7 @@ For seamless experience, we recommend using a browser at Full HD (1920 × 1080 p
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with the following instructions: `avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.
+The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popcnt`, `sse`, `sse2`, `sse4.1`, `sse4.2`, `sse4a`, and `ssse3`. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.
 
 The minimum requirements are:
 
@@ -69,7 +69,7 @@ For managed service provider (MSP) networks:
 
 !!! warning
 
-    If you are planning to use FTP/SFTP IP Fabric backup option, recommended disk space has to be doubled.
+    If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled.
 
     For 500 devices 180 GB, for 1 000 devices 200 GB and so on.
 
@@ -89,11 +89,11 @@ For managed service provider (MSP) networks:
 
 We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.
 
-The appliance is built on top of Debian 11, which is officially supported since [ESXi 7.0](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16). In order to get the best performance we strongly recommend using latest ESXi with [`pvscsi`](https://kb.vmware.com/s/article/1010398) storage driver and [`VMXNET 3`](https://kb.vmware.com/s/article/1001805) networking driver.
+The appliance is built on top of Debian 11, which has been officially supported since [ESXi 7.0](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16). To get the best performance, we strongly recommend using the latest ESXi with the [`pvscsi`](https://kb.vmware.com/s/article/1010398) storage driver and the [`VMXNET 3`](https://kb.vmware.com/s/article/1001805) networking driver.
 
 The minimal recommended `Virtual Hardware Version` is `vmx-17`, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See [VMware KB](https://kb.vmware.com/s/article/1003746) for details.
 
-If you will deploy IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following [Error: Invalid OVF checksum algorithm: SHA256](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md). This is because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.
+If you deploy IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following [Error: Invalid OVF checksum algorithm: SHA256](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md). This is because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.
 
 It might be possible to deploy `vmdk` on earlier versions of ESXi with some effort. OVA is a tar file, so you can extract `.vmdk` image and import that directly with recommended hardware requirements.
 Similar [VMware documentation article](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html) with description how to extract `ova` and import `vmdk`.
@@ -104,7 +104,7 @@ It is also possible to run IP Fabric on any other virtualization platform using 
 
 During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.
 
-IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md#setting-up-jumphost) can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)
+IP Fabric should be connected to a network that has direct connectivity to managed devices. [Jumphost server](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md#setting-up-jumphost) can also be set up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)
 
 Inbound flows:
 

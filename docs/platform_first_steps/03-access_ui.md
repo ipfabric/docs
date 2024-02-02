@@ -1,10 +1,10 @@
 ---
-description: In the second step we will show you how to access the user interface and how to install the IP Fabric license.
+description: In this step, we will show you how to access the user interface and how to install the IP Fabric license.
 ---
 
-# Access User Interface And Install License
+# Access User Interface and Install License
 
-## Creating The First IP Fabric User
+## Creating the First IP Fabric User
 
 To create the first user, please log in to the **System Administration** interface on port `8443`.
 
@@ -28,7 +28,7 @@ In **Settings --> Administration --> Local Users**, you can also create or delet
 
 ![Creating a new user account](modify_local_accounts.png)
 
-## Accessing The Main User Interface
+## Accessing the Main User Interface
 
 Type the IP Fabric VM's address into a web browser and allow HTTPS exceptions in case of a warning.
 
@@ -38,7 +38,7 @@ Type the IP Fabric VM's address into a web browser and allow HTTPS exceptions in
 
 The system requires a license file that uniquely identifies the system and links it to the dedicated support channels.
 Keep the license file safe, as the license file is also used as part of the key to encrypt sensitive information.
-Drag the `license.key` file into the web interface, or click **Select file** and browse to the `license.key` file.
+Drag the `license.key` file into the web interface or click **Select file** and browse to the `license.key` file.
 If the license installation fails, contact the IP Fabric support team.
 
 ![IPF License 1](ui_license_1.png)

@@ -8,7 +8,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 
 !!! important
 
-    Please bear in mind that IP Fabric uses CLI access (SSH or telnet) to connect to devices for data collection. It's important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.
+    Please remember that IP Fabric uses CLI access (SSH or telnet) to connect to devices for collecting data. It's important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.
 
 ## Deploying on VMware OVA Virtual Machine
 
@@ -29,7 +29,7 @@ All virtual appliance images are available at  [https://releases.ipfabric.io/ip
 ## Deploying on Hyper-V Virtual Machine
 
 The `qcow2` disk image file can be converted to different formats.
-Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
+Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
 
 1. Download `ipfabric-*.qcow2` from the official source.
 2. Convert `qcow2` image to `VHDX` (Be sure to change the filenames in the command examples below.)
@@ -99,11 +99,11 @@ Using this method we will create a `VHDX` usable on Microsoft Hyper-V and manual
    2. Change memory size
    3. [Extend the system disk or add a new empty virtual disk](../System_Administration/increase_disk_space.md) if necessary.
 
-5. Start the VM and check if the system starts without any interrupts.
+5. Start the VM and check if the system starts without any interruptions.
 
 ## Deploying a Virtual Machine on KVM
 
-We have currently the limitation that drives need to be `/dev/sdx`. Usually Linux hypervisors are using the `virtio-blk` driver which is represented as `/dev/vdx` in the guest system. To overcome this limitation use the `virtio-scsi` as drive controller.
+We have currently the limitation that drives need to be `/dev/sdx`. Usually, Linux hypervisors are using the `virtio-blk` driver which is represented as `/dev/vdx` in the guest system. To overcome this limitation, use the `virtio-scsi` as drive controller.
 
 1. Download `qcow2` system disk to your KVM hypervisor.
 2. Resize the `qcow2` data-disk that corresponds to [your network needs](../overview/index.md#operational-requirements) if necessary. Use the following command:
@@ -118,7 +118,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
    virt-install --name=IP_Fabric --disk path=<path to the disk>.qcow2 --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
    ```
 
-4. This command deploys a new virtual machine with IP_Fabric name, system `qcow2` disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the `--network` parameter).
+4. This command deploys a new virtual machine with the name `IP_Fabric`, system `qcow2` disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the `virtbr0` interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the `--network` parameter).
 
 5. This command also starts up the VM.
 
@@ -128,7 +128,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
 !!! warning
 
-    Deploying IP Fabric on VirtualBox is currently not officially supported -- it is not tested and we cannot guarantee that it will work.
+    Deploying IP Fabric on VirtualBox is currently not officially supported -- it is not tested, and we cannot guarantee that it will work.
 
 1.  Download the `OVA` image.
 
@@ -144,7 +144,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
     ![VirtualBox - Import Virtual Appliance - Appliance Settings](virtualbox_import-virtual-appliance-2.png)
 
-4.  Right-click the newly-created virtual machine and select its **Settings...**
+4.  Right-click the newly created virtual machine and select its **Settings...**
 
 5.  In the **System** section, select `ICH9` as the Chipset:
 
@@ -218,7 +218,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
 5. Upload VHD image to storage account
 
-   To [upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure), one need to download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
+   To [upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure), you need to download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
    The image needs to be uploaded to the previously created Blob container.
 
    ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
@@ -241,7 +241,7 @@ We have currently the limitation that drives need to be `/dev/sdx`. Usually Linu
 
   !!! important
 
-      Please note that the Azure serial console might be not accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md). In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:
+      Please note that the Azure serial console might not be accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md). In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:
       
       ```
       sudo nimpee-net-config -a

@@ -1,10 +1,10 @@
 ---
-description: Network snapshots record the state of the network in time, enabling to retrieve historical information, follow network state changes, analyze connectivity
+description: Network snapshots record the state of the network in time, enabling us to retrieve historical information, follow network state changes, analyze connectivity, and more.
 ---
 
 # How Snapshots Work
 
-Network snapshots record the state of the network in time, enabling to retrieve historical information, follow network state changes, analyze connectivity, and more. A network snapshot is a fully functional software copy of the network, including all configuration and state data. Active network view displays information from a network snapshot which can be selected using Snapshot selector drop-down menu in the top left corner of the Main User Interface.
+Network snapshots record the state of the network in time, enabling us to retrieve historical information, follow network state changes, analyze connectivity, and more. A network snapshot is a fully functional software copy of the network, including all configuration and state data. Active network view displays information from a network snapshot which can be selected using Snapshot selector drop-down menu in the top left corner of the Main User Interface.
 
 ![Snapshot selector menu](snapshot_selector_menu.png)
 
@@ -20,7 +20,7 @@ Unloading snapshot will move network state information from RAM to HDD. It usual
 
 Snapshots can be downloaded for external storage, which can be later uploaded back to the system.
 
-Snapshots can be cloned to accommodate change management practices, for example when change comparison is desired but only a small part of the network is affected by the change. A snapshot can be restricted to a specific portion of the network through **IP Scope** in **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery**. This will enable visual comparison of a portion of the network, and provide historical data for the collected portion of the network. However when comparing partial snapshot with full network snapshot, a number of false positives will appear, because large portion of the network will be missing.
+Snapshots can be cloned to accommodate change management practices, for example when change comparison is desired but only a small part of the network is affected by the change. A snapshot can be restricted to a specific portion of the network through **IP Scope** in **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery**. This will enable visual comparison of a portion of the network and provide historical data for the collected portion of the network. However, when comparing a partial snapshot with a full snapshot, many false positives will appear, because a large portion of the network will be missing.
 
 Snapshots can be also permanently deleted from the system.
 

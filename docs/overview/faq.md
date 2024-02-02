@@ -88,7 +88,7 @@ A: For the very first network discovery, IP Fabric needs to be deployed with th
 
 A: IP Fabric can discover **all supported IP-based active network devices**. In general, those are switches, routers, firewalls, load-balancers, WAN concentrators, wireless controllers, wireless access-points.
 
-## Supported manufacturers
+## Supported Manufacturers
 
 **Q:** What network vendors are currently supported?
 

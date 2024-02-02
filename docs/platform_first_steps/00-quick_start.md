@@ -24,7 +24,7 @@ Access is restricted to registered customers only.
 
 !!! note "Image Access"
 
-    If you are a current customer please contact your Solution Architect
+    If you are a current customer, please contact your Solution Architect
     or [Support](../support/index.md) for access instructions.
 
     Please contact our [sales representative](mailto:sales@ipfabric.io)
@@ -33,7 +33,7 @@ Access is restricted to registered customers only.
 We provide two different images listed below along with links to installation
 instructions.
 
-1. OVA can deployed on:
+1. OVA can be deployed on:
    1. [VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
    2. [Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
    3. [VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
@@ -65,10 +65,10 @@ page: [Creating The First IP Fabric User](03-access_ui.md#accessing-the-main-use
 
 ## Applying IP Fabric License
 
-In order to access the main IP Fabric user interface, a license must be uploaded
-to IP Fabric. Please contact your salesperson for the license key and follow the
-instructions
-at [Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
+To access the main IP Fabric user interface, a license must be uploaded to IP
+Fabric. Please contact your salesperson for the license key and follow the
+instructions at
+[Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
 
 !!! important "Licensing"
 
@@ -76,10 +76,10 @@ at [Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-i
 
 ## Configuration
 
-The simplest way for first time configuration of IP Fabric is through the use of
-the [Configuration Wizard](04-configuration_wizard.md) which will guide you
-through the process of adding device credentials, discovery seeds, networks
-to include/exclude in discovery and Advanced CLI settings.
+The simplest way for first time configuration of IP Fabric is with the
+[Configuration Wizard](04-configuration_wizard.md) which will guide you through
+the process of adding device credentials, discovery seeds, networks to
+include/exclude in discovery and Advanced CLI settings.
 
 If you would like to change these settings after initial configuration,
 please see [IP Fabric Settings](../IP_Fabric_Settings/configuration_management.md). Alternatively, there
@@ -101,7 +101,7 @@ which are useful for testing small changes prior to changing Global Settings.
 
 ## Discovery
 
-If you followed the **Configuration Wizard**, the last step will ask you to
+If you followed the **Configuration Wizard**, the last step would ask you to
 **Start Discovery**. You can also start discoveries by using the
 [Discovery Snapshot](../IP_Fabric_GUI/discovery_snapshot.md) menu. This is
 where the magic of IP Fabric happens where it will go out to your devices, find
@@ -120,5 +120,5 @@ page that will guide you through the most common issues seen during the initial
 discovery process. It explains how discovery works, how to view logs, and which
 settings to change to include (or exclude) devices among other useful tips.
 
-If you are working with a Solution Architect in a Proof of Concept deployment
+If you are working with a Solution Architect in a Proof-of-Concept deployment,
 they will also work with you in troubleshooting any issues that may arise.

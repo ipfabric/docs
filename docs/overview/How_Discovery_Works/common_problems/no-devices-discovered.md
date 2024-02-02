@@ -15,7 +15,7 @@ time or after system changes
     specific addresses attempted and the reason for the failure.
     
     1.  If the reason reports timeout, IP Fabric has IP address assigned
-        that cannot reach the device. The route may not be present or
+        that cannot reach the device. The route may not be present, or
         the traffic may be filtered. Check IP Fabric connectivity
         with [Troubleshooting VM network problems using IP Fabric
         CLI](../../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md).
@@ -32,10 +32,10 @@ time or after system changes
 2.  Provide discovery seed address in **Settings --> Discovery & Snapshots -->
     Discovery Settings --> Discovery Seeds**.
 
-    Seed addresses specify starting points of discovery. If default
-    gateway of IP Fabric VM is not discoverable, you need to specify
+    Seed addresses specify starting points of discovery. If the default
+    gateway of the IP Fabric VM is not discoverable, you will need to specify
     an IP address or a network to start the discovery. It is
-    recommended to provide IP address of a router as a starting
+    recommended to provide the IP address of a router as a starting
     point for discovery. Check [Discovery
     Seeds](../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds.md).
 

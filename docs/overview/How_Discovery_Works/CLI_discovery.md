@@ -14,8 +14,8 @@ The process is controlled with the **Start discovery** and **Stop discovery** bu
 
 You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
 --> Create Snapshots Periodically** to automatically run a network discovery in
-periodic intervals or at a specific time. We recommend doing a network
-discovery at least once a day in order to capture any network changes.
+periodic intervals or at a specific time. We recommend performing a network
+discovery at least once a day to capture any network changes.
 
 ## Connectivity Report
 
@@ -23,13 +23,13 @@ A connection to every attempted address either succeeds or is recorded in the Co
 
 ![Connectivity Report](cli_discovery/connectivity_report.png)
 
-which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure messages denote an unsuccessful login attempt and provide a description of how the device has responded.
+which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.
 
 ## Bandwidth Limit
 
 Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.
 
-To further distribute the network load and reduce the possibility of the bottlenecks, the connection scheduler sorts connections attempts to addresses that are farthest away. For example, in a list of addresses `10.10.10.1, 10.10.10.2, 10.20.10.1, 10.10.20.1`, after attempting a
+To further distribute the network load and reduce the possibility of bottlenecks, the connection scheduler sorts connections attempts to addresses that are farthest away. For example, in a list of addresses `10.10.10.1, 10.10.10.2, 10.20.10.1, 10.10.20.1`, after attempting a
 connection to `10.10.10.1`, the next IP scheduled is `10.20.10.1`, because it shares only 11 bits with `10.10.10.1`. This lowest common mask rule enables statistically distributing the load without prior topology knowledge.
 
 The selected number of megabits per second also controls the number of simultaneous connections. Each additional megabit adds 3 parallel sessions.
@@ -40,7 +40,7 @@ Discovery is performed via a lightweight interaction with the network infrastruc
 
 ![discovery process](cli_discovery/discovery.png)
 
-After a successful login, discovery reads the network protocol state tables and looks for known neighbours, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbour information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
+After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
 
 This is how the discovery process continues after a successful connection to a network device:
 
@@ -60,20 +60,19 @@ The spanning-tree domain is a topology of contiguously connected spanning-tree i
 The routing domain is a topology of contiguously connected forwarding hops and signifies a Layer 3 failure domain in the case of a cascading Layer 3 failure.
 
 
-## Already discovered IP address behaviour
+## Already Discovered IP Address Behavior
 
-If IP Fabric discovery process resolves an IP address which is an interface of already discovered device, it won't even attempt to connect to the IP address resolved.
+If the IP Fabric discovery process resolves an IP address which is an interface of already discovered device, it won't even attempt to connect to the IP address resolved.
 
-There's another check in the flow, which connects to the IP address and starts to collect basic data, it executes `show inventory` and its variants on other vendors, collects the serial number and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, and stops the device discovery in its tracks.
-
+There's another check in the flow, which connects to the IP address and starts to collect basic data, it executes `show inventory` and its variants on other vendors, collects the serial number and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.
 
 ```mermaid
 flowchart TD
-    IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an inteface \non already discovered device?}
+    IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an interface\non an already discovered device?}
     
     AlreadyDiscoveredDevice -->|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
     AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
-    CollectsSN --> ComparesSN[[IP Fabric compares the \nserial number with devices\nalready in queue.]]
+    CollectsSN --> ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in queue.]]
 
     ComparesSN --> AlreadyInQueue{Is the device already\nin Discovery queue?}
     AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
@@ -84,7 +83,7 @@ flowchart TD
     style IPFWontConnect fill:#dd3300
 ```
 
-You can see the results of the process in "**Discovery Snapshot --> Connectivity Report**".
+You can see the results of the process in **Discovery Snapshot --> Connectivity Report**.
 
 ![Connectivity Report](cli_discovery/already_discovered_or_in_queue.png)
 
