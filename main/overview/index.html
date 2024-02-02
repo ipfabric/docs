@@ -1190,7 +1190,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR To Work With IP Fabric
+    Configuring Quagga / FRR to Work with IP Fabric
   
 
     
@@ -1371,7 +1371,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Access User Interface And Install License
+    Access User Interface and Install License
   
 
     
@@ -12086,7 +12086,7 @@ documentation.
 <p><a class="glightbox" href="architecture.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric Architecture" src="architecture.png" /></a></p>
 <h2 id="operational-requirements">Operational Requirements</h2>
 <h3 id="browser-requirements">Browser Requirements</h3>
-<p>To access your IP Fabric GUI, we recommend using a browser version that is at most 1 year old or newer. We support most major browsers. Below is a list of supported browsers:</p>
+<p>To access your IP Fabric GUI, we recommend using a browser version that is no older than one year. We support most major browsers, including:</p>
 <ul>
 <li>Google Chrome and Chromium-based browsers (e.g. Brave, Opera, Vivaldi, Edge)</li>
 <li>Mozilla Firefox and maintained forks (e.g. LibreWolf)</li>
@@ -12094,7 +12094,7 @@ documentation.
 </ul>
 <p>For seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with the following instructions: <code>avx,popcnt,sse,sse2,sse4.1,sse4.2,sse4a,ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
+<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
 <p>The minimum requirements are:</p>
 <table>
 <thead>
@@ -12250,7 +12250,7 @@ documentation.
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you are planning to use FTP/SFTP IP Fabric backup option, recommended disk space has to be doubled.</p>
+<p>If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled.</p>
 <p>For 500 devices 180 GB, for 1 000 devices 200 GB and so on.</p>
 </div>
 <div class="admonition info">
@@ -12265,15 +12265,15 @@ documentation.
 </div>
 <h3 id="supported-virtualization-platforms">Supported Virtualization Platforms</h3>
 <p>We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.</p>
-<p>The appliance is built on top of Debian 11, which is officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. In order to get the best performance we strongly recommend using latest ESXi with <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
+<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. To get the best performance, we strongly recommend using the latest ESXi with the <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and the <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
 <p>The minimal recommended <code>Virtual Hardware Version</code> is <code>vmx-17</code>, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See <a href="https://kb.vmware.com/s/article/1003746">VMware KB</a> for details.</p>
-<p>If you will deploy IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This is because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.</p>
+<p>If you deploy IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This is because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.</p>
 <p>It might be possible to deploy <code>vmdk</code> on earlier versions of ESXi with some effort. OVA is a tar file, so you can extract <code>.vmdk</code> image and import that directly with recommended hardware requirements.
 Similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html">VMware documentation article</a> with description how to extract <code>ova</code> and import <code>vmdk</code>.</p>
 <p>It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.</p>
 <h3 id="network-connectivity-requirements">Network Connectivity Requirements</h3>
 <p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
-<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/#setting-up-jumphost">Jumphost server</a> can also be set-up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)</p>
+<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/#setting-up-jumphost">Jumphost server</a> can also be set up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)</p>
 <p>Inbound flows:</p>
 <table>
 <thead>
@@ -12444,7 +12444,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     

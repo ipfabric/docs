@@ -1022,7 +1022,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR To Work With IP Fabric
+    Configuring Quagga / FRR to Work with IP Fabric
   
 
     
@@ -1315,7 +1315,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Access User Interface And Install License
+    Access User Interface and Install License
   
 
     
@@ -11971,7 +11971,7 @@ documentation.
 <p>All virtual appliance images are available at  <a href="https://releases.ipfabric.io/ipfabric/#current">https://releases.ipfabric.io/ipfabric/#current</a>. Access is restricted to registered customers only. Please contact our <a href="mailto:sales@ipfabric.io">sales representative</a> if you are interested in a trial of IP Fabric.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Please bear in mind that IP Fabric uses CLI access (SSH or telnet) to connect to devices for data collection. It&rsquo;s important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
+<p>Please remember that IP Fabric uses CLI access (SSH or telnet) to connect to devices for collecting data. It&rsquo;s important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
 </div>
 <h2 id="deploying-on-vmware-ova-virtual-machine">Deploying on VMware OVA Virtual Machine</h2>
 <ol>
@@ -11993,7 +11993,7 @@ on how to resolve this.</p>
 </div>
 <h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
 <p>The <code>qcow2</code> disk image file can be converted to different formats.
-Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
+Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
 <ol>
 <li>Download <code>ipfabric-*.qcow2</code> from the official source.</li>
 <li>Convert <code>qcow2</code> image to <code>VHDX</code> (Be sure to change the filenames in the command examples below.)<ul>
@@ -12076,11 +12076,11 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </ol>
 </li>
 <li>
-<p>Start the VM and check if the system starts without any interrupts.</p>
+<p>Start the VM and check if the system starts without any interruptions.</p>
 </li>
 </ol>
 <h2 id="deploying-a-virtual-machine-on-kvm">Deploying a Virtual Machine on KVM</h2>
-<p>We have currently the limitation that drives need to be <code>/dev/sdx</code>. Usually Linux hypervisors are using the <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation use the <code>virtio-scsi</code> as drive controller.</p>
+<p>We have currently the limitation that drives need to be <code>/dev/sdx</code>. Usually, Linux hypervisors are using the <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation, use the <code>virtio-scsi</code> as drive controller.</p>
 <ol>
 <li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
@@ -12094,7 +12094,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </code></pre></div>
 </li>
 <li>
-<p>This command deploys a new virtual machine with IP_Fabric name, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the <code>--network</code> parameter).</p>
+<p>This command deploys a new virtual machine with the name <code>IP_Fabric</code>, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the <code>--network</code> parameter).</p>
 </li>
 <li>
 <p>This command also starts up the VM.</p>
@@ -12106,7 +12106,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <h2 id="deploying-a-virtual-machine-on-virtualbox">Deploying a Virtual Machine on VirtualBox</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Deploying IP Fabric on VirtualBox is currently not officially supported &ndash; it is not tested and we cannot guarantee that it will work.</p>
+<p>Deploying IP Fabric on VirtualBox is currently not officially supported &ndash; it is not tested, and we cannot guarantee that it will work.</p>
 </div>
 <ol>
 <li>
@@ -12124,7 +12124,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <p><a class="glightbox" href="../virtualbox_import-virtual-appliance-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance - Appliance Settings" src="../virtualbox_import-virtual-appliance-2.png" /></a></p>
 </li>
 <li>
-<p>Right-click the newly-created virtual machine and select its <strong>Settings&hellip;</strong></p>
+<p>Right-click the newly created virtual machine and select its <strong>Settings&hellip;</strong></p>
 </li>
 <li>
 <p>In the <strong>System</strong> section, select <code>ICH9</code> as the Chipset:</p>
@@ -12191,7 +12191,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 </li>
 <li>
 <p>Upload VHD image to storage account</p>
-<p>To <a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">upload the VHD image</a>, one need to download and install the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.
+<p>To <a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">upload the VHD image</a>, you need to download and install the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.
  The image needs to be uploaded to the previously created Blob container.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
 <div class="admonition important">
@@ -12212,7 +12212,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
 <p>Ensure that you follow the <a href="../../overview/#hardware-requirements">resource requirements matrix</a> when sizing the virtual machine on Azure.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Please note that the Azure serial console might be not accessible for setting the <code>osadmin</code> password in the <a href="../02-boot_wizard/">First Boot Wizard</a>. In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory <code>osadmin</code> password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:</p>
+<p>Please note that the Azure serial console might not be accessible for setting the <code>osadmin</code> password in the <a href="../02-boot_wizard/">First Boot Wizard</a>. In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory <code>osadmin</code> password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:</p>
 <div class="highlight"><pre><span></span><code>sudo nimpee-net-config -a
 </code></pre></div>
 </div>
@@ -12238,7 +12238,7 @@ Using this method we will create a <code>VHDX</code> usable on Microsoft Hyper-V
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     
