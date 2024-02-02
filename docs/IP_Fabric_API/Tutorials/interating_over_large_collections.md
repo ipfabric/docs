@@ -1,12 +1,12 @@
 ---
-description: Current API may return an arbitrary `count` of `100000000` for large collections (tables). 
+description: Current API may return an arbitrary count of 100000000 for large collections (tables). 
 ---
 
 # Iterating Over Large Collections
 
-Current API may return an arbitrary `count` of `100000000` for large collections (tables). This doesn't mean that collection doesn't contain more records. We have an open change request to augment this behavior and return `null` in such cases (as returned value cannot be trusted).
+Current API may return an arbitrary `count` of `100000000` for large collections (tables). This doesn't mean that the collection doesn't contain more records. We have an open change request to augment this behavior and return `null` in such cases (as returned value cannot be trusted).
 
-We recommend to implement "blind iteration" even before mentioned change is implemented as it will allow to fetch all records with the current as well as future API implementation.
+We recommend implementing "blind iteration" even before mentioned change is implemented as it will allow to fetch all records with the current as well as future API implementation.
 
 !!! example "Blind iteration pseudo-code"
 

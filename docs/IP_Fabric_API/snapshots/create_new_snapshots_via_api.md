@@ -2,7 +2,7 @@
 description: This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with...
 ---
 
-# Create New Snapshots Via API
+# Create New Snapshots via API
 
 This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with a different set of settings, if you wanted to have a reduced scope for example.
 
@@ -19,39 +19,39 @@ Headers must contain:
 - `content-type: application/json`
 - `X-API-Token:` (the API token provided from the IP Fabric Settings UI)
 
-## Create a New Snapshot With The Existing Settings
+## Create a New Snapshot with the Existing Settings
 
 If you want to start a discovery, using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
 
 ![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 
-## Create a New Snapshot With Different Settings Than The Default Ones
+## Create a New Snapshot with Different Settings Than the Default Ones
 
 What if you wanted a snapshot for a smaller scope of your network. For this, you can use the API to start a new discovery, with some specific settings used for a specific discovery.
 
-Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`) and not taking into account the Vendor API (Check Point, Meraki, AWS…) that you may have configured in your settings. All fields are optional, if not specified,
+Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`), and not considering the Vendor APIs (Check Point, Meraki, AWS etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)
 
-!!! info "The value from your settings will be used"
+!!! example
 
-```js
-{
-    "snapshotName": "Name of the Snapshot",
-    "snapshotNote": "Some notes to describe the snapshot",
-    "networks":
-        {
-            "exclude": [],
-            "include": [ "10.66.0.0/16" ]
-        },
-    "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ],
-    "vendorApi": []
-}
-```
+    ```js
+    {
+        "snapshotName": "Name of the Snapshot",
+        "snapshotNote": "Some notes to describe the snapshot",
+        "networks":
+            {
+                "exclude": [],
+                "include": [ "10.66.0.0/16" ]
+            },
+        "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ],
+        "vendorApi": []
+    }
+    ```
 
 Let’s see how it looks when using Postman:
 
 ![create snapshot](create_snapshot.gif)
 
-## Settings for creating a new snapshot
+## Settings for Creating a New Snapshot
 
 There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `/api/{api_version}/settings`
 

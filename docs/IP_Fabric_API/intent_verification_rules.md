@@ -10,9 +10,9 @@ The results of the intent verification checks are identified as "reports" in the
 
 ## Instructions
 
-In order to handle the intent verification checks to be able to act on them then, there are a series of steps.:
+To handle the intent verification checks to be able to act on them then, there are a series of steps.
 
-First step is to fetch a list of the reports from the snapshot you're interested in. This is a simple GET request to `/api/{api_version}/reports?snapshot=<id>` where `<id>` is `$last` or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:
+The first step is to fetch a list of the reports from the snapshot you're interested in. This is a simple GET request to `/api/{api_version}/reports?snapshot=<id>` where `<id>` is `$last` or a valid snapshot id. The JSON dictionary returned is a list of reports created in the snapshot, with information about:
 
 - the table they relate to
 - the columns colored by the test
@@ -77,7 +77,7 @@ We can compare that with the Web UI dialog for the same check:
 
 ![intent verification rule](intent_verification_rule.png)
 
-So once we have found the report we are looking for, we retrieve the technology table from the `apiEndpoint` field in the report dictionary, filtered for the color that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an `UP` state, we make a POST request to `/api/{api_version}/tables/security/dmvpn` with the following request payload:
+So, once we have found the report we are looking for, we retrieve the technology table from the `apiEndpoint` field in the report dictionary, filtered for the color that matches the condition we’re interested in from the validation check. From our above example then, to retrieve the DMVPN tunnels that are in an `UP` state, we make a POST request to `/api/{api_version}/tables/security/dmvpn` with the following request payload:
 
 ```json
 {
@@ -98,6 +98,6 @@ So once we have found the report we are looking for, we retrieve the technology 
 }
 ```
 
-This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the `state` column equalling `0` -- which equates to the color green from the validation check.
+This will retrieve a dictionary with the data from the columns listed in the technology table from the last snapshot, filtered on the value of the `state` column equaling `0` -- which equates to the color green from the validation check.
 
-Note that snapshot management is referred to in a separate article - the `$last` snapshot may not be the best to query on in all cases.
+Note that snapshot management is referred to in a separate article - the `$last` snapshot may not be the best to query in all cases.

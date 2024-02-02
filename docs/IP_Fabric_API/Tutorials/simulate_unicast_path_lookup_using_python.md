@@ -2,7 +2,7 @@
 description: A quick tutorial about how to use IP Fabric’s API with python-ipfabric-diagrams Python module.
 ---
 
-# Simulate Unicast Path Lookup In IP Fabric Using Python
+# Simulate Unicast Path Lookup in IP Fabric Using Python
 
 A quick tutorial about how to use IP Fabric’s API with [python-ipfabric](https://pypi.org/project/ipfabric/) Python module.
 

@@ -4,9 +4,9 @@ description: Information about how you can authenticate your API calls towards I
 
 # Authentication
 
-Majority of requests to IP Fabric platform need to be authenticated. We provide
-multiple authentication methods. They differ to each other, please review all of
-them before committing to any.
+The majority of requests to the IP Fabric platform need to be authenticated. We
+provide multiple authentication methods. They differ from each other, please
+review all of them before committing to any.
 
 ## API Token
 
@@ -28,8 +28,8 @@ X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI
 Using Basic Authentication requires Base64 encoding `username:password` and
 passing that into the `Authorization` header.
 
-- Call will always have the same rights as the user account. This may be really
-  unnecessary for many use-cases.
+- Call will always have the same rights as the user account. This may not be
+  necessary for many use-cases.
 - In case this approach is use, we highly encourage creation of a "bot"/"
   service" user account with limited access scope.
 - Another form of long-lived static token / authentication details (secure
@@ -49,11 +49,11 @@ Token authentication allows to exchange username and password for pair of tokens
 -- access and refresh. Exchange is facilitated via `login` endpoint. Access
 token is then passed to the consecutive API calls in the `Authorization` header.
 
-- Call will always have the same rights as the user account. This may be really
-  unnecessary for many use-cases.
-- In case this approach is use, we highly encourage creation of a "bot"/"
-  service" user account with limited access scope.
-- Storage of refresh token is important as it allows for maintaining long-term
+- Call will always have the same rights as the user account. This may not be
+  necessary for many use-cases.
+- In case this approach is used, we highly encourage creation of a
+  `bot`/`service` user account with limited access scope.
+- Storage of refresh token is important as it allows to maintain long-term
   access.
 
 ### Types of Tokens
@@ -85,9 +85,9 @@ being generated and it can’t be revoked during its lifetime.
 It can be requested for new access tokens until the refresh token is used, 
 revoked, or expired.
 
-: A refresh token expires after 24 hours of not being used for generation of a
+: A refresh token expires 24 hours after not being used for generation of a
 new access token. Refresh tokens must be stored securely by an application
-as it creates a new Access Token and allowing access to the system.
+as it creates a new Access Token and allows access to the system.
 
 : Starting in IP Fabric version `6.1.0` the `refreshToken` is rotated after 
 every use and a new one is issued.
@@ -117,7 +117,7 @@ This returns a JSON response with `accessToken` and `refreshToken`:
 }
 ```
 
-#### Using the accessToken
+#### Using `accessToken`
 
 The `accessToken` is then placed in the `Authorization` header as seen below.
 Please ensure it is formatted as `Authorization: Bearer <ACCESS_TOKEN>`.
@@ -128,7 +128,7 @@ curl -X GET 'https://demo3.ipfabric.io/api/v5.0/snapshots' \
   -H 'Authorization: Bearer eyJhbGc...'
 ```
 
-#### Using the refreshToken
+#### Using `refreshToken`
 
 To create a new `accessToken` from the `refreshToken`:
 
@@ -139,7 +139,7 @@ curl -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/token' \
 ```
 
 Which then returns a new `accessToken` to use in subsequent calls and a new 
-`refreshToken` to use for request the next `accessToken`:
+`refreshToken` to use for requesting the next `accessToken`:
 
 ```json
 {
@@ -168,7 +168,7 @@ The default token expiration is as follows:
 - `accessToken` -- 30 minutes (1800 seconds)
 - `refreshToken` -- 24 hours (86400 seconds)
 
-Many company standards requires shorter expiration times and this can be
+Many company standards require shorter expiration times and this can be
 accomplished via the CLI settings.
 
 --8<-- "snippets/cli_root_access.md"
@@ -196,7 +196,7 @@ accomplished via the CLI settings.
 4. Change file permissions `chmod 644 /opt/nimpee/conf.d/api.json`
 5. Restart API `systemctl restart nimpee-api.service`
 
-### Disabling local authentication
+### Disabling Local Authentication
 
 In case you don't want to use local authentication (username/password) and log in only via SSO or LDAP, you can disable it via the CLI settings (both token and basic authentication will be disabled). Please note that [API Tokens](../IP_Fabric_Settings/integration/api_tokens.md) will still work.
 

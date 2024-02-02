@@ -9,8 +9,8 @@ interface (UI) has an API call associated with the action of the click.
 
 ## Python IP Fabric (SDK)
 
-API first principles allow the IP Fabric team to maintain a Software Development
-Kit (SDK) that can used for automations. While the IP Fabric main GUI is written
+API-first principles allow the IP Fabric team to maintain a Software Development
+Kit (SDK) that can be used for automation. While the IP Fabric main GUI is written
 in TypeScript, we have chosen to write the SDK in Python as it is the most
 common language used by Network Engineers.
 
@@ -24,8 +24,7 @@ map directly to API calls.
 ## Postman Collection
 
 An IP Fabric Postman Collection is also available to use for testing API calls.
-The collection can be found at [IP Fabric Public Workspace](
-https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview) and documentation can be here at
+The collection can be found at [IP Fabric Public Workspace](https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview) and documentation can be here at
 [Postman Collection](../integrations/postman/index.md).
 
 ## Using API Directly
@@ -33,12 +32,12 @@ https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview) 
 The following documentation is meant to get you started working with API and
 give you a tutorial on how it works.
 
-Many of the tables within IP Fabric have a `?` which provides a description of
-how to interact with the API, the data required in the payload, and the endpoint
-to send the request to. This is the easiest way to learn how to use the API and
-for more information please see
-[Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description)
-.
+Most of the tables within IP Fabric have a `Table description` option under the
+`...` (3-dot menu) in their top-right corner. It describes how to interact with
+the API, the data required in the payload, and the endpoint to send the request
+to. This is the easiest way to learn how to use the API. For more information,
+please see
+[Table Description](../IP_Fabric_GUI/tips/navigate_in_tables.md#table-description).
 
 Another option is using the network viewer in the web
 browser's `Developers Tools` which will show you the endpoints and data required
@@ -90,7 +89,7 @@ where
 - `{api_version}` stands for the complete version string, for example `v5.1`.
   Please, mind the `v` prefix.
 
-### API version deprecation and allowed changes
+### API Version Deprecation and Allowed Changes
 
 IPF commits to keep support for all `minor` versions within the particular
 `major` version (so for example in release `5.4.3` we allow `/api/v5.1/`
@@ -142,8 +141,8 @@ This may look excessive at first, but it is to promote the client code to be
 changed with every update, as to keep track with all small changes and updates
 we bring. But in reality, clients would be typically fine, if they update API
 version when moving to the new major release only. Frequently, the client code
-is actually not going to change except of the API version. Thus we recommend
-using a global constant for it.
+will not change, except for the API version. Thus, we recommend using a global
+constant for it.
 
 ## Technology Table Endpoints
 
@@ -160,7 +159,7 @@ be used with filters as well):
 
 ![API Endpoint inline description](endpoint_inline_description.png)
 
-## Payload definition
+## Payload Definition
 
 ```jscript
 {
@@ -179,7 +178,7 @@ be used with filters as well):
   - Example: `"filters": {"vendor":["like","cisco"],"family":["eq","lap"],"reload":["color","eq","0"]}`
 - `pagination` -- (Recommended) Specifies the pagination and response limits.
   - Example: `{"limit":1000,"start":0}`
-  - It is currently recommended querying 1,000 rows or fewer at a time.
+  - It is currently recommended to query 1,000 rows or fewer at a time.
 - `snapshot` -- Specify snapshot ID or use: `$last`, `$prev`
   , `$lastlocked`
   - Note: some tables (i.e. settings) do not allow the `snapshot` parameter.

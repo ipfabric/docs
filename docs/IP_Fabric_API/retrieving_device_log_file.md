@@ -2,22 +2,24 @@
 description: This tech note describes how you can retrieve log files for a device from IP Fabric’s discovery, to be consumed outside the platform.
 ---
 
-# Retrieving device log file
+# Retrieving Device Log File
 
-This tech note describes how you can retrieve log files for a device from IP Fabric’s discovery, to be consumed outside the platform.
+This tech note describes how you can retrieve log files for a device from IP
+Fabric’s discovery, to be consumed outside the platform.
 
-You do this in two stages:
+Do this in two stages:
 
-1. send a POST to `/tables/inventory/devices` with a request body like
+1. Send a `POST` to `/tables/inventory/devices` with a request body like:
 
-    ```json
-    {
-      "columns": ["hostname", "taskKey"],
-      "snapshot": "$last"
-    }
-    ```
+   ```json
+   {
+     "columns": ["hostname", "taskKey"],
+     "snapshot": "$last"
+   }
+   ```
 
-    You can (and probably would) filter that list (for example for a specific device with the hostname `SWITCH01`) by including a `key:value` pair.
+   You can (and probably would) filter that list (for example, for a specific
+   device with the hostname `SWITCH01`) by including a `key:value` pair:
 
     ```json
     "filters": {
@@ -25,6 +27,8 @@ You do this in two stages:
     }
     ```
 
-    This gives you the task ID for the discovery for the device in question.
+    This gives you the task ID for the discovery of the device in question.
 
-2. send a `GET` to `/os/logs/task/XXXXXXXXXXXXX` where `XXXXXXXXXXXXX` is the `taskKey` value returned in step 1 for the required network device. This returns the plain text of the log file for that device discovery.
+2. Send a `GET` to `/os/logs/task/XXXXXXXXXXXXX` where `XXXXXXXXXXXXX` is the
+   `taskKey` value returned in step 1 for the required network device. This
+   returns the plain text of the log file for that device discovery.
