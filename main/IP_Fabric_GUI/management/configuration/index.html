@@ -11947,7 +11947,7 @@ documentation.
 
 <h1 id="configuration">Configuration</h1>
 <h2 id="overview">Overview</h2>
-<p>Configuration management can be found at <strong>Management &rarr; Configuration</strong> and <strong>backs up the running configuration</strong> of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. <strong>Only changed configurations</strong> are stored, and these report both the time of the last change and the time of the last configuration check for a change.</p>
+<p>Configuration management can be found in <strong>Management &rarr; Configuration</strong> and <strong>backs up the running configuration</strong> of managed network devices based on the defined trigger. Downloaded configuration is then available for viewing in full or sanitized formats, or for comparison. <strong>Only changed configurations</strong> are stored, and these report both the time of the last change and the time of the last configuration check for a change.</p>
 <p>Configuration can be retrieved in <code>full</code> or <code>sanitized</code> forms. Sanitization removes all passwords and network identification information from the configuration to prevent sharing of sensitive information.</p>
 <h2 id="credential-requirements">Credential Requirements</h2>
 <p>Network access credentials allowing the <code>show run</code> command (or equivalent)
@@ -11971,7 +11971,7 @@ checked.</p>
 </li>
 <li><code>Hash</code> &ndash; Unique ID of the configuration file</li>
 </ul>
-<p>We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When new configuration is found (either brand new, or different from previous) for given device, it is committed to git and new record is entered to DB, with status set to <code>changed</code>. Next time the device&rsquo;s configuration is checked, there are two options:</p>
+<p>We need to realize that every table row, once we filter output for a specific hostname, represents a modified configuration file. When a new configuration is found (either brand new, or different from previous) for a given device, it is committed to git and the new record is entered to the DB, with status set to <code>changed</code>. Next time the device&rsquo;s configuration is checked, there are two options:</p>
 <ol>
 <li>the configuration file remains the same, in which case status field of the DB record is set to <code>no change</code>, and <code>Last Check At</code> is set to the current time;</li>
 <li>the configuration file is changed again, in which case the new configuration is committed to git and new DB record is inserted into DB with status <code>changed</code> and <code>Last Change At</code> and <code>Last Check At</code> being set to current time, as described above.</li>
@@ -12031,7 +12031,7 @@ checked.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
   </span>
 
     
