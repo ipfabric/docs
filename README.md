@@ -5,25 +5,25 @@ MkDocs](https://squidfunk.github.io/mkdocs-material/). Last but not least, there
 is [mike](https://github.com/jimporter/mike), which is a tool for building and
 publishing different versions of the documentation.
 
-## Release process
+## Release Process
 
 One of the main motivations for migrating towards Markdown-based documentation
 is the ability to follow a standard development model. Thus, any update to the
 documentation happens as follows:
 
-- Create your "feature" branch. It is a good practice to include a ticket number
-  at the beginning. For example `NIM-5808_readme`.
+- Create your "feature" branch. It is good practice to include a ticket number
+  at the beginning. For example, `NIM-5808_readme`.
 - Do all your commits in the branch. When ready, open a merge request (MR) on
   GitLab (also make sure that it starts with your ticket number, correctly
   formatted).
-- Set yourself as the assignee (as your are the owner of the MR).
+- Set yourself as the assignee (as you are the owner of the MR).
 - At the moment, please set the reviewer to @antonin.kral-ipf and/or
   @zdenek.sindylek-ipf for all your MRs.
 - The CI/CD pipeline builds and publishes on every push to `main`.
 - `mike` is then used by repository maintainers to push a new version release to
   the documentation web. (See the `mike` section below.)
 
-## Writing documentation
+## Writing Documentation
 
 ### Style Guide
 
@@ -43,32 +43,32 @@ documentation happens as follows:
 - Consider using [snippets](snippets) for content repeated / copy-pasted through
   multiple pages.
 
-Take a look at e.g.
+Look at e.g.:
 
 - <https://github.com/errata-ai/vale-boilerplate/tree/master/styles/Microsoft>
 - <https://grafana.com/docs/writers-toolkit/writing-guide/markdown-guide/>
 
 ### CI/CD
 
-We use [vale](https://github.com/errata-ai/vale) to help you keep consistent
-documentation style. It keeps an eye on your choice of words, tenses, sentence
-complexity and much more. It is run as a part of the CI/CD pipeline.
+We are using [Vale](https://github.com/errata-ai/vale) to help you keep a
+consistent documentation style. It keeps an eye on your choice of words, tenses,
+sentence complexity, and much more. It is run as a part of the CI/CD pipeline.
 
-Failure is not a fatal error at the moment, but please look into CI/CD logs
+A failure is not a fatal error at the moment, but please look into CI/CD logs
 during MR to avoid adding new problems.
 
 We also build the documentation during CI/CD which means that internal links
 are being validated.
 
-### General recommendations
+### General Recommendations
 
-There are some great resource on how to write a good documentation out on
+There are some great resources on how to write a good documentation out on
 Interwebs. Good starting points:
 
 - [Google's Technical Documentation Style Guide](https://developers.google.com/style)
 - [Google's Technical Writing Course](https://developers.google.com/tech-writing)
 
-### Repository layout
+### Repository Layout
 
 All the documents live under the `docs` directory. Directories are used to
 create sections. Please pay attention to naming. We have opted for automated
@@ -85,15 +85,15 @@ similar in other documentation builders (except Sphinx). You can read more at
 layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
 Instead, we have opted for `awesome-pages` plugin, which allows for a
-combination of manual navigation entries as well as automated (based on
-filename). Check `.pages.yml` file in the directories.
+combination of manual navigation entries as well as automated ones (based on
+filenames). Check the `.pages.yml` file in the directories.
 
-### Including documentation from other repositories
+### Including Documentation From Other Repositories
 
 You can include content from other repositories. This is especially useful
 for integrations. We have opted for [`mkdocs-multirepo-plugin`](https://github.com/jdoiro3/mkdocs-multirepo-plugin).
 
-Basic configuration looks like
+A basic configuration looks like:
 
 ```yaml
 plugins:
@@ -110,24 +110,24 @@ plugins:
 ```
 
 This will bring two repositories under `integrations/` path and name them as
-`pokus` and `monorepo`. First one is a public repository, second one is a
-private one. For private, you need to add `docs_ci_bot` deploy key to your
+`pokus` and `monorepo`. The first one is a public repository, the second one is
+a private one. For private, you need to add `docs_ci_bot` deploy key to your
 repository (read-only access).
 
-It also demonstrates use of `docs_dir` to pick a custom directory from
+It also demonstrates the use of `docs_dir` to pick a custom directory from
 within the repository.
 
-`temp_multirepo` is a temporary directory used for cloning the repositories.
-It contains pulled pages in a correct structure. It's also used for linters.
+`temp_multirepo` is a temporary directory used for cloning repositories. It
+contains pulled pages in a correct structure. It's also used for linters.
 
-### Writing your documents
+### Writing Your Documents
 
 Documents are written in [Markdown](https://www.markdownguide.org/cheat-sheet/)
 with some helpful extensions. List of enabled extensions is in `mkdocs.yml`
 under the `markdown_extensions` section.
 
 - [admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
-  for call-outs like "example", "note", "warning" etc.
+  for callouts like "example", "note", "warning" etc.
 - [attr_list](https://squidfunk.github.io/mkdocs-material/reference/buttons/)
   for nice buttons
 - [def_list](https://squidfunk.github.io/mkdocs-material/reference/lists/#using-definition-lists)
@@ -138,17 +138,17 @@ Please make yourself familiar with
 and
 [MkDocs Markdown Guide](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown).
 
-### GitHub mirror and public sources
+### GitHub Mirror and Public Sources
 
 Our documentation is open to public at <https://docs.ipfabric.io> . We went one
 step further and also made the source code for the documentation open at
 <https://github.com/ipfabric/docs> . This allows customers to not only closely
 follow updates, but also to provide improvements. Every page also has an
-`Edit this page` button to simplify this process.
+**Edit this page** button to simplify this process.
 
-#### Handling contribution (Pull Request on GitHub)
+#### Handling Contribution (Pull Request on GitHub)
 
-Primary source of data is GitLab, where also the majority of reviews takes
+The primary source of data is GitLab, where also the majority of reviews takes
 place. GitLab pushes updates to GitHub (it automatically mirrors all protected
 branches). This means that the final merge needs to happen on the GitLab side.
 The rough process for handling contribution is as follows:
@@ -156,13 +156,14 @@ The rough process for handling contribution is as follows:
 - A contributor creates a pull request (PR) on GitHub.
 - People with access to GitHub do the review with the contributor using GitHub's
   PR interface.
-- Remote branch is pulled from GitHub and pushed to GitLab, where a new merge
-  request (MR) is created. CI runs at this time for the MR on the GitLab side.
+- The remote branch is pulled from GitHub and pushed to GitLab, where a new
+  merge request (MR) is created. CI runs at this time for the MR on the GitLab
+  side.
 - When merged to `main` (or other appropriate branch) on the GitLab side, code
   is pushed to GitHub. A responsible person needs to go to GitHub and close the
   opened pull request manually.
 
-### Live preview
+### Live Preview
 
 #### Container
 
@@ -176,8 +177,8 @@ make serve
 ```
 
 Please note that it will utilize `--dirtyreload` which can lead to
-inconsistencies, but is significantly faster to reload, when editing just couple
-pages.
+inconsistencies, but is significantly faster to reload, when editing just a
+couple of pages.
 
 #### Python Virtual Environment
 
@@ -193,25 +194,25 @@ Windows users -- If you receive errors related to `cairo` libs/DLL installing
 will install the necessary packages. Please ensure you specify that it is added
 to your PATH.
 
-## Docker image
+## Docker Image
 
-As mentioned in the Live preview section, we have a Docker image which is used
-by the CI pipeline for building the documentation site, as well as can be
-leveraged during writing the documentation for live preview.
+As mentioned in the `Live Preview` section above, we have a Docker image which
+is used by the CI pipeline for building the documentation site, as well as can
+be leveraged during writing the documentation for live preview.
 
 The main motivation behind the image is to allow leveraging
 [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)
-without publishing its sources, while still allowing to publish the source code
-of our documentation.
+without publishing its sources, while still allowing us to publish the source
+code of our documentation.
 
-### Updating container image
+### Updating Container Image
 
 ```shell
 make docker-build
 make docker-push
 ```
 
-## `mike` cookbook
+## `mike` Cookbook
 
 You probably don't need to read this section. :)
 
@@ -227,7 +228,7 @@ Make sure that in case you need to run `mike`, you either:
 - use a virtual environment created with `make mike`, which replaces
   `mkdocs-material` with the Insiders edition.
 
-### Why do we have `gh-pages` on GitLab?
+### Why Do We Have `gh-pages` on GitLab?
 
 `mike` expects to be running on GitHub. GitHub uses the `gh-pages` branch as a
 store for files being deployed to the static website. GitLab has a different
@@ -264,11 +265,11 @@ The `versions.json` file contains information about published versions. This is
 consumed by the Material Theme to render version switcher at the top of the
 page.
 
-### Release a new version of documentation
+### Release New Version of Documentation
 
 Please be careful -- running `mike` with `--push` will result in immediate
-changes in the repository (no reviews and such), as described in the taken
-steps.
+changes in the repository (no reviews and such), as described in the steps
+taken.
 
 Let's assume that we are on version `4.5` and want to release a brand new `4.6`.
 The current `main` corresponds to the content of the `4.6` release. To release
@@ -290,7 +291,7 @@ mike alias --update-aliases 5.0 latest
 # if everything looks good, push `gh-pages`
 ```
 
-### Release an update to existing version
+### Release Update to Existing Version
 
 We use "release" branches for tracking release-specific (backported) changes.
 Those follow the `release/x.y` naming, such as `release/5.0`. Just be aware that
@@ -326,16 +327,16 @@ means that the `541d97e0d` was deployed to version `5.0` on the website.
 
 - agrr, profit!
 
-### Removing old release
+### Removing Old Release
 
 You can use `mike list` and `mike delete` to remove obsolete releases from the
 website. Use with caution!
 
-### Updating low-level release notes (LLRN) from JIRA
+### Updating Low-Level Release Notes (LLRN) From JIRA
 
 Script `jira_release_notes.py` will refresh all low-level
 release notes from JIRA. There are certain shortcuts, like hard-coded
-configuration values. Also check your release filtering in there to limit which
+configuration values. Also, check your release filtering in there to limit which
 releases are actually refreshed.
 
 To use this script, you need to export two environment variables:
