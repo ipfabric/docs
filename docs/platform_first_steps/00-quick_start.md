@@ -5,7 +5,7 @@ description: This will guide you through installing IP Fabric in your environmen
 # Quick Start Installation Guide
 
 <figure markdown>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/x3WXQFk6paY?si=JsM0euJZBnezeR7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x3WXQFk6paY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <figcaption>Solution Architect Dan Kelcher will guide you through the installation and configuration of IP Fabric in under 25 minutes!</figcaption>
 </figure>
 
