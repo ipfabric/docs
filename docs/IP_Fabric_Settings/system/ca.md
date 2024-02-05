@@ -33,8 +33,7 @@ mkdir /usr/local/share/ca-certificates/my_custom_ca
 
 After placing the certificate in the directory, you will need to run the
 `update-ca-certificates` command to link the certificate to the `Trusted Root
-Certificate Store`. Running it should give you an output similar to the
-following:
+Certificate Store`. Running it should give you an output like the following:
 
 ```shell
 Updating certificates in /etc/ssl/certs...

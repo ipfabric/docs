@@ -63,13 +63,12 @@ SFTP protocol.
 
 !!! warning
 
-    For FTP and SFTP backups, a directory **has to be specified** . It **has to
+    For FTP and SFTP backups, a directory **must be specified**. It **must
     exist** on the remote side. If it does not, you will get an error.
 
-    For **FTP**, the directory path has to be specified as a **relative path**.
+    For **FTP**, the directory path must be specified as a **relative path**.
     
-    For **SFTP**, the directory path has to be specified as an **absolute
-    path**.
+    For **SFTP**, the directory path must be specified as an **absolute path**.
 
 To set up remote backup, do the following steps:
 

@@ -26,8 +26,8 @@ Type**):
 - [Viptela](Cisco_Viptela_SD-WAN.md)
 - [VMware NSX-T](VMware_NSX-T.md)
 
-They are frequently **complementary to CLI-based** discovery process for
-established networking vendors, but **completely essential** for **SD-WAN** or
+They are often **complementary to CLI-based** discovery process for
+established networking vendors but **essential** for **SD-WAN** or
 **cloud vendors**.
 
 This section describes per-API specific settings for supported APIs.
@@ -48,7 +48,7 @@ example screenshot shows the AWS configuration).
 
 **Slug**
 
-: Slug has to be unique and not empty. It is included in logs and other places
+: A slug must be unique and not empty. It is included in logs and other places
   to distinguish among potentially multiple API instances (think about it as
   `loginIP` for API). We recommend using short and descriptive values, such as
   `aws-us`, `aws-jp` etc.
@@ -76,8 +76,8 @@ example screenshot shows the AWS configuration).
 **System proxy** is by default used for communication from IP Fabric to the
 Internet (e.g., IP Fabric and system updates).
 
-Some Vendor API controllers might be **located on the Internet** or other parts
-of the network and sending traffic through the System proxy might be required.
+Some Vendor API controllers might be **on the Internet** or other parts
+of the network, and sending traffic through the System proxy might be required.
 
 This setting can be enabled/disabled per Vendor API.
 

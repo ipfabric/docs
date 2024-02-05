@@ -6,7 +6,7 @@ description: In this section, we will explain how to set up jumphosts.
 
 ## Setting Up Jumphost
 
-**Jumphost** allows to set-up a connection to the server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
+**Jumphost** allows to set up a connection to a server which can be used as a **proxy server for discovery** purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.
 
 The user used for **Jumphost** connection must have access to jumphosts `shell` and must be able to run `python`.
 
@@ -56,15 +56,14 @@ We successfully tested IP Fabric against jumphosts with the following python ver
         If you want to use a custom port for the jumphost connection, please use the following format: `IP/FQDN:PORT` 
 
         ![Custom Port](jumphost/jumphost_custom_port.png)
+
   - **IPv4 subnets** - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)
 
     !!! warning
 
         If you use `0.0.0.0/0` or another subnet that **includes the IP address of IP Fabric**, please make sure to **add IP Fabric IP address/subnet** to **"Exclude IPv4 subnet"**. Otherwise, the connection to IP Fabric will be lost and you **will not** be able to **access IP Fabric GUI/CLI** and it will require manual intervention to fix.
 
-        Also if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.
-            
-
+        Also, if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.
 
   - **Exclude IPv4 subnets** - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)
   - **Login type**
@@ -115,7 +114,7 @@ We successfully tested IP Fabric against jumphosts with the following python ver
 
 4. To test, connect to the jumphost server via SSH with: `ssh <jumphost-user>@<jumphost-ip>`
 
-5. If the key has been copied you can use the `Use SSH keys` option instead of
+5. If the key has been copied, you can use the `Use SSH keys` option instead of
    `Use credentials`.
 
 ### Disabling Jumphost Connection
@@ -154,7 +153,7 @@ Because of this, you will have to add at least one IP address of a network devic
 
 If you can't open the main GUI or ssh to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
 
-To fix this issue, you have to have a **direct access** to the **virtual machine CLI** from a hypervisor, the password for `osadmin` user account, and do the following:
+To fix this issue, you must have a **direct access** to the **virtual machine CLI** from a hypervisor, the password for `osadmin` user account, and do the following:
 
 1. Log in to the **virtual machine CLI** with the `osadmin` account.
 

@@ -4,7 +4,7 @@ description: In this section we go through the IP Scope and how to include and e
 
 # IP Scope
 
-## Including And Excluding Networks From Discovery
+## Including And Excluding Networks from Discovery
 
 By default, there are no limitations on discovery and all IP addresses
 are allowed (i.e. _Include scope_ is `0.0.0.0/0`).

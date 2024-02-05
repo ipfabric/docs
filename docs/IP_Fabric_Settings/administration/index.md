@@ -19,7 +19,7 @@ For more information, follow [Single Sign-On (SSO) Authentication](sso.md).
 
 IP Fabric uses **Role Based Access Control** to manage users access to particular resources as well as allow certain actions on the top of those resources.
 
-Foundation for RBAC is list of resources (e.g. *Reports*, *Discovery*) and actions on those resources (e.g. *Read*, *Execute*).
+The foundation for RBAC is a list of resources (e.g. *Reports*, *Discovery*) and actions on those resources (e.g. *Read*, *Execute*).
 
 Those resources are then assigned to *Policies* which are sets of resources with their actions (e.g. *discovery* policy allows access to discovery api endpoints).
 

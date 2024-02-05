@@ -1,5 +1,5 @@
 ---
-description: To ensure the IP Fabric platform’s good health, it’s highly recommended to run the System Maintenance on regular basis.
+description: To ensure the IP Fabric platform’s good health, it’s highly recommended to run the System Maintenance regularly.
 ---
 
 # Schedule System Maintenance
@@ -8,8 +8,8 @@ Settings location: **Settings --> System --> Backup & Maintenance --> Schedule
 System Maintenance**
 
 To ensure the platform’s good health, it’s highly recommended to run the System
-Maintenance on regular basis. The recommended frequency for the System
-Maintenance is once a day.
+Maintenance on regularly. The recommended frequency for the System Maintenance
+is once a day.
 
 Even though the process is very quick, we would recommend performing it when no
 one is working with IP Fabric, as the platform is not available during the

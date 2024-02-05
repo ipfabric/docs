@@ -18,7 +18,7 @@ You can find the threshold configuration in **Settings --> Discovery Settings
 --> Discovery --> Limit download BGP routes**.
 
 The lower limit available is currently 10000 BGP routes. The IP Fabric
-will read the full routing table but will filter BGP routes per the
+will read the full routing table but will filter BGP routes per
 threshold before storing them in the database.
 
 ![Limit download of BGP routes](limit-bgp-routes.png)

@@ -11,7 +11,7 @@ URL. Webhooks can be used to send notifications to messaging tools of
 your choice or update an external issue tracker. You're only limited by
 your imagination.
 
-To setup a webhook, please navigate to **Settings --> Integration --> Webhooks**.
+To set up a webhook, please navigate to **Settings --> Integration --> Webhooks**.
 
 ![Webhooks Settings](webhooks.png)
 
@@ -25,7 +25,7 @@ HTTP status `2xx` in response and can process the payload as needed. In
 case the receiving party doesn’t confirm the payload (because it is not
 reachable, it returns a bad status code, or the delivery times out), we
 retry delivering the webhook payload again in 1, 2, 5, and 10 minutes
-since the initial delivery. In case we cannot deliver the webhook in
+after the initial delivery. In case we cannot deliver the webhook in
 these five attempts, we give up. All delivery attempts are recorded in
 the webhook's delivery history (in the webhook's edit view).
 

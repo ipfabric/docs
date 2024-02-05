@@ -24,8 +24,8 @@ The **Roles** page allows you to create or modify roles.
 ## List of Roles
 
 The **Roles** table lists all roles including their details and allows you to
-**modify** or **delete** them _(with the exception of the built-in **admin**
-role which cannot be modified nor deleted)_.
+**modify** or **delete** them _(except the built-in **admin** role which cannot
+be modified nor deleted)_.
 
 ![Roles table](roles/roles_table.png)
 

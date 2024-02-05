@@ -30,8 +30,8 @@ Juniper Mist devices are discovered only through API.
 
 ## Known Issues
 
-**Routing table** -- In the current setup there is no routing table for API endpoints so it is being created only from directly connected routes.
+**Routing table** -- In the current setup, there is no routing table for API endpoints, so it is being created only from the directly connected routes.
 
 **ARP table** -- Cannot be fetched in the current setup as the API endpoint requires higher privileges.
 
-**Rate limiting** -- The current rate limiting is [5000 API calls per hour](https://www.mist.com/documentation/api-rate-limiting/) and is reset at the hourly boundary. This can affect discovery speed and accuracy (some device might not be discovered). If you need more information, please contact Juniper support at support@mist.com.
+**Rate limiting** -- The current rate limiting is [5000 API calls per hour](https://www.mist.com/documentation/api-rate-limiting/) and is reset at the hourly boundary. This can affect discovery speed and accuracy (some devices might not be discovered). If you need more information, please contact Juniper support at support@mist.com.

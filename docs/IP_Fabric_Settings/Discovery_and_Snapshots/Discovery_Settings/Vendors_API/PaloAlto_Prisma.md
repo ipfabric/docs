@@ -17,6 +17,6 @@ In IP Fabric, go to **Settings --> Discovery & Snapshots --> Discovery Settings 
 
 ![Add Prisma API vendor](prisma_api_add.png)
 
-## Known Issues
+## Known Issue
 
-Path lookup isn't fully supported. Currently Prisma SASE unified API doesn't have all needed endpoints.
+Path lookup isn't fully supported. Currently, Prisma SASE unified API doesn't have all the needed endpoints.

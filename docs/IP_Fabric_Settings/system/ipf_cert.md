@@ -10,8 +10,8 @@ But by the nature of SSL/TLS, the self-signed server certificate cannot be
 trusted -- as indicated in an SSL/TLS error in the web browser (for example,
 `NET::ERR_CERT_AUTHORITY_INVALID` in Google Chrome).
 
-We recommend that you replace the self-signed server certificate with your own
-server certificate that is signed by a trusted certificate authority.
+We recommend you replace the self-signed server certificate with your own
+server certificate signed by a trusted certificate authority.
 
 Usually, the server certificate replacement can be handled via **Settings -->
 System --> IPF Certificates** and consists of the following steps:
@@ -28,7 +28,7 @@ System --> IPF Certificates** and consists of the following steps:
     used as IP Fabric's server certificate.
 
 In the [Miscellaneous](#miscellaneous) section, we also describe how to handle
-some special requirements in regards to certificates -- when **Settings -->
+some special requirements in regard to certificates -- when **Settings -->
 System --> IPF Certificates** on its own is not sufficient.
 
 ## Generate CSR (Certificate Signing Request)
@@ -61,8 +61,8 @@ System --> IPF Certificates** on its own is not sufficient.
 
 ## Sign Generated CSR
 
-This step depends on the vendor and particular version of your certificate
-authority. So please check the vendor's documentation.
+This step depends on the vendor and version of your certificate authority. So
+please check the vendor's documentation.
 
 ## Upload Signed Server Certificate
 
@@ -74,7 +74,7 @@ authority. So please check the vendor's documentation.
 
     Only a certificate that was created by signing the most-recent CSR can be
     uploaded to IP Fabric! If you generate another CSR before uploading the
-    certificate created from the previously-generated CSR, the certificate will
+    certificate created from the previously generated CSR, the certificate will
     not be applied.
 
 !!! important
@@ -176,7 +176,7 @@ the certificate.
 
 ### Additionally Add Entire Certificate Chain
 
-A new, unmodified certificate's file might contain only the server certificate
+A new, unmodified certificate file might contain only the server certificate
 itself without the certificate chain (intermediate and root certificates).
 
 This might be sufficient for your browser (as it most probably already has the

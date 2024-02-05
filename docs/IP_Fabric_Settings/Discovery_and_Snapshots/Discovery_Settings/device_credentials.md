@@ -12,7 +12,7 @@ used by IP Fabric to access the CLI of the network devices.
 ## Credential Selection Logic
 
 If more credentials are specified, a top-down algorithm is used when trying to
-logging in to a network device or the credentials priority can be changed using
+log in to a network device or the credentials priority can be changed using
 drag and drop.
 
 ```mermaid
@@ -26,7 +26,7 @@ flowchart TD
     tryAuth --> |Login Failed|otherCreds{Are there other<br/>credentials to try?}
     previousUsername --> |Login Success|loginSuccess
     previousUsername --> |Login Failed|configuredAuth
-    otherCreds --> |Yes|tryNext[Try next credential.]
+    otherCreds --> |Yes|tryNext[Try the next credential.]
     otherCreds --> |No|loginFailed
     tryNext --> |Login Success|loginSuccess
     tryNext --> |Login Failed|otherCreds
@@ -54,7 +54,7 @@ Provided credentials can be used for configuration change tracking and saved
 configuration consistency (i.e. they allow commands such as **show run** and
 **show start**).
 
-To use this credentials for configuration change tracking, please
+To use these credentials for configuration change tracking, please
 check [Use for configuration management](../../configuration_management.md)
 box.
 

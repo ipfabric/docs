@@ -4,13 +4,13 @@ description: IP Fabric supports the LDAP authentication where users need to be a
 
 # LDAP
 
-LDAP (Lightweight Directory Access Protocol) authentication is a secure and reliable method of authenticating users and granting access to network resources. It is a widely used protocol for authentication and authorization in enterprise networks, and is an important component of any secure network infrastructure.
+LDAP (Lightweight Directory Access Protocol) authentication is a secure and reliable method of authenticating users and granting access to network resources. It is a widely used protocol for authentication and authorization in enterprise networks and is an important component of any secure network infrastructure.
 
 We regularly test our LDAP implementation against `OpenLDAP` and `Microsoft Active Directory`.
 
 ## Authentication Flow
 
-Local authentication has a precedence over other authentication methods. This means that LDAP is consulted only if the user doesn't have a local account. Thus, we recommend to keep number of the local accounts to an absolute minimum in cases when an external authentication method (like an LDAP) is in use.
+Local authentication has a precedence over other authentication methods. This means that LDAP is consulted only if the user doesn't have a local account. Thus, we recommend keeping the number of local accounts to an absolute minimum in cases when an external authentication method (like an LDAP) is in use.
 
 IP Fabric implementation authenticates users with LDAP every time they try to log in with username and password to IP Fabric. Accounts are not synchronized or imported in advance. Simplified authentication flow for configured and enabled LDAP is as follows:
 
@@ -19,7 +19,7 @@ graph LR
     LoginStart[User attempts to log in] --> UserLocal{Local account?}
 
     UserLocal -->|Yes| PswCheck{Correct password?}
-      PswCheck -->|Yes| LoginOk[Successfull login]
+      PswCheck -->|Yes| LoginOk[Successful login]
       PswCheck --> |No| LoginFailed[Login failed]
     UserLocal -->|No| LDAP{LDAP configured?}
 
@@ -32,15 +32,15 @@ graph LR
   	LdapBind --> |failure| LoginFailed[Login failed]
     LdapBind -->|success| UserLocalLdap[Create/update non-local account in DB]
     UserLocalLdap --> FetchGroups[Fetch Groups from LDAP]
-    FetchGroups --> LoginOk[Successfull login]
+    FetchGroups --> LoginOk[Successful login]
 
     style LoginOk fill:#33dd00
     style LoginFailed fill:#dd3300
 ```
 
-If a user is successfully authenticated through LDAP, basic information about this user is then passed from LDAP and stored in the database as a non-local account. Also information about groups and memberships are fetched and stored within the database.
+If a user is successfully authenticated through LDAP, basic information about this user is then passed from LDAP and stored in the database as a non-local account. Also, information about groups and memberships is fetched and stored within the database.
 
-Local accounts have `isLocal` attribute set to `true`. You may see accounts for external authentication method also being created, but these will have `isLocal` set to `false`, and they will not be considered for local authentication. Records are created for housekeeping reasons, primarily to have a consistent mapping to local groups and roles.
+Local accounts have `isLocal` attribute set to `true`. You may see accounts for external authentication methods also being created, but these will have `isLocal` set to `false`, and they will not be considered for local authentication. Records are created for housekeeping reasons, primarily to have a consistent mapping to local groups and roles.
 
 ## Enable LDAP Authentication
 
@@ -67,7 +67,7 @@ Local accounts have `isLocal` attribute set to `true`. You may see accounts for 
 
    1. As an **explicit list of addresses**:
 
-      1. Choose **Use pre-configured LDAP servers** in Servers dropdown.
+      1. Choose **Use pre-configured LDAP servers** in Servers' dropdown.
 
       2. Specify full FQDN (including domain) or IP address of the LDAP server
          including the protocol prefix (such as `ldap://your.domain.com`
@@ -82,7 +82,7 @@ Local accounts have `isLocal` attribute set to `true`. You may see accounts for 
 
    2. Using **DNS service records**:
 
-      1. Choose **Use DNS to find LDAP servers** in servers dropdown.
+      1. Choose **Use DNS to find LDAP servers** in Servers' dropdown.
 
       2. Choose or upload a certificate (recommended in the production
          environment).
@@ -143,7 +143,7 @@ All authenticated users will get assigned role configured for
 
 - By leaving this role empty it's possible to ensure that users logged via LDAP
   will get `API_INSUFFICIENT_RIGHTS` error upon login / access to API.
-- Alternatively this could be set to a `read-only` role so that any user that
+- Alternatively, this could be set to a `read-only` role so that any user that
   authenticates successfully to LDAP will have access to IP Fabric.
 
 !!! warning "Primary user groups are not supported"
@@ -158,11 +158,11 @@ Delete all LDAP configuration domains in **Settings --> Administration --> LDAP*
 
 ## Troubleshooting
 
-Two most common issues are either incorrectly configured search account (`Bind DN`, `Bind credentials`) or incorrect `Search base`. These will typically result into `LDAP Search Failed` error being shown.
+The two most common issues are either incorrectly configured search account (`Bind DN`, `Bind credentials`) or incorrect `Search base`. These will typically result in an `LDAP Search Failed` error being shown.
 
-Please be aware, that all LDAP errors regarding server connection and user binding are returned as `LDAP as provided is not reachable` due to security concerns.
+Please be aware that all LDAP errors regarding server connection and user binding are returned as `LDAP as provided is not reachable` due to security concerns.
 
-Before contacting our support, please make sure that information entered into IP Fabric user interface are correct.
+Before contacting our support, please make sure that information entered in the IP Fabric user interface is correct.
 
 ### Using `ldapsearch` to verify LDAP configuration
 
@@ -180,7 +180,7 @@ LDAPTLS_REQCERT=ALLOW ldapsearch \
   -s sub
 ```
 
-Exit code of the command above is zero if the `ldapsearch` was able to establish connection and bind. It will ask for a bind password interactively. LDAP search/filer query can be added to the end of the previous example code.
+The exit code of the command above is zero if the `ldapsearch` was able to establish connection and bind. It will ask for a bind password interactively. LDAP search/filer query can be added to the end of the previous example code.
 
 ```text title="Search for a concrete user account"
 (uid=$LOGIN_INPUT)

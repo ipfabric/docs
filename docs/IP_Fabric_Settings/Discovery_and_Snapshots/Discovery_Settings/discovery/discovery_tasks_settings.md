@@ -15,7 +15,7 @@ new network devices**.
 If this limit is disabled, the discovery process will crawl through the whole
 network, using the selected methods for new devices
 detection (ARP, CDP/LLDP, Routing Table records or a Traceroute).
-Default is to use all available options.
+The default is to use all available options.
 
 ![Discovery tasks settings](discovery_tasks_settings.png)
 

@@ -52,12 +52,12 @@ located at [IPF Certificates](../system/ipf_cert.md).
 
     IP Fabric only trusts certificates issued by CAs listed in the system
     `openssl` trust-store. If your company uses certificates signed by an
-    internal CA, please reach out to your Solution Architect or open a Support
+    internal CA, please contact your Solution Architect or open a support
     ticket for further configuration in order to properly enable SSO.
 
 ### CLI Access
 
-In order to make changes to certain files, you must have access to the `osadmin`
+To make changes to certain files, you must have access to the `osadmin`
 account to log in to the CLI and gain root access. For more information, please
 see [CLI Overview](../../System_Administration/Command_Line_Interface/index.md).
 
@@ -178,7 +178,7 @@ Example:
 
 ### Providers Configuration
 
-The `providers` section has to contain at least one SSO provider (which
+The `providers` section must contain at least one SSO provider (which
 corresponds to `staticClient` in the Dex configuration).
 
 ```json
@@ -266,7 +266,7 @@ and an example is provided below along with SAML). Please check the
 overview.
 
 Dex configuration is located in `/etc/ipf-dex.yaml` on the IP Fabric appliance.
-It has several configuration sections and a full example of the file is located
+It has several configuration sections, and a full example of the file is located
 below. Please note that OIDC, SAML, and Azure have different syntaxes for the
 `connectors` configuration portion, which are covered separately.
 
@@ -425,7 +425,7 @@ configuration options and potential caveats.
 !!! note "Well-known Configuration"
 
     Many of the variables required can be found in the OIDC well-known
-    configuration endpoint. For example take a look at Google:
+    configuration endpoint. For example, take a look at Google:
     [`.well-known/openid-configuration`](https://accounts.google.com/.well-known/openid-configuration).
 
 ```yaml
@@ -509,7 +509,7 @@ connectors:
   - Can be found in [`api.json`](#url-configuration) under `dex`, OR
   - can be found in [`ipf-dex.yaml`](#issuer).
 - `tenant` -- UUID or Name of specific tenant accounts belong to.
-  - **Required in order to obtain `groups` claim from Azure.**
+  - **Required for obtaining the `groups` claim from Azure.**
 - `clientID` -- A client ID configured or generated on the Identity Provider.
 - `clientSecret` -- A client secret configured or generated on the Identity
   Provider.

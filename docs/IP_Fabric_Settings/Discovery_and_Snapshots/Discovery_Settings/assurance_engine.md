@@ -4,7 +4,7 @@ description: This section contains information how to skip some discovery featur
 
 # Assurance Engine
 
-Since version 6.0, IP Fabric is able to skip some of the discovery features in order to decrease discovery time.
+Since version `6.0`, IP Fabric can skip some of the discovery features to decrease discovery time.
 
 ![Assurance Engine](assurance_engine.png)
 
@@ -12,7 +12,7 @@ The **Assurance Engine** section allows you to disable the following features to
 
 1. **Loading Graph cache**
 
-   Site Diagrams and End To End Path check will not be able to load diagrams. Sites list under Inventory menu will be available, however you will not be able to open any of the sites.
+   Site Diagrams and End To End Path check will not be able to load diagrams. The Sites list under the Inventory menu will be available, however you will not be able to open any of the sites.
 
 2. **Save historical data**
 

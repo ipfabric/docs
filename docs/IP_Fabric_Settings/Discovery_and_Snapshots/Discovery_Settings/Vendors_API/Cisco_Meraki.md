@@ -6,7 +6,7 @@ description: IP Fabric supports API-based discovery for Cisco Meraki. On this se
 
 Since version `3.5.0`, IP Fabric supports API-based discovery for Cisco Meraki.
 
-## Meraki Requires The Following Settings To Be Applied:
+## Meraki Requires the Following Settings to Be Applied:
 
 - **API key** -- Generated in Meraki dashboard
 - **Organizations ID** -- You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used
@@ -35,7 +35,7 @@ publicIp has the lowest priority
 
     The `publicIp` parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device's public IP in the dashboard.
 
-To understand what is being sent from Meraki’s Dashboard, we need to look into the Discovery Snapshot and download the Tasker or Log File from the device:
+To understand what is being sent from Meraki’s Dashboard, we need to investigate the Discovery Snapshot and download the Tasker or Log File from the device:
 
 ![Discovery Snapshot](discovery_snapshot.png)
 
@@ -61,6 +61,6 @@ The Tasker file contains complete communication between IP Fabric and Meraki Das
 }
 ```
 
-## Known Issues
+## Known Issue
 
 [Meraki API Limited Functionality](../../../../support/known_issues/Vendors/meraki.md)

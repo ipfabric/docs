@@ -22,7 +22,7 @@ Starting version `4.1.0`, IP Fabric supports Viptela API. Viptela devices are di
 
 ## Cisco Viptela cEdge
 
-Starting version `4.4.0`, IP Fabric supports Viptela on Cisco IOS XE devices in the controller (SD-WAN) mode (cEdge). Thus from the version 4.4 cEdge devices are discoverable only through the vManage API.
+Starting version `4.4.0`, IP Fabric supports Viptela on Cisco IOS XE devices in the controller (SD-WAN) mode (cEdge). Thus, from the version `4.4.0`, cEdge devices are discoverable only through the vManage API.
 
 ## Known Issues
 

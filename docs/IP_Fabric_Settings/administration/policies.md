@@ -61,8 +61,8 @@ The **Policies** page allows you to create or modify policies.
 ## List of Policies
 
 The **Policies** table lists all policies including their details and allows
-you to **modify** or **delete** them _(with the exception of the built-in
-policies which cannot be modified or deleted)_.
+you to **modify** or **delete** them _(except the built-in policies which cannot
+be modified or deleted)_.
 
 ![Policies table](policies/policies_table.png)
 

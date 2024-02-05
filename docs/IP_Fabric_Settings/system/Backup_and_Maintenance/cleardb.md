@@ -11,13 +11,13 @@ description: In rare cases, it may be necessary to delete and recreate the IP Fa
 !!! important
 
     After clearing the DB, we highly recommend rebooting the IP Fabric
-    appliance. It is especially important when you had issues with low amount of
-    available RAM and a lot of memory data were moved to the disk swap.
+    appliance. It is especially important when you had issues with a low amount of
+    available RAM and a lot of memory data was moved to the disk swap.
 
 In rare cases, it may be necessary to delete and recreate the IP Fabric
 database. Go to **Settings --> System --> Backup & Maintenance** and click **Clear DB**.
 
-When running Clear DB, all loaded snapshots are automatically unloaded and the
+When running Clear DB, all loaded snapshots are automatically unloaded, and the
 database recreated.
 
 ![Clear DB](cleardb/cleardb.png)

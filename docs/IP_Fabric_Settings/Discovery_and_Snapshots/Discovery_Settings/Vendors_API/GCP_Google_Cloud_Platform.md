@@ -22,7 +22,7 @@ description: In order to add GCP to discovery, you will need an access to privat
 
    ![Service account details](gcp/giveAServiceAccountName.png)
 
-5. Select a role for the account. We recommend to use the `Viewer` role as it
+5. Select a role for the account. We recommend using the `Viewer` role as it
    gives only read access to the project. Afterwards, click **CONTINUE**.
 
    ![Grant this service account access to project](gcp/selectAViewRole.png)
@@ -36,8 +36,8 @@ description: In order to add GCP to discovery, you will need an access to privat
    ![Select the account](gcp/selectTheCreateAccount.png)
 
 8. Navigate to the **KEYS** tab, click **ADD KEY** and select `Create new key`.
-   (You can use your own key, but the properties have to be the same as when you
-   generate it. So it is highly recommended to use the `Create new key` option.)
+   (You can use your own key, but the properties must be the same as when you
+   generate it. So, it is highly recommended to use the `Create new key` option.)
 
    ![Create a new private key](gcp/selectToCreateANewKey.png)
 

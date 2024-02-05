@@ -12,7 +12,7 @@ local users as well as to modify LDAP and SSO accounts.
 To add a new user, click **+ Add local user**, fill out the **User Profile**
 form and click **Create user**.
 
-To access IP Fabric, the new user has to have one or more **Roles** assigned.
+To access IP Fabric, the new user must have one or more **Roles** assigned.
 
 Users with no **Roles** assigned will get the `API_INSUFFICIENT_RIGHTS` error
 upon logging in or accessing the API.

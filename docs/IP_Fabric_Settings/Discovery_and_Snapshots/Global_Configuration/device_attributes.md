@@ -42,8 +42,8 @@ new snapshot is required for it to be applied.
 
 ### Creating rules in the UI
 
-You can create rules in the UI by clicking **+ Add attribute**. This will
-provide you a form to fill out.
+To create rules in the UI, click **+ Add attribute**. A form will be shown to be
+filled out: 
 
 ![Device attributes rules](device_attributes/device_attributes_rules.png)
 

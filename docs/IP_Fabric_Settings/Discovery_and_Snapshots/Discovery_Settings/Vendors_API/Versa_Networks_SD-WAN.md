@@ -20,6 +20,6 @@ Versa requires the following settings to be applied:
 
     OAuth based authentication for Versa Director is not supported.
 
-## Known Issues
+## Known Issue
 
 [HTTP 500 Error `AsyncRequestTimeoutException`](../../../../support/known_issues/Vendors/versa.md)

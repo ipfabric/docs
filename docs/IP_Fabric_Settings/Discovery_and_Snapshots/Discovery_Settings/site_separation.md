@@ -6,9 +6,9 @@ description: Site separation can follow a specific Regular Expression (RegEx) wh
 
 Sites are separated collections of devices. Rule precedence is defined by the order from top to bottom.
 
-The site can be a branch, a factory, a production floor, a campus, or anything that represents a site from customer’s point of view.
+A site can be a branch, a factory, a production floor, a campus, or anything that represents a site from a customer's point of view.
 
-By default, site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at site’s edge is not accessible.
+By default, a site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at a site's edge is not accessible.
 
 ## Regular Expression Site Separation
 
@@ -68,7 +68,7 @@ You can also test SNMP location rules:
     (^[a-zA-Z]{2}[0-9])(?!.*-dev)
     ```
 
-    - `BL1-router01` the regex will match and the device will be assigned to the site `BL1`
+    - `BL1-router01` the regex will match, and the device will be assigned to the site `BL1`
     - `PA2-router02-dev` teh regex will not match, as we can see `-dev` in the hostname
 
 Use this link to read more about [Regular Expression and Assertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions)
@@ -106,7 +106,7 @@ or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Devic
 - **Attribute** is the Device Attribute to assign, since we want to set the Site based on the serial number set it to **Site name**
 - **Value** is the attribute’s value to assign, in this case, we want to split site `L35` into separate sites named `35COLO`, `35PRODUCTION`, `35HEADOFFICE`
 
-### Creating Rules In The UI
+### Creating Rules in the UI
 
 You can create rules in the UI by clicking **+ Add attribute**. This will provide you with a form to fill out.
 
@@ -120,7 +120,7 @@ You can create rules in the UI by clicking **+ Add attribute**. This will provid
 
 ![Dropdown](site_separation/dropdown.png)
 
-### Creating Rules Via The API
+### Creating Rules via the API
 
 The API is the preferred method of creating rules as it allows for bulk importing. Via `PUT` method requested on endpoint `https://<IPF_URL>/api/<IPF_API_VERSION>/attributes/global`. An example of the payload can be seen below:
 
@@ -143,7 +143,7 @@ The API is the preferred method of creating rules as it allows for bulk importin
 
 ![Rule priority](site_separation/rule_priority.png)
 
-Rule precedence is defined by the order from top to bottom. So in the example above:
+Rule precedence is defined by the order from top to bottom. So, in the example above:
 
 1. **Manual site separation** (if enabled) will look at the **Device Attributes** and try to first assign a device based on its serial number if a match is found.
 
@@ -155,6 +155,6 @@ Rule precedence is defined by the order from top to bottom. So in the example ab
 
 3. **Try to assign devices without sites based on device neighborship** (if enabled)
 
-### Reporting Rule matches With `python-ipfabric` Package
+### Reporting Rule Matches With `python-ipfabric` Package
 
-Please see example at [GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py).
+Please see the example at [GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py).

@@ -11,18 +11,18 @@ dashboard.
 
 ![AWS Management Console](aws/aws-management-console.png)
 
-Click `My Security Credentials` and open `Access keys` tab.
+Click `My Security Credentials` and open the `Access keys` tab.
 
 ![AWS - Your Security Credentials](aws/aws-your-security-credentials.png)
 
 To generate keys, click **Create New Access Key** and your keys will be
-generated. These access keys are available globally for all of yours AWS
+generated. These access keys are available globally for all of your AWS
 regions.
 
 ![AWS - Create Access Key](aws/aws-create-access-key.png)
 
 Copy those keys to the AWS API settings in your IP Fabric and don't
-forget to **fill the regions where the devices which you want to discover
+forget to **fill in the regions where the devices which you want to discover
 are**. Multiple regions can be set for one API key and secret.
 
 ![Add Connection](aws/aws-vendor-api.png)
@@ -40,17 +40,17 @@ IP Fabric enables you to add AssumeRole targets to AWS API configuration. Assume
 
 ![Add Connection With AssumeRole](aws/aws-assumerole.png)
 
-!!! info "How `AssumeRole` works?"
+!!! info "How `AssumeRole` works"
 
     It returns a set of temporary access credentials that can be used to access
-    AWS resources that original account might not normally have access to. For
-    more information about AssumeRole see
+    AWS resources that the original account might not normally have access to. For
+    more information about AssumeRole, see
     [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
 !!! warning "Connection testing limitation"
 
     AWS configuration allows you to configure multiple roles and regions.
-    However, the connectivity testing has a limit on the number of tests you can
+    However, connectivity testing has a limit on the number of tests you can
     perform. This is to prevent the testing from taking too much time. You can
     test up to 3 regions and 3 roles at a time, which means 9 tests in total.
     The AWS library also has a restriction on the number of parallel requests,

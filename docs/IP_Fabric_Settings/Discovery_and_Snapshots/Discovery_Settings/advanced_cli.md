@@ -20,9 +20,9 @@ remote branches over low-speed lines or overloaded devices to respond.
 ### Network Device Session Timeout
 
 Too many **Command Timeout** errors during the Discovery process may
-indicate that **Network device session timeout** is too short and the session is closed before the response arrives. It may be necessary to increase this timeout.
+indicate that **Network device session timeout** is too short, and the session is closed before the response arrives. It may be necessary to increase this timeout.
 
-### Maximum Number Of Parallel Sessions
+### Maximum Number of Parallel Sessions
 
 To prevent flooding your network with too many SSH/TELNET sessions set
 **Maximum number of parallel sessions**. This setting can be also
@@ -42,7 +42,7 @@ authentication failure.
 ### Authentication Failure
 
 **Authentication failure** can occur even if a user is authorized to
-Login. For example, this may happen when an AAA server is overloaded or
+Login. For example, this may happen when an AAA server is overloaded, or
 an authentication packet is lost.
 
 ### Command Authorization Failure Retries
@@ -51,7 +51,7 @@ If you see many examples of **Authentication error** during the
 Discovery process, please adjust **Authentication failure** and
 **Command Authorization Failure retries**.
 
-### Example Of Error Message In Connectivity Report
+### Example of Error Message in Connectivity Report
 
 According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common
