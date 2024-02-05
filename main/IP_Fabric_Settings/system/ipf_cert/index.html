@@ -12007,8 +12007,8 @@ server certificate is automatically generated during the IP Fabric deployment.
 But by the nature of SSL/TLS, the self-signed server certificate cannot be
 trusted &ndash; as indicated in an SSL/TLS error in the web browser (for example,
 <code>NET::ERR_CERT_AUTHORITY_INVALID</code> in Google Chrome).</p>
-<p>We recommend that you replace the self-signed server certificate with your own
-server certificate that is signed by a trusted certificate authority.</p>
+<p>We recommend you replace the self-signed server certificate with your own
+server certificate signed by a trusted certificate authority.</p>
 <p>Usually, the server certificate replacement can be handled via <strong>Settings &rarr;
 System &rarr; IPF Certificates</strong> and consists of the following steps:</p>
 <ol>
@@ -12024,7 +12024,7 @@ IP Fabric with <strong>Settings &rarr; System &rarr; IPF Certificates &rarr; U
 used as IP Fabric&rsquo;s server certificate.</p>
 </div>
 <p>In the <a href="#miscellaneous">Miscellaneous</a> section, we also describe how to handle
-some special requirements in regards to certificates &ndash; when <strong>Settings &rarr;
+some special requirements in regard to certificates &ndash; when <strong>Settings &rarr;
 System &rarr; IPF Certificates</strong> on its own is not sufficient.</p>
 <h2 id="generate-csr-certificate-signing-request">Generate CSR (Certificate Signing Request)</h2>
 <div class="admonition note">
@@ -12053,8 +12053,8 @@ CSR, switch off the <strong>Include DNS short name in CSR SAN</strong> toggle.<
 <li>A file called <code>nimpee.csr</code> will be downloaded.</li>
 </ol>
 <h2 id="sign-generated-csr">Sign Generated CSR</h2>
-<p>This step depends on the vendor and particular version of your certificate
-authority. So please check the vendor&rsquo;s documentation.</p>
+<p>This step depends on the vendor and version of your certificate authority. So
+please check the vendor&rsquo;s documentation.</p>
 <h2 id="upload-signed-server-certificate">Upload Signed Server Certificate</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -12064,7 +12064,7 @@ authority. So please check the vendor&rsquo;s documentation.</p>
 <p class="admonition-title">Warning</p>
 <p>Only a certificate that was created by signing the most-recent CSR can be
 uploaded to IP Fabric! If you generate another CSR before uploading the
-certificate created from the previously-generated CSR, the certificate will
+certificate created from the previously generated CSR, the certificate will
 not be applied.</p>
 </div>
 <div class="admonition important">
@@ -12160,7 +12160,7 @@ use the following steps:</p>
 &rarr; IPF Certificates</strong> and click <strong>Upload</strong> to begin the process of uploading
 the certificate.</p>
 <h3 id="additionally-add-entire-certificate-chain">Additionally Add Entire Certificate Chain</h3>
-<p>A new, unmodified certificate&rsquo;s file might contain only the server certificate
+<p>A new, unmodified certificate file might contain only the server certificate
 itself without the certificate chain (intermediate and root certificates).</p>
 <p>This might be sufficient for your browser (as it most probably already has the
 corresponding intermediate and root certificates), but not for SSO.</p>
@@ -12380,7 +12380,7 @@ certificate.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

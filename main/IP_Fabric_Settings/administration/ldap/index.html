@@ -11980,16 +11980,16 @@ documentation.
 
 
 <h1 id="ldap">LDAP</h1>
-<p>LDAP (Lightweight Directory Access Protocol) authentication is a secure and reliable method of authenticating users and granting access to network resources. It is a widely used protocol for authentication and authorization in enterprise networks, and is an important component of any secure network infrastructure.</p>
+<p>LDAP (Lightweight Directory Access Protocol) authentication is a secure and reliable method of authenticating users and granting access to network resources. It is a widely used protocol for authentication and authorization in enterprise networks and is an important component of any secure network infrastructure.</p>
 <p>We regularly test our LDAP implementation against <code>OpenLDAP</code> and <code>Microsoft Active Directory</code>.</p>
 <h2 id="authentication-flow">Authentication Flow</h2>
-<p>Local authentication has a precedence over other authentication methods. This means that LDAP is consulted only if the user doesn&rsquo;t have a local account. Thus, we recommend to keep number of the local accounts to an absolute minimum in cases when an external authentication method (like an LDAP) is in use.</p>
+<p>Local authentication has a precedence over other authentication methods. This means that LDAP is consulted only if the user doesn&rsquo;t have a local account. Thus, we recommend keeping the number of local accounts to an absolute minimum in cases when an external authentication method (like an LDAP) is in use.</p>
 <p>IP Fabric implementation authenticates users with LDAP every time they try to log in with username and password to IP Fabric. Accounts are not synchronized or imported in advance. Simplified authentication flow for configured and enabled LDAP is as follows:</p>
 <pre class="mermaid"><code>graph LR
     LoginStart[User attempts to log in] --&gt; UserLocal{Local account?}
 
     UserLocal --&gt;|Yes| PswCheck{Correct password?}
-      PswCheck --&gt;|Yes| LoginOk[Successfull login]
+      PswCheck --&gt;|Yes| LoginOk[Successful login]
       PswCheck --&gt; |No| LoginFailed[Login failed]
     UserLocal --&gt;|No| LDAP{LDAP configured?}
 
@@ -12002,12 +12002,12 @@ documentation.
     LdapBind --&gt; |failure| LoginFailed[Login failed]
     LdapBind --&gt;|success| UserLocalLdap[Create/update non-local account in DB]
     UserLocalLdap --&gt; FetchGroups[Fetch Groups from LDAP]
-    FetchGroups --&gt; LoginOk[Successfull login]
+    FetchGroups --&gt; LoginOk[Successful login]
 
     style LoginOk fill:#33dd00
     style LoginFailed fill:#dd3300</code></pre>
-<p>If a user is successfully authenticated through LDAP, basic information about this user is then passed from LDAP and stored in the database as a non-local account. Also information about groups and memberships are fetched and stored within the database.</p>
-<p>Local accounts have <code>isLocal</code> attribute set to <code>true</code>. You may see accounts for external authentication method also being created, but these will have <code>isLocal</code> set to <code>false</code>, and they will not be considered for local authentication. Records are created for housekeeping reasons, primarily to have a consistent mapping to local groups and roles.</p>
+<p>If a user is successfully authenticated through LDAP, basic information about this user is then passed from LDAP and stored in the database as a non-local account. Also, information about groups and memberships is fetched and stored within the database.</p>
+<p>Local accounts have <code>isLocal</code> attribute set to <code>true</code>. You may see accounts for external authentication methods also being created, but these will have <code>isLocal</code> set to <code>false</code>, and they will not be considered for local authentication. Records are created for housekeeping reasons, primarily to have a consistent mapping to local groups and roles.</p>
 <h2 id="enable-ldap-authentication">Enable LDAP Authentication</h2>
 <p><a class="glightbox" href="../ldap_configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LDAP Configuration" src="../ldap_configuration.png" /></a></p>
 <ol>
@@ -12039,7 +12039,7 @@ documentation.
 <ol>
 <li>
 <p>As an <strong>explicit list of addresses</strong>:</p>
-<p>1. Choose <strong>Use pre-configured LDAP servers</strong> in Servers dropdown.</p>
+<p>1. Choose <strong>Use pre-configured LDAP servers</strong> in Servers&rsquo; dropdown.</p>
 <p>2. Specify full FQDN (including domain) or IP address of the LDAP server
      including the protocol prefix (such as <code>ldap://your.domain.com</code>
      or <code>ldaps://your.domain.com</code>).</p>
@@ -12050,7 +12050,7 @@ documentation.
 </li>
 <li>
 <p>Using <strong>DNS service records</strong>:</p>
-<p>1. Choose <strong>Use DNS to find LDAP servers</strong> in servers dropdown.</p>
+<p>1. Choose <strong>Use DNS to find LDAP servers</strong> in Servers&rsquo; dropdown.</p>
 <p>2. Choose or upload a certificate (recommended in the production
      environment).</p>
 <p>3. Define the DNS address.</p>
@@ -12114,7 +12114,7 @@ configuration is present.</p>
 <ul>
 <li>By leaving this role empty it&rsquo;s possible to ensure that users logged via LDAP
   will get <code>API_INSUFFICIENT_RIGHTS</code> error upon login / access to API.</li>
-<li>Alternatively this could be set to a <code>read-only</code> role so that any user that
+<li>Alternatively, this could be set to a <code>read-only</code> role so that any user that
   authenticates successfully to LDAP will have access to IP Fabric.</li>
 </ul>
 <div class="admonition warning">
@@ -12126,9 +12126,9 @@ assign them permissions.</p>
 <h2 id="disable-ldap-authentication">Disable LDAP Authentication</h2>
 <p>Delete all LDAP configuration domains in <strong>Settings &rarr; Administration &rarr; LDAP</strong> to disable LDAP authentication.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p>Two most common issues are either incorrectly configured search account (<code>Bind DN</code>, <code>Bind credentials</code>) or incorrect <code>Search base</code>. These will typically result into <code>LDAP Search Failed</code> error being shown.</p>
-<p>Please be aware, that all LDAP errors regarding server connection and user binding are returned as <code>LDAP as provided is not reachable</code> due to security concerns.</p>
-<p>Before contacting our support, please make sure that information entered into IP Fabric user interface are correct.</p>
+<p>The two most common issues are either incorrectly configured search account (<code>Bind DN</code>, <code>Bind credentials</code>) or incorrect <code>Search base</code>. These will typically result in an <code>LDAP Search Failed</code> error being shown.</p>
+<p>Please be aware that all LDAP errors regarding server connection and user binding are returned as <code>LDAP as provided is not reachable</code> due to security concerns.</p>
+<p>Before contacting our support, please make sure that information entered in the IP Fabric user interface is correct.</p>
 <h3 id="using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> to verify LDAP configuration</h3>
 <p>You can use <code>ldapsearch</code> command-line utility to independently query LDAP servers. <code>ldapsearch</code> is present in the IP Fabric appliance (access it via ssh) or it can be installed locally as part of <code>ldap-utils</code> Linux package. It is recommended to <strong>always test LDAP configuration from the IP Fabric appliance</strong> to rule connectivity issues out.</p>
 <div class="admonition warning">
@@ -12141,7 +12141,7 @@ assign them permissions.</p>
 <span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-s<span class="w"> </span>sub
 </code></pre></div>
-<p>Exit code of the command above is zero if the <code>ldapsearch</code> was able to establish connection and bind. It will ask for a bind password interactively. LDAP search/filer query can be added to the end of the previous example code.</p>
+<p>The exit code of the command above is zero if the <code>ldapsearch</code> was able to establish connection and bind. It will ask for a bind password interactively. LDAP search/filer query can be added to the end of the previous example code.</p>
 <div class="highlight"><span class="filename">Search for a concrete user account</span><pre><span></span><code>(uid=$LOGIN_INPUT)
 (|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
 </code></pre></div>
@@ -12167,7 +12167,7 @@ assign them permissions.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

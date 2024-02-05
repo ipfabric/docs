@@ -12110,7 +12110,7 @@ documentation.
 
 <h1 id="jumphost">Jumphost</h1>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set-up a connection to the server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
+<p><strong>Jumphost</strong> allows to set up a connection to a server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
 <p>The user used for <strong>Jumphost</strong> connection must have access to jumphosts <code>shell</code> and must be able to run <code>python</code>.</p>
 <p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
 <table>
@@ -12190,11 +12190,15 @@ documentation.
 <p>If you want to use a custom port for the jumphost connection, please use the following format: <code>IP/FQDN:PORT</code> </p>
 <p><a class="glightbox" href="jumphost_custom_port.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Custom Port" src="jumphost_custom_port.png" /></a></p>
 </div>
-<p>- <strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>&ldquo;Exclude IPv4 subnet&rdquo;</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
-<p>Also if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.</p>
+<p>Also, if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.</p>
 </div>
 </li>
 </ul>
@@ -12276,7 +12280,7 @@ documentation.
 <p>To test, connect to the jumphost server via SSH with: <code>ssh &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
 </li>
 <li>
-<p>If the key has been copied you can use the <code>Use SSH keys</code> option instead of
+<p>If the key has been copied, you can use the <code>Use SSH keys</code> option instead of
    <code>Use credentials</code>.</p>
 </li>
 </ol>
@@ -12314,7 +12318,7 @@ documentation.
 <p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
 <p>If you can&rsquo;t open the main GUI or ssh to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
-<p>To fix this issue, you have to have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
+<p>To fix this issue, you must have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
 <ol>
 <li>
 <p>Log in to the <strong>virtual machine CLI</strong> with the <code>osadmin</code> account.</p>
@@ -12370,7 +12374,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

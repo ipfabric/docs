@@ -4052,7 +4052,7 @@ documentation.
   <a href="#creating-rules-in-the-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating Rules In The UI
+        Creating Rules in the UI
       
     </span>
   </a>
@@ -4063,7 +4063,7 @@ documentation.
   <a href="#creating-rules-via-the-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating Rules Via The API
+        Creating Rules via the API
       
     </span>
   </a>
@@ -4091,7 +4091,7 @@ documentation.
   <a href="#reporting-rule-matches-with-python-ipfabric-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reporting Rule matches With python-ipfabric Package
+        Reporting Rule Matches With python-ipfabric Package
       
     </span>
   </a>
@@ -11990,7 +11990,7 @@ documentation.
   <a href="#creating-rules-in-the-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating Rules In The UI
+        Creating Rules in the UI
       
     </span>
   </a>
@@ -12001,7 +12001,7 @@ documentation.
   <a href="#creating-rules-via-the-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating Rules Via The API
+        Creating Rules via the API
       
     </span>
   </a>
@@ -12029,7 +12029,7 @@ documentation.
   <a href="#reporting-rule-matches-with-python-ipfabric-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reporting Rule matches With python-ipfabric Package
+        Reporting Rule Matches With python-ipfabric Package
       
     </span>
   </a>
@@ -12132,8 +12132,8 @@ documentation.
 
 <h1 id="site-separation">Site Separation</h1>
 <p>Sites are separated collections of devices. Rule precedence is defined by the order from top to bottom.</p>
-<p>The site can be a branch, a factory, a production floor, a campus, or anything that represents a site from customer’s point of view.</p>
-<p>By default, site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at site’s edge is not accessible.</p>
+<p>A site can be a branch, a factory, a production floor, a campus, or anything that represents a site from a customer&rsquo;s point of view.</p>
+<p>By default, a site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at a site&rsquo;s edge is not accessible.</p>
 <h2 id="regular-expression-site-separation">Regular Expression Site Separation</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -12174,7 +12174,7 @@ documentation.
 <div class="highlight"><pre><span></span><code>(^[a-zA-Z]{2}[0-9])(?!.*-dev)
 </code></pre></div>
 <ul>
-<li><code>BL1-router01</code> the regex will match and the device will be assigned to the site <code>BL1</code></li>
+<li><code>BL1-router01</code> the regex will match, and the device will be assigned to the site <code>BL1</code></li>
 <li><code>PA2-router02-dev</code> teh regex will not match, as we can see <code>-dev</code> in the hostname</li>
 </ul>
 </div>
@@ -12201,7 +12201,7 @@ documentation.
 <li><strong>Attribute</strong> is the Device Attribute to assign, since we want to set the Site based on the serial number set it to <strong>Site name</strong></li>
 <li><strong>Value</strong> is the attribute’s value to assign, in this case, we want to split site <code>L35</code> into separate sites named <code>35COLO</code>, <code>35PRODUCTION</code>, <code>35HEADOFFICE</code></li>
 </ul>
-<h3 id="creating-rules-in-the-ui">Creating Rules In The UI</h3>
+<h3 id="creating-rules-in-the-ui">Creating Rules in the UI</h3>
 <p>You can create rules in the UI by clicking <strong>+ Add attribute</strong>. This will provide you with a form to fill out.</p>
 <p><a class="glightbox" href="add_attribute.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Attribute" src="add_attribute.png" /></a></p>
 <div class="admonition info">
@@ -12211,7 +12211,7 @@ for devices discovered via an API in the UI. Even though it seems that no
 device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
 <p><a class="glightbox" href="dropdown.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dropdown" src="dropdown.png" /></a></p>
-<h3 id="creating-rules-via-the-api">Creating Rules Via The API</h3>
+<h3 id="creating-rules-via-the-api">Creating Rules via the API</h3>
 <p>The API is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> method requested on endpoint <code>https://&lt;IPF_URL&gt;/api/&lt;IPF_API_VERSION&gt;/attributes/global</code>. An example of the payload can be seen below:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -12229,7 +12229,7 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
 <h2 id="rule-priority">Rule Priority</h2>
 <p><a class="glightbox" href="rule_priority.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Rule priority" src="rule_priority.png" /></a></p>
-<p>Rule precedence is defined by the order from top to bottom. So in the example above:</p>
+<p>Rule precedence is defined by the order from top to bottom. So, in the example above:</p>
 <ol>
 <li>
 <p><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on its serial number if a match is found.</p>
@@ -12246,8 +12246,8 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 <p><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled)</p>
 </li>
 </ol>
-<h3 id="reporting-rule-matches-with-python-ipfabric-package">Reporting Rule matches With <code>python-ipfabric</code> Package</h3>
-<p>Please see example at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py">GitLab</a>.</p>
+<h3 id="reporting-rule-matches-with-python-ipfabric-package">Reporting Rule Matches With <code>python-ipfabric</code> Package</h3>
+<p>Please see the example at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py">GitLab</a>.</p>
 
 
 
@@ -12268,7 +12268,7 @@ device matches the SN, the attribute will still be assigned to the device.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
