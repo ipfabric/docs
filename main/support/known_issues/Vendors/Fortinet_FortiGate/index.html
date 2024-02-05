@@ -10319,7 +10319,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Site Name Can Change To An Obscure UUID Value After Update
+    Site Name Can Change to an Obscure UUID Value After Update
   
 
     
@@ -10400,7 +10400,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Restore is not working when 2 full backups are present
+    Restore Is Not Working When 2 Full Backups Are Present
   
 
     
@@ -11419,7 +11419,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Adding AAA User To Cisco ACS
+    Adding AAA User to Cisco ACS
   
 
     
@@ -11500,7 +11500,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Dropping Support For ACL On Cisco Firepower
+    Dropping Support for ACL on Cisco Firepower
   
 
     
@@ -11581,7 +11581,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Inconsistent VRF Names On Cisco Platforms
+    Inconsistent VRF Names on Cisco Platforms
   
 
     
@@ -11716,7 +11716,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Viptela cEdge shows only one next-hop
+    Viptela cEdge Shows Only One Next Hop
   
 
     
@@ -11770,7 +11770,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    APIC Tables are all empty except Controllers
+    APIC Tables Are All Empty Except Controllers
   
 
     
@@ -12009,7 +12009,7 @@ documentation.
 
 
 <h1 id="fortinet-fortigate">Fortinet FortiGate</h1>
-<p>Currently, we support FortiOS version 5.2 and higher. In this article, you will find <strong>our recommendations regarding setup of administrator profiles and 
+<p>Currently, we support FortiOS version 5.2 and higher. In this article, you will find <strong>our recommendations regarding the setup of administrator profiles and 
 accounts</strong>. It&rsquo;s very important, especially if you use <strong>Virtual Domains</strong>, since part of a required configuration can be done only from CLI.</p>
 <p>If you plan to use a user with full read/write permissions or even with super_admin profile assigned (which is not recommended, except a LAB testing), you can skip the rest of 
 this article.</p>
@@ -12024,7 +12024,7 @@ this article.</p>
 <li>Navigate to <strong>System &rarr; Admin Profiles</strong> and click <strong>+ Create New</strong></li>
 <li>Fill in a name and set all permissions to Read (you can do it by clicking
     <strong>Set All</strong> dropdown menu). The only exception is <strong>System &rarr; Maintenance</strong>
-    permission, which has to be set to <strong>Read/Write</strong> (especially if VDOMs are
+    permission, which must be set to <strong>Read/Write</strong> (especially if VDOMs are
     enabled). See the picture below from FortiOS versions 6.0 and 7.0:<p><a class="glightbox" href="../fortinet/fortios-60-admin-profile.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Admin Profile, FortiOS 6.0" src="../fortinet/fortios-60-admin-profile.png" title="Admin Profile, FortiOS 6.0" /></a></p>
 <p><a class="glightbox" href="../fortinet/fortios-70-admin-profile.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Admin Profile, FortiOS 7.0" src="../fortinet/fortios-70-admin-profile.png" title="Admin Profile, FortiOS 7.0" /></a></p>
 </li>
@@ -12034,7 +12034,7 @@ this article.</p>
 <p>FortiOS version 7.0 and higher - &ldquo;permit usage of CLI diagnostic commands&rdquo; have to be enabled.</p>
 </div>
 <h3 id="make-the-created-admin-profile-global-vdoms-only">Make The Created Admin Profile Global (VDOMs Only)</h3>
-<p>If you have Virtual Domains (VDOMs) enabled, you have to follow this procedure to make the created admin profile global. It means that administrators having 
+<p>If Virtual Domains (VDOMs) are enabled, follow this procedure to make the created admin profile global. It means that administrators having 
 this profile will be able to work with all VDOMs. By default, only the default <em>prof_admin</em> profile is set as global.</p>
 <ol>
 <li>Connect to the FortiGate via SSH or Telnet or use the console in the top right corner (version 5.6 and above) or at the dashboard (version 5.4 and below)</li>
@@ -12056,15 +12056,15 @@ end
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Ensure, that there is at least one interface with SSH or Telnet allowed, and this interface is accessible from IP Fabric VM. To do so, navigate to <strong>Network &rarr; Interfaces</strong> and check the <strong>Access</strong> column.</p>
+<p>Ensure that there is at least one interface with SSH or Telnet allowed, and this interface is accessible from IP Fabric VM. To do so, navigate to <strong>Network &rarr; Interfaces</strong> and check the <strong>Access</strong> column.</p>
 </div>
 <p>Now it&rsquo;s time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>&lt;hostname&gt;/&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
 <h2 id="known-bugs">Known Bugs</h2>
 <h3 id="fortigate-300d-interface-flap">FortiGate 300D Interface Flap</h3>
 <p><strong>Known Affected platforms</strong>: 6.0.*</p>
 <p><strong>Description</strong>: Running <code>get system interface transceiver</code> command on FortiGate 300D running version <code>6.0.*</code> can cause some interfaces to flap.
-This has been confirmed by Fortinet however no bug ID has been received. Transceiver task has been disabled for any device matching this vendor, model, and version.</p>
-<p><strong>Fix</strong>: Upgrade to newer version of FortiGate.</p>
+This was confirmed by Fortinet, but no bug ID was received. The Transceivers task has been disabled for any device matching this vendor, model, and version.</p>
+<p><strong>Fix</strong>: Upgrade to a newer version of FortiGate.</p>
 
 
 
@@ -12085,7 +12085,7 @@ This has been confirmed by Fortinet however no bug ID has been received. Transce
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
