@@ -7,7 +7,7 @@ description: This page provides an overview of the System 'Boot Wizard'.
 ## Overview
 
 The **Boot Wizard** is automatically started during the initial boot of the IP
-Fabric appliance and must be completed in order to proceed with the appliance's
+Fabric appliance and must be completed to proceed with the appliance's
 deployment.
 
 It introduces the configuration of basic network parameters, including:

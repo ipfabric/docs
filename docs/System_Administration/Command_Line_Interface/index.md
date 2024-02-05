@@ -11,7 +11,7 @@ The command line also allows the use of the standard networking tools, such as `
 
 From `5.0` release, the `osadmin` account is no longer restricted to `chroot` only and has access to the whole system.
 
-The `osadmin` account has `sudo` rights with the `osadmin` password and a standard 5 minutes retention.
+The `osadmin` account has `sudo` rights with the `osadmin` password and a standard 5-minute retention.
 
 !!! note
 

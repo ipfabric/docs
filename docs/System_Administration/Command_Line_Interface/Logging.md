@@ -47,7 +47,7 @@ Service logs for IP Fabric services are stored in the `/var/log/nimpee` director
 
 ## Snapshot Logs
 
-Snapshots are available in the `/home/autoboss/snapshots` directory. Each sub-directory represents one snapshot. Snapshot-related logs are located in `/home/autoboss/snapshots/<id>/*`:
+Snapshots are available in the `/home/autoboss/snapshots` directory. Each sub-directory represents one snapshot. Snapshot-related logs are in `/home/autoboss/snapshots/<id>/*`:
 
 ```bash
 /home/autoboss/snapshots/<id>/*                     - snapshot related logs

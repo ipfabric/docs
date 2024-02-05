@@ -8,7 +8,7 @@ description: This section contains information on how to troubleshoot jumphost-r
 
 IP Fabric doesn't work with DNS names that have IPv6 address in addition to IPv4 address. It is always better to use IPv4 address record.
 
-It is a good practice to test the SSH from IP Fabric's CLI to any network device that should be discoverable using the jumphost when the jumphost is configured and active.
+It is good practice to test the SSH from IP Fabric's CLI to any network device that should be discoverable using the jumphost when the jumphost is configured and active.
 
 Other useful commands:
 
@@ -23,11 +23,11 @@ journalctl -f -u jumphost@xxx.service
 ```
 !!! example
 
-    replace `x.x.x.x/yy` with a subnet which you want to reach through the jumphost e.g. `10.254.63.0/24`
+    Replace `x.x.x.x/yy` with a subnet which you want to reach through the jumphost (e.g., `10.254.63.0/24`).
 
-## Jumphost Status Is Running, But Devices Behind Jumphost Are Not Discovered
+## Jumphost Status Is Running, but Devices Behind Jumphost Are Not Discovered
 
-### Check Incoming Traffic From the IP Fabric To a Jumphost
+### Check Incoming Traffic from the IP Fabric to a Jumphost
 
 1.  On a jumphost machine run tcpdump with parameters: `tcpdump src <IPF_IP> and dst <JUMPHOST_IP>`
 
@@ -56,7 +56,7 @@ journalctl -f -u jumphost@xxx.service
 
     If there is no incoming traffic, check **outgoing traffic from the IP Fabric to a jumphost**
 
-### Check Outgoing Traffic From the IP Fabric To a Jumphost
+### Check Outgoing Traffic from the IP Fabric to a Jumphost
 
 1. On the IP Fabric instance run tcpdump with parameters: `tcpdump src <IPF_IP> and dst <JUMPHOST_IP>`
 
@@ -71,7 +71,7 @@ journalctl -f -u jumphost@xxx.service
     12:53:25.477998 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 2317, win 686, options [nop,nop,TS val 542685257 ecr 585173962], length 0
     ```
 
-### Check Outgoing Traffic From a Jumphost To a Host
+### Check Outgoing Traffic from a Jumphost to a Host
 
 1.  On a jumphost run tcpdump with parameters: `tcpdump src <JUMPHOST_IP> and dst <HOST_IP>`
 
@@ -86,11 +86,11 @@ journalctl -f -u jumphost@xxx.service
     12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
     ```
 
-### Check Incoming Traffic From a Host To a Jumphost
+### Check Incoming Traffic from a Host to a Jumphost
 
-1.  On a jumphost run tcpdump with parameters: `tcpdump src <HOST_IP> and dst <JUMPHOST_IP>`
+1.  On a jumphost, run `tcpdump` with parameters: `tcpdump src <HOST_IP> and dst <JUMPHOST_IP>`
 
-2.  On the IP Fabric instance open ssh/telnet to any host behind jumphost
+2.  On the IP Fabric instance, open ssh/telnet to any host behind the jumphost:
 
     ```shell
     root@jumphost:/home/autoboss# tcpdump src 10.47.102.104 and dst 10.0.9.17
@@ -101,7 +101,7 @@ journalctl -f -u jumphost@xxx.service
     12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
     ```
 
-## How To Restore access to IP Fabric's GUI After `jumphost` misconfiguration
+## How to Restore Access to IP Fabric's GUI After `jumphost` Misconfiguration
 
 If you suddenly cannot open the main GUI or SSH to the IP Fabric machine after saving the jumphost settings, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
 
@@ -109,11 +109,10 @@ To fix this issue, you need a **direct access** to the **virtual machine CLI** f
 
 1. Log in to the **virtual machine CLI** with the `osadmin` account.
 
-2. Filter `systemctl` output with `jumphost`. Each configured jumphost has its own ID.
+2. Filter the `systemctl` output with `jumphost`. Each configured jumphost has its own ID:
 
     ```shell
     osadmin@ipfabric-server:~$ sudo systemctl | grep jumphost
-
     [sudo] password for osadmin: 
       jumphost@923216920.service                                   loaded activating auto-restart Jumphost (ID=923216920)
       system-jumphost.slic                                         loaded active     active       system-jumphost.slice
@@ -129,9 +128,9 @@ To fix this issue, you need a **direct access** to the **virtual machine CLI** f
         Process: 682331 ExecStart=/opt/nimpee/jumphost/start-one.sh /opt/nimpee/conf.d/jumphost/923216920.conf (code=exited, status=1/FAILURE)
     ```
 
-3. Stop the jumphost service with `sudo systemctl stop jumphost@xxxx.service`
+3. Stop the jumphost service with `sudo systemctl stop jumphost@xxxx.service`.
 
-4. Check that the **jumphost process is inactive** with `systemctl status jumphost@xxxx.service` command
+4. Check that **the jumphost process is inactive** with the `systemctl status jumphost@xxxx.service` command:
 
     ```shell
     osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
@@ -150,7 +149,6 @@ To fix this issue, you need a **direct access** to the **virtual machine CLI** f
     Dec 14 14:28:55 ipfabric-server systemd[1]: Failed to start Jumphost (ID=923216920).
     Dec 14 14:29:13 ipfabric-server systemd[1]: Stopped Jumphost (ID=923216920).
     osadmin@ipfabric-server:~$ 
-
     ```
 
-5. IP Fabric GUI should be accessible by now
+5. The IP Fabric GUI should be accessible by now.

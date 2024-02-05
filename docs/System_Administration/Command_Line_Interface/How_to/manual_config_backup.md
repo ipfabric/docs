@@ -2,13 +2,13 @@
 description: This section contains information how to trigger a manual configuration backup for a single device using an API call.
 ---
 
-# How to trigger manual configuration backup for a single device
+# How to Trigger Manual Configuration Backup for a Single Device
 
-After adding a new device to the network, and you don't want to wait until the next regular configuration backup collection, you can trigger config backup through IP Fabric's API. Here's how.
+You have added a new device to the network, but you don't want to wait until the next regular configuration backup collection. In that case, you can trigger config backup through IP Fabric's API.
 
-## Use Python3 `requests` module
+## Use Python3 `requests` Module
 
-The Python3 [requests module](https://pypi.org/project/requests/) is simple, yet elegant, HTTP library. To trigger a single config backup, we need to set these parameters:
+The Python3 [requests module](https://pypi.org/project/requests/) is a simple, yet elegant, HTTP library. To trigger a single config backup, you need to set these parameters:
 
 - request resource `https://{hostname}/api/{api_version}/discovery/trigger-config-backup`
 - request type `POST`
@@ -34,7 +34,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
-## Alternatively use cURL from Linux shell
+## Alternatively Use cURL from Linux Shell
 
 ```shell
 curl --location --request POST 'https://FQDN/api/API_VERSION/discovery/trigger-config-backup' \

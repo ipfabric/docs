@@ -2,13 +2,13 @@
 description: This section contains information how to troubleshoot common problems with IP Fabric's VM setup.
 ---
 
-# How to troubleshoot IP Fabric VM
+# How to Troubleshoot IP Fabric VM
 
 In the event of a VM network connection problem, DNS issues, network devices connectivity issue, IP Fabric CLI is a useful helper.
 
-CLI can be also used to access system and application logs as well as snapshot files.
+CLI can also be used to access system and application logs and snapshot files.
 
-## Examining The Network Interface Settings
+## Examining the Network Interface Settings
 
 !!! warning
 
@@ -123,7 +123,7 @@ IP Fabric CLI provides access to standard Unix tools for network testing, such a
 
 !!! warning "ICMP"
 
-    Please bear in mind that ICMP packets used by `ping` and `traceroute` can be blocked by other devices in the network. It does not mean that a device cannot be reached using SSH or Telnet.
+    Please remember that ICMP packets used by `ping` and `traceroute` might be blocked by other devices in the network. It does not mean that a device cannot be reached using SSH or Telnet.
 
 To make sure that the network device is available from IP Fabric VM, you
 can use the `telnet` and `ssh` client from the command line.
@@ -196,7 +196,7 @@ If you wish to run `ipf-connection-tester` from your own automation script, here
 - `1` -- Missing or invalid command line arguments
 - `2` -- Connection failed
 
-## Check memory and swap usage
+## Check Memory and Swap Usage
 
 ```shell
 free -m
@@ -211,7 +211,7 @@ free -m
     Swap:            979           0         979
     ```
 
-## Check which processes use most CPU
+## Check Which Processes Use Most CPU
 
 ```shell
 top
@@ -241,7 +241,7 @@ top
     [...]
     ```
 
-## Check which processes use most memory
+## Check Which Processes Use Most Memory
 
 ```shell
 top -o %MEM
@@ -271,7 +271,7 @@ top -o %MEM
     [...]
     ```
 
-## Check status of common services
+## Check Status of Common Services
 
 ```shell
 systemctl status nimpee-api.service
@@ -403,7 +403,7 @@ systemctl --failed
     0 loaded units listed.
     ```
 
-## Check disk space usage
+## Check Disk Space Usage
 
 ```shell
 df -h
@@ -423,7 +423,7 @@ df -h
     tmpfs                          1.6G     0  1.6G   0% /run/user/0
     ```
 
-## Check inode usage on filesystems
+## Check Inode Usage on Filesystems
 
 ```shell
 df -i
@@ -443,9 +443,9 @@ df -i
     tmpfs                           400131    17   400114    1% /run/user/0
     ```
 
-## Reboot And Shutdown
+## Reboot and Shutdown
 
-IP Fabric VM can be also rebooted or shutdown using CLI.
+The IP Fabric VM can be also rebooted or shutdown using CLI.
 
-- For VM reboot, use `reboot` command without any parameters.
-- For VM shutdown, use `shutdown` command without any parameters.
+- For rebooting the VM, use the `reboot` command.
+- For shutting down the VM, use the `shutdown -h now` command.

@@ -1,12 +1,12 @@
 ---
-description: Appliance disk space can be extended by extending existing virtual disk or by adding new empty virtual hard drive to IP Fabric VM.
+description: The appliance disk space can be extended by extending an existing virtual disk or by adding a new empty virtual disk to the IP Fabric VM.
 ---
 
 # Server Disk Space Summary
 
-Starting in IP Fabric version 5.0.0, the virtual appliance deploys as one hard disk installation instead of two disk volumes.
+Starting with version `5.0.0`, the IP Fabric appliance deploys as a single hard disk installation instead of two disk volumes.
 
-IP Fabric appliance is using LVM type for **root** and **swap** partitions. On a default installation, the **swap** has 16GB, and **root** has ~72GB of disk space.
+The IP Fabric appliance is using LVM type for the **root** and **swap** partitions. On a default installation, **swap** has 16 GB, and **root** has ~72 GB of disk space.
 
 We automatically resize the **boot** disk as follows:
 
@@ -15,27 +15,27 @@ We automatically resize the **boot** disk as follows:
 - extend `ipfabric-vg/root` to `+100%FREE`
 - online resize `ext4` partition
 
-## Increasing Disk Space On IP Fabric Appliance
+## Increasing Disk Space on IP Fabric Appliance
 
-If you need any help with a disk space expansion, please contact our [Support Team](../support/index.md)
+If you need any help with disk space expansion, please contact our [Support team](../support/index.md).
 
 ### Resizing Root/First Disk
 
-The easiest way how to resize IP Fabric system disk is to
+The easiest way how to resize the IP Fabric system disk is to:
 
-1. Shutdown the appliance
+1. Shutdown the VM.
 
-2. Resize root/first disk to a desired size
+2. Resize the root/first disk to a desired size.
 
-3. Start virtual machine
+3. Start the VM.
 
-`cloud-init` will take care of resizing this disk.
+`cloud-init` will take care of resizing the disk.
 
-### Expanding System Volume By Adding Additional Disk(s)
+### Expanding System Volume by Adding Additional Disk(s)
 
-If you want to add secondary or any additional disk as a system disk, you will need to manually add it to `ipfabric-vg/root` volume.
+If you want to add a secondary or any additional disk as a system disk, you will need to manually add it to the `ipfabric-vg/root` volume.
 
-To do that follow LVM resource:
+To do that, follow LVM resources:
 
 - [Debian LVM wiki](https://wiki.debian.org/LVM)
 - [Arch LVM wiki](https://wiki.archlinux.org/title/LVM)
@@ -53,7 +53,7 @@ Any additional disk (see hypervisor-specific configuration at the bottom of this
 
 !!! warning
 
-    The backup disk has to be partitioned with LVM. Specifically, the `/backup` directory must be on the logical volume `backup` of the volume group `backup-vg`.
+    The backup disk must be partitioned with LVM. Specifically, the `/backup` directory must be on the logical volume `backup` of the volume group `backup-vg`.
 
 ### Instructions To Mount a Physical Disk To `/backup` Directory
 
@@ -72,7 +72,7 @@ Any additional disk (see hypervisor-specific configuration at the bottom of this
    └─vda5                  254:5    0 75,8G  0 part
      ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
      └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
-   vdb                     254:16   0   20G  0 disk             # <- We want to use this device for the /backup directory.
+   vdb                     254:16   0   20G  0 disk             # <-- We want to use this device for the /backup directory.
    ```
 
 2. Create LVM physical volume on the disk `vdb`:
@@ -234,70 +234,70 @@ Suppose you prepared a backup disk with size of 20 GB with the instructions abov
 
 ## Deprecated Resize Wizard
 
-IP Fabric appliance with version lower than 5.0 was using two LVM volumes by default. `ipfabric-vg/root` for system and data, `backup-vg/backup` for `/backup`.
-System and data volume was extended over two disks (usually first two). For additional drives, one could choose to extend _root_ or _backup_ volume. This option was discontinued in favor of one system/data disk with the possibility of adding a backup disk.
-The original script is still present in the system, but it is discouraged to use it as it expects only the boot disk to be `sda`, `sdb` as extended `ipfabic-vg/root`, and one could choose how `sd[c-z]` would be used. The new approach with one disk is more versatile and is not limited to `sd[a-z]` disks.
+IP Fabric appliance with version lower than `5.0` was using two LVM volumes by default. `ipfabric-vg/root` for system and data, `backup-vg/backup` for `/backup`.
+The system and data volume was extended over two disks (usually first two). For additional drives, you could choose to extend the _root_ or _backup_ volume. This option was discontinued in favor of one system/data disk with the possibility of adding a backup disk.
+The original script is still present in the system, but we discourage to use it as it expects only the boot disk to be `sda`, `sdb` as extended `ipfabic-vg/root`, and you could choose how `sd[c-z]` would be used. The new approach with one disk is more versatile and is not limited to `sd[a-z]` disks.
 
 !!! error "Deprecated script"
 
-    This script should not be used anymore. You should run only when you are sure you know what you are doing.
+    This script should not be used anymore. You should run it only when you know what you are doing.
 
 Script location: `/opt/nimpee/sys-lvm-resize.sh`
 
-## Increase Disk Space For VMware
+## Increase Disk Space for VMware
 
-### Extend Existing Virtual Disk (For System And Data)
+### Extend Existing Virtual Disk (for System and Data)
 
-1.  Open VMware vSphere web console.
-2.  Right click VM name and select **Edit Settings**.
+1.  Open the VMware vSphere web console.
+2.  Right click the VM name and select **Edit Settings**.
 3.  Select **Hard disk** and change its size.
 4.  Click **OK**.
-5.  Restart VM (using CLI or web UI).
-6.  Disk space is automatically increased if you resized the first drive.
+5.  Restart the VM (using CLI or web UI).
+6.  The disk space is automatically increased if you resized the first disk.
 
-### Add New Virtual Disk (As An Additional Backup Disk)
+### Add New Virtual Disk (as an Additional Backup Disk)
 
-1. Open VMware vSphere web console.
-2. Right click VM name and select **Edit Settings**.
-3. Click **Add New Device --> Hard Disk**
-4. Select new size
+1. Open the VMware vSphere web console.
+2. Right click the VM name and select **Edit Settings**.
+3. Click **Add New Device --> Hard Disk**.
+4. Select new size.
 5. Specify **Location**:
-   1. for system disk expansion is recommended to select **Store with
+   1. for system disk expansion, it is recommended to select **Store with
       the virtual machine**
-   2. for backup volume is recommended to select different datastore
+   2. for backup volume, it is recommended to select a different datastore
       ideally on a different physical storage
-6. Click **OK**
+6. Click **OK**.
    ![VMware virtual hardware](vmware_virtual_hardware.png)
-7. Launch Remote (Web) Console.
-8. Reboot(**Send Ctrl+Alt+Delete** function can be also used) or power on IP
+7. Launch the Remote (Web) Console.
+8. Reboot (the **Send Ctrl+Alt+Delete** function can be also used) or power on the IP
    Fabric VM.
 9. Follow [Adding additional disk(s)](#expanding-system-volume-by-adding-additional-disks)
-   or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory)
+   or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory).
 
-## Increase Disk Space For Hyper-V
+## Increase Disk Space for Hyper-V
 
-### Extend Existing Virtual Disk (For System And Data)
+### Extend Existing Virtual Disk (for System and Data)
 
 1.  Open Hyper-V Manager.
-2.  Shutdown VM. (when Started, HyperV won't let you change any
-    hardware settings)
-3.  Right click VM name and select **Settings**.
+2.  Shutdown the VM. (When Started, Hyper-V won't let you change any
+    hardware settings.)
+3.  Right click the VM name and select **Settings**.
 4.  Select **IDE Controller - Hard Drive -
-    ipfabric-x-x-x-disk1.vhdx **
+    ipfabric-x-x-x-disk1.vhdx**.
 5.  Click **Edit** - **Choose Action** - select option **Expand**,
     click **Next**.
-6.  Set up required disk size and click **Finish**.
-7.  Start VM.
-8.  Disk space is automatically increased, if you resized the first disk.
+6.  Set up the required disk size and click **Finish**.
+7.  Start the VM.
+8.  The disk space is automatically increased, if you resized the first disk.
 
-### Add New Virtual Disk (As An Additional Backup Disk)
+### Add New Virtual Disk (as an Additional Backup Disk)
 
-1. Open HyperV Manager.
-2. Shutdown VM. (when Started, HyperV won't let you change any
-   hardware settings)
-3. Right click VM name an select **Settings**.
+1. Open Hyper-V Manager.
+2. Shutdown the VM. (When Started, HyperV won't let you change any
+   hardware settings.)
+3. Right click the VM name and select **Settings**.
    ![HyperV settings](hyperv_settings.png)
-4. Select IDE Controller 1 - Hard Drive - click **Add**
+4. Select IDE Controller 1 - Hard Drive - click **Add**.
    ![HyperV Add hard drive](hyperv_add_hdd.png)
 5. Select **Virtual hard disk** - click **New** - select **Choose
    Disk Format** - select **VHDX** - click **Next**.
@@ -309,7 +309,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
    disk** - change **Size** to required value - click
    **Finish**.
    ![HyperV Add hard drive - space](hyperv_add_hdd_space.png)
-9. Apply new disk on Settings window - close **Settings**.
-10. Start VM.
+9. Apply the new disk the on Settings window - close **Settings**.
+10. Start the VM.
 11. Follow [Adding additional disk(s)](#expanding-system-volume-by-adding-additional-disks)
-    or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory)
+    or [Example adding disk to backup](#instructions-to-mount-a-physical-disk-to-backup-directory).
