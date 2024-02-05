@@ -5700,7 +5700,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to trigger manual configuration backup for a single device
+    How to Trigger Manual Configuration Backup for a Single Device
   
 
     
@@ -5782,7 +5782,7 @@ documentation.
   <a href="#users-are-not-able-to-log-in" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Users Are Not Able To Log In
+        Users Are Not Able to Log In
       
     </span>
   </a>
@@ -5804,7 +5804,7 @@ documentation.
   <a href="#issues-with-ldaps-after-upgrade-to-50" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issues With LDAPS After Upgrade To 5.0
+        Issues with LDAPS After Upgrade to 5.0
       
     </span>
   </a>
@@ -5833,7 +5833,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to troubleshoot IP Fabric VM
+    How to Troubleshoot IP Fabric VM
   
 
     
@@ -11800,7 +11800,7 @@ documentation.
   <a href="#users-are-not-able-to-log-in" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Users Are Not Able To Log In
+        Users Are Not Able to Log In
       
     </span>
   </a>
@@ -11822,7 +11822,7 @@ documentation.
   <a href="#issues-with-ldaps-after-upgrade-to-50" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issues With LDAPS After Upgrade To 5.0
+        Issues with LDAPS After Upgrade to 5.0
       
     </span>
   </a>
@@ -11919,18 +11919,18 @@ documentation.
 
 
 <h1 id="how-to-troubleshoot-ldap">How To Troubleshoot LDAP</h1>
-<h2 id="users-are-not-able-to-log-in">Users Are Not Able To Log In</h2>
-<p>The <code>ldapsearch</code> is the best tool to troubleshoot LDAP issues. Sometimes groups or users are not found and LDAP needs to be troubleshot.</p>
+<h2 id="users-are-not-able-to-log-in">Users Are Not Able to Log In</h2>
+<p>The <code>ldapsearch</code> is the best tool to troubleshoot LDAP issues. Sometimes groups or users are not found, and LDAP needs to be troubleshot.</p>
 <p>To troubleshoot user login/missing group issues, use the following command with similar fields:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap(s)://ldap-server:port&quot;</span><span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;Service account AD path&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;Base directory path&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="nv">sAMAccountName</span><span class="o">=</span><span class="s2">&quot;Username of the user that wants to log in&quot;</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This command will prompt you to enter service account password.</p>
-<p>Output of this command could be extensive, it shows the information about the user and groups they are part of, check if it matches the group settings in IP Fabric.
+<p>This command will prompt you to enter the service account password.</p>
+<p>The output of this command could be extensive, it shows the information about the user and groups they are part of, check if it matches the group settings in IP Fabric.
 If the user is not part of any required group, you can try to use the next command which will search in nested groups.</p>
 </div>
-<p>To troubleshoot nested groups use the following command to list groups of a specific user:</p>
+<p>To troubleshoot nested groups, use the following command to list groups of a specific user:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap(s)://ldap-server:port&quot;</span><span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;Service account AD path&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;Base directory path&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span>member:1.2.840.113556.1.4.1941:<span class="o">=</span><span class="s2">&quot;Username of the user that wants to log in&quot;</span>
 </code></pre></div>
 <h2 id="ldaps-troubleshooting">LDAPS Troubleshooting</h2>
@@ -11946,7 +11946,7 @@ If the user is not part of any required group, you can try to use the next comma
 <p>To verify name/CN/SAN of the LDAP server and root/intermediate certificates by which is the LDAPS certificate signed with, use the following command:</p>
 <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>&lt;ldaps<span class="w"> </span>server&gt;:&lt;ldaps<span class="w"> </span>port&gt;
 </code></pre></div>
-<h2 id="issues-with-ldaps-after-upgrade-to-50">Issues With LDAPS After Upgrade To <code>5.0</code></h2>
+<h2 id="issues-with-ldaps-after-upgrade-to-50">Issues with LDAPS After Upgrade to <code>5.0</code></h2>
 <p>OpenSSL in Debian 11 has significantly improved security, not trusting certificates signed with 2048bit RSA key or lower.</p>
 <p>If you are getting <code>Unexpected Failure</code> error for LDAP login attempts after upgrade to 5.x, most likely there is an issue with public key length of the certificate.</p>
 <p>Check public key length with <code>openssl s_client -connect &lt;ldaps server&gt;:&lt;ldaps port&gt;</code></p>
@@ -11976,7 +11976,7 @@ If the user is not part of any required group, you can try to use the next comma
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
@@ -12054,7 +12054,7 @@ If the user is not part of any required group, you can try to use the next comma
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../manual_config_backup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to trigger manual configuration backup for a single device">
+          <a href="../manual_config_backup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to Trigger Manual Configuration Backup for a Single Device">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12064,20 +12064,20 @@ If the user is not part of any required group, you can try to use the next comma
                 Previous
               </span>
               <div class="md-ellipsis">
-                How to trigger manual configuration backup for a single device
+                How to Trigger Manual Configuration Backup for a Single Device
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: How to troubleshoot IP Fabric VM">
+          <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: How to Troubleshoot IP Fabric VM">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                How to troubleshoot IP Fabric VM
+                How to Troubleshoot IP Fabric VM
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -27,7 +27,7 @@
     
     
       
-        <title>How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal</title>
+        <title>How to Trigger Manual Configuration Backup for a Single Device - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,7 +73,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal" />
+<meta property="og:title" content="How to Trigger Manual Configuration Backup for a Single Device - IP Fabric Documentation Portal" />
 <meta property="og:description" content="Official documentation of the IP Fabric Network Assurance Platform." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/manual_config_backup.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,7 +81,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/manual_config_backup/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="How to trigger manual configuration backup for a single device - IP Fabric Documentation Portal" />
+<meta property="twitter:title" content="How to Trigger Manual Configuration Backup for a Single Device - IP Fabric Documentation Portal" />
 <meta property="twitter:description" content="Official documentation of the IP Fabric Network Assurance Platform." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/manual_config_backup.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to trigger manual configuration backup for a single device
+              How to Trigger Manual Configuration Backup for a Single Device
             
           </span>
         </div>
@@ -5709,7 +5709,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to trigger manual configuration backup for a single device
+    How to Trigger Manual Configuration Backup for a Single Device
   
 
     
@@ -5726,7 +5726,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to trigger manual configuration backup for a single device
+    How to Trigger Manual Configuration Backup for a Single Device
   
 
     
@@ -5755,7 +5755,7 @@ documentation.
   <a href="#use-python3-requests-module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Python3 requests module
+        Use Python3 requests Module
       
     </span>
   </a>
@@ -5766,7 +5766,7 @@ documentation.
   <a href="#alternatively-use-curl-from-linux-shell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alternatively use cURL from Linux shell
+        Alternatively Use cURL from Linux Shell
       
     </span>
   </a>
@@ -5822,7 +5822,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to troubleshoot IP Fabric VM
+    How to Troubleshoot IP Fabric VM
   
 
     
@@ -11789,7 +11789,7 @@ documentation.
   <a href="#use-python3-requests-module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Python3 requests module
+        Use Python3 requests Module
       
     </span>
   </a>
@@ -11800,7 +11800,7 @@ documentation.
   <a href="#alternatively-use-curl-from-linux-shell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alternatively use cURL from Linux shell
+        Alternatively Use cURL from Linux Shell
       
     </span>
   </a>
@@ -11896,10 +11896,10 @@ documentation.
   
 
 
-<h1 id="how-to-trigger-manual-configuration-backup-for-a-single-device">How to trigger manual configuration backup for a single device</h1>
-<p>After adding a new device to the network, and you don&rsquo;t want to wait until the next regular configuration backup collection, you can trigger config backup through IP Fabric&rsquo;s API. Here&rsquo;s how.</p>
-<h2 id="use-python3-requests-module">Use Python3 <code>requests</code> module</h2>
-<p>The Python3 <a href="https://pypi.org/project/requests/">requests module</a> is simple, yet elegant, HTTP library. To trigger a single config backup, we need to set these parameters:</p>
+<h1 id="how-to-trigger-manual-configuration-backup-for-a-single-device">How to Trigger Manual Configuration Backup for a Single Device</h1>
+<p>You have added a new device to the network, but you don&rsquo;t want to wait until the next regular configuration backup collection. In that case, you can trigger config backup through IP Fabric&rsquo;s API.</p>
+<h2 id="use-python3-requests-module">Use Python3 <code>requests</code> Module</h2>
+<p>The Python3 <a href="https://pypi.org/project/requests/">requests module</a> is a simple, yet elegant, HTTP library. To trigger a single config backup, you need to set these parameters:</p>
 <ul>
 <li>request resource <code>https://{hostname}/api/{api_version}/discovery/trigger-config-backup</code></li>
 <li>request type <code>POST</code></li>
@@ -11923,7 +11923,7 @@ documentation.
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="alternatively-use-curl-from-linux-shell">Alternatively use cURL from Linux shell</h2>
+<h2 id="alternatively-use-curl-from-linux-shell">Alternatively Use cURL from Linux Shell</h2>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://FQDN/api/API_VERSION/discovery/trigger-config-backup&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -11952,7 +11952,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

@@ -5700,7 +5700,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to trigger manual configuration backup for a single device
+    How to Trigger Manual Configuration Backup for a Single Device
   
 
     
@@ -5754,7 +5754,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    How to troubleshoot IP Fabric VM
+    How to Troubleshoot IP Fabric VM
   
 
     
@@ -12114,43 +12114,44 @@ documentation.
 
 
 <h1 id="overview">Overview</h1>
-<p>Postman Collections can be viewed directly on the 
-<a href="https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview">IP Fabric Public Workspace</a> 
+<p>Postman Collections can be viewed directly on the
+<a href="https://www.postman.com/ipfabric/workspace/ip-fabric-public-workspace/overview">IP Fabric Public Workspace</a>
 and forked to your own workspace.</p>
 <p>These collections describe the IP Fabric API and allow you to send requests to your IP Fabric instance.</p>
 <h2 id="easy-installation">Easy Installation</h2>
 <ol>
 <li>
-<p>In Postman use the search bar to search <code>All of Postman</code> for <code>IP Fabric</code> and filter on <code>Collection</code>.</p>
+<p>In Postman, use the search bar to search <code>All of Postman</code> for <code>IP Fabric</code> and filter on <code>Collection</code>.</p>
 <p><a class="glightbox" href="images/search.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Search" src="images/search.png" /></a></p>
 </li>
 <li>
-<p>Select the API version that matches your IP Fabric Instance.</p>
+<p>Select the API version that matches your IP Fabric instance.</p>
 </li>
 <li>
-<p>You will then be redirected to the <code>IP Fabric Public Workspace</code> where you can fork the collection into your personal
-   workspace in order to add your required environment variables.</p>
+<p>You will then be redirected to the <code>IP Fabric Public Workspace</code> where you can
+   fork the collection into your personal workspace in order to add your
+   required environment variables.</p>
 <p><a class="glightbox" href="images/fork.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fork" src="images/fork.png" /></a></p>
 </li>
 </ol>
 <h2 id="configuration">Configuration</h2>
-<p>Setup your environment using Postman <code>Environments</code> either with the Global or create a New Environment.</p>
+<p>Setup your environment using Postman <code>Environments</code> either with the <code>Globals</code> or create a new <code>Environment</code>.</p>
 <p><a class="glightbox" href="images/environment.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Environment" src="images/environment.png" /></a></p>
-<p>Required variables are:</p>
+<p>The required variables are:</p>
 <ul>
 <li><strong>IPF_URL</strong>: <code>https://&lt;IPFABRIC_HOSTNAME&gt;</code></li>
 <li><strong>IPF_TOKEN</strong>: <code>&lt;IPFABRIC_TOKEN&gt;</code></li>
 <li><strong>IPF_SNAPSHOT</strong>: Can be <code>$last</code>, <code>$prev</code>, <code>$lastLocked</code>, or UUID of a Loaded Snapshot.</li>
 </ul>
-<p>After adding the variables press <code>Save</code> in the top right corner to save them before testing the API.</p>
-<p><em>In the above example shows how you can create Environments with different <code>IPF_SNAPSHOT</code> variables to easily switch 
-between $last and $prev snapshots.</em></p>
+<p>After adding the variables, click <code>Save</code> in the top-right corner to save them before testing the API.</p>
+<p><em>The above example shows how you can create Environments with different <code>IPF_SNAPSHOT</code> variables to easily switch
+between <code>$last</code> and <code>$prev</code> snapshots.</em></p>
 <h2 id="usage">Usage</h2>
-<p>This collection provides examples of how to use the IP Fabric API.  Most of the <code>tables</code> endpoints have been included
-as well as example returned data. Under the <code>Body</code> tab you can view/edit the JSON that is being sent to the API. 
+<p>This collection provides examples of how to use the IP Fabric API. Most of the <code>tables</code> endpoints have been included
+as well as example returned data. Under the <code>Body</code> tab, you can view/edit the JSON that is being sent to the API.
 If there is an example returned data, it will be below the query (see below the highlighted <code>Success</code>).</p>
 <p><a class="glightbox" href="images/post_example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="POST Example" src="images/post_example.png" /></a></p>
-<p><strong>Before sending any request please see the <a href="#ip-fabric-api-overview">IP Fabric API Overview</a> section.</strong></p>
+<p><strong>Before sending any request, please see the <a href="#ip-fabric-api-overview">IP Fabric API Overview</a> section.</strong></p>
 <h3 id="ip-fabric-api-overview">IP Fabric API Overview</h3>
 <h4 id="filters">Filters</h4>
 <p>There are two types of Filters in IP Fabric:</p>
@@ -12165,19 +12166,19 @@ If there is an example returned data, it will be below the query (see below the 
 </li>
 </ul>
 <p><a class="glightbox" href="images/filters.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Filters" src="images/filters.png" /></a></p>
-<p>The easiest way to create these are by using GUI and then copying the sections found in the
+<p>The easiest way to create these is by using the GUI and then copying the sections found in the
 <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/tips/navigate_in_tables/?h=#table-description">Table Description</a>.</p>
 <h4 id="reports-intent">Reports &amp; Intent</h4>
 <h5 id="reports">Reports</h5>
 <ul>
-<li>If reports is set in the body or parameters the data returned will be nested JSON
-  <code>"l2": {"data": "up", "severity": 0}</code>. </li>
-<li>Without reports set it will return only the data <code>"l2": "up"</code>.</li>
+<li>If <code>reports</code> is set in the body or parameters, the data returned will be nested JSON
+  <code>"l2": {"data": "up", "severity": 0}</code>.</li>
+<li>Without <code>reports</code> set, it will return only the data <code>"l2": "up"</code>.</li>
 <li><strong><code>reports</code> is required if filtering based on color for any type of request.</strong></li>
 <li><strong>CSV export will never return the nested JSON and only the data.</strong></li>
 </ul>
 <h5 id="severity">Severity</h5>
-<p>If <code>reports</code> is set in the request <code>severity</code> will be one of the following:</p>
+<p>If <code>reports</code> is set in the request, <code>severity</code> will be one of the following:</p>
 <table>
 <thead>
 <tr>
@@ -12224,9 +12225,9 @@ If there is an example returned data, it will be below the query (see below the 
 <li><code>order</code> can be <code>asc</code> or <code>desc</code></li>
 </ul>
 </li>
-<li>Remove reports:<ul>
-<li>If reports is set the data returned will be nested JSON <code>"l2": {"data": "up", "severity": 0}</code>.</li>
-<li>Without reports set: <code>"l2": "up"</code></li>
+<li>Remove <code>reports</code>:<ul>
+<li>If <code>reports</code> is set, the data returned will be nested JSON <code>"l2": {"data": "up", "severity": 0}</code>.</li>
+<li>Without <code>reports</code> set: <code>"l2": "up"</code></li>
 <li><strong><code>reports</code> is required if filtering based on color.</strong></li>
 </ul>
 </li>
@@ -12243,8 +12244,8 @@ If there is an example returned data, it will be below the query (see below the 
 </li>
 <li>Optional:<ul>
 <li>Change pagination to increase the number of results or the start.<ul>
-<li>Unlike the <code>POST</code> method pagination is handled on the server when requesting using <code>GET</code>.</li>
-<li>Because of this you can unselect this box and return all data in a single request.</li>
+<li>Unlike the <code>POST</code> method, pagination is handled on the server when requesting using <code>GET</code>.</li>
+<li>Because of this, you can unselect this box and return all data in a single request.</li>
 <li><strong>Please note pagination is recommended in Postman as tables can contain large amounts of data.</strong></li>
 </ul>
 </li>
@@ -12252,8 +12253,8 @@ If there is an example returned data, it will be below the query (see below the 
 <li><code>order</code> can be <code>asc</code> or <code>desc</code></li>
 </ul>
 </li>
-<li>Unselect reports:<ul>
-<li><strong><code>reports</code> is required if filtering based on color for all requests but only the 
+<li>Unselect <code>reports</code>:<ul>
+<li><strong><code>reports</code> is required if filtering based on color for all requests, but only the
   data is returned when requesting CSV.</strong></li>
 </ul>
 </li>
@@ -12261,7 +12262,7 @@ If there is an example returned data, it will be below the query (see below the 
 </li>
 </ul>
 <h2 id="alternate-install">Alternate Install</h2>
-<p>Import the <code>IPFabricCollection.json</code> JSON file located under the <a href="https://gitlab.com/ip-fabric/integrations/postman/-/tree/main/postman">postman</a> directory into Postman.</p>
+<p>Import the <code>IPFabricCollection.json</code> JSON file located under the <a href="https://gitlab.com/ip-fabric/integrations/postman/-/tree/main/postman">postman</a> directory into Postman:</p>
 <p><a class="glightbox" href="images/import.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Import" src="images/import.png" /></a></p>
 <p><a class="glightbox" href="images/in_progress.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IN Progress" src="images/in_progress.png" /></a></p>
 
