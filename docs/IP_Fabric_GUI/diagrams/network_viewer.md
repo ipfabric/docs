@@ -232,7 +232,7 @@ diagram.
 
 ### Device Information Deep Dive
 
-After right clicking the device, it is possible to display additional
+After right-clicking the device, it is possible to display additional
 information about it by selecting **Explore**:
 
 ![Device - Explore](network_viewer/device_explore.png)
