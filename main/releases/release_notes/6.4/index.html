@@ -12093,12 +12093,15 @@ documentation.
 
 <h1 id="ip-fabric-v64">IP Fabric v6.4</h1>
 <div class="admonition info">
-<p class="admonition-title">Upgrade version policy</p>
+<p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li><strong>latest</strong> version in the previous major line &rarr; any version in the current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li><strong>latest</strong> version in the current major line &rarr; any version in the next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
+<li>any version in the current major line &rarr; any newer version in the current
+  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
+<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -12119,13 +12122,13 @@ following key combinations:</p>
 <ul>
 <li>During the update process, locked snapshots will be unloaded together with other snapshots and their lock will be preserved. Therefore, such snapshots won&rsquo;t be deleted by snapshot retention.</li>
 <li>
-<p>Upgrade to <code>v6.4</code> may break custom SSO integrations and will require a change to the <code>/etc/ipf-dex.yaml</code> file. Since <code>6.3.2</code> release, we are omitting minor API version for SSO configuration and only major version will need to be changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> in this file with <code>v6</code> and then run <code>systemctl restart ipf-dex</code>.</p>
+<p>Upgrade to <code>6.4</code> may break custom SSO integrations and will require a change to the <code>/etc/ipf-dex.yaml</code> file. Since the <code>6.3.2</code> release, we are omitting minor API version for SSO configuration, and only major version will need to be changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> string in this file with <code>v6</code> and then run <code>systemctl restart ipf-dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
 <span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://demo1.eu.ipfabric.io/api/vX/auth/external/azure&quot;</span>
 </code></pre></div>
-<p>For more information, please refer to the <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>. If you would like assistance please contact your Solution Architect.</p>
+<p>For more information, please refer to the <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>. If you would like assistance, please contact your Solution Architect.</p>
 </li>
 </ul>
 <h2 id="v643-ga-october-16th-2023">v6.4.3 (GA, October 16<sup>th</sup>, 2023)</h2>
@@ -12156,7 +12159,7 @@ whitelist some subnets.</p>
 <p>For the list of delivered tickets, please consult the <a href="../../release_notes_low-level/6.x/6.4.x/6.4.1/">Low-Level Release Notes for 6.4.1</a>.</p>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
-<li>Discovery process may got stuck when processing last devices in the queue. Also Remaining devices
+<li>Discovery process may get stuck when processing last devices in the queue. Also Remaining devices
   for the discovery are now being correctly removed from the queue.</li>
 </ul>
 <h2 id="v640-september-15th-2023">v6.4.0 (September 15<sup>th</sup>, 2023)</h2>
@@ -12253,7 +12256,7 @@ Architect team and we will gladly help you with enabling these features.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

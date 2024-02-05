@@ -7835,7 +7835,7 @@ documentation.
   <a href="#network-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network discovery
+        Network Discovery
       
     </span>
   </a>
@@ -7846,7 +7846,7 @@ documentation.
   <a href="#important-product-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important product changes
+        Important Product Changes
       
     </span>
   </a>
@@ -7868,19 +7868,19 @@ documentation.
   <a href="#known-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues
+        Known Issues
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Known issues">
+    <nav class="md-nav" aria-label="Known Issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#state-refresh-issues-in-discovery-snapshot-section-with-webhook-enabled" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State refresh issues in Discovery Snapshot section with webhook enabled
+        State Refresh Issues in Discovery Snapshot Section With Webhook Enabled
       
     </span>
   </a>
@@ -7891,7 +7891,7 @@ documentation.
   <a href="#network-analysis-report-table-not-showing-all-loaded-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network Analysis Report table not showing all loaded snapshots
+        Network Analysis Report Table Not Showing All Loaded Snapshots
       
     </span>
   </a>
@@ -11890,7 +11890,7 @@ documentation.
   <a href="#network-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network discovery
+        Network Discovery
       
     </span>
   </a>
@@ -11901,7 +11901,7 @@ documentation.
   <a href="#important-product-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important product changes
+        Important Product Changes
       
     </span>
   </a>
@@ -11923,19 +11923,19 @@ documentation.
   <a href="#known-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues
+        Known Issues
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Known issues">
+    <nav class="md-nav" aria-label="Known Issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#state-refresh-issues-in-discovery-snapshot-section-with-webhook-enabled" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State refresh issues in Discovery Snapshot section with webhook enabled
+        State Refresh Issues in Discovery Snapshot Section With Webhook Enabled
       
     </span>
   </a>
@@ -11946,7 +11946,7 @@ documentation.
   <a href="#network-analysis-report-table-not-showing-all-loaded-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network Analysis Report table not showing all loaded snapshots
+        Network Analysis Report Table Not Showing All Loaded Snapshots
       
     </span>
   </a>
@@ -12037,12 +12037,15 @@ documentation.
 
 <h1 id="ip-fabric-v66">IP Fabric v6.6</h1>
 <div class="admonition info">
-<p class="admonition-title">Upgrade version policy</p>
+<p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li><strong>latest</strong> version in the previous major line &rarr; any version in the current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li><strong>latest</strong> version in the current major line &rarr; any version in the next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
+<li>any version in the current major line &rarr; any newer version in the current
+  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
+<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -12073,10 +12076,10 @@ MD5 (ipfabric-6-6-3+0.ova) = e52d04cfcde3d68bc768010785762249
   other snapshots and their lock will be preserved. Therefore, such snapshots
   won&rsquo;t be deleted by snapshot retention.</li>
 <li>
-<p>Upgrade to <code>v6.6</code> may break custom SSO integrations and will require a change
-  to the <code>/etc/ipf-dex.yaml</code> file. Since <code>6.3.2</code> release, we are omitting minor
-  API version for SSO configuration and only major version will need to be
-  changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> in
+<p>Upgrade to <code>6.6</code> may break custom SSO integrations and will require a change
+  to the <code>/etc/ipf-dex.yaml</code> file. Since the <code>6.3.2</code> release, we are omitting minor
+  API version for SSO configuration, and only major version will need to be
+  changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> string in
   this file with <code>v6</code> and then run <code>systemctl restart ipf-dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
@@ -12085,10 +12088,10 @@ MD5 (ipfabric-6-6-3+0.ova) = e52d04cfcde3d68bc768010785762249
 </code></pre></div>
 <p>For more information, please refer to the
 <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>.
-If you would like assistance please contact your Solution Architect.</p>
+If you would like assistance, please contact your Solution Architect.</p>
 </li>
 </ul>
-<h3 id="network-discovery">Network discovery</h3>
+<h3 id="network-discovery">Network Discovery</h3>
 <ul>
 <li>Fortinet<ul>
 <li>FortiGate &ndash; Added initial support for Aggregate IPsec tunnels with limited support in path-lookup &ndash; evaluation of security rules is not supported yet.</li>
@@ -12117,7 +12120,7 @@ If you would like assistance please contact your Solution Architect.</p>
 </ul>
 </li>
 </ul>
-<h3 id="important-product-changes">Important product changes</h3>
+<h3 id="important-product-changes">Important Product Changes</h3>
 <ul>
 <li>API-discovered devices are now available in the global Device Attributes settings via Serial number search autocomplete.</li>
 <li>A request to <code>POST /discovery/trigger-config-backup</code> now will return <code>403 Forbidden</code> instead of <code>404 Not Found</code> if an API-discovered device <code>sn</code> is provided as parameter.</li>
@@ -12134,8 +12137,8 @@ If you would like assistance please contact your Solution Architect.</p>
 </ul>
 </li>
 </ul>
-<h3 id="known-issues">Known issues</h3>
-<h4 id="state-refresh-issues-in-discovery-snapshot-section-with-webhook-enabled">State refresh issues in <code>Discovery Snapshot</code> section with webhook enabled</h4>
+<h3 id="known-issues">Known Issues</h3>
+<h4 id="state-refresh-issues-in-discovery-snapshot-section-with-webhook-enabled">State Refresh Issues in <code>Discovery Snapshot</code> Section With Webhook Enabled</h4>
 <p>When a webhook is configured and enabled in <strong>Settings &rarr; Integration &rarr;
 Webhooks</strong>, a newly started discovery won&rsquo;t show progress until you switch to
 another menu section (for example <strong>Dashboard</strong>) and back to <strong>Discovery
@@ -12157,7 +12160,7 @@ Snapshot</strong> (or until you refresh the page).</p>
 <p>You may also encounter that after deleting a snapshot, it is still being shown
 among <code>Loaded/Unloaded Snapshots</code> until you switch to another menu section and
 back (or until you refresh the page).</p>
-<h4 id="network-analysis-report-table-not-showing-all-loaded-snapshots"><code>Network Analysis Report</code> table not showing all loaded snapshots</h4>
+<h4 id="network-analysis-report-table-not-showing-all-loaded-snapshots"><code>Network Analysis Report</code> Table Not Showing All Loaded Snapshots</h4>
 <p><strong>Reports &rarr; Network Analysis Report</strong> should allow you to download <code>Network
 Analysis Report</code> documents for each loaded snapshot. However, on version <code>6.6</code>
 (and a few previous major releases), it does not show all loaded snapshots.</p>
@@ -12184,7 +12187,7 @@ API service (with <code>sudo systemctl restart nimpee-api</code>).</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

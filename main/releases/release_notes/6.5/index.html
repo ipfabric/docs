@@ -12093,12 +12093,15 @@ documentation.
 
 <h1 id="ip-fabric-v65">IP Fabric v6.5</h1>
 <div class="admonition info">
-<p class="admonition-title">Upgrade version policy</p>
+<p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li><strong>latest</strong> version in the previous major line &rarr; any version in the current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li><strong>latest</strong> version in the current major line &rarr; any version in the next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
+<li>any version in the current major line &rarr; any newer version in the current
+  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
+<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -12121,10 +12124,10 @@ following key combinations:</p>
   other snapshots and their lock will be preserved. Therefore, such snapshots
   won&rsquo;t be deleted by snapshot retention.</li>
 <li>
-<p>Upgrade to <code>v6.5</code> may break custom SSO integrations and will require a change
-  to the <code>/etc/ipf-dex.yaml</code> file. Since <code>6.3.2</code> release, we are omitting minor
-  API version for SSO configuration and only major version will need to be
-  changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> in
+<p>Upgrade to <code>6.5</code> may break custom SSO integrations and will require a change
+  to the <code>/etc/ipf-dex.yaml</code> file. Since the <code>6.3.2</code> release, we are omitting minor
+  API version for SSO configuration, and only major version will need to be
+  changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> string in
   this file with <code>v6</code> and then run <code>systemctl restart ipf-dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
@@ -12133,7 +12136,7 @@ following key combinations:</p>
 </code></pre></div>
 <p>For more information, please refer to the
 <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>.
-If you would like assistance please contact your Solution Architect.</p>
+If you would like assistance, please contact your Solution Architect.</p>
 </li>
 </ul>
 <h2 id="v652-ga-december-04th-2023">v6.5.2 (GA, December 04th, 2023)</h2>
@@ -12163,7 +12166,7 @@ MD5 (ipfabric-6-5-1+0.ova) = 1113c4c4ea684651414bfa307b0ca149
 forced <code>DEFAULT@SECLEVEL=0</code> to allow connections to devices with older OpenSSL
 versions (which leads to the use of ciphers that are now considered weak). This
 is just a temporary solution and will be removed in the future. We are working
-on a solution to allow OpenSSL being configured by the user from the outside of
+on a solution to allow OpenSSL to be configured by the user from the outside of
 the <code>node.js</code> process.</p>
 <h3 id="known-issues">Known Issues</h3>
 <ul>
@@ -12182,7 +12185,7 @@ the <code>node.js</code> process.</p>
   Private Gateways (not both types at the same time).</li>
 <li>DXGW partial routing table &ndash; based on allowed prefixes specified in Direct
   Connect Gateway Association. DXGW routing table is currently missing
-  prefixes from on-premise routers.</li>
+  prefixes from on-premises routers.</li>
 <li>L2/L3 interfaces name on TGWs and VGWs directing towards DXGW.</li>
 <li>Renamed DCGW to DXGW</li>
 </ul>
@@ -12196,7 +12199,7 @@ the <code>node.js</code> process.</p>
 </li>
 <li>Cisco<ul>
 <li>Viptela &ndash; to prevent long discovery time, limit for OMP route API endpoints
-  was added. Default value is 100. (see our
+  was added. The default value is 100. (see our
   <a href="../../../support/known_issues/Vendors/cisco/Viptela_cEdge_omp_limit/">documentation</a>
   for more details)</li>
 <li>Firepower &ndash; extend support to map policies assigned to device clusters.</li>
@@ -12234,7 +12237,7 @@ Architect team and we will gladly help you with enabling these features.</p>
   We introduced a new feature flag <code>USE_FMC_NONEXPANDED_ICMP_CALL</code> which
   downloads ICMP objects definition 1 by 1.</li>
 <li>ACI &ndash; <code>fvTenant</code> Cisco APIC endpoint can fail in some environments due to
-  size of response output. The <code>USE_ACI_FVTENANT_ENDPOINT</code> flag separates
+  the size of response output. The <code>USE_ACI_FVTENANT_ENDPOINT</code> flag separates
   subclasses into single parameter requests.</li>
 </ul>
 </li>
@@ -12276,7 +12279,7 @@ Architect team and we will gladly help you with enabling these features.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     

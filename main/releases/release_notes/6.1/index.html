@@ -7728,7 +7728,7 @@ documentation.
   <a href="#noticeable-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Noticeable changes
+        Noticeable Changes
       
     </span>
   </a>
@@ -11907,7 +11907,7 @@ documentation.
   <a href="#noticeable-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Noticeable changes
+        Noticeable Changes
       
     </span>
   </a>
@@ -12015,12 +12015,15 @@ documentation.
 
 <h1 id="ip-fabric-v61-burlap">IP Fabric v6.1 (Burlap)</h1>
 <div class="admonition info">
-<p class="admonition-title">Upgrade version policy</p>
+<p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li><strong>latest</strong> version in the previous major line &rarr; any version in the current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li><strong>latest</strong> version in the current major line &rarr; any version in the next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
+<li>any version in the current major line &rarr; any newer version in the current
+  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
+<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -12049,7 +12052,7 @@ MD5<span class="o">(</span>ipfabric-update-6_1_1+0.tar.gz.sig<span class="o">)</
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
 <li>Issue of switching into FortiGate VDOM fixed</li>
-<li>Speed of Check Point discovery optimized &ndash; parallel load of API data enabled and duplicate requests eliminated</li>
+<li>Speed of Check Point discovery optimized &ndash; parallel load of API data enabled, and duplicate requests eliminated</li>
 <li>Cisco <code>show flow monitor</code> command parsing refactored to prevent an issue of a too high regular expression backtracking</li>
 </ul>
 <h2 id="v610-february-21st-2023">v6.1.0 (February 21<sup>st</sup>, 2023)</h2>
@@ -12063,10 +12066,10 @@ MD5<span class="o">(</span>ipfabric-update-6_1_0+12.tar.gz.sig<span class="o">)<
 <p>For the list of delivered tickets, please consult the <a href="../../release_notes_low-level/6.x/6.1.x/6.1.0/">Low-Level Release Notes for 6.1.0</a>.</p>
 <h3 id="upgrade-notices">Upgrade Notices</h3>
 <ul>
-<li>Upgrade to <code>v6.1</code> will break custom SSO integrations and will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v6.0</code> in this file with <code>v6.1</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance please contact your Solution Architect.</li>
+<li>Upgrade to <code>6.1</code> will break custom SSO integrations and will require a change to the <code>/etc/ipf-dex.yaml</code> file. Simply replace the <code>v6.0</code> string in this file with <code>v6.1</code> and then run <code>systemctl restart ipf-dex</code>. If you would like assistance, please contact your Solution Architect.</li>
 <li>Forcepoint &ndash; More features supported, mainly added support for SMC API (see our <a href="https://matrix.ipfabric.io">feature matrix</a> for more details).</li>
 </ul>
-<h3 id="noticeable-changes">Noticeable changes</h3>
+<h3 id="noticeable-changes">Noticeable Changes</h3>
 <ul>
 <li>Removed the End User Licensing agreement (EULA) acceptance step on a user&rsquo;s first log-in. A user approves EULA on loading a license.</li>
 <li>Web front-end migrated from local storage to cookie-based storage for access and refresh tokens.</li>
@@ -12085,7 +12088,7 @@ MD5<span class="o">(</span>ipfabric-update-6_1_0+12.tar.gz.sig<span class="o">)<
 <li>Removed &ldquo;Technology &gt; Spanning Tree &gt; STP Stability&rdquo; table from frontend and marked API endpoint <code>/tables/spanning-tree/topology</code> deprecated.
   &ldquo;STP instances&rdquo; table can be used instead.</li>
 <li>Clarified <a href="../../../System_Administration/boot_wizard/change_osadmin_pass/">password requirements and complexity checks</a> for the <code>osadmin</code> user.</li>
-<li>Added a hard limit on number of retries for all http based vendor API discovery (except AWS). These are triggered when vendor API server is assumed to be overloaded.</li>
+<li>Added a hard limit on number of retries for all HTTP-based vendor API discovery (except AWS). These are triggered when vendor API server is assumed to be overloaded.</li>
 </ul>
 <h3 id="bug-fixes_1">Bug Fixes</h3>
 <ul>
@@ -12109,7 +12112,7 @@ MD5<span class="o">(</span>ipfabric-update-6_1_0+12.tar.gz.sig<span class="o">)<
 <li>Added support for FabricPath in end-to-end path tracing.</li>
 <li>Updated EoL information.</li>
 <li>Viptela<ul>
-<li>Device information will not be fetched if device is not successfully synchronized within the vManage.</li>
+<li>Device information will not be fetched if the device is not successfully synchronized within the vManage.</li>
 <li>Lowered the maximum number of concurrent requests from a discovery worker to a Viptela server from 250 to 75 concurrent requests. This should decrease the workload on the Viptela server and increase its availability during the discovery process.</li>
 </ul>
 </li>
@@ -12163,7 +12166,7 @@ MD5<span class="o">(</span>ipfabric-update-6_1_0+12.tar.gz.sig<span class="o">)<
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
   </span>
 
     
