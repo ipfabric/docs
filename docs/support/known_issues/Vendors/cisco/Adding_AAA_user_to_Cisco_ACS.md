@@ -1,8 +1,8 @@
 ---
-description: In this section, IP Fabric shows how to Add AAA User To Cisco ACS and also go through basic Cisco ACS Configuration.
+description: This page describes how to add AAA user to Cisco ACS, and also goes through basic Cisco ACS configuration.
 ---
 
-# Adding AAA User To Cisco ACS
+# Adding AAA User to Cisco ACS
 
 In this chapter we will go through basic Cisco ACS configuration. We
 will describe how you can create network device groups, users that will
@@ -33,8 +33,8 @@ In our example, we will create the following:
     level 1 access to the devices in the RoutersHQ device group.
 
 We can create the ACS components listed above. First, we need to create
-a device group called **RoutersHQ**. To do so, go to **Network Resources \>
-Network Device Groups \> Device Type \> Create**:
+a device group called **RoutersHQ**. To do so, go to **Network Resources -->
+Network Device Groups --> Device Type --> Create**:
 
 ![acs1](acs1.png)
 
@@ -43,8 +43,8 @@ Enter the device group information and click the **Submit** button:
 ![acs2](acs2.png)
 
 After the device group has been created, we need to add a router in it.
-To do this, go to **Network Resources \> Network Devices and AAA Clients
-\> Create**:
+To do this, go to **Network Resources --> Network Devices and AAA Clients
+--> Create**:
 
 ![acs1](acs3.png)
 
@@ -58,7 +58,7 @@ next to the protocol that will be used and type the password.
 ![acs4](acs4.png)
 
 Next, we need to create two user groups: **Admin** and **HelpDesk**. To do this,
-go to **Users and Identity Stores \> Identity Groups \> Create**:
+go to **Users and Identity Stores --> Identity Groups --> Create**:
 
 ![acs5](acs5.png)
 
@@ -71,8 +71,8 @@ Repeat the process to create the second group:
 ![acs7](acs7.png)
 
 Now we need to create two users and place them in the appropriate
-identity groups. To do that, go to **Users and Identity Stores \> Internal
-Identity Stores \> Users \> Create**:
+identity groups. To do that, go to **Users and Identity Stores --> Internal
+Identity Stores --> Users --> Create**:
 
 ![acs8](acs8.png)
 
@@ -89,8 +89,8 @@ the **HelpDesk** group:
 
 The next step is to create authorization policies to give full access to
 users in the **Admin** group and limited access to users in
-the **HelpDesk** group. Go to **Access Policies \> Access Services \>
-Default Device Admin \> Authorization \> Create**:
+the **HelpDesk** group. Go to **Access Policies --> Access Services -->
+Default Device Admin --> Authorization --> Create**:
 
 ![acs11](acs11.png)
 
@@ -124,7 +124,5 @@ This time, assign the privilege level of **1**:
 
 ![acs16](acs18.png)
 
-  
-
-You can now test the user and then add it to IP Fabric authentication
+You can now test the user and then add it to the IP Fabric authentication
 list.

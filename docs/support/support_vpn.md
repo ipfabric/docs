@@ -15,7 +15,7 @@ DC. Support VPN uses OpenVPN.
 
     Connection through proxy servers should work, but it is not guaranteed.
 
-## How To Establish Support VPN
+## How to Establish Support VPN
 
 !!! info "Security info"
 
@@ -35,7 +35,7 @@ DC. Support VPN uses OpenVPN.
 4.  `VPN status` should change to `connected` and you should also see the
     assigned IP address.
 
-## How To Tear Down Support VPN
+## How to Tear Down Support VPN
 
 1.  Repeat steps 1 and 2 from the
     [How To Establish Support VPN](#how-to-establish-support-vpn) section above.

@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known affected issues for Mikrotik and how to fix them.
+description: This page describes known issues with Mikrotik and how to fix them.
 ---
 
 # Mikrotik

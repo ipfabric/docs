@@ -8,12 +8,12 @@ IP Fabric strives to ensure that the power of our Automated Network Assurance Pl
 
 We want to make sure you find it simple to use and get the results you are looking for, and that you have the support you need to achieve that.
 
-The IP Fabric licence entitles every paying customer to full customer support so in case of any issue, please contact our support team at
+The IP Fabric license entitles every paying customer to full customer support so in case of any issue, please contact our Support team at
 [support.ipfabric.io](https://support.ipfabric.io):
 
 ## IP Fabric Help Center
 
-This is the [support portal](https://support.ipfabric.io) from which you can contact our support teams in case of any issue with IP Fabric.
+This is the [support portal](https://support.ipfabric.io) from which you can contact our Support team in case of any issue with IP Fabric.
 
 ![IP Fabric Help Center](help_center.png)
 
@@ -28,7 +28,7 @@ If you feel that the product is not behaving as it should, please select this op
 
 In either case, once you have raised a support ticket, you may be asked to generate a
 [techsupport](techsupport.md) file and upload it via [upload.ipfabric.io](https://upload.ipfabric.io).
-This will be used by the support team to recreate your issue and speed diagnosis of any issue.
+This will be used by the Support team to recreate your issue and speed diagnosis of any issue.
 
 ## Callhome
 

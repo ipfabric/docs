@@ -9,7 +9,7 @@ description: IP Fabric describes general known affected issues that may occur in
   device on the other end. To show connection to a device, click **Show
   Edge Cloud**
 
-- Diagrams drill-down missing. Current diagrams offer vast amount of
+- Diagrams drill-down missing. Current diagrams offer a vast amount of
   information, which is not available through drill-downs. More
   drill-down capabilities are planned for future releases.
 
@@ -30,13 +30,13 @@ description: IP Fabric describes general known affected issues that may occur in
 
 ## Snapshots
 
-- When Discovery is stopped mid way, and then Refresh is executed, the
+- When Discovery is stopped mid-way, and then Refresh is executed, the
   refresh does not consider IPs with status "STOP" for the next
   discovery
 
-- Resource check for sufficient RAM and HDD use a sliding window.
-  Creating a new snapshot immediately after previous one may result in
-  a "insufficient resources" failure. In such a case, verify resources
+- Resource check for sufficient RAM and HDD uses a sliding window.
+  Creating a new snapshot immediately after the previous one may result in
+  an "insufficient resources" failure. In such a case, verify resources
   on the status page and retry in several minutes.
 
 - Switching site separation to RegEx can cause issues.

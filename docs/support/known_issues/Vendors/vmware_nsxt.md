@@ -1,5 +1,5 @@
 ---
-description: In this section, we describe known issues affecting VMware NSX-T and how to address them.
+description: This page describes known issues with VMware NSX-T and how to fix them.
 ---
 
 # VMware NSX-T

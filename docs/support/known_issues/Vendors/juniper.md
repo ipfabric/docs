@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known affected issues for Juniper and how to fix them.
+description: This page describes known issues with Juniper and how to fix them.
 ---
 
 # Juniper
@@ -110,4 +110,4 @@ Check <https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos> fo
 - Wildcard & Dynamic objects and negated services are not supported
 - **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**
   in the IP Fabric GUI: In case that base URL points to a multi-domain server
-  address, domains have to be specified
+  address, domains must be specified

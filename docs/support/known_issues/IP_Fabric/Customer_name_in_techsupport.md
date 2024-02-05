@@ -17,13 +17,11 @@ name.
 Affects only new deployments of versions between `5.0.0` and `6.0.0`, not
 upgrades.
 
-The `autoboss` user has to be able to create new files in the
-`/opt/nimpee/conf.d/` directory in order to update the customer name. Between
-versions `5.0.0` and `6.0.0`, this directory was not writable for the `autoboss`
-user.
+The `autoboss` user must be able to create new files in the
+`/opt/nimpee/conf.d/` directory to update the customer name. Between versions
+`5.0.0` and `6.0.0`, this directory was not writable for the `autoboss` user.
 
-Version `6.0.1` implements a fix for this issue, but you still have to re-upload
-your license.
+Version `6.0.1` fixes this issue, but you still have to re-upload your license.
 
 On older versions between `5.0.0` and `6.0.0`, the issue can be fixed manually
 (`#` denotes a root prompt):

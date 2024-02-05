@@ -8,7 +8,7 @@ Suppose you have the FTP root directory on the FTP server in `/ftp` and you woul
 
 In that case you enter `backup` (relative path) while performing FTP backup.
 
-However, that will fail as the presence of `/backup` (absolute path) is checked instead -- even if the backup should actually go to `/ftp/backup`.
+However, that will fail as the presence of `/backup` (absolute path) is checked instead, even if the backup should actually go to `/ftp/backup`.
 
 So please also create `/backup` on the FTP server before performing the backup.
 

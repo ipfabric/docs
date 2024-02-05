@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known issues affecting Forcepoint and how to fix them.
+description: This page describes known issues with Forcepoint and how to fix them.
 ---
 
 # Forcepoint

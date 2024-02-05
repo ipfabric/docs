@@ -4,7 +4,7 @@ description: IP Fabric can ingest information about security incident from multi
 
 # Security Incident Response
 
-## Initial source of information
+## Initial Source of Information
 
 If you have any information about potential security events or incidents relating to the IP Fabric, please notify us in one of the following ways:
 
@@ -34,7 +34,7 @@ Timeline and escalation path is as follows
 | 7.0 – 8.9  | High               | High       | Next working day         | CTO, VPE, SRE |
 | 9.0 – 10.0 | Critical           | Critical   | 4h during business hours | CTO, VPE, SRE |
 
-Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third party component on which there may be a dependency). Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.
+Note that we don't show Remediation Time in this table, instead showing Reaction Time as a metric. It is hard to predict upfront time complexity of a particular issue, or availability of the solution (particularly in a third-party component on which there may be a dependency). Reaction time refers to the time to reach a proposal for solution of the issue with time estimate.
 
 ## Tracking
 
@@ -47,4 +47,4 @@ Every security incident has a tracking ticket, which contains:
 
 Also, the IP Fabric internal security Slack channel will be notified, with a dedicated channel created for a specific incident as necessary.
 
-We select one person to be responsible for coordinating internal communication and serve as an interface to the teams communicating directly with customers. Typical candidates: DevOps TL, Head of Development, VPE, CTO.
+We select one person to be responsible for coordinating internal communication and to serve as an interface to the teams communicating directly with customers. Typical candidates: DevOps TL, Head of Development, VPE, CTO.

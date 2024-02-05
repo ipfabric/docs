@@ -1,5 +1,5 @@
 ---
-description: This section contains information about `show version` command hanging on specific version of NX-OS.
+description: This page contains information about the show version command hanging on a specific version of NX-OS.
 ---
 
 # Nexus 9k Show Version

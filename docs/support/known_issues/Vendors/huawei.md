@@ -1,10 +1,10 @@
 ---
-description: IP Fabric describes known affected issues for Huawei and how to fix them.
+description: This page describes known issues with Huawei and how to fix them.
 ---
 
 # Huawei
 
-**Known Affected platforms**: Huawei - platforms with bridge domains
+**Known Affected platforms**: Huawei -- platforms with bridge domains
 
 **Description**: IP Fabric currently doesn’t have a separate bridge
 domain model. The bridge domain is mapped into the VLAN model. This has

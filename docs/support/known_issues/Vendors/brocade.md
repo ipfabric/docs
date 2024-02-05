@@ -1,13 +1,13 @@
 ---
-description: IP Fabric describes known issues affecting Brocade and how to fix them.
+description: This page describes known issues with Brocade and how to fix them.
 ---
 
 # Brocade
 
 **IP Fabric version:** `4.3.x` and newer
 
-**Description:** Brocade purchased Ruckus Wireless and uses the same MAC OUI. In
-order to discover Brocade devices, we have enabled `Brocade Communications
+**Description:** Brocade purchased Ruckus Wireless and uses the same MAC OUI.
+To discover Brocade devices, we have enabled `Brocade Communications
 Systems LLC` and `Ruckus Wireless` in the **OUI** table (in **Settings -->
 Discovery & Snapshots --> Global Configuration --> OUI**).
 

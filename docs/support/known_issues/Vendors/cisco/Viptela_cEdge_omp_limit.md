@@ -59,12 +59,12 @@ limit, contact the IP Fabric Support or Solution Architect team.
     >
     > Old behavior: There is no limit to vManage real-time omp received and advertised routes. But when the total number/setup scale is large, ConfD might crash.
     >
-    > New behavior( starting from 17.3.5 onwards): Added a limit to vManage real-time omp received and advertised routes. The limit total routes, more specifically, the row number in vManage UI is 4001.
+    > New behavior (starting from 17.3.5 onwards): Added a limit to vManage real-time omp received and advertised routes. The limit total routes, more specifically, the row number in vManage UI is 4001.
     >
     > Impact on customer: To avoid ConfD crash, only the first 4001 route entries will be shown in vManage UI.
 
     To solve this, they need to add pagination support from vManage to device.
-    There is a Sev6 present for this requirement -- ``CSCvu59961`:
+    There is a Sev6 present for this requirement -- `CSCvu59961`:
 
     > Need to add pagination support so that vManage can pull the large amount of API data in batches.”
 

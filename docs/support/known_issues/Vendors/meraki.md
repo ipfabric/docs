@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known affected issues for Meraki and how to fix them.
+description: This page describes known issues with Meraki and how to fix them.
 ---
 
 # Meraki
@@ -18,5 +18,5 @@ provide all the necessary data for the IP Fabric model. The following are known 
 * Routing table static routes only for Firewalls
 * Pathlookup is not working because forwarding tables are not provided
 * Can't add Meraki device into snapshot (refresh works)
-* Limited snapshot - Meraki tasks will be always downloaded
-* MX firewall uplink ports - not possible to determine if traffic load balancing is enabled and/or which port is primary and backup
+* Limited snapshot -- Meraki tasks will be always downloaded
+* MX firewall uplink ports -- not possible to determine if traffic load balancing is enabled and/or which port is primary and backup

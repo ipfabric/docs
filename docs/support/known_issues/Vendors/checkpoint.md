@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known affected issues for Check Point and how to fix them.
+description: This page describes known issues with Check Point and how to fix them.
 ---
 
 # Check Point
@@ -22,7 +22,7 @@ description: IP Fabric describes known affected issues for Check Point and how t
 
 - **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors
   API** in the IP Fabric GUI: In case that base URL points to a multi-domain
-  server address, domains have to be specified
+  server address, domains must be specified
 
 ## Identity Awareness support
 
@@ -49,9 +49,9 @@ IP Fabric uses the `ipf_pdp monitor all` command to collect information about ac
 
     Ensure that the predefined `fwm` extended command is also enabled for discovery. For more information, see the section below.
 
-## Required Permissions For Successful Discovery Over CLI
+## Required Permissions for Successful Discovery Over CLI
 
-To successfully discover a Check Point Gateway, correct role have to be
+To successfully discover a Check Point Gateway, a correct role must be
 assigned to a user. IPF requires role features set as read-only, except
 of "Virtual-System" where read-write is needed (only if VSX firewalls
 are in your network, otherwise read-only is enough).
@@ -67,7 +67,7 @@ are in your network, otherwise read-only is enough).
 3.  Click **Add**, fill in the name. In the **Features** tab select all items
     and mark them as **Read-Only**. These permissions from the **Extended Commands** tab are needed (only if Gaia acts as a management server): `fwm` and `ipf_pdp`.
 
-4.  If you have VSX firewall in your network, you have to set
+4.  If you have VSX firewall in your network, you must set
     **Virtual-System** feature to **Read-Write** (we call `set
 virtual-system \<ID>` to switch to proper virtual system). This
     allows IPF just to change context and can’t be used for anything
@@ -77,6 +77,6 @@ virtual-system \<ID>` to switch to proper virtual system). This
 
 !!! info
 
-    Not all the features are needed for IPF. But as we will add support of new features, it can change. List of currently required features for minimal working setup (IPF 4.0, Gaia R81):
+    Not all the features are needed for IPF. But as we will add support for new features, it can change. List of currently required features for minimal working setup (IPF 4.0, Gaia R81):
 
     > Advanced VRRP, ARP, BGP, Cluster, Display Configuration, Domain Name, Host Name, Management Interface, Netflow Export, Network Interfaces, Network Management, NTP, OSPF, Route, Routing Monitor, SNMP, System Configuration, Virtual-System, VRRP, VSX.

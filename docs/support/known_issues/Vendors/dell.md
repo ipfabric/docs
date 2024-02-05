@@ -1,5 +1,5 @@
 ---
-description: This section defines problems with Dell devices and how to fix them.
+description: This page describes known issues with Dell and how to fix them.
 ---
 
 # Dell

@@ -2,7 +2,7 @@
 description: If two full backups are present in the backup directory, this article should help you get the backup restore working again.
 ---
 
-# Restore is not working when 2 full backups are present
+# Restore Is Not Working When 2 Full Backups Are Present
 
 When two full backups exist in the backup directory:
 

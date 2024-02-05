@@ -18,7 +18,7 @@ Security notifications affecting the IP Fabric solution published according to o
 
 The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.
 
-This affects particularly customer having an internet facing IP Fabric instance.
+This affects particularly customers who have an internet-facing IP Fabric instance.
 
 ### Workaround
 
@@ -39,7 +39,7 @@ Currently, upgrading IP Fabric will overwrite the nginx files, leading to the pr
     /etc/nginx/sites-enabled/ipf-nimpee-update:	listen 8443 ssl http2;
     ```
 
-- Edit each file to remove the `http2`. You can either do this manually or use the following command:
+- Edit each file to remove the `http2` string. You can either do this manually or use the following command:
 
     ```bash
     sudo sed -i 's/ http2//' /etc/nginx/sites-enabled/*
@@ -75,6 +75,6 @@ Tokens issued in the web app are accepted without proper validation. Using that,
 | -------- | --------------------- | ----------- |
 | High     | 5.0.0, 5.0.1 or 5.0.2 | 6.0.1       |
 
-Users can create an API token with RBAC properties that the token is not authorised for.
+Users can create an API token with RBAC properties that the token is not authorized for.
 
-An API token can be generated that allows unauthorised collection of network data or modification of IP Fabric system settings.
+An API token can be generated that allows unauthorized collection of network data or modification of IP Fabric system settings.

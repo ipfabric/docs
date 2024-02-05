@@ -1,5 +1,5 @@
 ---
-description: IP Fabric describes known affected issues for Arista and how to fix them.
+description: This page describes known issues with Arista and how to fix them.
 ---
 
 # Arista
@@ -38,7 +38,7 @@ but could possibly affect other versions.
 
 **Temporary Fix**: Remove the unused VLAN from the configuration using the `no vlan #` command.
 
-**Permanent Fix**: Unknown. Waiting for response from Arista.
+**Permanent Fix**: Unknown. Waiting for a response from Arista.
 
 ## Wrong E2E Path Lookups due to bug in EOS which assigns the same STP ID to different interfaces
 

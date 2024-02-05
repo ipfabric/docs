@@ -4,7 +4,7 @@ description: SSH client not received any data for last xx ms! errors in Connecti
 
 # Connectivity Report -- `SSH client not received any data for last xx ms!`
 
-If you encounter this error message while running discovery, it means that the SSH client has not received any data from the network device for a certain period of time. This can be caused by various factors, such as:
+If you encounter this error message while running discovery, it means that the SSH client has not received any data from the network device for a certain period. This can be caused by various factors, such as:
 
 - Slow response from network devices due to high CPU or memory usage, configuration issues, or network errors.
 
@@ -12,7 +12,7 @@ If you encounter this error message while running discovery, it means that the S
 
 - Discovery services being overloaded with other tasks and prevent the SSH client from sending or receiving data.
 
-## How To Improve The Performance Of Discovery Services
+## How to Improve the Performance of Discovery Services
 
 There are some ways to improve the performance of discovery services and reduce the occurrence of this error message. Some of them are:
 
@@ -24,4 +24,4 @@ Contact the Support or Solution Architect team for changes in the discovery serv
 
 We are actively searching for not optimized tasks that can cause the discovery services to be stuck and prevent them from processing SSH data. We appreciate your feedback and cooperation in reporting any issues you encounter with our discovery services.
 
-If you are having an extensive number of these error messages, please contact us through our support portal. We will investigate the issue and provide you with a solution as soon as possible.
+If you have an extensive number of these error messages, please contact us through our support portal. We will investigate the issue and provide you with a solution as soon as possible.
