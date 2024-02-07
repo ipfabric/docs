@@ -1,9 +1,9 @@
 variables:
-  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i \"${CI_PROJECT_DIR}/.ssh/gitlab-ci\""
+  GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no -i "${CI_PROJECT_DIR}/.ssh/gitlab-ci"'
   GIT_STRATEGY: clone
   VALE_RELEASE: "https://github.com/errata-ai/vale/releases/download/v2.15.5/vale_2.15.5_Linux_64-bit.tar.gz"
 
-image: 
+image:
   name: registry.gitlab.com/ip-fabric/documentation/docs
   pull_policy: always
 
@@ -47,6 +47,15 @@ strict_build_mr:
     expire_in: 1 week
     paths:
       - temp_multirepo/
+
+markdownlint:
+  stage: test
+  only:
+    - merge_requests
+  image: registry.gitlab.com/pipeline-components/markdownlint-cli2:latest
+  allow_failure: true
+  script:
+    - markdownlint-cli2 "docs/**/*.md"
 
 vale_mr:
   stage: test
