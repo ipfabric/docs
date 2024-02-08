@@ -39,8 +39,6 @@ description: IP Fabric describes general known affected issues that may occur in
   an "insufficient resources" failure. In such a case, verify resources
   on the status page and retry in several minutes.
 
-- Switching site separation to RegEx can cause issues.
-
 ## Duplicate IP detection
 
 - Anycast IP addresses are reported as duplicate addresses.
