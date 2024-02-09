@@ -4,7 +4,7 @@ description: On this page, we explain the IP Fabric licensing concept.
 
 # Licensing
 
-IP Fabric has a straightforward licensing concept. For every physical or virtual device in the network, except wireless access points, one license is used.
+IP Fabric has a straightforward licensing concept. One license is consumed for every physical or virtual device in the network, excluding wireless access points.
 
 For example:
 
@@ -22,17 +22,17 @@ For example:
 
 ### Release 4.4.0
 
-From version `4.4.0`, every device (virtual or physical) will consume one license. This now applies to devices where information is collected via CLI or API. The only exception is wireless access points, which don't consume any licenses.
+Starting from version `4.4.0`, every device (virtual or physical) will consume one license. This now applies to devices where information is collected via CLI or API. The only exception is wireless access points, which do not consume any licenses.
 
 This change in licensing will affect the following vendors:
 
 * SD-WAN -- Versa, Viptela, Silver Peak
 * Wireless access points -- Meraki, Juniper MIST
-* Cloud Infrastructure -- AWS, Azure
+* Cloud infrastructure -- AWS, Azure
 
 ### Releases <= 4.3.x
 
-For versions `4.3.x` or older, every device (virtual or physical) with information collected via CLI will consume one license. Any devices with information collected via API would _not_ consume a license. Examples of API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless (Meraki) and cloud infrastructure (AWS).
+For versions `4.3.x` or older, every device (virtual or physical) with information collected via CLI will consume one license. Any devices with information collected via API would _not_ consume a license. Examples of API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless (Meraki), and cloud infrastructure (AWS).
 
 ## Expired License
 

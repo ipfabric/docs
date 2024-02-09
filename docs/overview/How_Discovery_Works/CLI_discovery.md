@@ -1,5 +1,5 @@
 ---
-description: Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and collecting the current state of network protocols and technologies.
+description: Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.
 ---
 
 # How CLI Discovery Works
@@ -10,18 +10,18 @@ Discovery creates a snapshot of the network, finding all active network infrastr
 
 The process is controlled with the **Start discovery** and **Stop discovery** buttons in the **Discovery Snapshot** section of the IP Fabric web UI.
 
-![Start discovery](cli_discovery/start.png) ![Stop discovery](cli_discovery/stop.png)
+![Start discovery button](cli_discovery/start.png) ![Stop discovery button](cli_discovery/stop.png)
 
 You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
---> Create Snapshots Periodically** to automatically run a network discovery in
+--> Create Snapshots Periodically** to automatically run a network discovery at
 periodic intervals or at a specific time. We recommend performing a network
 discovery at least once a day to capture any network changes.
 
 ## Connectivity Report
 
-A connection to every attempted address either succeeds or is recorded in the Connectivity Report
+A connection to every attempted address either succeeds or is recorded in the **Connectivity Report**:
 
-![Connectivity Report](cli_discovery/connectivity_report.png)
+![Connectivity Report button](cli_discovery/connectivity_report.png)
 
 which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.
 
@@ -38,18 +38,18 @@ The selected number of megabits per second also controls the number of simultane
 
 Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to log in to the default gateway and to responders of ICMP probes returning from the traceroute to the `10.0.0.0` network address.
 
-![discovery process](cli_discovery/discovery.png)
+![Discovery process schema](cli_discovery/discovery.png)
 
 After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
 
 This is how the discovery process continues after a successful connection to a network device:
 
-1.  IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.
-2.  IP Fabric tries to connect to a next-hop device from the routing table.
-3.  IP Fabric uses the device's ARP table to find hosts and other network devices it can connect to with the help of the **OUI** table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**).
-4.  Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.
+1. IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.
+2. IP Fabric tries to connect to a next-hop device from the routing table.
+3. IP Fabric uses the device's ARP table to find hosts and other network devices it can connect to with the help of the **OUI** table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**).
+4. Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.
 
-Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data is timestamped at the reading time and the timestamps are used to calculate the rate of change for each element.
+Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data are timestamped at the reading time, and the timestamps are used to calculate the rate of change for each element.
 
 Discovery also computes network topology and cross-technology dependencies by using network graph traversals of upstream and downstream paths. A topology for each protocol is computed separately.
 
@@ -59,12 +59,11 @@ The spanning-tree domain is a topology of contiguously connected spanning-tree i
 
 The routing domain is a topology of contiguously connected forwarding hops and signifies a Layer 3 failure domain in the case of a cascading Layer 3 failure.
 
-
 ## Already Discovered IP Address Behavior
 
-If the IP Fabric discovery process resolves an IP address which is an interface of already discovered device, it won't even attempt to connect to the IP address resolved.
+If the IP Fabric discovery process resolves an IP address which is an interface of an already discovered device, it won't even attempt to connect to the IP address resolved.
 
-There's another check in the flow, which connects to the IP address and starts to collect basic data, it executes `show inventory` and its variants on other vendors, collects the serial number and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.
+There's another check in the flow, which connects to the IP address and starts to collect basic data, it executes `show inventory` and its variants on other vendors, collects the serial number, and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.
 
 ```mermaid
 flowchart TD
@@ -72,9 +71,9 @@ flowchart TD
     
     AlreadyDiscoveredDevice -->|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
     AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
-    CollectsSN --> ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in queue.]]
+    CollectsSN --> ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in the queue.]]
 
-    ComparesSN --> AlreadyInQueue{Is the device already\nin Discovery queue?}
+    ComparesSN --> AlreadyInQueue{Is the device already\nin the Discovery queue?}
     AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
     AlreadyInQueue -->|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
     
@@ -83,10 +82,10 @@ flowchart TD
     style IPFWontConnect fill:#dd3300
 ```
 
-You can see the results of the process in **Discovery Snapshot --> Connectivity Report**.
+You can see the results of the process in **Discovery Snapshot --> Connectivity Report**:
 
-![Connectivity Report](cli_discovery/already_discovered_or_in_queue.png)
+![Discovery Connectivity Report table](cli_discovery/already_discovered_or_in_queue.png)
 
-!!! Tip "Deliberate duplicate IPs"
+!!! Tip "Deliberate Duplicate IPs"
 
     You can override this behavior with a feature flag (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) if you use the same IP ranges in different VRFs within your management network. Contact [Support](../../support/index.md) for more information.

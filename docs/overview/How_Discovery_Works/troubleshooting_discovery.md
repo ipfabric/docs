@@ -1,5 +1,5 @@
 ---
-description: Documentation on most commonly seen discovery issues and how to resolve them.
+description: This page describes the most commonly seen discovery issues and how to resolve them.
 ---
 
 # Troubleshooting Discovery
@@ -66,7 +66,7 @@ use in other snapshots.
   return to normal.
 
 - If you have removed devices from your network, IP Fabric will still try to
-  connect to them because the IP addresses are defined as seeds in this
+  connect to them, because the IP addresses are defined as seeds in this
   Discovery History table. To speed up discovery, you could delete stale records.
   You can also filter on **Last discovery time** and delete records older than X
   months.
@@ -87,14 +87,14 @@ Fabric will not try to connect to and discover the device.
 The **exclude list** is a great way to exclude networks managed by a different
 department or perhaps vendors or devices that IP Fabric does not currently support.
 For instance, a customer had discovery hanging due to it trying to log in to a
-terminal server which IP Fabric could not understand; once added to the exclude list,
+terminal server, which IP Fabric could not understand; once added to the exclude list,
 the discovery completed successfully.
 
 !!! important
 
     Do not confuse the include list with the seed list. The include list will only
-    try to discover an IP if it is found through the Discovery task or the
-    IP is in the seeds. Also note IP Fabric does not do any ICMP pings to find
+    try to discover an IP address if it is found through the Discovery task or the
+    IP address is in the seeds. Also note that IP Fabric does not do any ICMP pings to find
     hosts, so having a `/16` here will not send massive amounts of pings.
 
 ### Discovery tasks settings
@@ -173,7 +173,7 @@ of `0.0.0.0/0`.
     that you have `Use for configuration management` set on the proper usernames.
 
 Further information can be located
-at [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
+in [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
 ## Troubleshooting Missing Devices
 
@@ -196,36 +196,37 @@ require elevated or `admin` profiles to pull all data.
 
 ![Unmanaged Neighbors](troubleshooting/unmanaged_neighbors.png)
 
-This is the best table to start as not only you see the local host and
-interface names, but also the remote hostname, interface name, and remote IP.
+This is the best table to start with because it not only shows the local host
+and interface names but also provides the remote hostname, interface name, and
+remote IP address.
 Since devices can connect to multiple other devices, there can be duplicate
 remote hostnames in this list.
 
-You can export this view to CSV and remove duplicate hostnames to get a unique
-list of devices. For instance, in this demo, we see a total of 59 unmanaged
+You can export this view to CSV and remove duplicate hostnames to obtain a unique
+list of devices. For instance, in this demo, we observe a total of 59 unmanaged
 neighbors, but only 40 unique remote hostnames.
 
 #### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail
 
 ![Unmanaged Neighbors Detail](troubleshooting/unmanaged_neighbors_detail.png)
 
-This table shows you unmanaged neighbors based on many protocols and has a built-in
-default intent check for you.
+This table displays unmanaged neighbors based on various protocols and includes
+a built-in default intent check for you.
 
 - <span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP
   neighbors
-  (`cdp|lldp|mndp`). This does not provide you with the remote hostname which is
+  (`cdp|lldp|mndp`). However, it does not provide the remote hostname, which is
   why it is recommended to look at this table second.
 
 - <span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior
   Gateway Protocols
   (`eigrp|ospf|rip|isis|pim|vxlan|cef`). It is specified as such because if you
-  have a neighbor adjacency with an iGP, it is assumed it is under the control of
+  have a neighbor adjacency with an iGP, it is assumed to be under the control of
   your network.
 
   !!! tip
 
-      Check this table for help with locating rogue devices in your network.
+      Check this table for assistance with locating rogue devices in your network.
 
 - <span style="color: blue;">BLUE</span>: Is the default rule if the protocol
   does not match any other regex.
@@ -236,7 +237,7 @@ default intent check for you.
 ### Auditing Using an External Network Management System
 
 Perhaps you would like to audit IP Fabric with an NMS (or vice versa). This can
-be done as all the tables can return the data in CSV format via the UI or JSON
+be done, as all the tables can return the data in CSV format via the UI or JSON
 using the API. This would perhaps help you find other missing devices IP Fabric
 could not discover.
 
@@ -256,20 +257,20 @@ could not discover.
     in to any IP address found during the discovery tasks processes. This
     value could be a loopback, management, physical, or virtual interface.
     Auditing your external NMS will need extra care as in many cases, the
-    IPs will not match.
+    IP addresses will not match.
 
     One solution is to export your NMS inventory to Excel and the
     **Technology --> Addressing --> Managed IP** table to CSV and then perform
-    vlookups between the two datasets. Since the **Managed IP** contains all
+    vlookups between the two datasets. Since the **Managed IP** table contains all
     the IP addresses found on devices, the NMS data should find a match.
 
     Another option is to use the device's Serial Number. Serial numbers are
-    not always unique and there is a chance of overlap, so please consider this.
+    not always unique, and there is a chance of overlap, so please consider this.
 
 !!! Note "Note on Serial Numbers"
 
     IP Fabric records two serial numbers for a device. The column named
-    `Serial Number` is the actual hardware serial number of the device which
+    `Serial Number` is the actual hardware serial number of the device, which
     is why it is labeled as `snHw` in the API.
 
     The column named `Unique serial number` is an IP Fabric-unique identifier
@@ -290,19 +291,19 @@ Network Management System, this is where you would start your troubleshooting
 process.
 
 The most common reason why a new installation of IP Fabric will not connect is
-due to the `connect ECONNREFUSED XX.XX.XX.XX:22` error which signifies the
+due to the `connect ECONNREFUSED XX.XX.XX.XX:22` error, which signifies that the
 traffic is being blocked by an ACL or firewall. This is why it is recommended
 to have IP Fabric in your management subnet, which is already allowed for remote
-access to devices, so you do not have to re-configure all your ACLs. Another
+access to devices, so you do not have to reconfigure all your ACLs. Another
 option is to use a jumphost as described
-at [Jumphost](../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md).
+in [Jumphost](../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost.md).
 
 Another common error is due to authentication or authorization errors. Please
 ensure that the configured username has the correct permissions. There is also
-[a list of CLI commands](https://matrix.ipfabric.io) used which can help ensure
+[a list of CLI commands](https://matrix.ipfabric.io) used, which can help ensure
 authorization is correct.
 
-If you find other errors, you can refer to
+If you encounter other errors, you can refer to
 [Connectivity report - Type of Error](common_problems/connectivity_report.md)
 and the CLI output of the device is usually helpful as well.
 
@@ -311,12 +312,12 @@ Architect or open a ticket following
 the [Technical Support](../../support/index.md) instructions.
 
 Finally, another option for testing devices is to log in to the IP Fabric CLI
-using the `osadmin` account and manually trying SSH'ing into your devices,
+using the `osadmin` account and manually trying to SSH into your devices,
 preferably using the username and password the system was configured to use. If
 you cannot open a connection, this is due to an external reason.
 
 Further information can be found
-at [No Devices Discovered](common_problems/no-devices-discovered.md).
+in [No Devices Discovered](common_problems/no-devices-discovered.md).
 
 ## Troubleshooting Configuration Management
 
@@ -331,13 +332,13 @@ Management** list.
 !!! example
 
     - **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create
-      Snapshots Periodically** is set to create snapshots every day at 6AM.
+      Snapshots Periodically** is set to create snapshots every day at 6 AM.
 
     - **Settings --> Configuration Management --> Schedule** is set to
-      create device configuration backups every day at 11PM.
+      create device configuration backups every day at 11 PM.
 
-    - The new device will be found at 6AM, but since its configuration backup is
-      scheduled for 11PM, you will need to wait until the next day to be sure
+    - The new device will be found at 6 AM, but since its configuration backup is
+      scheduled for 11 PM, you will need to wait until the next day to be sure
       that its configuration is pulled.
 
 !!! tip

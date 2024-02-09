@@ -1,5 +1,5 @@
 ---
-description: This will guide you through installing IP Fabric in your environment.
+description: This page will guide you through installing IP Fabric in your environment.
 ---
 
 # Quick Start Installation Guide
@@ -19,7 +19,7 @@ Please reference [Operational Requirements](../overview/index.md#operational-req
 
 ## Images
 
-IP Fabric Images can be found on our [Releases Page](https://releases.ipfabric.io/ipfabric/current/).
+IP Fabric images can be found on our [Releases Page](https://releases.ipfabric.io/ipfabric/current/).
 Access is restricted to registered customers only.
 
 !!! note "Image Access"
@@ -53,22 +53,22 @@ instructions.
 
 The Boot Wizard needs to be completed during the IP Fabric virtual machine's
 initial deployment. The Boot Wizard introduces the configuration of basic
-network parameters, including time zone, NTP, IP address, DNS or Proxy settings.
+network parameters, including time zone, NTP, IP address, DNS, or Proxy settings.
 
-Follow instructions at [CLI Boot Wizard](02-boot_wizard.md)
+Follow the instructions in [First Boot Wizard](02-boot_wizard.md).
 
 ## Accessing User Interface
 
 Prior to accessing the main IP Fabric UI, you will need to create an `admin`
-account in the System Administration
-page: [Creating The First IP Fabric User](03-access_ui.md#accessing-the-main-user-interface)
+account in the System Administration UI:
+[Creating the First IP Fabric User](03-access_ui.md#accessing-the-main-user-interface)
 
 ## Applying IP Fabric License
 
 To access the main IP Fabric user interface, a license must be uploaded to IP
 Fabric. Please contact your salesperson for the license key and follow the
-instructions at
-[Accessing The Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
+instructions in
+[Accessing the Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
 
 !!! important "Licensing"
 
@@ -76,16 +76,16 @@ instructions at
 
 ## Configuration
 
-The simplest way for first time configuration of IP Fabric is with the
-[Configuration Wizard](04-configuration_wizard.md) which will guide you through
+The simplest way for the first-time configuration of IP Fabric is with the
+[Configuration Wizard](04-configuration_wizard.md), which will guide you through
 the process of adding device credentials, discovery seeds, networks to
-include/exclude in discovery and Advanced CLI settings.
+include/exclude in discovery, and Advanced CLI settings.
 
-If you would like to change these settings after initial configuration,
+If you would like to change these settings after the initial configuration,
 please see [IP Fabric Settings](../IP_Fabric_Settings/configuration_management.md). Alternatively, there
 are also
-[snapshot-specific settings](../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings)
-which are useful for testing small changes prior to changing Global Settings.
+[snapshot-specific settings](../IP_Fabric_GUI/discovery_snapshot.md#snapshot-specific-settings),
+which are useful for testing small changes prior to changing the Global Settings.
 
 !!! note "Site Separation"
 
@@ -97,17 +97,17 @@ which are useful for testing small changes prior to changing Global Settings.
     discovered device would belong to using the "regex tester" on the **Site
     Separation** page.
 
-    Please see documentation located at [Site Separation](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
+    Please see the documentation in [Site Separation](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.md).
 
 ## Discovery
 
 If you followed the **Configuration Wizard**, the last step would ask you to
 **Start Discovery**. You can also start discoveries by using the
 [Discovery Snapshot](../IP_Fabric_GUI/discovery_snapshot.md) menu. This is
-where the magic of IP Fabric happens where it will go out to your devices, find
+where the magic of IP Fabric happens, where it will go out to your devices, find
 neighbors, and collect information.
 
-Here are some great resources for explaining the Discovery process:
+Here are some great resources for explaining the discovery process:
 
 - [How CLI Discovery Works](../overview/How_Discovery_Works/CLI_discovery.md)
 - [How API Discovery Works](../overview/How_Discovery_Works/API_discovery.md)
@@ -118,7 +118,7 @@ Finally, please read through the
 [Troubleshooting Discovery](../overview/How_Discovery_Works/troubleshooting_discovery.md)
 page that will guide you through the most common issues seen during the initial
 discovery process. It explains how discovery works, how to view logs, and which
-settings to change to include (or exclude) devices among other useful tips.
+settings to change to include (or exclude) devices, among other useful tips.
 
 If you are working with a Solution Architect in a Proof-of-Concept deployment,
-they will also work with you in troubleshooting any issues that may arise.
+they will help you with troubleshooting any issues that may arise.

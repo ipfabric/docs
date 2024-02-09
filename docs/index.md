@@ -7,11 +7,11 @@ description: On the IP Fabric documentation portal, you can find all relevant pr
 On this portal, you can find all relevant product documents and information,
 including release notes, documentation, and API documentation, among others. If
 you are unable to find what you are looking for on this portal, please contact
-us at [info@ipfabric.io](mailto:info@ipfabric.io) or contact your account
+us at [info@ipfabric.io](mailto:info@ipfabric.io) or reach out to your account
 representative.
 
-IP Fabric supports a wide range of network equipments from various vendors. For
-a complete overview of supported devices and features, please visit
+IP Fabric supports a wide range of network equipment from various vendors. For a
+complete overview of supported devices and features, please visit
 [matrix.ipfabric.io](https://matrix.ipfabric.io).
 
 Not looking for technical documentation but want to know more about what IP
@@ -28,4 +28,4 @@ Network via:
 - Intent-Based Networking
 
 And we demonstrate how Network Assurance, in general, and IP Fabric,
-specifically, serves as the navigator throughout that journey.
+specifically, navigate you throughout that journey.

@@ -10,19 +10,19 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Snapshot**
 
-: The data stored on an IPF appliance represents the inventory, configuration, state and topology of a group of network devices within a given time window. It can be:
+: The data stored on an IP Fabric appliance represents the inventory, configuration, state, and topology of a group of network devices within a given time window. It can be:
 
-    - **Scheduled** or **ad hoc** -- settings in the IPF UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.
+    - **Scheduled** or **ad hoc** -- Settings in the IP Fabric UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.
 
-    - **Full** or **partial** -- the snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted, and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a **full** snapshot. If a **partial** snapshot is required, only containing certain devices -- perhaps to validate a change outcome -- it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.
+    - **Full** or **partial** -- The snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted, and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a **full** snapshot. If a **partial** snapshot is required, only containing certain devices -- perhaps to validate a change outcome -- it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.
 
-    - **Refreshed** -- if the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config and state data from that device by selecting it/them and refreshing the snapshot.
+    - **Refreshed** -- If the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config, and state data from that device by selecting it/them and refreshing the snapshot.
 
 **Model**
 
 : Model can refer to:
 
-    - (n) the database representation of network object inventory, configuration, state and topology that is contained within an IP Fabric snapshot
+    - (n) the database representation of network object inventory, configuration, state, and topology contained within an IP Fabric snapshot
 
     - (v) the actions involved in the second phase of Snapshot Creation
 
@@ -32,19 +32,19 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Discovery**
 
-: The process of crawling out through the network -- device by device or using APIs to gather from a controller -- collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of devices then assemble data ready for use in the second stage.
+: The process of crawling through the network -- device by device or using APIs to gather from a controller -- collecting raw configuration and state data, then parsing, normalizing, and structuring the data ready to process. IP Fabric uses internal tasks to gather the appropriate data from different types of devices and then assembles the data ready for use in the second stage.
 
 **Modelling**
 
-: The mechanism of processing the device data from the Discovery phase is to insert them into the database model, and to uncover and document groupings, classifications and relationships between devices.
+: The mechanism of processing the device data from the Discovery phase is to insert them into the database model and to uncover and document groupings, classifications, and relationships between devices.
 
 **Assurance Engine**
 
-: Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently, IPF introduced an option to disable elements of this phase to speed up release of the data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
+: Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently, IP Fabric introduced an option to disable elements of this phase to speed up the release of the data to the API. Settings to enable and disable Assurance Engine processes are described in [the Assurance Engine documentation section](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine.md).
 
   !!! note
 
-      Disabling these options will affect the UI display of data in IP Fabric -- diagrams, path lookups, changes between snapshots and/or intent rules may not be displayed as a result.
+      Disabling these options will affect the UI display of data in IP Fabric -- diagrams, path lookups, changes between snapshots, and/or intent rules may not be displayed as a result.
 
 **Device Authentication**
 
@@ -60,23 +60,23 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Crawl**
 
-: The process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.
+: The process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find out how an unfamiliar network was interconnected.
 
 **OUI**
 
 : The fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the `Organizationally Unique Identifier` and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.
 
-**Excluded subnets**
+**Excluded Subnets**
 
 : The network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet, it will not be accessed but highlighted in the platform as an "unmanaged device".
 
-**Included subnets**
+**Included Subnets**
 
-: The network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound discovery.
+: The network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound the discovery.
 
 **Scan**
 
-: This is a "brute force" process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery, but it is extremely inefficient, often resulting in triggering security alerts in a customer's network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.
+: This is a "brute force" process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery, but it is extremely inefficient, often resulting in triggering security alerts in a customer's network monitoring tools. IP Fabric does not use this method by default but if enabled, it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.
 
 **Jumphosts**
 
@@ -92,48 +92,48 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Site Separation**
 
-: This is a special use case for IP Fabric attributes -- it is possible to create rules to assign devices with a `siteName` attribute (based for example on a regex search of `hostname`). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.
+: This is a special use case for IP Fabric attributes -- it is possible to create rules to assign devices with a `siteName` attribute (based, for example, on a regex search of `hostname`). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.
 
 ## User Interface
 
 **Inventory** and **Technology Tables**
 
-: The area of the product UI that presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.
+: This area of the product UI presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.
 
-**Intent Rules** (aka Intent Verification Rules, Intent Checks)
+**Intent Rules** (aka **Intent Verification Rules**, **Intent Checks**)
 
-: User-configurable rules to provide a measure of compliance for values in the database with customer's intent. For example -- NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. Displayed above the related table in the UI.
+: User-configurable rules to provide a measure of compliance for values in the database with the customer's intent. For example -- NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. These rules are displayed above the related table in the UI.
 
 **Dashboard**
 
-: User-configurable reporting view of the collection of intent rules -- includes the RAG representation, radar graphs, bar charts or graphs representing change over time.
+: This user-configurable reporting view displays the collection of intent rules, including the RAG representation, radar graphs, bar charts, or graphs representing change over time.
 
 **Device Explorer**
 
-: UI feature of IP Fabric that shows a tabbed view of all the data that is collected for a given device. Tabs can be added for each technology that is deployed and then the filtered data from the master technology table is displayed, along with a link to retrieve the raw data as collected from the device.
+: This UI feature of IP Fabric shows a tabbed view of all the data collected for a given device. Tabs can be added for each deployed technology, and then the filtered data from the master technology table is displayed, along with a link to retrieve the raw data as collected from the device.
 
 **Path Inspector**
 
-: UI feature of IP Fabric used to give the details of behavior of individual nodes or edges in the path lookup simulation. Contains headers for the simulated ingress and egress packets, and a decision table representing how the node's forwarding and policy behavior.
+: This UI feature of IP Fabric is used to give the details of behavior of individual nodes or edges in the path lookup simulation. It contains headers for the simulated ingress and egress packets and a decision table representing how the node's forwarding and policy behavior.
 
 **Diagram Canvas**
 
-: The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes are able to be placed according to user preference, and the Visualization Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapse or hide certain nodes and further layout options, the ability to save and load layouts to be shared with other users of the platform, refresh snapshots for selected nodes, export the output to SVG or PNG, and display the API information used to generate the output on the canvas.
+: The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes can be placed according to user preference, and the Visualization Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapsing or hiding certain nodes, additional layout options, saving and loading layouts to be shared with other platform users, refreshing snapshots for selected nodes, exporting output to SVG or PNG, and displaying API information used to generate the output on the canvas.
 
 **Management Tables**
 
 : Management tables present three areas of the product:
 
-    - Device **configuration** collection and diffs between them
+    - Device **configuration** collection and diffs between them.
 
-    - **Changes** -- allowing the user to compare inventory, managed IP addresses and connectivity matrix between snapshots
+    - **Changes** -- Allowing the user to compare inventory, managed IP addresses, and connectivity matrix between snapshots.
 
-    - **Discovery History** -- information about devices that have been previously discovered in earlier snapshots
+    - **Discovery History** -- Information about devices previously discovered in earlier snapshots.
 
 **Reports**
 
-: The Reports menu houses two sample report types which are created by the Assurance Engine phase of snapshot creation:
+: The Reports menu houses two sample report types created by the Assurance Engine phase of snapshot creation:
 
-    - **Network Analysis Report** -- A Word document that contains all the details from the intent check dashboard.
+    - **Network Analysis Report** -- A Word document containing all the details from the intent check dashboard.
 
-    - **Site Low Level Design** -- a Word document created for each site in a snapshot containing connectivity matrix, VLANs, IP addressing, diagrams and so on.
+    - **Site Low Level Design** -- A Word document created for each site in a snapshot containing connectivity matrix, VLANs, IP addressing, diagrams, and so on.

@@ -1,12 +1,11 @@
 ---
-description: After logging in for the first time, the Configuration Wizard will guide you throughout the initial setup to start the first discovery.
+description: Once you log in for the first time, you will see the Configuration Wizard. It will guide you through the initial setup to start the first discovery.
 ---
 
 # Configuration Wizard
 
-After logging in for the first time, you will be presented with the
-**Configuration Wizard**. It will guide you throughout the initial setup to
-start the first discovery.
+Once you log in for the first time, you will see the **Configuration Wizard**.
+It will guide you through the initial setup to start the first discovery.
 
 ![Configuration Wizard](wizard.png)
 
