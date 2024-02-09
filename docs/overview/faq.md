@@ -24,7 +24,7 @@ A: The IP Fabric platform collects data from the network regularly to provide 
 
 A: Monitoring tools are still crucial to your network operations processes; raised alerts and alarms will notify engineers when there is something to be assessed or investigated.
 
-Network analytics will give you the ability to compare past states of the network, compare changes, analyze the full route cause of issues to prevent future repeats of the same issues, and improve efficiency of troubleshooting processes through an automated toolset.
+Network analytics will give you the ability to compare past states of the network, compare changes, analyze the full root cause of issues to prevent future repeats of the same issues, and improve efficiency of troubleshooting processes through an automated toolset.
 
 ## Installation
 
