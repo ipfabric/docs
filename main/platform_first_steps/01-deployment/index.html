@@ -941,7 +941,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1022,7 +1022,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -11914,86 +11914,92 @@ documentation.
 
 
 <h1 id="deploying-the-ip-fabric-virtual-machine-vm">Deploying the IP Fabric Virtual Machine (VM)</h1>
-<p>All virtual appliance images are available at  <a href="https://releases.ipfabric.io/ipfabric/#current">https://releases.ipfabric.io/ipfabric/#current</a>. Access is restricted to registered customers only. Please contact our <a href="mailto:sales@ipfabric.io">sales representative</a> if you are interested in a trial of IP Fabric.</p>
+<p>All VM images are available at  <a href="https://releases.ipfabric.io/ipfabric/#current">https://releases.ipfabric.io/ipfabric/#current</a>. Access is restricted to registered customers only. Please contact our <a href="mailto:sales@ipfabric.io">sales representative</a> if you are interested in a trial of IP Fabric.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Please remember that IP Fabric uses CLI access (SSH or telnet) to connect to devices for collecting data. It&rsquo;s important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
+<p>Please remember that IP Fabric uses CLI access (SSH or Telnet) to connect to devices for collecting data. It&rsquo;s important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
 </div>
 <h2 id="deploying-on-vmware-ova-virtual-machine">Deploying on VMware OVA Virtual Machine</h2>
 <ol>
-<li>Deploy OVA to your vSphere environment as described at <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA
-   Template</a>.</li>
-<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../overview/#operational-requirements">operational requirements section</a>.<ol>
+<li>Deploy the OVA to your vSphere environment as described in
+   <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html">Deploy an OVF or OVA Template</a>.</li>
+<li><a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-4AB8C63C-61EA-4202-8158-D9903E04A0ED.html">Edit VM settings</a> and adjust according to your network size as described in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.<ol>
 <li>Change CPU count.</li>
 <li>Change memory size.</li>
-<li><a href="../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a></li>
+<li><a href="../../System_Administration/increase_disk_space/">Add a new empty virtual disk or resize the main system disk</a>.</li>
 </ol>
 </li>
-<li>Power on VM and <a href="#complete-first-time-boot-wizard">complete Boot Wizard</a>.</li>
+<li>Power on the VM and <a href="#complete-first-time-boot-wizard">complete the First Boot Wizard</a>.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Invalid OVF checksum algorithm: SHA256</p>
-<p>Importing OVA on older vSphere/ESXi hosts may error stating the OVF checksum
-is invalid.  Please see <a href="../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">this documentation</a>
-on how to resolve this.</p>
+<p>Importing the OVA on older vSphere/ESXi hosts may result in an error stating that the OVF checksum
+is invalid. Please refer to <a href="../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">this documentation</a>
+on how to resolve the issue.</p>
 </div>
 <h2 id="deploying-on-hyper-v-virtual-machine">Deploying on Hyper-V Virtual Machine</h2>
 <p>The <code>qcow2</code> disk image file can be converted to different formats.
 Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
 <ol>
-<li>Download <code>ipfabric-*.qcow2</code> from the official source.</li>
-<li>Convert <code>qcow2</code> image to <code>VHDX</code> (Be sure to change the filenames in the command examples below.)<ul>
+<li>
+<p>Download <code>ipfabric-*.qcow2</code> from the official source.</p>
+</li>
+<li>
+<p>Convert the <code>qcow2</code> image to <code>VHDX</code>. (Be sure to change the filenames in the command examples below.)</p>
+<ul>
 <li>Windows instructions:<ol>
-<li>Download <a href="https://cloudbase.it/qemu-img-windows/">QEMU disk image utility for Windows</a></li>
-<li>Unzip <code>qemu-img-windows</code></li>
-<li>Run <code>qemu-img.exe convert ipfabric-&lt;*&gt;.qcow2 -O vhdx -o subformat=dynamic ipfabric-&lt;*&gt;.vhdx</code></li>
+<li>Download the <a href="https://cloudbase.it/qemu-img-windows/">QEMU disk image utility for Windows</a>.</li>
+<li>Unzip <code>qemu-img-windows</code>.</li>
+<li>Run: <code>qemu-img.exe convert ipfabric-&lt;*&gt;.qcow2 -O vhdx -o subformat=dynamic ipfabric-&lt;*&gt;.vhdx</code></li>
 </ol>
 </li>
+</ul>
+<ul>
 <li>Linux instructions:<ol>
-<li>Install <code>qemu-utils</code> <code>sudo apt install qemu-utils</code></li>
-<li>Convert file: <code>qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-&lt;*&gt;.qcow2 ipfabric-&lt;*&gt;.vhdx</code></li>
+<li>Install <code>qemu-utils</code>: <code>sudo apt install qemu-utils</code></li>
+<li>Run: <code>qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-&lt;*&gt;.qcow2 ipfabric-&lt;*&gt;.vhdx</code></li>
 </ol>
 </li>
 </ul>
 </li>
 <li>
-<p>Create New Hyper-V Virtual Machine and Specify Name and Location</p>
-<p><a class="glightbox" href="../hyperv_create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Create" src="../hyperv_create.png" /></a></p>
+<p>Create a new Hyper-V virtual machine and specify its <strong>Name</strong> and <strong>Location</strong>:</p>
+<p><a class="glightbox" href="../hyperv_create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Name and Location" src="../hyperv_create.png" /></a></p>
 </li>
 <li>
-<p>Specify Generation as <code>Generation 1</code></p>
-<p><a class="glightbox" href="../hyperv_generation.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Generation" src="../hyperv_generation.png" /></a></p>
+<p>In the <strong>Specify Generation</strong> step, select <code>Generation 1</code>:</p>
+<p><a class="glightbox" href="../hyperv_generation.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Generation" src="../hyperv_generation.png" /></a></p>
 </li>
 <li>
-<p>Assign Memory (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>)</p>
-<p><a class="glightbox" href="../hyperv_memory.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Memory" src="../hyperv_memory.png" /></a></p>
+<p>Assign memory. (Check requirements in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.)</p>
+<p><a class="glightbox" href="../hyperv_memory.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Assign Memory" src="../hyperv_memory.png" /></a></p>
 </li>
 <li>
-<p>Configure Networking</p>
-<p><a class="glightbox" href="../hyperv_networking.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Networking" src="../hyperv_networking.png" /></a></p>
+<p>Configure networking:</p>
+<p><a class="glightbox" href="../hyperv_networking.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Configure Networking" src="../hyperv_networking.png" /></a></p>
 </li>
 <li>
-<p>Connect the Virtual Hard Disk</p>
-<p><a class="glightbox" href="../hyperv_harddisk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Hard Disk" src="../hyperv_harddisk.png" /></a></p>
+<p>Connect a virtual hard disk:</p>
+<p><a class="glightbox" href="../hyperv_harddisk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Connect Virtual Hard Disk" src="../hyperv_harddisk.png" /></a></p>
 </li>
 <li>
-<p>Verify the Summary and Finish</p>
-<p><a class="glightbox" href="../hyperv_summary.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Summary" src="../hyperv_summary.png" /></a></p>
+<p>Verify the Summary and click <strong>Finish</strong>:</p>
+<p><a class="glightbox" href="../hyperv_summary.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Summary" src="../hyperv_summary.png" /></a></p>
 </li>
 <li>
-<p>Wait for the VM to be created</p>
+<p>Wait for the VM to be created.</p>
 </li>
 <li>
-<p>Edit the VM CPU settings (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>)</p>
-<p><a class="glightbox" href="../hyperv_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Settings" src="../hyperv_settings.png" /></a></p>
-<p><a class="glightbox" href="../hyperv_settings_cpu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Settings CPU" src="../hyperv_settings_cpu.png" /></a></p>
+<p>Edit the VM CPU settings. (Check requirements in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.)</p>
+<p><a class="glightbox" href="../hyperv_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings" src="../hyperv_settings.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_settings_cpu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings - Hardware - Processor" src="../hyperv_settings_cpu.png" /></a></p>
 </li>
 <li>
-<p>Optionally increase Hard Disk Size based on <a href="../../overview/#operational-requirements">operational requirements section</a></p>
-<p>1. <a href="../../System_Administration/increase_disk_space/#increase-disk-space-for-hyper-v">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
+<p>Optionally, increase the disk size based on the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.</p>
+<p>- <a href="../../System_Administration/increase_disk_space/#increase-disk-space-for-hyper-v">Extend the system disk or add a new empty virtual disk</a> if necessary.</p>
 </li>
 <li>
-<p>Close the VM Settings window</p>
+<p>Close the VM Settings window.</p>
 </li>
 <li>
 <p>Start the VM.</p>
@@ -12002,22 +12008,24 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 <h2 id="deploying-a-virtual-machine-to-nutanix">Deploying a Virtual Machine to Nutanix</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VM’s, below instructions are based on the same image as used at <a href="#deploying-on-vmware-ova-virtual-machine">VMware deployment section</a>.</p>
+<p>The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VMs, the instructions below are based on the same image as used in the <a href="#deploying-on-vmware-ova-virtual-machine">VMware deployment</a> section.</p>
 </div>
 <ol>
-<li>Download the <code>ipfabric-*-.OVA</code> file from official source.</li>
 <li>
-<p>Extract the previously downloaded OVA file using 7-zip or any similar software. The structure of extracted files should look like below</p>
+<p>Download the <code>ipfabric-*-.OVA</code> file from the official source.</p>
+</li>
+<li>
+<p>Extract the downloaded OVA file using 7-Zip or any similar software. The structure of extracted files should look like below:</p>
 <p><a class="glightbox" href="../unzip_ova.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Unzip OVA" src="../unzip_ova.png" /></a></p>
 </li>
 <li>
-<p>Import <code>.vmdk</code> files to Nutanix hypervisor and follow Nutanix&rsquo; official documentation &ndash; <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
+<p>Import the <code>.vmdk</code> files to the Nutanix hypervisor and follow Nutanix&rsquo;s official documentation &ndash; <a href="https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY">Nutanix import OVA</a> and <a href="https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613">Quick tip how to deploy a VM from OVF to AHV</a>.</p>
 </li>
 <li>
-<p>Edit VM hardware settings and adjust according to the network environment size (check requirements in <a href="../../overview/#operational-requirements">operational requirements section</a>).</p>
+<p>Edit the VM hardware settings and adjust according to the network environment size. (Check requirements in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.)</p>
 <ol>
-<li>Change CPU count</li>
-<li>Change memory size</li>
+<li>Change CPU count.</li>
+<li>Change memory size.</li>
 <li><a href="../../System_Administration/increase_disk_space/">Extend the system disk or add a new empty virtual disk</a> if necessary.</li>
 </ol>
 </li>
@@ -12026,27 +12034,27 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 </ol>
 <h2 id="deploying-a-virtual-machine-on-kvm">Deploying a Virtual Machine on KVM</h2>
-<p>We have currently the limitation that drives need to be <code>/dev/sdx</code>. Usually, Linux hypervisors are using the <code>virtio-blk</code> driver which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation, use the <code>virtio-scsi</code> as drive controller.</p>
+<p>We currently have the limitation that drives need to be <code>/dev/sdx</code>. Usually, Linux hypervisors use the <code>virtio-blk</code> driver, which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation, use <code>virtio-scsi</code> as the drive controller.</p>
 <ol>
-<li>Download <code>qcow2</code> system disk to your KVM hypervisor.</li>
 <li>
-<p>Resize the <code>qcow2</code> data-disk that corresponds to <a href="../../overview/#operational-requirements">your network needs</a> if necessary. Use the following command:</p>
+<p>Download <code>qcow2</code> system disk to your KVM hypervisor.</p>
+</li>
+<li>
+<p>Resize the <code>qcow2</code> data disk so it corresponds to <a href="../../overview/#operational-requirements">your network&rsquo;s needs</a> if necessary. Use the following command:</p>
 <div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>resize<span class="w"> </span>ipfabric-disk1.qcow2<span class="w"> </span>100G<span class="w"> </span><span class="c1"># (up to 1000G for 20 000 devices)</span>
 </code></pre></div>
 </li>
 <li>
-<p>Deploy the VM to your hypervisor with the virt-install utility by issuing the following command (chose CPU and RAM size according to the size of your network):</p>
+<p>Deploy the VM to your hypervisor with the <code>virt-install</code> utility by issuing the following command (chose CPU and RAM size according to the size of your network):</p>
 <div class="highlight"><pre><span></span><code>virt-install<span class="w"> </span>--name<span class="o">=</span>IP_Fabric<span class="w"> </span>--disk<span class="w"> </span><span class="nv">path</span><span class="o">=</span>&lt;path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>disk&gt;.qcow2<span class="w"> </span>--graphics<span class="w"> </span>spice<span class="w"> </span>--vcpu<span class="o">=</span><span class="m">4</span><span class="w"> </span>--ram<span class="o">=</span><span class="m">16384</span><span class="w"> </span>--network<span class="w"> </span><span class="nv">bridge</span><span class="o">=</span>virbr0<span class="w"> </span>--import
 </code></pre></div>
+<ul>
+<li>This command deploys a new virtual machine with the name <code>IP_Fabric</code>, system <code>qcow2</code> disk, 4 CPU cores, 16 GB of RAM, and connects the VM to the internet through the <code>virtbr0</code> interface. (If your machine has a different bridge interface name or you want to connect it to the internet directly through the device network card, you need to change the <code>--network</code> parameter.)</li>
+<li>This command also starts up the VM.</li>
+</ul>
 </li>
 <li>
-<p>This command deploys a new virtual machine with the name <code>IP_Fabric</code>, system <code>qcow2</code> disk, 4 CPU cores, 16GB of RAM and will connect VM to the internet through the <code>virtbr0</code> interface (if your machine has a different bridge interface name or you want to connect it straight through the device network card to the internet you need to change the <code>--network</code> parameter).</p>
-</li>
-<li>
-<p>This command also starts up the VM.</p>
-</li>
-<li>
-<p>Additionally, you can <a href="../../System_Administration/increase_disk_space/">create and add a new empty virtual disk if needed</a>.</p>
+<p>Additionally, you can <a href="../../System_Administration/increase_disk_space/">create and add a new empty virtual disk</a> if needed.</p>
 </li>
 </ol>
 <h2 id="deploying-a-virtual-machine-on-virtualbox">Deploying a Virtual Machine on VirtualBox</h2>
@@ -12064,22 +12072,22 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 <li>
 <p>In the next step of the <strong>Import Virtual Appliance</strong> guide:</p>
-<p>- set CPU and RAM as per the <a href="../../overview/#hardware-requirements">hardware requirements</a> for your use-case
-  - set the Network Adapter to <code>Paravirtualized Network (virtio-net)</code>
-  - keep the <code>Import hard drives as VDI</code> option checked for importing the disk image in the default VirtualBox format, otherwise the disk image will be imported as VDMK (the default format of VMware)</p>
+<p>1. Set <strong>CPU</strong> and <strong>RAM</strong> as per the <a href="../../overview/#hardware-requirements">hardware requirements</a> for your use-case.</p>
+<p>2 Set the <strong>Network Adapter</strong> to <code>Paravirtualized Network (virtio-net)</code>.</p>
+<p>3. Keep the <code>Import hard drives as VDI</code> option checked for importing the disk image in the default VirtualBox format. (Otherwise, the disk image will be imported as VDMK, the default format of VMware.)</p>
 <p><a class="glightbox" href="../virtualbox_import-virtual-appliance-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance - Appliance Settings" src="../virtualbox_import-virtual-appliance-2.png" /></a></p>
 </li>
 <li>
 <p>Right-click the newly created virtual machine and select its <strong>Settings&hellip;</strong></p>
 </li>
 <li>
-<p>In the <strong>System</strong> section, select <code>ICH9</code> as the Chipset:</p>
+<p>In the <strong>System</strong> section, select <code>ICH9</code> as the <strong>Chipset</strong>:</p>
 <p><a class="glightbox" href="../virtualbox_vm-settings_system.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - System" src="../virtualbox_vm-settings_system.png" /></a></p>
 </li>
 <li>
-<p>In the <strong>Display</strong> section, select <code>VMSVGA</code> as the Graphics Controller:</p>
+<p>In the <strong>Display</strong> section, select <code>VMSVGA</code> as the <strong>Graphics Controller</strong>:</p>
 <p><a class="glightbox" href="../virtualbox_vm-settings_display.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display" src="../virtualbox_vm-settings_display.png" /></a></p>
-<p>- or to what VirtualBox suggests when an invalid Graphics Controller is selected:</p>
+<p>- Or to what VirtualBox suggests when an invalid Graphics Controller is selected:</p>
 <p><a class="glightbox" href="../virtualbox_vm-settings_display-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display - Invalid settings detected" src="../virtualbox_vm-settings_display-2.png" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -12087,41 +12095,41 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </div>
 </li>
 <li>
-<p>In the <strong>Storage</strong> section, select <code>virtio-scsi</code> as the Controller Type:</p>
+<p>In the <strong>Storage</strong> section, select <code>virtio-scsi</code> as the Controller <strong>Type</strong>:</p>
 <p><a class="glightbox" href="../virtualbox_vm-settings_storage.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Storage" src="../virtualbox_vm-settings_storage.png" /></a></p>
 </li>
 <li>
-<p>In the <strong>Network</strong> section, select <code>Bridged Adapter</code> and re-check in <strong>Advanced</strong> that the Adapter Type is <code>Paravirtualized Network (virtio-net)</code>:</p>
+<p>In the <strong>Network</strong> section, select <code>Bridged Adapter</code> and re-check in <strong>Advanced</strong> that the <strong>Adapter Type</strong> is <code>Paravirtualized Network (virtio-net)</code>:</p>
 <p><a class="glightbox" href="../virtualbox_vm-settings_network.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Network" src="../virtualbox_vm-settings_network.png" /></a></p>
 </li>
 <li>
-<p>Start the virtual machine.</p>
+<p>Start the VM.</p>
 </li>
 </ol>
 <h2 id="deploying-a-virtual-machine-on-microsoft-azure">Deploying a Virtual Machine on Microsoft Azure</h2>
 <ol>
 <li>
-<p>Log in to the Microsoft Azure portal and create a resource group</p>
+<p>Log in to the Microsoft Azure portal and create a resource group.</p>
 <p>In the <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group">Microsoft Azure documentation</a>, a <strong>resource group</strong> is defined as:</p>
 <blockquote>
 <p>&hellip; a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.</p>
 </blockquote>
-<p>Please follow the instructions at <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups">Create resource groups</a>.</p>
+<p>Please follow the instructions in <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups">Create resource groups</a>.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-01-Create-resource-group.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Resource group" src="../azure-imgs/azure-01-Create-resource-group.png" /></a></p>
 </li>
 <li>
-<p>Create a storage account for IP Fabric</p>
+<p>Create a storage account for IP Fabric.</p>
 <p>A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager overview</a> and <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1">Creating Storage Account</a>.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-02-Create-storage-account.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage account" src="../azure-imgs/azure-02-Create-storage-account.png" /></a></p>
 </li>
 <li>
-<p>Create a Storage Blob container</p>
+<p>Create a Storage Blob container.</p>
 <p>Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Introduction to Azure Blob storage</a>.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-03-storage-blob-container.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage blob container" src="../azure-imgs/azure-03-storage-blob-container.png" /></a></p>
 </li>
 <li>
-<p>Convert qcow2 image to VHD</p>
-<p>IP Fabric provides the qcow2 image. For converting qcow2 to VHD, you may for instance use a utility from <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image is then:</p>
+<p>Convert the <code>qcow2</code> image to VHD.</p>
+<p>IP Fabric provides the <code>qcow2</code> image. For converting <code>qcow2</code> to VHD, you may for instance use a utility from <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image is then:</p>
 <div class="highlight"><pre><span></span><code>qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-6-3-1+1.qcow2 ipfabric-6-3-1+1.vhd
 </code></pre></div>
 <div class="admonition important">
@@ -12136,7 +12144,7 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </div>
 </li>
 <li>
-<p>Upload VHD image to storage account</p>
+<p>Upload the VHD image to the storage account.</p>
 <p>To <a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">upload the VHD image</a>, you need to download and install the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.
  The image needs to be uploaded to the previously created Blob container.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
@@ -12149,12 +12157,12 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </div>
 </li>
 <li>
-<p>Create image from VHD</p>
+<p>Create an image from VHD.</p>
 <p>Creating a managed image in Azure is as simple as loading the necessary files. The <a href="https://learn.microsoft.com/en-gb/azure/virtual-machines/capture-image-resource">Create a legacy managed image of a generalized VM in Azure</a> documentation section contains all the needed clues.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-05-create-image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create an Image from VHD" src="../azure-imgs/azure-05-create-image.png" /></a></p>
 </li>
 <li>
-<p>Deploy VM from image</p>
+<p>Deploy a VM from the image.</p>
 <p>Ensure that you follow the <a href="../../overview/#hardware-requirements">resource requirements matrix</a> when sizing the virtual machine on Azure.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -12184,7 +12192,7 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     

@@ -1181,7 +1181,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1262,7 +1262,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -12242,7 +12242,7 @@ use in other snapshots.</p>
 </ul>
 <ul>
 <li>If you have removed devices from your network, IP Fabric will still try to
-  connect to them because the IP addresses are defined as seeds in this
+  connect to them, because the IP addresses are defined as seeds in this
   Discovery History table. To speed up discovery, you could delete stale records.
   You can also filter on <strong>Last discovery time</strong> and delete records older than X
   months.</li>
@@ -12259,13 +12259,13 @@ Fabric will not try to connect to and discover the device.</p>
 <p>The <strong>exclude list</strong> is a great way to exclude networks managed by a different
 department or perhaps vendors or devices that IP Fabric does not currently support.
 For instance, a customer had discovery hanging due to it trying to log in to a
-terminal server which IP Fabric could not understand; once added to the exclude list,
+terminal server, which IP Fabric could not understand; once added to the exclude list,
 the discovery completed successfully.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Do not confuse the include list with the seed list. The include list will only
-try to discover an IP if it is found through the Discovery task or the
-IP is in the seeds. Also note IP Fabric does not do any ICMP pings to find
+try to discover an IP address if it is found through the Discovery task or the
+IP address is in the seeds. Also note that IP Fabric does not do any ICMP pings to find
 hosts, so having a <code>/16</code> here will not send massive amounts of pings.</p>
 </div>
 <h3 id="discovery-tasks-settings">Discovery tasks settings</h3>
@@ -12334,7 +12334,7 @@ of <code>0.0.0.0/0</code>.</p>
 that you have <code>Use for configuration management</code> set on the proper usernames.</p>
 </div>
 <p>Further information can be located
-at <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/">Device Credentials</a>.</p>
+in <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/">Device Credentials</a>.</p>
 <h2 id="troubleshooting-missing-devices">Troubleshooting Missing Devices</h2>
 <p>There can be numerous reasons why IP Fabric did not discover a
 device from Day 0: incorrectly configured devices, AAA outage, insufficient
@@ -12349,21 +12349,22 @@ require elevated or <code>admin</code> profiles to pull all data.</p>
 <h3 id="technology-tables">Technology Tables</h3>
 <h4 id="cdplldp-unmanaged-neighbors">CDP/LLDP &rarr; Unmanaged neighbors</h4>
 <p><a class="glightbox" href="../troubleshooting/unmanaged_neighbors.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Unmanaged Neighbors" src="../troubleshooting/unmanaged_neighbors.png" /></a></p>
-<p>This is the best table to start as not only you see the local host and
-interface names, but also the remote hostname, interface name, and remote IP.
+<p>This is the best table to start with because it not only shows the local host
+and interface names but also provides the remote hostname, interface name, and
+remote IP address.
 Since devices can connect to multiple other devices, there can be duplicate
 remote hostnames in this list.</p>
-<p>You can export this view to CSV and remove duplicate hostnames to get a unique
-list of devices. For instance, in this demo, we see a total of 59 unmanaged
+<p>You can export this view to CSV and remove duplicate hostnames to obtain a unique
+list of devices. For instance, in this demo, we observe a total of 59 unmanaged
 neighbors, but only 40 unique remote hostnames.</p>
 <h4 id="interfaces-connectivity-matrix-unmanaged-neighbors-detail">Interfaces &rarr; Connectivity matrix &rarr; Unmanaged Neighbors Detail</h4>
 <p><a class="glightbox" href="../troubleshooting/unmanaged_neighbors_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Unmanaged Neighbors Detail" src="../troubleshooting/unmanaged_neighbors_detail.png" /></a></p>
-<p>This table shows you unmanaged neighbors based on many protocols and has a built-in
-default intent check for you.</p>
+<p>This table displays unmanaged neighbors based on various protocols and includes
+a built-in default intent check for you.</p>
 <ul>
 <li><span style="color:red;">RED</span>: Provides a list of unmanaged CDP/LLDP
   neighbors
-  (<code>cdp|lldp|mndp</code>). This does not provide you with the remote hostname which is
+  (<code>cdp|lldp|mndp</code>). However, it does not provide the remote hostname, which is
   why it is recommended to look at this table second.</li>
 </ul>
 <ul>
@@ -12371,11 +12372,11 @@ default intent check for you.</p>
 <p><span style="color: orange;">AMBER</span>: Is a list of unmanaged Interior
   Gateway Protocols
   (<code>eigrp|ospf|rip|isis|pim|vxlan|cef</code>). It is specified as such because if you
-  have a neighbor adjacency with an iGP, it is assumed it is under the control of
+  have a neighbor adjacency with an iGP, it is assumed to be under the control of
   your network.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Check this table for help with locating rogue devices in your network.</p>
+<p>Check this table for assistance with locating rogue devices in your network.</p>
 </div>
 </li>
 </ul>
@@ -12389,7 +12390,7 @@ default intent check for you.</p>
 </ul>
 <h3 id="auditing-using-an-external-network-management-system">Auditing Using an External Network Management System</h3>
 <p>Perhaps you would like to audit IP Fabric with an NMS (or vice versa). This can
-be done as all the tables can return the data in CSV format via the UI or JSON
+be done, as all the tables can return the data in CSV format via the UI or JSON
 using the API. This would perhaps help you find other missing devices IP Fabric
 could not discover.</p>
 <div class="admonition tip">
@@ -12407,18 +12408,18 @@ the API column name <code>loginIp</code>.</p>
 in to any IP address found during the discovery tasks processes. This
 value could be a loopback, management, physical, or virtual interface.
 Auditing your external NMS will need extra care as in many cases, the
-IPs will not match.</p>
+IP addresses will not match.</p>
 <p>One solution is to export your NMS inventory to Excel and the
 <strong>Technology &rarr; Addressing &rarr; Managed IP</strong> table to CSV and then perform
-vlookups between the two datasets. Since the <strong>Managed IP</strong> contains all
+vlookups between the two datasets. Since the <strong>Managed IP</strong> table contains all
 the IP addresses found on devices, the NMS data should find a match.</p>
 <p>Another option is to use the device&rsquo;s Serial Number. Serial numbers are
-not always unique and there is a chance of overlap, so please consider this.</p>
+not always unique, and there is a chance of overlap, so please consider this.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note on Serial Numbers</p>
 <p>IP Fabric records two serial numbers for a device. The column named
-<code>Serial Number</code> is the actual hardware serial number of the device which
+<code>Serial Number</code> is the actual hardware serial number of the device, which
 is why it is labeled as <code>snHw</code> in the API.</p>
 <p>The column named <code>Unique serial number</code> is an IP Fabric-unique identifier
 and primary key for the device. This column is labeled as <code>sn</code> in the API, so it is
@@ -12435,28 +12436,28 @@ IP addresses from the unmanaged neighbor tables above or perhaps an external
 Network Management System, this is where you would start your troubleshooting
 process.</p>
 <p>The most common reason why a new installation of IP Fabric will not connect is
-due to the <code>connect ECONNREFUSED XX.XX.XX.XX:22</code> error which signifies the
+due to the <code>connect ECONNREFUSED XX.XX.XX.XX:22</code> error, which signifies that the
 traffic is being blocked by an ACL or firewall. This is why it is recommended
 to have IP Fabric in your management subnet, which is already allowed for remote
-access to devices, so you do not have to re-configure all your ACLs. Another
+access to devices, so you do not have to reconfigure all your ACLs. Another
 option is to use a jumphost as described
-at <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/">Jumphost</a>.</p>
+in <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/">Jumphost</a>.</p>
 <p>Another common error is due to authentication or authorization errors. Please
 ensure that the configured username has the correct permissions. There is also
-<a href="https://matrix.ipfabric.io">a list of CLI commands</a> used which can help ensure
+<a href="https://matrix.ipfabric.io">a list of CLI commands</a> used, which can help ensure
 authorization is correct.</p>
-<p>If you find other errors, you can refer to
+<p>If you encounter other errors, you can refer to
 <a href="../common_problems/connectivity_report/">Connectivity report - Type of Error</a>
 and the CLI output of the device is usually helpful as well.</p>
 <p>If you need further assistance, please feel free to reach out to your IP Fabric Solution
 Architect or open a ticket following
 the <a href="../../../support/">Technical Support</a> instructions.</p>
 <p>Finally, another option for testing devices is to log in to the IP Fabric CLI
-using the <code>osadmin</code> account and manually trying SSH&rsquo;ing into your devices,
+using the <code>osadmin</code> account and manually trying to SSH into your devices,
 preferably using the username and password the system was configured to use. If
 you cannot open a connection, this is due to an external reason.</p>
 <p>Further information can be found
-at <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
+in <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
 <h2 id="troubleshooting-configuration-management">Troubleshooting Configuration Management</h2>
 <p><a class="glightbox" href="../troubleshooting/configuration_management.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configuration Management" src="../troubleshooting/configuration_management.png" /></a></p>
 <p><strong>Configuration Management</strong> is a separate process from discovery. First, a device
@@ -12468,15 +12469,15 @@ Management</strong> list.</p>
 <p class="admonition-title">Example</p>
 <ul>
 <li><strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention &rarr; Create
-  Snapshots Periodically</strong> is set to create snapshots every day at 6AM.</li>
+  Snapshots Periodically</strong> is set to create snapshots every day at 6 AM.</li>
 </ul>
 <ul>
 <li><strong>Settings &rarr; Configuration Management &rarr; Schedule</strong> is set to
-  create device configuration backups every day at 11PM.</li>
+  create device configuration backups every day at 11 PM.</li>
 </ul>
 <ul>
-<li>The new device will be found at 6AM, but since its configuration backup is
-  scheduled for 11PM, you will need to wait until the next day to be sure
+<li>The new device will be found at 6 AM, but since its configuration backup is
+  scheduled for 11 PM, you will need to wait until the next day to be sure
   that its configuration is pulled.</li>
 </ul>
 </div>
@@ -12507,7 +12508,7 @@ configuration management, then configurations will not be backed up.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     
@@ -12602,13 +12603,13 @@ configuration management, then configurations will not be backed up.</p>
         
         
           
-          <a href="../common_problems/connectivity_report/" class="md-footer__link md-footer__link--next" aria-label="Next: Connectivity Report - Type of Error">
+          <a href="../common_problems/connectivity_report/" class="md-footer__link md-footer__link--next" aria-label="Next: Connectivity Report &amp;ndash; Type of Error">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Connectivity Report - Type of Error
+                Connectivity Report &ndash; Type of Error
               </div>
             </div>
             <div class="md-footer__button md-icon">

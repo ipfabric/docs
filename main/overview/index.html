@@ -1109,7 +1109,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1190,7 +1190,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -12026,21 +12026,21 @@ documentation.
 
 
 <h1 id="ip-fabric-overview">IP Fabric Overview</h1>
-<p>The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and detailed engineering visibility. The lightweight discovery capabilities (through SSH or Telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable a cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and on network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.</p>
+<p>The IP Fabric network infrastructure management platform provides on-demand network discovery, advanced analytics, and in-depth engineering visibility. The lightweight discovery capabilities (through SSH or Telnet) quickly detect the current network state, including detailed data for each address and port. A network model of gathered data reconstructs the topologies for each switching and routing protocol to enable cross-technology analysis of upstream and downstream relationships. Dependencies and dependents are calculated for each network element, allowing analysis to represent each aspect of the network in the context of productivity impact on the downstream hosts and network devices, while the immediate productivity impact of performance and capacity is calculated for each user and every element.</p>
 <h2 id="architecture">Architecture</h2>
-<p>A distributed system of micro-service components resides within the IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any sign of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port <code>443</code> of the VM&rsquo;s IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.</p>
+<p>A distributed system of microservice components resides within the IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security, and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any signs of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port <code>443</code> of the VM&rsquo;s IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.</p>
 <p><a class="glightbox" href="architecture.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric Architecture" src="architecture.png" /></a></p>
 <h2 id="operational-requirements">Operational Requirements</h2>
 <h3 id="browser-requirements">Browser Requirements</h3>
 <p>To access your IP Fabric GUI, we recommend using a browser version that is no older than one year. We support most major browsers, including:</p>
 <ul>
-<li>Google Chrome and Chromium-based browsers (e.g. Brave, Opera, Vivaldi, Edge)</li>
-<li>Mozilla Firefox and maintained forks (e.g. LibreWolf)</li>
+<li>Google Chrome and Chromium-based browsers (e.g., Brave, Opera, Vivaldi, Edge)</li>
+<li>Mozilla Firefox and its maintained forks (e.g., LibreWolf)</li>
 <li>Safari</li>
 </ul>
-<p>For seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
+<p>For a seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs in at least 4 parallel threads, but scheduling can handle operations even down to a single thread. IP Fabric uses around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space and an additional 50 MB per device for the network.</p>
+<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space, with an additional 50 MB per network device.</p>
 <p>The minimum requirements are:</p>
 <table>
 <thead>
@@ -12058,7 +12058,7 @@ documentation.
 </tr>
 </tbody>
 </table>
-<p>Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and a disk space overhead for IP Fabric and system logs.</p>
+<p>Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and disk space overhead for IP Fabric and system logs.</p>
 <p>For networks with medium complexity and many access points (&gt;50%) or networks with basic complexity (simple dynamic routing, few or no VRFs, small sites):</p>
 <table>
 <thead>
@@ -12196,30 +12196,29 @@ documentation.
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled.</p>
-<p>For 500 devices 180 GB, for 1 000 devices 200 GB and so on.</p>
+<p>If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 180 GB for 500 devices, 200 GB for 1 000 devices, and so on.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Additional resources requirements</p>
-<p>To make sure you have enough resources, please use the following formulas:</p>
+<p>To ensure you have sufficient resources, please use the following formulas:</p>
 <p>Data <strong>disk storage</strong> requires 1 MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots =&gt; 135 GB data storage).</p>
-<p><strong>Memory</strong> requires 5 MB of RAM per device per each <strong>loaded</strong> snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) =&gt; 18 GB RAM).</p>
+<p><strong>Memory</strong> requires 5 MB of RAM per device for each <strong>loaded</strong> snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) =&gt; 18 GB RAM).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The recommended hardware resources may not allow running the most demanding graph traversal functions. These functions may require a sizable memory pool to complete successfully.</p>
+<p>The recommended hardware resources may not allow for running the most demanding graph traversal functions. These functions may require a sizable memory pool to complete successfully.</p>
 </div>
 <h3 id="supported-virtualization-platforms">Supported Virtualization Platforms</h3>
-<p>We recommend using either VMware ESXi or vSphere platform to deploy the IP Fabric appliance.</p>
-<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. To get the best performance, we strongly recommend using the latest ESXi with the <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and the <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
+<p>We recommend using either VMware ESXi or vSphere to deploy the IP Fabric appliance.</p>
+<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. To achieve the best performance, we strongly recommend using the latest ESXi with the <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and the <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
 <p>The minimal recommended <code>Virtual Hardware Version</code> is <code>vmx-17</code>, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See <a href="https://kb.vmware.com/s/article/1003746">VMware KB</a> for details.</p>
-<p>If you deploy IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This is because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.</p>
-<p>It might be possible to deploy <code>vmdk</code> on earlier versions of ESXi with some effort. OVA is a tar file, so you can extract <code>.vmdk</code> image and import that directly with recommended hardware requirements.
-Similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html">VMware documentation article</a> with description how to extract <code>ova</code> and import <code>vmdk</code>.</p>
+<p>If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This occurs because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.</p>
+<p>It might be possible to deploy <code>vmdk</code> on earlier versions of ESXi with some effort. Since the OVA is a tar file, you can extract the <code>.vmdk</code> image and import it directly with the recommended hardware requirements.
+A similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html">VMware documentation article</a> provides a description of how to extract <code>ova</code> and import <code>vmdk</code>.</p>
 <p>It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.</p>
 <h3 id="network-connectivity-requirements">Network Connectivity Requirements</h3>
-<p>During the snapshot operations, the user can control network bandwidth limit which never exceeds an aggregate of set bandwidths in any direction to provide an additional safety measure.</p>
-<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. <a href="../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/#setting-up-jumphost">Jumphost server</a> can also be set up and used. (Jumphost server requires an installation of SSH Python version 3.6+.)</p>
+<p>During snapshot operations, you can control the network bandwidth limit, which never exceeds the aggregate of set bandwidths in any direction, providing an additional safety measure.</p>
+<p>IP Fabric should be connected to a network that has direct connectivity to managed devices. A <a href="../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/#setting-up-jumphost">jumphost server</a> can also be set up and used. (A jumphost server requires an installation of SSH Python version 3.6+.)</p>
 <p>Inbound flows:</p>
 <table>
 <thead>
@@ -12247,25 +12246,25 @@ Similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vspher
 <td>443</td>
 <td>&gt; 1024</td>
 <td>TCP</td>
-<td>Network Infrastructure Interaction - API; Support, Updates (Optional)</td>
+<td>Network Infrastructure Interaction &ndash; API; Support, Updates (Optional)</td>
 </tr>
 <tr>
 <td>22</td>
 <td>&gt; 1024</td>
 <td>TCP</td>
-<td>Network Infrastructure Interaction - SSH</td>
+<td>Network Infrastructure Interaction &ndash; SSH</td>
 </tr>
 <tr>
 <td>23</td>
 <td>&gt;1024</td>
 <td>TCP</td>
-<td>Network Infrastructure Interaction - Telnet</td>
+<td>Network Infrastructure Interaction &ndash; Telnet</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>ICMP</td>
-<td>Network Infrastructure Interaction - Traceroute</td>
+<td>Network Infrastructure Interaction &ndash; Traceroute</td>
 </tr>
 </tbody>
 </table>
@@ -12289,40 +12288,40 @@ Similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vspher
 <tr>
 <td>8443</td>
 <td>&gt;1024</td>
-<td>TCP Administrative Interface</td>
-<td></td>
+<td>TCP</td>
+<td>Administrative Interface</td>
 </tr>
 <tr>
 <td>&gt;1024</td>
 <td>443</td>
 <td>TCP</td>
-<td>Network Infrastructure Interaction - API; Technical Support, Updates (Optional)</td>
+<td>Network Infrastructure Interaction &ndash; API; Support, Updates (Optional)</td>
 </tr>
 <tr>
 <td>&gt;1024</td>
 <td>22</td>
 <td>TCP</td>
-<td>Network Infrastructure Interaction - SSH</td>
+<td>Network Infrastructure Interaction &ndash; SSH</td>
 </tr>
 <tr>
 <td>&gt;1024</td>
 <td>23</td>
 <td>TCO</td>
-<td>Network Infrastructure Interaction - Telnet</td>
+<td>Network Infrastructure Interaction &ndash; Telnet</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>ICMP</td>
-<td>Network Infrastructure Interaction - Traceroute</td>
+<td>Network Infrastructure Interaction &ndash; Traceroute</td>
 </tr>
 </tbody>
 </table>
-<p>Internet connectivity is used to check product updates, upgrades, setup support VPN, send error reports, and submit support tickets.</p>
+<p>Internet connectivity is used to check for product updates, perform upgrades, setup the Support VPN, send error reports, and submit support tickets.</p>
 <h3 id="network-access-credentials-requirements">Network Access Credentials Requirements</h3>
 <h4 id="network-device-access">Network Device Access</h4>
-<p>IP Fabric accesses network-infrastructure devices via CLI (command-line interface) using SSH or Telnet. All device interaction is accounted on the platform and only <code>read-only</code> or <code>operator</code> group privilege level 1 credentials are required.</p>
-<p>The following list contains an example of commands used for Cisco IOS:</p>
+<p>IP Fabric accesses network infrastructure devices via CLI (command-line interface) using SSH or Telnet. All device interactions are recorded on the platform, and only <code>read-only</code> or <code>operator</code> group privilege level 1 credentials are required.</p>
+<p>Below are examples of commands used for Cisco IOS:</p>
 <div class="highlight"><pre><span></span><code>terminal length 0
 show version
 show inventory
@@ -12342,7 +12341,7 @@ show standby [brief]
 show vrrp [brief]
 show vlan brief
 </code></pre></div>
-<p>In the beginning, IP Fabric fingerprints the device using the <code>show version</code> command (or equivalent) to identify a vendor and a system version. A <code>terminal length</code> command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.</p>
+<p>At the beginning, IP Fabric fingerprints the device using the <code>show version</code> command (or equivalent) to identify the vendor and system version. A <code>terminal length</code> command is optional but highly recommended, as it greatly improves the speed of the device interaction, reduces the load on the network and the device, and improves collection precision.</p>
 <h4 id="additional-device-access">Additional Device Access</h4>
 <p>Since firewalls do not follow privilege levels, it may be necessary to
 explicitly specify the commands allowed for each user. The following list specifies the exec-mode commands needed for firewall discovery.</p>
@@ -12353,23 +12352,23 @@ show arp
 show context
 terminal pager 0
 </code></pre></div>
-<p>Turning off paging greatly improves the speed of the discovery and allows a terminal pager command, making it highly recommended although not mandatory. The commands can be allowed through the central <code>TACACS</code> or <code>RADIUS</code> access control system, or they can be configured locally on a device. The following example adds the necessary commands to a privilege-1 user:</p>
+<p>Turning off paging greatly improves the speed of discovery and allows a terminal pager command, making it highly recommended although not mandatory. The commands can be allowed through the central <code>TACACS</code> or <code>RADIUS</code> access control system, or they can be configured locally on a device. The following example adds the necessary commands to a privilege-1 user:</p>
 <div class="highlight"><pre><span></span><code>privilege show level 1 mode exec command interface
 privilege show level 1 mode exec command arp
 privilege show level 1 mode exec command route
 privilege show level 1 mode exec command context
 privilege cmd level 1 mode exec command terminal
 </code></pre></div>
-<p>List of all commands used for CLI discovery can be found in this <a href="https://matrix.ipfabric.io">feature/vendor matrix</a>.</p>
+<p>A list of all commands used for CLI discovery can be found in the <a href="https://matrix.ipfabric.io">feature/vendor matrix</a>.</p>
 <h3 id="staging-vs-production-deployment">Staging vs Production Deployment</h3>
-<p>IP Fabric is a complex solution with multiple moving parts. We thoroughly test every release before it is made available to our customers. Testing comprises of the automated unit testing on the code level and automated tests run against various physical and virtual lab environments. These emulate complex networks with many devices from multiple vendors. Despite these efforts, issues can still arise after deploying a new version of IP Fabric to the customer&rsquo;s environment. For example, it is not feasible to replicate the entire network or a combination of particular device models.</p>
-<p>Therefore, we suggest 2-stage deployment of the new IP Fabric releases for complex or critical implementations. The first stage is <em>staging</em> deployment, used to verify the functionality of the new release within the customer&rsquo;s environment.</p>
+<p>IP Fabric is a complex solution with multiple moving parts. We thoroughly test every release before making it available to our customers. Testing comprises automated unit testing at the code level and automated tests run against various physical and virtual lab environments. These environments emulate complex networks with many devices from multiple vendors. Despite these efforts, issues can still arise after deploying a new version of IP Fabric to the customer&rsquo;s environment. For example, it is not feasible to replicate the entire network or a combination of particular device models.</p>
+<p>Therefore, we suggest a 2-stage deployment of new IP Fabric releases for complex or critical implementations. The first stage is a <em>staging</em> deployment, used to verify the functionality of the new release within the customer&rsquo;s environment.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You will need a valid license for the staging deployment. Please contact our sales team to check eligibility for a free complimentary license.</p>
+<p>You will need a valid license for the staging deployment. Please contact our sales team to check your eligibility for a complimentary license.</p>
 </div>
-<p>The second stage is the deployment to the production / live environment. The staging environment&rsquo;s sizing follows the suggestions mentioned above for a standard deployment. We don&rsquo;t provide special staging builds. These are regular production builds, which are just deployed separately not to potentially disrupt the day-to-day use of IP Fabric within the organization.</p>
-<p>We suggest that you make staging as close as possible to the final production environment. The staging environment should discover the same devices as the production (e.g., there is only a limited value if the staging environment &ldquo;sees&rdquo; only 500 network devices, while the whole network consists of thousands of devices). On the other hand, it is perfectly fine to provision the staging environment dynamically if your deployment environment allows it. Also, a typical &ldquo;acceptance test&rdquo; on the staging environment lasts only a couple of days to verify overall functionality.</p>
+<p>The second stage is the deployment to the production/live environment. The staging environment&rsquo;s sizing follows the suggestions mentioned above for a standard deployment. We don&rsquo;t provide special staging builds; these are just regular production builds, which are deployed separately to potentially avoid disrupting the day-to-day use of IP Fabric within the organization.</p>
+<p>We suggest making the staging as close as possible to the final production environment. The staging environment should discover the same devices as the production (e.g., there is only a limited value if the staging environment &ldquo;sees&rdquo; only 500 network devices, while the whole network consists of thousands of devices). On the other hand, it is perfectly fine to provision the staging environment dynamically if your deployment environment allows it. Also, a typical &ldquo;acceptance test&rdquo; on the staging environment lasts only a couple of days to verify overall functionality.</p>
 
 
 
@@ -12390,7 +12389,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     

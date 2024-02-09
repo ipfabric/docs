@@ -1042,7 +1042,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1123,7 +1123,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -11912,14 +11912,14 @@ documentation.
 <h2 id="overview">Overview</h2>
 <p>Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.</p>
 <p>The process is controlled with the <strong>Start discovery</strong> and <strong>Stop discovery</strong> buttons in the <strong>Discovery Snapshot</strong> section of the IP Fabric web UI.</p>
-<p><a class="glightbox" href="../cli_discovery/start.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Start discovery" src="../cli_discovery/start.png" /></a> <a class="glightbox" href="../cli_discovery/stop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stop discovery" src="../cli_discovery/stop.png" /></a></p>
+<p><a class="glightbox" href="../cli_discovery/start.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Start discovery button" src="../cli_discovery/start.png" /></a> <a class="glightbox" href="../cli_discovery/stop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stop discovery button" src="../cli_discovery/stop.png" /></a></p>
 <p>You may configure <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention
-&rarr; Create Snapshots Periodically</strong> to automatically run a network discovery in
+&rarr; Create Snapshots Periodically</strong> to automatically run a network discovery at
 periodic intervals or at a specific time. We recommend performing a network
 discovery at least once a day to capture any network changes.</p>
 <h2 id="connectivity-report">Connectivity Report</h2>
-<p>A connection to every attempted address either succeeds or is recorded in the Connectivity Report</p>
-<p><a class="glightbox" href="../cli_discovery/connectivity_report.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Connectivity Report" src="../cli_discovery/connectivity_report.png" /></a></p>
+<p>A connection to every attempted address either succeeds or is recorded in the <strong>Connectivity Report</strong>:</p>
+<p><a class="glightbox" href="../cli_discovery/connectivity_report.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Connectivity Report button" src="../cli_discovery/connectivity_report.png" /></a></p>
 <p>which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.</p>
 <h2 id="bandwidth-limit">Bandwidth Limit</h2>
 <p>Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.</p>
@@ -11928,7 +11928,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
 <p>The selected number of megabits per second also controls the number of simultaneous connections. Each additional megabit adds 3 parallel sessions.</p>
 <h2 id="discovery-process">Discovery Process</h2>
 <p>Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to log in to the default gateway and to responders of ICMP probes returning from the traceroute to the <code>10.0.0.0</code> network address.</p>
-<p><a class="glightbox" href="../cli_discovery/discovery.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="discovery process" src="../cli_discovery/discovery.png" /></a></p>
+<p><a class="glightbox" href="../cli_discovery/discovery.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery process schema" src="../cli_discovery/discovery.png" /></a></p>
 <p>After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.</p>
 <p>This is how the discovery process continues after a successful connection to a network device:</p>
 <ol>
@@ -11937,32 +11937,32 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
 <li>IP Fabric uses the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of the <strong>OUI</strong> table (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>).</li>
 <li>Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.</li>
 </ol>
-<p>Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data is timestamped at the reading time and the timestamps are used to calculate the rate of change for each element.</p>
+<p>Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data are timestamped at the reading time, and the timestamps are used to calculate the rate of change for each element.</p>
 <p>Discovery also computes network topology and cross-technology dependencies by using network graph traversals of upstream and downstream paths. A topology for each protocol is computed separately.</p>
 <p>A managed network is considered to consist of every discovered device under a coherent administrative domain, as restricted by access credentials, and the full list of devices is available in the inventory.</p>
 <p>The spanning-tree domain is a topology of contiguously connected spanning-tree instances and signifies a Layer 2 failure domain in the case of a cascading Layer 2 failure.</p>
 <p>The routing domain is a topology of contiguously connected forwarding hops and signifies a Layer 3 failure domain in the case of a cascading Layer 3 failure.</p>
 <h2 id="already-discovered-ip-address-behavior">Already Discovered IP Address Behavior</h2>
-<p>If the IP Fabric discovery process resolves an IP address which is an interface of already discovered device, it won&rsquo;t even attempt to connect to the IP address resolved.</p>
-<p>There&rsquo;s another check in the flow, which connects to the IP address and starts to collect basic data, it executes <code>show inventory</code> and its variants on other vendors, collects the serial number and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.</p>
+<p>If the IP Fabric discovery process resolves an IP address which is an interface of an already discovered device, it won&rsquo;t even attempt to connect to the IP address resolved.</p>
+<p>There&rsquo;s another check in the flow, which connects to the IP address and starts to collect basic data, it executes <code>show inventory</code> and its variants on other vendors, collects the serial number, and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.</p>
 <pre class="mermaid"><code>flowchart TD
     IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --&gt; AlreadyDiscoveredDevice{Is the IP address an interface\non an already discovered device?}
 
     AlreadyDiscoveredDevice --&gt;|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
     AlreadyDiscoveredDevice --&gt;|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
-    CollectsSN --&gt; ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in queue.]]
+    CollectsSN --&gt; ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in the queue.]]
 
-    ComparesSN --&gt; AlreadyInQueue{Is the device already\nin Discovery queue?}
+    ComparesSN --&gt; AlreadyInQueue{Is the device already\nin the Discovery queue?}
     AlreadyInQueue --&gt;|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
     AlreadyInQueue --&gt;|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
 
     style IPFDiscovers fill:#33dd00
     style IPFStops fill:#dd3300
     style IPFWontConnect fill:#dd3300</code></pre>
-<p>You can see the results of the process in <strong>Discovery Snapshot &rarr; Connectivity Report</strong>.</p>
-<p><a class="glightbox" href="../cli_discovery/already_discovered_or_in_queue.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Connectivity Report" src="../cli_discovery/already_discovered_or_in_queue.png" /></a></p>
+<p>You can see the results of the process in <strong>Discovery Snapshot &rarr; Connectivity Report</strong>:</p>
+<p><a class="glightbox" href="../cli_discovery/already_discovered_or_in_queue.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Connectivity Report table" src="../cli_discovery/already_discovered_or_in_queue.png" /></a></p>
 <div class="admonition tip">
-<p class="admonition-title">Deliberate duplicate IPs</p>
+<p class="admonition-title">Deliberate Duplicate IPs</p>
 <p>You can override this behavior with a feature flag (<code>SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP</code>) if you use the same IP ranges in different VRFs within your management network. Contact <a href="../../../support/">Support</a> for more information.</p>
 </div>
 
@@ -11985,7 +11985,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     

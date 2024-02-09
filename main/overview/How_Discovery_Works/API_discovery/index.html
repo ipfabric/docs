@@ -1070,7 +1070,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1151,7 +1151,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -11970,12 +11970,11 @@ documentation.
 discovery.</p>
 <p>Please consider connectivity requirements for the platform when planning to add
 cloud or SD-WAN vendors for API discovery.</p>
-<p>The API discovery is not automated and requires manually adding all necessary
+<p>API discovery is not automated and requires manually adding all necessary
 HTTP endpoints to initiate connection to in <strong>Settings &rarr; Discovery &amp; Snapshots
 &rarr; Discovery Settings &rarr; Vendors API</strong>.</p>
-<p>The settings common for all Vendor APIs are described in
-<a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/">Vendors API - Overview</a>.</p>
-<p>List of supported Vendor APIs (the links are to the settings specific for each
+<p>The settings common for all Vendor APIs are described in the <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/">Vendors API Overview</a>.</p>
+<p>List of supported Vendor APIs (the links lead to the settings specific for each
 vendor):</p>
 <ul>
 <li><a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/AWS_Amazon_Web_Services/">AWS</a></li>
@@ -11996,8 +11995,8 @@ vendor):</p>
 </ul>
 <p>All Vendor API clients share the same behaviors described below.</p>
 <h2 id="rate-limiting">Rate Limiting</h2>
-<p>When a Vendor API client requires to apply a rate limiting, it instantiates its
-own rate limiter. Then any request is sent only when the rate limiter has a free
+<p>When a Vendor API client needs to apply rate limiting, it instantiates its own
+rate limiter. Then, any request is sent only when the rate limiter has free
 capacity. The rate limiting is determined by:</p>
 <ul>
 <li>capacity</li>
@@ -12009,50 +12008,49 @@ capacity. The rate limiting is determined by:</p>
 algorithm. The bucket fills up with permissions to send a request at a constant
 rate (the refill rate each refill rate interval). When a client wants to make a
 request, it consumes one token from the bucket. If the bucket is empty, the
-request gets queued until a token becomes available. The bucket has a capacity,
-which limits the burstiness of the requests.</p>
-<p>The rate limiter also cares about accepted requests distribution in time and
-doesn&rsquo;t allow short-term requests spikes. The rate limiter tries to distribute
-all requests equally through time (the refill rate interval) with some random
+request gets queued until a token becomes available. The bucket has a capacity
+that limits the burstiness of the requests.</p>
+<p>The rate limiter also ensures an even distribution of accepted requests over
+time and doesn&rsquo;t allow short-term request spikes. It attempts to distribute all
+requests equally through time (the refill rate interval) with some random
 fluctuation.</p>
 <h2 id="automatic-session-renewal">Automatic Session Renewal</h2>
-<p>If the Vendor API requires the client to log-in, or to create a session and the
-session has a specified expiration, the Vendor API client actively tries to
-renew it. The first attempt is sent at 80% of the session lifetime. If the
-renewal request doesn&rsquo;t succeed, it is repeated while data requests can be sent
-until the session expires.</p>
+<p>If the Vendor API requires the client to log in or to create a session with a
+specified expiration, the Vendor API client actively tries to renew it. The
+first attempt is sent at 80% of the session lifetime. If the renewal request
+doesn&rsquo;t succeed, it is repeated while data requests can be sent until the
+session expires.</p>
 <h2 id="expired-session-detection-and-handling">Expired Session Detection and Handling</h2>
-<p>If the Vendor API requires the client to log-in, or to create a session, the
-Vendor API client creates it and takes care about its timely renewal. Please
-note that there are also some cases when the session can get invalid before its
-expiration. The Vendor API client is aware of that, and it can detect that. When
-such a situation is detected, the session is immediately renewed, and the
-discovery continues.</p>
+<p>If the Vendor API requires the client to log in or to create a session, the
+Vendor API client creates it and takes care of its timely renewal. Note that
+there are cases when the session can become invalid before its expiration. The
+Vendor API client is aware of this and can detect it. When such a situation is
+detected, the session is immediately renewed, and the discovery continues.</p>
 <h2 id="overloaded-server-detection-and-handling">Overloaded Server Detection and Handling</h2>
 <p>Although the discovery process respects the configured rate limiting parameters,
 the discovery traffic is not the only traffic the Vendor API server has to
-serve, so the server can get overloaded. The Vendor API clients are aware of it
-and detect it. When the overloaded server situation is detected, the Vendor API
-client waits some time and sends all unanswered requests again. Vendor API
-clients apply exponential backoff for the wait time. If the overloaded server
-situation is not mitigated for some time, the Vendor API discovery is
-terminated.</p>
+serve, so the server can become overloaded. The Vendor API clients are aware of
+this and can detect it. When the overloaded server situation is detected, the
+Vendor API client waits for some time and sends all unanswered requests again.
+Vendor API clients apply exponential backoff for the wait time. If the
+overloaded server situation is not mitigated for some time, the Vendor API
+discovery is terminated.</p>
 <h2 id="recoverable-network-errors">Recoverable Network Errors</h2>
 <p>Vendor API clients are aware of some recoverable network errors (e.g.,
 <code>ECONNRESET</code>, <code>ECONNABORTED</code>, <code>ECONNREFUSED</code>). When a recoverable network error
-is detected, the request is not immediately rejected but it is resent with
+is detected, the request is not immediately rejected but is resent with
 exponential backoff. If the network error is not mitigated for some time, then
-the request is rejected &ndash; but the Vendor API discovery can continue by
+the request is rejected &ndash; but the Vendor API discovery can continue with
 additional requests.</p>
 <h2 id="vendor-specific-cases">Vendor-Specific Cases</h2>
 <p>Some Vendor APIs have specific situations that are detected and handled to
-increase the probability of a successful discovery.</p>
+increase the probability of successful discovery.</p>
 <h3 id="unreachable-viptela-devices">Unreachable Viptela Devices</h3>
 <p>Sometimes, some Viptela devices are unreachable for a short time. The Viptela
-client is aware of it &ndash; it detects it and repeats the request again to increase
-the probability of a successful discovery. The request for an unreachable device
-is terminated only when it fails more than the configured number of times.
-Whenever that happens, the discovery of other devices can continue.</p>
+client is aware of this &ndash; it detects it and repeats the request again to
+increase the probability of successful discovery. The request for an unreachable
+device is terminated only when it fails more than the configured number of
+times. Whenever that happens, the discovery of other devices can continue.</p>
 
 
 
@@ -12073,7 +12071,7 @@ Whenever that happens, the discovery of other devices can continue.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     

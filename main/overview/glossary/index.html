@@ -1009,7 +1009,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Connectivity Report - Type of Error
+    Connectivity Report &ndash; Type of Error
   
 
     
@@ -1090,7 +1090,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Configuring Quagga / FRR to Work with IP Fabric
+    Configuring Quagga / FRR to Work With IP Fabric
   
 
     
@@ -11831,15 +11831,15 @@ documentation.
 <dl>
 <dt><strong>Snapshot</strong></dt>
 <dd>
-<p>The data stored on an IPF appliance represents the inventory, configuration, state and topology of a group of network devices within a given time window. It can be:</p>
-<p>- <strong>Scheduled</strong> or <strong>ad hoc</strong> &ndash; settings in the IPF UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.</p>
-<p>- <strong>Full</strong> or <strong>partial</strong> &ndash; the snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted, and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a <strong>full</strong> snapshot. If a <strong>partial</strong> snapshot is required, only containing certain devices &ndash; perhaps to validate a change outcome &ndash; it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.</p>
-<p>- <strong>Refreshed</strong> &ndash; if the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config and state data from that device by selecting it/them and refreshing the snapshot.</p>
+<p>The data stored on an IP Fabric appliance represents the inventory, configuration, state, and topology of a group of network devices within a given time window. It can be:</p>
+<p>- <strong>Scheduled</strong> or <strong>ad hoc</strong> &ndash; Settings in the IP Fabric UI allow a user to determine a regular schedule of snapshot creation; it is also possible to create additional snapshots on a one-off basis.</p>
+<p>- <strong>Full</strong> or <strong>partial</strong> &ndash; The snapshot creation process is bounded by providing starting points (seeds), whitelisting and blacklisting subnets to crawl, providing credentials and jumphost information. Assuming that no part of the network is blacklisted, and all other information is available, a snapshot will discover as much of the network as it is able to authenticate against. This is considered a <strong>full</strong> snapshot. If a <strong>partial</strong> snapshot is required, only containing certain devices &ndash; perhaps to validate a change outcome &ndash; it is possible to select a set of existing devices against which a new snapshot can be created in the diagrams UI, or over API by specifying a list of serial numbers.</p>
+<p>- <strong>Refreshed</strong> &ndash; If the data relating to one or more devices has changed, it is possible to update a snapshot to contain the new inventory, config, and state data from that device by selecting it/them and refreshing the snapshot.</p>
 </dd>
 <dt><strong>Model</strong></dt>
 <dd>
 <p>Model can refer to:</p>
-<p>- (n) the database representation of network object inventory, configuration, state and topology that is contained within an IP Fabric snapshot</p>
+<p>- (n) the database representation of network object inventory, configuration, state, and topology contained within an IP Fabric snapshot</p>
 <p>- (v) the actions involved in the second phase of Snapshot Creation</p>
 </dd>
 <dt><strong>Snapshot Creation</strong></dt>
@@ -11848,18 +11848,18 @@ documentation.
 </dd>
 <dt><strong>Discovery</strong></dt>
 <dd>
-<p>The process of crawling out through the network &ndash; device by device or using APIs to gather from a controller &ndash; collecting raw configuration and state data, then parsing, normalising and structuring the data ready to process. IPF uses internal tasks to gather the appropriate data from different types of devices then assemble data ready for use in the second stage.</p>
+<p>The process of crawling through the network &ndash; device by device or using APIs to gather from a controller &ndash; collecting raw configuration and state data, then parsing, normalizing, and structuring the data ready to process. IP Fabric uses internal tasks to gather the appropriate data from different types of devices and then assembles the data ready for use in the second stage.</p>
 </dd>
 <dt><strong>Modelling</strong></dt>
 <dd>
-<p>The mechanism of processing the device data from the Discovery phase is to insert them into the database model, and to uncover and document groupings, classifications and relationships between devices.</p>
+<p>The mechanism of processing the device data from the Discovery phase is to insert them into the database model and to uncover and document groupings, classifications, and relationships between devices.</p>
 </dd>
 <dt><strong>Assurance Engine</strong></dt>
 <dd>
-<p>Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently, IPF introduced an option to disable elements of this phase to speed up release of the data to the API. Settings to enable and disable Assurance Engine processes are described in <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/">the Assurance Engine documentation section</a>.</p>
+<p>Running the Assurance Engine takes the database data from the model, applies business logic to it to create insight from the data, and prepares enhanced network topology views. Recently, IP Fabric introduced an option to disable elements of this phase to speed up the release of the data to the API. Settings to enable and disable Assurance Engine processes are described in <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/">the Assurance Engine documentation section</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Disabling these options will affect the UI display of data in IP Fabric &ndash; diagrams, path lookups, changes between snapshots and/or intent rules may not be displayed as a result.</p>
+<p>Disabling these options will affect the UI display of data in IP Fabric &ndash; diagrams, path lookups, changes between snapshots, and/or intent rules may not be displayed as a result.</p>
 </div>
 </dd>
 <dt><strong>Device Authentication</strong></dt>
@@ -11876,23 +11876,23 @@ documentation.
 </dd>
 <dt><strong>Crawl</strong></dt>
 <dd>
-<p>The process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find how an unfamiliar network was interconnected.</p>
+<p>The process of logging in to network devices, discovering which devices are connected, then subsequently logging in to those to continue the exploration of the network. This equates to the same process a network engineer would manually attempt to find out how an unfamiliar network was interconnected.</p>
 </dd>
 <dt><strong>OUI</strong></dt>
 <dd>
 <p>The fundamental means by which IP Fabric identifies that a node in the network is a supported network device. The first three bytes of an Ethernet MAC address are called the <code>Organizationally Unique Identifier</code> and are assigned to a specific vendor of network equipment. Under the Settings menu, IP Fabric contains a list of OUIs as allocated by IEEE and flags the ones used for network discovery.</p>
 </dd>
-<dt><strong>Excluded subnets</strong></dt>
+<dt><strong>Excluded Subnets</strong></dt>
 <dd>
 <p>The network ranges explicitly blacklisted from the discovery process. If a network node is uncovered in an excluded subnet, it will not be accessed but highlighted in the platform as an &ldquo;unmanaged device&rdquo;.</p>
 </dd>
-<dt><strong>Included subnets</strong></dt>
+<dt><strong>Included Subnets</strong></dt>
 <dd>
-<p>The network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound discovery.</p>
+<p>The network address ranges explicitly whitelisted in the discovery process. Combined with the excluded subnets, these ranges effectively bound the discovery.</p>
 </dd>
 <dt><strong>Scan</strong></dt>
 <dd>
-<p>This is a &ldquo;brute force&rdquo; process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery, but it is extremely inefficient, often resulting in triggering security alerts in a customer&rsquo;s network monitoring tooling. IP Fabric does not use this method by default but if enabled it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.</p>
+<p>This is a &ldquo;brute force&rdquo; process for finding devices of interest in a network by attempting to connect with every node in a range of IP addresses in turn. Many other tools use this method of discovery, but it is extremely inefficient, often resulting in triggering security alerts in a customer&rsquo;s network monitoring tools. IP Fabric does not use this method by default but if enabled, it uses a smart approach, attempting to connect to the most likely used IP addresses first before filling in the gaps, speeding up the process significantly and reducing the chance of triggering alerts.</p>
 </dd>
 <dt><strong>Jumphosts</strong></dt>
 <dd>
@@ -11906,47 +11906,47 @@ documentation.
 </dd>
 <dt><strong>Site Separation</strong></dt>
 <dd>
-<p>This is a special use case for IP Fabric attributes &ndash; it is possible to create rules to assign devices with a <code>siteName</code> attribute (based for example on a regex search of <code>hostname</code>). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.</p>
+<p>This is a special use case for IP Fabric attributes &ndash; it is possible to create rules to assign devices with a <code>siteName</code> attribute (based, for example, on a regex search of <code>hostname</code>). That attribute has a specific use in the platform to provide grouping and filtering of device based on location in tables and diagrams.</p>
 </dd>
 </dl>
 <h2 id="user-interface">User Interface</h2>
 <dl>
 <dt><strong>Inventory</strong> and <strong>Technology Tables</strong></dt>
 <dd>
-<p>The area of the product UI that presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.</p>
+<p>This area of the product UI presents the raw data relating to the inventory contained within a snapshot, the configuration and behavior of technologies deployed on the nodes in the network model, and the relationships between those devices.</p>
 </dd>
-<dt><strong>Intent Rules</strong> (aka Intent Verification Rules, Intent Checks)</dt>
+<dt><strong>Intent Rules</strong> (aka <strong>Intent Verification Rules</strong>, <strong>Intent Checks</strong>)</dt>
 <dd>
-<p>User-configurable rules to provide a measure of compliance for values in the database with customer&rsquo;s intent. For example &ndash; NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. Displayed above the related table in the UI.</p>
+<p>User-configurable rules to provide a measure of compliance for values in the database with the customer&rsquo;s intent. For example &ndash; NTP is configured with the correct server IP and is reachable; MTU matches at both ends of a link; BGP is established and exchanging prefixes. These rules are displayed above the related table in the UI.</p>
 </dd>
 <dt><strong>Dashboard</strong></dt>
 <dd>
-<p>User-configurable reporting view of the collection of intent rules &ndash; includes the RAG representation, radar graphs, bar charts or graphs representing change over time.</p>
+<p>This user-configurable reporting view displays the collection of intent rules, including the RAG representation, radar graphs, bar charts, or graphs representing change over time.</p>
 </dd>
 <dt><strong>Device Explorer</strong></dt>
 <dd>
-<p>UI feature of IP Fabric that shows a tabbed view of all the data that is collected for a given device. Tabs can be added for each technology that is deployed and then the filtered data from the master technology table is displayed, along with a link to retrieve the raw data as collected from the device.</p>
+<p>This UI feature of IP Fabric shows a tabbed view of all the data collected for a given device. Tabs can be added for each deployed technology, and then the filtered data from the master technology table is displayed, along with a link to retrieve the raw data as collected from the device.</p>
 </dd>
 <dt><strong>Path Inspector</strong></dt>
 <dd>
-<p>UI feature of IP Fabric used to give the details of behavior of individual nodes or edges in the path lookup simulation. Contains headers for the simulated ingress and egress packets, and a decision table representing how the node&rsquo;s forwarding and policy behavior.</p>
+<p>This UI feature of IP Fabric is used to give the details of behavior of individual nodes or edges in the path lookup simulation. It contains headers for the simulated ingress and egress packets and a decision table representing how the node&rsquo;s forwarding and policy behavior.</p>
 </dd>
 <dt><strong>Diagram Canvas</strong></dt>
 <dd>
-<p>The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes are able to be placed according to user preference, and the Visualization Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapse or hide certain nodes and further layout options, the ability to save and load layouts to be shared with other users of the platform, refresh snapshots for selected nodes, export the output to SVG or PNG, and display the API information used to generate the output on the canvas.</p>
+<p>The scrollable, zoomable UI component on which IP Fabric draws topology and path lookup diagrams. Nodes can be placed according to user preference, and the Visualization Setup allows users to specify which elements are to be seen and how they are represented. Canvas actions include collapsing or hiding certain nodes, additional layout options, saving and loading layouts to be shared with other platform users, refreshing snapshots for selected nodes, exporting output to SVG or PNG, and displaying API information used to generate the output on the canvas.</p>
 </dd>
 <dt><strong>Management Tables</strong></dt>
 <dd>
 <p>Management tables present three areas of the product:</p>
-<p>- Device <strong>configuration</strong> collection and diffs between them</p>
-<p>- <strong>Changes</strong> &ndash; allowing the user to compare inventory, managed IP addresses and connectivity matrix between snapshots</p>
-<p>- <strong>Discovery History</strong> &ndash; information about devices that have been previously discovered in earlier snapshots</p>
+<p>- Device <strong>configuration</strong> collection and diffs between them.</p>
+<p>- <strong>Changes</strong> &ndash; Allowing the user to compare inventory, managed IP addresses, and connectivity matrix between snapshots.</p>
+<p>- <strong>Discovery History</strong> &ndash; Information about devices previously discovered in earlier snapshots.</p>
 </dd>
 <dt><strong>Reports</strong></dt>
 <dd>
-<p>The Reports menu houses two sample report types which are created by the Assurance Engine phase of snapshot creation:</p>
-<p>- <strong>Network Analysis Report</strong> &ndash; A Word document that contains all the details from the intent check dashboard.</p>
-<p>- <strong>Site Low Level Design</strong> &ndash; a Word document created for each site in a snapshot containing connectivity matrix, VLANs, IP addressing, diagrams and so on.</p>
+<p>The Reports menu houses two sample report types created by the Assurance Engine phase of snapshot creation:</p>
+<p>- <strong>Network Analysis Report</strong> &ndash; A Word document containing all the details from the intent check dashboard.</p>
+<p>- <strong>Site Low Level Design</strong> &ndash; A Word document created for each site in a snapshot containing connectivity matrix, VLANs, IP addressing, diagrams, and so on.</p>
 </dd>
 </dl>
 
@@ -11969,7 +11969,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
   </span>
 
     
