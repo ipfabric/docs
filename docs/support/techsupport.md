@@ -88,6 +88,9 @@ IP Fabric Support.
 5. **Database dump without devices data** -- Removes all collected data from
    devices. Dump contains only error and service tables.
 
+6. **Usage data** -- Includes [usage data](../IP_Fabric_GUI/usage_data_collection.md).
+   Providing them helps us to improve the product.
+
 !!! info
 
     Snapshot and database dumps don't include any customer credentials
