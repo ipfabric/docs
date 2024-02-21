@@ -113,8 +113,8 @@ Local accounts have `isLocal` attribute set to `true`. You may see accounts for 
 
 11. Only for **Microsoft Active Directory**: Check **Allow nested groups** for
     nested group permission lookup. This
-    uses [Extensible Match](https://ldapwiki.com/wiki/ExtensibleMatch)
-    Rule ([LDAP_MATCHING_RULE_IN_CHAIN](https://ldapwiki.com/wiki/LDAP_MATCHING_RULE_IN_CHAIN))
+    uses [Extensible Match](https://ldapwiki.com/wiki/Wiki.jsp?page=ExtensibleMatch)
+    Rule ([LDAP_MATCHING_RULE_IN_CHAIN](https://ldapwiki.com/wiki/Wiki.jsp?page=LDAP_MATCHING_RULE_IN_CHAIN))
     which might be slow in your local setup.
 
 12. Click **Confirm**.
