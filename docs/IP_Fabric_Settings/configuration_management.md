@@ -37,18 +37,8 @@ To enable the scheduled configuration management, go to **Settings --> Configura
 
 Multiple values from the lists can be selected while holding the `Ctrl` or `Shift` keys.
 
-### Single Device Config Collection
+## API Trigger
 
-A config collection can be triggered for a single device via an API call, the following is a `curl` call which can be executed directly in the IP Fabric machine's shell:
-
-```shell
-curl -X POST "https://localhost/api/v<VERSION>/discovery/trigger-config-backup" \
--H "X-API-Token: <TOKEN>" \
--H "Content-Type: application/json" \
--d '{"ip":"<LOGIN_IP>"}' \
--k
-```
-
-!!! tip
-
-    You can also execute this command on a remote machine with `curl` installed, just change the `localhost` address to the **FQDN** or **IP address** of your IP Fabric appliance.
+Config collection can be triggered for a single device via an API call based on an IP Address or IP Fabric Unique 
+Serial Number (`sn`).  For complete instructions please see 
+[Trigger Manual Configuration Backup](../IP_Fabric_API/manual_config_backup.md).
