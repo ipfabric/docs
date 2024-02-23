@@ -39,6 +39,7 @@ Multiple values from the lists can be selected while holding the `Ctrl` or `Shif
 
 ## API Trigger
 
-Config collection can be triggered for a single device via an API call based on an IP Address or IP Fabric Unique 
-Serial Number (`sn`).  For complete instructions please see 
+Configuration collection can be triggered for a single device via an API call
+based on an IP address or IP Fabric Unique Serial Number (`sn`). For complete
+instructions, please see
 [Trigger Manual Configuration Backup](../IP_Fabric_API/manual_config_backup.md).
