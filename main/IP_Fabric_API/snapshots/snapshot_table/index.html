@@ -2019,15 +2019,15 @@ documentation.
 </li>
       
         <li class="md-nav__item">
-  <a href="#v430-examples" class="md-nav__link">
+  <a href="#version-430-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v4.3.0 Examples
+        Version 4.3.0 Examples
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v4.3.0 Examples">
+    <nav class="md-nav" aria-label="Version 4.3.0 Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2042,10 +2042,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-valid-snapshots-newest-to-oldest" class="md-nav__link">
+  <a href="#get-valid-snapshots-from-newest-to-oldest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Valid Snapshots Newest to Oldest
+        Get Valid Snapshots From Newest to Oldest
       
     </span>
   </a>
@@ -2053,10 +2053,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-loaded-snapshots-newest-to-oldest" class="md-nav__link">
+  <a href="#get-loaded-snapshots-from-newest-to-oldest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Loaded Snapshots Newest to Oldest
+        Get Loaded Snapshots From Newest to Oldest
       
     </span>
   </a>
@@ -2064,10 +2064,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-locked-snapshots-oldest-to-newest" class="md-nav__link">
+  <a href="#get-locked-snapshots-from-oldest-to-newest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Locked Snapshots Oldest to Newest
+        Get Locked Snapshots From Oldest to Newest
       
     </span>
   </a>
@@ -2075,10 +2075,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-running-snapshot" class="md-nav__link">
+  <a href="#get-the-running-snapshot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Running Snapshot
+        Get the Running Snapshot
       
     </span>
   </a>
@@ -11881,15 +11881,15 @@ documentation.
 </li>
       
         <li class="md-nav__item">
-  <a href="#v430-examples" class="md-nav__link">
+  <a href="#version-430-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v4.3.0 Examples
+        Version 4.3.0 Examples
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v4.3.0 Examples">
+    <nav class="md-nav" aria-label="Version 4.3.0 Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -11904,10 +11904,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-valid-snapshots-newest-to-oldest" class="md-nav__link">
+  <a href="#get-valid-snapshots-from-newest-to-oldest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Valid Snapshots Newest to Oldest
+        Get Valid Snapshots From Newest to Oldest
       
     </span>
   </a>
@@ -11915,10 +11915,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-loaded-snapshots-newest-to-oldest" class="md-nav__link">
+  <a href="#get-loaded-snapshots-from-newest-to-oldest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Loaded Snapshots Newest to Oldest
+        Get Loaded Snapshots From Newest to Oldest
       
     </span>
   </a>
@@ -11926,10 +11926,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-locked-snapshots-oldest-to-newest" class="md-nav__link">
+  <a href="#get-locked-snapshots-from-oldest-to-newest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Locked Snapshots Oldest to Newest
+        Get Locked Snapshots From Oldest to Newest
       
     </span>
   </a>
@@ -11937,10 +11937,10 @@ documentation.
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-running-snapshot" class="md-nav__link">
+  <a href="#get-the-running-snapshot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Running Snapshot
+        Get the Running Snapshot
       
     </span>
   </a>
@@ -12025,137 +12025,137 @@ documentation.
 
 
 <h1 id="snapshot-table">Snapshot Table</h1>
-<p>In IP Fabric <code>4.3.0</code>, a new method for retrieving snapshot information has been
+<p>In IP Fabric <code>4.3.0</code>, a new method for retrieving snapshot information was
 added. This is a <code>POST</code> method to <code>tables/management/snapshots</code> that allows for
 filtering based on columns.</p>
 <h2 id="columns">Columns</h2>
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>id</code></td>
-<td>str</td>
-<td>Snapshot ID</td>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Snapshot ID.</td>
 </tr>
 <tr>
-<td><code>status</code></td>
-<td>str</td>
-<td><code>done</code> &ndash; Loaded<br/><code>unloaded</code> &ndash; Unloaded<br/><code>ready</code> &ndash; The snapshot record was created, discovery process not started yet<br/><code>run</code> &ndash; Discovery or Snapshot Load in progress<br/><code>finishing</code> &ndash; Almost done, Tasker creating Topology and other calculations like site separation<br/><code>error</code> - Errored</td>
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"><code>done</code> &ndash; Loaded.<br/><code>unloaded</code> &ndash; Unloaded.<br/><code>ready</code> &ndash; The snapshot record was created, but the discovery process has not started yet.<br/><code>run</code> &ndash; Discovery or snapshot load is in progress.<br/><code>finishing</code> &ndash; Almost done, Tasker is creating topology and other calculations like Site Separation.<br/><code>error</code> &ndash; Errored.</td>
 </tr>
 <tr>
-<td><code>finishStatus</code></td>
-<td>str</td>
-<td><code>done</code> &ndash; Done<br/><code>error</code> &ndash; Errored<br/>&lsquo;&rsquo; &ndash; Other</td>
+<td style="text-align: left;"><code>finishStatus</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"><code>done</code> &ndash; Done.<br/><code>error</code> &ndash; Errored.<br/>&lsquo;&rsquo; &ndash; Other.</td>
 </tr>
 <tr>
-<td><code>loading</code></td>
-<td>bool</td>
-<td><code>true</code> if the snapshot is currently loading.</td>
+<td style="text-align: left;"><code>loading</code></td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the snapshot is currently loading.</td>
 </tr>
 <tr>
-<td><code>loadedSize</code></td>
-<td>int</td>
-<td>Size of snapshot when loaded</td>
+<td style="text-align: left;"><code>loadedSize</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Size of the snapshot when loaded.</td>
 </tr>
 <tr>
-<td><code>unloadedSize</code></td>
-<td>int</td>
-<td>Size of snapshot when unloaded</td>
+<td style="text-align: left;"><code>unloadedSize</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Size of the snapshot when unloaded.</td>
 </tr>
 <tr>
-<td><code>isLastSnapshot</code></td>
-<td>bool</td>
-<td><code>true</code> if it is the last loaded snapshot <code>($last)</code></td>
+<td style="text-align: left;"><code>isLastSnapshot</code></td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if it is the last loaded snapshot (<code>$last</code>).</td>
 </tr>
 <tr>
-<td><code>name</code></td>
-<td>str</td>
-<td>Snapshot <code>name</code> or <code>empty</code> string</td>
+<td style="text-align: left;"><code>name</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Snapshot name or an empty string.</td>
 </tr>
 <tr>
-<td><code>note</code></td>
-<td>str</td>
-<td>Snapshot <code>note</code> or <code>empty</code> string</td>
+<td style="text-align: left;"><code>note</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Snapshot note or an empty string.</td>
 </tr>
 <tr>
-<td><code>sites</code></td>
-<td>list</td>
-<td>List of Site Names</td>
+<td style="text-align: left;"><code>sites</code></td>
+<td style="text-align: left;">list</td>
+<td style="text-align: left;">List of site names.</td>
 </tr>
 <tr>
-<td><code>fromArchive</code></td>
-<td>bool</td>
-<td><code>true</code> if snapshot was loaded from a file</td>
+<td style="text-align: left;"><code>fromArchive</code></td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the snapshot was loaded from a file.</td>
 </tr>
 <tr>
-<td><code>locked</code></td>
-<td>bool</td>
-<td><code>true</code> if snapshot is locked</td>
+<td style="text-align: left;"><code>locked</code></td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"><code>true</code> if the snapshot is locked.</td>
 </tr>
 <tr>
-<td><code>totalDevCount</code></td>
-<td>int</td>
-<td>Number of total devices (<code>licensed</code> and <code>unlicensed</code>)</td>
+<td style="text-align: left;"><code>totalDevCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of total devices (<code>licensed</code> and <code>unlicensed</code>).</td>
 </tr>
 <tr>
-<td><code>deviceAddedCount</code></td>
-<td>int</td>
-<td>Number of devices added since the previous snapshot</td>
+<td style="text-align: left;"><code>deviceAddedCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of devices added since the previous snapshot.</td>
 </tr>
 <tr>
-<td><code>deviceRemovedCount</code></td>
-<td>int</td>
-<td>Number of devices removed since the previous snapshot</td>
+<td style="text-align: left;"><code>deviceRemovedCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of devices removed since the previous snapshot.</td>
 </tr>
 <tr>
-<td><code>interfaceCount</code></td>
-<td>int</td>
-<td>Number of interfaces<br/><strong>Inventory &rarr; Interfaces</strong></td>
+<td style="text-align: left;"><code>interfaceCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of interfaces.<br/><strong>Inventory &rarr; Interfaces</strong></td>
 </tr>
 <tr>
-<td><code>interfaceActiveCount</code></td>
-<td>int</td>
-<td>Number of Active Interface<br/><strong>Inventory &rarr; Interfaces</strong> [Filter L2 State=up]</td>
+<td style="text-align: left;"><code>interfaceActiveCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of active interfaces.<br/><strong>Inventory &rarr; Interfaces</strong> [Filter L2 State=up]</td>
 </tr>
 <tr>
-<td><code>interfaceEdgeCount</code></td>
-<td>int</td>
-<td>Number of Edge interfaces<br/><strong>Technology &rarr; Interfaces &rarr; Switchport</strong> [Filter Edge=yes]</td>
+<td style="text-align: left;"><code>interfaceEdgeCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of edge interfaces.<br/><strong>Technology &rarr; Interfaces &rarr; Switchport</strong> [Filter Edge=yes]</td>
 </tr>
 <tr>
-<td><code>userCount</code></td>
-<td>int</td>
-<td>Number of hosts<br/><strong>Inventory &rarr; Hosts</strong></td>
+<td style="text-align: left;"><code>userCount</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Number of hosts.<br/><strong>Inventory &rarr; Hosts</strong></td>
 </tr>
 <tr>
-<td><code>tsStart</code></td>
-<td>int</td>
-<td>Timestamp in milliseconds when the snapshot started</td>
+<td style="text-align: left;"><code>tsStart</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Timestamp in milliseconds when the snapshot started.</td>
 </tr>
 <tr>
-<td><code>tsEnd</code></td>
-<td>int</td>
-<td>Timestamp in milliseconds when the snapshot completed</td>
+<td style="text-align: left;"><code>tsEnd</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Timestamp in milliseconds when the snapshot completed.</td>
 </tr>
 <tr>
-<td><code>tsChange</code></td>
-<td>int</td>
-<td>Timestamp in milliseconds when the snapshot was last changed</td>
+<td style="text-align: left;"><code>tsChange</code></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">Timestamp in milliseconds when the snapshot was last changed.</td>
 </tr>
 <tr>
-<td><code>creatorUsername</code></td>
-<td>str</td>
-<td>Username who created the Snapshot (new in <code>6.3.0</code>)</td>
+<td style="text-align: left;"><code>creatorUsername</code></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Username of the user who created the snapshot (new in <code>6.3.0</code>).</td>
 </tr>
 </tbody>
 </table>
-<h2 id="v430-examples">v4.3.0 Examples</h2>
+<h2 id="version-430-examples">Version <code>4.3.0</code> Examples</h2>
 <h3 id="get-last">Get <code>($last)</code></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -12191,7 +12191,7 @@ filtering based on columns.</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="get-valid-snapshots-newest-to-oldest">Get Valid Snapshots Newest to Oldest</h3>
+<h3 id="get-valid-snapshots-from-newest-to-oldest">Get Valid Snapshots From Newest to Oldest</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
@@ -12230,7 +12230,7 @@ filtering based on columns.</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="get-loaded-snapshots-newest-to-oldest">Get Loaded Snapshots Newest to Oldest</h3>
+<h3 id="get-loaded-snapshots-from-newest-to-oldest">Get Loaded Snapshots From Newest to Oldest</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
@@ -12272,7 +12272,7 @@ filtering based on columns.</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="get-locked-snapshots-oldest-to-newest">Get Locked Snapshots Oldest to Newest</h3>
+<h3 id="get-locked-snapshots-from-oldest-to-newest">Get Locked Snapshots From Oldest to Newest</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
@@ -12311,7 +12311,7 @@ filtering based on columns.</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="get-running-snapshot">Get Running Snapshot</h3>
+<h3 id="get-the-running-snapshot">Get the Running Snapshot</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
@@ -12366,7 +12366,7 @@ filtering based on columns.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     

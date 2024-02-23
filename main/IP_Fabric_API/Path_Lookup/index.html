@@ -12039,7 +12039,7 @@ documentation.
 <h1 id="overview">Overview</h1>
 <h2 id="python-sdk">Python SDK</h2>
 <p><code>python-ipfabric</code> and is the recommended method for graphing via the API.
-To ensure working graphs, please ensure <code>python-ipfabric</code> Major and Minor version matches your IP Fabric version.</p>
+To ensure working graphs, please make sure that <code>python-ipfabric</code> Major and Minor versions match your IP Fabric version.</p>
 <ul>
 <li><a href="https://pypi.org/project/ipfabric/">https://pypi.org/project/ipfabric/</a></li>
 <li>For example, when using the <code>6.4</code> release, use <code>pip install -U ipfabric==6.4.*</code> to install the appropriate package.</li>
@@ -12053,14 +12053,14 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 <h2 id="post-request">POST Request</h2>
 <p>Requests are made using a <code>POST</code> to the endpoint listed above for the desired output. The body of the request contains the JSON described in the next section.</p>
 <h3 id="request-body">Request Body</h3>
-<p>Contains a JSON data structure with the keys</p>
+<p>Contains a JSON data structure with the following keys:</p>
 <ul>
-<li><code>snapshot</code> <em>[mandatory]</em> &ndash; A quoted string containing the ID of the required snapshot. Can also use the reserved strings <code>$last</code>, <code>$prev</code> and <code>$lastLocked</code></li>
-<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys</li>
+<li><code>snapshot</code> <em>[mandatory]</em> &ndash; A quoted string containing the ID of the required snapshot. Can also use the reserved strings <code>$last</code>, <code>$prev</code>, and <code>$lastLocked</code>.</li>
+<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys.</li>
 <li>
-<p><code>positions</code> <em>[optional]</em> &ndash; A nested JSON data structure consisting of keys representing the serial number of devices and their positions in the completed diagram. Origin of <code>x=0, y=0</code> is the top left of the resulting image.</p>
+<p><code>positions</code> <em>[optional]</em> &ndash; A nested JSON data structure consisting of keys representing the serial number of devices and their positions in the completed diagram. The origin of <code>x=0, y=0</code> is the top left of the resulting image.</p>
 <div class="admonition example">
-<p class="admonition-title">Sample position data structure</p>
+<p class="admonition-title">Sample Positions Data Structure</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;positions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;SNXXXXXXXXX&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -12079,10 +12079,10 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 <ul>
 <li>change edge properties like colors and thickness of lines representing protocols and groups</li>
 <li>change labels on the edges and interfaces</li>
-<li>
-<p>hide certain device types.</p>
+<li>hide certain device types</li>
+</ul>
 <div class="admonition example">
-<p class="admonition-title">Example settings data structure</p>
+<p class="admonition-title">Example Settings Data Structure</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -12106,23 +12106,21 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 </div>
 </li>
 </ul>
-</li>
-</ul>
 <h3 id="response">Response</h3>
-<p>If the PNG or SVG endpoints are selected, the request returns a binary File representing the desired output.</p>
-<p>Using the /graphs endpoint, a successful request returns a JSON response of the form:</p>
+<p>If the PNG or SVG endpoints are selected, the request returns a binary file representing the desired output.</p>
+<p>Using the <code>/graphs</code> endpoint, a successful request returns a JSON response of the following form:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;graphResult&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;pathlookup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="graphresult"><code>graphResult</code></h4>
-<p>The <code>graphResult</code> construct describes the detail of the topology of the end-to-end path through the network. It consists of three sections:</p>
+<p>The <code>graphResult</code> construct describes the details of the topology of the end-to-end path through the network. It consists of three sections:</p>
 <ul>
-<li><code>settings</code> &ndash; echoes the settings from the request body or the system settings as they apply to line styles, colors, weights and labels; hidden device types and groupings</li>
-<li><code>boxLabels</code> &ndash; text labels for each of the groups</li>
+<li><code>settings</code> &ndash; Echoes the settings from the request body or the system settings as they apply to line styles, colors, weights, and labels; hidden device types and groupings.</li>
+<li><code>boxLabels</code> &ndash; Text labels for each of the groups.</li>
 <li>
-<p><code>graphData</code> &ndash; a JSON construct containing a list of nodes and edges in the topological view of the path. Takes the form:</p>
+<p><code>graphData</code> &ndash; A JSON construct containing a list of nodes and edges in the topological view of the path. It takes the following form:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;edges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
@@ -12130,7 +12128,7 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 </code></pre></div>
 </li>
 </ul>
-<p>where <code>nodes</code> contain data relating to the individual nodes in the graph. Each one is assigned a <code>vDevice</code> ID but there is recorded in each its hostname as <code>label</code>, its <code>position</code>, its serial number in the <code>sn</code> field and the device <code>type</code>. Other key:value pairs relate to the inner workings of the IP Fabric graphing process.</p>
+<p>where <code>nodes</code> contain data relating to the individual nodes in the graph. Each one is assigned a <code>vDevice</code> ID, but there is recorded in each its hostname as <code>label</code>, its <code>position</code>, its serial number in the <code>sn</code> field, and the device <code>type</code>. Other key:value pairs relate to the inner workings of the IP Fabric graphing process.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -12150,7 +12148,7 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<p><code>edges</code> contain data relating to the connections between the nodes along the data path. Each one is assigned an ID consisting of a combination of the node ID and interface at each end of the edge. The JSON construct also includes labels for the ends and the center of the line, graphical details like (x,y) positions of the line and arrowheads and the colors and style of the lines. The <code>severity_info</code> key:value pair contains the information about how the edge conforms to applied intent checks; and the <code>packet</code> subtree contains a list of the layered packet headers in the simulation as it passes through the edge.</p>
+<p><code>edges</code> contain data relating to the connections between the nodes along the data path. Each one is assigned an ID consisting of a combination of the node ID and interface at each end of the edge. The JSON construct also includes labels for the ends and the center of the line, graphical details like <code>(x,y)</code> positions of the line and arrowheads, and the colors and style of the lines. The <code>severity_info</code> key:value pair contains the information about how the edge conforms to applied intent checks; and the <code>packet</code> subtree contains a list of the layered packet headers in the simulation as it passes through the edge.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -12190,35 +12188,35 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
 <p>The <code>pathlookup</code> construct describes the hop-by-hop forwarding and policy decisions that have been taken to get from source to destination. Notable key:value pairs within that construct include:</p>
 <ul>
 <li>
-<p><code>eventSummary</code> &ndash; which highlights the success or failure of the path and the cause of any issues along the way.</p>
+<p><code>eventSummary</code> &ndash; Highlights the success or failure of the path and the cause of any issues along the way.</p>
 <ul>
-<li><code>flags</code> will show if any policy has caused the traffic to fail to reach the destination (e.g. <code>acl-deny</code> or <code>zone-deny</code>)</li>
+<li><code>flags</code> show if any policy has caused the traffic to fail to reach the destination (e.g., <code>acl-deny</code> or <code>zone-deny</code>).</li>
 </ul>
 <ul>
-<li><code>topics</code> is a construct to represent the &ldquo;Result&rdquo; tab in the UI &ndash; it shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behavior. Positive values for the &ldquo;0&rdquo; key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point</li>
+<li><code>topics</code> is a construct to represent the &ldquo;Result&rdquo; tab in the UI. It shows whether there have been ACL or firewall policies affecting the path, or any issues with forwarding behavior. Positive values for the &ldquo;0&rdquo; key show that the decision has allowed traffic to pass; positive values for any of the other keys indicate a failure in the evaluation at some point.</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>
-<p><code>decisions</code> &ndash; contains a record for each device in the path and the forwarding and policy decision it must make in the path. For each device:</p>
+<p><code>decisions</code> &ndash; Contains a record for each device in the path and the forwarding and policy decision it must make in the path. For each device:</p>
 <ul>
-<li><code>trafficIn</code> is a representation of the ingress interface and the edge that it is connected to</li>
-<li><code>trafficOut</code> represents the egress interface and the edge that it sends traffic along towards the destination</li>
+<li><code>trafficIn</code> is a representation of the ingress interface and the edge that it is connected to.</li>
+<li><code>trafficOut</code> represents the egress interface and the edge that it sends traffic along towards the destination.</li>
 <li>
-<p><code>traces</code> contain the data to represent how that decision was taken &ndash; that might include for example:</p>
+<p><code>traces</code> contain the data to represent how that decision was taken &ndash; that might include, for example:</p>
 <ul>
 <li>a <code>switching-nexthop</code> decision in a switch will require a MAC address table match;</li>
 <li>an <code>ip-routing</code> decision in a router will require a routing table lookup and an ARP table;</li>
 <li>an <code>ip-routing</code> decision in a zone-based firewall will add in a security check to validate that policy allows the packet to pass;</li>
-<li>an <code>mpls-switching</code> decision will validate the VRF, MPLS labels and push/pop behavior in the label stack; and so on.</li>
+<li>an <code>mpls-switching</code> decision will validate the VRF, MPLS labels, and push/pop behavior in the label stack; and so on.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <p>We&rsquo;ve not given any specific examples here as they vary wildly depending on the specifics of your environment. There are also numerous additional fields in the <code>pathlookup</code> construct which will also be dependent on your particular path check. And there are some key:value pairs which have specific internal usage. But by using trial and error, you should be able to get a good handle on the behavior of the path lookup using this guidance.</p>
-<p>From this note, you can see just how much thought and detail has gone into the development of the path lookup process. Hopefully it illustrates how closely IP Fabric models the behavior of the data plane of network devices to give an accurate view of the impact of the network on forwarding behavior.</p>
+<p>From this note, you can see just how much thought and detail has gone into the development of the path lookup process. Hopefully, it illustrates how closely IP Fabric models the behavior of the data plane of network devices to give an accurate view of the impact of the network on forwarding behavior.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are interested in multicast or host-to-gateway path lookups, look at our other tech notes. The result will be the same, but the request body will use different parameters.</p>
@@ -12243,7 +12241,7 @@ To ensure working graphs, please ensure <code>python-ipfabric</code> Major and M
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     

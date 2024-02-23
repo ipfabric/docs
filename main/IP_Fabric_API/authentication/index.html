@@ -12107,28 +12107,28 @@ documentation.
 
 <h1 id="authentication">Authentication</h1>
 <p>The majority of requests to the IP Fabric platform need to be authenticated. We
-provide multiple authentication methods. They differ from each other, please
+provide multiple authentication methods, which differ from each other. Please
 review all of them before committing to any.</p>
 <h2 id="api-token">API Token</h2>
-<p>API Token needs to be passed as a request header. Please
-see <a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> on how to create an API
-Token in the UI.</p>
+<p>API token need to be passed as a request header. Please see
+<a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> on how to create
+an API token in the UI.</p>
 <ul>
-<li>Allows for limiting the scope of API calls. This allows for giving <em>less</em>
-  rights than has account creating the token.</li>
-<li>Long-lived static token (secure storage is important).</li>
+<li>Allows for limiting the scope of API calls. This allows for giving <em>fewer</em>
+  rights than the account creating the token has.</li>
+<li>Long-lived static tokens (secure storage is important).</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="err">Content-Type: application/json</span>
 <span class="err">X-API-Token: YOUR_API_TOKEN_GENERATED_VIA_IPFABRIC_UI</span>
 </code></pre></div>
 <h2 id="basic-authentication">Basic Authentication</h2>
-<p>Using Basic Authentication requires Base64 encoding <code>username:password</code> and
+<p>Using basic authentication requires Base64 encoding <code>username:password</code> and
 passing that into the <code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may not be
+<li>The call will always have the same rights as the user account. This may not be
   necessary for many use-cases.</li>
-<li>In case this approach is use, we highly encourage creation of a &ldquo;bot&rdquo;/&rdquo;
-  service&rdquo; user account with limited access scope.</li>
+<li>In case this approach is use, we highly encourage the creation of a
+  &ldquo;bot&rdquo;/&rdquo;service&rdquo; user account with a limited access scope.</li>
 <li>Another form of long-lived static token / authentication details (secure
   storage is important).</li>
 </ul>
@@ -12139,39 +12139,44 @@ osadmin@ipfabric:~$<span class="w"> </span>curl<span class="w"> </span>-X<span c
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=&#39;</span>
 </code></pre></div>
 <h2 id="token-authentication">Token Authentication</h2>
-<p>Token authentication allows to exchange username and password for pair of tokens
-&ndash; access and refresh. Exchange is facilitated via <code>login</code> endpoint. Access
-token is then passed to the consecutive API calls in the <code>Authorization</code> header.</p>
+<p>Token authentication allows the exchange of username and password for a pair of
+tokens &ndash; access and refresh. The exchange is facilitated via the <code>login</code>
+endpoint. The access token is then passed to the consecutive API calls in the
+<code>Authorization</code> header.</p>
 <ul>
-<li>Call will always have the same rights as the user account. This may not be
+<li>The call will always have the same rights as the user account. This may not be
   necessary for many use-cases.</li>
 <li>In case this approach is used, we highly encourage creation of a
-  <code>bot</code>/<code>service</code> user account with limited access scope.</li>
-<li>Storage of refresh token is important as it allows to maintain long-term
+  &ldquo;bot&rdquo;/&rdquo;service&rdquo; user account with a limited access scope.</li>
+<li>Storage of the refresh token is important as it allows maintaining long-term
   access.</li>
 </ul>
 <h3 id="types-of-tokens">Types of Tokens</h3>
 <dl>
 <dt><strong>Access Token</strong></dt>
 <dd>
-<p>An access token is <a href="https://jwt.io/">JSON Web Token (JWT)</a> as per RFC-7519
+<p>An access token is a <a href="https://jwt.io/">JSON Web Token (JWT)</a> as per RFC-7519,
 signed using SHA-256 with RSA encryption. The token expires in 30 minutes since
-being generated and it can’t be revoked during its lifetime.</p>
+being generated, and it can&rsquo;t be revoked during its lifetime.</p>
 </dd>
 <dd>
 <details class="info">
-<summary>What is inside access token?</summary>
-<p>Access token is a JWT which concists of three parts separated by dots &ndash; Header, Payload, and Signature. You don&rsquo;t need to parse any of these fields. You can use <a href="https://jwt.io/">https://jwt.io/</a> for inspecting content of JWT. You will not be able to verify its validity as you don&rsquo;t have access to signing key.</p>
+<summary>What is inside an access token?</summary>
+<p>An access token is a JWT consisting of three parts separated by dots &ndash;
+Header, Payload, and Signature. You don&rsquo;t need to parse any of these
+fields. For inspecting the content of the JWT, you can use
+<a href="https://jwt.io/">https://jwt.io/</a>. You will not be able to verify its validity as you
+don&rsquo;t have access to the signing key.</p>
 <p>The payload contains an object with the following fields:</p>
 <ul>
-<li><code>id</code> &ndash; User ID</li>
-<li><code>exp</code> &ndash; Token expiration time (in seconds since Unix epoch)</li>
-<li><code>iat</code> &ndash; Token issued time (in seconds since Unix epoch)</li>
-<li><code>scope</code> &ndash; Array of strings representing granted user access</li>
-<li><code>username</code> &ndash; String containing the username of the user</li>
-<li><code>isAdmin</code> &ndash; A boolean value whether a user is an admin</li>
-<li><code>aud</code> &ndash; String containing the recipient for which the JWT is intended</li>
-<li><code>iss</code> &ndash; String containing the issuer of the JWT</li>
+<li><code>id</code> &ndash; User ID.</li>
+<li><code>exp</code> &ndash; Token expiration time (in seconds since Unix epoch).</li>
+<li><code>iat</code> &ndash; Token issued time (in seconds since Unix epoch).</li>
+<li><code>scope</code> &ndash; Array of strings representing granted user access.</li>
+<li><code>username</code> &ndash; String containing the username of the user.</li>
+<li><code>isAdmin</code> &ndash; A Boolean value whether the user is an admin.</li>
+<li><code>aud</code> &ndash; String containing the recipient for which the JWT is intended.</li>
+<li><code>iss</code> &ndash; String containing the issuer of the JWT.</li>
 </ul>
 </details>
 </dd>
@@ -12182,19 +12187,18 @@ It can be requested for new access tokens until the refresh token is used,
 revoked, or expired.</p>
 </dd>
 <dd>
-<p>A refresh token expires 24 hours after not being used for generation of a
+<p>A refresh token expires 24 hours after not being used for the generation of a
 new access token. Refresh tokens must be stored securely by an application
 as it creates a new Access Token and allows access to the system.</p>
 </dd>
 <dd>
-<p>Starting in IP Fabric version <code>6.1.0</code> the <code>refreshToken</code> is rotated after 
-every use and a new one is issued.</p>
+<p>Starting in IP Fabric version <code>6.1.0</code>, the <code>refreshToken</code> is rotated after 
+every use, and a new one is issued.</p>
 </dd>
 </dl>
 <h3 id="token-api">Token API</h3>
 <h4 id="login">Login</h4>
-<p>To log in and obtain an Access and Refresh token, please see the below curl
-example:</p>
+<p>To log in and obtain an Access and Refresh token, see the below <code>curl</code> example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v6.1/auth/login&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;&lt;USERNAME&gt;&quot;,&quot;password&quot;:&quot;&lt;PASSWORD&gt;&quot;}&#39;</span>
@@ -12221,7 +12225,7 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">&#39;{&quot;refreshToken&quot;:&quot;YvnTNW...&quot;}&#39;</span>
 </code></pre></div>
-<p>Which then returns a new <code>accessToken</code> to use in subsequent calls and a new 
+<p>which then returns a new <code>accessToken</code> to use in subsequent calls and a new 
 <code>refreshToken</code> to use for requesting the next <code>accessToken</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;eula&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
@@ -12243,19 +12247,19 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 <li><code>accessToken</code> &ndash; 30 minutes (1800 seconds)</li>
 <li><code>refreshToken</code> &ndash; 24 hours (86400 seconds)</li>
 </ul>
-<p>Many company standards require shorter expiration times and this can be
+<p>Many company standards require shorter expiration times, and this can be
 accomplished via the CLI settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ol>
-<li>Log in to IP Fabric CLI as <code>osadmin</code></li>
+<li>Log in to IP Fabric CLI as <code>osadmin</code>.</li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
-<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> or extend existing one with the below JSON. In this
-   example the <code>accessToken</code> expires in 10 minutes and <code>refreshToken</code> expires in
-   15 minutes:</p>
+<p>Create a new file <code>/opt/nimpee/conf.d/api.json</code> or extend the existing one
+   with the below JSON. In this example, the <code>accessToken</code> expires in 10
+   minutes, and the <code>refreshToken</code> expires in 15 minutes:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -12270,21 +12274,25 @@ accomplished via the CLI settings.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
+<p>Change file permissions: <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
 </li>
-<li>Restart API <code>systemctl restart nimpee-api.service</code></li>
+<li>Restart the API: <code>systemctl restart nimpee-api.service</code></li>
 </ol>
 <h3 id="disabling-local-authentication">Disabling Local Authentication</h3>
-<p>In case you don&rsquo;t want to use local authentication (username/password) and log in only via SSO or LDAP, you can disable it via the CLI settings (both token and basic authentication will be disabled). Please note that <a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> will still work.</p>
+<p>In case you don&rsquo;t want to use local authentication (username/password) and want
+to log in only via SSO or LDAP, you can disable it via the CLI settings (both
+token and basic authentication will be disabled). Please note that
+<a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> will still work.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ol>
-<li>Log in to IP Fabric CLI as <code>osadmin</code></li>
+<li>Log in to IP Fabric CLI as <code>osadmin</code>.</li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
-<p>Create new file <code>/opt/nimpee/conf.d/api.json</code> or extend existing one with the below JSON:</p>
+<p>Create a new file <code>/opt/nimpee/conf.d/api.json</code> or extend the existing one
+   with the below JSON:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;enableLocalAuthentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
@@ -12293,13 +12301,13 @@ accomplished via the CLI settings.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Change file permissions <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
+<p>Change file permissions: <code>chmod 644 /opt/nimpee/conf.d/api.json</code></p>
 </li>
-<li>Restart API <code>systemctl restart nimpee-api.service</code></li>
+<li>Restart the API: <code>systemctl restart nimpee-api.service</code></li>
 </ol>
 <h3 id="token-errors">Token Errors</h3>
-<p>The API returns an object with a machine-readable error code and a
-human-readable error message in response body when an error is encountered:</p>
+<p>When an error is encountered, the API returns an object with a machine-readable
+error code and a human-readable error message in the response body:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;API_EXPIRED_API_TOKEN&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Expired API Token&quot;</span>
@@ -12308,30 +12316,30 @@ human-readable error message in response body when an error is encountered:</p>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Message</th>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Message</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>API_EXPIRED_API_TOKEN</td>
-<td>The provided API key expired.</td>
+<td style="text-align: left;"><code>API_EXPIRED_API_TOKEN</code></td>
+<td style="text-align: left;">The provided API key expired.</td>
 </tr>
 <tr>
-<td>API_INVALID_API_TOKEN</td>
-<td>The provided API key doesn’t exist. It was removed, or it never existed.</td>
+<td style="text-align: left;"><code>API_INVALID_API_TOKEN</code></td>
+<td style="text-align: left;">The provided API key doesn&rsquo;t exist. It was removed, or it never existed.</td>
 </tr>
 <tr>
-<td>API_EXPIRED_ACCESS_TOKEN</td>
-<td>The provided access token (from Authorization header) is expired.</td>
+<td style="text-align: left;"><code>API_EXPIRED_ACCESS_TOKEN</code></td>
+<td style="text-align: left;">The provided access token (from the Authorization header) is expired.</td>
 </tr>
 <tr>
-<td>API_INVALID_ACCESS_TOKEN</td>
-<td>The provided access token (from Authorization header) is invalid.</td>
+<td style="text-align: left;"><code>API_INVALID_ACCESS_TOKEN</code></td>
+<td style="text-align: left;">The provided access token (from the Authorization header) is invalid.</td>
 </tr>
 <tr>
-<td>API_INVALID_REFRESH_TOKEN</td>
-<td>The provided refresh token (typically sent in the request body) is revoked (blacklisted) or expired.</td>
+<td style="text-align: left;"><code>API_INVALID_REFRESH_TOKEN</code></td>
+<td style="text-align: left;">The provided refresh token (typically sent in the request body) is revoked (blacklisted) or expired.</td>
 </tr>
 </tbody>
 </table>
@@ -12355,7 +12363,7 @@ human-readable error message in response body when an error is encountered:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     

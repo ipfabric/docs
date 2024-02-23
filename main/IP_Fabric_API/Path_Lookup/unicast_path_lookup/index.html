@@ -11883,54 +11883,54 @@ documentation.
 <h1 id="unicast-path-lookup">Unicast Path Lookup</h1>
 <h2 id="request-parameters">Request Parameters</h2>
 <ul>
-<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys<ul>
-<li><code>type</code> <em>[mandatory]</em> &ndash; A string with a value of <code>pathLookup</code> for an E2E path simulation output</li>
-<li><code>pathLookupType</code> <em>[mandatory]</em> &ndash; A string containing the word <code>unicast</code></li>
-<li><code>protocol</code> <em>[mandatory]</em> &ndash; A string with a value of <code>tcp</code>, <code>udp</code>, <code>icmp</code></li>
-<li><code>startingPoint</code> <em>[mandatory]</em> &ndash; A string containing the source IP address or subnet</li>
-<li><code>destinationPoint</code> <em>[mandatory]</em> &ndash; A string containing the destination IP address or subnet</li>
-<li><code>groupBy</code> <em>[mandatory]</em> &ndash; A quoted string representing the grouping of devices in the output &ndash; currently, one of <code>siteName</code>, <code>routingDomain</code> or <code>stpDomain</code>.</li>
-<li><code>networkMode</code> <em>[mandatory]</em> &ndash; A boolean &ndash; the new version of IP Fabric allows you to simulate paths between subnets. Setting this key to <code>true</code> means that you will create a single result representing the subnets; <code>false</code> means that IP Fabric will create a separate path for each source or destination in the range of addresses up to a maximum of 255.</li>
-<li><code>securedPath</code> <em>[mandatory]</em> &ndash; A boolean &ndash; when you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and highlight the policy enforcement point (<code>false</code>)</li>
+<li><code>parameters</code> <em>[mandatory]</em> &ndash; A nested JSON data structure with keys:<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; A string with a value of <code>pathLookup</code> for an end-to-end path simulation output.</li>
+<li><code>pathLookupType</code> <em>[mandatory]</em> &ndash; A string containing the word <code>unicast</code>.</li>
+<li><code>protocol</code> <em>[mandatory]</em> &ndash; A string with a value of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>.</li>
+<li><code>startingPoint</code> <em>[mandatory]</em> &ndash; A string containing the source IP address or subnet.</li>
+<li><code>destinationPoint</code> <em>[mandatory]</em> &ndash; A string containing the destination IP address or subnet.</li>
+<li><code>groupBy</code> <em>[mandatory]</em> &ndash; A quoted string representing the grouping of devices in the output. Currently, one of <code>siteName</code>, <code>routingDomain</code>, or <code>stpDomain</code>.</li>
+<li><code>networkMode</code> <em>[mandatory]</em> &ndash; Boolean &ndash; The new version of IP Fabric allows you to simulate paths between subnets. Setting this key to <code>true</code> means that you will create a single result representing the subnets; <code>false</code> means that IP Fabric will create a separate path for each source or destination in the range of addresses up to a maximum of 255.</li>
+<li><code>securedPath</code> <em>[mandatory]</em> &ndash; Boolean &ndash; When you run a path simulation, you can tell IP Fabric if you want to stop when it hits a security policy which blocks the traffic in question (<code>true</code>) or complete the forwarding path and highlight the policy enforcement point (<code>false</code>).</li>
 <li><code>ttl</code> <em>[mandatory]</em> &ndash; integer &ndash; Time-to-live value (default is <code>128</code>)</li>
-<li><code>fragmentOffset</code> <em>[mandatory]</em> &ndash; integer &ndash; Fragment offset value (default is <code>0</code>)</li>
-<li><code>enableRegions</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
+<li><code>fragmentOffset</code> <em>[mandatory]</em> &ndash; integer &ndash; Fragment offset value (default is <code>0</code>).</li>
+<li><code>enableRegions</code> <em>[mandatory]</em> &ndash; Boolean &ndash; (default <code>false</code>)</li>
 <li><code>srcRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
 <li><code>dstRegions</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
-<li><code>otherOptions</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
+<li><code>otherOptions</code> <em>[mandatory]</em> &ndash; Nested JSON data.<ul>
 <li><code>applications</code> <em>[mandatory]</em> &ndash; string &ndash; (default <code>.*</code>)</li>
-<li><code>tracked</code> <em>[mandatory]</em> &ndash; boolean &ndash; (default <code>false</code>)</li>
+<li><code>tracked</code> <em>[mandatory]</em> &ndash; Boolean &ndash; (default <code>false</code>)</li>
 </ul>
 </li>
-<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
-<li><code>type</code> <em>[mandatory]</em> &ndash; Either <code>automatic</code> or <code>userDefined</code></li>
+<li><code>firstHopAlgorithm</code> <em>[mandatory]</em> &ndash; Nested JSON data.<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; Either <code>automatic</code> or <code>userDefined</code>.</li>
 <li><code>vrf</code> <em>[Optional and if type == <code>automatic</code>]</em></li>
-<li><code>entryPoints</code> <em>[mandatory and if type == <code>userDefined</code>]</em> &ndash; nested array of JSON data<ul>
-<li><code>hostname</code> <em>[mandatory]</em> &ndash; Hostname string</li>
-<li><code>sn</code> <em>[mandatory]</em> &ndash; IP Fabric Unique Serial Number string</li>
-<li><code>iface</code> <em>[mandatory]</em> &ndash; Interface name</li>
+<li><code>entryPoints</code> <em>[mandatory and if type == <code>userDefined</code>]</em> &ndash; A nested array of JSON data.<ul>
+<li><code>hostname</code> <em>[mandatory]</em> &ndash; Hostname string.</li>
+<li><code>sn</code> <em>[mandatory]</em> &ndash; IP Fabric Unique Serial Number string.</li>
+<li><code>iface</code> <em>[mandatory]</em> &ndash; Interface name.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>l4Options</code> <em>[mandatory]</em> &ndash; nested JSON data<ul>
-<li>If <code>protocol = tcp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>flags</code> <em>[mandatory]</em> &ndash; An array of TCP flags to be set in the simulated path or empty array<ul>
+<li><code>l4Options</code> <em>[mandatory]</em> &ndash; Nested JSON data.<ul>
+<li>If <code>protocol = tcp</code>:<ul>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports. For example, <code>80,443,1025-4096</code>.</li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; A string representing ports. For example, <code>80,443,1025-4096</code>.</li>
+<li><code>flags</code> <em>[mandatory]</em> &ndash; An array of TCP flags to be set in the simulated path or an empty array.<ul>
 <li>Valid flags: [<code>ack</code>, <code>fin</code>, <code>psh</code>, <code>rst</code>, <code>syn</code>, <code>urg</code>]</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>If <code>protocol = udp</code><ul>
-<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports; ex. <code>80,443,1025-4096</code></li>
-<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; An integer representing the destination port</li>
+<li>If <code>protocol = udp</code>:<ul>
+<li><code>srcPorts</code> <em>[mandatory]</em> &ndash; A string representing ports. For example, <code>80,443,1025-4096</code>.</li>
+<li><code>dstPorts</code> <em>[mandatory]</em> &ndash; An integer representing the destination port.</li>
 </ul>
 </li>
-<li>If <code>protocol = icmp</code><ul>
-<li><code>type</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP type</li>
-<li><code>code</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP code</li>
+<li>If <code>protocol = icmp</code>:<ul>
+<li><code>type</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP type.</li>
+<li><code>code</code> <em>[mandatory]</em> &ndash; An integer representing the ICMP code.</li>
 </ul>
 </li>
 </ul>
@@ -11941,34 +11941,34 @@ documentation.
 <div class="admonition example">
 <p class="admonition-title">Minimal Request Body Example</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;snapshot&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$last&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">parameters</span><span class="s2">&quot;: {</span>
-<span class="s2">    &quot;</span><span class="nx">destinationPoint</span><span class="s2">&quot;: &quot;</span><span class="mf">10.35.253.58</span><span class="o">/</span><span class="mf">32</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">groupBy</span><span class="s2">&quot;: &quot;</span><span class="nx">siteName</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">networkMode</span><span class="s2">&quot;: false,</span>
-<span class="s2">    &quot;</span><span class="nx">pathLookupType</span><span class="s2">&quot;: &quot;</span><span class="nx">unicast</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">securedPath</span><span class="s2">&quot;: false,</span>
-<span class="s2">    &quot;</span><span class="nx">startingPoint</span><span class="s2">&quot;: &quot;</span><span class="mf">10.241.1.203</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">type</span><span class="s2">&quot;: &quot;</span><span class="nx">pathLookup</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">firstHopAlgorithm</span><span class="s2">&quot;: {</span>
-<span class="s2">      &quot;</span><span class="nx">type</span><span class="s2">&quot;: &quot;</span><span class="nx">automatic</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nt">&quot;snapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$last&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">parame</span><span class="kc">ters</span><span class="s2">&quot;: {</span>
+<span class="s2">    &quot;</span><span class="err">des</span><span class="kc">t</span><span class="err">i</span><span class="kc">nat</span><span class="err">io</span><span class="kc">n</span><span class="err">Poi</span><span class="kc">nt</span><span class="s2">&quot;: &quot;</span><span class="mf">10.35.253.58</span><span class="err">/</span><span class="mi">32</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="err">groupBy</span><span class="s2">&quot;: &quot;</span><span class="err">si</span><span class="kc">te</span><span class="err">Name</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="kc">net</span><span class="err">workMode</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="err">pa</span><span class="kc">t</span><span class="err">hLookupType</span><span class="s2">&quot;: &quot;</span><span class="err">u</span><span class="kc">n</span><span class="err">icas</span><span class="kc">t</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="err">securedPa</span><span class="kc">t</span><span class="err">h</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="err">s</span><span class="kc">tart</span><span class="err">i</span><span class="kc">n</span><span class="err">gPoi</span><span class="kc">nt</span><span class="s2">&quot;: &quot;</span><span class="mf">10.241.1.203</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="kc">t</span><span class="err">ype</span><span class="s2">&quot;: &quot;</span><span class="err">pa</span><span class="kc">t</span><span class="err">hLookup</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="err">HopAlgori</span><span class="kc">t</span><span class="err">hm</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="kc">t</span><span class="err">ype</span><span class="s2">&quot;: &quot;</span><span class="err">au</span><span class="kc">t</span><span class="err">oma</span><span class="kc">t</span><span class="err">ic</span><span class="s2">&quot;</span>
 <span class="s2">    },</span>
-<span class="s2">    &quot;</span><span class="nx">protocol</span><span class="s2">&quot;: &quot;</span><span class="nx">tcp</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">enableRegions</span><span class="s2">&quot;: false,</span>
-<span class="s2">    &quot;</span><span class="nx">srcRegions</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="o">*</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">dstRegions</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="o">*</span><span class="s2">&quot;,</span>
-<span class="s2">    &quot;</span><span class="nx">ttl</span><span class="s2">&quot;: 128,</span>
-<span class="s2">    &quot;</span><span class="nx">fragmentOffset</span><span class="s2">&quot;: 0,</span>
-<span class="s2">    &quot;</span><span class="nx">otherOptions</span><span class="s2">&quot;: {</span>
-<span class="s2">      &quot;</span><span class="nx">applications</span><span class="s2">&quot;: &quot;</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;,</span>
-<span class="s2">      &quot;</span><span class="nx">tracked</span><span class="s2">&quot;: false</span>
+<span class="s2">    &quot;</span><span class="err">pro</span><span class="kc">t</span><span class="err">ocol</span><span class="s2">&quot;: &quot;</span><span class="kc">t</span><span class="err">cp</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="err">e</span><span class="kc">na</span><span class="err">bleRegio</span><span class="kc">ns</span><span class="s2">&quot;: false,</span>
+<span class="s2">    &quot;</span><span class="err">srcRegio</span><span class="kc">ns</span><span class="s2">&quot;: &quot;</span><span class="err">.*</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="err">ds</span><span class="kc">t</span><span class="err">Regio</span><span class="kc">ns</span><span class="s2">&quot;: &quot;</span><span class="err">.*</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="kc">ttl</span><span class="s2">&quot;: 128,</span>
+<span class="s2">    &quot;</span><span class="kc">fra</span><span class="err">gme</span><span class="kc">nt</span><span class="err">O</span><span class="kc">ffset</span><span class="s2">&quot;: 0,</span>
+<span class="s2">    &quot;</span><span class="err">o</span><span class="kc">t</span><span class="err">herOp</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="s2">&quot;: &quot;</span><span class="err">(.*)</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="kc">tra</span><span class="err">cked</span><span class="s2">&quot;: false</span>
 <span class="s2">    },</span>
-<span class="s2">    &quot;</span><span class="nx">l4Options</span><span class="s2">&quot;: {</span>
-<span class="s2">      &quot;</span><span class="nx">dstPorts</span><span class="s2">&quot;: &quot;</span><span class="mf">80</span><span class="p">,</span><span class="mf">443</span><span class="s2">&quot;,</span>
-<span class="s2">      &quot;</span><span class="nx">srcPorts</span><span class="s2">&quot;: &quot;</span><span class="mf">1024</span><span class="s2">&quot;,</span>
-<span class="s2">      &quot;</span><span class="nx">flags</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="s2">    &quot;</span><span class="err">l</span><span class="mi">4</span><span class="err">Op</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="s2">&quot;: {</span>
+<span class="s2">      &quot;</span><span class="err">ds</span><span class="kc">t</span><span class="err">Por</span><span class="kc">ts</span><span class="s2">&quot;: &quot;</span><span class="mi">80</span><span class="p">,</span><span class="mi">443</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="err">srcPor</span><span class="kc">ts</span><span class="s2">&quot;: &quot;</span><span class="mi">1024</span><span class="s2">&quot;,</span>
+<span class="s2">      &quot;</span><span class="kc">fla</span><span class="err">gs&quot;: []</span>
+<span class="err">    }</span>
+<span class="err">}</span>
 </code></pre></div>
 </div>
 
@@ -11991,7 +11991,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     
