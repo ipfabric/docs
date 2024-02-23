@@ -12287,9 +12287,9 @@ documentation.
 </div>
 <h3 id="supported-virtualization-platforms">Supported Virtualization Platforms</h3>
 <p>We recommend using either VMware ESXi or vSphere to deploy the IP Fabric appliance.</p>
-<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. To achieve the best performance, we strongly recommend using the latest ESXi with the <a href="https://kb.vmware.com/s/article/1010398"><code>pvscsi</code></a> storage driver and the <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
+<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi 7.0</a>. To achieve the best performance, we strongly recommend using the latest ESXi with the <a href="https://kb.vmware.com/s/article/1010398"><code>PVSCSI</code></a> (Paravirtual SCSI) storage driver and the <a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a> networking driver.</p>
 <p>The minimal recommended <code>Virtual Hardware Version</code> is <code>vmx-17</code>, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See <a href="https://kb.vmware.com/s/article/1003746">VMware KB</a> for details.</p>
-<p>If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This occurs because our OVAs use the SHA256 cryptographic hashing algorithm, which is not supported by those versions.</p>
+<p>If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following <a href="../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/">Error: Invalid OVF checksum algorithm: SHA256</a>. This occurs because our OVAs use the <code>SHA256</code> cryptographic hashing algorithm, which is not supported by those versions.</p>
 <p>It might be possible to deploy <code>vmdk</code> on earlier versions of ESXi with some effort. Since the OVA is a tar file, you can extract the <code>.vmdk</code> image and import it directly with the recommended hardware requirements.
 A similar <a href="https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html">VMware documentation article</a> provides a description of how to extract <code>ova</code> and import <code>vmdk</code>.</p>
 <p>It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.</p>
@@ -12466,7 +12466,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     
