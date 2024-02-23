@@ -1516,7 +1516,7 @@ documentation.
   <a href="#curl-from-linux-shell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        cURL from Linux Shell
+        curl From Linux Shell
       
     </span>
   </a>
@@ -11845,7 +11845,7 @@ documentation.
   <a href="#curl-from-linux-shell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        cURL from Linux Shell
+        curl From Linux Shell
       
     </span>
   </a>
@@ -11884,41 +11884,46 @@ documentation.
 
 
 <h1 id="trigger-manual-configuration-backup">Trigger Manual Configuration Backup</h1>
-<p><a href="../../IP_Fabric_GUI/management/configuration/">Configuration Backups</a> is a separate process from that of Discovery. 
-This can be configured on a schedule or triggered by syslog in the IP Fabric GUI but can also be triggered using an 
+<p><a href="../../IP_Fabric_GUI/management/configuration/">Configuration Backup</a> is a
+separate process from that of Discovery. It can be configured on a schedule or
+triggered by syslog in the IP Fabric GUI, but it can also be triggered using an
 API call.</p>
-<p>Some example situations to use the API call:</p>
+<p>Some example situations to use an API call:</p>
 <ul>
-<li>A new device was added to the network, but you don&rsquo;t want to wait until the next regular configuration backup collection.</li>
+<li>A new device was added to the network, but you don&rsquo;t want to wait until the
+  next regular configuration backup collection.</li>
 <li>Syslog messages may not be parsed for all vendors.</li>
-<li>Perform a backup as a part of automation after a configuration change on a device.</li>
+<li>You want to perform a backup as part of automation after a configuration
+  change on a device.</li>
 </ul>
 <h2 id="python-ipfabric-sdk">Python <code>ipfabric</code> SDK</h2>
-<p>The <a href="../integrations/python">python-ipfabric</a> and is the easiest and simplest method to trigger a backup using the API.
-This was added to the SDK in version <code>v6.0.0</code>.</p>
+<p><a href="../integrations/python"><code>python-ipfabric</code></a> is the easiest and simplest method to
+trigger a backup using the API. This was added to the SDK in version <code>6.0.0</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s1">&#39;&lt;FQDN&gt;&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">&#39;&lt;TOKEN&gt;&#39;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># Trigger based on IP Address</span>
+<span class="c1"># Trigger based on an IP address</span>
 <span class="n">status_code</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">trigger_backup</span><span class="p">(</span><span class="n">ip</span><span class="o">=</span><span class="s1">&#39;&lt;IP_OF_DEVICE_TO_BACKUP&gt;&#39;</span><span class="p">)</span>
 
-<span class="c1"># Trigger based on IP Fabric Unique Serial Number</span>
+<span class="c1"># Trigger based on an IP Fabric Unique Serial Number</span>
 <span class="n">status_code</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">trigger_backup</span><span class="p">(</span><span class="n">sn</span><span class="o">=</span><span class="s1">&#39;&lt;IPF_UNIQUE_SERIAL_NUMBER&gt;&#39;</span><span class="p">)</span>
 
-<span class="c1"># Trigger directly on a Device object</span>
+<span class="c1"># Trigger directly on a device object</span>
 <span class="n">dev</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">status_code</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">trigger_backup</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="python3-requests-module">Python3 <code>requests</code> Module</h2>
-<p>The Python3 <a href="https://pypi.org/project/requests/">requests module</a> is a simple, yet elegant, HTTP library. To trigger a
-single config backup, you need to set these parameters:</p>
+<p>The Python3 <a href="https://pypi.org/project/requests/">requests</a> module is a simple,
+yet elegant, HTTP library. To trigger a single configuration backup, you need to
+set these parameters:</p>
 <ul>
-<li>Request resource <code>https://{hostname}/api/{api_version}/discovery/trigger-config-backup</code></li>
-<li>Request type <code>POST</code></li>
-<li>Request Body:<ul>
+<li>request resource
+  <code>https://{hostname}/api/{api_version}/discovery/trigger-config-backup</code></li>
+<li>request type <code>POST</code></li>
+<li>request body:<ul>
 <li>IP address: <code>{"ip": "&lt;IP_OF_DEVICE_TO_BACKUP&gt;"}</code></li>
-<li>Serial Number: <code>{"sn": "&lt;IPF_UNIQUE_SERIAL_NUMBER&gt;"}</code></li>
+<li>serial number: <code>{"sn": "&lt;IPF_UNIQUE_SERIAL_NUMBER&gt;"}</code></li>
 </ul>
 </li>
 </ul>
@@ -11926,11 +11931,11 @@ single config backup, you need to set these parameters:</p>
 
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="c1"># Set FQDN and API Token of your IP Fabric installation</span>
+<span class="c1"># Set the FQDN and an API token of your IP Fabric installation</span>
 <span class="n">FQDN</span> <span class="o">=</span> <span class="s2">&quot;https://&lt;FQDN&gt;/&quot;</span>
 <span class="n">TOKEN</span> <span class="o">=</span> <span class="s2">&quot;&lt;TOKEN&gt;&quot;</span>
 
-<span class="c1"># Set an IP Address or IP Fabric Unique Serial Number `sn`</span>
+<span class="c1"># Set an IP address or IP Fabric Unique Serial Number (`sn`)</span>
 <span class="n">IP</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;10.0.0.1&quot;</span>
 <span class="n">SN</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;a24ff71&quot;</span>
 
@@ -11948,8 +11953,8 @@ single config backup, you need to set these parameters:</p>
     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="curl-from-linux-shell">cURL from Linux Shell</h2>
-<p>To trigger a backup based on an IP Address:</p>
+<h2 id="curl-from-linux-shell"><code>curl</code> From Linux Shell</h2>
+<p>To trigger a backup based on an IP address:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/discovery/trigger-config-backup&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;X-API-Token: &lt;YOUR_API_TOKEN&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -11963,12 +11968,14 @@ single config backup, you need to set these parameters:</p>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can also execute this cURL command locally on the IP Fabric VM and can replace the FQDN with <code>localhost</code>.</p>
+<p>You can also execute this <code>curl</code> command locally on the IP Fabric VM. Just
+replace the FQDN with <code>localhost</code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are using a self-signed certificate use <code>-k</code> or <code>--insecure</code>.  Required if using <code>localhost</code> when running 
-the command locally on the IP Fabric VM.</p>
+<p>If you are using a self-signed certificate, use <code>-k</code> or <code>--insecure</code>. This
+is required if running the command locally on the IP Fabric VM with
+<code>localhost</code>.</p>
 </div>
 
 
@@ -11990,7 +11997,7 @@ the command locally on the IP Fabric VM.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     
