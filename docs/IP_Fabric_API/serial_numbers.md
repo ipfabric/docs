@@ -6,19 +6,19 @@ description: IP Fabric uses the serial number field as a key in its tables for a
 
 IP Fabric uses the serial number field as a key in its tables for a device. In
 some cases, the same serial number may be required to be used for multiple
-elements (for example, clusters, stacks or virtualized platforms).
+elements (for example, clusters, stacks, or virtualized platforms).
 
-Thus, the serial number is manipulated by IP Fabric in some way - anything from
+Thus, the serial number is manipulated by IP Fabric in some way -- anything from
 a virtual context name to a simple `_1` might be added.
 
-This makes it potentially more difficult to match the serial number with other
+This potentially makes it more difficult to match the serial number with other
 platforms outside IP Fabric.
 
-To work around the issue, we did the following in version `3.7.0`:
+To work around the issue, we made the following changes in version `3.7.0`:
 
 - renamed the previous `Serial Number` column in the **Device Inventory** table
   (in **Inventory --> Devices**) to `Unique serial number` (including
-  virtualization unique identifier such as context, VSYS, VDC etc.)
+  virtualization unique identifier such as context, VSYS, VDC, etc.)
 - introduced a new `Serial Number` column (containing real serial numbers as
   reported by devices themselves)
 

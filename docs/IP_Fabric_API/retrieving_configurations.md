@@ -1,12 +1,11 @@
 ---
-description: This tech note describes how you can retrieve configuration files from IP Fabric’s configuration management capability, to be consumed outside the platform.
+description: This page describes how you can retrieve configuration files from IP Fabric's configuration management capability to be consumed outside the platform.
 ---
 
 # Retrieving Configurations
 
-This tech note describes how you can retrieve configuration files from IP
-Fabric’s configuration management capability, to be consumed outside the
-platform.
+This page describes how you can retrieve configuration files from IP Fabric's
+configuration management capability to be consumed outside the platform.
 
 Do this in two stages:
 
@@ -18,15 +17,15 @@ Do this in two stages:
    }
    ```
 
-   Of course, you can of course filter that list (for example, for devices
-   containing `L36`) with a `key:value` pair:
+   Of course, you can filter that list (for example, for devices containing
+   `L36`) with a `key:value` pair:
 
    ```json
    "filters": {
      "hostname": ["like","L36"]
    }
    ```
-   
+
    or you can select the range of dates you are interested in:
 
    ```json
@@ -34,7 +33,7 @@ Do this in two stages:
      "lastCheckAt": ["gte",XXXXXXXXXXXXXX]
    }
    ```
-   
+
    where `XXXXXXXXXXXXXX` is the [UNIX epoch time](https://www.epoch101.com/)
    representing the start of the time range.
 
@@ -42,7 +41,7 @@ Do this in two stages:
    "hash" for each of them.
 
 2. Send a `GET` to
-   `/tables/management/configuration/download?hash=XXXXXXXXXXXXX`
+   `/tables/management/configuration/download?hash=XXXXXXXXXXXXX`,
    where `XXXXXXXXXXXXX` is the hash for the required configuration from the
    list returned in step 1. This returns the plain text of the configuration in
    question.

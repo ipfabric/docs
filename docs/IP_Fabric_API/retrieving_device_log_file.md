@@ -1,11 +1,11 @@
 ---
-description: This tech note describes how you can retrieve log files for a device from IP Fabric’s discovery, to be consumed outside the platform.
+description: This page describes how you can retrieve log files for a device from IP Fabric's discovery to be consumed outside the platform.
 ---
 
 # Retrieving Device Log File
 
-This tech note describes how you can retrieve log files for a device from IP
-Fabric’s discovery, to be consumed outside the platform.
+This page describes how you can retrieve log files for a device from IP Fabric's
+discovery to be consumed outside the platform.
 
 Do this in two stages:
 
@@ -27,8 +27,9 @@ Do this in two stages:
     }
     ```
 
-    This gives you the task ID for the discovery of the device in question.
+    This provides you with the task ID for the discovery of the device in
+    question.
 
-2. Send a `GET` to `/os/logs/task/XXXXXXXXXXXXX` where `XXXXXXXXXXXXX` is the
+2. Send a `GET` to `/os/logs/task/XXXXXXXXXXXXX`, where `XXXXXXXXXXXXX` is the
    `taskKey` value returned in step 1 for the required network device. This
    returns the plain text of the log file for that device discovery.

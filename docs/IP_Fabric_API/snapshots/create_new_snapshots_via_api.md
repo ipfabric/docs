@@ -4,32 +4,32 @@ description: This post is intended to explain how to create a new snapshot using
 
 # Create New Snapshots via API
 
-This post is intended to explain how to create a new snapshot using the API. You may want to create the new snapshot with the existing settings, or with a different set of settings, if you wanted to have a reduced scope for example.
+This page explains how to create a new snapshot using the API. You may want to create a new snapshot with the existing settings or with a different set of settings, for example, if you wanted to have a reduced scope.
 
 ## API Endpoints
 
-- `/api/{api_version}/snapshots` - method `POST` to create a new snapshot
+- `/api/{api_version}/snapshots` -- A `POST` method to create a new snapshot.
 
-- `/api/{api_version}/settings` - method `GET` to collect all IP Fabric settings
+- `/api/{api_version}/settings` -- A `GET` method to collect all IP Fabric settings.
 
 ## Header Authentication
 
 Headers must contain:
 
 - `content-type: application/json`
-- `X-API-Token:` (the API token provided from the IP Fabric Settings UI)
+- `X-API-Token:` -- An API token generated in IP Fabric Settings.
 
-## Create a New Snapshot with the Existing Settings
+## Create a New Snapshot With the Existing Settings
 
-If you want to start a discovery, using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
+If you want to start a discovery using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
 
 ![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 
-## Create a New Snapshot with Different Settings Than the Default Ones
+## Create a New Snapshot With Different Settings Than the Default Ones
 
-What if you wanted a snapshot for a smaller scope of your network. For this, you can use the API to start a new discovery, with some specific settings used for a specific discovery.
+What if you wanted a snapshot for a smaller scope of your network? For this, you can use the API to start a new discovery with some specific settings used for that specific discovery.
 
-Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`), and not considering the Vendor APIs (Check Point, Meraki, AWS etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)
+Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`), and not considering the Vendor APIs (Check Point, Meraki, AWS, etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)
 
 !!! example
 
@@ -53,11 +53,11 @@ Let’s see how it looks when using Postman:
 
 ## Settings for Creating a New Snapshot
 
-There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric’s instance via a `GET` on the endpoint `/api/{api_version}/settings`
+There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric instance via a `GET` on the endpoint `/api/{api_version}/settings`.
 
 The response will look like this _(this is just an extract of the JSON)_:
 
-```js
+```json
 {
     "fullBgpLimit": {
         "enabled": true,
