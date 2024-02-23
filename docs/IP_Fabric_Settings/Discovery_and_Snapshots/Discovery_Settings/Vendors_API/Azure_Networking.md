@@ -29,7 +29,7 @@ IP Fabric needs the following to connect to the Azure API:
 
 - **Tenant ID**
 - **Client ID** (application ID)
-- **Client Secret (application secret)
+- **Client Secret** (application secret)
 
 Since version `6.7`, the **Subscription IDs** field is optional. Leave it empty to discover all available subscriptions within the same tenant.
 
