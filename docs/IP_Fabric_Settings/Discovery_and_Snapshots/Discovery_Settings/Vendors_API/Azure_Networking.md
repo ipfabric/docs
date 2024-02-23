@@ -27,10 +27,11 @@ Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add** 
 
 IP Fabric needs the following to connect to the Azure API:
 
-- Tenant ID
-- Subscription ID
-- Application ID
-- Application secret
+- **Tenant ID**
+- **Client ID** (application ID)
+- **Client Secret (application secret)
+
+Since version `6.7`, the **Subscription IDs** field is optional. Leave it empty to discover all available subscriptions within the same tenant.
 
 Follow these steps to get the required data.
 
@@ -67,8 +68,8 @@ Search for **Subscriptions** and select the subscription you like to add to IPF 
 
 ### Role Definitions for IP Fabric
 
-The following JSON format applies to IP Fabric version `4.3` and above:
+The following JSON format applies to IP Fabric version `6.7` and above:
 
-```json title="azure-role-4_3.json"
---8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-4_3.json"
+```json title="azure-role-6_7.json"
+--8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-6_7.json"
 ```
