@@ -28,4 +28,4 @@ Network via:
 - Intent-Based Networking
 
 And we demonstrate how Network Assurance, in general, and IP Fabric,
-specifically, navigate you throughout that journey.
+specifically, will navigate you throughout that journey.

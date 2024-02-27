@@ -22,7 +22,7 @@ Do this in two stages:
    numbers and hostnames for devices in the site `L38`.
 
 2. Send a `POST` to `/snapshots/XXXXXXXXXXX/devices`, where `XXXXXXXXXX` is the
-   snapshot ID that needs to be refreshed with a request body like:
+   snapshot ID that needs to be refreshed, with a request body like:
 
    ```json
    {

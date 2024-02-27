@@ -91,7 +91,7 @@ The appliance is built on top of Debian 11, which has been officially supported 
 
 The minimal recommended `Virtual Hardware Version` is `vmx-17`, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See [VMware KB](https://kb.vmware.com/s/article/1003746) for details.
 
-If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the following [Error: Invalid OVF checksum algorithm: SHA256](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md). This occurs because our OVAs use the `SHA256` cryptographic hashing algorithm, which is not supported by those versions.
+If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the [Invalid OVF checksum algorithm: SHA256](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md) error. This occurs because our OVAs use the `SHA256` cryptographic hashing algorithm, which is not supported by those versions.
 
 It might be possible to deploy `vmdk` on earlier versions of ESXi with some effort. Since the OVA is a tar file, you can extract the `.vmdk` image and import it directly with the recommended hardware requirements.
 A similar [VMware documentation article](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html) provides a description of how to extract `ova` and import `vmdk`.

@@ -10,13 +10,13 @@ review all of them before committing to any.
 
 ## API Token
 
-API token need to be passed as a request header. Please see
+API token needs to be passed as a request header. Please see
 [API Tokens](../IP_Fabric_Settings/integration/api_tokens.md) on how to create
 an API token in the UI.
 
 - Allows for limiting the scope of API calls. This allows for giving _fewer_
   rights than the account creating the token has.
-- Long-lived static tokens (secure storage is important).
+- Long-lived static token (secure storage is important).
 
 ```http
 Content-Type: application/json

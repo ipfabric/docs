@@ -10,7 +10,7 @@ might occur:
 ![OVA error](ova_error.png)
 
 Our appliance is built on top of Debian 11. We also require the `AVX` CPU instruction. The minimal requirement
-for the VMWare system type is `vmx-17`, supported by ESXi version `7.0` or newer.
+for the VMware system type is `vmx-17`, supported by ESXi version `7.0` or newer.
 See [ESXi/ESX hosts and compatible virtual machine hardware versions list (2007240)](https://kb.vmware.com/s/article/2007240).
 We require this system type because of `virtio`
 drivers for network and storage. All VMware applications from the same _generation_ support `SHA256`. There is a chance

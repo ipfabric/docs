@@ -111,7 +111,7 @@ as `deprecated: true` in the OpenAPI schema when we fully migrate to the OpenAPI
 Responses made with `minor < release_minor` will contain a custom header warning
 the client about the use of a potentially old API. We leverage
 the [IETF Draft for Deprecation header](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header). It is included and set to `true` (`Deprecation: true`) in every response to
-a call made with an older than current API version.
+a call made with an older than the current API version.
 
 Requests made with `major < release_major` (obsolete version) will be refused
 with the HTTP code `410 Gone` (`406 Not Acceptable` would also be reasonable, but we

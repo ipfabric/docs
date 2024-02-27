@@ -32,6 +32,22 @@ To add devices to an existing snapshot, use the **+ Add Devices** button. When a
 
 ![Add Devices](snapshot_add_device.png)
 
-To refresh network state data for specific devices in an existing snapshot, use the **Refresh Devices** button.
+To refresh network state data for specific devices in an existing snapshot:
 
-![Refresh Devices](snapshot_refresh_device.png)
+1. Select the devices you want to refresh:
+
+   ![Selecting devices](snapshot_select_device.png)
+
+2. Click **Refresh Devices**:
+
+   ![Refresh Devices](snapshot_refresh_device.png)
+
+To delete devices from an existing snapshot:
+
+1. Select the devices you want to delete:
+
+   ![Selecting devices](snapshot_select_device.png)
+
+2. Click **Delete Devices**:
+
+   ![Delete Devices](snapshot_delete_device.png)

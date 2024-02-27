@@ -2,7 +2,7 @@
 description: IP Fabric collects usage data to help improve the product.
 ---
 
-# Usage data collection
+# Usage Data Collection
 
 IP Fabric collects usage data to help improve the product. We use
 [PostHog](https://posthog.com) as a client-side event library.

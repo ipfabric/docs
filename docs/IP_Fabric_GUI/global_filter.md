@@ -1,5 +1,5 @@
 ---
-description: This section is about applying an Attribute filter in the IP Fabric GUI which will quickly limit the scope of data that will be displayed in tables.
+description: This page explains how to apply an Attribute filter in the IP Fabric GUI, which will quickly limit the scope of data that will be displayed in tables.
 ---
 
 # Global Filter
