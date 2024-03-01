@@ -16,14 +16,14 @@
         <link rel="prev" href="../netbox/user_guide/10_FAQ/">
       
       
-        <link rel="next" href="Command_Line_Interface/">
+        <link rel="next" href="Command-Line_Interface/">
       
       
         
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11+insiders-4.53.0">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12+insiders-4.53.0">
     
     
       
@@ -7235,9 +7235,10 @@ documentation.
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pypi" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7247,8 +7248,8 @@ documentation.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#poetry" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7256,6 +7257,11 @@ documentation.
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7336,7 +7342,7 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="Command_Line_Interface/" class="md-nav__link">
+      <a href="Command-Line_Interface/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7392,7 +7398,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    IP Fabric Service Now Application
+    IP Fabric ServiceNow Application
   
 
     
@@ -7408,7 +7414,7 @@ documentation.
             <span class="md-nav__icon md-icon"></span>
             
   
-    IP Fabric Service Now Application
+    IP Fabric ServiceNow Application
   
 
           </label>
@@ -7421,13 +7427,13 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="IP_Fabric_Service_Now_Application/" class="md-nav__link">
+      <a href="IP_Fabric_ServiceNow_Application/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    IP Fabric Service Now Application Installation and Management
+    IP Fabric ServiceNow Application Installation and Management
   
 
     
@@ -11812,9 +11818,10 @@ documentation.
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pypi" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11824,8 +11831,8 @@ documentation.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#poetry" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11833,6 +11840,11 @@ documentation.
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -11920,11 +11932,6 @@ documentation.
 
 
 <h1 id="installation-overview">Installation &amp; Overview</h1>
-<p>Requirements:</p>
-<ul>
-<li>Python 3.10+</li>
-<li>Access to IP Fabric and ServiceNow</li>
-</ul>
 <div class="highlight"><pre><span></span><code>❯<span class="w"> </span>ipfabric-snow<span class="w"> </span>--help
 
 <span class="w"> </span>Usage:<span class="w"> </span>ipfabric-snow<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="w">                                                                                                                                                                                                            </span>
@@ -11940,33 +11947,38 @@ documentation.
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─<span class="w"> </span>Commands<span class="w"> </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │<span class="w"> </span>env<span class="w">                            </span>Setup<span class="w"> </span>environment<span class="w"> </span>variables<span class="w">                                                                                                                                                                                                </span>│
-│<span class="w"> </span>sync<span class="w">                           </span>Sync<span class="w"> </span>Inventory<span class="w"> </span>data<span class="w"> </span>with<span class="w"> </span>Service<span class="w"> </span>Now<span class="w">                                                                                                                                                                                       </span>│
+│<span class="w"> </span>sync<span class="w">                           </span>Sync<span class="w"> </span>Inventory<span class="w"> </span>data<span class="w"> </span>with<span class="w"> </span>ServiceNow<span class="w">                                                                                                                                                                                        </span>│
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
-<h3 id="installation">Installation</h3>
+<h2 id="installation">Installation</h2>
+<p>Requirements:</p>
+<ul>
+<li>Python 3.10+</li>
+<li>Access to IP Fabric and ServiceNow</li>
+</ul>
 <h3 id="pypi">PyPI</h3>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric-snow
 </code></pre></div>
 <h3 id="poetry">Poetry</h3>
-<p>Clone <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-snow">the repository</a> and run
+<p>Clone <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-snow">the repository</a> and run:</p>
 <div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>install
-</code></pre></div></p>
-<h3 id="overview">Overview</h3>
-<p>The ipfabric-snow integration is a powerful command-line tool designed to facilitate the synchronization of network inventory data between IP Fabric and ServiceNow. This Python-based application is built with minimal dependencies, ensuring ease of setup and maintenance. Key features and requirements of this tool include:</p>
+</code></pre></div>
+<h2 id="overview">Overview</h2>
+<p>The <code>ipfabric-snow</code> integration is a powerful command-line tool designed to facilitate the synchronization of network inventory data between IP Fabric and ServiceNow. This Python application is built with minimal dependencies, ensuring ease of setup and maintenance. Key features and requirements of this tool include:</p>
 <ul>
-<li>Staging Table Requirement: ipfabric-snow requires a staging table in ServiceNow. This table acts as an intermediate location where data from IP Fabric is temporarily stored before being processed or transferred to the final destination table. In Service Now this is referred to as a import set. Reference Service Now’s documentation on <a href="https://docs.servicenow.com/bundle/vancouver-integrate-applications/page/administer/import-sets/reference/import-sets-landing-page.html">import sets</a>.</li>
+<li><strong>Staging Table Requirement:</strong> <code>ipfabric-snow</code> requires a staging table in ServiceNow. This table acts as an intermediate location where data from IP Fabric is temporarily stored before being processed or transferred to the final destination table. In ServiceNow, this is referred to as a import set. Reference ServiceNow&rsquo;s documentation on <a href="https://docs.servicenow.com/bundle/vancouver-integrate-applications/page/administer/import-sets/reference/import-sets-landing-page.html">import sets</a>.</li>
 </ul>
 <ul>
-<li>Transformation Maps: The integration utilizes transformation maps, a component in ServiceNow, to map and transform data fields from IP Fabric to corresponding fields in ServiceNow. Service Now’s documentation on <a href="https://docs.servicenow.com/csh?topicname=c_CreatingNewTransformMaps.html&amp;version=latest">transformation maps</a>.</li>
+<li><strong>Transformation Maps:</strong> The integration utilizes transformation maps, a component in ServiceNow, to map and transform data fields from IP Fabric to corresponding fields in ServiceNow. See ServiceNow&rsquo;s documentation on <a href="https://docs.servicenow.com/csh?topicname=c_CreatingNewTransformMaps.html&amp;version=latest">transformation maps</a>.</li>
 </ul>
 <ul>
-<li>Diffing with CMDB Network Gear Table: The main functionality of ipfabric-snow is its ability to perform differential analysis between the data in IP Fabric and the existing data in ServiceNow’s CMDB (Configuration Management Database) network gear table. This feature allows users to identify and synchronize any discrepancies between the two data sources.</li>
+<li><strong>Diffing with CMDB Network Gear Table:</strong> The main functionality of <code>ipfabric-snow</code> is its ability to perform differential analysis between the data in IP Fabric and the existing data in ServiceNow&rsquo;s CMDB (Configuration Management Database) network gear table. This feature allows users to identify and synchronize any discrepancies between the two data sources.</li>
 </ul>
 <ul>
-<li>Command Line Interface: ipfabric-snow is a command-line utility, offering a user-friendly interface with various commands and options. This approach makes it versatile for different environments and use cases, allowing automation and scripting.</li>
+<li><strong>Command-Line Interface:</strong> <code>ipfabric-snow</code> is a command-line utility, offering a user-friendly interface with various commands and options. This approach makes it versatile for different environments and use cases, allowing automation and scripting.</li>
 </ul>
 <ul>
-<li>Dry Run Feature: Supports a ‘dry run’ mode. The dry run mode allows users to simulate the synchronization process without making actual changes.</li>
+<li><strong>Dry Run Feature:</strong> Supports a &ldquo;dry run&rdquo; mode, which allows users to simulate the synchronization process without making actual changes.</li>
 </ul>
 
 
@@ -11988,7 +12000,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
   </span>
 
     
@@ -12083,7 +12095,7 @@ documentation.
         
         
           
-          <a href="Command_Line_Interface/" class="md-footer__link md-footer__link--next" aria-label="Next: Using the ipfabric-snow CLI">
+          <a href="Command-Line_Interface/" class="md-footer__link md-footer__link--next" aria-label="Next: Using the ipfabric-snow CLI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -12249,7 +12261,7 @@ documentation.
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.82b033e4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.cd25cebc.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       
