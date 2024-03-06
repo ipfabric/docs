@@ -1947,33 +1947,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Refreshing Devices in a Snapshot
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../IP_Fabric_API/snapshots/snapshot_table/" class="md-nav__link">
         
   
@@ -2512,12 +2485,12 @@ documentation.
   <a href="#inspecting-and-adjusting-path-lookup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inspecting And Adjusting Path Lookup
+        Inspecting and Adjusting Path Lookup
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Inspecting And Adjusting Path Lookup">
+    <nav class="md-nav" aria-label="Inspecting and Adjusting Path Lookup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2535,7 +2508,7 @@ documentation.
   <a href="#understand-the-path-selection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand The Path Selection
+        Understand the Path Selection
       
     </span>
   </a>
@@ -12072,12 +12045,12 @@ documentation.
   <a href="#inspecting-and-adjusting-path-lookup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inspecting And Adjusting Path Lookup
+        Inspecting and Adjusting Path Lookup
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Inspecting And Adjusting Path Lookup">
+    <nav class="md-nav" aria-label="Inspecting and Adjusting Path Lookup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -12095,7 +12068,7 @@ documentation.
   <a href="#understand-the-path-selection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand The Path Selection
+        Understand the Path Selection
       
     </span>
   </a>
@@ -12194,47 +12167,47 @@ documentation.
 <h2 id="unicast-path-lookup">Unicast Path Lookup</h2>
 <p><a class="glightbox" href="../pathlookup/unicast.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Unicast form" src="../pathlookup/unicast.png" /></a></p>
 <h3 id="first-hop-algorithm-and-vrf">First Hop Algorithm And VRF</h3>
-<p>First Hop Algorithm adds possibility to start path lookup simulation from a different device than the closest one.</p>
-<p>If the <strong>Automatic</strong> option is selected, IP Fabric starts path lookup simulation from the closest device possible, VRF is also automatically selected by default, but can be changed manually.</p>
+<p>The <strong>First Hop Algorithm</strong> adds the possibility to start the path lookup simulation from a different device than the closest one.</p>
+<p>If the <strong>Automatic</strong> option is selected, IP Fabric initiates the path lookup simulation from the closest possible device. VRF is also automatically selected by default but can be changed manually.</p>
 <p><a class="glightbox" href="../pathlookup/first_hop_algorithm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="First hop algorithm" src="../pathlookup/first_hop_algorithm.png" /></a></p>
-<p><strong>User defined</strong> First Hop Algorithm can be useful when simulating flow where the source network is not known by IP Fabric.</p>
-<p>To simulate such flow, it is necessary to specify the starting point by entering the name of the device and the interface which will be used to start the path lookup.</p>
-<p>Packets will use the source IP indicated.</p>
+<p>The <strong>User defined</strong> First Hop Algorithm can be useful when simulating a flow where the source network is not known by IP Fabric.</p>
+<p>To simulate such a flow, it is necessary to specify the starting point by entering the name of the device and the interface which will be used to start the path lookup.</p>
+<p>Packets will use the indicated source IP address.</p>
 <div class="admonition example">
-<p class="admonition-title">User Defined First Hop Algorithm</p>
+<p class="admonition-title">User-Defined First Hop Algorithm</p>
 <p>In the example below, the source network <code>10.25.25.0/24</code> is not known by IP Fabric. To show the path between a client in this network and a server in a network known by IP Fabric:</p>
 <p><a class="glightbox" href="../pathlookup/user_defined_first_hop_algorithm_example_drawing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="User Defined First hop algorithm example" src="../pathlookup/user_defined_first_hop_algorithm_example_drawing.png" style="height:150px" /></a></p>
-<ul>
-<li>Select <code>User defined</code> First Hop Algorithm</li>
-<li>Search for the device where to start the path: <code>L43EXR1</code></li>
-<li>Select the source interface: <code>Et0/1</code></li>
-<li>Enter the source IP, from the network outside the scope of IP Fabric: <code>10.25.25.10</code></li>
-<li>Finally enter the destination IP: <code>10.66.122.110</code></li>
-</ul>
+<ol>
+<li>Select the <strong>User defined</strong> First Hop Algorithm.</li>
+<li>Search for the device where you want to start the path: <code>L43EXR1</code>.</li>
+<li>Select the source interface: <code>Et0/1</code>.</li>
+<li>Enter the source IP from the network outside the scope of IP Fabric: <code>10.25.25.10</code>.</li>
+<li>Finally, enter the destination IP: <code>10.66.122.110</code>.</li>
+</ol>
 <p><a class="glightbox" href="../pathlookup/user_defined_first_hop_algorithm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="User Defined First hop algorithm" src="../pathlookup/user_defined_first_hop_algorithm.png" /></a></p>
 <p>This is the result you will get:</p>
 <p><a class="glightbox" href="../pathlookup/user_defined_first_hop_algorithm_result.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="User Defined First hop algorithm Result" src="../pathlookup/user_defined_first_hop_algorithm_result.png" /></a></p>
 </div>
 <h3 id="sourcedestination-ip-address-and-port">Source/Destination IP Address and Port</h3>
-<p>As a source/destination IP address can be used a plain IP address or a CIDR (Classless Inter-Domain Routing) when for example simulating path lookup from a host to a network.</p>
+<p>A plain IP address or a CIDR (Classless Inter-Domain Routing) can be used as a source/destination IP address, for example, when simulating path lookup from a host to a network.</p>
 <p>By default, the <code>ICMP</code> protocol and the <code>Echo request</code> option are chosen for path lookup.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_src_dst.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source and destination" src="../pathlookup/pathlookup_src_dst.png" /></a></p>
-<p>When switched to Web HTTP/HTTPS, TCP destination port 80 and 443 with (web|http|https) application is set by default.</p>
+<p>When switched to <code>Web HTTP/HTTPS</code>, TCP destination ports <code>80</code> and <code>443</code> with the <code>(web|http|https)</code> application are set by default.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_http_default.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HTTP default" src="../pathlookup/pathlookup_http_default.png" /></a></p>
-<p>When extending details, transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the path lookup.</p>
+<p>When extending details, the transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the path lookup.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_src_dst_port.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source and destination ports" src="../pathlookup/pathlookup_src_dst_port.png" /></a></p>
-<p>Port can be changed to an arbitrary one for TCP/UDP protocols.</p>
-<p>The following flags can be also set for TCP traffic &ndash; None/ACK/FIN/SYN/RST/PSH/URG.</p>
+<p>The port can be changed to an arbitrary one for TCP/UDP protocols.</p>
+<p>The following flags can also be set for TCP traffic: <code>None</code> / <code>ACK</code> / <code>FIN</code> / <code>SYN</code> / <code>RST</code> / <code>PSH</code> / <code>URG</code>.</p>
 <h3 id="ttl-and-fragment-offset">TTL and Fragment Offset</h3>
-<p>In <strong>More details</strong>, <strong>TTL</strong> (Time to live) and <strong>Fragment offset</strong> can be set &ndash; thus affecting path lookup output - default TTL is 128 and Fragment offset is set to 0</p>
+<p>In <strong>More details</strong>, <strong>TTL</strong> (Time to live) and <strong>Fragment offset</strong> can be set &ndash; thus affecting the path lookup output. The default TTL is 128 and Fragment offset is set to 0.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_ttl_fragment.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TTL and Fragmentation" src="../pathlookup/pathlookup_ttl_fragment.png" /></a></p>
 <h3 id="application">Application</h3>
 <p>When evaluating security rules and security appliances on the path check traffic on <code>L7</code>, an application can be checked on the path lookup.</p>
-<p>It’s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.</p>
+<p>It&rsquo;s almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>An application name input is just a string, so it needs to be defined
-exactly as in a security rule!</p>
+<p>The application name input is simply a string, so it must be defined
+exactly as it appears in a security rule!</p>
 </div>
 <p><a class="glightbox" href="../pathlookup/pathlookup_application.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Application" src="../pathlookup/pathlookup_application.png" /></a></p>
 <h3 id="sourcedestination-ip-regions">Source/Destination IP Regions</h3>
@@ -12243,22 +12216,22 @@ exactly as in a security rule!</p>
 <p>By default, IP regions are not evaluated.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>IP regions are just a string, so they need to be defined exactly as they are
-in a security rule!</p>
+<p>IP regions are represented as strings, so they must be defined exactly as
+they are appear in a security rule!</p>
 </div>
 <p><a class="glightbox" href="../pathlookup/pathlookup_src_dst_regions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Regions" src="../pathlookup/pathlookup_src_dst_regions.png" /></a></p>
 <h3 id="path-lookup-mode">Path Lookup Mode</h3>
-<p>If you’ve used a network CIDR instead of a single IP address, you will have the option between:</p>
+<p>If you&rsquo;ve used a network CIDR instead of a single IP address, you will have the option between:</p>
 <ul>
-<li><strong>Network Mode</strong> &ndash; simulation starts and ends with whole networks,
-individual hosts are not considered</li>
+<li><strong>Network Mode</strong> &ndash; Simulation starts and ends with whole networks; individual
+  hosts are not considered.</li>
 </ul>
 <ul>
-<li><strong>Host Mode</strong> &ndash; simulation starts and ends with each host. It is
-limited to 255 hosts, source and destination combined.</li>
+<li><strong>Host Mode</strong> &ndash; Simulation starts and ends with each host. It is limited to
+  255 hosts, source and destination combined.</li>
 </ul>
-<p>Then click submit.</p>
-<p>This is how path lookup might look like:</p>
+<p>Then click <strong>Submit</strong>.</p>
+<p>This is how the path lookup might look:</p>
 <p><a class="glightbox" href="../pathlookup/example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path lookup example" src="../pathlookup/example.png" /></a></p>
 <h3 id="security-rules">Security Rules</h3>
 <p><a class="glightbox" href="../pathlookup/pathlookup_drop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path lookup drop" src="../pathlookup/pathlookup_drop.png" /></a></p>
@@ -12266,11 +12239,11 @@ limited to 255 hosts, source and destination combined.</li>
 traffic.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_continue.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path lookup continue" src="../pathlookup/pathlookup_continue.png" /></a></p>
 <p>If <strong>Continue</strong> is selected, the path lookup continues and does not apply the 
-policy&rsquo;s deny; in the detail pane it is labeled as <code>(not applied)</code>.</p>
+policy&rsquo;s deny; in the detail pane, it is labeled as <code>(not applied)</code>.</p>
 <h2 id="multicast-tree-lookup">Multicast Tree Lookup</h2>
 <p>If you want to understand how a certain multicast flow is used, you can use
-the Multicast Tree Lookup. For that, just select the correct option and
-enter the relevant details</p>
+the <strong>Multicast Tree Lookup</strong> tab. Just select the correct option and
+enter the relevant details.</p>
 <p><a class="glightbox" href="../pathlookup/multicast.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Multicast form" src="../pathlookup/multicast.png" /></a></p>
 <p>You will then see the Multicast Tree:</p>
 <p><a class="glightbox" href="../pathlookup/multicast_example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Multicast example" src="../pathlookup/multicast_example.png" /></a></p>
@@ -12279,29 +12252,29 @@ forwarding decision:</p>
 <p><a class="glightbox" href="../pathlookup/multicast_path_inspector.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Multicast path inspector" src="../pathlookup/multicast_path_inspector.png" /></a></p>
 <h2 id="host-to-gateway">Host To Gateway</h2>
 <p>To find out more details between a host and its network gateway, you can
-use this menu: Host To Gateway. You only need to provide the host, and
+use the <strong>Host To Gateway</strong> tab. You only need to provide the host, and
 you will the details:</p>
-<p><a class="glightbox" href="../pathlookup/host_to_gw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Host to gateway form" src="../pathlookup/host_to_gw.png" /></a></p>
-<h2 id="inspecting-and-adjusting-path-lookup">Inspecting And Adjusting Path Lookup</h2>
+<p><a class="glightbox" href="../pathlookup/host_to_gw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Host To Gateway form" src="../pathlookup/host_to_gw.png" /></a></p>
+<h2 id="inspecting-and-adjusting-path-lookup">Inspecting and Adjusting Path Lookup</h2>
 <h3 id="path-controls">Path Controls</h3>
-<p>With the mouse right-click, more options are enabled:</p>
+<p>With the right mouse click, more options are enabled:</p>
 <p><a class="glightbox" href="../pathlookup/path_controls.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path controls" src="../pathlookup/path_controls.png" /></a></p>
-<p>After opening the details with <code>Explore</code>, we can select the destination link to proceed with packet analysis:</p>
+<p>After opening the details with <code>Explore</code>, you can select the destination link to proceed with packet analysis:</p>
 <p><a class="glightbox" href="../pathlookup/path_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path detail" src="../pathlookup/path_detail.png" /></a></p>
-<h3 id="understand-the-path-selection">Understand The Path Selection</h3>
+<h3 id="understand-the-path-selection">Understand the Path Selection</h3>
 <p>To understand the decision taken by a device, right-click the device
 and click <code>Explore</code>. You will then be presented with the details. If you
 have more than one interface where the flow can come from, you will need
 to select the interface you want to look at. Similarly, if you have
 several interfaces that can be used to forward the traffic, you will
-have to choose one. Then in the middle of the table, you will see the
+have to choose one. Then, in the middle of the table, you will see the
 forwarding decision:</p>
 <p><a class="glightbox" href="../pathlookup/forwarding_decision.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Forwarding decision" src="../pathlookup/forwarding_decision.png" /></a></p>
 <p>In this example, we are looking at the device <code>L21C11</code>, which has 2
 incoming interfaces and one forwarding for this flow:</p>
 <p><a class="glightbox" href="../pathlookup/forwarding_decision_animation.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Forwarding decision animation" src="../pathlookup/forwarding_decision_animation.gif" /></a></p>
 <h3 id="visualization-setup">Visualization Setup</h3>
-<p>You can set up what you want to prioritize in the view. Just simply move
+<p>You can set up what you want to prioritize in the view. Simply move
 the bars up or down.</p>
 <p><a class="glightbox" href="../pathlookup/visualization_setup_movable.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visualization setup" src="../pathlookup/visualization_setup_movable.png" /></a></p>
 
@@ -12324,7 +12297,7 @@ the bars up or down.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2024</span>
   </span>
 
     

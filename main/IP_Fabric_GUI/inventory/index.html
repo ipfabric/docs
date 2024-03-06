@@ -1947,33 +1947,6 @@ documentation.
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/snapshots/refreshing_devices_in_a_snapshot/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Refreshing Devices in a Snapshot
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../IP_Fabric_API/snapshots/snapshot_table/" class="md-nav__link">
         
   
@@ -11995,15 +11968,15 @@ documentation.
 
 <h1 id="inventory">Inventory</h1>
 <h2 id="overview">Overview</h2>
-<p>The inventory provides a list overview of sites, devices, modules, interfaces
+<p>The inventory provides an overview list of sites, devices, modules, interfaces,
 and users discovered within the network.</p>
 <h2 id="sites">Sites</h2>
 <p>The site inventory provides an overview of discovered sites, the number of
-devices and users present at the site. It enables the generation of
+devices and users present at each site. It enables the generation of
 site-specific reports and diagrams. Sites are automatically calculated based on
 the administrative domain boundaries, such as carrier networks and other
-unmanaged infrastructure. A single, unmanaged <code>traceroute</code> hop is not considered
-a site boundary, so unmanaged infrastructure is reconstructed from the probes.
+unmanaged infrastructure. A single unmanaged <code>traceroute</code> hop is not considered
+a site boundary; therefore, unmanaged infrastructure is reconstructed from the probes.
 The specific method of site boundary calculation can be changed in the settings.</p>
 <p>An unknown site is either a collection of isolated devices or when a device
 forms a single-device site.</p>
@@ -12012,38 +11985,38 @@ forms a single-device site.</p>
 devices that have been discovered and analyzed. Each entry provides the
 following information (<code>Human Readable Name (apiColumnName)</code>):</p>
 <ul>
-<li><code>Hostname (hostname)</code> is the short name of the device.</li>
-<li><code>Hostname original (hostnameOriginal)</code> is the original hostname which was
-  acquired from the device.</li>
-<li><code>Hostname processed (hostnameProcessed)</code> is hostname which is parsed from the
-  original hostname (if there isn&rsquo;t any parsing, it&rsquo;s the same as <code>hostnameOriginal</code>); when
-  applicable &ndash; logical device name &ndash; e.g. firewall <code>context</code> or <code>vsys</code> name &ndash;
+<li><code>Hostname (hostname)</code> is the device&rsquo;s short name.</li>
+<li><code>Hostname original (hostnameOriginal)</code> is the original hostname acquired from
+  the device.</li>
+<li><code>Hostname processed (hostnameProcessed)</code> is the hostname parsed from the
+  original hostname (if no parsing occurs, it is the same as <code>hostnameOriginal</code>); when
+  applicable &ndash; logical device name &ndash; e.g., firewall <code>context</code> or <code>vsys</code> name &ndash;
   can be added as a suffix to the hostname.</li>
 <li><code>FQDN (fqdn)</code> is the device fully qualified domain
   name (<code>hostnameProcessed.domain</code>).</li>
-<li><code>Domain (domain)</code> is the device domain name.</li>
-<li><code>Site (siteName)</code> is the logical grouping to which device belongs to, while
+<li><code>Domain (domain)</code> is the device&rsquo;s domain name.</li>
+<li><code>Site (siteName)</code> is the logical grouping to which the device belongs, while
   single-site or isolated devices belong to an unknown site.</li>
-<li><code>Routing domain (rd)</code> is an IP Fabric generated separation based upon the
-  contiguous layer 3 routing domain to which the device belongs to.</li>
-<li><code>Switching domain (stpDomain)</code> is an IP Fabric generated separation based upon
-  contiguous layer 2 switching domain the device belongs to.</li>
-<li><code>Serial Number (snHw)</code> is the serial number of the device.</li>
+<li><code>Routing domain (rd)</code> is an IP Fabric-generated separation based on the
+  contiguous layer 3 routing domain to which the device belongs.</li>
+<li><code>Switching domain (stpDomain)</code> is an IP Fabric-generated separation based on
+  the contiguous layer 2 switching domain to which the device belongs.</li>
+<li><code>Serial Number (snHw)</code> is the device&rsquo;s serial number.</li>
 <li><code>Unique serial number (sn)</code> is the serial number IP Fabric assigns to the
-  device. This can be different from the Hardware SN especially in cases of
+  device. This can differ from the Hardware SN, especially in cases of
   virtualized equipment.</li>
-<li><code>Vendor (vendor)</code> is the vendor of the device.</li>
-<li><code>Family (family)</code> is the software family of the device.</li>
-<li><code>Platform (platform)</code> is the hardware platform of the device.</li>
-<li><code>Model (model)</code> is the hardware platform of the device.</li>
+<li><code>Vendor (vendor)</code> is the device&rsquo;s vendor.</li>
+<li><code>Family (family)</code> is the device&rsquo;s software family.</li>
+<li><code>Platform (platform)</code> is the device&rsquo;s hardware platform.</li>
+<li><code>Model (model)</code> is the device&rsquo;s model.</li>
 <li><code>Login IP (loginIp)</code> is the IP address used to connect to the device.</li>
 <li><code>Management Protocol (loginType)</code> is the protocol used to connect to the
   device.</li>
-<li><code>MAC Address (mac)</code> MAC address of the device.</li>
+<li><code>MAC Address (mac)</code> is the device&rsquo;s MAC address.</li>
 <li><code>Uptime (uptime)</code> is the time since the device&rsquo;s last boot.</li>
 <li><code>Reload Reason (reload)</code> is the reason why the device has booted.</li>
 <li><code>Image (image)</code> is the path to the operating system image file.</li>
-<li><code>Version (version)</code> is the operating system the device is running with.</li>
+<li><code>Version (version)</code> is the operating system with which the device is running.</li>
 <li><code>Configuration Register (configReg)</code> is the Configuration Register set on the
   device.</li>
 <li><code>Processor (processor)</code> is the hardware CPU family name.</li>
@@ -12054,16 +12027,16 @@ following information (<code>Human Readable Name (apiColumnName)</code>):</p>
 <li><code>Memory % (memoryUtilization)</code> is the utilization of RAM memory at the time of
   discovery (memoryUsedBytes / memoryTotalBytes).</li>
 <li><code>Type (devType)</code> is a logical Device Type that IP Fabric assigns to the
-  device (i.e a Firewall is labeled <code>fw</code> and a Wireless Access Point as <code>ap</code>).
+  device (i.e., a Firewall is labeled <code>fw</code> and a Wireless Access Point as <code>ap</code>).
   This is used for internal decisions such as the device icon to display in
-  diagrams and cannot be changed. To set a custom type please
+  diagrams and cannot be changed. To set a custom type, please
   see <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes/">Device Attributes</a>.</li>
 <li><code>Object Id (objectId)</code> is a Unique ID for API devices used during discovery.</li>
 </ul>
-<p>API only Columns:</p>
+<p>API-only Columns:</p>
 <ul>
 <li><code>id</code> is the unique ID for the row of data.</li>
-<li><code>taskKey</code> is a UUID which is used to download the specific device log file for
+<li><code>taskKey</code> is a UUID used to download the specific device log file for
   a snapshot.</li>
 </ul>
 <h2 id="modules-and-part-numbers">Modules and Part Numbers</h2>
@@ -12071,7 +12044,7 @@ following information (<code>Human Readable Name (apiColumnName)</code>):</p>
 through device inventories.</p>
 <h2 id="os-versions">OS Versions</h2>
 <p>The operating system versions inventory provides an overview of the unique
-operating systems used in the network and their variation.</p>
+operating systems used in the network and their variations.</p>
 <h2 id="interfaces">Interfaces</h2>
 <p>The interface inventory provides information about every unique network
 interface discovered and includes information such as state, description, speed,
@@ -12079,13 +12052,12 @@ duplex, and media type.</p>
 <h2 id="hosts">Hosts</h2>
 <p>The hosts&rsquo; inventory provides information about every discovered host and user
 utilizing network infrastructure. A host is any unique IP or MAC address, or an
-IP/MAC tuple, that is not part of the network infrastructure. Following rules
-may prevent the IP addresses from the ARP to be included in the Hosts&rsquo;
-inventory:</p>
+IP/MAC tuple, that is not part of the network infrastructure. The following rules
+may prevent the inclusion of IP addresses from the ARP in the Hosts&rsquo; inventory:</p>
 <ul>
-<li>There can&rsquo;t be any route pointing to that interface</li>
-<li>No CDP/LLDP information should be coming from that IP</li>
-<li>The MAC shouldn&rsquo;t be in the OUI flagged as &ldquo;Enabled for Discovery&rdquo;</li>
+<li>There cannot be any route pointing to that interface.</li>
+<li>No CDP/LLDP information should be coming from that IP.</li>
+<li>The MAC shouldn&rsquo;t be in the OUI flagged as &ldquo;Enabled for Discovery&rdquo;.</li>
 </ul>
 <h2 id="end-of-life-milestones">End of Life Milestones</h2>
 <p>EoX reports provide an overview of the announced end-of-life milestones. Network
@@ -12127,7 +12099,7 @@ products.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2024</span>
   </span>
 
     
