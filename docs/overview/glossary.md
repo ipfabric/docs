@@ -122,13 +122,15 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
 **Management Tables**
 
-: Management tables present three areas of the product:
+: Management tables present four areas of the product:
 
     - Device **configuration** collection and diffs between them.
 
     - **Changes** -- Allowing the user to compare inventory, managed IP addresses, and connectivity matrix between snapshots.
 
     - **Discovery History** -- Information about devices previously discovered in earlier snapshots.
+
+    - **Saved Config Consistency** -- Allowing the user to download the `Startup` and `Current` configurations of network devices and to compare the differences (if any) between these two configurations.
 
 **Reports**
 

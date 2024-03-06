@@ -1,22 +1,22 @@
 ---
-description: The inventory provides a list overview of sites, devices, modules, interfaces, and users discovered within the network.
+description: The inventory provides an overview list of sites, devices, modules, interfaces, and users discovered within the network.
 ---
 
 # Inventory
 
 ## Overview
 
-The inventory provides a list overview of sites, devices, modules, interfaces
+The inventory provides an overview list of sites, devices, modules, interfaces,
 and users discovered within the network.
 
 ## Sites
 
 The site inventory provides an overview of discovered sites, the number of
-devices and users present at the site. It enables the generation of
+devices and users present at each site. It enables the generation of
 site-specific reports and diagrams. Sites are automatically calculated based on
 the administrative domain boundaries, such as carrier networks and other
-unmanaged infrastructure. A single, unmanaged `traceroute` hop is not considered
-a site boundary, so unmanaged infrastructure is reconstructed from the probes.
+unmanaged infrastructure. A single unmanaged `traceroute` hop is not considered
+a site boundary; therefore, unmanaged infrastructure is reconstructed from the probes.
 The specific method of site boundary calculation can be changed in the settings.
 
 An unknown site is either a collection of isolated devices or when a device
@@ -28,38 +28,38 @@ The device inventory represents all logical managed network infrastructure
 devices that have been discovered and analyzed. Each entry provides the
 following information (`Human Readable Name (apiColumnName)`):
 
-- `Hostname (hostname)` is the short name of the device.
-- `Hostname original (hostnameOriginal)` is the original hostname which was
-  acquired from the device.
-- `Hostname processed (hostnameProcessed)` is hostname which is parsed from the
-  original hostname (if there isn't any parsing, it's the same as `hostnameOriginal`); when
-  applicable -- logical device name -- e.g. firewall `context` or `vsys` name --
+- `Hostname (hostname)` is the device's short name.
+- `Hostname original (hostnameOriginal)` is the original hostname acquired from
+  the device.
+- `Hostname processed (hostnameProcessed)` is the hostname parsed from the
+  original hostname (if no parsing occurs, it is the same as `hostnameOriginal`); when
+  applicable -- logical device name -- e.g., firewall `context` or `vsys` name --
   can be added as a suffix to the hostname.
 - `FQDN (fqdn)` is the device fully qualified domain
   name (`hostnameProcessed.domain`).
-- `Domain (domain)` is the device domain name.
-- `Site (siteName)` is the logical grouping to which device belongs to, while
+- `Domain (domain)` is the device's domain name.
+- `Site (siteName)` is the logical grouping to which the device belongs, while
   single-site or isolated devices belong to an unknown site.
-- `Routing domain (rd)` is an IP Fabric generated separation based upon the
-  contiguous layer 3 routing domain to which the device belongs to.
-- `Switching domain (stpDomain)` is an IP Fabric generated separation based upon
-  contiguous layer 2 switching domain the device belongs to.
-- `Serial Number (snHw)` is the serial number of the device.
+- `Routing domain (rd)` is an IP Fabric-generated separation based on the
+  contiguous layer 3 routing domain to which the device belongs.
+- `Switching domain (stpDomain)` is an IP Fabric-generated separation based on
+  the contiguous layer 2 switching domain to which the device belongs.
+- `Serial Number (snHw)` is the device's serial number.
 - `Unique serial number (sn)` is the serial number IP Fabric assigns to the
-  device. This can be different from the Hardware SN especially in cases of
+  device. This can differ from the Hardware SN, especially in cases of
   virtualized equipment.
-- `Vendor (vendor)` is the vendor of the device.
-- `Family (family)` is the software family of the device.
-- `Platform (platform)` is the hardware platform of the device.
-- `Model (model)` is the hardware platform of the device.
+- `Vendor (vendor)` is the device's vendor.
+- `Family (family)` is the device's software family.
+- `Platform (platform)` is the device's hardware platform.
+- `Model (model)` is the device's model.
 - `Login IP (loginIp)` is the IP address used to connect to the device.
 - `Management Protocol (loginType)` is the protocol used to connect to the
   device.
-- `MAC Address (mac)` MAC address of the device.
+- `MAC Address (mac)` is the device's MAC address.
 - `Uptime (uptime)` is the time since the device's last boot.
 - `Reload Reason (reload)` is the reason why the device has booted.
 - `Image (image)` is the path to the operating system image file.
-- `Version (version)` is the operating system the device is running with.
+- `Version (version)` is the operating system with which the device is running.
 - `Configuration Register (configReg)` is the Configuration Register set on the
   device.
 - `Processor (processor)` is the hardware CPU family name.
@@ -70,16 +70,16 @@ following information (`Human Readable Name (apiColumnName)`):
 - `Memory % (memoryUtilization)` is the utilization of RAM memory at the time of
   discovery (memoryUsedBytes / memoryTotalBytes).
 - `Type (devType)` is a logical Device Type that IP Fabric assigns to the
-  device (i.e a Firewall is labeled `fw` and a Wireless Access Point as `ap`).
+  device (i.e., a Firewall is labeled `fw` and a Wireless Access Point as `ap`).
   This is used for internal decisions such as the device icon to display in
-  diagrams and cannot be changed. To set a custom type please
+  diagrams and cannot be changed. To set a custom type, please
   see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
 - `Object Id (objectId)` is a Unique ID for API devices used during discovery.
 
-API only Columns:
+API-only Columns:
 
 - `id` is the unique ID for the row of data.
-- `taskKey` is a UUID which is used to download the specific device log file for
+- `taskKey` is a UUID used to download the specific device log file for
   a snapshot.
 
 ## Modules and Part Numbers
@@ -90,7 +90,7 @@ through device inventories.
 ## OS Versions
 
 The operating system versions inventory provides an overview of the unique
-operating systems used in the network and their variation.
+operating systems used in the network and their variations.
 
 ## Interfaces
 
@@ -102,13 +102,12 @@ duplex, and media type.
 
 The hosts' inventory provides information about every discovered host and user
 utilizing network infrastructure. A host is any unique IP or MAC address, or an
-IP/MAC tuple, that is not part of the network infrastructure. Following rules
-may prevent the IP addresses from the ARP to be included in the Hosts'
-inventory:
+IP/MAC tuple, that is not part of the network infrastructure. The following rules
+may prevent the inclusion of IP addresses from the ARP in the Hosts' inventory:
 
-- There can't be any route pointing to that interface
-- No CDP/LLDP information should be coming from that IP
-- The MAC shouldn't be in the OUI flagged as "Enabled for Discovery"
+- There cannot be any route pointing to that interface.
+- No CDP/LLDP information should be coming from that IP.
+- The MAC shouldn't be in the OUI flagged as "Enabled for Discovery".
 
 ## End of Life Milestones
 

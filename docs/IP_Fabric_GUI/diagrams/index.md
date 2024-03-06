@@ -1,10 +1,10 @@
 ---
-description: In this section we talk about diagrams and how it helps to visualize the network state information.
+description: This page provides an overview of diagrams and how they help to visualize the network state information.
 ---
 
 # Overview
 
-Diagrams help to visualize the network state information.
+Diagrams help visualize the network state information.
 
 We had to change how the diagrams work to bring more functionalities
 soon. One of the key changes in the processing of the diagrams is done
@@ -15,12 +15,12 @@ information via the API, where it wasn't possible before.
 
 ### Network
 
-By default, when you click Network, all networks are displayed and
+By default, when you click Network, all networks are displayed along with
 the relationships between them. They are grouped into sites represented
 by a cloud for better visibility. You can double-click a cloud to
 explore further that specific site.
 
-For more details on using the diagrams, check [Network Viewer](network_viewer.md) .
+For more details on using the diagrams, check [Network Viewer](network_viewer.md).
 
 ### Sites Diagrams
 
@@ -30,41 +30,41 @@ For more details on using the diagrams, check [Network Viewer](network_viewer.md
 
 ### Routing
 
-Routing diagrams display contiguously, directly interconnected routers
+Routing diagrams display contiguously interconnected routers
 to form a routing domain.
 
 ### Switching
 
-Switching diagrams displays individual spanning-tree instances or a
+Switching diagrams display individual spanning-tree instances or a
 composite switching domain. A unique Root ID identifies spanning-tree
-instances. The switching Domain is composed of contiguously connected
+instances. The switching domain is composed of contiguously connected
 spanning-tree instances, representing the maximum possible fault
 propagation in a Layer 2 failure domain.
 
-### End-to-End path
+### End-to-End Path
 
-End-to-End path diagram displays a complete path between any two network
+End-to-end path diagram displays a complete path between any two network
 endpoints or networks. Only the actual network path is displayed, and
 missing parts denote unavailable network information necessary for
 completing the routing process.
 
-The End-to-End path can be found in ***Diagrams --> End to end path*** or
-on any diagram using the **Path Lookup** menu on the left (see picture
+The end-to-end path can be found in **Diagrams --> End to end path** or
+in any diagram using the **Path Lookup** menu on the left (see the picture
 below).
 
 ![End to end](diagrams_end_end.png)
 
-For more details, check [How to use Path Lookup](how_to_use_path-lookup.md).
+For more details, check [How To Use Path Lookup](how_to_use_path-lookup.md).
 
-### Host-to-Gateway path
+### Host-to-Gateway Path
 
-The Host-to-Gateway path diagram displays the Layer 2 path from every
+The host-to-gateway path diagram displays the Layer 2 path from every
 identified endpoint in the network to its active gateway router.
 
-The Host to Gateway path can be found in ***Diagrams --> Host to gateway
-path*** or any diagram using the **Path Lookup** menu on the left and
-selecting **Host To Gateway** (see picture below).
+The host-to-gateway path can be found in **Diagrams --> Host to gateway
+path** or in any diagram using the **Path Lookup** menu on the left and
+selecting **Host To Gateway** (see the picture below).
 
 ![Host to gateway](diagrams_host_gateway.png)
 
-For more details, check [How to use Path Lookup](how_to_use_path-lookup.md).
+For more details, check [How To Use Path Lookup](how_to_use_path-lookup.md).

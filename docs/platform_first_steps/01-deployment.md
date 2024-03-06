@@ -145,7 +145,7 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
     1. Set **CPU** and **RAM** as per the [hardware requirements](../overview/index.md#hardware-requirements) for your use-case.
 
-    2 Set the **Network Adapter** to `Paravirtualized Network (virtio-net)`.
+    2. Set the **Network Adapter** to `Paravirtualized Network (virtio-net)`.
 
     3. Keep the `Import hard drives as VDI` option checked for importing the disk image in the default VirtualBox format. (Otherwise, the disk image will be imported as VDMK, the default format of VMware.)
 
