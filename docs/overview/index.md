@@ -42,10 +42,10 @@ For networks with medium complexity and many access points (>50%) or networks wi
 | ------: | --: | -----: | -------: |
 |     500 |   4 |  16 GB |    90 GB |
 |   1 000 |   8 |  16 GB |    90 GB |
-|   2 000 |  12 |  32 GB |   250 GB |
-|   5 000 |  16 |  64 GB |   350 GB |
-|  10 000 |  20 | 100 GB |   700 GB |
-|  20 000 |  24 | 190 GB | 1 000 GB |
+|   2 000 |  12 |  32 GB |   100 GB |
+|   5 000 |  16 |  64 GB |   250 GB |
+|  10 000 |  20 | 100 GB |   450 GB |
+|  20 000 |  24 | 190 GB |   850 GB |
 
 For networks with complex configurations (large routing tables, many VRFs, many STP domains, large MAC and ARP tables, etc.) and few or no access points (<20%):
 
