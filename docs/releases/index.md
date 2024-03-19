@@ -4,6 +4,8 @@ description: In this section, we publish release notes and low-level release not
 
 # IP Fabric Releases
 
+--8<-- "snippets/6.6.3_online_upgrade_issue.md"
+
 --8<-- "snippets/upgrade_version_policy.md"
 
 !!! important "Current release"
