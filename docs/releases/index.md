@@ -8,10 +8,10 @@ description: In this section, we publish release notes and low-level release not
 
 --8<-- "snippets/upgrade_version_policy.md"
 
-!!! important "Current release"
+!!! important "Current Release"
 
-    The current major release is `6.6`. Please check the
-    [detailed release notes](release_notes/6.6.md) for this release.
+    The current major release is `6.7`. Please check the
+    [detailed release notes](release_notes/6.7.md) for this release.
 
 Our release naming follows [semantic versioning](https://semver.org/). Where
 components of the version are `major.minor.patch+build`:
