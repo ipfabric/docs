@@ -8,11 +8,11 @@ Since version `6.0`, IP Fabric can skip some of the discovery features to decrea
 
 ![Assurance Engine](assurance_engine.png)
 
-The **Assurance Engine** section allows you to disable the following features to speed up discovery process, but it will also limit application features:
+The **Assurance Engine** section allows you to disable the following features to speed up the discovery process, but it will also limit application features:
 
 1. **Loading Graph cache**
 
-   Site Diagrams and End To End Path check will not be able to load diagrams. The Sites list under the Inventory menu will be available, however you will not be able to open any of the sites.
+   Disabling this task is especially useful in large networks. By disabling this, topology calculations at the end of discovery are skipped. The Network Viewer (Site Diagrams) and Path Lookup (End to end path, Host to Gateway path) are still able to load diagrams; they will be just slower as the topology is not cached and needs to be calculated on demand.
 
 2. **Save historical data**
 
