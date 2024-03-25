@@ -10,7 +10,6 @@ If you have any information about potential security events or incidents relatin
 
 - email: `security@ipfabric.io` or `support@ipfabric.io`
 - [IP Fabric Help Center](https://support.ipfabric.io)
-- to the office phone `+420 720 022 997`
 
 In line with industry best practice, we also monitor standard data sources including (but not limited to):
 
