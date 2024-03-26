@@ -6612,6 +6612,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#adding-a-custom-strftime-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a Custom strftime Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#capturing-events" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6619,45 +6630,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Capturing Events">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuring-the-ip-fabric-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring the IP Fabric App
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-intent-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing Intent Checks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-table-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing Table Data
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -12270,6 +12242,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#adding-a-custom-strftime-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a Custom strftime Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#capturing-events" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12277,45 +12260,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Capturing Events">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuring-the-ip-fabric-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring the IP Fabric App
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-intent-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing Intent Checks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-table-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing Table Data
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -12472,8 +12416,10 @@ platform.</p>
 <li>Paste the token into the <strong>API Token</strong> field.</li>
 <li>Click <strong>Save</strong>.</li>
 </ol>
+<p><a class="glightbox" href="IPF_splunk_addon_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric API Token" src="IPF_splunk_addon_settings.png" /></a></p>
+<h3 id="adding-a-custom-strftime-format">Adding a Custom <code>strftime</code> Format</h3>
+<p>You can customize the timestamp format by adding a custom <code>strftime</code> format. Please reference the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">Python <code>strftime</code> documentation</a> for more information and how to set your own format code.</p>
 <h3 id="capturing-events">Capturing Events</h3>
-<h4 id="configuring-the-ip-fabric-app">Configuring the IP Fabric App</h4>
 <ol>
 <li>Log in to Splunk and navigate to the IP Fabric app.</li>
 <li>Click the <strong>Inputs</strong> tab.</li>
@@ -12484,29 +12430,21 @@ platform.</p>
 <li>Enter an <strong>Index</strong> for the input.</li>
 <li>Enter the <strong>URL</strong> of your IP Fabric instance.
    <a class="glightbox" href="IPF_splunk_capture_events.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Update IP FABRIC form" src="IPF_splunk_capture_events.png" /></a></li>
+<li>Click <strong>Update</strong>.</li>
 </ol>
-<h4 id="capturing-intent-checks">Capturing Intent Checks</h4>
-<ol>
-<li>Follow the steps above to configure the app.</li>
-<li>Select the <strong>Load Intent Checks</strong> checkbox.</li>
-<li>Click <strong>Save</strong> / <strong>Update</strong>.
-   <a class="glightbox" href="IPF_splunk_load_intents.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Update IP FABRIC form - Load Intent Checks" src="IPF_splunk_load_intents.png" /></a></li>
-</ol>
-<h4 id="capturing-table-data">Capturing Table Data</h4>
-<ol>
-<li>Follow the steps above to configure the app.</li>
-<li>From the <strong>Table</strong> dropdown, select either <code>Inventory</code> or <code>Technology</code>.</li>
-<li>Enter a table path in the <strong>Table Path</strong> field.</li>
-<li>Optionally, add filters in the <strong>Table filter</strong> field.</li>
-<li>Click <strong>Save</strong> / <strong>Update</strong>.
-   <a class="glightbox" href="IPF_splunk_load_bgp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Update IP FABRIC form - BGP Neighbors table" src="IPF_splunk_load_bgp.png" /></a></li>
-</ol>
+<p>Optional settings include:</p>
+<ul>
+<li>Sending the Snapshot Time with the event.</li>
+<li>Only capturing the amount of occurrences or rows in a specific table.</li>
+<li>Only capturing Intent Checks or Table Data.</li>
+</ul>
 <h2 id="using-the-add-on">Using the Add-On</h2>
 <h3 id="search-an-index-loaded-with-ip-fabric-data">Search an Index Loaded With IP Fabric Data</h3>
 <p>Using the search bar, you can search for any data that has been loaded into the
 index. You can start correlating data in other Splunk indexes with IP Fabric
 data.</p>
 <p><a class="glightbox" href="IPF_splunk_search_index.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="New Search" src="IPF_splunk_search_index.png" /></a></p>
+<iframe src="https://share.descript.com/embed/KLl5lVdaOYZ" width="756" height="500" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -12527,7 +12465,7 @@ data.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2024</span>
   </span>
 
     
