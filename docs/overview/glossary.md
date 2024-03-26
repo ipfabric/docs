@@ -44,7 +44,7 @@ _An explanation of terms used in the IP Fabric documentation and product interfa
 
   !!! note
 
-      Disabling these options will affect the UI display of data in IP Fabric -- diagrams, path lookups, changes between snapshots, and/or intent rules may not be displayed as a result.
+      Disabling these options will affect the UI display of data in IP Fabric. Diagrams and path lookups may be slower. Changes between snapshots and intent rules may not be displayed.
 
 **Device Authentication**
 
