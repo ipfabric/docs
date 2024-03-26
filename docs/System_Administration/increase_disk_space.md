@@ -232,6 +232,104 @@ Suppose you prepared a backup disk with size of 20 GB with the instructions abov
    /dev/mapper/backup--vg-backup   40G   19M   38G   1% /backup
    ```
 
+### Remove Backup Disk
+
+!!! danger
+
+    After following the instructions, all data on the backup disk will be lost!
+
+!!! warning
+
+    The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the `lsblk` command. In the following step 6, we will use `vdb` as an example of a backup disk name. If your backup disk has a different name, please replace `vdb` with the correct name in step 6.
+
+Suppose you have a backup disk prepared with the instructions above and now you would like to remove it.
+
+1. Find the backup disk you want to remove. In this case, `vdb`.
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76.3G  0 disk 
+   ├─vda1                  254:1    0  487M  0 part /boot
+   ├─vda2                  254:2    0    1K  0 part 
+   └─vda5                  254:5    0 75.8G  0 part 
+     ├─ipfabric--vg-swap_1 253:1    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:2    0 59.8G  0 lvm  /
+   vdb                     254:16   0   20G  0 disk             # <-- We want to unconfigure and remove this device.
+   └─backup--vg-backup     253:0    0   20G  0 lvm  /backup
+   ```
+
+2. Remove the `fstab` entry (for example, with `sudo vi /etc/fstab`):
+
+   ```shell
+   /dev/mapper/backup--vg-backup   /backup   ext4   defaults   0   0
+   ```
+
+3. Unmount the LVM logical volume `backup`:
+
+   ```
+   sudo umount /backup
+   ```
+
+4. Disable and remove the LVM logical volume `backup` (you may check the `sudo lvdisplay` outputs before and after running the commands):
+
+   ```shell
+   osadmin@ipfabric:~$ sudo lvchange -an /dev/backup-vg/backup
+
+   osadmin@ipfabric:~$ sudo lvremove /dev/backup-vg/backup
+     Logical volume "backup" successfully removed
+   ```
+
+5. Disable and remove the LVM volume group `backup-vg` (you may check the `sudo vgdisplay` outputs before and after running the commands):
+
+   ```shell
+   osadmin@ipfabric:~$ sudo vgchange -an backup-vg
+     0 logical volume(s) in volume group "backup-vg" now active
+
+   osadmin@ipfabric:~$ sudo vgremove backup-vg
+     Volume group "backup-vg" successfully removed
+   ```
+
+6. Remove the LVM physical volume on the disk `vdb` (you may check the `sudo pvdisplay` outputs before and after running the command):
+
+   ```shell
+   osadmin@ipfabric:~$ sudo pvremove /dev/vdb
+     Labels on physical volume "/dev/vdb" successfully wiped.
+   ```
+
+7. Verify with `lsblk` that the disk `vdb` has been unconfigured:
+
+   ```shell
+   root@ipfabric:~# lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76.3G  0 disk 
+   ├─vda1                  254:1    0  487M  0 part /boot
+   ├─vda2                  254:2    0    1K  0 part 
+   └─vda5                  254:5    0 75.8G  0 part 
+     ├─ipfabric--vg-swap_1 253:1    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:2    0 59.8G  0 lvm  /
+   vdb                     254:16   0   20G  0 disk 
+   ```
+
+8. Shut down the IP Fabric VM.
+
+9. Remove the disk `vdb` from the VM at the hypervisor level.
+
+10. Start the VM.
+
+11. Verify with `lsblk` that the disk `vdb` is no longer present:
+
+    ```shell
+    osadmin@ipfabric:~$ lsblk
+    NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+    vda                     254:0    0 76.3G  0 disk 
+    ├─vda1                  254:1    0  487M  0 part /boot
+    ├─vda2                  254:2    0    1K  0 part 
+    └─vda5                  254:5    0 75.8G  0 part 
+      ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+      └─ipfabric--vg-root   253:1    0 59.8G  0 lvm  /
+    ```
+
 ## Deprecated Resize Wizard
 
 IP Fabric appliance with version lower than `5.0` was using two LVM volumes by default. `ipfabric-vg/root` for system and data, `backup-vg/backup` for `/backup`.
