@@ -12294,7 +12294,13 @@ documentation.
 <p><strong>Q:</strong> Is IP Fabric&rsquo;s VM encrypted?</p>
 <p>A: No, it isn&rsquo;t. It would add an unnecessary level of complexity for both IP Fabric engineers and customers. Encryption key provisioning would need to be solved in case the filesystem or underlying block device is encrypted. This would require either a passphrase prompt on every boot or integration into secret store on the deployment infrastructure side. We recommend to customers to handle encryption at the storage level (e.g., VMware Datastore).</p>
 <p><strong>Q:</strong> Is IP Fabric storing everything as plain text?</p>
-<p>A: No, it isn&rsquo;t. Passwords at rest in the database and techsupports are encrypted to ensure the safety of customers&rsquo; private data.</p>
+<p>A: No, it isn&rsquo;t. Passwords at rest in the database and techsupports are encrypted to ensure the safety of customers&rsquo; private data. In fact, the whole techsupport archive is encrypted.</p>
+<p><strong>Q:</strong> What is used for encryption or hashing?</p>
+<p>A: Algorithm used depends on the use-case:</p>
+<ul>
+<li>Local user passwords are hashed with <code>bcrypt</code>, and cannot be decrypted.</li>
+<li>Network-device credentials and 3<sup>rd</sup>-party access details (e.g., API tokens, jumphosts credentials, etc.) are encrypted with <code>AES-256-CRT</code>. The key is derived from the license (and thus customer/installation-specific).</li>
+</ul>
 
 
 
@@ -12315,7 +12321,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2024</span>
   </span>
 
     
