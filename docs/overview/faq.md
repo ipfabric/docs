@@ -106,4 +106,11 @@ A: No, it isn't. It would add an unnecessary level of complexity for both IP Fab
 
 **Q:** Is IP Fabric storing everything as plain text?
 
-A: No, it isn't. Passwords at rest in the database and techsupports are encrypted to ensure the safety of customers' private data.
+A: No, it isn't. Passwords at rest in the database and techsupports are encrypted to ensure the safety of customers' private data. In fact, the whole techsupport archive is encrypted.
+
+**Q:** What is used for encryption or hashing?
+
+A: Algorithm used depends on the use-case:
+
+- Local user passwords are hashed with `bcrypt`, and cannot be decrypted.
+- Network-device credentials and 3rd-party access details (e.g., API tokens, jumphosts credentials, etc.) are encrypted with `AES-256-CRT`. The key is derived from the license (and thus customer/installation-specific).
