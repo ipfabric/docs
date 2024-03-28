@@ -181,7 +181,11 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 ## Deploying a Virtual Machine on Microsoft Azure
 
-1. Log in to the Microsoft Azure portal and create a resource group.
+### Uploading the IP Fabric Disk File
+
+The first step of deploying to Azure requires creating a VHD file from the `qcow2` image, uploading it to a blob storage container, and then creating an Image to use for a Virtual Machine.
+
+1. Log in to the [Microsoft Azure Portal](https://portal.azure.com/) and create or use an existing Resource Group.
 
    In the [Microsoft Azure documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group), a **resource group** is defined as:
 
@@ -191,27 +195,25 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
    ![Create a Resource group](azure-imgs/azure-01-Create-resource-group.png)
 
-2. Create a storage account for IP Fabric.
+2. Create or use an existing Storage Account for the IP Fabric VM.
 
    A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see [Azure Resource Manager overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and [Creating Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1).
 
    ![Create a Storage account](azure-imgs/azure-02-Create-storage-account.png)
 
-3. Create a Storage Blob container.
+3. Create or use an existing Blob Storage Container.
 
-   Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the [Introduction to Azure Blob storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
+   Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the [Introduction to Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
 
-   ![Create a Storage blob container](azure-imgs/azure-03-storage-blob-container.png)
+   ![Create a Blob Storage container](azure-imgs/azure-03-storage-blob-container.png)
 
-4. Convert the `qcow2` image to VHD.
+4. Convert the IP Fabric-provided `qcow2` image to VHD using [QEMU](https://www.qemu.org/download/). The recommended way to convert the image:
 
-   IP Fabric provides the `qcow2` image. For converting `qcow2` to VHD, you may for instance use a utility from [QEMU](https://www.qemu.org/download/). The recommended way to convert the image is then:
-
-   ```
+   ```shell
    qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-6-3-1+1.qcow2 ipfabric-6-3-1+1.vhd
    ```
 
-  !!! important
+  !!! important "QEMU Version"
 
       Please use `qemu-img` version `2.6` or higher. According to the [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic#resizing-vhds):
 
@@ -219,37 +221,162 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
       
       You may check the `qemu-img` version that you are using with:
       
-      ```
+      ```shell
       qemu-img --version
       ```
 
-5. Upload the VHD image to the storage account.
-
-   To [upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure), you need to download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
-   The image needs to be uploaded to the previously created Blob container.
+5. [Upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure) to the storage account blob container created using the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
 
    ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
 
-  !!! important
+  !!! important "VHD Upload"
 
       For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:
       
       > The specified cookie value in VHD footer indicates that disk 'ipfabric-6-3-1+1.vhd' with blob https://.../vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
 
-6. Create an image from VHD.
+### Sizing the IP Fabric VM
 
-   Creating a managed image in Azure is as simple as loading the necessary files. The [Create a legacy managed image of a generalized VM in Azure](https://learn.microsoft.com/en-gb/azure/virtual-machines/capture-image-resource) documentation section contains all the needed clues.
+Prior to creating the IP Fabric image, it is necessary to know the type of server required.
+Azure Regions contain different server sizes, so performing this step will ensure you select the correct Region in the next step.
 
-   ![Create an Image from VHD](azure-imgs/azure-05-create-image.png)
+#### IP Fabric Hardware Requirements
 
-7. Deploy a VM from the image.
+1. Check the IP Fabric [Hardware Requirements](../overview/index.md#hardware-requirements) documentation.
+2. Record the number of CPUs.
+3. Record the RAM requirements.
 
-   Ensure that you follow the [resource requirements matrix](../overview/index.md#hardware-requirements) when sizing the virtual machine on Azure.
+#### Azure VM Finder
 
-  !!! important
+For this example, we will use minimum of 16 CPUs and 32 GB memory requirements.
 
-      Please note that the Azure serial console might not be accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md). In that case, please contact the IP Fabric Support team or your Solution Architect. We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually with:
-      
-      ```
-      sudo nimpee-net-config -a
-      ```
+1. Please visit the [Azure Find your VM](https://azure.microsoft.com/en-us/pricing/vm-selector/) website.
+2. Select `Find VMs by workload type`.
+3. Select all for `Workload type` and click `Next`.
+4. Enter minimum and maximum CPU and RAM values.
+   1. vCPU: min 16, max 24
+   2. RAM: min 32 GB, max 56 GB
+5. Select `Premium SSD` for `Disk Storage`.
+6. `Data Disk` can be left as default as IP Fabric does not use a separate disk for data.
+7. Under `Operating system`: `To use a custom VM image, select Linux and then CentOS to see VM availability and pricing information.`
+8. Select your preferred Region(s).
+9. Under the `Recommended Virtual Machine(s)`, find an `Instance` with either an **Intel or AMD processor** that will suit your needs.
+10. Record the `Instance` and `Region` names you would like to use for the deployment.
+
+### Creating an Image
+
+![Search Images](azure-imgs/azure-05-1-images.png)
+
+Search and select `Images` in the portal's search bar, and then `Create` a new Image.
+
+![Create an Image from VHD](azure-imgs/azure-05-create-image.png)
+
+1. Select the correct `Subscription` and `Resource group`.
+2. Name the image.
+3. Select the `Region` that was recorded from [Azure VM Finder](#azure-vm-finder).
+4. Set `OS type` to `Linux`.
+5. **Set `VM generation` to `Gen 1`.**
+6. Browse the `Storage blob` to find and select your uploaded VHD.
+7. Set `Account type` to `Premium SSD`.
+8. Set `Host Caching` to `Read/write`.
+9. Set `Key management` to `Platform-managed key`.
+10. Optional: Add custom `Tags`.
+11. Select `Review + create`, wait for validation, and then click `Create`.
+
+### Creating a Virtual Machine
+
+After creating the Image, go to the Resource and select `Create VM`:
+
+![Create VM](azure-imgs/azure-06-create-vm.png)
+
+#### Basics
+
+![VM Details](azure-imgs/azure-07-vm-details.png)
+
+![Basics Continued](azure-imgs/azure-08-basics-cont.png)
+
+1. Fill out the required `Project details` and `Instance details` sections:
+
+   1. Select the correct `Subscription` and `Resource group`.
+
+   2. Name the virtual machine.
+
+   3. Select an `Availability Zone`.
+
+   4. Using the information in [Sizing the IP Fabric VM](#sizing-the-ip-fabric-vm), select the appropriate instance size.
+
+2. Specify an `Administrator account` using Password authentication with a secure password.
+
+  !!! warning "Username"
+
+      Username **must not** be `autoboss`, `osadmin`, or `root`. Optionally, use the default `azureuser`.
+
+  !!! note "SSH Public Key"
+
+      Specifying `SSH public key` authentication will disable SSH Password authentication for the entire VM requiring either:
+
+      - Manually editing `/etc/ssh/sshd_config` to enable password authentication for the `osadmin` user.
+      - Using the configured key(s) to SSH into the VM anytime CLI access is required (most secure).
+
+3. `Inbound port rules > Public inbound ports` should be set to `None`.
+
+4. Set `Licensing > License type` to `Other`.
+
+#### Disks
+
+![VM Disks](azure-imgs/azure-09-disks.png)
+
+1. Enabling `Encryption at host` is recommended if it is available.
+
+2. Select the OS disk size based on [resource requirements matrix](../overview/index.md#hardware-requirements).
+
+3. OS disk type can be `Premium SSD (locally-redundant storage)` or `Premium SSD (zone-redundant storage)`.
+
+#### Networking
+
+![VM Networking](azure-imgs/azure-10-networking.png)
+
+1. Select or create a new `Virtual network` and `Subnet`.
+
+2. Please see [Network security groups](https://learn.microsoft.com/en-us/azure/virtual-network/network-overview#network-security-groups) for information on securing access to your VM.
+
+!!! danger "Public IP"
+
+    **IP Fabric contains sensitive information about your network, so it is highly recommended to use private networks only.**
+
+#### Other Configuration Options
+
+1. `Management`: Can be left to defaults.
+2. `Monitoring` and `Advanced`:
+   - This is outside the scope of a normal IP Fabric deployment.
+   - Installing `Extensions` may impact the application, and future upgrades could remove these from the VM.
+   - If required, please reach out to your Solution Architect to explore options.
+3. `Tags`: Optional, assign custom tags to the resources being created.
+
+#### Review + Create
+
+Ensure validation passed and click `Create`.
+
+### Post Deployment
+
+1. Connect to the IP Fabric VM via SSH with the username created during the deployment:
+
+   ```shell
+   # password authentication:
+   ssh azureuser@ip_address
+
+   # SSH public key authentication:
+   ssh -i identity-file.pem azureuser@ip_address
+   ```
+
+2. Run the [First Boot Wizard](02-boot_wizard.md):
+
+    ```shell
+    sudo nimpee-net-config -a
+    ```
+
+!!! important "Console Access"
+
+    Please note that the Azure serial console might not be accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md).
+    In that case, please contact the IP Fabric Support team or your Solution Architect. 
+    We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually.
