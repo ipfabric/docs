@@ -85,16 +85,7 @@ For managed service provider (MSP) networks:
 
 ### Supported Virtualization Platforms
 
-We recommend using either VMware ESXi or vSphere to deploy the IP Fabric appliance.
-
-The appliance is built on top of Debian 11, which has been officially supported since [ESXi 7.0](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16). To achieve the best performance, we strongly recommend using the latest ESXi with the [`PVSCSI`](https://kb.vmware.com/s/article/1010398) (Paravirtual SCSI) storage driver and the [`VMXNET 3`](https://kb.vmware.com/s/article/1001805) networking driver.
-
-The minimal recommended `Virtual Hardware Version` is `vmx-17`, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x, Workstation Player 16.x. See [VMware KB](https://kb.vmware.com/s/article/1003746) for details.
-
-If you deploy the IP Fabric OVA on versions of ESXi that are older than the ones we recommend, you will get the [Invalid OVF checksum algorithm: SHA256](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md) error. This occurs because our OVAs use the `SHA256` cryptographic hashing algorithm, which is not supported by those versions.
-
-It might be possible to deploy `vmdk` on earlier versions of ESXi with some effort. Since the OVA is a tar file, you can extract the `.vmdk` image and import it directly with the recommended hardware requirements.
-A similar [VMware documentation article](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.hostclient.doc/GUID-96CFEA28-DBDB-43C9-8C28-DAC6E6451C1C.html) provides a description of how to extract `ova` and import `vmdk`.
+We recommend using either VMware ESXi or vSphere to deploy the IP Fabric appliance. Please, see [OVA distribution details](deployment/ova_details.md) for more information.
 
 It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.
 
