@@ -19,7 +19,7 @@ Some example situations to use an API call:
 
 ## Python `ipfabric` SDK
 
-[`python-ipfabric`](../integrations/python) is the easiest and simplest method to
+[`python-ipfabric`](../integrations/python/index.md) is the easiest and simplest method to
 trigger a backup using the API. This was added to the SDK in version `6.0.0`.
 
 ```python
