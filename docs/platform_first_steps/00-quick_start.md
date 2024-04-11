@@ -53,7 +53,7 @@ instructions.
 
 The Boot Wizard needs to be completed during the IP Fabric virtual machine's
 initial deployment. The Boot Wizard introduces the configuration of basic
-network parameters, including time zone, NTP, IP address, DNS, or Proxy settings.
+network parameters, including IP address, DNS, or Proxy settings.
 
 Follow the instructions in [First Boot Wizard](02-boot_wizard.md).
 

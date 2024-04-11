@@ -13,8 +13,6 @@ deployment.
 It introduces the configuration of basic network parameters, including:
 
 - IP Fabric's IP address and subnet
-- Time Zone
-- NTP servers
 - DNS servers
 - Proxy server
 

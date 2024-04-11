@@ -4,7 +4,7 @@ description: This section explains how to change the IP Fabric appliance's netwo
 
 # Update Network Config
 
-To change the IP Address, Subnet, Gateway, NTP, DNS, or Proxy configuration of 
+To change the IP Address, Subnet, Gateway, DNS, or Proxy configuration of
 your IP Fabric VM from the CLI, please do the following:
 
 1. Connect to the IP Fabric appliance via SSH as the `osadmin` user.
@@ -17,7 +17,7 @@ your IP Fabric VM from the CLI, please do the following:
       To keep the current configuration for any item, select `OK` and press
       `Enter`.
 
-3. First options are to modify the `hostname` and `DNS domain name` (detailed 
+3. First options are to modify the `hostname` and `DNS domain name` (detailed
    docs at [Update hostname or domain name](change_hostname.md)).
 
 4. Next, select DHCP or Static IP Address Assignment. (Use the up/down and
@@ -35,10 +35,6 @@ your IP Fabric VM from the CLI, please do the following:
 
    ![Configure a static IP](change_static_ip.png)
 
-6. Update NTP servers using the comma-separated list:
-
-   ![NTP servers](change_ntp.png)
-
-7. Select `Yes` to reboot the system:
+6. Select `Yes` to reboot the system:
 
    ![Reboot system](reboot.png)
