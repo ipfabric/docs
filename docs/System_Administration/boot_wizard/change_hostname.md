@@ -29,7 +29,7 @@ CLI, please do the following:
   !!! note
 
       The IP Fabric Boot Wizard can modify other configuration items like
-      Network Interface configuration, NTP etc.
+      Network Interface configuration, etc.
 
       To change only the `hostname` or `DNS domain name`, leave everything as is
       until you reach the `Reboot system` prompt screen.
