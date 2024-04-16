@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between...">
+        <meta name="description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between hierarchical policies, the class rates, and match parameters.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="QoS - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between..." />
+<meta property="og:description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between hierarchical policies, the class rates, and match parameters." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/technology_tables/QoS.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_GUI/technology_tables/QoS/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="QoS - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between..." />
+<meta property="twitter:description" content="The QoS technology section provides information about all class-maps and applied policy-maps in the network, including the relationships between hierarchical policies, the class rates, and match parameters." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/technology_tables/QoS.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -2727,7 +2727,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    MPLS
+    MPLS (Multiprotocol Label Switching)
   
 
     
@@ -12310,123 +12310,123 @@ documentation.
 
 <h1 id="qos">QoS</h1>
 <h3 id="overview">Overview</h3>
-<p>The QoS technology section provides information about all class-maps and
+<p>The <strong>QoS</strong> technology section provides information about all class-maps and
 applied policy-maps in the network, including the relationships between
 hierarchical policies, the class rates, and match parameters.</p>
 <h3 id="applied-service-policies">Applied Service-Policies</h3>
-<p>These provide details of every class of service policy applied to an
+<p>The <strong>Applied Service-Policies</strong> tab provides details of every class of service policy applied to an
 interface from each managed network device. Each line represents an
 active class (which can be searched for by the offered or drop rates),
-the matching parameters of the class, and the parent policy. Site is the
-site where devices with the applied policy are located; Hostname is the
-short name of the device with the applied policy; Policy is the applied
-service policy name; Type is the type of applied service policy,
-depending on the direction or hierarchy; Interface is the interface the
-policy-map is applied to; Class is the specific class name of the policy
-map the detailed information is displayed for; Child or Parent policy is
+the matching parameters of the class, and the parent policy. <code>Site</code> is the
+site where devices with the applied policy are located; <code>Hostname</code> is the
+short name of the device with the applied policy; <code>Policy</code> is the applied
+service policy name; <code>Type</code> is the type of applied service policy,
+depending on the direction or hierarchy; <code>Interface</code> is the interface to which the
+policy-map is applied; <code>Class</code> is the specific class name of the policy
+map for which the detailed information is displayed; <code>Child</code> or <code>Parent policy</code> is
 the policy-map name applied as a child to the class, or a parent policy
-of a policy of a class if present; Match is the match parameters of the
-class; Packets and Bytes are the number of matched packets and bytes for
-each class; Rate Offered is the bitrate of traffic attempting to pass
-through the class; Drop rate is the bitrate of dropped traffic.</p>
+of a policy of a class if present; <code>Match</code> is the match parameters of the
+class; <code>#Packets</code> and <code>#Bytes</code> are the number of matched packets and bytes for
+each class; <code>Rate offered</code> is the bitrate of traffic attempting to pass
+through the class; <code>Drop rate</code> is the bitrate of dropped traffic.</p>
 <h3 id="shaping">Shaping</h3>
-<p>The shaping table details every class that has shaping action and the specific
-parameters of that class. Site is the site where devices with the applied
-policy is located at; Hostname is the short name of the device with the applied
-policy; Policy is the applied service policy name; Type is the type of applied
-service policy depending on the direction or hierarchy; Interface is the
-interface the policy-map is applied to; Class is the specific class name of the
-policy map the detailed information is displayed for; Child Policy is the
-policy-map name applied as a child to the class if present; Parent Policy is
+<p>The <strong>Shaping</strong> tab details every class that has a shaping action and the specific
+parameters of that class. <code>Site</code> is the site where devices with the applied
+policy are located; <code>Hostname</code> is the short name of the device with the applied
+policy; <code>Policy</code> is the applied service policy name; <code>Type</code> is the type of applied
+service policy depending on the direction or hierarchy; <code>Interface</code> is the
+interface to which the policy-map is applied; <code>Class</code> is the specific class name of the
+policy map for which the detailed information is displayed; <code>Child policy</code> is the
+policy-map name applied as a child to the class if present; <code>Parent policy</code> is
 the policy-map name of a parent policy-map for this specific class if present;
-Match is the match parameters of the class; Shape Type is the Shaper bucket
-calculation type, Average (<code>bc</code>) or Peak (<code>bc+be</code>); CIR is the Committed
-Information Rate; BC is the Burst Committed (or bucket size); BE is the Burst
-Excess (or burst size); Target Rate is the maximum rate traffic is expected to
+<code>Match</code> is the match parameters of the class; <code>Shape type</code> is the Shaper bucket
+calculation type, Average (<code>bc</code>) or Peak (<code>bc+be</code>); <code>CIR</code> is the Committed
+Information Rate; <code>Bc</code> is the Burst Committed (or bucket size); <code>Be</code> is the Burst
+Excess (or burst size); <code>Target rate</code> is the maximum rate at which traffic is expected to
 leave the shaper over prolonged intervals.</p>
 <h3 id="queuing">Queuing</h3>
-<p>The queuing table details every class with queuing action along with
-each class&rsquo;s specific queuing parameters. Site is the site location of
-the devices with the applied policy; Hostname is the short name of the
-device with the applied policy. Policy is the Applied service policy
-name; Type is the Type of applied service policy according to direction
-or hierarchy; Interface is the interface the policy-map is applied to;
-Class is the Specific class name of the policy map detailed information
-is displayed for; Child policy is the policy-map name applied as a child
-to the class if present; Parent policy is the policy-map name of a
-parent policy-map for this specific class if present; Match is the match
-parameters of the class; Queue Limit is the Maximum depth of the queue;
-Bandwidth is the Minimum bandwidth reservation assigned to the queue and
-used by the scheduler; Queue depth is the current observed depth of the
-queue; Total Drops are the number of packet drops in a class; Packets
-Output is the number of packets sent by the class; Bytes Output is the
+<p>The <strong>Queueing</strong> tab details every class with queuing action along with
+each class&rsquo;s specific queuing parameters. <code>Site</code> is the site of
+the devices with the applied policy; <code>Hostname</code> is the short name of the
+device with the applied policy. <code>Policy</code> is the applied service policy
+name; <code>Type</code> is the type of applied service policy according to direction
+or hierarchy; <code>Interface</code> is the interface to which the policy-map is applied;
+<code>Class</code> is the specific class name of the policy map for which detailed information
+is displayed; <code>Child policy</code> is the policy-map name applied as a child
+to the class if present; <code>Parent policy</code> is the policy-map name of a
+parent policy-map for this specific class if present; <code>Match</code> is the match
+parameters of the class; <code>Queue limit</code> is the maximum depth of the queue;
+<code>Bandwidth</code> is the minimum bandwidth reservation assigned to the queue and
+used by the scheduler; <code>Queue depth</code> is the current observed depth of the
+queue; <code>#Total drops</code> are the number of packet drops in a class; <code>#Packets
+output</code> is the number of packets sent by the class; <code>#Bytes output</code> is the
 number of bytes sent by the class.</p>
 <h3 id="policing">Policing</h3>
-<p>This table details every class with a policing action with the specific
-policing parameters. Site is the site where devices with the applied
-policy are located; Hostname is the short name of the device with the
-applied policy; Policy is the applied service policy name; Type is the
-Type of the applied service policy according to direction or hierarchy;
-Interface is the interface the policy-map is applied to; Class is the
-specific class name of the policy map detailed information is displayed
-for; Child policy is the policy-map name applied as a child to the class
-if present; Parent Policy is the policy-map name of a parent policy-map
-for this specific class if present; Match is the match parameters of the
-class; Police type is the method of rate calculation; CIR is the
-committed information rate; BC is the burst committed; Action is the
-policing actions (or colors); Conformed is the number of packets, bytes,
-or rate in bits per second of traffic below the policing rate; Exceeded
+<p>The <strong>Policing</strong> tab details every class with a policing action with the specific
+policing parameters. <code>Site</code> is the site where devices with the applied
+policy are located; <code>Hostname</code> is the short name of the device with the
+applied policy; <code>Policy</code> is the applied service policy name; <code>Type</code> is the
+type of the applied service policy according to direction or hierarchy;
+<code>Interface</code> is the interface to which the policy-map is applied; <code>Class</code> is the
+specific class name of the policy map for which detailed information is displayed;
+<code>Child policy</code> is the policy-map name applied as a child to the class
+if present; <code>Parent policy</code> is the policy-map name of a parent policy-map
+for this specific class if present; <code>Match</code> is the match parameters of the
+class; <code>Police type</code> is the method of rate calculation; <code>CIR</code> is the
+Committed Information Rate; <code>Bc</code> is the burst committed; <code>Action</code> is the
+policing actions (or colors); <code>Conformed</code> is the number of packets, bytes,
+or rate in bits per second of traffic below the policing rate; <code>Exceeded</code>
 is the number of packets, bytes, or rate in bits per second of traffic
 exceeding the policing rate (or second color).</p>
 <h3 id="priority">Priority</h3>
-<p>This table details every class with a priority action and associated
-specific priority parameters. Site is the site where devices with the
-applied policy are located; Hostname is the short name of the device
-with the applied policy; Policy is the Applied service policy name; Type
+<p>The <strong>Priority</strong> tab details every class with a priority action and associated
+specific priority parameters. <code>Site</code> is the site where devices with the
+applied policy are located; <code>Hostname</code> is the short name of the device
+with the applied policy; <code>Policy</code> is the applied service policy name; <code>Type</code>
 is the type of the applied service policy according to direction or
-hierarchy; Interface is the interface the policy-map is applied to;
-Class is the specific class name of the policy map detailed information
-is displayed for; Child policy is the policy-map name applied as a child
-to the class, if present; Parent policy is the policy-map name of a
-parent policy-map for a specific class if present; Match is the match
-parameters of the class; Strict priority is the level or limit of
-prioritization; Drops is the number of packets dropped due to the
+hierarchy; <code>Interface</code> is the interface to which the policy-map is applied;
+<code>Class</code> is the specific class name of the policy map for which detailed information
+is displayed; <code>Child policy</code> is the policy-map name applied as a child
+to the class if present; <code>Parent polic</code>y is the policy-map name of a
+parent policy-map for a specific class if present; <code>Match</code> is the match
+parameters of the class; <code>Strict priority</code> is the level or limit of
+prioritization; <code>#Drops</code> is the number of packets dropped due to the
 excessive offered rate.</p>
 <h3 id="marking">Marking</h3>
-<p>This table details every class with a marking action along with specific
-marking parameters. Site is the site where devices with the applied
-policy are located. Hostname is the short name of the device with the
-applied policy; Policy is the Applied service policy name; Type is the
-Type of the applied service policy according to the direction or
-hierarchy; Interface is the interface the policy-map is applied to;
-Class is the specific class name of the policy map the detailed
-information is displayed for; Child Policy is the policy-map name
-applied as a child to the class if present; Parent Policy is the
+<p>The <strong>Marking</strong> tab details every class with a marking action along with specific
+marking parameters. <code>Site</code> is the site where devices with the applied
+policy are located. <code>Hostname</code> is the short name of the device with the
+applied policy; <code>Policy</code> is the applied service policy name; <code>Type</code> is the
+type of the applied service policy according to the direction or
+hierarchy; <code>Interface</code> is the interface to which the policy-map is applied;
+<code>Class</code> is the specific class name of the policy map for which detailed
+information is displayed; <code>Child policy</code> is the policy-map name
+applied as a child to the class if present; <code>Parent policy</code> is the
 policy-map name of a parent policy-map for this specific class if
-present; Match is the match parameters of the class; Set is the QoS bit
-specification standard; Value is the bit value being set; Packets is the
+present; <code>Match</code> is the match parameters of the class; <code>Set</code> is the QoS bit
+specification standard; <code>Value</code> is the bit value being set; <code>#Packets</code> is the
 number of packets marked by the class.</p>
 <h3 id="random-drops">Random Drops</h3>
-<p>This table details every class with a random early drop detection action
-and associated specific random drop parameters. Site is the site where
-devices with the applied policy are located. Hostname is the short name
-of the device with the applied policy; Policy is the Applied service
-policy name; Type is the type of applied service policy according to
-direction or hierarchy; Interface is the interface the policy-map is
-applied to; Class is the specific class name of the policy map the
-detailed information displayed for; Child policy is the policy-map name
-applied as a child to the class if present; Parent Policy is the
+<p>The <strong>Random Drops</strong> tab details every class with a random early drop detection action
+and associated specific random drop parameters. <code>Site</code> is the site where
+devices with the applied policy are located. <code>Hostname</code> is the short name
+of the device with the applied policy; <code>Policy</code> is the applied service
+policy name; <code>Type</code> is the type of applied service policy according to
+direction or hierarchy; <code>Interface</code> is the interface to which the policy-map is
+applied; <code>Class</code> is the specific class name of the policy map for which
+detailed information is displayed; <code>Child policy</code> is the policy-map name
+applied as a child to the class if present; <code>Parent policy</code> is the
 policy-map name of a parent policy-map for a specific class if present;
-Match is the class&rsquo;s match parameters; Random is the type of random drop
-used in a class; Min is the minimum probability queue depth threshold to
-consider a random drop; Max is the maximum probability queue depth
-threshold to consider for a random drop; Prob is the maximum probability
-of a drop to occur from the total number of packets being queued; Tx
-Pkts is the number of transmitted packets by class; Tx Bytes is the
-number of transmitted bytes by class; Random Drops Packets is the number
-of packets dropped by the algorithm; Random drops bytes is the number of
-bytes dropped by the algorithm; Tail Drops Packets is the number of
-packets dropped due to queue saturation; Tail Drops Bytes is the number
+<code>Match</code> is the class&rsquo;s match parameters; <code>Random</code> is the type of random drop
+used in a class; <code>Min</code> is the minimum probability queue depth threshold to
+consider for a random drop; <code>Max</code> is the maximum probability queue depth
+threshold to consider for a random drop; <code>ProbDrop</code> is the maximum probability
+of a drop to occur from the total number of packets being queued; <code>Tx Pkts</code>
+is the number of transmitted packets by class; <code>Tx Bytes</code> is the
+number of transmitted bytes by class; <code>Random drops packets</code> is the number
+of packets dropped by the algorithm; <code>Random drops bytes</code> is the number of
+bytes dropped by the algorithm; <code>Tail drops packets</code> is the number of
+packets dropped due to queue saturation; <code>Tail drops bytes</code> is the number
 of bytes dropped due to queue saturation.</p>
 
 
@@ -12448,7 +12448,7 @@ of bytes dropped due to queue saturation.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
   </span>
 
     
@@ -12526,7 +12526,7 @@ of bytes dropped due to queue saturation.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../MPLS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MPLS">
+          <a href="../MPLS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MPLS (Multiprotocol Label Switching)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12536,7 +12536,7 @@ of bytes dropped due to queue saturation.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                MPLS
+                MPLS (Multiprotocol Label Switching)
               </div>
             </div>
           </a>
