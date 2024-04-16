@@ -53,8 +53,8 @@ Aggregation (LAG)/Portchannel/Etherchannel Member status table**:
 2. Click `...` in the top-right corner of the table and select `Add intent
    verification rule`:  
    ![Add intent verification rule option](intent_rules/add_intent_verification_rule_option.png)
-3. Specify the **Rule name**, for example `Protocol Check`.
-4. Select **Colorized column**, it's `Protocol` in our case.
+3. Specify the **Rule name**. For example, `Protocol Check`.
+4. Select **Colorized column**. In our case, it's `Protocol`.
 5. Leave **Dashboard Widgets** empty for now.
 6. Click the **blue color**.
 7. Create a rule "`Protocol` insensitive equal `lacp`".

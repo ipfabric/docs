@@ -1,5 +1,5 @@
 ---
-description: In this section, we give you a tip on how to navigate in tables efficiently.
+description: In this section, we provide you with tips on how to navigate in tables efficiently.
 ---
 
 # Navigate in Tables
@@ -13,16 +13,16 @@ usually takes longer than subsequent loads, but all tables were built to handle
 a large capacity and complex queries, so the outcome should be better than
 analyzing the output in an external application like Excel.
 
-## Working with tables
+## Working With Tables
 
-The **ARP Table** (in **Technology --> Addressing --> ARP Table**) is used as an
-example below to demonstrate the functionality of tables.
+As an example, the **ARP Table** (in **Technology --> Addressing --> ARP Table**)
+is used below to demonstrate the functionality of tables.
 
 ### Table Description
 
 ![Table description option](navigate_in_tables/table_description.png)
 
-By clicking `...` (3-dot button in the top-right corner of the table) and
+By clicking `...` (the 3-dot button in the top-right corner of the table) and
 selecting `Table description`, you can get a short description of the current
 table along with API examples.
 
@@ -52,7 +52,7 @@ the API documentation found in the [Table Description](#table-description).
 ![Table filter](navigate_in_tables/table_filter.png)
 
 In most columns, you can type in what you are looking for. The example above
-shows a search for all devices with an IP address starting `10.67.254`
+shows a search for all devices with an IP address starting with `10.67.254`
 throughout all the ARP tables in our lab environment.
 
 Use this button to clear the filter:
@@ -80,7 +80,7 @@ interface `Et7/2`, plus all devices with hostname `L43SD73` with interface
 
 ### Using the Standard Metric Notation on Filtering
 
-Trying to filter the values in the number columns using `Simple Filtering` or in the `Advanced Filters`, you can type not only numbers to filter, but some measure prefixes (like `10 k`, `15M`, etc.):
+When filtering values in number columns using `Simple Filtering` or in the `Advanced Filters`, you can type not only numbers but also some measure prefixes (like `10k`, `15M`, etc.):
 
 ![Clear filter](navigate_in_tables/table_number_simple_filter.png)
 
@@ -88,7 +88,7 @@ or
 
 ![Clear filter](navigate_in_tables/table_number_advanced_filter.png)
 
-You can find the table with available prefixes below:
+These are the available prefixes:
 
 | **Symbol** | **Name** | **Base 10** | **Decimal**      |
 | ---------- | -------- | ----------- | ---------------- |
@@ -117,7 +117,7 @@ To create a new rule, you need to specify its `Rule name` and select a
 displayed on the **Dashboard**, but this is optional (check the
 [Dashboard](../../IP_Fabric_GUI/dashboard.md) page for more details).
 
-Finally, specify a filter rule to colorize the selected column:
+Finally, specify a filter rule to color the selected column:
 
 1. Choose a color to apply rules to.
 2. Add rules based on the same logic as described in
@@ -132,7 +132,7 @@ In the example above, all items in the `VRF` column which are named `VRF1` will
 be colored red. A summary number of items which match this rule will also be
 displayed in the `Interfaces` widget on the **Dashboard**.
 
-### Display settings
+### Display Settings
 
 ![Display settings option](navigate_in_tables/table_display_settings_option.png)
 
@@ -142,7 +142,7 @@ In `Display Settings`, you may select what columns are displayed. This will also
 change the behavior of [Export to CSV](#export-to-csv) and the API documentation
 in the [Table Description](#table-description).
 
-### Auto size
+### Auto Size
 
 ![Auto size option](navigate_in_tables/table_auto_size.png)
 
@@ -151,9 +151,9 @@ fit their current content each time the table is opened.
 
 By disabling `Auto size`, columns will remember user-defined widths.
 
-### Restore table settings
+### Restore Table Settings
 
 ![Restore table settings](navigate_in_tables/table_restore.png)
 
 Table filters and other settings can be restored using the `Restore table
-settings` option. Colorization rules will not be removed!
+settings` option. Coloring rules will not be removed!
