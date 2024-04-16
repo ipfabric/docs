@@ -9,9 +9,9 @@ combine multiple physical links for load sharing and redundancy
 purposes. The section provides information about discovered channels and
 their members, alongside current rates and balancing ratios.
 
-As an example, let's have a look at the **Member status table**.
+As an example, let's take a look at the **Member status table**.
 
-IP Fabric has a lot of predefined intent rules. In our particular case, port channels are colored green if everything is OK, and another color is used when some malfunctions are detected.
+IP Fabric has many predefined intent rules. In our particular case, port channels are colored green if everything is OK, and another color is used when some malfunctions are detected.
 
 ![Port-Channel Members State](port-channels/port-channel_members_state.png)
 

@@ -1,10 +1,10 @@
 ---
-description: This section provides information for configuring both DHCP (Dynamic Host Configuration Protocol) server and relay. 
+description: The DHCP section provides information for configuring both DHCP server and DHCP relay.
 ---
 
 # DHCP
 
-This section provides information for configuring both **DHCP** (Dynamic Host Configuration Protocol) **server** and **relay**.
+The **DHCP** (Dynamic Host Configuration Protocol) section provides information for configuring both **DHCP server** and **DHCP relay**.
 
 DHCP information for IPv6 is not supported yet.
 
@@ -12,14 +12,14 @@ DHCP information for IPv6 is not supported yet.
 
 The **Summary** tab gives you basic information about DHCP server configuration across all devices where this functionality is configured.
 
-Every server is also linked to its **pool**. Pools can be accessed in the next tab.
+Every server is also linked to its **pool**. Pools can be accessed in the **Pools** tab.
 
-**Leases, Excluded Ranges and Interfaces** provide a different view on DHCP information with some more details.
+The **Leases**, **Excluded Ranges**, and **Interfaces** tabs provide different views of DHCP information with some more details.
 
 ## DHCP Relay
 
-The **Interfaces** tab provides information about configuration of DHCP Relay per interface. Option 82 configuration information is also available.
+The **Interfaces** tab provides information about the configuration of DHCP Relay per interface. Option 82 configuration information is also available.
 
 The **Interfaces stats** tab provides detailed status information per interface.
 
-The **Global stats** tab provides same statistics as **interfaces stats** but globally, per device.
+The **Global Stats** tab provides the same statistics as **Interfaces stats** but globally, per device.

@@ -1,11 +1,11 @@
 ---
-description: The Discovery Protocols section provides information about link layer discovery protocols such as CDP and LLDP.
+description: The CDP/LLDP section provides information about link-layer discovery protocols such as CDP and LLDP.
 ---
 
 # CDP/LLDP
 
-The Discovery Protocols section provides information about link layer discovery
-protocols such as CDP and LLDP. 
+The **CDP/LLDP** section provides information about link-layer discovery
+protocols such as CDP and LLDP.
 
 **All neighbors** list information about all neighborships.
 

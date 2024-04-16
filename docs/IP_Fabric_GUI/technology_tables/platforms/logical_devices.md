@@ -6,6 +6,6 @@ description: The Logical Devices section provides a summary of all discovered lo
 
 The **Logical Devices** section provides a summary of all discovered logical
 firewalls (contexts, VSYS, VDOM) and Cisco Nexus VDCs. For each logical device,
-it provides its name and type and if available even its ID.
+it provides its name, type, and, if available, even its ID.
 
 ![Logical Devices](logical_devices.png)

@@ -18,7 +18,7 @@ The **Routes** tab contains a list of EID/RLOC mappings where `hostname` is the 
 
 ![LISP IPv4 Routes table](lisp/lisp-routes-ipv4.png)
 
-The **Map Resolvers** tab contains a list of references to database servers which houses the `EID/RLOC` mappings.
+The **Map Resolvers** tab contains a list of references to database servers which house the `EID/RLOC` mappings.
 
 ![LISP IPv4 Map Resolvers table](lisp/lisp-routes-mapResolver-ipv4.png)
 
