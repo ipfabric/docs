@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section, we describe how IP Fabric handles Time Conversion.">
+        <meta name="description" content="In this section, we describe how IP Fabric handles time conversion.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Times Stored in IP Fabric - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In this section, we describe how IP Fabric handles Time Conversion." />
+<meta property="og:description" content="In this section, we describe how IP Fabric handles time conversion." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/time_conversion.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_GUI/tips/time_conversion/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Times Stored in IP Fabric - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In this section, we describe how IP Fabric handles Time Conversion." />
+<meta property="twitter:description" content="In this section, we describe how IP Fabric handles time conversion." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_GUI/tips/time_conversion.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12199,8 +12199,7 @@ documentation.
 
 
 <h1 id="times-stored-in-ip-fabric">Times Stored in IP Fabric</h1>
-<p>IP Fabric stores times in two different formats;
-<em>Absolute Time</em> or <em>Relative Time</em> depending on the type of data.</p>
+<p>IP Fabric stores times in two different formats: <em>Absolute Time</em> or <em>Relative Time</em>, depending on the type of data.</p>
 <h2 id="absolute-time">Absolute Time</h2>
 <p>This is also known as an <em>Epoch</em> or <em>Unix timestamp</em> and is stored in milliseconds
 that have elapsed since 00:00:00 UTC on 1 January 1970.</p>
@@ -12227,7 +12226,7 @@ that have elapsed since 00:00:00 UTC on 1 January 1970.</p>
 </li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Converting millisecond timestamp to ISO date with Python</p>
+<p class="admonition-title">Converting Millisecond Timestamp to ISO Date With Python</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">ts</span> <span class="o">=</span> <span class="mi">1348876800000</span>  <span class="c1"># milliseconds</span>
@@ -12241,7 +12240,7 @@ that have elapsed since 00:00:00 UTC on 1 January 1970.</p>
 <p>Relative time (stored in seconds) is the amount of time that has elapsed and does not represent an exact timestamp.</p>
 <ul>
 <li><strong>Inventory &rarr; Devices</strong>:<ul>
-<li><em>Uptime</em>: <code>uptime</code> (relative to the boot time of the device at the time the command was run on the device.)</li>
+<li><em>Uptime</em>: <code>uptime</code> &ndash; Relative to the boot time of the device at the time the command was run on the device.</li>
 </ul>
 </li>
 <li><strong>Technology &rarr; Routing &rarr; *</strong> :<ul>
@@ -12257,15 +12256,15 @@ that have elapsed since 00:00:00 UTC on 1 January 1970.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Relative time does not change.</p>
-<p>This is relative to the time that the command was run on the device and does not change. Example:</p>
+<p class="admonition-title">Relative Time Does Not Change</p>
+<p>This is relative to the time when the command was run on the device and does not change. For example:</p>
 <blockquote>
-<p>Device reported uptime of <code>120 Days 5 Hours</code> when <code>show version</code> was run.<br></p>
+<p>The device reported uptime of <code>120 Days 5 Hours</code> when <code>show version</code> was run.<br/></p>
 </blockquote>
-<p>Viewing that Snapshot on a day or week later will also show <code>120 Days 5 Hours</code>.</p>
+<p>Viewing that snapshot on a day or week later will also show <code>120 Days 5 Hours</code>.</p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Converting time interval in seconds to human readable form with Python</p>
+<p class="admonition-title">Converting Time Interval in Seconds to Human-Readable Format With Python</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">ts</span> <span class="o">=</span> <span class="mi">200700</span>  <span class="c1"># seconds</span>
@@ -12276,13 +12275,13 @@ that have elapsed since 00:00:00 UTC on 1 January 1970.</p>
 </div>
 <h2 id="ip-fabric-time-conversion">IP Fabric Time Conversion</h2>
 <p>Time conversion in IP Fabric is done in the frontend and is also formatted when exporting to CSV.
-The data returned via the API will always be returned in milliseconds or seconds.
-This can differ from other time conversion websites as an example from <a href="https://www.epochconverter.com/">epochconverter.com</a>:</p>
-<p>Time Conversion (in seconds):</p>
+The data returned via the API will always be in milliseconds or seconds.
+This may differ from other time conversion websites, as seen in the example from <a href="https://www.epochconverter.com/">epochconverter.com</a>:</p>
+<p>Time conversion (in seconds):</p>
 <table>
 <thead>
 <tr>
-<th>Human-readable Time</th>
+<th>Human-Readable Time</th>
 <th style="text-align: right;">IP Fabric</th>
 <th style="text-align: right;"><a href="https://www.epochconverter.com/">epochconverter.com</a></th>
 </tr>
@@ -12295,28 +12294,28 @@ This can differ from other time conversion websites as an example from <a href="
 </tr>
 <tr>
 <td>1 hour</td>
-<td style="text-align: right;">3,600</td>
-<td style="text-align: right;">3,600</td>
+<td style="text-align: right;">3 600</td>
+<td style="text-align: right;">3 600</td>
 </tr>
 <tr>
 <td>1 day</td>
-<td style="text-align: right;">86,400</td>
-<td style="text-align: right;">86,400</td>
+<td style="text-align: right;">86 400</td>
+<td style="text-align: right;">86 400</td>
 </tr>
 <tr>
 <td>1 week</td>
-<td style="text-align: right;">604,800</td>
-<td style="text-align: right;">604,800</td>
+<td style="text-align: right;">604 800</td>
+<td style="text-align: right;">604 800</td>
 </tr>
 <tr>
 <td>1 month</td>
-<td style="text-align: right;">2,629,800<br/>(30.4375 days)</td>
-<td style="text-align: right;">2,629,743<br/>(30.44 days)</td>
+<td style="text-align: right;">2 629 800<br/>(30.4375 days)</td>
+<td style="text-align: right;">2 629 743<br/>(30.44 days)</td>
 </tr>
 <tr>
 <td>1 year</td>
-<td style="text-align: right;">31,557,600<br/>(365.25 days)</td>
-<td style="text-align: right;">31,556,926<br/>(365.24 days)</td>
+<td style="text-align: right;">31 557 600<br/>(365.25 days)</td>
+<td style="text-align: right;">31 556 926<br/>(365.24 days)</td>
 </tr>
 </tbody>
 </table>
@@ -12340,7 +12339,7 @@ This can differ from other time conversion websites as an example from <a href="
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
   </span>
 
     
