@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OVA distribution details">
+        <meta name="description" content="This page provides OVA distribution details.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>OVA distribution details - IP Fabric Documentation Portal</title>
+        <title>OVA Distribution Details - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="OVA distribution details - IP Fabric Documentation Portal" />
-<meta property="og:description" content="OVA distribution details" />
+<meta property="og:title" content="OVA Distribution Details - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This page provides OVA distribution details." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/overview/deployment/ova_details.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/overview/deployment/ova_details/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="OVA distribution details - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="OVA distribution details" />
+<meta property="twitter:title" content="OVA Distribution Details - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This page provides OVA distribution details." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/overview/deployment/ova_details.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OVA distribution details
+              OVA Distribution Details
             
           </span>
         </div>
@@ -12018,7 +12018,7 @@ documentation.
   <a href="#setting-the-virtual-machine-from-scratch-importing-the-vmdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setting the virtual machine from scratch &ndash; importing the vmdk
+        Setting the Virtual Machine From Scratch &ndash; Importing the vmdk
       
     </span>
   </a>
@@ -12125,22 +12125,20 @@ documentation.
   
 
 
-<h1 id="ova-distribution-details">OVA distribution details</h1>
-<p>The appliance is built on top of Debian 11. Debian 11 has officially been supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi Version 7.0</a>.</p>
+<h1 id="ova-distribution-details">OVA Distribution Details</h1>
+<p>The appliance is built on top of Debian 11, which has been officially supported since <a href="https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&amp;productid=54075&amp;vcl=true&amp;supRel=396,448,508,518,578,589,615,617,649,650&amp;testConfig=16">ESXi Version 7.0</a>.</p>
 <p>The minimal required <code>Virtual Hardware Version</code> is <code>vmx-17</code>, supported by ESXi 7.0, Fusion 12.x, Workstation Pro 16.x,
-and Workstation Player 16.x. See <a href="https://kb.vmware.com/s/article/1003746">VMware KB</a> for details.
-<a href="https://kb.vmware.com/s/article/2007240">ESXi/ESX hosts and compatible virtual machine hardware versions list (2007240)</a>.</p>
-<p>We require this system type because of <code>virtio</code> drivers for network and storage.</p>
-<p>Note that we have also requirements about processor itself: <a href="../../#hardware-requirements">Hardware Requirements</a>,
-those cannot be described through <code>ova</code> definition.</p>
+and Workstation Player 16.x. For details, see the VMware KB articles <a href="https://kb.vmware.com/s/article/1003746">1003746</a> and <a href="https://kb.vmware.com/s/article/2007240">2007240</a>.</p>
+<p>We require this system type because of the <code>virtio</code> drivers for network and storage.</p>
+<p>Note that we also have requirements about the processor itself: <a href="../../#hardware-requirements">Hardware Requirements</a>. These cannot be described through the OVA image definition.</p>
 <div class="admonition danger">
-<p class="admonition-title">If you do not use virtio/paravirtualized drivers for network and storage, performance will be degraded.</p>
+<p class="admonition-title">If you do not use the virtio/paravirtualized drivers for network and storage, performance will be degraded.</p>
 </div>
-<h2 id="setting-the-virtual-machine-from-scratch-importing-the-vmdk">Setting the virtual machine from scratch &ndash; importing the <code>vmdk</code></h2>
+<h2 id="setting-the-virtual-machine-from-scratch-importing-the-vmdk">Setting the Virtual Machine From Scratch &ndash; Importing the <code>vmdk</code></h2>
 <div class="admonition success">
 <p class="admonition-title">Importing <code>vmdk</code> is the recommended way.</p>
 </div>
-<p>If you do not have access to an <code>ESXi</code> host for importing. You can try to import the disk (<code>vmdk</code>) and set up the machine manually. Ensure the following is configured correctly:</p>
+<p>If you do not have access to an <code>ESXi</code> host for importing, you can try to import the disk (<code>vmdk</code>) and set up the machine manually. Ensure the following are configured correctly:</p>
 <ul>
 <li><code>Virtual Hardware Version</code> is at least <code>vmx-17</code></li>
 <li>virtio/paravirtualized drivers<ul>
@@ -12150,17 +12148,17 @@ those cannot be described through <code>ova</code> definition.</p>
 </li>
 </ul>
 <h2 id="deploying-through-vsphere-or-vxrail-converting-to-sha1-image">Deploying through vSphere or VxRail (converting to SHA1 image)</h2>
-<p>Customers may experience deploying through vSphere/VxRail to be problematic. vSphere/VxRail is refusing the <code>SHA256</code> version of our <code>ova</code>. When trying to create a virtual machine using the <code>SHA1</code> based <code>ova</code>, customers are experiencing problems importing the ova, because of unsupported &ldquo;hardware&rdquo;. In this case please see the next paragraph about deploying manually.</p>
-<p>VMware&rsquo;s KB on converting OVA images:
-<a href="https://kb.vmware.com/s/article/2151537">&ldquo;The OVF package is invalid and cannot be deployed&rdquo; error when deploying the OVA (2151537)</a>.</p>
+<p>Customers may experience problems deploying through vSphere/VxRail. vSphere/VxRail is refusing the SHA256 version of our OVA image. When trying to create a virtual machine using the SHA1-based OVA image, customers are experiencing problems importing the OVA image, because of unsupported &ldquo;hardware&rdquo;. In this case, please see the next paragraph about deploying manually.</p>
+<p>VMware&rsquo;s KB article on converting OVA images:
+<a href="https://kb.vmware.com/s/article/2151537">&ldquo;The OVF package is invalid and cannot be deployed&rdquo; error when deploying the OVA (2151537)</a></p>
 <div class="admonition warning">
-<p class="admonition-title">Importing the SHA1 based OVA</p>
-<p>This might lead into unexpected results, like wrong hardware assignments, degraded performance, etc.</p>
+<p class="admonition-title">Importing the SHA1-Based OVA Image</p>
+<p>This might lead to unexpected results, such as wrong hardware assignments, degraded performance, etc.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">operation not supported on this object</p>
-<p>This states the inability to deploy the <code>ova</code> with the required hardware requirements through itself (vSphere).
-But if the same <code>ova</code> is deployed through <code>ESXi</code> no warnings are present while creating the virtual machine.</p>
+<p class="admonition-title"><code>operation not supported on this object</code></p>
+<p>This states the inability to deploy the OVA image with the required hardware requirements through itself (vSphere).
+However, if the same OVA image is deployed through <code>ESXi</code>, no warnings are present while creating the virtual machine.</p>
 </div>
 
 
@@ -12182,7 +12180,7 @@ But if the same <code>ova</code> is deployed through <code>ESXi</code> no warnin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
   </span>
 
     
