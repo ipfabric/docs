@@ -9,4 +9,4 @@ might occur:
 
 ![OVA error](ova_error.png)
 
-Please, follow [OVA distribution details](../../../../overview/deployment/ova_details.md) for resolving the issue.
+For resolving the issue, please follow the instructions in [OVA Distribution Details](../../../../overview/deployment/ova_details.md).
