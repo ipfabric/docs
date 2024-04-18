@@ -76,12 +76,17 @@ and
 ## Local Attributes
 
 Local or 'Snapshot Specific' Attributes are applied during discovery and stored
-in the snapshot file separate from the Global Settings. Currently, there is no 
-UI to view the Local Attributes (in development) and to interact with these
-you are required to either:
+in the snapshot file separate from the Global Settings. Currently, you are able
+to:
 
-- Update the Global Settings and run a new Discovery.
-- Use the API (or Python SDK) to view, add, edit attributes.
+- Update from Global Settings
+  - Update `Settings > Discovery & Snapshots > Global Configuration > Device Attributes`
+  - Navigate to the Snapshot's `Settings > Device Attributes` under `Discovery Snapshot`
+  - Select `Update from global settings`
+- Use the API (or Python SDK) to view, add, edit the snapshot local attributes.
+
+Editing snapshot local attributes will require recalculations if a device `stpDomain`, `siteName`,
+or `routingDomain`has been changed.
 
 ### Creating Local Attributes in Python
 
