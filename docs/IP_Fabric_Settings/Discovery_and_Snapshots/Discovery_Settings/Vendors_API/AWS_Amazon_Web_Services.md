@@ -4,6 +4,20 @@ description: In order to add AWS to the discovery you will need an access key & 
 
 # AWS (Amazon Web Services)
 
+## What counts against the IP Fabric license
+
+One license is consumed by each networking object (VPC, gateway, etc.). At this moment, those are at least:
+
+| AWS Networking Object  | IP Fabric |
+| ---------------------- | --------- |
+| Direct Connect gateway | `dxgw`    |
+| Internet gateway       | `igw`     |
+| NAT gateway            | `nat`     |
+| Transit gateway        | `tgw`     |
+| VPC endpoint           | `vpce`    |
+| VPC                    | `vpc`     |
+| VPN gateway            | `vgw`     |
+
 ## Configuring access to AWS API
 
 To add AWS to the discovery you will need an access key & secret access key from your AWS account. These keys can be found/generated under your account in the AWS

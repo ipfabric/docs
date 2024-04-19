@@ -12,11 +12,11 @@ For example:
 * Each virtual instance on a firewall (VSYS, VDOM, etc.) counts as one license each. If you have one firewall with 80 virtual instances, it will count as 80 devices in the license count.
 * A stack of switches (StackWise, etc.) count as one device in the license, regardless of the number of switches in the stack.
 * For wireless access points, a single license is consumed by the centralized controller, regardless of the number of APs controlled by it.
-* For cloud infrastructure providers, every construct (VPC, gateway, etc.) counts as one license.
+* For cloud infrastructure providers, one license is consumed by each networking construct (VPC, gateway, etc.).
 
-!!! Info
+!!! info
 
-	If IP Fabric cannot detect the device type of a discovered device (due to missing information from the CLI or API calls), the device will be counted as unlicensed.
+  	If IP Fabric cannot detect the device type of a discovered device (due to missing information from the CLI or API calls), the device will be counted as unlicensed.
 
 ## Changes
 
