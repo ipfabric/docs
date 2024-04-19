@@ -7,7 +7,7 @@ description: This page describes the option to establish remote SSL VPN from the
 Starting with IP Fabric `1.0.3`, you can establish remote SSL VPN to IP Fabric's
 DC. Support VPN uses OpenVPN.
 
-!!! warning "Network requirements"
+!!! warning "Network Requirements"
 
     Support VPN requires access to `remote.ipfabric.io` remote port `443/tcp`.
     The IP Fabric appliance must be also configured with a functional DNS
@@ -17,31 +17,71 @@ DC. Support VPN uses OpenVPN.
 
 ## How to Establish Support VPN
 
-!!! info "Security info"
+!!! info "Security Info"
 
     VPN is always established and teared down by you. VPN connection cannot be
     triggered externally.
 
-1.  Click **Support** in the top-right corner of the IP Fabric GUI.
+### From GUI
 
-2.  Select **Remote support VPN**:
+1. Click **Support** in the top-right corner of the IP Fabric GUI.
 
-    ![Select Remote support VPN in Support menu](vpn/menu.png)
+2. Select **Remote support VPN**:
 
-3.  On the newly opened page, click **Connect**:
+   ![Select Remote support VPN in Support menu](vpn/menu.png)
 
-    ![Remote support over VPN - Connect](vpn/connect.png)
+3. On the newly opened page, click **Connect**:
 
-4.  `VPN status` should change to `connected` and you should also see the
-    assigned IP address.
+   ![Remote support over VPN - Connect](vpn/connect.png)
+
+4. `VPN status` should change to `connected` and you should also see the
+   assigned IP address.
+
+### From CLI
+
+1. Connect to the IP Fabric appliance via SSH with the `osadmin` user:
+
+   ```shell
+   ssh osadmin@<ip_or_fqdn>
+   ```
+
+2. Switch to `root`:
+
+   ```shell
+   sudo su -
+   ```
+
+3. Now run the VPN command:
+
+   ```shell
+   sudo -u autoboss nimpee-support-vpn start
+   ```
+
+   ![Start VPN from CLI](vpn/cli_vpn_connect.png)
 
 ## How to Tear Down Support VPN
 
-1.  Repeat steps 1 and 2 from the
-    [How To Establish Support VPN](#how-to-establish-support-vpn) section above.
+### From GUI
 
-2.  On the newly opened page, click **Disconnect**:
+1. Repeat steps 1 and 2 from the
+   [How To Establish Support VPN](#how-to-establish-support-vpn) section above.
 
-    ![Remote support over VPN - Disconnect](vpn/disconnect.png)
+2. On the newly opened page, click **Disconnect**:
 
-3.  `VPN status` should change to `disconnected`.
+   ![Remote support over VPN - Disconnect](vpn/disconnect.png)
+
+3. `VPN status` should change to `disconnected`.
+
+### From CLI
+
+1. Repeat steps 1 and 2 from the
+   [How To Establish Support VPN](#how-to-establish-support-vpn) section above
+   if you logged out, skip this step if you didn't.
+
+2. Now run the VPN command:
+
+   ```shell
+   sudo -u autoboss nimpee-support-vpn stop
+   ```
+
+   ![Stop VPN from CLI](vpn/cli_vpn_disconnect.png)
