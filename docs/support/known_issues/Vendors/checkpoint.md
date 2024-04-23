@@ -26,7 +26,7 @@ description: This page describes known issues with Check Point and how to fix th
 
 ## Identity Awareness support
 
-Starting with version `6.5`, IP Fabric supports collecting data from the `pdpd` daemon. As the `pdp` command isn't by default available from CLISH, an extended command has to be defined first.
+Starting with version `6.5`, IP Fabric supports collecting data from the `pdpd` daemon. As the `pdp` command isn't by default available from CLISH, an extended command has to be defined first (on appliances where PDP daemon is running).
 
 The extended command can be defined from CLISH, but the path depends on the OS version currently installed. For example, if the OS version is `R80.40`, the command would be:
 
@@ -43,11 +43,7 @@ Alternatively, you can define the extended command from the expert mode by using
 
 Don't forget to update the related role and add the `ipf_pdp` extended command to it if needed. See the [official Check Point documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_ScalablePlatforms_Gaia_AdminGuide/Topics-SP-Gaia/User-Defined-Extended-Commands.htm?tocpath=Introduction%20to%20the%20Command%20Line%20Interface%7C_____8).
 
-IP Fabric uses the `ipf_pdp monitor all` command to collect information about active users. Log in to the Check Point management server with the credentials used by IP Fabric discovery and run the command to verify the configuration.
-
-!!! warning
-
-    Ensure that the predefined `fwm` extended command is also enabled for discovery. For more information, see the section below.
+IP Fabric uses the `ipf_pdp monitor all` command to collect information about active users. Log in to the Check Point Gaia appliance with the credentials used by IP Fabric discovery and run the command to verify the configuration.
 
 ## Required Permissions for Successful Discovery Over CLI
 
