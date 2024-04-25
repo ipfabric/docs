@@ -341,7 +341,7 @@ releases are actually refreshed.
 
 To use this script, you need to export two environment variables:
 
-- `JIRA_USER` -- your username (e.g. `pavel.bykov@ipfabric.io`)
+- `JIRA_USER` -- your username (e.g. `first.last@ipfabric.io`)
 - `JIRA_PASS` -- a token you can get from the
   [JIRA API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
