@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17+insiders-4.53.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14+insiders-4.53.2">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ab3d5eaf.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.003a5498.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2704,7 +2704,7 @@
   <span class="md-ellipsis">
     
   
-    MPLS
+    MPLS (Multiprotocol Label Switching)
   
 
     
@@ -10417,6 +10417,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to Establish Support VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -10427,6 +10455,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="How to Tear Down Support VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -11094,33 +11150,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../known_issues/Vendors/Fortinet_FortiGate/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Fortinet FortiGate
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../known_issues/Vendors/arista/" class="md-nav__link">
         
   
@@ -11290,6 +11319,33 @@
     
   
     Forcepoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known_issues/Vendors/fortinet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Fortinet
   
 
     
@@ -12071,6 +12127,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to Establish Support VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -12081,6 +12165,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="How to Tear Down Support VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -12119,7 +12231,7 @@
 <p>Starting with IP Fabric <code>1.0.3</code>, you can establish remote SSL VPN to IP Fabric&rsquo;s
 DC. Support VPN uses OpenVPN.</p>
 <div class="admonition warning">
-<p class="admonition-title">Network requirements</p>
+<p class="admonition-title">Network Requirements</p>
 <p>Support VPN requires access to <code>remote.ipfabric.io</code> remote port <code>443/tcp</code>.
 The IP Fabric appliance must be also configured with a functional DNS
 server.</p>
@@ -12127,10 +12239,11 @@ server.</p>
 </div>
 <h2 id="how-to-establish-support-vpn">How to Establish Support VPN</h2>
 <div class="admonition info">
-<p class="admonition-title">Security info</p>
+<p class="admonition-title">Security Info</p>
 <p>VPN is always established and teared down by you. VPN connection cannot be
 triggered externally.</p>
 </div>
+<h3 id="from-gui">From GUI</h3>
 <ol>
 <li>
 <p>Click <strong>Support</strong> in the top-right corner of the IP Fabric GUI.</p>
@@ -12145,14 +12258,34 @@ triggered externally.</p>
 </li>
 <li>
 <p><code>VPN status</code> should change to <code>connected</code> and you should also see the
-    assigned IP address.</p>
+   assigned IP address.</p>
+</li>
+</ol>
+<h3 id="from-cli">From CLI</h3>
+<ol>
+<li>
+<p>Connect to the IP Fabric appliance via SSH with the <code>osadmin</code> user:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>osadmin@&lt;ip_or_fqdn&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Switch to <code>root</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>su<span class="w"> </span>-
+</code></pre></div>
+</li>
+<li>
+<p>Now run the VPN command:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>autoboss<span class="w"> </span>nimpee-support-vpn<span class="w"> </span>start
+</code></pre></div>
+<p><a class="glightbox" href="../vpn/cli_vpn_connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Start VPN from CLI" src="../vpn/cli_vpn_connect.png" /></a></p>
 </li>
 </ol>
 <h2 id="how-to-tear-down-support-vpn">How to Tear Down Support VPN</h2>
+<h3 id="from-gui_1">From GUI</h3>
 <ol>
 <li>
 <p>Repeat steps 1 and 2 from the
-    <a href="#how-to-establish-support-vpn">How To Establish Support VPN</a> section above.</p>
+   <a href="#how-to-establish-support-vpn">How To Establish Support VPN</a> section above.</p>
 </li>
 <li>
 <p>On the newly opened page, click <strong>Disconnect</strong>:</p>
@@ -12160,6 +12293,20 @@ triggered externally.</p>
 </li>
 <li>
 <p><code>VPN status</code> should change to <code>disconnected</code>.</p>
+</li>
+</ol>
+<h3 id="from-cli_1">From CLI</h3>
+<ol>
+<li>
+<p>Repeat steps 1 and 2 from the
+   <a href="#how-to-establish-support-vpn">How To Establish Support VPN</a> section above
+   if you logged out, skip this step if you didn&rsquo;t.</p>
+</li>
+<li>
+<p>Now run the VPN command:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>autoboss<span class="w"> </span>nimpee-support-vpn<span class="w"> </span>stop
+</code></pre></div>
+<p><a class="glightbox" href="../vpn/cli_vpn_disconnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stop VPN from CLI" src="../vpn/cli_vpn_disconnect.png" /></a></p>
 </li>
 </ol>
 
@@ -12182,7 +12329,7 @@ triggered externally.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2024</span>
   </span>
 
     
@@ -12443,7 +12590,7 @@ triggered externally.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1135ae9f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a255a381.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       
