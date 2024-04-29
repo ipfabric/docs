@@ -18,7 +18,7 @@ The **Disabled Discovery Tasks** settings were introduced in version `3.7.0`.
 Since then, the user can manipulate specific tasks for the discovery process
 to avoid extra data collection (when particular protocols are not
 present on the network) or avoid specific operational commands to be
-executed on specific hardware platforms.
+executed on specific hardware platforms. Since version `6.8.0`, you can filter disabled tasks by device's Serial Number.
 
 !!! warning
 
