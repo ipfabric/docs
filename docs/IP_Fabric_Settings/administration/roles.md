@@ -10,6 +10,11 @@ add, update or delete `users`, `roles`, `policies`, and `LDAP configuration`).
 
 The **Roles** page allows you to create or modify roles.
 
+!!! note `ipf-checker` Role
+
+    You may ignore the `ipf-checker` role, which is used by our internal
+    diagnostics tool.
+
 ## Add Role
 
 1. To add a new role, click **+ Add role**:
