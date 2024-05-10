@@ -10,7 +10,7 @@ add, update or delete `users`, `roles`, `policies`, and `LDAP configuration`).
 
 The **Roles** page allows you to create or modify roles.
 
-!!! note `ipf-checker` Role
+!!! note "`ipf-checker` Role"
 
     You may ignore the `ipf-checker` role, which is used by our internal
     diagnostics tool.
@@ -29,8 +29,8 @@ The **Roles** page allows you to create or modify roles.
 ## List of Roles
 
 The **Roles** table lists all roles including their details and allows you to
-**modify** or **delete** them _(except the built-in **admin** role which cannot
-be modified nor deleted)_.
+**modify** or **delete** them _(except the built-in **admin** and
+**ipf-checker** roles which cannot be modified nor deleted)_.
 
 ![Roles table](roles/roles_table.png)
 

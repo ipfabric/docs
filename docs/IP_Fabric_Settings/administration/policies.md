@@ -28,7 +28,7 @@ The **Policies** page allows you to create or modify policies.
     Users with `admin` role have access to all attributes and endpoints by
     default.
 
-!!! note `ipf-checker` Policy
+!!! note "`ipf-checker` Policy"
 
     You may ignore the `ipf-checker` (API endpoints scope) policy, which is used
     by our internal diagnostics tool.
