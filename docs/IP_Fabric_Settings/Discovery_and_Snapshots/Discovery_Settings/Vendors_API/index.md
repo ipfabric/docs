@@ -98,9 +98,9 @@ for each Vendor API in the GUI (without going directly to the database):
 - maximum concurrent requests
   - maximum amount of API calls to a device that can run in parallel
 - `maxCapacity` (number of requests)
-  - see [How API Discovery Works - Rate Limitation](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limitation)
+  - see [How API Discovery Works - Rate Limiting](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limiting)
 - `refillRate` (number of requests per specified milliseconds)
-  - see [How API Discovery Works - Rate Limitation](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limitation)
+  - see [How API Discovery Works - Rate Limiting](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limiting)
 
 ![Show advanced settings](show_advanced_settings.png)
 

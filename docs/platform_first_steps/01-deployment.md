@@ -18,7 +18,7 @@ All VM images are available at  [https://releases.ipfabric.io/ipfabric/#current
    1. Change CPU count.
    2. Change memory size.
    3. [Add a new empty virtual disk or resize the main system disk](../System_Administration/increase_disk_space.md).
-3. Power on the VM and [complete the First Boot Wizard](#complete-first-time-boot-wizard).
+3. Power on the VM and [complete the First Boot Wizard](02-boot_wizard.md).
 
 !!! note "Invalid OVF checksum algorithm: SHA256"
 
