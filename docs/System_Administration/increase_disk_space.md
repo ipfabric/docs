@@ -300,7 +300,7 @@ Suppose you have a backup disk prepared with the instructions above and now you 
 7. Verify with `lsblk` that the disk `vdb` has been unconfigured:
 
    ```shell
-   root@ipfabric:~# lsblk
+   osadmin@ipfabric:~# lsblk
    NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
    vda                     254:0    0 76.3G  0 disk 
    ├─vda1                  254:1    0  487M  0 part /boot
