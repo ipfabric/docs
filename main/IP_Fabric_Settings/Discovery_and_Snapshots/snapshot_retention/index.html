@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section we talk about snapshots, scheduling, retention rules and how they work.">
+        <meta name="description" content="In this section, we discuss snapshots, scheduling, retention rules, and how they work.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Snapshot Retention - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In this section we talk about snapshots, scheduling, retention rules and how they work." />
+<meta property="og:description" content="In this section, we discuss snapshots, scheduling, retention rules, and how they work." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Snapshot Retention - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In this section we talk about snapshots, scheduling, retention rules and how they work." />
+<meta property="twitter:description" content="In this section, we discuss snapshots, scheduling, retention rules, and how they work." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12488,15 +12488,14 @@ documentation.
 
 <h1 id="snapshot-retention">Snapshot Retention</h1>
 <h2 id="create-snapshots-periodically">Create Snapshots Periodically</h2>
-<p>For <a href="../../../IP_Fabric_GUI/management/changes/">change management</a>, regularly running IP Fabric
-discovery is necessary. A periodic discovery run can be scheduled
+<p>For <a href="../../../IP_Fabric_GUI/management/changes/">change management</a>, it is necessary to regularly run IP Fabric discovery. A periodic discovery run can be scheduled
 in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention &rarr; Create Snapshots Periodically</strong>.</p>
-<p>Here is an example for an automatic discovery run at <strong>10 minutes past
-every hour</strong> (0:10; 1:10; 2:10; 3:10, etc.).</p>
+<p>Here is an example of an automatic discovery run at <strong>10 minutes past
+every hour</strong> (0:10, 1:10, 2:10, 3:10, etc.).</p>
 <p><a class="glightbox" href="create_snapshots_periodically.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Snapshots Periodically" src="create_snapshots_periodically.png" /></a></p>
 <h3 id="how-scheduling-works-in-ip-fabric">How Scheduling Works in IP Fabric</h3>
 <p>Let&rsquo;s assume that a snapshot is scheduled for every hour, and it
-takes 4h:20min to be created, then the next snapshot will be scheduled
+takes 4 hours and 20 minutes to be created. Then, the next snapshot will be scheduled
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.</p>
 <p><a class="glightbox" href="cron_setup.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cron Setup" src="cron_setup.jpg" /></a></p>
@@ -12504,15 +12503,15 @@ the next possible period according to the cron setup.</p>
 <p>In <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention</strong>, you can change these parameters:</p>
 <ul>
 <li><strong>Maximum number of loaded snapshots</strong><ul>
-<li>maximum number of snapshots that can be loaded in <strong>Discovery Snapshot</strong></li>
-<li>default value: 3</li>
-<li>possible values: 1-5</li>
+<li>Maximum number of snapshots that can be loaded in <strong>Discovery Snapshot</strong>.</li>
+<li>Default value: 3</li>
+<li>Possible values: 1-5</li>
 </ul>
 </li>
 <li><strong>Maximum number of locked snapshots</strong><ul>
-<li>maximum number of loaded snapshots that can be locked in <strong>Discovery Snapshot</strong> to prevent them from being unloaded</li>
-<li>default value: 1</li>
-<li>possible values: 0-4</li>
+<li>Maximum number of loaded snapshots that can be locked in <strong>Discovery Snapshot</strong> to prevent them from being unloaded.</li>
+<li>Default value: 1</li>
+<li>Possible values: 0-4</li>
 </ul>
 </li>
 </ul>
@@ -12525,35 +12524,35 @@ the next possible period according to the cron setup.</p>
 <ol>
 <li>
 <p>If any of the <strong>keep</strong> rules are enabled, IP Fabric goes through
-    unloaded snapshots and based on enabled <strong>keep</strong> rules it marks
-    snapshots to be retained or deleted.</p>
+   unloaded snapshots and, based on enabled <strong>keep</strong> rules, it marks
+   snapshots to be retained or deleted.</p>
 </li>
 <li>
-<p>HDD utilization and a number of unloaded snapshots are checked. If
-    any of these rules are exceeded, the oldest unloaded snapshots are
-    deleted.</p>
+<p>HDD utilization and the number of unloaded snapshots are checked. If
+   any of these rules are exceeded, the oldest unloaded snapshots are
+   deleted.</p>
 </li>
 </ol>
 <p>Please note:</p>
 <ol>
 <li>
 <p>HDD utilization and the number of snapshots have precedence over
-    <strong>keep</strong> rules. This means that snapshots marked as retained by a
-    <strong>keep</strong> rule can be deleted when the HDD utilization or number of
-    snapshots are exceeded.</p>
+   <strong>keep</strong> rules. This means that snapshots marked as retained by a
+   <strong>keep</strong> rule can be deleted when HDD utilization or the number of
+   snapshots are exceeded.</p>
 </li>
 <li>
 <p>When at least one retention rule is enabled, all snapshots not
-    protected by them will be removed regardless of reaching HDD
-    utilization or snapshots count limits.</p>
+   protected by them will be removed regardless of reaching HDD
+   utilization or snapshot count limits.</p>
 </li>
 <li>
 <p>Loaded snapshots are not affected by these rules. It affects only
-    unloaded unlocked snapshots.</p>
+   unloaded unlocked snapshots.</p>
 </li>
 <li>
 <p>Currently, IP Fabric only supports the delete action. Additional
-    actions will be added in upcoming releases.</p>
+   actions will be added in upcoming releases.</p>
 </li>
 </ol>
 <div class="admonition info">
@@ -12580,7 +12579,7 @@ the next possible period according to the cron setup.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
   </span>
 
     

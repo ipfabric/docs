@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Platform interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet. Credentials added in the...">
+        <meta name="description" content="IP Fabric interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Device Credentials - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Platform interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet. Credentials added in the..." />
+<meta property="og:description" content="IP Fabric interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Device Credentials - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Platform interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet. Credentials added in the..." />
+<meta property="twitter:description" content="IP Fabric interacts with the network infrastructure devices by running show commands through CLI using SSH or Telnet." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12441,42 +12441,42 @@ commands through CLI using SSH or Telnet. Credentials added in <strong>Settings 
 Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Device Credentials</strong> will be
 used by IP Fabric to access the CLI of the network devices.</p>
 <h2 id="credential-selection-logic">Credential Selection Logic</h2>
-<p>If more credentials are specified, a top-down algorithm is used when trying to
-log in to a network device or the credentials priority can be changed using
+<p>If multiple credentials are specified, a top-down algorithm is used when trying to
+log in to a network device, or the credential priority can be changed using
 drag and drop.</p>
 <pre class="mermaid"><code>flowchart TD
-    A([Start]) --&gt; discoveryHistory{Is IP in&lt;br/&gt;`Management &gt;&lt;br/&gt;Discovery History`&lt;br/&gt;table?}
-    discoveryHistory --&gt; |Yes|previousUsername[Try previously discovered username.]
-    discoveryHistory --&gt; |No|configuredAuth{Does IP fall within&lt;br/&gt;'Use in subnets' range in&lt;br/&gt;`Settings &gt; Discovery and Snapshots &gt;&lt;br/&gt;Discovery Settings &gt; Device Credentials`&lt;br/&gt;table?}
-    configuredAuth --&gt; |Yes|tryAuth[Try configured Device Credentials&lt;br/&gt;starting from top to bottom.]
-    configuredAuth --&gt; |No|loginFailed([&lt;b&gt;Login Failed.&lt;/b&gt;])
-    tryAuth --&gt; |Login Success|loginSuccess([&lt;b&gt;Login Success.&lt;/b&gt;])
-    tryAuth --&gt; |Login Failed|otherCreds{Are there other&lt;br/&gt;credentials to try?}
-    previousUsername --&gt; |Login Success|loginSuccess
-    previousUsername --&gt; |Login Failed|configuredAuth
+    A([Start]) --&gt; discoveryHistory{Is the IP address in&lt;br/&gt;the &lt;strong&gt;Management →&lt;br/&gt;Discovery History&lt;/strong&gt;&lt;br/&gt;table?}
+    discoveryHistory --&gt; |Yes|previousUsername[Try the previously discovered username.]
+    discoveryHistory --&gt; |No|configuredAuth{Does the IP address fall within&lt;br/&gt;the &lt;strong&gt;Use in subnets&lt;/strong&gt; range in&lt;br/&gt;the &lt;strong&gt;Settings → Discovery &amp; Snapshots →&lt;br/&gt;Discovery Settings → Device Credentials&lt;/strong&gt;&lt;br/&gt;table?}
+    configuredAuth --&gt; |Yes|tryAuth[Try the configured &lt;strong&gt;Device Credentials&lt;/strong&gt;&lt;br/&gt;starting from top to bottom.]
+    configuredAuth --&gt; |No|loginFailed([&lt;strong&gt;Login failed.&lt;/strong&gt;])
+    tryAuth --&gt; |Login succeeded|loginSucceeded([&lt;strong&gt;Login succeeded.&lt;/strong&gt;])
+    tryAuth --&gt; |Login failed|otherCreds{Are there other&lt;br/&gt;credentials to try?}
+    previousUsername --&gt; |Login succeeded|loginSucceeded
+    previousUsername --&gt; |Login failed|configuredAuth
     otherCreds --&gt; |Yes|tryNext[Try the next credential.]
     otherCreds --&gt; |No|loginFailed
-    tryNext --&gt; |Login Success|loginSuccess
-    tryNext --&gt; |Login Failed|otherCreds
+    tryNext --&gt; |Login succeeded|loginSucceeded
+    tryNext --&gt; |Login failed|otherCreds
 
     style loginFailed fill:#dd3300
-    style loginSuccess fill:#33dd00
+    style loginSucceeded fill:#33dd00
     linkStyle 2,4,6,8,10,12 stroke:red;
     linkStyle 1,3,5,7,9,11 stroke:green;</code></pre>
 <h2 id="configure-network-infrastructure-access">Configure Network Infrastructure Access</h2>
 <p>Read-only (Privilege 1) credentials are sufficient for basic functionality.
-Security sensitive operations and advanced functionality might require higher
-privilege. See the
+Security-sensitive operations and advanced functionality might require higher
+privileges. See the
 <a href="https://matrix.ipfabric.io/">full list of used command in the documentation</a>.</p>
 <p>When adding new credentials, you can limit the validity of the credentials just
-for a part of your network using <strong>Use in subnets</strong>
+for a part of your network using the <strong>Use in subnets</strong>
 and <strong>Don&rsquo;t use in subnets</strong> fields.</p>
 <p><a class="glightbox" href="../add-new-cli-credential.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add new CLI credential" src="../add-new-cli-credential.png" /></a></p>
 <p>Provided credentials can be used for configuration change tracking and saved
-configuration consistency (i.e. they allow commands such as <strong>show run</strong> and
-<strong>show start</strong>).</p>
+configuration consistency (i.e., they allow commands such as <code>show run</code> and
+<code>show start</code>).</p>
 <p>To use these credentials for configuration change tracking, please
-check <a href="../../../configuration_management/">Use for configuration management</a>
+check the <a href="../../../configuration_management/">Use for configuration management</a>
 box.</p>
 <h2 id="optional-passwords-for-enable-mode">(Optional) Passwords for Enable Mode</h2>
 <p>Privileged credentials are generally only necessary for configuration
@@ -12504,7 +12504,7 @@ session information.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
   </span>
 
     

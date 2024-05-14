@@ -12385,20 +12385,20 @@ documentation.
 </ul>
 <h2 id="syslog-triggered">Syslog Triggered</h2>
 <p>IP Fabric checks incoming syslog messages for key phrases (for example, <code>Configured from console by admin15 on vty0.</code>). This option needs the appropriate <code>syslog</code> configuration on the device side.</p>
-<p>The syslog server listens on port <code>514/udp</code>, and there is no additional configuration on the IP Fabric side needed. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>)
+<p>The syslog server listens on port <code>514/udp</code>, and there is no additional configuration needed on the IP Fabric side. You can send syslog directly from network devices (<a href="https://community.cisco.com/t5/network-architecture-documents/how-to-configure-logging-in-cisco-ios/tac-p/3132436">example for Cisco IOS</a>)
 or use a syslog forwarder (<a href="https://support.symantec.com/en_US/article.TECH92854.html">example for syslog-ng</a>).</p>
 <p>Please note:</p>
 <ul>
 <li>The receiving port <code>514</code> cannot be modified.</li>
-<li>The syslog messages are filtered and are stored in RabbitMQ apart from the main DB and cannot be observed in IP Fabric&rsquo;s GUI.</li>
+<li>The syslog messages are filtered and are stored in RabbitMQ, apart from the main DB, and cannot be observed in IP Fabric&rsquo;s GUI.</li>
 </ul>
-<p>To enable the syslog triggered configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Syslog Triggered</strong>.</p>
+<p>To enable the syslog-triggered configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Syslog Triggered</strong>.</p>
 <h2 id="schedule">Schedule</h2>
-<p>Configuration change is checked at regular intervals as configured by user.</p>
-<p>To enable the scheduled configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Schedule</strong>.</p>
+<p>Configuration changes are checked at regular intervals as configured by you.</p>
+<p>To enable scheduled configuration management, go to <strong>Settings &rarr; Configuration Management &rarr; Configuration Management Setup</strong> and select <strong>Schedule</strong>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Example for scheduling a check every day at 5:00; 5:30; 10:00; 10:30; 15:00; 15:30; 20:00; 20:30.</p>
+<p>Example for scheduling a check every day at 5:00, 5:30, 10:00, 10:30, 15:00, 15:30, 20:00, and 20:30.</p>
 <p><a class="glightbox" href="../configuration_management_setup.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configuration Management Setup" src="../configuration_management_setup.png" /></a></p>
 </div>
 <p>Multiple values from the lists can be selected while holding the <code>Ctrl</code> or <code>Shift</code> keys.</p>
@@ -12427,7 +12427,7 @@ instructions, please see
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
   </span>
 
     
