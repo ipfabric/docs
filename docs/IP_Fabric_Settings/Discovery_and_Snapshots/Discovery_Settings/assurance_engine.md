@@ -1,5 +1,5 @@
 ---
-description: This section contains information how to skip some discovery features to decrease discovery time.
+description: This section contains information on how to skip some discovery features to decrease discovery time.
 ---
 
 # Assurance Engine
@@ -12,11 +12,11 @@ The **Assurance Engine** section allows you to disable the following features to
 
 1. **Loading Graph cache**
 
-   Disabling this task is especially useful in large networks. By disabling this, topology calculations at the end of discovery are skipped. The Network Viewer (Site Diagrams) and Path Lookup (End to end path, Host to Gateway path) are still able to load diagrams; they will be just slower as the topology is not cached and needs to be calculated on demand.
+   Disabling this task is especially useful in large networks. By disabling this, topology calculations at the end of discovery are skipped. The Network Viewer (Site Diagrams) and Path Lookup (End to end path, Host to Gateway path) are still able to load diagrams; they will just be slower as the topology is not cached and needs to be calculated on demand.
 
 2. **Save historical data**
 
-   Tables under **Management --> Changes** will not be updated, so you will not be able to compare removed/added devices between snapshots.
+   Tables under **Management --> Changes** will not be updated, so you will not be able to compare added/removed devices between snapshots.
 
 3. **Compute Intent Verification Rules**
 
