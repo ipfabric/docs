@@ -10,8 +10,8 @@ description: In this section, we publish release notes and low-level release not
 
 !!! important "Current Release"
 
-    The current major release is `6.7`. Please check the
-    [detailed release notes](release_notes/6.7.md) for this release.
+    The current major release is `6.8`. Please check the
+    [detailed release notes](release_notes/6.8.md) for this release.
 
 Our release naming follows [semantic versioning](https://semver.org/). Where
 components of the version are `major.minor.patch+build`:
