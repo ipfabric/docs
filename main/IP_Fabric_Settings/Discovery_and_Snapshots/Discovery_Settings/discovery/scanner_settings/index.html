@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Scanner in IP Fabric intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet)...">
+        <meta name="description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Scanner settings - IP Fabric Documentation Portal</title>
+        <title>Scanner Settings - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Scanner settings - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The Scanner in IP Fabric intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet)..." />
+<meta property="og:title" content="Scanner Settings - IP Fabric Documentation Portal" />
+<meta property="og:description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Scanner settings - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The Scanner in IP Fabric intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet)..." />
+<meta property="twitter:title" content="Scanner Settings - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings.png" />
  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scanner settings
+              Scanner Settings
             
           </span>
         </div>
@@ -4547,7 +4547,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Discovery tasks settings
+    Discovery Tasks Settings
   
 
     
@@ -4574,7 +4574,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    DNS resolve
+    DNS Resolve
   
 
     
@@ -4628,7 +4628,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Limit download of BGP routes
+    Limit Download of BGP Routes
   
 
     
@@ -4664,7 +4664,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Scanner settings
+    Scanner Settings
   
 
     
@@ -4692,7 +4692,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Traceroute settings
+    Traceroute Settings
   
 
     
@@ -12342,28 +12342,27 @@ documentation.
   
 
 
-<h1 id="scanner-settings">Scanner settings</h1>
-<p>The Scanner intelligently scans the parts of the network which are not
-reachable using standard methods by testing the login (SSH/Telnet) to
-each IP address from IP networks without any discovered device.</p>
-<p>In other words, the Scanner takes each unique route for which there is
-no <strong>CONNECTED</strong> router and attempts to log in to each IP address by first
-logging in to first unicast address of a subnet, then last address,
-split the subnet in half and continue the process accordingly (excluding
-the already attempted addresses).</p>
+<h1 id="scanner-settings">Scanner Settings</h1>
+<p>The Scanner intelligently scans the parts of the network which are not reachable
+using standard methods by testing the login (SSH/Telnet) to each IP address from
+IP networks without any discovered device.</p>
+<p>In other words, the Scanner takes each unique route for which there is no
+<strong>CONNECTED</strong> router and attempts to log in to each IP address by first logging
+in to first unicast address of a subnet, then last address, splitting the subnet
+in half and continuing the process accordingly (excluding the already attempted
+addresses).</p>
 <p>For example, if after standard intelligent discovery, there is a network
-<code>10.0.0.0/24</code> in a routing table which does not belong to any of the
-interfaces discovered, the scanner will attempt to log in to <code>10.0.0.1</code>,
-then to <code>10.0.0.254</code>, then to <code>10.0.0.126</code>, then to <code>10.0.0.129</code>, and so on,
-until all of the addresses in the <code>10.0.0.0/24</code> network have been
-attempted.<br />
-Turn on the Scanner to increase the number of discovered devices.</p>
+<code>10.0.0.0/24</code> in a routing table which does not belong to any of the discovered
+interfaces, the scanner will attempt to log in to <code>10.0.0.1</code>, then to
+<code>10.0.0.254</code>, then to <code>10.0.0.126</code>, then to <code>10.0.0.129</code>, and so on, until all
+of the addresses in the <code>10.0.0.0/24</code> network have been attempted.  </p>
+<p>Turn on the Scanner to increase the number of discovered devices.</p>
 <p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery
-&rarr; Scanner settings</strong> and turn on the <strong>Use scanner in discovery</strong> switch.</p>
-<p><strong>Shortest mask of the network to scan</strong> - defines maximum size of the
-networks in a routing table to be scanned. A smaller prefix length means
-a larger network and therefore a longer scan time. The minimum prefix
-length size is /16.</p>
+&rarr; Scanner settings</strong> and turn on the <strong>Use scanner in discovery</strong> toggle.</p>
+<p><strong>Shortest mask of the network to scan</strong> &ndash; Defines the maximum size of the
+networks in a routing table to be scanned. A smaller prefix length means a
+larger network and therefore a longer scan time. The minimum prefix length size
+is <code>/16</code>.</p>
 
 
 
@@ -12384,7 +12383,7 @@ length size is /16.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
   </span>
 
     
@@ -12462,7 +12461,7 @@ length size is /16.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../limit_download_of_bgp_routes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Limit download of BGP routes">
+          <a href="../limit_download_of_bgp_routes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Limit Download of BGP Routes">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12472,20 +12471,20 @@ length size is /16.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Limit download of BGP routes
+                Limit Download of BGP Routes
               </div>
             </div>
           </a>
         
         
           
-          <a href="../traceroute_settings/" class="md-footer__link md-footer__link--next" aria-label="Next: Traceroute settings">
+          <a href="../traceroute_settings/" class="md-footer__link md-footer__link--next" aria-label="Next: Traceroute Settings">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Traceroute settings
+                Traceroute Settings
               </div>
             </div>
             <div class="md-footer__button md-icon">

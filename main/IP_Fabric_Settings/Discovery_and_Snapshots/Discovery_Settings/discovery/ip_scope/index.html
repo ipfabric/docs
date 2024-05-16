@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section we go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery.">
+        <meta name="description" content="In this section, we will go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="IP Scope - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In this section we go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery." />
+<meta property="og:description" content="In this section, we will go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="IP Scope - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In this section we go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery." />
+<meta property="twitter:description" content="In this section, we will go through the IP Scope and how to include and exclude networks from discovery. By default, there are no limitations on discovery." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope.png" />
  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -4547,7 +4547,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Discovery tasks settings
+    Discovery Tasks Settings
   
 
     
@@ -4574,7 +4574,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    DNS resolve
+    DNS Resolve
   
 
     
@@ -4656,7 +4656,7 @@ documentation.
   <a href="#including-and-excluding-networks-from-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Including And Excluding Networks from Discovery
+        Including and Excluding Networks From Discovery
       
     </span>
   </a>
@@ -4685,7 +4685,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Limit download of BGP routes
+    Limit Download of BGP Routes
   
 
     
@@ -4712,7 +4712,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Scanner settings
+    Scanner Settings
   
 
     
@@ -4739,7 +4739,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Traceroute settings
+    Traceroute Settings
   
 
     
@@ -12295,7 +12295,7 @@ documentation.
   <a href="#including-and-excluding-networks-from-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Including And Excluding Networks from Discovery
+        Including and Excluding Networks From Discovery
       
     </span>
   </a>
@@ -12409,42 +12409,50 @@ documentation.
 
 
 <h1 id="ip-scope">IP Scope</h1>
-<h2 id="including-and-excluding-networks-from-discovery">Including And Excluding Networks from Discovery</h2>
-<p>By default, there are no limitations on discovery and all IP addresses
-are allowed (i.e. <em>Include scope</em> is <code>0.0.0.0/0</code>).</p>
-<p>The Include and Exclude lists act as an Access Control List for IP Fabric, when
-an IP Address is found during discovery it is then checked against this ACL.</p>
+<h2 id="including-and-excluding-networks-from-discovery">Including and Excluding Networks From Discovery</h2>
+<p>By default, there are no limitations on discovery, and all IP addresses are
+allowed (i.e., the <em>Include scope</em> is <code>0.0.0.0/0</code>).</p>
+<p>The Include and Exclude lists act as an Access Control List for IP Fabric; when
+an IP address is found during discovery, it is then checked against this ACL.</p>
 <pre class="mermaid"><code>graph LR
-    ip[IP Found During Discovery] --&gt; exclude{Is IP in Exclude List?}
+    ip[IP found during discovery] --&gt; exclude{Is the IP in the Exclude list?}
 
-    exclude --&gt;|No| include{Is IP in Include List?}
-      include --&gt;|Yes| continue[Continue with Discovery Logic]
-      include --&gt; |No| doNotDiscover[Do Not Discover]
-    exclude --&gt;|Yes| doNotDiscover[Do Not Discover]
+    exclude --&gt;|No| include{Is the IP in the Include list?}
+      include --&gt;|Yes| continue[Continue with discovery logic]
+      include --&gt; |No| doNotDiscover[Do not discover]
+    exclude --&gt;|Yes| doNotDiscover[Do not discover]
 
     style continue fill:#33dd00
     style doNotDiscover fill:#dd3300</code></pre>
-<p>Discovery can be limited to one or more subnets using <strong>Settings &rarr; Discovery
-&amp; Snapshots &rarr; Discovery Settings &rarr; Discovery &rarr; IP Scope &rarr; IP networks to
-include in discovery and analysis</strong>. Enter one or more subnets to limit the
-discovery process to addresses from particular networks.</p>
-<p>Specific parts of the network can be also excluded from discovery using
-<strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery &rarr; IP
-Scope &rarr; IP networks to exclude from discovery and analysis</strong>.</p>
+<p>Discovery can be limited to one or more subnets using the Include list (in
+<strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery &rarr;
+IP Scope &rarr; IP networks to include in discovery and analysis</strong>). Enter one or
+more subnets to limit the discovery process to addresses from particular
+networks.</p>
+<p>Specific parts of the network can also be excluded from discovery using the
+Exclude list (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings
+&rarr; Discovery &rarr; IP Scope &rarr; IP networks to exclude from discovery and
+analysis</strong>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Priority</p>
-<p>Exclude option takes precedence over include.</p>
+<p>The Exclude list takes precedence over the Include list.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">API Discovery</p>
-<p>IP Scope settings are not applied to Vendors discovered using API
-(everything is downloaded and used in discovery).</p>
+<p>The IP Scope settings are not applied to vendors discovered using the Vendor
+APIs (everything is downloaded and used in discovery).</p>
 </div>
 <p><strong><em>Example</em></strong>:</p>
-<p><em>IP networks to include in discovery and analysis:</em> <code>10.0.0.0/8</code></p>
-<p><em>IP networks to exclude from discovery and analysis:</em> <code>10.24.0.0/16</code></p>
-<p><em>Result:</em> Only network <code>10.0.0.0/8</code> is scanned excluding <code>10.24.0.0/16</code>
-subnet.</p>
+<ul>
+<li><em>IP networks to include in discovery and analysis:</em> <code>10.0.0.0/8</code></li>
+</ul>
+<ul>
+<li><em>IP networks to exclude from discovery and analysis:</em> <code>10.24.0.0/16</code></li>
+</ul>
+<ul>
+<li><em>Result:</em> Only the network <code>10.0.0.0/8</code> is scanned, excluding the
+  <code>10.24.0.0/16</code> subnet.</li>
+</ul>
 
 
 
@@ -12465,7 +12473,7 @@ subnet.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
   </span>
 
     
@@ -12543,7 +12551,7 @@ subnet.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../dns_resolve/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DNS resolve">
+          <a href="../dns_resolve/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DNS Resolve">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12553,20 +12561,20 @@ subnet.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                DNS resolve
+                DNS Resolve
               </div>
             </div>
           </a>
         
         
           
-          <a href="../limit_download_of_bgp_routes/" class="md-footer__link md-footer__link--next" aria-label="Next: Limit download of BGP routes">
+          <a href="../limit_download_of_bgp_routes/" class="md-footer__link md-footer__link--next" aria-label="Next: Limit Download of BGP Routes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Limit download of BGP routes
+                Limit Download of BGP Routes
               </div>
             </div>
             <div class="md-footer__button md-icon">
