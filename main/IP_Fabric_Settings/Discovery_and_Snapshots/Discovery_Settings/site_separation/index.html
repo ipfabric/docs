@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location.">
+        <meta name="description" content="Site separation can follow a specific regular expression (regex), where separation will be performed based on a portion of a device hostname or SNMP location.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Site Separation - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location." />
+<meta property="og:description" content="Site separation can follow a specific regular expression (regex), where separation will be performed based on a portion of a device hostname or SNMP location." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Site Separation - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on portion of a device hostname or SNMP location." />
+<meta property="twitter:description" content="Site separation can follow a specific regular expression (regex), where separation will be performed based on a portion of a device hostname or SNMP location." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12649,87 +12649,81 @@ documentation.
 
 <h1 id="site-separation">Site Separation</h1>
 <p>Sites are separated collections of devices. Rule precedence is defined by the order from top to bottom.</p>
-<p>A site can be a branch, a factory, a production floor, a campus, or anything that represents a site from a customer&rsquo;s point of view.</p>
-<p>By default, a site is comprised of topology of all contiguously interconnected protocols, and the boundary of a site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where directly connected routing infrastructure at a site&rsquo;s edge is not accessible.</p>
+<p>A Site can be a branch, a factory, a production floor, a campus, or anything that represents a Site from a your point of view.</p>
+<p>By default, a Site consists of the topology of all contiguously interconnected protocols, and the boundary of a Site is formed by the network protocol relation that is not under management using provided authentication credentials. The default separation is good for MPLS networks, where the directly connected routing infrastructure at a Site&rsquo;s edge is not accessible.</p>
 <h2 id="regular-expression-site-separation">Regular Expression Site Separation</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Site distribution cannot be changed manually when regex rules are used. Sites cannot be renamed.</p>
-<p>Alternatively, site separation can follow a specific Regular Expression (RegEx) where separation will be performed based on a portion of a device hostname or SNMP location.</p>
+<p>Site distribution cannot be changed manually when regular expression (regex) rules are used. Sites cannot be renamed.</p>
+<p>Alternatively, site separation can follow a specific regex, where separation will be performed based on a portion of a device hostname or SNMP location.</p>
 </div>
 <div class="admonition check">
 <p class="admonition-title">Check</p>
-<p>If you cannot cover the names of the sites with one regex, you can use logical <strong>or</strong>. Use <code>|</code> (pipe) operator between RegEx rules or use the Device Attributes method shown below.</p>
+<p>If you cannot cover the names of the Sites with one regex, you can use a logical <strong>or</strong>. Use the <code>|</code> (pipe) operator between regex rules or use the Device Attributes method detailed below.</p>
 </div>
 <h3 id="hostname-regex">Hostname Regex</h3>
-<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on hostname</strong> or create a new rule by clicking the <strong>Add rule</strong> button.</p>
-<p><strong>Transform hostname</strong> is used to normalize site names based on hostname:</p>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, select <strong>Regex based on hostname</strong>, and click <strong>+ Add rule</strong> to create a new rule.</p>
+<p><strong>Transform hostname</strong> is used to normalize Site names based on hostname:</p>
 <ul>
-<li>Upper case (default) - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>PRAGUE</code></li>
-<li>Lower case - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that both devices in one site named <code>prague</code></li>
-<li>No transformation - first hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> =&gt; result is that each device has its own site named <code>PRAGUE</code> and <code>prague</code></li>
+<li><strong>UPPER CASE</strong> &ndash; First hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> &rarr; result: both devices are in one Site named <code>PRAGUE</code>.</li>
+<li><strong>lower case</strong> &ndash; First hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> &rarr; result: both devices are in one Site named <code>prague</code>.</li>
+<li><strong>None</strong> (default) &ndash; First hostname <code>PRAGUE-RTR1</code>, second hostname <code>prague-rtr2</code> &rarr; result: each device is in its own Site (<code>PRAGUE-RTR1</code> being in <code>PRAGUE</code> and <code>prague-rtr2</code> being in <code>prague</code>).</li>
 </ul>
-<p><a class="glightbox" href="hostname_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hostname Regex" src="hostname_regex.png" /></a></p>
+<p><a class="glightbox" href="hostname_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hostname regex" src="hostname_regex.png" /></a></p>
 <p>In this example, the regular expression matches items such as <code>PRAGUE-</code>, <code>LONDON-</code>, etc.</p>
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
-<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and change <strong>Routing &amp; Switching Domain</strong> to <strong>RegEx based on SNMP location</strong> or create a new rule by <strong>Add rule</strong> button.</p>
-<p><a class="glightbox" href="snmp_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP Regex" src="snmp_regex.png" /></a></p>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, select <strong>Regex based on SNMP location</strong>, and click <strong>+ Add rule</strong> to create a new rule.</p>
+<p><a class="glightbox" href="snmp_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP regex" src="snmp_regex.png" /></a></p>
 <h3 id="testing">Testing</h3>
-<p>The UI now allows you to edit and test your rules directly in the browser when selecting the <strong>Test rule</strong> option. Here you can see a live preview of devices that will match the regex you created.</p>
+<p>The UI allows you to edit and test your rules directly in the browser by selecting the <strong>Test rule</strong> option. Here, you can see a live preview of devices that will match the regex you created.</p>
 <p><a class="glightbox" href="testing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Testing" src="testing.png" /></a></p>
 <p>You can also test SNMP location rules:</p>
 <p><a class="glightbox" href="snmp_location.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP location" src="snmp_location.png" /></a></p>
 <div class="admonition example">
-<p class="admonition-title">RegEx example</p>
-<p>We have several locations whose name is logically designed as one letter with one to three numbers. From the point of view of a regex, such a site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other sites that do not fit into this schema. These sites can be defined with their own regex and this can be added to the original one using the logical operator <strong>or</strong>. The following example will match one of 3 options:</p>
+<p class="admonition-title">Regex Example</p>
+<p>We have several locations whose names are logically designed as one letter with one to three numbers. From the point of view of a regex, such a Site can generally be expressed as <code>^([a-zA-Z]\\d{1,3})</code>. Unfortunately, we have two other Sites that do not fit into this schema. These Sites can be defined with their own regex, and these can be added to the original one using the logical operator <strong>or</strong>. The following example will match one of three options:</p>
 <div class="highlight"><pre><span></span><code>^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
 </code></pre></div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">RegEx example &ndash; lookahead</p>
-<p>You can match a part of the string, only if it contains, or not, a specific expression afterwards, by using lookahead (positive or negative). In the example below, we want to match the first 2 letters and 1 number, only if we don&rsquo;t see the pattern <code>-dev</code> afterwards. Using this regex:</p>
+<p class="admonition-title">Regex Example &ndash; Lookahead</p>
+<p>You can match a part of the string, only if it contains, or does not contain, a specific expression afterward, by using lookahead (positive or negative). In the example below, we want to match the first two letters and one number only if we don&rsquo;t see the pattern <code>-dev</code> afterward. Using this regex:</p>
 <div class="highlight"><pre><span></span><code>(^[a-zA-Z]{2}[0-9])(?!.*-dev)
 </code></pre></div>
 <ul>
-<li><code>BL1-router01</code> the regex will match, and the device will be assigned to the site <code>BL1</code></li>
-<li><code>PA2-router02-dev</code> teh regex will not match, as we can see <code>-dev</code> in the hostname</li>
+<li><code>BL1-router01</code> &ndash; The regex will match, and the device will be assigned to the Site <code>BL1</code>.</li>
+<li><code>PA2-router02-dev</code> &ndash; The regex will not match, as we can see <code>-dev</code> in the hostname.</li>
 </ul>
 </div>
-<p>Use this link to read more about <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions">Regular Expression and Assertion</a></p>
+<p>Read more about regular expression and assertion at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions</a>.</p>
 <p>The brief explanation:</p>
 <ul>
-<li><code>(^[a-zA-Z]{2}[a-zA-Z0-9])</code> &ndash; We are going to match those first 3 characters: <code>AP1</code>, or <code>LO2</code>&hellip;</li>
+<li><code>(^[a-zA-Z]{2}[a-zA-Z0-9])</code> &ndash; We are going to match those first three characters: <code>AP1</code>, or <code>LO2</code>&hellip;</li>
 <li><code>(?![a-fA-F0-9]{3}[.][a-fA-F0-9]{4}[.][a-fA-F0-9]{4})</code> &ndash; &hellip; only if it is NOT followed by what would be a MAC address.</li>
 </ul>
 <h2 id="device-neighborship">Device Neighborship</h2>
 <p><a class="glightbox" href="device_neighborship.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Neighborship" src="device_neighborship.png" /></a></p>
-<p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard like in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct site.</p>
+<p>This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard, such as those in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct Site.</p>
 <h2 id="manual-site-separation-device-attributes">Manual Site Separation (Device Attributes)</h2>
-<p><strong>Manual site separation</strong> enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or perhaps the hostname is duplicated in multiple locations.</p>
-<p>To configure <strong>Device Attributes</strong>, first enable the <strong>Manual site separation</strong> toggle in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong> and then select <strong>Configure device attributes</strong>:</p>
+<p><strong>Manual site separation</strong> enables the <strong>Device Attributes</strong> feature to create manual separation if a device does not follow a standard hostname rule or if the hostname is duplicated in multiple locations.</p>
+<p>To configure <strong>Device Attributes</strong>, first enable the <strong>Manual site separation</strong> toggle in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, and then select <strong>Configure device attributes</strong>:</p>
 <p><a class="glightbox" href="configure_device_attributes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure device attributes" src="configure_device_attributes.png" /></a></p>
 <p>or go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Device Attributes</strong>:</p>
 <p><a class="glightbox" href="device_attributes_menu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes menu" src="device_attributes_menu.png" /></a></p>
 <h3 id="device-attributes">Device Attributes</h3>
 <p><a class="glightbox" href="device_attributes_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Device Attributes table" src="device_attributes_table.png" /></a></p>
 <ul>
-<li>Serial Number is IP Fabric’s &ldquo;Unique Serial Number&rdquo; (API column <code>sn</code>); this is not the column &ldquo;Serial Number&rdquo; which represents the Hardware SN (API column <code>snHw</code>). Devices discovered via API can also be assigned using Device Attributes.</li>
-<li><strong>Hostname</strong> is populated by IP Fabric when a device matching the <strong>Serial Number</strong> is found</li>
-<li><strong>Attribute</strong> is the Device Attribute to assign, since we want to set the Site based on the serial number set it to <strong>Site name</strong></li>
-<li><strong>Value</strong> is the attribute’s value to assign, in this case, we want to split site <code>L35</code> into separate sites named <code>35COLO</code>, <code>35PRODUCTION</code>, <code>35HEADOFFICE</code></li>
+<li><code>Serial number</code> is IP Fabric&rsquo;s &ldquo;Unique Serial Number&rdquo; (API column <code>sn</code>). This is not the <code>Serial Number</code> column, which represents the Hardware SN (API column <code>snHw</code>). Devices discovered via API can also be assigned using Device Attributes.</li>
+<li><code>Hostname</code> is populated by IP Fabric when a device matching the <code>Serial number</code> is found.</li>
+<li><code>Attribute</code> is the Device Attribute to assign. Since we want to set the Site based on the serial number, set it to <code>siteName</code>.</li>
+<li><code>Value</code> is the attribute&rsquo;s value to assign. In this case, we want to split the Site <code>L35</code> into separate Sites <code>35COLO</code>, <code>35PRODUCTION</code>, and <code>35HEADOFFICE</code>.</li>
 </ul>
 <h3 id="creating-rules-in-the-ui">Creating Rules in the UI</h3>
 <p>You can create rules in the UI by clicking <strong>+ Add attribute</strong>. This will provide you with a form to fill out.</p>
 <p><a class="glightbox" href="add_attribute.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Attribute" src="add_attribute.png" /></a></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Currently, there is an issue where IP Fabric will not search
-for devices discovered via an API in the UI. Even though it seems that no
-device matches the SN, the attribute will still be assigned to the device.</p>
-</div>
 <p><a class="glightbox" href="dropdown.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dropdown" src="dropdown.png" /></a></p>
 <h3 id="creating-rules-via-the-api">Creating Rules via the API</h3>
-<p>The API is the preferred method of creating rules as it allows for bulk importing. Via <code>PUT</code> method requested on endpoint <code>https://&lt;IPF_URL&gt;/api/&lt;IPF_API_VERSION&gt;/attributes/global</code>. An example of the payload can be seen below:</p>
+<p>The API is the preferred method of creating rules as it allows for bulk importing. Use the <code>PUT</code> method on the endpoint <code>https://&lt;IPF_URL&gt;/api/&lt;IPF_API_VERSION&gt;/attributes/global</code>. Below is an example of the payload:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -12742,7 +12736,7 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>It&rsquo;s important to use specifically the <code>siteName</code> attribute to define the Sites in the IP Fabric. You can define other attributes, but site-separation is solely based on <code>siteName</code>.</p>
+<p>It&rsquo;s important to specifically use the <code>siteName</code> attribute to define the Sites in IP Fabric. You can define other attributes as well, but site separation is solely based on <code>siteName</code>.</p>
 </div>
 <h2 id="rule-priority">Rule Priority</h2>
 <p><a class="glightbox" href="rule_priority.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Rule priority" src="rule_priority.png" /></a></p>
@@ -12752,19 +12746,19 @@ device matches the SN, the attribute will still be assigned to the device.</p>
 <p><strong>Manual site separation</strong> (if enabled) will look at the <strong>Device Attributes</strong> and try to first assign a device based on its serial number if a match is found.</p>
 </li>
 <li>
-<p>Rules you define. In the example above it will check the following</p>
+<p>Rules you define. In the example above, it will check the following:</p>
 <ol>
-<li>If SNMP Location matches <code>IPFABRIC, (LAB01)</code> &rarr; Site <code>LAB01</code></li>
-<li>If Hostname matches <code>^L21</code> &rarr; Site <code>MPLS</code></li>
-<li>If Hostname matches <code>^(L\d{1,2})</code> &rarr; Site <code>L2-99</code></li>
+<li>If SNMP Location matches <code>IPFABRIC, (LAB01)</code> &rarr; Site <code>LAB01</code>.</li>
+<li>If Hostname matches <code>^L21</code> &rarr; Site <code>MPLS</code>.</li>
+<li>If Hostname matches <code>^(L\d{1,2})</code> &rarr; Site <code>L2-99</code>.</li>
 </ol>
 </li>
 <li>
-<p><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled)</p>
+<p><strong>Try to assign devices without sites based on device neighborship</strong> (if enabled).</p>
 </li>
 </ol>
 <h3 id="reporting-rule-matches-with-python-ipfabric-package">Reporting Rule Matches With <code>python-ipfabric</code> Package</h3>
-<p>Please see the example at <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py">GitLab</a>.</p>
+<p>Please see the example on GitLab: <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py">https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/tools/site_separation_report.py</a>.</p>
 
 
 
@@ -12785,7 +12779,7 @@ device matches the SN, the attribute will still be assigned to the device.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
   </span>
 
     

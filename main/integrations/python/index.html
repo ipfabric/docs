@@ -12320,7 +12320,27 @@ documentation.
 <li>Access to an instance of IP Fabric</li>
 <li>API Token or Username/Password to IP Fabric</li>
 </ul>
-<h2 id="poetry-recommended">Poetry (Recommended)</h2>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="ensure-git-is-installed-and-configured">Ensure git is installed and configured</h3>
+<p>Follow <a href="https://git-scm.com/downloads">git-downloads</a> for your deployment, and git clone this repo.</p>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@gitlab.com:ip-fabric/integrations/python-ipfabric.git
+</code></pre></div>
+or 
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/ip-fabric/integrations/python-ipfabric.git
+
+Cloning<span class="w"> </span>into<span class="w"> </span><span class="s1">&#39;python-ipfabric&#39;</span>...
+remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">5805</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">168</span>/168<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">144</span>/144<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">5805</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">85</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">24</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">5637</span><span class="w"> </span><span class="o">(</span>from<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+Receiving<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5805</span>/5805<span class="o">)</span>,<span class="w"> </span><span class="m">2</span>.88<span class="w"> </span>MiB<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">7</span>.24<span class="w"> </span>MiB/s,<span class="w"> </span><span class="k">done</span>.
+Resolving<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3824</span>/3824<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+</code></pre></div>
+Change directory into the cloned project
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>python-ipfabric
+</code></pre></div>
+Follow either <a href="#poetry-recommended">Poetry</a> or <a href="#pip">pip</a> to continue the getting started guide.</p>
+<h3 id="poetry-recommended">Poetry (Recommended)</h3>
 <p>Poetry is a Python package manager that makes spinning up a virtual environment ready to run your code quick and easy.</p>
 <p>Make sure you have Poetry installed in your Python environment:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>poetry<span class="w"> </span>
@@ -12331,16 +12351,16 @@ documentation.
 <p>Want to install all the dependencies required to run our example scripts? </p>
 <div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>install<span class="w"> </span>-E<span class="w"> </span>examples
 </code></pre></div>
-<h2 id="pip">pip</h2>
+<h3 id="pip">pip</h3>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric
 </code></pre></div>
 <p>To run scripts in the example directory:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric<span class="o">[</span>examples<span class="o">]</span>
 </code></pre></div>
-<h1 id="using-the-sdk">Using the SDK</h1>
-<h2 id="setting-up-an-api-token">Setting Up an API Token</h2>
+<h2 id="using-the-sdk">Using the SDK</h2>
+<h3 id="setting-up-an-api-token">Setting Up an API Token</h3>
 <p>Please follow the instruction on the <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> documentation page.</p>
-<h2 id="environment-variables">Environment Variables</h2>
+<h3 id="environment-variables">Environment Variables</h3>
 <p>Please add the following environment variables to your <code>.env</code> file:</p>
 <table>
 <thead>
@@ -12372,11 +12392,11 @@ documentation.
 </tr>
 </tbody>
 </table>
-<h2 id="initializing">Initializing</h2>
+<h3 id="initializing">Initializing</h3>
 <p>Once you set up your environment variables:</p>
 <script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="2" data-loop="1"></script>
 
-<h2 id="inventory">Inventory</h2>
+<h3 id="inventory">Inventory</h3>
 <p>To quickly get an inventory of devices or interfaces:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
@@ -12384,7 +12404,7 @@ documentation.
 <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="technology">Technology</h2>
+<h3 id="technology">Technology</h3>
 <p>For each Technology table in IP Fabric, you have a way to quickly gather the data:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span>
 <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">addressing</span>       <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span>                                  
@@ -12425,7 +12445,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2024</span>
   </span>
 
     
