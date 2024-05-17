@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric supports Juniper Mist API. Juniper Mist devices are discovered only through API. Some settings to be applied that we go through on this section.">
+        <meta name="description" content="This section contains information on how to set up API discovery for Juniper Mist.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Juniper Mist - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric supports Juniper Mist API. Juniper Mist devices are discovered only through API. Some settings to be applied that we go through on this section." />
+<meta property="og:description" content="This section contains information on how to set up API discovery for Juniper Mist." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/juniper_mist.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/juniper_mist/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Juniper Mist - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric supports Juniper Mist API. Juniper Mist devices are discovered only through API. Some settings to be applied that we go through on this section." />
+<meta property="twitter:description" content="This section contains information on how to set up API discovery for Juniper Mist." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/juniper_mist.png" />
  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12431,32 +12431,40 @@ documentation.
 
 
 <h1 id="juniper-mist">Juniper Mist</h1>
-<p>Starting version <code>4.4.0</code>, IP Fabric supports Juniper Mist API.</p>
-<p>Juniper Mist devices are discovered only through API.</p>
+<p>Starting with version <code>4.4.0</code>, IP Fabric supports the Juniper Mist API.</p>
+<p>Juniper Mist devices are discovered only through the API.</p>
 <h2 id="generate-api-token">Generate API Token</h2>
 <ol>
 <li>
-<p>Log in to the <a href="https://manage.mist.com/signin.html#!signin">Juniper Mist website</a></p>
-<p><a class="glightbox" href="../mist/mist_login.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login" src="../mist/mist_login.png" /></a></p>
-<p><a class="glightbox" href="../mist/mist_gui.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="main GUI" src="../mist/mist_gui.png" /></a></p>
+<p>Log in to the <a href="https://manage.mist.com/signin.html#!signin">Juniper Mist website</a>:</p>
+<p><a class="glightbox" href="../mist/mist_login.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Juniper Mist login page" src="../mist/mist_login.png" /></a></p>
+<p><a class="glightbox" href="../mist/mist_gui.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Juniper Mist main GUI" src="../mist/mist_gui.png" /></a></p>
 </li>
 <li>
-<p>Once logged in, you may proceed to open a new tab in the same browser and go to <a href="https://api.mist.com/api/v1/self/apitokens">API token generation.</a></p>
-<p><a class="glightbox" href="../mist/mist_api_token.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Mist API token" src="../mist/mist_api_token.png" /></a></p>
+<p>Once logged in, open a new tab in the same browser and go to the <a href="https://api.mist.com/api/v1/self/apitokens">API token generation</a> page:</p>
+<p><a class="glightbox" href="../mist/mist_api_token.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create API token" src="../mist/mist_api_token.png" /></a></p>
 </li>
 <li>
 <p>Once generated, the API token can be used in the IP Fabric GUI.</p>
-<p><a class="glightbox" href="../mist/mist_api_create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create API token" src="../mist/mist_api_create.png" /></a></p>
+<p><a class="glightbox" href="../mist/mist_api_create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create API token - copy generated API token" src="../mist/mist_api_create.png" /></a></p>
 </li>
 <li>
-<p>In the IP Fabric GUI, go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Vendors API</strong>, click <strong>+ Add</strong>, select <code>Juniper Mist</code> from the list and fill in the fields:</p>
-<p><a class="glightbox" href="../mist/mist_ipf_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric API settings" src="../mist/mist_ipf_settings.png" /></a></p>
+<p>In the IP Fabric GUI, go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr;
+   Discovery Settings &rarr; Vendors API</strong>, click <strong>+ Add</strong>, select <code>Juniper Mist</code>
+   from the list, and fill in the fields:</p>
+<p><a class="glightbox" href="../mist/mist_ipf_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection - Juniper Mist" src="../mist/mist_ipf_settings.png" /></a></p>
 </li>
 </ol>
 <h2 id="known-issues">Known Issues</h2>
-<p><strong>Routing table</strong> &ndash; In the current setup, there is no routing table for API endpoints, so it is being created only from the directly connected routes.</p>
-<p><strong>ARP table</strong> &ndash; Cannot be fetched in the current setup as the API endpoint requires higher privileges.</p>
-<p><strong>Rate limiting</strong> &ndash; The current rate limiting is <a href="https://www.mist.com/documentation/api-rate-limiting/">5000 API calls per hour</a> and is reset at the hourly boundary. This can affect discovery speed and accuracy (some devices might not be discovered). If you need more information, please contact Juniper support at support@mist.com.</p>
+<ul>
+<li><strong>Routing table</strong> &ndash; In the current setup, there is no routing table for API endpoints, so it is created only from the directly connected routes.</li>
+</ul>
+<ul>
+<li><strong>ARP table</strong> &ndash; Cannot be fetched in the current setup as the API endpoint requires higher privileges.</li>
+</ul>
+<ul>
+<li><strong>Rate limiting</strong> &ndash; The current rate limiting is <a href="https://www.mist.com/documentation/api-rate-limiting/">5000 API calls per hour</a> and is reset at the hourly boundary. This can affect discovery speed and accuracy (some devices might not be discovered). If you need more information, please contact Juniper support at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#105;&#115;&#116;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#105;&#115;&#116;&#46;&#99;&#111;&#109;</a>.</li>
+</ul>
 
 
 
@@ -12477,7 +12485,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2024</span>
   </span>
 
     

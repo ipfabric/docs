@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric supports API-based discovery for Cisco Meraki. On this section we go through the required settings that need to be applied.">
+        <meta name="description" content="This section contains information on how to set up API discovery for Cisco Meraki.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Cisco Meraki - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric supports API-based discovery for Cisco Meraki. On this section we go through the required settings that need to be applied." />
+<meta property="og:description" content="This section contains information on how to set up API discovery for Cisco Meraki." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Meraki.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Meraki/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Cisco Meraki - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric supports API-based discovery for Cisco Meraki. On this section we go through the required settings that need to be applied." />
+<meta property="twitter:description" content="This section contains information on how to set up API discovery for Cisco Meraki." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Meraki.png" />
  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -4271,21 +4271,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#meraki-requires-the-following-settings-to-be-applied" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Meraki Requires the Following Settings to Be Applied:
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#login-ip-for-cisco-meraki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Login IP For Cisco Meraki
+        Login IP for Cisco Meraki
       
     </span>
   </a>
@@ -12314,21 +12303,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#meraki-requires-the-following-settings-to-be-applied" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Meraki Requires the Following Settings to Be Applied:
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#login-ip-for-cisco-meraki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Login IP For Cisco Meraki
+        Login IP for Cisco Meraki
       
     </span>
   </a>
@@ -12454,53 +12432,57 @@ documentation.
 
 <h1 id="cisco-meraki">Cisco Meraki</h1>
 <p>Since version <code>3.5.0</code>, IP Fabric supports API-based discovery for Cisco Meraki.</p>
-<h2 id="meraki-requires-the-following-settings-to-be-applied">Meraki Requires the Following Settings to Be Applied:</h2>
+<p>To add Cisco Meraki to the global discovery settings, go to <strong>Settings &rarr;
+Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Vendors API</strong>, click <strong>+ Add</strong>,
+select <code>Meraki REST</code> from the list, and fill in:</p>
 <ul>
-<li><strong>API key</strong> &ndash; Generated in Meraki dashboard</li>
-<li><strong>Organizations ID</strong> &ndash; You can specify which organization will be included in the discovery process. If you do not specify, all available IDs will be used</li>
-<li><strong>Version</strong> &ndash; Only <code>v1</code> is supported since IPF v5.0. Similarly to the original <code>v0</code>, even the latest API version has a lot of limitations (Meraki known issues)</li>
-<li><strong>Base URL</strong> &ndash; URL of the Meraki Dashboard API, e.g. <code>https://api.meraki.com/api</code> or <code>https://nXYZ.meraki.com/api</code>. For organizations hosted in the China Dashboard, please use <code>.cn</code> instead of <code>.com</code></li>
+<li><strong>API key</strong> &ndash; Generated in the Meraki Dashboard.</li>
+<li><strong>Organizations ID</strong> &ndash; You can specify which organization will be included in the discovery process. If you do not specify that, all available IDs will be used.</li>
+<li><strong>Version</strong> &ndash; Only <code>v1</code> is supported since IP Fabric <code>5.0</code>. Similarly to the original <code>v0</code>, even the latest API version has a lot of limitations (Meraki known issues).</li>
+<li><strong>Base URL</strong> &ndash; URL of the Meraki Dashboard API (e.g., <code>https://api.meraki.com/api</code> or <code>https://nXYZ.meraki.com/api</code>). For organizations hosted in the China Dashboard, please use <code>.cn</code> instead of <code>.com</code>.</li>
 <li><a href="../#slug-and-comment"><strong>Slug</strong></a></li>
 </ul>
 <p><a class="glightbox" href="../add_meraki_rest.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection - Meraki REST" src="../add_meraki_rest.png" /></a></p>
-<h2 id="login-ip-for-cisco-meraki">Login IP For Cisco Meraki</h2>
-<p>For the CLI (SSH/Telnet) discovery, the Login IP represents the IP address that platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore different logic described below is used to assign Login IP parameter for Meraki devices in the main inventory.</p>
-<div class="highlight"><pre><span></span><code>LAN<span class="w"> </span>IP<span class="w"> </span>is<span class="w"> </span>considered<span class="w"> </span>to<span class="w"> </span>have<span class="w"> </span>the<span class="w"> </span>highest<span class="w"> </span>priority
+<h2 id="login-ip-for-cisco-meraki">Login IP for Cisco Meraki</h2>
+<p>For CLI (SSH/Telnet) discovery, the Login IP represents the IP address that the platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore, different logic described below is used to assign the Login IP parameter for Meraki devices in the main inventory.</p>
+<div class="highlight"><pre><span></span><code>LAN<span class="w"> </span>IP<span class="w"> </span>is<span class="w"> </span>considered<span class="w"> </span>to<span class="w"> </span>have<span class="w"> </span>the<span class="w"> </span>highest<span class="w"> </span>priority.
 -------<span class="w"> </span>key<span class="w"> </span>--&gt;<span class="w"> </span><span class="s1">&#39;lanIp&#39;</span>
-wan1Ip<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>2nd<span class="w"> </span>highest<span class="w"> </span>priority
+wan1Ip<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>2nd<span class="w"> </span>highest<span class="w"> </span>priority.
 -------<span class="w"> </span>key<span class="w"> </span>--&gt;<span class="w"> </span><span class="s1">&#39;wan1Ip&#39;</span>
-wan2Ip<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>3rd<span class="w"> </span>highest<span class="w"> </span>priority
+wan2Ip<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>3rd<span class="w"> </span>highest<span class="w"> </span>priority.
 -------<span class="w"> </span>key<span class="w"> </span>--&gt;<span class="w"> </span><span class="s1">&#39;wan2Ip&#39;</span>
-publicIp<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>lowest<span class="w"> </span>priority
+publicIp<span class="w"> </span>has<span class="w"> </span>the<span class="w"> </span>lowest<span class="w"> </span>priority.
 -------<span class="w"> </span>key<span class="w"> </span>--&gt;<span class="w"> </span><span class="s1">&#39;publicIp&#39;</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The <code>publicIp</code> parameter can have duplicate values across inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device&rsquo;s public IP in the dashboard.</p>
+<p>The <code>publicIp</code> parameter can have duplicate values across the inventory as more devices can be accessed via the same public IP address. It can also be inaccurate (e.g., when the WAN circuit fails to the secondary circuit) because it can take quite a long time to refresh the device&rsquo;s public IP address in the Dashboard.</p>
 </div>
-<p>To understand what is being sent from Meraki’s Dashboard, we need to investigate the Discovery Snapshot and download the Tasker or Log File from the device:</p>
+<p>To understand what is being sent from the Meraki Dashboard, we need to investigate the Discovery Snapshot and download the Tasker file or log file from the device:</p>
 <p><a class="glightbox" href="../discovery_snapshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Snapshot" src="../discovery_snapshot.png" /></a></p>
-<p>The Tasker file contains complete communication between IP Fabric and Meraki Dashboard. We can use the device hostname to locate the JSON source:</p>
+<p>The Tasker file contains complete communication between IP Fabric and the Meraki Dashboard. We can use the device hostname to locate the JSON source:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">   </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;mx01-dl1&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;serial&quot;</span><span class="o">:</span><span class="s2">&quot;Q2QN-Q6EY-NP7J&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;mac&quot;</span><span class="o">:</span><span class="s2">&quot;0c:8d:db:b0:c2:dc&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;networkId&quot;</span><span class="o">:</span><span class="s2">&quot;L_783626335162466320&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;model&quot;</span><span class="o">:</span><span class="s2">&quot;MX65&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;lat&quot;</span><span class="o">:</span><span class="mf">37.4180951010362</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;lng&quot;</span><span class="o">:-</span><span class="mf">122.098531723022</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;notes&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;wan1Ip&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.128.4&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;wan2Ip&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;configurationUpdatedAt&quot;</span><span class="o">:</span><span class="s2">&quot;2022-03-05T15:07:48Z&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;firmware&quot;</span><span class="o">:</span><span class="s2">&quot;wired-15-44&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="s2">&quot;https://XXX.meraki.com/DevNetLab-applia/n/xaNlkcig/manage/nodes/new_list/456789654858&quot;</span>
+<span class="w">   </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;mx01-dl1&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;serial&quot;</span><span class="p">:</span><span class="s2">&quot;Q2QN-Q6EY-NP7J&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="s2">&quot;0c:8d:db:b0:c2:dc&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;networkId&quot;</span><span class="p">:</span><span class="s2">&quot;L_783626335162466320&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="s2">&quot;MX65&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="mf">37.4180951010362</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;lng&quot;</span><span class="p">:</span><span class="mf">-122.098531723022</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;wan1Ip&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.128.4&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;wan2Ip&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;configurationUpdatedAt&quot;</span><span class="p">:</span><span class="s2">&quot;2022-03-05T15:07:48Z&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;firmware&quot;</span><span class="p">:</span><span class="s2">&quot;wired-15-44&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;https://XXX.meraki.com/DevNetLab-applia/n/xaNlkcig/manage/nodes/new_list/456789654858&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="known-issue">Known Issue</h2>
-<p><a href="../../../../../support/known_issues/Vendors/meraki/">Meraki API Limited Functionality</a></p>
+<ul>
+<li><a href="../../../../../support/known_issues/Vendors/meraki/">Meraki API Limited Functionality</a></li>
+</ul>
 
 
 
@@ -12521,7 +12503,7 @@ publicIp<span class="w"> </span>has<span class="w"> </span>the<span class="w"> <
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2024</span>
   </span>
 
     
