@@ -1,12 +1,12 @@
 ---
-description: In order to add AWS to the discovery you will need an access key & secret access key from your AWS account.
+description: This section contains information on how to set up API discovery for AWS.
 ---
 
 # AWS (Amazon Web Services)
 
-## What counts against the IP Fabric license
+## What Counts Against the IP Fabric License
 
-One license is consumed by each networking object (VPC, gateway, etc.). At this moment, those are at least:
+One license is consumed by each networking object (VPC, gateway, etc.). Currently, these are at least:
 
 | AWS Networking Object  | IP Fabric |
 | ---------------------- | --------- |
@@ -18,9 +18,9 @@ One license is consumed by each networking object (VPC, gateway, etc.). At this 
 | VPC                    | `vpc`     |
 | VPN gateway            | `vgw`     |
 
-## Configuring access to AWS API
+## Configuring Access to AWS API
 
-To add AWS to the discovery you will need an access key & secret access key from your AWS account. These keys can be found/generated under your account in the AWS
+To add AWS to discovery, you will need an access key and secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.
 
 ![AWS Management Console](aws/aws-management-console.png)
@@ -29,19 +29,19 @@ Click `My Security Credentials` and open the `Access keys` tab.
 
 ![AWS - Your Security Credentials](aws/aws-your-security-credentials.png)
 
-To generate keys, click **Create New Access Key** and your keys will be
+To generate keys, click **Create New Access Key**, and your keys will be
 generated. These access keys are available globally for all of your AWS
 regions.
 
 ![AWS - Create Access Key](aws/aws-create-access-key.png)
 
-Copy those keys to the AWS API settings in your IP Fabric and don't
-forget to **fill in the regions where the devices which you want to discover
-are**. Multiple regions can be set for one API key and secret.
+Copy those keys to the AWS API settings in your IP Fabric, and don't
+forget to **fill in the regions where the devices you want to discover
+are located**. Multiple regions can be set for one API key and secret.
 
 ![Add Connection](aws/aws-vendor-api.png)
 
-## Required IAM policy
+## Required IAM Policy
 
 To ensure that IP Fabric can retrieve all the required data to model the
 AWS networks, a series of specific policies are required to be applied
@@ -50,18 +50,18 @@ contains a JSON description of the required IAM policies.
 
 ## AWS AssumeRole
 
-IP Fabric enables you to add AssumeRole targets to AWS API configuration. AssumeRole is typically used for delegating access to additional resources / account in AWS. IP Fabric will iterate through all listed ARNs, call `AssumeRole` against those, and do discovery on resources which became accessible.
+IP Fabric enables you to add `AssumeRole` targets to AWS API configuration. `AssumeRole` is typically used for delegating access to additional resources/account in AWS. IP Fabric will iterate through all listed ARNs, call `AssumeRole` against those, and perform discovery on resources which became accessible.
 
-![Add Connection With AssumeRole](aws/aws-assumerole.png)
+![Add Connection with AssumeRole](aws/aws-assumerole.png)
 
-!!! info "How `AssumeRole` works"
+!!! info "How `AssumeRole` Works"
 
     It returns a set of temporary access credentials that can be used to access
     AWS resources that the original account might not normally have access to. For
-    more information about AssumeRole, see
-    [AssumeRole - AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
+    more information about `AssumeRole`, see
+    [AWS Security Token Service -- AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html).
 
-!!! warning "Connection testing limitation"
+!!! warning "Connection Testing Limitation"
 
     AWS configuration allows you to configure multiple roles and regions.
     However, connectivity testing has a limit on the number of tests you can

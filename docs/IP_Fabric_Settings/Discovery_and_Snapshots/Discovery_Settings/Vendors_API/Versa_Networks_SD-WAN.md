@@ -1,17 +1,21 @@
 ---
-description: IP Fabric supports Versa SD-WAN API. API is based on HTTPS authentication. Versa requires some settings to be applied that we go through on this section.
+description: This section contains information on how to set up API discovery for Versa. Versa devices are discovered through the API (or the combination of API and CLI).
 ---
 
 # Versa Networks SD-WAN
 
-Starting with version `3.8.0`, IP Fabric supports Versa SD-WAN API. API is based on HTTPS authentication.
+Starting with version `3.8.0`, IP Fabric supports the Versa SD-WAN API. The API is based on HTTPS authentication.
 
-Since `6.8.0`, IP Fabric supports discovering Versa devices in combined (hybrid) mode.
+Since version `6.8.0`, IP Fabric supports discovering Versa devices in combined (hybrid) mode.
+
+To add Versa to the global discovery settings, go to **Settings --> Discovery &
+Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**, and select
+`Versa` from the list.
 
 Versa requires the following settings to be applied:
 
-- **Username** -- Username to Versa Director to access API data.
-- **Password** -- Password to Versa Director access API data.
+- **Username** -- Username for Versa Director to access API data.
+- **Password** -- Password for Versa Director access API data.
 - **Base URL** -- Base URL of Versa Director. If the API isn't available on
   the default port `9182`, add a port part to the URL (e.g., `https://server:4443/`).
 - [**Slug**](index.md#slug-and-comment)
@@ -20,7 +24,7 @@ Optionally, you may enable **Allow API+CLI combined discovery**, which allows th
 
 !!! note
 
-    OAuth based authentication for Versa Director is not supported.
+    OAuth-based authentication for Versa Director is not supported.
 
 ## Known Issue
 

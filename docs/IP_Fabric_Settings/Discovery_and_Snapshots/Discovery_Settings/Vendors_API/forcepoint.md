@@ -1,49 +1,52 @@
 ---
-description: IP Fabric supports Forcepoint SMC API. Forcepoint devices are discovered though CLI and only configuration references like security rules are downloaded via the SMC API.
+description: This section contains information on how to set up API discovery for Forcepoint.
 ---
 
 # Forcepoint
 
-Starting version `6.1.0`, IP Fabric supports Forcepoint SMC API. Forcepoint devices are discovered though CLI and only configuration references like security rules are downloaded via the SMC API.
+Starting with version `6.1.0`, IP Fabric supports the Forcepoint SMC API. Forcepoint devices are discovered though CLI, and only configuration references, such as security rules, are downloaded via the SMC API.
 
-## How to Add Forcepoint SMC to IP Fabric
+## How To Add Forcepoint SMC to IP Fabric
 
 ### Generate API Token
 
-1. Log in to the Forcepoint SMC Web UI.
+1. Log in to the Forcepoint SMC web UI.
 
    ![Forcepoint login page](forcepoint/smc/forcepoint_login_page.png)
 
-2. Generate API tokens
+2. Generate API tokens:
 
    - Click **Configuration**.
-   - Open **Configuration --> Administration --> Access Rights --> API Clients** and select **New**.
+   - Navigate to **Configuration --> Administration --> Access Rights --> API Clients**.
+   - Then, click **New**.
 
-   ![location where to find the API key generation](forcepoint/smc/forcepoint_generate_api_token.png)
+   ![Location where to generate new API key](forcepoint/smc/forcepoint_generate_api_token.png)
 
-3. Add some name for the newly created entry and **copy the token**. When the settings are saved, the **token will be hidden**. Also add read access privileges.
+3. Add a name for the newly created entry and **copy the token**. Once the settings are saved, the **token will be hidden**. Also, add read-access privileges.
 
-   ![creating new API key](forcepoint/smc/forcepoint_generate_token.png)
+   ![Create new API key](forcepoint/smc/forcepoint_generate_token.png)
 
-4. API endpoint needs to be enabled explicitly, as it is disabled by default.
+4. The API endpoint needs to be enabled explicitly, as it is disabled by default:
 
-   - Click **Home**
-   - Go to **Other** section on the left sidebar.
+   - Click **Home**.
+   - Go to **Others** section on the left sidebar.
    - Find your management server that you will use to query the data.
-   - Go to **SMC API** section where in the tab, you must enable it, and you can also specify other parameters.
+   - Go to the **SMC API** tab, where you must enable it, and you can also specify other parameters.
 
-   ![enabling SMC API](forcepoint/smc/forcepoint_enable_api.png)
+   ![Enable SMC API](forcepoint/smc/forcepoint_enable_api.png)
 
 ### Add Forcepoint to Vendors API in IP Fabric
 
-To add Forcepoint to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** in IP Fabric, click **+ Add**, select `Forcepoint` from the list and fill in:
+To add Forcepoint to the global discovery settings, go to **Settings -->
+Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**,
+select `Forcepoint` from the list, and fill in:
 
-- **Base URL** -- URL which you specified when enabling the SMC API, for example `http://X.X.X.X:8082`.
-- **Authentication Key** -- generated authentication API key from the SMC.
+- **Base URL** -- The URL you specified when enabling the SMC API (e.g, `http://X.X.X.X:8082`).
+- **Authentication Key** -- The generated authentication API key from the SMC.
 - [**Slug**](index.md#slug-and-comment)
 
-  ![adding vendor](forcepoint/smc/forcepoint_ipf_add_vendor.png)
+  ![Add Connection - Forcepoint](forcepoint/smc/forcepoint_ipf_add_vendor.png)
 
 ## Known Issue
 
-`ip_list` -- Output data cannot be used as when tried, SMC API is returning unusable data.
+- `ip_list` -- Output data cannot be used as when tried, the SMC API is returning unusable data.

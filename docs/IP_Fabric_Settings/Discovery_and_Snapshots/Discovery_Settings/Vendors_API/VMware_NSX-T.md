@@ -1,30 +1,30 @@
 ---
-description: IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
+description: This section contains information on how to set up API discovery for VMware NSX-T.
 ---
 
 # VMware NSX-T
 
-Starting version `4.3`, IP Fabric supports NSX-T API. NSX-T devices are discovered only through API.
+Starting with version `4.3`, IP Fabric supports the NSX-T API. NSX-T devices are discovered only through the API.
 
-To add NSX-T to discovery global settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and click **+ Add**. Afterwards, choose `VMware NSX-T` from the list and fill in:
+To add NSX-T to the global discovery settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and click **+ Add**. Afterwards, select `VMware NSX-T` from the list and fill in:
 
-- **Username and password** used to log in to NSX Manager
-- **Base URL** of NSX Manager server (`https://nsx-manager-ip-address`)
+- **Username** and **Password** used to log in to NSX Manager
+- **Base URL** of the NSX Manager server (`https://nsx-manager-ip-address`)
 - [**Slug**](index.md#slug-and-comment)
 
 ## General Support Information
 
-- IP Fabric supports NSX-T from version `3.0` and higher,
-  development was done on version `3.1.2`, the latest version is `3.2`. We
-  are not supporting the `2.x` versions, there are a lot of differences,
-  VMware’s end of general support was in September 2021. [Product Lifecycle Matrix](https://lifecycle.vmware.com/#/)
+- IP Fabric supports NSX-T version `3.0` and higher.
+  Development was done on version `3.1.2`, and the latest version is `3.2`. We
+  do not support the `2.x` versions due to significant differences,
+  VMware's end of general support was in September 2021, see the [Product Lifecycle Matrix](https://lifecycle.vmware.com/#/).
 
-- NSX-T running as on-premises (there are also cloud versions for AWS
-  and Azure, where can NSX-T cloud be deployed on top of AWS/Azure
-  infrastructure), but we don’t support it now.
+- NSX-T runs on-premises. (There are also cloud versions for AWS
+  and Azure, where NSX-T can be deployed on top of AWS/Azure
+  infrastructure, but we do not support these cloud versions currently.)
 
-- We don’t collect any data from vCenter, as NSX-T is multiplatform
-  and supports KVM and bare metal servers as well, if those are
+- We do not collect any data from vCenter. Since NSX-T is multiplatform
+  and supports KVM and bare-metal servers as well, if those are
   connected to the NSX-T cloud, we will collect information about
   those also.
 
@@ -53,16 +53,16 @@ To add NSX-T to discovery global settings, go to **Settings --> Discovery & Snap
 
 - Load balancing
 - Some security features (IPv6, IPS/IDS, Network introspection, Endpoint protection rules,
-  AD identity groups) -- planned for upcoming releases
-- Forwarding policies -- planned for upcoming releases
+  AD identity groups) -- Planned for upcoming releases.
+- Forwarding policies -- Planned for upcoming releases.
 - VPN services
 - NAT
 - EVPN VxLANs
 
 ## External Connectivity
 
-We are supporting both external connectivity protocols, which are
-implemented in NSX-T, and of course static routes. External connectivity
+We support both external connectivity protocols
+implemented in NSX-T, as well as static routes. External connectivity
 can be done only on Tier-0 routers.
 
 - OSPF
@@ -95,7 +95,7 @@ According to the
 
 The default settings for API rate limiting in IP Fabric are based on 0.75 times
 the VMware values, which means 75 requests per second and 30 concurrent
-requests. If you need to modify these settings, please reach out to IP Fabric
+requests. If you need to modify these settings, please reach out to the IP Fabric
 Support or Solution Architect team.
 
 We recommend using a dedicated NSX-T user for discovery in IP Fabric and running
