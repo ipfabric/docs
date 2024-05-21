@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table of network device manufacturer and uses it during the discovery process whenever there is a network device discovered through the ARP table.">
+        <meta name="description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="OUI (Organizationally Unique Identifier) - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table of network device manufacturer and uses it during the discovery process whenever there is a network device discovered through the ARP table." />
+<meta property="og:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="OUI (Organizationally Unique Identifier) - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table of network device manufacturer and uses it during the discovery process whenever there is a network device discovered through the ARP table." />
+<meta property="twitter:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12353,23 +12353,25 @@ documentation.
 
 
 <h1 id="oui-organizationally-unique-identifier">OUI (Organizationally Unique Identifier)</h1>
-<p>IP Fabric includes an OUI (Organizationally Unique Identifier) MAC table
-of network device manufacturer and uses it during the discovery process
-whenever there is a network device discovered through the ARP table.</p>
+<p>IP Fabric includes an OUI (Organizationally Unique Identifier) table of network
+device manufacturers and uses it during the discovery process whenever a network
+device is discovered through the ARP table.</p>
 <p><a class="glightbox" href="../OUI.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="OUI table" src="../OUI.png" /></a></p>
 <p>This table can be found in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global
 Configuration &rarr; OUI</strong>.</p>
 <p>It contains an OUI (the start of a device&rsquo;s MAC address), the vendor to whom
-this OUI belongs and if it is enabled (can be used) during the discovery
+this OUI belongs, and whether it is enabled (can be used) during the discovery
 process.</p>
-<p>Custom OUIs can be added with the <strong>+ Add OUI</strong> button.</p>
-<p>All OUIs can be enabled or disabled for discovery through the <strong>Edit</strong> button.</p>
+<p>Custom OUIs can be added with <strong>+ Add OUI</strong>.</p>
+<p>All OUIs can be enabled or disabled for discovery with the <strong>Edit</strong> icon (in the
+<code>Actions</code> column).</p>
+<p><strong>Restore to Factory Settings</strong> reverts the <code>Enabled for discovery</code> status of
+all non-custom OUIs to default and removes any custom OUIs.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If there are network devices in your infrastructure that were found as
-hosts and IP Fabric did not try to connect to them during the discovery,
-please refer to this table and check if OUIs of those devices are
-enabled for discovery.</p>
+<p>If there are network devices in your infrastructure that were found as hosts
+and IP Fabric did not try to connect to them during discovery, please refer
+to this table and check if OUIs of those devices are enabled for discovery.</p>
 </div>
 
 
@@ -12391,7 +12393,7 @@ enabled for discovery.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2024</span>
   </span>
 
     

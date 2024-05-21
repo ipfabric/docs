@@ -12654,138 +12654,177 @@ documentation.
 
 <h1 id="jumphost">Jumphost</h1>
 <h2 id="setting-up-jumphost">Setting Up Jumphost</h2>
-<p><strong>Jumphost</strong> allows to set up a connection to a server which can be used as a <strong>proxy server for discovery</strong> purposes. IP Fabric uses an SSH tunnel established by python on the client and the server side.</p>
-<p>The user used for <strong>Jumphost</strong> connection must have access to jumphosts <code>shell</code> and must be able to run <code>python</code>.</p>
-<p>We successfully tested IP Fabric against jumphosts with the following python versions:</p>
+<p><strong>Jumphost</strong> allows setting up a connection to a server that can be used as a
+<strong>proxy server for discovery</strong>. IP Fabric uses an SSH tunnel established by
+Python on the client and server sides.</p>
+<p>The user account used for <strong>jumphost</strong> connection must have access to the
+jumphost&rsquo;s shell and must be able to run Python.</p>
+<p>We successfully tested IP Fabric against jumphosts with the following Python
+versions:</p>
 <table>
 <thead>
 <tr>
-<th>Jumphost Python Version</th>
-<th></th>
+<th style="text-align: left;">Jumphost&rsquo;s Python Version</th>
+<th style="text-align: left;">Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2.7</td>
-<td>tested</td>
+<td style="text-align: left;"><code>2.7</code></td>
+<td style="text-align: left;">tested</td>
 </tr>
 <tr>
-<td>3.4</td>
-<td>tested</td>
+<td style="text-align: left;"><code>3.4</code></td>
+<td style="text-align: left;">tested</td>
 </tr>
 <tr>
-<td>3.5</td>
-<td>tested</td>
+<td style="text-align: left;"><code>3.5</code></td>
+<td style="text-align: left;">tested</td>
 </tr>
 <tr>
-<td>3.6</td>
-<td><strong>supported</strong></td>
+<td style="text-align: left;"><code>3.6</code></td>
+<td style="text-align: left;"><strong>supported</strong></td>
 </tr>
 <tr>
-<td>3.7</td>
-<td><strong>supported</strong></td>
+<td style="text-align: left;"><code>3.7</code></td>
+<td style="text-align: left;"><strong>supported</strong></td>
 </tr>
 <tr>
-<td>3.8</td>
-<td><strong>supported</strong></td>
+<td style="text-align: left;"><code>3.8</code></td>
+<td style="text-align: left;"><strong>supported</strong></td>
 </tr>
 <tr>
-<td>3.9</td>
-<td><strong>supported</strong></td>
+<td style="text-align: left;"><code>3.9</code></td>
+<td style="text-align: left;"><strong>supported</strong></td>
 </tr>
 <tr>
-<td>3.10</td>
-<td>tested</td>
+<td style="text-align: left;"><code>3.10</code></td>
+<td style="text-align: left;">tested</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Tested vs. Supported</p>
-<p><code>tested</code> &ndash; Python version was successfully tested on a jumphost however it is not officially supported by the underlying SSH tunnel project.</p>
-<p><code>supported</code> &ndash; Python version was successfully tested on a jumphost and it is officially supported by the underlying SSH tunnel project.
-<strong>We strongly recommend using the supported Python versions in your production environment.</strong></p>
+<p><code>tested</code> &ndash; Python version was successfully tested on a jumphost. However,
+it is not officially supported by the underlying SSH tunnel project.</p>
+<p><code>supported</code> &ndash; Python version was successfully tested on a jumphost and is
+officially supported by the underlying SSH tunnel project. <strong>We strongly
+recommend using a supported Python version in your production environment.</strong></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Please bear in mind, that once the connection is established, it will be enabled permanently, until disabled or removed! If there are any network issues, IP Fabric software will try to establish a connection periodically.</p>
+<p>Please bear in mind that once the connection is established, it will be
+enabled permanently until disabled or removed! If there are any network
+issues, IP Fabric will try to establish a connection periodically.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings, at least one IP address behind the Jumphost has to be provided as a starting point.</p>
+<p>In the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings,
+at least one IP address behind the jumphost has to be provided as a starting
+point.</p>
 </div>
 <h3 id="adding-new-jumphost">Adding New Jumphost</h3>
-<ul>
-<li>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</li>
+<ol>
+<li>
+<p>Navigate to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr;
+   Jumphost</strong>.</p>
+</li>
 <li>
 <p>On the page, click <strong>+ Add</strong>:</p>
 <p><a class="glightbox" href="add_button.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add button" src="add_button.png" /></a></p>
 </li>
-</ul>
-<ul>
 <li>
 <p>Fill in all necessary data:</p>
 <p><a class="glightbox" href="add_jumphost_form.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Jumphost form" src="add_jumphost_form.png" /></a></p>
 <ul>
-<li><strong>Label</strong> - the name for configuration (mandatory)</li>
+<li><strong>Label</strong> &ndash; <em>(mandatory)</em> Name of the configuration.</li>
+</ul>
+<ul>
 <li>
-<p><strong>Jumphost Address</strong> - IP address or FQDN name (mandatory)</p>
+<p><strong>Jumphost Address</strong> &ndash; <em>(mandatory)</em> IP address or FQDN name.</p>
 <div class="admonition tip">
 <p class="admonition-title">Custom Port</p>
-<p>If you want to use a custom port for the jumphost connection, please use the following format: <code>IP/FQDN:PORT</code> </p>
-<p><a class="glightbox" href="jumphost_custom_port.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Custom Port" src="jumphost_custom_port.png" /></a></p>
+<p>If you want to use a custom port for the jumphost connection, please use
+the following format:</p>
+<div class="highlight"><pre><span></span><code>IP/FQDN:PORT
+</code></pre></div>
+<p><a class="glightbox" href="jumphost_custom_port.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Jumphost form - custom port" src="jumphost_custom_port.png" /></a></p>
 </div>
 </li>
 </ul>
 <ul>
 <li>
-<p><strong>IPv4 subnets</strong> - subnet in CIDR representation, allows adding more than open, separated with spaces (mandatory)</p>
+<p><strong>IPv4 subnets</strong> &ndash; <em>(mandatory)</em> Subnet in CIDR representation. Allows
+   adding more than one, separated with spaces. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address of IP Fabric</strong>, please make sure to <strong>add IP Fabric IP address/subnet</strong> to <strong>&ldquo;Exclude IPv4 subnet&rdquo;</strong>. Otherwise, the connection to IP Fabric will be lost and you <strong>will not</strong> be able to <strong>access IP Fabric GUI/CLI</strong> and it will require manual intervention to fix.</p>
-<p>Also, if you have multiple jumphosts that have IP address that is part of include list of another jumphost, add the IP addresses in all the other jumphosts exclude lists.</p>
+<p>If you use <code>0.0.0.0/0</code> or another subnet that <strong>includes the IP address
+of IP Fabric</strong>, please make sure to <strong>add the IP Fabric IP
+address/subnet</strong> to <strong>Exclude IPv4 subnet</strong>. Otherwise, the connection
+to IP Fabric will be lost, and you <strong>will not</strong> be able to <strong>access the
+IP Fabric GUI/CLI</strong>, requiring manual intervention to fix.</p>
+<p>Also, if you have multiple jumphosts that have IP addresses that are
+part of the include list of another jumphost, add the IP addresses in
+all the other jumphosts&rsquo; exclude lists.</p>
 </div>
 </li>
 </ul>
 <ul>
-<li><strong>Exclude IPv4 subnets</strong> - subnet to exclude in CIDR representation, allows to add more than open, separated with spaces (optional)</li>
-<li><strong>Login type</strong></li>
-<li><strong>Use credentials</strong> - required to provide username and password</li>
-<li><strong>Use SSH keys</strong> - if you copied the SSH public key to the proxy server, it won’t require providing a password (please jump to the <em>SSH key configuration</em> section)</li>
-<li><strong>Username</strong> - Username for authentication (mandatory)</li>
+<li><strong>Exclude IPv4 subnets</strong> &ndash; <em>(optional)</em> Subnet to exclude in CIDR
+   representation. Allows adding more than one, separated with spaces.</li>
+</ul>
+<ul>
 <li>
-<p><strong>Password</strong> - password for authentication (mandatory if ‘Use credentials’ is used) i.e., refer to the picture below.</p>
+<p><strong>Login type</strong></p>
+<ul>
+<li><code>Use credentials</code> &ndash; Required to provide username and password.</li>
+</ul>
+<ul>
+<li><code>Use SSH keys</code> &ndash; If you copied the SSH public key to the proxy server,
+ it won&rsquo;t require providing a password (please jump to the
+ <a href="#ssh-key-configuration">SSH Key Configuration</a> section).</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Username</strong> &ndash; <em>(mandatory)</em> Username for authentication.</li>
+</ul>
+<ul>
+<li>
+<p><strong>Password</strong> &ndash; <em>(mandatory if <code>Use credentials</code> is selected)</em> Password for
+   authentication.</p>
 <div class="admonition info">
-<p class="admonition-title">Username and Password character restrictions</p>
+<p class="admonition-title">Username and Password Character Restrictions</p>
 <p>Username must match the following regular expression:
 <code>/^[A-Za-z0-9_][A-Za-z0-9\._-]*\$?$/</code></p>
 <ul>
-<li>it must start with one of these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>_</code></li>
-<li>it may contain any of these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>._-</code></li>
-<li><code>$</code> is only allowed once at the very end</li>
+<li>It must start with one of these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>_</code></li>
+<li>It may contain any of these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>._-</code></li>
+<li><code>$</code> is only allowed once at the very end.</li>
 </ul>
 <p>Password must match the following regular expression:
 <code>/^[A-Za-z0-9\.,\/_@%^:=+ -]*$/</code></p>
 <ul>
-<li>it must contain only these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>.,/_@%^:=+ -</code></li>
+<li>It must contain only these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>.,/_@%^:=+ -</code></li>
 </ul>
 </div>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Click the green <strong>Add</strong> button to save the configuration.</li>
-</ul>
-<ul>
 <li>
-<p>If the connection is open, you will see <code>Yes</code> in the <code>Status</code> column in the <code>Jumphost settings</code> table:</p>
-<p><a class="glightbox" href="jumphost_settings_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings table" src="jumphost_settings_table.png" /></a></p>
+<p>Click the green <strong>Add</strong> button to save the configuration.</p>
 </li>
-</ul>
+<li>
+<p>If the connection is open, you will see <code>Yes</code> in the <code>Status</code> column in the
+   <code>Jumphost settings</code> table:</p>
+<p><a class="glightbox" href="jumphost_settings_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings table - Yes status for jumphost" src="jumphost_settings_table.png" /></a></p>
+</li>
+</ol>
 <h3 id="ssh-key-configuration">SSH Key Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>To avoid using a password for authentication, you can add the SSH key to the proxy server.</p>
+<p>To avoid using a password for authentication, you can add the SSH key to the
+proxy server.</p>
 </div>
 <h4 id="copy-ssh-key-manually">Copy SSH Key Manually</h4>
 <ol>
@@ -12797,11 +12836,15 @@ documentation.
 <p>Save <code>jumphost-public-key.pub</code>.</p>
 </li>
 <li>
-<p>Insert content of the <code>jumphost-public-key.pub</code> file to the <code>authorized_keys</code> file of the user that will authenticate with Jumphost server. Please follow official documentation at <a href="https://www.ssh.com/academy/ssh/authorized-key">https://www.ssh.com/academy/ssh/authorized-key</a>.</p>
+<p>Insert the content of the <code>jumphost-public-key.pub</code> file into the
+   <code>authorized_keys</code> file of the user that will authenticate with the jumphost
+   server. Please follow the official documentation at
+   <a href="https://www.ssh.com/academy/ssh/authorized-key">https://www.ssh.com/academy/ssh/authorized-key</a>.</p>
 <p>You can also use <code>ssh-copy-id</code> on your machine to deploy the key (see below).</p>
 </li>
 <li>
-<p>After the key is transferred to the jumphost server, you can use the <code>Use SSH keys</code> option instead of <code>Use credentials</code>.</p>
+<p>After the key is transferred to the jumphost server, you can use the <code>Use SSH
+   keys</code> option instead of <code>Use credentials</code>.</p>
 </li>
 </ol>
 <h4 id="use-ssh-copy-id">Use <code>ssh-copy-id</code></h4>
@@ -12810,18 +12853,24 @@ documentation.
 <p>Log in to the IP Fabric CLI using the <code>osadmin</code> account.</p>
 </li>
 <li>
-<p>Change to user <code>autoboss</code> by running <code>sudo su - autoboss</code>.</p>
+<p>Change to the <code>autoboss</code> user by running <code>sudo su - autoboss</code>.</p>
 </li>
 <li>
-<p>Run <code>ssh-copy-id</code> with specified identity file replacing <code>&lt;jumphost-user&gt;</code> with the
-   jumphost user and <code>&lt;jumphost-ip&gt;</code> with the IP or FQDN of the jumphost server:</p>
+<p>Run <code>ssh-copy-id</code> with the specified identity file, replacing
+   <code>&lt;jumphost-user&gt;</code> with the jumphost user and <code>&lt;jumphost-ip&gt;</code> with the IP or
+   FQDN of the jumphost server:</p>
 <ol>
-<li><code>ssh-copy-id -i ~/.ssh/ipf-jumphost.pub &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></li>
-<li>When prompted for a password, use the jumphost user&rsquo;s password.</li>
+<li>
+<p><code>ssh-copy-id -i ~/.ssh/ipf-jumphost.pub &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
+</li>
+<li>
+<p>When prompted for a password, use the jumphost user&rsquo;s password.</p>
+</li>
 </ol>
 </li>
 <li>
-<p>To test, connect to the jumphost server via SSH with: <code>ssh &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
+<p>To test, connect to the jumphost server via SSH with: <code>ssh
+   &lt;jumphost-user&gt;@&lt;jumphost-ip&gt;</code></p>
 </li>
 <li>
 <p>If the key has been copied, you can use the <code>Use SSH keys</code> option instead of
@@ -12831,7 +12880,7 @@ documentation.
 <h3 id="disabling-jumphost-connection">Disabling Jumphost Connection</h3>
 <ol>
 <li>
-<p>Edit configuration that needs to be disabled, i.e.:</p>
+<p>Edit the configuration that needs to be disabled, i.e.:</p>
 <p><a class="glightbox" href="edit_icon.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Edit icon" src="edit_icon.png" /></a></p>
 </li>
 <li>
@@ -12852,51 +12901,69 @@ documentation.
 <p><a class="glightbox" href="delete_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Delete jumphost" src="delete_jumphost.png" /></a></p>
 </li>
 <li>
-<p>(If SSH key authentication was enabled) Delete inserted IP Fabric public key from the <code>authorized_keys</code> file on the jumphost server added in the <a href="#ssh-key-configuration">SSH Key Configuration</a>.</p>
+<p>(If SSH key authentication was enabled) Delete the inserted IP Fabric public
+   key from the <code>authorized_keys</code> file on the jumphost server added in the
+   <a href="#ssh-key-configuration">SSH Key Configuration</a>.</p>
 </li>
 </ol>
 <h2 id="jumphost-known-issues">Jumphost Known Issues</h2>
 <h3 id="non-tcp-discovery">Non-TCP Discovery</h3>
 <p>Only TCP connections work through the jumphost.</p>
-<p>Traceroute with ICMP is not supported so the discovery process might not be able to get over the unreachable parts of the network (for example sites separated by the provider’s network).</p>
-<p>Because of this, you will have to add at least one IP address of a network device from each site to the <a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings.</p>
+<p>Traceroute with ICMP is not supported, so the discovery process might not be
+able to traverse the unreachable parts of the network (for example, sites
+separated by the provider&rsquo;s network).</p>
+<p>Due to this, you will have to add at least one IP address of a network device
+from each site to the
+<a href="../../Discovery_Settings/discovery_seeds/">Discovery Seeds</a> settings.</p>
 <h3 id="ip-fabric-is-not-accessible-after-saving-jumphost-configuration">IP Fabric Is Not Accessible After Saving Jumphost Configuration</h3>
-<p>If you can&rsquo;t open the main GUI or ssh to the IP Fabric machine, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.</p>
-<p>To fix this issue, you must have a <strong>direct access</strong> to the <strong>virtual machine CLI</strong> from a hypervisor, the password for <code>osadmin</code> user account, and do the following:</p>
+<p>If you can&rsquo;t open the main GUI or connect to the IP Fabric machine via SSH, the
+subnet/IP address of the IP Fabric machine was most likely included in the
+jumphost configuration.</p>
+<p>To fix this issue, you must have <strong>direct access</strong> to the <strong>virtual machine&rsquo;s
+CLI</strong> from the hypervisor, the password for the <code>osadmin</code> user account, and
+follow these steps:</p>
 <ol>
 <li>
-<p>Log in to the <strong>virtual machine CLI</strong> with the <code>osadmin</code> account.</p>
+<p>Log in to the <strong>virtual machine&rsquo;s CLI</strong> with the <code>osadmin</code> account.</p>
 </li>
 <li>
-<p>Filter out the <strong>jumphost</strong> services with <code>systemctl | grep jumphost</code> command. Each configured jumphost has its own ID:</p>
-<p><a class="glightbox" href="systemctl_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="systemctl_jumphost" src="systemctl_jumphost.png" /></a></p>
+<p>Filter out the <strong>jumphost</strong> services with the <code>systemctl | grep jumphost</code>
+   command. Each configured jumphost has its own ID.</p>
+<p><a class="glightbox" href="systemctl_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="grep jumphost from systemctl output" src="systemctl_jumphost.png" /></a></p>
 </li>
 <li>
-<p><strong>Stop the jumphost service</strong> with the command <code>sudo systemctl stop jumphost@xxxx.service</code>, confirm the <code>osadmin</code> password:</p>
-<p><a class="glightbox" href="systemctl_stop_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="systemctl_stop_jumphost" src="systemctl_stop_jumphost.png" /></a></p>
+<p><strong>Stop the jumphost service</strong> with the <code>sudo systemctl stop
+   jumphost@xxxx.service</code> command and enter the <code>osadmin</code> password:</p>
+<p><a class="glightbox" href="systemctl_stop_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="systemctl stop jumphost" src="systemctl_stop_jumphost.png" /></a></p>
 </li>
 <li>
-<p>Check that the <strong>jumphost process is inactive</strong> with <code>systemctl status jumphost@xxxx.service</code> command:</p>
-<p><a class="glightbox" href="systemctl_status_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="systemctl_status_jumphost" src="systemctl_status_jumphost.png" /></a></p>
+<p>Check that the <strong>jumphost process is inactive</strong> with the <code>systemctl status
+   jumphost@xxxx.service</code> command:</p>
+<p><a class="glightbox" href="systemctl_status_jumphost.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="systemctl status jumphost" src="systemctl_status_jumphost.png" /></a></p>
 </li>
 <li>
-<p>IP Fabric GUI should be accessible by now.</p>
+<p>The IP Fabric GUI should now be accessible.</p>
 </li>
 <li>
-<p>Log in to the <strong>IP Fabric main GUI</strong> with your regular account and go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</p>
+<p>Log in to the <strong>IP Fabric main GUI</strong> with your regular account and go to
+   <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; Jumphost</strong>.</p>
 </li>
 <li>
-<p>Make a screenshot or copy the settings of the old jumphost and then delete or edit the jumphost settings.</p>
-<p><a class="glightbox" href="jumphost_delete_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="jumphost_delete_settings" src="jumphost_delete_settings.png" /></a></p>
+<p>Make a screenshot or copy the settings of the old jumphost. Then, delete or
+   edit the jumphost settings.</p>
+<p><a class="glightbox" href="jumphost_delete_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jumphost settings - edit or delete" src="jumphost_delete_settings.png" /></a></p>
 </li>
 <li>
-<p>Put <strong>IP address/subnet of the IP Fabric</strong> machine to the <strong>exclude IPv4 subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP address of IP Fabric</strong>:</p>
-<p><a class="glightbox" href="jumphost_exclude.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="jumphost_exclude" src="jumphost_exclude.png" /></a></p>
+<p>Put the <strong>IP address/subnet of the IP Fabric machine</strong> to <strong>Exclude IPv4
+   subnets</strong> or <strong>edit</strong> the <strong>IPv4 subnets</strong> so it does <strong>not contain the IP
+   address of IP Fabric</strong>:</p>
+<p><a class="glightbox" href="jumphost_exclude.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add IP Fabric VM's IP address to jumphost's exclude list" src="jumphost_exclude.png" /></a></p>
 </li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If <strong>IP Fabric</strong> becomes inaccessible via GUI or SSH again, repeat the previous steps and again edit the jumphost configuration.</p>
+<p>If IP Fabric becomes inaccessible via GUI or SSH again, repeat the previous
+steps and again edit the jumphost configuration.</p>
 </div>
 
 
@@ -12918,7 +12985,7 @@ documentation.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2024</span>
   </span>
 
     
