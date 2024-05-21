@@ -1,63 +1,55 @@
 ---
-description: IP Fabric added the ability to add attributes to a device based on the IP Fabric Unique Serial Number. Currently this supports manually changing a...
+description: IP Fabric allows adding attributes to a device based on the IP Fabric Unique Serial Number.
 ---
 
 # Device Attributes
 
-Version 4.3 has added the ability to add attributes to a device based on the IP
-Fabric Unique Serial Number. In versions earlier than 6.0.0 this only supported
-manually changing a Device’s Site Name, Routing Domain, or STP Domain. IP Fabric
-now supports adding custom attributes. The attribute name may not contain any
+Version `4.3` introduced the ability to add attributes to a device based on the IP
+Fabric Unique Serial Number. In versions before `6.0.0`, this only supported
+manually changing a device's `siteName`, `routingDomain`, or `stpDomain`. IP Fabric
+now supports adding custom attributes. Attribute names may not contain any
 spaces or special characters.
 
 ## Attribute Requirements
 
-![attributes_warning](device_attributes/device_attributes_warning.png)
+![Attribute field warning](device_attributes/device_attributes_warning.png)
 
-Attribute names must match the following
-regex `^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$`. Underscore `_` is valid and will
-later be used to denote Hierarchical Attributes (i.e. REGION_COUNTRY).
+Attribute names must match the following regex:
+`/^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$/`. The underscore `_` is valid and will
+later be used to denote hierarchical attributes (i.e., `REGION_COUNTRY`).
 
 ## Global Attributes
 
 Attributes can be assigned globally or locally to an individual snapshot. To
 assign global attributes, navigate to **Settings --> Discovery & Snapshots -->
-Global Configuration --> Device Attributes**. Once an attribute is assigned a
+Global Configuration --> Device Attributes**. Once an attribute is assigned, a
 new snapshot is required for it to be applied.
 
-![Device attributes](device_attributes/device_attributes.png)
+![Device Attributes table](device_attributes/device_attributes.png)
 
-- **Serial Number** is IP Fabric’s **Unique Serial Number** (API column
-  `sn`); this is not the column **Serial Number** which represents the Hardware
-  SN (API column `snHw`)
+- `Serial number` is IP Fabric's "Unique Serial Number" (API column
+  `sn`). Note that this is not the `Serial Number` column, which represents the
+  Hardware SN (API column `snHw`). Devices discovered via API can also be
+  assigned using Device Attributes.
 
-  - Devices discovered via API can also be assigned using Device Attributes.
+- `Hostname` is populated by IP Fabric when a device matching the `Serial
+  number` is found.
 
-- **Hostname** is populated by IP Fabric when a device matching the
-  **Serial Number** is found
+- `Attribute` is the Device Attribute to assign.
 
-- **Attribute** is the Device Attribute to assign.
+- `Value` is the attribute's value to assign.
 
-- **Value** is the attribute’s value to assign.
+### Creating Rules in the UI
 
-### Creating rules in the UI
+To create a rule in the UI, click **+ Add attribute** and fill out the form:
 
-To create rules in the UI, click **+ Add attribute**. A form will be shown to be
-filled out: 
-
-![Device attributes rules](device_attributes/device_attributes_rules.png)
+![Device Attributes - create rule](device_attributes/device_attributes_rules.png)
 
 The dropdown is intuitive and will let you search based on SN or hostname.
 
-!!! Info
+![Device Attributes - dropdown](device_attributes/device_attributes_dropdown.png)
 
-    Currently, there is an issue where IP Fabric will not search
-    for devices discovered via an API in the UI. Even though it seems that no
-    device matches the SN, the attribute will still be assigned to the device.
-
-![Device attributes dropdown](device_attributes/device_attributes_dropdown.png)
-
-### Creating rules via the API
+### Creating Rules via the API
 
 This is the preferred method of creating rules as it allows for bulk importing.
 
@@ -75,18 +67,19 @@ and
 
 ## Local Attributes
 
-Local or 'Snapshot Specific' Attributes are applied during discovery and stored
-in the snapshot file separate from the Global Settings. Currently, you are able
+Local or "Snapshot-Specific" Attributes are applied during discovery and stored
+in the snapshot file separate from the global settings. Currently, you are able
 to:
 
-- Update from Global Settings
-  - Update `Settings > Discovery & Snapshots > Global Configuration > Device Attributes`
-  - Navigate to the Snapshot's `Settings > Device Attributes` under `Discovery Snapshot`
-  - Select `Update from global settings`
-- Use the API (or Python SDK) to view, add, edit the snapshot local attributes.
+1. Update from the global settings:
+  1. Update global device attributes in **Settings --> Discovery & Snapshots --> Global Configuration --> Device Attributes**.
+  2. Go to **Discovery Snapshot**.
+  3. Select a snapshot and navigate to its **Settings --> Device Attributes**.
+  4. Click **Override with global settings**.
+2. Use the API (or Python SDK) to view, add, or edit a snapshot's Local Attributes.
 
-Editing snapshot local attributes will require recalculations if a device `stpDomain`, `siteName`,
-or `routingDomain`has been changed.
+Editing a snapshot's Local Attributes will require recalculations if a device's `siteName`,
+`routingDomain`, or `stpDomain` have been changed.
 
 ### Creating Local Attributes in Python
 
