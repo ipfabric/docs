@@ -58,6 +58,12 @@ To use these credentials for configuration change tracking, please
 check the [Use for configuration management](../../configuration_management.md)
 box.
 
+!!! warning "Password Character Restrictions"
+
+    The password will only be decrypted if ASCII characters are used. If you are
+    using special characters, please make sure that the password is within the
+    ```[A-Za-z0-9+-!?@#$%^&*()_`~[]{}<>,./|\:;'" ]``` range.
+
 ## (Optional) Passwords for Enable Mode
 
 Privileged credentials are generally only necessary for configuration
