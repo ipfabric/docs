@@ -1,24 +1,24 @@
 ---
-description: This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements in regards to certificates.
+description: This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates.
 ---
 
 # IPF Certificates
 
 You are accessing the IP Fabric GUI using a secure TLS connection. A self-signed
 server certificate is automatically generated during the IP Fabric deployment.
-But by the nature of SSL/TLS, the self-signed server certificate cannot be
+However, due to the nature of SSL/TLS, the self-signed server certificate cannot be
 trusted -- as indicated in an SSL/TLS error in the web browser (for example,
 `NET::ERR_CERT_AUTHORITY_INVALID` in Google Chrome).
 
-We recommend you replace the self-signed server certificate with your own
+We recommend that you replace the self-signed server certificate with your own
 server certificate signed by a trusted certificate authority.
 
 Usually, the server certificate replacement can be handled via **Settings -->
 System --> IPF Certificates** and consists of the following steps:
 
-1. generate a CSR (certificate signing request)
-2. sign the generated CSR with a trusted certificate authority
-3. upload the signed server certificate
+1. Generate a CSR (Certificate Signing Request).
+2. Sign the generated CSR with a trusted certificate authority.
+3. Upload the signed server certificate.
 
 !!! important
 
@@ -28,7 +28,7 @@ System --> IPF Certificates** and consists of the following steps:
     used as IP Fabric's server certificate.
 
 In the [Miscellaneous](#miscellaneous) section, we also describe how to handle
-some special requirements in regard to certificates -- when **Settings -->
+some special requirements regarding certificates -- when **Settings -->
 System --> IPF Certificates** on its own is not sufficient.
 
 ## Generate CSR (Certificate Signing Request)
@@ -36,16 +36,16 @@ System --> IPF Certificates** on its own is not sufficient.
 !!! note "Subject Alternative Name"
 
     Short Subject Alternative Names (only hostnames without a domain name) are
-    not accepted by all CAs (certificate authorities). To remove it from the
+    not accepted by all CAs (Certificate Authorities). To remove it from the
     CSR, switch off the **Include DNS short name in CSR SAN** toggle.
 
-!!! warning "Only some characters allowed in fields" 
+!!! warning "Only Some Characters Are Allowed in Fields" 
 
-    The fields **Organization name**, **Department**, **City**,
+    The fields **Organization name**, **Department**, **City**, and
     **State / Province** must match the following regular expression:
     `/^[A-Za-z0-9.,\/_@%^:=+ -]*$/`
     
-    - it must contain only these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`
+    - They must contain only these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`
 
     This is for security reasons.
 
@@ -61,8 +61,8 @@ System --> IPF Certificates** on its own is not sufficient.
 
 ## Sign Generated CSR
 
-This step depends on the vendor and version of your certificate authority. So
-please check the vendor's documentation.
+This step depends on the vendor and version of your certificate authority.
+Therefore, please check the vendor's documentation.
 
 ## Upload Signed Server Certificate
 
@@ -72,7 +72,7 @@ please check the vendor's documentation.
 
 !!! warning
 
-    Only a certificate that was created by signing the most-recent CSR can be
+    Only a certificate that was created by signing the most recent CSR can be
     uploaded to IP Fabric! If you generate another CSR before uploading the
     certificate created from the previously generated CSR, the certificate will
     not be applied.
@@ -98,13 +98,13 @@ please check the vendor's documentation.
 1. Go to **Settings --> System --> IPF Certificates**.
 2. Click **Upload** (in the top-right corner).
 3. **Drag and drop** the new certificate or use **Select file** to upload it.
-4. While the new certificate is being installed, the IP Fabric GUI can be
+4. While the new certificate is being installed, the IP Fabric GUI may be
    unresponsive for a few seconds.
 5. Refresh the IP Fabric GUI in your browser.
 
 ## Miscellaneous
 
-### Generate CSR with Special Characters
+### Generate CSR With Special Characters
 
 Let's consider an example where we enter `Test Company with &` (please note that
 the character `&` is not allowed) as the **Organization name**. After filling in
@@ -113,8 +113,8 @@ be displayed.
 
 ![Generate a CSR - Invalid Input](ipf_cert/create_a_csr_invalid_input.png)
 
-If any special characters are required in any of the mentioned fields, you may
-use the following steps:
+If any special characters are required in any of the mentioned fields, follow
+these steps:
 
 1. Fill out the **Create a CSR (Certificate Signing Request)** form, but avoid
    any special characters (in our example, we replaced `Test Company with &`
@@ -123,8 +123,8 @@ use the following steps:
    ![Generate a CSR - with avoiding any special characters](ipf_cert/create_a_csr_without_special_chars.png)
 
 2. Click **Generate**.
-  - In the browser, a file called `nimpee.csr` will be downloaded - please do
-    not use this file.
+  - In your browser, a file called `nimpee.csr` will be downloaded. **Please do
+    not use this file.**
   - The files `customer.conf`, `customer.key`, and `customer.csr` will be
     generated in the directory `/opt/nimpee/conf.d/ssl-cust` on the IP Fabric
     appliance. It's important to note that `customer.csr` will be identical to
@@ -144,7 +144,7 @@ use the following steps:
    cd /opt/nimpee/conf.d/ssl-cust
    ``` 
 
-6. Remove `customer.key` and `customer.csr` (will be re-generated in step 8):
+6. Remove `customer.key` and `customer.csr` (they will be re-generated in step 8):
 
    ```shell
    rm customer.key customer.csr
@@ -224,8 +224,8 @@ certificate chain, do the following:
    grep 'CERTIFICATE' server.crt
    ```
 
-   (the command should return only one pair of `-----BEGIN CERTIFICATE-----` and
-   `-----END CERTIFICATE-----`)
+   - The command should return only one pair of `-----BEGIN CERTIFICATE-----`
+     and `-----END CERTIFICATE-----`.
 
 5. Make a backup of `server.crt`:
 
@@ -244,7 +244,7 @@ certificate chain, do the following:
 
    1. Open the IP Fabric GUI in your browser.
 
-   2. Click the **lock** icon in the browser’s address bar and download the
+   2. Click the **Lock** icon in the browser's address bar and download the
       entire certificate chain:
 
       Google Chrome: **Connection is secure --> Certificate is valid --> Details
@@ -299,7 +299,7 @@ certificate chain, do the following:
 
 ### Add Custom SSL Certificate
 
-In case you require a custom SSL certificate (prepared completely outside IP
+If you require a custom SSL certificate (prepared completely outside IP
 Fabric) and cannot use **Settings --> System --> IPF Certificates**, follow this
 guide to replace the self-signed certificate manually.
 
@@ -309,7 +309,7 @@ guide to replace the self-signed certificate manually.
     your custom certificate's `Subject Alternative Name`. Having the FQDN as the
     certificate's `Subject` or `Common Name` is not sufficient.
 
-1. Log in to the IP Fabric CLI as `osadmin`.
+1. Log in to the IP Fabric CLI as the `osadmin` user.
 
 2. Change to `root`:
 
@@ -331,14 +331,14 @@ guide to replace the self-signed certificate manually.
    ```
 
 5. Upload the new certificate chain and private key to the `/etc/nginx/ssl/`
-   directory
+   directory.
 
-   1. They have to have the same names as those previous ones -- `server.crt`
-      and `server.key`
+   1. They must have the same names as those previous ones -- `server.crt`
+      and `server.key`.
    2. `server.crt` needs to contain the new SSL certificate and full certificate
-      chain in PEM format
+      chain in PEM format.
    3. `server.key` needs to contain the new SSL certificate's private key in
-      decrypted PEM format
+      decrypted PEM format.
 
 6. The certificate chain in `server.crt` must have the following sequence:
 
@@ -386,4 +386,4 @@ guide to replace the self-signed certificate manually.
     ```
 
 11. Verify that the new certificate works correctly by visiting the IP Fabric
-    main GUI in the browser.
+    main GUI in your browser.

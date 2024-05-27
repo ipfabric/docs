@@ -1,16 +1,16 @@
 ---
-description: This section contains information how to add CA certificates to IP Fabric.
+description: This section contains information on how to add CA certificates to IP Fabric.
 ---
 
-# Certification Authorities
+# Certificate Authorities
 
-Before version `6.0`, IP Fabric used the CA bundle shipped with `node.js`. This
+Before version `6.0`, IP Fabric used the CA bundle shipped with Node.js. This
 led to confusion as system utilities were not aware of new certificates.
 
-Since version `6.0`, we have switched to global cert store trusted by `openssl`.
-Internally, this is achieved by passing `--use-openssl-ca` to `node.js`.
+Since version `6.0`, we have switched to global cert store trusted by OpenSSL.
+Internally, this is achieved by passing `--use-openssl-ca` to Node.js.
 
-## Adding a custom certificate
+## Adding a Custom Certificate
 
 You can add a certificate by placing its `.crt` file in the
 `/usr/local/share/ca-certificates` directory and running the following command:
@@ -19,16 +19,16 @@ You can add a certificate by placing its `.crt` file in the
 update-ca-certificates
 ```
 
-We recommend creating a subdirectory in case you are going to add multiple
-certificates:
+If you are going to add multiple certificates, we recommend creating a
+subdirectory:
 
 ```shell
 mkdir /usr/local/share/ca-certificates/my_custom_ca
 ```
 
-!!! Info
+!!! info
 
-    The certificate has to be in PEM format with `.crt` extension. Files with
+    The certificate must be in PEM format with a `.crt` extension. Files with
     other extensions are omitted.
 
 After placing the certificate in the directory, you will need to run the
@@ -44,9 +44,9 @@ done.
 
 ### Converting to `.crt`
 
-`.crt` is nothing more than a PEM certificate with a custom extension.
-If you need to convert your certificate, you can use the `openssl` command-line
-tool to do so:
+`.crt` is nothing more than a PEM certificate with a custom extension. If you
+need to convert your certificate, you can use the `openssl` command-line tool to
+do so:
 
 ```shell
 openssl x509 -in my_custom_ca.der -out /usr/local/share/ca-certificates/my_custom_ca.crt
@@ -54,7 +54,8 @@ openssl x509 -in my_custom_ca.der -out /usr/local/share/ca-certificates/my_custo
 
 `openssl` is typically pretty good at guessing the input format.
 
-## Deleting a custom certificate
+## Deleting a Custom Certificate
 
-1. Remove relevant files/subdirectories from `/usr/local/share/ca-certificates`.
+1. Remove the relevant files/subdirectories from
+   `/usr/local/share/ca-certificates`.
 2. Run `update-ca-certificates`.

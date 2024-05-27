@@ -1,13 +1,13 @@
 ---
-description: You can schedule a local or remote backup to protect your IP Fabric data.
+description: This section describes how to schedule a local or remote backup to protect your IP Fabric data.
 ---
 
 # Schedule System Backup
 
 !!! warning
 
-    For performing a backup, there needs to be > 50 % free space on the `root`
-    filesystem.
+    For performing a backup, there needs to be more than 50% free space on the
+    `root` filesystem.
     
     You can check the free space with the `df -h` command in the IP Fabric VM's
     shell.
@@ -22,27 +22,27 @@ There are two types of backup:
 !!! important
 
     Backups are encrypted with the `osadmin` user password configured during the
-    **First Boot Wizard**. When you lose the `osadmin` user password, backups
-    are also lost!
+    **First Boot Wizard**. If you lose the `osadmin` user password, backups are
+    also lost!
 
 ## Automatic Local Backups
 
-Local backup saves database, user and system files locally on a dedicated backup
-volume. It's highly recommended placing the backup volume on a different
-datastore, ideally on a separate physical storage.
+Local backup saves the database and user and system files locally on a dedicated
+backup volume. It's highly recommended to place the backup volume on a different
+datastore, ideally on separate physical storage.
 
 !!! info "Backup Disk"
 
-    The backup disk is not present by default! Please add a new virtual disk to
-    enable local backups.
+    The backup disk is not present by default! To enable local backups, please
+    add a new virtual disk.
 
-To add a new backup drive, follow the instructions in
+To add a new backup disk, follow the instructions in
 [Increase Disk Space - Local Backup Disk](../../../System_Administration/increase_disk_space.md#local-backup-disk).
 
-To schedule automatic local backups, do the following steps:
+To schedule automatic local backups, follow these steps:
 
 1. Add a dedicated backup volume (if not done yet).
-2. Log in to the main user interface.
+2. Log in to the IP Fabric main GUI.
 3. Go to **Settings --> System --> Backup & Maintenance --> Schedule system
    backup**.
 4. Enable backup.
@@ -54,8 +54,8 @@ To schedule automatic local backups, do the following steps:
 
 ## Automatic Remote Backups
 
-Remote backup saves database, user and system files remotely using the FTP or
-SFTP protocol.
+Remote backup saves the database and user and system files remotely using the
+FTP or SFTP protocol.
 
 !!! note
 
@@ -70,20 +70,20 @@ SFTP protocol.
     
     For **SFTP**, the directory path must be specified as an **absolute path**.
 
-To set up remote backup, do the following steps:
+To set up remote backup, follow these steps:
 
-1. Log in to the user interface.
+1. Log in to the IP Fabric main GUI.
 2. Go to **Settings --> System --> Backup & Maintenance --> Schedule system
    backup**.
 3. Enable backup.
-4. Set a backup schedule. See the example for `Every day at 5:15 and 17:15` (for
-   selecting multiple values, hold `Ctrl` or `Shift` during the selection).
+4. Set a backup schedule. See the example for `Every day at 5:15 and 17:15` (to
+   select multiple values, hold `Ctrl` or `Shift` during the selection).
    ![Backup schedule](system_backup/backup_schedule.png)
 5. Change the **Destination** to `FTP` or `SFTP`.
 6. Enter the remote FTP/SFTP **Server** FQDN or IP address. Make sure that your
    DNS client is configured and working properly in case of FQDN.
 7. Enter **Username** and **Password** for accessing the FTP/SFTP server.
-9. Specify the **Directory** where FTP/SFTP backup should be uploaded.
+9. Specify the **Directory** to which FTP/SFTP backup should be uploaded.
 10. Click **Save**.
 11. IP Fabric will try to reach the FTP/SFTP server with the configured
     parameters.
@@ -92,7 +92,7 @@ To set up remote backup, do the following steps:
 
 !!! warning
 
-    The FTP/SFTP user needs the `read`, `write`, `list` and `delete`
+    The FTP/SFTP user needs the `read`, `write`, `list`, and `delete`
     permissions.
 
 !!! note
@@ -102,25 +102,25 @@ To set up remote backup, do the following steps:
 
 ## Full vs Incremental Backups
 
-The first backup is a full backup. Additional backups are incremental backups.
+The first backup is a full backup, while subsequent backups are incremental.
 Incremental backup 1 depends on the full backup, incremental backup 2 depends on
-incremental backup 1 and the full backup etc.
+incremental backup 1 and the full backup, and so forth.
 
-By default, a new full backup is created after 14 days since the previous full
-backup. You may change this behavior by changing `--full-if-older-than 14D` in
+By default, a new full backup is created 14 days after the previous full backup.
+You can modify this behavior by adjusting `--full-if-older-than 14D` in
 the following line in `/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for
-example with `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
+example, using `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 
 ```
 STATIC_OPTIONS="--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-certificate"
 ```
 
-- possible time values: `s` (seconds), `m` (minutes), `h` (hours), `D` (days),
-  `W` (weeks), `M` (months), `Y` (years)
+- Possible time values include: `s` (seconds), `m` (minutes), `h` (hours), `D`
+  (days), `W` (weeks), `M` (months), and `Y` (years).
 
-By default, only 2 full backups are kept in the backup directory. You may change
-this behavior by amending the value in the following line in
-`/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example with
+By default, only two full backups are retained in the backup directory. You can
+alter this behavior by adjusting the value in the following line in
+`/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example, using
 `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 
 ```
@@ -129,20 +129,21 @@ CLEAN_UP_VARIABLE="2"
 
 !!! tip
 
-    Due to
-    [Restore is not working when 2 full backups are present](../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
-    you may consider setting `CLEAN_UP_VARIABLE="1"` (i.e. keeping only 1 full
+    As
+    [restore does not function properly when two full backups are present](../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
+    you may want to set `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
     backup and its increments).
 
-    Please note that this has a downside -- when a new full backup is created,
-    all previous backup files will be removed from the backup directory.
+    Please note that this approach has a downside -- when a new full backup is
+    created, all previous backup files will be removed from the backup
+    directory.
 
-If unsure, please contact IP Fabric Support for assistance.
+If you are unsure, please contact IP Fabric Support for assistance.
 
 !!! example "Examples"
 
-    First full backup's files (depending on the backup's size, you may have
-    `vol1`, `vol2` ... `volX` instead of just `vol1`):
+    The first full backup's files (depending on the backup's size, you may have
+    `vol1`, `vol2`, ..., `volX` instead of just `vol1`):
 
     ```shell
     -rw-r--r-- 1 root root  54M Sep 27 11:14 ipfabric-94c370c9-duplicity-full.20230927T111440Z.vol1.difftar.gpg
@@ -150,7 +151,7 @@ If unsure, please contact IP Fabric Support for assistance.
     -rw-r--r-- 1 root root  62K Sep 27 11:14 ipfabric-94c370c9-duplicity-full.20230927T111440Z.manifest.gpg
     ```
 
-    First incremental backup's files (they refer to/depend on the full backup):
+    Incremental backup 1's files (referring to / dependent on the full backup):
 
     ```shell
     -rw-r--r-- 1 root root  28M Sep 27 11:17 ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.vol1.difftar.gpg
@@ -158,8 +159,8 @@ If unsure, please contact IP Fabric Support for assistance.
     -rw-r--r-- 1 root root  11K Sep 27 11:17 ipfabric-94c370c9-duplicity-inc.20230927T111440Z.to.20230927T111735Z.manifest.gpg
     ```
 
-    Second incremental backup's files (they refer to/depend on the first
-    incremental backup and also depend on the full backup):
+    Incremental backup 2's files (referring to / dependent on incremental backup
+    1 and also dependent on the full backup):
 
     ```shell
     -rw-r--r-- 1 root root  28M Sep 27 11:20 ipfabric-94c370c9-duplicity-inc.20230927T111735Z.to.20230927T112005Z.vol1.difftar.gpg
