@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The IP Fabric Solution Architects will setup the SSO configuration as it is complex to implement.">
+        <meta name="description" content="This section provides instructions on how to configure Single Sign-On (SSO) for IP Fabric.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Single Sign-On (SSO) - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The IP Fabric Solution Architects will setup the SSO configuration as it is complex to implement." />
+<meta property="og:description" content="This section provides instructions on how to configure Single Sign-On (SSO) for IP Fabric." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/administration/sso.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/administration/sso/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Single Sign-On (SSO) - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The IP Fabric Solution Architects will setup the SSO configuration as it is complex to implement." />
+<meta property="twitter:description" content="This section provides instructions on how to configure Single Sign-On (SSO) for IP Fabric." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/administration/sso.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -5253,7 +5253,7 @@ documentation.
   <a href="#azure-ad-app-registration-auth-using-oidc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Azure AD App Registration Auth using OIDC
+        Azure AD App Registration Auth Using OIDC
       
     </span>
   </a>
@@ -12728,7 +12728,7 @@ documentation.
   <a href="#azure-ad-app-registration-auth-using-oidc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Azure AD App Registration Auth using OIDC
+        Azure AD App Registration Auth Using OIDC
       
     </span>
   </a>
@@ -12852,51 +12852,52 @@ documentation.
 
 <h1 id="single-sign-on-sso">Single Sign-On (SSO)</h1>
 <div class="admonition warning">
-<p class="admonition-title">Outdated SSO user records in IP Fabric might cause login issues</p>
+<p class="admonition-title">Outdated SSO User Records in IP Fabric Might Cause Login Issues</p>
 <p>With SSO configured, each sign-in of a new user into IP Fabric via SSO will
 create a new (non-local) user record in <strong>Settings &rarr; Administration &rarr;
 Local Users</strong> &ndash; with the user&rsquo;s current username and email from the
 Identity Provider (IdP).</p>
-<p>If the user&rsquo;s username or email change on the IdP side, the user will
-encounter <code>Authentication Failure</code> while logging in to IP Fabric via SSO &ndash;
-due to username/email mismatch between the IdP and IP Fabric.</p>
+<p>If the user&rsquo;s username or email changes on the IdP side, the user will
+encounter an <code>Authentication Failure</code> while logging in to IP Fabric via SSO
+&ndash; due to a username/email mismatch between the IdP and IP Fabric.</p>
 <p>In that case, please remove the outdated user record of that user in
 <strong>Settings &rarr; Administration &rarr; Local Users</strong>.</p>
 </div>
-<p>IP Fabric includes support for single sign-on. We have opted for
-<a href="https://dexidp.io/">Dex (A Federated OpenID Connect Provider)</a> as a key
+<p>IP Fabric includes support for Single Sign-On (SSO). We have opted for
+<a href="https://dexidp.io/">Dex</a> (a federated OpenID Connect provider) as a key
 building block to allow a broader set of Identity Providers (IdP).</p>
 <pre class="mermaid"><code>sequenceDiagram
-  IPF-&gt;&gt;IPF: User selects SSO on the IPF login screen.
+  IPF-&gt;&gt;IPF: User selects SSO on the IPF login page.
   IPF-&gt;&gt;Dex: Redirect after starting SSO auth.
-  Dex-&gt;&gt;IdP: Dex redirects to selected and cofigured IdP.
-  IdP-&gt;&gt;IdP: User authenticates, provides MFA etc.
+  Dex-&gt;&gt;IdP: Dex redirects to the selected and cofigured IdP.
+  IdP-&gt;&gt;IdP: User authenticates, provides MFA, etc.
   IdP-&gt;&gt;Dex: User is redirected back to Dex with code.
-  Dex-&gt;&gt;IdP: Dex fetches token from IdP.
+  Dex-&gt;&gt;IdP: Dex fetches token from the IdP.
   Dex-&gt;&gt;IPF: Dex redirects the user back to IPF with code.
   IPF-&gt;&gt;Dex: IPF fetches token from Dex.</code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Complex Configuration</p>
 <p>Implementation of SSO configuration can be complex, and because of that, it
-is recommended to be configured for you by our Solution Architects. If you
-are unsure who your Solution Architect is, please contact our Support Team.</p>
+is recommended to have it configured by your Solution Architect. If you are
+unsure who your Solution Architect is, please contact our Support team.</p>
 </div>
 <h2 id="requirements">Requirements</h2>
 <h3 id="certificate">Certificate</h3>
 <p>Prior to configuring SSO, the IP Fabric server must not be using a self-signed
 certificate. To create a new signed TLS certificate, please see the instructions
-located at <a href="../../system/ipf_cert/">IPF Certificates</a>.</p>
+in <a href="../../system/ipf_cert/">IPF Certificates</a>.</p>
 <div class="admonition information">
 <p class="admonition-title">Private Certificate Authority (CA)</p>
 <p>IP Fabric only trusts certificates issued by CAs listed in the system
 <code>openssl</code> trust-store. If your company uses certificates signed by an
 internal CA, please contact your Solution Architect or open a support
-ticket for further configuration in order to properly enable SSO.</p>
+ticket for further configuration to properly enable SSO.</p>
 </div>
 <h3 id="cli-access">CLI Access</h3>
 <p>To make changes to certain files, you must have access to the <code>osadmin</code>
 account to log in to the CLI and gain root access. For more information, please
-see <a href="../../../System_Administration/Command_Line_Interface/">CLI Overview</a>.</p>
+see the
+<a href="../../../System_Administration/Command_Line_Interface/">CLI Overview</a>.</p>
 <div class="highlight"><pre><span></span><code>justin@ubuntu:~$<span class="w"> </span>ssh<span class="w"> </span>osadmin@demo.ipfabric.io
 osadmin@demo:~$<span class="w"> </span>sudo<span class="w"> </span>-s
 <span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>osadmin:
@@ -12904,8 +12905,8 @@ root@demo:/home/osadmin#
 </code></pre></div>
 <h2 id="api-configuration-apijson">API Configuration <code>api.json</code></h2>
 <p>The IP Fabric API configuration is stored in <code>/opt/nimpee/conf.d/api.json</code>. This
-file needs to be created during the first configuration as it does not exist in
-the default image. It will also be persistent during upgrades and will not be
+file needs to be created during the initial configuration, as it does not exist
+in the default image. It will also be persistent during upgrades and will not be
 changed. Below is a full example of the <code>api.json</code> config file:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -12945,10 +12946,10 @@ changed. Below is a full example of the <code>api.json</code> config file:</p>
 <span class="p">}</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">roleName</p>
+<p class="admonition-title"><code>roleName</code></p>
 <p>In IP Fabric version <code>6.1.0</code>, the ability to use <code>roleName</code> in the SSO
-configuration was added. It is recommended to switch from using <code>roleId</code> to
-<code>roleName</code> for consistency and human readability.</p>
+configuration was added. For consistency and human readablility, it is
+recommended to switch from using <code>roleId</code> to <code>roleName</code>.</p>
 </div>
 <details class="example">
 <summary>JSON Validation</summary>
@@ -12972,13 +12973,13 @@ searching through log files or <code>journalctl</code> output.</p>
 parse<span class="w"> </span>error:<span class="w"> </span>Expected<span class="w"> </span>another<span class="w"> </span>key-value<span class="w"> </span>pair<span class="w"> </span>at<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span>column<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 <p>You can reformat and prettify the JSON file by running:</p>
-<div class="highlight"><pre><span></span><code>echo &quot;$(jq &lt; /opt/nimpee/conf.d/api.json)&quot; &gt; /opt/nimpee/conf.d/api.json
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>jq<span class="w"> </span>&lt;<span class="w"> </span>/opt/nimpee/conf.d/api.json<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/opt/nimpee/conf.d/api.json
 </code></pre></div>
 </details>
 <h3 id="url-configuration">URL Configuration</h3>
-<p>Inside the <code>app</code>, <code>web</code> and <code>dex</code> sections, the <code>url</code> fields need to be updated
+<p>Inside the <code>app</code>, <code>web</code>, and <code>dex</code> sections, the <code>url</code> fields need to be updated
 with the FQDN of the IP Fabric system.</p>
-<p><code>dex.url</code> must match the <a href="#issuer"><code>ipf-dex.yaml</code></a> issuer URL.</p>
+<p>The <code>dex.url</code> must match the <a href="#issuer"><code>ipf-dex.yaml</code></a> issuer URL.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -13028,42 +13029,51 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <ul>
 <li><code>name</code> &ndash; User-defined name of the Identity Provider (IdP) displayed in the
   GUI.<ul>
-<li>Can only contain <code>a-z0-9_</code>. <strong>Do not use uppercase.</strong></li>
+<li>Can only contain <code>a-z</code> <code>0-9</code> <code>_</code>. <strong>Do not use uppercase.</strong></li>
 <li>Used in <a href="#static-clients"><code>ipf-dex.yaml</code></a> for <code>redirectURIs</code> under
   <code>staticClients</code>.</li>
-<li>This name will be displayed on the login page of the GUI. This name will be
-  capitalized (<code>sso</code> &rarr; <code>Sso</code>), therefore it is recommended to use names such
-  as <code>azure</code> or <code>okta</code>.</li>
-<li><a class="glightbox" href="sso_button_name.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SSO Button" src="sso_button_name.png" /></a></li>
+<li>
+<p>This name will be displayed on the login page of the GUI. This name will be
+  capitalized (e.g., <code>sso</code> &rarr; <code>Sso</code>); therefore, it is recommended to use
+  names such as <code>azure</code> or <code>okta</code>.</p>
+<p><a class="glightbox" href="sso_button_name.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SSO button" src="sso_button_name.png" /></a></p>
+</li>
 </ul>
 </li>
-<li><code>clientId</code> &ndash; User-defined value (suggested to keep <code>ipfabric</code>).<ul>
+</ul>
+<ul>
+<li><code>clientId</code> &ndash; User-defined value. Suggested to keep <code>ipfabric</code>.<ul>
 <li>Used in <a href="#static-clients"><code>ipf-dex.yaml</code></a> for <code>id</code> under <code>staticClients</code>.</li>
 </ul>
 </li>
-<li><code>clientSecret</code> &ndash; User-defined value for a shared secret between IP Fabric and
-  Dex only.<ul>
-<li>Can be randomly created for instance using Python:
-  <code>python -c "import secrets; print(secrets.token_urlsafe())"</code></li>
+<li>
+<p><code>clientSecret</code> &ndash; User-defined value for a secret shared only between
+   IP Fabric and Dex.</p>
+<ul>
+<li>
+<p>Can be randomly created for instance using Python:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import secrets; print(secrets.token_urlsafe())&quot;</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
 <li>Used in <a href="#static-clients"><code>ipf-dex.yaml</code></a> for <code>secret</code> under
   <code>staticClients</code>.</li>
-</ul>
-</li>
-<li><code>roleAssignments</code> &ndash; An array of objects.<ul>
+<li><code>roleAssignments</code> &ndash; An array of objects.</li>
 <li>Objects are in the format of
   <code>{groupName: string, roleId?: string|null, roleName?: string|null }</code><ul>
 <li><code>groupName</code> &ndash; The name of the group that is configured on the SSO side.<ul>
 <li><code>any</code> will provide access to any user by default.</li>
-<li>Multiple mappings with the same <code>groupName</code> will get merged (so the user
-  will receive all corresponding roles on the IP Fabric side).</li>
+<li>Multiple mappings with the same <code>groupName</code> will get merged. So the user
+  will receive all corresponding roles on the IP Fabric side.</li>
 </ul>
 </li>
 <li><code>roleId</code> &ndash; The ID of the IP Fabric role.<ul>
 <li>A value of <code>null</code> will provide no access.</li>
 <li>Either <code>roleId</code> or <code>roleName</code> property must be specified, not both.</li>
 <li><strong>Please do not confuse <code>roleId</code> with <code>roleName</code> as these are different
-  values. <code>roleId</code> must be retrieved using the browser Developer Tools or
-  using the API (example below).</strong></li>
+  values. <code>roleId</code> must be retrieved using the browser&rsquo;s Developer Tools
+  or using the API (example below).</strong></li>
 </ul>
 </li>
 <li><code>roleName</code> &ndash; The name of the IP Fabric role.<ul>
@@ -13071,10 +13081,11 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <li>Either <code>roleName</code> or <code>roleId</code> property must be specified, not both.</li>
 <li><strong>Since version <code>6.1</code>, you can opt to only use <code>roleName</code> instead of
   <code>roleId</code> in your configuration.</strong></li>
-<li><strong>Since version <code>6.3</code>, <code>roleName</code> can only contain <code>a-zA-Z0-9_-</code>.
-  Previously created roles will be automatically modified by removing
-  not-allowed characters from role name according to the new validation rules.
-  Make sure specified <code>roleName</code> refers to the existing role in the system.</strong></li>
+<li><strong>Since version <code>6.3</code>, <code>roleName</code> can only contain <code>a-z</code> <code>A-Z</code> <code>0-9</code>
+  <code>_-</code>. Previously created roles will be automatically modified by
+  removing not-allowed characters from role name according to the new
+  validation rules. Make sure the specified <code>roleName</code> refers to an
+  existing role in the system.</strong></li>
 </ul>
 </li>
 </ul>
@@ -13086,14 +13097,15 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <p><a class="glightbox" href="../roles/roles_id.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Role ID" src="../roles/roles_id.png" /></a></p>
 <h2 id="sso-configuration-ipf-dexyaml">SSO Configuration <code>ipf-dex.yaml</code></h2>
 <p>While Dex supports various connectors, we strongly recommend using OpenID
-Connect (OIDC) for SSO integration (Azure uses a special <code>microsoft</code> connector
-and an example is provided below along with SAML). Please check the
+Connect (OIDC) for SSO integration. (Azure uses a special <code>microsoft</code> connector,
+and an example is provided below along with SAML.) Please check the
 <a href="https://dexidp.io/docs/connectors">official Dex documentation</a> for their
 overview.</p>
-<p>Dex configuration is located in <code>/etc/ipf-dex.yaml</code> on the IP Fabric appliance.
-It has several configuration sections, and a full example of the file is located
-below. Please note that OIDC, SAML, and Azure have different syntaxes for the
-<code>connectors</code> configuration portion, which are covered separately.</p>
+<p>The Dex configuration is located in <code>/etc/ipf-dex.yaml</code> on the IP Fabric
+appliance. It has several configuration sections, and a full example of the file
+is provided below. Please note that OIDC, SAML, and Azure have different
+syntaxes for the <code>connectors</code> configuration portion, which are covered
+separately.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/ipf-dex.yaml</span>
 
 <span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://&lt;FQDN&gt;/dex</span>
@@ -13142,7 +13154,7 @@ below. Please note that OIDC, SAML, and Azure have different syntaxes for the
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Keep Default Values</p>
-<p>The following lines should be left to the default values:</p>
+<p>The following lines should be left at the default values:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">storage</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">memory</span>
@@ -13161,22 +13173,22 @@ below. Please note that OIDC, SAML, and Azure have different syntaxes for the
 </code></pre></div>
 </div>
 <h3 id="issuer">Issuer</h3>
-<p>Dex configuration has at the very top an attribute called <code>issuer</code>. This needs
-to be configured to be equal to the <code>url</code> under <code>dex</code> in
+<p>In the Dex configuration, at the very top, there is an attribute called
+<code>issuer</code>. This needs to be configured to be equal to the <code>url</code> under <code>dex</code> in
 <a href="#providers-configuration"><code>api.json</code></a>.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://demo.ipfabric.io/dex</span>
 </code></pre></div>
 <h3 id="skip-approval-screen">Skip Approval Screen</h3>
-<p>The following lines of the configuration control if you would like a <code>Grant
+<p>The following lines of the configuration control whether you would like a <code>Grant
 Access</code> screen to be presented to your users on every login. By setting it to
-true, the message below won&rsquo;t be displayed.</p>
+<code>true</code>, the message below won&rsquo;t be displayed.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">oauth2</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">skipApprovalScreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 <p><a class="glightbox" href="sso_approval.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Grant Access" src="sso_approval.png" /></a></p>
 <h3 id="static-clients">Static Clients</h3>
-<p>The <code>staticClients</code> section contains the configuration for the IP Fabric portal
+<p>The <code>staticClients</code> section contains the configuration for the IP Fabric portal,
 which acts as a client to <code>dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
@@ -13194,23 +13206,25 @@ which acts as a client to <code>dex</code>.</p>
   <code>providers</code>.</li>
 </ul>
 </li>
-<li>
-<p><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.</p>
-<ul>
+<li><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.<ul>
 <li>It is in the format of
   <code>https://&lt;FQDN&gt;/api/&lt;API_MAJOR_VERSION&gt;/auth/external/&lt;API-DEX-PROVIDERS-NAME&gt;</code></li>
 <li><code>API-DEX-PROVIDERS-NAME</code> is found in <a href="#providers-configuration"><code>api.json</code></a>
   for <code>name</code> under <code>providers</code>.<ul>
-<li>Can only contain <code>a-z0-9_</code>. <strong>Do not use uppercase.</strong></li>
+<li>Can only contain <code>a-z</code> <code>0-9</code> <code>_</code>. <strong>Do not use uppercase.</strong></li>
 </ul>
 </li>
 <li>
-<p>Please be aware of the <code>API_VERSION</code> property which needs to be updated with
-  <strong>every major version IPF release</strong> (i.e. <code>v6</code> &rarr; <code>v7</code>).</p>
+<p>Please be aware of the <code>API_VERSION</code> property, which needs to be updated
+  with <strong>every IP Fabric major release</strong> (i.e., <code>v6</code> &rarr; <code>v7</code>).</p>
 <div class="admonition note">
-<p class="admonition-title"><code>redirectURIs</code> after upgrade to <code>6.3.2</code></p>
-<p>In IP Fabric versions <code>&lt;6.3.2</code> users were required to change the <code>redirectURIs</code> after every upgrade. Starting in version <code>6.3.2</code> a fix has been added to ensure that this is only required after upgrading to a new major release version (i.e. <code>v6</code> &rarr; <code>v7</code>).</p>
-<p>Please change the <code>redirectURIs</code> to only include the major version: <code>https://&lt;FQDN&gt;/api/v6/auth/external/sso</code> after upgrade to <code>6.3.2</code>.</p>
+<p class="admonition-title"><code>redirectURIs</code> After Upgrade to <code>6.3.2</code></p>
+<p>In IP Fabric versions <code>&lt;6.3.2</code>, users were required to change the
+<code>redirectURIs</code> after every upgrade. Starting from version <code>6.3.2</code>, a fix
+has been added to ensure that this is only required after upgrading to a
+new major release (i.e., <code>v6</code> &rarr; <code>v7</code>).</p>
+<p>After upgrade to <code>6.3.2</code>, please change the <code>redirectURIs</code> to only
+include the major version: <code>https://&lt;FQDN&gt;/api/v6/auth/external/sso</code>.</p>
 </div>
 </li>
 </ul>
@@ -13225,21 +13239,21 @@ which acts as a client to <code>dex</code>.</p>
 <li><code>secret</code> &ndash; User-defined secret.<ul>
 <li>Found in <a href="#providers-configuration"><code>api.json</code></a> for <code>clientSecret</code> under
   <code>providers</code>.</li>
-<li>It is a shared secret between IP Fabric and Dex only.</li>
+<li>It is a secret shared only between IP Fabric and Dex.</li>
 </ul>
 </li>
 </ul>
 <h3 id="config-file-mapping">Config File Mapping</h3>
-<p>Here is a nice illustration of how the <code>/opt/nimpee/conf.d/api.json</code> values map
-to <code>/etc/ipf-dex.yaml</code>:</p>
+<p>Here is a concise illustration of how the <code>/opt/nimpee/conf.d/api.json</code> values
+map to <code>/etc/ipf-dex.yaml</code>:</p>
 <p><a class="glightbox" href="sso_api_dex_mapping.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="JSON YAML mapping" src="sso_api_dex_mapping.png" /></a></p>
 <h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
 <p>Please review the
 <a href="https://dexidp.io/docs/connectors/oidc/">Dex documentation on OIDC</a> for all
 configuration options and potential caveats.</p>
 <div class="admonition note">
-<p class="admonition-title">Well-known Configuration</p>
-<p>Many of the variables required can be found in the OIDC well-known
+<p class="admonition-title">Well-Known Configuration</p>
+<p>Many of the required variables can be found in the OIDC well-known
 configuration endpoint. For example, take a look at Google:
 <a href="https://accounts.google.com/.well-known/openid-configuration"><code>.well-known/openid-configuration</code></a>.</p>
 </div>
@@ -13264,39 +13278,39 @@ configuration endpoint. For example, take a look at Google:
 </code></pre></div>
 <ul>
 <li><code>type</code> &ndash; Dex connector type.</li>
-<li><code>id</code> &ndash; User-defined arbitrary ID (not used anywhere).</li>
-<li><code>name</code> &ndash; User-defined arbitrary name (not used anywhere).</li>
+<li><code>id</code> &ndash; User-defined arbitrary ID. (Not used anywhere.)</li>
+<li><code>name</code> &ndash; User-defined arbitrary name. (Not used anywhere.)</li>
 <li><code>redirectURI</code> &ndash; <code>issuer</code> URL with <code>/callback</code> appended.<ul>
-<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code>, OR</li>
-<li>can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
+<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code><br/>
+  OR can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
 </ul>
 </li>
-<li><code>getUserInfo</code> &ndash; When enabled, the OpenID Connector will query the UserInfo
+<li><code>getUserInfo</code> &ndash; When enabled, the OpenID Connector will query the <code>UserInfo</code>
   endpoint for additional claims.</li>
-<li><code>insecureEnableGroups</code> &ndash; Groups claims only refresh when the id token is
+<li><code>insecureEnableGroups</code> &ndash; Groups claims only refresh when the ID token is
   refreshed, meaning the regular refresh flow doesn&rsquo;t update the groups claim.
-  As such, by default the OIDC connector doesn&rsquo;t allow groups claims. If you are
-  okay with having potentially stale group claims, you can use this option to
-  enable groups claims through the OIDC connector on a per-connector basis.</li>
+  As such, by default, the OIDC connector doesn&rsquo;t allow groups claims. If you
+  are okay with having potentially stale group claims, you can use this option
+  to enable groups claims through the OIDC connector on a per-connector basis.</li>
 <li><code>clientID</code> &ndash; A client ID configured or generated on the Identity Provider.</li>
 <li><code>clientSecret</code> &ndash; A client secret configured or generated on the Identity
   Provider.</li>
 <li><code>scopes</code> &ndash; A list of scopes to be returned from the Identity Provider.<ul>
 <li>The ones listed above are the most common. However, these can differ from
   provider to provider.</li>
-<li>Scopes are normally found in <code>.well-known/openid-configuration</code> which is
+<li>Scopes are normally found in <code>.well-known/openid-configuration</code>, which is
   discussed in the <a href="#openid-connect-oidc">OIDC</a> section.</li>
 </ul>
 </li>
-<li><code>claimMapping</code> &ndash; Some providers return non-standard claims (i.e. roles), use
-  claimMapping to map those claims to standard claims.</li>
+<li><code>claimMapping</code> &ndash; Some providers return non-standard claims (i.e., roles). Use
+  <code>claimMapping</code> to map those claims to standard claims.</li>
 </ul>
 <h3 id="azure">Azure</h3>
 <div class="admonition warning">
-<p class="admonition-title">Azure</p>
+<p class="admonition-title">Warning</p>
 <p>Please review the
 <a href="https://dexidp.io/docs/connectors/microsoft/">Dex documentation on Azure</a>
-for all configuration options and potential caveats as Azure requires
+for all configuration options and potential caveats, as Azure requires
 special configuration for proper enablement.</p>
 </div>
 <h4 id="dex-config">Dex Config</h4>
@@ -13318,14 +13332,14 @@ special configuration for proper enablement.</p>
 </code></pre></div>
 <ul>
 <li><code>type</code> &ndash; Dex connector type.</li>
-<li><code>id</code> &ndash; User-defined arbitrary ID (not used anywhere).</li>
-<li><code>name</code> &ndash; User-defined arbitrary name (not used anywhere).</li>
+<li><code>id</code> &ndash; User-defined arbitrary ID. (Not used anywhere.)</li>
+<li><code>name</code> &ndash; User-defined arbitrary name. (Not used anywhere.)</li>
 <li><code>redirectURI</code> &ndash; <code>issuer</code> URL with <code>/callback</code> appended.<ul>
-<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code>, OR</li>
-<li>can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
+<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code><br/>
+  OR can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
 </ul>
 </li>
-<li><code>tenant</code> &ndash; UUID or Name of specific tenant accounts belong to.<ul>
+<li><code>tenant</code> &ndash; UUID or name of the specific tenant to which accounts belong.<ul>
 <li><strong>Required for obtaining the <code>groups</code> claim from Azure.</strong></li>
 </ul>
 </li>
@@ -13335,41 +13349,84 @@ special configuration for proper enablement.</p>
 <li><code>scopes</code> &ndash; A list of scopes to be returned from the Identity Provider.<ul>
 <li>The ones listed above are the most common. However, these can differ from
   provider to provider.</li>
-<li>Scopes are normally found in <code>.well-known/openid-configuration</code> which is
+<li>Scopes are normally found in <code>.well-known/openid-configuration</code>, which is
   discussed in the <a href="#openid-connect-oidc">OIDC</a> section.</li>
 </ul>
 </li>
-<li><code>claimMapping</code> &ndash; Some providers return non-standard claims (i.e. roles), use
-  claimMapping to map those claims to standard claims.</li>
+<li><code>claimMapping</code> &ndash; Some providers return non-standard claims (i.e., roles). Use
+  <code>claimMapping</code> to map those claims to standard claims.</li>
 </ul>
-<h4 id="azure-ad-app-registration-auth-using-oidc">Azure AD App Registration Auth using OIDC</h4>
+<h4 id="azure-ad-app-registration-auth-using-oidc">Azure AD App Registration Auth Using OIDC</h4>
 <ol>
-<li>From the <code>Azure Active Directory</code> &gt; <code>App registrations</code> menu, choose <code>+ New registration</code></li>
-<li>Enter a <code>Name</code> for the application (e.g. <code>IP Fabric SSO</code>).</li>
-<li>Specify who can use the application (e.g. <code>Accounts in this organizational directory only</code>).</li>
-<li>Enter Redirect URI (optional) as follows (replacing <code>IP_FABRIC_FQDN</code> with your IP Fabric URL), then choose <code>Add</code>.</li>
-</ol>
+<li>
+<p>From the <strong>Azure Active Directory &rarr; App registrations</strong> menu, select <code>+ New
+   registration</code>.</p>
+</li>
+<li>
+<p>Enter a <code>Name</code> for the application. E.g., <code>IP Fabric SSO</code>.</p>
+</li>
+<li>
+<p>Specify who can use the application. E.g., <code>Accounts in this organizational
+   directory only</code>.</p>
+</li>
+<li>
+<p>Enter Redirect URI <em>(optional)</em> as follows (replace <code>IP_FABRIC_FQDN</code> with
+   your IP Fabric URL), then select <code>Add</code>.</p>
 <ul>
 <li><strong>Platform:</strong> <code>Web</code></li>
 <li><strong>Redirect URI:</strong> https://<code>&lt;IP_FABRIC_FQDN&gt;</code>/dex/callback</li>
 </ul>
-<ol>
-<li>When registration finishes, the Azure portal displays the app registration&rsquo;s Overview pane. You see the Application (client) ID.
-   <a class="glightbox" href="azure-app-registration-overview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="azure-app-registration-overview.png" title="Azure App registration's Overview" /></a></li>
-<li>From the <code>Certificates &amp; secrets</code> menu, choose <code>+ New client secret</code></li>
-<li>Enter a <code>Name</code> for the secret (e.g. <code>clientSecret</code>). <strong>Make sure to copy and save generated value for the <code>clientSecret</code>.</strong>
-   <a class="glightbox" href="azure-app-registration-secret.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.png" title="Azure App registration's Secret" /></a></li>
-<li>From the <code>API permissions</code> menu, choose <code>+ Add a permission</code></li>
-<li>Find <code>User.Read</code> permission (under <code>Microsoft Graph</code>) and grant it to the created application:
-   <a class="glightbox" href="azure-api-permissions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD API permissions" src="azure-api-permissions.png" title="Azure AD API permissions" /></a></li>
-<li>From the <code>Token Configuration</code> menu, choose <code>+ Add groups claim</code>
-    <a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" title="Azure AD token configuration" /></a></li>
-<li><code>All groups</code>: Emits security groups and distribution lists and roles.</li>
-<li><code>Security groups</code>: Emits security groups that the user is a member of in the groups claim.</li>
-<li><code>Directory roles</code>: If the user is assigned directory roles, they&rsquo;re emitted as a <code>wids</code> claim. (The group&rsquo;s claim won&rsquo;t be emitted.)</li>
-<li><code>Groups assigned to the application</code>: Emits only the groups that are explicitly assigned to the application and that the user is a member of. <strong>Recommended for large organizations due to the group number limit in token.</strong></li>
-<li>From the <code>Azure Active Directory</code> &gt; <code>Enterprise applications</code> menu, search the App that you created (e.g. <code>IP Fabric SSO</code>).</li>
-<li>From the <code>Users and groups</code> menu of the app, add any users or groups requiring access to the service.</li>
+</li>
+<li>
+<p>When the registration finishes, the Azure portal displays the app
+   registration&rsquo;s Overview pane. You will see the Application (client) ID.</p>
+<p><a class="glightbox" href="azure-app-registration-overview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="azure-app-registration-overview.png" /></a></p>
+</li>
+<li>
+<p>From the <strong>Certificates &amp; secrets</strong> menu, select <code>+ New client secret</code>.</p>
+</li>
+<li>
+<p>Enter a <code>Name</code> for the secret. E.g., <code>clientSecret</code>. <strong>Make sure to copy and
+   save the generated value for the <code>clientSecret</code>.</strong></p>
+<p><a class="glightbox" href="azure-app-registration-secret.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.png" /></a></p>
+</li>
+<li>
+<p>From the <strong>API permissions</strong> menu, select <code>+ Add a permission</code>.</p>
+</li>
+<li>
+<p>Find the <code>User.Read</code> permission (under <code>Microsoft Graph</code>) and grant it to the
+   created application:</p>
+<p><a class="glightbox" href="azure-api-permissions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD API permissions" src="azure-api-permissions.png" /></a></p>
+</li>
+<li>
+<p>From the <strong>Token Configuration</strong> menu, select <code>+ Add groups claim</code>:</p>
+<p><a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" /></a></p>
+</li>
+<li>
+<p><code>All groups</code>: Emits security groups, distribution lists, and roles.</p>
+</li>
+<li>
+<p><code>Security groups</code>: Emits security groups of which the user is a member in
+    the groups claim.</p>
+</li>
+<li>
+<p><code>Directory roles</code>: If the user is assigned directory roles, they&rsquo;re emitted
+    as a <code>wids</code> claim. (The group&rsquo;s claim won&rsquo;t be emitted.)</p>
+</li>
+<li>
+<p><code>Groups assigned to the application</code>: Emits only the groups which are
+    explicitly assigned to the application and of which the user is a member.
+    <strong>Recommended for large organizations due to the group number limit in
+    token.</strong></p>
+</li>
+<li>
+<p>From the <strong>Azure Active Directory &rarr; Enterprise applications</strong> menu, search
+    for the app that you created. E.g., <code>IP Fabric SSO</code>.</p>
+</li>
+<li>
+<p>From the <strong>Users and groups</strong> menu of the app, add any users or groups
+    requiring access to the service.</p>
+</li>
 </ol>
 <h3 id="saml-connector">SAML Connector</h3>
 <p>Please review the
@@ -13392,33 +13449,34 @@ configuration options and potential caveats.</p>
 </code></pre></div>
 <ul>
 <li><code>type</code> &ndash; Dex connector type.</li>
-<li><code>id</code> &ndash; User-defined arbitrary ID (not used anywhere).</li>
-<li><code>name</code> &ndash; User-defined arbitrary name (not used anywhere).</li>
+<li><code>id</code> &ndash; User-defined arbitrary ID. (Not used anywhere.)</li>
+<li><code>name</code> &ndash; User-defined arbitrary name. (Not used anywhere.)</li>
 <li><code>redirectURI</code> &ndash; <code>issuer</code> URL with <code>/callback</code> appended.<ul>
-<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code>, OR</li>
-<li>can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
+<li>Can be found in <a href="#url-configuration"><code>api.json</code></a> under <code>dex</code><br/>
+  OR can be found in <a href="#issuer"><code>ipf-dex.yaml</code></a>.</li>
 </ul>
 </li>
 <li><code>ssoURL</code> &ndash; SSO URL used for POST value.</li>
-<li><code>ssoIssuer</code> &ndash; Optional: Issuer value expected in the SAML response.</li>
-<li>Pick and use one option to validate the signature of the SAML response:<ul>
-<li><code>caData</code> &ndash; Base64 encoded certification chain.</li>
-<li><code>ca</code> &ndash; File location of containing certification chain.</li>
+<li><code>ssoIssuer</code> &ndash; <em>(optional)</em> Issuer value expected in the SAML response.</li>
+<li>Pick and use one of the following options to validate the signature of the
+  SAML response:<ul>
+<li><code>caData</code> &ndash; Base64-encoded certificate chain.</li>
+<li><code>ca</code> &ndash; Path to the file containing the certificate chain.</li>
 </ul>
 </li>
 <li><code>usernameAttr</code> &ndash; Maps SAML <code>name</code> value to IP Fabric&rsquo;s <code>username</code>.</li>
 <li><code>emailAttr</code> &ndash; Maps SAML <code>email</code> value to IP Fabric&rsquo;s <code>email</code>.</li>
 <li><code>groupsAttr</code> &ndash; Maps SAML <code>groups</code> value to IP Fabric&rsquo;s <code>groupName</code>.</li>
-<li><code>nameIDPolicyFormat</code> &ndash; The connector uses the value of the NameID element as
-  the user&rsquo;s unique identifier which Dex assumes is both unique and
+<li><code>nameIDPolicyFormat</code> &ndash; The connector uses the value of the <code>NameID</code> element
+  as the user&rsquo;s unique identifier, which Dex assumes is both unique and
   never-changing. Use <code>nameIDPolicyFormat</code> to ensure this is set to a value
   which satisfies these requirements.</li>
 </ul>
 <h3 id="yaml-validation">YAML Validation</h3>
 <p>While the validity of the actual configuration is determined by Dex itself, it
 can be handy to verify parsing of the configuration YAML. You can use the
-following to get a JSON representation of <code>/etc/ipf-dex.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code>python3 -c &#39;import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))&#39; &lt; /etc/ipf-dex.yaml  | jq .
+following command to get a JSON representation of <code>/etc/ipf-dex.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))&#39;</span><span class="w"> </span>&lt;<span class="w"> </span>/etc/ipf-dex.yaml<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
 </code></pre></div>
 <details class="example">
 <summary>Correct YAML</summary>
@@ -13485,13 +13543,13 @@ following to get a JSON representation of <code>/etc/ipf-dex.yaml</code>:</p>
 multiline string.</p>
 </details>
 <h2 id="restarting-services">Restarting Services</h2>
-<p>After making changes to <code>/opt/nimpee/conf.d/api.json</code>, it is required to restart
-the API service:</p>
-<div class="highlight"><pre><span></span><code>systemctl restart nimpee-api.service
+<p>After making changes to <code>/opt/nimpee/conf.d/api.json</code>, you need to restart the
+API service:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>nimpee-api.service
 </code></pre></div>
-<p>Consequently, after making changes to <code>/etc/ipf-dex.yaml</code>, the Dex service needs
-to be restarted:</p>
-<div class="highlight"><pre><span></span><code>systemctl restart ipf-dex.service
+<p>Consequently, after making changes to <code>/etc/ipf-dex.yaml</code>, you need to restart
+the Dex service:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-dex.service
 </code></pre></div>
 
 
@@ -13513,7 +13571,7 @@ to be restarted:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2024</span>
   </span>
 
     

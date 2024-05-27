@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information about RBAC policies, how they work and how to set them.">
+        <meta name="description" content="This section contains information about RBAC policies, how they work, and how to set them.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Policies - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information about RBAC policies, how they work and how to set them." />
+<meta property="og:description" content="This section contains information about RBAC policies, how they work, and how to set them." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/administration/policies.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/administration/policies/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Policies - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information about RBAC policies, how they work and how to set them." />
+<meta property="twitter:description" content="This section contains information about RBAC policies, how they work, and how to set them." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/administration/policies.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12539,21 +12539,23 @@ documentation.
 
 
 <h1 id="policies">Policies</h1>
-<p><strong>Policies</strong> can contain sets of <strong>attributes or endpoints</strong>.</p>
-<p><strong>Attributes scope</strong> defines devices which are available to end users. Access is
-defined by a specific attribute such as <strong>siteName</strong>.</p>
-<p><strong>API endpoints scope</strong> defines actions which are permitted for end users to
+<p><strong>Policies</strong> contain sets either of <strong>attributes</strong> or <strong>endpoints</strong>.</p>
+<p><strong>Attributes scope</strong> defines devices that are available to end users. Access is
+defined by a specific attribute such as <code>siteName</code>.</p>
+<p><strong>API endpoints scope</strong> defines actions that are permitted for end users to
 perform on allowed devices or on the system. Access is defined only to a
-<strong>specific API endpoint</strong> within IP Fabric (e.g., <em>discovery</em> policy allows
+<strong>specific API endpoint</strong> within IP Fabric (e.g., a <em>discovery</em> policy allows
 access to discovery API endpoints (actions)).</p>
-<p>The <strong>Policies</strong> page allows you to create or modify policies.</p>
+<p>The <strong>Policies</strong> section (in <strong>Settings &rarr; Administration &rarr; Policies</strong>)
+allows you to create or modify policies.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Every <code>custom role</code> has to have at least 2 policies configured to see
+<p>Every <code>custom role</code> must have at least two policies configured to see
 diagrams:</p>
-<p>1. <strong>Attributes scope</strong> policy defining <code>siteName</code>s</p>
-<p>2. <strong>API endpoints scope</strong> policy defining access to <strong>Graphs</strong> API calls</p>
-<p>Users with <code>admin</code> role have access to all attributes and endpoints by
+<p>1. An <strong>attributes scope</strong> policy defining <code>siteName</code>s.</p>
+<p>2. An <strong>API endpoints scope</strong> policy defining access to <code>Graphs</code> API
+     calls.</p>
+<p>Users with the <code>admin</code> role have access to all attributes and endpoints by
 default.</p>
 </div>
 <div class="admonition note">
@@ -12569,12 +12571,12 @@ by our internal diagnostics tool.</p>
 </li>
 <li>
 <p>Click <strong>Attributes scope</strong>:</p>
-<p><a class="glightbox" href="policies_attributes_add.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add attributes scope policy" src="policies_attributes_add.png" /></a></p>
+<p><a class="glightbox" href="policies_attributes_add.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add policy - Attributes scope" src="policies_attributes_add.png" /></a></p>
 </li>
 <li>
-<p>Set a policy name, add attributes (create filters), select values, and
-   <strong>save</strong> your attributes scope policy:</p>
-<p><a class="glightbox" href="policies_attributes_select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Select attributes scope policy" src="policies_attributes_select.png" /></a></p>
+<p>Set a policy name, add attributes (create filters), select values, and click
+   <strong>Save</strong>:</p>
+<p><a class="glightbox" href="policies_attributes_select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Specify attributes scope policy" src="policies_attributes_select.png" /></a></p>
 </li>
 </ol>
 <h2 id="add-api-endpoints-scope-policy">Add API Endpoints Scope Policy</h2>
@@ -12585,25 +12587,24 @@ by our internal diagnostics tool.</p>
 </li>
 <li>
 <p><strong>API endpoints scope</strong> should be selected by default:</p>
-<p><a class="glightbox" href="policies_endpoints_add.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add API endpoints scope policy" src="policies_endpoints_add.png" /></a></p>
+<p><a class="glightbox" href="policies_endpoints_add.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add policy - API endpoints scope" src="policies_endpoints_add.png" /></a></p>
 </li>
 <li>
-<p>Set a policy name, select API endpoints and <strong>save</strong> your API endpoints scope
-   policy:</p>
-<p><a class="glightbox" href="policies_endpoints_select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Select API endpoints scope policy" src="policies_endpoints_select.png" /></a></p>
+<p>Set a policy name, select API endpoints, and click <strong>Save</strong>:</p>
+<p><a class="glightbox" href="policies_endpoints_select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Specify API endpoints scope policy" src="policies_endpoints_select.png" /></a></p>
 </li>
 </ol>
 <h2 id="list-of-policies">List of Policies</h2>
-<p>The <strong>Policies</strong> table lists all policies including their details and allows
-you to <strong>modify</strong> or <strong>delete</strong> them <em>(except the built-in policies which cannot
-be modified or deleted)</em>.</p>
+<p>The <code>Policies</code> table lists all policies including their details and allows you
+to <strong>modify</strong> or <strong>delete</strong> them <em>(except for the built-in policies, which
+cannot be modified or deleted)</em>.</p>
 <p><a class="glightbox" href="policies_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table" src="policies_table.png" /></a></p>
 <h2 id="edit-policy">Edit Policy</h2>
 <ol>
 <li>
 <p>To modify the details of a policy, click the <strong>Edit</strong> icon next to it in the
-   <strong>Policies</strong> table:</p>
-<p><a class="glightbox" href="policies_table_edit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - edit" src="policies_table_edit.png" /></a></p>
+   <code>Policies</code> table:</p>
+<p><a class="glightbox" href="policies_table_edit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - Edit icon" src="policies_table_edit.png" /></a></p>
 </li>
 <li>
 <p>Update the data in the <strong>Edit policy</strong> form and click <strong>Save</strong>:</p>
@@ -12613,9 +12614,8 @@ be modified or deleted)</em>.</p>
 <h2 id="copy-policy">Copy Policy</h2>
 <ol>
 <li>
-<p>To copy a policy, click the <strong>Copy</strong> icon next to it in the <strong>Policies</strong>
-   table:</p>
-<p><a class="glightbox" href="policies_table_copy.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - copy" src="policies_table_copy.png" /></a></p>
+<p>To copy a policy, click the <strong>Copy</strong> icon next to it in the <code>Policies</code> table:</p>
+<p><a class="glightbox" href="policies_table_copy.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - Copy icon" src="policies_table_copy.png" /></a></p>
 </li>
 <li>
 <p>Update the data in the <strong>Copy policy</strong> form and click <strong>Save</strong>:</p>
@@ -12625,13 +12625,13 @@ be modified or deleted)</em>.</p>
 <h2 id="delete-policy">Delete Policy</h2>
 <ol>
 <li>
-<p>To delete a policy, click the <strong>Delete</strong> icon next to it in the <strong>Policies</strong>
+<p>To delete a policy, click the <strong>Delete</strong> icon next to it in the <code>Policies</code>
    table:</p>
-<p><a class="glightbox" href="policies_table_delete.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - delete" src="policies_table_delete.png" /></a></p>
+<p><a class="glightbox" href="policies_table_delete.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policies table - Delete icon" src="policies_table_delete.png" /></a></p>
 </li>
 <li>
-<p>Click <strong>Delete</strong> to confirm the action:</p>
-<p><a class="glightbox" href="policies_table_delete_confirm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Confirm deletion" src="policies_table_delete_confirm.png" /></a></p>
+<p>To confirm the action, click <strong>Delete</strong>:</p>
+<p><a class="glightbox" href="policies_table_delete_confirm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Policy will be removed dialog" src="policies_table_delete_confirm.png" /></a></p>
 </li>
 </ol>
 
@@ -12654,7 +12654,7 @@ be modified or deleted)</em>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2024</span>
   </span>
 
     
