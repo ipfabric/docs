@@ -17,9 +17,9 @@ graph LR
     ip[IP found during discovery] --> exclude{Is the IP in the Exclude list?}
 
     exclude -->|No| include{Is the IP in the Include list?}
-      include -->|Yes| continue[Continue with discovery logic]
-      include --> |No| doNotDiscover[Do not discover]
-    exclude -->|Yes| doNotDiscover[Do not discover]
+      include -->|Yes| continue[<strong>Continue with the discovery logic</strong>]
+      include --> |No| doNotDiscover[<strong>Do not discover</strong>]
+    exclude -->|Yes| doNotDiscover
 
     style continue fill:#33dd00
     style doNotDiscover fill:#dd3300
@@ -35,6 +35,8 @@ Specific parts of the network can also be excluded from discovery using the
 Exclude list (in **Settings --> Discovery & Snapshots --> Discovery Settings
 --> Discovery --> IP Scope --> IP networks to exclude from discovery and
 analysis**).
+
+![IP Scope](ip_scope.png)
 
 !!! warning "Priority"
 

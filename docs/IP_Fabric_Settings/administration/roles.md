@@ -1,14 +1,15 @@
 ---
-description: This section contains information about RBAC roles you can assign policies to and then assign those roles to IP Fabric users.
+description: This section contains information about RBAC roles to which you can assign policies, and then assign those roles to IP Fabric users.
 ---
 
 # Roles
 
 **Roles** allow users to perform actions on system resources (e.g., a
 _user-management_ role with the _team_ policy assigned allows users to view,
-add, update or delete `users`, `roles`, `policies`, and `LDAP configuration`).
+add, update, or delete `users`, `roles`, `policies`, and `LDAP configuration`).
 
-The **Roles** page allows you to create or modify roles.
+The **Roles** section (in **Settings --> Administration --> Roles**) allows you
+to create or modify roles.
 
 !!! note "`ipf-checker` Role"
 
@@ -21,25 +22,24 @@ The **Roles** page allows you to create or modify roles.
 
    ![Add role button](roles/roles_table.png)
 
-2. Fill out the **Add role** form -- set a name, description, and select
-   policies -- and click **Save**:
+2. Set a role name, description, select policies, and click **Save**:
 
    ![Add role form](roles/roles_add.png)
 
 ## List of Roles
 
-The **Roles** table lists all roles including their details and allows you to
-**modify** or **delete** them _(except the built-in **admin** and
-**ipf-checker** roles which cannot be modified nor deleted)_.
+The `Roles` table lists all roles, including their details, and allows you to
+**modify** or **delete** them _(except for the built-in **admin** and
+**ipf-checker** roles, which cannot be modified nor deleted)_.
 
 ![Roles table](roles/roles_table.png)
 
 ## Edit Role
 
 1. To modify the details of a role, click the **Edit** icon next to it in the
-   **Roles** table:
+   `Roles` table:
 
-   ![Roles table - edit](roles/roles_table_edit.png)
+   ![Roles table - Edit icon](roles/roles_table_edit.png)
 
 2. Update the data in the **Edit role** form and click **Save**:
 
@@ -47,9 +47,9 @@ The **Roles** table lists all roles including their details and allows you to
 
 ## Copy Role
 
-1. To copy a role, click the **Copy** icon next to it in the **Roles** table:
+1. To copy a role, click the **Copy** icon next to it in the `Roles` table:
 
-   ![Roles table - copy](roles/roles_table_copy.png)
+   ![Roles table - Copy icon](roles/roles_table_copy.png)
 
 2. Update the data in the **Copy role** form and click **Save**:
 
@@ -57,11 +57,10 @@ The **Roles** table lists all roles including their details and allows you to
 
 ## Delete Role
 
-1. To delete a role, click the **Delete** icon next to it in the **Roles**
-   table:
+1. To delete a role, click the **Delete** icon next to it in the `Roles` table:
 
-   ![Roles table - delete](roles/roles_table_delete.png)
+   ![Roles table - Delete icon](roles/roles_table_delete.png)
 
-2. Click **Delete** to confirm the action:
+2. To confirm the action, click **Delete**:
 
-   ![Confirm deletion](roles/roles_table_delete_confirm.png)
+   ![Role will be removed dialog](roles/roles_table_delete_confirm.png)
