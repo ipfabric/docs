@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information how to add CA certificates to IP Fabric.">
+        <meta name="description" content="This section contains information on how to add CA certificates to IP Fabric.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Certification Authorities - IP Fabric Documentation Portal</title>
+        <title>Certificate Authorities - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Certification Authorities - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information how to add CA certificates to IP Fabric." />
+<meta property="og:title" content="Certificate Authorities - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This section contains information on how to add CA certificates to IP Fabric." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/ca.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/system/ca/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Certification Authorities - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information how to add CA certificates to IP Fabric." />
+<meta property="twitter:title" content="Certificate Authorities - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This section contains information on how to add CA certificates to IP Fabric." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/ca.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#certification-authorities" class="md-skip">
+        <a href="#certificate-authorities" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Certification Authorities
+              Certificate Authorities
             
           </span>
         </div>
@@ -5263,7 +5263,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Certification Authorities
+    Certificate Authorities
   
 
     
@@ -5280,7 +5280,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Certification Authorities
+    Certificate Authorities
   
 
     
@@ -5309,12 +5309,12 @@ documentation.
   <a href="#adding-a-custom-certificate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding a custom certificate
+        Adding a Custom Certificate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding a custom certificate">
+    <nav class="md-nav" aria-label="Adding a Custom Certificate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5337,7 +5337,7 @@ documentation.
   <a href="#deleting-a-custom-certificate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deleting a custom certificate
+        Deleting a Custom Certificate
       
     </span>
   </a>
@@ -12377,12 +12377,12 @@ documentation.
   <a href="#adding-a-custom-certificate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adding a custom certificate
+        Adding a Custom Certificate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding a custom certificate">
+    <nav class="md-nav" aria-label="Adding a Custom Certificate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -12405,7 +12405,7 @@ documentation.
   <a href="#deleting-a-custom-certificate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deleting a custom certificate
+        Deleting a Custom Certificate
       
     </span>
   </a>
@@ -12484,23 +12484,23 @@ documentation.
   
 
 
-<h1 id="certification-authorities">Certification Authorities</h1>
-<p>Before version <code>6.0</code>, IP Fabric used the CA bundle shipped with <code>node.js</code>. This
+<h1 id="certificate-authorities">Certificate Authorities</h1>
+<p>Before version <code>6.0</code>, IP Fabric used the CA bundle shipped with Node.js. This
 led to confusion as system utilities were not aware of new certificates.</p>
-<p>Since version <code>6.0</code>, we have switched to global cert store trusted by <code>openssl</code>.
-Internally, this is achieved by passing <code>--use-openssl-ca</code> to <code>node.js</code>.</p>
-<h2 id="adding-a-custom-certificate">Adding a custom certificate</h2>
+<p>Since version <code>6.0</code>, we have switched to global cert store trusted by OpenSSL.
+Internally, this is achieved by passing <code>--use-openssl-ca</code> to Node.js.</p>
+<h2 id="adding-a-custom-certificate">Adding a Custom Certificate</h2>
 <p>You can add a certificate by placing its <code>.crt</code> file in the
 <code>/usr/local/share/ca-certificates</code> directory and running the following command:</p>
 <div class="highlight"><pre><span></span><code>update-ca-certificates
 </code></pre></div>
-<p>We recommend creating a subdirectory in case you are going to add multiple
-certificates:</p>
+<p>If you are going to add multiple certificates, we recommend creating a
+subdirectory:</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/usr/local/share/ca-certificates/my_custom_ca
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The certificate has to be in PEM format with <code>.crt</code> extension. Files with
+<p>The certificate must be in PEM format with a <code>.crt</code> extension. Files with
 other extensions are omitted.</p>
 </div>
 <p>After placing the certificate in the directory, you will need to run the
@@ -12512,15 +12512,16 @@ Running<span class="w"> </span>hooks<span class="w"> </span><span class="k">in</
 <span class="k">done</span>.
 </code></pre></div>
 <h3 id="converting-to-crt">Converting to <code>.crt</code></h3>
-<p><code>.crt</code> is nothing more than a PEM certificate with a custom extension.
-If you need to convert your certificate, you can use the <code>openssl</code> command-line
-tool to do so:</p>
+<p><code>.crt</code> is nothing more than a PEM certificate with a custom extension. If you
+need to convert your certificate, you can use the <code>openssl</code> command-line tool to
+do so:</p>
 <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>my_custom_ca.der<span class="w"> </span>-out<span class="w"> </span>/usr/local/share/ca-certificates/my_custom_ca.crt
 </code></pre></div>
 <p><code>openssl</code> is typically pretty good at guessing the input format.</p>
-<h2 id="deleting-a-custom-certificate">Deleting a custom certificate</h2>
+<h2 id="deleting-a-custom-certificate">Deleting a Custom Certificate</h2>
 <ol>
-<li>Remove relevant files/subdirectories from <code>/usr/local/share/ca-certificates</code>.</li>
+<li>Remove the relevant files/subdirectories from
+   <code>/usr/local/share/ca-certificates</code>.</li>
 <li>Run <code>update-ca-certificates</code>.</li>
 </ol>
 
@@ -12543,7 +12544,7 @@ tool to do so:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2024</span>
   </span>
 
     

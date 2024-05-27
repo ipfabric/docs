@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements in regards to certificates.">
+        <meta name="description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="IPF Certificates - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements in regards to certificates." />
+<meta property="og:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/ipf_cert.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/system/ipf_cert/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="IPF Certificates - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements in regards to certificates." />
+<meta property="twitter:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/system/ipf_cert.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -5254,7 +5254,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Certification Authorities
+    Certificate Authorities
   
 
     
@@ -5381,7 +5381,7 @@ documentation.
   <a href="#generate-csr-with-special-characters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Generate CSR with Special Characters
+        Generate CSR With Special Characters
       
     </span>
   </a>
@@ -12466,7 +12466,7 @@ documentation.
   <a href="#generate-csr-with-special-characters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Generate CSR with Special Characters
+        Generate CSR With Special Characters
       
     </span>
   </a>
@@ -12575,17 +12575,17 @@ documentation.
 <h1 id="ipf-certificates">IPF Certificates</h1>
 <p>You are accessing the IP Fabric GUI using a secure TLS connection. A self-signed
 server certificate is automatically generated during the IP Fabric deployment.
-But by the nature of SSL/TLS, the self-signed server certificate cannot be
+However, due to the nature of SSL/TLS, the self-signed server certificate cannot be
 trusted &ndash; as indicated in an SSL/TLS error in the web browser (for example,
 <code>NET::ERR_CERT_AUTHORITY_INVALID</code> in Google Chrome).</p>
-<p>We recommend you replace the self-signed server certificate with your own
+<p>We recommend that you replace the self-signed server certificate with your own
 server certificate signed by a trusted certificate authority.</p>
 <p>Usually, the server certificate replacement can be handled via <strong>Settings &rarr;
 System &rarr; IPF Certificates</strong> and consists of the following steps:</p>
 <ol>
-<li>generate a CSR (certificate signing request)</li>
-<li>sign the generated CSR with a trusted certificate authority</li>
-<li>upload the signed server certificate</li>
+<li>Generate a CSR (Certificate Signing Request).</li>
+<li>Sign the generated CSR with a trusted certificate authority.</li>
+<li>Upload the signed server certificate.</li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -12595,22 +12595,22 @@ IP Fabric with <strong>Settings &rarr; System &rarr; IPF Certificates &rarr; U
 used as IP Fabric&rsquo;s server certificate.</p>
 </div>
 <p>In the <a href="#miscellaneous">Miscellaneous</a> section, we also describe how to handle
-some special requirements in regard to certificates &ndash; when <strong>Settings &rarr;
+some special requirements regarding certificates &ndash; when <strong>Settings &rarr;
 System &rarr; IPF Certificates</strong> on its own is not sufficient.</p>
 <h2 id="generate-csr-certificate-signing-request">Generate CSR (Certificate Signing Request)</h2>
 <div class="admonition note">
 <p class="admonition-title">Subject Alternative Name</p>
 <p>Short Subject Alternative Names (only hostnames without a domain name) are
-not accepted by all CAs (certificate authorities). To remove it from the
+not accepted by all CAs (Certificate Authorities). To remove it from the
 CSR, switch off the <strong>Include DNS short name in CSR SAN</strong> toggle.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Only some characters allowed in fields</p>
-<p>The fields <strong>Organization name</strong>, <strong>Department</strong>, <strong>City</strong>,
+<p class="admonition-title">Only Some Characters Are Allowed in Fields</p>
+<p>The fields <strong>Organization name</strong>, <strong>Department</strong>, <strong>City</strong>, and
 <strong>State / Province</strong> must match the following regular expression:
 <code>/^[A-Za-z0-9.,\/_@%^:=+ -]*$/</code></p>
 <ul>
-<li>it must contain only these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>.,/_@%^:=+ -</code></li>
+<li>They must contain only these characters: <code>A-Z</code> <code>a-z</code> <code>0-9</code> <code>.,/_@%^:=+ -</code></li>
 </ul>
 <p>This is for security reasons.</p>
 <p>If this is too restrictive, please follow the instructions in
@@ -12624,8 +12624,8 @@ CSR, switch off the <strong>Include DNS short name in CSR SAN</strong> toggle.<
 <li>A file called <code>nimpee.csr</code> will be downloaded.</li>
 </ol>
 <h2 id="sign-generated-csr">Sign Generated CSR</h2>
-<p>This step depends on the vendor and version of your certificate authority. So
-please check the vendor&rsquo;s documentation.</p>
+<p>This step depends on the vendor and version of your certificate authority.
+Therefore, please check the vendor&rsquo;s documentation.</p>
 <h2 id="upload-signed-server-certificate">Upload Signed Server Certificate</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -12633,7 +12633,7 @@ please check the vendor&rsquo;s documentation.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Only a certificate that was created by signing the most-recent CSR can be
+<p>Only a certificate that was created by signing the most recent CSR can be
 uploaded to IP Fabric! If you generate another CSR before uploading the
 certificate created from the previously generated CSR, the certificate will
 not be applied.</p>
@@ -12658,19 +12658,19 @@ in the final certificate uploaded to IP Fabric in one continuous file:</p>
 <li>Go to <strong>Settings &rarr; System &rarr; IPF Certificates</strong>.</li>
 <li>Click <strong>Upload</strong> (in the top-right corner).</li>
 <li><strong>Drag and drop</strong> the new certificate or use <strong>Select file</strong> to upload it.</li>
-<li>While the new certificate is being installed, the IP Fabric GUI can be
+<li>While the new certificate is being installed, the IP Fabric GUI may be
    unresponsive for a few seconds.</li>
 <li>Refresh the IP Fabric GUI in your browser.</li>
 </ol>
 <h2 id="miscellaneous">Miscellaneous</h2>
-<h3 id="generate-csr-with-special-characters">Generate CSR with Special Characters</h3>
+<h3 id="generate-csr-with-special-characters">Generate CSR With Special Characters</h3>
 <p>Let&rsquo;s consider an example where we enter <code>Test Company with &amp;</code> (please note that
 the character <code>&amp;</code> is not allowed) as the <strong>Organization name</strong>. After filling in
 the remaining fields, when we click <strong>Generate</strong>, an <code>Invalid Input</code> error will
 be displayed.</p>
 <p><a class="glightbox" href="create_a_csr_invalid_input.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generate a CSR - Invalid Input" src="create_a_csr_invalid_input.png" /></a></p>
-<p>If any special characters are required in any of the mentioned fields, you may
-use the following steps:</p>
+<p>If any special characters are required in any of the mentioned fields, follow
+these steps:</p>
 <ol>
 <li>
 <p>Fill out the <strong>Create a CSR (Certificate Signing Request)</strong> form, but avoid
@@ -12681,8 +12681,8 @@ use the following steps:</p>
 <li>
 <p>Click <strong>Generate</strong>.</p>
 <ul>
-<li>In the browser, a file called <code>nimpee.csr</code> will be downloaded - please do
-  not use this file.</li>
+<li>In your browser, a file called <code>nimpee.csr</code> will be downloaded. <strong>Please do
+  not use this file.</strong></li>
 <li>The files <code>customer.conf</code>, <code>customer.key</code>, and <code>customer.csr</code> will be
   generated in the directory <code>/opt/nimpee/conf.d/ssl-cust</code> on the IP Fabric
   appliance. It&rsquo;s important to note that <code>customer.csr</code> will be identical to
@@ -12703,7 +12703,7 @@ use the following steps:</p>
 </code></pre></div>
 </li>
 <li>
-<p>Remove <code>customer.key</code> and <code>customer.csr</code> (will be re-generated in step 8):</p>
+<p>Remove <code>customer.key</code> and <code>customer.csr</code> (they will be re-generated in step 8):</p>
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>customer.key<span class="w"> </span>customer.csr
 </code></pre></div>
 </li>
@@ -12770,8 +12770,10 @@ certificate chain, do the following:</p>
    itself:</p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s1">&#39;CERTIFICATE&#39;</span><span class="w"> </span>server.crt
 </code></pre></div>
-<p>(the command should return only one pair of <code>-----BEGIN CERTIFICATE-----</code> and
- <code>-----END CERTIFICATE-----</code>)</p>
+<ul>
+<li>The command should return only one pair of <code>-----BEGIN CERTIFICATE-----</code>
+   and <code>-----END CERTIFICATE-----</code>.</li>
+</ul>
 </li>
 <li>
 <p>Make a backup of <code>server.crt</code>:</p>
@@ -12789,7 +12791,7 @@ certificate chain, do the following:</p>
 <p>Open the IP Fabric GUI in your browser.</p>
 </li>
 <li>
-<p>Click the <strong>lock</strong> icon in the browser’s address bar and download the
+<p>Click the <strong>Lock</strong> icon in the browser&rsquo;s address bar and download the
     entire certificate chain:</p>
 <p>Google Chrome: <strong>Connection is secure &rarr; Certificate is valid &rarr; Details
   &rarr; Export&hellip; &rarr; Base64-encoded ASCII, certificate chain</strong></p>
@@ -12842,7 +12844,7 @@ certificate chain, do the following:</p>
 </li>
 </ol>
 <h3 id="add-custom-ssl-certificate">Add Custom SSL Certificate</h3>
-<p>In case you require a custom SSL certificate (prepared completely outside IP
+<p>If you require a custom SSL certificate (prepared completely outside IP
 Fabric) and cannot use <strong>Settings &rarr; System &rarr; IPF Certificates</strong>, follow this
 guide to replace the self-signed certificate manually.</p>
 <div class="admonition important">
@@ -12853,7 +12855,7 @@ certificate&rsquo;s <code>Subject</code> or <code>Common Name</code> is not suff
 </div>
 <ol>
 <li>
-<p>Log in to the IP Fabric CLI as <code>osadmin</code>.</p>
+<p>Log in to the IP Fabric CLI as the <code>osadmin</code> user.</p>
 </li>
 <li>
 <p>Change to <code>root</code>:</p>
@@ -12873,14 +12875,14 @@ mv<span class="w"> </span>server.key<span class="w"> </span>server.key.bkp
 </li>
 <li>
 <p>Upload the new certificate chain and private key to the <code>/etc/nginx/ssl/</code>
-   directory</p>
+   directory.</p>
 <ol>
-<li>They have to have the same names as those previous ones &ndash; <code>server.crt</code>
-    and <code>server.key</code></li>
+<li>They must have the same names as those previous ones &ndash; <code>server.crt</code>
+    and <code>server.key</code>.</li>
 <li><code>server.crt</code> needs to contain the new SSL certificate and full certificate
-    chain in PEM format</li>
+    chain in PEM format.</li>
 <li><code>server.key</code> needs to contain the new SSL certificate&rsquo;s private key in
-    decrypted PEM format</li>
+    decrypted PEM format.</li>
 </ol>
 </li>
 <li>
@@ -12928,7 +12930,7 @@ certificate.</p>
 </li>
 <li>
 <p>Verify that the new certificate works correctly by visiting the IP Fabric
-    main GUI in the browser.</p>
+    main GUI in your browser.</p>
 </li>
 </ol>
 
@@ -12951,7 +12953,7 @@ certificate.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2024</span>
   </span>
 
     
@@ -13029,7 +13031,7 @@ certificate.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ca/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Certification Authorities">
+          <a href="../ca/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Certificate Authorities">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -13039,7 +13041,7 @@ certificate.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Certification Authorities
+                Certificate Authorities
               </div>
             </div>
           </a>
