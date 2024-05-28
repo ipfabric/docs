@@ -111,8 +111,8 @@ appropriate backups, and are comfortable doing so.
 1. Go to <https://gist.github.com/sbiffi/11256316>.
 2. Download the `putty.reg` file.
 3. In `putty.reg`, edit the path to PuTTY if it differs from `C:\Program Files (x86)\putty.exe`.
-4. Download `putty.bat` (save it to `C:\putty.bat` or change this path in `putty.reg` above).
-5. In `putty.bat`, edit the path to PuTTY if it differs from `C:\Program Files (x86)\putty.exe`.
+4. Download `putty.vbs` (save it to `C:\putty.vbs` or change this path in `putty.reg` above).
+5. In `putty.vbs`, edit the path to PuTTY if it differs from `C:\Program Files (x86)\putty.exe`.
 6. Launch `putty.reg` to associate `ssh://` and `telnet://` to this script.
 
 ### SecureCRT
