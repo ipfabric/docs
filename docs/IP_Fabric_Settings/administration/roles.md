@@ -1,5 +1,5 @@
 ---
-description: This section contains information about RBAC roles to which you can assign policies, and then assign those roles to IP Fabric users.
+description: This section contains information about RBAC roles, to which you can assign policies and then assign those roles to IP Fabric users.
 ---
 
 # Roles

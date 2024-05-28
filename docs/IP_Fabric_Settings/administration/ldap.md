@@ -174,7 +174,7 @@ user`:
 !!! warning "Primary User Groups Are Not Supported"
 
     It is recommended to create new
-    LDAP groups (such as `IP_FABRIC_ADMINISTRATORS`, `IP_FABRIC_USERS`,etc.) and
+    LDAP groups (such as `IP_FABRIC_ADMINISTRATORS`, `IP_FABRIC_USERS`, etc.) and
     assign them permissions.
 
 ## Disable LDAP Authentication
@@ -191,13 +191,13 @@ typically result in an `LDAP Search Failed` error being shown.
 Please be aware that due to security concerns, all LDAP errors regarding server
 connection and user binding are returned as `LDAP as provided is not reachable`.
 
-Before contacting our Support team, please make sure that the information
+Before contacting our Support team, please make sure that the information you
 entered in the IP Fabric GUI is correct.
 
 ### Using `ldapsearch` To Verify LDAP Configuration
 
 You can use the `ldapsearch` command-line utility to independently query LDAP
-servers. `ldapsearch` is present on the IP Fabric appliance (access it via SSH)
+servers. `ldapsearch` is present on the IP Fabric appliance (access it via SSH),
 or it can be installed locally as part of the `ldap-utils` Linux package. It is
 recommended to **always test the LDAP configuration from the IP Fabric
 appliance** to rule out connectivity issues.
@@ -218,7 +218,7 @@ The exit code of the command above is zero if `ldapsearch` was able to establish
 a connection and bind. It will ask for a bind password interactively. An LDAP
 search/filter query can be added to the end of the previous example code.
 
-```text title="Search for a Concrete User Account"
+```text title="Search for a Specific User Account"
 (uid=$LOGIN_INPUT)
 (|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
 ```

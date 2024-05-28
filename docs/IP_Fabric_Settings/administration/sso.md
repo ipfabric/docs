@@ -36,9 +36,9 @@ sequenceDiagram
 
 !!! warning "Complex Configuration"
 
-    Implementation of SSO configuration can be complex, and because of that, it
-    is recommended to have it configured by your Solution Architect. If you are
-    unsure who your Solution Architect is, please contact our Support team.
+    Configuring SSO can be a complex task. Due to that, it is recommended to
+    have it configured by your Solution Architect. If you are unsure who your
+    Solution Architect is, please contact our Support team.
 
 ## Requirements
 
@@ -57,9 +57,8 @@ in [IPF Certificates](../system/ipf_cert.md).
 
 ### CLI Access
 
-To make changes to certain files, you must have access to the `osadmin`
-account to log in to the CLI and gain root access. For more information, please
-see the
+To make changes to certain files, you must log in to the IP Fabric CLI as the
+`osadmin` user and gain `root` access. For more information, please see the
 [CLI Overview](../../System_Administration/Command_Line_Interface/index.md).
 
 ```bash
@@ -117,9 +116,9 @@ changed. Below is a full example of the `api.json` config file:
 
 !!! note "`roleName`"
 
-    In IP Fabric version `6.1.0`, the ability to use `roleName` in the SSO
-    configuration was added. For consistency and human readablility, it is
-    recommended to switch from using `roleId` to `roleName`.
+    In IP Fabric version `6.1.0`, we added the option to use `roleName` in the
+    SSO configuration. For consistency and human readability, we recommend
+    switching from `roleId` to `roleName`.
 
 ??? example "JSON Validation"
 

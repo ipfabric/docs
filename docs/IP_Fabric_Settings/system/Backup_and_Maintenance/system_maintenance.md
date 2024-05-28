@@ -14,10 +14,10 @@ day.
 Even though the process is very quick, we recommend performing it when no one is
 working with IP Fabric, as the platform is not available during maintenance.
 
-If the IP Fabric GUI is accessed during maintenance, the following message is
-shown:
+If you access the IP Fabric GUI during maintenance, you will see the `We'll be
+back soon!` message:
 
-![System Maintenance message](system_maintenance/system_maintenance_message.png)
+![System Maintenance message](system_maintenance/system_maintenance_message.gif)
 
 Sometimes, it is necessary to run maintenance manually; this can be done with
 the **Start Maintenance** button:

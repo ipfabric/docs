@@ -29,7 +29,7 @@ reachable, it returns a bad status code, or the delivery times out), IP Fabric
 tries to deliver the webhook payload again 1, 2, 5, and 10 minutes
 after the initial delivery. If IP Fabric cannot deliver the webhook in
 these five attempts, it gives up. All delivery attempts are recorded in
-the webhook's delivery history (in the webhook's edit view).
+the webhook's delivery history (in the webhook's **Edit** view).
 
 ## Payload Hash
 

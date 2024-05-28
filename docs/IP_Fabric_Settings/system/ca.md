@@ -7,8 +7,8 @@ description: This section contains information on how to add CA certificates to 
 Before version `6.0`, IP Fabric used the CA bundle shipped with Node.js. This
 led to confusion as system utilities were not aware of new certificates.
 
-Since version `6.0`, we have switched to global cert store trusted by OpenSSL.
-Internally, this is achieved by passing `--use-openssl-ca` to Node.js.
+Since version `6.0`, we have switched to the global certificate store trusted by
+OpenSSL. Internally, this is achieved by passing `--use-openssl-ca` to Node.js.
 
 ## Adding a Custom Certificate
 

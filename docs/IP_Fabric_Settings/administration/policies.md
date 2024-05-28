@@ -4,7 +4,7 @@ description: This section contains information about RBAC policies, how they wor
 
 # Policies
 
-**Policies** contain sets either of **attributes** or **endpoints**.
+**Policies** contain sets of either **attributes** or **endpoints**.
 
 **Attributes scope** defines devices that are available to end users. Access is
 defined by a specific attribute such as `siteName`.

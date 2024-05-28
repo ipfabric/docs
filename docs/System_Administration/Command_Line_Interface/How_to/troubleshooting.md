@@ -448,4 +448,4 @@ df -i
 The IP Fabric VM can be also rebooted or shutdown using CLI.
 
 - For rebooting the VM, use the `reboot` command.
-- For shutting down the VM, use the `shutdown -h now` command.
+- For shutting down the VM, use the `poweroff` command.

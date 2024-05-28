@@ -8,7 +8,7 @@ The IP Fabric appliance can be monitored using the SNMP protocol. CPU, memory,
 hard drives, and network interfaces can be monitored. The IP Fabric appliance
 uses standard Linux OS OIDs.
 
-To enable SNMP in IP Fabric, go to **Settings --> System --> SNMP**, click the
+To enable SNMP in IP Fabric, go to **Settings --> System --> SNMP**, enable the
 **on/off** toggle, and select `2c` or `3` from the **Version** list:
 
 ![SNMP](snmp/enable_snmp.png)

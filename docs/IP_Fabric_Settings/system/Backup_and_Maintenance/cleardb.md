@@ -1,5 +1,5 @@
 ---
-description: In rare cases, it might be necessary to delete and recreate the IP Fabric database.
+description: This section describes how to clear the IP Fabric database, which might be necessary in some rare cases.
 ---
 
 # Clear DB
@@ -17,8 +17,8 @@ description: In rare cases, it might be necessary to delete and recreate the IP 
     swap.
 
 In rare cases, it might be necessary to delete and recreate the IP Fabric
-database. Go to **Settings --> System --> Backup & Maintenance** and click
-**Clear DB**.
+database. To do that, navigate to **Settings --> System --> Backup &
+Maintenance** and click **Clear DB**.
 
 When running Clear DB, all loaded snapshots are automatically unloaded, and the
 database recreated.
