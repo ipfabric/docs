@@ -2,7 +2,7 @@
 description: This page describes known issues with Fortinet and how to fix them.
 ---
 
-# Fortinet
+# Overview
 
 ## FortiGate
 
@@ -27,11 +27,11 @@ Follow these steps:
 3. Fill in a name and set all permissions to Read (you can do it by clicking
    **Set All** dropdown menu). The only exception is **System --> Maintenance**
    permission, which must be set to **Read/Write** (especially if VDOMs are
-   enabled). See the picture below from FortiOS versions 6.0 and 7.0:
+   enabled). See the screenshots below from FortiOS versions 6.0 and 7.0:
 
-   ![Admin Profile, FortiOS 6.0](fortinet/fortios-60-admin-profile.png "Admin Profile, FortiOS 6.0")
+   ![Admin Profile, FortiOS 6.0](fortios-60-admin-profile.png "Admin Profile, FortiOS 6.0")
 
-   ![Admin Profile, FortiOS 7.0](fortinet/fortios-70-admin-profile.png "Admin Profile, FortiOS 7.0")
+   ![Admin Profile, FortiOS 7.0](fortios-70-admin-profile.png "Admin Profile, FortiOS 7.0")
 
 !!! note
 
