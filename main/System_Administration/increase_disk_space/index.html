@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The appliance disk space can be extended by extending an existing virtual disk or by adding a new empty virtual disk to the IP Fabric VM.">
+        <meta name="description" content="This section describes how to increase disk space on the IP Fabric appliance. It also details how to add a local backup disk, increase its size, or remove it.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Server Disk Space Summary - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The appliance disk space can be extended by extending an existing virtual disk or by adding a new empty virtual disk to the IP Fabric VM." />
+<meta property="og:description" content="This section describes how to increase disk space on the IP Fabric appliance. It also details how to add a local backup disk, increase its size, or remove it." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/increase_disk_space.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/increase_disk_space/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Server Disk Space Summary - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The appliance disk space can be extended by extending an existing virtual disk or by adding a new empty virtual disk to the IP Fabric VM." />
+<meta property="twitter:description" content="This section describes how to increase disk space on the IP Fabric appliance. It also details how to add a local backup disk, increase its size, or remove it." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/increase_disk_space.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -5642,10 +5642,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instructions-to-mount-a-physical-disk-to-backup-directory" class="md-nav__link">
+  <a href="#instructions-to-mount-a-physical-disk-to-the-backup-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions To Mount a Physical Disk To /backup Directory
+        Instructions To Mount a Physical Disk to the /backup Directory
       
     </span>
   </a>
@@ -12703,10 +12703,10 @@ documentation.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instructions-to-mount-a-physical-disk-to-backup-directory" class="md-nav__link">
+  <a href="#instructions-to-mount-a-physical-disk-to-the-backup-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instructions To Mount a Physical Disk To /backup Directory
+        Instructions To Mount a Physical Disk to the /backup Directory
       
     </span>
   </a>
@@ -12861,58 +12861,70 @@ documentation.
 
 
 <h1 id="server-disk-space-summary">Server Disk Space Summary</h1>
-<p>Starting with version <code>5.0.0</code>, the IP Fabric appliance deploys as a single hard disk installation instead of two disk volumes.</p>
-<p>The IP Fabric appliance is using LVM type for the <strong>root</strong> and <strong>swap</strong> partitions. On a default installation, <strong>swap</strong> has 16 GB, and <strong>root</strong> has ~72 GB of disk space.</p>
+<p>Starting with version <code>5.0.0</code>, the IP Fabric appliance deploys as a single hard
+disk installation instead of two disk volumes.</p>
+<p>The IP Fabric appliance uses LVM for the <strong>root</strong> and <strong>swap</strong> partitions. In a
+default installation, <strong>swap</strong> has 16 GB, and <strong>root</strong> has approximately 72 GB
+of disk space.</p>
 <p>We automatically resize the <strong>boot</strong> disk as follows:</p>
-<ul>
-<li>resize primary partition to full size of the disk</li>
-<li>resize extended partition to full size of primary partition</li>
-<li>extend <code>ipfabric-vg/root</code> to <code>+100%FREE</code></li>
-<li>online resize <code>ext4</code> partition</li>
-</ul>
-<h2 id="increasing-disk-space-on-ip-fabric-appliance">Increasing Disk Space on IP Fabric Appliance</h2>
-<p>If you need any help with disk space expansion, please contact our <a href="../../support/">Support team</a>.</p>
-<h3 id="resizing-rootfirst-disk">Resizing Root/First Disk</h3>
-<p>The easiest way how to resize the IP Fabric system disk is to:</p>
 <ol>
-<li>
-<p>Shutdown the VM.</p>
-</li>
-<li>
-<p>Resize the root/first disk to a desired size.</p>
-</li>
-<li>
-<p>Start the VM.</p>
-</li>
+<li>Resize the primary partition to the full size of the disk.</li>
+<li>Resize the extended partition to the full size of the primary partition.</li>
+<li>Extend <code>ipfabric-vg/root</code> to <code>+100%FREE</code>.</li>
+<li>Online resize the <code>ext4</code> partition.</li>
+</ol>
+<h2 id="increasing-disk-space-on-ip-fabric-appliance">Increasing Disk Space on IP Fabric Appliance</h2>
+<p>If you need any help with disk space expansion, please contact our
+<a href="../../support/">Support team</a>.</p>
+<h3 id="resizing-rootfirst-disk">Resizing Root/First Disk</h3>
+<p>The easiest way to resize the IP Fabric system disk is to:</p>
+<ol>
+<li>Shutdown the VM.</li>
+<li>Resize the root/first disk to the desired size.</li>
+<li>Start the VM.</li>
 </ol>
 <p><code>cloud-init</code> will take care of resizing the disk.</p>
 <h3 id="expanding-system-volume-by-adding-additional-disks">Expanding System Volume by Adding Additional Disk(s)</h3>
-<p>If you want to add a secondary or any additional disk as a system disk, you will need to manually add it to the <code>ipfabric-vg/root</code> volume.</p>
-<p>To do that, follow LVM resources:</p>
+<p>If you want to add a secondary or any additional disk as a system disk, you will
+need to manually add it to the <code>ipfabric-vg/root</code> volume.</p>
+<p>To do that, follow these LVM resources:</p>
 <ul>
-<li><a href="https://wiki.debian.org/LVM">Debian LVM wiki</a></li>
-<li><a href="https://wiki.archlinux.org/title/LVM">Arch LVM wiki</a></li>
+<li><a href="https://wiki.debian.org/LVM">Debian Wiki &ndash; LVM</a></li>
+<li><a href="https://wiki.archlinux.org/title/LVM">ArchWiki &ndash; LVM</a></li>
 </ul>
 <h2 id="local-backup-disk">Local Backup Disk</h2>
 <div class="admonition note">
 <p class="admonition-title">Backup Disk</p>
-<p>Backup disk is not present by default! Please add a new virtual disk to enable local backups.</p>
+<p>The backup disk is not present by default! To enable local backups, please
+add a new virtual disk.</p>
 </div>
-<p>When enabling local backups, a <a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/">backup</a> tool creates backups to the <code>/backup</code> directory.
-The tool first checks if the local backup directory exists and then the backups are created.</p>
-<p>Any additional disk (see hypervisor-specific configuration at the bottom of this page) can be mounted as the backup directory. We recommend using an additional disk located on a different datastore than the <code>root</code> volume for the local backups.</p>
+<p>When enabling local backups, a
+<a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/">backup</a>
+tool creates backups in the <code>/backup</code> directory. The tool first checks if the
+local backup directory exists, and then the backups are created.</p>
+<p>Any additional disk (see the hypervisor-specific configurations at the bottom of
+this page) can be mounted as the backup directory. For local backups, we
+recommend using an additional disk located on a different datastore than the
+<code>root</code> volume.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The backup disk must be partitioned with LVM. Specifically, the <code>/backup</code> directory must be on the logical volume <code>backup</code> of the volume group <code>backup-vg</code>.</p>
+<p>The backup disk must be partitioned with LVM. Specifically, the <code>/backup</code>
+directory must be on the logical volume <code>backup</code> of the volume group
+<code>backup-vg</code>.</p>
 </div>
-<h3 id="instructions-to-mount-a-physical-disk-to-backup-directory">Instructions To Mount a Physical Disk To <code>/backup</code> Directory</h3>
+<h3 id="instructions-to-mount-a-physical-disk-to-the-backup-directory">Instructions To Mount a Physical Disk to the <code>/backup</code> Directory</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the <code>lsblk</code> command. In the following steps 2 and 3, we will use <code>vdb</code> as an example of a backup disk name. If your backup disk has a different name, please replace <code>vdb</code> with the correct name in steps 2 and 3.</p>
+<p>Depending on your system, the name of your backup disk may vary. To find out
+the name of your backup disk, you can use the <code>lsblk</code> command. In the
+following steps 2 and 3, we will use <code>vdb</code> as an example of a backup disk
+name. If your backup disk has a different name, please replace <code>vdb</code> with
+the correct name in steps 2 and 3.</p>
 </div>
 <ol>
 <li>
-<p>Find a device which you want to use as the <code>/backup</code> directory. In this case, <code>vdb</code>.</p>
+<p>Find a device which you want to use as the <code>/backup</code> directory. In this case,
+   <code>vdb</code>.</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
 NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
 vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
@@ -12925,7 +12937,7 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Create LVM physical volume on the disk <code>vdb</code>:</p>
+<p>Create an LVM physical volume on the disk <code>vdb</code>:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>pvcreate<span class="w"> </span>/dev/vdb
 <span class="w">  </span>Physical<span class="w"> </span>volume<span class="w"> </span><span class="s2">&quot;/dev/vdb&quot;</span><span class="w"> </span>successfully<span class="w"> </span>created.
 </code></pre></div>
@@ -12937,13 +12949,14 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Use the entire size of the volume group <code>backup-vg</code> for creating the logical volume <code>backup</code>:</p>
+<p>Use the entire size of the volume group <code>backup-vg</code> to create the logical
+   volume <code>backup</code>:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>lvcreate<span class="w"> </span>-n<span class="w"> </span>backup<span class="w"> </span>-l<span class="w"> </span><span class="m">100</span>%FREE<span class="w"> </span>backup-vg
 <span class="w">  </span>Logical<span class="w"> </span>volume<span class="w"> </span><span class="s2">&quot;backup&quot;</span><span class="w"> </span>created.
 </code></pre></div>
 </li>
 <li>
-<p>Create a filesystem (in this example <code>ext4</code>) on the logical volume <code>backup</code>:</p>
+<p>Create a filesystem (in this example, <code>ext4</code>) on the logical volume <code>backup</code>:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/mapper/backup--vg-backup
 mke2fs<span class="w"> </span><span class="m">1</span>.46.2<span class="w"> </span><span class="o">(</span><span class="m">28</span>-Feb-2021<span class="o">)</span>
 Discarding<span class="w"> </span>device<span class="w"> </span>blocks:<span class="w"> </span><span class="k">done</span>
@@ -12960,10 +12973,11 @@ Writing<span class="w"> </span>superblocks<span class="w"> </span>and<span class
 </code></pre></div>
 </li>
 <li>
-<p>Create a new <a href="https://wiki.archlinux.org/title/fstab">fstab</a> entry (for example with <code>sudo vi /etc/fstab</code>):</p>
+<p>Create a new <a href="https://wiki.archlinux.org/title/fstab">fstab</a> entry (for example, using <code>sudo vi /etc/fstab</code>):</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>We strongly recommend only LVM partition, LABEL and UUID in <code>fstab</code>, for more info see
+<p>We strongly recommend using only LVM partition LABELs and UUIDs in
+<code>fstab</code>. For more information, see
 <a href="https://wiki.archlinux.org/title/Persistent_block_device_naming">Persistent block device naming</a>.</p>
 <div class="highlight"><pre><span></span><code>/dev/mapper/backup--vg-backup<span class="w">   </span>/backup<span class="w">   </span>ext4<span class="w">   </span>defaults<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span>
 </code></pre></div>
@@ -12975,7 +12989,7 @@ Writing<span class="w"> </span>superblocks<span class="w"> </span>and<span class
 </code></pre></div>
 </li>
 <li>
-<p>The logical volume <code>backup</code> can be now mounted with:</p>
+<p>The logical volume <code>backup</code> can now be mounted with:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>/backup
 </code></pre></div>
 </li>
@@ -12997,15 +13011,21 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 <h3 id="increase-size-of-backup-disk">Increase Size of Backup Disk</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the <code>lsblk</code> command. In the following step 5, we will use <code>vdb</code> as an example of a backup disk name. If your backup disk has a different name, please replace <code>vdb</code> with the correct name in step 5.</p>
+<p>Depending on your system, the name of your backup disk may vary. To find out
+the name of your backup disk, you can use the <code>lsblk</code> command. In the
+following step 6, we will use <code>vdb</code> as an example of a backup disk name. If
+your backup disk has a different name, please replace <code>vdb</code> with the correct
+name in step 6.</p>
 </div>
-<p>Suppose you prepared a backup disk with size of 20 GB with the instructions above and you would like to increase its size (for example to 40 GB).</p>
+<p>Suppose you prepared a backup disk with size of 20 GB with the instructions
+above, and you would like to increase its size (for example, to 40 GB).</p>
 <ol>
 <li>
 <p>Shutdown the IP Fabric appliance.</p>
 </li>
 <li>
-<p>Increase the backup disk&rsquo;s size at the VM-level (for example to 40 GB).</p>
+<p>Increase the backup disk&rsquo;s size at the hypervisor level (for example, to 40
+   GB).</p>
 </li>
 <li>
 <p>Start the IP Fabric appliance.</p>
@@ -13014,7 +13034,8 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 <p>Log in to the CLI as the <code>osadmin</code> user.</p>
 </li>
 <li>
-<p>Check the status with <code>lsblk</code> &ndash; notice that the disk <code>vdb</code> in this case has 40 GB, but the LVM logical volume <code>backup</code> still has only 20 GB:</p>
+<p>Check the status with <code>lsblk</code> &ndash; notice that the disk <code>vdb</code> in this case has
+   40 GB, but the LVM logical volume <code>backup</code> still has only 20 GB:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
 NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
 vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w"> </span>
@@ -13065,7 +13086,7 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Also check the size of the filesystem:</p>
+<p>Also, check the size of the filesystem:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>df<span class="w"> </span>-h<span class="w"> </span>/backup
 Filesystem<span class="w">                     </span>Size<span class="w">  </span>Used<span class="w"> </span>Avail<span class="w"> </span>Use%<span class="w"> </span>Mounted<span class="w"> </span>on
 /dev/mapper/backup--vg-backup<span class="w">   </span>40G<span class="w">   </span>19M<span class="w">   </span>38G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/backup
@@ -13079,9 +13100,14 @@ Filesystem<span class="w">                     </span>Size<span class="w">  </sp
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The name of your backup disk may vary depending on your system. To find out the name of your backup disk, you can use the <code>lsblk</code> command. In the following step 6, we will use <code>vdb</code> as an example of a backup disk name. If your backup disk has a different name, please replace <code>vdb</code> with the correct name in step 6.</p>
+<p>Depending on your system, the name of your backup disk may vary. To find out
+the name of your backup disk, you can use the <code>lsblk</code> command. In the
+following step 6, we will use <code>vdb</code> as an example of a backup disk name. If
+your backup disk has a different name, please replace <code>vdb</code> with the correct
+name in step 6.</p>
 </div>
-<p>Suppose you have a backup disk prepared with the instructions above and now you would like to remove it.</p>
+<p>Suppose you have a backup disk prepared with the instructions above, and now you
+would like to remove it.</p>
 <ol>
 <li>
 <p>Find the backup disk you want to remove. In this case, <code>vdb</code>.</p>
@@ -13098,7 +13124,7 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Remove the <code>fstab</code> entry (for example, with <code>sudo vi /etc/fstab</code>):</p>
+<p>Remove the <code>fstab</code> entry (for example, using <code>sudo vi /etc/fstab</code>):</p>
 <div class="highlight"><pre><span></span><code>/dev/mapper/backup--vg-backup<span class="w">   </span>/backup<span class="w">   </span>ext4<span class="w">   </span>defaults<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span>
 </code></pre></div>
 </li>
@@ -13108,7 +13134,8 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Disable and remove the LVM logical volume <code>backup</code> (you may check the <code>sudo lvdisplay</code> outputs before and after running the commands):</p>
+<p>Disable and remove the LVM logical volume <code>backup</code> (you may check the <code>sudo
+   lvdisplay</code> outputs before and after running the commands):</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>lvchange<span class="w"> </span>-an<span class="w"> </span>/dev/backup-vg/backup
 
 osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>lvremove<span class="w"> </span>/dev/backup-vg/backup
@@ -13116,7 +13143,8 @@ osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>lvremove<
 </code></pre></div>
 </li>
 <li>
-<p>Disable and remove the LVM volume group <code>backup-vg</code> (you may check the <code>sudo vgdisplay</code> outputs before and after running the commands):</p>
+<p>Disable and remove the LVM volume group <code>backup-vg</code> (you may check the <code>sudo
+   vgdisplay</code> outputs before and after running the commands):</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>vgchange<span class="w"> </span>-an<span class="w"> </span>backup-vg
 <span class="w">  </span><span class="m">0</span><span class="w"> </span>logical<span class="w"> </span>volume<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>volume<span class="w"> </span>group<span class="w"> </span><span class="s2">&quot;backup-vg&quot;</span><span class="w"> </span>now<span class="w"> </span>active
 
@@ -13125,7 +13153,8 @@ osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>vgremove<
 </code></pre></div>
 </li>
 <li>
-<p>Remove the LVM physical volume on the disk <code>vdb</code> (you may check the <code>sudo pvdisplay</code> outputs before and after running the command):</p>
+<p>Remove the LVM physical volume on the disk <code>vdb</code> (you may check the <code>sudo
+   pvdisplay</code> outputs before and after running the command):</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>sudo<span class="w"> </span>pvremove<span class="w"> </span>/dev/vdb
 <span class="w">  </span>Labels<span class="w"> </span>on<span class="w"> </span>physical<span class="w"> </span>volume<span class="w"> </span><span class="s2">&quot;/dev/vdb&quot;</span><span class="w"> </span>successfully<span class="w"> </span>wiped.
 </code></pre></div>
@@ -13144,7 +13173,7 @@ vdb<span class="w">                     </span><span class="m">254</span>:16<spa
 </code></pre></div>
 </li>
 <li>
-<p>Shut down the IP Fabric VM.</p>
+<p>Shutdown the IP Fabric VM.</p>
 </li>
 <li>
 <p>Remove the disk <code>vdb</code> from the VM at the hypervisor level.</p>
@@ -13166,19 +13195,28 @@ vda<span class="w">                     </span><span class="m">254</span>:0<span
 </li>
 </ol>
 <h2 id="deprecated-resize-wizard">Deprecated Resize Wizard</h2>
-<p>IP Fabric appliance with version lower than <code>5.0</code> was using two LVM volumes by default. <code>ipfabric-vg/root</code> for system and data, <code>backup-vg/backup</code> for <code>/backup</code>.
-The system and data volume was extended over two disks (usually first two). For additional drives, you could choose to extend the <em>root</em> or <em>backup</em> volume. This option was discontinued in favor of one system/data disk with the possibility of adding a backup disk.
-The original script is still present in the system, but we discourage to use it as it expects only the boot disk to be <code>sda</code>, <code>sdb</code> as extended <code>ipfabic-vg/root</code>, and you could choose how <code>sd[c-z]</code> would be used. The new approach with one disk is more versatile and is not limited to <code>sd[a-z]</code> disks.</p>
+<p>The IP Fabric appliance with a version lower than <code>5.0</code> used two LVM volumes by
+default: <code>ipfabric-vg/root</code> for system and data, and <code>backup-vg/backup</code> for
+<code>/backup</code>.</p>
+<p>The system and data volume was extended over two disks (usually the first two).
+For additional disks, you could choose to extend the <em>root</em> or <em>backup</em> volume.
+This option was discontinued in favor of one system/data disk with the
+possibility of adding a backup disk.</p>
+<p>The original script is still present in the system, but we discourage its use as
+it expects only the boot disk to be <code>sda</code>, <code>sdb</code> as extended <code>ipfabic-vg/root</code>,
+and you could choose how <code>sd[c-z]</code> would be used. The new approach with one disk
+is more versatile and is not limited to <code>sd[a-z]</code> disks.</p>
 <div class="admonition error">
-<p class="admonition-title">Deprecated script</p>
-<p>This script should not be used anymore. You should run it only when you know what you are doing.</p>
+<p class="admonition-title">Deprecated Script</p>
+<p>This script should not be used anymore. You should run it only when you know
+what you are doing.</p>
 </div>
 <p>Script location: <code>/opt/nimpee/sys-lvm-resize.sh</code></p>
 <h2 id="increase-disk-space-for-vmware">Increase Disk Space for VMware</h2>
 <h3 id="extend-existing-virtual-disk-for-system-and-data">Extend Existing Virtual Disk (for System and Data)</h3>
 <ol>
 <li>Open the VMware vSphere web console.</li>
-<li>Right click the VM name and select <strong>Edit Settings</strong>.</li>
+<li>Right-click the VM name and select <strong>Edit Settings</strong>.</li>
 <li>Select <strong>Hard disk</strong> and change its size.</li>
 <li>Click <strong>OK</strong>.</li>
 <li>Restart the VM (using CLI or web UI).</li>
@@ -13187,62 +13225,66 @@ The original script is still present in the system, but we discourage to use it 
 <h3 id="add-new-virtual-disk-as-an-additional-backup-disk">Add New Virtual Disk (as an Additional Backup Disk)</h3>
 <ol>
 <li>Open the VMware vSphere web console.</li>
-<li>Right click the VM name and select <strong>Edit Settings</strong>.</li>
-<li>Click <strong>Add New Device &rarr; Hard Disk</strong>.</li>
-<li>Select new size.</li>
-<li>Specify <strong>Location</strong>:<ol>
-<li>for system disk expansion, it is recommended to select <strong>Store with
-    the virtual machine</strong></li>
-<li>for backup volume, it is recommended to select a different datastore
-    ideally on a different physical storage</li>
+<li>Right-click the VM name and select <strong>Edit Settings</strong>.</li>
+<li>Click <strong>Add New Device &rarr; New Hard disk</strong>.</li>
+<li>Specify the size.</li>
+<li>Specify the <strong>Location</strong>:<ol>
+<li>For system disk expansion, it is recommended to select <code>Store with the
+    virtual machine</code>.</li>
+<li>For the backup volume, it is recommended to select a different datastore,
+    ideally on different physical storage.</li>
 </ol>
 </li>
 <li>Click <strong>OK</strong>.
    <a class="glightbox" href="../vmware_virtual_hardware.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware virtual hardware" src="../vmware_virtual_hardware.png" /></a></li>
 <li>Launch the Remote (Web) Console.</li>
-<li>Reboot (the <strong>Send Ctrl+Alt+Delete</strong> function can be also used) or power on the IP
-   Fabric VM.</li>
-<li>Follow <a href="#expanding-system-volume-by-adding-additional-disks">Adding additional disk(s)</a>
-   or <a href="#instructions-to-mount-a-physical-disk-to-backup-directory">Example adding disk to backup</a>.</li>
+<li>Reboot (the <strong>Send Ctrl+Alt+Delete</strong> function can be also used) or power on
+   the IP Fabric VM.</li>
+<li>Follow
+   <a href="#expanding-system-volume-by-adding-additional-disks">Adding additional disk(s)</a>
+   or
+   <a href="#instructions-to-mount-a-physical-disk-to-the-backup-directory">Example adding disk to backup</a>.</li>
 </ol>
 <h2 id="increase-disk-space-for-hyper-v">Increase Disk Space for Hyper-V</h2>
 <h3 id="extend-existing-virtual-disk-for-system-and-data_1">Extend Existing Virtual Disk (for System and Data)</h3>
 <ol>
 <li>Open Hyper-V Manager.</li>
-<li>Shutdown the VM. (When Started, Hyper-V won&rsquo;t let you change any
-    hardware settings.)</li>
-<li>Right click the VM name and select <strong>Settings</strong>.</li>
-<li>Select <strong>IDE Controller - Hard Drive -
-    ipfabric-x-x-x-disk1.vhdx</strong>.</li>
-<li>Click <strong>Edit</strong> - <strong>Choose Action</strong> - select option <strong>Expand</strong>,
-    click <strong>Next</strong>.</li>
+<li>Shutdown the VM. (When started, Hyper-V won&rsquo;t let you change any hardware
+   settings.)</li>
+<li>Right-click the VM name and select <strong>Settings</strong>.</li>
+<li>Select <strong>IDE Controller &rarr; Hard Drive &rarr; ipfabric-x-x-x-disk1.vhdx</strong>.</li>
+<li>Click <strong>Edit</strong> &ndash; <strong>Choose Action</strong> &ndash; select the option <strong>Expand</strong>, click
+   <strong>Next</strong>.</li>
 <li>Set up the required disk size and click <strong>Finish</strong>.</li>
 <li>Start the VM.</li>
-<li>The disk space is automatically increased, if you resized the first disk.</li>
+<li>The disk space is automatically increased if you resized the first disk.</li>
 </ol>
 <h3 id="add-new-virtual-disk-as-an-additional-backup-disk_1">Add New Virtual Disk (as an Additional Backup Disk)</h3>
 <ol>
 <li>Open Hyper-V Manager.</li>
-<li>Shutdown the VM. (When Started, HyperV won&rsquo;t let you change any
-   hardware settings.)</li>
-<li>Right click the VM name and select <strong>Settings</strong>.
-   <a class="glightbox" href="../hyperv_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV settings" src="../hyperv_settings.png" /></a></li>
-<li>Select IDE Controller 1 - Hard Drive - click <strong>Add</strong>.
-   <a class="glightbox" href="../hyperv_add_hdd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Add hard drive" src="../hyperv_add_hdd.png" /></a></li>
-<li>Select <strong>Virtual hard disk</strong> - click <strong>New</strong> - select <strong>Choose
-   Disk Format</strong> - select <strong>VHDX</strong> - click <strong>Next</strong>.
-   <a class="glightbox" href="../hyperv_add_hdd_format.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Add hard drive - format" src="../hyperv_add_hdd_format.png" /></a></li>
-<li>Select <strong>Dynamically expanding</strong> - click <strong>Next</strong>
-   <a class="glightbox" href="../hyperv_add_hdd_type.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Add hard drive - type" src="../hyperv_add_hdd_type.png" /></a></li>
-<li>Specify name and location of disk.</li>
-<li><strong>Configure Disk</strong> - select <strong>Create a new blank virtual hard
-   disk</strong> - change <strong>Size</strong> to required value - click
+<li>Shutdown the VM. (When started, Hyper-V won&rsquo;t let you change any hardware
+   settings.)</li>
+<li>Right-click the VM name and select <strong>Settings</strong>.
+   <a class="glightbox" href="../hyperv_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V settings" src="../hyperv_settings.png" /></a></li>
+<li>Select <strong>IDE Controller 1 &rarr; Hard Drive</strong> and click <strong>Add</strong>.
+   <a class="glightbox" href="../hyperv_add_hdd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V Add hard drive" src="../hyperv_add_hdd.png" /></a></li>
+<li>Select <strong>Virtual hard disk</strong> and click <strong>New</strong>. In the <code>Choose Disk Format</code>
+   step, select <strong>VHDX</strong> and click <strong>Next</strong>.
+   <a class="glightbox" href="../hyperv_add_hdd_format.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V Add hard drive - format" src="../hyperv_add_hdd_format.png" /></a></li>
+<li>In the <code>Choose Disk Type</code> step, select <strong>Dynamically expanding</strong> and click
+   <strong>Next</strong>.
+   <a class="glightbox" href="../hyperv_add_hdd_type.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V Add hard drive - type" src="../hyperv_add_hdd_type.png" /></a></li>
+<li>Specify the name and location of the disk and click <strong>Next</strong>.</li>
+<li>In the <code>Configure Disk</code> step, select <strong>Create a new blank virtual hard
+   disk</strong>, change the <strong>Size</strong> to the required value, and click
    <strong>Finish</strong>.
-   <a class="glightbox" href="../hyperv_add_hdd_space.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HyperV Add hard drive - space" src="../hyperv_add_hdd_space.png" /></a></li>
-<li>Apply the new disk the on Settings window - close <strong>Settings</strong>.</li>
+   <a class="glightbox" href="../hyperv_add_hdd_space.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V Add hard drive - space" src="../hyperv_add_hdd_space.png" /></a></li>
+<li>Apply the new disk in the <strong>Settings</strong> window and close <strong>Settings</strong>.</li>
 <li>Start the VM.</li>
-<li>Follow <a href="#expanding-system-volume-by-adding-additional-disks">Adding additional disk(s)</a>
-    or <a href="#instructions-to-mount-a-physical-disk-to-backup-directory">Example adding disk to backup</a>.</li>
+<li>Follow
+    <a href="#expanding-system-volume-by-adding-additional-disks">Adding additional disk(s)</a>
+    or
+    <a href="#instructions-to-mount-a-physical-disk-to-the-backup-directory">Example adding disk to backup</a>.</li>
 </ol>
 
 
@@ -13264,7 +13306,7 @@ The original script is still present in the system, but we discourage to use it 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2024</span>
   </span>
 
     
