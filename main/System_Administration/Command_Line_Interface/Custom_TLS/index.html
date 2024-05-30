@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information how to re-enable TLS older than `v1.3`.">
+        <meta name="description" content="This section describes how to re-enable TLS (Transport Layer Security) versions older than 1.3.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal</title>
+        <title>Custom TLS Settings - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information how to re-enable TLS older than `v1.3`." />
+<meta property="og:title" content="Custom TLS Settings - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This section describes how to re-enable TLS (Transport Layer Security) versions older than 1.3." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/Custom_TLS.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/Custom_TLS/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Custom Transport Layer Security (TLS) Settings - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information how to re-enable TLS older than `v1.3`." />
+<meta property="twitter:title" content="Custom TLS Settings - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This section describes how to re-enable TLS (Transport Layer Security) versions older than 1.3." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/Custom_TLS.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custom-transport-layer-security-tls-settings" class="md-skip">
+        <a href="#custom-tls-settings" class="md-skip">
           Skip to content
         </a>
       
@@ -125,14 +125,14 @@
             
 
 <div class="admonition warning">
-<p class="admonition-title">Unreleased content!</p>
+<p class="admonition-title">Unreleased Content!</p>
 You are viewing a build based on the latest commit on the <code>main</code>
 branch. This means that the content of this site is subject to change. In your
 production deployment, some features may behave differently than described
 here.
 
-<br/>Please visit <a href="/latest">/latest</a> for the latest released
-documentation.
+<br/>For the latest released documentation, please visit
+<a href="/latest">/latest</a>.
 </div>
 
           </div>
@@ -169,7 +169,7 @@ documentation.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Custom Transport Layer Security (TLS) Settings
+              Custom TLS Settings
             
           </span>
         </div>
@@ -5652,7 +5652,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Custom Transport Layer Security (TLS) Settings
+    Custom TLS Settings
   
 
     
@@ -5669,7 +5669,7 @@ documentation.
   <span class="md-ellipsis">
     
   
-    Custom Transport Layer Security (TLS) Settings
+    Custom TLS Settings
   
 
     
@@ -5695,10 +5695,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-re-enable-tlsv1x" class="md-nav__link">
+  <a href="#how-to-re-enable-older-tls-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Re-Enable TLSv1.X
+        How To Re-Enable Older TLS Version
       
     </span>
   </a>
@@ -12496,10 +12496,10 @@ documentation.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-re-enable-tlsv1x" class="md-nav__link">
+  <a href="#how-to-re-enable-older-tls-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Re-Enable TLSv1.X
+        How To Re-Enable Older TLS Version
       
     </span>
   </a>
@@ -12589,29 +12589,41 @@ documentation.
   
 
 
-<h1 id="custom-transport-layer-security-tls-settings">Custom Transport Layer Security (TLS) Settings</h1>
-<p>Since IP Fabric <code>5.0</code>, by default, the only supported TLS version is <code>v1.3</code>. TLS 1.3 brings many improvements over TLS 1.2, such as stronger encryption, simplified handshake, perfect forward secrecy, fewer round trips, and improved performance. Some older web browsers or proxies may not support the latest version and older TLS version will need to be re-enabled in IP Fabric.</p>
-<p>For example, <a href="https://docs.splunk.com/Documentation/Splunk/9.0.1/Security/SetyourSSLversion">Splunk</a>
-does not currently support <code>TLSv1.3</code>, meaning any integration between these systems may not be operational without re-enabling an older TLS version.</p>
+<h1 id="custom-tls-settings">Custom TLS Settings</h1>
+<p>Since IP Fabric <code>5.0</code>, the only TLS (Transport Layer Security) version supported
+by default is <code>1.3</code>. TLSv1.3 brings many improvements over TLSv1.2, such as
+stronger encryption, a simplified handshake, perfect forward secrecy, fewer
+round trips, and improved performance. Some older web browsers or proxies may
+not support the latest version, and older TLS version may need to be re-enabled
+in IP Fabric.</p>
+<p>For example,
+<a href="https://docs.splunk.com/Documentation/Splunk/9.0.1/Security/SetyourSSLversion">Splunk</a>
+does not currently support TLSv1.3, meaning that any integration between these
+systems may not be operational without re-enabling an older TLS version.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Any action on the command-line interface (CLI) using the <code>root</code>, <code>osadmin</code>, or <code>autoboss</code> account may cause irreversible detrimental changes to the product. Actions taken without direct communication with the IP Fabric Support or Solution Architect teams can render the system unusable.</p>
+<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
+or <code>autoboss</code> account may cause irreversible, detrimental changes to the
+product. Actions taken without direct communication with the IP Fabric
+Support or Solution Architect teams can render the system unusable.</p>
 </div>
-<h2 id="how-to-re-enable-tlsv1x">How to Re-Enable TLSv1.X</h2>
-<p>To re-enable an older version of TLS, please perform the following:</p>
+<h2 id="how-to-re-enable-older-tls-version">How To Re-Enable Older TLS Version</h2>
+<p>To re-enable an older version of TLS, follow these steps:</p>
 <ol>
-<li>Log in to the IP Fabric CLI using the <code>osadmin</code> user.</li>
-<li>Switch to root using the <code>sudo su root</code> command.</li>
-<li>Edit the TLS config file <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with your preferred editor.</li>
-<li>Modify the first line of the configuration file by adding other TLS versions separated by spaces:<ol>
+<li>Log in to the IP Fabric CLI as the <code>osadmin</code> user.</li>
+<li>Switch to <code>root</code>: <code>sudo su -</code></li>
+<li>Edit the TLS configuration file <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with
+   your preferred editor.</li>
+<li>Modify the first line of the configuration file by adding other TLS versions
+   separated by spaces:<ol>
 <li>Original: <code>ssl_protocols TLSv1.3;</code></li>
 <li>Updated: <code>ssl_protocols TLSv1.2 TLSv1.3;</code></li>
 </ol>
 </li>
-<li>Save the file and restart the <code>nginx</code> service using <code>systemctl restart nginx</code>.</li>
-<li>Make sure that nginx is reactivated with <code>systemctl status nginx</code></li>
+<li>Save the file and restart the <code>nginx</code> service: <code>systemctl restart nginx</code>.</li>
+<li>Make sure that <code>nginx</code> is reactivated: <code>systemctl status nginx</code></li>
 </ol>
-<p>Confirming the <code>nginx</code>status after restart</p>
+<p>Confirming the <code>nginx</code> status after restart:</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
@@ -12628,7 +12640,7 @@ does not currently support <code>TLSv1.3</code>, meaning any integration between
 <span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/nginx.service
 <span class="w">             </span>├─244199<span class="w"> </span>nginx:<span class="w"> </span>master<span class="w"> </span>process<span class="w"> </span>/usr/sbin/nginx<span class="w"> </span>-g<span class="w"> </span>daemon<span class="w"> </span>on<span class="p">;</span><span class="w"> </span>master_process<span class="w"> </span>on<span class="p">;</span>
 </code></pre></div>
-<p>Updated file to support TLSv1.2<code>/etc/nginx/conf.d/ipf-ssl-params.conf</code></p>
+<p>Updated <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> file to support TLSv1.2:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span>ssl_protocols<span class="w"> </span>TLSv1.2<span class="w"> </span>TLSv1.3<span class="p">;</span>
 <span class="w">    </span>ssl_prefer_server_ciphers<span class="w"> </span>on<span class="p">;</span>
 <span class="w">    </span>ssl_ciphers<span class="w"> </span>EECDH+AESGCM:EDH+AESGCM<span class="p">;</span>
@@ -12641,26 +12653,35 @@ does not currently support <code>TLSv1.3</code>, meaning any integration between
 <span class="w">    </span>gzip<span class="w"> </span>off<span class="p">;</span>
 </code></pre></div>
 <div class="admonition warning">
-<p class="admonition-title">File changes during IP Fabric upgrade</p>
-<p>The TLS config file will not sustain any changes during the system upgrade. This is because the main configuration file is part of the system image and is overwritten when the upgrade is applied. Therefore, saving any desired changes in a separate configuration file is important before running the upgrade.</p>
+<p class="admonition-title">File Changes During IP Fabric Upgrade</p>
+<p>During a system upgrade, the TLS configuration file will not sustain any
+changes. This is because the main configuration file is part of the system
+image and is overwritten when the upgrade is applied. Therefore, it is
+important to save any desired changes in a separate file before proceeding
+with the upgrade.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Other TLS Settings</p>
-<p>It is possible to adjust other TLS settings, such as ciphers, using the instructions above. However, only re-enabling TLSv1.2 has been tested by the Solution Architect team.</p>
+<p>It is possible to adjust other TLS settings, such as ciphers, using the
+instructions above. However, only re-enabling TLSv1.2 has been tested by the
+Solution Architect team.</p>
 </div>
 <h2 id="after-ip-fabric-system-upgrade">After IP Fabric System Upgrade</h2>
-<p>After an IP Fabric system upgrade, it is recommended to check that no new updates to this file have been made. Because the user has customized the file, the update will not override it and instead create a new file with the updated version.</p>
-<p>Below you will find an example on how to check if a new version of the
+<p>After an IP Fabric system upgrade, we recommend to check that no new updates to
+this file have been made. Because the user has customized the file, the update
+will not override it and instead create a new file with the updated version.</p>
+<p>Below, you will find an example of how to check if a new version of the
 configuration file is added and how to perform a diff. If changes other than
-your own have been discovered, please make the necessary updates and
-restart the <code>nginx</code> service.</p>
+your own have been discovered, please make the necessary updates and restart the
+<code>nginx</code> service.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/etc/nginx/conf.d/<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>ls<span class="w"> </span>/etc/nginx/conf.d/<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">300</span><span class="w"> </span>Nov<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">21</span>:01<span class="w"> </span>ipf-ssl-params.conf
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">292</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">13</span>:17<span class="w"> </span>ipf-ssl-params.conf.29865.2022-11-02@21:01:39~
 </code></pre></div>
-<p>There are two SSL config files in the output above. To see which one is being used by Nginx, run:</p>
+<p>In the output above, there are two TLS configuration files. To see which one is
+being used by <code>nginx</code>, run:</p>
 <div class="highlight"><pre><span></span><code>nginx<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>nginx<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
@@ -12672,7 +12693,8 @@ nginx:<span class="w"> </span>the<span class="w"> </span>configuration<span clas
 nginx:<span class="w"> </span>configuration<span class="w"> </span>file<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="nb">test</span><span class="w"> </span>is<span class="w"> </span>successful
 <span class="c1"># configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:                                                  gzip off;</span>
 </code></pre></div>
-<p>Based on the output above, the configuration file in use is <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code>.</p>
+<p>Based on the output above, the configuration file in use is
+<code>/etc/nginx/conf.d/ipf-ssl-params.conf</code>.</p>
 
 
 
@@ -12693,7 +12715,7 @@ nginx:<span class="w"> </span>configuration<span class="w"> </span>file<span cla
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2024</span>
   </span>
 
     
