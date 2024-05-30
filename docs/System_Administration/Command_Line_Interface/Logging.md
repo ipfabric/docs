@@ -1,98 +1,119 @@
 ---
-description: This section contains information about different logs IP Fabric keeps and where you can find them.
+description: This section describes the various logs that IP Fabric keeps and where you can find them.
 ---
 
 # Understanding System Logs
 
-System logs are important because they provide a record of all activities that have occurred on a system. They can be used to track core system or snapshot activity and help with troubleshooting issues. 
+System logs are important because they provide a record of all activities that
+have occurred on the system. They can be used to track core system or snapshot
+activity and help with troubleshooting issues.
 
 ## System Logs
 
-System logs are stored in the `/var/log` directory. The `osadmin` user has access to these sub-directories:
+System logs are stored in the `/var/log` directory. The `osadmin` user has
+access to these sub-directories:
 
-```shell
-/var/log/syslog*                               - all service and system logs
-/var/log/arangodb3/*                           - ArangoDB related logs
-/var/log/nginx/*                               - NGINX related logs
-/var/log/redis/*                               - REDIS related logs
-/var/log/rabbitmq/*                            - RabbitMQ related logs
-```
+| Files                  | Description                 |
+| :--------------------- | :-------------------------- |
+| `/var/log/syslog*`     | All service and system logs |
+| `/var/log/arangodb3/*` | ArangoDB-related logs       |
+| `/var/log/nginx/*`     | nginx-related logs          |
+| `/var/log/redis/*`     | Redis-related logs          |
+| `/var/log/rabbitmq/*`  | RabbitMQ-related logs       |
 
 ## Service Logs
 
-Service logs for IP Fabric services are stored in the `/var/log/nimpee` directory:
+Service logs for IP Fabric services are stored in the `/var/log/nimpee`
+directory:
 
-```shell
-/var/log/nimpee/api-errors.log                      - API error logs
-/var/log/nimpee/api.log                             - all API logs including error logs
-/var/log/nimpee/migrate/                            - DB migrate logs
-/var/log/nimpee/net-config.log                      - Boot wizard related logs
-/var/log/nimpee/net-jumphost-*.log                  - Logs related to a specific jumphost service
-/var/log/nimpee/sys-lvm-resize.log                  - Logs for automatic HDD resize
-/var/log/nimpee/net-shaping-newshape.log            - Discovery bandwidth control logs
-/var/log/nimpee/support-vpn.log                     - Support VPN related logs
-/var/log/nimpee/sys-arangodb-dump.log               - ArangoDB dump logs
-/var/log/nimpee/sys-backup-duplicity.log            - Logs for backup services
-/var/log/nimpee/duplicity/sys-duplicity-*.log       - Detailed logs for each backup session
-/var/log/nimpee/sys-certificate.log                 - SSL certificates related logs
-/var/log/nimpee/sys-install.log                     - Logs related to IP Fabric installation
-/var/log/nimpee/sys-service-autorestart.log         - Logs related to service auto restart
-/var/log/nimpee/sys-techsupport.log                 - Techsupport related logs
-/var/log/nimpee/sys-update.log                      - IP Fabric new version update logs
-/var/log/nimpee/webhook-worker-errors.log           - webhook errors logs
-/var/log/nimpee/webhook-worker.log                  - webhook worker logs
-/var/log/nimpee/frontend.log                        - web console errors (received by API)
-/var/log/nimpee/discovery/syslogWorker/*            - Configuration management logs
-```
+| File(s)                                         | Description                                 |
+| :---------------------------------------------- | :------------------------------------------ |
+| `/var/log/nimpee/api-errors.log`                | API error logs                              |
+| `/var/log/nimpee/api.log`                       | All API logs, including error logs          |
+| `/var/log/nimpee/migrate/`                      | Database migration logs                     |
+| `/var/log/nimpee/net-config.log`                | First Boot Wizard-related logs              |
+| `/var/log/nimpee/net-jumphost-*.log`            | Logs related to a specific jumphost service |
+| `/var/log/nimpee/sys-lvm-resize.log`            | Logs for automatic hard disk resize         |
+| `/var/log/nimpee/net-shaping-newshape.log`      | Discovery bandwidth control logs            |
+| `/var/log/nimpee/support-vpn.log`               | Support VPN-related logs                    |
+| `/var/log/nimpee/sys-arangodb-dump.log`         | ArangoDB dump logs                          |
+| `/var/log/nimpee/sys-backup-duplicity.log`      | Logs for backup services                    |
+| `/var/log/nimpee/duplicity/sys-duplicity-*.log` | Detailed logs for each backup session       |
+| `/var/log/nimpee/sys-certificate.log`           | SSL certificate-related logs      b         |
+| `/var/log/nimpee/sys-install.log`               | Logs related to IP Fabric installation      |
+| `/var/log/nimpee/sys-service-autorestart.log`   | Logs related to service auto restart        |
+| `/var/log/nimpee/sys-techsupport.log`           | Techsupport-related logs                    |
+| `/var/log/nimpee/sys-update.log`                | IP Fabric new version update logs           |
+| `/var/log/nimpee/webhook-worker-errors.log`     | Webhook error logs                          |
+| `/var/log/nimpee/webhook-worker.log`            | webhook worker logs                         |
+| `/var/log/nimpee/frontend.log`                  | Web console errors (received by API)        |
+| `/var/log/nimpee/discovery/syslogWorker/*`      | Configuration management logs               |
 
 ## Snapshot Logs
 
-Snapshots are available in the `/home/autoboss/snapshots` directory. Each sub-directory represents one snapshot. Snapshot-related logs are in `/home/autoboss/snapshots/<id>/*`:
+Snapshots are stored in the `/home/autoboss/snapshots` directory. Each
+sub-directory represents one snapshot. Snapshot-related logs are in
+`/home/autoboss/snapshots/<id>/*`:
 
-```bash
-/home/autoboss/snapshots/<id>/*                     - snapshot related logs
-/home/autoboss/snapshots/<id>/cli/*                 - CLI logs collected during the disocvery
-/home/autoboss/snapshots/<id>/devices/*             - information about devices processed by IP Fabric from the CLI logs
-```
+| Files                                     | Description                                                        |
+| :---------------------------------------- | :----------------------------------------------------------------- |
+| `/home/autoboss/snapshots/<id>/*`         | Snapshot-related logs                                              |
+| `/home/autoboss/snapshots/<id>/cli/*`     | CLI logs collected during discovery                                |
+| `/home/autoboss/snapshots/<id>/devices/*` | Information about devices processed by IP Fabric from the CLI logs |
 
-Following 4 services - Networker, Tasker, Updater, Worker all log in two formats:
+The following 4 services -- Networker, Tasker, Updater, and Worker -- all log in
+two formats:
 
-```shell
-/home/autoboss/snapshots/<id>/services/<service>/all.txt          - simple text format, basic information
-/home/autoboss/snapshots/<id>/services/<service>/structured.json  - more detailed information in JSON Lines format
-```
+| File                                                               | Description                                      |
+| :----------------------------------------------------------------- | :----------------------------------------------- |
+| `/home/autoboss/snapshots/<id>/services/<service>/all.txt`         | Simple text format, basic information            |
+| `/home/autoboss/snapshots/<id>/services/<service>/structured.json` | More detailed information in `JSON Lines` format |
 
-Service folders and their descriptions:
+Service directories and their descriptions:
 
-```shell
-/home/autoboss/snapshots/<id>/services/networker/    - networker via traceroute looks for other possible next tasks for worker service
-/home/autoboss/snapshots/<id>/services/tasker/       - tasker prepares `vTask` records - connecting into (network) devices
-/home/autoboss/snapshots/<id>/services/updater/      - updater is transforming device JSON into DB
-/home/autoboss/snapshots/<id>/services/worker/       - worker does parsing
-```
+| Directory                                           | Description                                                                              |
+| :-------------------------------------------------- | :--------------------------------------------------------------------------------------- |
+| `/home/autoboss/snapshots/<id>/services/networker/` | Networker via `traceroute` looks for other possible next tasks for the `worker` service. |
+| `/home/autoboss/snapshots/<id>/services/tasker/`    | Tasker prepares `vTask` records -- connecting into (network) devices.                    |
+| `/home/autoboss/snapshots/<id>/services/updater/`   | Updater is transforming device JSONs into the database.                                  |
+| `/home/autoboss/snapshots/<id>/services/worker/`    | Worker does the parsing.                                                                 |
 
 ## Remote Syslog
 
-In IP Fabric version greater than `5.0.0`, it is possible to send logs to a remote collector. Here we will show a basic example using the default UDP port `514`. For more advanced examples (such as using TCP connection), please consult the [syslog-ng documentation](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide)
+In IP Fabric versions greater than `5.0.0`, it is possible to send logs to a
+remote collector. Here, we will show a basic example using the default UDP port
+`514`. For more advanced examples (such as using a TCP connection), please
+consult the
+[syslog-ng Administration Guide](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.26/administration-guide)
 
-!!! warning "Changes to `/etc/*.conf` files"
+!!! warning "Changes to `/etc/*.conf` Files"
 
-    It is important not to modify any `*.conf` files in the `/etc/` directory as this can cause issues during upgrades.
-    The recommended approach is to create a new file under the service's `conf.d` directory.
+    It is important not to modify any `*.conf` files in the `/etc/` directory,
+    as this can cause issues during upgrades.
+    
+    The recommended approach is to create a new file under the service's
+    `conf.d` directory.
 
 --8<-- "snippets/cli_root_access.md"
 
 ### Forwarding Syslog Messages
 
-1. Log in to the IP Fabric CLI with the `osadmin` user.
-2. Switch to root account using `sudo su` and enter the `osadmin` password.
-3. Create a new configuration file in the `/etc/syslog-ng/conf.d/` folder
+1. Log in to the IP Fabric CLI as the `osadmin` user.
+
+2. Switch to `root` (you will be asked to enter the `osadmin` password):
+
+   ```shell
+   sudo su -
+   ```
+
+3. Create a new configuration file in the `/etc/syslog-ng/conf.d/` directory:
 
     ```shell
     nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf`
     ```
 
-    The file name should be unique and must not conflict with other files in folder.
+    The file name should be unique and must not conflict with other files in the
+    directory:
 
     ```shell
     ls /etc/syslog-ng/conf.d/ -l
@@ -105,16 +126,17 @@ In IP Fabric version greater than `5.0.0`, it is possible to send logs to a remo
     -rw-r--r-- 1 root root 1414 Oct 11 13:31 ipfabric-log.conf
     ```
 
-4. Add the configuration options (replacing `<YOUR_IP>` with the IP of your syslog server)
+4. Add the configuration options (replace `<YOUR_IP>` with the IP address of
+   your syslog server):
 
-   1. Forwarding All Syslog Messages (including system messages):
+   1. Forwarding all syslog messages (including system messages):
 
       ```syslog-ng
       destination remote { network("<YOUR_IP>" transport("udp") port(514)); };
       log { source(s_src); destination(remote); };
       ```
 
-   2. Forwarding Only IP Fabric Syslog Messages:
+   2. Forwarding only IP Fabric syslog messages:
 
       ```syslog-ng
       destination remote { network("<YOUR_IP>" transport("udp") port(514)); };
@@ -129,13 +151,13 @@ In IP Fabric version greater than `5.0.0`, it is possible to send logs to a remo
 
 5. Save the file and exit.
 
-6. Restart syslog-ng.
+6. Restart the `syslog-ng` service:
 
     ```shell
     systemctl restart syslog-ng
     ```
 
-7. Confirm the `syslog-ng` service status.
+7. Confirm the `syslog-ng` service status:
 
     ```shell
     systemctl status syslog-ng
