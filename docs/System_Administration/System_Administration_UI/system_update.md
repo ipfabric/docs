@@ -28,12 +28,13 @@ IP Fabric backup, do the following:
 
 ## Online Update
 
-Online update is automatically available only when the IP Fabric appliance has connectivity to the servers below:
+Online update is automatically available only when the IP Fabric appliance has
+connectivity to the servers below:
 
-* `callhome.ipfabric.io` (`95.217.156.217`) remote port `443/tcp` for update
-  availability check
-* `releases.ipfabric.io` (`95.216.185.152`) remote port `443/tcp` for update
-  package download
+- `callhome.ipfabric.io` remote port `443/tcp` for update availability check
+- `releases.ipfabric.io` remote port `443/tcp` for update package download
+
+--8<-- "snippets/allowlist_fqdn.md"
 
 When a new IP Fabric version is available, a green indicator will appear in the
 top-right corner of the main GUI. The image below shows an example of the new
