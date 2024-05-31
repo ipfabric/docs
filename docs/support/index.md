@@ -32,10 +32,15 @@ This will be used by the Support team to recreate your issue and speed diagnosis
 
 ## Callhome
 
-If your IP Fabric instance has permissions to connect directly to the Internet (specifically to `callhome.ipfabric.io`), you can
-send our development team any diagnostic data related to parsing errors that may have occurred during your snapshot.
+If your IP Fabric instance has permissions to connect directly to the internet
+(specifically to `callhome.ipfabric.io` remote port `443/tcp`), you can send our
+development team any diagnostic data related to parsing errors that may have
+occurred during your network discovery.
 
-To send that diagnostic data to the IP Fabric team, select **Send Diagnostics** in the product's **Support** menu:
+--8<-- "snippets/allowlist_fqdn.md"
+
+To send that diagnostic data to the IP Fabric team, select **Send Diagnostics**
+in the product's **Support** menu:
 
 ![Diagnostics](diagnostics.png)
 

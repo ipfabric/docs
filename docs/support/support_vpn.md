@@ -7,13 +7,12 @@ description: This page describes the option to establish remote SSL VPN from the
 Starting with IP Fabric `1.0.3`, you can establish remote SSL VPN to IP Fabric's
 DC. Support VPN uses OpenVPN.
 
-!!! warning "Network Requirements"
+Support VPN requires access to `remote.ipfabric.io` remote port `443/tcp`. The
+IP Fabric appliance must be also configured with a functional DNS server.
 
-    Support VPN requires access to `remote.ipfabric.io` remote port `443/tcp`.
-    The IP Fabric appliance must be also configured with a functional DNS
-    server.
+--8<-- "snippets/allowlist_fqdn.md"
 
-    Connection through proxy servers should work, but it is not guaranteed.
+Connection through proxy servers should work, but it is not guaranteed.
 
 ## How to Establish Support VPN
 
