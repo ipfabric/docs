@@ -39,7 +39,7 @@ directory:
 | `/var/log/nimpee/sys-arangodb-dump.log`         | ArangoDB dump logs                          |
 | `/var/log/nimpee/sys-backup-duplicity.log`      | Logs for backup services                    |
 | `/var/log/nimpee/duplicity/sys-duplicity-*.log` | Detailed logs for each backup session       |
-| `/var/log/nimpee/sys-certificate.log`           | SSL certificate-related logs      b         |
+| `/var/log/nimpee/sys-certificate.log`           | SSL certificate-related logs                |
 | `/var/log/nimpee/sys-install.log`               | Logs related to IP Fabric installation      |
 | `/var/log/nimpee/sys-service-autorestart.log`   | Logs related to service auto restart        |
 | `/var/log/nimpee/sys-techsupport.log`           | Techsupport-related logs                    |
