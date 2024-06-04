@@ -346,7 +346,16 @@ guide to replace the self-signed certificate manually.
   2. intermediate certificate(s)
   3. root certificate
 
-7. Make sure that the new `server.key` has the same owner and group
+
+7. Make sure that the new `server.crt` has the same owner and group
+   (`root:root`) and permissions (`-rw-r--r--`) as the old one:
+
+   ```shell
+   chown root:root server.crt
+   chmod 0644 server.crt
+   ```
+
+8. Make sure that the new `server.key` has the same owner and group
    (`root:autoboss`) and permissions (`-rw-r-----`) as the old one:
 
    ```shell
@@ -354,7 +363,7 @@ guide to replace the self-signed certificate manually.
    chmod 0640 server.key
    ```
 
-8. Verify that the MD5 hashes for `server.crt` and `server.key` are identical:
+9. Verify that the MD5 hashes for `server.crt` and `server.key` are identical:
 
   !!! example
 
@@ -373,17 +382,17 @@ guide to replace the self-signed certificate manually.
       correct order and if the private key corresponds to the server
       certificate.
 
-9. Restart the `nginx` web server:
+10. Restart the `nginx` web server:
 
    ```shell
    systemctl restart nginx
    ```
 
-10. Check if the `nginx` web server is running:
+11. Check if the `nginx` web server is running:
 
     ```shell
     systemctl status nginx
     ```
 
-11. Verify that the new certificate works correctly by visiting the IP Fabric
+12. Verify that the new certificate works correctly by visiting the IP Fabric
     main GUI in your browser.
