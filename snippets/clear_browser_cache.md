@@ -4,7 +4,7 @@
     cache after each IP Fabric upgrade.
 
     The key combination for doing this depends on your operating system. In your
-    browser window with your IP Fabric appliance's URL opened, use one of the
+    browser window with your IP Fabric appliance's URL open, use one of the
     following key combinations:
 
     - Windows: `Ctrl` + `F5`

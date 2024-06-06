@@ -1,23 +1,22 @@
 ---
-description: On this page, we will explain the System status section of the System Administration interface.
+description: This page explains the System status section of the System Administration UI.
 ---
 
-# System status
+# System Status
 
-When you log in to the **System Administration** interface with the `osadmin`
-user, you will find yourself in the **System status** section. It displays
-information such as the current CPU load, RAM usage, HDD storage space, and the
-running services.
+When you log in to the **System Administration** UI with the `osadmin` user, you
+will find yourself in the **System status** section. It displays information
+such as the current CPU load, RAM usage, disk space usage, and the running
+services.
 
 The top system processes are also displayed.
 
 ![System status](system_status.png)
 
-Additionally, you can **restart** specific system services or
-**reboot/shutdown** the whole virtual machine.
+Additionally, you can **restart** specific system services or **restart / shut
+down** the entire virtual machine.
 
 !!! info
 
-    The Discovery process services (Tasker, Updater, Workers, Net Worker and
-    Scanner Workers) are not active when the there is no discovery process
-    running.
+    When no discovery process is running, its services (Tasker, Updater,
+    Workers, Net Worker, and Scanner Workers) are expected to be inactive.
