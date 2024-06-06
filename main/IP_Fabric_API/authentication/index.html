@@ -12876,7 +12876,7 @@ revoked, or expired.</p>
 <dd>
 <p>A refresh token expires 24 hours after not being used for the generation of a
 new access token. Refresh tokens must be stored securely by an application
-as it creates a new Access Token and allows access to the system.</p>
+as it creates a new access token and allows access to the system.</p>
 </dd>
 <dd>
 <p>Starting in IP Fabric version <code>6.1.0</code>, the <code>refreshToken</code> is rotated after 
@@ -12884,20 +12884,23 @@ every use, and a new one is issued.</p>
 </dd>
 </dl>
 <h3 id="token-api">Token API</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The token API is designed for secure usage with the IP Fabric frontend in
+web browsers. The tokens are present only in headers as secure HTTP-only
+cookies and do not appear anywhere in the response body, providing
+protection against XSS attacks.</p>
+</div>
 <h4 id="login">Login</h4>
-<p>To log in and obtain an Access and Refresh token, see the below <code>curl</code> example:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v6.1/auth/login&#39;</span><span class="w"> </span><span class="se">\</span>
+<p>To log in and obtain an access token and a refresh token, see the <code>curl</code> example
+below:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-D<span class="w"> </span>-<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v6.1/auth/login&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;&lt;USERNAME&gt;&quot;,&quot;password&quot;:&quot;&lt;PASSWORD&gt;&quot;}&#39;</span>
 </code></pre></div>
-<p>This returns a JSON response with <code>accessToken</code> and <code>refreshToken</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;eula&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2473545443652&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGc...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;refreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YvnTNW...&quot;</span>
-<span class="p">}</span>
+<p>This returns an HTTP response with <code>accessToken</code> and <code>refreshToken</code> cookies:</p>
+<div class="highlight"><pre><span></span><code>set-cookie: accessToken=eyJhbGc....; Max-Age=1800; Path=/; Expires=Thu, 06 Jun 2024 12:17:09 GMT; HttpOnly; Secure; SameSite=Strict
+set-cookie: refreshToken=w2PJG2hA.....12830361114; Max-Age=86400; Path=/api/auth/token; Expires=Fri, 07 Jun 2024 11:47:09 GMT; HttpOnly; Secure; SameSite=Strict
 </code></pre></div>
 <h4 id="using-accesstoken">Using <code>accessToken</code></h4>
 <p>The <code>accessToken</code> is then placed in the <code>Authorization</code> header as seen below.
@@ -12908,19 +12911,14 @@ Please ensure it is formatted as <code>Authorization: Bearer &lt;ACCESS_TOKEN&gt
 </code></pre></div>
 <h4 id="using-refreshtoken">Using <code>refreshToken</code></h4>
 <p>To create a new <code>accessToken</code> from the <code>refreshToken</code>:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v5.0/auth/token&#39;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-D<span class="w"> </span>-<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://demo3.ipfabric.io/api/v5.0/auth/token&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-raw<span class="w"> </span><span class="s1">&#39;{&quot;refreshToken&quot;:&quot;YvnTNW...&quot;}&#39;</span>
 </code></pre></div>
 <p>which then returns a new <code>accessToken</code> to use in subsequent calls and a new 
 <code>refreshToken</code> to use for requesting the next <code>accessToken</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;eula&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2473545443652&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGc...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;refreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bofZw...&quot;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>set-cookie: accessToken=eyJhbGc....; Max-Age=1800; Path=/; Expires=Thu, 06 Jun 2024 12:17:09 GMT; HttpOnly; Secure; SameSite=Strict
+set-cookie: refreshToken=w2PJG2hA.....12830361114; Max-Age=86400; Path=/api/auth/token; Expires=Fri, 07 Jun 2024 11:47:09 GMT; HttpOnly; Secure; SameSite=Strict
 </code></pre></div>
 <h4 id="logout">Logout</h4>
 <p>To log out of IP Fabric:</p>
@@ -12944,7 +12942,7 @@ product. Actions taken without direct communication with the IP Fabric
 Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ol>
-<li>Log in to IP Fabric CLI as <code>osadmin</code>.</li>
+<li>Log in to the IP Fabric CLI as <code>osadmin</code>.</li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
 <p>Create a new file <code>/opt/nimpee/conf.d/api.json</code> or extend the existing one
@@ -12981,7 +12979,7 @@ product. Actions taken without direct communication with the IP Fabric
 Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <ol>
-<li>Log in to IP Fabric CLI as <code>osadmin</code>.</li>
+<li>Log in to the IP Fabric CLI as <code>osadmin</code>.</li>
 <li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
 <li>
 <p>Create a new file <code>/opt/nimpee/conf.d/api.json</code> or extend the existing one
@@ -13056,7 +13054,7 @@ error code and a human-readable error message in the response body:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2024</span>
   </span>
 
     
