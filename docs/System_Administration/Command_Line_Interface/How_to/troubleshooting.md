@@ -1,18 +1,22 @@
 ---
-description: This section contains information how to troubleshoot common problems with IP Fabric's VM setup.
+description: This section contains information on how to troubleshoot common problems with the IP Fabric VM's setup.
 ---
 
-# How to Troubleshoot IP Fabric VM
+# How To Troubleshoot IP Fabric VM
 
-In the event of a VM network connection problem, DNS issues, network devices connectivity issue, IP Fabric CLI is a useful helper.
+In the event of a VM network connection problem, DNS issues, or network devices
+connectivity issue, the IP Fabric CLI is a useful helper.
 
-CLI can also be used to access system and application logs and snapshot files.
+The CLI can also be used to access system and application logs and snapshot
+files.
 
-## Examining the Network Interface Settings
+## Examine Network Interface Settings
 
 !!! warning
 
-    When you log in through a VM console or SSH, network settings are displayed. This content is static, generated when VM boots! When DHCP is used, an IP address can change in some cases.
+    When you log in through the VM console or SSH, the network interface
+    settings are displayed. This content is static, generated when VM boots!
+    When DHCP is used, the IP address(es) can change in some cases.
 
 ```shell
 Linux ipfabric-server 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
@@ -33,7 +37,7 @@ with password configured during initial setup.
 Last login: Wed Dec 14 14:21:01 2022 from 192.168.253.6
 ```
 
-To determine the IP address or addresses of your IP Fabric system:
+To determine the IP address(es) of your IP Fabric system:
 
 ```shell
 ip addr show
@@ -45,11 +49,11 @@ To show the route entries in the kernel:
 ip route
 ```
 
-## Examining DNS Settings
+## Examine DNS Settings
 
 DNS can be checked using the `dig` or `nslookup` command.
 
-!!! example "Use `dig` to try to resolve a domain"
+!!! example "Use `dig` To Try To Resolve Domain"
 
     ```shell
     16:45 #> dig ipfabric.io
@@ -75,7 +79,7 @@ DNS can be checked using the `dig` or `nslookup` command.
     ;; MSG SIZE  rcvd: 72
     ```
 
-!!! example "Use `dig` to get a PTR record"
+!!! example "Use `dig` To Get PTR Record"
 
     ```shell
     16:49 #> dig -x 135.181.89.75
@@ -101,9 +105,10 @@ DNS can be checked using the `dig` or `nslookup` command.
 
     ```
 
-For PTR record check **ANSWER** which contains requested domain name.
+For PTR record, check the `ANSWER SECTION` which contains the requested domain
+name.
 
-With `nslookup` one can achieve similar results.
+With `nslookup`, you can achieve similar results.
 
 !!! example
 
@@ -117,16 +122,19 @@ With `nslookup` one can achieve similar results.
     Address: 135.181.89.75
     ```
 
-## Testing Network Connectivity
+## Test Network Connectivity
 
-IP Fabric CLI provides access to standard Unix tools for network testing, such as `ping`, `traceroute`, `telnet`, `ssh`, `netstat` etc.
+The IP Fabric CLI provides access to standard Unix tools for network testing,
+such as `ping`, `traceroute`, `telnet`, `ssh`, `netstat`, etc.
 
 !!! warning "ICMP"
 
-    Please remember that ICMP packets used by `ping` and `traceroute` might be blocked by other devices in the network. It does not mean that a device cannot be reached using SSH or Telnet.
+    Please remember that ICMP packets used by `ping` and `traceroute` might be
+    blocked by other devices in the network. It does not mean that a device
+    cannot be reached using SSH or Telnet.
 
-To make sure that the network device is available from IP Fabric VM, you
-can use the `telnet` and `ssh` client from the command line.
+To make sure that an network device is available from the IP Fabric VM, you can
+use the `telnet` and `ssh` client from the command line.
 
 For SSH testing:
 
@@ -140,7 +148,11 @@ For Telnet testing:
 telnet device-IP-or-Hostname
 ```
 
-Since version 5.0, there is also a tool called `ipf-connection-tester` for testing the network connectivity using SSH library that is used by the Discovery process, which is different than the system SSH library!
+### `ipf-connection-tester`
+
+Since version `5.0`, there is also a tool called `ipf-connection-tester` for
+testing the network connectivity using the same SSH library that is used by the
+discovery process, which is different than the system SSH library!
 
 To test SSH connectivity, use:
 
@@ -168,7 +180,7 @@ ipf-connection-tester ssh userName@device-IP-or-Hostname
     2022-12-14T16:33:33.583Z - error: connect ETIMEDOUT 192.168.121.119:22 {"name":"ABConnectionError","stack":"Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)"}
     ```
 
-If you are getting timeouts, it is possible to increase the default timeout options:
+If you are getting timeouts, you may increase the default timeout options:
 
 ```shell
 Options:
@@ -182,18 +194,21 @@ For example:
 ipf-connection-tester ssh userName@device-IP-or-Hostname -r 60 -d 20
 ```
 
-For testing telnet, simply change `ssh` to `telnet`:
+To test Telnet, simply change `ssh` to `telnet`:
 
 ```shell
 ipf-connection-tester telnet userName@device-IP-or-Hostname
 ```
 
-Timeout options are the same. However, the telnet connection tester is much less verbose than the SSH one, so for both security and verbosity, prefer SSH whenever possible.
+Timeout options are the same. However, the Telnet connection tester is much less
+verbose than the SSH one, so for both security and verbosity, prefer SSH
+whenever possible.
 
-If you wish to run `ipf-connection-tester` from your own automation script, here are possible return values:
+If you wish to run `ipf-connection-tester` from your automation script, here are
+the possible return values:
 
-- `0` -- Connection success
-- `1` -- Missing or invalid command line arguments
+- `0` -- Connection succeeded
+- `1` -- Missing or invalid command-line arguments
 - `2` -- Connection failed
 
 ## Check Memory and Swap Usage
@@ -389,7 +404,7 @@ systemctl status arangodb3.service
     Nov 18 13:11:50 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:50Z [888] INFO [cf3f4] ArangoDB (version 3.5.7 [linux]) is ready for business. Have fun!
     ```
 
-## Check if there are any failed services
+## Check if There Are Any Failed Services
 
 ```shell
 systemctl --failed
@@ -445,7 +460,7 @@ df -i
 
 ## Reboot and Shutdown
 
-The IP Fabric VM can be also rebooted or shutdown using CLI.
+The IP Fabric VM can also be rebooted or shut down using the CLI:
 
-- For rebooting the VM, use the `reboot` command.
-- For shutting down the VM, use the `poweroff` command.
+- To reboot the VM, use the `reboot` command.
+- To shut down the VM, use the `poweroff` command.

@@ -2,65 +2,82 @@
 description: This section contains information on how to troubleshoot jumphost-related problems.
 ---
 
-# Troubleshooting `jumphost`
+# How To Troubleshoot Jumphost
 
 ## Jumphost Troubleshooting Tools
 
-IP Fabric doesn't work with DNS names that have IPv6 address in addition to IPv4 address. It is always better to use IPv4 address record.
+IP Fabric doesn't work with DNS names that have IPv6 address in addition to IPv4
+address. It is always better to use IPv4 address records.
 
-It is good practice to test the SSH from IP Fabric's CLI to any network device that should be discoverable using the jumphost when the jumphost is configured and active.
+When the jumphost is configured and active, it is good practice to test the SSH
+connection from the IP Fabric CLI to any network device that should be
+discoverable using the jumphost.
 
 Other useful commands:
 
-```shell title="Gets the name of the service and latest logs from Jumphost service in real time"
+```shell title="To Get the Name of the Service and the Latest Logs From the Jumphost Service in Real Time"
 systemctl | grep jumphost
 
 journalctl -f -u jumphost@xxx.service
 ```
 
-```shell title="Manually Starts a Jumphost"
+```shell title="To Manually Start a Jumphost"
 /usr/bin/python3 /usr/sbin/sshuttle -D -vvv -r jumphost-user@jumphost-ip x.x.x.x/yy
 ```
+
 !!! example
 
-    Replace `x.x.x.x/yy` with a subnet which you want to reach through the jumphost (e.g., `10.254.63.0/24`).
+    Replace `x.x.x.x/yy` with a subnet that you want to reach through the
+    jumphost (e.g., `10.254.63.0/24`).
 
 ## Jumphost Status Is Running, but Devices Behind Jumphost Are Not Discovered
 
-### Check Incoming Traffic from the IP Fabric to a Jumphost
+### Check Incoming Traffic From IP Fabric to Jumphost
 
-1.  On a jumphost machine run tcpdump with parameters: `tcpdump src <IPF_IP> and dst <JUMPHOST_IP>`
+1. On a jumphost machine, run `tcpdump` with the parameters:
 
-2.  On the IP Fabric instance open ssh/telnet session to any host behind jumphost
+   ```shell
+   tcpdump src <IPF_IP> and dst <JUMPHOST_IP>
+   ```
 
-    ```
-    autoboss@ip-fabric:~$ telnet 10.47.102.104
-    Trying 10.47.102.104...
-    Connected to 10.47.102.104.
-    Escape character is '^]'.
+2. On the IP Fabric instance, open an SSH/Telnet session to any host behind the
+   jumphost:
 
-    ##########################################################################
-    ##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##
-    ## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##
-    ##########################################################################
-    ```
-    ```
-    root@jumphost:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
-    tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-    listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+   ```shell
+   autoboss@ip-fabric:~$ telnet 10.47.102.104
+   Trying 10.47.102.104...
+   Connected to 10.47.102.104.
+   Escape character is '^]'.
 
-    12:35:58.065549 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [P.], seq 1498215736:1498215828, ack 173264556, win 687, options [nop,nop,TS val 542423406 ecr 584899103], length 92
-    12:35:58.066759 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 661, win 686, options [nop,nop,TS val 542423406 ecr 584912111], length 0
-    12:35:58.068806 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 985, win 686, options [nop,nop,TS val 542423407 ecr 584912111], length 0
-    ```
+   ##########################################################################
+   ##        UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED              ##
+   ## :::: $$$$$ ::::: ''''' ````` """"" ::::: $$$$$ ::::: ''''' ````` """ ##
+   ##########################################################################
+   ```
 
-    If there is no incoming traffic, check **outgoing traffic from the IP Fabric to a jumphost**
+   ```shell
+   root@jumphost:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
+   tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+   listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
-### Check Outgoing Traffic from the IP Fabric to a Jumphost
+   12:35:58.065549 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [P.], seq 1498215736:1498215828, ack 173264556, win 687, options [nop,nop,TS val 542423406 ecr 584899103], length 92
+   12:35:58.066759 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 661, win 686, options [nop,nop,TS val 542423406 ecr 584912111], length 0
+   12:35:58.068806 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 985, win 686, options [nop,nop,TS val 542423407 ecr 584912111], length 0
+   ```
 
-1. On the IP Fabric instance run tcpdump with parameters: `tcpdump src <IPF_IP> and dst <JUMPHOST_IP>`
+   If there is no incoming traffic, check **outgoing traffic from IP Fabric to
+   the jumphost**.
 
-2. On the IP Fabric instance open ssh/telnet session to any host behind jumphost.
+### Check Outgoing Traffic from IP Fabric to Jumphost
+
+1. On the IP Fabric instance, run `tcpdump` with the parameters:
+
+   ```shell
+   tcpdump src <IPF_IP> and dst <JUMPHOST_IP>
+   ```
+
+2. On the IP Fabric instance, open an SSH/Telnet session to any host behind
+   the jumphost:
 
     ```shell
     root@ip-fabric:/home/autoboss# tcpdump src 10.0.9.13 and dst 10.0.9.17
@@ -71,84 +88,106 @@ journalctl -f -u jumphost@xxx.service
     12:53:25.477998 IP dev01.ipf.ipfabric.io.20718 > dev03.ipf.ipfabric.io.ssh: Flags [.], ack 2317, win 686, options [nop,nop,TS val 542685257 ecr 585173962], length 0
     ```
 
-### Check Outgoing Traffic from a Jumphost to a Host
+### Check Outgoing Traffic From Jumphost to Host
 
-1.  On a jumphost run tcpdump with parameters: `tcpdump src <JUMPHOST_IP> and dst <HOST_IP>`
+1. On a jumphost machine, run `tcpdump` with the parameters:
 
-2.  On the IP Fabric instance open ssh/telnet to any host behind jumphost
+   ```shell
+   tcpdump src <JUMPHOST_IP> and dst <HOST_IP>
+   ```
 
-    ```shell
-    root@jumphost:/home/autoboss# tcpdump src 10.0.9.17 and dst 10.47.102.104
-    tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-    listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+2. On the IP Fabric instance, open an SSH/Telnet to any host behind the
+   jumphost:
 
-    12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
-    12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
-    ```
+   ```shell
+   root@jumphost:/home/autoboss# tcpdump src 10.0.9.17 and dst 10.47.102.104
+   tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+   listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
-### Check Incoming Traffic from a Host to a Jumphost
+   12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
+   12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
+   ```
 
-1.  On a jumphost, run `tcpdump` with parameters: `tcpdump src <HOST_IP> and dst <JUMPHOST_IP>`
+### Check Incoming Traffic From Host to Jumphost
 
-2.  On the IP Fabric instance, open ssh/telnet to any host behind the jumphost:
+1. On a jumphost machine, run `tcpdump` with parameters:
 
-    ```shell
-    root@jumphost:/home/autoboss# tcpdump src 10.47.102.104 and dst 10.0.9.17
-    tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-    listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+   ```shell
+   tcpdump src <HOST_IP> and dst <JUMPHOST_IP>
+   ```
 
-    12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
-    12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
-    ```
+2. On the IP Fabric instance, open an SSH/Telnet to any host behind the
+   jumphost:
 
-## How to Restore Access to IP Fabric's GUI After `jumphost` Misconfiguration
+   ```shell
+   root@jumphost:/home/autoboss# tcpdump src 10.47.102.104 and dst 10.0.9.17
+   tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+   listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
-If you suddenly cannot open the main GUI or SSH to the IP Fabric machine after saving the jumphost settings, the subnet/IP address of the IP Fabric machine was most likely included in the jumphost configuration.
+   12:44:05.002545 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [S], seq 270942017, win 29200, options [mss 1460,sackOK,TS val 585033845 ecr 0,nop,wscale 9], length 0
+   12:44:05.004743 IP dev03.ipf.ipfabric.io.29736 > 10.47.102.104.telnet: Flags [.], ack 1464937247, win 29200, length 0
+   ```
 
-To fix this issue, you need a **direct access** to the **virtual machine CLI** from your hypervisor, the password for `osadmin` user account, and do following:
+## Restore Access to IP Fabric GUI After Jumphost Misconfiguration
 
-1. Log in to the **virtual machine CLI** with the `osadmin` account.
+If you suddenly cannot open the IP Fabric main GUI or connect to the IP Fabric
+machine via SSH after saving the jumphost settings, the subnet/IP address of the
+IP Fabric machine was most likely included in the jumphost configuration.
 
-2. Filter the `systemctl` output with `jumphost`. Each configured jumphost has its own ID:
+To fix this issue, you need **direct access** to **the virtual machine's CLI**
+from your hypervisor, the password for the `osadmin` user account, and follow
+these steps:
 
-    ```shell
-    osadmin@ipfabric-server:~$ sudo systemctl | grep jumphost
-    [sudo] password for osadmin: 
-      jumphost@923216920.service                                   loaded activating auto-restart Jumphost (ID=923216920)
-      system-jumphost.slic                                         loaded active     active       system-jumphost.slice
-    ```
+1. Log in to the **virtual machine's CLI** with the `osadmin` account.
 
-    ```shell
-    osadmin@ipfabric-server:~$ systemctl status jumphost@923216920.service
-    Failed to connect to bus: No such file or directory
-    osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
-    ● jumphost@923216920.service - Jumphost (ID=923216920)
-         Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
-         Active: activating (auto-restart) (Result: exit-code) since Wed 2022-12-14 14:25:52 UTC; 6s ago
-        Process: 682331 ExecStart=/opt/nimpee/jumphost/start-one.sh /opt/nimpee/conf.d/jumphost/923216920.conf (code=exited, status=1/FAILURE)
-    ```
+2. Filter the `systemctl` output containing `jumphost`. Each configured jumphost
+   has its own ID.
 
-3. Stop the jumphost service with `sudo systemctl stop jumphost@xxxx.service`.
+   ```shell
+   osadmin@ipfabric-server:~$ sudo systemctl | grep jumphost
+   [sudo] password for osadmin: 
+     jumphost@923216920.service                                   loaded activating auto-restart Jumphost (ID=923216920)
+     system-jumphost.slic                                         loaded active     active       system-jumphost.slice
+   ```
 
-4. Check that **the jumphost process is inactive** with the `systemctl status jumphost@xxxx.service` command:
+   ```shell
+   osadmin@ipfabric-server:~$ systemctl status jumphost@923216920.service
+   Failed to connect to bus: No such file or directory
+   osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
+   ● jumphost@923216920.service - Jumphost (ID=923216920)
+        Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
+        Active: activating (auto-restart) (Result: exit-code) since Wed 2022-12-14 14:25:52 UTC; 6s ago
+       Process: 682331 ExecStart=/opt/nimpee/jumphost/start-one.sh /opt/nimpee/conf.d/jumphost/923216920.conf (code=exited, status=1/FAILURE)
+   ```
 
-    ```shell
-    osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
-    ● jumphost@923216920.service - Jumphost (ID=923216920)
-         Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
-         Active: inactive (dead)
+3. Stop the `jumphost` service:
 
-    Dec 14 14:28:55 ipfabric-server sshuttle[682901]: ssh: connect to host 2.3.2.1 port 22: Network is unreachable
-    Dec 14 14:28:55 ipfabric-server sshuttle[682901]: c : fatal: c : failed to establish ssh session (2)
-    Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: read eof
-    Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(spawn_id) "exp3"
-    Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(buffer) ""
-    Dec 14 14:28:55 ipfabric-server start-one.sh[682915]: Dec 14 14:28:55 [ERROR] Jumphost was not started
-    Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Control process exited, code=exited, status=1/FAILURE
-    Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Failed with result 'exit-code'.
-    Dec 14 14:28:55 ipfabric-server systemd[1]: Failed to start Jumphost (ID=923216920).
-    Dec 14 14:29:13 ipfabric-server systemd[1]: Stopped Jumphost (ID=923216920).
-    osadmin@ipfabric-server:~$ 
-    ```
+   ```shell
+   sudo systemctl stop jumphost@xxxx.service
+   ```
+
+4. Check that **the `jumphost` process is inactive** with:
+
+   ```shell
+   systemctl status jumphost@xxxx.service
+   ```
+
+   ```shell
+   osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
+   ● jumphost@923216920.service - Jumphost (ID=923216920)
+        Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
+        Active: inactive (dead)
+
+   Dec 14 14:28:55 ipfabric-server sshuttle[682901]: ssh: connect to host 2.3.2.1 port 22: Network is unreachable
+   Dec 14 14:28:55 ipfabric-server sshuttle[682901]: c : fatal: c : failed to establish ssh session (2)
+   Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: read eof
+   Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(spawn_id) "exp3"
+   Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(buffer) ""
+   Dec 14 14:28:55 ipfabric-server start-one.sh[682915]: Dec 14 14:28:55 [ERROR] Jumphost was not started
+   Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Control process exited, code=exited, status=1/FAILURE
+   Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Failed with result 'exit-code'.
+   Dec 14 14:28:55 ipfabric-server systemd[1]: Failed to start Jumphost (ID=923216920).
+   Dec 14 14:29:13 ipfabric-server systemd[1]: Stopped Jumphost (ID=923216920).
+   ```
 
 5. The IP Fabric GUI should be accessible by now.
