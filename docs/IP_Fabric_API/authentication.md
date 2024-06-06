@@ -92,33 +92,36 @@ revoked, or expired.
 
 : A refresh token expires 24 hours after not being used for the generation of a
 new access token. Refresh tokens must be stored securely by an application
-as it creates a new Access Token and allows access to the system.
+as it creates a new access token and allows access to the system.
 
 : Starting in IP Fabric version `6.1.0`, the `refreshToken` is rotated after 
 every use, and a new one is issued.
 
 ### Token API
 
+!!! info
+
+    The token API is designed for secure usage with the IP Fabric frontend in
+    web browsers. The tokens are present only in headers as secure HTTP-only
+    cookies and do not appear anywhere in the response body, providing
+    protection against XSS attacks.
+
 #### Login
 
-To log in and obtain an Access and Refresh token, see the below `curl` example:
+To log in and obtain an access token and a refresh token, see the `curl` example
+below:
 
 ```bash
-curl -X POST 'https://demo3.ipfabric.io/api/v6.1/auth/login' \
+curl -D - -X POST 'https://demo3.ipfabric.io/api/v6.1/auth/login' \
   -H 'Content-Type: application/json' \
   --data-raw '{"username":"<USERNAME>","password":"<PASSWORD>"}'
 ```
 
-This returns a JSON response with `accessToken` and `refreshToken`:
+This returns an HTTP response with `accessToken` and `refreshToken` cookies:
 
-```json
-{
-  "eula": false,
-  "scope": ["read"],
-  "id": "2473545443652",
-  "accessToken": "eyJhbGc...",
-  "refreshToken": "YvnTNW..."
-}
+```
+set-cookie: accessToken=eyJhbGc....; Max-Age=1800; Path=/; Expires=Thu, 06 Jun 2024 12:17:09 GMT; HttpOnly; Secure; SameSite=Strict
+set-cookie: refreshToken=w2PJG2hA.....12830361114; Max-Age=86400; Path=/api/auth/token; Expires=Fri, 07 Jun 2024 11:47:09 GMT; HttpOnly; Secure; SameSite=Strict
 ```
 
 #### Using `accessToken`
@@ -137,7 +140,7 @@ curl -X GET 'https://demo3.ipfabric.io/api/v5.0/snapshots' \
 To create a new `accessToken` from the `refreshToken`:
 
 ```bash
-curl -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/token' \
+curl -D - -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/token' \
   -H 'Content-Type: application/json' \
   --data-raw '{"refreshToken":"YvnTNW..."}'
 ```
@@ -145,15 +148,11 @@ curl -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/token' \
 which then returns a new `accessToken` to use in subsequent calls and a new 
 `refreshToken` to use for requesting the next `accessToken`:
 
-```json
-{
-  "eula": false,
-  "scope": ["read"],
-  "id": "2473545443652",
-  "accessToken": "eyJhbGc...",
-  "refreshToken": "bofZw..."
-}
 ```
+set-cookie: accessToken=eyJhbGc....; Max-Age=1800; Path=/; Expires=Thu, 06 Jun 2024 12:17:09 GMT; HttpOnly; Secure; SameSite=Strict
+set-cookie: refreshToken=w2PJG2hA.....12830361114; Max-Age=86400; Path=/api/auth/token; Expires=Fri, 07 Jun 2024 11:47:09 GMT; HttpOnly; Secure; SameSite=Strict
+```
+
 
 #### Logout
 
@@ -177,7 +176,7 @@ accomplished via the CLI settings.
 
 --8<-- "snippets/cli_root_access.md"
 
-1. Log in to IP Fabric CLI as `osadmin`.
+1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
 3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
    with the below JSON. In this example, the `accessToken` expires in 10
@@ -209,7 +208,7 @@ token and basic authentication will be disabled). Please note that
 
 --8<-- "snippets/cli_root_access.md"
 
-1. Log in to IP Fabric CLI as `osadmin`.
+1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
 3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
    with the below JSON:
