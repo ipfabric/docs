@@ -12764,8 +12764,8 @@ backup volume. It&rsquo;s highly recommended to place the backup volume on a di
 datastore, ideally on separate physical storage.</p>
 <div class="admonition info">
 <p class="admonition-title">Backup Disk</p>
-<p>The backup disk is not present by default! Please add a new virtual disk to
-enable local backups.</p>
+<p>The backup disk is not present by default! To enable local backups, please
+add a new virtual disk.</p>
 </div>
 <p>To add a new backup disk, follow the instructions in
 <a href="../../increase_disk_space/#local-backup-disk">Local Backup Disk</a>.</p>
@@ -12775,7 +12775,7 @@ before a system update. (For automatic backups, see
 <a href="../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/">Schedule System Backup</a>.)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>For FTP and SFTP backups, a directory <strong>must be specified</strong> . It <strong>must
+<p>For FTP and SFTP backups, a directory <strong>must be specified</strong>. It <strong>must
 exist</strong> on the remote side. If it does not, you will get an error.</p>
 <p>For <strong>FTP</strong>, the directory path must be specified as a <strong>relative path</strong>.</p>
 <p>For <strong>SFTP</strong>, the directory path must be specified as an <strong>absolute path</strong>.</p>
@@ -12802,8 +12802,8 @@ exist</strong> on the remote side. If it does not, you will get an error.</p>
    destination</strong> drop-down menu.</p>
 <ol>
 <li>
-<p>Enter the remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that
-    your DNS client is configured and working properly if using an FQDN.</p>
+<p>Enter the remote FTP/SFTP <strong>Server</strong> FQDN or IP address. If using an FQDN,
+    make sure that your DNS client is configured and working properly.</p>
 </li>
 <li>
 <p>Enter the <strong>Username</strong> and <strong>Password</strong> for accessing the FTP/SFTP server.</p>
@@ -12820,7 +12820,7 @@ exist</strong> on the remote side. If it does not, you will get an error.</p>
 <h3 id="full-vs-incremental-backups">Full vs Incremental Backups</h3>
 <p>The first backup is a full backup. Additional backups are incremental backups.
 Incremental backup 1 depends on the full backup, incremental backup 2 depends on
-incremental backup 1 and the full backup, etc.</p>
+incremental backup 1 and the full backup, and so forth.</p>
 <p>By default, a new full backup is created 14 days after the previous full
 backup. You may change this behavior by adjusting <code>--full-if-older-than 14D</code> in
 the following line in <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> (for
@@ -12828,11 +12828,11 @@ example, with <code>sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf</cod
 <div class="highlight"><pre><span></span><code>STATIC_OPTIONS=&quot;--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-certificate&quot;
 </code></pre></div>
 <ul>
-<li>Possible time values: <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>D</code> (days),
-  <code>W</code> (weeks), <code>M</code> (months), and <code>Y</code> (years)</li>
+<li>Possible time values include : <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>D</code>
+  (days), <code>W</code> (weeks), <code>M</code> (months), and <code>Y</code> (years).</li>
 </ul>
-<p>By default, only two full backups are kept in the backup directory. You may
-change this behavior by amending the value in the following line in
+<p>By default, only two full backups are retained in the backup directory. You may
+modify this behavior by amending the value in the following line in
 <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> (for example, with
 <code>sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf</code>):</p>
 <div class="highlight"><pre><span></span><code>CLEAN_UP_VARIABLE=&quot;2&quot;
@@ -12841,7 +12841,7 @@ change this behavior by amending the value in the following line in
 <p class="admonition-title">Tip</p>
 <p>As
 <a href="../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups/">restore does not function properly when two full backups are present</a>,
-you may want to set <code>CLEAN_UP_VARIABLE="1"</code> (i.e. retaining only one full
+you may want to set <code>CLEAN_UP_VARIABLE="1"</code> (i.e., retaining only one full
 backup and its increments).</p>
 <p>Please note that this approach has a downside &ndash; when a new full backup is
 created, all previous backup files will be removed from the backup
@@ -12850,7 +12850,7 @@ directory.</p>
 <p>If you are unsure, please contact IP Fabric Support for assistance.</p>
 <div class="admonition example">
 <p class="admonition-title">Examples</p>
-<p>First full backup&rsquo;s files (depending on its size, you may have <code>vol1</code>,
+<p>The first full backup&rsquo;s files (depending on its size, you may have <code>vol1</code>,
 <code>vol2</code>, &hellip;, <code>volX</code> instead of just <code>vol1</code>):</p>
 <div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:14<span class="w"> </span>ipfabric-94c370c9-duplicity-full.20230927T111440Z.vol1.difftar.gpg
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">3</span>.3M<span class="w"> </span>Sep<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span>:14<span class="w"> </span>ipfabric-94c370c9-duplicity-full-signatures.20230927T111440Z.sigtar.gpg
@@ -12903,7 +12903,7 @@ IP Fabric appliance.</p>
    failures or upgrade failures.</p>
 </li>
 <li>
-<p><code>Restore database</code> &ndash; Only the database is restored. It can be sufficient
+<p><code>Restore database</code> &ndash; Only the database is restored. This can be sufficient
    in case of a database failure or accidental database drop.</p>
 </li>
 <li>
@@ -12947,7 +12947,7 @@ IP Fabric appliance.</p>
    failures or upgrade failures.</p>
 </li>
 <li>
-<p><code>Restore database</code> &ndash; Only the database is restored. It can be sufficient
+<p><code>Restore database</code> &ndash; Only the database is restored. This can be sufficient
    in case of a database failure or accidental database drop.</p>
 </li>
 <li>
@@ -12959,8 +12959,8 @@ IP Fabric appliance.</p>
 <p>Select <code>FTP</code> or <code>SFTP</code> from the <strong>Backup files source</strong> drop-down menu.</p>
 <ol>
 <li>
-<p>Enter the remote FTP/SFTP <strong>Server</strong> FQDN or IP address. Make sure that
-    your DNS client is configured and working properly if using an FQDN.</p>
+<p>Enter the remote FTP/SFTP <strong>Server</strong> FQDN or IP address. If using an FQDN,
+    make sure that your DNS client is configured and working properly.</p>
 </li>
 <li>
 <p>Enter the <strong>Username</strong> and <strong>Password</strong> for accessing the FTP/SFTP server.</p>
@@ -13001,7 +13001,7 @@ IP Fabric appliance.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2024</span>
   </span>
 
     
