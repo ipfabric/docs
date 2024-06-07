@@ -1,37 +1,40 @@
 ---
-description: This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard.
+description: This page explains how to change the IP Fabric VM's network configuration using the First Boot Wizard.
 ---
 
-# Update Network Config
+# Update Network Configuration
 
-To change the IP Address, Subnet, Gateway, DNS, or Proxy configuration of
-your IP Fabric VM from the CLI, please do the following:
+To change the IP address, subnet, gateway, DNS, or proxy configuration of your
+IP Fabric appliance from the CLI, follow these steps:
 
 1. Connect to the IP Fabric appliance via SSH as the `osadmin` user.
 
-2. Run the `sudo nimpee-net-config -n` command to launch the network
-   configuration wizard.
+2. Run:
+
+   ```shell
+   sudo nimpee-net-config -n
+   ```
 
   !!! note
 
       To keep the current configuration for any item, select `OK` and press
       `Enter`.
 
-3. First options are to modify the `hostname` and `DNS domain name` (detailed
-   docs at [Update hostname or domain name](change_hostname.md)).
+3. The first two options are to modify the hostname and the DNS domain name.
+   See [Update Hostname or DNS Domain Name](change_hostname.md).
 
-4. Next, select DHCP or Static IP Address Assignment. (Use the up/down and
-   `Space` keys to change `()` to `(*)`.)
+4. Next, select DHCP or static IP address assignment. Use the `up`/`down` and
+   `Space` keys to change `()` to `(*)`.
 
    ![Use DHCP or Static IP Address](change_ip_assignment.png)
 
-5. If you selected Static IP Address Assignment, then enter:
+5. If you selected static IP address assignment, then enter:
 
-   - IP Address
-   - Netmask
-   - Gateway
-   - Primary DNS
-   - Secondary DNS
+   - IP address
+   - netmask
+   - gateway
+   - primary DNS
+   - secondary DNS
 
    ![Configure a static IP](change_static_ip.png)
 

@@ -1,51 +1,60 @@
 ---
-description: This section explains how to change the 'osadmin' password in the IP Fabric Boot Wizard.
+description: This section explains how to change the osadmin password using the First Boot Wizard.
 ---
 
-# Update `osadmin` password
+# Update `osadmin` Password
 
 1. Connect to your IP Fabric appliance via SSH as the `osadmin` user.
 
-2. Run the `sudo nimpee-net-config -t` command to launch the configuration
-   wizard and select `Yes` to proceed:
+2. Run:
+
+   ```shell
+   sudo nimpee-net-config -t
+   ```
+
+3. Select `Yes` to proceed:
 
   ![Do you want to change osadmin user password?](osadmin_password_change2.png)
 
   !!! attention
 
-      Changing the `osadmin` password will affect: CLI access, System
-      Administration access and the backup encryption! Backups created before
-      the password change will no longer be restorable.
+      Changing the `osadmin` password will affect:
 
-3. Enter the new `osadmin` password twice:
+      - CLI access
+      - System Administration UI access
+      - backup encryption
+
+      Backups created before the password change will no longer be restorable!
+
+4. Enter the new `osadmin` password twice:
 
    ![Enter osadmin shell user password](osadmin_password_change3.png)
 
    ![Repeat osadmin user password](osadmin_password_change4.png)
 
-   Password setup contains password complexity check, simple passwords are
+   Password setup contains password complexity check; simple passwords are
    rejected.
 
    Password requirements are as follows:
 
-   - max password length is 256
-   - single character class passwords are not supported
-   - two character class must be at least 24 characters long
-   - minimal length of passphrase is 24 characters
-   - three character class must be at least 16 characters long
-   - four character class must be at least 12 characters long
-   - passphrase must have at least five words
+   - The maximum password length is 256.
+   - Single-character class passwords are not supported.
+   - Two-character class must be at least 24 characters long.
+   - The minimal length of the passphrase is 24 characters.
+   - Three-character class must be at least 16 characters long.
+   - Four-character class must be at least 12 characters long.
+   - The passphrase must have at least five words.
 
    The character classes are:
 
    - digits
    - lower-case letters
    - upper-case letters
-   - and other characters
+   - other characters
 
    There is also a special class for non-ASCII characters, which could not be 
-   classified, but are assumed to be non-digits.
+   classified but are assumed to be non-digits.
 
-4. Select `Yes` to reboot the system:
+5. Select `Yes` to reboot the system:
 
   ![Reboot system](reboot.png)
