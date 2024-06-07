@@ -35,8 +35,8 @@ datastore, ideally on separate physical storage.
 
 !!! info "Backup Disk"
 
-    The backup disk is not present by default! Please add a new virtual disk to
-    enable local backups.
+    The backup disk is not present by default! To enable local backups, please
+    add a new virtual disk.
 
 To add a new backup disk, follow the instructions in
 [Local Backup Disk](../../System_Administration/increase_disk_space.md#local-backup-disk).
@@ -49,7 +49,7 @@ before a system update. (For automatic backups, see
 
 !!! warning
 
-    For FTP and SFTP backups, a directory **must be specified** . It **must
+    For FTP and SFTP backups, a directory **must be specified**. It **must
     exist** on the remote side. If it does not, you will get an error.
 
     For **FTP**, the directory path must be specified as a **relative path**.
@@ -72,8 +72,8 @@ To proceed with a manual backup, follow these steps:
 5. For remote backup, select `FTP` or `SFTP` from the **Backup files
    destination** drop-down menu.
 
-   1. Enter the remote FTP/SFTP **Server** FQDN or IP address. Make sure that
-      your DNS client is configured and working properly if using an FQDN.
+   1. Enter the remote FTP/SFTP **Server** FQDN or IP address. If using an FQDN,
+      make sure that your DNS client is configured and working properly.
 
    2. Enter the **Username** and **Password** for accessing the FTP/SFTP server.
 
@@ -85,7 +85,7 @@ To proceed with a manual backup, follow these steps:
 
 The first backup is a full backup. Additional backups are incremental backups.
 Incremental backup 1 depends on the full backup, incremental backup 2 depends on
-incremental backup 1 and the full backup, etc.
+incremental backup 1 and the full backup, and so forth.
 
 By default, a new full backup is created 14 days after the previous full
 backup. You may change this behavior by adjusting `--full-if-older-than 14D` in
@@ -96,11 +96,11 @@ example, with `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 STATIC_OPTIONS="--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-certificate"
 ```
 
-- Possible time values: `s` (seconds), `m` (minutes), `h` (hours), `D` (days),
-  `W` (weeks), `M` (months), and `Y` (years)
+- Possible time values include : `s` (seconds), `m` (minutes), `h` (hours), `D`
+  (days), `W` (weeks), `M` (months), and `Y` (years).
 
-By default, only two full backups are kept in the backup directory. You may
-change this behavior by amending the value in the following line in
+By default, only two full backups are retained in the backup directory. You may
+modify this behavior by amending the value in the following line in
 `/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example, with
 `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 
@@ -112,7 +112,7 @@ CLEAN_UP_VARIABLE="2"
 
     As
     [restore does not function properly when two full backups are present](../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
-    you may want to set `CLEAN_UP_VARIABLE="1"` (i.e. retaining only one full
+    you may want to set `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
     backup and its increments).
 
     Please note that this approach has a downside -- when a new full backup is
@@ -123,7 +123,7 @@ If you are unsure, please contact IP Fabric Support for assistance.
 
 !!! example "Examples"
 
-    First full backup's files (depending on its size, you may have `vol1`,
+    The first full backup's files (depending on its size, you may have `vol1`,
     `vol2`, ..., `volX` instead of just `vol1`):
 
     ```shell
@@ -184,7 +184,7 @@ backup.
      and user and system files. It is usable for restoring from general system
      failures or upgrade failures.
 
-  2. `Restore database` -- Only the database is restored. It can be sufficient
+  2. `Restore database` -- Only the database is restored. This can be sufficient
      in case of a database failure or accidental database drop.
 
   3. `Restore snapshot files` -- A particular snapshot can be restored.
@@ -214,15 +214,15 @@ backup.
      and user and system files. It is usable for restoring from general system
      failures or upgrade failures.
 
-  2. `Restore database` -- Only the database is restored. It can be sufficient
+  2. `Restore database` -- Only the database is restored. This can be sufficient
      in case of a database failure or accidental database drop.
 
   3. `Restore snapshot files` -- A particular snapshot can be restored.
 
 5. Select `FTP` or `SFTP` from the **Backup files source** drop-down menu.
 
-   1. Enter the remote FTP/SFTP **Server** FQDN or IP address. Make sure that
-      your DNS client is configured and working properly if using an FQDN.
+   1. Enter the remote FTP/SFTP **Server** FQDN or IP address. If using an FQDN,
+      make sure that your DNS client is configured and working properly.
 
    2. Enter the **Username** and **Password** for accessing the FTP/SFTP server.
 

@@ -41,7 +41,7 @@ To add a new backup disk, follow the instructions in
 
 To schedule automatic local backups, follow these steps:
 
-1. Add a dedicated backup volume (if not done yet).
+1. If not done yet, add a dedicated backup volume.
 2. Log in to the IP Fabric main GUI.
 3. Go to **Settings --> System --> Backup & Maintenance --> Schedule system
    backup**.
@@ -142,8 +142,8 @@ If you are unsure, please contact IP Fabric Support for assistance.
 
 !!! example "Examples"
 
-    The first full backup's files (depending on the backup's size, you may have
-    `vol1`, `vol2`, ..., `volX` instead of just `vol1`):
+    The first full backup's files (depending on its size, you may have `vol1`,
+    `vol2`, ..., `volX` instead of just `vol1`):
 
     ```shell
     -rw-r--r-- 1 root root  54M Sep 27 11:14 ipfabric-94c370c9-duplicity-full.20230927T111440Z.vol1.difftar.gpg

@@ -6,8 +6,8 @@ description: This section contains information on how to troubleshoot jumphost-r
 
 ## Jumphost Troubleshooting Tools
 
-IP Fabric doesn't work with DNS names that have IPv6 address in addition to IPv4
-address. It is always better to use IPv4 address records.
+IP Fabric doesn't work with DNS names that have an IPv6 address in addition to
+an IPv4 address. It is always better to use IPv4 address records.
 
 When the jumphost is configured and active, it is good practice to test the SSH
 connection from the IP Fabric CLI to any network device that should be

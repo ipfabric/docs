@@ -7,7 +7,7 @@ description: This page provides an overview of the IP Fabric System Administrati
 The **System Administration** UI allows you to:
 
 * check the IP Fabric system status
-* perform backup or restore of IP Fabric
+* back up or restore your IP Fabric data
 * update IP Fabric
 * create a local administrator account
 

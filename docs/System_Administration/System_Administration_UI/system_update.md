@@ -13,7 +13,7 @@ your hypervisor. Alternatively, you may use an IP Fabric backup. To proceed with
 IP Fabric backup, follow these steps:
 
 1. In the top-right corner of the main GUI, click **Support**.
-2. Click **System Administration** to access the administrative interface (e.g.,
+2. Click **System Administration** to access the interface on port `8443` (e.g.,
    `https://ipfabric-ip-address:8443`).
 3. Log in with the `osadmin` user and the password configured during the first
    boot.
@@ -49,27 +49,29 @@ To proceed with an online update, follow these steps:
 2. Log in with the `osadmin` user and the password configured during the first
    boot.
 3. Perform the VM backup as described in the section above.
-4. Navigate to **System update** and proceed. IP Fabric will automatically
-   download the update file, perform the update, and reboot itself.
+4. Navigate to **System update** and click **Update over internet**.
+5. IP Fabric will automatically download the update file, perform the update,
+   and reboot itself.
+6. Afterwards, it is recommended to create a new discovery snapshot on the
+   latest version.
 
 ## Offline Update
 
-If your IP Fabric does not have direct internet connectivity, you may use
-offline update:
+If your IP Fabric instance does not have direct internet connectivity, you may
+use offline update:
 
 1. Download the latest update file from
    [https://releases.ipfabric.io/ipfabric/updates/](https://releases.ipfabric.io/ipfabric/updates/).
 2. In the top-right corner of the main GUI, click **Support**.
-3. Click **System Administration** to access the administrative interface (e.g.,
+3. Click **System Administration** to access the interface on port `8443` (e.g.,
    `https://ipfabric-ip-address:8443`).
 4. Log in with the `osadmin` user and the password configured during the first
    boot.
 5. Perform the VM backup as described in the section above.
 6. Navigate to **System update**.
-7. Select or drag-and-drop the downloaded update file.
-
-![IP Fabric system update in progress](system_update.png)
-
-After a successful package upload, the update process will start automatically,
-and the IP Fabric VM will reboot once completed. Afterwards, it is recommended
-to create a new discovery snapshot on the latest version.
+7. Select or drag-and-drop the downloaded update file:
+   ![System update section](system_update.png)
+8. After a successful package upload, the update process will start
+   automatically, and the IP Fabric VM will reboot once completed.
+9. Afterwards, it is recommended to create a new discovery snapshot on the
+   latest version.
