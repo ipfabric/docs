@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This page provides an overview of the System 'Boot Wizard'.">
+        <meta name="description" content="This page provides an overview of the First Boot Wizard.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>System ‘Boot Wizard’ - IP Fabric Documentation Portal</title>
+        <title>Overview - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="System &lsquo;Boot Wizard&rsquo; - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This page provides an overview of the System 'Boot Wizard'." />
+<meta property="og:title" content="Overview - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This page provides an overview of the First Boot Wizard." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="System &lsquo;Boot Wizard&rsquo; - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This page provides an overview of the System 'Boot Wizard'." />
+<meta property="twitter:title" content="Overview - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This page provides an overview of the First Boot Wizard." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/index.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#system-boot-wizard" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              System &lsquo;Boot Wizard&rsquo;
+              Overview
             
           </span>
         </div>
@@ -6096,7 +6096,7 @@ here.
   <span class="md-ellipsis">
     
   
-    System &lsquo;Boot Wizard&rsquo;
+    Overview
   
 
     
@@ -6113,7 +6113,7 @@ here.
   <span class="md-ellipsis">
     
   
-    System &lsquo;Boot Wizard&rsquo;
+    Overview
   
 
     
@@ -6139,17 +6139,6 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6161,10 +6150,10 @@ here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-full-boot-wizard" class="md-nav__link">
+  <a href="#run-full-first-boot-wizard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run Full Boot Wizard
+        Run Full First Boot Wizard
       
     </span>
   </a>
@@ -6193,7 +6182,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update hostname or domain name
+    Update Hostname or DNS Domain Name
   
 
     
@@ -6220,7 +6209,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update Network Config
+    Update Network Configuration
   
 
     
@@ -6247,7 +6236,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update osadmin password
+    Update osadmin Password
   
 
     
@@ -12507,17 +12496,6 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12529,10 +12507,10 @@ here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-full-boot-wizard" class="md-nav__link">
+  <a href="#run-full-first-boot-wizard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run Full Boot Wizard
+        Run Full First Boot Wizard
       
     </span>
   </a>
@@ -12611,23 +12589,25 @@ here.
   
 
 
-<h1 id="system-boot-wizard">System &lsquo;Boot Wizard&rsquo;</h1>
-<h2 id="overview">Overview</h2>
-<p>The <strong>Boot Wizard</strong> is automatically started during the initial boot of the IP
+<h1 id="overview">Overview</h1>
+<p>The <strong>First Boot Wizard</strong> automatically starts during the initial boot of the IP
 Fabric appliance and must be completed to proceed with the appliance&rsquo;s
 deployment.</p>
 <p>It introduces the configuration of basic network parameters, including:</p>
 <ul>
 <li>IP Fabric&rsquo;s IP address and subnet</li>
 <li>DNS servers</li>
-<li>Proxy server</li>
+<li>proxy server</li>
 </ul>
-<p>Suppose some initial parameters need to be modified after the deployment is
-completed. In that case, you may re-run the Boot Wizard with the
-<code>sudo nimpee-net-config</code> command (with one or more options) in the CLI as
-<code>osadmin</code>.</p>
+<p>If some initial parameters need to be modified after the deployment is
+completed, you may re-run the First Boot Wizard with the following command (with
+one or more options) in the CLI as <code>osadmin</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nimpee-net-config
+</code></pre></div>
 <h2 id="documentation">Documentation</h2>
-<p>To see more command options, log in to the CLI and run <code>nimpee-net-config -h</code>.</p>
+<p>To see more command options, log in to the CLI and run:</p>
+<div class="highlight"><pre><span></span><code>nimpee-net-config<span class="w"> </span>-h
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~#<span class="w"> </span>nimpee-net-config<span class="w"> </span>-h
 IP<span class="w"> </span>Fabric<span class="w"> </span>network<span class="w"> </span>configuration<span class="w"> </span>wizard.
 Usage:<span class="w"> </span>nimpee-net-config<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span>
@@ -12642,15 +12622,15 @@ Usage:<span class="w"> </span>nimpee-net-config<span class="w"> </span><span cla
 This<span class="w"> </span>script<span class="w"> </span>is<span class="w"> </span>started<span class="w"> </span>automatically<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="s2">&quot;firstrun&quot;</span><span class="w"> </span>parameter<span class="w"> </span>is<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="s2">&quot;yes&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
 or<span class="w"> </span>user<span class="w"> </span><span class="s2">&quot;osadmin&quot;</span><span class="w"> </span>enables<span class="w"> </span>it<span class="w"> </span>using<span class="w"> </span><span class="s2">&quot;nimpee-net-wizard&quot;</span><span class="w"> </span>script.
 </code></pre></div>
-<h2 id="run-full-boot-wizard">Run Full Boot Wizard</h2>
-<p>To re-run the <em>full</em> Boot Wizard as described
+<h2 id="run-full-first-boot-wizard">Run Full First Boot Wizard</h2>
+<p>To re-run the <em>full</em> First Boot Wizard as described
 in <a href="../../platform_first_steps/02-boot_wizard/">First Boot Wizard</a>,
 you may use one of these options:</p>
 <ul>
 <li>Run <code>sudo nimpee-net-config -a</code></li>
-<li>Change <code>firstrun="no"</code> in <code>/opt/nimpee/conf.d/sys-nimpee.conf</code> to
-  <code>firstrun="yes"</code> (for example with
-  <code>sudo vi /opt/nimpee/conf.d/sys-nimpee.conf</code>), and reboot.
+<li>Change <code>firstrun="no"</code> to <code>firstrun="yes"</code> in
+  <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>  (for example, with <code>sudo vi
+  /opt/nimpee/conf.d/sys-nimpee.conf</code>), and reboot.
   <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>grep<span class="w"> </span>firstrun<span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
 <span class="nv">firstrun</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
 </code></pre></div></li>
@@ -12675,7 +12655,7 @@ you may use one of these options:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2024</span>
   </span>
 
     
@@ -12770,13 +12750,13 @@ you may use one of these options:</p>
         
         
           
-          <a href="change_hostname/" class="md-footer__link md-footer__link--next" aria-label="Next: Update hostname or domain name">
+          <a href="change_hostname/" class="md-footer__link md-footer__link--next" aria-label="Next: Update Hostname or DNS Domain Name">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Update hostname or domain name
+                Update Hostname or DNS Domain Name
               </div>
             </div>
             <div class="md-footer__button md-icon">

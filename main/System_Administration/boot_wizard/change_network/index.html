@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard.">
+        <meta name="description" content="This page explains how to change the IP Fabric VM's network configuration using the First Boot Wizard.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Update Network Config - IP Fabric Documentation Portal</title>
+        <title>Update Network Configuration - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Update Network Config - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard." />
+<meta property="og:title" content="Update Network Configuration - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This page explains how to change the IP Fabric VM's network configuration using the First Boot Wizard." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_network.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/boot_wizard/change_network/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Update Network Config - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section explains how to change the IP Fabric appliance's network configuration using the Boot Wizard." />
+<meta property="twitter:title" content="Update Network Configuration - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This page explains how to change the IP Fabric VM's network configuration using the First Boot Wizard." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/boot_wizard/change_network.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#update-network-config" class="md-skip">
+        <a href="#update-network-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Update Network Config
+              Update Network Configuration
             
           </span>
         </div>
@@ -6087,7 +6087,7 @@ here.
   <span class="md-ellipsis">
     
   
-    System &lsquo;Boot Wizard&rsquo;
+    Overview
   
 
     
@@ -6114,7 +6114,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update hostname or domain name
+    Update Hostname or DNS Domain Name
   
 
     
@@ -6150,7 +6150,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update Network Config
+    Update Network Configuration
   
 
     
@@ -6178,7 +6178,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Update osadmin password
+    Update osadmin Password
   
 
     
@@ -12501,16 +12501,17 @@ here.
   
 
 
-<h1 id="update-network-config">Update Network Config</h1>
-<p>To change the IP Address, Subnet, Gateway, DNS, or Proxy configuration of
-your IP Fabric VM from the CLI, please do the following:</p>
+<h1 id="update-network-configuration">Update Network Configuration</h1>
+<p>To change the IP address, subnet, gateway, DNS, or proxy configuration of your
+IP Fabric appliance from the CLI, follow these steps:</p>
 <ol>
 <li>
 <p>Connect to the IP Fabric appliance via SSH as the <code>osadmin</code> user.</p>
 </li>
 <li>
-<p>Run the <code>sudo nimpee-net-config -n</code> command to launch the network
-   configuration wizard.</p>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nimpee-net-config<span class="w"> </span>-n
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To keep the current configuration for any item, select <code>OK</code> and press
@@ -12518,22 +12519,22 @@ your IP Fabric VM from the CLI, please do the following:</p>
 </div>
 </li>
 <li>
-<p>First options are to modify the <code>hostname</code> and <code>DNS domain name</code> (detailed
-   docs at <a href="../change_hostname/">Update hostname or domain name</a>).</p>
+<p>The first two options are to modify the hostname and the DNS domain name.
+   See <a href="../change_hostname/">Update Hostname or DNS Domain Name</a>.</p>
 </li>
 <li>
-<p>Next, select DHCP or Static IP Address Assignment. (Use the up/down and
-   <code>Space</code> keys to change <code>()</code> to <code>(*)</code>.)</p>
+<p>Next, select DHCP or static IP address assignment. Use the <code>up</code>/<code>down</code> and
+   <code>Space</code> keys to change <code>()</code> to <code>(*)</code>.</p>
 <p><a class="glightbox" href="../change_ip_assignment.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Use DHCP or Static IP Address" src="../change_ip_assignment.png" /></a></p>
 </li>
 <li>
-<p>If you selected Static IP Address Assignment, then enter:</p>
+<p>If you selected static IP address assignment, then enter:</p>
 <ul>
-<li>IP Address</li>
-<li>Netmask</li>
-<li>Gateway</li>
-<li>Primary DNS</li>
-<li>Secondary DNS</li>
+<li>IP address</li>
+<li>netmask</li>
+<li>gateway</li>
+<li>primary DNS</li>
+<li>secondary DNS</li>
 </ul>
 <p><a class="glightbox" href="../change_static_ip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure a static IP" src="../change_static_ip.png" /></a></p>
 </li>
@@ -12562,7 +12563,7 @@ your IP Fabric VM from the CLI, please do the following:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2024</span>
   </span>
 
     
@@ -12640,7 +12641,7 @@ your IP Fabric VM from the CLI, please do the following:</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../change_hostname/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Update hostname or domain name">
+          <a href="../change_hostname/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Update Hostname or DNS Domain Name">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12650,20 +12651,20 @@ your IP Fabric VM from the CLI, please do the following:</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Update hostname or domain name
+                Update Hostname or DNS Domain Name
               </div>
             </div>
           </a>
         
         
           
-          <a href="../change_osadmin_pass/" class="md-footer__link md-footer__link--next" aria-label="Next: Update osadmin password">
+          <a href="../change_osadmin_pass/" class="md-footer__link md-footer__link--next" aria-label="Next: Update osadmin Password">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Update osadmin password
+                Update osadmin Password
               </div>
             </div>
             <div class="md-footer__button md-icon">
