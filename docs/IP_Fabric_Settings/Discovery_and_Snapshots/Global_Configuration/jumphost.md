@@ -211,20 +211,43 @@ follow these steps:
 
 1. Log in to the **virtual machine's CLI** with the `osadmin` account.
 
-2. Filter out the **jumphost** services with the `systemctl | grep jumphost`
+2. Filter out the **jumphost** services with the `systemctl | grep ipf-jumphost`
    command. Each configured jumphost has its own ID.
 
-   ![grep jumphost from systemctl output](jumphost/systemctl_jumphost.png)
+   ```shell
+   osadmin@Appliance-5:~$ systemctl | grep ipf-jumphost
+     ipf-jumphost@10001843.service                               loaded activating auto-restart ipf-jumphost (ID=10001843)
+   ```
 
 3. **Stop the jumphost service** with the `sudo systemctl stop
-   jumphost@xxxx.service` command and enter the `osadmin` password:
+   ipf-jumphost@xxxx.service` command and enter the `osadmin` password:
 
-   ![systemctl stop jumphost](jumphost/systemctl_stop_jumphost.png)
+   ```shell
+   osadmin@Appliance-5:~$ sudo systemctl stop ipf-jumphost@10001843.service
+   [sudo] password for osadmin: 
+   osadminaAppliance-5:~$ 
+   ```
 
 4. Check that the **jumphost process is inactive** with the `systemctl status
-   jumphost@xxxx.service` command:
+   ipf-jumphost@xxxx.service` command:
 
-   ![systemctl status jumphost](jumphost/systemctl_status_jumphost.png)
+   ```shell
+   osadmin@Appliance-5:~$ sudo systemctl status ipf-jumphost@10001843.service
+   ● ipf-jumphost@10001843.service - ipf-jumphost (ID=10001843)
+        Loaded: loaded (/lib/systemd/system/ipf-jumphost@.service; disabled; vendor preset: enabled)
+        Active: inactive (dead)
+
+   Jul 12 13:53:25 Appliance-5 sshuttle[671008]: ssh: connect to host 192.168.5.5 port 22: Network is unreachable
+   Jul 12 13:53:25 Appliance-5 sshuttle[671008]: c : fatal: c : failed to establish ssh session (2)
+   Jul 12 13:53:25 Appliance-5 start-one.sh[670989]: expect: read eof
+   Jul 12 13:53:25 Appliance-5 start-one.sh[670989]: expect: set expect_out(spawn_id) "exp3"
+   Jul 12 13:53:25 Appliance-5 start-one.sh[670989]: expect: set expect_out(buffer) ""
+   Jul 12 13:53:26 Appliance-5 start-one.sh[671021]: Jul 12 13:53:25 [ERROR] Jumphost was not started
+   Jul 12 13:53:26 Appliance-5 systemd[1]: ipf-jumphost@10001843.service: Control process exited, code=exited, status=1/FAILURE
+   Jul 12 13:53:26 Appliance-5 systemd[1]: ipf-jumphost@10001843.service: Failed with result 'exit-code'.
+   Jul 12 13:53:26 Appliance-5 systemd[1]: Failed to start ipf-jumphost (ID=10001843).
+   Jul 12 13:53:36 Appliance-5 systemd[1]: Stopped ipf-jumphost (ID=10001843).
+   ```
 
 5. The IP Fabric GUI should now be accessible.
 

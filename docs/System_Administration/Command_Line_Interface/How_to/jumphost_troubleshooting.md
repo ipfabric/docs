@@ -16,9 +16,9 @@ discoverable using the jumphost.
 Other useful commands:
 
 ```shell title="To Get the Name of the Service and the Latest Logs From the Jumphost Service in Real Time"
-systemctl | grep jumphost
+systemctl | grep ipf-jumphost
 
-journalctl -f -u jumphost@xxx.service
+journalctl -f -u ipf-jumphost@xxx.service
 ```
 
 ```shell title="To Manually Start a Jumphost"
@@ -144,38 +144,35 @@ these steps:
    has its own ID.
 
    ```shell
-   osadmin@ipfabric-server:~$ sudo systemctl | grep jumphost
+   osadmin@ipfabric-server:~$ sudo systemctl | grep ipf-jumphost
    [sudo] password for osadmin: 
-     jumphost@923216920.service                                   loaded activating auto-restart Jumphost (ID=923216920)
-     system-jumphost.slic                                         loaded active     active       system-jumphost.slice
+     ipf-jumphost@923216920.service                               loaded activating auto-restart ipf-jumphost (ID=923216920)
    ```
 
    ```shell
-   osadmin@ipfabric-server:~$ systemctl status jumphost@923216920.service
-   Failed to connect to bus: No such file or directory
-   osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
-   ● jumphost@923216920.service - Jumphost (ID=923216920)
-        Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
+   osadmin@ipfabric-server:~$ sudo systemctl status ipf-jumphost@923216920.service
+   ● ipf-jumphost@923216920.service - ipf-jumphost (ID=923216920)
+        Loaded: loaded (/lib/systemd/system/ipf-jumphost@.service; disabled; vendor preset: enabled)
         Active: activating (auto-restart) (Result: exit-code) since Wed 2022-12-14 14:25:52 UTC; 6s ago
-       Process: 682331 ExecStart=/opt/nimpee/jumphost/start-one.sh /opt/nimpee/conf.d/jumphost/923216920.conf (code=exited, status=1/FAILURE)
+       Process: 682331 ExecStart=/opt/ipf-jumphost/bin/start-one.sh /opt/ipf-jumphost/conf/923216920.conf (code=exited, status=1/FAILURE)
    ```
 
 3. Stop the `jumphost` service:
 
    ```shell
-   sudo systemctl stop jumphost@xxxx.service
+   sudo systemctl stop ipf-jumphost@xxxx.service
    ```
 
 4. Check that **the `jumphost` process is inactive** with:
 
    ```shell
-   systemctl status jumphost@xxxx.service
+   systemctl status ipf-jumphost@xxxx.service
    ```
 
    ```shell
-   osadmin@ipfabric-server:~$ sudo systemctl status jumphost@923216920.service
-   ● jumphost@923216920.service - Jumphost (ID=923216920)
-        Loaded: loaded (/lib/systemd/system/jumphost@.service; disabled; vendor preset: enabled)
+   osadmin@ipfabric-server:~$ sudo systemctl status ipf-jumphost@923216920.service
+   ● ipf-jumphost@923216920.service - ipf-jumphost (ID=923216920)
+        Loaded: loaded (/lib/systemd/system/ipf-jumphost@.service; disabled; vendor preset: enabled)
         Active: inactive (dead)
 
    Dec 14 14:28:55 ipfabric-server sshuttle[682901]: ssh: connect to host 2.3.2.1 port 22: Network is unreachable
@@ -184,10 +181,10 @@ these steps:
    Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(spawn_id) "exp3"
    Dec 14 14:28:55 ipfabric-server start-one.sh[682882]: expect: set expect_out(buffer) ""
    Dec 14 14:28:55 ipfabric-server start-one.sh[682915]: Dec 14 14:28:55 [ERROR] Jumphost was not started
-   Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Control process exited, code=exited, status=1/FAILURE
-   Dec 14 14:28:55 ipfabric-server systemd[1]: jumphost@923216920.service: Failed with result 'exit-code'.
-   Dec 14 14:28:55 ipfabric-server systemd[1]: Failed to start Jumphost (ID=923216920).
-   Dec 14 14:29:13 ipfabric-server systemd[1]: Stopped Jumphost (ID=923216920).
+   Dec 14 14:28:55 ipfabric-server systemd[1]: ipf-jumphost@923216920.service: Control process exited, code=exited, status=1/FAILURE
+   Dec 14 14:28:55 ipfabric-server systemd[1]: ipf-jumphost@923216920.service: Failed with result 'exit-code'.
+   Dec 14 14:28:55 ipfabric-server systemd[1]: Failed to start ipf-jumphost (ID=923216920).
+   Dec 14 14:29:13 ipfabric-server systemd[1]: Stopped ipf-jumphost (ID=923216920).
    ```
 
 5. The IP Fabric GUI should be accessible by now.
