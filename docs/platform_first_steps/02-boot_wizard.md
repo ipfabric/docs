@@ -25,7 +25,7 @@ first time and configures basic system parameters:
 
 The wizard can also be re-run later from the CLI.
 
-Its documentation can be found in [System 'Boot Wizard'](../System_Administration/boot_wizard/index.md).
+Its documentation can be found in [First Boot Wizard](../System_Administration/First_Boot_Wizard/index.md).
 
 !!! warning
 

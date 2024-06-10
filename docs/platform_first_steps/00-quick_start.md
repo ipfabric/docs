@@ -49,11 +49,11 @@ instructions.
     Importing the OVA will use the base requirements of 4 CPUs, 16 GB RAM, and
     90 GB HDD.
 
-## First Time Boot Wizard
+## First Boot Wizard
 
-The Boot Wizard needs to be completed during the IP Fabric virtual machine's
-initial deployment. The Boot Wizard introduces the configuration of basic
-network parameters, including IP address, DNS, or Proxy settings.
+The First Boot Wizard needs to be completed during the IP Fabric virtual machine's
+initial deployment. The First Boot Wizard introduces the configuration of basic
+network parameters, including IP address, DNS, or proxy settings.
 
 Follow the instructions in [First Boot Wizard](02-boot_wizard.md).
 

@@ -61,16 +61,16 @@ description: In this section, IP Fabric publishes previous version releases of N
 
 - Improved MOTD for NIMPEE troubleshooting user
 - HTTPS access.
-- HTTPS certificate wizard is now part of the initial configuration
+- HTTPS certificate configuration is now part of the First Boot Wizard
 - Image hardening
-- network configuration wizard automatically pre-fill current values
-  (for example current hostname or domain name)
+- First Boot Wizard automatically pre-fills current values
+  (for example, the current hostname or domain name)
 - Remote support SSL VPN
 
 ### System BugFixes
 
 - Simplified bandwidth management
-- Added ability to rerun initial boot wizard
+- Added ability to rerun the First Boot Wizard
 - User configured BW limit is still in place after the reboot
 - DNS is now properly configured in case of static IP address
 - NTP configuration was not properly applied
@@ -169,6 +169,6 @@ description: In this section, IP Fabric publishes previous version releases of N
 - Added integrated support
 - Configurable site boundary detection
 - Configurable operational scope
-- Added first boot wizard
+- Added First Boot Wizard
 - Added Automated error reporting
 - Added Licensing
