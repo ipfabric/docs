@@ -13082,7 +13082,7 @@ If set to <code>false</code> it will ignore the values in the <code>srcRegions</
 </ul>
 </li>
 <li>removed jailkit for <code>osadmin</code> user<ul>
-<li>There is still the limitation for changing the <code>osadmin</code> account password only via running <code>nimpee-net-config -t</code></li>
+<li>There is still the limitation for changing the <code>osadmin</code> account password only via running <code>nimpee-net-config -t</code>. (Note: In version <code>6.9</code>, this command changed to <code>ipf-cli-config -t</code>.)</li>
 <li>CLI users logging in as <code>osadmin</code> now have <code>sudo</code> access</li>
 </ul>
 </li>
@@ -13103,7 +13103,7 @@ Support or Solution Architect teams can render the system unusable.</p>
 <li>First Boot Wizard Changes<ul>
 <li>For VM initial deployments where console access is not possible, it&rsquo;s now possible to run the First Boot Wizard via SSH<ul>
 <li>Boot the VM, determine the IP address assigned to it from DHCP, and SSH to the VM: <code>ssh osadmin@&lt;dhcp-learned-ip-address&gt;</code></li>
-<li>Once logged in, run <code>nimpee-net-config -a</code></li>
+<li>Once logged in, run <code>nimpee-net-config -a</code>. (Note: In version <code>6.9</code>, this command changed to <code>ipf-cli-config -a</code>.)</li>
 </ul>
 </li>
 </ul>
@@ -13112,7 +13112,7 @@ Support or Solution Architect teams can render the system unusable.</p>
 <li>For users wanting to automate VM installations, <code>cloud-init</code> can be used for initial VM provisioning</li>
 <li>IP address assignment to the VM is supported via <code>cloud-init</code></li>
 <li>Any other changes via <code>cloud-init</code> (users, ssh keys, resizing) may work, but are untested and unsupported</li>
-<li>Changing the password for <code>osadmin</code> through <code>cloud-init</code> is discouraged as it has some implications, use <code>nimpee-net-config -t</code> instead</li>
+<li>Changing the password for <code>osadmin</code> through <code>cloud-init</code> is discouraged as it has some implications, use <code>nimpee-net-config -t</code> instead. (Note: In version <code>6.9</code>, this command changed to <code>ipf-cli-config -t</code>.)</li>
 <li>If you are using auto <code>cloud-init</code> via certain cloud providers, note the OpenSSH server will regenerate new public/private keys</li>
 </ul>
 </li>

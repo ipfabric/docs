@@ -12602,15 +12602,15 @@ deployment.</p>
 <p>If some initial parameters need to be modified after the deployment is
 completed, you may re-run the First Boot Wizard with the following command (with
 one or more options) in the CLI as <code>osadmin</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nimpee-net-config
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ipf-cli-config
 </code></pre></div>
 <h2 id="documentation">Documentation</h2>
 <p>To see more command options, log in to the CLI and run:</p>
-<div class="highlight"><pre><span></span><code>nimpee-net-config<span class="w"> </span>-h
+<div class="highlight"><pre><span></span><code>ipf-cli-config<span class="w"> </span>-h
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~#<span class="w"> </span>nimpee-net-config<span class="w"> </span>-h
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~#<span class="w"> </span>ipf-cli-config<span class="w"> </span>-h
 IP<span class="w"> </span>Fabric<span class="w"> </span>network<span class="w"> </span>configuration<span class="w"> </span>wizard.
-Usage:<span class="w"> </span>nimpee-net-config<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span>
+Usage:<span class="w"> </span>/usr/local/bin/ipf-cli-config<span class="w"> </span><span class="o">[</span>-a<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="o">]</span><span class="w"> </span><span class="o">[</span>-s<span class="o">]</span><span class="w"> </span><span class="o">[</span>-t<span class="o">]</span><span class="w"> </span><span class="o">[</span>-b<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span>
 <span class="w">    </span>-a<span class="w">  </span>configure<span class="w"> </span>all<span class="w"> </span>services<span class="w"> </span><span class="o">(</span>network,<span class="w"> </span>proxy,<span class="w"> </span>SSL<span class="w"> </span>cert.,<span class="w"> </span>osadmin<span class="w"> </span>user<span class="o">)</span>
 <span class="w">    </span>-n<span class="w">  </span>network
 <span class="w">    </span>-p<span class="w">  </span>proxy
@@ -12618,23 +12618,12 @@ Usage:<span class="w"> </span>nimpee-net-config<span class="w"> </span><span cla
 <span class="w">    </span>-t<span class="w">  </span>osadmin<span class="w"> </span>troubleshooting<span class="w"> </span>user
 <span class="w">    </span>-b<span class="w">  </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>start<span class="w"> </span>during<span class="w"> </span>boot
 <span class="w">    </span>-h<span class="w">  </span>displays<span class="w"> </span>basic<span class="w"> </span><span class="nb">help</span>
-
-This<span class="w"> </span>script<span class="w"> </span>is<span class="w"> </span>started<span class="w"> </span>automatically<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="s2">&quot;firstrun&quot;</span><span class="w"> </span>parameter<span class="w"> </span>is<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="s2">&quot;yes&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
-or<span class="w"> </span>user<span class="w"> </span><span class="s2">&quot;osadmin&quot;</span><span class="w"> </span>enables<span class="w"> </span>it<span class="w"> </span>using<span class="w"> </span><span class="s2">&quot;nimpee-net-wizard&quot;</span><span class="w"> </span>script.
 </code></pre></div>
 <h2 id="run-full-first-boot-wizard">Run Full First Boot Wizard</h2>
-<p>To re-run the <em>full</em> First Boot Wizard as described
-in <a href="../../platform_first_steps/02-boot_wizard/">First Boot Wizard</a>,
-you may use one of these options:</p>
-<ul>
-<li>Run <code>sudo nimpee-net-config -a</code></li>
-<li>Change <code>firstrun="no"</code> to <code>firstrun="yes"</code> in
-  <code>/opt/nimpee/conf.d/sys-nimpee.conf</code>  (for example, with <code>sudo vi
-  /opt/nimpee/conf.d/sys-nimpee.conf</code>), and reboot.
-  <div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>grep<span class="w"> </span>firstrun<span class="w"> </span>/opt/nimpee/conf.d/sys-nimpee.conf
-<span class="nv">firstrun</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
-</code></pre></div></li>
-</ul>
+<p>To re-run the <em>full</em> First Boot Wizard as described in
+<a href="../../platform_first_steps/02-boot_wizard/">First Boot Wizard</a>, use this
+command:</p>
+<p><code>sudo ipf-cli-config -a</code></p>
 
 
 
