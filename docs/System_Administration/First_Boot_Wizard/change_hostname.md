@@ -12,7 +12,7 @@ CLI, follow these steps:
 2. Run:
 
    ```shell
-   sudo nimpee-net-config -n
+   sudo ipf-cli-config -n
    ```
 
 3. Modify the hostname -- the very first option:

@@ -21,8 +21,12 @@ standard 5-minute retention.
 
 !!! note
 
-    The `osadmin` password cannot be changed with `cloud-init` or `passwd`. To
-    change the `osadmin` password, please use the `nimpee-net-config -t`
-    command.
+    The `osadmin` password cannot be changed with `cloud-init` or `passwd`.
+    
+    To change the `osadmin` password, please use the following command:
+    
+    ```shell
+    sudo ipf-cli-config -t
+    ```
 
 --8<-- "snippets/cli_root_access.md"

@@ -26,28 +26,29 @@ access to these sub-directories:
 Service logs for IP Fabric services are stored in the `/var/log/nimpee`
 directory:
 
-| File(s)                                         | Description                                 |
-| :---------------------------------------------- | :------------------------------------------ |
-| `/var/log/nimpee/api-errors.log`                | API error logs                              |
-| `/var/log/nimpee/api.log`                       | All API logs, including error logs          |
-| `/var/log/nimpee/migrate/`                      | Database migration logs                     |
-| `/var/log/nimpee/net-config.log`                | First Boot Wizard-related logs              |
-| `/var/log/nimpee/net-jumphost-*.log`            | Logs related to a specific jumphost service |
-| `/var/log/nimpee/sys-lvm-resize.log`            | Logs for automatic hard disk resize         |
-| `/var/log/nimpee/net-shaping-newshape.log`      | Discovery bandwidth control logs            |
-| `/var/log/nimpee/support-vpn.log`               | Support VPN-related logs                    |
-| `/var/log/nimpee/sys-arangodb-dump.log`         | ArangoDB dump logs                          |
-| `/var/log/nimpee/sys-backup-duplicity.log`      | Logs for backup services                    |
-| `/var/log/nimpee/duplicity/sys-duplicity-*.log` | Detailed logs for each backup session       |
-| `/var/log/nimpee/sys-certificate.log`           | SSL certificate-related logs                |
-| `/var/log/nimpee/sys-install.log`               | Logs related to IP Fabric installation      |
-| `/var/log/nimpee/sys-service-autorestart.log`   | Logs related to service auto restart        |
-| `/var/log/nimpee/sys-techsupport.log`           | Techsupport-related logs                    |
-| `/var/log/nimpee/sys-update.log`                | IP Fabric new version update logs           |
-| `/var/log/nimpee/webhook-worker-errors.log`     | Webhook error logs                          |
-| `/var/log/nimpee/webhook-worker.log`            | webhook worker logs                         |
-| `/var/log/nimpee/frontend.log`                  | Web console errors (received by API)        |
-| `/var/log/nimpee/discovery/syslogWorker/*`      | Configuration management logs               |
+| File(s)                                          | Description                                   |
+| :----------------------------------------------- | :-------------------------------------------- |
+| `/var/log/nimpee/api-errors.log`                 | API error logs                                |
+| `/var/log/nimpee/api.log`                        | All API logs, including error logs            |
+| `/var/log/nimpee/migrate/`                       | Database migration logs                       |
+| `/var/log/nimpee/net-config.log`                 | First Boot Wizard-related logs (before `6.9`) |
+| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log` | First Boot Wizard-related logs (since `6.9`)  |
+| `/var/log/nimpee/net-jumphost-*.log`             | Logs related to a specific jumphost service   |
+| `/var/log/nimpee/sys-lvm-resize.log`             | Logs for automatic hard disk resize           |
+| `/var/log/nimpee/net-shaping-newshape.log`       | Discovery bandwidth control logs              |
+| `/var/log/nimpee/support-vpn.log`                | Support VPN-related logs                      |
+| `/var/log/nimpee/sys-arangodb-dump.log`          | ArangoDB dump logs                            |
+| `/var/log/nimpee/sys-backup-duplicity.log`       | Logs for backup services                      |
+| `/var/log/nimpee/duplicity/sys-duplicity-*.log`  | Detailed logs for each backup session         |
+| `/var/log/nimpee/sys-certificate.log`            | SSL certificate-related logs                  |
+| `/var/log/nimpee/sys-install.log`                | Logs related to IP Fabric installation        |
+| `/var/log/nimpee/sys-service-autorestart.log`    | Logs related to service auto restart          |
+| `/var/log/nimpee/sys-techsupport.log`            | Techsupport-related logs                      |
+| `/var/log/nimpee/sys-update.log`                 | IP Fabric new version update logs             |
+| `/var/log/nimpee/webhook-worker-errors.log`      | Webhook error logs                            |
+| `/var/log/nimpee/webhook-worker.log`             | Webhook worker logs                           |
+| `/var/log/nimpee/frontend.log`                   | Web console errors (received by API)          |
+| `/var/log/nimpee/discovery/syslogWorker/*`       | Configuration management logs                 |
 
 ## Snapshot Logs
 

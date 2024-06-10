@@ -12,7 +12,7 @@ IP Fabric appliance from the CLI, follow these steps:
 2. Run:
 
    ```shell
-   sudo nimpee-net-config -n
+   sudo ipf-cli-config -n
    ```
 
   !!! note

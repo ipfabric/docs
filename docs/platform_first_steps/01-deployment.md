@@ -372,7 +372,7 @@ Ensure validation passed and click `Create`.
 2. Run the [First Boot Wizard](02-boot_wizard.md):
 
     ```shell
-    sudo nimpee-net-config -a
+    sudo ipf-cli-config -a
     ```
 
 !!! important "Console Access"

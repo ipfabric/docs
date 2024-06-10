@@ -9,7 +9,7 @@ description: This section explains how to change the osadmin password using the 
 2. Run:
 
    ```shell
-   sudo nimpee-net-config -t
+   sudo ipf-cli-config -t
    ```
 
 3. Select `Yes` to proceed:
