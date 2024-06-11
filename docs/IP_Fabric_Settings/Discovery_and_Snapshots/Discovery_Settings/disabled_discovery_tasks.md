@@ -29,14 +29,17 @@ disabled Tasks by the device's Serial Number.
 
 ## Default Disabled Discovery Tasks
 
-Since version `6.3.0`, **Disabled Discovery Tasks** contain the following three
+![Default Disabled Discovery Tasks](default_disabled_discovery_tasks.png)
+
+Since version `6.9`, **Disabled Discovery Tasks** contain the following four
 predefined rules:
 
-| **Rule Name**        | **Rule Description**                                                                                                    |
-| :------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| `Disable Pagination` | By default disabled for F5 devices -- the command is modifying the configuration and can break cluster synchronization. |
-| `Transceivers`       | By default disabled for all vendors -- certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More in [Known Issues --> Cisco](../../../support/known_issues/Vendors/cisco/index.md). |
-| `NTP`                | By default disabled for Cisco Firepower -- on some versions, a Firepower bug may freeze the CLI session.                |
+| Rule Name               | Rule Description                                                                                                                   |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `Disable Pagination`    | By default, it is disabled for F5 devices. The command is modifying the configuration and can break cluster synchronization.       |
+| `Transceivers`          | By default, it is disabled for all vendors. Certain Cisco platforms may be affected by a memory leak bug and lead to device crash or hung VTY line. More in [Known Issues -- Cisco](../../../support/known_issues/Vendors/cisco/index.md). |
+| `NTP`                   | By default, it is disabled for Cisco Firepower. On some versions, a Firepower bug may freeze the CLI session.                      |
+| `BGP Advertised Routes` | Since version `6.9`, it is disabled by default for Cisco devices. The output could be huge, so it may break the discovery process. |
 
 Prior to version `6.3.0`, the `Configuration saved` rule (disabling for all
 vendors) was also present by default. New deployments of version `6.3.0` or
