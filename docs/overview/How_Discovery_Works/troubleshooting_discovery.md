@@ -175,6 +175,33 @@ of `0.0.0.0/0`.
 Further information can be located
 in [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
+
+## Summary of Issues
+
+Each snapshot under the **Discovery Snapshot** menu has an **Summary of Issues**
+tab:
+
+![Summary of Issues tab](troubleshooting/summary_of_issues.png)
+
+| Error Type                                  | Description                                                                                                                     |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| Result mapping failures (per command)       | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| Parsing failures (per command)              | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| Result mapping failures (per task)          | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| Ambiguous or Incomplete command             | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| **Command authorization failure**           | Can be resolved by you. Click the item -- you should see more details in the `Error` column.                                    |
+| Invalid command                             | IP Fabric parsing issues, most likely wrong command argument. Can be fixed by us based on a provided techsupport file.          |
+| Command timeout                             | Needs to be investigated separately -- as it can be caused by various factors (IP Fabric SSH client issue, device issue, etc.). |
+| Fatal error                                 | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              | 
+| Unspecified command                         | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| Unknown device version                      | Incorrect device version parsing / missing devices. Can be fixed by the IP Fabric team.                                         |
+| Possible device issue (during parsing)      | IP Fabric parsing issues, can be fixed by us based on a provided techsupport file.                                              |
+| Request failed                              | Related to Vendor API tasks.                                                                                                    |
+| Possible device issue (during task mapping) | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+| Unsupported device                          | Click the item. Compare with <https://matrix.ipfabric.io> to confirm if the devices are indeed not supported by IP Fabric.      |
+| **Authentication error**                    | Can be resolved by you. Click the item -- you should see more details in the `Error` column.                                    |
+| TypeError                                   | IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.                                              |
+
 ## Troubleshooting Missing Devices
 
 There can be numerous reasons why IP Fabric did not discover a
