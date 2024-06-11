@@ -1018,6 +1018,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#summary-of-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting-missing-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12762,6 +12773,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#summary-of-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting-missing-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13099,6 +13121,84 @@ that you have <code>Use for configuration management</code> set on the proper us
 </div>
 <p>Further information can be located
 in <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/">Device Credentials</a>.</p>
+<h2 id="summary-of-issues">Summary of Issues</h2>
+<p>Each snapshot under the <strong>Discovery Snapshot</strong> menu has an <strong>Summary of Issues</strong>
+tab:</p>
+<p><a class="glightbox" href="../troubleshooting/summary_of_issues.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Summary of Issues tab" src="../troubleshooting/summary_of_issues.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Error Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Result mapping failures (per command)</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parsing failures (per command)</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Result mapping failures (per task)</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ambiguous or Incomplete command</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Command authorization failure</strong></td>
+<td style="text-align: left;">Can be resolved by you. Click the item &ndash; you should see more details in the <code>Error</code> column.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Invalid command</td>
+<td style="text-align: left;">IP Fabric parsing issues, most likely wrong command argument. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Command timeout</td>
+<td style="text-align: left;">Needs to be investigated separately &ndash; as it can be caused by various factors (IP Fabric SSH client issue, device issue, etc.).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fatal error</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unspecified command</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unknown device version</td>
+<td style="text-align: left;">Incorrect device version parsing / missing devices. Can be fixed by the IP Fabric team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Possible device issue (during parsing)</td>
+<td style="text-align: left;">IP Fabric parsing issues, can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Request failed</td>
+<td style="text-align: left;">Related to Vendor API tasks.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Possible device issue (during task mapping)</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unsupported device</td>
+<td style="text-align: left;">Click the item. Compare with <a href="https://matrix.ipfabric.io">https://matrix.ipfabric.io</a> to confirm if the devices are indeed not supported by IP Fabric.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Authentication error</strong></td>
+<td style="text-align: left;">Can be resolved by you. Click the item &ndash; you should see more details in the <code>Error</code> column.</td>
+</tr>
+<tr>
+<td style="text-align: left;">TypeError</td>
+<td style="text-align: left;">IP Fabric parsing issues. Can be fixed by us based on a provided techsupport file.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="troubleshooting-missing-devices">Troubleshooting Missing Devices</h2>
 <p>There can be numerous reasons why IP Fabric did not discover a
 device from Day 0: incorrectly configured devices, AAA outage, insufficient
@@ -13272,7 +13372,7 @@ configuration management, then configurations will not be backed up.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 11, 2024</span>
   </span>
 
     
