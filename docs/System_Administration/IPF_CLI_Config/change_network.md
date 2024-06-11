@@ -1,5 +1,5 @@
 ---
-description: This page explains how to change the IP Fabric VM's network configuration using the First Boot Wizard.
+description: This page explains how to change the IP Fabric VM's network configuration using IPF CLI Config.
 ---
 
 # Update Network Configuration

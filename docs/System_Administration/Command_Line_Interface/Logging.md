@@ -31,7 +31,7 @@ directory:
 | `/var/log/nimpee/api-errors.log`                 | API error logs                              |
 | `/var/log/nimpee/api.log`                        | All API logs, including error logs          |
 | `/var/log/nimpee/migrate/`                       | Database migration logs                     |
-| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log` | First Boot Wizard-related logs              |
+| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log` | IPF CLI Config logs                         |
 | `/var/log/ipf/ipf-jumphost/*.log`                | Logs related to a specific jumphost service |
 | `/var/log/nimpee/sys-lvm-resize.log`             | Logs for automatic hard disk resize         |
 | `/var/log/nimpee/net-shaping-newshape.log`       | Discovery bandwidth control logs            |

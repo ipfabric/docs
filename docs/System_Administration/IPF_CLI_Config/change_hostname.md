@@ -1,5 +1,5 @@
 ---
-description: This page explains how to change the hostname or the DNS domain name using the First Boot Wizard.
+description: This page explains how to change the hostname or the DNS domain name using IPF CLI Config.
 ---
 
 # Update Hostname or DNS Domain Name
@@ -30,8 +30,8 @@ CLI, follow these steps:
 
   !!! note
 
-      The First Boot Wizard can modify other configuration items, such as the
-      network interface.
+      IPF CLI Config can modify other configuration items, such as the network
+      interface.
 
       To change only the hostname or the DNS domain name, leave everything as is
       until you reach the `Reboot system` dialog.

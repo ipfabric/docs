@@ -14,9 +14,9 @@ description: This page explains how to manually back up or restore your IP Fabri
 
 !!! important
 
-    Backups are encrypted with the `osadmin` user password configured during the
-    **First Boot Wizard**. If you lose the `osadmin` user password, the backups
-    are also lost!
+    Backups are encrypted with the `osadmin` user password configured with **IPF
+    CLI Config**. If you lose the `osadmin` user password, the backups are also
+    lost!
 
 --8<-- "snippets/username_password_regex.md"
 

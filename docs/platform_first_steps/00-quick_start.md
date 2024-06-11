@@ -49,13 +49,13 @@ instructions.
     Importing the OVA will use the base requirements of 4 CPUs, 16 GB RAM, and
     90 GB HDD.
 
-## First Boot Wizard
+## IPF CLI Config
 
-The First Boot Wizard needs to be completed during the IP Fabric virtual machine's
-initial deployment. The First Boot Wizard introduces the configuration of basic
-network parameters, including IP address, DNS, or proxy settings.
+IPF CLI Config needs to be completed during the IP Fabric virtual machine's
+initial deployment. IPF CLI Config introduces the configuration of basic network
+parameters, including IP address, DNS, or proxy settings.
 
-Follow the instructions in [First Boot Wizard](02-boot_wizard.md).
+Follow the instructions in [IPF CLI Config](02-ipf_cli_config.md).
 
 ## Accessing User Interface
 

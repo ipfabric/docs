@@ -18,7 +18,7 @@ All VM images are available at  [https://releases.ipfabric.io/ipfabric/#current
    1. Change CPU count.
    2. Change memory size.
    3. [Add a new empty virtual disk or resize the main system disk](../System_Administration/increase_disk_space.md).
-3. Power on the VM and [complete the First Boot Wizard](02-boot_wizard.md).
+3. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
 !!! note "Invalid OVF checksum algorithm: SHA256"
 
@@ -369,7 +369,7 @@ Ensure validation passed and click `Create`.
    ssh -i identity-file.pem azureuser@ip_address
    ```
 
-2. Run the [First Boot Wizard](02-boot_wizard.md):
+2. Run [IPF CLI Config](02-ipf_cli_config.md):
 
     ```shell
     sudo ipf-cli-config -a
@@ -377,6 +377,6 @@ Ensure validation passed and click `Create`.
 
 !!! important "Console Access"
 
-    Please note that the Azure serial console might not be accessible for setting the `osadmin` password in the [First Boot Wizard](02-boot_wizard.md).
+    Please note that the Azure serial console might not be accessible for setting the `osadmin` password in [IPF CLI Config](02-ipf_cli_config.md).
     In that case, please contact the IP Fabric Support team or your Solution Architect. 
-    We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during the First Boot Wizard) and run the First Boot Wizard manually.
+    We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during IPF CLI Config) and run IPF CLI Config manually.

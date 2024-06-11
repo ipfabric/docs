@@ -1,5 +1,5 @@
 ---
-description: This section explains how to change the osadmin password using the First Boot Wizard.
+description: This section explains how to change the osadmin password using IPF CLI Config.
 ---
 
 # Update `osadmin` Password

@@ -21,9 +21,9 @@ There are two types of backup:
 
 !!! important
 
-    Backups are encrypted with the `osadmin` user password configured during the
-    **First Boot Wizard**. If you lose the `osadmin` user password, backups are
-    also lost!
+    Backups are encrypted with the `osadmin` user password configured with **IPF
+    CLI Config**. If you lose the `osadmin` user password, backups are also
+    lost!
 
 ## Automatic Local Backups
 
