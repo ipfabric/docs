@@ -12634,14 +12634,16 @@ commands through CLI using SSH or Telnet. Credentials added in <strong>Settings 
 Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Device Credentials</strong> will be
 used by IP Fabric to access the CLI of the network devices.</p>
 <h2 id="credential-selection-logic">Credential Selection Logic</h2>
-<p>If multiple credentials are specified, a top-down algorithm is used when trying to
-log in to a network device, or the credential priority can be changed using
-drag and drop.</p>
+<p>The credential priority can be changed using drag and drop. The credential 
+selection algorithm will match the device&rsquo;s IP address to the subnets specified
+in the credential&rsquo;s <strong>Use in subnets</strong> field, and will try the credentials in the 
+order of the longest prefix match. Within the same prefix match length, the 
+credentials are tried in top-down order.</p>
 <pre class="mermaid"><code>flowchart TD
     A([Start]) --&gt; discoveryHistory{Is the IP address in&lt;br/&gt;the &lt;strong&gt;Management →&lt;br/&gt;Discovery History&lt;/strong&gt;&lt;br/&gt;table?}
     discoveryHistory --&gt; |Yes|previousUsername[Try the previously discovered username.]
     discoveryHistory --&gt; |No|configuredAuth{Does the IP address fall within&lt;br/&gt;the &lt;strong&gt;Use in subnets&lt;/strong&gt; range in&lt;br/&gt;the &lt;strong&gt;Settings → Discovery &amp; Snapshots →&lt;br/&gt;Discovery Settings → Device Credentials&lt;/strong&gt;&lt;br/&gt;table?}
-    configuredAuth --&gt; |Yes|tryAuth[Try the configured &lt;strong&gt;Device Credentials&lt;/strong&gt;&lt;br/&gt;starting from top to bottom.]
+    configuredAuth --&gt; |Yes|tryAuth[Try the configured &lt;strong&gt;Device Credentials,&lt;/strong&gt;&lt;br/&gt;starting from the longest prefix match and&lt;br/&gt;using top-to-bottom order as a tie-breaker.]
     configuredAuth --&gt; |No|loginFailed([&lt;strong&gt;Login failed.&lt;/strong&gt;])
     tryAuth --&gt; |Login succeeded|loginSucceeded([&lt;strong&gt;Login succeeded.&lt;/strong&gt;])
     tryAuth --&gt; |Login failed|otherCreds{Are there other&lt;br/&gt;credentials to try?}
@@ -12663,7 +12665,8 @@ privileges. See the
 <a href="https://matrix.ipfabric.io/">full list of used command in the documentation</a>.</p>
 <p>When adding new credentials, you can limit the validity of the credentials just
 for a part of your network using the <strong>Use in subnets</strong>
-and <strong>Don&rsquo;t use in subnets</strong> fields.</p>
+and <strong>Don&rsquo;t use in subnets</strong> fields. Please be aware that the <strong>Use in subnets</strong> 
+field will also affect the credential selection algorithm.</p>
 <p><a class="glightbox" href="../add-new-cli-credential.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add new CLI credential" src="../add-new-cli-credential.png" /></a></p>
 <p>Provided credentials can be used for configuration change tracking and saved
 configuration consistency (i.e., they allow commands such as <code>show run</code> and
@@ -12703,7 +12706,7 @@ session information.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 14, 2024</span>
   </span>
 
     
