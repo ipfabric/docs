@@ -18,7 +18,7 @@ Other useful commands:
 ```shell title="To Get the Name of the Service and the Latest Logs From the Jumphost Service in Real Time"
 systemctl | grep ipf-jumphost
 
-journalctl -f -u ipf-jumphost@xxx.service
+journalctl -f -u ipf-jumphost@<ID>.service
 ```
 
 ```shell title="To Manually Start a Jumphost"
@@ -160,13 +160,13 @@ these steps:
 3. Stop the `jumphost` service:
 
    ```shell
-   sudo systemctl stop ipf-jumphost@xxxx.service
+   sudo systemctl stop ipf-jumphost@<ID>.service
    ```
 
 4. Check that **the `jumphost` process is inactive** with:
 
    ```shell
-   systemctl status ipf-jumphost@xxxx.service
+   systemctl status ipf-jumphost@<ID>.service
    ```
 
    ```shell

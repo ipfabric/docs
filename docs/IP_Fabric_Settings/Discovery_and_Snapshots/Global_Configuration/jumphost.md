@@ -212,7 +212,7 @@ follow these steps:
 1. Log in to the **virtual machine's CLI** with the `osadmin` account.
 
 2. Filter out the **jumphost** services with the `systemctl | grep ipf-jumphost`
-   command. Each configured jumphost has its own ID.
+   command. Each configured jumphost has its own `ID`.
 
    ```shell
    osadmin@Appliance-5:~$ systemctl | grep ipf-jumphost
@@ -220,7 +220,7 @@ follow these steps:
    ```
 
 3. **Stop the jumphost service** with the `sudo systemctl stop
-   ipf-jumphost@xxxx.service` command and enter the `osadmin` password:
+   ipf-jumphost@<ID>.service` command and enter the `osadmin` password:
 
    ```shell
    osadmin@Appliance-5:~$ sudo systemctl stop ipf-jumphost@10001843.service
@@ -229,7 +229,7 @@ follow these steps:
    ```
 
 4. Check that the **jumphost process is inactive** with the `systemctl status
-   ipf-jumphost@xxxx.service` command:
+   ipf-jumphost@<ID>.service` command:
 
    ```shell
    osadmin@Appliance-5:~$ sudo systemctl status ipf-jumphost@10001843.service

@@ -178,7 +178,7 @@ in [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discove
 
 ## Summary of Issues
 
-Each snapshot under the **Discovery Snapshot** menu has an **Summary of Issues**
+Each snapshot under the **Discovery Snapshot** menu has a **Summary of Issues**
 tab:
 
 ![Summary of Issues tab](troubleshooting/summary_of_issues.png)

@@ -13,9 +13,9 @@ It introduces the configuration of basic network parameters, including:
 - DNS servers
 - proxy server
 
-If some initial parameters need to be modified after the deployment is
-completed, you may re-run IPF CLI Config with the following command (with one or
-more options) in the CLI as `osadmin`:
+If some initial parameters need to be modified after completing the deployment,
+you may re-run IPF CLI Config with the following command (with one or more
+options) as `osadmin`:
 
 ```shell
 sudo ipf-cli-config
@@ -31,7 +31,7 @@ ipf-cli-config -h
 
 ```shell
 osadmin@ipfabric:~# ipf-cli-config -h
-IP Fabric network configuration wizard.
+IPF CLI Config.
 Usage: /usr/local/bin/ipf-cli-config [-a] [-n] [-p] [-s] [-t] [-b] [-h]
 	-a	configure all services (network, proxy, SSL cert., osadmin user)
 	-n	network
@@ -48,4 +48,6 @@ To re-run the _full_ IPF CLI Config as described in
 [IPF CLI Config](../../platform_first_steps/02-ipf_cli_config.md), use this
 command:
 
-`sudo ipf-cli-config -a`
+```shell
+sudo ipf-cli-config -a
+```
