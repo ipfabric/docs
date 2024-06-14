@@ -11,16 +11,18 @@ used by IP Fabric to access the CLI of the network devices.
 
 ## Credential Selection Logic
 
-If multiple credentials are specified, a top-down algorithm is used when trying to
-log in to a network device, or the credential priority can be changed using
-drag and drop.
+The credential priority can be changed using drag and drop. The credential 
+selection algorithm will match the device's IP address to the subnets specified
+in the credential's **Use in subnets** field, and will try the credentials in the 
+order of the longest prefix match. Within the same prefix match length, the 
+credentials are tried in top-down order.
 
 ```mermaid
 flowchart TD
     A([Start]) --> discoveryHistory{Is the IP address in<br/>the <strong>Management →<br/>Discovery History</strong><br/>table?}
     discoveryHistory --> |Yes|previousUsername[Try the previously discovered username.]
     discoveryHistory --> |No|configuredAuth{Does the IP address fall within<br/>the <strong>Use in subnets</strong> range in<br/>the <strong>Settings → Discovery & Snapshots →<br/>Discovery Settings → Device Credentials</strong><br/>table?}
-    configuredAuth --> |Yes|tryAuth[Try the configured <strong>Device Credentials</strong><br/>starting from top to bottom.]
+    configuredAuth --> |Yes|tryAuth[Try the configured <strong>Device Credentials,</strong><br/>starting from the longest prefix match and<br/>using top-to-bottom order as a tie-breaker.]
     configuredAuth --> |No|loginFailed([<strong>Login failed.</strong>])
     tryAuth --> |Login succeeded|loginSucceeded([<strong>Login succeeded.</strong>])
     tryAuth --> |Login failed|otherCreds{Are there other<br/>credentials to try?}
@@ -46,7 +48,8 @@ privileges. See the
 
 When adding new credentials, you can limit the validity of the credentials just
 for a part of your network using the **Use in subnets**
-and **Don't use in subnets** fields.
+and **Don't use in subnets** fields. Please be aware that the **Use in subnets** 
+field will also affect the credential selection algorithm.
 
 ![Add new CLI credential](add-new-cli-credential.png)
 
