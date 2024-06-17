@@ -1,5 +1,5 @@
 IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
-TAG=9.5.26-insiders-4.53.11
+TAG=9.5.27-insiders-4.53.11
 
 serve:
 	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
