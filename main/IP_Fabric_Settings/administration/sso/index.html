@@ -13042,7 +13042,7 @@ osadmin@demo:~$<span class="w"> </span>sudo<span class="w"> </span>-s
 root@demo:/home/osadmin#
 </code></pre></div>
 <h2 id="api-configuration-apijson">API Configuration <code>api.json</code></h2>
-<p>The IP Fabric API configuration is stored in <code>/opt/nimpee/conf.d/api.json</code>. This
+<p>The IP Fabric API configuration is stored in <code>/opt/ipf-api/conf.d/api.json</code>. This
 file needs to be created during the initial configuration, as it does not exist
 in the default image. It will also be persistent during upgrades and will not be
 changed. Below is a full example of the <code>api.json</code> config file:</p>
@@ -13107,11 +13107,11 @@ switching from <code>roleId</code> to <code>roleName</code>.</p>
 </code></pre></div>
 <p>Using the <code>jq</code> command, it is easy to discover JSON errors instead of
 searching through log files or <code>journalctl</code> output.</p>
-<div class="highlight"><pre><span></span><code>root@demo:~$<span class="w"> </span>jq<span class="w"> </span>.<span class="w"> </span>/opt/nimpee/conf.d/api.json
+<div class="highlight"><pre><span></span><code>root@demo:~$<span class="w"> </span>jq<span class="w"> </span>.<span class="w"> </span>/opt/ipf-api/conf.d/api.json
 parse<span class="w"> </span>error:<span class="w"> </span>Expected<span class="w"> </span>another<span class="w"> </span>key-value<span class="w"> </span>pair<span class="w"> </span>at<span class="w"> </span>line<span class="w"> </span><span class="m">4</span>,<span class="w"> </span>column<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 <p>You can reformat and prettify the JSON file by running:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>jq<span class="w"> </span>&lt;<span class="w"> </span>/opt/nimpee/conf.d/api.json<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/opt/nimpee/conf.d/api.json
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>jq<span class="w"> </span>&lt;<span class="w"> </span>/opt/ipf-api/conf.d/api.json<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/opt/ipf-api/conf.d/api.json
 </code></pre></div>
 </details>
 <h3 id="url-configuration">URL Configuration</h3>
@@ -13382,7 +13382,7 @@ include the major version: <code>https://&lt;FQDN&gt;/api/v6/auth/external/sso</
 </li>
 </ul>
 <h3 id="config-file-mapping">Config File Mapping</h3>
-<p>Here is a concise illustration of how the <code>/opt/nimpee/conf.d/api.json</code> values
+<p>Here is a concise illustration of how the <code>/opt/ipf-api/conf.d/api.json</code> values
 map to <code>/etc/ipf-dex.yaml</code>:</p>
 <p><a class="glightbox" href="sso_api_dex_mapping.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="JSON YAML mapping" src="sso_api_dex_mapping.png" /></a></p>
 <h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
@@ -13681,9 +13681,9 @@ following command to get a JSON representation of <code>/etc/ipf-dex.yaml</code>
 multiline string.</p>
 </details>
 <h2 id="restarting-services">Restarting Services</h2>
-<p>After making changes to <code>/opt/nimpee/conf.d/api.json</code>, you need to restart the
+<p>After making changes to <code>/opt/ipf-api/conf.d/api.json</code>, you need to restart the
 API service:</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>nimpee-api.service
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-api.service
 </code></pre></div>
 <p>Consequently, after making changes to <code>/etc/ipf-dex.yaml</code>, you need to restart
 the Dex service:</p>
@@ -13709,7 +13709,7 @@ the Dex service:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2024</span>
   </span>
 
     
