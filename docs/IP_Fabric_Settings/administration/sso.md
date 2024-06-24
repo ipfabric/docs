@@ -550,6 +550,11 @@ connectors:
 
 ### SAML Connector
 
+!!! danger "SAML Connector is obsolete"
+
+    SAML is not recommended, please use OpenID Connect (OIDC) or
+    OAuth2 instead.
+
 Please review the
 [Dex documentation on SAML](https://dexidp.io/docs/connectors/saml/) for all
 configuration options and potential caveats.
@@ -691,3 +696,4 @@ to be restarted:
 ```commandline
 systemctl restart ipf-dex.service
 ```
+
