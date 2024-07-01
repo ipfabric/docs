@@ -73,8 +73,8 @@ MTU value displayed in "show interface" command is assumed to be the default val
 
 **Affected platforms**: FTD family firewalls
 
-**Description**: VLAN ID detection for interfaces - If "show interface detail" doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.
+**Description**: When using FTD, if you run the `show ntp` command, a password prompt will appear in the command line. This will break the discovery of FTD.
 
-**Result**: When using FTD, if you run the `show ntp` command a password prompt will appear in the command line. This will break the discovery of FTD. NTP tasks for FTD is by default disabled. If your FTD is not affected by this bug, you can safely enable it.
+**Result**: The NTP discovery task is by default disabled for FTD. If your FTD is not affected by this bug, you can safely enable it.
 
 [CSCvt01938](https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvt01938)
