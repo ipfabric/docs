@@ -1,12 +1,15 @@
 ---
-description: IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table.
+description: IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table or the CDP/LLDP information (if it contains the MAC address of the remote device).
 ---
 
 # OUI (Organizationally Unique Identifier)
 
 IP Fabric includes an OUI (Organizationally Unique Identifier) table of network
 device manufacturers and uses it during the discovery process whenever a network
-device is discovered through the ARP table.
+device is discovered through:
+
+- the ARP table
+- the CDP/LLDP information if it contains the MAC address of the remote device
 
 ![OUI table](OUI.png)
 
