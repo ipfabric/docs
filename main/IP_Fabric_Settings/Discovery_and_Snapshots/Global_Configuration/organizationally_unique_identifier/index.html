@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table.">
+        <meta name="description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table or the CDP/LLDP information (if it contains the MAC address of the remote device).">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="OUI (Organizationally Unique Identifier) - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table." />
+<meta property="og:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table or the CDP/LLDP information (if it contains the MAC address of the remote device)." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="OUI (Organizationally Unique Identifier) - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table." />
+<meta property="twitter:description" content="IP Fabric includes an OUI (Organizationally Unique Identifier) table of network device manufacturers and uses it during the discovery process whenever a network device is discovered through the ARP table or the CDP/LLDP information (if it contains the MAC address of the remote device)." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -12521,7 +12521,11 @@ here.
 <h1 id="oui-organizationally-unique-identifier">OUI (Organizationally Unique Identifier)</h1>
 <p>IP Fabric includes an OUI (Organizationally Unique Identifier) table of network
 device manufacturers and uses it during the discovery process whenever a network
-device is discovered through the ARP table.</p>
+device is discovered through:</p>
+<ul>
+<li>the ARP table</li>
+<li>the CDP/LLDP information if it contains the MAC address of the remote device</li>
+</ul>
 <p><a class="glightbox" href="../OUI.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="OUI table" src="../OUI.png" /></a></p>
 <p>This table can be found in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global
 Configuration &rarr; OUI</strong>.</p>
@@ -12559,7 +12563,7 @@ to this table and check if OUIs of those devices are enabled for discovery.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 1, 2024</span>
   </span>
 
     
