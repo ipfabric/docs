@@ -12540,30 +12540,33 @@ manually with an update file from <a href="https://releases.ipfabric.io/updates/
 <p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current
-  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
-  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example, <code>5.0.2</code> &rarr; <code>6.1.3</code>).</li>
+<li>Any version in the current major line &rarr; any newer version in the current
+  major line (for example, <code>6.0.1</code> &rarr; <code>6.2.3</code>).</li>
+<li>The <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example, <code>6.2.5</code> &rarr; <code>7.1.3</code>).</li>
 </ul>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Current Release</p>
-<p>The current major release is <code>6.8</code>. Please check the
-<a href="release_notes/6.8/">detailed release notes</a> for this release.</p>
+<p>The current major release is <code>6.8</code>. Please check its
+<a href="release_notes/6.8/">detailed release notes</a>.</p>
 </div>
-<p>Our release naming follows <a href="https://semver.org/">semantic versioning</a>. Where
-components of the version are <code>major.minor.patch+build</code>:</p>
+<p>Our release naming follows <a href="https://semver.org/">semantic versioning</a>, where
+the components of the version are:</p>
+<div class="highlight"><pre><span></span><code>major.minor.patch+build
+</code></pre></div>
 <ul>
-<li><code>major</code> version changes if we introduce a change (typically backwards
-  incompatible) touching APIs, deployment or key component of the platform.</li>
-<li><code>minor</code> version means a significant change, typically a new feature being
+<li>The <code>major</code> version changes if we introduce a (typically backwards
+  incompatible) change affecting APIs, deployment, or key component of the
+  platform.</li>
+<li>The <code>minor</code> version means a significant change, typically a new feature being
   added. These are typically backwards compatible, and we also keep the promise
   of API compatibility.</li>
 <li><code>patch</code> releases are frequently bugfix releases.</li>
-<li><code>build</code> is an internal version which increases with every internal build, thus
-  can be pretty large number. It is used to distinguish between different
+<li><code>build</code> is an internal version that increases with every internal build and
+  can thus be a large number. It is used to distinguish between different
   packages.</li>
 </ul>
 <div class="admonition warning">
@@ -12584,10 +12587,10 @@ following key combinations:</p>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
 <h3 id="update-process">Update Process</h3>
-<p>Our update process is based on Debian apt package resolving. As a result, we
-remove any configured apt repositories during the update. If you have manually
+<p>Our update process is based on Debian&rsquo;s <code>apt</code> package resolving. As a result, we
+remove any configured <code>apt</code> repositories during the update. If you have manually
 configured any repositories, the update process will remove them. Please note
-that we are trying to keep the appliance as small and thin as possible, so any
+that we aim to keep the appliance as small and thin as possible, so any
 unwanted packages may be automatically removed.</p>
 
 
@@ -12609,7 +12612,7 @@ unwanted packages may be automatically removed.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2024</span>
   </span>
 
     

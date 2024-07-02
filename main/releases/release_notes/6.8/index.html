@@ -12737,12 +12737,12 @@ manually with an update file from <a href="https://releases.ipfabric.io/updates/
 <p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
-<li>the <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example <code>5.0.2</code> &rarr; <code>6.1.3</code>)</li>
-<li>any version in the current major line &rarr; any newer version in the current
-  major line (for example <code>6.0.1</code> &rarr; <code>6.2.3</code>)</li>
-<li>the <strong>latest</strong> version in the current major line &rarr; any version in the
-  next major line (for example <code>6.2.5</code> &rarr; <code>7.1.3</code>)</li>
+<li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
+  current major line (for example, <code>5.0.2</code> &rarr; <code>6.1.3</code>).</li>
+<li>Any version in the current major line &rarr; any newer version in the current
+  major line (for example, <code>6.0.1</code> &rarr; <code>6.2.3</code>).</li>
+<li>The <strong>latest</strong> version in the current major line &rarr; any version in the
+  next major line (for example, <code>6.2.5</code> &rarr; <code>7.1.3</code>).</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -12765,18 +12765,19 @@ following key combinations:</p>
 <h3 id="upgrade-notices">Upgrade Notices</h3>
 <ul>
 <li>During the update process, locked snapshots will be unloaded together with
-  other snapshots and their lock will be preserved. Therefore, such snapshots
+  other snapshots, and their locks will be preserved. Therefore, such snapshots
   won&rsquo;t be deleted by snapshot retention.</li>
 <li>
-<p>Upgrade to <code>6.8</code> may break custom SSO integrations and will require a change
-  to the <code>/etc/ipf-dex.yaml</code> file. Since the <code>6.3.2</code> release, we are omitting minor
-  API version for SSO configuration, and only major version will need to be
-  changed with the next major IP Fabric version. Simply replace the <code>vX.Y</code> string in
-  this file with <code>v6</code> and then run <code>systemctl restart ipf-dex</code>.</p>
+<p>The upgrade to version <code>6.8</code> may break custom SSO integrations and will
+  require a change to the <code>/etc/ipf-dex.yaml</code> file. Since the <code>6.3.2</code> release,
+  we are omitting the minor API version for SSO configuration, and only the
+  major version will need to be changed with the next major IP Fabric version.
+  Simply replace the <code>vX.Y</code> string in this file with <code>v6</code> and then run
+  <code>systemctl restart ipf-dex</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">staticClients</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipfabric</span>
 <span class="w">    </span><span class="nt">redirectURIs</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://demo1.eu.ipfabric.io/api/vX/auth/external/azure&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://demo1.eu.ipfabric.io/api/v6/auth/external/azure&quot;</span>
 </code></pre></div>
 <p>For more information, please refer to the
 <a href="../../../IP_Fabric_Settings/administration/sso/#sso-configuration-ipf-dexyaml">SSO documentation</a>.
@@ -12796,7 +12797,7 @@ MD5 (ipfabric-6-8-6+0.vmdk) = cfd14bc55cd02259a6be3d4178c470d4
 <h3 id="security-fixes">Security Fixes</h3>
 <ul>
 <li>Fixed the issue with Vendor API clients logging sensitive data when the
-  sensitive data contained a regex special character (e.g., <code>\t</code>, <code>\b</code>, <code>\d</code>, 
+  sensitive data contained a regex special character (e.g., <code>\t</code>, <code>\b</code>, <code>\d</code>,
   <code>\w</code>, etc.).</li>
 </ul>
 <h2 id="v684-may-14th-2024-ga">v6.8.4 (May 14<sup>th</sup>, 2024; GA)</h2>
@@ -12811,21 +12812,31 @@ MD5 (ipfabric-6-8-4+0.vmdk) = 4da10b0f213a6af0c1c88982115f4dbe
 </code></pre></div>
 <h3 id="network-discovery">Network Discovery</h3>
 <ul>
-<li>Combined API + CLI discovery support for SD-WAN vendors <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Versa_Networks_SD-WAN/">Versa</a> and <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Viptela_SD-WAN/#cisco-viptela-sd-wan">Viptela</a><ul>
-<li>If combined discovery is enabled, routing tables are downloaded via CLI to avoid big data transfers over the controller. The discovery time should be improved.</li>
-<li>After finishing all API calls, IP Fabric tries to connect to one of the device IPs (the default limit is 10 IPs, now configurable with IP Fabric Support). Credentials from the global discovery settings are used. If the device is not reachable, the routing table won&rsquo;t be downloaded.</li>
+<li>Combined API+CLI discovery support for SD-WAN vendors
+  <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Versa_Networks_SD-WAN/">Versa</a>
+  and
+  <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Viptela_SD-WAN/#cisco-viptela-sd-wan">Viptela</a><ul>
+<li>If combined discovery is enabled, routing tables are downloaded via CLI to
+  avoid large data transfers over the controller, improving discovery time.</li>
+<li>After completing all API calls, IP Fabric attempts to connect to one of the
+  device IPs (default limit is 10 IPs, now configurable with IP Fabric
+  Support). Credentials from the global discovery settings are used. If the
+  device is not reachable, the routing table won&rsquo;t be downloaded.</li>
 </ul>
 </li>
-<li>Azure &ndash; The issue with multiple subcriptions has been fixed. Multiple subscriptions can now be specified and will be correctly discovered.</li>
+<li>Azure &ndash; The issue with multiple subcriptions has been fixed. Multiple
+  subscriptions can now be specified and will be correctly discovered.</li>
 <li>Silver Peak (HPE Aruba EdgeConnect) &ndash; Stale ARP records are stored due to a
   very short expiration time (TTL).</li>
 <li>HPE Citrix Aruba CX &ndash; Support for Policy-Based Routing was added.</li>
 <li>Fortinet FortiSwitch<ul>
-<li>It is not necessary to enable it manually (<code>ENABLE_DISCOVERY_DEVICES_FORTISWITCH</code>) anymore.</li>
+<li>It is no longer necessary to enable it manually
+  (<code>ENABLE_DISCOVERY_DEVICES_FORTISWITCH</code>).</li>
 <li>Support for MCLAG and transceivers was added.</li>
 </ul>
 </li>
-<li>Cisco (NX-OS, IOS-XR, ACI, ASA, FTD, IOS, IOS-XE) &ndash; Support for bandwidth on interfaces was added.</li>
+<li>Cisco (NX-OS, IOS-XR, ACI, ASA, FTD, IOS, IOS-XE) &ndash; Support for bandwidth on
+  interfaces was added.</li>
 </ul>
 <h3 id="new-cidr-operators-for-table-routing-columns">New CIDR Operators for Table Routing Columns</h3>
 <ul>
@@ -12839,35 +12850,41 @@ MD5 (ipfabric-6-8-4+0.vmdk) = 4da10b0f213a6af0c1c88982115f4dbe
 </ul>
 </li>
 <li>All new operators take IPv4 CIDR as a value.</li>
-<li>The operators are available for IPv4 routing table columns (e.g., in <strong>Technology &rarr; Routing &rarr; Routes</strong>).</li>
-<li>The operators can be used for table data filtering and in intent verification rule definitions.</li>
+<li>These operators are available for IPv4 routing table columns (e.g., in
+  <strong>Technology &rarr; Routing &rarr; Routes</strong>).</li>
+<li>They can be used for filtering table data and in defining intent verification
+  rules.</li>
 </ul>
 <h3 id="other-changes">Other Changes</h3>
 <ul>
 <li>Discovery error detection and reporting have been improved.<ul>
-<li>In a snapshot&rsquo;s <strong>Summary of Issues</strong>, any Vendor API discovery failure
-  is now being reported (for example, due to missing/wrong
-  credentials):<br/>
+<li>In a snapshot&rsquo;s <strong>Summary of Issues</strong>, any Vendor API discovery failure is
+  now being reported (for example, due to missing/wrong credentials):<br/>
   <a class="glightbox" href="../6.8_failed_vendor_apis.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Failed Vendor APIs" src="../6.8_failed_vendor_apis.png" /></a></li>
 </ul>
 </li>
-<li><code>Device Change</code> dashboard widget &ndash; The <code>Number of Changes</code> axis&rsquo; scale has
-  been changed from linear to logarithmic. This adjustment should improve
-  visualization overall and prevent confusion with scale in certain cases.</li>
-<li>You can now update device attributes on an existing snapshot from global settings in
-  <strong>Discovery Snapshot &rarr; Settings &rarr; Device Attributes</strong>. This action fully replaces
-  all attributes on the snapshot.</li>
-<li>You can filter <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/">Disabled Discovery Tasks</a> by device&rsquo;s Serial Number. This should help with targeting specific devices.</li>
-<li>In Table Description, there&rsquo;s a link to a separate page with the API documentation. Additionally, we&rsquo;ve ensured that the information in our API documentation accurately reflects the behavior of our endpoints.</li>
+<li><code>Device Change</code> dashboard widget &ndash; The scale of the <code>Number of Changes</code> axis
+  has been changed from linear to logarithmic. This adjustment should improve
+  visualization overall and prevent scale confusion in certain cases.</li>
+<li>You can now update device attributes in an existing snapshot from the global
+  settings in <strong>Discovery Snapshot &rarr; Settings &rarr; Device Attributes</strong>. This
+  action fully replaces all attributes in the snapshot.</li>
+<li>You can filter
+  <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/">Disabled Discovery Tasks</a>
+  by a device&rsquo;s Serial Number. This should help in targeting specific devices.</li>
+<li>In Table Description, there&rsquo;s a link to a separate page with the API
+  documentation. Additionally, we&rsquo;ve ensured that the information in our API
+  documentation accurately reflects the behavior of our endpoints.</li>
 <li><code>callhome.ipfabric.io</code> has changed its IP address from <code>95.217.156.217</code> to
   <code>65.109.166.252</code>.<ul>
 <li>It is needed for
   <a href="../../../System_Administration/System_Administration_UI/system_update/#online-update">upgrading IP Fabric over the internet</a>
   (along with <code>releases.ipfabric.io</code>) and
-  <a href="../../../support/#callhome">sending diagnostics (parsing errors)</a> to us.</li>
-<li>If you want to use the mentioned functionalities, please allowlist the FQDN
-  <code>callhome.ipfabric.io</code> instead of the IP address <code>65.109.166.252</code>, as the IP
-  address is subject to change.</li>
+  <a href="../../../support/#callhome">sending diagnostics (parsing errors)</a> to
+  us.</li>
+<li>If you intend to use the mentioned functionalities, please allowlist the
+  FQDN <code>callhome.ipfabric.io</code> instead of the IP address <code>65.109.166.252</code>, as
+  IP addresses are subject to change.</li>
 </ul>
 </li>
 </ul>
@@ -12891,7 +12908,7 @@ MD5 (ipfabric-6-8-4+0.vmdk) = 4da10b0f213a6af0c1c88982115f4dbe
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2024</span>
   </span>
 
     
