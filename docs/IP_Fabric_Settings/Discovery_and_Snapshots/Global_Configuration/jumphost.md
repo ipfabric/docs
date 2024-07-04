@@ -77,19 +77,21 @@ versions:
         ![Add Jumphost form - custom port](jumphost/jumphost_custom_port.png)
 
    - **IPv4 subnets** -- _(mandatory)_ Subnet in CIDR representation. Allows
-     adding more than one, separated with spaces. 
+     adding more than one, separated with spaces. The subnet `0.0.0.0/0` cannot
+     be added here.
 
     !!! warning
 
-        If you use `0.0.0.0/0` or another subnet that **includes the IP address
-        of IP Fabric**, please make sure to **add the IP Fabric IP
-        address/subnet** to **Exclude IPv4 subnet**. Otherwise, the connection
-        to IP Fabric will be lost, and you **will not** be able to **access the
-        IP Fabric GUI/CLI**, requiring manual intervention to fix.
+        If you use any subnet that **includes IP Fabric's IP address or the IP
+        address of its default gateway**, please **add both of these IP
+        addresses or the IP Fabric subnet** to **Exclude IPv4 subnet**.
+        Otherwise, the connection to IP Fabric will be lost, and you **will
+        not** be able to **access the IP Fabric GUI/CLI**, requiring manual
+        intervention to fix.
 
-        Also, if you have multiple jumphosts that have IP addresses that are
-        part of the include list of another jumphost, add the IP addresses in
-        all the other jumphosts' exclude lists.
+        Also, if you have multiple jumphosts with IP addresses that are part of
+        the include list of another jumphost, add these IP addresses to all the
+        other jumphosts' exclude lists.
 
    - **Exclude IPv4 subnets** -- _(optional)_ Subnet to exclude in CIDR
      representation. Allows adding more than one, separated with spaces.
@@ -186,6 +188,19 @@ versions:
    [SSH Key Configuration](#ssh-key-configuration).
 
 ## Jumphost Known Issues
+
+### `Invalid Input` Error When Saving Jumphost Configuration
+
+This might be caused by one of the following requirements not being met:
+
+- The jumphost's **"IPv4 subnets"** must not contain the subnet `0.0.0.0/0`.
+
+- If a subnet in the jumphost's **"IPv4 subnets"** contains either IP Fabric's
+  IP address or the IP address of its default gateway, then these IP addresses
+  must be added to **"Exclude IPv4 subnets"**.
+
+- The **Username** or **Password** configured for the jumphost must not contain
+  any restricted characters.
 
 ### Non-TCP Discovery
 
