@@ -1,29 +1,29 @@
 ---
-description: This page describes the option to establish remote SSL VPN from the IP Fabric appliance to IP Fabric's DC.
+description: This page describes how to establish a remote SSL VPN from your IP Fabric appliance to IP Fabric's DC.
 ---
 
 # Support VPN
 
-Starting with IP Fabric `1.0.3`, you can establish remote SSL VPN to IP Fabric's
-DC. Support VPN uses OpenVPN.
+Starting with IP Fabric `1.0.3`, you can establish a remote SSL VPN from your IP
+Fabric appliance to IP Fabric's DC. Support VPN uses OpenVPN.
 
-Support VPN requires access to `remote.ipfabric.io` remote port `443/tcp`. The
-IP Fabric appliance must be also configured with a functional DNS server.
+Support VPN requires access to `remote.ipfabric.io` on remote port `443/tcp`.
+The IP Fabric appliance must also be configured with a functional DNS server.
 
 --8<-- "snippets/allowlist_fqdn.md"
 
 Connection through proxy servers should work, but it is not guaranteed.
 
-## How to Establish Support VPN
+## How To Establish Support VPN
 
 !!! info "Security Info"
 
-    VPN is always established and teared down by you. VPN connection cannot be
-    triggered externally.
+    VPN is always established and teared down by you. The VPN connection cannot
+    be triggered externally.
 
 ### From GUI
 
-1. Click **Support** in the top-right corner of the IP Fabric GUI.
+1. In the top-right corner of the IP Fabric GUI, click **Support**.
 
 2. Select **Remote support VPN**:
 
@@ -33,7 +33,7 @@ Connection through proxy servers should work, but it is not guaranteed.
 
    ![Remote support over VPN - Connect](vpn/connect.png)
 
-4. `VPN status` should change to `connected` and you should also see the
+4. The `VPN status` should change to `connected`, and you should see the
    assigned IP address.
 
 ### From CLI
@@ -58,7 +58,7 @@ Connection through proxy servers should work, but it is not guaranteed.
 
    ![Start VPN from CLI](vpn/cli_vpn_connect.png)
 
-## How to Tear Down Support VPN
+## How To Tear Down Support VPN
 
 ### From GUI
 
@@ -69,13 +69,13 @@ Connection through proxy servers should work, but it is not guaranteed.
 
    ![Remote support over VPN - Disconnect](vpn/disconnect.png)
 
-3. `VPN status` should change to `disconnected`.
+3. The `VPN status` should change to `disconnected`.
 
 ### From CLI
 
 1. Repeat steps 1 and 2 from the
    [How To Establish Support VPN](#how-to-establish-support-vpn) section above
-   if you logged out, skip this step if you didn't.
+   if you logged out. Skip this step if you didn't.
 
 2. Now run the VPN command:
 
