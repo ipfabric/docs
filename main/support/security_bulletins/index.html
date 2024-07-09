@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Overview of security-related issues in IP Fabric">
+        <meta name="description" content="This page provides an overview of security-related issues in IP Fabric.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Security Bulletin - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Overview of security-related issues in IP Fabric" />
+<meta property="og:description" content="This page provides an overview of security-related issues in IP Fabric." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/security_bulletins.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/security_bulletins/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Security Bulletin - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Overview of security-related issues in IP Fabric" />
+<meta property="twitter:description" content="This page provides an overview of security-related issues in IP Fabric." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/security_bulletins.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -10707,7 +10707,7 @@ here.
   <a href="#nim-9199-privilege-escalation-via-admin-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-9199: Privilege escalation via Admin portal
+        NIM-9199: Privilege Escalation via Admin Portal
       
     </span>
   </a>
@@ -10718,7 +10718,7 @@ here.
   <a href="#nim-9023-api-token-privilege-escalation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-9023: API Token privilege escalation
+        NIM-9023: API Token Privilege Escalation
       
     </span>
   </a>
@@ -12555,7 +12555,7 @@ here.
   <a href="#nim-9199-privilege-escalation-via-admin-portal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-9199: Privilege escalation via Admin portal
+        NIM-9199: Privilege Escalation via Admin Portal
       
     </span>
   </a>
@@ -12566,7 +12566,7 @@ here.
   <a href="#nim-9023-api-token-privilege-escalation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-9023: API Token privilege escalation
+        NIM-9023: API Token Privilege Escalation
       
     </span>
   </a>
@@ -12605,10 +12605,13 @@ here.
 
 
 <h1 id="security-bulletin">Security Bulletin</h1>
-<p>Security notifications affecting the IP Fabric solution published according to our <a href="../security_incidents/">Security Incident Response</a> policy.</p>
+<p>Security notifications affecting the IP Fabric solution published according to
+our <a href="../security_incidents/">Security Incident Response</a> policy.</p>
 <div class="admonition info">
-<p class="admonition-title">Upgrade information</p>
-<p>Upgrade information can be found in the <a href="../../System_Administration/System_Administration_UI/system_update/">System update</a> section.</p>
+<p class="admonition-title">Upgrade Information</p>
+<p>Upgrade Information can be found in the
+<a href="../../System_Administration/System_Administration_UI/system_update/">System Update</a>
+section.</p>
 </div>
 <h2 id="sa-495-decoding-http2-rapid-reset-cve-2023-44487">SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)</h2>
 <table>
@@ -12622,42 +12625,52 @@ here.
 <tbody>
 <tr>
 <td>High</td>
-<td>6.2.0 or newer</td>
+<td><code>6.2.0</code> or newer</td>
 <td>N/A</td>
 </tr>
 </tbody>
 </table>
-<p>The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.</p>
-<p>This affects particularly customers who have an internet-facing IP Fabric instance.</p>
+<p>The HTTP/2 protocol allows a denial of service (server resource consumption),
+because request cancellation can reset many streams quickly, as exploited in the
+wild in August through October 2023.</p>
+<p>This particularly affects customers who have an internet-facing IP Fabric
+instance.</p>
 <h3 id="workaround">Workaround</h3>
-<p>The issue lies in the configuration of <code>http2</code> on the line <code>listen 443 ssl http2;</code> within the nginx configuration files. To resolve this problem, you can remove <code>http2</code>, restart nginx, and the issue will be resolved.
-Currently, upgrading IP Fabric will overwrite the nginx files, leading to the problem recurring.</p>
-<ul>
-<li>Connect via SSH to IP Fabric VM and check which files contain <code>http2</code>:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+<p>The issue lies in the configuration of <code>http2</code> on the line <code>listen 443 ssl
+http2;</code> within the nginx configuration files. To resolve this issue, you can
+remove <code>http2</code> and restart nginx. Currently, upgrading IP Fabric will overwrite
+the nginx files, leading to the issue recurring.</p>
+<ol>
+<li>
+<p>Connect to the IP Fabric VM via SSH and check which files contain <code>http2</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 </code></pre></div>
 <p>The output should look like this:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 /etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
-/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w">  </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
 </code></pre></div>
 </li>
-</ul>
-<ul>
-<li>Edit each file to remove the <code>http2</code> string. You can either do this manually or use the following command:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/ http2//&#39;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
+<li>
+<p>Edit each file to remove the <code>http2</code> string. You can either do this manually
+   or use the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/ http2//&#39;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 </code></pre></div>
-<p>You can verify that the <code>http2</code> has been removed by running the <code>grep</code> command:</p>
+</li>
+<li>
+<p>Verify that <code>http2</code> has been removed by running the <code>grep</code> command:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 /etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="p">;</span>
-/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w">  </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="p">;</span>
 </code></pre></div>
 </li>
-</ul>
-<ul>
-<li>Restart nginx:<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
+<li>
+<p>Restart nginx:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
 </code></pre></div>
 </li>
-</ul>
-<h2 id="nim-9199-privilege-escalation-via-admin-portal">NIM-9199: Privilege escalation via Admin portal</h2>
+</ol>
+<h2 id="nim-9199-privilege-escalation-via-admin-portal">NIM-9199: Privilege Escalation via Admin Portal</h2>
 <table>
 <thead>
 <tr>
@@ -12669,14 +12682,18 @@ Currently, upgrading IP Fabric will overwrite the nginx files, leading to the pr
 <tbody>
 <tr>
 <td>High</td>
-<td>5.0.2 or earlier</td>
-<td>6.0.1</td>
+<td><code>5.0.2</code> or earlier</td>
+<td><code>6.0.1</code></td>
 </tr>
 </tbody>
 </table>
-<p>A read-only user can create an escalated privilege account by taking advantage of token validation.</p>
-<p>Tokens issued in the web app are accepted without proper validation. Using that, users of any privilege level can call an API endpoint for creating a new admin user account using their token. Then it is possible to escalate their privilege by logging in to the new account.</p>
-<h2 id="nim-9023-api-token-privilege-escalation">NIM-9023: API Token privilege escalation</h2>
+<p>A read-only user can create an escalated privilege account by exploiting token
+validation.</p>
+<p>Tokens issued in the web app are accepted without proper validation. Using this,
+users of any privilege level can call an API endpoint to create a new admin user
+account with their token. They can then their privilege by logging in to the new
+account.</p>
+<h2 id="nim-9023-api-token-privilege-escalation">NIM-9023: API Token Privilege Escalation</h2>
 <table>
 <thead>
 <tr>
@@ -12688,13 +12705,15 @@ Currently, upgrading IP Fabric will overwrite the nginx files, leading to the pr
 <tbody>
 <tr>
 <td>High</td>
-<td>5.0.0, 5.0.1 or 5.0.2</td>
-<td>6.0.1</td>
+<td><code>5.0.0</code>, <code>5.0.1</code>, or <code>5.0.2</code></td>
+<td><code>6.0.1</code></td>
 </tr>
 </tbody>
 </table>
-<p>Users can create an API token with RBAC properties that the token is not authorized for.</p>
-<p>An API token can be generated that allows unauthorized collection of network data or modification of IP Fabric system settings.</p>
+<p>Users can create an API token with RBAC properties that the token is not
+authorized for.</p>
+<p>An API token can be generated that allows unauthorized collection of network
+data or modification of IP Fabric system settings.</p>
 
 
 
@@ -12715,7 +12734,7 @@ Currently, upgrading IP Fabric will overwrite the nginx files, leading to the pr
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2024</span>
   </span>
 
     
