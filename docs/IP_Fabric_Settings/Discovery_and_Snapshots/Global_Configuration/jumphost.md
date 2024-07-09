@@ -193,11 +193,15 @@ versions:
 
 This might be caused by one of the following requirements not being met:
 
-- The jumphost's **"IPv4 subnets"** must not contain the subnet `0.0.0.0/0`.
+- The jumphost's **IPv4 subnets** must not contain the subnet `0.0.0.0/0`.
 
-- If a subnet in the jumphost's **"IPv4 subnets"** contains either IP Fabric's
-  IP address or the IP address of its default gateway, then these IP addresses
-  must be added to **"Exclude IPv4 subnets"**.
+- If a subnet in the jumphost's **IPv4 subnets** contains either IP Fabric's IP
+  address or the IP address of its default gateway, then these IP addresses must
+  be added to **Exclude IPv4 subnets**.
+
+- The `127.0.0.0/8` network must not be included in **IPv4 subnets**. If it is
+  currently part of **IPv4 subnets**, it must be explicitly added to **Exclude
+  IPv4 subnets**.
 
 - The **Username** or **Password** configured for the jumphost must not contain
   any restricted characters.
