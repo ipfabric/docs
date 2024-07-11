@@ -4,15 +4,16 @@ description: This page describes known issues with Arista and how to fix them.
 
 # Arista
 
-## Discovery task stops when it hits a VLAN that is not assigned to any ports
-**IP Fabric Version:** All
+## Discovery Task Stops When Encountering VLAN Not Assigned to Any Ports
 
-**Known Affected platforms**: Arista EOS, Platform 7280sr3, Version 4.26.4M
+**IP Fabric version:** all
 
-**Description**: The command `show spanning-tree vlan detail` stops when it hits
-a VLAN that is configured on the device but is not assigned to any ports (exception
-is the default VLAN 1). This has been seen when running `rapid-pvst` spanning-tree
-but could possibly affect other versions.
+**Known affected platforms:** Arista EOS, platform `7280sr3`, version `4.26.4M`
+
+**Description:** The `show spanning-tree vlan detail` command stops when it
+encounters a VLAN configured on the device but not assigned to any ports (except
+for the default VLAN 1). This issue has been observed when running rapid-PVST
+spanning tree but could potentially affect other versions.
 
 !!! example
 
@@ -34,22 +35,31 @@ but could possibly affect other versions.
     No spanning tree information available for vlan 2
     ```
 
-**Result**: Incomplete IP Fabric Path Lookups.
+**Result:** Incomplete IP Fabric path lookups.
 
-**Temporary Fix**: Remove the unused VLAN from the configuration using the `no vlan #` command.
+**Temporary fix:** Remove the unused VLAN from the configuration using the `no
+vlan #` command.
 
-**Permanent Fix**: Unknown. Waiting for a response from Arista.
+**Permanent fix:** Unknown. Waiting for a response from Arista.
 
-## Wrong E2E Path Lookups due to bug in EOS which assigns the same STP ID to different interfaces
+## Wrong End-to-End Path Lookups Due to EOS Bug Assigning Same STP ID to Different Interfaces
 
-**IP Fabric Version:** All
+**IP Fabric version:** all
 
-**Known Affected platforms**: `Arista DCS-7504N`, `4.28.6M-30705735.4286M`, `DCS-7280SR-48C6-F`, `4.26.4M-25280047.4264M`
+**Known affected platforms:** `Arista DCS-7504N` `4.28.6M-30705735.4286M`, `DCS-7280SR-48C6-F` `4.26.4M-25280047.4264M`
 
-**Description**: Arista is assigning the same STP ID to different ports. To serve its purpose spanning tree port ID needs to be unique in a L2 domain. Under some circumstances, e.g. when device operational requirements break its maximum scalability limits or due to a bug in device operating system, a device may assign the same spanning tree port ID to more ports in a single L2 domain. This situation was observed e.g. on `Arista DCS-7504N` running software image with internal build version `4.28.6M-30705735.4286M`. In IP Fabric this has resulted in wrong STP topology calculation and consequent issues in path lookup.
+**Description:** Arista is assigning the same STP ID to different ports. For
+spanning tree port IDs to serve their purpose, they need to be unique within an
+L2 domain. Under certain circumstances (such as when a device's operational
+requirements exceed its maximum scalability limits or due to a bug in the
+device's operating system), a device may assign the same spanning tree port ID
+to multiple ports within a single L2 domain. This situation was observed, for
+example, on `Arista DCS-7504N` running a software image with internal build
+version `4.28.6M-30705735.4286M`. In IP Fabric, this has resulted in incorrect
+STP topology calculations and consequent issues in path lookup.
 
-**Result**: Incomplete IP Fabric Path Lookups.
+**Result:** Incomplete path lookups in IP Fabric.
 
-**Temporary Fix**: None.
+**Temporary fix:** None.
 
-**IP Fabric fix Version**: To be specified.
+**IP Fabric fix version:** To be specified.

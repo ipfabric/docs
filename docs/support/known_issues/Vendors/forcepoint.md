@@ -4,14 +4,17 @@ description: This page describes known issues with Forcepoint and how to fix the
 
 # Forcepoint
 
-## Forcepoint NGFW CLI discovery
+## Forcepoint NGFW CLI Discovery
 
-**IP Fabric Version:** All
+**IP Fabric version:** all
 
-**Known Affected platforms**: Forcepoint NGFW
+**Known affected platforms**: Forcepoint NGFW
 
-**Description**: When running discovery via CLI be sure you are using an account that can run the `sg-*` commands. When the account doesn't have the privileges to run the commands, it will give an error `command not found`.
+**Description**: When performing discovery via CLI, ensure that you are using an
+account that has the necessary privileges to run the `sg-*` commands. If the
+account lacks these privileges, attempting to run the commands will result in a
+`command not found` error.
 
-### List of all `sg-` commands
+### List of All `sg-*` Commands
 
-![sg-command-list](forcepoint_sg_command_list.png)
+![List of commands](forcepoint_sg_command_list.png)

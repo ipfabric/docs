@@ -4,12 +4,12 @@ description: This page describes known issues with Dell and how to fix them.
 
 # Dell
 
-**IP Fabric Version:** All
+**IP Fabric Version:** all
 
-**Known Affected platforms**: Dell SmartFabric OS10
+**Known affected platforms:** Dell SmartFabric OS10
 
-**Description**: The command `show license status` is only available for
-`sysadmin` user role. This command is required to detect the serial number
+**Description:** The `show license status` command is only available for users
+with the `sysadmin` role. This command is necessary to detect the serial number
 and discover the device.
 
-**Fix**: User must be added to the `sysadmin` role for discovery to occur.
+**Fix:** The user must be added to the `sysadmin` role for discovery to occur.
