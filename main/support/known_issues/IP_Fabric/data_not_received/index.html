@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SSH client not received any data for last xx ms! errors in Connectivity Report explanation">
+        <meta name="description" content="This page explains the error "SSH client not received any data for last xx ms!" seen in the Connectivity Report.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Connectivity Report &ndash; SSH client not received any data for last xx ms! - IP Fabric Documentation Portal" />
-<meta property="og:description" content="SSH client not received any data for last xx ms! errors in Connectivity Report explanation" />
+<meta property="og:description" content="This page explains the error "SSH client not received any data for last xx ms!" seen in the Connectivity Report." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/data_not_received.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/IP_Fabric/data_not_received/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Connectivity Report &ndash; SSH client not received any data for last xx ms! - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="SSH client not received any data for last xx ms! errors in Connectivity Report explanation" />
+<meta property="twitter:description" content="This page explains the error "SSH client not received any data for last xx ms!" seen in the Connectivity Report." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/data_not_received.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -10886,7 +10886,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Customer name in techsupport
+    Customer Name in Techsupport
   
 
     
@@ -10913,7 +10913,7 @@ here.
   <span class="md-ellipsis">
     
   
-    FTP backup and restore are not working
+    FTP Backup and Restore Are Not Working
   
 
     
@@ -11046,10 +11046,10 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-improve-the-performance-of-discovery-services" class="md-nav__link">
+  <a href="#how-to-improve-performance-of-discovery-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Improve the Performance of Discovery Services
+        How To Improve Performance of Discovery Services
       
     </span>
   </a>
@@ -11105,7 +11105,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Restore Is Not Working When 2 Full Backups Are Present
+    Restore Is Not Working When Two Full Backups Are Present
   
 
     
@@ -11236,7 +11236,7 @@ here.
   <span class="md-ellipsis">
     
   
-    a request xxx Failed to fetch HTTP status: 504 followed by Database seems to be overloaded
+    a request xxx Failed to fetch HTTP status: 504 Followed by Database seems to be overloaded
   
 
     
@@ -12485,10 +12485,10 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-improve-the-performance-of-discovery-services" class="md-nav__link">
+  <a href="#how-to-improve-performance-of-discovery-services" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Improve the Performance of Discovery Services
+        How To Improve Performance of Discovery Services
       
     </span>
   </a>
@@ -12585,27 +12585,29 @@ here.
 
 
 <h1 id="connectivity-report-ssh-client-not-received-any-data-for-last-xx-ms">Connectivity Report &ndash; <code>SSH client not received any data for last xx ms!</code></h1>
-<p>If you encounter this error message while running discovery, it means that the SSH client has not received any data from the network device for a certain period. This can be caused by various factors, such as:</p>
+<p>If you encounter this error message during discovery, it indicates that the SSH client has not received any data from the network device for a certain period. This could be due to various factors, including:</p>
 <ul>
-<li>Slow response from network devices due to high CPU or memory usage, configuration issues, or network errors.</li>
+<li>Slow response from network devices caused by high CPU or memory usage, configuration issues, or network errors.</li>
 </ul>
 <ul>
-<li>Congested network that causes packet loss, latency, or jitter between the SSH client and the network device.</li>
+<li>Congested network causing packet loss, latency, or jitter between the SSH client and the network device.</li>
 </ul>
 <ul>
-<li>Discovery services being overloaded with other tasks and prevent the SSH client from sending or receiving data.</li>
+<li>Discovery services being overloaded with other tasks, preventing the SSH client from sending or receiving data.</li>
 </ul>
-<h2 id="how-to-improve-the-performance-of-discovery-services">How to Improve the Performance of Discovery Services</h2>
-<p>There are some ways to improve the performance of discovery services and reduce the occurrence of this error message. Some of them are:</p>
+<h2 id="how-to-improve-performance-of-discovery-services">How To Improve Performance of Discovery Services</h2>
+<p>There are several ways to enhance the performance of discovery services and reduce the occurrence of this error message. Some suggestions include:</p>
 <ul>
-<li>Create more workers to handle more concurrent SSH sessions and distribute the workload among them (available since 6.0).</li>
+<li>Creating more workers to manage additional concurrent SSH sessions and distribute the workload among them (available since <code>6.0</code>).</li>
 </ul>
 <ul>
-<li>Limit the number of devices processed by each worker to avoid overloading them and causing timeouts or errors (available since 6.3.1).</li>
+<li>Limiting the number of devices processed by each worker to prevent overloading and potential timeouts or errors (available since <code>6.3.1</code>).</li>
 </ul>
-<p>Contact the Support or Solution Architect team for changes in the discovery services configuration or architecture that can optimize the performance and scalability.</p>
-<p>We are actively searching for not optimized tasks that can cause the discovery services to be stuck and prevent them from processing SSH data. We appreciate your feedback and cooperation in reporting any issues you encounter with our discovery services.</p>
-<p>If you have an extensive number of these error messages, please contact us through our support portal. We will investigate the issue and provide you with a solution as soon as possible.</p>
+<ul>
+<li>Contacting the Support or Solution Architecture team to explore configuration or architectural changes that can optimize the performance and scalability of the discovery services.</li>
+</ul>
+<p>We are actively identifying tasks that are not optimized, which may cause the discovery services to stall and hinder the processing of SSH data. Your feedback and cooperation in reporting any issues encountered with our discovery services are highly appreciated.</p>
+<p>If you are experiencing a significant number of these error messages, please reach out to us through our support portal. We will investigate the issue promptly and provide a resolution as soon as possible.</p>
 
 
 
@@ -12626,7 +12628,7 @@ here.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2024</span>
   </span>
 
     

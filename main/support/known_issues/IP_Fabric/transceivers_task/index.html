@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This page describes known issues with the Transceivers task and how to fix them.">
+        <meta name="description" content="This page describes that the Transceivers task is disabled by default due to a known issue, and how you can enable it.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Transceivers Task - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This page describes known issues with the Transceivers task and how to fix them." />
+<meta property="og:description" content="This page describes that the Transceivers task is disabled by default due to a known issue, and how you can enable it." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/transceivers_task.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/IP_Fabric/transceivers_task/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Transceivers Task - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This page describes known issues with the Transceivers task and how to fix them." />
+<meta property="twitter:description" content="This page describes that the Transceivers task is disabled by default due to a known issue, and how you can enable it." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/transceivers_task.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -10886,7 +10886,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Customer name in techsupport
+    Customer Name in Techsupport
   
 
     
@@ -10913,7 +10913,7 @@ here.
   <span class="md-ellipsis">
     
   
-    FTP backup and restore are not working
+    FTP Backup and Restore Are Not Working
   
 
     
@@ -11048,7 +11048,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Restore Is Not Working When 2 Full Backups Are Present
+    Restore Is Not Working When Two Full Backups Are Present
   
 
     
@@ -11135,13 +11135,41 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Task Execution Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disclaimer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#how-to-find-transceivers-in-ip-fabric" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Find Transceivers in IP Fabric
+        How To Find Transceivers in IP Fabric
       
     </span>
   </a>
@@ -11152,7 +11180,7 @@ here.
   <a href="#how-to-enabledisable-transceivers-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Enable/Disable Transceivers Task
+        How To Enable/Disable Transceivers Task
       
     </span>
   </a>
@@ -11258,7 +11286,7 @@ here.
   <span class="md-ellipsis">
     
   
-    a request xxx Failed to fetch HTTP status: 504 followed by Database seems to be overloaded
+    a request xxx Failed to fetch HTTP status: 504 Followed by Database seems to be overloaded
   
 
     
@@ -12515,13 +12543,41 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Task Execution Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disclaimer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#how-to-find-transceivers-in-ip-fabric" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Find Transceivers in IP Fabric
+        How To Find Transceivers in IP Fabric
       
     </span>
   </a>
@@ -12532,7 +12588,7 @@ here.
   <a href="#how-to-enabledisable-transceivers-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Enable/Disable Transceivers Task
+        How To Enable/Disable Transceivers Task
       
     </span>
   </a>
@@ -12630,27 +12686,27 @@ here.
 
 <h1 id="transceivers-task">Transceivers Task</h1>
 <h2 id="task-execution-control">Task Execution Control</h2>
-<p>Executing some commands to get transceiver related information may cause issues on some devices. In the worst case, a device may crash and reload. To prevent disruptions of your network, IP Fabric uses a transceiver task execution control system. The task is only executed on a device if:</p>
+<p>Executing certain commands to retrieve transceiver-related information may cause issues on some devices. In the worst case, a device may crash and reload. To prevent network disruptions, IP Fabric employs a transceiver task execution control system. The task is only executed on a device if:</p>
 <ul>
-<li>The Transceivers task is enabled.</li>
-<li>IP Fabric doesn’t classify the device to be affected by any known bugs.</li>
+<li>The <code>Transceivers</code> task is enabled.</li>
+<li>IP Fabric doesn’t classify the device as affected by any known bugs.</li>
 </ul>
-<p><strong>Note:</strong></p>
+<h3 id="note">Note</h3>
 <ul>
-<li>The Transceivers task is disabled by default. You can enable it in the IP Fabric settings (see the steps below).</li>
-<li>Even if the Transceivers task is enabled, IP Fabric still prevents its execution on any device that is classified to be affected by any known bug. It is not possible to disable this feature now. See the list of known bugs and their corresponding <a href="../../Vendors/cisco/Show_Interface_Transceivers/">software and hardware versions.</a></li>
+<li>By default, the <code>Transceivers</code> task is disabled. You can enable it in the IP Fabric settings (follow the steps below).</li>
+<li>Even if the <code>Transceivers</code> task is enabled, IP Fabric still prevents its execution on any devices classified as affected by any known bugs. This feature cannot be disabled at this time. Refer to the list of known bugs and their corresponding <a href="../../Vendors/cisco/Show_Interface_Transceivers/">software and hardware versions</a>.</li>
 </ul>
-<p><strong>Disclaimer</strong></p>
-<p>Although we try to prevent task execution on all software and hardware versions that are known to be affected by any bug, we cannot guarantee that all bugs are patched. For example, a device manufacturer may update their list of devices affected by a certain bug in time, but IP Fabric may not fully reflect it.</p>
-<h2 id="how-to-find-transceivers-in-ip-fabric">How to Find Transceivers in IP Fabric</h2>
-<p>Navigate to <strong>Technology &rarr; Interfaces &rarr; Transceivers</strong></p>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>While we strive to prevent task execution on all software and hardware versions known to be affected by bugs, we cannot guarantee that all bugs are patched. For example, a device manufacturer may update their list of devices affected by a specific bug over time, but IP Fabric may not fully reflect these updates.</p>
+<h2 id="how-to-find-transceivers-in-ip-fabric">How To Find Transceivers in IP Fabric</h2>
+<p>Navigate to <strong>Technology &rarr; Interfaces &rarr; Transceivers</strong>:</p>
 <p><a class="glightbox" href="../ipf_issues/transceivers_interfaces.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric menu" src="../ipf_issues/transceivers_interfaces.png" /></a></p>
-<h2 id="how-to-enabledisable-transceivers-task">How to Enable/Disable Transceivers Task</h2>
-<p>This function is <strong>enabled by default</strong> for all vendors and product families. This means that <strong>this command is not executed on any device</strong>.</p>
-<p>The function can be <strong>Enabled/Disabled</strong> in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Disabled Discovery Tasks</strong>.</p>
+<h2 id="how-to-enabledisable-transceivers-task">How To Enable/Disable Transceivers Task</h2>
+<p>This task is <strong>enabled by default</strong> for all vendors and product families, meaning that <strong>this command is not executed on any device</strong>.</p>
+<p>You can <strong>enable/disable</strong> this task in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Disabled Discovery Tasks</strong>.</p>
 <p><a class="glightbox" href="../ipf_issues/transceivers_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Transceivers settings" src="../ipf_issues/transceivers_settings.png" /></a></p>
-<p>To <strong>disable</strong> this task, you need to <strong>delete the default Transceivers task</strong> or <strong>edit</strong> this default task.</p>
-<p>When <strong>editing</strong> this rule, you select by regex expression on which devices this command <strong>should not</strong> be executed (so for example, if you don&rsquo;t want to run the <code>show interface transceivers</code> command for all Cisco devices, put <code>cisco</code> to the <strong>Vendor</strong> field. More specific device selection can be done with the <strong>Family</strong>, <strong>Platform</strong>, <strong>Model</strong>, and <strong>Version</strong> fields). You can simply test your regex rules with the <strong>Test rules</strong> button.</p>
+<p>To <strong>disable</strong> this task, you need to <strong>delete the default <code>Transceivers</code> task</strong> or <strong>edit</strong> it.</p>
+<p>When <strong>editing</strong> this task, you select devices by using a regex expression where this command <strong>should not</strong> be executed. For example, if you don&rsquo;t want to run the <code>show interface transceivers</code> command on all Cisco devices, enter <code>cisco</code> to the <strong>Vendor</strong> field. More specific device selection can be done using the <strong>Family</strong>, <strong>Platform</strong>, <strong>Model</strong>, and <strong>Version</strong> fields. You can test your regex rules with the <strong>Test rules</strong> button.</p>
 <p><a class="glightbox" href="../ipf_issues/transceivers_edit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Edit transceivers rule" src="../ipf_issues/transceivers_edit.png" /></a></p>
 
 
@@ -12672,7 +12728,7 @@ here.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2024</span>
   </span>
 
     
@@ -12750,7 +12806,7 @@ here.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../restore_not_working_with_2_full_backups/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Restore Is Not Working When 2 Full Backups Are Present">
+          <a href="../restore_not_working_with_2_full_backups/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Restore Is Not Working When Two Full Backups Are Present">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12760,7 +12816,7 @@ here.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Restore Is Not Working When 2 Full Backups Are Present
+                Restore Is Not Working When Two Full Backups Are Present
               </div>
             </div>
           </a>

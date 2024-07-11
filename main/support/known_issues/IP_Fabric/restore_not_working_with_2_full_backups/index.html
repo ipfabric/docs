@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="If two full backups are present in the backup directory, this article should help you get the backup restore working again.">
+        <meta name="description" content="This page describes how to resolve the issue of restoring backups when two full backups are present in the backup directory.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Restore Is Not Working When 2 Full Backups Are Present - IP Fabric Documentation Portal</title>
+        <title>Restore Is Not Working When Two Full Backups Are Present - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Restore Is Not Working When 2 Full Backups Are Present - IP Fabric Documentation Portal" />
-<meta property="og:description" content="If two full backups are present in the backup directory, this article should help you get the backup restore working again." />
+<meta property="og:title" content="Restore Is Not Working When Two Full Backups Are Present - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This page describes how to resolve the issue of restoring backups when two full backups are present in the backup directory." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Restore Is Not Working When 2 Full Backups Are Present - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="If two full backups are present in the backup directory, this article should help you get the backup restore working again." />
+<meta property="twitter:title" content="Restore Is Not Working When Two Full Backups Are Present - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This page describes how to resolve the issue of restoring backups when two full backups are present in the backup directory." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restore-is-not-working-when-2-full-backups-are-present" class="md-skip">
+        <a href="#restore-is-not-working-when-two-full-backups-are-present" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Restore Is Not Working When 2 Full Backups Are Present
+              Restore Is Not Working When Two Full Backups Are Present
             
           </span>
         </div>
@@ -10886,7 +10886,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Customer name in techsupport
+    Customer Name in Techsupport
   
 
     
@@ -10913,7 +10913,7 @@ here.
   <span class="md-ellipsis">
     
   
-    FTP backup and restore are not working
+    FTP Backup and Restore Are Not Working
   
 
     
@@ -11057,7 +11057,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Restore Is Not Working When 2 Full Backups Are Present
+    Restore Is Not Working When Two Full Backups Are Present
   
 
     
@@ -11189,7 +11189,7 @@ here.
   <span class="md-ellipsis">
     
   
-    a request xxx Failed to fetch HTTP status: 504 followed by Database seems to be overloaded
+    a request xxx Failed to fetch HTTP status: 504 Followed by Database seems to be overloaded
   
 
     
@@ -12518,7 +12518,7 @@ here.
   
 
 
-<h1 id="restore-is-not-working-when-2-full-backups-are-present">Restore Is Not Working When 2 Full Backups Are Present</h1>
+<h1 id="restore-is-not-working-when-two-full-backups-are-present">Restore Is Not Working When Two Full Backups Are Present</h1>
 <p>When two full backups exist in the backup directory:</p>
 <div class="highlight"><pre><span></span><code>root@ipfabric:/backup/ipfabric#<span class="w"> </span>ls<span class="w"> </span>-latr
 total<span class="w"> </span><span class="m">206316</span>
@@ -12531,15 +12531,23 @@ drwxr-xr-x<span class="w"> </span><span class="m">5</span><span class="w"> </spa
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">40631</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:06<span class="w"> </span>ipfabric-94c370c9-duplicity-full.20230418T090633Z.manifest.gpg
 drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">     </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:06<span class="w"> </span>.
 </code></pre></div>
-<p>restoring will fail with an error message: <code>No backups files exists for given source</code>.</p>
-<p>To restore the newer full backup (in this example, <code>20230418T090633Z</code>), it is necessary to delete or move the files of the older full backup (<code>20230418T090304Z</code>).</p>
-<p>Before restoring the backup, please ensure that the backup directory contains only files of one full backup and its related incremental backups. You can sort the files from oldest to newest with this command:</p>
-<div class="highlight"><pre><span></span><code>ls -lahtr &lt;path_to_backup_directory&gt;
+<p>restoring will fail with an error message:</p>
+<div class="highlight"><pre><span></span><code>No backups files exists for given source
 </code></pre></div>
-<p>By default, two full backups are kept in the backup directory. A possible hot fix is to keep only one full backup (and its incremental backups) by changing the following line in <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> script (as a root):</p>
+<p>To restore the newer full backup (in this example, <code>20230418T090633Z</code>), it is
+necessary to delete or move the files of the older full backup
+(<code>20230418T090304Z</code>).</p>
+<p>Before restoring the backup, please ensure that the backup directory contains
+only files of one full backup and its related incremental backups. You can sort
+the files from oldest to newest with this command:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lahtr<span class="w"> </span>&lt;path_to_backup_directory&gt;
+</code></pre></div>
+<p>By default, two full backups are kept in the backup directory. A possible hotfix
+is to keep only one full backup (and its incremental backups) by changing the
+following line in <code>/opt/nimpee/conf.d/backup/duplicity-backup.conf</code> (as <code>root</code>):</p>
 <div class="highlight"><pre><span></span><code>CLEAN_UP_VARIABLE=&quot;2&quot;
 </code></pre></div>
-<p>to</p>
+<p>to:</p>
 <div class="highlight"><pre><span></span><code>CLEAN_UP_VARIABLE=&quot;1&quot;
 </code></pre></div>
 
@@ -12562,7 +12570,7 @@ drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </spa
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2024</span>
   </span>
 
     
