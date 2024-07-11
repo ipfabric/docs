@@ -1,19 +1,21 @@
 ---
-description: 'IP Fabric describes the error message "Error: AQL: internal error - in index that may occur" and how to fix it.'
+description: 'This page describes what to do if you encounter "Error: AQL: internal error - in index".'
 ---
 
 # Error: AQL: internal error -- in index
 
-When any error containing `Error: AQL: internal error - in index` is
-shown after any main action after upgrade (for example after Unloading
-snapshot or starting Network discovery).
+When `Error: AQL: internal error - in index` appears after any main action
+following an upgrade (for example, after unloading a snapshot or starting
+network discovery), it indicates that the database has become corrupted (rest
+assured, all your data is safely stored).
 
-The database got corrupted (no worries, all your data is safely
-stored), and it is necessary to run maintenance.
+To resolve this issue, you need to perform System Maintenance:
 
-This can be done in **Settings --> System --> Backup & Maintenance** in the main GUI.
-For more information see [Schedule System Maintenance](../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
+1. In the main GUI, navigate to **Settings --> System --> Backup &
+   Maintenance**. For more information, see
+   [Schedule System Maintenance](../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
-If this does not help, we recommend restarting ArangoDB process in
-System Administration (port `8443`) [System Status](../../../../System_Administration/System_Administration_UI/system_status.md) and
-running maintenance -- see the previous step.
+2. If the above step does not resolve the issue, we recommend restarting the
+   ArangoDB process in **System Administration (port `8443`) -->
+   [System status](../../../../System_Administration/System_Administration_UI/system_status.md)**
+   and then running System Maintenance again.

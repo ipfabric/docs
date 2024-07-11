@@ -1,20 +1,26 @@
 ---
-description: This section helps you define passwords for different services that IP Fabric uses.
+description: This page describes the password restrictions for various services used by IP Fabric.
 ---
 
 # Service Passwords
 
-Passwords to the following services must match this regular expression:
-`/^[A-Za-z0-9\.,\/_@%^:=+ -]*$/` (they can contain only these characters: `A-Z`
-`a-z` `0-9` `.,/_@%^:=+ -`).
+Passwords to the following services:
 
 - Backup
 - Jumphosts
 - SNMP
 
-Furthermore, the same restriction applies to the fields **Organization name**,
+must match this regular expression:
+
+```
+/^[A-Za-z0-9\.,\/_@%^:=+ -]*$/
+```
+
+(They can only contain these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`)
+
+Additionally, the same restriction applies to the fields **Organization name**,
 **Department**, **City**, and **State / Province** in **Settings --> System -->
 IPF Certificates**.
 
-This was done because of issues with some special characters and to increase
-security.
+This restriction was implemented due to issues with certain special characters
+and to enhance security.

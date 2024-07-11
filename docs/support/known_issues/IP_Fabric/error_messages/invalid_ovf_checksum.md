@@ -4,9 +4,10 @@ description: This page describes a known issue with some older ESXi/vSphere vers
 
 # Error: Invalid OVF checksum algorithm: SHA256
 
-When importing the IP Fabric OVA image on vSphere/ESXi, the following error
-might occur:
+When importing the IP Fabric OVA image on vSphere/ESXi, you might encounter the
+following error:
 
 ![OVA error](ova_error.png)
 
-For resolving the issue, please follow the instructions in [OVA Distribution Details](../../../../overview/deployment/ova_details.md).
+To resolve this issue issue, please follow the instructions in
+[OVA Distribution Details](../../../../overview/deployment/ova_details.md).

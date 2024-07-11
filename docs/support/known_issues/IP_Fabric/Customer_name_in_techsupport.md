@@ -1,20 +1,20 @@
 ---
-description: On some old IP Fabric versions, the generic customer name 'IPF' was not updated upon license upload. This page explains how to fix that.
+description: On some older IP Fabric versions, the generic customer name IPF was not updated upon license upload. This page explains how to fix that.
 ---
 
-# Customer name in techsupport
+# Customer Name in Techsupport
 
 !!! info
 
     This issue was fixed in IP Fabric version `6.0.1`.
 
 The customer name is stored in `/opt/nimpee/conf.d/sys-nimpee.conf`. Its default
-value is `IPF` after the initial deployment and it is updated to the real
-customer name upon license upload. When license upload fails, the customer name
-is not updated and generated techsupports would contain `IPF` as the customer
+value is `IPF` after the initial deployment and, it is updated to the real
+customer name upon license upload. When the license upload fails, the customer name
+is not updated, and generated techsupport files would contain `IPF` as the customer
 name.
 
-Affects only new deployments of versions between `5.0.0` and `6.0.0`, not
+This issue affects only new deployments of versions between `5.0.0` and `6.0.0`, not
 upgrades.
 
 The `autoboss` user must be able to create new files in the
