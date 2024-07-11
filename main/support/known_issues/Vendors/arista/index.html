@@ -11405,10 +11405,10 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discovery-task-stops-when-it-hits-a-vlan-that-is-not-assigned-to-any-ports" class="md-nav__link">
+  <a href="#discovery-task-stops-when-encountering-vlan-not-assigned-to-any-ports" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discovery task stops when it hits a VLAN that is not assigned to any ports
+        Discovery Task Stops When Encountering VLAN Not Assigned to Any Ports
       
     </span>
   </a>
@@ -11416,10 +11416,10 @@ here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#wrong-e2e-path-lookups-due-to-bug-in-eos-which-assigns-the-same-stp-id-to-different-interfaces" class="md-nav__link">
+  <a href="#wrong-end-to-end-path-lookups-due-to-eos-bug-assigning-same-stp-id-to-different-interfaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wrong E2E Path Lookups due to bug in EOS which assigns the same STP ID to different interfaces
+        Wrong End-to-End Path Lookups Due to EOS Bug Assigning Same STP ID to Different Interfaces
       
     </span>
   </a>
@@ -12496,10 +12496,10 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discovery-task-stops-when-it-hits-a-vlan-that-is-not-assigned-to-any-ports" class="md-nav__link">
+  <a href="#discovery-task-stops-when-encountering-vlan-not-assigned-to-any-ports" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discovery task stops when it hits a VLAN that is not assigned to any ports
+        Discovery Task Stops When Encountering VLAN Not Assigned to Any Ports
       
     </span>
   </a>
@@ -12507,10 +12507,10 @@ here.
 </li>
       
         <li class="md-nav__item">
-  <a href="#wrong-e2e-path-lookups-due-to-bug-in-eos-which-assigns-the-same-stp-id-to-different-interfaces" class="md-nav__link">
+  <a href="#wrong-end-to-end-path-lookups-due-to-eos-bug-assigning-same-stp-id-to-different-interfaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wrong E2E Path Lookups due to bug in EOS which assigns the same STP ID to different interfaces
+        Wrong End-to-End Path Lookups Due to EOS Bug Assigning Same STP ID to Different Interfaces
       
     </span>
   </a>
@@ -12607,13 +12607,13 @@ here.
 
 
 <h1 id="arista">Arista</h1>
-<h2 id="discovery-task-stops-when-it-hits-a-vlan-that-is-not-assigned-to-any-ports">Discovery task stops when it hits a VLAN that is not assigned to any ports</h2>
-<p><strong>IP Fabric Version:</strong> All</p>
-<p><strong>Known Affected platforms</strong>: Arista EOS, Platform 7280sr3, Version 4.26.4M</p>
-<p><strong>Description</strong>: The command <code>show spanning-tree vlan detail</code> stops when it hits
-a VLAN that is configured on the device but is not assigned to any ports (exception
-is the default VLAN 1). This has been seen when running <code>rapid-pvst</code> spanning-tree
-but could possibly affect other versions.</p>
+<h2 id="discovery-task-stops-when-encountering-vlan-not-assigned-to-any-ports">Discovery Task Stops When Encountering VLAN Not Assigned to Any Ports</h2>
+<p><strong>IP Fabric version:</strong> all</p>
+<p><strong>Known affected platforms:</strong> Arista EOS, platform <code>7280sr3</code>, version <code>4.26.4M</code></p>
+<p><strong>Description:</strong> The <code>show spanning-tree vlan detail</code> command stops when it
+encounters a VLAN configured on the device but not assigned to any ports (except
+for the default VLAN 1). This issue has been observed when running rapid-PVST
+spanning tree but could potentially affect other versions.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code>arista#show vlan
@@ -12633,16 +12633,25 @@ Spanning tree instance for vlan 1
 No spanning tree information available for vlan 2
 </code></pre></div>
 </div>
-<p><strong>Result</strong>: Incomplete IP Fabric Path Lookups.</p>
-<p><strong>Temporary Fix</strong>: Remove the unused VLAN from the configuration using the <code>no vlan #</code> command.</p>
-<p><strong>Permanent Fix</strong>: Unknown. Waiting for a response from Arista.</p>
-<h2 id="wrong-e2e-path-lookups-due-to-bug-in-eos-which-assigns-the-same-stp-id-to-different-interfaces">Wrong E2E Path Lookups due to bug in EOS which assigns the same STP ID to different interfaces</h2>
-<p><strong>IP Fabric Version:</strong> All</p>
-<p><strong>Known Affected platforms</strong>: <code>Arista DCS-7504N</code>, <code>4.28.6M-30705735.4286M</code>, <code>DCS-7280SR-48C6-F</code>, <code>4.26.4M-25280047.4264M</code></p>
-<p><strong>Description</strong>: Arista is assigning the same STP ID to different ports. To serve its purpose spanning tree port ID needs to be unique in a L2 domain. Under some circumstances, e.g. when device operational requirements break its maximum scalability limits or due to a bug in device operating system, a device may assign the same spanning tree port ID to more ports in a single L2 domain. This situation was observed e.g. on <code>Arista DCS-7504N</code> running software image with internal build version <code>4.28.6M-30705735.4286M</code>. In IP Fabric this has resulted in wrong STP topology calculation and consequent issues in path lookup.</p>
-<p><strong>Result</strong>: Incomplete IP Fabric Path Lookups.</p>
-<p><strong>Temporary Fix</strong>: None.</p>
-<p><strong>IP Fabric fix Version</strong>: To be specified.</p>
+<p><strong>Result:</strong> Incomplete IP Fabric path lookups.</p>
+<p><strong>Temporary fix:</strong> Remove the unused VLAN from the configuration using the <code>no
+vlan #</code> command.</p>
+<p><strong>Permanent fix:</strong> Unknown. Waiting for a response from Arista.</p>
+<h2 id="wrong-end-to-end-path-lookups-due-to-eos-bug-assigning-same-stp-id-to-different-interfaces">Wrong End-to-End Path Lookups Due to EOS Bug Assigning Same STP ID to Different Interfaces</h2>
+<p><strong>IP Fabric version:</strong> all</p>
+<p><strong>Known affected platforms:</strong> <code>Arista DCS-7504N</code> <code>4.28.6M-30705735.4286M</code>, <code>DCS-7280SR-48C6-F</code> <code>4.26.4M-25280047.4264M</code></p>
+<p><strong>Description:</strong> Arista is assigning the same STP ID to different ports. For
+spanning tree port IDs to serve their purpose, they need to be unique within an
+L2 domain. Under certain circumstances (such as when a device&rsquo;s operational
+requirements exceed its maximum scalability limits or due to a bug in the
+device&rsquo;s operating system), a device may assign the same spanning tree port ID
+to multiple ports within a single L2 domain. This situation was observed, for
+example, on <code>Arista DCS-7504N</code> running a software image with internal build
+version <code>4.28.6M-30705735.4286M</code>. In IP Fabric, this has resulted in incorrect
+STP topology calculations and consequent issues in path lookup.</p>
+<p><strong>Result:</strong> Incomplete path lookups in IP Fabric.</p>
+<p><strong>Temporary fix:</strong> None.</p>
+<p><strong>IP Fabric fix version:</strong> To be specified.</p>
 
 
 
@@ -12663,7 +12672,7 @@ No spanning tree information available for vlan 2
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2024</span>
   </span>
 
     

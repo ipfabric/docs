@@ -12520,72 +12520,79 @@ here.
 
 <h1 id="juniper">Juniper</h1>
 <ul>
-<li>Route leak defined by reference to another VRF is not supported.
-  Route leak with the policy is supported.</li>
+<li>Route leaks defined by reference to another VRF are not supported, but route
+  leaks with policy are supported.</li>
 </ul>
 <ul>
-<li>Juniper devices cannot be discovered using a root account. Such an account
+<li>Juniper devices cannot be discovered using a root account, as such an account
   does not go straight to the CLI prompt. Please use a non-root account instead.</li>
 </ul>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: Juniper SRX300</p>
-<p><strong><em>Description</em></strong>: <code>show ethernet-switching interface detail</code> can cause
-infinite loop output</p>
-<p><strong><em>Result</em></strong>:</p>
-<p>Version 3.1.1 and earlier.</p>
+<p><strong>Known affected platforms:</strong> Juniper SRX300</p>
+<p><strong>Description:</strong> The <code>show ethernet-switching interface detail</code> command can
+cause an infinite loop output.</p>
+<p><strong>Result:</strong></p>
+<p>Version <code>3.1.1</code> and earlier:</p>
 <ul>
-<li>Endless command execution can cause device control plane
-  overutilization issues that might also affect other control plane
-  protocol operations (e.g. BFD). Further, it increases the time of
-  IPF device/network discovery and can result in not discovering the
-  device and gathering information from it.</li>
-<li>We recommend removing such devices from the scope of IPF discovery
-  (putting these devices to discovery exclude list).</li>
+<li>Endless command execution can cause device control plane overutilization
+  issues that might also affect other control plane protocol operations (e.g.,
+  BFD). Furthermore, it increases the time of IP Fabric device/network discovery
+  and can result in not discovering the device and gathering information from
+  it.</li>
+<li>We recommend removing such devices from the scope of IP Fabric discovery
+  (placing these devices on the discovery exclude list).</li>
 </ul>
-<p>Version 3.1.2 and above</p>
+<p>Version <code>3.1.2</code> and above:</p>
 <ul>
-<li>Command <code>show ethernet-switching interfaces detail</code> is no longer
-  used and was substituted by other commands including <code>show ethernet-switching interfaces</code>. Further <code>show ethernet-switching interfaces</code> command is only executed on devices discovered as EX or
-  QFX switches.</li>
+<li>The <code>show ethernet-switching interfaces detail</code> command is no longer used and
+  has been replaced by other commands, including <code>show ethernet-switching
+  interfaces</code>. Furthermore, the <code>show ethernet-switching interfaces</code> command is
+  only executed on devices discovered as EX or QFX switches.</li>
 </ul>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: SRX, MX</p>
-<p><strong><em>Description</em></strong>: <code>show ntp associations no-resolve</code> command timeouts</p>
-<p><strong><em>Result</em></strong>: <a href="https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436">https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436</a></p>
+<p><strong>Known affected platforms:</strong> SRX, MX</p>
+<p><strong>Description:</strong> The <code>show ntp associations no-resolve</code> command times out.</p>
+<p><strong>Result:</strong> <a href="https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436">https://kb.juniper.net/InfoCenter/index?page=content&amp;id=KB11436</a></p>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: ALL</p>
-<p><strong><em>Description</em></strong>: The Link-Layer Discovery Protocol (LLDP) links are not
+<p><strong>Known affected platforms:</strong> all</p>
+<p><strong>Description:</strong> The Link-Layer Discovery Protocol (LLDP) links are not
 displayed in diagrams.</p>
-<p><strong><em>Result</em></strong>: To display LLDP links in diagrams correctly, the IP address
-of the neighbor has to be present in <code>show lldp neighbor interface xx-x/x/x</code> command. The IP address is present only when configured with
-the <code>set lldp management-address xx.xx.xx.xx</code> command in the
-configuration mode. More
-at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html</a>.</p>
+<p><strong>Result:</strong> To display LLDP links in diagrams correctly, the IP address of the
+neighbor must be present in the <code>show lldp neighbor interface xx-x/x/x</code> command.
+The IP address is only present when configured with the <code>set lldp
+management-address xx.xx.xx.xx</code> command in configuration mode. More details can
+be found at
+<a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/management-address-edit-protocols-lldp.html</a>.</p>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: ALL</p>
-<p><strong><em>Description</em></strong>: Information gathered from running-config doesn&rsquo;t
-reflect apply-groups.</p>
-<p><strong><em>Result</em></strong>: Some information gathered from running-config might be
-missing. Since version 6.3 tasks Zone Firewall, NAT44 and ACL aren&rsquo;t affected, other tasks like SNMP and Syslog are still affected.
-More
-at: <a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html</a></p>
+<p><strong>Known affected platforms:</strong> all</p>
+<p><strong>Description:</strong> Information gathered from running-config doesn&rsquo;t reflect
+apply-groups.</p>
+<p><strong>Result:</strong> Some information gathered from running-config might be missing.
+Since version <code>6.3</code>, tasks such as Zone Firewall, NAT44, and ACL aren&rsquo;t
+affected; however, other tasks like SNMP and Syslog are still affected. More
+information can be found at
+<a href="https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html">https://www.juniper.net/documentation/en_US/junos/topics/reference/configuration-statement/apply-groups.html</a>.</p>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: All</p>
-<p><strong><em>Description</em></strong>: <code>fw ctl pstat</code> command requires admin rights</p>
-<p><strong><em>Result</em></strong>: Without this command collected no memory utilization will be
-present</p>
+<p><strong>Known affected platforms:</strong> all</p>
+<p><strong>Description:</strong> The <code>fw ctl pstat</code> command requires admin rights.</p>
+<p><strong>Result:</strong> Without the output from this command, no memory utilization data
+will be available.</p>
 <hr />
-<p><strong><em>Known Affected platforms</em></strong>: ALL</p>
-<p><strong><em>Description</em></strong>: Routing table doesn&rsquo;t reflect ECMP settings. Information is gathered with <code>show route active-path</code>. Actual forwarding table can contain less next hops.</p>
-<p><strong><em>Result</em></strong>: E2E path can show more paths when ECMP is disabled.</p>
-<p>Check <a href="https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos">https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos</a> for additional information.</p>
+<p><strong>Known affected platforms:</strong> all</p>
+<p><strong>Description:</strong> The routing table doesn&rsquo;t reflect ECMP settings. Information is gathered with the <code>show route active-path</code> command. The actual forwarding table
+can contain fewer next hops.</p>
+<p><strong>Result:</strong> The end-to-end path can show more paths when ECMP is disabled. For
+additional information, check
+<a href="https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos">https://serverfault.com/questions/209657/ecmp-load-balancing-in-junos</a>.</p>
 <hr />
 <h1 id="discovery-of-security-policies">Discovery of Security Policies</h1>
 <ul>
-<li>Wildcard &amp; Dynamic objects and negated services are not supported</li>
+<li>Wildcard &amp; Dynamic objects and negated services are not supported.</li>
+</ul>
+<ul>
 <li><strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Vendors API</strong>
-  in the IP Fabric GUI: In case that base URL points to a multi-domain server
-  address, domains must be specified</li>
+  in the IP Fabric GUI: If the base URL points to a multi-domain server address,
+  domains must be specified.</li>
 </ul>
 
 
