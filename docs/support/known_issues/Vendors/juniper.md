@@ -45,22 +45,6 @@ Version 3.1.2 and above
 
 ---
 
-**_Known Affected platforms_**: ALL - valid for version 3.1.1 and
-earlier
-
-**_Description_**: The platform doesn't discover Juniper devices with the
-`root` login. The `root` enters the shell prompt (`%`) and not the
-operational mode directly.
-
-**_Result_**:
-
-Version 3.1.1 and earlier - the `root` login cannot be used for
-discovery.
-
-Version 3.1.2 and above - the `root` login may be used for discovery.
-
----
-
 **_Known Affected platforms_**: ALL
 
 **_Description_**: The Link-Layer Discovery Protocol (LLDP) links are not
