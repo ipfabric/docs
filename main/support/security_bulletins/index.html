@@ -10676,6 +10676,17 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#nim-13396-opengear-prevent-sudo-password-from-being-logged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIM-13396: OpenGear - Prevent sudo password from being logged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sa-495-decoding-http2-rapid-reset-cve-2023-44487" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12524,6 +12535,17 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#nim-13396-opengear-prevent-sudo-password-from-being-logged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIM-13396: OpenGear - Prevent sudo password from being logged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sa-495-decoding-http2-rapid-reset-cve-2023-44487" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12613,6 +12635,34 @@ our <a href="../security_incidents/">Security Incident Response</a> policy.</p>
 <a href="../../System_Administration/System_Administration_UI/system_update/">System Update</a>
 section.</p>
 </div>
+<h2 id="nim-13396-opengear-prevent-sudo-password-from-being-logged">NIM-13396: OpenGear - Prevent <code>sudo</code> password from being logged</h2>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Affected Versions</th>
+<th>Fix Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td><code>6.3.0</code> and later</td>
+<td><code>6.9.4</code></td>
+</tr>
+</tbody>
+</table>
+<p>Enable passwords are used for <code>sudo</code>, which is needed for neighbors task.
+Due to incorrect implementation password can be seen in plain text in cli log. This
+affects all customers who discovered any OpenGear device with neighbors task enabled.
+Anybody with access to Device Log Files, Downloaded Snapshot files, or CLI access
+created by affected versions can obtain stored enable password(s).</p>
+<p>Remediation:</p>
+<ol>
+<li>Upgrade IP Fabric instance to latest version.</li>
+<li>If unable to upgrade at this moment, disable LLDP/neighbors task for OpenGear.</li>
+<li>Change all enable password stored in Device Credentials.</li>
+</ol>
 <h2 id="sa-495-decoding-http2-rapid-reset-cve-2023-44487">SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)</h2>
 <table>
 <thead>
@@ -12648,7 +12698,7 @@ the nginx files, leading to the issue recurring.</p>
 <p>The output should look like this:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;http2&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 /etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
-/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w">  </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="w"> </span>http2<span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
@@ -12661,7 +12711,7 @@ the nginx files, leading to the issue recurring.</p>
 <p>Verify that <code>http2</code> has been removed by running the <code>grep</code> command:</p>
 <div class="highlight"><pre><span></span><code>osadmin@ipfabric-632:~$<span class="w"> </span>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;443&quot;</span><span class="w"> </span>/etc/nginx/sites-enabled/*
 /etc/nginx/sites-enabled/ipf-frontend:<span class="w">    </span>listen<span class="w"> </span><span class="m">443</span><span class="w"> </span>ssl<span class="p">;</span>
-/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w">  </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="p">;</span>
+/etc/nginx/sites-enabled/ipf-nimpee-update:<span class="w"> </span>listen<span class="w"> </span><span class="m">8443</span><span class="w"> </span>ssl<span class="p">;</span>
 </code></pre></div>
 </li>
 <li>
@@ -12734,7 +12784,7 @@ data or modification of IP Fabric system settings.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2024</span>
   </span>
 
     
