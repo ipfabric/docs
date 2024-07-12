@@ -13,23 +13,29 @@ our [Security Incident Response](security_incidents.md) policy.
     [System Update](../System_Administration/System_Administration_UI/system_update.md)
     section.
 
-## NIM-13396: OpenGear - Prevent `sudo` password from being logged
+## NIM-13396: Opengear -- Prevent `sudo` Password From Being Logged
 
 | Severity | Affected Versions | Fix Version |
 | -------- | ----------------- | ----------- |
 | High     | `6.3.0` and later | `6.9.4`     |
 
-Enable passwords are used for `sudo`, which is needed for neighbors task.
-Due to incorrect implementation password can be seen in plain text in cli log. This
-affects all customers who discovered any OpenGear device with neighbors task enabled.
-Anybody with access to Device Log Files, Downloaded Snapshot files, or CLI access
-created by affected versions can obtain stored enable password(s).
+Enable passwords are used for `sudo`, which is needed for the `Neighbors`
+discovery task. Due to incorrect implementation, the password can be seen in
+plaintext in the CLI log. This affects all customers who have discovered any
+Opengear device with the `Neighbors` task enabled. Anyone with CLI access or
+access to device log files and downloaded snapshot files created by affected
+versions can obtain stored enable passwords.
 
-Remediation:
+### Remediation
 
-1. Upgrade IP Fabric instance to latest version.
-2. If unable to upgrade at this moment, disable LLDP/neighbors task for OpenGear.
-3. Change all enable password stored in Device Credentials.
+1. Upgrade the IP Fabric instance to the latest version.
+2. If you are unable to upgrade at this moment, disable the `Neighbors` task for
+   the **Vendor** `opengear` in **Settings --> Discovery & Snapshots -->
+   Discovery Settings -->
+   [Disabled Discovery Tasks](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks.md)**.
+3. Change all enable passwords stored in **Settings --> Discovery & Snapshots
+   --> Discovery Settings --> Device Credentials -->
+   [Passwords for enable mode](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md#optional-passwords-for-enable-mode)**.
 
 ## SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)
 
