@@ -9,5 +9,5 @@ following error:
 
 ![OVA error](ova_error.png)
 
-To resolve this issue issue, please follow the instructions in
+To resolve this issue, please follow the instructions in
 [OVA Distribution Details](../../../../overview/deployment/ova_details.md).

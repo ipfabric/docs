@@ -103,8 +103,8 @@ validation.
 
 Tokens issued in the web app are accepted without proper validation. Using this,
 users of any privilege level can call an API endpoint to create a new admin user
-account with their token. They can then their privilege by logging in to the new
-account.
+account with their token. They can then escalate their privilege by logging in
+to the new account.
 
 ## NIM-9023: API Token Privilege Escalation
 

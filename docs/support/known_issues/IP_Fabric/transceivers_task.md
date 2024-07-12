@@ -36,6 +36,6 @@ You can **enable/disable** this task in **Settings --> Discovery & Snapshots -->
 
 To **disable** this task, you need to **delete the default `Transceivers` task** or **edit** it.
 
-When **editing** this task, you select devices by using a regex expression where this command **should not** be executed. For example, if you don't want to run the `show interface transceivers` command on all Cisco devices, enter `cisco` to the **Vendor** field. More specific device selection can be done using the **Family**, **Platform**, **Model**, and **Version** fields. You can test your regex rules with the **Test rules** button.
+When **editing** this task, you select devices by using a regular expression where this command **should not** be executed. For example, if you don't want to run the `show interface transceivers` command on all Cisco devices, enter `cisco` in the **Vendor** field. More specific device selection can be done using the **Family**, **Platform**, **Model**, and **Version** fields. You can test your regex rules with the **Test rules** button.
 
 ![Edit transceivers rule](ipf_issues/transceivers_edit.png)

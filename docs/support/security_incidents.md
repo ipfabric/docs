@@ -6,8 +6,8 @@ description: This page describes our Security Incident Response policy.
 
 ## Initial Source of Information
 
-If you have any information about potential security events or incidents
-relating to the IP Fabric, please notify us in one of the following ways:
+If you have any information about potential security events or incidents related
+to IP Fabric, please notify us in one of the following ways:
 
 - Email: `security@ipfabric.io` or `support@ipfabric.io`
 - [IP Fabric Help Center](https://support.ipfabric.io)
@@ -58,4 +58,4 @@ with a dedicated channel created for a specific incident as necessary.
 
 We select one person to be responsible for coordinating internal communication
 and to serve as an interface to the teams communicating directly with customers.
-Typical candidates include : DevOps TL, Head of Development, VPE, CTO.
+Typical candidates include: DevOps TL, Head of Development, VPE, CTO.
