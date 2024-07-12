@@ -10679,10 +10679,27 @@ here.
   <a href="#nim-13396-opengear-prevent-sudo-password-from-being-logged" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-13396: OpenGear - Prevent sudo password from being logged
+        NIM-13396: Opengear &ndash; Prevent sudo Password From Being Logged
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="NIM-13396: Opengear – Prevent sudo Password From Being Logged">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -12538,10 +12555,27 @@ here.
   <a href="#nim-13396-opengear-prevent-sudo-password-from-being-logged" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NIM-13396: OpenGear - Prevent sudo password from being logged
+        NIM-13396: Opengear &ndash; Prevent sudo Password From Being Logged
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="NIM-13396: Opengear – Prevent sudo Password From Being Logged">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -12635,7 +12669,7 @@ our <a href="../security_incidents/">Security Incident Response</a> policy.</p>
 <a href="../../System_Administration/System_Administration_UI/system_update/">System Update</a>
 section.</p>
 </div>
-<h2 id="nim-13396-opengear-prevent-sudo-password-from-being-logged">NIM-13396: OpenGear - Prevent <code>sudo</code> password from being logged</h2>
+<h2 id="nim-13396-opengear-prevent-sudo-password-from-being-logged">NIM-13396: Opengear &ndash; Prevent <code>sudo</code> Password From Being Logged</h2>
 <table>
 <thead>
 <tr>
@@ -12652,16 +12686,22 @@ section.</p>
 </tr>
 </tbody>
 </table>
-<p>Enable passwords are used for <code>sudo</code>, which is needed for neighbors task.
-Due to incorrect implementation password can be seen in plain text in cli log. This
-affects all customers who discovered any OpenGear device with neighbors task enabled.
-Anybody with access to Device Log Files, Downloaded Snapshot files, or CLI access
-created by affected versions can obtain stored enable password(s).</p>
-<p>Remediation:</p>
+<p>Enable passwords are used for <code>sudo</code>, which is needed for the <code>Neighbors</code>
+discovery task. Due to incorrect implementation, the password can be seen in
+plaintext in the CLI log. This affects all customers who have discovered any
+Opengear device with the <code>Neighbors</code> task enabled. Anyone with CLI access or
+access to device log files and downloaded snapshot files created by affected
+versions can obtain stored enable passwords.</p>
+<h3 id="remediation">Remediation</h3>
 <ol>
-<li>Upgrade IP Fabric instance to latest version.</li>
-<li>If unable to upgrade at this moment, disable LLDP/neighbors task for OpenGear.</li>
-<li>Change all enable password stored in Device Credentials.</li>
+<li>Upgrade the IP Fabric instance to the latest version.</li>
+<li>If you are unable to upgrade at this moment, disable the <code>Neighbors</code> task for
+   the <strong>Vendor</strong> <code>opengear</code> in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr;
+   Discovery Settings &rarr;
+   <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/">Disabled Discovery Tasks</a></strong>.</li>
+<li>Change all enable passwords stored in <strong>Settings &rarr; Discovery &amp; Snapshots
+   &rarr; Discovery Settings &rarr; Device Credentials &rarr;
+   <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/#optional-passwords-for-enable-mode">Passwords for enable mode</a></strong>.</li>
 </ol>
 <h2 id="sa-495-decoding-http2-rapid-reset-cve-2023-44487">SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)</h2>
 <table>
