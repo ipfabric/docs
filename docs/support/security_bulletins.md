@@ -13,11 +13,29 @@ our [Security Incident Response](security_incidents.md) policy.
     [System Update](../System_Administration/System_Administration_UI/system_update.md)
     section.
 
+## NIM-13396: OpenGear - Prevent `sudo` password from being logged
+
+| Severity | Affected Versions | Fix Version |
+| -------- | ----------------- | ----------- |
+| High     | `6.3.0` and later | `6.9.4`     |
+
+Enable passwords are used for `sudo`, which is needed for neighbors task.
+Due to incorrect implementation password can be seen in plain text in cli log. This
+affects all customers who discovered any OpenGear device with neighbors task enabled.
+Anybody with access to Device Log Files, Downloaded Snapshot files, or CLI access
+created by affected versions can obtain stored enable password(s).
+
+Remediation:
+
+1. Upgrade IP Fabric instance to latest version.
+2. If unable to upgrade at this moment, disable LLDP/neighbors task for OpenGear.
+3. Change all enable password stored in Device Credentials.
+
 ## SA-495: Decoding HTTP/2 Rapid Reset (CVE-2023-44487)
 
-| Severity | Affected Versions   | Fix Version |
-| -------- | ------------------- | ----------- |
-| High     | `6.2.0` or newer    | N/A         |
+| Severity | Affected Versions | Fix Version |
+| -------- | ----------------- | ----------- |
+| High     | `6.2.0` or newer  | N/A         |
 
 The HTTP/2 protocol allows a denial of service (server resource consumption),
 because request cancellation can reset many streams quickly, as exploited in the
@@ -44,7 +62,7 @@ the nginx files, leading to the issue recurring.
    ```bash
    osadmin@ipfabric-632:~$ sudo grep "http2" /etc/nginx/sites-enabled/*
    /etc/nginx/sites-enabled/ipf-frontend:    listen 443 ssl http2;
-   /etc/nginx/sites-enabled/ipf-nimpee-update:	listen 8443 ssl http2;
+   /etc/nginx/sites-enabled/ipf-nimpee-update: listen 8443 ssl http2;
    ```
 
 2. Edit each file to remove the `http2` string. You can either do this manually
@@ -59,7 +77,7 @@ the nginx files, leading to the issue recurring.
    ```bash
    osadmin@ipfabric-632:~$ sudo grep "443" /etc/nginx/sites-enabled/*
    /etc/nginx/sites-enabled/ipf-frontend:    listen 443 ssl;
-   /etc/nginx/sites-enabled/ipf-nimpee-update:	listen 8443 ssl;
+   /etc/nginx/sites-enabled/ipf-nimpee-update: listen 8443 ssl;
    ```
 
 4. Restart nginx:
@@ -70,9 +88,9 @@ the nginx files, leading to the issue recurring.
 
 ## NIM-9199: Privilege Escalation via Admin Portal
 
-| Severity | Affected Versions   | Fix Version |
-| -------- | ------------------- | ----------- |
-| High     | `5.0.2` or earlier  | `6.0.1`     |
+| Severity | Affected Versions  | Fix Version |
+| -------- | ------------------ | ----------- |
+| High     | `5.0.2` or earlier | `6.0.1`     |
 
 A read-only user can create an escalated privilege account by exploiting token
 validation.
