@@ -26,6 +26,8 @@ description: This page explains how to generate and upload a techsupport file fo
 
 ## Generating Techsupport File
 
+### WEB / GUI
+
 1. In the IP Fabric GUI, go to **Support --> Generate Techsupport**:
 
    ![Generate techsupport file](techsupport/generate.png)
@@ -34,6 +36,52 @@ description: This page explains how to generate and upload a techsupport file fo
    the defaults):
 
    ![Configure what to include in techsupport file](techsupport/config.png)
+
+### CLI
+
+1. Connect to the IP Fabric appliance via SSH with the `osadmin` user:
+
+   ```shell
+   ssh osadmin@<IP_or_FQDN>
+   ```
+
+2. Switch to `root`:
+
+   ```shell
+   sudo su -
+   ```
+
+3. Run the `nimpee-sys-techsupport` script as the `autoboss` user to generate an
+   encrypted techsupport file with the recommended default contents (system and
+   service logs, usage data, and a specific snapshot `SNAPSHOT_ID` with its
+   database records).
+
+   ```shell
+   sudo -u autoboss nimpee-sys-techsupport -e -1 -2 -3 SNAPSHOT_ID -4 SNAPSHOT_ID -6
+   ```
+
+   If needed, you can use the following options to select what to include in the
+   techsupport file:
+
+   ```
+   Techsupport content (default if not specified is the first four):
+	-1	System logs
+	-2	Discovery logs
+	-3	Snapshots (specify snapshot number)
+	-4	DB dump (specify snapshot number or use "full" keyword for complete dump)
+	-5	Exclude CLI logs from snapshot
+	-6	Usage data
+   ```
+
+4. By default, the file will be named `techsupport.tar` and stored in the
+   `/home/autoboss/` directory. You can copy it to another computer or upload it
+   directly to us using the [`curl`](#curl) command if your IP Fabric appliance
+   has access to the internet.
+
+### API
+
+Please refer to the [Techsupport](../IP_Fabric_API/techsupport.md) section of
+our API documentation.
 
 ## Uploading Techsupport File
 
@@ -63,7 +111,7 @@ Generated techsupport files are located in the `/home/autoboss/files` directory
 on the IP Fabric appliance.
 
 In the command, you may change `https://upload.EU.ipfabric.io/upload` to
-`https://upload.US.ipfabric.io/upload`. The username and password are provided
+`https://upload.US.ipfabric.io/upload`. The username and password are provided by
 IP Fabric Support.
 
 ## What Techsupport File Includes
