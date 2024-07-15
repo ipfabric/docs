@@ -7,10 +7,10 @@ description: This page describes how to generate and download a techsupport file
 To generate and download a [techsupport](../support/techsupport.md) file via the
 API, follow these steps:
 
-1. Send a POST request to `/os/techsupport`. The information to include in the
-   techsupport file is specified in the request body. In the example below, the
-   default options from the GUI (system and service logs, usage data, and a
-   specific snapshot `SNAPSHOT_ID` with its database records) are shown.
+1. Send a POST request to `/os/techsupport`. The request body specifies what to
+   include in the techsupport file. In the example below, the default options
+   from the GUI (system and service logs, usage data, and a specific snapshot
+   `SNAPSHOT_ID` with its database records) are shown.
 
    ```json
    {
