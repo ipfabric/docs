@@ -19,7 +19,7 @@ Please reference [Operational Requirements](../overview/index.md#operational-req
 
 ## Images
 
-IP Fabric images can be found on our [Releases Page](https://releases.ipfabric.io/ipfabric/current/).
+IP Fabric images can be found on our [Releases Page](https://releases.ipfabric.io/).
 Access is restricted to registered customers only.
 
 !!! note "Image Access"
@@ -35,9 +35,11 @@ instructions.
 
 1. OVA can be deployed on:
    1. [VMware](01-deployment.md#deploying-on-vmware-ova-virtual-machine)
+   2. [VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
+2. VMDK can be deployed on:
+   1. [VMware](01-deployment.md#deploying-virtual-machine-on-vmware-esxi-using-vmdk-image)
    2. [Nutanix](01-deployment.md#deploying-a-virtual-machine-to-nutanix)
-   3. [VirtualBox](01-deployment.md#deploying-a-virtual-machine-on-virtualbox)
-2. qcow2 can be deployed on:
+3. qcow2 can be deployed on:
    1. [Hyper-V](01-deployment.md#deploying-on-hyper-v-virtual-machine)
    2. [Azure](01-deployment.md#deploying-a-virtual-machine-on-microsoft-azure)
    3. [KVM](01-deployment.md#deploying-a-virtual-machine-on-kvm)

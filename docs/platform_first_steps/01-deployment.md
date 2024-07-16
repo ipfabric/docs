@@ -4,7 +4,7 @@ description: In this first step, we will guide you through the deployment of the
 
 # Deploying the IP Fabric Virtual Machine (VM)
 
-All VM images are available at  [https://releases.ipfabric.io/ipfabric/#current](https://releases.ipfabric.io/ipfabric/#current). Access is restricted to registered customers only. Please contact our [sales representative](mailto:sales@ipfabric.io) if you are interested in a trial of IP Fabric.
+All VM images are available at <https://releases.ipfabric.io/images/>. Access is restricted to registered customers only. Please contact our [sales representative](mailto:sales@ipfabric.io) if you are interested in a trial of IP Fabric.
 
 !!! important
 
@@ -25,6 +25,54 @@ All VM images are available at  [https://releases.ipfabric.io/ipfabric/#current
     Importing the OVA on older vSphere/ESXi hosts may result in an error stating that the OVF checksum
     is invalid. Please refer to [this documentation](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md)
     on how to resolve the issue.
+
+## Deploying Virtual Machine on VMware ESXi Using VMDK Image
+
+1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
+   highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
+
+2. Log in to the VMware ESXi web interface.
+
+3. Select **Virtual Machines** and click **Create / Register VM**.
+
+4. A `New virtual machine` dialog appears. In its 1st step `Select creation
+   type`, select **Create a new virtual machine**:
+
+   ![VMware ESXi - Create a new virtual machine](esxi-vmdk/create-vm.png)
+
+5. In the 2nd step `Select a name and guest OS`:
+
+   1. Specify the VM's **Name**.
+
+   2. In the **Compatibility** field, select at least `ESXi 7.0 virtual
+      machine`, which corresponds to the Virtual Hardware Version `17`
+      (`vmx-17`). Refer to
+      [Virtual machine hardware versions](https://knowledge.broadcom.com/external/article?legacyId=1003746)
+      for mapping between Virtual Hardware Versions and ESXi versions.
+
+   3. In the **Guest OS family** field, select `Linux`.
+
+   4. In the **Guest OS version** field, select `Debian GNU/Linux 11 (64-bit)`.
+
+6. In the 3rd step `Select storage`, keep the default settings.
+
+7. In the 4th step `Customize settings`:
+
+   1. Remove the automatically added hard disk:
+
+      ![VMware ESXi - Remove disk](esxi-vmdk/remove-disk.png)
+
+   2. Change the **SCSI Controller** to `VMware Paravirtual` (`PVSCSI`) and
+      the **Adapter Type** under **Network Adapter** to `VMXNET 3`:
+
+      ![VMware ESXi - Change storage and network](esxi-vmdk/storage-and-network.png)
+
+   3. Click **Add hard disk**, select **Existing hard disk**, and import the
+      downloaded `ipfabric-<x.y.z+build>.vmdk` file:
+
+      ![VMware ESXi - Add disk](esxi-vmdk/add-disk.png)
+
+8. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
 ## Deploying on Hyper-V Virtual Machine
 
@@ -86,25 +134,26 @@ Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manua
 
 ## Deploying a Virtual Machine to Nutanix
 
-!!! note
+1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
+   highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
 
-    The Nutanix image is based on Virtual Disks of VMware vSphere OVA image. As Nutanix officially supports import of VMware VMs, the instructions below are based on the same image as used in the [VMware deployment](#deploying-on-vmware-ova-virtual-machine) section.
+3. Import the `ipfabric-<x.y.z+build>.vmdk` file to the Nutanix hypervisor and
+   follow Nutanix's official documentation --
+   [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY)
+   and
+   [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
 
-1. Download the `ipfabric-*-.OVA` file from the official source.
-
-2. Extract the downloaded OVA file using 7-Zip or any similar software. The structure of extracted files should look like below:
-
-   ![Unzip OVA](unzip_ova.png)
-
-3. Import the `.vmdk` files to the Nutanix hypervisor and follow Nutanix's official documentation -- [Nutanix import OVA](https://portal.nutanix.com/#page/kbs/details?targetId=kA03200000099TXCAY) and [Quick tip how to deploy a VM from OVF to AHV](https://next.nutanix.com/installation-configuration-23/quick-tip-how-to-deploy-a-vm-from-an-ovf-to-ahv-33613).
-
-4. Edit the VM hardware settings and adjust according to the network environment size. (Check requirements in the [Operational Requirements](../overview/index.md#operational-requirements) section.)
+4. Edit the VM hardware settings and adjust according to the network environment
+   size. (Check requirements in the
+   [Operational Requirements](../overview/index.md#operational-requirements)
+   section.)
 
    1. Change CPU count.
    2. Change memory size.
-   3. [Extend the system disk or add a new empty virtual disk](../System_Administration/increase_disk_space.md) if necessary.
+   3. [Extend the system disk or add a new empty virtual disk](../System_Administration/increase_disk_space.md)
+      if necessary.
 
-5. Start the VM and check if the system starts without any interruptions.
+5. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
 ## Deploying a Virtual Machine on KVM
 
