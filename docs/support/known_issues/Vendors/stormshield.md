@@ -8,7 +8,8 @@ description: This page describes known issues with Stormshield.
 
 Implicit rules are not supported.
 
-Filter rules with the following options configured as part of the rule are not supported:
+Filter rules with the following options configured as part of the rule are not
+supported:
 
 - Scheduling
 - Routing

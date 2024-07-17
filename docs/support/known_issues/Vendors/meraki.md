@@ -4,19 +4,23 @@ description: This page describes known issues with Meraki and how to fix them.
 
 # Meraki
 
-**Known Affected platforms**: All
+**Known affected platforms:** all
 
-**Description**: The Meraki API has limited functionality and doesn’t
-provide all the necessary data for the IP Fabric model. The following are known limitations:
+**Description:** The Meraki API has limited functionality and doesn't provide
+all the necessary data for the IP Fabric model.
 
-* Multiple Meraki devices can have the same public IP
-* CDP/LLDP might be not linked between devices correctly as reported port ID doesn’t allow it
-* CDP/LLDP timespan is 2h, so it might not show actual state
-* ARP is missing, MAC table is reconstructed from endpoints
-* DHCP/STATIC doesn’t provide IP mask
-* STP is missing
-* Routing table static routes only for Firewalls
-* Pathlookup is not working because forwarding tables are not provided
-* Can't add Meraki device into snapshot (refresh works)
-* Limited snapshot -- Meraki tasks will be always downloaded
-* MX firewall uplink ports -- not possible to determine if traffic load balancing is enabled and/or which port is primary and backup
+These are the known limitations:
+
+- Multiple Meraki devices can have the same public IP address.
+- CDP/LLDP might be not linked between devices correctly, as the reported port
+  ID doesn't allow it.
+- CDP/LLDP timespan is 2 hours, so it might not show the actual state.
+- ARP is missing; the MAC table is reconstructed from endpoints.
+- DHCP/STATIC doesn't provide an IP mask.
+- STP is missing.
+- The routing table includes static routes only for firewalls.
+- Path lookup is not working because forwarding tables are not provided.
+- Can't add a Meraki device into a snapshot (refresh works).
+- Limited snapshot -- Meraki tasks will always be downloaded.
+- MX firewall uplink ports -- It is not possible to determine if traffic load
+  balancing is enabled and/or which port is primary and which is backup.
