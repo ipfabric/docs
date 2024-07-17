@@ -12446,7 +12446,7 @@ here.
   <a href="#make-the-created-admin-profile-global-vdoms-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Make The Created Admin Profile Global (VDOMs Only)
+        Make the Created Admin Profile Global (VDOMs Only)
       
     </span>
   </a>
@@ -12457,7 +12457,7 @@ here.
   <a href="#create-an-administrator-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create An Administrator Account
+        Create an Administrator Account
       
     </span>
   </a>
@@ -12662,7 +12662,7 @@ here.
   <a href="#make-the-created-admin-profile-global-vdoms-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Make The Created Admin Profile Global (VDOMs Only)
+        Make the Created Admin Profile Global (VDOMs Only)
       
     </span>
   </a>
@@ -12673,7 +12673,7 @@ here.
   <a href="#create-an-administrator-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create An Administrator Account
+        Create an Administrator Account
       
     </span>
   </a>
@@ -12854,37 +12854,53 @@ here.
 
 <h1 id="overview">Overview</h1>
 <h2 id="fortigate">FortiGate</h2>
-<p>Currently, we support FortiOS version 5.2 and higher. In this section, you will find <strong>our recommendations regarding the setup of administrator profiles and 
-accounts</strong>. It&rsquo;s very important, especially if you use <strong>Virtual Domains</strong>, since part of a required configuration can be done only from CLI.</p>
-<p>If you plan to use a user with full read/write permissions or even with super_admin profile assigned (which is not recommended, except a LAB testing), you can skip the rest of 
-this article.</p>
+<p>Currently, we support FortiOS version <code>5.2</code> and higher. In this section, you
+will find <strong>our recommendations regarding the setup of administrator profiles
+and accounts</strong>. This is very important, especially if you use <strong>Virtual
+Domains</strong>, since part of the required configuration can be done only from the
+CLI.</p>
+<p>If you plan to use a user with full read/write permissions or even with the
+<code>super_admin</code> profile assigned (which is not recommended, except for LAB
+testing), you can skip the rest of this article.</p>
 <h3 id="user-and-profile-creation">User and Profile Creation</h3>
 <h4 id="create-an-admin-profile">Create an Admin Profile</h4>
 <p>First, you need to create an admin profile with read-only permissions.</p>
 <p>Follow these steps:</p>
 <ol>
-<li>Log in to your FortiGate. In case you have VDOMs enabled, ensure you have
-   switched to the global scope (relevant drop-down menu is in the top left
-   corner)</li>
-<li>Navigate to <strong>System &rarr; Admin Profiles</strong> and click <strong>+ Create New</strong></li>
+<li>
+<p>Log in to your FortiGate. In case you have VDOMs enabled, ensure you have
+   switched to the global scope (the relevant drop-down menu is in the top left
+   corner).</p>
+</li>
+<li>
+<p>Navigate to <strong>System &rarr; Admin Profiles</strong> and click <strong>+ Create New</strong>.</p>
+</li>
 <li>
 <p>Fill in a name and set all permissions to Read (you can do it by clicking
-   <strong>Set All</strong> dropdown menu). The only exception is <strong>System &rarr; Maintenance</strong>
-   permission, which must be set to <strong>Read/Write</strong> (especially if VDOMs are
-   enabled). See the screenshots below from FortiOS versions 6.0 and 7.0:</p>
+   the <strong>Set All</strong> drop-down menu). The only exception is the <strong>System &rarr;
+   Maintenance</strong> permission, which must be set to <strong>Read/Write</strong> (especially if
+   VDOMs are enabled). See the screenshots below from FortiOS versions <code>6.0</code> and
+   <code>7.0</code>:</p>
 <p><a class="glightbox" href="fortios-60-admin-profile.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Admin Profile, FortiOS 6.0" src="fortios-60-admin-profile.png" title="Admin Profile, FortiOS 6.0" /></a></p>
 <p><a class="glightbox" href="fortios-70-admin-profile.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Admin Profile, FortiOS 7.0" src="fortios-70-admin-profile.png" title="Admin Profile, FortiOS 7.0" /></a></p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For FortiOS version 7.0 and higher, &ldquo;permit usage of CLI diagnostic commands&rdquo; has to be enabled.</p>
+<p>For FortiOS version <code>7.0</code> and higher, &ldquo;permit usage of CLI diagnostic 
+commands&rdquo; has to be enabled.</p>
 </div>
-<h4 id="make-the-created-admin-profile-global-vdoms-only">Make The Created Admin Profile Global (VDOMs Only)</h4>
-<p>If Virtual Domains (VDOMs) are enabled, follow this procedure to make the created admin profile global. It means that administrators having 
-this profile will be able to work with all VDOMs. By default, only the default <em>prof_admin</em> profile is set as global.</p>
+<h4 id="make-the-created-admin-profile-global-vdoms-only">Make the Created Admin Profile Global (VDOMs Only)</h4>
+<p>If Virtual Domains (VDOMs) are enabled, follow this procedure to make the
+created admin profile global. This means that administrators with this profile
+will be able to work with all VDOMs. By default, only the default <code>prof_admin</code>
+profile is set as global.</p>
 <ol>
-<li>Connect to the FortiGate via SSH or Telnet or use the console in the top right corner (version 5.6 and above) or at the dashboard (version 5.4 and below)</li>
+<li>
+<p>Connect to the FortiGate via SSH or Telnet or use the console in the top
+   right corner (version <code>5.6</code> and above) or at the dashboard (version <code>5.4</code> and 
+   below).</p>
+</li>
 <li>
 <p>Run the following commands to change the profile:</p>
 <div class="highlight"><pre><span></span><code>config global
@@ -12894,29 +12910,51 @@ set scope global
 end
 end
 </code></pre></div>
+<p>Change the name of the previously created profile in the 3<sup>rd</sup> line 
+ accordingly.</p>
 </li>
 </ol>
-<p>Change the name of the previously created profile in the 3<sup>rd</sup> line accordingly.</p>
-<h4 id="create-an-administrator-account">Create An Administrator Account</h4>
+<h4 id="create-an-administrator-account">Create an Administrator Account</h4>
 <ol>
-<li>Navigate to <strong>System &rarr; Administrators</strong> and click <strong>+ Create New</strong> and select <strong>Administrator</strong></li>
-<li>Fill in its name, select a type of authentication, and finally select the previously created Administrator profile. If you have VDOMs enabled, the Virtual Domains section below should disappear (if not, the selected profile is not global)</li>
-<li>Apply other restrictions if needed and click OK.</li>
+<li>
+<p>Navigate to <strong>System &rarr; Administrators</strong> and click <strong>+ Create New</strong> and
+   select <strong>Administrator</strong>.</p>
+</li>
+<li>
+<p>Fill in its name, select a type of authentication, and finally select the
+   previously created Administrator profile. If you have VDOMs enabled, the 
+   Virtual Domains section below should disappear (if not, the selected profile
+   is not global).</p>
+</li>
+<li>
+<p>Apply other restrictions if needed and click <strong>OK</strong>.</p>
+</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Ensure that there is at least one interface with SSH or Telnet allowed, and this interface is accessible from IP Fabric VM. To do so, navigate to <strong>Network &rarr; Interfaces</strong> and check the <strong>Access</strong> column.</p>
+<p>Ensure that there is at least one interface with SSH or Telnet allowed, and
+this interface is accessible from the IP Fabric VM. To do so, navigate to
+<strong>Network &rarr; Interfaces</strong> and check the <strong>Access</strong> column.</p>
 </div>
-<p>Now it&rsquo;s time to create a new snapshot or add your FortiGate to an existing one. All VDOMs should be discovered as separate devices named as <code>&lt;hostname&gt;/&lt;VDOM_name&gt;</code>.  If not, check the connectivity report in IP Fabric web interface and search for an IP address of your FortiGate.</p>
+<p>Now it&rsquo;s time to create a new snapshot or add your FortiGate to an existing
+one. All VDOMs should be discovered as separate devices named
+<code>&lt;hostname&gt;/&lt;VDOM_name&gt;</code>. If not, check the <strong>Connectivity Report</strong> in the IP
+Fabric GUI and search for the IP address of your FortiGate.</p>
 <h3 id="known-bugs">Known Bugs</h3>
 <h4 id="fortigate-300d-interface-flap">FortiGate 300D Interface Flap</h4>
-<p><strong>Known Affected platforms</strong>: 6.0.*</p>
-<p><strong>Description</strong>: Running <code>get system interface transceiver</code> command on FortiGate 300D running version <code>6.0.*</code> can cause some interfaces to flap.
-This was confirmed by Fortinet, but no bug ID was received. The Transceivers task has been disabled for any device matching this vendor, model, and version.</p>
-<p><strong>Fix</strong>: Upgrade to a newer version of FortiGate.</p>
+<p><strong>Known affected platforms:</strong> <code>6.0.*</code></p>
+<p><strong>Description:</strong> Running the <code>get system interface transceiver</code> command on a
+FortiGate 300D running version <code>6.0.*</code> can cause some interfaces to flap. This
+was confirmed by Fortinet, but no bug ID was received. The <code>Transceivers</code> task
+has been disabled for any device matching this vendor, model, and version.</p>
+<p><strong>Fix:</strong> Upgrade to a newer version of FortiGate.</p>
 <h2 id="fortiswitch">FortiSwitch</h2>
 <h3 id="transceivers">Transceivers</h3>
-<p>To get the <code>brokenThld</code> data, we need to run the <code>diagnose switch modules state-machine</code> command. However, currently, we do not have any outputs with meaningful data. Thus, for the FortiSwitch family, we are running this command just to collect outputs and will add the <code>brokenThld</code> field as soon as we collect usable data.</p>
+<p>To get the <code>brokenThld</code> data, we need to run the <code>diagnose switch modules
+state-machine</code> command. However, currently, we do not have any outputs with
+meaningful data. Thus, for the FortiSwitch family, we are running this command
+just to collect outputs and will add the <code>brokenThld</code> field as soon as we
+collect usable data.</p>
 
 
 
@@ -12937,7 +12975,7 @@ This was confirmed by Fortinet, but no bug ID was received. The Transceivers tas
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     
