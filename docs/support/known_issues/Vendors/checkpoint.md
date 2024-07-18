@@ -64,6 +64,26 @@ are in your network; otherwise, read-only is sufficient).
 
 ![Check Point - Edit Role - ipfRole](checkpoint/checkpoint_role.png)
 
+Running some commands requires elevated permissions. See the example below:
+
+```commandline
+gaia> show cluster state
+
+/tmp/.CPprofile.sh: line 1: /opt/CPshrd-R81.10/scripts/cpprofile_functions.sh: Permission denied
+```
+
+The `show cluster *` commands call the `cphaprob` utility, which has the
+following permissions and ownership:
+
+```
+[Expert@gaia:0]# ls -al `which cphaprob`
+-rwxr-x--- 1 admin bin 303196 Jan 27  2020 /opt/CPsuite-R81.10/fw1/bin/cphaprob
+```
+
+So ensure that the user used for IP Fabric discovery has sufficient permissions
+configured -- the user should be in the group `bin` (recommended) or be `admin`
+(have UID 0; less recommended).
+
 ### How To Setup Role From Web GUI
 
 1. Open the Check Point Gaia web interface.
