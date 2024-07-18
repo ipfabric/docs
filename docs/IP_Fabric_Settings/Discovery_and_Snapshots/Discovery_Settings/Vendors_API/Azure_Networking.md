@@ -20,6 +20,20 @@ infrastructure.
 
 The plan is to add support of the [Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) in one of the upcoming releases.
 
+## What Counts Against the IP Fabric License
+
+One license is consumed by each networking object (VNet, gateway, etc.). At this
+moment, these include at least the following:
+
+| Azure Networking Object  | IP Fabric |
+| ------------------------ | --------- |
+| Express Route gateway    | `erg`     |
+| NAT gateway              | `nat`     |
+| Virtual HUB              | `vhub`    |
+| Virtual Network          | `vnet`    |
+| Virtual Network gateway  | `vngw`    |
+| VPN gateway              | `vpngw`   |
+
 ## Azure Setup
 
 To add Azure devices to the global discovery settings, go to **Settings -->
