@@ -16,7 +16,7 @@
         <link rel="prev" href="../postman/">
       
       
-        <link rel="next" href="../service-now/">
+        <link rel="next" href="CLI_Tools/ipf_device_search/">
       
       
         
@@ -7195,6 +7195,145 @@ here.
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CLI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CLI_Tools/ipf_device_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Inventory Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CLI_Tools/ipf_global_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Global IP and MAC Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CLI_Tools/ipf_route_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -12777,58 +12916,64 @@ here.
 
 <h1 id="python-sdk-overview">Python SDK Overview</h1>
 <p>IP Fabric is a Python API for connecting to and communicating against an IP Fabric instance using IP Fabric&rsquo;s Rest API.</p>
+<p><strong>Please use release <code>main</code> when viewing on the 
+<a href="https://docs.ipfabric.io/main/integrations/">IP Fabric Documentation Portal</a> for all Integrations. 
+These docs are not versioned but versioned files can be found in the GitLab releases.</strong></p>
 <p>The IP Fabric Python SDK allows you to quickly gather data from your network in as little as 3 lines of code.</p>
 <script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="2" data-loop="1"></script>
 
-<h1 id="installing-python-ip-fabric">Installing Python IP Fabric</h1>
-<h2 id="minimum-requirements">Minimum Requirements</h2>
+<h1 id="minimum-requirements">Minimum Requirements</h1>
 <ul>
 <li>Python 3.8.1+</li>
 <li>Access to an instance of IP Fabric</li>
 <li>API Token or Username/Password to IP Fabric</li>
 </ul>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="ensure-git-is-installed-and-configured">Ensure git is installed and configured</h3>
-<p>Follow <a href="https://git-scm.com/downloads">git-downloads</a> for your deployment, and git clone this repo.</p>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@gitlab.com:ip-fabric/integrations/python-ipfabric.git
-</code></pre></div>
-or 
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/ip-fabric/integrations/python-ipfabric.git
+<h1 id="versioning">Versioning</h1>
+<p>Semantic Versioning: <code>Major.Minor.Patch</code></p>
+<p>Starting with IP Fabric version 5.0.x the <code>ipfabric</code> SDK is recommended to match your IP Fabric major and minor version.
+We will try to keep some backwards compatability (SDK version <code>6.9.x</code> should work with IP Fabric API <code>6.8</code>) however new
+features may break some functionality. By ensuring that your <code>ipfabric</code> SDK&rsquo;s match your IP Fabric major and minor
+version will ensure compatibility and will continue to work.</p>
+<p>The Patch version of the SDK is used for bug fixes and new features that are compatible with the major and minor version.</p>
+<h1 id="installation">Installation</h1>
+<p>It is recommended to use <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments</a>
+for any development purposes. Installing the package globally is not recommended but can be installed under your user
+(<code>pip install --user ipfabric</code>) which will give you access to run the IP Fabric CLI Tools without needing to activate
+the virtual environment.</p>
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>curl<span class="w"> </span>https://demo1.us.ipfabric.io/api/version<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;apiVersion&quot;</span>:<span class="w"> </span><span class="s2">&quot;v6.8&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;releaseVersion&quot;</span>:<span class="w"> </span><span class="s2">&quot;6.8.6+0&quot;</span>
+<span class="o">}</span>
 
-Cloning<span class="w"> </span>into<span class="w"> </span><span class="s1">&#39;python-ipfabric&#39;</span>...
-remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">5805</span>,<span class="w"> </span><span class="k">done</span>.
-remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">168</span>/168<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
-remote:<span class="w"> </span>Compressing<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">144</span>/144<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
-remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">5805</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">85</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">24</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">5637</span><span class="w"> </span><span class="o">(</span>from<span class="w"> </span><span class="m">1</span><span class="o">)</span>
-Receiving<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">5805</span>/5805<span class="o">)</span>,<span class="w"> </span><span class="m">2</span>.88<span class="w"> </span>MiB<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">7</span>.24<span class="w"> </span>MiB/s,<span class="w"> </span><span class="k">done</span>.
-Resolving<span class="w"> </span>deltas:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3824</span>/3824<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;ipfabric~=6.8&quot;</span><span class="w">  </span><span class="c1"># To update to a new version use the `-U` flag</span>
+<span class="c1"># This will match version `6.8.0` or any patch like `6.8.3` but not `6.7.x` nor `6.9.x`</span>
 </code></pre></div>
-Change directory into the cloned project
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>python-ipfabric
-</code></pre></div>
-Follow either <a href="#poetry-recommended">Poetry</a> or <a href="#pip">pip</a> to continue the getting started guide.</p>
-<h3 id="poetry-recommended">Poetry (Recommended)</h3>
-<p>Poetry is a Python package manager that makes spinning up a virtual environment ready to run your code quick and easy.</p>
-<p>Make sure you have Poetry installed in your Python environment:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>poetry<span class="w"> </span>
-</code></pre></div>
-<p>Since Poetry manages all the required packages, you only have to run one command to install all the dependencies required for Python IP Fabric:</p>
-<div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>install<span class="w">  </span>
-</code></pre></div>
-<p>Want to install all the dependencies required to run our example scripts? </p>
-<div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>install<span class="w"> </span>-E<span class="w"> </span>examples
-</code></pre></div>
-<h3 id="pip">pip</h3>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric
-</code></pre></div>
-<p>To run scripts in the example directory:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric<span class="o">[</span>examples<span class="o">]</span>
-</code></pre></div>
-<h2 id="using-the-sdk">Using the SDK</h2>
-<h3 id="setting-up-an-api-token">Setting Up an API Token</h3>
+<ul>
+<li>To return IP Fabric table data as Pandas DataFrames (<code>export='df'</code>):<ul>
+<li><code>pip install "ipfabric[pd]~=6.8"</code></li>
+</ul>
+</li>
+<li>To install extra requirements required for some CLI Tools:<ul>
+<li><code>pip install "ipfabric[cli]~=6.8"</code></li>
+</ul>
+</li>
+<li>To run scripts in the <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/tree/develop/examples?ref_type=heads">examples directory</a>:<ul>
+<li><code>pip install "ipfabric[examples]~=6.8"</code></li>
+</ul>
+</li>
+<li>Multiple optional dependencies can be specified:<ul>
+<li><code>pip install "ipfabric[pd,cli]~=6.8"</code></li>
+</ul>
+</li>
+</ul>
+<p><em>For contributing to the project please see <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/README.md?ref_type=heads#development">README.md &gt; Development</a>.</em></p>
+<h1 id="authentication">Authentication</h1>
+<h2 id="setting-up-an-api-token">Setting Up an API Token</h2>
 <p>Please follow the instruction on the <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> documentation page.</p>
-<h3 id="environment-variables">Environment Variables</h3>
-<p>Please add the following environment variables to your <code>.env</code> file:</p>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>Please add the following environment variables these can be included in a <code>.env</code> 
+file that can be copied from <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/sample.env?ref_type=heads">sample.env</a>:</p>
 <table>
 <thead>
 <tr>
@@ -12836,6 +12981,7 @@ Follow either <a href="#poetry-recommended">Poetry</a> or <a href="#pip">pip</a>
 <th style="text-align: center;">Python Parameter</th>
 <th style="text-align: right;">Default</th>
 <th style="text-align: right;">Description</th>
+<th style="text-align: right;">Optional</th>
 </tr>
 </thead>
 <tbody>
@@ -12844,53 +12990,136 @@ Follow either <a href="#poetry-recommended">Poetry</a> or <a href="#pip">pip</a>
 <td style="text-align: center;"><code>base_url</code></td>
 <td style="text-align: right;"><code>None</code></td>
 <td style="text-align: right;">IP Fabric URL</td>
+<td style="text-align: right;"></td>
 </tr>
 <tr>
 <td><code>IPF_TOKEN</code></td>
 <td style="text-align: center;"><code>auth</code></td>
 <td style="text-align: right;"><code>None</code></td>
 <td style="text-align: right;">API Token</td>
+<td style="text-align: right;">If not <code>IPF_USERNAME/IPF_PASSWORD</code></td>
 </tr>
 <tr>
 <td><code>IPF_VERIFY</code></td>
 <td style="text-align: center;"><code>verify</code></td>
 <td style="text-align: right;"><code>True</code></td>
 <td style="text-align: right;">Enforce SSL</td>
+<td style="text-align: right;">True</td>
+</tr>
+<tr>
+<td><code>IPF_USERNAME</code></td>
+<td style="text-align: center;"><code>auth</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td style="text-align: right;">Username</td>
+<td style="text-align: right;">If not <code>IPF_TOKEN</code></td>
+</tr>
+<tr>
+<td><code>IPF_PASSWORD</code></td>
+<td style="text-align: center;"><code>auth</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td style="text-align: right;">Password</td>
+<td style="text-align: right;">If not <code>IPF_TOKEN</code></td>
+</tr>
+<tr>
+<td><code>IPF_SNAPSHOT</code></td>
+<td style="text-align: center;"><code>snapshot_id</code></td>
+<td style="text-align: right;"><code>$last</code></td>
+<td style="text-align: right;">IPF Snapshot</td>
+<td style="text-align: right;">True</td>
+</tr>
+<tr>
+<td><code>IPF_TIMEOUT</code></td>
+<td style="text-align: center;"><code>timeout</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">Timeout</td>
+<td style="text-align: right;">True</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"><code>streaming</code></td>
+<td style="text-align: right;"><code>True</code></td>
+<td style="text-align: right;">Using Streaming HTTP</td>
+<td style="text-align: right;">True</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: center;"><code>proxy</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td style="text-align: right;">Proxy for requests</td>
+<td style="text-align: right;">True</td>
 </tr>
 </tbody>
 </table>
-<h3 id="initializing">Initializing</h3>
+<p><strong>Adding a <code>.env</code> file in your home directory or setting these as environment variables will allow you to run the CLI 
+Tools from any location.</strong></p>
+<p>Environment Selection:</p>
+<ol>
+<li>Initialization arguments take precedence: <code>IPFClient(base_url='FQDN', auth='TOKEN')</code>.</li>
+<li>Environment variables.</li>
+<li><code>.env</code> file variables; file is selected using the following methods:<ol>
+<li><code>IPFClient(env_file='/path/to/env')</code></li>
+<li>Check current working directory (<code>/opt/path/</code> -&gt; <code>/opt/path/.env</code>).</li>
+<li>Work up the directory tree until the root (<code>/opt/.env</code>, <code>/.env</code>).</li>
+<li>Finally check user home directory (<code>$HOME/.env</code>)</li>
+</ol>
+</li>
+</ol>
+<h1 id="initializing">Initializing</h1>
 <p>Once you set up your environment variables:</p>
 <script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="2" data-loop="1"></script>
 
-<h3 id="inventory">Inventory</h3>
-<p>To quickly get an inventory of devices or interfaces:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<h2 id="alternatively-without-environment-variables">Alternatively without Environment Variables</h2>
+<div class="highlight"><span class="filename">Initialization with Token.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Initialization with Username and Password.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;pass&#39;</span><span class="p">))</span>
+</code></pre></div>
+<h1 id="inventory">Inventory</h1>
+<div class="highlight"><span class="filename">Inventory Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span>
+<span class="go">IPFClient().inventory.devices       IPFClient().inventory.modules</span>
+<span class="go">IPFClient().inventory.eol_details   IPFClient().inventory.os_version_consistency</span>
+<span class="go">IPFClient().inventory.eol_summary   IPFClient().inventory.phones</span>
+<span class="go">IPFClient().inventory.families      IPFClient().inventory.platforms</span>
+<span class="go">IPFClient().inventory.fans          IPFClient().inventory.pn</span>
+<span class="go">IPFClient().inventory.hosts         IPFClient().inventory.sites</span>
+<span class="go">IPFClient().inventory.hosts_ipv6    IPFClient().inventory.vendors</span>
+<span class="go">IPFClient().inventory.interfaces</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">To quickly get an inventory of devices or interfaces.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">devices</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">interfaces</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div>
-<h3 id="technology">Technology</h3>
-<p>For each Technology table in IP Fabric, you have a way to quickly gather the data:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">addressing</span>       <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span>                                  
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">client</span>           <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">stp</span>           
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">cloud</span>            <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">serial_ports</span>                
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">mpls</span>             <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">sdwan</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">multicast</span>        <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">security</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">dhcp</span>             <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">neighbors</span>                 
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">oam</span>              <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">sn</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">fhrpd</span>            <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">managed_networks</span>             
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">vlans</span>            <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">routing</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">interfaces</span>       <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">platforms</span>
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">ip_telephony</span>     <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">wireless</span>                      
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">port_channels</span>    <span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">qos</span>    
-<span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">load_balancing</span>   
+<h1 id="technology">Technology</h1>
+<div class="highlight"><span class="filename">Technology Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span>
+<span class="go">IPFClient().technology.addressing       IPFClient().technology.oam</span>
+<span class="go">IPFClient().technology.cloud            IPFClient().technology.platforms</span>
+<span class="go">IPFClient().technology.dhcp             IPFClient().technology.port_channels</span>
+<span class="go">IPFClient().technology.fhrp             IPFClient().technology.qos</span>
+<span class="go">IPFClient().technology.interfaces       IPFClient().technology.routing</span>
+<span class="go">IPFClient().technology.ip_telephony     IPFClient().technology.sdn</span>
+<span class="go">IPFClient().technology.load_balancing   IPFClient().technology.sdwan</span>
+<span class="go">IPFClient().technology.managed_networks IPFClient().technology.security</span>
+<span class="go">IPFClient().technology.management       IPFClient().technology.serial_ports</span>
+<span class="go">IPFClient().technology.mpls             IPFClient().technology.stp</span>
+<span class="go">IPFClient().technology.multicast        IPFClient().technology.vlans</span>
+<span class="go">IPFClient().technology.neighbors        IPFClient().technology.wireless</span>
 </code></pre></div>
 <p>Each one of these technologies relates to data IP Fabric has gathered about your network devices.</p>
-<p>For example, to view NTP configurations:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ipf</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">ntp_summary</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class="highlight"><span class="filename">Example: NTP Summary Table.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">ntp_summary</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Alternatively using API URL:</span>
+<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/tables/management/ntp/summary&#39;</span><span class="p">)</span>
+
+<span class="c1"># Or even using the Front End GUI URL:</span>
+<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/technology/management/ntp/summary&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -13007,13 +13236,13 @@ Follow either <a href="#poetry-recommended">Poetry</a> or <a href="#pip">pip</a>
         
         
           
-          <a href="../service-now/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation &amp;amp; Overview">
+          <a href="CLI_Tools/ipf_device_search/" class="md-footer__link md-footer__link--next" aria-label="Next: Device Inventory Search">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Installation &amp; Overview
+                Device Inventory Search
               </div>
             </div>
             <div class="md-footer__button md-icon">

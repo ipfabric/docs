@@ -7182,6 +7182,145 @@ here.
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CLI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/python/CLI_Tools/ipf_device_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Inventory Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/python/CLI_Tools/ipf_global_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Global IP and MAC Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/python/CLI_Tools/ipf_route_search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -13051,10 +13190,19 @@ more details, see <a href="../../../IP_Fabric_API/authentication/#token-api">Tok
 </ul>
 <h3 id="other-changes">Other Changes</h3>
 <ul>
-<li>The <strong>Authentication failure</strong> field (how many times to retry a connection
-  when it fails on authentication) in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr;
-  Discovery Settings &rarr; Advanced CLI</strong> now has an increased maximum value. It
-  can be set up to 5 retries.</li>
+<li><strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Advanced CLI
+  &rarr; CLI Settings</strong><ul>
+<li>The <strong>Authentication failure</strong> field (how many times to retry a connection 
+  when it fails on authentication) now has an increased maximum value (5,
+  previously 2). The default value is still 0.</li>
+<li>The option to amend <strong>Network device authentication timeout</strong> (how many
+  seconds to wait for the login prompt to appear) was added. The default value 
+  is 300 seconds.</li>
+<li>The option to amend <strong>Command response timeout</strong> (how many minutes to wait
+  for a device to finish sending the response to a command) was added. The
+  default value is 180 minutes.</li>
+</ul>
+</li>
 <li>The <code>nimpee-net-config</code> command for the First Boot Wizard has changed to
   <code>ipf-cli-config</code>. Also, the First Boot Wizard is now known as IPF CLI Config.</li>
 <li>Jumphost services have been renamed from <code>jumphost@&lt;ID&gt;.service</code> to
