@@ -42,7 +42,7 @@ How many minutes to wait for a device to finish sending the response to a
 command.
 
 This option was introduced because, in rare cases,
-[network devices affected by a bug](../../../../support/known_issues/Vendors/f5/#long-or-infinite-discovery-due-to-restjavad-frequent-restarts-because-of-insufficient-memory)
+[network devices affected by a bug](../../../support/known_issues/Vendors/f5.md#long-or-infinite-discovery-due-to-restjavad-frequent-restarts-because-of-insufficient-memory)
 never stopped sending outputs for a command. This led to never-ending discovery.
 
 ### Basic Failure
