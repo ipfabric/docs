@@ -4,20 +4,6 @@ description: This section contains information on how to set up API discovery fo
 
 # AWS (Amazon Web Services)
 
-## What Counts Against the IP Fabric License
-
-One license is consumed by each networking object (VPC, gateway, etc.). Currently, these are at least:
-
-| AWS Networking Object  | IP Fabric |
-| ---------------------- | --------- |
-| Direct Connect gateway | `dxgw`    |
-| Internet gateway       | `igw`     |
-| NAT gateway            | `nat`     |
-| Transit gateway        | `tgw`     |
-| VPC endpoint           | `vpce`    |
-| VPC                    | `vpc`     |
-| VPN gateway            | `vgw`     |
-
 ## Configuring Access to AWS API
 
 To add AWS to discovery, you will need an access key and secret access key from your AWS account. These keys can be found/generated under your account in the AWS
@@ -74,3 +60,7 @@ IP Fabric enables you to add `AssumeRole` targets to AWS API configuration. `Ass
     following error:
 
     ![AWS - Connection testing limitation](aws/aws_connection_test_limit.png)
+
+## What Counts Against IP Fabric License
+
+See [Licensing -- AWS](../../../../overview/licensing.md#aws).

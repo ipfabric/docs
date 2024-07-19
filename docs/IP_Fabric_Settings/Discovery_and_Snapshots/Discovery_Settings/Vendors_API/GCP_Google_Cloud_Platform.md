@@ -4,15 +4,6 @@ description: This section contains information on how to set up API discovery fo
 
 # Google Cloud Platform (GCP)
 
-## What Counts Against the IP Fabric License
-
-One license is consumed by each networking object. Currently, these are at least:
-
-| GCP Networking Object  | IP Fabric |
-| ---------------------- | --------- |
-| VPC                    | `vpc`     |
-| Router                 | `router`  |
-
 ## Generate a Private Key for Your GCP Service Account
 
 1. Select a project for which you want to create a service account:
@@ -68,3 +59,7 @@ One license is consumed by each networking object. Currently, these are at least
    enter the other required information:
 
    ![Add Connection - Google Cloud Platform](gcp/loadingKeyFile.png)
+
+## What Counts Against IP Fabric License
+
+See [Licensing -- GCP](../../../../overview/licensing.md#gcp).
