@@ -12,6 +12,12 @@ IP Fabric primarily uses the Command-Line Interface
 
 ![CLI Settings](advanced_cli/cli_settings.png)
 
+!!! tip
+
+    If you see many examples of **Authentication error** during discovery, 
+    adjust **[Authentication failure](#authentication-failure)** and
+    **[Command Authorization Failure retries](#command-authorization-failure-retries)**.
+
 ### Network Device Login Timeout
 
 Timeout before the logging prompt is received. It may take longer for
@@ -21,6 +27,34 @@ remote branches over low-speed lines or overloaded devices to respond.
 
 If there are too many **Command Timeout** errors during the discovery process, it may
 indicate that the **Network device session timeout** is too short, and the session is closed before the response arrives. It may be necessary to increase this timeout.
+
+### Network Device Authentication Timeout
+
+How many seconds to wait for the login prompt to appear.
+
+This option was introduced because, in rare cases, IoT devices were constantly
+sending data without the command prompt appearing. This led to never-ending
+discovery.
+
+### Command Response Timeout
+
+How many minutes to wait for a device to finish sending the response to a
+command.
+
+This option was introduced because, in rare cases,
+[network devices affected by a bug](../../../../support/known_issues/Vendors/f5/#long-or-infinite-discovery-due-to-restjavad-frequent-restarts-because-of-insufficient-memory)
+never stopped sending outputs for a command. This led to never-ending discovery.
+
+### Basic Failure
+
+This setting determines how many times to retry a connection for any error, except
+authentication failure.
+
+### Authentication Failure
+
+**Authentication failure** can occur even if a user is authorized to
+log in. For example, this may happen when an AAA server is overloaded, or
+an authentication packet is lost.
 
 ### Maximum Number of Parallel Sessions
 
@@ -34,24 +68,12 @@ command authorization. If there are too many authorization failures
 and Cisco ISE is in place, try limiting the number of parallel sessions
 to 10 and steadily increasing.
 
-### Basic Failure
-
-This setting determines how many times to retry a connection for any error, except
-authentication failure.
-
-### Authentication Failure
-
-**Authentication failure** can occur even if a user is authorized to
-log in. For example, this may happen when an AAA server is overloaded, or
-an authentication packet is lost.
-
 ### Command Authorization Failure Retries
 
-If you see many examples of **Authentication error** during the
-Discovery process, adjust **Authentication failure** and
-**Command Authorization Failure retries**.
+How many times try to send the same command after authorization failure, and the
+delay before the next attempt.
 
-### Example of Error Message in Connectivity Report
+### Examples of Error Messages in Connectivity Report
 
 According to the **Summary of issues** in the very first completed snapshot,
 CLI Settings can be adjusted. Here are some of the most common
