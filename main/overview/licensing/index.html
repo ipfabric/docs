@@ -766,6 +766,56 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-counts-against-ip-fabric-license-in-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Counts Against IP Fabric License in Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Counts Against IP Fabric License in Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12744,6 +12794,56 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-counts-against-ip-fabric-license-in-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Counts Against IP Fabric License in Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Counts Against IP Fabric License in Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12866,30 +12966,148 @@ here.
 
 
 <h1 id="licensing">Licensing</h1>
-<p>IP Fabric has a straightforward licensing concept. One license is consumed for every physical or virtual device in the network, excluding wireless access points.</p>
+<p>IP Fabric has a straightforward licensing concept. One license is consumed for
+every physical or virtual device in the network, excluding wireless access
+points.</p>
 <p>For example:</p>
 <ul>
 <li>A router with multiple VRFs counts as only one device in the license count.</li>
-<li>Each virtual instance on a firewall (VSYS, VDOM, etc.) counts as one license each. If you have one firewall with 80 virtual instances, it will count as 80 devices in the license count.</li>
-<li>A stack of switches (StackWise, etc.) count as one device in the license, regardless of the number of switches in the stack.</li>
-<li>For wireless access points, a single license is consumed by the centralized controller, regardless of the number of APs controlled by it.</li>
-<li>For cloud infrastructure providers, one license is consumed by each networking construct (VPC, gateway, etc.).</li>
+<li>Each virtual instance on a firewall (VSYS, VDOM, etc.) counts as one license
+  each. If you have one firewall with 80 virtual instances, it will count as 80
+  devices in the license count.</li>
+<li>A stack of switches (StackWise, etc.) count as one device in the license,
+  regardless of the number of switches in the stack.</li>
+<li>For wireless access points, a single license is consumed by the centralized
+  controller, regardless of the number of APs controlled by it.</li>
+<li>For cloud infrastructure providers, one license is consumed by each networking
+  construct (VPC, gateway, etc.). For details, see
+  <a href="#what-counts-against-ip-fabric-license-in-cloud">What Counts Against IP Fabric License in Cloud</a>
+  below.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If IP Fabric cannot detect the device type of a discovered device (due to missing information from the CLI or API calls), the device will be counted as unlicensed.</p>
+<p>If IP Fabric cannot detect the device type of a discovered device (due
+to missing information from the CLI or API calls), the device will be
+counted as unlicensed.</p>
 </div>
+<h2 id="what-counts-against-ip-fabric-license-in-cloud">What Counts Against IP Fabric License in Cloud</h2>
+<h3 id="aws">AWS</h3>
+<p>One license is consumed by each networking object (VPC, gateway, etc.).
+Currently, these are at least:</p>
+<table>
+<thead>
+<tr>
+<th>AWS Networking Object</th>
+<th>IP Fabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct Connect gateway</td>
+<td><code>dxgw</code></td>
+</tr>
+<tr>
+<td>Internet gateway</td>
+<td><code>igw</code></td>
+</tr>
+<tr>
+<td>NAT gateway</td>
+<td><code>nat</code></td>
+</tr>
+<tr>
+<td>Transit gateway</td>
+<td><code>tgw</code></td>
+</tr>
+<tr>
+<td>VPC endpoint</td>
+<td><code>vpce</code></td>
+</tr>
+<tr>
+<td>VPC</td>
+<td><code>vpc</code></td>
+</tr>
+<tr>
+<td>VPN gateway</td>
+<td><code>vgw</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure">Azure</h3>
+<p>One license is consumed by each networking object (VNet, gateway, etc.).
+Currently, these are at least:</p>
+<table>
+<thead>
+<tr>
+<th>Azure Networking Object</th>
+<th>IP Fabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Express Route gateway</td>
+<td><code>erg</code></td>
+</tr>
+<tr>
+<td>NAT gateway</td>
+<td><code>nat</code></td>
+</tr>
+<tr>
+<td>Virtual HUB</td>
+<td><code>vhub</code></td>
+</tr>
+<tr>
+<td>Virtual Network</td>
+<td><code>vnet</code></td>
+</tr>
+<tr>
+<td>Virtual Network gateway</td>
+<td><code>vngw</code></td>
+</tr>
+<tr>
+<td>VPN gateway</td>
+<td><code>vpngw</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gcp">GCP</h3>
+<p>One license is consumed by each networking object. Currently, these are at
+least:</p>
+<table>
+<thead>
+<tr>
+<th>GCP Networking Object</th>
+<th>IP Fabric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC</td>
+<td><code>vpc</code></td>
+</tr>
+<tr>
+<td>Router</td>
+<td><code>router</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="changes">Changes</h2>
-<h3 id="release-440">Release 4.4.0</h3>
-<p>Starting from version <code>4.4.0</code>, every device (virtual or physical) will consume one license. This now applies to devices where information is collected via CLI or API. The only exception is wireless access points, which do not consume any licenses.</p>
+<h3 id="release-440">Release <code>4.4.0</code></h3>
+<p>Starting from version <code>4.4.0</code>, every device (virtual or physical) will consume
+one license. This now applies to devices where information is collected via CLI
+or API. The only exception is wireless access points, which do not consume any
+licenses.</p>
 <p>This change in licensing will affect the following vendors:</p>
 <ul>
 <li>SD-WAN &ndash; Versa, Viptela, Silver Peak</li>
 <li>Wireless access points &ndash; Meraki, Juniper MIST</li>
 <li>Cloud infrastructure &ndash; AWS, Azure</li>
 </ul>
-<h3 id="releases-43x">Releases &lt;= 4.3.x</h3>
-<p>For versions <code>4.3.x</code> or older, every device (virtual or physical) with information collected via CLI will consume one license. Any devices with information collected via API would <em>not</em> consume a license. Examples of API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless (Meraki), and cloud infrastructure (AWS).</p>
+<h3 id="releases-43x">Releases &lt;= <code>4.3.x</code></h3>
+<p>For versions <code>4.3.x</code> or older, every device (virtual or physical) with
+information collected via CLI will consume one license. Any devices with
+information collected via API would <em>not</em> consume a license. Examples of
+API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless
+(Meraki), and cloud infrastructure (AWS).</p>
 <h2 id="expired-license">Expired License</h2>
 <p>When your license expires:</p>
 <ul>
@@ -12918,7 +13136,7 @@ here.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2024</span>
   </span>
 
     
