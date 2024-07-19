@@ -61,7 +61,7 @@ If your IP Fabric instance does not have direct internet connectivity, you may
 use offline update:
 
 1. Download the latest update file from
-   <https://releases.ipfabric.io/updates/>).
+   <https://releases.ipfabric.io/updates/>.
 2. In the top-right corner of the main GUI, click **Support**.
 3. Click **System Administration** to access the interface on port `8443` (e.g.,
    `https://ipfabric-ip-address:8443`).

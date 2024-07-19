@@ -2,7 +2,7 @@
 description: In this first step, we will guide you through the deployment of the IP Fabric virtual machine.
 ---
 
-# Deploying the IP Fabric Virtual Machine (VM)
+# Deploying IP Fabric Virtual Machine (VM)
 
 All VM images are available at <https://releases.ipfabric.io/images/>. Access is restricted to registered customers only. Please contact our [sales representative](mailto:sales@ipfabric.io) if you are interested in a trial of IP Fabric.
 
@@ -10,7 +10,72 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
     Please remember that IP Fabric uses CLI access (SSH or Telnet) to connect to devices for collecting data. It's important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.
 
-## Deploying on VMware OVA Virtual Machine
+## OVA Distribution Details
+
+The appliance is built on top of Debian 11, which has been officially supported
+since
+[ESXi version `7.0`](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16).
+
+The minimal required Virtual Hardware Version is `vmx-17`, supported by ESXi
+`7.0`, Fusion `12.x`, Workstation Pro `16.x`, and Workstation Player `16.x`. For
+details, see the VMware KB articles
+[1003746](https://kb.vmware.com/s/article/1003746) and
+[2007240](https://kb.vmware.com/s/article/2007240).
+
+This system type is required because we need the virtio/paravirtualized drivers
+for storage and network:
+
+- [`PVSCSI`](https://kb.vmware.com/s/article/1010398) (Paravirtual SCSI)
+- [`VMXNET 3`](https://kb.vmware.com/s/article/1001805)
+
+Note that we also have requirements about the processor itself -- see
+[Hardware Requirements](../overview/index.md#hardware-requirements). These
+cannot be described through the OVA image definition.
+
+!!! danger "If you do not use the virtio/paravirtualized drivers for storage and network, performance will be degraded."
+
+### Setting VM From Scratch -- Importing VMDK Image
+
+!!! success "Importing VMDK is the recommended way."
+
+If you do not have access to an ESXi host for importing, you can try to import
+the disk (VMDK) and set up the machine manually. Ensure the following are
+configured correctly:
+
+- Virtual Hardware Version is at least `vmx-17`
+- virtio/paravirtualized drivers for storage and network
+  - [`PVSCSI`](https://kb.vmware.com/s/article/1010398) (Paravirtual SCSI)
+  - [`VMXNET 3`](https://kb.vmware.com/s/article/1001805)
+
+See the detailed instructions in
+[Deploying VM on VMware ESXi Using VMDK Image](#deploying-vm-on-vmware-esxi-using-vmdk-image).
+
+### Deploying Through vSphere or VxRail -- Converting SHA256 OVA Image to SHA1
+
+You may experience problems deploying through vSphere/VxRail. vSphere/VxRail is
+refusing the SHA256 version of our OVA image. When trying to create a virtual
+machine using the SHA1-based OVA image, you may experience problems with
+importing the image because of unsupported "hardware". In this case, please see
+the next paragraph about deploying manually.
+
+VMware's KB article on converting OVA images:
+["The OVF package is invalid and cannot be deployed" error when deploying the OVA (2151537)](https://kb.vmware.com/s/article/2151537)
+
+!!! warning "Importing SHA1-Based OVA Image"
+
+    This might lead to unexpected results, such as wrong hardware assignments,
+    degraded performance, etc.
+
+!!! tip "`operation not supported on this object`"
+
+    This states the inability to deploy the OVA image with the required hardware
+    requirements through itself (vSphere). However, if the same OVA image is
+    deployed through ESXi, no warnings are present while creating the virtual
+    machine.
+
+## Deploying VM on VMware
+
+### Deploying VM on VMware vSphere Using OVA Image
 
 1. Deploy the OVA to your vSphere environment as described in
    [Deploy an OVF or OVA Template](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html).
@@ -23,10 +88,10 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 !!! note "Invalid OVF checksum algorithm: SHA256"
 
     Importing the OVA on older vSphere/ESXi hosts may result in an error stating that the OVF checksum
-    is invalid. Please refer to [this documentation](../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum.md)
+    is invalid. Please refer to [OVA Distribution Details](#ova-distribution-details)
     on how to resolve the issue.
 
-## Deploying Virtual Machine on VMware ESXi Using VMDK Image
+### Deploying VM on VMware ESXi Using VMDK Image
 
 1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
    highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
@@ -74,7 +139,7 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
 8. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
-## Deploying on Hyper-V Virtual Machine
+## Deploying VM on Hyper-V
 
 The `qcow2` disk image file can be converted to different formats.
 Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
@@ -132,7 +197,7 @@ Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manua
 
 13. Start the VM.
 
-## Deploying a Virtual Machine to Nutanix
+## Deploying VM on Nutanix
 
 1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
    highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
@@ -155,7 +220,7 @@ Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manua
 
 5. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
-## Deploying a Virtual Machine on KVM
+## Deploying VM on KVM
 
 We currently have the limitation that drives need to be `/dev/sdx`. Usually, Linux hypervisors use the `virtio-blk` driver, which is represented as `/dev/vdx` in the guest system. To overcome this limitation, use `virtio-scsi` as the drive controller.
 
@@ -178,7 +243,7 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 4. Additionally, you can [create and add a new empty virtual disk](../System_Administration/increase_disk_space.md) if needed.
 
-## Deploying a Virtual Machine on VirtualBox
+## Deploying VM on VirtualBox
 
 !!! warning
 
@@ -228,9 +293,9 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 9.  Start the VM.
 
-## Deploying a Virtual Machine on Microsoft Azure
+## Deploying VM on Azure
 
-### Uploading the IP Fabric Disk File
+### Uploading IP Fabric Disk File
 
 The first step of deploying to Azure requires creating a VHD file from the `qcow2` image, uploading it to a blob storage container, and then creating an Image to use for a Virtual Machine.
 
@@ -284,7 +349,7 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
       
       > The specified cookie value in VHD footer indicates that disk 'ipfabric-6-3-1+1.vhd' with blob https://.../vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
 
-### Sizing the IP Fabric VM
+### Sizing IP Fabric VM
 
 Prior to creating the IP Fabric image, it is necessary to know the type of server required.
 Azure Regions contain different server sizes, so performing this step will ensure you select the correct Region in the next step.
@@ -312,7 +377,7 @@ For this example, we will use minimum of 16 CPUs and 32 GB memory requirements.
 9. Under the `Recommended Virtual Machine(s)`, find an `Instance` with either an **Intel or AMD processor** that will suit your needs.
 10. Record the `Instance` and `Region` names you would like to use for the deployment.
 
-### Creating an Image
+### Creating Image
 
 ![Search Images](azure-imgs/azure-05-1-images.png)
 
@@ -332,7 +397,7 @@ Search and select `Images` in the portal's search bar, and then `Create` a new I
 10. Optional: Add custom `Tags`.
 11. Select `Review + create`, wait for validation, and then click `Create`.
 
-### Creating a Virtual Machine
+### Creating VM
 
 After creating the Image, go to the Resource and select `Create VM`:
 
@@ -352,7 +417,7 @@ After creating the Image, go to the Resource and select `Create VM`:
 
    3. Select an `Availability Zone`.
 
-   4. Using the information in [Sizing the IP Fabric VM](#sizing-the-ip-fabric-vm), select the appropriate instance size.
+   4. Using the information in [Sizing IP Fabric VM](#sizing-ip-fabric-vm), select the appropriate instance size.
 
 2. Specify an `Administrator account` using Password authentication with a secure password.
 

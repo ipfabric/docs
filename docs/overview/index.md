@@ -85,7 +85,7 @@ For managed service provider (MSP) networks:
 
 ### Supported Virtualization Platforms
 
-For deploying the IP Fabric appliance, we recommend using either VMware ESXi or vSphere. For more information, please see [OVA Distribution Details](deployment/ova_details.md).
+For deploying the IP Fabric appliance, we recommend using either VMware ESXi or vSphere. For more information, please see [Deploying IP Fabric Virtual Machine (VM) -- OVA Distribution Details](../platform_first_steps/01-deployment.md#ova-distribution-details).
 
 It is also possible to run IP Fabric on any other virtualization platform using our qcow2/OVA images, but we can provide only limited support for those platforms.
 

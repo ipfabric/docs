@@ -10,4 +10,4 @@ following error:
 ![OVA error](ova_error.png)
 
 To resolve this issue, please follow the instructions in
-[OVA Distribution Details](../../../../overview/deployment/ova_details.md).
+[Deploying IP Fabric Virtual Machine (VM) -- OVA Distribution Details](../../../../platform_first_steps/01-deployment.md#ova-distribution-details).
