@@ -8190,6 +8190,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#security-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12982,6 +12993,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#security-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13173,6 +13195,14 @@ MD5 (ipfabric-6-9-4+0.qcow2) = 2524ee52363ba8d6a7a55541e2645e25
 SHA256 (ipfabric-6-9-4+0.vmdk) = 75d5e7c6806c1506113e93732d7284e177fe2b223e3b61f9c9b14a09bab22e89
 MD5 (ipfabric-6-9-4+0.vmdk) = cbec5f2e35f9b2231e7e924ee9a3595b
 </code></pre></div>
+<h3 id="security-fixes">Security Fixes</h3>
+<ul>
+<li>Fixed the issue with enable passwords being logged in plaintext in the CLI log
+  while discovering Opengear devices with the <code>Neighbors</code> task enabled. For
+  details and remediation, please see 
+  <a href="../../../support/security_bulletins/#nim-13396-opengear-prevent-sudo-password-from-being-logged">NIM-13396: Opengear – Prevent <code>sudo</code> Password From Being Logged</a>
+  in our Security Bulletin.</li>
+</ul>
 <h3 id="authentication">Authentication</h3>
 <p><code>accessToken</code> and <code>refreshToken</code> have been removed from the response body of all
 endpoints (<code>/auth/login</code>, <code>/auth/token</code>, and <code>/auth/token/swap</code>) as a security
