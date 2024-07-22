@@ -70,7 +70,7 @@ root@demo:/home/osadmin#
 
 ## API Configuration `api.json`
 
-The IP Fabric API configuration is stored in `/opt/ipf-api/conf.d/api.json`. This
+The IP Fabric API configuration is stored in `/opt/nimpee/conf.d/api.json`. This
 file needs to be created during the initial configuration, as it does not exist
 in the default image. It will also be persistent during upgrades and will not be
 changed. Below is a full example of the `api.json` config file:
@@ -143,14 +143,14 @@ changed. Below is a full example of the `api.json` config file:
     searching through log files or `journalctl` output.
 
     ```bash
-    root@demo:~$ jq . /opt/ipf-api/conf.d/api.json
+    root@demo:~$ jq . /opt/nimpee/conf.d/api.json
     parse error: Expected another key-value pair at line 4, column 3
     ```
 
     You can reformat and prettify the JSON file by running:
 
     ```bash
-    echo "$(jq < /opt/ipf-api/conf.d/api.json)" > /opt/ipf-api/conf.d/api.json
+    echo "$(jq < /opt/nimpee/conf.d/api.json)" > /opt/nimpee/conf.d/api.json
     ```
 
 ### URL Configuration
@@ -422,7 +422,7 @@ staticClients:
 
 ### Config File Mapping
 
-Here is a concise illustration of how the `/opt/ipf-api/conf.d/api.json` values
+Here is a concise illustration of how the `/opt/nimpee/conf.d/api.json` values
 map to `/etc/ipf-dex.yaml`:
 
 ![JSON YAML mapping](sso/sso_api_dex_mapping.png)
@@ -726,11 +726,11 @@ python3 -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(js
 
 ## Restarting Services
 
-After making changes to `/opt/ipf-api/conf.d/api.json`, you need to restart the
+After making changes to `/opt/nimpee/conf.d/api.json`, you need to restart the
 API service:
 
 ```bash
-systemctl restart ipf-api.service
+systemctl restart nimpee-api.service
 ```
 
 Consequently, after making changes to `/etc/ipf-dex.yaml`, you need to restart
