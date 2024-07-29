@@ -12953,13 +12953,14 @@ here.
 in 2023.</p>
 <p>Downloading and processing such a large amount of data is time-consuming and may
 not provide any relevant information about the internal IP addressing scheme.</p>
-<p>In cases where we expect to discover a router with a full BGP table, we can
-limit the total number of BGP routes stored in the database.</p>
 <p>You can find the threshold configuration in <strong>Settings &rarr; Discovery Settings
 &rarr; Discovery &rarr; Limit download BGP routes</strong>.</p>
-<p>The lower limit available is currently 10000 BGP routes. IP Fabric will read the
-full routing table but will filter BGP routes per threshold before storing them
-in the database.</p>
+<p>If the number of BGP routes in the routing table is below the specified
+threshold, IP Fabric will collect all routes from this table.</p>
+<p>However, if the number exceeds this threshold, IP Fabric will only collect
+routes from other available routing protocols on the device. In this scenario,
+no BGP routes from the routing table will be collected.</p>
+<p>The lowest limit currently available is 10000 BGP routes.</p>
 <p><a class="glightbox" href="../limit-bgp-routes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Limit download of BGP routes" src="../limit-bgp-routes.png" /></a></p>
 
 
@@ -12981,7 +12982,7 @@ in the database.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2024</span>
   </span>
 
     
