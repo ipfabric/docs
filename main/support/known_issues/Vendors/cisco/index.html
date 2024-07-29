@@ -12949,44 +12949,46 @@ here.
 
 
 <h1 id="overview">Overview</h1>
-<p><strong>Affected platforms</strong>: 15.1(4)M4, 15.1(4)M4.7, 15.1(4)M5, 12.2(50)SE3, 6.0(2)N2(3), 15.5(3.0l)M</p>
-<p><strong>Description</strong>: show transceivers command can have on some Cisco platform fatal issues including device crash. It takes several minutes to finish the command on some platforms.</p>
-<p><strong>Result</strong>: Affected platforms are removed from collection and the Transceivers task is disabled by default in IP Fabric. Before enabling it, make sure that your devices are not affected, and if yes, remove them from the task settings.</p>
-<p><strong>Resources</strong>:</p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCua29548">CSCua29548</a></p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCtg41473">CSCtg41473</a></p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq13396">CSCuq13396</a></p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCva00194">CSCva00194</a></p>
+<p><strong>Affected platforms:</strong> 15.1(4)M4, 15.1(4)M4.7, 15.1(4)M5, 12.2(50)SE3, 6.0(2)N2(3), 15.5(3.0l)M</p>
+<p><strong>Description:</strong> The <code>show transceivers</code> command can cause fatal issues on some Cisco platforms, including device crashes. It takes several minutes to finish the command on some platforms.</p>
+<p><strong>Result:</strong> Affected platforms are removed from collection, and the <code>Transceivers task</code> is disabled by default in IP Fabric. Before enabling it, ensure that your devices are not affected. If they are, remove them from the task settings.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCua29548">CSCua29548</a></li>
+<li><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCtg41473">CSCtg41473</a></li>
+<li><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq13396">CSCuq13396</a></li>
+<li><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCva00194">CSCva00194</a></li>
+</ul>
 <hr />
-<p><strong>Affected platforms</strong>: All IOS family switches</p>
-<p><strong>Description</strong>: <code>show spanning-tree mst</code> command requires enable password. Currently not supported for IOS family (only SG and ASA).</p>
-<p><strong>Result</strong>: MST is not collected, STP inconsistency check false positive</p>
-<p><strong>Workaround</strong>: Privilege 15 authorization on login or <code>show spanning-tree mst</code> command authorization</p>
+<p><strong>Affected platforms:</strong> all IOS-family switches</p>
+<p><strong>Description:</strong> The <code>show spanning-tree mst</code> command requires an enable password. It is currently not supported for the IOS family (only SG and ASA).</p>
+<p><strong>Result:</strong> MST is not collected, leading to false positives in the STP inconsistency check.</p>
+<p><strong>Workaround:</strong> Use privilege 15 authorization on login or <code>show spanning-tree mst</code> command authorization.</p>
 <hr />
-<p><strong>Affected platforms</strong>: SG family, sf302-08pp-k9 platform</p>
-<p><strong>Description</strong>:  sh spa d command returns misformatted output (forgetting newline characters and repeating the output with an offset)</p>
-<p><strong>Result</strong>: STP detail is not collected</p>
+<p><strong>Affected platforms:</strong> SG family, sf302-08pp-k9 platform</p>
+<p><strong>Description:</strong>  The <code>sh spa d</code> command returns misformatted output (forgetting newline characters and repeating the output with an offset).</p>
+<p><strong>Result:</strong> STP detail is not collected.</p>
 <hr />
-<p><strong>Affected platforms</strong>: Cisco ASA</p>
-<p><strong>Description</strong>: Some Cisco ASA and Firepower Hardware platforms enable running either Cisco ASA software or Firepower Threat Defense software. Depending on the software in use, these devices are detected either as Cisco ASA or Cisco FTD. E.g., Cisco Firepower 2100 can be detected as <code>asa</code> when running ASA software, or as <code>ftd</code> when running FTD software.</p>
+<p><strong>Affected platforms:</strong> Cisco ASA</p>
+<p><strong>Description:</strong> Some Cisco ASA and Firepower hardware platforms can run either Cisco ASA software or Firepower Threat Defense software. Depending on the software in use, these devices are detected either as Cisco ASA or Cisco FTD. For example, Cisco Firepower 2100 can be detected as <code>asa</code> when running ASA software or as <code>ftd</code> when running FTD software.</p>
 <hr />
-<p><strong>Affected platforms</strong>: Cisco Nexus 5000, 6000 and 9000</p>
-<p><strong>Description</strong>: Several Cisco Nexus platforms allow setting MTU on a per-service basis. Interface MTU shown in IPF GUI is only interface specific (e.g. inventory/interfaces table). Therefore. interface MTU value for Nexus 5k/6k/9k can only be displayed if the network-qos system policy defines the same MTU for all services or when no network-qos system policy is active. Command &ldquo;show policy-map system type network-qos&rdquo; is used to determine the network-qos system policy.
-MTU value displayed in &ldquo;show interface&rdquo; command is assumed to be the default value. Note: class-fcoe is not considered when comparing different services MTUs.</p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCsl21529">CSCsl21529</a></p>
+<p><strong>Affected platforms:</strong> Cisco Nexus 5000, 6000, and 9000</p>
+<p><strong>Description:</strong> Several Cisco Nexus platforms allow setting MTU on a per-service basis. The interface MTU shown in the IP Fabric GUI is only interface-specific (e.g., inventory/interfaces table). Therefore, the interface MTU value for Nexus 5k/6k/9k can only be displayed if the network-qos system policy defines the same MTU for all services or when no network-qos system policy is active. The <code>show policy-map system type network-qos</code> command is used to determine the network-qos system policy.
+The MTU value displayed in the <code>show interface</code> command is assumed to be the default value. Note: class-fcoe is not considered when comparing different services&rsquo; MTUs.</p>
+<p><strong>Resource:</strong> <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCsl21529">CSCsl21529</a></p>
 <hr />
-<p><strong>Affected platforms</strong>: ASA and FTD family firewalls</p>
-<p><strong>Description</strong>: Interface security levels are not supported currently.</p>
-<p><strong>Result</strong>: End-to-end path security policy check is only based on ACLs now.</p>
+<p><strong>Affected platforms:</strong> ASA- and FTD-family firewalls</p>
+<p><strong>Description:</strong> Currently, interface security levels are not supported.</p>
+<p><strong>Result:</strong> End-to-end path security policy check is only based on ACLs.</p>
 <hr />
-<p><strong>Affected platforms</strong>: ASA and FTD family firewalls</p>
-<p><strong>Description</strong>: VLAN ID detection for interfaces - If &ldquo;show interface detail&rdquo; doesn’t provide VLAN ID, then if the interface name suggests VLAN presence (e.g. interface names like vlan100, or sub-interfaces like Gi0/1.100 or Po1.100, etc.) this VLAN will be used.</p>
-<p><strong>Result</strong>: In rare cases, VLAN ID for interface might be not determined correctly</p>
+<p><strong>Affected platforms:</strong> ASA- and FTD-family firewalls</p>
+<p><strong>Description:</strong> VLAN ID detection for interfaces &ndash; If the <code>show interface detail</code> command doesn&rsquo;t provide the VLAN ID, but the interface name suggests VLAN presence (e.g., interface names like vlan100 or sub-interfaces like Gi0/1.100 or Po1.100, etc.), this VLAN will be used.</p>
+<p><strong>Result:</strong> In rare cases, the VLAN ID for an interface might not be determined correctly.</p>
 <hr />
-<p><strong>Affected platforms</strong>: FTD family firewalls</p>
-<p><strong>Description</strong>: When using FTD, if you run the <code>show ntp</code> command, a password prompt will appear in the command line. This will break the discovery of FTD.</p>
-<p><strong>Result</strong>: The NTP discovery task is by default disabled for FTD. If your FTD is not affected by this bug, you can safely enable it.</p>
-<p><a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvt01938">CSCvt01938</a></p>
+<p><strong>Affected platforms:</strong> FTD-family firewalls</p>
+<p><strong>Description:</strong> When using FTD, if you run the <code>show ntp</code> command, a password prompt will appear in the command line. This will break the discovery of FTD.</p>
+<p><strong>Result:</strong> The NTP discovery task is disabled by default for FTD. If your FTD is not affected by this bug, you can safely enable it.</p>
+<p><strong>Resource:</strong> <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvt01938">CSCvt01938</a></p>
 
 
 
@@ -13007,7 +13009,7 @@ MTU value displayed in &ldquo;show interface&rdquo; command is assumed to be the
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 1, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2024</span>
   </span>
 
     
