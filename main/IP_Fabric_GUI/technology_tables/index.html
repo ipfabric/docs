@@ -2731,6 +2731,28 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#additional-operators-for-routing-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Operators for Routing Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13025,6 +13047,28 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#additional-operators-for-routing-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Operators for Routing Columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13193,9 +13237,36 @@ select box values.</p>
 <li><code>cis</code> &ndash; Matches <code>cis</code> or <code>cisco</code> (prefix match).</li>
 <li><code>=~^(?!cisco)</code> &ndash; RegEx negative lookahead &ndash; matches all except values starting with <code>cisco</code>.</li>
 </ul>
-<p>Some columns containing IP addresses can be filtered by entering the IP/prefix
-length in CIDR notation. For example, <code>10.0.0.0/25</code> will find
-addresses between and including <code>10.0.0.128</code> and <code>10.0.0.255</code>.</p>
+<p>Some columns containing IP addresses (such as <code>Login IP</code> within <strong>Inventory &rarr;
+Devices</strong>) can be filtered by entering the IP/prefix length in CIDR notation.
+For example, <code>10.0.0.0/25</code> will find addresses between and including
+<code>10.0.0.128</code> and <code>10.0.0.255</code>.</p>
+<h3 id="additional-operators-for-routing-columns">Additional Operators for Routing Columns</h3>
+<p>Columns containing IPv4 prefixes (such as <code>Route</code> within <strong>Technology &rarr;
+Routing &rarr; Routes</strong>) have:</p>
+<ul>
+<li>
+<p>an additional operator &ldquo;contains IP address&rdquo; (API: <code>ip</code>, UI: <code>IP:</code>)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>IP:192.168.127.129</code> will match any prefix containing that IP address,
+such as <code>192.168.127.0/24</code> or <code>192.168.0.0/16</code>, but not
+<code>192.168.128.0/24</code>.</p>
+</div>
+</li>
+</ul>
+<ul>
+<li>as well as a set of CIDR operators:<ul>
+<li>is strict supernet (API: <code>gt</code>, UI: <code>&gt;</code>)</li>
+<li>is supernet (API: <code>gte</code>, UI: <code>&gt;=</code>)</li>
+<li>is strict subnet (API: <code>lt</code>, UI: <code>&lt;</code>)</li>
+<li>is subnet (API: <code>lte</code>, UI: <code>&lt;=</code>)</li>
+<li>overlaps (API: <code>sect</code>, UI: <code>@</code>)</li>
+<li>does not overlap (API: <code>nsect</code>, UI: <code>!@</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="advanced-filters">Advanced Filters</h3>
 <p>Advanced filters can be used to construct arbitrarily complex expressions
 by combining nested filters and filter groups with any number of logical
 AND and OR operators between them. Advanced filters can be saved and
@@ -13298,7 +13369,7 @@ the <code>...</code> menu:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2024</span>
   </span>
 
     
