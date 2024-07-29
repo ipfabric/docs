@@ -51,4 +51,11 @@ or older does not automatically remove the previously predefined rule.
 In the following example, we are creating a rule for disabling OSPFv3 on Arista
 vEOS. The test for the rule reveals 4 matches.
 
+!!! note "Check"
+
+    For a device to be considered a match, all defined regex rules must match 
+    (evaluated using AND logic). Additional information about regex syntax can 
+    be found in
+    [Regular Expression Syntax](../../../IP_Fabric_GUI/technology_tables/index.md#regular-expression-syntax).
+
 ![Example](disabled_discovery_tasks_example.png)

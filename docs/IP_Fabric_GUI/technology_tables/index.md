@@ -33,9 +33,33 @@ select box values.
 - `cis` -- Matches `cis` or `cisco` (prefix match).
 - `=~^(?!cisco)` -- RegEx negative lookahead -- matches all except values starting with `cisco`.
 
-Some columns containing IP addresses can be filtered by entering the IP/prefix
-length in CIDR notation. For example, `10.0.0.0/25` will find
-addresses between and including `10.0.0.128` and `10.0.0.255`.
+Some columns containing IP addresses (such as `Login IP` within **Inventory -->
+Devices**) can be filtered by entering the IP/prefix length in CIDR notation.
+For example, `10.0.0.0/25` will find addresses between and including
+`10.0.0.128` and `10.0.0.255`.
+
+### Additional Operators for Routing Columns
+
+Columns containing IPv4 prefixes (such as `Route` within **Technology -->
+Routing --> Routes**) have:
+
+- an additional operator "contains IP address" (API: `ip`, UI: `IP:`)
+
+  !!! example
+
+      `IP:192.168.127.129` will match any prefix containing that IP address,
+      such as `192.168.127.0/24` or `192.168.0.0/16`, but not
+      `192.168.128.0/24`.
+
+- as well as a set of CIDR operators:
+  - is strict supernet (API: `gt`, UI: `>`)
+  - is supernet (API: `gte`, UI: `>=`)
+  - is strict subnet (API: `lt`, UI: `<`)
+  - is subnet (API: `lte`, UI: `<=`)
+  - overlaps (API: `sect`, UI: `@`)
+  - does not overlap (API: `nsect`, UI: `!@`)
+
+### Advanced Filters
 
 Advanced filters can be used to construct arbitrarily complex expressions
 by combining nested filters and filter groups with any number of logical
