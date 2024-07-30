@@ -8,6 +8,6 @@ deploy_to_production:
   only:
     - gh-pages
   script:
-    - apt-get install --yes curl zstd
+    - apt-get update && apt-get install --yes curl zstd && rm -rf /var/lib/apt/lists/*
     - /usr/bin/tar --create --exclude-from=deploy-exclude.lst --use-compress-program='/usr/bin/zstd -T0 -9' --file=/tmp/ipf-docs-site.tar.zst ./
     - /usr/bin/curl --fail --location --user "$UPLOAD_CREDENTIALS" --upload-file /tmp/ipf-docs-site.tar.zst https://docs-upload.ipf.cx/upload/ipf-docs-site.tar.zst
