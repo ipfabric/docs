@@ -286,7 +286,7 @@ issuer: https://<FQDN>/dex
 staticClients:
   - id: ipfabric
     redirectURIs:
-      - "https://<FQDN>/api/<API_VERSION>/auth/external/<API-DEX-PROVIDERS-NAME>"
+      - "https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>"
     name: IP Fabric
     secret: <RANDOM_SECRET>
 
@@ -382,10 +382,10 @@ which acts as a client to `dex`.
 staticClients:
   - id: ipfabric
     redirectURIs:
-      # IPF version `<6.3.0` URL must contain `v<Major>.<Minor>`
-      - "https://demo.ipfabric.io/api/v5.0/auth/external/sso"
-      # IPF version `>=6.3.2` URL can be set to `v<Major>` only
+      # IPF version `<7.0.0` URL can be set to `v<Major>` only
       - "https://demo.ipfabric.io/api/v6/auth/external/sso"
+      # IPF version `>=7.0.0` URL can be set without a version of the application
+      - "https://demo.ipfabric.io/api/oauth2/external/sso"
     name: IP Fabric
     secret: jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q
 ```
@@ -395,22 +395,21 @@ staticClients:
     `providers`.
 - `redirectURIs` -- Full path to the callback endpoint of the IP Fabric client.
   - It is in the format of
-    `https://<FQDN>/api/<API_MAJOR_VERSION>/auth/external/<API-DEX-PROVIDERS-NAME>`
+    `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`
   - `API-DEX-PROVIDERS-NAME` is found in [`api.json`](#providers-configuration)
     for `name` under `providers`.
     - Can only contain `a-z` `0-9` `_`. **Do not use uppercase.**
-  - Please be aware of the `API_VERSION` property, which needs to be updated
-    with **every IP Fabric major release** (i.e., `v6` --> `v7`).
 
-    !!! note "`redirectURIs` After Upgrade to `6.3.2`"
+    !!! note "`redirectURIs` After Upgrade to `7.0.0`"
 
-        In IP Fabric versions `<6.3.2`, users were required to change the
-        `redirectURIs` after every upgrade. Starting from version `6.3.2`, a fix
-        has been added to ensure that this is only required after upgrading to a
-        new major release (i.e., `v6` --> `v7`).
+        In IP Fabric versions `<7.0.0`, the `redirectURIs` only included the 
+        major version: `https://<FQDN>/api/v6/auth/external/sso`.
 
-        After upgrade to `6.3.2`, please change the `redirectURIs` to only
-        include the major version: `https://<FQDN>/api/v6/auth/external/sso`.
+        Starting from version `>=7.0.0`, the redirect URI has been modified to 
+        exclude the application's version: 
+        `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`,
+        eliminating the need for reconfiguration even after future major 
+        updates.
 
 - `name` -- Arbitrary name of the client.
   - This will be displayed in the
