@@ -22,7 +22,7 @@ If you selected version `2c`, please configure:
 
 1. **NMS IPs** -- IP addresses of remote monitoring servers.
 2. **Locality** -- Location of the IP Fabric appliance.
-3. **System Contact** -- Contact details (e.g., email) of a responsible person
+3. **System contact** -- Contact details (e.g., email) of a responsible person
    or department.
 4. **Community string** -- Must match the community string configured on the
    monitoring server.
@@ -34,17 +34,18 @@ If you selected version `3`, please configure:
 
 !!! info "SNMP v3"
 
-    For user authentication, only SHA is supported. AES is used for data
-    privacy.
+   AES is used for data privacy.
 
 1. **NMS IPs** -- IP addresses of remote monitoring servers.
 2. **Locality** -- Location of the IP Fabric appliance.
-3. **System Contact** -- Contact details (e.g., email) of a responsible person
+3. **System contact** -- Contact details (e.g., email) of a responsible person
    or department.
 4. **Username** -- SNMPv3 user.
 5. **Passphrase** -- Authentication passphrase.
 6. **Encryption Passphrase** -- Privacy passphrase.
-7. Click **Save**.
+7. **Authentication Type** -- Authentication type (`SHA 1`, `SHA 224`,
+   `SHA 256`, or `SHA 512`). Prefer the stronger algorithm, `SHA 512`.
+8. Click **Save**.
 
 ![Version 3](snmp/version_3.png)
 
