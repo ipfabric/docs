@@ -86,6 +86,12 @@ You can see the results of the process in **Discovery Snapshot --> Connectivity 
 
 ![Discovery Connectivity Report table](cli_discovery/already_discovered_or_in_queue.png)
 
-!!! Tip "Deliberate Duplicate IPs"
+!!! tip "Deliberate Duplicate IPs"
 
-    You can override this behavior with a feature flag (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) if you use the same IP ranges in different VRFs within your management network. Contact [Support](../../support/index.md) for more information.
+    Since the `7.0` release, you can override this behavior (if you use the same 
+    IP ranges in different VRFs within your management network) and configure 
+    [Duplicate IPs Discovery](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/duplicate_ips_discovery.md).
+
+    Between versions `6.4` and `6.9`, the same was possible with a feature flag
+    (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) and help from the 
+    [Support](../../support/index.md) team.
