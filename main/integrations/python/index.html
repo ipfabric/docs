@@ -4619,6 +4619,33 @@ here.
   
   
     <li class="md-nav__item">
+      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/duplicate_ips_discovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate IPs Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope/" class="md-nav__link">
         
   
@@ -12915,40 +12942,50 @@ here.
 
 
 <h1 id="python-sdk-overview">Python SDK Overview</h1>
-<p>IP Fabric is a Python API for connecting to and communicating against an IP Fabric instance using IP Fabric&rsquo;s Rest API.</p>
-<p><strong>Please use release <code>main</code> when viewing on the 
-<a href="https://docs.ipfabric.io/main/integrations/">IP Fabric Documentation Portal</a> for all Integrations. 
-These docs are not versioned but versioned files can be found in the GitLab releases.</strong></p>
-<p>The IP Fabric Python SDK allows you to quickly gather data from your network in as little as 3 lines of code.</p>
-<script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="2" data-loop="1"></script>
-
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Please use the <code>main</code> branch when viewing on the 
+<a href="https://docs.ipfabric.io/main/integrations/">IP Fabric Documentation Portal</a> for all Integrations. These 
+documents are not versioned. However, you can find versioned files in the GitLab releases.</p>
+</div>
+<p>Using an SDK offers several advantages. It simplifies integration by providing pre-built functions and methods, ensuring
+consistent implementation of API calls, and reducing the risk of errors. SDKs streamline development, allowing
+developers to focus on building features rather than managing API requests.</p>
 <h1 id="minimum-requirements">Minimum Requirements</h1>
 <ul>
 <li>Python 3.8.1+</li>
-<li>Access to an instance of IP Fabric</li>
+<li>HTTPs Access to an instance of IP Fabric</li>
 <li>API Token or Username/Password to IP Fabric</li>
 </ul>
 <h1 id="versioning">Versioning</h1>
 <p>Semantic Versioning: <code>Major.Minor.Patch</code></p>
-<p>Starting with IP Fabric version 5.0.x the <code>ipfabric</code> SDK is recommended to match your IP Fabric major and minor version.
-We will try to keep some backwards compatability (SDK version <code>6.9.x</code> should work with IP Fabric API <code>6.8</code>) however new
-features may break some functionality. By ensuring that your <code>ipfabric</code> SDK&rsquo;s match your IP Fabric major and minor
-version will ensure compatibility and will continue to work.</p>
+<p>Starting with IP Fabric version <code>5.0.x</code>, it is recommended to use the <code>ipfabric</code> SDK version that matches your IP Fabric
+major and minor version. While we strive to maintain some backward compatibility (e.g., SDK version <code>6.9.x</code> should work
+with IP Fabric API version <code>6.8</code>), new features might occasionally break existing functionality.
+Ensuring that your ipfabric SDK version matches the major and minor version of your IP Fabric instance will guarantee
+compatibility and continued functionality.</p>
 <p>The Patch version of the SDK is used for bug fixes and new features that are compatible with the major and minor version.</p>
 <h1 id="installation">Installation</h1>
-<p>It is recommended to use <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments</a>
-for any development purposes. Installing the package globally is not recommended but can be installed under your user
-(<code>pip install --user ipfabric</code>) which will give you access to run the IP Fabric CLI Tools without needing to activate
-the virtual environment.</p>
-<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>curl<span class="w"> </span>https://demo1.us.ipfabric.io/api/version<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
-<span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;apiVersion&quot;</span>:<span class="w"> </span><span class="s2">&quot;v6.8&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;releaseVersion&quot;</span>:<span class="w"> </span><span class="s2">&quot;6.8.6+0&quot;</span>
-<span class="o">}</span>
-
-&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;ipfabric~=6.8&quot;</span><span class="w">  </span><span class="c1"># To update to a new version use the `-U` flag</span>
-<span class="c1"># This will match version `6.8.0` or any patch like `6.8.3` but not `6.7.x` nor `6.9.x`</span>
+<p>For development purposes, it is recommended to use 
+<a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments</a>. Installing the package 
+globally is not advised. Instead, you can install it under your user account with <code>pip install --user ipfabric</code>, 
+which allows you to run the IP Fabric CLI Tools without needing to activate the virtual environment.</p>
+<p>To check the version of the IP Fabric API you are working with, you can use the following command:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://demo1.us.ipfabric.io/api/version<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
 </code></pre></div>
+<p>Example response:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;apiVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v6.8&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;releaseVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6.8.6+0&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>This command sends <strong>an unauthenticated request</strong> to the IP Fabric&rsquo;s API endpoint and uses <code>[jq](https://jqlang.github.io/jq/)</code>
+to format the JSON response. The response will include the <code>apiVersion</code> and <code>releaseVersion</code>. To ensure compatibility 
+with the API version, you should install the corresponding ipfabric SDK version:</p>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;ipfabric~=6.8&quot;</span>
+</code></pre></div>
+This command installs the ipfabric SDK version that matches <code>6.8.0</code> or any patch release such as <code>6.8.3</code>, but not <code>6.7.x</code> 
+or <code>6.9.x</code>. To update to a newer version, include the <code>-U</code> flag.</p>
 <ul>
 <li>To return IP Fabric table data as Pandas DataFrames (<code>export='df'</code>):<ul>
 <li><code>pip install "ipfabric[pd]~=6.8"</code></li>
@@ -12969,90 +13006,84 @@ the virtual environment.</p>
 </ul>
 <p><em>For contributing to the project please see <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/README.md?ref_type=heads#development">README.md &gt; Development</a>.</em></p>
 <h1 id="authentication">Authentication</h1>
-<h2 id="setting-up-an-api-token">Setting Up an API Token</h2>
-<p>Please follow the instruction on the <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> documentation page.</p>
+<h2 id="creating-an-api-token">Creating an API Token</h2>
+<p>It&rsquo;s recommended to use API Token (<code>IPF_TOKEN</code>) for development. Please follow the instruction on the <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> documentation 
+page to see how to generate one.</p>
 <h2 id="environment-variables">Environment Variables</h2>
-<p>Please add the following environment variables these can be included in a <code>.env</code> 
-file that can be copied from <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/sample.env?ref_type=heads">sample.env</a>:</p>
+<p>It&rsquo;s recommended to add following environment variables to a local <code>.env</code> file. Here&rsquo;s an example: <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/sample.env?ref_type=heads">sample.env</a>:</p>
 <table>
 <thead>
 <tr>
-<th>Variable Name</th>
+<th style="text-align: left;">Variable Name</th>
 <th style="text-align: center;">Python Parameter</th>
-<th style="text-align: right;">Default</th>
-<th style="text-align: right;">Description</th>
-<th style="text-align: right;">Optional</th>
+<th style="text-align: center;">Default</th>
+<th style="text-align: center;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>IPF_URL</code></td>
+<td style="text-align: left;"><code>IPF_URL</code></td>
 <td style="text-align: center;"><code>base_url</code></td>
-<td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">IP Fabric URL</td>
-<td style="text-align: right;"></td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;">IP Fabric URL</td>
 </tr>
 <tr>
-<td><code>IPF_TOKEN</code></td>
+<td style="text-align: left;"><code>IPF_TOKEN</code></td>
 <td style="text-align: center;"><code>auth</code></td>
-<td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">API Token</td>
-<td style="text-align: right;">If not <code>IPF_USERNAME/IPF_PASSWORD</code></td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;">API Token</td>
 </tr>
 <tr>
-<td><code>IPF_VERIFY</code></td>
+<td style="text-align: left;"><code>IPF_VERIFY</code></td>
 <td style="text-align: center;"><code>verify</code></td>
-<td style="text-align: right;"><code>True</code></td>
-<td style="text-align: right;">Enforce SSL</td>
-<td style="text-align: right;">True</td>
+<td style="text-align: center;"><code>True</code></td>
+<td style="text-align: center;">Enforce SSL</td>
 </tr>
 <tr>
-<td><code>IPF_USERNAME</code></td>
+<td style="text-align: left;"><code>IPF_USERNAME</code></td>
 <td style="text-align: center;"><code>auth</code></td>
-<td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">Username</td>
-<td style="text-align: right;">If not <code>IPF_TOKEN</code></td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;">Username</td>
 </tr>
 <tr>
-<td><code>IPF_PASSWORD</code></td>
+<td style="text-align: left;"><code>IPF_PASSWORD</code></td>
 <td style="text-align: center;"><code>auth</code></td>
-<td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">Password</td>
-<td style="text-align: right;">If not <code>IPF_TOKEN</code></td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;">Password</td>
 </tr>
 <tr>
-<td><code>IPF_SNAPSHOT</code></td>
+<td style="text-align: left;"><code>IPF_SNAPSHOT</code></td>
 <td style="text-align: center;"><code>snapshot_id</code></td>
-<td style="text-align: right;"><code>$last</code></td>
-<td style="text-align: right;">IPF Snapshot</td>
-<td style="text-align: right;">True</td>
+<td style="text-align: center;"><code>$last</code></td>
+<td style="text-align: center;">Snapshot ID</td>
 </tr>
 <tr>
-<td><code>IPF_TIMEOUT</code></td>
+<td style="text-align: left;"><code>IPF_TIMEOUT</code></td>
 <td style="text-align: center;"><code>timeout</code></td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">Timeout</td>
-<td style="text-align: right;">True</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Request Timeout</td>
 </tr>
 <tr>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: center;"><code>streaming</code></td>
-<td style="text-align: right;"><code>True</code></td>
-<td style="text-align: right;">Using Streaming HTTP</td>
-<td style="text-align: right;">True</td>
+<td style="text-align: center;"><code>True</code></td>
+<td style="text-align: center;">Using Streaming HTTP</td>
 </tr>
 <tr>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: center;"><code>proxy</code></td>
-<td style="text-align: right;"><code>None</code></td>
-<td style="text-align: right;">Proxy for requests</td>
-<td style="text-align: right;">True</td>
+<td style="text-align: center;"><code>None</code></td>
+<td style="text-align: center;">Proxy for requests</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Adding a <code>.env</code> file in your home directory or setting these as environment variables will allow you to run the CLI 
-Tools from any location.</strong></p>
-<p>Environment Selection:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code>IPF_URL</code> with <code>IPF_TOKEN</code> or <code>IPF_USERNAME</code>/<code>IPF_PASSWORD</code> are required for the SDK to initiate correctly.</p>
+</div>
+<p>Adding a <code>.env</code> file in your home directory or setting these as environment variables will enable you to run the CLI 
+Tools from any location.</p>
+<p><strong>Environment Source Priority:</strong></p>
 <ol>
 <li>Initialization arguments take precedence: <code>IPFClient(base_url='FQDN', auth='TOKEN')</code>.</li>
 <li>Environment variables.</li>
@@ -13065,16 +13096,17 @@ Tools from any location.</strong></p>
 </li>
 </ol>
 <h1 id="initializing">Initializing</h1>
-<p>Once you set up your environment variables:</p>
-<script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="2" data-loop="1"></script>
-
-<h2 id="alternatively-without-environment-variables">Alternatively without Environment Variables</h2>
+<h2 id="initializing-without-environment-variables">Initializing without Environment Variables</h2>
 <div class="highlight"><span class="filename">Initialization with Token.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Initialization with Username and Password.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;pass&#39;</span><span class="p">))</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
 </code></pre></div>
+<h2 id="initializing-with-environment-variables">Initializing with Environment Variables</h2>
+<p>Once you set up your environment variables, you can initialize the client without any arguments.</p>
+<script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="1" data-loop="1"></script>
+
 <h1 id="inventory">Inventory</h1>
 <div class="highlight"><span class="filename">Inventory Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
@@ -13141,7 +13173,7 @@ Tools from any location.</strong></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2024</span>
   </span>
 
     
