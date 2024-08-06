@@ -1,5 +1,5 @@
 ---
-description: A description of Panorama by Palo Alto Networks next-generation firewalls.
+description: A description of Panorama by Palo Alto Networks next-generation firewalls and lists unsupported tasks.
 ---
 
 # Panorama
@@ -44,3 +44,14 @@ description: A description of Panorama by Palo Alto Networks next-generation fir
 >   incidents and administrative modifications.
 
 Source: [https://www.paloguard.com/](https://www.paloguard.com/Panorama.asp#:~:text=Panorama%20is%20a%20centralized%20management,to%20use%20web-based%20interface.&text=From%20a%20central%20location%2C%20administrators,and%20content%20traversing%20the%20firewalls.)
+
+## Unsupported tasks on Panorama
+
+The following tasks are not supported on Panorama as they are not applicable:
+
+- FHRP
+- MAC
+- Neighbors
+- PortChannel
+- STP
+- VLAN
