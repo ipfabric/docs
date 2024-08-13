@@ -231,13 +231,12 @@ Make sure that in case you need to run `mike`, you either:
 ### Why Do We Have `gh-pages` on GitLab?
 
 `mike` expects to be running on GitHub. GitHub uses the `gh-pages` branch as a
-store for files being deployed to the static website. GitLab has a different
-approach and uses an artifact called `public` to achieve the same. To allow
-`mike` function normally:
+store for files being deployed to the static website. To allow `mike` function
+normally:
 
 - we have kept the `gh-pages` branch
-- there is a CD/CI job in the branch, which copies content to the `public`
-  artifact when pushed to the `gh-pages` branch
+- there is a CD/CI job in the branch, which packages up content and uploads it
+  to [our hosting environment](https://ipfabric.atlassian.net/wiki/x/B4CP8w)
 
 You can see the previous versions being saved in the `gh-pages` branch. It looks
 something like this:
