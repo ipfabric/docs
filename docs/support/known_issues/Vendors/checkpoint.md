@@ -32,12 +32,16 @@ Starting with version `6.5`, IP Fabric supports collecting data from the `pdpd`
 daemon. Since the `pdp` command isn't available by default in CLISH, an extended
 command must be defined first (on appliances where the PDP daemon is running).
 
+Starting with version `7.0`, we are using the `pepd` daemon to collect
+additional information.
+
 The extended command can be defined from CLISH, but the path depends on the OS
 version currently installed. For example, if the OS version is `R80.40`, the
 command would be:
 
 ```commandline
 > add command ipf_pdp path /opt/CPsuite-R80.40/fw1/bin/pdp description "PDP for IP Fabric"
+> add command ipf_pep path /opt/CPsuite-R80.40/fw1/bin/pep description "PEP for IP Fabric"
 > save config
 ```
 
@@ -45,15 +49,17 @@ Alternatively, you can define the extended command from expert mode by using the
 
 ```commandline
 # clish -s -c "add command ipf_pdp path $FWDIR/bin/pdp description \"PDP for IP Fabric\""
+# clish -s -c "add command pep path $FWDIR/bin/pep description \"PEP for IP Fabric\""
 ```
 
-Don't forget to update the related role and add the `ipf_pdp` extended command
-to it if needed. See the
+Don't forget to update the related role and add the `ipf_pdp` and `ipf_pep`
+extended commands to it if needed. See the
 [official Check Point documentation](https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_ScalablePlatforms_Gaia_AdminGuide/Topics-SP-Gaia/User-Defined-Extended-Commands.htm?tocpath=Introduction%20to%20the%20Command%20Line%20Interface%7C_____8).
 
-IP Fabric uses the `ipf_pdp monitor all` command to collect information about
-active users. Log in to the Check Point Gaia appliance with the credentials used
-by IP Fabric discovery and run the command to verify the configuration.
+IP Fabric uses the `ipf_pdp monitor all` and `ipf_pep show user all` commands to
+collect information about active users. Log in to the Check Point Gaia appliance
+with the credentials used by IP Fabric discovery and run the command to verify
+the configuration.
 
 ## Required Permissions for Successful Discovery Over CLI
 
@@ -92,8 +98,8 @@ configured -- the user should be in the group `bin` (recommended) or be `admin`
 
 3. Click **Add** and fill in the name. In the **Features** tab, select all items
    and mark them as **Read-Only**. The following permissions from the **Extended
-   Commands** tab are needed (only if Gaia acts as a management server): `fwm`
-   and `ipf_pdp`.
+   Commands** tab are needed (only if Gaia acts as a management server): `fwm`, 
+   `ipf_pdp`, and `ipf_pep`.
 
 4. If you have a VSX firewall in your network, you must set the
    **Virtual-System** feature to **Read-Write** (we call `set virtual-system
