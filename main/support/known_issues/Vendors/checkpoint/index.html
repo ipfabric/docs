@@ -13276,21 +13276,26 @@ entries only for the <code>master VSYS 0</code>, regardless of the active <code>
 <p>Starting with version <code>6.5</code>, IP Fabric supports collecting data from the <code>pdpd</code>
 daemon. Since the <code>pdp</code> command isn&rsquo;t available by default in CLISH, an extended
 command must be defined first (on appliances where the PDP daemon is running).</p>
+<p>Starting with version <code>7.0</code>, we are using the <code>pepd</code> daemon to collect
+additional information.</p>
 <p>The extended command can be defined from CLISH, but the path depends on the OS
 version currently installed. For example, if the OS version is <code>R80.40</code>, the
 command would be:</p>
 <div class="highlight"><pre><span></span><code>&gt; add command ipf_pdp path /opt/CPsuite-R80.40/fw1/bin/pdp description &quot;PDP for IP Fabric&quot;
+&gt; add command ipf_pep path /opt/CPsuite-R80.40/fw1/bin/pep description &quot;PEP for IP Fabric&quot;
 &gt; save config
 </code></pre></div>
 <p>Alternatively, you can define the extended command from expert mode by using the environment variable <code>$FWDIR</code>. The <code>-s</code> option saves the configuration:</p>
 <div class="highlight"><pre><span></span><code># clish -s -c &quot;add command ipf_pdp path $FWDIR/bin/pdp description \&quot;PDP for IP Fabric\&quot;&quot;
+# clish -s -c &quot;add command pep path $FWDIR/bin/pep description \&quot;PEP for IP Fabric\&quot;&quot;
 </code></pre></div>
-<p>Don&rsquo;t forget to update the related role and add the <code>ipf_pdp</code> extended command
-to it if needed. See the
+<p>Don&rsquo;t forget to update the related role and add the <code>ipf_pdp</code> and <code>ipf_pep</code>
+extended commands to it if needed. See the
 <a href="https://sc1.checkpoint.com/documents/R81/WebAdminGuides/EN/CP_R81_ScalablePlatforms_Gaia_AdminGuide/Topics-SP-Gaia/User-Defined-Extended-Commands.htm?tocpath=Introduction%20to%20the%20Command%20Line%20Interface%7C_____8">official Check Point documentation</a>.</p>
-<p>IP Fabric uses the <code>ipf_pdp monitor all</code> command to collect information about
-active users. Log in to the Check Point Gaia appliance with the credentials used
-by IP Fabric discovery and run the command to verify the configuration.</p>
+<p>IP Fabric uses the <code>ipf_pdp monitor all</code> and <code>ipf_pep show user all</code> commands to
+collect information about active users. Log in to the Check Point Gaia appliance
+with the credentials used by IP Fabric discovery and run the command to verify
+the configuration.</p>
 <h2 id="required-permissions-for-successful-discovery-over-cli">Required Permissions for Successful Discovery Over CLI</h2>
 <p>To successfully discover a Check Point Gateway, the correct role must be
 assigned to the user. IP Fabric requires role features to be set as read-only,
@@ -13321,8 +13326,8 @@ configured &ndash; the user should be in the group <code>bin</code> (recommended
 <li>
 <p>Click <strong>Add</strong> and fill in the name. In the <strong>Features</strong> tab, select all items
    and mark them as <strong>Read-Only</strong>. The following permissions from the <strong>Extended
-   Commands</strong> tab are needed (only if Gaia acts as a management server): <code>fwm</code>
-   and <code>ipf_pdp</code>.</p>
+   Commands</strong> tab are needed (only if Gaia acts as a management server): <code>fwm</code>, 
+   <code>ipf_pdp</code>, and <code>ipf_pep</code>.</p>
 </li>
 <li>
 <p>If you have a VSX firewall in your network, you must set the
@@ -13363,7 +13368,7 @@ a minimal working setup (IP Fabric <code>4.0</code>, Gaia <code>R81</code>):</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2024</span>
   </span>
 
     
