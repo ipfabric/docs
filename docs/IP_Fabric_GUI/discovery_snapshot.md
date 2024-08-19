@@ -179,6 +179,16 @@ Snapshots can be deleted using `Delete snapshot`.
 
 A downloaded snapshot can be loaded back onto the IP Fabric platform with the **Load From File** button.
 
+## Create URL Pointing to Specific Snapshot
+
+You can add the `selectSnapshot` argument to any URL in the GUI to point to a specific snapshot.
+
+Example:
+`https://your-ipfabric-instance/inventory/devices?selectSnapshot=ad61c08c-c179-4142-8c95-3628228bc3df`
+
+After opening the link, the specified snapshot will be selected as the current
+one in IP Fabric.
+
 ## Related Articles
 
 If you want to learn more about how network discovery works from a technical point of view, read:

@@ -163,3 +163,22 @@ Characters and sequences may optionally be repeated using the following quantifi
 Note that `xyz+` matches `xyzzz`, but if you want to match `xyzxyz` instead, you need to define a pattern group by wrapping the sub-expression in parentheses and place the quantifier right behind it, like `(xyz)+`.
 
 You can use 3rd-party services, like [regex101](https://regex101.com/), to fine-tune and troubleshoot your regular expressions.
+
+## Create Links to Table Views
+
+![Share URL options for tables](../../IP_Fabric_GUI/technology_tables/table_share_url_options.png)
+
+To point to a particular dataset, the link may include
+[a snapshot ID that IP Fabric will switch to](../discovery_snapshot.md#create-url-pointing-to-specific-snapshot) after opening.
+
+Also, you can generate the link in two forms:
+
+1. A short form, like
+   `https://your-ipfabric-instance/inventory/devices?copyId=916264918z`, is 
+   useful for sharing.
+2. A long URL that contains the filter definition in JSON format:
+   `https://ipf.local:8005/inventory/devices?options=%7B"filters"%3A%7B"and"%3A%5B%7B"hostname"%3A%5B"like"%2C"L7"%5D%7D%2C%7B"or"%3A%5B%7B"vendor"%3A%5B"eq"%2C"cisco"%5D%7D%2C%7B"vendor"%3A%5B"eq"%2C"fortinet"%5D%7D%5D%7D%5D%7D%7D`.
+   - These URLs can be used, for example, to generate templates for your
+     automations. You can prepare the structure of a filter using the **Advanced
+     Filter** GUI, then replace values with variables in your automation 
+     scripts.
