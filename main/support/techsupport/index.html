@@ -27,7 +27,7 @@
     
     
       
-        <title>Techsupport - IP Fabric Documentation Portal</title>
+        <title>Techsupport File - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,7 +73,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Techsupport - IP Fabric Documentation Portal" />
+<meta property="og:title" content="Techsupport File - IP Fabric Documentation Portal" />
 <meta property="og:description" content="This page explains how to generate and upload a techsupport file for troubleshooting your IP Fabric appliance by our teams. The page also describes the contents of such a file." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/support/techsupport.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,7 +81,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/main/support/techsupport/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Techsupport - IP Fabric Documentation Portal" />
+<meta property="twitter:title" content="Techsupport File - IP Fabric Documentation Portal" />
 <meta property="twitter:description" content="This page explains how to generate and upload a techsupport file for troubleshooting your IP Fabric appliance by our teams. The page also describes the contents of such a file." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/support/techsupport.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#techsupport" class="md-skip">
+        <a href="#techsupport-file" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Techsupport
+              Techsupport File
             
           </span>
         </div>
@@ -11208,7 +11208,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Techsupport
+    Techsupport File
   
 
     
@@ -11225,7 +11225,7 @@ here.
   <span class="md-ellipsis">
     
   
-    Techsupport
+    Techsupport File
   
 
     
@@ -13252,7 +13252,7 @@ here.
   
 
 
-<h1 id="techsupport">Techsupport</h1>
+<h1 id="techsupport-file">Techsupport File</h1>
 <div class="admonition note">
 <p class="admonition-title">Techsupport Data Handling</p>
 <p>A techsupport file uploaded to the <code>upload.ipfabric.io</code> server is stored
@@ -13298,11 +13298,15 @@ the data.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Run the <code>nimpee-sys-techsupport</code> script as the <code>autoboss</code> user to generate an
-   encrypted techsupport file with the recommended default contents (system and
-   service logs, usage data, and a specific snapshot <code>SNAPSHOT_ID</code> with its
-   database records).</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>autoboss<span class="w"> </span>nimpee-sys-techsupport<span class="w"> </span>-e<span class="w"> </span>-1<span class="w"> </span>-2<span class="w"> </span>-3<span class="w"> </span>SNAPSHOT_ID<span class="w"> </span>-4<span class="w"> </span>SNAPSHOT_ID<span class="w"> </span>-6
+<p>Run the <code>ipf-techsupport-exporter.sh</code> script as the <code>autoboss</code> user to
+   generate an encrypted techsupport file with the recommended default contents 
+   (system and service logs, usage data, and a specific snapshot <code>SNAPSHOT_ID</code> 
+   with its database records).</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>autoboss<span class="w"> </span>/opt/ipf-techsupport-exporter/bin/ipf-techsupport-exporter.sh<span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span>-1<span class="w"> </span>-2<span class="w"> </span><span class="se">\</span>
+-3<span class="w"> </span>&lt;SNAPSHOT_ID&gt;<span class="w"> </span><span class="se">\</span>
+-4<span class="w"> </span>&lt;SNAPSHOT_ID&gt;<span class="w"> </span><span class="se">\ </span>
+-6
 </code></pre></div>
 <p>If needed, you can use the following options to select what to include in the
  techsupport file:</p>
@@ -13316,10 +13320,10 @@ the data.</p>
 </code></pre></div>
 </li>
 <li>
-<p>By default, the file will be named <code>techsupport.tar</code> and stored in the
-   <code>/home/autoboss/</code> directory. You can copy it to another computer or upload it
-   directly to us using the <a href="#curl"><code>curl</code></a> command if your IP Fabric appliance
-   has access to the internet.</p>
+<p>By default, the file will be named <code>techsupport-&lt;JOB_ID&gt;.tar</code> and stored in
+   the <code>/home/autoboss/files</code> directory. You can copy it to another computer or 
+   upload it directly to us using the <a href="#curl"><code>curl</code></a> command if your IP Fabric 
+   appliance has access to the internet.</p>
 </li>
 </ol>
 <h3 id="api">API</h3>
@@ -13337,7 +13341,7 @@ Support.</p>
 <p>If your IP Fabric appliance has direct internet access, you can upload the
 techsupport file directly from it using the following <code>curl</code> command:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--user<span class="w"> </span>username:password<span class="w"> </span><span class="se">\</span>
--T<span class="w"> </span><span class="s2">&quot;/home/autoboss/files/techsupport-xxx.tar&quot;</span><span class="w"> </span><span class="se">\</span>
+-T<span class="w"> </span><span class="s2">&quot;/home/autoboss/files/techsupport-&lt;JOB_ID&gt;.tar&quot;</span><span class="w"> </span><span class="se">\</span>
 -X<span class="w"> </span>POST<span class="w"> </span>https://upload.EU.ipfabric.io/upload<span class="w"> </span><span class="se">\</span>
 -f
 </code></pre></div>
@@ -13405,7 +13409,7 @@ IP Fabric Support.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2024</span>
   </span>
 
     
