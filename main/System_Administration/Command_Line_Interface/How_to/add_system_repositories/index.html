@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section contains information on how to troubleshoot common problems with the IP Fabric VM's setup.">
+        <meta name="description" content="This section contains information on how to add Debian system repositories for updates.">
       
       
       
-        <link rel="canonical" href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/troubleshooting/">
+        <link rel="canonical" href="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/add_system_repositories/">
       
       
-        <link rel="prev" href="../troubleshoot_ldap/">
+        <link rel="prev" href="../../Logging/">
       
       
-        <link rel="next" href="../../../IPF_CLI_Config/">
+        <link rel="next" href="../jumphost_troubleshooting/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>How To Troubleshoot IP Fabric VM - IP Fabric Documentation Portal</title>
+        <title>How To Add Debian System Repositories - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="How To Troubleshoot IP Fabric VM - IP Fabric Documentation Portal" />
-<meta property="og:description" content="This section contains information on how to troubleshoot common problems with the IP Fabric VM's setup." />
-<meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/troubleshooting.png" />
+<meta property="og:title" content="How To Add Debian System Repositories - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This section contains information on how to add Debian system repositories for updates." />
+<meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/add_system_repositories.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/troubleshooting/" />
+<meta property="og:url" content="https://docs.ipfabric.io/main/System_Administration/Command_Line_Interface/How_to/add_system_repositories/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="How To Troubleshoot IP Fabric VM - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="This section contains information on how to troubleshoot common problems with the IP Fabric VM's setup." />
-<meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/troubleshooting.png" />
+<meta property="twitter:title" content="How To Add Debian System Repositories - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This section contains information on how to add Debian system repositories for updates." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/System_Administration/Command_Line_Interface/How_to/add_system_repositories.png" />
  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-troubleshoot-ip-fabric-vm" class="md-skip">
+        <a href="#how-to-add-debian-system-repositories" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@ here.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How To Troubleshoot IP Fabric VM
+              How To Add Debian System Repositories
             
           </span>
         </div>
@@ -5819,10 +5819,19 @@ here.
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../add_system_repositories/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -5837,6 +5846,7 @@ here.
   
 
       </a>
+      
     </li>
   
 
@@ -5900,36 +5910,10 @@ here.
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    How To Troubleshoot IP Fabric VM
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5944,164 +5928,6 @@ here.
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examine-network-interface-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examine Network Interface Settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examine-dns-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examine DNS Settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-network-connectivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Test Network Connectivity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Test Network Connectivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipf-connection-tester" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ipf-connection-tester
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-memory-and-swap-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Memory and Swap Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-which-processes-use-most-cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Which Processes Use Most CPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-which-processes-use-most-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Which Processes Use Most Memory
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-of-common-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Status of Common Services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-if-there-are-any-failed-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check if There Are Any Failed Services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-disk-space-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Disk Space Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-inode-usage-on-filesystems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Inode Usage on Filesystems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot-and-shutdown" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reboot and Shutdown
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -13180,152 +13006,6 @@ here.
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examine-network-interface-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examine Network Interface Settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examine-dns-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examine DNS Settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-network-connectivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Test Network Connectivity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Test Network Connectivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipf-connection-tester" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ipf-connection-tester
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-memory-and-swap-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Memory and Swap Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-which-processes-use-most-cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Which Processes Use Most CPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-which-processes-use-most-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Which Processes Use Most Memory
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-of-common-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Status of Common Services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-if-there-are-any-failed-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check if There Are Any Failed Services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-disk-space-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Disk Space Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-inode-usage-on-filesystems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Inode Usage on Filesystems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reboot-and-shutdown" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reboot and Shutdown
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -13383,7 +13063,7 @@ here.
     
     
       <li class="md-path__item">
-        <a href="../add_system_repositories/" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     How to
@@ -13405,7 +13085,7 @@ here.
 
 
   
-    <a href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/How_to/troubleshooting.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ipfabric/docs/edit/main/docs/System_Administration/Command_Line_Interface/How_to/add_system_repositories.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -13413,389 +13093,24 @@ here.
   
 
 
-<h1 id="how-to-troubleshoot-ip-fabric-vm">How To Troubleshoot IP Fabric VM</h1>
-<p>In the event of a VM network connection problem, DNS issues, or network devices
-connectivity issue, the IP Fabric CLI is a useful helper.</p>
-<p>The CLI can also be used to access system and application logs and snapshot
-files.</p>
-<h2 id="examine-network-interface-settings">Examine Network Interface Settings</h2>
+<h1 id="how-to-add-debian-system-repositories">How To Add Debian System Repositories</h1>
+<p>Our appliance provides a script to prepare the <code>/etc/apt/sources.list</code> with
+the Debian system repositories configuration. The default content of
+<code>/etc/apt/sources.list</code> is either empty or a banner asking the user to place
+configuration to file in <code>/etc/apt/sources.list.d/</code> directory - depending on
+the first version deployed.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When you log in through the VM console or SSH, the network interface
-settings are displayed. This content is static, generated when VM boots!
-When DHCP is used, the IP address(es) can change in some cases.</p>
+<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
+or <code>autoboss</code> account may cause irreversible, detrimental changes to the
+product. Actions taken without direct communication with the IP Fabric
+Support or Solution Architect teams can render the system unusable.</p>
 </div>
-<div class="highlight"><pre><span></span><code>Linux<span class="w"> </span>ipfabric-server<span class="w"> </span><span class="m">5</span>.10.0-19-amd64<span class="w"> </span><span class="c1">#1 SMP Debian 5.10.149-2 (2022-10-21) x86_64</span>
-IP<span class="w"> </span>FABRIC<span class="w"> </span><span class="m">6</span>.0.0+21
-NETWORK<span class="w"> </span>INFRASTRUCTURE<span class="w"> </span>MANAGEMENT<span class="w"> </span>PLATFORM
-ENGINEERING<span class="w"> </span>EDITION
-<span class="o">(</span>c<span class="o">)</span><span class="w"> </span>IP<span class="w"> </span>FABRIC,<span class="w"> </span>INC
-UNAUTHORIZED<span class="w"> </span>ACCESS<span class="w"> </span>PROHIBITED
-
-WEB:<span class="w"> </span>https://65.21.240.33/
-IP:<span class="w">  </span><span class="m">65</span>.121.240.33
-GW:<span class="w">  </span><span class="m">172</span>.31.1.1
-DNS:<span class="w"> </span><span class="m">185</span>.12.64.1
-DNS:<span class="w"> </span><span class="m">185</span>.12.64.2
-
-For<span class="w"> </span>troubleshooting<span class="w"> </span>purpose<span class="w"> </span>please<span class="w"> </span>login<span class="w"> </span>as<span class="w"> </span>user<span class="w"> </span><span class="s2">&quot;osadmin&quot;</span>
-with<span class="w"> </span>password<span class="w"> </span>configured<span class="w"> </span>during<span class="w"> </span>initial<span class="w"> </span>setup.
-Last<span class="w"> </span>login:<span class="w"> </span>Wed<span class="w"> </span>Dec<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:21:01<span class="w"> </span><span class="m">2022</span><span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.253.6
+<div class="highlight"><span class="filename">Enable system repositories</span><pre><span></span><code>/opt/ipf-debian-repositories/bin/ipf-debian-repositories.sh
 </code></pre></div>
-<p>To determine the IP address(es) of your IP Fabric system:</p>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>addr<span class="w"> </span>show
+<div class="highlight"><span class="filename">Install updates</span><pre><span></span><code>apt-get<span class="w"> </span>update
+apt-get<span class="w"> </span>upgrade
 </code></pre></div>
-<p>To show the route entries in the kernel:</p>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>route
-</code></pre></div>
-<h2 id="examine-dns-settings">Examine DNS Settings</h2>
-<p>DNS can be checked using the <code>dig</code> or <code>nslookup</code> command.</p>
-<div class="admonition example">
-<p class="admonition-title">Use <code>dig</code> To Try To Resolve Domain</p>
-<div class="highlight"><pre><span></span><code><span class="m">16</span>:45<span class="w"> </span><span class="c1">#&gt; dig ipfabric.io</span>
-
-<span class="p">;</span><span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>DiG<span class="w"> </span><span class="m">9</span>.10.6<span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>ipfabric.io
-<span class="p">;;</span><span class="w"> </span>global<span class="w"> </span>options:<span class="w"> </span>+cmd
-<span class="p">;;</span><span class="w"> </span>Got<span class="w"> </span>answer:
-<span class="p">;;</span><span class="w"> </span>-&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de:<span class="w"> </span>QUERY,<span class="w"> </span>status:<span class="w"> </span>NOERROR,<span class="w"> </span>id:<span class="w"> </span><span class="m">40055</span>
-<span class="p">;;</span><span class="w"> </span>flags:<span class="w"> </span>qr<span class="w"> </span>rd<span class="w"> </span>ra<span class="p">;</span><span class="w"> </span>QUERY:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>ANSWER:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span>AUTHORITY:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ADDITIONAL:<span class="w"> </span><span class="m">1</span>
-
-<span class="p">;;</span><span class="w"> </span>OPT<span class="w"> </span>PSEUDOSECTION:
-<span class="p">;</span><span class="w"> </span>EDNS:<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>flags:<span class="p">;</span><span class="w"> </span>udp:<span class="w"> </span><span class="m">1480</span>
-<span class="p">;;</span><span class="w"> </span>QUESTION<span class="w"> </span>SECTION:
-<span class="p">;</span>ipfabric.io.<span class="w">           </span>IN<span class="w">  </span>A
-
-<span class="p">;;</span><span class="w"> </span>ANSWER<span class="w"> </span>SECTION:
-ipfabric.io.<span class="w">        </span><span class="m">300</span><span class="w"> </span>IN<span class="w">  </span>A<span class="w">   </span><span class="m">162</span>.159.137.54
-ipfabric.io.<span class="w">        </span><span class="m">300</span><span class="w"> </span>IN<span class="w">  </span>A<span class="w">   </span><span class="m">162</span>.159.136.54
-
-<span class="p">;;</span><span class="w"> </span>Query<span class="w"> </span>time:<span class="w"> </span><span class="m">54</span><span class="w"> </span>msec
-<span class="p">;;</span><span class="w"> </span>SERVER:<span class="w"> </span><span class="m">10</span>.64.16.1#53<span class="o">(</span><span class="m">10</span>.64.16.1<span class="o">)</span>
-<span class="p">;;</span><span class="w"> </span>WHEN:<span class="w"> </span>Wed<span class="w"> </span>Dec<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">16</span>:45:46<span class="w"> </span>CET<span class="w"> </span><span class="m">2022</span>
-<span class="p">;;</span><span class="w"> </span>MSG<span class="w"> </span>SIZE<span class="w">  </span>rcvd:<span class="w"> </span><span class="m">72</span>
-</code></pre></div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Use <code>dig</code> To Get PTR Record</p>
-<div class="highlight"><pre><span></span><code><span class="m">16</span>:49<span class="w"> </span><span class="c1">#&gt; dig -x 135.181.89.75</span>
-
-<span class="p">;</span><span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>DiG<span class="w"> </span><span class="m">9</span>.10.6<span class="w"> </span>&lt;&lt;&gt;&gt;<span class="w"> </span>-x<span class="w"> </span><span class="m">135</span>.181.89.75
-<span class="p">;;</span><span class="w"> </span>global<span class="w"> </span>options:<span class="w"> </span>+cmd
-<span class="p">;;</span><span class="w"> </span>Got<span class="w"> </span>answer:
-<span class="p">;;</span><span class="w"> </span>-&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de:<span class="w"> </span>QUERY,<span class="w"> </span>status:<span class="w"> </span>NOERROR,<span class="w"> </span>id:<span class="w"> </span><span class="m">62086</span>
-<span class="p">;;</span><span class="w"> </span>flags:<span class="w"> </span>qr<span class="w"> </span>rd<span class="w"> </span>ra<span class="p">;</span><span class="w"> </span>QUERY:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>ANSWER:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>AUTHORITY:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ADDITIONAL:<span class="w"> </span><span class="m">1</span>
-
-<span class="p">;;</span><span class="w"> </span>OPT<span class="w"> </span>PSEUDOSECTION:
-<span class="p">;</span><span class="w"> </span>EDNS:<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>flags:<span class="p">;</span><span class="w"> </span>udp:<span class="w"> </span><span class="m">1480</span>
-<span class="p">;;</span><span class="w"> </span>QUESTION<span class="w"> </span>SECTION:
-<span class="p">;</span><span class="m">75</span>.89.181.135.in-addr.arpa.<span class="w">    </span>IN<span class="w">  </span>PTR
-
-<span class="p">;;</span><span class="w"> </span>ANSWER<span class="w"> </span>SECTION:
-<span class="m">75</span>.89.181.135.in-addr.arpa.<span class="w"> </span><span class="m">600</span><span class="w"> </span>IN<span class="w">  </span>PTR<span class="w"> </span>static.75.89.181.135.clients.your-server.de.
-
-<span class="p">;;</span><span class="w"> </span>Query<span class="w"> </span>time:<span class="w"> </span><span class="m">225</span><span class="w"> </span>msec
-<span class="p">;;</span><span class="w"> </span>SERVER:<span class="w"> </span><span class="m">10</span>.64.16.1#53<span class="o">(</span><span class="m">10</span>.64.16.1<span class="o">)</span>
-<span class="p">;;</span><span class="w"> </span>WHEN:<span class="w"> </span>Wed<span class="w"> </span>Dec<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">16</span>:49:43<span class="w"> </span>CET<span class="w"> </span><span class="m">2022</span>
-<span class="p">;;</span><span class="w"> </span>MSG<span class="w"> </span>SIZE<span class="w">  </span>rcvd:<span class="w"> </span><span class="m">112</span>
-</code></pre></div>
-</div>
-<p>For PTR record, check the <code>ANSWER SECTION</code> which contains the requested domain
-name.</p>
-<p>With <code>nslookup</code>, you can achieve similar results.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="m">16</span>:49<span class="w"> </span><span class="c1">#&gt; nslookup static.75.89.181.135.clients.your-server.de</span>
-Server:<span class="w">     </span><span class="m">10</span>.64.16.1
-Address:<span class="w">    </span><span class="m">10</span>.64.16.1#53
-
-Non-authoritative<span class="w"> </span>answer:
-Name:<span class="w">   </span>static.75.89.181.135.clients.your-server.de
-Address:<span class="w"> </span><span class="m">135</span>.181.89.75
-</code></pre></div>
-</div>
-<h2 id="test-network-connectivity">Test Network Connectivity</h2>
-<p>The IP Fabric CLI provides access to standard Unix tools for network testing,
-such as <code>ping</code>, <code>traceroute</code>, <code>telnet</code>, <code>ssh</code>, <code>netstat</code>, etc.</p>
-<div class="admonition warning">
-<p class="admonition-title">ICMP</p>
-<p>Please remember that ICMP packets used by <code>ping</code> and <code>traceroute</code> might be
-blocked by other devices in the network. It does not mean that a device
-cannot be reached using SSH or Telnet.</p>
-</div>
-<p>To make sure that an network device is available from the IP Fabric VM, you can
-use the <code>telnet</code> and <code>ssh</code> client from the command line.</p>
-<p>For SSH testing:</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>userName@device-IP-or-Hostname
-</code></pre></div>
-<p>For Telnet testing:</p>
-<div class="highlight"><pre><span></span><code>telnet<span class="w"> </span>device-IP-or-Hostname
-</code></pre></div>
-<h3 id="ipf-connection-tester"><code>ipf-connection-tester</code></h3>
-<p>Since version <code>5.0</code>, there is also a tool called <code>ipf-connection-tester</code> for
-testing the network connectivity using the same SSH library that is used by the
-discovery process, which is different than the system SSH library!</p>
-<p>To test SSH connectivity, use:</p>
-<div class="highlight"><pre><span></span><code>ipf-connection-tester<span class="w"> </span>ssh<span class="w"> </span>userName@device-IP-or-Hostname
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>ipf-connection-tester<span class="w"> </span>ssh<span class="w"> </span><span class="m">192</span>.168.121.119
-Username?<span class="w"> </span>username1
-Password?
-<span class="m">2022</span>-12-14T16:33:30.505Z<span class="w"> </span>-<span class="w"> </span>debug:<span class="w"> </span>Custom<span class="w"> </span>crypto<span class="w"> </span>binding<span class="w"> </span>not<span class="w"> </span>available
-<span class="m">2022</span>-12-14T16:33:30.507Z<span class="w"> </span>-<span class="w"> </span>debug:<span class="w"> </span>Local<span class="w"> </span>ident:<span class="w"> </span><span class="s1">&#39;SSH-2.0-ssh2js1.10.0&#39;</span>
-<span class="m">2022</span>-12-14T16:33:30.507Z<span class="w"> </span>-<span class="w"> </span>debug:<span class="w"> </span>Client:<span class="w"> </span>Trying<span class="w"> </span><span class="m">192</span>.168.121.119<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">22</span><span class="w"> </span>...
-<span class="m">2022</span>-12-14T16:33:33.576Z<span class="w"> </span>-<span class="w"> </span>debug:<span class="w"> </span>Socket<span class="w"> </span>error:<span class="w"> </span>connect<span class="w"> </span>ETIMEDOUT<span class="w"> </span><span class="m">192</span>.168.121.119:22
-<span class="m">2022</span>-12-14T16:33:33.579Z<span class="w"> </span>-<span class="w"> </span>info:<span class="w"> </span>Awaiting<span class="w"> </span>connectionEndedPromise...
-<span class="m">2022</span>-12-14T16:33:33.580Z<span class="w"> </span>-<span class="w"> </span>debug:<span class="w"> </span>Socket<span class="w"> </span>closed
-<span class="m">2022</span>-12-14T16:33:33.582Z<span class="w"> </span>-<span class="w"> </span>info:<span class="w"> </span>SocketClosedPromise<span class="w"> </span>finished.
-<span class="m">2022</span>-12-14T16:33:33.582Z<span class="w"> </span>-<span class="w"> </span>info:<span class="w"> </span>LogList:<span class="w">  </span><span class="o">[</span>
-<span class="w">  </span><span class="s2">&quot;Trying SSH connect to 192.168.121.119:22&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;SSH Error: Error: connect ETIMEDOUT 192.168.121.119:22&quot;</span>
-<span class="o">]</span>
-<span class="m">2022</span>-12-14T16:33:33.583Z<span class="w"> </span>-<span class="w"> </span>error:<span class="w"> </span>connect<span class="w"> </span>ETIMEDOUT<span class="w"> </span><span class="m">192</span>.168.121.119:22<span class="w"> </span><span class="o">{</span><span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;ABConnectionError&quot;</span>,<span class="s2">&quot;stack&quot;</span>:<span class="s2">&quot;Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)&quot;</span><span class="o">}</span>
-</code></pre></div>
-</div>
-<p>If you are getting timeouts, you may increase the default timeout options:</p>
-<div class="highlight"><pre><span></span><code>Options:
-<span class="w">  </span>-r,<span class="w"> </span>--ready-timeout<span class="w"> </span>&lt;timeout&gt;<span class="w">  </span>seconds<span class="w"> </span>to<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>till<span class="w"> </span>connection<span class="w"> </span>is<span class="w"> </span>ready<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">30</span><span class="o">)</span>
-<span class="w">  </span>-d,<span class="w"> </span>--data-timeout<span class="w"> </span>&lt;timeout&gt;<span class="w">   </span>seconds<span class="w"> </span>to<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>till<span class="w"> </span>data<span class="w"> </span>is<span class="w"> </span>received<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">10</span><span class="o">)</span>
-</code></pre></div>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code>ipf-connection-tester<span class="w"> </span>ssh<span class="w"> </span>userName@device-IP-or-Hostname<span class="w"> </span>-r<span class="w"> </span><span class="m">60</span><span class="w"> </span>-d<span class="w"> </span><span class="m">20</span>
-</code></pre></div>
-<p>To test Telnet, simply change <code>ssh</code> to <code>telnet</code>:</p>
-<div class="highlight"><pre><span></span><code>ipf-connection-tester<span class="w"> </span>telnet<span class="w"> </span>userName@device-IP-or-Hostname
-</code></pre></div>
-<p>Timeout options are the same. However, the Telnet connection tester is much less
-verbose than the SSH one, so for both security and verbosity, prefer SSH
-whenever possible.</p>
-<p>If you wish to run <code>ipf-connection-tester</code> from your automation script, here are
-the possible return values:</p>
-<ul>
-<li><code>0</code> &ndash; Connection succeeded</li>
-<li><code>1</code> &ndash; Missing or invalid command-line arguments</li>
-<li><code>2</code> &ndash; Connection failed</li>
-</ul>
-<h2 id="check-memory-and-swap-usage">Check Memory and Swap Usage</h2>
-<div class="highlight"><pre><span></span><code>free<span class="w"> </span>-m
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>free<span class="w"> </span>-m
-<span class="w">               </span>total<span class="w">        </span>used<span class="w">        </span>free<span class="w">      </span>shared<span class="w">  </span>buff/cache<span class="w">   </span>available
-Mem:<span class="w">           </span><span class="m">15630</span><span class="w">        </span><span class="m">4708</span><span class="w">        </span><span class="m">8271</span><span class="w">           </span><span class="m">3</span><span class="w">        </span><span class="m">2649</span><span class="w">       </span><span class="m">10662</span>
-Swap:<span class="w">            </span><span class="m">979</span><span class="w">           </span><span class="m">0</span><span class="w">         </span><span class="m">979</span>
-</code></pre></div>
-</div>
-<h2 id="check-which-processes-use-most-cpu">Check Which Processes Use Most CPU</h2>
-<div class="highlight"><pre><span></span><code>top
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>top
-top<span class="w"> </span>-<span class="w"> </span><span class="m">13</span>:19:40<span class="w"> </span>up<span class="w"> </span><span class="m">7</span><span class="w"> </span>min,<span class="w">  </span><span class="m">1</span><span class="w"> </span>user,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">0</span>.01,<span class="w"> </span><span class="m">0</span>.13,<span class="w"> </span><span class="m">0</span>.10
-Tasks:<span class="w"> </span><span class="m">186</span><span class="w"> </span>total,<span class="w">   </span><span class="m">1</span><span class="w"> </span>running,<span class="w"> </span><span class="m">185</span><span class="w"> </span>sleeping,<span class="w">   </span><span class="m">0</span><span class="w"> </span>stopped,<span class="w">   </span><span class="m">0</span><span class="w"> </span>zombie
-%Cpu<span class="o">(</span>s<span class="o">)</span>:<span class="w">  </span><span class="m">0</span>.1<span class="w"> </span>us,<span class="w">  </span><span class="m">0</span>.2<span class="w"> </span>sy,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>ni,<span class="w"> </span><span class="m">99</span>.7<span class="w"> </span>id,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>wa,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>hi,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>si,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>st
-MiB<span class="w"> </span>Mem<span class="w"> </span>:<span class="w">  </span><span class="m">15630</span>.1<span class="w"> </span>total,<span class="w">   </span><span class="m">8321</span>.4<span class="w"> </span>free,<span class="w">   </span><span class="m">4659</span>.0<span class="w"> </span>used,<span class="w">   </span><span class="m">2649</span>.7<span class="w"> </span>buff/cache
-MiB<span class="w"> </span>Swap:<span class="w">    </span><span class="m">980</span>.0<span class="w"> </span>total,<span class="w">    </span><span class="m">980</span>.0<span class="w"> </span>free,<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>used.<span class="w">  </span><span class="m">10713</span>.4<span class="w"> </span>avail<span class="w"> </span>Mem
-
-<span class="w">    </span>PID<span class="w"> </span>USER<span class="w">      </span>PR<span class="w">  </span>NI<span class="w">    </span>VIRT<span class="w">    </span>RES<span class="w">    </span>SHR<span class="w"> </span>S<span class="w">  </span>%CPU<span class="w">  </span>%MEM<span class="w">     </span>TIME+<span class="w"> </span>COMMAND
-<span class="w">    </span><span class="m">683</span><span class="w"> </span>rabbitmq<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">5397952</span><span class="w"> </span><span class="m">116476</span><span class="w">   </span><span class="m">7984</span><span class="w"> </span>S<span class="w">   </span><span class="m">1</span>.3<span class="w">   </span><span class="m">0</span>.7<span class="w">   </span><span class="m">0</span>:13.36<span class="w"> </span>beam.smp
-<span class="w">    </span><span class="m">888</span><span class="w"> </span>arangodb<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">8397360</span><span class="w">   </span><span class="m">3</span>.3g<span class="w">   </span><span class="m">1</span>.9g<span class="w"> </span>S<span class="w">   </span><span class="m">1</span>.0<span class="w">  </span><span class="m">21</span>.7<span class="w">   </span><span class="m">0</span>:23.53<span class="w"> </span>arangod
-<span class="w">    </span><span class="m">690</span><span class="w"> </span>redis<span class="w">     </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">67308</span><span class="w">  </span><span class="m">10480</span><span class="w">   </span><span class="m">8256</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.7<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.85<span class="w"> </span>redis-server
-<span class="w">   </span><span class="m">1423</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1056132</span><span class="w"> </span><span class="m">272092</span><span class="w">  </span><span class="m">38308</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">1</span>.7<span class="w">   </span><span class="m">0</span>:04.59<span class="w"> </span>ipfabric-api
-<span class="w">   </span><span class="m">2528</span><span class="w"> </span>osadmin<span class="w">   </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">10192</span><span class="w">   </span><span class="m">3764</span><span class="w">   </span><span class="m">3016</span><span class="w"> </span>R<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.02<span class="w"> </span>top
-<span class="w">      </span><span class="m">1</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">102700</span><span class="w">  </span><span class="m">10680</span><span class="w">   </span><span class="m">7672</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:01.46<span class="w"> </span>systemd
-<span class="w">      </span><span class="m">2</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.01<span class="w"> </span>kthreadd
-<span class="w">      </span><span class="m">3</span><span class="w"> </span>root<span class="w">       </span><span class="m">0</span><span class="w"> </span>-20<span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>I<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span>rcu_gp
-<span class="w">      </span><span class="m">4</span><span class="w"> </span>root<span class="w">       </span><span class="m">0</span><span class="w"> </span>-20<span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>I<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span>rcu_par_gp
-<span class="w">      </span><span class="m">6</span><span class="w"> </span>root<span class="w">       </span><span class="m">0</span><span class="w"> </span>-20<span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>I<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span>kworker/0:0H-events_highpri
-<span class="o">[</span>...<span class="o">]</span>
-</code></pre></div>
-</div>
-<h2 id="check-which-processes-use-most-memory">Check Which Processes Use Most Memory</h2>
-<div class="highlight"><pre><span></span><code>top<span class="w"> </span>-o<span class="w"> </span>%MEM
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>top<span class="w"> </span>-o<span class="w"> </span>%MEM
-top<span class="w"> </span>-<span class="w"> </span><span class="m">13</span>:20:55<span class="w"> </span>up<span class="w"> </span><span class="m">9</span><span class="w"> </span>min,<span class="w">  </span><span class="m">1</span><span class="w"> </span>user,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">0</span>.00,<span class="w"> </span><span class="m">0</span>.10,<span class="w"> </span><span class="m">0</span>.09
-Tasks:<span class="w"> </span><span class="m">184</span><span class="w"> </span>total,<span class="w">   </span><span class="m">1</span><span class="w"> </span>running,<span class="w"> </span><span class="m">183</span><span class="w"> </span>sleeping,<span class="w">   </span><span class="m">0</span><span class="w"> </span>stopped,<span class="w">   </span><span class="m">0</span><span class="w"> </span>zombie
-%Cpu<span class="o">(</span>s<span class="o">)</span>:<span class="w">  </span><span class="m">0</span>.9<span class="w"> </span>us,<span class="w">  </span><span class="m">0</span>.3<span class="w"> </span>sy,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>ni,<span class="w"> </span><span class="m">98</span>.8<span class="w"> </span>id,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>wa,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>hi,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>si,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>st
-MiB<span class="w"> </span>Mem<span class="w"> </span>:<span class="w">  </span><span class="m">15630</span>.1<span class="w"> </span>total,<span class="w">   </span><span class="m">8321</span>.8<span class="w"> </span>free,<span class="w">   </span><span class="m">4658</span>.6<span class="w"> </span>used,<span class="w">   </span><span class="m">2649</span>.8<span class="w"> </span>buff/cache
-MiB<span class="w"> </span>Swap:<span class="w">    </span><span class="m">980</span>.0<span class="w"> </span>total,<span class="w">    </span><span class="m">980</span>.0<span class="w"> </span>free,<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>used.<span class="w">  </span><span class="m">10716</span>.3<span class="w"> </span>avail<span class="w"> </span>Mem
-
-<span class="w">    </span>PID<span class="w"> </span>USER<span class="w">      </span>PR<span class="w">  </span>NI<span class="w">    </span>VIRT<span class="w">    </span>RES<span class="w">    </span>SHR<span class="w"> </span>S<span class="w">  </span>%CPU<span class="w">  </span>%MEM<span class="w">     </span>TIME+<span class="w"> </span>COMMAND
-<span class="w">    </span><span class="m">888</span><span class="w"> </span>arangodb<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">8398384</span><span class="w">   </span><span class="m">3</span>.3g<span class="w">   </span><span class="m">1</span>.9g<span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.7<span class="w">  </span><span class="m">21</span>.7<span class="w">   </span><span class="m">0</span>:24.11<span class="w"> </span>arangod
-<span class="w">    </span><span class="m">672</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">4171476</span><span class="w">   </span><span class="m">1</span>.7g<span class="w">  </span><span class="m">40324</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">  </span><span class="m">10</span>.9<span class="w">   </span><span class="m">0</span>:35.67<span class="w"> </span>ipfabric-api
-<span class="w">   </span><span class="m">1429</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1137824</span><span class="w"> </span><span class="m">309384</span><span class="w">  </span><span class="m">40568</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">1</span>.9<span class="w">   </span><span class="m">0</span>:07.04<span class="w"> </span>ipfabric-api
-<span class="w">   </span><span class="m">1435</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1123412</span><span class="w"> </span><span class="m">275388</span><span class="w">  </span><span class="m">38776</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">1</span>.7<span class="w">   </span><span class="m">0</span>:04.67<span class="w"> </span>ipfabric-api
-<span class="w">   </span><span class="m">1417</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1122176</span><span class="w"> </span><span class="m">273100</span><span class="w">  </span><span class="m">38760</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">1</span>.7<span class="w">   </span><span class="m">0</span>:06.45<span class="w"> </span>ipfabric-api
-<span class="w">   </span><span class="m">1423</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1056132</span><span class="w"> </span><span class="m">271580</span><span class="w">  </span><span class="m">38308</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">1</span>.7<span class="w">   </span><span class="m">0</span>:04.63<span class="w"> </span>ipfabric-api
-<span class="w">    </span><span class="m">701</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">10</span>.8g<span class="w"> </span><span class="m">170648</span><span class="w">  </span><span class="m">32152</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">1</span>.1<span class="w">   </span><span class="m">0</span>:02.52<span class="w"> </span>syslogWorkerBui
-<span class="w">    </span><span class="m">683</span><span class="w"> </span>rabbitmq<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">5398464</span><span class="w"> </span><span class="m">116380</span><span class="w">   </span><span class="m">7984</span><span class="w"> </span>S<span class="w">   </span><span class="m">1</span>.3<span class="w">   </span><span class="m">0</span>.7<span class="w">   </span><span class="m">0</span>:14.47<span class="w"> </span>beam.smp
-<span class="w">    </span><span class="m">673</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">945264</span><span class="w"> </span><span class="m">112476</span><span class="w">  </span><span class="m">32556</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.7<span class="w">   </span><span class="m">0</span>:01.76<span class="w"> </span>nimpee-update
-<span class="w">    </span><span class="m">737</span><span class="w"> </span>autoboss<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">811620</span><span class="w">  </span><span class="m">53092</span><span class="w">  </span><span class="m">30736</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">0</span>:00.37<span class="w"> </span>ipfabric-webhoo
-<span class="o">[</span>...<span class="o">]</span>
-</code></pre></div>
-</div>
-<h2 id="check-status-of-common-services">Check Status of Common Services</h2>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>nimpee-api.service
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nimpee-api.service
-●<span class="w"> </span>nimpee-api.service<span class="w"> </span>-<span class="w"> </span>IPFabric<span class="w"> </span>API
-<span class="w">     </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/nimpee-api.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
-<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2022</span>-11-18<span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>18min<span class="w"> </span>ago
-<span class="w">   </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">672</span><span class="w"> </span><span class="o">(</span>ipfabric-api<span class="o">)</span>
-<span class="w">      </span>Tasks:<span class="w"> </span><span class="m">58</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">18711</span><span class="o">)</span>
-<span class="w">     </span>Memory:<span class="w"> </span><span class="m">2</span>.7G
-<span class="w">        </span>CPU:<span class="w"> </span>1min<span class="w"> </span><span class="m">3</span>.168s
-<span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/nimpee-api.service
-<span class="w">             </span>├─<span class="w"> </span><span class="m">672</span><span class="w"> </span>/opt/ipf-api/ipfabric-api
-<span class="w">             </span>├─1417<span class="w"> </span>/opt/ipf-api/ipfabric-api<span class="w"> </span>/snapshot/api/build/bundle.js<span class="w"> </span>--worker<span class="w"> </span>--port<span class="o">=</span><span class="m">20000</span><span class="w"> </span>--slave
-<span class="w">             </span>├─1423<span class="w"> </span>/opt/ipf-api/ipfabric-api<span class="w"> </span>/snapshot/api/build/bundle.js<span class="w"> </span>--worker<span class="w"> </span>--port<span class="o">=</span><span class="m">20001</span>
-<span class="w">             </span>├─1429<span class="w"> </span>/opt/ipf-api/ipfabric-api<span class="w"> </span>/snapshot/api/build/bundle.js<span class="w"> </span>--worker<span class="w"> </span>--port<span class="o">=</span><span class="m">20002</span>
-<span class="w">             </span>├─1435<span class="w"> </span>/opt/ipf-api/ipfabric-api<span class="w"> </span>/snapshot/api/build/bundle.js<span class="w"> </span>--worker<span class="w"> </span>--port<span class="o">=</span><span class="m">20003</span>
-<span class="w">             </span>└─1503<span class="w"> </span>bwm-ng<span class="w"> </span>-o<span class="w"> </span>csv<span class="w"> </span>-I<span class="w"> </span>eth0<span class="w"> </span>-t<span class="w"> </span><span class="m">1000</span><span class="w"> </span>-u<span class="w"> </span>bytes<span class="w"> </span>-t<span class="w"> </span>rate
-
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3599</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3606</span><span class="o">]</span>:<span class="w"> </span>autoboss<span class="w"> </span>:<span class="w"> </span><span class="nv">PWD</span><span class="o">=</span>/opt/ipf-api<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">USER</span><span class="o">=</span>root<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">COMMAND</span><span class="o">=</span>/usr/sbin/service<span class="w"> </span>rabbitmq-server<span class="w"> </span>status
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3606</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>opened<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root<span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>by<span class="w"> </span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">1001</span><span class="o">)</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3606</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3614</span><span class="o">]</span>:<span class="w"> </span>autoboss<span class="w"> </span>:<span class="w"> </span><span class="nv">PWD</span><span class="o">=</span>/opt/ipf-api<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">USER</span><span class="o">=</span>root<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">COMMAND</span><span class="o">=</span>/usr/sbin/service<span class="w"> </span>syslogWorker@1<span class="w"> </span>status
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3614</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>opened<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root<span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>by<span class="w"> </span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">1001</span><span class="o">)</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3614</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3630</span><span class="o">]</span>:<span class="w"> </span>autoboss<span class="w"> </span>:<span class="w"> </span><span class="nv">PWD</span><span class="o">=</span>/opt/ipf-api<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">USER</span><span class="o">=</span>root<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nv">COMMAND</span><span class="o">=</span>/usr/sbin/service<span class="w"> </span>webhookWorker<span class="w"> </span>status
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3630</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>opened<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root<span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>by<span class="w"> </span><span class="o">(</span><span class="nv">uid</span><span class="o">=</span><span class="m">1001</span><span class="o">)</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:30:00<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>sudo<span class="o">[</span><span class="m">3630</span><span class="o">]</span>:<span class="w"> </span>pam_unix<span class="o">(</span>sudo:session<span class="o">)</span>:<span class="w"> </span>session<span class="w"> </span>closed<span class="w"> </span><span class="k">for</span><span class="w"> </span>user<span class="w"> </span>root
-</code></pre></div>
-</div>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>nginx.service
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx.service
-●<span class="w"> </span>nginx.service<span class="w"> </span>-<span class="w"> </span>A<span class="w"> </span>high<span class="w"> </span>performance<span class="w"> </span>web<span class="w"> </span>server<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>reverse<span class="w"> </span>proxy<span class="w"> </span>server
-<span class="w">     </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/nginx.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
-<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2022</span>-11-18<span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>19min<span class="w"> </span>ago
-<span class="w">       </span>Docs:<span class="w"> </span>man:nginx<span class="o">(</span><span class="m">8</span><span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">1445</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/sbin/nginx<span class="w"> </span>-t<span class="w"> </span>-q<span class="w"> </span>-g<span class="w"> </span>daemon<span class="w"> </span>on<span class="p">;</span><span class="w"> </span>master_process<span class="w"> </span>on<span class="p">;</span><span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">1446</span><span class="w"> </span><span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/nginx<span class="w"> </span>-g<span class="w"> </span>daemon<span class="w"> </span>on<span class="p">;</span><span class="w"> </span>master_process<span class="w"> </span>on<span class="p">;</span><span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">   </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">1447</span><span class="w"> </span><span class="o">(</span>nginx<span class="o">)</span>
-<span class="w">      </span>Tasks:<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">18711</span><span class="o">)</span>
-<span class="w">     </span>Memory:<span class="w"> </span><span class="m">26</span>.7M
-<span class="w">        </span>CPU:<span class="w"> </span>573ms
-<span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/nginx.service
-<span class="w">             </span>├─1447<span class="w"> </span>nginx:<span class="w"> </span>master<span class="w"> </span>process<span class="w"> </span>/usr/sbin/nginx<span class="w"> </span>-g<span class="w"> </span>daemon<span class="w"> </span>on<span class="p">;</span><span class="w"> </span>master_process<span class="w"> </span>on<span class="p">;</span>
-<span class="w">             </span>├─1448<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1449<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1450<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1451<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1452<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1453<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>├─1454<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-<span class="w">             </span>└─1455<span class="w"> </span>nginx:<span class="w"> </span>worker<span class="w"> </span>process
-
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1445</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/ipf-nimpee-update:28
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1445</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/nimpee-webng:35
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1445</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1445</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1446</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/ipf-nimpee-update:28
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1446</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/nimpee-webng:35
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1446</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>nginx<span class="o">[</span><span class="m">1446</span><span class="o">]</span>:<span class="w"> </span>nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>nginx.service:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>parse<span class="w"> </span>PID<span class="w"> </span>from<span class="w"> </span>file<span class="w"> </span>/run/nginx.pid:<span class="w"> </span>Invalid<span class="w"> </span>argument
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:56<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>A<span class="w"> </span>high<span class="w"> </span>performance<span class="w"> </span>web<span class="w"> </span>server<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>reverse<span class="w"> </span>proxy<span class="w"> </span>server.
-</code></pre></div>
-</div>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>arangodb3.service
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>arangodb3.service
-●<span class="w"> </span>arangodb3.service<span class="w"> </span>-<span class="w"> </span>ArangoDB<span class="w"> </span>database<span class="w"> </span>server
-<span class="w">     </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/arangodb3.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
-<span class="w">    </span>Drop-In:<span class="w"> </span>/etc/systemd/system/arangodb3.service.d
-<span class="w">             </span>└─ipf-nofile-override.conf
-<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2022</span>-11-18<span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>20min<span class="w"> </span>ago
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">662</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/install<span class="w"> </span>-g<span class="w"> </span>arangodb<span class="w"> </span>-o<span class="w"> </span>arangodb<span class="w"> </span>-d<span class="w"> </span>/var/tmp/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">744</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/install<span class="w"> </span>-g<span class="w"> </span>arangodb<span class="w"> </span>-o<span class="w"> </span>arangodb<span class="w"> </span>-d<span class="w"> </span>/var/run/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">799</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>arangodb:arangodb<span class="w"> </span>/var/log/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">800</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>/var/log/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">801</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>arangodb:arangodb<span class="w"> </span>/var/lib/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">880</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>/var/lib/arangodb3<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">885</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>arangodb:arangodb<span class="w"> </span>/var/lib/arangodb3-apps<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">    </span>Process:<span class="w"> </span><span class="m">887</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/env<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>/var/lib/arangodb3-apps<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
-<span class="w">   </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">888</span><span class="w"> </span><span class="o">(</span>arangod<span class="o">)</span>
-<span class="w">      </span>Tasks:<span class="w"> </span><span class="m">49</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">131072</span><span class="o">)</span>
-<span class="w">     </span>Memory:<span class="w"> </span><span class="m">3</span>.4G
-<span class="w">        </span>CPU:<span class="w"> </span><span class="m">29</span>.865s
-<span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/arangodb3.service
-<span class="w">             </span>└─888<span class="w"> </span>/usr/sbin/arangod<span class="w"> </span>--uid<span class="w"> </span>arangodb<span class="w"> </span>--gid<span class="w"> </span>arangodb<span class="w"> </span>--pid-file<span class="w"> </span>/var/run/arangodb3/arangod.pid<span class="w"> </span>--temp.path<span class="w"> </span>/var/tmp/arangodb3<span class="w"> </span>--log.foreground-tty<span class="w"> </span><span class="nb">true</span>
-
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>e52b0<span class="o">]</span><span class="w"> </span>ArangoDB<span class="w"> </span><span class="m">3</span>.5.7<span class="w"> </span><span class="o">[</span>linux<span class="o">]</span><span class="w"> </span>64bit,<span class="w"> </span>using<span class="w"> </span>jemalloc,<span class="w"> </span>build<span class="w"> </span>tags/v3.5.7-0-ga94761e8c6,<span class="w"> </span>VPack<span class="w"> </span><span class="m">0</span>.1.33,<span class="w"> </span>RocksDB<span class="w"> </span><span class="m">6</span>.2.0,<span class="w"> </span>ICU<span class="w"> </span><span class="m">58</span>.1,<span class="w"> </span>V8<span class="w"> </span><span class="m">7</span>.1.302.28,<span class="w"> </span>OpenSSL<span class="w"> </span><span class="m">1</span>.1.1h<span class="w">  </span><span class="m">22</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">2020</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>75ddc<span class="o">]</span><span class="w"> </span>detected<span class="w"> </span>operating<span class="w"> </span>system:<span class="w"> </span>Linux<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.10.0-19-amd64<span class="w"> </span><span class="o">(</span>debian-kernel@lists.debian.org<span class="o">)</span><span class="w"> </span><span class="o">(</span>gcc-10<span class="w"> </span><span class="o">(</span>Debian<span class="w"> </span><span class="m">10</span>.2.1-6<span class="o">)</span><span class="w"> </span><span class="m">10</span>.2.1<span class="w"> </span><span class="m">20210110</span>,<span class="w"> </span>GNU<span class="w"> </span>ld<span class="w"> </span><span class="o">(</span>GNU<span class="w"> </span>Binutils<span class="w"> </span><span class="k">for</span><span class="w"> </span>Debian<span class="o">)</span><span class="w"> </span><span class="m">2</span>.35.2<span class="o">)</span><span class="w"> </span><span class="c1">#1 SMP Debia&gt;</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span><span class="m">43396</span><span class="o">]</span><span class="w"> </span><span class="o">{</span>authentication<span class="o">}</span><span class="w"> </span>Jwt<span class="w"> </span>secret<span class="w"> </span>not<span class="w"> </span>specified,<span class="w"> </span>generating...
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>144fe<span class="o">]</span><span class="w"> </span>using<span class="w"> </span>storage<span class="w"> </span>engine<span class="w"> </span>mmfiles
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>3bb7d<span class="o">]</span><span class="w"> </span><span class="o">{</span>cluster<span class="o">}</span><span class="w"> </span>Starting<span class="w"> </span>up<span class="w"> </span>with<span class="w"> </span>role<span class="w"> </span>SINGLE
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>a1c60<span class="o">]</span><span class="w"> </span><span class="o">{</span>syscall<span class="o">}</span><span class="w"> </span>file-descriptors<span class="w"> </span><span class="o">(</span>nofiles<span class="o">)</span><span class="w"> </span>hard<span class="w"> </span>limit<span class="w"> </span>is<span class="w"> </span><span class="m">1048576</span>,<span class="w"> </span>soft<span class="w"> </span>limit<span class="w"> </span>is<span class="w"> </span><span class="m">1048576</span>
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:48<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:48Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>3844e<span class="o">]</span><span class="w"> </span><span class="o">{</span>authentication<span class="o">}</span><span class="w"> </span>Authentication<span class="w"> </span>is<span class="w"> </span>turned<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>system<span class="w"> </span>only<span class="o">)</span>,<span class="w"> </span>authentication<span class="w"> </span><span class="k">for</span><span class="w"> </span>unix<span class="w"> </span>sockets<span class="w"> </span>is<span class="w"> </span>turned<span class="w"> </span>on
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:49<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:49Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>8767f<span class="o">]</span><span class="w"> </span><span class="o">{</span>engines<span class="o">}</span><span class="w"> </span>DB<span class="w"> </span>recovery<span class="w"> </span>finished<span class="w"> </span>successfully
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:50<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:50Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>6ea38<span class="o">]</span><span class="w"> </span>using<span class="w"> </span>endpoint<span class="w"> </span><span class="s1">&#39;http+tcp://0.0.0.0:8529&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>non-encrypted<span class="w"> </span>requests
-Nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:11:50<span class="w"> </span>ipfabric-howto1118135353<span class="w"> </span>arangod<span class="o">[</span><span class="m">888</span><span class="o">]</span>:<span class="w"> </span><span class="m">2022</span>-11-18T13:11:50Z<span class="w"> </span><span class="o">[</span><span class="m">888</span><span class="o">]</span><span class="w"> </span>INFO<span class="w"> </span><span class="o">[</span>cf3f4<span class="o">]</span><span class="w"> </span>ArangoDB<span class="w"> </span><span class="o">(</span>version<span class="w"> </span><span class="m">3</span>.5.7<span class="w"> </span><span class="o">[</span>linux<span class="o">])</span><span class="w"> </span>is<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>business.<span class="w"> </span>Have<span class="w"> </span>fun!
-</code></pre></div>
-</div>
-<h2 id="check-if-there-are-any-failed-services">Check if There Are Any Failed Services</h2>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--failed
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>systemctl<span class="w"> </span>--failed
-<span class="w">  </span>UNIT<span class="w"> </span>LOAD<span class="w"> </span>ACTIVE<span class="w"> </span>SUB<span class="w"> </span>DESCRIPTION
-<span class="m">0</span><span class="w"> </span>loaded<span class="w"> </span>units<span class="w"> </span>listed.
-</code></pre></div>
-</div>
-<h2 id="check-disk-space-usage">Check Disk Space Usage</h2>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>df<span class="w"> </span>-h
-Filesystem<span class="w">                     </span>Size<span class="w">  </span>Used<span class="w"> </span>Avail<span class="w"> </span>Use%<span class="w"> </span>Mounted<span class="w"> </span>on
-udev<span class="w">                           </span><span class="m">7</span>.7G<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">7</span>.7G<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/dev
-tmpfs<span class="w">                          </span><span class="m">1</span>.6G<span class="w">  </span>688K<span class="w">  </span><span class="m">1</span>.6G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run
-/dev/mapper/ipfabric--vg-root<span class="w">  </span>224G<span class="w">   </span>12G<span class="w">  </span>203G<span class="w">   </span><span class="m">6</span>%<span class="w"> </span>/
-tmpfs<span class="w">                          </span><span class="m">7</span>.7G<span class="w">  </span><span class="m">8</span>.0K<span class="w">  </span><span class="m">7</span>.7G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/dev/shm
-tmpfs<span class="w">                          </span><span class="m">5</span>.0M<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">5</span>.0M<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/run/lock
-/dev/sda1<span class="w">                      </span>470M<span class="w">   </span>88M<span class="w">  </span>358M<span class="w">  </span><span class="m">20</span>%<span class="w"> </span>/boot
-tmpfs<span class="w">                          </span><span class="m">1</span>.6G<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">1</span>.6G<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/run/user/0
-</code></pre></div>
-</div>
-<h2 id="check-inode-usage-on-filesystems">Check Inode Usage on Filesystems</h2>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-i
-</code></pre></div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>osadmin@ipfabric-howto1118135353:~$<span class="w"> </span>df<span class="w"> </span>-i
-Filesystem<span class="w">                      </span>Inodes<span class="w"> </span>IUsed<span class="w">    </span>IFree<span class="w"> </span>IUse%<span class="w"> </span>Mounted<span class="w"> </span>on
-udev<span class="w">                           </span><span class="m">1995938</span><span class="w">   </span><span class="m">379</span><span class="w">  </span><span class="m">1995559</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/dev
-tmpfs<span class="w">                          </span><span class="m">2000655</span><span class="w">   </span><span class="m">600</span><span class="w">  </span><span class="m">2000055</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/run
-/dev/mapper/ipfabric--vg-root<span class="w"> </span><span class="m">14822080</span><span class="w"> </span><span class="m">65161</span><span class="w"> </span><span class="m">14756919</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/
-tmpfs<span class="w">                          </span><span class="m">2000655</span><span class="w">     </span><span class="m">2</span><span class="w">  </span><span class="m">2000653</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/dev/shm
-tmpfs<span class="w">                          </span><span class="m">2000655</span><span class="w">     </span><span class="m">3</span><span class="w">  </span><span class="m">2000652</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/run/lock
-/dev/sda1<span class="w">                       </span><span class="m">124928</span><span class="w">   </span><span class="m">356</span><span class="w">   </span><span class="m">124572</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/boot
-tmpfs<span class="w">                           </span><span class="m">400131</span><span class="w">    </span><span class="m">17</span><span class="w">   </span><span class="m">400114</span><span class="w">    </span><span class="m">1</span>%<span class="w"> </span>/run/user/0
-</code></pre></div>
-</div>
-<h2 id="reboot-and-shutdown">Reboot and Shutdown</h2>
-<p>The IP Fabric VM can also be rebooted or shut down using the CLI:</p>
-<ul>
-<li>To reboot the VM, use the <code>reboot</code> command.</li>
-<li>To shut down the VM, use the <code>poweroff</code> command.</li>
-</ul>
 
 
 
@@ -13816,7 +13131,7 @@ tmpfs<span class="w">                           </span><span class="m">400131</s
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2024</span>
   </span>
 
     
@@ -13894,7 +13209,7 @@ tmpfs<span class="w">                           </span><span class="m">400131</s
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../troubleshoot_ldap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How To Troubleshoot LDAP">
+          <a href="../../Logging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Understanding System Logs">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -13904,20 +13219,20 @@ tmpfs<span class="w">                           </span><span class="m">400131</s
                 Previous
               </span>
               <div class="md-ellipsis">
-                How To Troubleshoot LDAP
+                Understanding System Logs
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../IPF_CLI_Config/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="../jumphost_troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: How To Troubleshoot Jumphost">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                How To Troubleshoot Jumphost
               </div>
             </div>
             <div class="md-footer__button md-icon">
