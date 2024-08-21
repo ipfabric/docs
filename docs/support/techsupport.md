@@ -2,7 +2,7 @@
 description: This page explains how to generate and upload a techsupport file for troubleshooting your IP Fabric appliance by our teams. The page also describes the contents of such a file.
 ---
 
-# Techsupport
+# Techsupport File
 
 !!! note "Techsupport Data Handling"
 
@@ -51,13 +51,17 @@ description: This page explains how to generate and upload a techsupport file fo
    sudo su -
    ```
 
-3. Run the `nimpee-sys-techsupport` script as the `autoboss` user to generate an
-   encrypted techsupport file with the recommended default contents (system and
-   service logs, usage data, and a specific snapshot `SNAPSHOT_ID` with its
-   database records).
+3. Run the `ipf-techsupport-exporter.sh` script as the `autoboss` user to
+   generate an encrypted techsupport file with the recommended default contents 
+   (system and service logs, usage data, and a specific snapshot `SNAPSHOT_ID` 
+   with its database records).
 
    ```shell
-   sudo -u autoboss nimpee-sys-techsupport -e -1 -2 -3 SNAPSHOT_ID -4 SNAPSHOT_ID -6
+   sudo -u autoboss /opt/ipf-techsupport-exporter/bin/ipf-techsupport-exporter.sh \
+   -e -1 -2 \
+   -3 <SNAPSHOT_ID> \
+   -4 <SNAPSHOT_ID> \ 
+   -6
    ```
 
    If needed, you can use the following options to select what to include in the
@@ -73,10 +77,10 @@ description: This page explains how to generate and upload a techsupport file fo
 	-6	Usage data
    ```
 
-4. By default, the file will be named `techsupport.tar` and stored in the
-   `/home/autoboss/` directory. You can copy it to another computer or upload it
-   directly to us using the [`curl`](#curl) command if your IP Fabric appliance
-   has access to the internet.
+4. By default, the file will be named `techsupport-<JOB_ID>.tar` and stored in
+   the `/home/autoboss/files` directory. You can copy it to another computer or 
+   upload it directly to us using the [`curl`](#curl) command if your IP Fabric 
+   appliance has access to the internet.
 
 ### API
 
@@ -102,7 +106,7 @@ techsupport file directly from it using the following `curl` command:
 
 ```shell
 curl --user username:password \
--T "/home/autoboss/files/techsupport-xxx.tar" \
+-T "/home/autoboss/files/techsupport-<JOB_ID>.tar" \
 -X POST https://upload.EU.ipfabric.io/upload \
 -f
 ```
