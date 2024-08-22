@@ -24,17 +24,55 @@ By default, a Site consists of the topology of all contiguously interconnected p
 
 ### Hostname Regex
 
-Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Regex based on hostname**, and click **+ Add rule** to create a new rule.
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select
+**Regex based on hostname**, and click **+ Add rule** to create a new rule.
 
-**Transform hostname** is used to normalize Site names based on hostname:
+**Regular Expression** input value is what the hostnames of discovered devices will be tested against.
 
-- **UPPER CASE** -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> result: both devices are in one Site named `PRAGUE`.
-- **lower case** -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> result: both devices are in one Site named `prague`.
-- **None** (default) -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> result: each device is in its own Site (`PRAGUE-RTR1` being in `PRAGUE` and `prague-rtr2` being in `prague`).
+You can use capturing groups (sections of regular expression in `(` and `)` brackets), which you can
+then refer to in **Site Name** input value. The capturing groups might be named, using the `(?<name>...)` syntax.
 
-![Hostname regex](site_separation/hostname_regex.png)
+**Transform hostname** operation is applied BEFORE the regular expression is applied:
 
-In this example, the regular expression matches items such as `PRAGUE-`, `LONDON-`, etc.
+- **UPPER CASE** -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> regular expression is applied on `PRAGUE-RTR1` and `PRAGUE-RTR2` hostname strings.
+- **lower case** -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> regular expression is applied on `prague-rtr1` and `prague-rtr2` hostname strings.
+- **None** (default) -- First hostname `PRAGUE-RTR1`, second hostname `prague-rtr2` --> regular expression is applied on the original hostname strings, i.e. `PRAGUE-RTR1` and `prague-rtr2` respectively.
+
+**Site Name** input value is the site to which device will be assigned to in case the name
+of the device is matching the Regular Expression.
+
+Site Name might be a string value, e.g. `prague`, or it might be a template string with `${...}`
+references to Regular Expression capturing groups, e.g. `production-${1}` or `staging-${city}`.
+
+If at least one capturing group is detected in the Regular Expression, the Site Name input is
+disabled and **Customize** button appears.
+
+Unless you click the button, the value matched in the first capturing group of the Regular
+Expression is used as the Site Name.
+
+!!! Example "Regex Based on Hostname Using Default Option"
+
+    ![Hostname regex: default site name](site_separation/hostname_regex_default.png)
+
+    The regular expression matches hostnames such as `Prague-123`, `London-456`, the
+    resulting Site Names would be `PRAGUE` and `LONDON` respectively.
+
+If you decide to edit the Site Name, click the **Customize** button and enter Site Name string.
+
+Use numbered references: `${1}` for the value of the first capturing group, `${2}` for second,
+..., or named references, e.g. `${city}`, to refer to named capturing groups of Regular Expression.
+
+You can combine both approaches and construct the site names according to your needs, e.g.
+`${city}-${street}-${3}`. The compatibility between the Regular Expression and the references
+used in the Site Name is checked in UI to prevent any typos or other mistakes.
+
+!!! Example "Regex Based on Hostname Using Customized Site Name"
+
+    ![Hostname regex: custom site name](site_separation/hostname_regex_custom.png)
+
+    The regular expression matches hostnames such as `Prague-Parizska-4`,
+    `London-Downing_street-10`, the resulting Site Names would be `parizska-of-prague` and
+    `downing_street-of-london` respectively.
 
 ### SNMP Location Regex
 
@@ -46,37 +84,42 @@ Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separ
 
 The UI allows you to edit and test your rules directly in the browser by selecting the **Test rule** option. Here, you can see a live preview of devices that will match the regex you created.
 
-![Testing](site_separation/testing.png)
+![Testing hostname regex](site_separation/testing_hostname.png)
 
 You can also test SNMP location rules:
 
-![SNMP location](site_separation/snmp_location.png)
+![Testing SNMP location regex](site_separation/testing_snmp.png)
 
 !!! example "Regex Example"
 
-    We have several locations whose names are logically designed as one letter with one to three numbers. From the point of view of a regex, such a Site can generally be expressed as `^([a-zA-Z]\\d{1,3})`. Unfortunately, we have two other Sites that do not fit into this schema. These Sites can be defined with their own regex, and these can be added to the original one using the logical operator **or**. The following example will match one of three options:
+    We have several locations whose names are logically designed as one letter with one to three numbers.
+    From the point of view of a regex, such a Site can generally be expressed as `^([a-zA-Z]\d{1,3})`.
+
+    Unfortunately, we have two other Sites that do not fit into this schema. These Sites can be defined
+    with their own regex, and these can be added to the original one using the logical operator **or**.
+
+    The following example will match one of three options:
 
     ```
-    ^([a-zA-Z]\\d{1,3}\|HWLAB\|static\\d{1})
+    ^([a-zA-Z]\d{1,3}\|HWLAB\|static\d{1})
     ```
 
 !!! example "Regex Example -- Lookahead"
 
-    You can match a part of the string, only if it contains, or does not contain, a specific expression afterward, by using lookahead (positive or negative). In the example below, we want to match the first two letters and one number only if we don't see the pattern `-dev` afterward. Using this regex:
+    You can match a part of the string, only if it contains, or does not contain, a specific expression
+    afterward, by using lookahead (positive or negative).
+
+    In the example below, we want to match the first two letters and one number only if we don't
+    see the pattern `-dev` afterward. Using this regex:
 
     ```
     (^[a-zA-Z]{2}[0-9])(?!.*-dev)
     ```
 
-    - `BL1-router01` -- The regex will match, and the device will be assigned to the Site `BL1`.
-    - `PA2-router02-dev` -- The regex will not match, as we can see `-dev` in the hostname.
+    - `BL1-router01` -- the regex will match.
+    - `PA2-router02-dev` -- the regex will not match, as we can see `-dev` in the hostname.
 
 Read more about regular expression and assertion at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions#other_assertions>.
-
-The brief explanation:
-
-- `(^[a-zA-Z]{2}[a-zA-Z0-9])` -- We are going to match those first three characters: `AP1`, or `LO2`...
-- `(?![a-fA-F0-9]{3}[.][a-fA-F0-9]{4}[.][a-fA-F0-9]{4})` -- ... only if it is NOT followed by what would be a MAC address.
 
 ## Device Neighborship
 
