@@ -37,6 +37,13 @@ To enable scheduled configuration management, go to **Settings --> Configuration
 
 Multiple values from the lists can be selected while holding the `Ctrl` or `Shift` keys.
 
+!!! info
+
+    Since version `6.9`, the speed of Configuration Management processing has
+    been improved by increasing the number of concurrent CLI sessions from 10 to 
+    80. If you need to lower the default value, please
+    [contact our Support team](https://support.ipfabric.io).
+
 ## API Trigger
 
 Configuration collection can be triggered for a single device via an API call

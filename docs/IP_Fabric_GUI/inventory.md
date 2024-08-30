@@ -75,12 +75,18 @@ following information (`Human Readable Name (apiColumnName)`):
   diagrams and cannot be changed. To set a custom type, please
   see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
 - `Object Id (objectId)` is a Unique ID for API devices used during discovery.
+- `Ts Discovery Start (tsDiscoveryStart)` is the timestamp when device discovery
+  starts.
+- `Ts Discovery End (tsDiscoveryEnd)` is the timestamp when device discovery
+  ends.
+- `Discovery Duration (secDiscoveryDuration)` is the duration of device
+  discovery in seconds.
 
-API-only Columns:
+API-only columns:
 
 - `id` is the unique ID for the row of data.
-- `taskKey` is a UUID used to download the specific device log file for
-  a snapshot.
+- `taskKey` is a UUID used to download the specific device log file for a
+  snapshot.
 
 ## Modules and Part Numbers
 
