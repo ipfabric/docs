@@ -20,7 +20,7 @@ Versa requires the following settings to be applied:
   the default port `9182`, add a port part to the URL (e.g., `https://server:4443/`).
 - [**Slug**](index.md#slug-and-comment)
 
-Optionally, you may enable **Allow API+CLI combined discovery**, which allows the retrieval of data partially using API calls and partially using CLI commands.
+Optionally, you may enable **Allow API+CLI combined discovery**, which allows the retrieval of data partially using API calls and partially using CLI commands. When combined discovery is enabled **routing table** is downloaded via cli. **Configuration management** is available only when combined discovery is enabled.
 
 !!! note
 

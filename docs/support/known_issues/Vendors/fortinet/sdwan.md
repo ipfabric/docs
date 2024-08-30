@@ -18,5 +18,4 @@ SD-WAN neighbors and the application of route-map-out-preferable are not
 currently implemented, nor are route-maps in general on FortiGate.
 
 Since SD-WAN on FortiGate is primarily an extension of PBR, there are currently
-no new tables available in the
-[SD-WAN](../../../../IP_Fabric_GUI/technology_tables/SDWAN.md) section.
+no new tables available in the **Technology --> SDWAN** section.
