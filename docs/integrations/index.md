@@ -23,3 +23,9 @@ the dynamic landscape of modern networking.
 | [Service Now Integration](service-now/index.md)                                                            | [`ipfabric-snow` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-snow)<br/>[`ipfabric-snow` PyPI](https://pypi.org/project/ipfabric-snow/)             |
 | [IP Fabric Splunk TA](splunk/index.md)                                                                     | [Splunkbase Add-on](https://splunkbase.splunk.com/app/6707)<br/>[`splunk-ta-ip-fabric` GitLab](https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric)     |
 
+!!! danger
+
+    Integrations should be installed outside of the IP Fabric VM unless the IP
+    Fabric team explicitly instructs otherwise.
+
+--8<-- "snippets/cli_root_access.md"
