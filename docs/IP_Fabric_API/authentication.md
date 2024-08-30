@@ -140,7 +140,7 @@ curl -X GET 'https://demo3.ipfabric.io/api/v5.0/snapshots' \
 To create a new `accessToken` from the `refreshToken`:
 
 ```bash
-curl -D - -X POST 'https://demo3.ipfabric.io/api/v5.0/auth/token' \
+curl -D - -X POST 'https://demo3.ipfabric.io/api/auth/token' \
   -H 'Content-Type: application/json' \
   --data-raw '{"refreshToken":"YvnTNW..."}'
 ```
@@ -153,6 +153,8 @@ set-cookie: accessToken=eyJhbGc....; Max-Age=1800; Path=/; Expires=Thu, 06 Jun 2
 set-cookie: refreshToken=w2PJG2hA.....12830361114; Max-Age=86400; Path=/api/auth/token; Expires=Fri, 07 Jun 2024 11:47:09 GMT; HttpOnly; Secure; SameSite=Strict
 ```
 
+Starting with version `7.0`, you can no longer reach token endpoints with the
+specified API version: `<API_VERSION>/auth/token`. Use `auth/token` instead.
 
 #### Logout
 
