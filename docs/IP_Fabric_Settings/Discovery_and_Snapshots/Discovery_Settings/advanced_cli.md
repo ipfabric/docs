@@ -6,9 +6,9 @@ description: In this section, we delve deeper into the Command-Line Interface (C
 
 ## Fine-Tune SSH/Telnet CLI Parameters
 
-IP Fabric primarily uses the Command-Line Interface
-(CLI) for discovering network elements. The CLI parameters can be found in
-**Settings --> Discovery & Snapshots --> Discovery Settings --> Advanced CLI**.
+IP Fabric primarily uses the Command-Line Interface (CLI) for discovering
+network elements. The CLI parameters can be found in **Settings --> Discovery &
+Snapshots --> Discovery Settings --> Advanced CLI**.
 
 ![CLI Settings](advanced_cli/cli_settings.png)
 
@@ -20,17 +20,25 @@ IP Fabric primarily uses the Command-Line Interface
 
 ### Network Device Login Timeout
 
-Timeout before the logging prompt is received. It may take longer for
-remote branches over low-speed lines or overloaded devices to respond.
+Timeout before the logging prompt is received. It may take longer for remote
+branches over low-speed lines or overloaded devices to respond.
+
+The default value is 20 seconds.
 
 ### Network Device Session Timeout
 
-If there are too many **Command Timeout** errors during the discovery process, it may
-indicate that the **Network device session timeout** is too short, and the session is closed before the response arrives. It may be necessary to increase this timeout.
+If there are too many **Command Timeout** errors during the discovery process,
+it may indicate that the **Network device session timeout** is too short, and
+the session is closed before the response arrives. It may be necessary to
+increase this timeout.
+
+The default value is 20 seconds.
 
 ### Network Device Authentication Timeout
 
 How many seconds to wait for the login prompt to appear.
+
+The default value is 300 seconds.
 
 This option was introduced because, in rare cases, IoT devices were constantly
 sending data without the command prompt appearing. This led to never-ending
@@ -41,43 +49,56 @@ discovery.
 How many minutes to wait for a device to finish sending the response to a
 command.
 
+The default value is 180 minutes.
+
 This option was introduced because, in rare cases,
 [network devices affected by a bug](../../../support/known_issues/Vendors/f5.md#long-or-infinite-discovery-due-to-restjavad-frequent-restarts-because-of-insufficient-memory)
 never stopped sending outputs for a command. This led to never-ending discovery.
 
 ### Basic Failure
 
-This setting determines how many times to retry a connection for any error, except
-authentication failure.
+This setting determines how many times to retry a connection for any error,
+except authentication failure.
+
+The default values is 3 retries.
 
 ### Authentication Failure
 
-**Authentication failure** can occur even if a user is authorized to
-log in. For example, this may happen when an AAA server is overloaded, or
-an authentication packet is lost.
+**Authentication failure** can occur even if a user is authorized to log in. For
+example, this may happen when an AAA server is overloaded, or an authentication
+packet is lost.
+
+The default value is 0 retries.
 
 ### Maximum Number of Parallel Sessions
 
-To prevent flooding your network with too many SSH/Telnet sessions, set
-the **Maximum number of parallel sessions**. This setting can also be
-helpful if the AAA server (TACACS/Radius) has a limit of parallel AAA
-requests for users.
+To prevent flooding your network with too many SSH/Telnet sessions, set the
+**Maximum number of parallel sessions**. This setting can also be helpful if the
+AAA server (TACACS/Radius) has a limit of parallel AAA requests for users.
 
-In rare cases, Cisco ISE or similar systems may rate limit
-command authorization. If there are too many authorization failures
-and Cisco ISE is in place, try limiting the number of parallel sessions
-to 10 and steadily increasing.
+This option is disabled by default. If enabled, the default value is 200
+parallel sessions.
+
+In rare cases, Cisco ISE or similar systems may rate limit command
+authorization. If there are too many authorization failures and Cisco ISE is in
+place, try limiting the number of parallel sessions to 10 and steadily
+increasing.
 
 ### Command Authorization Failure Retries
 
 How many times try to send the same command after authorization failure, and the
 delay before the next attempt.
 
+The default value is 0 retries.
+
+If any retries (>0) are set, the default delay before the next retry is 1000 ms
+(milliseconds; i.e., 1 second).
+
 ### Examples of Error Messages in Connectivity Report
 
-According to the **Summary of issues** in the very first completed snapshot,
-CLI Settings can be adjusted. Here are some of the most common
-errors and adjustments:
+According to the **Summary of issues** in the very first completed snapshot, CLI
+Settings can be adjusted. Here are some of the most common errors and
+adjustments:
 
 | Error                                                                            | Error Type                    | How To Mitigate                                                                                                         |
 | -------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -94,7 +115,9 @@ errors and adjustments:
 
 !!! info
 
-    **Custom SSH/Telnet ports** settings enable the discovery process to use different ports for connecting. The standard ports for SSH and Telnet are 22 and 23, respectively.
+    **Custom SSH/Telnet ports** settings enable the discovery process to use
+    different ports for connecting. The standard ports for SSH and Telnet are 22
+    and 23, respectively.
 
 In the following example, we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
