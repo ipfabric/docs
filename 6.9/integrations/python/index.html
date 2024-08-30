@@ -16,7 +16,7 @@
         <link rel="prev" href="../postman/">
       
       
-        <link rel="next" href="CLI_Tools/ipf_device_search/">
+        <link rel="next" href="snapshots/">
       
       
         
@@ -7181,6 +7181,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="snapshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tables_basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tables basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -7194,10 +7248,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -7214,8 +7268,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7385,7 +7439,7 @@
   <span class="md-ellipsis">
     
   
-    Installation &amp; Overview
+    Overview &amp; Installation
   
 
     
@@ -12985,6 +13039,18 @@ documents are not versioned. However, you can find versioned files in the GitLab
 <p>Using an SDK offers several advantages. It simplifies integration by providing pre-built functions and methods, ensuring
 consistent implementation of API calls, and reducing the risk of errors. SDKs streamline development, allowing
 developers to focus on building features rather than managing API requests.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Integrations should be installed outside of the IP Fabric VM unless the IP
+Fabric team explicitly instructs otherwise.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
+or <code>autoboss</code> account may cause irreversible, detrimental changes to the
+product. Actions taken without direct communication with the IP Fabric
+Support or Solution Architect teams can render the system unusable.</p>
+</div>
 <h1 id="minimum-requirements">Minimum Requirements</h1>
 <ul>
 <li>Python 3.8.1+</li>
@@ -13141,53 +13207,6 @@ Tools from any location.</p>
 <p>Once you set up your environment variables, you can initialize the client without any arguments.</p>
 <script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="1" data-loop="1"></script>
 
-<h1 id="inventory">Inventory</h1>
-<div class="highlight"><span class="filename">Inventory Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span>
-<span class="go">IPFClient().inventory.devices       IPFClient().inventory.modules</span>
-<span class="go">IPFClient().inventory.eol_details   IPFClient().inventory.os_version_consistency</span>
-<span class="go">IPFClient().inventory.eol_summary   IPFClient().inventory.phones</span>
-<span class="go">IPFClient().inventory.families      IPFClient().inventory.platforms</span>
-<span class="go">IPFClient().inventory.fans          IPFClient().inventory.pn</span>
-<span class="go">IPFClient().inventory.hosts         IPFClient().inventory.sites</span>
-<span class="go">IPFClient().inventory.hosts_ipv6    IPFClient().inventory.vendors</span>
-<span class="go">IPFClient().inventory.interfaces</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">To quickly get an inventory of devices or interfaces.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-
-<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
-<span class="n">devices</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="n">interfaces</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">interfaces</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-</code></pre></div>
-<h1 id="technology">Technology</h1>
-<div class="highlight"><span class="filename">Technology Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span>
-<span class="go">IPFClient().technology.addressing       IPFClient().technology.oam</span>
-<span class="go">IPFClient().technology.cloud            IPFClient().technology.platforms</span>
-<span class="go">IPFClient().technology.dhcp             IPFClient().technology.port_channels</span>
-<span class="go">IPFClient().technology.fhrp             IPFClient().technology.qos</span>
-<span class="go">IPFClient().technology.interfaces       IPFClient().technology.routing</span>
-<span class="go">IPFClient().technology.ip_telephony     IPFClient().technology.sdn</span>
-<span class="go">IPFClient().technology.load_balancing   IPFClient().technology.sdwan</span>
-<span class="go">IPFClient().technology.managed_networks IPFClient().technology.security</span>
-<span class="go">IPFClient().technology.management       IPFClient().technology.serial_ports</span>
-<span class="go">IPFClient().technology.mpls             IPFClient().technology.stp</span>
-<span class="go">IPFClient().technology.multicast        IPFClient().technology.vlans</span>
-<span class="go">IPFClient().technology.neighbors        IPFClient().technology.wireless</span>
-</code></pre></div>
-<p>Each one of these technologies relates to data IP Fabric has gathered about your network devices.</p>
-<div class="highlight"><span class="filename">Example: NTP Summary Table.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">ntp_summary</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-<span class="c1"># Alternatively using API URL:</span>
-<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/tables/management/ntp/summary&#39;</span><span class="p">)</span>
-
-<span class="c1"># Or even using the Front End GUI URL:</span>
-<span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/technology/management/ntp/summary&#39;</span><span class="p">)</span>
-</code></pre></div>
-
 
 
 
@@ -13207,7 +13226,7 @@ Tools from any location.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2024</span>
   </span>
 
     
@@ -13302,13 +13321,13 @@ Tools from any location.</p>
         
         
           
-          <a href="CLI_Tools/ipf_device_search/" class="md-footer__link md-footer__link--next" aria-label="Next: Device Inventory Search">
+          <a href="snapshots/" class="md-footer__link md-footer__link--next" aria-label="Next: Snapshots Basics">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Device Inventory Search
+                Snapshots Basics
               </div>
             </div>
             <div class="md-footer__button md-icon">
