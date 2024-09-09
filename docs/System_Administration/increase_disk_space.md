@@ -375,7 +375,7 @@ This option was discontinued in favor of one system/data disk with the
 possibility of adding a backup disk.
 
 The original script is still present in the system, but we discourage its use as
-it expects only the boot disk to be `sda`, `sdb` as extended `ipfabic-vg/root`,
+it expects only the boot disk to be `sda`, `sdb` as extended `ipfabric-vg/root`,
 and you could choose how `sd[c-z]` would be used. The new approach with one disk
 is more versatile and is not limited to `sd[a-z]` disks.
 
