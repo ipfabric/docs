@@ -343,6 +343,10 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
 
    ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
 
+  !!! warning "Blob Type"
+
+      When uploading the VHD image to Azure, make sure to select `Page Blob` as the Blob Type. Azure images can only be created from a `Page Blob` source.
+
   !!! important "VHD Upload"
 
       For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:
