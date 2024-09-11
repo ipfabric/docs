@@ -14210,6 +14210,10 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 <li>
 <p><a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">Upload the VHD image</a> to the storage account blob container created using the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.</p>
 <p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Blob Type</p>
+<p>When uploading the VHD image to Azure, make sure to select <code>Page Blob</code> as the Blob Type. Azure images can only be created from a <code>Page Blob</code> source.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">VHD Upload</p>
 <p>For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:</p>
@@ -14392,7 +14396,7 @@ We can connect to the appliance via SSH with the default/factory <code>osadmin</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 11, 2024</span>
   </span>
 
     
