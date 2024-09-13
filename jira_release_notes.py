@@ -174,7 +174,11 @@ def main():
 
         rn = Document()
         rn.add_raw(
-            f"---\ndescription: IP Fabric automatically generated low-level release notes for version {v['name']}.\n---"
+            f"---\n"
+            f"description: IP Fabric automatically generated low-level release notes for version {v['name']}.\n"
+            f"search:\n"
+            f"  boost: 0.5\n"
+            f"---"
         )
         rn.add_heading(f"LLRN {v['name']}")
         rn.add_paragraph(
