@@ -1,5 +1,7 @@
 ---
 description: This page describes the most commonly seen discovery issues and how to resolve them.
+search:
+  boost: 1.5
 ---
 
 # Troubleshooting Discovery
