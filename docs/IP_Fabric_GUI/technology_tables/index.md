@@ -67,6 +67,557 @@ AND and OR operators between them. Advanced filters can be saved and
 recalled for each specific table. Filters are stored per table and are
 available to all users.
 
+#### Device-based advanced filters
+
+![Device Filters](table_device_filters.png)
+
+Supported device properties:
+- Vendor
+- Family
+- Model
+- Platform
+- Version
+- Image
+- Type
+- Login Ip
+- Domain
+- API Slug
+
+Support tables:
+- **Inventory**
+  - **Part numbers**
+  - **Interfaces**
+  - **End of Life Milestones**
+    - Detail
+- **Technology**
+  - **Platforms**
+    - Cisco FEX
+      - Interfaces
+    - Cisco VSS
+      - VSS
+      - Chassis
+      - VSL
+    - PoE
+      - Devices
+      - Interfaces
+      - Modules
+    - Stacks
+      - Stacks
+      - Members
+      - Stack Ports
+    - Environment
+      - Power Supplies
+      - Power Supplies Fans
+      - Fans
+      - Modules
+      - Temperature sensors
+    - Cisco FabricPath
+      - Summary
+      - IS-IS neighbors
+      - Switch IDs
+      - Routes
+    - Logical Devices
+  - **Interfaces**
+    - Current Rates - Data
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Data
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Errors
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Drops
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Duplex
+    - Connectivity matrix
+      - Connectivity Matrix
+    - Switchport
+    - MTU
+    - Storm Control
+      - Broadcast
+      - Unicast
+      - Multicast
+      - All traffic
+    - Transceivers
+      - Inventory
+      - Statistics
+      - Triggered thresholds
+      - Errors
+    - PPPoE
+      - PPPoE sessions
+    - Counters
+      - Inbound
+      - Outbound
+    - Tunnels
+      - IPv4 Tunnels
+      - IPv6 Tunnels
+  - **CDP/LDP**
+    - All neighbors
+    - Unmanaged neighbors
+    - Unidirectional neighbors
+    - Endpoints neighbors
+  - **DHCP**
+    - Relay
+      - Interfaces
+      - Interfaces stats
+        - Received
+        - Relayed
+        - Sent
+      - Global Stats
+        - Summary
+        - Received
+        - Relayed
+        - Sent
+    - Server
+      - Summary
+      - Pools
+      - Leases
+      - Excluded Ranges
+      - Interfaces
+  - **Port channels**
+    - Inbound Balancing table
+    - Outbound Balancing table
+    - Member status table
+    - MLAG
+      - Switches
+      - Peer links
+      - Pairs
+      - Cisco VPC
+  - **VLANs**
+    - Device Summary
+    - Device Detail
+  - **Spanning Tree**
+    - STP bridges
+    - STP VLANs
+    - STP virtual ports
+    - STP neighbors
+    - STP Guards
+    - STP Inconsistencies
+      - VLANs without STP
+        - Summary
+        - Detail
+      - Neighbor ports allowed VLAN mismatch
+      - Ports with multiple neighbors
+      - STP/CDP ports mismatch
+      - Multiple STP between two devices
+  - **Addressing**
+    - ARP Table
+    - MAC Table
+    - Managed IP
+      - IPv4 Managed IP
+      - IPv6 Managed IP
+    - NAT
+    - IPv6 Neighbor discovery
+  - **FHRP**
+    - GLBP Forwarders
+    - Virtual Gateways
+  - **Networks**
+    - Managed networks
+    - Gateway redundancy
+  - **Routing**
+    - Routes
+      - IPv4 Routes
+      - IPv6 Routes
+    - OSPF
+      - Neighbors
+      - Interfaces
+    - OSPF v3
+      - Neighbors
+      - Interfaces
+    - BGP
+      - Neighbors
+      - Address Families
+      - Advertised Routes
+    - EIGRP
+      - Neighbors
+      - Interfaces
+    - RIP
+      - Neighbors
+      - Interfaces
+    - IS-IS
+      - Neighbors
+      - Interfaces
+      - Levels
+    - VRF
+      - Detail
+      - Interfaces
+    - Prefix lists
+      - IPv4
+      - IPv6
+    - LISP
+      - Routes
+        - IPv4
+        - IPv6
+      - Map Resolvers
+        - IPv4
+        - IPv6
+    - Routing policy
+      - Routing Policies
+      - PBR Interfaces
+      - Policy Based Routing
+  - **MPLS**
+    - LDP
+      - Neighbors
+      - Interfaces
+    - RSVP
+      - Neighbors
+      - Interfaces
+    - Forwarding
+    - L3 VPN
+      - PE Routers
+      - VRF on PE
+      - VRF Route Targets
+      - PE Routes
+    - L2 VPN
+      - Point to point - VPWS
+      - Point to multipoint - VPLS
+      - Circuit cross-connect
+      - All pseudowires
+  - **Multicast**
+    - PIM
+      - Neighbors
+      - Interfaces
+    - MRoute
+      - Overview
+      - MRoute table
+      - OIL Detail
+      - MRoute counters
+      - First hop router
+      - Sources
+    - IGMP
+      - Groups
+      - Interfaces
+    - IGMP Snooping
+      - Global Configuration
+      - Groups
+      - Vlans Configuration
+    - MAC
+    - RP
+      - RP Overview
+      - BSR
+      - RP Mappings
+      - RP Mappings groups
+  - **Platforms**
+    - Cisco FEX
+      - Interfaces
+    - Cisco VSS
+      - VSS
+      - Chassis
+      - VSL
+    - PoE
+      - Devices
+      - Interfaces
+      - Modules
+    - Stacks
+      - Stacks
+      - Members
+      - Stack Ports
+    - Environment
+      - Power Supplies
+      - Power Supplies Fans
+      - Fans
+      - Modules
+      - Temperature sensors
+    - Cisco FabricPath
+      - Summary
+      - IS-IS neighbors
+      - Switch IDs
+      - Routes
+    - Logical Devices
+  - **Interfaces**
+    - Current Rates - Data
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Data
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Errors
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Average Rates - Drops
+      - Inbound
+      - Outbound
+      - Bidirectional
+    - Duplex
+    - Connectivity matrix
+      - Connectivity Matrix
+    - Switchport
+    - MTU
+    - Storm Control
+      - Broadcast
+      - Unicast
+      - Multicast
+      - All traffic
+    - Transceivers
+      - Inventory
+      - Statistics
+      - Triggered thresholds
+      - Errors
+    - PPPoE
+      - PPPoE sessions
+    - Counters
+      - Inbound
+      - Outbound
+    - Tunnels
+      - IPv4 Tunnels
+      - IPv6 Tunnels
+  - **CDP/LLDP**
+    - All neighbors
+    - Unmanaged neighbors
+    - Unidirectional neighbors
+    - Endpoints neighbors
+  - **DHCP**
+    - Relay
+      - Interfaces
+      - Interfaces stats
+      - Received
+      - Relayed
+      - Sent
+      - Global Stats
+      - Summary
+      - Received
+      - Relayed
+      - Sent
+    - Server
+      - Summary
+      - Pools
+      - Leases
+      - Excluded Ranges
+      - Interfaces
+  - **Port channels**
+    - Inbound Balancing table
+    - Outbound Balancing table
+    - Member status table
+    - MLAG
+      - Switches
+      - Peer links
+      - Pairs
+      - Cisco VPC
+  - **VLANs**
+    - Device Summary
+    - Device Detail
+  - **Spanning Tree**
+    - STP bridges
+    - STP VLANs
+    - STP virtual ports
+    - STP neighbors
+    - STP Guards
+    - STP Inconsistencies
+      - VLANs without STP
+      - Summary
+      - Detail
+      - Neighbor ports allowed VLAN mismatch
+      - Ports with multiple neighbors
+      - STP/CDP ports mismatch
+      - Multiple STP between two devices
+  - **Addressing**
+    - ARP Table
+    - MAC Table
+    - Managed IP
+      - IPv4 Managed IP
+      - IPv6 Managed IP
+    - NAT
+    - IPv6 Neighbor discovery
+  - **FHRP**
+    - GLBP Forwarders
+    - Virtual Gateways
+  - **Networks**
+    - Managed networks
+    - Gateway redundancy
+  - **Routing**
+    - Routes
+      - IPv4 Routes
+      - IPv6 Routes
+    - OSPF
+      - Neighbors
+      - Interfaces
+    - OSPF v3
+      - Neighbors
+      - Interfaces
+    - BGP
+      - Neighbors
+      - Address Families
+      - Advertised Routes
+    - EIGRP
+      - Neighbors
+      - Interfaces
+    - RIP
+      - Neighbors
+      - Interfaces
+    - IS-IS
+      - Neighbors
+      - Interfaces
+      - Levels
+    - VRF
+      - Detail
+      - Interfaces
+    - Prefix lists
+      - IPv4
+      - IPv6
+    - LISP
+      - Routes
+      - IPv4
+      - IPv6
+      - Map Resolvers
+      - IPv4
+      - IPv6
+    - Routing policy
+      - Routing Policies
+      - PBR Interfaces
+      - Policy Based Routing
+  - **MPLS**
+    - LDP
+      - Neighbors
+      - Interfaces
+    - RSVP
+      - Neighbors
+      - Interfaces
+    - Forwarding
+    - L3 VPN
+      - PE Routers
+      - VRF on PE
+      - VRF Route Targets
+      - PE Routes
+    - L2 VPN
+      - Point to point - VPWS
+      - Point to multipoint - VPLS
+      - Circuit cross-connect
+      - All pseudowires
+  - **Management**
+    - AAA
+      - Servers
+      - Lines
+      - Authentication
+      - Authorization
+      - Accounting
+      - Local Users
+      - Password Strength
+    - Banners
+      - Summary
+      - Banners
+    - Telnet access
+    - NTP
+      - Summary
+      - Sources
+    - Port Mirroring
+    - Logging
+      - Summary
+      - Remote Services
+      - Local Services
+    - Flow
+      - Flow Overview
+      - NetFlow Devices
+      - NetFlow Collectors
+      - NetFlow Interfaces
+      - sFlow Devices
+      - sFlow Collectors
+      - sFlow Data Sources
+    - SNMP
+      - Summary
+      - Communities
+      - Trap Hosts
+      - Users
+    - PTP
+      - PTP Local Clock
+      - PTP Masters
+      - PTP Interfaces
+    - Licenses
+      - License
+      - Summary
+      - License Detail
+      - Cisco Smart License
+      - Authorization
+      - Registration
+      - Reservations
+    - DNS resolver
+      - Settings
+      - Servers
+  - **Security**
+    - ACL
+      - ACL Policies
+      - ACL Interfaces
+      - Global ACL policies
+    - DMVPN
+    - DHCP Snooping
+      - Configuration
+      - Binding Database
+    - IPsec
+      - IPsec tunnels
+      - IPsec gateways
+    - Secure ports - 802.1x
+      - Devices
+      - Interfaces
+      - Users
+    - Zone Firewall
+      - Policies
+      - Interfaces
+  - **Load-balancing**
+    - Virtual Servers - Pools
+    - Virtual Servers - Pool members
+    - Partitions
+  - **Wireless**
+    - Controllers
+    - Access points
+    - Radios/BSSID
+      - Radios Detail
+    - Clients
+  - **IP Telephony**
+    - Phones
+  - **SDN**
+    - ACI
+      - Endpoint
+      - VLAN
+      - VRF
+      - DTEP
+    - VXLAN
+      - VTEP
+      - Peers
+      - Interfaces
+      - VNI
+    - APIC
+      - Controllers
+  - **SDWAN**
+    - Silverpeak
+      - Overlay
+      - Underlay
+    - Versa
+      - Sites
+      - Transport Links
+    - Viptela
+      - BFD Sessions
+      - Control Connections
+      - BFD Summary
+  - **QoS**
+    - Applied Service-Policies
+    - Shaping
+    - Queueing
+    - Policing
+    - Priority
+    - Marking
+    - Random Drops
+  - **OAM**
+    - UDLD
+      - Neighbors
+      - Interfaces
+  - **Cloud**
+    - Endpoints
+      - Virtual Machines
+      - Virtual Machines Interfaces
+  
+!!! note
+
+    Neigbors tables support only local device in this filters.
+
+
 ## Table Exports
 
 Table outputs can be exported into CSV format for further processing, and
