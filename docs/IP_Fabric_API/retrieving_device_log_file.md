@@ -7,6 +7,8 @@ description: This page describes how you can retrieve log files for a device fro
 This page describes how you can retrieve log files for a device from IP Fabric's
 discovery to be consumed outside the platform.
 
+## Using API
+
 Do this in two stages:
 
 1. Send a `POST` to `/tables/inventory/devices` with a request body like:
@@ -21,15 +23,27 @@ Do this in two stages:
    You can (and probably would) filter that list (for example, for a specific
    device with the hostname `SWITCH01`) by including a `key:value` pair:
 
-    ```json
-    "filters": {
-      "hostname": ["eq","SWITCH01"]
-    }
-    ```
+   ```json
+   "filters": {
+     "hostname": ["eq","SWITCH01"]
+   }
+   ```
 
-    This provides you with the task ID for the discovery of the device in
-    question.
+   This provides you with the task ID for the discovery of the device in
+   question.
 
 2. Send a `GET` to `/os/logs/task/XXXXXXXXXXXXX`, where `XXXXXXXXXXXXX` is the
    `taskKey` value returned in step 1 for the required network device. This
    returns the plain text of the log file for that device discovery.
+
+### Using the Python SDK
+
+Using the [python-ipfabric](https://pypi.org/project/ipfabric/) Python SDK this has been simplified to the following.
+
+```python
+from ipfabric import IPFClient
+
+ipf = IPFClient()
+device = ipf.devices.by_sn['DEVICE_SERIAL_NUMBER']
+json_log = device.get_log_file()
+```
