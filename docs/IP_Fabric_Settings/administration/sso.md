@@ -26,7 +26,7 @@ building block to allow a broader set of Identity Providers (IdP).
 sequenceDiagram
   IPF->>IPF: User selects SSO on the IPF login page.
   IPF->>Dex: Redirect after starting SSO auth.
-  Dex->>IdP: Dex redirects to the selected and cofigured IdP.
+  Dex->>IdP: Dex redirects to the selected and configured IdP.
   IdP->>IdP: User authenticates, provides MFA, etc.
   IdP->>Dex: User is redirected back to Dex with code.
   Dex->>IdP: Dex fetches token from the IdP.
@@ -215,6 +215,7 @@ corresponds to `staticClient` in the Dex configuration).
 
 - `name` -- User-defined name of the Identity Provider (IdP) displayed in the
   GUI.
+
   - Can only contain `a-z` `0-9` `_`. **Do not use uppercase.**
   - Used in [`ipf-dex.yaml`](#static-clients) for `redirectURIs` under
     `staticClients`.
@@ -227,7 +228,8 @@ corresponds to `staticClient` in the Dex configuration).
 - `clientId` -- User-defined value. Suggested to keep `ipfabric`.
   - Used in [`ipf-dex.yaml`](#static-clients) for `id` under `staticClients`.
 - `clientSecret` -- User-defined value for a secret shared only between
-   IP Fabric and Dex.
+  IP Fabric and Dex.
+
   - Can be randomly created for instance using Python:
 
     ```bash
@@ -236,6 +238,7 @@ corresponds to `staticClient` in the Dex configuration).
 
   - Used in [`ipf-dex.yaml`](#static-clients) for `secret` under
     `staticClients`.
+
 - `roleAssignments` -- An array of objects.
   - Objects are in the format of
     `{groupName: string, roleId?: string|null, roleName?: string|null }`
@@ -394,21 +397,23 @@ staticClients:
   - Found in [`api.json`](#providers-configuration) for `clientId` under
     `providers`.
 - `redirectURIs` -- Full path to the callback endpoint of the IP Fabric client.
+
   - It is in the format of
     `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`
   - `API-DEX-PROVIDERS-NAME` is found in [`api.json`](#providers-configuration)
     for `name` under `providers`.
+
     - Can only contain `a-z` `0-9` `_`. **Do not use uppercase.**
 
     !!! note "`redirectURIs` After Upgrade to `7.0.0`"
 
-        In IP Fabric versions `<7.0.0`, the `redirectURIs` only included the 
+        In IP Fabric versions `<7.0.0`, the `redirectURIs` only included the
         major version: `https://<FQDN>/api/v6/auth/external/sso`.
 
-        Starting from version `>=7.0.0`, the redirect URI has been modified to 
-        exclude the application's version: 
+        Starting from version `>=7.0.0`, the redirect URI has been modified to
+        exclude the application's version:
         `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`,
-        eliminating the need for reconfiguration even after future major 
+        eliminating the need for reconfiguration even after future major
         updates.
 
 - `name` -- Arbitrary name of the client.
@@ -534,12 +539,12 @@ connectors:
 #### Azure AD App Registration Auth Using OIDC
 
 1. From the **Azure Active Directory --> App registrations** menu, select `+ New
-   registration`.
+registration`.
 
 2. Enter a `Name` for the application. E.g., `IP Fabric SSO`.
 
 3. Specify who can use the application. E.g., `Accounts in this organizational
-   directory only`.
+directory only`.
 
 4. Enter Redirect URI _(optional)_ as follows (replace `IP_FABRIC_FQDN` with
    your IP Fabric URL), then select `Add`.
@@ -570,23 +575,23 @@ connectors:
 
     ![Azure AD token configuration](sso/azure-token-configuration.png)
 
-11. `All groups`: Emits security groups, distribution lists, and roles.
+    1. `All groups`: Emits security groups, distribution lists, and roles.
 
-12. `Security groups`: Emits security groups of which the user is a member in
-    the groups claim.
+    2. `Security groups`: Emits security groups of which the user is a member in
+       the groups claim.
 
-13. `Directory roles`: If the user is assigned directory roles, they're emitted
-    as a `wids` claim. (The group's claim won't be emitted.)
+    3. `Directory roles`: If the user is assigned directory roles, they're emitted
+       as a `wids` claim. (The group's claim won't be emitted.)
 
-14. `Groups assigned to the application`: Emits only the groups which are
-    explicitly assigned to the application and of which the user is a member.
-    **Recommended for large organizations due to the group number limit in
-    token.**
+    4. `Groups assigned to the application`: Emits only the groups which are
+       explicitly assigned to the application and of which the user is a member.
+       **Recommended for large organizations due to the group number limit in
+       token.**
 
-15. From the **Azure Active Directory --> Enterprise applications** menu, search
+11. From the **Azure Active Directory --> Enterprise applications** menu, search
     for the app that you created. E.g., `IP Fabric SSO`.
 
-16. From the **Users and groups** menu of the app, add any users or groups
+12. From the **Users and groups** menu of the app, add any users or groups
     requiring access to the service.
 
 ### SAML Connector
@@ -738,4 +743,3 @@ the Dex service:
 ```bash
 systemctl restart ipf-dex.service
 ```
-
