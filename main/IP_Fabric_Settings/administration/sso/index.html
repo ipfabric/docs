@@ -13830,7 +13830,7 @@ building block to allow a broader set of Identity Providers (IdP).</p>
 <pre class="mermaid"><code>sequenceDiagram
   IPF-&gt;&gt;IPF: User selects SSO on the IPF login page.
   IPF-&gt;&gt;Dex: Redirect after starting SSO auth.
-  Dex-&gt;&gt;IdP: Dex redirects to the selected and cofigured IdP.
+  Dex-&gt;&gt;IdP: Dex redirects to the selected and configured IdP.
   IdP-&gt;&gt;IdP: User authenticates, provides MFA, etc.
   IdP-&gt;&gt;Dex: User is redirected back to Dex with code.
   Dex-&gt;&gt;IdP: Dex fetches token from the IdP.
@@ -13987,8 +13987,10 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>name</code> &ndash; User-defined name of the Identity Provider (IdP) displayed in the
-  GUI.<ul>
+<li>
+<p><code>name</code> &ndash; User-defined name of the Identity Provider (IdP) displayed in the
+  GUI.</p>
+<ul>
 <li>Can only contain <code>a-z</code> <code>0-9</code> <code>_</code>. <strong>Do not use uppercase.</strong></li>
 <li>Used in <a href="#static-clients"><code>ipf-dex.yaml</code></a> for <code>redirectURIs</code> under
   <code>staticClients</code>.</li>
@@ -14008,7 +14010,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 </li>
 <li>
 <p><code>clientSecret</code> &ndash; User-defined value for a secret shared only between
-   IP Fabric and Dex.</p>
+  IP Fabric and Dex.</p>
 <ul>
 <li>
 <p>Can be randomly created for instance using Python:</p>
@@ -14019,7 +14021,11 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <ul>
 <li>Used in <a href="#static-clients"><code>ipf-dex.yaml</code></a> for <code>secret</code> under
   <code>staticClients</code>.</li>
-<li><code>roleAssignments</code> &ndash; An array of objects.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>roleAssignments</code> &ndash; An array of objects.<ul>
 <li>Objects are in the format of
   <code>{groupName: string, roleId?: string|null, roleName?: string|null }</code><ul>
 <li><code>groupName</code> &ndash; The name of the group that is configured on the SSO side.<ul>
@@ -14166,7 +14172,9 @@ which acts as a client to <code>dex</code>.</p>
   <code>providers</code>.</li>
 </ul>
 </li>
-<li><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.<ul>
+<li>
+<p><code>redirectURIs</code> &ndash; Full path to the callback endpoint of the IP Fabric client.</p>
+<ul>
 <li>It is in the format of
   <code>https://&lt;FQDN&gt;/api/oauth2/external/&lt;API-DEX-PROVIDERS-NAME&gt;</code></li>
 <li>
@@ -14177,12 +14185,12 @@ which acts as a client to <code>dex</code>.</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title"><code>redirectURIs</code> After Upgrade to <code>7.0.0</code></p>
-<p>In IP Fabric versions <code>&lt;7.0.0</code>, the <code>redirectURIs</code> only included the 
+<p>In IP Fabric versions <code>&lt;7.0.0</code>, the <code>redirectURIs</code> only included the
 major version: <code>https://&lt;FQDN&gt;/api/v6/auth/external/sso</code>.</p>
-<p>Starting from version <code>&gt;=7.0.0</code>, the redirect URI has been modified to 
-exclude the application&rsquo;s version: 
+<p>Starting from version <code>&gt;=7.0.0</code>, the redirect URI has been modified to
+exclude the application&rsquo;s version:
 <code>https://&lt;FQDN&gt;/api/oauth2/external/&lt;API-DEX-PROVIDERS-NAME&gt;</code>,
-eliminating the need for reconfiguration even after future major 
+eliminating the need for reconfiguration even after future major
 updates.</p>
 </div>
 </li>
@@ -14319,14 +14327,14 @@ special configuration for proper enablement.</p>
 <ol>
 <li>
 <p>From the <strong>Azure Active Directory &rarr; App registrations</strong> menu, select <code>+ New
-   registration</code>.</p>
+registration</code>.</p>
 </li>
 <li>
 <p>Enter a <code>Name</code> for the application. E.g., <code>IP Fabric SSO</code>.</p>
 </li>
 <li>
 <p>Specify who can use the application. E.g., <code>Accounts in this organizational
-   directory only</code>.</p>
+directory only</code>.</p>
 </li>
 <li>
 <p>Enter Redirect URI <em>(optional)</em> as follows (replace <code>IP_FABRIC_FQDN</code> with
@@ -14360,23 +14368,15 @@ special configuration for proper enablement.</p>
 <li>
 <p>From the <strong>Token Configuration</strong> menu, select <code>+ Add groups claim</code>:</p>
 <p><a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" /></a></p>
-</li>
-<li>
-<p><code>All groups</code>: Emits security groups, distribution lists, and roles.</p>
-</li>
-<li>
-<p><code>Security groups</code>: Emits security groups of which the user is a member in
-    the groups claim.</p>
-</li>
-<li>
-<p><code>Directory roles</code>: If the user is assigned directory roles, they&rsquo;re emitted
-    as a <code>wids</code> claim. (The group&rsquo;s claim won&rsquo;t be emitted.)</p>
-</li>
-<li>
-<p><code>Groups assigned to the application</code>: Emits only the groups which are
-    explicitly assigned to the application and of which the user is a member.
-    <strong>Recommended for large organizations due to the group number limit in
-    token.</strong></p>
+<p>1. <code>All groups</code>: Emits security groups, distribution lists, and roles.</p>
+<p>2. <code>Security groups</code>: Emits security groups of which the user is a member in
+     the groups claim.</p>
+<p>3. <code>Directory roles</code>: If the user is assigned directory roles, they&rsquo;re emitted
+     as a <code>wids</code> claim. (The group&rsquo;s claim won&rsquo;t be emitted.)</p>
+<p>4. <code>Groups assigned to the application</code>: Emits only the groups which are
+     explicitly assigned to the application and of which the user is a member.
+     <strong>Recommended for large organizations due to the group number limit in
+     token.</strong></p>
 </li>
 <li>
 <p>From the <strong>Azure Active Directory &rarr; Enterprise applications</strong> menu, search
@@ -14535,7 +14535,7 @@ the Dex service:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2024</span>
   </span>
 
     
