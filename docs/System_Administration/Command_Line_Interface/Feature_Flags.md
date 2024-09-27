@@ -117,14 +117,6 @@ Since `6.5.0`, Nokia SROS (Service Router Operating System) devices can be disco
 ENABLE_DISCOVERY_DEVICES_NOKIA=true
 ```
 
-### Stormshield Discovery
-
-Since `6.5.0`, Stormshield devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
-
-```
-ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
-```
-
 ### GCP Discovery
 
 Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
@@ -144,6 +136,15 @@ ENABLE_OPENGEAR_DOLLAR_PROMPT=true
 ```
 
 ## Deprecated Feature Flags
+
+### Stormshield Discovery (Removed in `7.0`)
+
+Since `6.5.0`, Stormshield devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
+```
+This feature was permanently added to the product in the `7.0` release.
 
 ### Fortinet FortiSwitch Discovery (Removed in `6.8`)
 
