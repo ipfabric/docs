@@ -72,6 +72,7 @@ available to all users.
 ![Device Filters](table_device_filters.png)
 
 Supported device properties:
+
 - Vendor
 - Family
 - Model
@@ -84,6 +85,7 @@ Supported device properties:
 - API Slug
 
 Support tables:
+
 - **Inventory**
   - **Part numbers**
   - **Interfaces**
