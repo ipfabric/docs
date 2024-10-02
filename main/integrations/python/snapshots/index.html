@@ -7527,23 +7527,6 @@ here.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Loading and Unloading Snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-and-unload-snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: Loading and unload Snapshots
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -7555,22 +7538,16 @@ here.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Locking and Unlocking Snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-locking-and-unlocking-a-snapshot" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Locking and Unlocking a Snapshot
+        Creating Snapshots
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -13531,23 +13508,6 @@ here.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Loading and Unloading Snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-and-unload-snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: Loading and unload Snapshots
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -13559,22 +13519,16 @@ here.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Locking and Unlocking Snapshots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-locking-and-unlocking-a-snapshot" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Locking and Unlocking a Snapshot
+        Creating Snapshots
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -13810,14 +13764,14 @@ how to access snapshot IDs and metadata:</p>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Version: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Print all data for the initialized snapshot:</span>
-<span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">json</span><span class="p">()))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
 </code></pre></div>
 <h2 id="initializing-the-ipfclient-with-snapshots">Initializing the IPFClient with Snapshots</h2>
 <p>You can initialize the IPFClient with specific snapshot IDs. The snapshot ID can be set to <code>$last</code> (the last snapshot
 is selected by default) or <code>$prev</code> to retrieve the previous snapshot, or you can directly specify any loaded snapshot 
 with its snapshot ID. In this sense, the <code>$prev</code> is considered a representative snapshot id for the previous snapshot.</p>
-<p>After initializing the client with a specific snapshot, all tables and methods will operate on the data from that snapshot
-unless a specific snapshot ID is passed into a method.</p>
+<p>After initializing the client with a specific snapshot, all tables and methods will operate on the data from that 
+snapshot unless a specific snapshot ID is passed into a method.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize client with the previous to the most recent snapshot</span>
@@ -13833,8 +13787,7 @@ unless a specific snapshot ID is passed into a method.</p>
 </code></pre></div>
 <h2 id="loading-and-unloading-snapshots">Loading and Unloading Snapshots</h2>
 <p>All operations available in the UI are available in SDK and loading and unloading snapshots is no exception.</p>
-<h3 id="example-loading-and-unload-snapshots">Example: Loading and unload Snapshots</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Loading and Unloading Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">unloaded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13857,8 +13810,7 @@ unless a specific snapshot ID is passed into a method.</p>
 <p>You can also lock or unlock snapshots as needed. By locking a snapshot, you prevent it from being modified, deleted or unloaded.
 For more information on locking and unlocking snapshots, please refer to the 
 <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/discovery_snapshot/?h=lock#lock-snapshot">Locking Snapshots</a></p>
-<h3 id="example-locking-and-unlocking-a-snapshot">Example: Locking and Unlocking a Snapshot</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Locking and Unlocking Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Initialize the IPFClient</span>
@@ -13873,6 +13825,81 @@ For more information on locking and unlocking snapshots, please refer to the
 
 <span class="c1"># Unlock a snapshot</span>
 <span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="s1">&#39;&lt;snapshot_id&gt;&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unlock</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="creating-snapshots">Creating Snapshots</h2>
+<p>In <code>ipfabric&gt;=6.9.9</code> the ability to create snapshots has been added to the SDK. This allows you to create snapshots
+using the default values or by specifying custom values. The <code>create_snapshot</code> method returns the snapshot ID of the
+newly created snapshot and the information about the Job that was scheduled.</p>
+<p>If a discovery process is already running no snapshot ID is provided until the newly created job starts. The job can
+be queried by the newly implemented <code>get_job_by_scheduled_time</code> method of the <code>Jobs</code> object.</p>
+<div class="highlight"><span class="filename">Creating Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">snapshot</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">create_snapshot</span><span class="p">(</span>
+    <span class="n">fail_if_running_snapshot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Default is True and will fail if a snapshot is running.</span>
+    <span class="n">snapshot_name</span><span class="o">=</span><span class="s2">&quot;New Snapshot via SDK&quot;</span><span class="p">,</span>  <span class="c1"># Default is `&#39;&#39;`</span>
+    <span class="n">snapshot_note</span><span class="o">=</span><span class="s2">&quot;This is a new snapshot created via the SDK&quot;</span><span class="p">,</span>  <span class="c1"># Default is `&#39;&#39;`</span>
+    <span class="c1"># The following are also available and default to `None` which will use the default values in Discovery Settings:</span>
+    <span class="n">networks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># {include: List[&lt;IP Network&gt;], exclude: List[&lt;IP Network&gt;]}</span>
+                    <span class="c1"># There must be 1 or more include networks; `[&#39;0.0.0.0/0&#39;]` will include all networks.</span>
+                    <span class="c1"># To disable on-prem discovery and to only discover Vendor API (AWS, Azure, Google) networks, set include to `[&#39;0.0.0.0/32&#39;]`.</span>
+    <span class="n">seeds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of IP addresses or subnets (/24 or smaller); Empty list will remove all seeds</span>
+    <span class="n">credentials</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of saved or custom credentials; Empty list will remove all credentials</span>
+                       <span class="c1"># At least one credential is required for on-prem discovery.</span>
+    <span class="n">privileges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of saved or custom privileges; Empty list will remove all privileges</span>
+    <span class="n">disabled_assurance_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List[Literal[&quot;graphCache&quot;, &quot;historicalData&quot;, &quot;intentVerification&quot;]]</span>
+    <span class="c1"># To disable Vendor API&#39;s set `vendorApi=[]`; Vendor API validation has not been included yet.</span>
+<span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">{&#39;error&#39;: False,</span>
+<span class="sd"> &#39;job&#39;: {&#39;downloadFile&#39;: None,</span>
+<span class="sd">         &#39;finishedAt&#39;: None,</span>
+<span class="sd">         &#39;id&#39;: &#39;2065349813&#39;,</span>
+<span class="sd">         &#39;isDone&#39;: False,</span>
+<span class="sd">         &#39;name&#39;: &#39;discoveryNew&#39;,</span>
+<span class="sd">         &#39;scheduledAt&#39;: 1727717798377,</span>
+<span class="sd">         &#39;snapshot&#39;: None,</span>
+<span class="sd">         &#39;startedAt&#39;: None,</span>
+<span class="sd">         &#39;status&#39;: &#39;scheduled&#39;,</span>
+<span class="sd">         &#39;username&#39;: &#39;justin.jeffery&#39;},</span>
+<span class="sd"> &#39;message&#39;: &#39;Please wait till current running snapshot finishes to get the new &#39;</span>
+<span class="sd">            &#39;snapshot ID.&#39;,</span>
+<span class="sd"> &#39;params&#39;: {&#39;snapshotName&#39;: &#39;New Snapshot via SDK&#39;,</span>
+<span class="sd">            &#39;snapshotNote&#39;: &#39;This is a new snapshot created via the SDK&#39;},</span>
+<span class="sd"> &#39;snapshot_running&#39;: True,</span>
+<span class="sd"> &#39;success&#39;: True}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">if</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot ID: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot will be created with the next job scheduled at: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">job_scheduled_at</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;New snapshot will be created with the next job scheduled at: 1727717798377&quot;&quot;&quot;</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">:</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">get_job_by_scheduled_time</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">job_scheduled_at</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">snapshot</span><span class="p">:</span>
+        <span class="n">snapshot</span><span class="o">.</span><span class="n">job</span> <span class="o">=</span> <span class="n">job</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot ID: </span><span class="si">{</span><span class="n">job</span><span class="o">.</span><span class="n">snapshot</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">{&#39;downloadFile&#39;: None,</span>
+<span class="sd"> &#39;finishedAt&#39;: None,</span>
+<span class="sd"> &#39;id&#39;: &#39;2065349813&#39;,</span>
+<span class="sd"> &#39;isDone&#39;: False,</span>
+<span class="sd"> &#39;name&#39;: &#39;discoveryNew&#39;,</span>
+<span class="sd"> &#39;scheduledAt&#39;: 1727717798377,</span>
+<span class="sd"> &#39;snapshot&#39;: &#39;90027d66-4299-4e10-b009-2f0505793d69&#39;,</span>
+<span class="sd"> &#39;startedAt&#39;: 1727717915672,</span>
+<span class="sd"> &#39;status&#39;: &#39;running&#39;,</span>
+<span class="sd"> &#39;username&#39;: &#39;justin.jeffery&#39;}</span>
+<span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 <h2 id="managing-devices-in-snapshots">Managing Devices in Snapshots</h2>
 <p>The IP Fabric Python SDK provides several methods to manage devices within snapshots.
@@ -13956,12 +13983,16 @@ These methods allow you to add new devices, rediscover existing devices, and del
 </ul>
 <h3 id="notes">Notes</h3>
 <ul>
-<li>The <code>skip_invalid_devices</code> parameter&rsquo;s default behavior may vary. Consult the latest documentation for the current default setting.</li>
+<li>The <code>skip_invalid_devices</code> parameter&rsquo;s default behavior may vary.
+  Consult the latest documentation for the current default setting.</li>
 <li>When using <code>ipf.devices.all[index]</code>, ensure that the devices have been loaded and the index is valid.</li>
-<li>The <code>wait_for_discovery</code> and <code>wait_for_assurance</code> parameters allow you to control whether the method should wait for these processes to complete before returning.</li>
-<li>Adjust the <code>timeout</code> and <code>retry</code> parameters based on your network size and complexity to ensure operations have sufficient time to complete.</li>
+<li>The <code>wait_for_discovery</code> and <code>wait_for_assurance</code> parameters allow you to control whether the method should wait
+  for these processes to complete before returning.</li>
+<li>Adjust the <code>timeout</code> and <code>retry</code> parameters based on your network size and complexity to ensure operations 
+  have sufficient time to complete.</li>
 </ul>
-<p>These methods provide powerful tools for managing devices within your IP Fabric snapshots. Use them carefully, especially when deleting devices, to maintain the integrity of your network inventory.</p>
+<p>These methods provide powerful tools for managing devices within your IP Fabric snapshots. Use them carefully,
+especially when deleting devices, to maintain the integrity of your network inventory.</p>
 
 
 
@@ -13982,7 +14013,7 @@ These methods allow you to add new devices, rediscover existing devices, and del
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 2, 2024</span>
   </span>
 
     
