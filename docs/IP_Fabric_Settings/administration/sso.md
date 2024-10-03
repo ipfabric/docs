@@ -575,18 +575,18 @@ directory only`.
 
     ![Azure AD token configuration](sso/azure-token-configuration.png)
 
-    1. `All groups`: Emits security groups, distribution lists, and roles.
+    - `All groups`: Emits security groups, distribution lists, and roles.
 
-    2. `Security groups`: Emits security groups of which the user is a member in
-       the groups claim.
+    - `Security groups`: Emits security groups of which the user is a member in
+      the groups claim.
 
-    3. `Directory roles`: If the user is assigned directory roles, they're emitted
-       as a `wids` claim. (The group's claim won't be emitted.)
+    - `Directory roles`: If the user is assigned directory roles, they're emitted
+      as a `wids` claim. (The group's claim won't be emitted.)
 
-    4. `Groups assigned to the application`: Emits only the groups which are
-       explicitly assigned to the application and of which the user is a member.
-       **Recommended for large organizations due to the group number limit in
-       token.**
+    - `Groups assigned to the application`: Emits only the groups which are
+      explicitly assigned to the application and of which the user is a member.
+      **Recommended for large organizations due to the group number limit in
+      token.**
 
 11. From the **Azure Active Directory --> Enterprise applications** menu, search
     for the app that you created. E.g., `IP Fabric SSO`.
@@ -742,4 +742,43 @@ the Dex service:
 
 ```bash
 systemctl restart ipf-dex.service
+```
+
+## Debugging Dex
+
+Dex logs can be found in `/var/log/syslog`.
+
+```shell title="Example successful login message"
+~# grep 'connector_id=' /var/log/syslog
+Oct  3 12:30:37 ipf-server dex[692]: time=2024-10-03T12:30:37.496Z level=INFO msg="login successful" connector_id=sso username="IPF User" preferred_username="" email=ipf.user@ipfabric.io groups="[Everyone Solution Architecture]"
+```
+
+The groups attribute must be returned in order for IP Fabric to match the role assignment in the
+`/etc/nimpee/conf.d/api.json` file. Please note that group names can have spaces like in the example above and that
+`Everyone` and `Solution Architecture` are two separate groups. It is best to consult the SSO provider for the group
+names as the log messages can be difficult to read.
+
+```json
+{
+  "roleAssignments": [
+    {
+      "groupName": "Solution Architecture",
+      "roleName": "admin"
+    }
+  ]
+}
+```
+
+If groups are not returned from the SSO provider the following configuration will allow any authenticated user to be
+mapped to the example `read-only` IP Fabric role.
+
+```json
+{
+  "roleAssignments": [
+    {
+      "groupName": "any",
+      "roleName": "read-only"
+    }
+  ]
+}
 ```
