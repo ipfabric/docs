@@ -13,6 +13,8 @@ It introduces the configuration of basic network parameters, including:
 - DNS servers
 - proxy server
 
+--8<-- "snippets/no_proxy_localhost.md"
+
 If some initial parameters need to be modified after completing the deployment,
 you may re-run IPF CLI Config with the following command (with one or more
 options) as `osadmin`:

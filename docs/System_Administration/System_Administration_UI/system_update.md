@@ -55,6 +55,8 @@ To proceed with an online update, follow these steps:
 6. Afterwards, it is recommended to create a new discovery snapshot on the
    latest version.
 
+--8<-- "snippets/no_proxy_localhost.md"
+
 ## Offline Update
 
 If your IP Fabric instance does not have direct internet connectivity, you may
@@ -75,3 +77,5 @@ use offline update:
    automatically, and the IP Fabric VM will reboot once completed.
 9. Afterwards, it is recommended to create a new discovery snapshot on the
    latest version.
+
+--8<-- "snippets/no_proxy_localhost.md"
