@@ -16,12 +16,12 @@ This page explains how to create a new snapshot using the API. You may want to c
 
 Headers must contain:
 
-- `content-type: application/json`
+- `Content-Type: application/json`
 - `X-API-Token:` -- An API token generated in IP Fabric Settings.
 
 ## Create a New Snapshot With the Existing Settings
 
-If you want to start a discovery using the existing settings, it is a simple `POST` request to `/api/{api_version}/settings`, without a body.
+If you want to start a discovery using the existing settings, it is a simple `POST` request to `/api/{api_version}/snapshot`, without a body.
 
 ![configure of Creating snapshot](configure_of_Creating_snapshoot.gif)
 
@@ -31,8 +31,9 @@ What if you wanted a snapshot for a smaller scope of your network? For this, you
 
 Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`), and not considering the Vendor APIs (Check Point, Meraki, AWS, etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)
 
-!!! example
+!!! example title="Example Snapshot creation using IP Fabric API"
 
+    Example Snapshot POST JSON Body:
     ```js
     {
         "snapshotName": "Name of the Snapshot",
@@ -47,6 +48,13 @@ Here is an example of a body to use to perform a discovery with a new scope (`ne
     }
     ```
 
+    Example cURL command:
+    ```bash
+    curl -X POST 'https://{ipf_server}/api/{api_version}/snapshots' \
+      --header 'Content-Type: application/json' --header 'X-API-Token: {api_token}' \
+      -d '{"snapshotName":"Name of the Snapshot","snapshotNote":"Some notes to describe the snapshot","networks":{"exclude":[],"include":["10.66.0.0/16"]},"seedList":["10.66.255.104/31","10.66.0.1/32"],"vendorApi":[]}'
+    ```
+
 Let’s see how it looks when using Postman:
 
 ![create snapshot](create_snapshot.gif)
@@ -57,7 +65,7 @@ There is a long list of what you can use in the request body to change the setti
 
 The response will look like this _(this is just an extract of the JSON)_:
 
-```json
+```json title="Snapshot settings JSON"
 {
     "fullBgpLimit": {
         "enabled": true,
