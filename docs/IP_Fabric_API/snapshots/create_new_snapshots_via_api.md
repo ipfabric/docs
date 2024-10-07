@@ -34,6 +34,7 @@ Here is an example of a body to use to perform a discovery with a new scope (`ne
 !!! example title="Example Snapshot creation using IP Fabric API"
 
     Example Snapshot POST JSON Body:
+
     ```js
     {
         "snapshotName": "Name of the Snapshot",
@@ -49,6 +50,7 @@ Here is an example of a body to use to perform a discovery with a new scope (`ne
     ```
 
     Example cURL command:
+
     ```bash
     curl -X POST 'https://{ipf_server}/api/{api_version}/snapshots' \
       --header 'Content-Type: application/json' --header 'X-API-Token: {api_token}' \
