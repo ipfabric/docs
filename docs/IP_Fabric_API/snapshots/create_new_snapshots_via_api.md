@@ -31,33 +31,33 @@ What if you wanted a snapshot for a smaller scope of your network? For this, you
 
 Here is an example of a body to use to perform a discovery with a new scope (`networks`), new seed devices (`seedList`), and not considering the Vendor APIs (Check Point, Meraki, AWS, etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)
 
-!!! example title="Example Snapshot creation using IP Fabric API"
+!!! example "Example Snapshot Creation Using IP Fabric API"
 
     Example Snapshot POST JSON Body:
 
-    ```js
-    {
-        "snapshotName": "Name of the Snapshot",
-        "snapshotNote": "Some notes to describe the snapshot",
-        "networks":
-            {
-                "exclude": [],
-                "include": [ "10.66.0.0/16" ]
-            },
-        "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ],
-        "vendorApi": []
-    }
-    ```
+     ```js
+     {
+         "snapshotName": "Name of the Snapshot",
+         "snapshotNote": "Some notes to describe the snapshot",
+         "networks":
+             {
+                 "exclude": [],
+                 "include": [ "10.66.0.0/16" ]
+             },
+         "seedList": [ "10.66.255.104/31", "10.66.0.1/32" ],
+         "vendorApi": []
+     }
+     ```
 
-    Example cURL command:
+     Example cURL Command:
 
-    ```bash
-    curl -X POST 'https://{ipf_server}/api/{api_version}/snapshots' \
-      --header 'Content-Type: application/json' --header 'X-API-Token: {api_token}' \
-      -d '{"snapshotName":"Name of the Snapshot","snapshotNote":"Some notes to describe the snapshot","networks":{"exclude":[],"include":["10.66.0.0/16"]},"seedList":["10.66.255.104/31","10.66.0.1/32"],"vendorApi":[]}'
-    ```
+     ```bash
+     curl -X POST 'https://{ipf_server}/api/{api_version}/snapshots' \
+       --header 'Content-Type: application/json' --header 'X-API-Token: {api_token}' \
+       -d '{"snapshotName":"Name of the Snapshot","snapshotNote":"Some notes to describe the snapshot","networks":{"exclude":[],"include":["10.66.0.0/16"]},"seedList":["10.66.255.104/31","10.66.0.1/32"],"vendorApi":[]}'
+     ```
 
-Let’s see how it looks when using Postman:
+Let's see how it looks when using Postman:
 
 ![create snapshot](create_snapshot.gif)
 
