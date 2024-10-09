@@ -117,14 +117,6 @@ Since `6.5.0`, Nokia SROS (Service Router Operating System) devices can be disco
 ENABLE_DISCOVERY_DEVICES_NOKIA=true
 ```
 
-### GCP Discovery
-
-Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_DISCOVERY_DEVICES_GCP=true
-```
-
 ### Opengear `$` Prompt Detection
 
 Opengear can be configured with only the `$` sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.
@@ -137,6 +129,16 @@ ENABLE_OPENGEAR_DOLLAR_PROMPT=true
 
 ## Deprecated Feature Flags
 
+### GCP Discovery (Removed in `7.0`)
+
+Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_GCP=true
+```
+
+This feature was permanently added to the product in the `7.0` release.
+
 ### Stormshield Discovery (Removed in `7.0`)
 
 Since `6.5.0`, Stormshield devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
@@ -144,6 +146,7 @@ Since `6.5.0`, Stormshield devices can be discovered by adding the following lin
 ```
 ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
 ```
+
 This feature was permanently added to the product in the `7.0` release.
 
 ### Fortinet FortiSwitch Discovery (Removed in `6.8`)
