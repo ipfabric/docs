@@ -127,6 +127,14 @@ Since `6.7.0`, the `$` prompt can be enabled for Opengear devices by adding the 
 ENABLE_OPENGEAR_DOLLAR_PROMPT=true
 ```
 
+### Opengear ACM/CM/OM support
+
+Since `7.0.0`, Opengear ACM/CM/OM devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_OPENGEAR_OM_CM_ACM=true
+```
+
 ## Deprecated Feature Flags
 
 ### GCP Discovery (Removed in `7.0`)
