@@ -87,14 +87,14 @@ being generated, and it can't be revoked during its lifetime.
 **Refresh Token**
 
 : A refresh token is a token that can be used to obtain a renewed access token.
-It can be requested for new access tokens until the refresh token is used, 
+It can be requested for new access tokens until the refresh token is used,
 revoked, or expired.
 
 : A refresh token expires 24 hours after not being used for the generation of a
 new access token. Refresh tokens must be stored securely by an application
 as it creates a new access token and allows access to the system.
 
-: Starting in IP Fabric version `6.1.0`, the `refreshToken` is rotated after 
+: Starting in IP Fabric version `6.1.0`, the `refreshToken` is rotated after
 every use, and a new one is issued.
 
 ### Token API
@@ -145,7 +145,7 @@ curl -D - -X POST 'https://demo3.ipfabric.io/api/auth/token' \
   --data-raw '{"refreshToken":"YvnTNW..."}'
 ```
 
-which then returns a new `accessToken` to use in subsequent calls and a new 
+which then returns a new `accessToken` to use in subsequent calls and a new
 `refreshToken` to use for requesting the next `accessToken`:
 
 ```
@@ -180,7 +180,7 @@ accomplished via the CLI settings.
 
 1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
+3. Create a new file `/opt/ipf-api/conf.d/api.json` or extend the existing one
    with the below JSON. In this example, the `accessToken` expires in 10
    minutes, and the `refreshToken` expires in 15 minutes:
 
@@ -198,8 +198,8 @@ accomplished via the CLI settings.
    }
    ```
 
-4. Change file permissions: `chmod 644 /opt/nimpee/conf.d/api.json`
-5. Restart the API: `systemctl restart nimpee-api.service`
+4. Change file permissions: `chmod 644 /opt/ipf-api/conf.d/api.json`
+5. Restart the API: `systemctl restart ipf-api.service`
 
 ### Disabling Local Authentication
 
@@ -212,7 +212,7 @@ token and basic authentication will be disabled). Please note that
 
 1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
+3. Create a new file `/opt/ipf-api/conf.d/api.json` or extend the existing one
    with the below JSON:
 
    ```json
@@ -223,8 +223,8 @@ token and basic authentication will be disabled). Please note that
    }
    ```
 
-4. Change file permissions: `chmod 644 /opt/nimpee/conf.d/api.json`
-5. Restart the API: `systemctl restart nimpee-api.service`
+4. Change file permissions: `chmod 644 /opt/ipf-api/conf.d/api.json`
+5. Restart the API: `systemctl restart ipf-api.service`
 
 ### Token Errors
 

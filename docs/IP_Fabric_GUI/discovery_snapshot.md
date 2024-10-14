@@ -60,7 +60,7 @@ checks (if any of them fails, a new snapshot won't be created):
    - If this condition is not met, `Not Enough Disk Space` is thrown.
 
 In case of ongoing issues, it is possible to disable these resource checks in
-`/opt/nimpee/conf.d/api.json`. Please contact IP Fabric Support for such a
+`/opt/ipf-api/conf.d/api.json`. Please contact IP Fabric Support for such a
 change.
 
 ## Snapshot-Specific Settings

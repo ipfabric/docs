@@ -289,21 +289,21 @@ top -o %MEM
 ## Check Status of Common Services
 
 ```shell
-systemctl status nimpee-api.service
+systemctl status ipf-api.service
 ```
 
 !!! example
 
     ```shell
-    osadmin@ipfabric-howto1118135353:~$ systemctl status nimpee-api.service
-    ● nimpee-api.service - IPFabric API
-         Loaded: loaded (/lib/systemd/system/nimpee-api.service; enabled; vendor preset: enabled)
+    osadmin@ipfabric-howto1118135353:~$ systemctl status ipf-api.service
+    ● ipf-api.service - IPFabric API
+         Loaded: loaded (/lib/systemd/system/ipf-api.service; enabled; vendor preset: enabled)
          Active: active (running) since Fri 2022-11-18 13:11:48 UTC; 18min ago
        Main PID: 672 (ipfabric-api)
           Tasks: 58 (limit: 18711)
          Memory: 2.7G
             CPU: 1min 3.168s
-         CGroup: /system.slice/nimpee-api.service
+         CGroup: /system.slice/ipf-api.service
                  ├─ 672 /opt/ipf-api/ipfabric-api
                  ├─1417 /opt/ipf-api/ipfabric-api /snapshot/api/build/bundle.js --worker --port=20000 --slave
                  ├─1423 /opt/ipf-api/ipfabric-api /snapshot/api/build/bundle.js --worker --port=20001
