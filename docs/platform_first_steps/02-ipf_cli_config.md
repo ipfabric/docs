@@ -19,8 +19,9 @@ and configures basic system parameters:
      - But it is not used for accessing the main GUI, which is accessible with a
        local administrator account configured in the System Administration UI --
        see [Access User Interface and Install License](03-access_ui.md).
-7. Optionally, define organization parameters for the local SSL certificate.
-8. After rebooting, the console login screen will display the assigned IP
+7. Set the `admin` password for the main IP Fabric GUI
+8. Optionally, define organization parameters for the local SSL certificate.
+9. After rebooting, the console login screen will display the assigned IP
    address of the system and provide a link to access the user interface.
 
 IPF CLI Config can also be re-run later from the CLI.

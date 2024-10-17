@@ -34,12 +34,13 @@ ipf-cli-config -h
 ```shell
 osadmin@ipfabric:~# ipf-cli-config -h
 IPF CLI Config.
-Usage: /usr/local/bin/ipf-cli-config [-a] [-n] [-p] [-s] [-t] [-b] [-h]
-	-a	configure all services (network, proxy, SSL cert., osadmin user)
+Usage: /usr/local/bin/ipf-cli-config [-a] [-n] [-p] [-s] [-t] [-u] [-b] [-h]
+	-a	configure all services (network, proxy, SSL cert., osadmin user, IPF GUI user)
 	-n	network
 	-p	proxy
 	-s	SSL certificates (web)
 	-t	osadmin troubleshooting user
+	-u	IPF GUI user (requires ipf-backend-cli-tools package)
 	-b	used for start during boot
 	-h	displays basic help
 ```
