@@ -2214,6 +2214,28 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stopping-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stopping Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-stopping-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Stopping Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13637,6 +13659,28 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stopping-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stopping Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force-stopping-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Stopping Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13912,7 +13956,7 @@ checks (if any of them fails, a new snapshot won&rsquo;t be created):</p>
 <li>
 <p>Even if the new snapshot would have the size of the largest loaded snapshot,
    any locked snapshots would not be automatically deleted based on the <code>Delete
-   Snapshots: If HDD utilization reaches ... percent</code> value (default 80) set in
+Snapshots: If HDD utilization reaches ... percent</code> value (default 80) set in
    <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention</strong>.</p>
 <ul>
 <li>If this condition is not met, <code>Not Enough Disk Space</code> is thrown.</li>
@@ -13922,6 +13966,19 @@ checks (if any of them fails, a new snapshot won&rsquo;t be created):</p>
 <p>In case of ongoing issues, it is possible to disable these resource checks in
 <code>/opt/ipf-api/conf.d/api.json</code>. Please contact IP Fabric Support for such a
 change.</p>
+<h3 id="stopping-discovery">Stopping Discovery</h3>
+<p><a class="glightbox" href="../snapshots/discovery_stop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Stop" src="../snapshots/discovery_stop.png" /></a></p>
+<p>While discovery is running, it can be stopped (highlighted in the red box) at its current state, preventing any further network device discoveries.</p>
+<p>The snapshot will then begin the topology calculation and Assurance Engine process for the devices discovered up to that point.</p>
+<p><a class="glightbox" href="../snapshots/discovery_stopping.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Stopping" src="../snapshots/discovery_stopping.png" /></a></p>
+<p>The snapshot will enter a <strong>Stopping</strong> state (highlighted in the red box), and the message <strong>Network topology building has been started</strong> (highlighted in the green box) will be displayed.</p>
+<p>Data from the snapshot will be partially available, and no other actions will be performed until the process is complete.</p>
+<h3 id="force-stopping-discovery">Force Stopping Discovery</h3>
+<p>If you don&rsquo;t want to wait for the Assurance Engine process to finish while stopping discovery, you can use the <strong>Force Stop</strong> option.</p>
+<p><a class="glightbox" href="../snapshots/discovery_force_stop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Force Stop" src="../snapshots/discovery_force_stop.png" /></a></p>
+<p>To ensure UI access is maintained after a discovery <strong>Force Stop</strong>, any system jobs scheduled to start afterward will be cancelled.</p>
+<p>The snapshot will enter an <strong>error</strong> state and be marked as <strong>Force Stopped</strong> with a note stating: <em>The discovery process was force-stopped, data may be inconsistent and unusable.</em></p>
+<p><a class="glightbox" href="../snapshots/discovery_force_stopped.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Force Stopped" src="../snapshots/discovery_force_stopped.png" /></a></p>
 <h2 id="snapshot-specific-settings">Snapshot-Specific Settings</h2>
 <p><a class="glightbox" href="../snapshots/snapshot_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshot-specific settings" src="../snapshots/snapshot_settings.png" /></a></p>
 <p>Adjusting the settings for either a new snapshot or a previously created snapshot will override the global <strong>Settings</strong>.
@@ -14025,7 +14082,7 @@ one in IP Fabric.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2024</span>
   </span>
 
     
