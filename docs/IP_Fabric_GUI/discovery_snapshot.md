@@ -47,21 +47,49 @@ checks (if any of them fails, a new snapshot won't be created):
 
 1. The size of the largest loaded snapshot plus 5 GB is lower than the available
    disk space.
+
    - If this condition is not met, `Not Enough Disk Space` is thrown.
 
 2. The average in-memory size of loaded snapshots plus 3 GB is lower than the
    available RAM.
+
    - If this condition is not met, `Not Enough System Memory` is thrown.
 
 3. Even if the new snapshot would have the size of the largest loaded snapshot,
    any locked snapshots would not be automatically deleted based on the `Delete
-   Snapshots: If HDD utilization reaches ... percent` value (default 80) set in
+Snapshots: If HDD utilization reaches ... percent` value (default 80) set in
    **Settings --> Discovery & Snapshots --> Snapshot Retention**.
    - If this condition is not met, `Not Enough Disk Space` is thrown.
 
 In case of ongoing issues, it is possible to disable these resource checks in
 `/opt/ipf-api/conf.d/api.json`. Please contact IP Fabric Support for such a
 change.
+
+### Stopping Discovery
+
+![Discovery Stop](snapshots/discovery_stop.png)
+
+While discovery is running, it can be stopped (highlighted in the red box) at its current state, preventing any further network device discoveries.
+
+The snapshot will then begin the topology calculation and Assurance Engine process for the devices discovered up to that point.
+
+![Discovery Stopping](snapshots/discovery_stopping.png)
+
+The snapshot will enter a **Stopping** state (highlighted in the red box), and the message **Network topology building has been started** (highlighted in the green box) will be displayed.
+
+Data from the snapshot will be partially available, and no other actions will be performed until the process is complete.
+
+### Force Stopping Discovery
+
+If you don't want to wait for the Assurance Engine process to finish while stopping discovery, you can use the **Force Stop** option.
+
+![Discovery Force Stop](snapshots/discovery_force_stop.png)
+
+To ensure UI access is maintained after a discovery **Force Stop**, any system jobs scheduled to start afterward will be cancelled.
+
+The snapshot will enter an **error** state and be marked as **Force Stopped** with a note stating: _The discovery process was force-stopped, data may be inconsistent and unusable._
+
+![Discovery Force Stopped](snapshots/discovery_force_stopped.png)
 
 ## Snapshot-Specific Settings
 
