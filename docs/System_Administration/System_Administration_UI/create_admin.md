@@ -4,6 +4,11 @@ description: This page describes the Create admin section of the IP Fabric Syste
 
 # Create Admin
 
+!!! important "Deprecated in 7.0"
+
+    The creation of the admin password from a System Administration UI is deprecated in version `7.0`.
+    Please use [IPF_CLI_Config](../IPF_CLI_Config/set_gui_admin_pass.md).
+
 **System Administration --> Create admin** allows you to create a new local
 administrator account.
 
