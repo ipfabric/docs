@@ -735,3 +735,17 @@ Also, you can generate the link in two forms:
      automations. You can prepare the structure of a filter using the **Advanced
      Filter** GUI, then replace values with variables in your automation 
      scripts.
+
+## Pin Pages to the Main Menu for Quick Access
+
+### Pin a Page to the Main Menu
+
+To pin any page in the Technology Tables, click the pin button next to the table name. The page will instantly appear in the left Main Menu.
+
+![Pin a page](page_pin.png){ width="250" }
+
+### Unpin a Page from the Main Menu
+
+If you no longer want it in the Menu, you can unpin it by clicking the pin in the Main Menu or by clicking the pin next to the page title again.
+
+![Unpin a page](page_unpin.png){ width="250" }
