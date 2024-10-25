@@ -182,17 +182,33 @@ couple of pages.
 
 #### Python Virtual Environment
 
-If you don't have access to the internal container image, please create your
-Python virtual environment manually (use the included `requirements.txt` or
-`make venv`) and run `mkdocs serve --dirtyreload`.
-Please be aware that you will have slightly different results compared to our
-production documentation which is using
+If you don't have access to the internal container image, you can alternatively utilize a Python virtual environment.
+
+**Prerequisites** 
+
+The `cairo` library must be installed and available in the PATH.
+
+* _Mac OS users_ -- Install the library via `brew install cairo`.
+* _Windows users_ -- Follow [GTK](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer) to install the necessary packages. Ensure you add them to your PATH.
+
+
+**Procedure**
+
+1. Run `make venv && source venv/bin/activate` to install requirements, create virtual environment and activate it.
+2. Run `mkdocs serve --dirtyreload`. 
+3. Open your browser and navigate to http://127.0.0.1:8000/.
+4. To deactivate the virtual environment afterward, run `deactivate`.
+
+Please note that you may see slightly different results compared to our production documentation, which uses
 [MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
 
-Windows users -- If you receive errors related to `cairo` libs/DLL installing
-[GTK](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer)
-will install the necessary packages. Please ensure you specify that it is added
-to your PATH.
+**Troubleshooting**
+
+If you encounter issues with missing cairo-related packages, try adding the Homebrew lib path directly before running MkDocs (as described in the [troubleshooting documentation](https://t.ly/MfX6u)):
+
+```shell
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+```
 
 ## Docker Image
 
