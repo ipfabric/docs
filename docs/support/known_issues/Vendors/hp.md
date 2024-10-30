@@ -26,6 +26,30 @@ Error: Failed to display the manufacture information of the chassis.
 
 ---
 
+**Affected platforms:** HP Aruba 2530 and 2930 series switches.
+
+**Description:** These devices may not be discovered immediately and might
+require multiple attempts due to sporadic errors such as `Bad Packet Length`
+or `Telnet terminated due to inactivity` when receiving the output for
+either of these two commands.
+
+`show interfaces all`
+
+`show spanning-tree debug-counters instance 0 ports all`
+
+**Fix:** In **Settings --> Discovery & Snapshots --> Discovery Settings -->
+Disabled Discovery Tasks**, click **Add rule**, select Task `Disable Pagination`, and
+add these three Regex rules:
+
+- Vendor: `hp`
+- Family: `arubasw`
+- Platform: `2530|2930`
+
+This fix might extend the network discovery process by a few minutes, depending
+on the number of affected devices.
+
+---
+
 **Description**: HP Aruba switches may not display their serial number in the
 `show version` command output. In such cases, their base MAC address from the
 `show version` output is set as their serial number. This issue is known, e.g.,
