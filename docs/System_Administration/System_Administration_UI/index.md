@@ -2,6 +2,13 @@
 description: This page provides an overview of the IP Fabric System Administration UI's features.
 ---
 
+!!! danger "Deprecated Since Version 7.0"
+    
+    The System Administration UI has been deprecated since version 7.0 and will be
+    removed in a future release. Each of its functionalities can now be used
+    separately. For more information, refer to the documentation for each specific
+    functionality.
+
 # Overview
 
 The **System Administration** UI allows you to:

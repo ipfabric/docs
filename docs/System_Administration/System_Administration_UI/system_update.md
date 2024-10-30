@@ -14,7 +14,7 @@ IP Fabric backup, follow these steps:
 
 1. In the top-right corner of the main GUI, click **Support**.
 2. Click **System Administration** to access the interface on port `8443` (e.g.,
-   `https://ipfabric-ip-address:8443`).
+   `https://ipfabric-ip-or-fqdn:8443`).
 3. Log in with the `osadmin` user and the password configured during the first
    boot.
 4. Backup the VM by following the instructions on the
@@ -26,7 +26,14 @@ IP Fabric backup, follow these steps:
     please add a new virtual disk to your VM. (See
     [Local Backup Disk](../increase_disk_space.md/#local-backup-disk).)
 
-## Online Update
+## Update
+
+The system update functionality has been moved to a separate service, accessible
+at `https://ipfabric-ip-or-fqdn/ipf-system-upgrade/`.
+
+![IP Fabric System Upgrade](ipf-system-upgrade.jpg)
+
+### Online Update
 
 Online updates are automatically available only when the IP Fabric appliance has
 connectivity to the following servers:
@@ -37,45 +44,36 @@ connectivity to the following servers:
 --8<-- "snippets/allowlist_fqdn.md"
 
 When a new IP Fabric version is available, a green indicator will appear in the
-top-right corner of the main GUI. The image below shows an example of the new
-version `6.8.6+0` being available:
-
-![New version 6.8.6+0 available](system_update_new_version.png)
+top-right corner of the main GUI.
 
 To proceed with an online update, follow these steps:
 
-1. Click the new version indicator. It will navigate you to the **System
-   Administration** UI.
-2. Log in with the `osadmin` user and the password configured during the first
+1. Go to `https://ipfabric-ip-address/ipf-system-upgrade/` and log in with the
+   `osadmin` user and the password configured during the first
    boot.
-3. Perform the VM backup as described in the section above.
-4. Navigate to **System update** and click **Update over internet**.
-5. IP Fabric will automatically download the update file, perform the update,
+2. In the **Upgrade remotely** section, select the IP Fabric version to which you
+   want to upgrade your instance.
+3. IP Fabric will automatically download the update file, perform the update,
    and reboot itself.
-6. Afterwards, it is recommended to create a new discovery snapshot on the
-   latest version.
+4. It is recommended to create a new discovery snapshot on the latest version
+   afterwards.
 
 --8<-- "snippets/no_proxy_localhost.md"
 
-## Offline Update
+### Offline Update
 
 If your IP Fabric instance does not have direct internet connectivity, you may
 use offline update:
 
 1. Download the latest update file from
    <https://releases.ipfabric.io/updates/>.
-2. In the top-right corner of the main GUI, click **Support**.
-3. Click **System Administration** to access the interface on port `8443` (e.g.,
-   `https://ipfabric-ip-address:8443`).
-4. Log in with the `osadmin` user and the password configured during the first
+2. Go to `https://ipfabric-ip-address/ipf-system-upgrade/` and log in with the
+   `osadmin` user and the password configured during the first
    boot.
-5. Perform the VM backup as described in the section above.
-6. Navigate to **System update**.
-7. Select or drag-and-drop the downloaded update file:
-   ![System update section](system_update.png)
-8. After a successful package upload, the update process will start
-   automatically, and the IP Fabric VM will reboot once completed.
-9. Afterwards, it is recommended to create a new discovery snapshot on the
-   latest version.
+3. In the **Upload upgrade package** section, choose the update file from your
+   computer.
+4. After a successful upload, the update process will start automatically, and the
+   IP Fabric VM will reboot once completed.
+5. It is recommended to create a new discovery snapshot on the latest version
 
 --8<-- "snippets/no_proxy_localhost.md"

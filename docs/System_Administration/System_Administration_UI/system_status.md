@@ -2,6 +2,14 @@
 description: This page explains the System status section of the System Administration UI.
 ---
 
+!!! danger "Deprecated Since Version 7.0"
+
+    The System Administration UI has been deprecated since version 7.0. You can now
+    access the same functionality, except for restarting the API service, in the main
+    GUI under `https://ipfabric-ip-or-fqdn/support/status` or by clicking
+    `Resource Usage` in the top-right corner. To restart the API service, use the
+    server’s standard Debian command line interface: `sudo systemctl restart ipf-api`.
+
 # System Status
 
 When you log in to the **System Administration** UI with the `osadmin` user, you
