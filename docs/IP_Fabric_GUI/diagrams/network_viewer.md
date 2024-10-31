@@ -156,19 +156,19 @@ Select the desired view and click to load.
 By clicking here, a URL will be displayed, which you can share with
 other users, and they will be able to see this view.
 
-### Export Current View To SVG/PNG
+### Export Current View To SVG/PNG/VSDX
 
-The view can be exported in the form of a SVG or PNG image by clicking
+The view can be exported in the form of a SVG, PNG image, or VSDX file by clicking
 **Export** and selecting the format you want.
 
 ![Export button](network_viewer/button_export.png)
 
-![Expanded Export menu](network_viewer/export_menu_expanded.png)
+![Expanded Export menu](network_viewer/export_menu_expanded.png){ width=300 }
 
-!!! info
-
-    The SVG file can be imported into a Visio diagram, or on other drawing
-    application.
+!!! Note "VSDX Export Limitations"
+    - Export of `Intent checks` in diagrams (colorful nodes are not supported).
+    - Export of temporarily visible hidden nodes in "Show Hidden Nodes" mode is not supported.
+    - Export of group boundaries is not supported.
 
 ### Search
 
