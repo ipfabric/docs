@@ -13699,7 +13699,7 @@ access to these sub-directories:</p>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>/var/log/syslog*</code></td>
-<td style="text-align: left;">All service and system logs</td>
+<td style="text-align: left;">All service and system logs, contains additional logs from components called by the <code>worker</code> and <code>tasker</code> services</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/var/log/arangodb3/*</code></td>
@@ -13830,7 +13830,7 @@ sub-directory represents one snapshot. Snapshot-related logs are in
 </tr>
 <tr>
 <td style="text-align: left;"><code>/home/autoboss/snapshots/&lt;id&gt;/cli/*</code></td>
-<td style="text-align: left;">CLI logs collected during discovery</td>
+<td style="text-align: left;">CLI logs collected during discovery in <code>JSON Lines</code> format</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/home/autoboss/snapshots/&lt;id&gt;/devices/*</code></td>
@@ -13838,6 +13838,13 @@ sub-directory represents one snapshot. Snapshot-related logs are in
 </tr>
 </tbody>
 </table>
+<p>The CLI logs under <code>/home/autoboss/snapshots/&lt;id&gt;/cli/*</code> are differentiated by
+the <code>messageSubType</code> key as follows:
+- <code>cliUi</code>: Messages containing the raw text received from the device and some
+  error reports. Available for download in the text form from the UI.
+- <code>cliSession</code>: Messages with a rigid structure describing the commands sent
+  and the responses received. Usable for scripting on top of the logs.
+- <code>cliInternal</code>: Messages with no formal structure used purely for debugging.</p>
 <p>The following 4 services &ndash; Networker, Tasker, Updater, and Worker &ndash; all log in
 two formats:</p>
 <table>
@@ -14000,7 +14007,7 @@ log {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2024</span>
   </span>
 
     
