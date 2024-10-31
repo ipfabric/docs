@@ -13,13 +13,13 @@ activity and help with troubleshooting issues.
 System logs are stored in the `/var/log` directory. The `osadmin` user has
 access to these sub-directories:
 
-| Files                  | Description                 |
-| :--------------------- | :-------------------------- |
-| `/var/log/syslog*`     | All service and system logs |
-| `/var/log/arangodb3/*` | ArangoDB-related logs       |
-| `/var/log/nginx/*`     | nginx-related logs          |
-| `/var/log/redis/*`     | Redis-related logs          |
-| `/var/log/rabbitmq/*`  | RabbitMQ-related logs       |
+| Files                  | Description                                                                                                        |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| `/var/log/syslog*`     | All service and system logs, contains additional logs from components called by the `worker` and `tasker` services |
+| `/var/log/arangodb3/*` | ArangoDB-related logs                                                                                              |
+| `/var/log/nginx/*`     | nginx-related logs                                                                                                 |
+| `/var/log/redis/*`     | Redis-related logs                                                                                                 |
+| `/var/log/rabbitmq/*`  | RabbitMQ-related logs                                                                                              |
 
 ## Service Logs
 
@@ -58,8 +58,16 @@ sub-directory represents one snapshot. Snapshot-related logs are in
 | Files                                     | Description                                                        |
 | :---------------------------------------- | :----------------------------------------------------------------- |
 | `/home/autoboss/snapshots/<id>/*`         | Snapshot-related logs                                              |
-| `/home/autoboss/snapshots/<id>/cli/*`     | CLI logs collected during discovery                                |
+| `/home/autoboss/snapshots/<id>/cli/*`     | CLI logs collected during discovery in `JSON Lines` format         |
 | `/home/autoboss/snapshots/<id>/devices/*` | Information about devices processed by IP Fabric from the CLI logs |
+
+The CLI logs under `/home/autoboss/snapshots/<id>/cli/*` are differentiated by
+the `messageSubType` key as follows:
+- `cliUi`: Messages containing the raw text received from the device and some
+  error reports. Available for download in the text form from the UI.
+- `cliSession`: Messages with a rigid structure describing the commands sent
+  and the responses received. Usable for scripting on top of the logs.
+- `cliInternal`: Messages with no formal structure used purely for debugging.
 
 The following 4 services -- Networker, Tasker, Updater, and Worker -- all log in
 two formats:
