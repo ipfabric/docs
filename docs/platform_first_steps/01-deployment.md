@@ -42,7 +42,7 @@ If you do not have access to an ESXi host for importing, you can try to import
 the disk (VMDK) and set up the machine manually. Ensure the following are
 configured correctly:
 
-- Virtual Hardware Version is at least `vmx-17`
+- Virtual Hardware Version is at least `vmx-20`
 - virtio/paravirtualized drivers for storage and network
   - [`PVSCSI`](https://kb.vmware.com/s/article/1010398) (Paravirtual SCSI)
   - [`VMXNET 3`](https://kb.vmware.com/s/article/1001805)
@@ -109,15 +109,21 @@ VMware's KB article on converting OVA images:
 
    1. Specify the VM's **Name**.
 
-   2. In the **Compatibility** field, select at least `ESXi 7.0 virtual
-      machine`, which corresponds to the Virtual Hardware Version `17`
-      (`vmx-17`). Refer to
+   2. In the **Compatibility** field, select at least `ESXi 8.0 virtual
+      machine`, which corresponds to the Virtual Hardware Version `20`
+      (`vmx-20`). Refer to
       [Virtual machine hardware versions](https://knowledge.broadcom.com/external/article?legacyId=1003746)
       for mapping between Virtual Hardware Versions and ESXi versions.
 
    3. In the **Guest OS family** field, select `Linux`.
 
-   4. In the **Guest OS version** field, select `Debian GNU/Linux 11 (64-bit)`.
+   4. In the **Guest OS version** field, select `Debian GNU/Linux 12 (64-bit)`.
+
+  !!! Info "Deploying VMDK on Older ESXi Systems"
+       
+      It is possible to deploy VMDK on older ESXi systems that do not support
+      Debian 12. Please choose the latest available `Debian (64-bit)` version.
+      For the best experience, use a supported version of ESXi.
 
 6. In the 3rd step `Select storage`, keep the default settings.
 
@@ -137,12 +143,11 @@ VMware's KB article on converting OVA images:
 
       ![VMware ESXi - Add disk](esxi-vmdk/add-disk.png)
 
+  !!! warning "Unsupported and/or invalid disk type while importing VMDK"
+
+      The disk format of the VMDK file may be incomatible with your ESXi version. To convert it to a compatible format, please refer to the [VMware documentation](https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html) for detailed instructions.
+
 8. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
-
-!!! warning "Unsupported and/or invalid disk type while importing VMDK"
-
-    The disk format of your VMDK file might not be supported for importing. For instructions on how to convert it to a compatible format, check the [VMware documentation](https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html).
-
 
 ## Deploying VM on Hyper-V
 
