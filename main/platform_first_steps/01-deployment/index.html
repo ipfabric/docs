@@ -14161,7 +14161,7 @@ cannot be described through the OVA image definition.</p>
 the disk (VMDK) and set up the machine manually. Ensure the following are
 configured correctly:</p>
 <ul>
-<li>Virtual Hardware Version is at least <code>vmx-17</code></li>
+<li>Virtual Hardware Version is at least <code>vmx-20</code></li>
 <li>virtio/paravirtualized drivers for storage and network<ul>
 <li><a href="https://kb.vmware.com/s/article/1010398"><code>PVSCSI</code></a> (Paravirtual SCSI)</li>
 <li><a href="https://kb.vmware.com/s/article/1001805"><code>VMXNET 3</code></a></li>
@@ -14233,9 +14233,9 @@ on how to resolve the issue.</p>
 <p>Specify the VM&rsquo;s <strong>Name</strong>.</p>
 </li>
 <li>
-<p>In the <strong>Compatibility</strong> field, select at least <code>ESXi 7.0 virtual
-    machine</code>, which corresponds to the Virtual Hardware Version <code>17</code>
-    (<code>vmx-17</code>). Refer to
+<p>In the <strong>Compatibility</strong> field, select at least <code>ESXi 8.0 virtual
+    machine</code>, which corresponds to the Virtual Hardware Version <code>20</code>
+    (<code>vmx-20</code>). Refer to
     <a href="https://knowledge.broadcom.com/external/article?legacyId=1003746">Virtual machine hardware versions</a>
     for mapping between Virtual Hardware Versions and ESXi versions.</p>
 </li>
@@ -14243,9 +14243,15 @@ on how to resolve the issue.</p>
 <p>In the <strong>Guest OS family</strong> field, select <code>Linux</code>.</p>
 </li>
 <li>
-<p>In the <strong>Guest OS version</strong> field, select <code>Debian GNU/Linux 11 (64-bit)</code>.</p>
+<p>In the <strong>Guest OS version</strong> field, select <code>Debian GNU/Linux 12 (64-bit)</code>.</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Deploying VMDK on Older ESXi Systems</p>
+<p>It is possible to deploy VMDK on older ESXi systems that do not support
+Debian 12. Please choose the latest available <code>Debian (64-bit)</code> version.
+For the best experience, use a supported version of ESXi.</p>
+</div>
 </li>
 <li>
 <p>In the 3<sup>rd</sup> step <code>Select storage</code>, keep the default settings.</p>
@@ -14268,15 +14274,15 @@ on how to resolve the issue.</p>
 <p><a class="glightbox" href="../esxi-vmdk/add-disk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Add disk" src="../esxi-vmdk/add-disk.png" /></a></p>
 </li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Unsupported and/or invalid disk type while importing VMDK</p>
+<p>The disk format of the VMDK file may be incomatible with your ESXi version. To convert it to a compatible format, please refer to the <a href="https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html">VMware documentation</a> for detailed instructions.</p>
+</div>
 </li>
 <li>
 <p>Power on the VM and <a href="../02-ipf_cli_config/">complete IPF CLI Config</a>.</p>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Unsupported and/or invalid disk type while importing VMDK</p>
-<p>The disk format of your VMDK file might not be supported for importing. For instructions on how to convert it to a compatible format, check the <a href="https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html">VMware documentation</a>.</p>
-</div>
 <h2 id="deploying-vm-on-hyper-v">Deploying VM on Hyper-V</h2>
 <p>The <code>qcow2</code> disk image file can be converted to different formats.
 Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-V and manually create a new VM.</p>
