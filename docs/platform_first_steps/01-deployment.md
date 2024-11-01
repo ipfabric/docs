@@ -139,6 +139,11 @@ VMware's KB article on converting OVA images:
 
 8. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
+!!! warning "Unsupported and/or invalid disk type while importing VMDK"
+
+    The disk format of your VMDK file might not be supported for importing. For instructions on how to convert it to a compatible format, check the [VMware documentation](https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html).
+    
+
 ## Deploying VM on Hyper-V
 
 The `qcow2` disk image file can be converted to different formats.
