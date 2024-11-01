@@ -12,12 +12,12 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
 ## OVA Distribution Details
 
-The appliance is built on top of Debian 11, which has been officially supported
+The appliance is built on top of Debian 12, which has been officially supported
 since
-[ESXi version `7.0`](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=54075&vcl=true&supRel=396,448,508,518,578,589,615,617,649,650&testConfig=16).
+[ESXi version `8.0`](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=58268&vcl=true&supRel=396,589,652,668,692&testConfig=16).
 
-The minimal required Virtual Hardware Version is `vmx-17`, supported by ESXi
-`7.0`, Fusion `12.x`, Workstation Pro `16.x`, and Workstation Player `16.x`. For
+The minimal required Virtual Hardware Version is `vmx-20`, supported by ESXi
+`8.0`, Fusion `13.6`, Workstation Pro `17.x`, and Workstation Player `17.x`. For
 details, see the VMware KB articles
 [1003746](https://kb.vmware.com/s/article/1003746) and
 [2007240](https://kb.vmware.com/s/article/2007240).
@@ -142,7 +142,7 @@ VMware's KB article on converting OVA images:
 !!! warning "Unsupported and/or invalid disk type while importing VMDK"
 
     The disk format of your VMDK file might not be supported for importing. For instructions on how to convert it to a compatible format, check the [VMware documentation](https://knowledge.broadcom.com/external/article/310567/a-virtual-machine-fails-to-power-on-with.html).
-    
+
 
 ## Deploying VM on Hyper-V
 
@@ -337,9 +337,9 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
       Please use `qemu-img` version `2.6` or higher. According to the [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic#resizing-vhds):
 
       > There is a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend using either qemu-img 2.2.0 or lower, or 2.6 or higher.
-      
+
       You may check the `qemu-img` version that you are using with:
-      
+
       ```shell
       qemu-img --version
       ```
@@ -355,7 +355,7 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
   !!! important "VHD Upload"
 
       For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:
-      
+
       > The specified cookie value in VHD footer indicates that disk 'ipfabric-6-3-1+1.vhd' with blob https://.../vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
 
 ### Sizing IP Fabric VM
@@ -501,5 +501,5 @@ Ensure validation passed and click `Create`.
 !!! important "Console Access"
 
     Please note that the Azure serial console might not be accessible for setting the `osadmin` password in [IPF CLI Config](02-ipf_cli_config.md).
-    In that case, please contact the IP Fabric Support team or your Solution Architect. 
+    In that case, please contact the IP Fabric Support team or your Solution Architect.
     We can connect to the appliance via SSH with the default/factory `osadmin` password (that is overwritten during IPF CLI Config) and run IPF CLI Config manually.
