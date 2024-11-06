@@ -34,7 +34,7 @@ If you selected version `3`, please configure:
 
 !!! info "SNMP v3"
 
-   AES is used for data privacy.
+    AES is used for data privacy.
 
 1. **NMS IPs** -- IP addresses of remote monitoring servers.
 2. **Locality** -- Location of the IP Fabric appliance.
