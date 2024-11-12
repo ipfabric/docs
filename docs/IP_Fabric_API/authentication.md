@@ -180,7 +180,7 @@ accomplished via the CLI settings.
 
 1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create a new file `/opt/ipf-api/conf.d/api.json` or extend the existing one
+3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
    with the below JSON. In this example, the `accessToken` expires in 10
    minutes, and the `refreshToken` expires in 15 minutes:
 
@@ -198,8 +198,8 @@ accomplished via the CLI settings.
    }
    ```
 
-4. Change file permissions: `chmod 644 /opt/ipf-api/conf.d/api.json`
-5. Restart the API: `systemctl restart ipf-api.service`
+4. Change file permissions: `chmod 644 /opt/nimpee/conf.d/api.json`
+5. Restart the API: `systemctl restart nimpee-api.service`
 
 ### Disabling Local Authentication
 
@@ -212,7 +212,7 @@ token and basic authentication will be disabled). Please note that
 
 1. Log in to the IP Fabric CLI as `osadmin`.
 2. Elevate to root using `sudo -s` and `osadmin` password.
-3. Create a new file `/opt/ipf-api/conf.d/api.json` or extend the existing one
+3. Create a new file `/opt/nimpee/conf.d/api.json` or extend the existing one
    with the below JSON:
 
    ```json
@@ -223,8 +223,8 @@ token and basic authentication will be disabled). Please note that
    }
    ```
 
-4. Change file permissions: `chmod 644 /opt/ipf-api/conf.d/api.json`
-5. Restart the API: `systemctl restart ipf-api.service`
+4. Change file permissions: `chmod 644 /opt/nimpee/conf.d/api.json`
+5. Restart the API: `systemctl restart nimpee-api.service`
 
 ### Token Errors
 

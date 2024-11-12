@@ -734,7 +734,7 @@ After making changes to `/opt/nimpee/conf.d/api.json`, you need to restart the
 API service:
 
 ```bash
-systemctl restart ipf-api.service
+systemctl restart nimpee-api.service
 ```
 
 Consequently, after making changes to `/etc/ipf-dex.yaml`, you need to restart
