@@ -39,12 +39,12 @@ System --> IPF Certificates** on its own is not sufficient.
     not accepted by all CAs (Certificate Authorities). To remove it from the
     CSR, switch off the **Include DNS short name in CSR SAN** toggle.
 
-!!! warning "Only Some Characters Are Allowed in Fields" 
+!!! warning "Only Some Characters Are Allowed in Fields"
 
     The fields **Organization name**, **Department**, **City**, and
     **State / Province** must match the following regular expression:
     `/^[A-Za-z0-9.,\/_@%^:=+ -]*$/`
-    
+
     - They must contain only these characters: `A-Z` `a-z` `0-9` `.,/_@%^:=+ -`
 
     This is for security reasons.
@@ -142,7 +142,7 @@ these steps:
 
    ```shell
    cd /opt/nimpee/conf.d/ssl-cust
-   ``` 
+   ```
 
 6. Remove `customer.key` and `customer.csr` (they will be re-generated in step 8):
 
@@ -157,7 +157,7 @@ these steps:
 
 8. Generate new `customer.key` and `customer.csr` files using the modified
    `customer.conf`:
-   
+
    ```shell
    openssl req -new -config customer.conf -keyout customer.key -out customer.csr
    ```
@@ -308,6 +308,12 @@ guide to replace the self-signed certificate manually.
     Please ensure that the FQDN (DNS name) of the IP Fabric appliance is set as
     your custom certificate's `Subject Alternative Name`. Having the FQDN as the
     certificate's `Subject` or `Common Name` is not sufficient.
+
+!!! important
+
+    Only RSA certificates are supported. Any other certificate, e.g. ECDSA would
+    cause authentication failures and sing-in issues.
+
 
 1. Log in to the IP Fabric CLI as the `osadmin` user.
 

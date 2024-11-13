@@ -44,3 +44,24 @@ solutions for addressing the issues.
 Bugs that have been fixed are documented on the
 [Releases](../../releases/index.md) page, either under the `Release notes` or
 the `Release notes low level`.
+
+### service ipf-api is not starting
+
+We recently discovered that SSL certificates using ECDSA are not compatible
+with our api server and might cause it will not start properly. Please make
+sure you are using RSA certificates when setting up a custom 
+[IPF Certificate](IP_Fabric_Settings/system/ipf_cert/).
+
+The log contains following error message:
+```
+...
+Error: "alg" parameter for "ec" key type must be one of: ES256, ES384, ES512.
+...
+```
+
+If you run into this problem, please provide RSA certificates and restart 
+ipf-api.service:
+
+```shell
+systemctl restart ipf-api
+```
