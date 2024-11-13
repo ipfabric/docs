@@ -16,7 +16,7 @@ By default, a Site consists of the topology of all contiguously interconnected p
 
     Site distribution cannot be changed manually when regular expression (regex) rules are used. Sites cannot be renamed.
 
-    Alternatively, site separation can follow a specific regex, where separation will be performed based on a portion of a device hostname or SNMP location.
+    Alternatively, site separation can follow a specific regex, where separation will be performed based on a portion of a device hostname, SNMP location or cloud specific properties.
 
 !!! check
 
@@ -79,6 +79,32 @@ used in the Site Name is checked in UI to prevent any typos or other mistakes.
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Regex based on SNMP location**, and click **+ Add rule** to create a new rule.
 
 ![SNMP regex](site_separation/snmp_regex.png)
+
+### Cloud Resource ID
+
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Cloud Resource ID (Cloud network)**, and click **+Add rule** to create a new rule.
+
+This rule uses cloud resource ID (**AWS** ARN, **Azure** resource ID, **GCP** full resource name) to build the site name.
+
+The switch **Include also cloud devices discovered via SSH or Vendor API** puts network devices into the same site as the relevant cloud resources. E.g. a router or a firewall running as an AWS instance will be placed to the same site as the VPC where it is deployed (instead of being classified by hostname, SNMP or other site separation rules). If this setting is enabled, ensure that site separation rules are placed in the right order (cloud rules should be above on-prem rules in order to work properly).
+
+**Regular Expression** input value can be found in the table **Technology** --> **Cloud** --> **Nodes** --> **Inventory**, column **Resource Name / ID**.
+
+!!! Example "Cloud Resource ID Site Sepatation"
+
+    ![Cloud Resource ID](site_separation/cloud_resource_aws_region_custom.png)
+    This example shows use of named regular expression groups. The result site name would be e.g. `AWS:1234567890/eu-north-1`.
+
+
+### Slug
+
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Slug (Cloud network)**, and click **+Add rule** to create a new rule.
+
+Currently you can select AWS, Azure and GCP devices to be matched by this rule. Whole slug string is used as a site name. It can be transformed to upper case, lower case or kept as it is set in a specific vendor API configuration in **Settings** --> **Discovery & Snapshots** --> **Discovery Settings** --> **Vendors API**.
+
+The switch **Include also cloud devices discovered via SSH or Vendor API** functionality is the same as in [Cloud Resource ID](#cloud-resource-id) site separation rule.
+
+![Slug](site_separation/slug_aws_azure.png )
 
 ### Testing
 
