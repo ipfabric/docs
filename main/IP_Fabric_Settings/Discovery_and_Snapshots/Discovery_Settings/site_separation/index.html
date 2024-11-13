@@ -4232,6 +4232,28 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#cloud-resource-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Resource ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slug
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13662,6 +13684,28 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#cloud-resource-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Resource ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slug
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13863,7 +13907,7 @@ here.
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Site distribution cannot be changed manually when regular expression (regex) rules are used. Sites cannot be renamed.</p>
-<p>Alternatively, site separation can follow a specific regex, where separation will be performed based on a portion of a device hostname or SNMP location.</p>
+<p>Alternatively, site separation can follow a specific regex, where separation will be performed based on a portion of a device hostname, SNMP location or cloud specific properties.</p>
 </div>
 <div class="admonition check">
 <p class="admonition-title">Check</p>
@@ -13911,6 +13955,21 @@ used in the Site Name is checked in UI to prevent any typos or other mistakes.</
 <h3 id="snmp-location-regex">SNMP Location Regex</h3>
 <p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, select <strong>Regex based on SNMP location</strong>, and click <strong>+ Add rule</strong> to create a new rule.</p>
 <p><a class="glightbox" href="snmp_regex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SNMP regex" src="snmp_regex.png" /></a></p>
+<h3 id="cloud-resource-id">Cloud Resource ID</h3>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, select <strong>Cloud Resource ID (Cloud network)</strong>, and click <strong>+Add rule</strong> to create a new rule.</p>
+<p>This rule uses cloud resource ID (<strong>AWS</strong> ARN, <strong>Azure</strong> resource ID, <strong>GCP</strong> full resource name) to build the site name.</p>
+<p>The switch <strong>Include also cloud devices discovered via SSH or Vendor API</strong> puts network devices into the same site as the relevant cloud resources. E.g. a router or a firewall running as an AWS instance will be placed to the same site as the VPC where it is deployed (instead of being classified by hostname, SNMP or other site separation rules). If this setting is enabled, ensure that site separation rules are placed in the right order (cloud rules should be above on-prem rules in order to work properly).</p>
+<p><strong>Regular Expression</strong> input value can be found in the table <strong>Technology</strong> &rarr; <strong>Cloud</strong> &rarr; <strong>Nodes</strong> &rarr; <strong>Inventory</strong>, column <strong>Resource Name / ID</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Cloud Resource ID Site Sepatation</p>
+<p><a class="glightbox" href="cloud_resource_aws_region_custom.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cloud Resource ID" src="cloud_resource_aws_region_custom.png" /></a>
+This example shows use of named regular expression groups. The result site name would be e.g. <code>AWS:1234567890/eu-north-1</code>.</p>
+</div>
+<h3 id="slug">Slug</h3>
+<p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Site Separation</strong>, select <strong>Slug (Cloud network)</strong>, and click <strong>+Add rule</strong> to create a new rule.</p>
+<p>Currently you can select AWS, Azure and GCP devices to be matched by this rule. Whole slug string is used as a site name. It can be transformed to upper case, lower case or kept as it is set in a specific vendor API configuration in <strong>Settings</strong> &rarr; <strong>Discovery &amp; Snapshots</strong> &rarr; <strong>Discovery Settings</strong> &rarr; <strong>Vendors API</strong>.</p>
+<p>The switch <strong>Include also cloud devices discovered via SSH or Vendor API</strong> functionality is the same as in <a href="#cloud-resource-id">Cloud Resource ID</a> site separation rule.</p>
+<p><a class="glightbox" href="slug_aws_azure.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Slug" src="slug_aws_azure.png" /></a></p>
 <h3 id="testing">Testing</h3>
 <p>The UI allows you to edit and test your rules directly in the browser by selecting the <strong>Test rule</strong> option. Here, you can see a live preview of devices that will match the regex you created.</p>
 <p><a class="glightbox" href="testing_hostname.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Testing hostname regex" src="testing_hostname.png" /></a></p>
@@ -14018,7 +14077,7 @@ see the pattern <code>-dev</code> afterward. Using this regex:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
   </span>
 
     
