@@ -114,7 +114,7 @@ Outbound flows:
 | 8443                | >1024                     | TCP                          | Administrative Interface                                               |
 | >1024               | 443                       | TCP                          | Network Infrastructure Interaction -- API; Support, Updates (Optional) |
 | >1024               | 22                        | TCP                          | Network Infrastructure Interaction -- SSH                              |
-| >1024               | 23                        | TCO                          | Network Infrastructure Interaction -- Telnet                           |
+| >1024               | 23                        | TCP                          | Network Infrastructure Interaction -- Telnet                           |
 |                     |                           | ICMP                         | Network Infrastructure Interaction -- Traceroute                       |
 
 Internet connectivity is used to check for product updates, perform upgrades, setup the Support VPN, send error reports, and submit support tickets.
