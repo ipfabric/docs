@@ -98,6 +98,14 @@ The snapshot will enter an **error** state and be marked as **Force Stopped** wi
 Adjusting the settings for either a new snapshot or a previously created snapshot will override the global **Settings**.
 This is useful, for example, for testing different SSH settings, Site Separation rules, or authentication methods.
 
+## Difference between snapshot data version and software version
+
+![Snapshot versus software version](snapshots/snapshot_versus_software_version.png)
+
+The **Software version** (displayed in the top-left corner) indicates the version of the **IP Fabric product**.
+
+The **Snapshot data version** (visible in the middle of the screenshot) represents the version of **IPF migrations**. The Snapshot Data Version (visible in the middle of the screenshot) represents the version of IPF migrations. This value is crucial for determining whether the snapshot needs to be Unloaded and Loaded again after an upgrade, or if it can be retained as-is.
+
 ## Inspection of Network Issues
 
 ![Connectivity Report and Summary of Issues](snapshots/connectivity_report.png)
