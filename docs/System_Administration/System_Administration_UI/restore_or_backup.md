@@ -12,6 +12,11 @@ description: This page explains how to manually back up or restore your IP Fabri
     You can check the free space with the `df -h` command in the IP Fabric VM's
     shell.
 
+!!! danger "Deprecated Since Version 7.0"
+
+    The System Administration UI has been deprecated since version 7.0 and will be
+    removed in a future release. Please refer to the [How to Backup/Restore IP Fabric via CLI](../Command_Line_Interface/How_to/backup_restore_CLI.md) for guidance.
+
 !!! important
 
     Backups are encrypted with the `osadmin` user password configured with **IPF
@@ -99,20 +104,20 @@ STATIC_OPTIONS="--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-
 - Possible time values include : `s` (seconds), `m` (minutes), `h` (hours), `D`
   (days), `W` (weeks), `M` (months), and `Y` (years).
 
-By default, only two full backups are retained in the backup directory. You may
+By default, only one full backup is retained in the backup directory. You may
 modify this behavior by amending the value in the following line in
 `/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example, with
 `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 
 ```
-CLEAN_UP_VARIABLE="2"
+CLEAN_UP_VARIABLE="1"
 ```
 
 !!! tip
 
     As
     [restore does not function properly when two full backups are present](../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
-    you may want to set `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
+    you may want to keep `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
     backup and its increments).
 
     Please note that this approach has a downside -- when a new full backup is

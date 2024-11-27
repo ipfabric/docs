@@ -118,20 +118,20 @@ STATIC_OPTIONS="--full-if-older-than 14D --allow-source-mismatch --ssl-no-check-
 - Possible time values include: `s` (seconds), `m` (minutes), `h` (hours), `D`
   (days), `W` (weeks), `M` (months), and `Y` (years).
 
-By default, only two full backups are retained in the backup directory. You can
+By default, only one full backup is retained in the backup directory. You can
 alter this behavior by adjusting the value in the following line in
 `/opt/nimpee/conf.d/backup/duplicity-backup.conf` (for example, using
 `sudo vi /opt/nimpee/conf.d/backup/duplicity-backup.conf`):
 
 ```
-CLEAN_UP_VARIABLE="2"
+CLEAN_UP_VARIABLE="1"
 ```
 
 !!! tip
 
     As
     [restore does not function properly when two full backups are present](../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
-    you may want to set `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
+    you may want to keep `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
     backup and its increments).
 
     Please note that this approach has a downside -- when a new full backup is
