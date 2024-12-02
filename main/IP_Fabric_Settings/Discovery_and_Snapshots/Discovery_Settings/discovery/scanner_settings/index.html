@@ -13717,19 +13717,19 @@ here.
 
 
 <h1 id="scanner-settings">Scanner Settings</h1>
-<p>The Scanner intelligently scans the parts of the network which are not reachable
+<p>The Scanner intelligently scans the parts of the network that are not reachable
 using standard methods by testing the login (SSH/Telnet) to each IP address from
 IP networks without any discovered device.</p>
-<p>In other words, the Scanner takes each unique route for which there is no
-<strong>CONNECTED</strong> router and attempts to log in to each IP address by first logging
-in to first unicast address of a subnet, then last address, splitting the subnet
-in half and continuing the process accordingly (excluding the already attempted
-addresses).</p>
+<p>In other words, the Scanner takes each unique route for which the next hop device was 
+not discovered. The Scanner excludes a network from scanning if we have already discovered
+a device with such a network configured on its L3 interface. Scanning itself attempts
+to log in to every IP address within a provided subnet. If Scanner successfully connects
+to an IP address, it schedules it for a regular discovery and proceeds with scanning.</p>
 <p>For example, if after standard intelligent discovery, there is a network
-<code>10.0.0.0/24</code> in a routing table which does not belong to any of the discovered
-interfaces, the scanner will attempt to log in to <code>10.0.0.1</code>, then to
-<code>10.0.0.254</code>, then to <code>10.0.0.126</code>, then to <code>10.0.0.129</code>, and so on, until all
-of the addresses in the <code>10.0.0.0/24</code> network have been attempted.  </p>
+<code>10.0.0.0/24</code> in a routing table that is not configured on any interface 
+of already discovered devices, the Scanner will attempt to log in to <code>10.0.0.1</code>,
+then to <code>10.0.0.2</code>, then to <code>10.0.0.3</code>, and so on, until all of the addresses
+in the <code>10.0.0.0/24</code> network has been attempted.</p>
 <p>Turn on the Scanner to increase the number of discovered devices.</p>
 <p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery
 &rarr; Scanner settings</strong> and turn on the <strong>Use scanner in discovery</strong> toggle.</p>
@@ -13758,7 +13758,7 @@ is <code>/16</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2024</span>
   </span>
 
     
