@@ -57,4 +57,4 @@ if __name__ == '__main__':
     ipf.close()
 ```
 
-More examples are available at <https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/tree/develop/examples/graphs>.
+More examples are available at <https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/tree/main/examples/graphs>.
