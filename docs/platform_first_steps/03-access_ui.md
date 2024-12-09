@@ -4,30 +4,6 @@ description: In this step, we will show you how to access the IP Fabric GUI and 
 
 # Access User Interface and Install License
 
-## Creating the First IP Fabric User
-
-To create the first user, please log in to the **System Administration** UI on port `8443`.
-
-After logging in as the `osadmin` user, go to the **Create admin** menu and set up a new local administrator account.
-
-!!! info
-
-    On a clean IP Fabric installation, there is no user for the main GUI
-    present by default. It is mandatory to create a new local administrator
-    account.
-
-![Creating new admin user](admin_create_new.png)
-
-With this new account, you will be able to log in to the main IP Fabric user
-interface.
-
-In **Settings --> Administration --> Local Users** of the main interface, you
-can change the password of the new account.
-
-In **Settings --> Administration --> Local Users**, you can also create or delete local users and change their passwords.
-
-![Creating a new user account](modify_local_accounts.png)
-
 ## Accessing the Main User Interface
 
 Type the IP Fabric VM's address into your web browser and allow HTTPS exceptions in case of a warning.
@@ -50,6 +26,14 @@ If the license installation fails, contact the IP Fabric Support team.
 
 Once the license is validated, the system will present a login screen.
 
-Log in with the account created in [Creating The First IP Fabric User](#creating-the-first-ip-fabric-user):
+Log in with the username `admin` and a password created in a previous step ([IPF CLI Config](02-ipf_cli_config.md)).
 
 ![Log in to IP Fabric](ui_admin.png)
+
+## Managing additional users
+
+When logged in with the `admin` account, you can manage all users in the main IP Fabric user interface.
+
+Navigate to **Settings --> Administration --> Local Users** to create, edit, delete local users, and change their passwords.
+
+![Creating a new user account](modify_local_accounts.png)

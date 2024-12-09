@@ -55,15 +55,10 @@ instructions.
 
 IPF CLI Config needs to be completed during the IP Fabric virtual machine's
 initial deployment. IPF CLI Config introduces the configuration of basic network
-parameters, including IP address, DNS, or proxy settings.
+parameters, including IP address, DNS, or proxy settings. 
+It also creates a password for the initial admin account to further access the main IP Fabric UI.
 
 Follow the instructions in [IPF CLI Config](02-ipf_cli_config.md).
-
-## Accessing User Interface
-
-Prior to accessing the main IP Fabric UI, you will need to create an `admin`
-account in the System Administration UI:
-[Creating the First IP Fabric User](03-access_ui.md#accessing-the-main-user-interface)
 
 ## Applying IP Fabric License
 

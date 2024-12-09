@@ -15,11 +15,8 @@ and configures basic system parameters:
 5. Configure internet proxy if used.
 6. Set the password of the `osadmin` user.
    - This password is used for encrypting system backups and accessing the CLI
-     and the System Administration UI.
-     - But it is not used for accessing the main GUI, which is accessible with a
-       local administrator account configured in the System Administration UI --
-       see [Access User Interface and Install License](03-access_ui.md).
-7. Set the `admin` password for the main IP Fabric GUI
+     and the System Administration UI. 
+7. Set a new password for the `admin` user of the main IP Fabric user interface.
 8. Optionally, define organization parameters for the local SSL certificate.
 9. After rebooting, the console login screen will display the assigned IP
    address of the system and provide a link to access the user interface.
@@ -29,13 +26,14 @@ IPF CLI Config can also be re-run later from the CLI.
 Its documentation can be found in
 [IPF CLI Config](../System_Administration/IPF_CLI_Config/index.md).
 
-!!! warning
+!!! warning "Important"
 
-    Remember the password from step 8! IP Fabric support engineers are able to
-    reset `osadmin` user passwords, but **encrypted backups will be lost**!
+    Remember the password from step 6! While IP Fabric support engineers can reset
+    the `osadmin` user password, please note that **encrypted backups will be lost**
+    if the password is reset.
 
 !!! info
 
     The self-signed SSL certificate can be replaced by a trusted certificate in
-    the IP Fabric web UI. Please see
+    the main IP Fabric user interface. Please see
     [IPF Certificates](../IP_Fabric_Settings/system/ipf_cert.md).
