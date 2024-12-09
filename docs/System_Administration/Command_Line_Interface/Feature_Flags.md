@@ -145,11 +145,7 @@ ENABLE_EXTENSIONS=true
 
 This feature flag enables the Extensions functionality, which allows users to add and customize their IP Fabric instance with tailored functionality through containerized applications. Extensions can be managed through the IP Fabric UI under the **Extensions** menu.
 
-<!-- FIXME for 7.0 release
-
 For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/7.0.md#extensions-engineering-preview) for more information.
-
--->
 
 ## Deprecated Feature Flags
 
@@ -192,3 +188,4 @@ ENABLE_DISCOVERY_DEVICES_CITRIX=true
 ```
 
 This feature was permanently added to the product in the `6.9` release.
+
