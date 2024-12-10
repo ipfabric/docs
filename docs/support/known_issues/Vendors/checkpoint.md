@@ -65,7 +65,7 @@ the configuration.
 
 To successfully discover a Check Point Gateway, the correct role must be
 assigned to the user. IP Fabric requires role features to be set as read-only,
-except for "Virtual-System", where read-write is needed (only if VSX firewalls
+except for "Virtual-System", where read-write is needed (only if VSx firewalls
 are in your network; otherwise, read-only is sufficient).
 
 ![Check Point - Edit Role - ipfRole](checkpoint/checkpoint_role.png)
@@ -98,12 +98,12 @@ configured -- the user should be in the group `bin` (recommended) or be `admin`
 
 3. Click **Add** and fill in the name. In the **Features** tab, select all items
    and mark them as **Read-Only**. The following permissions from the **Extended
-   Commands** tab are needed (only if Gaia acts as a management server): `fwm`, 
+   Commands** tab are needed (only if Gaia acts as a management server): `fwm`,
    `ipf_pdp`, and `ipf_pep`.
 
-4. If you have a VSX firewall in your network, you must set the
+4. If you have a VSx firewall in your network, you must set the
    **Virtual-System** feature to **Read-Write** (we call `set virtual-system
-   \<ID>` to switch to the proper virtual system). This allows IP Fabric to
+\<ID>` to switch to the proper virtual system). This allows IP Fabric to
    change context but cannot be used for anything else.
 
 5. Assign the role to the user used for IP Fabric discovery.
@@ -114,4 +114,4 @@ configured -- the user should be in the group `bin` (recommended) or be `admin`
     features, this may change. Here is a list of currently required features for
     a minimal working setup (IP Fabric `4.0`, Gaia `R81`):
 
-    > Advanced VRRP, ARP, BGP, Cluster, Display Configuration, Domain Name, Host Name, Management Interface, Netflow Export, Network Interfaces, Network Management, NTP, OSPF, Route, Routing Monitor, SNMP, System Configuration, Virtual-System, VRRP, VSX.
+    > Advanced VRRP, ARP, BGP, Cluster, Display Configuration, Domain Name, Host Name, Management Interface, Netflow Export, Network Interfaces, Network Management, NTP, OSPF, Route, Routing Monitor, SNMP, System Configuration, Virtual-System, VRRP, VSx.

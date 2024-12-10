@@ -6,7 +6,7 @@ description: Webhooks allow you to build or set up integrations that subscribe t
 
 Webhooks allow you to build or set up integrations that subscribe to
 certain events in IP Fabric. When one of those events is
-triggered, IP Fabric will send an HTTP POST payload to the webhook's configured
+triggered, IP Fabric will send an HTTP POST payload to the webhook configured
 URL. Webhooks can be used to send notifications to the messaging tools of
 your choice or update an external issue tracker. You're only limited by
 your imagination.
@@ -29,7 +29,7 @@ reachable, it returns a bad status code, or the delivery times out), IP Fabric
 tries to deliver the webhook payload again 1, 2, 5, and 10 minutes
 after the initial delivery. If IP Fabric cannot deliver the webhook in
 these five attempts, it gives up. All delivery attempts are recorded in
-the webhook's delivery history (in the webhook's **Edit** view).
+the webhook delivery history (in the webhook **Edit** view).
 
 ## Payload Hash
 

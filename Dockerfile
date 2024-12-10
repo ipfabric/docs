@@ -18,6 +18,7 @@ RUN \
   bash \
   cairo \
   curl \
+  findutils \
   freetype-dev \
   git \
   git-fast-import \
