@@ -61,9 +61,10 @@ endpoint. The access token is then passed to the consecutive API calls in the
 
 **Access Token**
 
-: An access token is a [JSON Web Token (JWT)](https://jwt.io/) as per RFC-7519,
-signed using SHA-256 with RSA encryption. The token expires in 30 minutes since
-being generated, and it can't be revoked during its lifetime.
+: An access token is a [JSON Web Token (JWT)](https://jwt.io/) as defined by RFC-7519.
+To ensure security, these tokens are digitally signed using HMAC-SHA-512 with
+a unique, randomly generated secret. Each token expires 30 minutes after generation
+and cannot be revoked during its lifetime.
 
 : ??? info "What is inside an access token?"
 
@@ -83,6 +84,14 @@ being generated, and it can't be revoked during its lifetime.
       - `isAdmin` -- A Boolean value whether the user is an admin.
       - `aud` -- String containing the recipient for which the JWT is intended.
       - `iss` -- String containing the issuer of the JWT.
+
+!!! info
+
+    The secret is rotated every 30 days when the service `ipf-api` is
+    (re)started. This process invalidates all JWTs signed with the
+    previous secret. Consequently, all existing access tokens become
+    invalid, requiring users to sign in again after the service restarts
+    following the 30-day period.
 
 **Refresh Token**
 
