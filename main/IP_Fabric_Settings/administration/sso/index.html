@@ -5426,6 +5426,56 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#automated-sso-enablement-for-the-ipf-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated SSO enablement for the IPF Application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated SSO enablement for the IPF Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-to-run-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparing to Run the Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-configuration-apijson" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14313,6 +14363,56 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#automated-sso-enablement-for-the-ipf-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated SSO enablement for the IPF Application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated SSO enablement for the IPF Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-to-run-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparing to Run the Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-configuration-apijson" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14630,6 +14730,131 @@ osadmin@demo:~$<span class="w"> </span>sudo<span class="w"> </span>-s
 <span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>osadmin:
 root@demo:/home/osadmin#
 </code></pre></div>
+<h2 id="automated-sso-enablement-for-the-ipf-application">Automated SSO enablement for the IPF Application</h2>
+<p>Using <code>ipf-sso-setup-helper</code>, you can configure both <code>api.json</code> and
+<code>ipf-dex.yaml</code> without needing to manually go through
+<a href="#api-configuration-apijson">API Configuration</a> or
+<a href="#sso-configuration-ipf-dexyaml">SSO configuration</a> setup.</p>
+<h3 id="preparing-to-run-the-script">Preparing to Run the Script</h3>
+<p>To successfully execute the script, make sure to carefully review the following
+points:</p>
+<ul>
+<li>
+<p>Maintenance window:</p>
+<ul>
+<li>At the end of the script execution, <strong>some systems will restart</strong>, causing a
+  brief loss of connectivity with the application.</li>
+<li>Notify all users working with the appliance about this planned action in
+  advance.</li>
+<li>Ensure that no discovery or maintenance tasks are running during this time!</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Ensure that you have completed all necessary preparatory steps on your side
+  before running this script.</li>
+</ul>
+<ul>
+<li>This means that the SSO configuration <strong>must already be completed</strong> with your SSO
+  provider.</li>
+</ul>
+<ul>
+<li>
+<p>SSL certificate:</p>
+<ul>
+<li>
+<p>The certificate must be signed by a <code>Certificate Authority</code> and <strong>cannot be
+  self-signed</strong>.</p>
+<ul>
+<li>The <code>Issuer</code> of the certificate must be different from the <code>Subject</code>.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Ensure that <code>server.crt</code> and <code>server.key</code> files are correctly stored in the
+  <code>/etc/nginx/ssl/</code> directory.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>The data you need to have ready before running the script:</p>
+<ul>
+<li><code>FQDN</code> or <code>IPv4</code> address.</li>
+<li>
+<p><code>IdP name</code></p>
+<ul>
+<li>This is the name that will appear on the
+<a href="sso_button_name.png">SSO Button</a>.
+<!-- used this style instead of showing same picture twice --></li>
+</ul>
+<ul>
+<li>Only <code>a-z</code>, <code>0-9</code>, and <code>_</code> are allowed.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>SSO provider:</p>
+<ul>
+<li>Only <strong>SAML</strong>, <strong>OpenID Connect</strong> and <strong>Azure Active Directory</strong> are supported.</li>
+</ul>
+<ul>
+<li>
+<p><a href="#saml-connector">SAML</a></p>
+<ul>
+<li>CA certificate<ul>
+<li>Ensure the CA certificate is loaded on the machine (this is separate from
+  the SSL certificate).</li>
+</ul>
+</li>
+<li>SAML issuer.</li>
+<li>Sign-On URL.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><a href="#openid-connect-oidc">Open ID Connect (OIDC)</a></p>
+<ul>
+<li>Client ID.</li>
+<li>Client Secret.</li>
+<li>Issuer.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><a href="#azure">Azure Active Directory (Azure AD)</a></p>
+<ul>
+<li>Application (Client) ID.</li>
+<li>Client Secret.</li>
+<li>Directory (Tenant) ID.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-started">Getting Started</h3>
+<p>The script can only be executed from the CLI and is pre-installed on your machine
+starting from version <code>7.2.X</code>.</p>
+<p>To start the script:</p>
+<div class="highlight"><pre><span></span><code>ipf-sso-setup-helper
+</code></pre></div>
+<p>A dialogue window will appear to guide you through the entire process.</p>
+<p>Once all done, please ensure <code>/opt/ipf-api/conf.d/api.json</code> and <code>/etc/ipf-dex.yaml</code>
+have been updated by using <code>ls -l</code> command:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span>/opt/ipf-api/conf.d/api.json<span class="w"> </span>/etc/ipf-dex.yaml
+</code></pre></div>
+<p>Please ensure that the date and time reflect the last update of both files. This
+should correspond to the time when you run the script.</p>
+<h3 id="debugging">Debugging</h3>
+<p>This script does not have standard logging. While it does log its behavior, the logs
+may be somewhat difficult to interpret. For any issues, please raise a ticket with IP
+Fabric Support.</p>
+<p>Logging can be found in <code>/opt/ipf-sso-setup-helper/log/</code>.</p>
 <h2 id="api-configuration-apijson">API Configuration <code>api.json</code></h2>
 <p>The IP Fabric API configuration is stored in <code>/opt/ipf-api/conf.d/api.json</code>. This
 file needs to be created during the initial configuration, as it does not exist
@@ -15331,7 +15556,7 @@ mapped to the example <code>read-only</code> IP Fabric role.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2024</span>
   </span>
 
     
