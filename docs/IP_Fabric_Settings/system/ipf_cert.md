@@ -309,12 +309,6 @@ guide to replace the self-signed certificate manually.
     your custom certificate's `Subject Alternative Name`. Having the FQDN as the
     certificate's `Subject` or `Common Name` is not sufficient.
 
-!!! important
-
-    Only RSA certificates are supported. Any other certificate, e.g. ECDSA would
-    cause authentication failures and sing-in issues.
-
-
 1. Log in to the IP Fabric CLI as the `osadmin` user.
 
 2. Change to `root`:
