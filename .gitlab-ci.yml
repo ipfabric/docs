@@ -53,14 +53,7 @@ vale_mr:
   only:
     - merge_requests
   script:
-    - ls -al
-    - rm -rf /tmp/vale && mkdir /tmp/vale
-    - curl --fail -L -o /tmp/vale/vale.tar.gz "$VALE_RELEASE"
-    - echo "$VALE_RELEASE"
-    - tar -C /tmp/vale -zxvf /tmp/vale/vale.tar.gz
-    - apk add gcompat libstdc++ libgcc
-    - 'find docs temp_multirepo -name "*.md" \! -regex ".*/release_notes_low-level/.*" \! -regex ".*/previous_releases/.*" | xargs /tmp/vale/vale'
-    - rm -rf /tmp/vale
+    - make vale
 
 seo_lint_mr:
   stage: test

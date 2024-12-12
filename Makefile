@@ -1,5 +1,8 @@
 IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
+VALE_RELEASE=https://github.com/errata-ai/vale/releases/download/v3.9.1/vale_3.9.1_Linux_64-bit.tar.gz
 TAG=9.5.48-insiders-4.53.14
+
+.PHONY: mike vale serve
 
 serve:
 	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
@@ -14,6 +17,14 @@ venv/touchfile: requirements.txt
 mike: venv
 	. venv/bin/activate && pip uninstall -y mkdocs-material
 	. venv/bin/activate && pip install "git+ssh://git@gitlab.com/ip-fabric/documentation/mkdocs-material-insiders-mirror.git@${TAG}"
+
+vale: /tmp/vale/vale
+	find docs temp_multirepo -name "*.md" \! -regex ".*/release_notes_low-level/.*" \! -regex ".*/previous_releases/.*" | xargs /tmp/vale/vale
+
+/tmp/vale/vale:
+	rm -rf /tmp/vale && mkdir /tmp/vale
+	curl --fail -L -o /tmp/vale/vale.tar.gz "$(VALE_RELEASE)"
+	tar -C /tmp/vale -zxvf /tmp/vale/vale.tar.gz
 
 guard-%:
 	@ if [ -z "${${*}}" ]; then \
@@ -31,3 +42,4 @@ docker-build: guard-GL_DEPLOY_USER guard-GL_DEPLOY_TOKEN Dockerfile requirements
 docker-push:
 	docker push $(IMAGE):$(TAG)
 	docker push $(IMAGE):latest
+

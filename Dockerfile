@@ -18,13 +18,17 @@ RUN \
   bash \
   cairo \
   curl \
+  gcompat \
   findutils \
   freetype-dev \
   git \
   git-fast-import \
   jpeg-dev \
+  libgcc \
+  libstdc++ \
   libxml2 \
   libxslt \
+  make \
   openssh \
   zlib-dev \
   && \
