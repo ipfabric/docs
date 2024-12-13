@@ -31,7 +31,7 @@ are located**. Multiple regions can be set for one API key and secret.
 
 To ensure that IP Fabric can retrieve all the required data to model the
 AWS networks, a series of specific policies are required to be applied
-to the user account or role used for the API key. [IAM-policy-IPF_6.4.json](aws/IAM-policy-IPF_6.4.json)
+to the user account or role used for the API key. [IAM-policy-IPF_7.0.json](aws/IAM-policy-IPF_7.0.json)
 contains a JSON description of the required IAM policies.
 
 ## AWS AssumeRole
