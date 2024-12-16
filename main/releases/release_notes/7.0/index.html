@@ -8391,6 +8391,34 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v708-december-13th-2024-ea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.0.8 (December 13th, 2024; EA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.0.8 (December 13th, 2024; EA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v707-december-5th-2024-ea" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8414,7 +8442,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         New Features
@@ -14473,6 +14501,34 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v708-december-13th-2024-ea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.0.8 (December 13th, 2024; EA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.0.8 (December 13th, 2024; EA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v707-december-5th-2024-ea" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14496,7 +14552,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-features" class="md-nav__link">
+  <a href="#new-features_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         New Features
@@ -14979,6 +15035,27 @@ following key combinations:</p>
 </ul>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
+<h2 id="v708-december-13th-2024-ea">v7.0.8 (December 13<sup>th</sup>, 2024; EA)</h2>
+<h3 id="new-features">New Features</h3>
+<ul>
+<li>
+<p><strong>AWS Network Load Balancers support</strong> &ndash; data collection &amp; E2E path lookup via NLB nodes for all listener types. Path lookup via AWS private link is not supported yet.</p>
+<div class="admonition warning">
+<p class="admonition-title">Don&rsquo;t forget to update IAM policy</p>
+<p>In order to collect AWS Network Load Balancers, respective IAM policy has to be updated. You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/aws/IAM-policy-IPF_7.0.json">here</a>.
+The only difference from the previous policy is a new statement allowing all <code>Describe*</code> API endpoints in the <code>elasticloadbalancing</code> service:
+<div class="highlight"><pre><span></span><code>{
+  &quot;Sid&quot;: &quot;IPFabricElasticLoadBalancing&quot;,
+  &quot;Effect&quot;: &quot;Allow&quot;,
+  &quot;Action&quot;: [
+      &quot;elasticloadbalancing:Describe*&quot;
+  ],
+  &quot;Resource&quot;: &quot;*&quot;
+}
+</code></pre></div></p>
+</div>
+</li>
+</ul>
 <h2 id="v707-december-5th-2024-ea">v7.0.7 (December 5<sup>th</sup>, 2024; EA)</h2>
 <h3 id="post-upgrade-notices">Post-Upgrade Notices</h3>
 <p>If you are using custom Role-Based Access Control (RBAC) to restrict access to certain IP Fabric elements based on role, ensure that users have the appropriate permissions for new tables and capabilities. After the upgrade, please run the script found in the Python SDK: <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/RBAC/managed_rbac.py">Managed RBAC Configuration</a> (<code>managed_rbac.py</code>).</p>
@@ -14989,7 +15066,7 @@ following key combinations:</p>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;https://&lt;YOUR_IPF_INSTANCE_URL&gt;/api/oauth2/external/&lt;SSO_PROVIDER_NAME&gt;&quot;</span>
 </code></pre></div>
 <p>For more information, please refer to the <a href="../../../IP_Fabric_Settings/administration/sso/#static-clients">SSO documentation</a>. If you would like assistance, please contact your Solution Architect or Support Team.</p>
-<h3 id="new-features">New Features</h3>
+<h3 id="new-features_1">New Features</h3>
 <h4 id="extensions-engineering-preview">Extensions (Engineering Preview)</h4>
 <p>In the 7.0 release, we&rsquo;re introducing Extensions, a new feature that allows users to add and customize their IP Fabric instance with a tailored functionality. Extension can</p>
 <ul>
@@ -15142,25 +15219,6 @@ following key combinations:</p>
 </ul>
 <ul>
 <li><strong>AWS Direct Connect Transit VIF support</strong> &ndash; Routing via Transit Virtual Interfaces over dedicated/hosted connections is now supported in E2E path lookup. To enable this, the new task <strong>“BGP Advertised Routes” must be activated</strong> on the on-prem routers where AWS Direct Connect connections terminate. More information can be found in the <a href="#dynamic-routing">Dynamic Routing</a> section.</li>
-</ul>
-<ul>
-<li>
-<p><strong>AWS Network Load Balancers support</strong> &ndash; data collection &amp; E2E path lookup via NLB nodes for all listener types. Path lookup via AWS private link is not supported yet.</p>
-<div class="admonition warning">
-<p class="admonition-title">Don&rsquo;t forget to update IAM policy</p>
-<p>In order to collect AWS Network Load Balancers, respective IAM policy has to be updated. You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/aws/IAM-policy-IPF_7.0.json">here</a>.
-The only difference from the previous policy is a new statement allowing all <code>Describe*</code> API endpoints in the <code>elasticloadbalancing</code> service:
-<div class="highlight"><pre><span></span><code>{
-  &quot;Sid&quot;: &quot;IPFabricElasticLoadBalancing&quot;,
-  &quot;Effect&quot;: &quot;Allow&quot;,
-  &quot;Action&quot;: [
-      &quot;elasticloadbalancing:Describe*&quot;
-  ],
-  &quot;Resource&quot;: &quot;*&quot;
-}
-</code></pre></div></p>
-</div>
-</li>
 </ul>
 <h4 id="sd-wan">SD-WAN</h4>
 <ul>
@@ -15523,7 +15581,7 @@ The only difference from the previous policy is a new statement allowing all <co
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2024</span>
   </span>
 
     
