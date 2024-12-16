@@ -22,7 +22,7 @@ journalctl -f -u ipf-jumphost@<ID>.service
 ```
 
 ```shell title="To Manually Start a Jumphost"
-/usr/bin/python3 /usr/sbin/sshuttle -D -vvv -r jumphost-user@jumphost-ip x.x.x.x/yy
+/usr/bin/python3 /usr/bin/sshuttle -D -vvv -r jumphost-user@jumphost-ip x.x.x.x/yy
 ```
 
 !!! example
@@ -145,7 +145,7 @@ these steps:
 
    ```shell
    osadmin@ipfabric-server:~$ sudo systemctl | grep ipf-jumphost
-   [sudo] password for osadmin: 
+   [sudo] password for osadmin:
      ipf-jumphost@923216920.service                               loaded activating auto-restart ipf-jumphost (ID=923216920)
    ```
 
