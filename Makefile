@@ -1,6 +1,6 @@
 IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
 VALE_RELEASE=https://github.com/errata-ai/vale/releases/download/v3.9.1/vale_3.9.1_Linux_64-bit.tar.gz
-TAG=9.5.48-insiders-4.53.14
+TAG=9.5.49-insiders-4.53.14
 
 .PHONY: mike vale serve
 
