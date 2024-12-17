@@ -12,7 +12,8 @@ To add EdgeConnect to the global discovery settings, go to **Settings -->
 Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**,
 select `Silver Peak` from the list, and fill in:
 
-- **Username** and **Password** to log in to Unity Orchestrator
+- **API key**, or
+- **Username** and **Password** with **Login Type** (select `Local`, `RADIUS`, or `TACACS+`) to log in to Unity Orchestrator
 
   !!! info
 
@@ -20,8 +21,6 @@ select `Silver Peak` from the list, and fill in:
       downloaded. This is a known limitation of the orchestrator's API.
 
 - **Base URL** of Unity Orchestrator (`https://unity-orchestrator-host`)
-
-- **Login Type** -- Select `Local`, `RADIUS`, or `TACACS+`.
 
 - [**Slug**](index.md#slug-and-comment)
 
