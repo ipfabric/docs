@@ -89,9 +89,10 @@ and cannot be revoked during its lifetime.
 
     The secret is rotated every 30 days when the service `ipf-api` is
     (re)started. This process invalidates all JWTs signed with the
-    previous secret. Consequently, all existing access tokens become
-    invalid, requiring users to sign in again after the service restarts
-    following the 30-day period.
+    previous secret. Fortunately, the refresh token addresses this
+    scenario by renewing the invalid access token during any subsequent
+    request. This ensures that the user does not need to sign in again
+    after the secret rotation.
 
 **Refresh Token**
 
