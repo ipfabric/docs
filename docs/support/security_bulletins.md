@@ -10,7 +10,7 @@ our [Security Incident Response](security_incidents.md) policy.
 !!! info "Upgrade Information"
 
     Upgrade Information can be found in the
-    [System Update](../System_Administration/System_Administration_UI/system_update.md)
+    [System Update](../System_Administration/system_update.md)
     section.
 
 ## NIM-13396: Opengear -- Prevent `sudo` Password From Being Logged

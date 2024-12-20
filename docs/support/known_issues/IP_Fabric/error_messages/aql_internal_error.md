@@ -16,6 +16,5 @@ To resolve this issue, you need to perform System Maintenance:
    [Schedule System Maintenance](../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 2. If the above step does not resolve the issue, we recommend restarting the
-   ArangoDB process in **System Administration (port `8443`) -->
-   [System status](../../../../System_Administration/System_Administration_UI/system_status.md)**
+   ArangoDB process in **[System status](../../../../IP_Fabric_GUI/tips/system_status.md)**
    and then running System Maintenance again.

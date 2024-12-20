@@ -14,8 +14,7 @@ and configures basic system parameters:
    DNS servers.
 5. Configure internet proxy if used.
 6. Set the password of the `osadmin` user.
-   - This password is used for encrypting system backups and accessing the CLI
-     and the System Administration UI. 
+   - This password is used for encrypting system backups and accessing the CLI. 
 7. Set a new password for the `admin` user of the main IP Fabric user interface.
 8. Optionally, define organization parameters for the local SSL certificate.
 9. After rebooting, the console login screen will display the assigned IP

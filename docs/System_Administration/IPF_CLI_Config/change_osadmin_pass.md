@@ -21,7 +21,6 @@ description: This section explains how to change the osadmin password using IPF 
       Changing the `osadmin` password will affect:
 
       - CLI access
-      - System Administration UI access
       - backup encryption
 
       Backups created before the password change will no longer be restorable!

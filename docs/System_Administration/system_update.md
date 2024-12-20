@@ -10,26 +10,13 @@ description: This page explains how to update IP Fabric over the internet or usi
 
 The best practice is to save the virtual machine's state (VM snapshot) using
 your hypervisor. Alternatively, you may use an IP Fabric backup. To proceed with
-IP Fabric backup, follow these steps:
-
-1. In the top-right corner of the main GUI, click **Support**.
-2. Click **System Administration** to access the interface on port `8443` (e.g.,
-   `https://ipfabric-ip-or-fqdn:8443`).
-3. Log in with the `osadmin` user and the password configured during the first
-   boot.
-4. Backup the VM by following the instructions on the
-   [Restore or Backup](restore_or_backup.md) page.
-
-!!! info "Backup Disk"
-
-    The local backup disk is not present by default! To enable local backups,
-    please add a new virtual disk to your VM. (See
-    [Local Backup Disk](../increase_disk_space.md/#local-backup-disk).)
+IP Fabric backup, follow the instructions on the
+[Restore or Backup](Command_Line_Interface/How_to/backup_restore_CLI.md) page.
 
 ## Update
 
-The system update functionality has been moved to a separate service, accessible
-at `https://ipfabric-ip-or-fqdn/ipf-system-upgrade/`.
+The system update functionality is accessible at
+`https://ipfabric-ip-or-fqdn/ipf-system-upgrade/`.
 
 ![IP Fabric System Upgrade](ipf-system-upgrade.jpg)
 
