@@ -25,3 +25,5 @@ However, different vendors use different names for their native VRF:
 Simply counting unique VRF names would result in many false positives. To address this, IPF recognizes various native VRF names as equivalent. This ensures accurate VRF counting, even for native VRFs.
 
 For example, if a subnet connects to both a Juniper device (native VRF: `global`) and a Cisco NX-OS device (native VRF: `default`), IPF correctly counts this as one VRF, not two, despite the different native VRF names.
+
+For the complete list of native VRF names, refer to the [Native VRF names section](../../tips/native_vrfs.md).
