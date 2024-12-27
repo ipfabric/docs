@@ -71,20 +71,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="CVE Reporting Tool - IP Fabric Documentation Portal" />
-<meta property="og:description" content="IP Fabric SDK CVE Report CLI Tool" />
-<meta property="og:image" content="https://docs.ipfabric.io/6.10/assets/images/social/integrations/python/CLI_Tools/ipf_cve_report.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/6.10/integrations/python/CLI_Tools/ipf_cve_report/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="CVE Reporting Tool - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="IP Fabric SDK CVE Report CLI Tool" />
-<meta property="twitter:image" content="https://docs.ipfabric.io/6.10/assets/images/social/integrations/python/CLI_Tools/ipf_cve_report.png" />
- <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -5965,33 +5952,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../System_Administration/Command_Line_Interface/How_to/add_system_repositories/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    How To Add Debian System Repositories
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../System_Administration/Command_Line_Interface/How_to/jumphost_troubleshooting/" class="md-nav__link">
         
   
@@ -7717,6 +7677,33 @@
     
   
     Routing Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipf_techsupprt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TechSupport CLI Tool
   
 
     
@@ -13715,7 +13702,7 @@ Solution Architect.</p>
 </ul>
 <h1 id="documentation">Documentation</h1>
 <div class="highlight"><span class="filename">IPF CVE Report Help</span><pre><span></span><code><span class="gp"># </span>ipf_cve_report<span class="w"> </span>-h
-<span class="go">usage: ipf_cve_report.cmd [-h] [-s SNAPSHOT] [-n NVD_API_KEY] [-f FILENAME] [-t TIMEOUT] [-j]</span>
+<span class="go">usage: ipf_cve_report [-h] [-s SNAPSHOT] [-b BASE_URL] [-t TOKEN] [-u USERNAME] [-p PASSWORD] [-n NVD_API_KEY] [-f FILENAME] [-to TIMEOUT] [-l SITE_NAME] [-j]</span>
 
 <span class="go">Creates an Excel report of CVEs and EoL for devices in IP Fabric; requires:</span>
 <span class="go">Python Packages: &#39;pandas&#39; and &#39;openpyxl&#39; (`pip install ipfabric[cve]` or `pip install pandas openpyxl`)</span>
@@ -13724,12 +13711,20 @@ Solution Architect.</p>
 <span class="go">optional arguments:</span>
 <span class="go">  -h, --help            show this help message and exit</span>
 <span class="go">  -s SNAPSHOT, --snapshot SNAPSHOT</span>
-<span class="go">                        Snapshot to use which can be a UUID or one of [&#39;last&#39;, &#39;prev&#39;, &#39;lastLocked&#39;]with or without `$` for *nix compatability; default &#39;$last&#39;.</span>
+<span class="go">                        Snapshot to use which can be a UUID or one of [&#39;last&#39;, &#39;prev&#39;, &#39;lastLocked&#39;]with or without `$` for *nix compatability.</span>
+<span class="go">  -b BASE_URL, --base-url BASE_URL</span>
+<span class="go">                        Base URL for IPFabric API or IPF_URL env variable.</span>
+<span class="go">  -t TOKEN, --token TOKEN</span>
+<span class="go">                        IP Fabric API Token or IPF_TOKEN env variable.</span>
+<span class="go">  -u USERNAME, --username USERNAME</span>
+<span class="go">                        IP Fabric username (requires --password) or IPF_USERNAME env variable.</span>
+<span class="go">  -p PASSWORD, --password PASSWORD</span>
+<span class="go">                        IP Fabric password or IPF_PASSWORD env variable.</span>
 <span class="go">  -n NVD_API_KEY, --nvd-api-key NVD_API_KEY</span>
 <span class="go">                        NVD_API_KEY from https://nvd.nist.gov/developers/request-an-api-key</span>
 <span class="go">  -f FILENAME, --filename FILENAME</span>
 <span class="go">                        Filename to save, defaults to CVE_report.(xlsx|json). Extension will always be corrected to either &#39;.xlsx&#39; or &#39;.json&#39;.</span>
-<span class="go">  -t TIMEOUT, --timeout TIMEOUT</span>
+<span class="go">  -to TIMEOUT, --timeout TIMEOUT</span>
 <span class="go">                        Timeout for NIST API (Int, Float, or None); default 60 seconds.</span>
 <span class="go">  -l SITE_NAME, --site-name SITE_NAME</span>
 <span class="go">                        Filter on a specific site name (location); case-insensitive equals search.</span>
@@ -13822,7 +13817,7 @@ Solution Architect.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 27, 2024</span>
   </span>
 
     
