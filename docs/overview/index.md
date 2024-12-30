@@ -26,11 +26,15 @@ For a seamless experience, we recommend using a browser at Full HD (1920 × 1080
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popcnt`, `sse`, `sse2`, `sse4.1`, `sse4.2`, `sse4a`, and `ssse3`. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of HDD space, with an additional 50 MB per network device.
+The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popcnt`, `sse`, `sse2`, `sse4.1`, `sse4.2`, `sse4a`, and `ssse3`. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of disk space, with an additional 50 MB per network device.
+
+!!! info "Solid State Storage Recommendation"
+
+    For optimal performance, we recommend using solid-state drives (SSDs) with a minimum of 2000 IOPS for virtual machine storage. Replacing traditional spinning disks with solid-state drives (SSDs) will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 The minimum requirements are:
 
-| CPU | RAM   | HDD   |
+| CPU | RAM   | Disk  |
 | --- | ----- | ----- |
 | 4   | 16 GB | 90 GB |
 
@@ -38,7 +42,7 @@ Since every network environment is different, we cannot recommend one general se
 
 For networks with medium complexity and many access points (>50%) or networks with basic complexity (simple dynamic routing, few or no VRFs, small sites):
 
-| Devices | CPU |    RAM |      HDD |
+| Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
 |     500 |   4 |  16 GB |    90 GB |
 |   1 000 |   8 |  16 GB |    90 GB |
@@ -49,7 +53,7 @@ For networks with medium complexity and many access points (>50%) or networks wi
 
 For networks with complex configurations (large routing tables, many VRFs, many STP domains, large MAC and ARP tables, etc.) and few or no access points (<20%):
 
-| Devices | CPU |    RAM |      HDD |
+| Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
 |     500 |   4 |  24 GB |    90 GB |
 |   1 000 |   8 |  36 GB |   100 GB |
@@ -60,7 +64,7 @@ For networks with complex configurations (large routing tables, many VRFs, many 
 
 For managed service provider (MSP) networks:
 
-| Devices | CPU |    RAM |     HDD |
+| Devices | CPU |    RAM |    Disk |
 | ------: | --: | -----: | ------: |
 |     500 |   8 |  40 GB |  150 GB |
 |   1 000 |  12 |  70 GB |  250 GB |
