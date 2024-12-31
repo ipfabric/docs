@@ -22,7 +22,7 @@ Type**):
 - [Prisma](PaloAlto_Prisma.md)
 - [Ruckus Virtual SmartZone](Ruckus_Virtual_SmartZone.md)
 - [Silver Peak](Silver_Peak_SD-WAN.md)
-- [VeloCloud](VeloCloud.md)
+- [VeloCloud](VeloCloud_SD-WAN.md)
 - [Versa](Versa_Networks_SD-WAN.md)
 - [Viptela](Cisco_Viptela_SD-WAN.md)
 - [VMware NSX-T](VMware_NSX-T.md)
