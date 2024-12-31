@@ -2,7 +2,7 @@
 description: This section contains information on how to set up API discovery for VeloCloud.
 ---
 
-# VeloCloud
+# VeloCloud SD-WAN
 
 Starting from version `6.9.0`, IP Fabric supports the VeloCloud Orchestrator
 API.  This feature can be activated using [a feature
