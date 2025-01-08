@@ -198,16 +198,12 @@ changed. Below is a full example of the `api.json` config file:
             "roleId": null
           },
           {
-            "groupName": "admin",
-            "roleId": "admin"
+            "groupName": "read-only-group-SSO",
+            "roleName": "read-only-role-IPF"
           },
           {
-            "groupName": "read",
-            "roleId": "2356575453"
-          },
-          {
-            "groupName": "read-only-users",
-            "roleName": "read-only-users"
+            "groupName": "admin-group-SSO",
+            "roleName": "admin"
           }
         ]
       }
@@ -215,12 +211,6 @@ changed. Below is a full example of the `api.json` config file:
   }
 }
 ```
-
-!!! note "`roleName`"
-
-    In IP Fabric version `6.1.0`, we added the option to use `roleName` in the
-    SSO configuration. For consistency and human readability, we recommend
-    switching from `roleId` to `roleName`.
 
 ??? example "JSON Validation"
 
