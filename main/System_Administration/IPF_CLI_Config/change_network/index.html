@@ -14165,6 +14165,11 @@ IP Fabric appliance from the CLI, follow these steps:</p>
 <p>To keep the current configuration for any item, select <code>OK</code> and press
 <code>Enter</code>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you will choose to not configure IPv6 network, current IPv6
+configuration will be removed.</p>
+</div>
 </li>
 <li>
 <p>The first two options are to modify the hostname and the DNS domain name.
@@ -14178,13 +14183,44 @@ IP Fabric appliance from the CLI, follow these steps:</p>
 <li>
 <p>If you selected static IP address assignment, then enter:</p>
 <ul>
-<li>IP address</li>
-<li>netmask</li>
+<li>IP address and prefixlen in format <code>address/prefixlen</code></li>
 <li>gateway</li>
-<li>primary DNS</li>
-<li>secondary DNS</li>
 </ul>
 <p><a class="glightbox" href="../change_static_ip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure a static IP" src="../change_static_ip.png" /></a></p>
+</li>
+<li>
+<p>Next, answer if you want to configure IPv6 network</p>
+<p><a class="glightbox" href="../question_ipv6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IPv6 configuration question" src="../question_ipv6.png" /></a></p>
+</li>
+<li>
+<p>If you chose to configure IPv6 network, select IPv6 configuration type.
+   Use the <code>up</code>/<code>down</code> and <code>Space</code> keys to change <code>()</code> to <code>(*)</code>.</p>
+<p><a class="glightbox" href="../change_ipv6_configuration_type.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IPv6 configuration type" src="../change_ipv6_configuration_type.png" /></a></p>
+</li>
+<li>
+<p>If you selected <code>static</code> IPv6 configuration, then enter</p>
+<ul>
+<li>IPv6 address and prefixlen in form <code>address/prefixlen</code></li>
+<li>IPv6 gateway</li>
+</ul>
+<p><a class="glightbox" href="../change_static_ipv6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure a static IPv6" src="../change_static_ipv6.png" /></a></p>
+</li>
+<li>
+<p>If you selected <code>auto</code> IPv6 configuration, then answer if you want to run
+   Recursive DNS server daemon which reads DNS resolvers addresses from router
+   advertisements and adds them to DNS configuration.</p>
+<p><a class="glightbox" href="../question_rdnssd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Run RDNSSD question" src="../question_rdnssd.png" /></a></p>
+</li>
+<li>
+<p>Next, insert IP addresses of DNS resolvers. If you chose to use IPv6,
+   then you can use both IPv4 and IPv6 addresses, otherwise IPv4 only.
+   If you selected static configuration, then at least one resolver address
+   is required.</p>
+<p><a class="glightbox" href="../change_dns_resolvers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure DNS resorvers" src="../change_dns_resolvers.png" /></a></p>
+</li>
+<li>
+<p>Confirm or change FQDN which will be resolved during DNS tests.</p>
+<p><a class="glightbox" href="../change_dns_test_fqdn.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Configure FQDN for DNS tests" src="../change_dns_test_fqdn.png" /></a></p>
 </li>
 <li>
 <p>Select <code>Yes</code> to reboot the system:</p>
@@ -14211,7 +14247,7 @@ IP Fabric appliance from the CLI, follow these steps:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2025</span>
   </span>
 
     
