@@ -65,16 +65,7 @@ versions:
 
    - **Jumphost Address** -- _(mandatory)_ IP address or FQDN name.
 
-    !!! tip "Custom Port"
-     
-        If you want to use a custom port for the jumphost connection, please use
-        the following format:
-
-        ```
-        IP/FQDN:PORT
-        ```
-
-        ![Add Jumphost form - custom port](jumphost/jumphost_custom_port.png)
+   - **Port** -- _(optional)_  Port number to connect. Defaults to the standard 22 if not specified.
 
    - **IPv4 subnets** -- _(mandatory)_ Subnet in CIDR representation. Allows
      adding more than one, separated with spaces. The subnet `0.0.0.0/0` cannot
