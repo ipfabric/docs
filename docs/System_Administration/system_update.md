@@ -54,8 +54,9 @@ use offline update:
 
 1. Download the latest update file from
    <https://releases.ipfabric.io/updates/>.
-2. Go to `https://ipfabric-ip-address/ipf-system-upgrade/` and log in with the
-   `osadmin` user and the password configured during the first
+2. Go to `https://ipfabric-ip-address/ipf-system-upgrade/` (you can go there
+   using the **Support --> Manual Upgrade** link in top right corner of main GUI)
+   and log in with the `osadmin` user and the password configured during the first
    boot.
 3. In the **Upload upgrade package** section, choose the update file from your
    computer.
