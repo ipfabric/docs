@@ -27,5 +27,16 @@ list, select type of authentication, and fill in the following details:
 ![Add Connection - VeloCloud - username](velocloud/VeloCloud_username.png)
 ![Add Connection - VeloCloud - API token](velocloud/VeloCloud_token.png)
 
-Please note that VeloCloud discovery utilizes both REST API and WebSocket
+Please note that since version `7.0` VeloCloud discovery utilizes both REST API and WebSocket
 connections for network discovery.
+
+For successful discovery, Edge devices **must be** running software versioned `5.0.0` or newer, see
+[WebSocket API documentation](https://developer.broadcom.com/xapis/vmware-sd-wan-remote-diagnostics-websocket-api/latest/).
+
+!!! Warning "Edge devices **not** running on version `5.0.0` or newer"
+
+    If your Edge devices are **not** running on version `5.0.0` or newer, there are workarounds available
+    to ensure continued functionality. Specifically, you need to add the tasks **ARP**, **Routing Table**
+    and **L2 Interfaces** to the **Disabled Discovery Tasks** list. For detailed documentation on how to
+    perform this, see [Adding a New Disabled Discovery Task](../disabled_discovery_tasks.md#example-of-adding-a-new-disabled-discovery-task).
+    Ensure that you fill in `velocloud` as a family while disabling tasks.
