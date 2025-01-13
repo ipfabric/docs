@@ -10,7 +10,7 @@ Discovery creates a snapshot of the network, finding all active network infrastr
 
 The process is controlled with the **Start discovery** and **Stop** buttons in the **Discovery Snapshot** section of the IP Fabric web UI.
 
-![Start discovery button](cli_discovery/start.png) ![Stop button](cli_discovery/stop.png)
+![Start discovery button](CLI_discovery/start.png) ![Stop button](CLI_discovery/stop.png)
 
 You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
 --> Create Snapshots Periodically** to automatically run a network discovery at
@@ -21,7 +21,7 @@ discovery at least once a day to capture any network changes.
 
 A connection to every attempted address either succeeds or is recorded in the **Connectivity Report**:
 
-![Connectivity Report button](cli_discovery/connectivity_report.png)
+![Connectivity Report button](CLI_discovery/connectivity_report.png)
 
 which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.
 
@@ -38,7 +38,7 @@ The selected number of megabits per second also controls the number of simultane
 
 Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to log in to the default gateway and to responders of ICMP probes returning from the traceroute to the `10.0.0.0` network address.
 
-![Discovery process schema](cli_discovery/discovery.png)
+![Discovery process schema](CLI_discovery/discovery.png)
 
 After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
 
@@ -68,7 +68,7 @@ There's another check in the flow, which connects to the IP address and starts t
 ```mermaid
 flowchart TD
     IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an interface\non an already discovered device?}
-    
+
     AlreadyDiscoveredDevice -->|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
     AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
     CollectsSN --> ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in the queue.]]
@@ -76,7 +76,7 @@ flowchart TD
     ComparesSN --> AlreadyInQueue{Is the device already\nin the Discovery queue?}
     AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
     AlreadyInQueue -->|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
-    
+
     style IPFDiscovers fill:#33dd00
     style IPFStops fill:#dd3300
     style IPFWontConnect fill:#dd3300
@@ -84,14 +84,14 @@ flowchart TD
 
 You can see the results of the process in **Discovery Snapshot --> Connectivity Report**:
 
-![Discovery Connectivity Report table](cli_discovery/already_discovered_or_in_queue.png)
+![Discovery Connectivity Report table](CLI_discovery/already_discovered_or_in_queue.png)
 
 !!! tip "Deliberate Duplicate IPs"
 
-    Since the `7.0` release, you can override this behavior (if you use the same 
-    IP ranges in different VRFs within your management network) and configure 
+    Since the `7.0` release, you can override this behavior (if you use the same
+    IP ranges in different VRFs within your management network) and configure
     [Duplicate IPs Discovery](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/duplicate_ips_discovery.md).
 
     Between versions `6.4` and `6.9`, the same was possible with a feature flag
-    (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) and help from the 
+    (`SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP`) and help from the
     [Support](../../support/index.md) team.
