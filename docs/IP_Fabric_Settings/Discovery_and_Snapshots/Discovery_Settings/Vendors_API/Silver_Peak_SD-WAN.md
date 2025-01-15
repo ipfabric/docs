@@ -17,8 +17,11 @@ select `Silver Peak` from the list, and fill in:
 
   !!! info
 
-      If the user has just read-only rights, the ARP table will **not** be
-      downloaded. This is a known limitation of the orchestrator's API.
+      When RBAC is used, the user or API key must have at lest the **Monitor** role
+      priviledges. If the user has only `read-only` permissions, all broadcast CLI API
+      calls will **not** function. Consequently, the ARP table will **not** be collected.
+      For all affected tasks, please refer to the [Feature Matrix](https://matrix.ipfabric.io).
+      This is a known limitation of the orchestrator's API.
 
 - **Base URL** of Unity Orchestrator (`https://unity-orchestrator-host`)
 
