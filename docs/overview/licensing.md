@@ -39,6 +39,7 @@ Currently, these are at least:
 | AWS Networking Object  | IP Fabric |
 | ---------------------- | --------- |
 | Direct Connect gateway | `dxgw`    |
+| Elastic Load Balancer  | `elb`     |
 | Internet gateway       | `igw`     |
 | NAT gateway            | `nat`     |
 | Transit gateway        | `tgw`     |
