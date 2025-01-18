@@ -116,6 +116,13 @@ Since `6.5.0`, Nokia SROS (Service Router Operating System) devices can be disco
 ```
 ENABLE_DISCOVERY_DEVICES_NOKIA=true
 ```
+### Opengear ACM/CM/OM support
+
+Since `7.0.0`, Opengear ACM/CM/OM devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_OPENGEAR_OM_CM_ACM=true
+```
 
 ### Opengear `$` Prompt Detection
 
@@ -127,12 +134,14 @@ Since `6.7.0`, the `$` prompt can be enabled for Opengear devices by adding the 
 ENABLE_OPENGEAR_DOLLAR_PROMPT=true
 ```
 
-### Opengear ACM/CM/OM support
+### Opengear `#` Prompt Detection
 
-Since `7.0.0`, Opengear ACM/CM/OM devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+Opengear can be configured with only the `#` sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.
+
+Since `7.2.0`, the `#` prompt can be enabled for Opengear devices by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
 ```
-ENABLE_DISCOVERY_DEVICES_OPENGEAR_OM_CM_ACM=true
+ENABLE_OPENGEAR_HASH_PROMPT=true
 ```
 
 ### Extensions (Added in 7.0)
