@@ -14367,7 +14367,7 @@ infrastructure.</p>
 </ul>
 </li>
 </ul>
-<p>The plan is to add support of the <a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview">Load Balancer</a> in one of the upcoming releases.</p>
+<p>Since version <code>7.2</code>, IP Fabric has introduced support for Load Balancers and Application Gateways.</p>
 <h2 id="azure-setup">Azure Setup</h2>
 <p>To add Azure devices to the global discovery settings, go to <strong>Settings &rarr;
 Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Vendors API</strong>, click <strong>+ Add</strong>,
@@ -14412,38 +14412,46 @@ and select <code>Azure</code> from the list.</p>
 </li>
 </ol>
 <h3 id="role-definitions-for-ip-fabric">Role Definitions for IP Fabric</h3>
-<p>The following JSON format applies to IP Fabric version <code>6.7</code> and above:</p>
-<div class="highlight"><span class="filename">azure-role-6_7.json</span><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;roleName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot; IPF discovery role 6.7&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Permissions needed for IP Fabric to discover Azure network infrastructure&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;assignableScopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">      </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">{</span>
-<span class="w">              </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Compute/galleries/images/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/instanceView/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/vmSizes/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/*/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/connections/getikesas/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveNetworkSecurityGroups/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveRouteTable/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/virtualHubs/effectiveRoutes/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getbgppeerstatus/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getlearnedroutes/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Network/vpnGateways/vpnConnections/vpnLinkConnections/getikesas/action&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Resources/subscriptions/locations/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Resources/subscriptions/resourceGroups/read&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="s2">&quot;Microsoft.Resources/subscriptions/read&quot;</span>
-<span class="w">              </span><span class="p">],</span>
-<span class="w">              </span><span class="nt">&quot;notActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">              </span><span class="nt">&quot;dataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">              </span><span class="nt">&quot;notDataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">      </span><span class="p">]</span>
+<p>The following JSON format applies to IP Fabric version <code>7.2</code> and above:</p>
+<div class="highlight"><span class="filename">azure-role-7_2.json</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;roleName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IPF discovery role 7.2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Permissions needed for IP Fabric to discover Azure network infrastructure&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;assignableScopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">        </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;actions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/galleries/images/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/instanceView/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachines/vmSizes/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/*/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/connections/getikesas/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveNetworkSecurityGroups/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/networkInterfaces/effectiveRouteTable/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualHubs/effectiveRoutes/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getbgppeerstatus/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/virtualNetworkGateways/getlearnedroutes/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/vpnGateways/vpnConnections/vpnLinkConnections/getikesas/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Resources/subscriptions/locations/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Resources/subscriptions/resourceGroups/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Resources/subscriptions/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/loadBalancers/loadBalancingRules/health/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/loadBalancers/health/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/loadBalancers/backendAddressPools/health/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/applicationGateways/getBackendHealthOnDemand/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Network/applicationGateways/backendhealth/action&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachineScaleSets/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachineScaleSets/virtualMachines/read&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Microsoft.Compute/virtualMachineScaleSets/networkInterfaces/read&quot;</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;notActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;dataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;notDataActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
 </code></pre></div>
 <h2 id="what-counts-against-ip-fabric-license">What Counts Against IP Fabric License</h2>
 <p>See <a href="../../../../../overview/licensing/#azure">Licensing &ndash; Azure</a>.</p>
@@ -14467,7 +14475,7 @@ and select <code>Azure</code> from the list.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2025</span>
   </span>
 
     
