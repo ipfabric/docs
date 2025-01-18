@@ -59,6 +59,8 @@ Currently, these are at least:
 | Virtual Network          | `vnet`    |
 | Virtual Network gateway  | `vngw`    |
 | VPN gateway              | `vpngw`   |
+| Load Balancer            | `lb`      |
+| Application Gateway      | `appgw`   |
 
 ### GCP
 

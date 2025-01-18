@@ -18,7 +18,7 @@ infrastructure.
   - VPN Gateway (the same functionality as VNGw type VPN)
   - ExpressRoute Gateway (the same functionality as VNGw type ExpressRoute)
 
-The plan is to add support of the [Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) in one of the upcoming releases.
+Since version `7.2`, IP Fabric has introduced support for Load Balancers and Application Gateways.
 
 ## Azure Setup
 
@@ -69,10 +69,10 @@ Search for **Subscriptions** and select the subscription you like to add to IP F
 
 ### Role Definitions for IP Fabric
 
-The following JSON format applies to IP Fabric version `6.7` and above:
+The following JSON format applies to IP Fabric version `7.2` and above:
 
-```json title="azure-role-6_7.json"
---8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-6_7.json"
+```json title="azure-role-7_2.json"
+--8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_2.json"
 ```
 
 ## What Counts Against IP Fabric License
