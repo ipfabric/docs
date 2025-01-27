@@ -2,12 +2,18 @@
 description: In this section, we discuss snapshots, scheduling, retention rules, and how they work.
 ---
 
+
 # Snapshot Retention
 
 ## Create Snapshots Periodically
 
+
 For [change management](../../IP_Fabric_GUI/management/changes.md), it is necessary to regularly run IP Fabric discovery. A periodic discovery run can be scheduled
 in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create Snapshots Periodically**.
+
+Set the **snapshot start time** to schedule snapshots minutely, hourly, daily, weekly, monthly, or yearly. Configuring the **snapshot start time** ensures snapshots are taken exactly when required. Once configured, the process will execute automatically according to your specified schedule.
+
+#### Configure Snapshot Start Time
 
 Here is an example of an automatic discovery run at **10 minutes past
 every hour** (0:10, 1:10, 2:10, 3:10, etc.).
