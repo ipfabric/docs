@@ -83,6 +83,7 @@ Supported device properties:
 - Login Ip
 - Domain
 - API Slug
+- Attributes (via an attribute name)
 
 Support tables:
 
