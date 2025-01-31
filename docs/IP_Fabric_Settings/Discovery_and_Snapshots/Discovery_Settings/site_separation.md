@@ -151,7 +151,7 @@ Read more about regular expression and assertion at <https://developer.mozilla.o
 
 ![Device Neighborship](site_separation/device_neighborship.png)
 
-This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard, such as those in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct Site.
+For devices not matching prior rules (e.g., non-standard configurations, DMZ devices, or Day 0 unconfigured systems), the site name is inherited from **CDP/LLDP-connected peers**, **STP topology neighbors**, or devices in the same **L3 network**, in order of priority. If linked to a rule-matched device, IP Fabric intelligently groups the device to the correct site, ensuring accurate placement.
 
 ## Manual Site Separation (Device Attributes)
 
