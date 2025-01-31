@@ -13,7 +13,7 @@ The table below offers an overview of the native VRF names for all supported dev
 | `alcatel` | `aos` | `default` |
 | `arista` | `eos` | `default` |
 | `azure` | *n/a* | *n/a* |
-| `aws` | `ec2` | *n/a* |
+| `aws` | *n/a* | *n/a* |
 | `brocade` | `fastiron` | `default-vrf` |
 | `checkpoint` | `gaia` | `0` |
 | `checkpoint` | `gaia-embedded` | *n/a* |
