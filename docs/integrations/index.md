@@ -4,15 +4,22 @@ description: This section is about the integrations available for IP Fabric.
 
 # IP Fabric Integrations
 
+!!! tip
+
+    Please use the `main` branch when viewing on the 
+    [IP Fabric Documentation Portal](https://docs.ipfabric.io/main/integrations/) for all Integrations. These 
+    documents are not versioned. However, you can find versioned files in the GitLab releases.
+
 IP Fabric's integrations streamline network management by merging with existing tools, like monitoring, automation, and
 security platforms. This enhances network visibility, simplifies troubleshooting, automates tasks, and fortifies
 security. These integrations foster efficient operations, proactive issue resolution, and robust protection, crucial in
 the dynamic landscape of modern networking.
 
 | Integration Documentation                                                                                  | Location(s)                                                                                                                                                       |
-|------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Ansible](https://ipfabric-ansible.readthedocs.io/en/latest/)                                              | [`ipfabric-ansible` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-ansible)                                                                           |
 | Grafana                                                                                                    | [`ipfabric-grafana` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-grafana)                                                                           |
+| Infoblox                                                                                                   | [`ipfabric-infoblox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-infoblox)                                                                         |
 | [Itential IP Fabric Adapter](https://www.itential.com/tech-partners/ipfabric/)                             | [`adapter-ipfabric` GitLab](https://gitlab.com/itentialopensource/adapters/telemetry-analytics/adapter-ipfabric)                                                  |
 | [Nautobot ChatOps IP Fabric](https://docs.nautobot.com/projects/chatops/en/latest/user/ipfabric_commands/) | [`nautobot-plugin-chatops` GitHub](https://github.com/nautobot/nautobot-plugin-chatops)<br/>[`nautobot-chatops` PyPI](https://pypi.org/project/nautobot-chatops/) |
 | [Nautobot SSoT IP Fabric](https://docs.nautobot.com/projects/ssot/en/latest/user/integrations/ipfabric/)   | [`nautobot-plugin-ssot` GitHub](https://github.com/nautobot/nautobot-plugin-ssot)<br/>[`nautobot-ssot` PyPI](https://pypi.org/project/nautobot-ssot/)             |
