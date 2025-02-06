@@ -2508,6 +2508,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ipsec-vxlan-tunnel-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPsec &amp; VXLAN tunnel endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14704,6 +14715,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ipsec-vxlan-tunnel-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPsec &amp; VXLAN tunnel endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14930,6 +14952,18 @@ traffic.</p>
 <p><a class="glightbox" href="../pathlookup/pathlookup_continue.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Path lookup continue" src="../pathlookup/pathlookup_continue.png" /></a></p>
 <p>If <strong>Continue</strong> is selected, the path lookup continues and does not apply the 
 policy&rsquo;s deny; in the detail pane, it is labeled as <code>(not applied)</code>.</p>
+<h3 id="ipsec-vxlan-tunnel-endpoints">IPsec &amp; VXLAN tunnel endpoints</h3>
+<p>To simplify the identification of where IPsec and VXLAN tunnels begin and terminate, especially when spanning multiple devices, direct links between
+tunnel endpoints are now displayed in path lookups. You can examine these links by right-clicking the connection and selecting <code>Show packet detail</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently enabled by default and cannot be disabled.</p>
+</div>
+<p>If multiple tunnels of the same type exist between two devices (where the type is either IPsec or VXLAN), only a single tunnel of that type will be displayed.
+In some cases, new connections may not be visible if a tunnel connection overlaps with an existing connection, for example:</p>
+<p><a class="glightbox" href="../ipsec_edge_overlapping.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IPsec connection overlapping with existing connections" class="center" src="../ipsec_edge_overlapping.png" width="473" /></a></p>
+<p>To resolve this, move the middle device to a different position:</p>
+<p><a class="glightbox" href="../ipsec_edge_overlapping_resolved.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IPsec connection overlapping resolved by moving device" class="center" src="../ipsec_edge_overlapping_resolved.png" width="473" /></a></p>
 <h2 id="multicast-tree-lookup">Multicast Tree Lookup</h2>
 <p>If you want to understand how a certain multicast flow is used, you can use
 the <strong>Multicast Tree Lookup</strong> tab. Just select the correct option and
@@ -14987,7 +15021,7 @@ the bars up or down.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
   </span>
 
     
