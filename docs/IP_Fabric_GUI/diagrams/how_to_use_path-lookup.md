@@ -123,6 +123,24 @@ traffic.
 If **Continue** is selected, the path lookup continues and does not apply the 
 policy's deny; in the detail pane, it is labeled as `(not applied)`.
 
+### IPsec & VXLAN tunnel endpoints
+
+To simplify the identification of where IPsec and VXLAN tunnels begin and terminate, especially when spanning multiple devices, direct links between
+tunnel endpoints are now displayed in path lookups. You can examine these links by right-clicking the connection and selecting `Show packet detail`.
+
+!!! warning
+
+    This feature is currently enabled by default and cannot be disabled.
+
+If multiple tunnels of the same type exist between two devices (where the type is either IPsec or VXLAN), only a single tunnel of that type will be displayed.
+In some cases, new connections may not be visible if a tunnel connection overlaps with an existing connection, for example:
+
+![IPsec connection overlapping with existing connections](ipsec_edge_overlapping.png){ width="473" .center}
+
+To resolve this, move the middle device to a different position:
+
+![IPsec connection overlapping resolved by moving device](ipsec_edge_overlapping_resolved.png){ width="473" .center}
+
 ## Multicast Tree Lookup
 
 If you want to understand how a certain multicast flow is used, you can use
