@@ -20,6 +20,4 @@ However, if the number exceeds this threshold, IP Fabric will only collect
 routes from other available routing protocols on the device. In this scenario,
 no BGP routes from the routing table will be collected.
 
-The lowest limit currently available is 10000 BGP routes.
-
 ![Limit download of BGP routes](limit-bgp-routes.png)
