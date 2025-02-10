@@ -89,6 +89,7 @@ Support tables:
 
 - **Inventory**
   - **Part numbers**
+  - **Devices**
   - **Interfaces**
   - **End of Life Milestones**
     - Detail
