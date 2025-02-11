@@ -289,7 +289,7 @@ issuer: https://<FQDN>/dex
 staticClients:
   - id: ipfabric
     redirectURIs:
-      - "https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>"
+      - "https://<FQDN>/api/v6/auth/external/<API-DEX-PROVIDERS-NAME>"
     name: IP Fabric
     secret: <RANDOM_SECRET>
 
@@ -385,10 +385,7 @@ which acts as a client to `dex`.
 staticClients:
   - id: ipfabric
     redirectURIs:
-      # IPF version `<7.0.0` URL can be set to `v<Major>` only
       - "https://demo.ipfabric.io/api/v6/auth/external/sso"
-      # IPF version `>=7.0.0` URL can be set without a version of the application
-      - "https://demo.ipfabric.io/api/oauth2/external/sso"
     name: IP Fabric
     secret: jqv-W_khLSwJdJMHCjhJefyu-QdeXq9kcz8sAfMrO1Q
 ```
@@ -399,7 +396,7 @@ staticClients:
 - `redirectURIs` -- Full path to the callback endpoint of the IP Fabric client.
 
   - It is in the format of
-    `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`
+    `https://<FQDN>/api/v6/auth/external/<API-DEX-PROVIDERS-NAME>`
   - `API-DEX-PROVIDERS-NAME` is found in [`api.json`](#providers-configuration)
     for `name` under `providers`.
 
@@ -408,7 +405,7 @@ staticClients:
     !!! note "`redirectURIs` After Upgrade to `7.0.0`"
 
         In IP Fabric versions `<7.0.0`, the `redirectURIs` only included the
-        major version: `https://<FQDN>/api/v6/auth/external/sso`.
+        major version: `https://<FQDN>/api/v6/auth/external/<API-DEX-PROVIDERS-NAME>`.
 
         Starting from version `>=7.0.0`, the redirect URI has been modified to
         exclude the application's version:
