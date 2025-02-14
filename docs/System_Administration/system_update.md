@@ -25,10 +25,16 @@ The system update functionality is accessible at
 Online updates are automatically available only when the IP Fabric appliance has
 connectivity to the following servers:
 
-- `callhome.ipfabric.io` remote port `443/tcp` for update availability check
+- `versions.ipfabric.io` remote port `443/tcp` for update availability check
 - `releases.ipfabric.io` remote port `443/tcp` for update package download
 
 --8<-- "snippets/allowlist_fqdn.md"
+
+The upgrade service use following User-Agent headers:
+
+- `IPF System Upgrade Run Upgrade Service (appliance version: .*)`
+- `IPF System Upgrade Version Fetcher (appliance version: .*)`
+
 
 When a new IP Fabric version is available, a green indicator will appear in the
 top-right corner of the main GUI.
