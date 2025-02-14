@@ -25,7 +25,7 @@ The system update functionality is accessible at
 Online updates are automatically available only when the IP Fabric appliance has
 connectivity to the following servers:
 
-- `versions.ipfabric.io` remote port `443/tcp` for update availability checks.
+- `version.ipfabric.io` remote port `443/tcp` for update availability checks.
 - `releases.ipfabric.io` remote port `443/tcp` for update package downloads.
 
 --8<-- "snippets/allowlist_fqdn.md"
