@@ -13,7 +13,7 @@ Fabric will only use the current `Discovery History` database (in **Management
 new network devices**.
 
 If this limit is disabled, the discovery process will crawl through the whole
-network, using the selected methods for new device detection (ARP, CDP/LLDP,
+network, using the selected methods for new device detection (ARP, ACI Endpoints, CDP/LLDP,
 Routing Table records, or a Traceroute). The default is to use all available
 options.
 
