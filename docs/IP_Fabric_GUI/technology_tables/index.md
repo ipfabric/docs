@@ -69,7 +69,7 @@ available to all users.
 
 #### Device-based advanced filters
 
-![Device Filters](table_device_filters.png)
+![Device Filters](table_device_filters.png){ width=250 .center }
 
 Supported device properties:
 
@@ -85,541 +85,21 @@ Supported device properties:
 - API Slug
 - Attributes (via an attribute name)
 
-Support tables:
+These filters are available in **most—though not all—tables**. Certain tables, such as **Site Summary tables**, do not support device-based property filtering.  
+For detailed information, consult the **`Rapidoc`** documentation specific to your chosen table.
 
-- **Inventory**
-  - **Part numbers**
-  - **Devices**
-  - **Interfaces**
-  - **End of Life Milestones**
-    - Detail
-- **Technology**
-  - **Platforms**
-    - Cisco FEX
-      - Interfaces
-    - Cisco VSS
-      - VSS
-      - Chassis
-      - VSL
-    - PoE
-      - Devices
-      - Interfaces
-      - Modules
-    - Stacks
-      - Stacks
-      - Members
-      - Stack Ports
-    - Environment
-      - Power Supplies
-      - Power Supplies Fans
-      - Fans
-      - Modules
-      - Temperature sensors
-    - Cisco FabricPath
-      - Summary
-      - IS-IS neighbors
-      - Switch IDs
-      - Routes
-    - Logical Devices
-  - **Interfaces**
-    - Current Rates - Data
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Data
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Errors
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Drops
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Duplex
-    - Connectivity matrix
-      - Connectivity Matrix
-    - Switchport
-    - MTU
-    - Storm Control
-      - Broadcast
-      - Unicast
-      - Multicast
-      - All traffic
-    - Transceivers
-      - Inventory
-      - Statistics
-      - Triggered thresholds
-      - Errors
-    - PPPoE
-      - PPPoE sessions
-    - Counters
-      - Inbound
-      - Outbound
-    - Tunnels
-      - IPv4 Tunnels
-      - IPv6 Tunnels
-  - **CDP/LDP**
-    - All neighbors
-    - Unmanaged neighbors
-    - Unidirectional neighbors
-    - Endpoints neighbors
-  - **DHCP**
-    - Relay
-      - Interfaces
-      - Interfaces stats
-        - Received
-        - Relayed
-        - Sent
-      - Global Stats
-        - Summary
-        - Received
-        - Relayed
-        - Sent
-    - Server
-      - Summary
-      - Pools
-      - Leases
-      - Excluded Ranges
-      - Interfaces
-  - **Port channels**
-    - Inbound Balancing table
-    - Outbound Balancing table
-    - Member status table
-    - MLAG
-      - Switches
-      - Peer links
-      - Pairs
-      - Cisco VPC
-  - **VLANs**
-    - Device Summary
-    - Device Detail
-  - **Spanning Tree**
-    - STP bridges
-    - STP VLANs
-    - STP virtual ports
-    - STP neighbors
-    - STP Guards
-    - STP Inconsistencies
-      - VLANs without STP
-        - Summary
-        - Detail
-      - Neighbor ports allowed VLAN mismatch
-      - Ports with multiple neighbors
-      - STP/CDP ports mismatch
-      - Multiple STP between two devices
-  - **Addressing**
-    - ARP Table
-    - MAC Table
-    - Managed IP
-      - IPv4 Managed IP
-      - IPv6 Managed IP
-    - NAT
-    - IPv6 Neighbor discovery
-  - **FHRP**
-    - GLBP Forwarders
-    - Virtual Gateways
-  - **Networks**
-    - Managed networks
-    - Gateway redundancy
-  - **Routing**
-    - Routes
-      - IPv4 Routes
-      - IPv6 Routes
-    - OSPF
-      - Neighbors
-      - Interfaces
-    - OSPF v3
-      - Neighbors
-      - Interfaces
-    - BGP
-      - Neighbors
-      - Address Families
-      - Advertised Routes
-    - EIGRP
-      - Neighbors
-      - Interfaces
-    - RIP
-      - Neighbors
-      - Interfaces
-    - IS-IS
-      - Neighbors
-      - Interfaces
-      - Levels
-    - VRF
-      - Detail
-      - Interfaces
-    - Prefix lists
-      - IPv4
-      - IPv6
-    - LISP
-      - Routes
-        - IPv4
-        - IPv6
-      - Map Resolvers
-        - IPv4
-        - IPv6
-    - Routing policy
-      - Routing Policies
-      - PBR Interfaces
-      - Policy Based Routing
-  - **MPLS**
-    - LDP
-      - Neighbors
-      - Interfaces
-    - RSVP
-      - Neighbors
-      - Interfaces
-    - Forwarding
-    - L3 VPN
-      - PE Routers
-      - VRF on PE
-      - VRF Route Targets
-      - PE Routes
-    - L2 VPN
-      - Point to point - VPWS
-      - Point to multipoint - VPLS
-      - Circuit cross-connect
-      - All pseudowires
-  - **Multicast**
-    - PIM
-      - Neighbors
-      - Interfaces
-    - MRoute
-      - Overview
-      - MRoute table
-      - OIL Detail
-      - MRoute counters
-      - First hop router
-      - Sources
-    - IGMP
-      - Groups
-      - Interfaces
-    - IGMP Snooping
-      - Global Configuration
-      - Groups
-      - Vlans Configuration
-    - MAC
-    - RP
-      - RP Overview
-      - BSR
-      - RP Mappings
-      - RP Mappings groups
-  - **Platforms**
-    - Cisco FEX
-      - Interfaces
-    - Cisco VSS
-      - VSS
-      - Chassis
-      - VSL
-    - PoE
-      - Devices
-      - Interfaces
-      - Modules
-    - Stacks
-      - Stacks
-      - Members
-      - Stack Ports
-    - Environment
-      - Power Supplies
-      - Power Supplies Fans
-      - Fans
-      - Modules
-      - Temperature sensors
-    - Cisco FabricPath
-      - Summary
-      - IS-IS neighbors
-      - Switch IDs
-      - Routes
-    - Logical Devices
-  - **Interfaces**
-    - Current Rates - Data
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Data
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Errors
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Average Rates - Drops
-      - Inbound
-      - Outbound
-      - Bidirectional
-    - Duplex
-    - Connectivity matrix
-      - Connectivity Matrix
-    - Switchport
-    - MTU
-    - Storm Control
-      - Broadcast
-      - Unicast
-      - Multicast
-      - All traffic
-    - Transceivers
-      - Inventory
-      - Statistics
-      - Triggered thresholds
-      - Errors
-    - PPPoE
-      - PPPoE sessions
-    - Counters
-      - Inbound
-      - Outbound
-    - Tunnels
-      - IPv4 Tunnels
-      - IPv6 Tunnels
-  - **CDP/LLDP**
-    - All neighbors
-    - Unmanaged neighbors
-    - Unidirectional neighbors
-    - Endpoints neighbors
-  - **DHCP**
-    - Relay
-      - Interfaces
-      - Interfaces stats
-      - Received
-      - Relayed
-      - Sent
-      - Global Stats
-      - Summary
-      - Received
-      - Relayed
-      - Sent
-    - Server
-      - Summary
-      - Pools
-      - Leases
-      - Excluded Ranges
-      - Interfaces
-  - **Port channels**
-    - Inbound Balancing table
-    - Outbound Balancing table
-    - Member status table
-    - MLAG
-      - Switches
-      - Peer links
-      - Pairs
-      - Cisco VPC
-  - **VLANs**
-    - Device Summary
-    - Device Detail
-  - **Spanning Tree**
-    - STP bridges
-    - STP VLANs
-    - STP virtual ports
-    - STP neighbors
-    - STP Guards
-    - STP Inconsistencies
-      - VLANs without STP
-      - Summary
-      - Detail
-      - Neighbor ports allowed VLAN mismatch
-      - Ports with multiple neighbors
-      - STP/CDP ports mismatch
-      - Multiple STP between two devices
-  - **Addressing**
-    - ARP Table
-    - MAC Table
-    - Managed IP
-      - IPv4 Managed IP
-      - IPv6 Managed IP
-    - NAT
-    - IPv6 Neighbor discovery
-  - **FHRP**
-    - GLBP Forwarders
-    - Virtual Gateways
-  - **Networks**
-    - Managed networks
-    - Gateway redundancy
-  - **Routing**
-    - Routes
-      - IPv4 Routes
-      - IPv6 Routes
-    - OSPF
-      - Neighbors
-      - Interfaces
-    - OSPF v3
-      - Neighbors
-      - Interfaces
-    - BGP
-      - Neighbors
-      - Address Families
-      - Advertised Routes
-    - EIGRP
-      - Neighbors
-      - Interfaces
-    - RIP
-      - Neighbors
-      - Interfaces
-    - IS-IS
-      - Neighbors
-      - Interfaces
-      - Levels
-    - VRF
-      - Detail
-      - Interfaces
-    - Prefix lists
-      - IPv4
-      - IPv6
-    - LISP
-      - Routes
-      - IPv4
-      - IPv6
-      - Map Resolvers
-      - IPv4
-      - IPv6
-    - Routing policy
-      - Routing Policies
-      - PBR Interfaces
-      - Policy Based Routing
-  - **MPLS**
-    - LDP
-      - Neighbors
-      - Interfaces
-    - RSVP
-      - Neighbors
-      - Interfaces
-    - Forwarding
-    - L3 VPN
-      - PE Routers
-      - VRF on PE
-      - VRF Route Targets
-      - PE Routes
-    - L2 VPN
-      - Point to point - VPWS
-      - Point to multipoint - VPLS
-      - Circuit cross-connect
-      - All pseudowires
-  - **Management**
-    - AAA
-      - Servers
-      - Lines
-      - Authentication
-      - Authorization
-      - Accounting
-      - Local Users
-      - Password Strength
-    - Banners
-      - Summary
-      - Banners
-    - Telnet access
-    - NTP
-      - Summary
-      - Sources
-    - Port Mirroring
-    - Logging
-      - Summary
-      - Remote Services
-      - Local Services
-    - Flow
-      - Flow Overview
-      - NetFlow Devices
-      - NetFlow Collectors
-      - NetFlow Interfaces
-      - sFlow Devices
-      - sFlow Collectors
-      - sFlow Data Sources
-    - SNMP
-      - Summary
-      - Communities
-      - Trap Hosts
-      - Users
-    - PTP
-      - PTP Local Clock
-      - PTP Masters
-      - PTP Interfaces
-    - Licenses
-      - License
-      - Summary
-      - License Detail
-      - Cisco Smart License
-      - Authorization
-      - Registration
-      - Reservations
-    - DNS resolver
-      - Settings
-      - Servers
-  - **Security**
-    - ACL
-      - ACL Policies
-      - ACL Interfaces
-      - Global ACL policies
-    - DMVPN
-    - DHCP Snooping
-      - Configuration
-      - Binding Database
-    - IPsec
-      - IPsec tunnels
-      - IPsec gateways
-    - Secure ports - 802.1x
-      - Devices
-      - Interfaces
-      - Users
-    - Zone Firewall
-      - Policies
-      - Interfaces
-  - **Load-balancing**
-    - Virtual Servers - Pools
-    - Virtual Servers - Pool members
-    - Partitions
-  - **Wireless**
-    - Controllers
-    - Access points
-    - Radios/BSSID
-      - Radios Detail
-    - Clients
-  - **IP Telephony**
-    - Phones
-  - **SDN**
-    - ACI
-      - Endpoint
-      - VLAN
-      - VRF
-      - DTEP
-    - VXLAN
-      - VTEP
-      - Peers
-      - Interfaces
-      - VNI
-    - APIC
-      - Controllers
-  - **SDWAN**
-    - Silverpeak
-      - Overlay
-      - Underlay
-    - Versa
-      - Sites
-      - Transport Links
-    - Viptela
-      - BFD Sessions
-      - Control Connections
-      - BFD Summary
-  - **QoS**
-    - Applied Service-Policies
-    - Shaping
-    - Queueing
-    - Policing
-    - Priority
-    - Marking
-    - Random Drops
-  - **OAM**
-    - UDLD
-      - Neighbors
-      - Interfaces
-  - **Cloud**
-    - Endpoints
-      - Virtual Machines
-      - Virtual Machines Interfaces
+#### Accessing `Rapidoc`  
+To navigate to `Rapidoc`, follow these steps:  
 
-!!! note
+1. **Open the target table:** Navigate to any table where you want to use **Device-based advanced filters**. Click the `...` menu to access **Table Description**.  
+   ![Table Description](index_advanced_filtering/Navigate_to_table_desc.png){ width="500" .center } 
+2. **Access API documentation:** Scroll down and select **API Documentation**.  
+   ![API Documentation](index_advanced_filtering/navigate_to_rapidoc.png){ width="500" .center } 
+3. **Review applicable filters:** Switch to the **Schema** tab to view all available filters for the selected table.  
+   ![Schema](index_advanced_filtering/switch_to_schema.png){ width="500" .center } 
 
-    Neigbors tables support only local device in this filters.
+!!! note  
+    For tables displaying a **local device** connected to a **neighbor device**, filtering is **only supported for the local device**.  
 
 ## Table Exports
 
@@ -639,11 +119,11 @@ content.
 Each table contains built-in help in `Table description` under the `...` menu
 (in the top-right corner of the table):
 
-![Table description](table_description_option.png).
+![Table description](table_description_option.png){ .center }
 
 Hover the mouse cursor over a column header for the column's description:
 
-![On-hover tooltip](table_onhover.png)
+![On-hover tooltip](table_onhover.png){ .center }
 
 ## Column Visibility
 
@@ -653,7 +133,7 @@ however, not all columns need to always be visible.
 Select `Display settings` under the `...` menu and choose which columns to show
 or hide:
 
-![Display settings](table_display_settings_option.png)
+![Display settings](table_display_settings_option.png){ .center }
 
 ## Column Size
 
@@ -661,7 +141,7 @@ Use the `Auto size` toggle to either automatically size columns to fit their
 current content (when enabled) or let columns remember user-defined widths
 (when disabled):
 
-![Auto size](table_auto_size.png)
+![Auto size](table_auto_size.png){ .center }
 
 ## Persistent Table View
 
@@ -671,7 +151,7 @@ user.
 To reset a table to its original state, select `Restore table settings` under
 the `...` menu:
 
-![Restore table settings](table_restore.png)
+![Restore table settings](table_restore.png){ .center }
 
 ## Regular Expression Syntax
 
@@ -720,7 +200,7 @@ You can use 3rd-party services, like [regex101](https://regex101.com/), to fine-
 
 ## Create Links to Table Views
 
-![Share URL options for tables](../../IP_Fabric_GUI/technology_tables/table_share_url_options.png)
+![Share URL options for tables](../../IP_Fabric_GUI/technology_tables/table_share_url_options.png){ .center }
 
 To point to a particular dataset, the link may include
 [a snapshot ID that IP Fabric will switch to](../discovery_snapshot.md#create-url-pointing-to-specific-snapshot) after opening.
@@ -743,10 +223,10 @@ Also, you can generate the link in two forms:
 
 To pin any page in the Technology Tables, click the pin button next to the table name. The page will instantly appear in the left Main Menu.
 
-![Pin a page](page_pin.png){ width="250" }
+![Pin a page](page_pin.png){ width="250" .center }
 
 ### Unpin a Page from the Main Menu
 
 If you no longer want it in the Menu, you can unpin it by clicking the pin in the Main Menu or by clicking the pin next to the page title again.
 
-![Unpin a page](page_unpin.png){ width="250" }
+![Unpin a page](page_unpin.png){ width="250" .center }
