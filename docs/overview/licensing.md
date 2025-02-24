@@ -72,6 +72,7 @@ least:
 | ---------------------- | --------- |
 | VPC                    | `vpc`     |
 | Router                 | `router`  |
+| Load Balancer          | `lb`      |
 
 ## Changes
 
