@@ -22,4 +22,22 @@ no BGP routes from the routing table will be collected.
 
 ![Limit download of BGP routes](limit-bgp-routes.png)
 
+Currently supported vendors:
+
+- IPv4
+  - Arista (EOS)
+  - Cisco (NX-OS, IOS, IOS-XE, IOS-XR, Viptela)
+  - Dell (OS10)
+  - FS (FSOS)
+  - HPE (ArubaCX)
+  - Huawei (VRP)
+  - Juniper (JunOS)
+  - Nokia (TiMOS)
+
+- IPv6
+  - Arista (EOS)
+  - Cisco (ACI, IOS, IOS-XE, IOS-XR, NX-OS, Viptela)
+  - Juniper (JunOS)
+  - Nokia (TiMOS)
+
 Another option to limit the number of BGP routes downloaded is to configure [BGP community filtering](../routing.md).
