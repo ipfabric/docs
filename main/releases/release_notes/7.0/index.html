@@ -15865,16 +15865,18 @@ MD5 (ipfabric-7-0-14+0.vhdx.zst) = 93fb5d279fa88d3b0ee516438db7c4be
 </code></pre></div>
 <h3 id="fixes">Fixes</h3>
 <ul>
-<li>The Docker service, which is used for extensions, was <strong>disabled and stopped</strong> due to conflicts between its default subnet (<code>172.17.0.0/16</code>) and <strong>networks used for discovery</strong>. For more details, refer to the <a href="#extensions-engineering-preview">Extensions section</a>.</li>
+<li>The Docker service, which is used for extensions, was <strong>disabled and stopped</strong> due to conflicts between its default subnet (<code>172.17.0.0/16</code>) and
+<strong>networks used for discovery</strong>. For more details, refer to the <a href="#extensions-engineering-preview">Extensions section</a>.</li>
 <li>Resolved various proxy-related issues.</li>
 <li>Addressed multiple issues affecting the upgrade process.</li>
 <li>Fixed problems causing failures in techsupport generation.</li>
+<li>The <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/">BGP Threshold function</a> did not work
+as expected on <code>JunOS</code> for <code>IPv6</code> addresses. When the function was disabled, routes were not downloaded, even though no limit should have been applied.</li>
 </ul>
 <h2 id="v7013-february-11th-2025-ga">v7.0.13 (February 11<sup>th</sup>, 2025; GA)</h2>
 <h3 id="fixes_1">Fixes</h3>
 <ul>
 <li>After system reboots, the bandwidth limit sporadically reset to 1 Mb/s and could not be reconfigured.</li>
-<li>The <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/">BGP Threshold function</a> did not work as expected. When the function was disabled, routes were not being downloaded, even though no limit should have been applied.</li>
 </ul>
 <h2 id="v7011-january-21st-2025-ea">v7.0.11 (January 21<sup>st</sup>, 2025; EA)</h2>
 <h2 id="v708-december-13th-2024-ea">v7.0.8 (December 13<sup>th</sup>, 2024; EA)</h2>
@@ -16411,8 +16413,6 @@ complete, the appliance will reboot automatically.</p>
 <h3 id="known-issues">Known Issues</h3>
 <ul>
 <li>When a Palo Alto firewall is connected to the infrastructure using a port-channel, but the port-channel configuration is missing on the device, the Layer 2 (L2) connection is not established in the network graphs. As a result, end-to-end traffic fails to traverse at the L2 level.</li>
-<li>Juniper devices with large IPv6 routing tables may cause issues during network discovery.
-To mitigate the impact, lower the <code>Limit download BGP routes</code> setting in <code>/settings/discovery-snapshots/global-discovery-settings</code>.</li>
 </ul>
 <h3 id="beta-features">Beta Features</h3>
 <p>If you&rsquo;re interested in trying our new beta features, please contact your Customer Success Manager for assistance with enabling these features.</p>
@@ -16473,7 +16473,7 @@ To mitigate the impact, lower the <code>Limit download BGP routes</code> setting
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2025</span>
   </span>
 
     
