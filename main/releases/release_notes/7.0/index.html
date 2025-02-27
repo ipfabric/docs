@@ -15865,18 +15865,17 @@ MD5 (ipfabric-7-0-14+0.vhdx.zst) = 93fb5d279fa88d3b0ee516438db7c4be
 </code></pre></div>
 <h3 id="fixes">Fixes</h3>
 <ul>
-<li>The Docker service, which is used for extensions, was <strong>disabled and stopped</strong> due to conflicts between its default subnet (<code>172.17.0.0/16</code>) and
-<strong>networks used for discovery</strong>. For more details, refer to the <a href="#extensions-engineering-preview">Extensions section</a>.</li>
+<li>The Docker service, which is used for extensions, was <strong>disabled and stopped</strong> due to conflicts between its default subnet (<code>172.17.0.0/16</code>) and <strong>networks used for discovery</strong>. For more details, refer to the <a href="#extensions-engineering-preview">Extensions section</a>.</li>
 <li>Resolved various proxy-related issues.</li>
 <li>Addressed multiple issues affecting the upgrade process.</li>
 <li>Fixed problems causing failures in techsupport generation.</li>
-<li>The <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/">BGP Threshold function</a> did not work
-as expected on <code>JunOS</code> for <code>IPv6</code> addresses. When the function was disabled, routes were not downloaded, even though no limit should have been applied.</li>
+<li>Juniper devices with large IPv6 routing tables were not following the <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/">BGP Threshold function</a>, resulting in the unnecessary downloading of BGP routes. This issue led to an increased snapshot size and caused discovery-related problems.</li>
 </ul>
 <h2 id="v7013-february-11th-2025-ga">v7.0.13 (February 11<sup>th</sup>, 2025; GA)</h2>
 <h3 id="fixes_1">Fixes</h3>
 <ul>
 <li>After system reboots, the bandwidth limit sporadically reset to 1 Mb/s and could not be reconfigured.</li>
+<li>The <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/">BGP Threshold function</a> did not work as expected. When the function was disabled, routes were not being downloaded, even though no limit should have been applied.</li>
 </ul>
 <h2 id="v7011-january-21st-2025-ea">v7.0.11 (January 21<sup>st</sup>, 2025; EA)</h2>
 <h2 id="v708-december-13th-2024-ea">v7.0.8 (December 13<sup>th</sup>, 2024; EA)</h2>
