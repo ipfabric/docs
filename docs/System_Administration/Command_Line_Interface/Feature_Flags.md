@@ -101,12 +101,24 @@ Since `6.7.0`, it is possible to enable API key authentication for FMC by adding
 ENABLE_FMC_TOKEN_AUTH=true
 ```
 
+After updating the environment file, you must restart IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
 ### VeloCloud Discovery
 
 Since `6.9.0`, VeloCloud devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
 ```
 ENABLE_DISCOVERY_DEVICES_VELOCLOUD=true
+```
+
+After updating the environment file, you must restart IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
 ```
 
 ### Nokia SROS Discovery
@@ -154,7 +166,28 @@ ENABLE_EXTENSIONS=true
 
 This feature flag enables the Extensions functionality, which allows users to add and customize their IP Fabric instance with tailored functionality through containerized applications. Extensions can be managed through the IP Fabric UI under the **Extensions** menu.
 
+!!! warning "Docker Default Subnet"
+
+    As of version `7.0.14`, the Docker service, which is used for extensions, is **disabled and stopped by default** to prevent potential subnet conflicts in its default configuration (`172.17.0.0/16`). This subnet may collide with existing network infrastructure.
+
+    **To customize the Docker subnet:**
+
+    1. Edit the configuration in `/etc/docker/daemon.json`, [see](../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet.md) OR 
+    2. Contact our customer support team via the [support portal](https://support.ipfabric.io)
+
+    **To use Docker with the default subnet** (only if `172.17.0.0/16` is unused in your environment) run: 
+
+    ```bash
+    sudo systemctl enable docker && sudo systemctl start docker
+    ```
+
 For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/7.0.md#extensions-engineering-preview) for more information.
+
+After updating the environment file, you must restart IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
 
 ## Deprecated Feature Flags
 
