@@ -15213,9 +15213,15 @@ adding the following line to the global environment file
 <p>Since <code>6.7.0</code>, it is possible to enable API key authentication for FMC by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_FMC_TOKEN_AUTH=true
 </code></pre></div>
+<p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
+</code></pre></div>
 <h3 id="velocloud-discovery">VeloCloud Discovery</h3>
 <p>Since <code>6.9.0</code>, VeloCloud devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_VELOCLOUD=true
+</code></pre></div>
+<p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
 </code></pre></div>
 <h3 id="nokia-sros-discovery">Nokia SROS Discovery</h3>
 <p>Since <code>6.5.0</code>, Nokia SROS (Service Router Operating System) devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
@@ -15240,7 +15246,22 @@ adding the following line to the global environment file
 <div class="highlight"><pre><span></span><code>ENABLE_EXTENSIONS=true
 </code></pre></div>
 <p>This feature flag enables the Extensions functionality, which allows users to add and customize their IP Fabric instance with tailored functionality through containerized applications. Extensions can be managed through the IP Fabric UI under the <strong>Extensions</strong> menu.</p>
+<div class="admonition warning">
+<p class="admonition-title">Docker Default Subnet</p>
+<p>As of version <code>7.0.14</code>, the Docker service, which is used for extensions, is <strong>disabled and stopped by default</strong> to prevent potential subnet conflicts in its default configuration (<code>172.17.0.0/16</code>). This subnet may collide with existing network infrastructure.</p>
+<p><strong>To customize the Docker subnet:</strong></p>
+<ol>
+<li>Edit the configuration in <code>/etc/docker/daemon.json</code>, <a href="../../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet/">see</a> OR </li>
+<li>Contact our customer support team via the <a href="https://support.ipfabric.io">support portal</a></li>
+</ol>
+<p><strong>To use Docker with the default subnet</strong> (only if <code>172.17.0.0/16</code> is unused in your environment) run: </p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+</code></pre></div>
+</div>
 <p>For more information about Extensions, see the <a href="../../../releases/release_notes/7.0/#extensions-engineering-preview">7.0 Release Notes</a> for more information.</p>
+<p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
+</code></pre></div>
 <h2 id="deprecated-feature-flags">Deprecated Feature Flags</h2>
 <h3 id="gcp-discovery-removed-in-70">GCP Discovery (Removed in <code>7.0</code>)</h3>
 <p>Since <code>6.5.0</code>, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
@@ -15282,7 +15303,7 @@ adding the following line to the global environment file
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2025</span>
   </span>
 
     
