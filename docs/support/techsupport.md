@@ -30,12 +30,17 @@ description: This page explains how to generate and upload a techsupport file fo
 
 1. In the IP Fabric GUI, go to **Support --> Generate Techsupport**:
 
-   ![Generate techsupport file](techsupport/generate.png)
+   ![Generate techsupport file](techsupport/techsupport_generation-20250307.png)
 
 2. Select the data to be included in the techsupport file (when in doubt, keep
    the defaults):
 
-   ![Configure what to include in techsupport file](techsupport/config.png)
+   ![Configure what to include in techsupport file](techsupport/techsupport_generation_settings-20250307.png)
+
+!!! note "Possible error when generating Techsupport file"
+
+    If you encounter an error while generating the Techsupport file, try again,
+    but first uncheck the **General environment information** option and then retry.
 
 ### CLI
 
