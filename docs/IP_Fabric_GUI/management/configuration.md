@@ -44,26 +44,34 @@ Note that every table row, once you filter output for a specific hostname, repre
 
 Let's consider the following example:
 
-![Output for L45EXR2](config/config_L45EXR2.png)
+![Configuration table example](config/config_table_example.png)
 
 Let's go from the bottom of the output:
 
-- `Last change At` is `2024-01-02, 16:13:53 Z`, and `Last Check At` is `2024-01-08, 12:33:21 Z` with status `no change`.
+- `Last Change At` is `2025-03-17, 14:00:14 Z`, and `Last Check At` is `2025-03-17, 14:00:14 Z` with status `changed`
+  - It means that configuration file changed in the last check.
+- `Last Change At` is `2025-03-17, 14:15:10 Z`, and `Last Check At` is `2025-03-17, 14:30:09 Z` with status `no change`.
   - It means there were no configuration file changes between these two timestamps.
   - Configuration file was checked multiple times, and status transitioned from `changed` to `no change`.
-- `Last Change At` is `2024-01-08, 12:43:55 Z`, and `Last Check At` is `2024-01-08, 12:43:55 Z` with status `changed`.
-  - It means that configuration file changed.
-  - The status is set to `changed`.
 
 ## Comparing Configurations
 
-![Selecting older config](config/older_config.png)
-
-![Selecting newer config](config/newer_config.png)
-
 Stored configurations are displayed in a table that shows information such as the serial number of the device, the device hostname, the time when configuration change was detected (the `Last Change At` column), and the last time a particular configuration was saved in the `Last Check At` column.
 
-The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the `Before` and `After` states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
+The table can be used to compare between two different configurations directly from the user interface. This is done by selecting exactly 2 configuration states to compare followed by clicking the `Compare` button.
+
+![Selecting configs for comparison](config/config_select_compare.png)
+
+There is also a shortcut for comparing configurations directly with their previous state by clicking this button instead:
+
+![alt text](config/config_quick_comparison.png)
+
+
+!!! Note "Last configuration quick compare behaviour"
+
+    For the last configuration, the quick compare behaviour is the same as for the second to last configuration. That is to say, it compares the last configuration to the second to last configuration instead of a 'previous' one.
+
+The resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
 
 <figure markdown>
   ![Side by side](config/config_side_by_side.png)
