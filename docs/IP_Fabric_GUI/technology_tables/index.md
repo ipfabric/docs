@@ -82,6 +82,7 @@ Supported device properties:
 - Type
 - Login Ip
 - Domain
+- Uptime
 - API Slug
 - Attributes (via an attribute name)
 
