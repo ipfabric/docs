@@ -62,6 +62,7 @@ Currently, these are at least:
 | VPN gateway              | `vpngw`   |
 | Load Balancer            | `lb`      |
 | Application Gateway      | `appgw`   |
+| Express Route Circuit    | `erc`     |
 
 ### GCP
 
