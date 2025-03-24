@@ -36,7 +36,7 @@ Currently supported vendors:
 
 - IPv6
   - Arista (EOS)
-  - Cisco (ACI, IOS, IOS-XE, IOS-XR, NX-OS, Viptela)
+  - Cisco (ACI, IOS, IOS-XE, IOS-XR, NX-OS)
   - Juniper (JunOS)
   - Nokia (TiMOS)
 
