@@ -33,7 +33,7 @@ Service logs for IP Fabric services are stored in the `/var/log/nimpee` and `/va
 | `/var/log/ipf/ipf-cli-config/ipf-cli-config.log`                     | IPF CLI Config logs                         |
 | `/var/log/ipf/ipf-jumphost/*.log`                                    | Logs related to a specific jumphost service |
 | `/var/log/nimpee/sys-lvm-resize.log`                                 | Logs for automatic hard disk resize         |
-| `/var/log/nimpee/net-shaping-newshape.log`                           | Discovery bandwidth control logs            |
+| `journalctl -u ipf-netshaper`                                        | Discovery bandwidth control logs            |
 | `/var/log/nimpee/support-vpn.log`                                    | Support VPN-related logs                    |
 | `/var/log/nimpee/sys-backup-duplicity.log`                           | Logs for backup services                    |
 | `/var/log/nimpee/duplicity/sys-duplicity-*.log`                      | Detailed logs for each backup session       |
