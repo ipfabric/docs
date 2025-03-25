@@ -63,6 +63,7 @@ Currently, these are at least:
 | Load Balancer            | `lb`      |
 | Application Gateway      | `appgw`   |
 | Express Route Circuit    | `erc`     |
+| Route Server             | `ars`     |
 
 ### GCP
 
