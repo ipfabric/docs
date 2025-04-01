@@ -7101,6 +7101,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -13637,6 +13648,33 @@ here.
   
   
     <li class="md-nav__item">
+      <a href="../../../support/known_issues/IP_Fabric/download_process_freeze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Download process freeze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../support/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
         
   
@@ -13757,10 +13795,10 @@ here.
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_12" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_13" >
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_12" id="__nav_9_6_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_13" id="__nav_9_6_2_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -13777,8 +13815,8 @@ here.
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_12">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -15318,6 +15356,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#manual-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15479,22 +15528,36 @@ with the syncing or diffing of data from IP Fabric and Infoblox.</p>
 <p>This can be installed on IP Fabric as an extension which also provides a GUI interface.</p>
 <h3 id="requirements_1">Requirements</h3>
 <ul>
-<li>Extension Feature Flag must be
-  enabled. <a href="https://docs.ipfabric.io/7.0/System_Administration/Command_Line_Interface/Feature_Flags/&quot;%20\l%20&quot;extensions-added-in-70">Link to Docs</a></li>
+<li><strong>Extension Feature Flag must be enabled.</strong> <a href="https://docs.ipfabric.io/latest/System_Administration/Command_Line_Interface/Feature_Flags/#extensions-added-in-70">Link to Docs</a></li>
 <li>User account with read/write access to <code>/extensions</code> endpoints.</li>
 </ul>
 <h3 id="installation_2">Installation</h3>
+<h4 id="pip-installation">Pip Installation</h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Pip installation is supported on Linux and macOS.</p>
 <p>For Windows, additional setup is required:
 Install <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools</a> (includes Visual C++ 14.0 or higher).</p>
 </div>
-<h4 id="pip-installation">Pip Installation</h4>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric-infoblox
 ipfabric-infoblox<span class="w"> </span>install-extension
 </code></pre></div>
 <p>Extension will be available at: <code>https://{IPF URL}/extensions-apps/ipfabric-infoblox</code></p>
+<h4 id="manual-installation">Manual Installation</h4>
+<ol>
+<li>Download the latest version of <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-infoblox/-/archive/main/ipfabric-infoblox-main.zip">IPFabric-Infoblox-main.zip</a> from our GitLab.</li>
+<li>Navigate to the Extensions page in the IP Fabric GUI and click the &ldquo;Add&rdquo; button.</li>
+<li>In the &ldquo;Add Extension&rdquo; page:<ol>
+<li>Enter a name for the extension.</li>
+<li>Select the &ldquo;Docker File&rdquo; option for type.</li>
+<li>Enter a description.</li>
+<li>Upload the zip file.</li>
+<li>Press Save.</li>
+</ol>
+</li>
+</ol>
+<p><a class="glightbox" href="../add-extension.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Extension" src="../add-extension.png" /></a></p>
+<p>Extension will be available at: <code>https://{IPF URL}/extensions-apps/&lt;EXTENSION_NAME&gt;</code></p>
 <h3 id="extension-and-streamlit-usage">Extension and Streamlit Usage</h3>
 <p>Ensure you follow the steps defined below in the configuration section to define a proper YAML file that will be used.
 Once you have a valid YAML file you can upload it via the Streamlit GUI.</p>
@@ -15537,7 +15600,7 @@ trigger a diff. To trigger a full sync, tick the enable sync checkbox and press 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 1, 2025</span>
   </span>
 
     
