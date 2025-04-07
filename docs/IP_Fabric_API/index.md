@@ -196,4 +196,4 @@ Refer to the example provided in the [Payload definition](#payload-definition) s
 For comprehensive details on the read-only tables, please refer to our API documentation available through visual UI. It is important to note that this documentation exclusively covers API tables and does not include other endpoints.
 
 Access the documentation at the following URL:
-`https://your_ipf_instance/api/static/docs/`
+`https://your_ipf_instance/api/rapidoc/`
