@@ -14,12 +14,12 @@ an IP address is found during discovery, it is then checked against this ACL.
 
 ```mermaid
 graph LR
-    ip[IP found during discovery] --> exclude{Is the IP in the Exclude list?}
+    ip[IP found during discovery] --> include{Is the IP in the Include list?}
 
-    exclude -->|No| include{Is the IP in the Include list?}
-      include -->|Yes| continue[<strong>Continue with the discovery logic</strong>]
-      include --> |No| doNotDiscover[<strong>Do not discover</strong>]
-    exclude -->|Yes| doNotDiscover
+    include -->|Yes| exclude{Is the IP in the Exclude list?}
+      exclude --> |No| continue[<strong>Continue with the discovery logic</strong>]
+      exclude --> |Yes| doNotDiscover[<strong>Do not discover</strong>]
+    include -->|No| doNotDiscover[<strong>Do not discover</strong>]
 
     style continue fill:#33dd00
     style doNotDiscover fill:#dd3300
