@@ -7376,6 +7376,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v324-2025-04-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v3.2.4 (2025-04-07)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.2.4 (2025-04-07)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v323-2025-04-03" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7388,7 +7416,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes" class="md-nav__link">
+  <a href="#fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -7427,7 +7455,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_1" class="md-nav__link">
+  <a href="#fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -14874,6 +14902,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v324-2025-04-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v3.2.4 (2025-04-07)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.2.4 (2025-04-07)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v323-2025-04-03" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14886,7 +14942,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes" class="md-nav__link">
+  <a href="#fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -14925,7 +14981,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_1" class="md-nav__link">
+  <a href="#fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -15343,32 +15399,37 @@
 
 
 <h1 id="v3-release-notes">v3 Release Notes</h1>
-<h2 id="v323-2025-04-03">v3.2.3 (2025-04-03)</h2>
+<h2 id="v324-2025-04-07">v3.2.4 (2025-04-07)</h2>
 <h4 id="fixes">Fixes</h4>
 <ul>
-<li>Empty <code>site</code> filter caused <code>API_FAILED</code> when pulling inventory items</li>
+<li><code>0010</code> migration raised <code>DoesNotExist</code> when object from transform map was manually removed.</li>
+</ul>
+<h2 id="v323-2025-04-03">v3.2.3 (2025-04-03)</h2>
+<h4 id="fixes_1">Fixes</h4>
+<ul>
+<li>Empty <code>site</code> filter caused <code>API_FAILED</code> when pulling inventory items.</li>
 </ul>
 <h2 id="v322-2025-04-03">v3.2.2 (2025-04-03)</h2>
 <h4 id="changes">Changes</h4>
 <ul>
-<li>Switch <code>uv</code> in docker development environment following NetBox container change</li>
-<li>Remove passing <code>uuid</code> to <code>get_model_or_update()</code> and instead moving the logic to transform maps</li>
-<li>Fields and relationships set to <code>coalesce</code> are now able to search for empty values when <code>None</code> is returned from transform map template</li>
-<li>Most errors during ingestion are now more descriptive and don&rsquo;t abort the whole process</li>
-<li>Statistics during ingestion run show total number from the very beginning and only count successful items</li>
-<li>Ingestion process now respects settings for models</li>
-<li>Failed merge will now provide more information about the error (logged to console)</li>
+<li>Switch <code>uv</code> in docker development environment following NetBox container change.</li>
+<li>Remove passing <code>uuid</code> to <code>get_model_or_update()</code> and instead moving the logic to transform maps.</li>
+<li>Fields and relationships set to <code>coalesce</code> are now able to search for empty values when <code>None</code> is returned from transform map template.</li>
+<li>Most errors during ingestion are now more descriptive and don&rsquo;t abort the whole process.</li>
+<li>Statistics during ingestion run show total number from the very beginning and only count successful items.</li>
+<li>Ingestion process now respects settings for models.</li>
+<li>Failed merge will now provide more information about the error (logged to console).</li>
 </ul>
-<h4 id="fixes_1">Fixes</h4>
+<h4 id="fixes_2">Fixes</h4>
 <ul>
-<li>NetBox v4.2.4 support<ul>
-<li><a href="https://github.com/netbox-community/netbox/pull/18501">NetBox #18241</a> removed <code>LogLevelChoices.LOG_DEFAULT</code> causing <code>AttributeError</code></li>
-<li><a href="https://github.com/netbox-community/netbox/pull/18642">NetBox #18286</a> removed <code>DurationChoices</code> causing <code>ImportError</code></li>
+<li>NetBox v4.2.4 support:<ul>
+<li><a href="https://github.com/netbox-community/netbox/pull/18501">NetBox #18241</a> removed <code>LogLevelChoices.LOG_DEFAULT</code> causing <code>AttributeError</code>.</li>
+<li><a href="https://github.com/netbox-community/netbox/pull/18642">NetBox #18286</a> removed <code>DurationChoices</code> causing <code>ImportError</code>.</li>
 </ul>
 </li>
-<li>Inventory item <code>part_id=None</code> in IPF no longer fails, the value is set <code>unknown</code> instead</li>
-<li><code>coalesce</code> relationships are now respected when searching for model without syncing it</li>
-<li>Allowed multiple IPs on single interface</li>
+<li>Inventory item <code>part_id=None</code> in IPF no longer fails, the value is set <code>unknown</code> instead.</li>
+<li><code>coalesce</code> relationships are now respected when searching for model without syncing it.</li>
+<li>Allowed multiple IPs on single interface.</li>
 <li>Added missing site filter support to the <code>site</code>, <code>interface</code>, <code>inventoryitem</code>, and <code>ipaddress</code> models.</li>
 </ul>
 <h2 id="v321-2025-04-03">v3.2.1 (2025-04-03)</h2>
@@ -15376,16 +15437,16 @@
 <h2 id="v320-2025-02-24">v3.2.0 (2025-02-24)</h2>
 <h3 id="enhancements">Enhancements</h3>
 <ul>
-<li><code>NIM-17843</code> - <code>transform_map.json</code> inside shipped package</li>
-<li><code>NIM-17847</code> - Transform maps are delivered as migration</li>
-<li><code>NIM-17848</code> - Custom fields are created in migration</li>
-<li><code>NIM-17851</code> - Update to support NetBox 4.2.0</li>
-<li><code>NIM-18142</code> - Allow to lock ipfabric SDK dependency to minor version</li>
+<li><code>NIM-17843</code> - <code>transform_map.json</code> inside shipped package.</li>
+<li><code>NIM-17847</code> - Transform maps are delivered as migration.</li>
+<li><code>NIM-17848</code> - Custom fields are created in migration.</li>
+<li><code>NIM-17851</code> - Update to support NetBox 4.2.0.</li>
+<li><code>NIM-18142</code> - Allow to lock ipfabric SDK dependency to minor version.</li>
 </ul>
 <h3 id="bugs">Bugs</h3>
 <ul>
-<li><code>NIM-18045</code> - TypeError when listed columns in branches contain ID</li>
-<li><a href="https://gitlab.com/ip-fabric/integrations/ipfabric-netbox/-/issues/11">#11</a> - Fails to install in current docker container</li>
+<li><code>NIM-18045</code> - TypeError when listed columns in branches contain ID.</li>
+<li><a href="https://gitlab.com/ip-fabric/integrations/ipfabric-netbox/-/issues/11">#11</a> - Fails to install in current docker container.</li>
 </ul>
 <h2 id="v313-2024-12-20">v3.1.3 (2024-12-20)</h2>
 <h3 id="bugs_1">Bugs</h3>
@@ -15455,7 +15516,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 8, 2025</span>
   </span>
 
     
