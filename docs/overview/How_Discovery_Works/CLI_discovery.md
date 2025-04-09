@@ -67,15 +67,15 @@ There's another check in the flow, which connects to the IP address and starts t
 
 ```mermaid
 flowchart TD
-    IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an interface\non an already discovered device?}
+    IPFResolves[[IP Fabric resolves an IP address of a connectable device.]] --> AlreadyDiscoveredDevice{Is the IP address an interface on an already discovered device?}
 
     AlreadyDiscoveredDevice -->|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
-    AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
-    CollectsSN --> ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in the queue.]]
+    AlreadyDiscoveredDevice -->|No| CollectsSN[[IP Fabric connects and issues a command which collects the serial number of the device.]]
+    CollectsSN --> ComparesSN[[IP Fabric compares the serial number with devices already in the queue.]]
 
-    ComparesSN --> AlreadyInQueue{Is the device already\nin the Discovery queue?}
-    AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
-    AlreadyInQueue -->|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
+    ComparesSN --> AlreadyInQueue{Is the device already in the Discovery queue?}
+    AlreadyInQueue -->|Yes| IPFStops([IP Fabric stops the device discovery in its tracks.])
+    AlreadyInQueue -->|No| IPFDiscovers([IP Fabric attempts to fully discover the device.])
 
     style IPFDiscovers fill:#33dd00
     style IPFStops fill:#dd3300
