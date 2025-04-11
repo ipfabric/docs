@@ -52,7 +52,8 @@ following information (`Human Readable Name (apiColumnName)`):
 - `Family (family)` is the device's software family.
 - `Platform (platform)` is the device's hardware platform.
 - `Model (model)` is the device's model.
-- `Login IP (loginIp)` is the IP address used to connect to the device.
+- `Login IPv4 (loginIpv4)` is the IPv4 address used to connect to the device.
+- `Login IPv6 (loginIpv6)` is the IPv6 address used to connect to the device.
 - `Management Protocol (loginType)` is the protocol used to connect to the
   device.
 - `MAC Address (mac)` is the device's MAC address.

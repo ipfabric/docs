@@ -40,13 +40,13 @@ Discovery is performed via a lightweight interaction with the network infrastruc
 
 ![Discovery process schema](CLI_discovery/discovery.png)
 
-After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
+After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries (respectively ACI Endpoint entries) with MAC addresses of supported vendors, CDP and LLDP neighbor information and NDPv6. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.
 
 This is how the discovery process continues after a successful connection to a network device:
 
 1. IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.
 2. IP Fabric tries to connect to a next-hop device from the routing table.
-3. IP Fabric uses the device's ARP table to find hosts and other network devices it can connect to with the help of the **OUI** table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**).
+3. IP Fabric uses the device's ARP and ACI Endpoint tables to find hosts and other network devices it can connect to with the help of the **OUI** table (in **Settings --> Discovery & Snapshots --> Global Configuration --> OUI**).
 4. Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.
 
 Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data are timestamped at the reading time, and the timestamps are used to calculate the rate of change for each element.

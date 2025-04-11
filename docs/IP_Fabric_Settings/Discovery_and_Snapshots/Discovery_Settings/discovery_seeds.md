@@ -28,4 +28,4 @@ gateway.
 
     When you add a network to the **Discovery Seeds**, IP Fabric attempts to
     connect to all IP addresses in that network. Due to this, the **maximum
-    prefix length** you can add into a discovery seed is `/23`.
+    prefix length** you can add into a discovery seed is `/23` for IPv4 and `/119` for IPv6.

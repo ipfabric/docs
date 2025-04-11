@@ -33,7 +33,7 @@ select box values.
 - `cis` -- Matches `cis` or `cisco` (prefix match).
 - `=~^(?!cisco)` -- RegEx negative lookahead -- matches all except values starting with `cisco`.
 
-Some columns containing IP addresses (such as `Login IP` within **Inventory -->
+Some columns containing IP addresses (such as `Login IPv4` or `Login IPv6` within **Inventory -->
 Devices**) can be filtered by entering the IP/prefix length in CIDR notation.
 For example, `10.0.0.0/25` will find addresses between and including
 `10.0.0.128` and `10.0.0.255`.

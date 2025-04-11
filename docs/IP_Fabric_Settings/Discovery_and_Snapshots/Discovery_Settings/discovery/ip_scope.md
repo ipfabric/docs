@@ -7,7 +7,7 @@ description: In this section, we will go through the IP Scope and how to include
 ## Including and Excluding Networks From Discovery
 
 By default, there are no limitations on discovery, and all IP addresses are
-allowed (i.e., the _Include scope_ is `0.0.0.0/0`).
+allowed (i.e., the _Include scope_ is `0.0.0.0/0` and `::/0`).
 
 The Include and Exclude lists act as an Access Control List for IP Fabric; when
 an IP address is found during discovery, it is then checked against this ACL.

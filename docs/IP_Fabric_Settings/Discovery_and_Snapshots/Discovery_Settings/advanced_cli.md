@@ -117,7 +117,7 @@ adjustments:
 
     **Custom SSH/Telnet ports** settings enable the discovery process to use
     different ports for connecting. The standard ports for SSH and Telnet are 22
-    and 23, respectively.
+    and 23, respectively. You can use both IPv4 and IPv6 subnets.
 
 In the following example, we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:

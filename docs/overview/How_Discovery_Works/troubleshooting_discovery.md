@@ -21,7 +21,7 @@ two methods for testing snapshot settings:
 2. Make your changes globally and then run a new snapshot. In **Settings -->
    Discovery & Snapshots --> Discovery Settings --> Discovery --> IP Scope -->
    IP networks to include in discovery and analysis**, you can also filter the
-   allowed discovery scope to a subset of `/32` addresses to lower the discovery
+   allowed discovery scope to a subset of `/32` addresses for IPv4 or `/128` addresses for IPv6 to lower the discovery
    time. In the example below, we allow only one subnet to be part of the
    discovery:
 
@@ -81,7 +81,7 @@ Discovery --> IP Scope**
 ![IP Scope](troubleshooting/ip_scope.png)
 
 **IP Scope** tells IP Fabric which networks to include or exclude in the discovery
-process. The default is set to include everything (`0.0.0.0/0`). When IP Fabric
+process. The default is set to include everything (`0.0.0.0/0` and `::/0`). When IP Fabric
 discovers a neighbor in this network, it will try to log in to and discover it. If
 the IP address is not in the **include list**, or is in the **exclude list**, then IP
 Fabric will not try to connect to and discover the device.
@@ -124,10 +124,14 @@ new devices on your network.
 - **xDP (neighbors)** signifies using CDP or LLDP information to discover devices
   in your network.
 
+- **NDPv6** uses Neighbor Discovery (ND) protocol to discover IPv6 devices.
+
 - **ARP** uses the ARP and MAC address OUI information to find devices. If the OUI
   is set to `Enabled for discovery` in the table in **Settings --> Discovery &
   Snapshots --> Global Configuration --> OUI**, then IP Fabric will attempt to
   connect to and discover the device.
+
+- **ACI endpoints** are similar to ARP, but for ACI environments.
 
 - **Routing Table** will try to connect to next-hop devices.
 
@@ -167,7 +171,7 @@ Credentials**
 connect to a physical device (devices discovered through the API are managed
 through **Advanced --> Vendors API**). Ensure that you have a username configured
 for all scopes of the network you wish to discover or set to the default
-of `0.0.0.0/0`.
+of `0.0.0.0/0` for IPv4 and `::/0` for IPv6.
 
 !!! tip
 
