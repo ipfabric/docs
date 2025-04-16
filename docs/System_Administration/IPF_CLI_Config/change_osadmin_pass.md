@@ -16,14 +16,19 @@ description: This section explains how to change the osadmin password using IPF 
 
   ![Do you want to change osadmin user password?](osadmin_password_change2.png)
 
-  !!! attention
+  !!! warning
 
       Changing the `osadmin` password will affect:
 
       - CLI access
       - backup encryption
 
-      Backups created before the password change will no longer be restorable!
+      Backups created before the password change **will no longer be restorable**:
+
+      - All backups are encrypted using the `osadmin` password that was set at the time of their creation.
+      - This means that if you change the `osadmin` password, any backups created prior to the change will no longer be restorable—unless you temporarily revert the password back to the original one used when the backups were made.
+      - If you attempt to restore a backup with an incorrect password, the system will not display any available backups, as it won’t be able to decrypt them.
+      - Before changing the `osadmin` password, ensure that you’ve either restored all necessary backups or are prepared to create new ones using the new password.
 
 4. Enter the new `osadmin` password twice:
 
