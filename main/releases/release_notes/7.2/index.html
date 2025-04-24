@@ -8638,6 +8638,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#rbac-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#system-upgrade-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15089,6 +15100,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#rbac-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#system-upgrade-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15422,6 +15444,28 @@ MD5 (ipfabric-7-2-5+0.vhdx.zst) = eb33e6d0e2a631730d5ffb426633f28e
 <li><a href="../../../System_Administration/system_update/">System Update</a></li>
 <li><a href="../../../System_Administration/IPF_CLI_Config/set_gui_admin_pass/">Restore Admin Access</a></li>
 </ul>
+<h3 id="rbac-fixes">RBAC Fixes</h3>
+<p>After reviewing our built-in RBAC policies, we have made the following changes. This is to ensure that the policies
+are more consistent with the intended use cases. If your roles require access to these endpoints, please create a
+<a href="../../../IP_Fabric_Settings/administration/policies/">custom RBAC policy</a> and assign it to the 
+<a href="../../../IP_Fabric_Settings/administration/roles/">required role(s)</a>.</p>
+<p>These policies have been removed from the built-in <code>others</code> (ID of <code>read</code>) and moved to <code>settings</code>:</p>
+<ul>
+<li><code>POST /os/generate-nimpee-cert</code>: Generate IP Fabric certificate</li>
+<li><code>POST /os/upload-nimpee-cert</code>: Upload certificate to platform</li>
+<li><code>POST /os/maintenance</code>: Trigger platform maintenance</li>
+<li><code>POST /os/snapshots-retention</code>: Trigger snapshot retention</li>
+<li><code>POST /os/techsupport</code>: Generate techsupport file</li>
+<li><code>POST /os/clean-db</code>: Clean system database</li>
+<li><code>POST /jobs/{key}/cancel</code>: Cancel specific job</li>
+<li><code>POST /jobs/{key}/force-stop</code>: Force stop running system job</li>
+<li><code>POST /jobs/{key}/stop</code>: Stop running system job</li>
+<li><code>GET /jobs/{key}/download</code>: Return result of system job<ul>
+<li>With the introduction of the new <a href="#configuration-importexport">Configuration Import/Export</a> users without <code>settings</code> policies are able to download and view all settings.</li>
+<li>Our team is working on a feature to provide RBAC based on the type of file (configuration, snapshot, techsupport). This will be available in a future release.</li>
+</ul>
+</li>
+</ul>
 <h3 id="system-upgrade-improvements">System upgrade improvements</h3>
 <ul>
 <li>The upgrade UI has switched from basic HTTP authentication to cookie/session-based authentication.</li>
@@ -15603,7 +15647,7 @@ are now visible in path lookups. More details can be found in <a href="../../../
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2025</span>
   </span>
 
     
