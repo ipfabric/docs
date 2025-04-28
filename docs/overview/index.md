@@ -104,7 +104,6 @@ Inbound flows:
 | Source port (remote) | Destination port (local) | Protocol | Description                                                            |
 | -------------------- | ------------------------ | -------- | ---------------------------------------------------------------------- |
 | > 1024               | 443                      | TCP      | User Interface                                                         |
-| > 1024               | 8443                     | TCP      | Administrative Interface                                               |
 | 443                  | > 1024                   | TCP      | Network Infrastructure Interaction -- API; Support, Updates (Optional) |
 | 22                   | > 1024                   | TCP      | Network Infrastructure Interaction -- SSH                              |
 | 23                   | >1024                    | TCP      | Network Infrastructure Interaction -- Telnet                           |
@@ -115,7 +114,6 @@ Outbound flows:
 | Source port (local) | Destination port (remote) | Protocol                     | Description                                                            |
 | ------------------- | ------------------------- | ---------------------------- | ---------------------------------------------------------------------- |
 | 443                 | >1024                     | TCP                          | User Interface                                                         |
-| 8443                | >1024                     | TCP                          | Administrative Interface                                               |
 | >1024               | 443                       | TCP                          | Network Infrastructure Interaction -- API; Support, Updates (Optional) |
 | >1024               | 22                        | TCP                          | Network Infrastructure Interaction -- SSH                              |
 | >1024               | 23                        | TCP                          | Network Infrastructure Interaction -- Telnet                           |
