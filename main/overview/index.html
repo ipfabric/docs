@@ -15230,7 +15230,12 @@ here.
 </ul>
 <p>For a seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of disk space, with an additional 50 MB per network device.</p>
+<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. </p>
+<div class="admonition info">
+<p class="admonition-title">Single Thread Performance Recommendation</p>
+<p>We recommend using processors from Intel Cascade Lake or newer, or AMD Zen 2 or newer, as higher single-thread performance is crucial for a smoother user experience. In most cases, it is more beneficial than a high core count with lower per-thread performance.</p>
+</div>
+<p>IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of disk space, with an additional 50 MB per network device.</p>
 <div class="admonition info">
 <p class="admonition-title">Solid State Storage Recommendation</p>
 <p>For optimal performance, we recommend using solid-state drives (SSDs) with a minimum of 2000 IOPS for virtual machine storage. Replacing traditional spinning disks with solid-state drives (SSDs) will significantly improve the performance of database-intensive operations, such as <a href="../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance/">System Maintenance</a>.</p>
@@ -15566,7 +15571,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2025</span>
   </span>
 
     
