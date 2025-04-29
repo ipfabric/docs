@@ -72,6 +72,7 @@ danger:
     - merge_requests
   script:
     - printenv
+    - gem install danger
     - gem install danger-gitlab
     - "ls -al"
     - export CI_MERGE_REQUEST_IID=${CI_OPEN_MERGE_REQUESTS#*!}
