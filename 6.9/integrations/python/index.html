@@ -6793,13 +6793,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../netbox/administration/Release_Notes/overview/" class="md-nav__link">
+      <a href="../netbox/administration/Release_Notes/version_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Overview
+    v3 Release Notes
   
 
     
@@ -6820,13 +6820,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../netbox/administration/Release_Notes/version_1.0/" class="md-nav__link">
+      <a href="../netbox/administration/Release_Notes/version_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v1.0 Release Notes
+    v2 Release Notes
   
 
     
@@ -6847,40 +6847,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../netbox/administration/Release_Notes/version_2.0/" class="md-nav__link">
+      <a href="../netbox/administration/Release_Notes/version_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v2.0 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../netbox/administration/Release_Notes/version_3.0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v3.0 Release Notes
+    v1 Release Notes
   
 
     
@@ -7286,6 +7259,33 @@
   
   
     <li class="md-nav__item">
+      <a href="CLI_Tools/ipf_cve_report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    CVE Reporting Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="CLI_Tools/ipf_device_search/" class="md-nav__link">
         
   
@@ -7347,6 +7347,33 @@
     
   
     Routing Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CLI_Tools/ipf_techsupprt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TechSupport CLI Tool
   
 
     
@@ -11606,6 +11633,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../support/known_issues/IP_Fabric/vGraphNode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    vGraphNode Issues During Snapshot Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -11619,10 +11673,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_10" id="__nav_9_6_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_11" id="__nav_9_6_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -11639,8 +11693,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -13053,7 +13107,7 @@ Support or Solution Architect teams can render the system unusable.</p>
 </div>
 <h1 id="minimum-requirements">Minimum Requirements</h1>
 <ul>
-<li>Python 3.8.1+</li>
+<li>Python 3.9+ (Python 3.8 will be removed in <code>v7.1.x</code>)</li>
 <li>HTTPs Access to an instance of IP Fabric</li>
 <li>API Token or Username/Password to IP Fabric</li>
 </ul>
@@ -13065,6 +13119,10 @@ with IP Fabric API version <code>6.8</code>), new features might occasionally br
 Ensuring that your ipfabric SDK version matches the major and minor version of your IP Fabric instance will guarantee
 compatibility and continued functionality.</p>
 <p>The Patch version of the SDK is used for bug fixes and new features that are compatible with the major and minor version.</p>
+<h2 id="deprecation-and-breaking-change-notices">Deprecation And Breaking Change Notices</h2>
+<p>Please see <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/README.md?ref_type=heads">README.md</a>
+for any current and future deprecation or breaking changes.</p>
+<p>Past notices can be found in the <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/NOTICES.md?ref_type=heads">NOTICES.md</a>.</p>
 <h1 id="installation">Installation</h1>
 <p>For development purposes, it is recommended to use 
 <a href="https://realpython.com/python-virtual-environments-a-primer/">Python Virtual Environments</a>. Installing the package 
@@ -13197,15 +13255,20 @@ Tools from any location.</p>
 </ol>
 <h1 id="initializing">Initializing</h1>
 <h2 id="initializing-without-environment-variables">Initializing without Environment Variables</h2>
-<div class="highlight"><span class="filename">Initialization with Token.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Initialization with Token.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Initialization with Username and Password.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Initialization with Username and Password.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="s1">&#39;https://demo3.ipfabric.io/&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">))</span>
 </code></pre></div>
 <h2 id="initializing-with-environment-variables">Initializing with Environment Variables</h2>
 <p>Once you set up your environment variables, you can initialize the client without any arguments.</p>
 <script id="asciicast-Wsz5iaI3zRSSyZkd0trmpXDSq" src="https://asciinema.org/a/Wsz5iaI3zRSSyZkd0trmpXDSq.js" async data-autoplay="true" data-speed="1" data-loop="1"></script>
+
+<h2 id="bugs">Bugs</h2>
+<p>A bug has been identified when ~2,000 requests are being made to the API.  The underlining issue seems to be with the
+implementation of <code>http2</code>. The workaround is to set <code>IPFClient(http2=False)</code>.  Example error:</p>
+<p><code>httpx.RemoteProtocolError: &lt;ConnectionTerminated error_code:ErrorCodes.NO_ERROR, last_stream_id:1999, additional_data:None&gt;</code></p>
 
 
 
@@ -13226,7 +13289,7 @@ Tools from any location.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2025</span>
   </span>
 
     

@@ -16,7 +16,7 @@
         <link rel="prev" href="../ipf_global_search/">
       
       
-        <link rel="next" href="../../../service-now/">
+        <link rel="next" href="../ipf_techsupprt/">
       
       
         
@@ -6793,13 +6793,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../netbox/administration/Release_Notes/overview/" class="md-nav__link">
+      <a href="../../../netbox/administration/Release_Notes/version_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Overview
+    v3 Release Notes
   
 
     
@@ -6820,13 +6820,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../netbox/administration/Release_Notes/version_1.0/" class="md-nav__link">
+      <a href="../../../netbox/administration/Release_Notes/version_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v1.0 Release Notes
+    v2 Release Notes
   
 
     
@@ -6847,40 +6847,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../netbox/administration/Release_Notes/version_2.0/" class="md-nav__link">
+      <a href="../../../netbox/administration/Release_Notes/version_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v2.0 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../netbox/administration/Release_Notes/version_3.0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v3.0 Release Notes
+    v1 Release Notes
   
 
     
@@ -7276,6 +7249,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../ipf_cve_report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    CVE Reporting Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ipf_device_search/" class="md-nav__link">
         
   
@@ -7355,6 +7355,33 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipf_techsupprt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TechSupport CLI Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -11606,6 +11633,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../support/known_issues/IP_Fabric/vGraphNode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    vGraphNode Issues During Snapshot Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -11619,10 +11673,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_10" id="__nav_9_6_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_11" id="__nav_9_6_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -11639,8 +11693,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -13016,7 +13070,7 @@
     
     
       <li class="md-path__item">
-        <a href="../ipf_device_search/" class="md-path__link">
+        <a href="../ipf_cve_report/" class="md-path__link">
           
   <span class="md-ellipsis">
     CLI Tools
@@ -13055,7 +13109,7 @@ After installing the package it can be run from the command line.</p>
 <p>Installing <code>rich</code> will enable prettier output (<code>pip install rich</code> or <code>pip install ipfabric[cli]</code>).</p>
 <h1 id="documentation">Documentation</h1>
 <div class="highlight"><span class="filename">IPF Route Search Help</span><pre><span></span><code><span class="gp"># </span>ipf_route_search<span class="w"> </span>-h
-<span class="go">usage: ipf_route_search.cmd [-h] [-o OPERATOR] [-d] [-n] [-c] [-s SNAPSHOT] [-v] [-j] [-R] address</span>
+<span class="go">usage: ipf_route_search [-h] [-o OPERATOR] [-d] [-n] [-s SNAPSHOT] [-b BASE_URL] [-t TOKEN] [-u USERNAME] [-p PASSWORD] [-c] [-v] [-j] [-R] address</span>
 
 <span class="go">Search IPv4 or IPv6 Route tables for an Address or Subnet.</span>
 
@@ -13068,9 +13122,17 @@ After installing the package it can be run from the command line.</p>
 <span class="go">                        Default &#39;eq&#39;</span>
 <span class="go">  -d, --default-route   Include &quot;0.0.0.0/0&quot; routes.</span>
 <span class="go">  -n, --next-hop        Search Next Hop IP instead of Route.</span>
-<span class="go">  -c, --count           Print count of rows instead of the actual data.</span>
 <span class="go">  -s SNAPSHOT, --snapshot SNAPSHOT</span>
 <span class="go">                        Snapshot to use which can be a UUID or one of [&#39;last&#39;, &#39;prev&#39;, &#39;lastLocked&#39;]with or without `$` for *nix compatability.</span>
+<span class="go">  -b BASE_URL, --base-url BASE_URL</span>
+<span class="go">                        Base URL for IPFabric API or IPF_URL env variable.</span>
+<span class="go">  -t TOKEN, --token TOKEN</span>
+<span class="go">                        IP Fabric API Token or IPF_TOKEN env variable.</span>
+<span class="go">  -u USERNAME, --username USERNAME</span>
+<span class="go">                        IP Fabric username (requires --password) or IPF_USERNAME env variable.</span>
+<span class="go">  -p PASSWORD, --password PASSWORD</span>
+<span class="go">                        IP Fabric password or IPF_PASSWORD env variable.</span>
+<span class="go">  -c, --count           Print count of rows instead of the actual data.</span>
 <span class="go">  -v, --verbose         Verbose output will enable debugging and print all tables even if no data.</span>
 <span class="go">  -j, --json            Enable JSON output which will also print all tables even if no data.</span>
 <span class="go">  -R, --rich-disable    Disable rich formatting if installed. Useful for sending JSON output to jq.</span>
@@ -13263,7 +13325,7 @@ https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2025</span>
   </span>
 
     
@@ -13358,13 +13420,13 @@ https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="
         
         
           
-          <a href="../../../service-now/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview &amp;amp; Installation">
+          <a href="../ipf_techsupprt/" class="md-footer__link md-footer__link--next" aria-label="Next: TechSupport CLI Tool">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview &amp; Installation
+                TechSupport CLI Tool
               </div>
             </div>
             <div class="md-footer__button md-icon">
