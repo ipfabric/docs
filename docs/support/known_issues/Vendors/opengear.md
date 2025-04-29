@@ -19,3 +19,9 @@ description: This page describes known issues with Opengear and how to fix them.
 **Description:** The NTP task may get stuck, causing the discovery of the device to terminate. This issue is due to an overloaded daemon on the device, resulting in a slow response and a timeout on the SSH connection.
 
 **Fix:** Increase SSH timeout or disable NTP task for Opengear vendor, or at least for og-om family.
+
+## Opengear IM -- LLDP task using `sudo` password
+
+**Description:** To collect LLDP information, `sudo lldpcli show chassis` and `sudo lldpcli show neighbors` commands are used. Enable passwords are used for `sudo` access.
+
+**Fix:** To correctly obtain all LLDP-related information, the password for `sudo` access must be configured as the enable password.
