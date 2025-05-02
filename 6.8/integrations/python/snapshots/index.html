@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.">
+        <meta name="description" content="This section provides examples and guidance on managing snapshots in IP Fabric with the Python SDK.">
       
       
       
-        <link rel="canonical" href="https://docs.ipfabric.io/6.8/overview/How_Discovery_Works/CLI_discovery/">
+        <link rel="canonical" href="https://docs.ipfabric.io/6.8/integrations/python/snapshots/">
       
       
-        <link rel="prev" href="../API_discovery/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../troubleshooting_discovery/">
+        <link rel="next" href="../tables_basics/">
       
       
         
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30+insiders-4.53.11">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22+insiders-4.53.8">
     
     
       
-        <title>How CLI Discovery Works - IP Fabric Documentation Portal</title>
+        <title>Snapshots Basics - IP Fabric Documentation Portal</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e8c34cb.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.46e89654.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -73,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="How CLI Discovery Works - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies." />
-<meta property="og:image" content="https://docs.ipfabric.io/6.8/assets/images/social/overview/How_Discovery_Works/CLI_discovery.png" />
+<meta property="og:title" content="Snapshots Basics - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This section provides examples and guidance on managing snapshots in IP Fabric with the Python SDK." />
+<meta property="og:image" content="https://docs.ipfabric.io/6.8/assets/images/social/integrations/python/snapshots.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/6.8/overview/How_Discovery_Works/CLI_discovery/" />
+<meta property="og:url" content="https://docs.ipfabric.io/6.8/integrations/python/snapshots/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="How CLI Discovery Works - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies." />
-<meta property="twitter:image" content="https://docs.ipfabric.io/6.8/assets/images/social/overview/How_Discovery_Works/CLI_discovery.png" />
+<meta property="twitter:title" content="Snapshots Basics - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This section provides examples and guidance on managing snapshots in IP Fabric with the Python SDK." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/6.8/assets/images/social/integrations/python/snapshots.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-cli-discovery-works" class="md-skip">
+        <a href="#snapshots-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How CLI Discovery Works
+              Snapshots Basics
             
           </span>
         </div>
@@ -224,7 +224,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -241,7 +241,7 @@
         <a href="https://github.com/ipfabric/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     ipfabric/docs
@@ -266,12 +266,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../.." class="md-tabs__link">
           
   
@@ -358,11 +356,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../integrations/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Integrations
@@ -460,7 +460,7 @@
       <a href="https://github.com/ipfabric/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     ipfabric/docs
@@ -474,28 +474,25 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -512,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -554,8 +551,6 @@
                 
   
   
-    
-  
   
   
     
@@ -565,11 +560,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -589,7 +586,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -607,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../overview/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/" class="md-nav__link">
+      <a href="../../../overview/glossary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -688,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../licensing/" class="md-nav__link">
+      <a href="../../../overview/licensing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../snapshots/" class="md-nav__link">
+      <a href="../../../overview/snapshots/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,8 +736,6 @@
                 
   
   
-    
-  
   
   
     
@@ -750,11 +745,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_6" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_6" >
         
           
           <label class="md-nav__link" for="__nav_1_2_6" id="__nav_1_2_6_label" tabindex="0">
@@ -774,7 +771,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -792,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../API_discovery/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/API_discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -816,36 +813,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    How CLI Discovery Works
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../overview/How_Discovery_Works/CLI_discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,81 +831,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connectivity-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connectivity Report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bandwidth-limit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bandwidth Limit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discovery-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discovery Process
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#already-discovered-ip-address-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Already Discovered IP Address Behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -947,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting_discovery/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/troubleshooting_discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1024,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common_problems/connectivity_report/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/common_problems/connectivity_report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common_problems/finetune-ssh-telnet/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common_problems/no-devices-discovered/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/common_problems/no-devices-discovered/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common_problems/quagga-frr/" class="md-nav__link">
+      <a href="../../../overview/How_Discovery_Works/common_problems/quagga-frr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6282,25 +6178,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -6317,7 +6216,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6335,7 +6234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6412,7 +6311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/" class="md-nav__link">
+      <a href="../../netbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6489,7 +6388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/02_getting_started/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/02_getting_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6516,7 +6415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/03_sources/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/03_sources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6543,7 +6442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/04_transform_maps/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/04_transform_maps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6570,7 +6469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/05_ingestion/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/05_ingestion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6597,7 +6496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/06_branches/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/06_branches/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6624,7 +6523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/07_extras/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/07_extras/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6651,7 +6550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/User_Guide/10_FAQ/" class="md-nav__link">
+      <a href="../../netbox/User_Guide/10_FAQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6736,7 +6635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/01_install/" class="md-nav__link">
+      <a href="../../netbox/administration/01_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6763,7 +6662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/02_transform_map/" class="md-nav__link">
+      <a href="../../netbox/administration/02_transform_map/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6840,13 +6739,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/Release_Notes/overview/" class="md-nav__link">
+      <a href="../../netbox/administration/Release_Notes/version_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Overview
+    v3 Release Notes
   
 
     
@@ -6867,13 +6766,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/Release_Notes/version_1.0/" class="md-nav__link">
+      <a href="../../netbox/administration/Release_Notes/version_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v1.0 Release Notes
+    v2 Release Notes
   
 
     
@@ -6894,40 +6793,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/Release_Notes/version_2.0/" class="md-nav__link">
+      <a href="../../netbox/administration/Release_Notes/version_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v2.0 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../integrations/netbox/administration/Release_Notes/version_3.0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v3.0 Release Notes
+    v1 Release Notes
   
 
     
@@ -7022,7 +6894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/nornir/" class="md-nav__link">
+      <a href="../../nornir/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7107,7 +6979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/postman/" class="md-nav__link">
+      <a href="../../postman/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7139,8 +7011,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -7148,13 +7022,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
         
           
           <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
@@ -7174,7 +7046,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -7192,13 +7064,268 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/python/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Python SDK Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots Basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#retrieving-snapshot-ids-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieving Snapshot IDs and Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initializing-the-ipfclient-with-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initializing the IPFClient with Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-and-unloading-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading and Unloading Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locking-and-unlocking-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Locking and Unlocking Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-devices-in-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Devices in Snapshots
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Devices in Snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-devices-by-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Devices by IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-and-refreshing-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding and Refreshing Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rediscovering-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rediscovering Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tables_basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Basics
   
 
     
@@ -7231,10 +7358,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -7251,8 +7378,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7269,7 +7396,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/python/CLI_Tools/ipf_device_search/" class="md-nav__link">
+      <a href="../CLI_Tools/ipf_cve_report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    CVE Reporting Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI_Tools/ipf_device_search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7296,7 +7450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/python/CLI_Tools/ipf_global_search/" class="md-nav__link">
+      <a href="../CLI_Tools/ipf_global_search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7323,13 +7477,40 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/python/CLI_Tools/ipf_route_search/" class="md-nav__link">
+      <a href="../CLI_Tools/ipf_route_search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
     Routing Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI_Tools/ipf_techsupprt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    TechSupport CLI Tool
   
 
     
@@ -7416,13 +7597,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/service-now/" class="md-nav__link">
+      <a href="../../service-now/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Installation &amp; Overview
+    Overview &amp; Installation
   
 
     
@@ -7493,7 +7674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/service-now/Command-Line_Interface/" class="md-nav__link">
+      <a href="../../service-now/Command-Line_Interface/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7578,7 +7759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/service-now/IP_Fabric_ServiceNow_Application/" class="md-nav__link">
+      <a href="../../service-now/IP_Fabric_ServiceNow_Application/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7671,7 +7852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../integrations/splunk/" class="md-nav__link">
+      <a href="../../splunk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -11315,6 +11496,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../support/known_issues/IP_Fabric/vGraphNode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    vGraphNode Issues During Snapshot Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -11328,10 +11536,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_6_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_10" id="__nav_9_6_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_11" id="__nav_9_6_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -11348,8 +11556,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12536,10 +12744,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#retrieving-snapshot-ids-and-metadata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Retrieving Snapshot IDs and Metadata
       
     </span>
   </a>
@@ -12547,10 +12755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connectivity-report" class="md-nav__link">
+  <a href="#initializing-the-ipfclient-with-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Connectivity Report
+        Initializing the IPFClient with Snapshots
       
     </span>
   </a>
@@ -12558,10 +12766,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bandwidth-limit" class="md-nav__link">
+  <a href="#loading-and-unloading-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bandwidth Limit
+        Loading and Unloading Snapshots
       
     </span>
   </a>
@@ -12569,10 +12777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discovery-process" class="md-nav__link">
+  <a href="#locking-and-unlocking-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discovery Process
+        Locking and Unlocking Snapshots
       
     </span>
   </a>
@@ -12580,13 +12788,113 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#already-discovered-ip-address-behavior" class="md-nav__link">
+  <a href="#creating-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Already Discovered IP Address Behavior
+        Creating Snapshots
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-devices-in-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Devices in Snapshots
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Devices in Snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-devices-by-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Devices by IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-and-refreshing-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding and Refreshing Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rediscovering-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rediscovering Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -12615,27 +12923,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../.." class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-    
-    
-      <li class="md-path__item">
         <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Overview
+    Integrations
   </span>
 
         </a>
@@ -12649,10 +12940,10 @@
     
     
       <li class="md-path__item">
-        <a href="../API_discovery/" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    How Discovery Works
+    Python
   </span>
 
         </a>
@@ -12671,7 +12962,7 @@
 
 
   
-    <a href="https://github.com/ipfabric/docs/edit/main/docs/overview/How_Discovery_Works/CLI_discovery.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric.git/edit/main/docs/snapshots.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -12679,63 +12970,295 @@
   
 
 
-<h1 id="how-cli-discovery-works">How CLI Discovery Works</h1>
-<h2 id="overview">Overview</h2>
-<p>Discovery creates a snapshot of the network, finding all active network infrastructure devices and collecting the current state of network protocols and technologies.</p>
-<p>The process is controlled with the <strong>Start discovery</strong> and <strong>Stop</strong> buttons in the <strong>Discovery Snapshot</strong> section of the IP Fabric web UI.</p>
-<p><a class="glightbox" href="../cli_discovery/start.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Start discovery button" src="../cli_discovery/start.png" /></a> <a class="glightbox" href="../cli_discovery/stop.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Stop button" src="../cli_discovery/stop.png" /></a></p>
-<p>You may configure <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention
-&rarr; Create Snapshots Periodically</strong> to automatically run a network discovery at
-periodic intervals or at a specific time. We recommend performing a network
-discovery at least once a day to capture any network changes.</p>
-<h2 id="connectivity-report">Connectivity Report</h2>
-<p>A connection to every attempted address either succeeds or is recorded in the <strong>Connectivity Report</strong>:</p>
-<p><a class="glightbox" href="../cli_discovery/connectivity_report.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Connectivity Report button" src="../cli_discovery/connectivity_report.png" /></a></p>
-<p>which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.</p>
-<h2 id="bandwidth-limit">Bandwidth Limit</h2>
-<p>Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.</p>
-<p>To further distribute the network load and reduce the possibility of bottlenecks, the connection scheduler sorts connections attempts to addresses that are farthest away. For example, in a list of addresses <code>10.10.10.1, 10.10.10.2, 10.20.10.1, 10.10.20.1</code>, after attempting a
-connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1</code>, because it shares only 11 bits with <code>10.10.10.1</code>. This lowest common mask rule enables statistically distributing the load without prior topology knowledge.</p>
-<p>The selected number of megabits per second also controls the number of simultaneous connections. Each additional megabit adds 3 parallel sessions.</p>
-<h2 id="discovery-process">Discovery Process</h2>
-<p>Discovery is performed via a lightweight interaction with the network infrastructure using CLI management protocols and ICMP probes. If the initial seed is not entered, the discovery mechanism attempts to log in to the default gateway and to responders of ICMP probes returning from the traceroute to the <code>10.0.0.0</code> network address.</p>
-<p><a class="glightbox" href="../cli_discovery/discovery.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery process schema" src="../cli_discovery/discovery.png" /></a></p>
-<p>After a successful login, discovery reads the network protocol state tables and looks for known neighbors, such as routing protocol next hops, ARP entries with MAC addresses of supported vendors, and CDP and LLDP neighbor information. A connection attempt is made to each potential network infrastructure device. Traceroute is attempted for each unknown connected router from the discovered networks on the routing table.</p>
-<p>This is how the discovery process continues after a successful connection to a network device:</p>
-<ol>
-<li>IP Fabric looks at LLDP/CDP and other neighbor protocols of the discovered device and tries to connect to those devices.</li>
-<li>IP Fabric tries to connect to a next-hop device from the routing table.</li>
-<li>IP Fabric uses the device&rsquo;s ARP table to find hosts and other network devices it can connect to with the help of the <strong>OUI</strong> table (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Global Configuration &rarr; OUI</strong>).</li>
-<li>Traceroute is attempted for each unknown connected router from the discovered networks in the routing table.</li>
-</ol>
-<p>Discovery then collects the detailed network state and information from every discovered device for every supported running protocol. All collected data are timestamped at the reading time, and the timestamps are used to calculate the rate of change for each element.</p>
-<p>Discovery also computes network topology and cross-technology dependencies by using network graph traversals of upstream and downstream paths. A topology for each protocol is computed separately.</p>
-<p>A managed network is considered to consist of every discovered device under a coherent administrative domain, as restricted by access credentials, and the full list of devices is available in the inventory.</p>
-<p>The spanning-tree domain is a topology of contiguously connected spanning-tree instances and signifies a Layer 2 failure domain in the case of a cascading Layer 2 failure.</p>
-<p>The routing domain is a topology of contiguously connected forwarding hops and signifies a Layer 3 failure domain in the case of a cascading Layer 3 failure.</p>
-<h2 id="already-discovered-ip-address-behavior">Already Discovered IP Address Behavior</h2>
-<p>If the IP Fabric discovery process resolves an IP address which is an interface of an already discovered device, it won&rsquo;t even attempt to connect to the IP address resolved.</p>
-<p>There&rsquo;s another check in the flow, which connects to the IP address and starts to collect basic data, it executes <code>show inventory</code> and its variants on other vendors, collects the serial number, and checks the serial number against the queue of devices being discovered. If it detects the device is in the queue, it stops the device discovery in its tracks.</p>
-<pre class="mermaid"><code>flowchart TD
-    IPFResolves[[IP Fabric resolves an\nIP address of a connectable device.]] --&gt; AlreadyDiscoveredDevice{Is the IP address an interface\non an already discovered device?}
+<h1 id="snapshots-basics">Snapshots Basics</h1>
+<p>This section provides examples and guidance on how to manage and operate snapshots in IP Fabric using the Python SDK.
+To understand more about snapshots in IP Fabric, please refer to the 
+<a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/discovery_snapshot/">Discovery Snapshot documentation</a>.</p>
+<h2 id="retrieving-snapshot-ids-and-metadata">Retrieving Snapshot IDs and Metadata</h2>
+<p>Before operating on snapshots, you may want to retrieve information about available snapshots. Here we offer examples of
+how to access snapshot IDs and metadata:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
-    AlreadyDiscoveredDevice --&gt;|Yes| IPFWontConnect([IP Fabric won't connect to the device.])
-    AlreadyDiscoveredDevice --&gt;|No| CollectsSN[[IP Fabric connects and issues\na command which collects the\nserial number of the device.]]
-    CollectsSN --&gt; ComparesSN[[IP Fabric compares the\nserial number with devices\nalready in the queue.]]
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">unloaded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Default is False</span>
 
-    ComparesSN --&gt; AlreadyInQueue{Is the device already\nin the Discovery queue?}
-    AlreadyInQueue --&gt;|Yes| IPFStops([IP Fabric stops the\ndevice discovery in\nits tracks.])
-    AlreadyInQueue --&gt;|No| IPFDiscovers([IP Fabric attempts\nto fully discover\nthe device.])
+<span class="c1"># Show current SDK client snapshot ID</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current Snapshot ID:&quot;</span><span class="p">,</span> <span class="n">ipf</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">)</span>
 
-    style IPFDiscovers fill:#33dd00
-    style IPFStops fill:#dd3300
-    style IPFWontConnect fill:#dd3300</code></pre>
-<p>You can see the results of the process in <strong>Discovery Snapshot &rarr; Connectivity Report</strong>:</p>
-<p><a class="glightbox" href="../cli_discovery/already_discovered_or_in_queue.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Discovery Connectivity Report table" src="../cli_discovery/already_discovered_or_in_queue.png" /></a></p>
-<div class="admonition tip">
-<p class="admonition-title">Deliberate Duplicate IPs</p>
-<p>You can override this behavior with a feature flag (<code>SUBNETS_TO_ALLOW_PROCESSING_DUPLICIT_IP</code>) if you use the same IP ranges in different VRFs within your management network. Contact <a href="../../../support/">Support</a> for more information.</p>
-</div>
+<span class="c1"># Show if unloaded </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unloaded snapshots retrieved:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">unloaded</span><span class="p">))</span>
+
+<span class="c1"># Get all snapshot IDs</span>
+<span class="n">snapshot_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Snapshot IDs:&quot;</span><span class="p">,</span> <span class="n">snapshot_ids</span><span class="p">)</span>
+
+<span class="c1"># Get snapshot IDs excluding special IDs (like $last, $prev)</span>
+<span class="n">actual_snapshot_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">snap_id</span> <span class="k">for</span> <span class="n">snap_id</span> <span class="ow">in</span> <span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">snap_id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actual Snapshot IDs:&quot;</span><span class="p">,</span> <span class="n">actual_snapshot_ids</span><span class="p">)</span>
+
+<span class="c1"># Pretty print snapshot metadata</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Snapshot Metadata:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Retrieve loaded snapshot IDs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loaded Snapshot IDs:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">loaded_snapshots</span><span class="p">))</span>
+
+<span class="c1"># Retrieve unloaded snapshot IDs (calling `ipf.unloaded_snapshots` will automatically load them)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unloaded Snapshot IDs:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">unloaded_snapshots</span><span class="p">))</span>
+
+<span class="c1"># Retrieve running snapshot ID</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running Snapshot ID:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ipf</span><span class="o">.</span><span class="n">running_snapshot</span><span class="p">)</span>
+
+<span class="c1"># Retrieve loading snapshot ID</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading Snapshot ID:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ipf</span><span class="o">.</span><span class="n">loading_snapshot</span><span class="p">)</span>
+
+<span class="c1"># Update list of snapshots:</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="c1"># Print specific metadata for each snapshot</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Detailed Snapshot Information:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">snap_id</span><span class="p">,</span> <span class="n">snapshot</span> <span class="ow">in</span> <span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Snapshot: </span><span class="si">{</span><span class="n">snap_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Name: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Start time: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  End time: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Status: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Locked: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">locked</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Device count: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">total_dev_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Version: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print all data for the initialized snapshot:</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+</code></pre></div>
+<h2 id="initializing-the-ipfclient-with-snapshots">Initializing the IPFClient with Snapshots</h2>
+<p>You can initialize the IPFClient with specific snapshot IDs. The snapshot ID can be set to <code>$last</code> (the last snapshot
+is selected by default) or <code>$prev</code> to retrieve the previous snapshot, or you can directly specify any loaded snapshot 
+with its snapshot ID. In this sense, the <code>$prev</code> is considered a representative snapshot id for the previous snapshot.</p>
+<p>After initializing the client with a specific snapshot, all tables and methods will operate on the data from that 
+snapshot unless a specific snapshot ID is passed into a method.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize client with the previous to the most recent snapshot</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">snapshot_id</span><span class="o">=</span><span class="s2">&quot;$prev&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">)</span>  <span class="c1"># Should return the snapshot ID of the previous snapshot</span>
+
+<span class="c1"># Changing the SDK IPFClient&#39;s snapshot</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshot_id</span> <span class="o">=</span> <span class="s2">&quot;$last&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">)</span>  <span class="c1"># Should return the snapshot ID of the last snapshot</span>
+<span class="c1"># All methods will now use this ID for returning data</span>
+</code></pre></div>
+<h2 id="loading-and-unloading-snapshots">Loading and Unloading Snapshots</h2>
+<p>All operations available in the UI are available in SDK and loading and unloading snapshots is no exception.</p>
+<div class="highlight"><span class="filename">Loading and Unloading Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">unloaded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unloaded snapshots retrieved:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">unloaded</span><span class="p">))</span>
+
+<span class="c1"># List all unloaded snapshot IDs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unloaded Snapshot IDs:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">ipf</span><span class="o">.</span><span class="n">unloaded_snapshots</span><span class="p">))</span>
+
+<span class="c1"># Load a specific unloaded snapshot and update SDK</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="s1">&#39;&lt;snapshot_id&gt;&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ipf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>  <span class="c1"># Should return True if the snapshot is successfully loaded</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="c1"># Unload the most recent snapshot and update SDK</span>
+<span class="n">success</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">loaded_snapshots</span><span class="p">[</span><span class="s1">&#39;$last&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unload</span><span class="p">(</span><span class="n">ipf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>  <span class="c1"># Should return True if the snapshot is successfully unloaded</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="locking-and-unlocking-snapshots">Locking and Unlocking Snapshots</h2>
+<p>You can also lock or unlock snapshots as needed. By locking a snapshot, you prevent it from being modified, deleted or unloaded.
+For more information on locking and unlocking snapshots, please refer to the 
+<a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/discovery_snapshot/?h=lock#lock-snapshot">Locking Snapshots</a></p>
+<div class="highlight"><span class="filename">Locking and Unlocking Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="c1"># Lock a snapshot</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="s1">&#39;&lt;snapshot_id&gt;&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lock</span><span class="p">()</span>
+
+<span class="c1"># To verify if the operation is completed we can use following code to check all running jobs</span>
+<span class="n">running_jobs</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">all_jobs</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">filters</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;isDone&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;eq&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="p">})</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">running_jobs</span><span class="p">)</span>
+
+<span class="c1"># Unlock a snapshot</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshots</span><span class="p">[</span><span class="s1">&#39;&lt;snapshot_id&gt;&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unlock</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="creating-snapshots">Creating Snapshots</h2>
+<p>In <code>ipfabric&gt;=6.9.9</code> the ability to create snapshots has been added to the SDK. This allows you to create snapshots
+using the default values or by specifying custom values. The <code>create_snapshot</code> method returns the snapshot ID of the
+newly created snapshot and the information about the Job that was scheduled.</p>
+<p>If a discovery process is already running no snapshot ID is provided until the newly created job starts. The job can
+be queried by the newly implemented <code>get_job_by_scheduled_time</code> method of the <code>Jobs</code> object.</p>
+<div class="highlight"><span class="filename">Creating Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">snapshot</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">create_snapshot</span><span class="p">(</span>
+    <span class="n">fail_if_running_snapshot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Default is True and will fail if a snapshot is running.</span>
+    <span class="n">snapshot_name</span><span class="o">=</span><span class="s2">&quot;New Snapshot via SDK&quot;</span><span class="p">,</span>  <span class="c1"># Default is `&#39;&#39;`</span>
+    <span class="n">snapshot_note</span><span class="o">=</span><span class="s2">&quot;This is a new snapshot created via the SDK&quot;</span><span class="p">,</span>  <span class="c1"># Default is `&#39;&#39;`</span>
+    <span class="c1"># The following are also available and default to `None` which will use the default values in Discovery Settings:</span>
+    <span class="n">networks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># {include: List[&lt;IP Network&gt;], exclude: List[&lt;IP Network&gt;]}</span>
+                    <span class="c1"># There must be 1 or more include networks; `[&#39;0.0.0.0/0&#39;]` will include all networks.</span>
+                    <span class="c1"># To disable on-prem discovery and to only discover Vendor API (AWS, Azure, Google) networks, set include to `[&#39;0.0.0.0/32&#39;]`.</span>
+    <span class="n">seeds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of IP addresses or subnets (/24 or smaller); Empty list will remove all seeds</span>
+    <span class="n">credentials</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of saved or custom credentials; Empty list will remove all credentials</span>
+                       <span class="c1"># At least one credential is required for on-prem discovery.</span>
+    <span class="n">privileges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List of saved or custom privileges; Empty list will remove all privileges</span>
+    <span class="n">disabled_assurance_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># List[Literal[&quot;graphCache&quot;, &quot;historicalData&quot;, &quot;intentVerification&quot;]]</span>
+    <span class="c1"># To disable Vendor API&#39;s set `vendorApi=[]`; Vendor API validation has not been included yet.</span>
+<span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">{&#39;error&#39;: False,</span>
+<span class="sd"> &#39;job&#39;: {&#39;downloadFile&#39;: None,</span>
+<span class="sd">         &#39;finishedAt&#39;: None,</span>
+<span class="sd">         &#39;id&#39;: &#39;2065349813&#39;,</span>
+<span class="sd">         &#39;isDone&#39;: False,</span>
+<span class="sd">         &#39;name&#39;: &#39;discoveryNew&#39;,</span>
+<span class="sd">         &#39;scheduledAt&#39;: 1727717798377,</span>
+<span class="sd">         &#39;snapshot&#39;: None,</span>
+<span class="sd">         &#39;startedAt&#39;: None,</span>
+<span class="sd">         &#39;status&#39;: &#39;scheduled&#39;,</span>
+<span class="sd">         &#39;username&#39;: &#39;justin.jeffery&#39;},</span>
+<span class="sd"> &#39;message&#39;: &#39;Please wait till current running snapshot finishes to get the new &#39;</span>
+<span class="sd">            &#39;snapshot ID.&#39;,</span>
+<span class="sd"> &#39;params&#39;: {&#39;snapshotName&#39;: &#39;New Snapshot via SDK&#39;,</span>
+<span class="sd">            &#39;snapshotNote&#39;: &#39;This is a new snapshot created via the SDK&#39;},</span>
+<span class="sd"> &#39;snapshot_running&#39;: True,</span>
+<span class="sd"> &#39;success&#39;: True}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">if</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot ID: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot will be created with the next job scheduled at: </span><span class="si">{</span><span class="n">snapshot</span><span class="o">.</span><span class="n">job_scheduled_at</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;New snapshot will be created with the next job scheduled at: 1727717798377&quot;&quot;&quot;</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">:</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">get_job_by_scheduled_time</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">job_scheduled_at</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">snapshot</span><span class="p">:</span>
+        <span class="n">snapshot</span><span class="o">.</span><span class="n">job</span> <span class="o">=</span> <span class="n">job</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New snapshot ID: </span><span class="si">{</span><span class="n">job</span><span class="o">.</span><span class="n">snapshot</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">{&#39;downloadFile&#39;: None,</span>
+<span class="sd"> &#39;finishedAt&#39;: None,</span>
+<span class="sd"> &#39;id&#39;: &#39;2065349813&#39;,</span>
+<span class="sd"> &#39;isDone&#39;: False,</span>
+<span class="sd"> &#39;name&#39;: &#39;discoveryNew&#39;,</span>
+<span class="sd"> &#39;scheduledAt&#39;: 1727717798377,</span>
+<span class="sd"> &#39;snapshot&#39;: &#39;90027d66-4299-4e10-b009-2f0505793d69&#39;,</span>
+<span class="sd"> &#39;startedAt&#39;: 1727717915672,</span>
+<span class="sd"> &#39;status&#39;: &#39;running&#39;,</span>
+<span class="sd"> &#39;username&#39;: &#39;justin.jeffery&#39;}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h2 id="managing-devices-in-snapshots">Managing Devices in Snapshots</h2>
+<p>The IP Fabric Python SDK provides several methods to manage devices within snapshots.
+These methods allow you to add new devices, rediscover existing devices, and delete devices from the snapshot.</p>
+<h3 id="adding-devices">Adding Devices</h3>
+<h4 id="adding-devices-by-ip">Adding Devices by IP</h4>
+<p>To add new devices to a snapshot by IP address or subnet:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">add_ip_devices</span><span class="p">(</span>
+    <span class="n">ip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.0.0/31&#39;</span><span class="p">],</span>  <span class="c1"># Also accepts ipaddress.IPv4* objects</span>
+    <span class="n">wait_for_discovery</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wait_for_assurance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">retry</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="adding-and-refreshing-devices">Adding and Refreshing Devices</h4>
+<p>To add new devices, retry timed-out devices, and refresh vendor API devices:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">add_devices</span><span class="p">(</span>
+    <span class="n">ip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="s1">&#39;10.0.0.0/31&#39;</span><span class="p">],</span>  <span class="c1"># Also accepts ipaddress.IPv4* objects</span>
+    <span class="n">refresh_vendor_api</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Default True</span>
+    <span class="n">retry_timed_out</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Default True</span>
+    <span class="n">wait_for_discovery</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wait_for_assurance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">retry</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="rediscovering-devices">Rediscovering Devices</h3>
+<p>To rediscover devices in the snapshot based on their serial numbers:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">rediscover_devices</span><span class="p">(</span>
+    <span class="n">devices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a2dff68&#39;</span><span class="p">,</span> <span class="n">ipf</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;BADSN&#39;</span><span class="p">],</span>
+    <span class="n">wait_for_discovery</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wait_for_assurance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">retry</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">skip_invalid_devices</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># Default behavior may vary</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="deleting-devices">Deleting Devices</h3>
+<p>To delete devices from the snapshot based on their serial numbers:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="c1"># Initialize the IPFClient</span>
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
+
+<span class="n">ipf</span><span class="o">.</span><span class="n">snapshot</span><span class="o">.</span><span class="n">delete_devices</span><span class="p">(</span>
+    <span class="n">devices</span><span class="o">=</span><span class="p">[</span><span class="n">ipf</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;BADSN&#39;</span><span class="p">],</span>
+    <span class="n">wait_for_discovery</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wait_for_assurance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">retry</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">skip_invalid_devices</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># Default behavior may vary</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="parameters-explanation">Parameters Explanation</h3>
+<ul>
+<li><code>ip</code>: List of IP addresses or subnets to add. Can be strings or <code>ipaddress.IPv4*</code> objects.</li>
+<li><code>devices</code>: List of device identifiers (serial numbers or device objects) to rediscover or delete.</li>
+<li><code>refresh_vendor_api</code>: Boolean to indicate whether to refresh vendor API devices.</li>
+<li><code>retry_timed_out</code>: Boolean to indicate whether to retry timed-out devices.</li>
+<li><code>wait_for_discovery</code>: Boolean to wait for the discovery process to complete.</li>
+<li><code>wait_for_assurance</code>: Boolean to wait for the assurance process to complete.</li>
+<li><code>timeout</code>: Maximum time (in seconds) to wait for discovery and assurance processes. (default is 60 seconds)</li>
+<li><code>retry</code>: Number of retry attempts for discovery and assurance processes. (default is 5 attempts)</li>
+<li><code>skip_invalid_devices</code>: Boolean to skip invalid devices during rediscovery or deletion.</li>
+</ul>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>The <code>skip_invalid_devices</code> parameter&rsquo;s default behavior may vary.
+  Consult the latest documentation for the current default setting.</li>
+<li>When using <code>ipf.devices.all[index]</code>, ensure that the devices have been loaded and the index is valid.</li>
+<li>The <code>wait_for_discovery</code> and <code>wait_for_assurance</code> parameters allow you to control whether the method should wait
+  for these processes to complete before returning.</li>
+<li>Adjust the <code>timeout</code> and <code>retry</code> parameters based on your network size and complexity to ensure operations 
+  have sufficient time to complete.</li>
+</ul>
+<p>These methods provide powerful tools for managing devices within your IP Fabric snapshots. Use them carefully,
+especially when deleting devices, to maintain the integrity of your network inventory.</p>
 
 
 
@@ -12756,7 +13279,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 2, 2025</span>
   </span>
 
     
@@ -12834,7 +13357,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../API_discovery/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How API Discovery Works">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python SDK Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -12844,20 +13367,20 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
                 Previous
               </span>
               <div class="md-ellipsis">
-                How API Discovery Works
+                Python SDK Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="../troubleshooting_discovery/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting Discovery">
+          <a href="../tables_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: SDK Basics">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Troubleshooting Discovery
+                SDK Basics
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -12892,7 +13415,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
       
     
     <a href="https://www.facebook.com/ipfabric.io" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
     </a>
   
     
@@ -12903,7 +13426,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
       
     
     <a href="https://www.youtube.com/channel/UCLztlukjD9RKFGkrKgxMT1w/featured" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
     </a>
   
     
@@ -12914,7 +13437,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
       
     
     <a href="https://twitter.com/IPFabric" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
     
@@ -12925,7 +13448,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
       
     
     <a href="https://www.linkedin.com/company/ip-fabric/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   
 </div>
@@ -13017,7 +13540,7 @@ connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.expand", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.1e90e0fb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d249fdc4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13690f9d.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       
