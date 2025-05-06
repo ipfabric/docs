@@ -4,6 +4,8 @@ description: This section explains how to set initial admin password to IPF GUI 
 
 # Set the `admin` Password for the Main IP Fabric GUI
 
+## Set `admin` Password via IPF CLI Config Tool
+
 1. Connect to your IP Fabric appliance via SSH as the `osadmin` user.
 
 2. Run:
@@ -54,3 +56,51 @@ description: This section explains how to set initial admin password to IPF GUI 
 5. Select `No` to prevent rebooting the system.
 
    ![Do not reboot the system](gui_admin_password_change5.png){: width="500" .center}
+
+## Create a User with Administrative Privileges via CLI
+
+The `IPF CLI Config` tool can only create the `admin` user for the main GUI. If you need to create an additional user with administrative privileges or if you have forgotten the password for the `admin` user and you need to log in to the GUI as a different user, follow these steps:
+
+1. Connect to your IP Fabric appliance via SSH as the `osadmin` user.
+
+2. Switch to the `root` user using the following command:
+   
+   ```
+   sudo su
+   ```
+
+3. Navigate to the `/opt/ipf-backend-cli-tools` directory:
+
+   ```
+   cd /opt/ipf-backend-cli-tools
+   ```
+
+4. Run the following command:
+
+   ```
+   bin/ipf-backend-cli-tools create-admin-user --username <name_of_admin_user> --password <password_of_admin_user>
+   ```
+
+## Reset Passwords for Local Users via CLI
+
+**Starting with version `7.3`**, you can reset the password for any local user on your IP Fabric appliance via the CLI.
+
+1. Connect to your IP Fabric appliance via SSH as the `osadmin` user.
+
+2. Switch to the `root` user using the following command:
+
+   ```
+   sudo su
+   ```
+
+3. Navigate to the `/opt/ipf-backend-cli-tools` directory:
+
+   ```
+   cd /opt/ipf-backend-cli-tools
+   ```
+
+4. Run the following command:
+
+   ```
+   bin/ipf-backend-cli-tools reset-user-password --username <name_of_a_user> --password <new_password>
+   ```
