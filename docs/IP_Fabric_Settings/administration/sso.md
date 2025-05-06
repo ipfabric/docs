@@ -726,6 +726,16 @@ connectors:
   SAML response:
   - `caData` -- Base64-encoded certificate chain.
   - `ca` -- Path to the file containing the certificate chain.
+
+  !!! tip "Recommendation"
+      It is recommended to store the **SAML CA (PEM) certificate** in the `/home/autoboss/` directory with file permissions set to `644`.
+      
+      To set the correct permissions, run:
+	
+      ```bash
+      chmod 644 /home/autoboss/<file-name>
+      ```
+
 - `usernameAttr` -- Maps SAML `name` value to IP Fabric's `username`.
 - `emailAttr` -- Maps SAML `email` value to IP Fabric's `email`.
 - `groupsAttr` -- Maps SAML `groups` value to IP Fabric's `groupName`.
