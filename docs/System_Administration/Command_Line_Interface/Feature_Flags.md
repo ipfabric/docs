@@ -48,25 +48,6 @@ Since `6.4.0`, ACI service graphs can be enabled by adding the following line to
 ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS=true
 ```
 
-### ACI `fvTenant` API Endpoint Replacement
-
-Until `6.5.0`, IP Fabric used a single `fvTenant` API call to retrieve all
-subtree classes needed for discovery.
-
-In large environments, due to the size of the output, the API call, and
-subsequently the entire APIC discovery process, may fail.
-
-Since `6.5.0`, IP Fabric, by default, uses a separate API call for each
-`fvTenant`'s subtree class needed.
-
-Downloading all data using a single `fvTenant` API call can be re-enabled by
-adding the following line to the global environment file
-`/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_ACI_FVTENANT_ENDPOINT=true
-```
-
 ### Download of FMC ICMP Object Definitions 1 by 1
 
 The FMC API has a bug returning malformed data for the `/objects/icmpv4objects?expanded=true` endpoint.
