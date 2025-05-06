@@ -57,102 +57,141 @@ Below is an example of a successful local backup output triggered via CLI:
     Nov 18 14:27:00 [INFO] ** Backup has started **
     Nov 18 14:27:00 [INFO] Cleaning up backup
     Nov 18 14:27:00 [INFO] Dumping up ArangoDB
-    du: cannot access '/opt/ipf-nimpee-update/server/etc/config.json': No such file or directory
     Nov 18 14:27:06 [INFO] Creating backups list
     Nov 18 14:27:14 [INFO] ** Backup has finished **
     Nov 18 14:27:14 [INFO] Removing temp backup files.
-    rm: cannot remove '/var/backups/database/': Permission denied
     ```
 
 ## Restore via CLI
 
-The same script used for backups is also used for restoring backups.
+To restore a backup, perform the following two steps:
 
-!!! Warning
+1. Configure the backup server in the main GUI, navigate to
+**Settings --> System --> Backup & Maintenance**. For more details, see
+[Schedule System Backup](../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.md).
 
-    Ensure that the backup destination and credentials are correctly configured in the main GUI under
-    **Settings --> System --> Backup & Maintenance**. These values cannot be adjusted using the
-    CLI backup/restore script.
+  !!! Warning
 
-There are three options for backup restoration:
+      Ensure that the backup destination and credentials are correctly configured in the main GUI under
+      **Settings --> System --> Backup & Maintenance**. These values cannot be adjusted using the
+      CLI backup/restore script.
 
-1. **Restore data & all system services** -- This option restores the database,
-   snapshots, and system files. It is useful for recovering from general system
-   failures or upgrade issues.
+2. Have a list of available backups ready for restore.
 
-2. **Restore database** -- Only the database is restored. This option is
-   sufficient for database failures or accidental database drops.
+  !!! Info "Backup List Format"
 
-3. **Restore snapshot files** -- A specific snapshot can be restored.
+      Any backup list has the following format:
+      
+      ```
+      ## LIST ##
+      <item to restore>; <date&time of the item to restore>
+      ## LIST END ##
+      ```
 
-To get the list of available backups, use the commands in the following section.
+      !!! example "Example of a Full Backup List"
 
-### List Available Backups to Restore
+          ```shell
+          ## LIST ##
+          backup-Full; 2024-11-18T13:49:28
+          ## LIST END ##
+          ```
 
-#### Restore data & all system services
+You can restore:
 
-To list available backups for restoration, run the following command in the IP Fabric CLI:
+1. [Data & all system services](#restore-data-all-system-services) -- This option restores the database, snapshots, and system files. It is useful for recovering from general system failures or upgrade issues.
+
+2. [Database only](#restore-database) -- Only the database is restored. This option is sufficient for database failures or accidental database drops.
+
+3. [Specific snapshot](#restore-specific-snapshot) -- A specific snapshot can be restored.
+
+
+### Restore Data & All System Services
+
+To restore data & all system services (full backups, databases, snapshots), use the following command format:
+
+```shell
+sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r backup-Full -d <date&time of the backup>
+```
+
+To list full backups for restoration, run the following command in the IP Fabric CLI:
 
 ```shell
 sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l backup
 ```
 
-!!! example "Output example"
+!!! example "List Example"
 
-    ```shell 
+    ```shell
     root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l backup
-    find: ‘/root/.cache/duplicity/’: Permission denied
     Nov 18 13:54:02 [INFO] Backup destination: local
     Nov 18 13:54:02 [INFO] Storage status: OK
     Nov 18 13:54:02 [INFO] Removing temp backup files.
-    rm: cannot remove '/var/backups/database/': Permission denied
-    
+
     ## LIST ##
     backup-Full; 2024-11-18T13:49:28
     ## LIST END ##
     ```
 
-#### Restore database
+!!! Example "Restore Data & All System Services Command Example"
 
-To list available databases for restoration, run the following command in the IP Fabric CLI:
+    ```shell
+    sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r backup-Full -d 2024-11-18T13:49:28
+    ```
+
+### Restore Database
+
+To restore only the database, use the following command format:
+
+```shell
+sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r arangodb-xxx -d <date&time of the backup>
+```
+
+To list database backups for restoration, run the following command in the IP Fabric CLI:
 
 ```shell
 sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l arangodb
 ```
 
-!!! example "Output example"
+!!! example "List Example"
 
     ```shell
     root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l arangodb
-    find: ‘/root/.cache/duplicity/’: Permission denied
     Nov 18 13:54:30 [INFO] Backup destination: local
     Nov 18 13:54:30 [INFO] Storage status: OK
     Nov 18 13:54:30 [INFO] Removing temp backup files.
-    rm: cannot remove '/var/backups/database/': Permission denied
-    Nov 18 13:54:31 [INFO] Local backup DB same as online list    
-    
+    Nov 18 13:54:31 [INFO] Local backup DB same as online list
+
     ## LIST ##
     arangodb-zsindylek-mq-70-20241118-1349-7_0_4+0; 2024-11-18T13:49:28
     ## LIST END ##
     ```
 
-#### Restore snapshot filesystem
+!!! Example "Restore Database Command Example"
 
-To list available snapshots for restoration, run the following command in the IP Fabric CLI:
+    ```shell
+    sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r arangodb-zsindylek-mq-70-20241118-1349-7_0_4+0 -d 2024-11-18T13:49:28
+    ```
+
+### Restore Specific Snapshot
+
+To restore only one specific snapshot, use the following command format:
+
+```shell
+sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r snapshot-xxx -d <date&time of the backup>
+```
+To list snapshots for restoration, run the following command in the IP Fabric CLI:
 
 ```shell
 sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l snapshots
 ```
 
-!!! example "Output example"
+!!! example "List Example"
 
     ```shell
     root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l snapshots
-    find: ‘/root/.cache/duplicity/’: Permission denied
     Nov 18 13:54:14 [INFO] Backup destination: local
     Nov 18 13:54:14 [INFO] Storage status: OK
     Nov 18 13:54:14 [INFO] Removing temp backup files.
-    rm: cannot remove '/var/backups/database/': Permission denied
     Nov 18 13:54:15 [INFO] Local backup DB same as online list
 
     ## LIST ##
@@ -166,34 +205,8 @@ sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l snapshots
     ## LIST END ##
     ```
 
-### Restore a Backup
-
-To restore a backup, you need the output from the previous section, [List Available Backups to Restore](#list-available-backups-to-restore).
-
-!!! example "Example of a full backup list from the previous section"
+!!! Example "Restore Specific Snapshot Command Example"
 
     ```shell
-    ## LIST ##
-    backup-Full; 2024-11-18T13:49:28
-    ## LIST END ##
+    sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r snapshot-e71519b9-b7fc-488d-841f-67983a12f6af -d 2024-11-18T13:49:28
     ```
-
-This is the syntax for the list:
-
-```shell
-## LIST ##
-<item to restore>; <date&time of the item to restore>
-## LIST END ##
-```
-
-Restoration (full backups, databases, snapshots) is then done using the following command format:
-
-```shell
-sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r <item to restore> -d <date&time of the item to restore>
-```
-
-Full backup restoration command example:
-
-```shell
-sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r backup-Full -d 2024-11-18T13:49:28
-```
