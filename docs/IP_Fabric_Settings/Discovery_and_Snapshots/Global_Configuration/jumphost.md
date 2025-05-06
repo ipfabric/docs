@@ -26,6 +26,9 @@ versions:
 | `3.8`                      | **supported** |
 | `3.9`                      | **supported** |
 | `3.10`                     | tested        |
+| `3.11`                     | tested        |
+| `3.12`                     | tested        |
+| `3.13`                     | tested        |
 
 !!! note "Tested vs. Supported"
 
