@@ -52,8 +52,8 @@ in [IPF Certificates](../system/ipf_cert.md).
 
     IP Fabric only trusts certificates issued by CAs listed in the system
     `openssl` trust-store. If your company uses certificates signed by an
-    internal CA, please contact your Solution Architect or open a support
-    ticket for further configuration to properly enable SSO.
+    internal CA, please see the instructions in [Certificate Authorities](../system/ca.md)
+    as your CA certificate will need to be added to the system's trust-store.
 
 ### CLI Access
 
