@@ -13,6 +13,13 @@ trusted -- as indicated in an SSL/TLS error in the web browser (for example,
 We recommend that you replace the self-signed server certificate with your own
 server certificate signed by a trusted certificate authority.
 
+!!! information "Enabling SSO while using a Private Certificate Authority (CA)"
+
+    If your organization uses an internal CA and you plan to enable SSO, additional
+    steps are required after completing the instructions on this page. Specifically,
+    you must add your CA certificate to the system's trust store to ensure SSO functions
+    correctly. For detailed guidance, refer to [Certificate Authorities](../system/ca.md).
+
 Usually, the server certificate replacement can be handled via **Settings -->
 System --> IPF Certificates** and consists of the following steps:
 
