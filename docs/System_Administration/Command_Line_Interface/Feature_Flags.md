@@ -189,6 +189,24 @@ After updating the environment file, you must restart IP Fabric application by r
 sudo systemctl restart ipf-appliance
 ```
 
+### Meraki Catalyst switches discovery
+
+Starting with version `7.3.5`, cloud-managed Cisco Catalyst switches can be discovered via the Meraki API.
+
+**Identification criteria**: Firmware starting with `CS` and Monitoring Version set to `n/a`.
+
+Discovery is enabled by default. To disable it, add the following line to the global environment file `/etc/default/ipf-appliance-local`:
+
+```
+DISABLE_DISCOVERY_CLOUD_MANAGED_CATALYST_SWITCHES=true
+```
+
+After updating the environment file, you must restart the IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
 ## Deprecated Feature Flags
 
 ### GCP Discovery (Removed in `7.0`)
