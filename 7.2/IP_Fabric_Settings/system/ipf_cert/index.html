@@ -15208,6 +15208,13 @@ trusted &ndash; as indicated in an SSL/TLS error in the web browser (for example
 <code>NET::ERR_CERT_AUTHORITY_INVALID</code> in Google Chrome).</p>
 <p>We recommend that you replace the self-signed server certificate with your own
 server certificate signed by a trusted certificate authority.</p>
+<div class="admonition information">
+<p class="admonition-title">Enabling SSO while using a Private Certificate Authority (CA)</p>
+<p>If your organization uses an internal CA and you plan to enable SSO, additional
+steps are required after completing the instructions on this page. Specifically,
+you must add your CA certificate to the system&rsquo;s trust store to ensure SSO functions
+correctly. For detailed guidance, refer to <a href="../ca/">Certificate Authorities</a>.</p>
+</div>
 <p>Usually, the server certificate replacement can be handled via <strong>Settings &rarr;
 System &rarr; IPF Certificates</strong> and consists of the following steps:</p>
 <ol>
@@ -15588,7 +15595,7 @@ certificate.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2025</span>
   </span>
 
     
