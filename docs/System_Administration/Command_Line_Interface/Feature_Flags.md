@@ -189,6 +189,17 @@ After updating the environment file, you must restart IP Fabric application by r
 sudo systemctl restart ipf-appliance
 ```
 
+### Enable Manual Links / Transparent firewall
+
+This feature flag enable manual link configuration option in both global and snapshot settings.
+For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#initial-transparent-firewall-setup-behind-feature-flag).
+
+Since `7.3.0`, the manual link support can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_MANUAL_LINKS=true
+```
+
 ### Meraki Catalyst switches discovery
 
 Starting with version `7.3.5`, cloud-managed Cisco Catalyst switches can be discovered via the Meraki API.
