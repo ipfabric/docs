@@ -113,10 +113,9 @@ def generate_release_notes(rn, project_issues):
                 issues.append(format_issue(issue))
 
         if len(issues) > 0:
-            rn.add_heading(type[1], 2)
+            rn.add_heading(type[1], 3)
             rn.add_paragraph(type[2])
             rn.add_unordered_list(issues)
-
 
 def main():
     global AUTH
@@ -126,6 +125,8 @@ def main():
         print(f"Given key not found - {err}")
         print("You need to set JIRA_USER and JIRA_PASS environment variables")
         exit(1)
+
+    branches = {}
 
     for v in get_project_versions(PROJECT_KEYS[0]):
         print(v)
@@ -138,65 +139,78 @@ def main():
         major = int(version_match[1])
         minor = int(version_match[2])
 
-        # Include only versions 6.10 and later
-        if (major * 1000 + minor) < 6009:
+        if major < 7:
             print(f"Skipping release {v['name']}")
             continue
 
-        version_dir = f"{major}.x/{major}.{minor}.x"
+        branch_key = f"{major}.{minor}"
+        if branch_key not in branches:
+            branches[branch_key] = []
+        branches[branch_key].append(v)
 
-        issues = []
-        issues_total = 0
+    for branch_key in sorted(branches.keys()):
+        versions = sorted(branches[branch_key], key=lambda v: int(re.match(r"^(\d+)\.(\d+)\.(\d+)", v["name"]).group(3)), reverse=True)
+        major, minor = branch_key.split(".")
+        version_dir = f"{major}.x"
+        file_name = f"{branch_key}.md"
 
-        for project in PROJECT_KEYS:
-            project_issues = []
-            start_at = 0
+        total_issues_in_branch = 0
+        version_data = []
 
-            while True:
-                response = get_project_issues_from_version(project, v, start_at)
-                response_len = len(response["issues"])
-                print(
-                    f"For {project} fetched {response_len}, so far {len(project_issues)}, should be {response['total']} issues"
-                )
-                # print(json.dumps(response['issues'], indent=2))
+        for v in versions:
+            print(f"Processing version {v['name']} in {branch_key}")
 
-                project_issues += response["issues"]
-                start_at += response_len
+            issues = []
+            issues_total = 0
 
-                if response_len == 0 or len(project_issues) == response["total"]:
-                    # We have fetched all results or we got empty response
-                    # maybe because we have iterated beyond the end of the list
-                    break
+            for project in PROJECT_KEYS:
+                project_issues = []
+                start_at = 0
 
-            issues += project_issues
-            issues_total += len(project_issues)
-            print(f"For {project} fetched {len(project_issues)} issues")
+                while True:
+                    response = get_project_issues_from_version(project, v, start_at)
+                    response_len = len(response["issues"])
+                    print(
+                        f"For {project} fetched {response_len}, so far {len(project_issues)}, should be {response['total']} issues"
+                    )
+                    project_issues += response["issues"]
+                    start_at += response_len
+
+                    if response_len == 0 or len(project_issues) == response["total"]:
+                        break
+
+                issues += project_issues
+                issues_total += len(project_issues)
+                total_issues_in_branch += len(project_issues)
+                print(f"For {project} fetched {len(project_issues)} issues")
+
+            if issues:
+                version_data.append((v["name"], issues))
 
         rn = Document()
         rn.add_raw(
             f"---\n"
-            f"description: IP Fabric automatically generated low-level release notes for version {v['name']}.\n"
+            f"description: IP Fabric automatically generated low-level release notes for version {branch_key}\n"
             f"search:\n"
             f"  boost: 0.5\n"
             f"---"
         )
-        rn.add_heading(f"LLRN {v['name']}")
+        rn.add_heading(f"LLRN {branch_key}")
         rn.add_paragraph(
-            f""" These are low-level release notes for IP Fabric
-                release `{v['name']}`. Please note, that this page contains
-                very low-level information about the actual release, which can
-                lead to false conclusions if you don't have access to the
-                tickets. On the other hand, it can provide valuable information,
-                if you are looking for a particular detail. This release of
-                IP Fabric contains a total of {issues_total} issues."""
+            f"These are low-level release notes for IP Fabric release branch `{branch_key}`. "
+            "Please note, that this page contains very low-level information about the actual release, "
+            "which can lead to false conclusions if you don’t have access to the tickets. "
+            "On the other hand, it can provide valuable information, if you are looking for a particular detail. "
+            f"This release branch contains a total of {total_issues_in_branch} fixed issues."
         )
 
-        generate_release_notes(rn, issues)
+        for version_name, issues in version_data:
+            rn.add_heading(version_name, 2)
+            generate_release_notes(rn, issues)
 
         os.makedirs(os.path.join(OUT_DIR, version_dir), exist_ok=True)
-        with open(os.path.join(OUT_DIR, version_dir, v["name"] + ".md"), "w") as file:
+        with open(os.path.join(OUT_DIR, version_dir, file_name), "w") as file:
             print(rn, file=file)
-
 
 if __name__ == "__main__":
     main()
