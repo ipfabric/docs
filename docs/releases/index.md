@@ -4,14 +4,7 @@ description: In this section, we publish release notes and low-level release not
 
 # IP Fabric Releases
 
---8<-- "snippets/6.6.3_online_upgrade_issue.md"
-
 --8<-- "snippets/upgrade_version_policy.md"
-
-!!! important "Current Release"
-
-    The current major release is `6.10`. Please check its
-    [detailed release notes](release_notes/6.10.md).
 
 Our release naming follows [semantic versioning](https://semver.org/), where
 the components of the version are:

@@ -3,8 +3,6 @@
     We support the following upgrade paths:
 
     - The **latest** version in the previous major line --> any version in the
-      current major line (for example, `5.0.2` --> `6.1.3`).
+      current major line (for example, `6.10.7` --> `7.2.13`).
     - Any version in the current major line --> any newer version in the current
-      major line (for example, `6.0.1` --> `6.2.3`).
-    - The **latest** version in the current major line --> any version in the
-      next major line (for example, `6.2.5` --> `7.1.3`).
+      major line (for example, `7.0.15` --> `7.2.13`).
