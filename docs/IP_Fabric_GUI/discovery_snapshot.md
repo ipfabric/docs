@@ -38,7 +38,7 @@ in the global **Settings** or in the
 box).
 
 For creating automatic snapshots, follow the instructions in
-[Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md#create-snapshots-periodically).
+[Create Snapshots Periodically](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection.md#create-snapshots-periodically).
 
 ### Resource Checks Before Creating a New Snapshot
 
@@ -58,7 +58,7 @@ checks (if any of them fails, a new snapshot won't be created):
 3. Even if the new snapshot would have the size of the largest loaded snapshot,
    any locked snapshots would not be automatically deleted based on the `Delete
 Snapshots: If HDD utilization reaches ... percent` value (default 80) set in
-   **Settings --> Discovery & Snapshots --> Snapshot Retention**.
+   **Settings --> Discovery & Snapshots --> Snapshot Collection**.
    - If this condition is not met, `Not Enough Disk Space` is thrown.
 
 In case of ongoing issues, it is possible to disable these resource checks in
@@ -161,13 +161,13 @@ will then show a `transit cloud` indicating it does not have information about t
 
 ## Snapshot Actions
 
-Due to database maintenance, only up to 5 snapshots can be loaded into memory. The default configuration allows only 3 loaded snapshots, but you can change this in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Maximum number of loaded snapshots**.
+Due to database maintenance, only up to 5 snapshots can be loaded into memory. The default configuration allows only 3 loaded snapshots, but you can change this in **Settings --> Discovery & Snapshots --> Snapshot Collection --> Maximum number of loaded snapshots**.
 
 ### Lock Snapshot
 
 ![Lock snapshot](snapshots/snapshot_lock.png)
 
-By selecting `Lock snapshot`, IP Fabric won't automatically unload the snapshot to the hard disk and will keep it in memory. The default configuration allows only 1 locked snapshot, but you can change this in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Maximum number of locked snapshots**.
+By selecting `Lock snapshot`, IP Fabric won't automatically unload the snapshot to the hard disk and will keep it in memory. The default configuration allows only 1 locked snapshot, but you can change this in **Settings --> Discovery & Snapshots --> Snapshot Collection --> Maximum number of locked snapshots**.
 
 ### Loaded Snapshots
 
@@ -188,7 +188,7 @@ When a snapshot is unloaded, it is safely stored on the hard disk, but the data 
     certain threshold.
 
     - For more information, please see:
-      - [Snapshot Retention](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md)
+      - [Snapshot Collection](../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection.md)
       - [Schedule System Backup](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup.md)
 
 ### Download Snapshots

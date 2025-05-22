@@ -3,13 +3,13 @@ description: In this section, we discuss snapshots, scheduling, retention rules,
 ---
 
 
-# Snapshot Retention
+# Snapshot Collection
 
 ## Create Snapshots Periodically
 
 
 For [change management](../../IP_Fabric_GUI/management/changes.md), it is necessary to regularly run IP Fabric discovery. A periodic discovery run can be scheduled
-in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create Snapshots Periodically**.
+in **Settings --> Discovery & Snapshots --> Snapshot Collection --> Create Snapshots Periodically**.
 
 Set the **snapshot start time** to schedule snapshots minutely, hourly, daily, weekly, monthly, or yearly. Configuring the **snapshot start time** ensures snapshots are taken exactly when required. Once configured, the process will execute automatically according to your specified schedule.
 
@@ -18,7 +18,7 @@ Set the **snapshot start time** to schedule snapshots minutely, hourly, daily, w
 Here is an example of an automatic discovery run at **10 minutes past
 every hour** (0:10, 1:10, 2:10, 3:10, etc.).
 
-![Create Snapshots Periodically](snapshot_retention/create_snapshots_periodically.png)
+![Create Snapshots Periodically](snapshot_collection/create_snapshots_periodically.png)
 
 ### How Scheduling Works in IP Fabric
 
@@ -27,11 +27,11 @@ takes 4 hours and 20 minutes to be created. Then, the next snapshot will be sche
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.
 
-![Cron Setup](snapshot_retention/cron_setup.jpg)
+![Cron Setup](snapshot_collection/cron_setup.jpg)
 
 ## Maximum Number of Loaded/Locked Snapshots
 
-In **Settings --> Discovery & Snapshots --> Snapshot Retention**, you can change these parameters:
+In **Settings --> Discovery & Snapshots --> Snapshot Collection**, you can change these parameters:
 
 - **Maximum number of loaded snapshots**
   - Maximum number of snapshots that can be loaded in **Discovery Snapshot**.
@@ -42,13 +42,13 @@ In **Settings --> Discovery & Snapshots --> Snapshot Retention**, you can change
   - Default value: 1
   - Possible values: 0-4
 
-![Maximum number of loaded/locked snapshots](snapshot_retention/maximum_number_of_loaded_or_locked_snapshots.png)
+![Maximum number of loaded/locked snapshots](snapshot_collection/maximum_number_of_loaded_or_locked_snapshots.png)
 
 ## Snapshot Retention Rules
 
 In version `4.1`, we added support for various snapshot retention policies.
 
-![Snapshot Retention Rules](snapshot_retention/snapshot_retention_rules.png)
+![Snapshot Retention Rules](snapshot_collection/snapshot_retention_rules.png)
 
 ### How Snapshot Retention Works
 

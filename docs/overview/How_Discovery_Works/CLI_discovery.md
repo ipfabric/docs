@@ -12,7 +12,7 @@ The process is controlled with the **Start discovery** and **Stop** buttons in t
 
 ![Start discovery button](CLI_discovery/start.png) ![Stop button](CLI_discovery/stop.png)
 
-You may configure **Settings --> Discovery & Snapshots --> Snapshot Retention
+You may configure **Settings --> Discovery & Snapshots --> Snapshot Collection
 --> Create Snapshots Periodically** to automatically run a network discovery at
 periodic intervals or at a specific time. We recommend performing a network
 discovery at least once a day to capture any network changes.

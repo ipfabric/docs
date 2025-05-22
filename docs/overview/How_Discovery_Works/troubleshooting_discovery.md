@@ -364,7 +364,7 @@ Management** list.
 
 !!! example
 
-    - **Settings --> Discovery & Snapshots --> Snapshot Retention --> Create
+    - **Settings --> Discovery & Snapshots --> Snapshot Collection --> Create
       Snapshots Periodically** is set to create snapshots every day at 6 AM.
 
     - **Settings --> Configuration Management --> Schedule** is set to

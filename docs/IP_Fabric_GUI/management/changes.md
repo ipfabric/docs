@@ -9,7 +9,7 @@ description: Snapshots at different time intervals can be compared to identify d
 Snapshots at different time intervals can be compared to identify dynamic changes in the network when a snapshot of the
 network (discovery run) completes successfully.
 
-To enable periodic discovery runs, check the [Automatic Snapshots](../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention.md) configuration.
+To enable periodic discovery runs, check the [Automatic Snapshots](../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection.md) configuration.
 
 ## Comparing Changes
 
