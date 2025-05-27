@@ -8680,6 +8680,34 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-or-database-errors-after-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License or Database Errors After Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -14657,6 +14685,34 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-or-database-errors-after-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License or Database Errors After Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15030,6 +15086,61 @@ MD5 (ESXi8.0-ipfabric-7-2-13+0.ova) = 51b3bb7cb54160f4295d4abdc9711aff
 <h3 id="post-upgrade-notice">Post-Upgrade Notice</h3>
 <p>If you encounter a <code>Something went wrong</code> error when accessing the IP Fabric GUI after upgrading, clear your browser cache using <code>CTRL</code>+<code>F5</code> (Windows/Linux) or <code>Command</code>+<code>Shift</code>+<code>R</code> (macOS). This resolves issues caused by outdated cached resources.</p>
 <p><a class="glightbox" href="7.2_browser_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Something went wrong.&quot; error" class="center" src="7.2_browser_error.png" /></a></p>
+<h3 id="known-issues">Known Issues</h3>
+<h4 id="license-or-database-errors-after-upgrade">License or Database Errors After Upgrade</h4>
+<p>If the IP Fabric GUI redirects to the status page after an upgrade and displays errors such as <strong>License Error</strong>, <strong>ArangoDB Disconnected</strong>, or <strong>Failed to load initial app data</strong>, this may indicate an issue with the ArangoDB configuration.  </p>
+<p><a class="glightbox" href="7.2_app_data_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Failed to load initial app data&quot; error" class="center" src="7.2_app_data_error.png" /></a>  </p>
+<p><a class="glightbox" href="7.2_license_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="License error" class="center" src="7.2_license_error.png" /></a>  </p>
+<p><strong>To diagnose the issue:</strong>  </p>
+<ol>
+<li>
+<p>Log in to the IP Fabric appliance via CLI and switch to the root user using <code>sudo -i</code>.  </p>
+</li>
+<li>
+<p>Check if ArangoDB is listening on port <code>8529</code> via IPv6 (expected for IP Fabric <code>7.2</code>): </p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# lsof -i | grep 8529 | grep LISTEN  
+arangod      952    arangodb   26u  IPv6   19501      0t0  TCP *:8529 (LISTEN)  
+</code></pre></div>
+<p>If ArangoDB is bound to IPv4 instead, this likely causes the error:  </p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# lsof -i | grep 8529 | grep LISTEN  
+arangod     874 arangodb   26u  IPv4  20599      0t0  TCP *:8529 (LISTEN)  
+</code></pre></div>
+</li>
+<li>
+<p>Verify the <code>arangod.conf</code> file in <code>/etc/arangodb3</code> is a symbolic link to <code>arangod.conf.ipf</code>. The directory should show:  </p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# cd /etc/arangodb3  
+root@IPF:/etc/arangodb3# ls -lsa | grep arangod.conf  
+0 lrwxrwxrwx   1 root root    16 Nov 27  2023 arangod.conf -&gt; arangod.conf.ipf  
+4 -rw-r--r--   1 root root  1687 Feb 11 12:07 arangod.conf.ipf  
+4 -rw-r--r--   1 root root  1696 Nov 27  2023 arangod.conf.ipf-orig  
+</code></pre></div>
+</li>
+</ol>
+<p><strong>If the symlink is missing (i.e., <code>arangod.conf</code> is a regular file):</strong>  </p>
+<ol>
+<li>
+<p>Run these commands to restore the symlink:  </p>
+<div class="highlight"><pre><span></span><code>cd /etc/arangodb3/  
+mv arangod.conf arangod.conf.bkp  
+ln -s arangod.conf.ipf arangod.conf  
+systemctl restart arangodb3  
+</code></pre></div>
+</li>
+<li>
+<p>Confirm the symlink exists and ArangoDB uses IPv6:  </p>
+<div class="highlight"><pre><span></span><code>root@IPF:/etc/arangodb3# ls -lsa | grep arangod.conf  
+0 lrwxrwxrwx   1 root root    16 May 27 09:30 arangod.conf -&gt; arangod.conf.ipf  
+4 -rw-r--r--   1 root root  1697 May 27 09:22 arangod.conf.bkp  
+4 -rw-r--r--   1 root root  1693 Jan 22  2021 arangod.conf.dpkg-old  
+4 -rw-r--r--   1 root root  1687 Apr 23 13:42 arangod.conf.ipf  
+4 -rw-r--r--   1 root root  1696 Mar  4 10:44 arangod.conf.ipf-orig  
+
+root@IPF:~# lsof -i | grep 8529 | grep LISTEN  
+arangod    876 arangodb   26u  IPv6  17979      0t0  TCP *:8529 (LISTEN)  
+</code></pre></div>
+</li>
+</ol>
+<p>After these steps, the GUI should function correctly.  </p>
 <h2 id="v725-march-17th-2025-ea">v7.2.5 (March 17<sup>th</sup>, 2025; EA)</h2>
 <h3 id="api-endpoints-deprecation">API Endpoints Deprecation</h3>
 <p>The below API endpoints have been marked as deprecated and the intention is to remove them in version <code>7.5</code>.</p>
@@ -15250,7 +15361,7 @@ are now visible in path lookups. More details can be found in <a href="../../../
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 22, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2025</span>
   </span>
 
     
