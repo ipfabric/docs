@@ -166,8 +166,52 @@ For more information about Extensions, see the [7.0 Release Notes](../../release
 
 After updating the environment file, you must restart IP Fabric application by running the following command:
 
-```
+```bash
 sudo systemctl restart ipf-appliance
+```
+
+### SyslogWorker Feature Flags
+
+When enabling or disabling a SyslogWorker feature flag, the worker environment file `/etc/default/ipf-discovery-syslogworker-local` needs to be created, edited, or deleted.
+
+#### Performance Logging
+
+```bash
+ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING=true
+```
+
+This feature enables detailed tracking of execution times for critical operations, including configuration updates, Git operations, database queries, and device connections.
+
+#### Git File Commit Optimization
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_FILE_COMMIT=true
+```
+
+This feature switches the internal implementation for faster file history retrieval operations. This optimization provides better performance scaling as the Git repository grows.
+
+#### Git Repository Configuration
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_CONFIGURE_REPOSITORY=true
+```
+
+This feature applies Git configuration optimizations, including preloading the Git index into memory, enabling commit graph files for faster history traversal, and automatic commit graph maintenance. These settings improve Git operation performance with minimal overhead.
+
+#### Git Repository Optimization
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_OPTIMIZE_REPOSITORY=true
+```
+
+This feature performs repository optimization during worker initialization, including comprehensive garbage collection, repository repacking for optimal storage, and commit graph generation for faster traversal. This optimization significantly increases worker startup time but provides improved runtime performance.
+
+#### Reminder
+
+After updating the environment file, you must restart the discovery worker by running the following command:
+
+```bash
+sudo systemctl restart ipf-discovery-syslogworker
 ```
 
 ### Enable Manual Links / Transparent Firewall
