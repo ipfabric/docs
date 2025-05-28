@@ -6488,6 +6488,78 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#syslogworker-feature-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SyslogWorker Feature Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SyslogWorker Feature Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-file-commit-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git File Commit Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repository-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Repository Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repository-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Repository Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reminder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reminder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#enable-manual-links-transparent-firewall" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14683,6 +14755,78 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#syslogworker-feature-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SyslogWorker Feature Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SyslogWorker Feature Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-file-commit-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git File Commit Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repository-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Repository Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repository-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Repository Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reminder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reminder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#enable-manual-links-transparent-firewall" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14929,7 +15073,29 @@ here.
 </div>
 <p>For more information about Extensions, see the <a href="../../../releases/release_notes/7.0/#extensions-engineering-preview">7.0 Release Notes</a> for more information.</p>
 <p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
-<div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-appliance
+</code></pre></div>
+<h3 id="syslogworker-feature-flags">SyslogWorker Feature Flags</h3>
+<p>When enabling or disabling a SyslogWorker feature flag, the worker environment file <code>/etc/default/ipf-discovery-syslogworker-local</code> needs to be created, edited, or deleted.</p>
+<h4 id="performance-logging">Performance Logging</h4>
+<div class="highlight"><pre><span></span><code><span class="nv">ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>This feature enables detailed tracking of execution times for critical operations, including configuration updates, Git operations, database queries, and device connections.</p>
+<h4 id="git-file-commit-optimization">Git File Commit Optimization</h4>
+<div class="highlight"><pre><span></span><code><span class="nv">ENABLE_EXPERIMENTAL_GIT_FILE_COMMIT</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>This feature switches the internal implementation for faster file history retrieval operations. This optimization provides better performance scaling as the Git repository grows.</p>
+<h4 id="git-repository-configuration">Git Repository Configuration</h4>
+<div class="highlight"><pre><span></span><code><span class="nv">ENABLE_EXPERIMENTAL_GIT_CONFIGURE_REPOSITORY</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>This feature applies Git configuration optimizations, including preloading the Git index into memory, enabling commit graph files for faster history traversal, and automatic commit graph maintenance. These settings improve Git operation performance with minimal overhead.</p>
+<h4 id="git-repository-optimization">Git Repository Optimization</h4>
+<div class="highlight"><pre><span></span><code><span class="nv">ENABLE_EXPERIMENTAL_GIT_OPTIMIZE_REPOSITORY</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>This feature performs repository optimization during worker initialization, including comprehensive garbage collection, repository repacking for optimal storage, and commit graph generation for faster traversal. This optimization significantly increases worker startup time but provides improved runtime performance.</p>
+<h4 id="reminder">Reminder</h4>
+<p>After updating the environment file, you must restart the discovery worker by running the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-discovery-syslogworker
 </code></pre></div>
 <h3 id="enable-manual-links-transparent-firewall">Enable Manual Links / Transparent Firewall</h3>
 <p>This feature flag enable manual link configuration option in both global and snapshot settings.
@@ -14987,7 +15153,7 @@ For more information about feature, see the <a href="../../../releases/release_n
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2025</span>
   </span>
 
     
