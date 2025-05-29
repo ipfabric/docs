@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Overview of the NetBox plugin, what it contains, and how to use it.">
+        <meta name="description" content="Overview of the IP Fabric NetBox plugin, its capabilities, compatibility, and use cases.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../infoblox/contributing/">
       
       
-        <link rel="next" href="User_Guide/02_getting_started/">
+        <link rel="next" href="Release_Notes/version_1/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - IP Fabric Documentation Portal</title>
+        <title>NetBox plugin Overview - IP Fabric Documentation Portal</title>
       
     
     
@@ -73,16 +73,16 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Overview - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Overview of the NetBox plugin, what it contains, and how to use it." />
+<meta property="og:title" content="NetBox plugin Overview - IP Fabric Documentation Portal" />
+<meta property="og:description" content="Overview of the IP Fabric NetBox plugin, its capabilities, compatibility, and use cases." />
 <meta property="og:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/index.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.ipfabric.io/7.3/integrations/netbox/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Overview - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Overview of the NetBox plugin, what it contains, and how to use it." />
+<meta property="twitter:title" content="NetBox plugin Overview - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="Overview of the IP Fabric NetBox plugin, its capabilities, compatibility, and use cases." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/index.png" />
  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#netbox-plugin-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              NetBox plugin Overview
             
           </span>
         </div>
@@ -7086,7 +7086,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    NetBox plugin Overview
   
 
     
@@ -7103,7 +7103,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    NetBox plugin Overview
   
 
     
@@ -7129,6 +7129,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-differencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Differencing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-source-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Source Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#netbox-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7140,13 +7223,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#screenshots" class="md-nav__link">
+  <a href="#important-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Screenshots
+        Important Notes
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots-from-netbox-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots from NetBox UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screenshots from NetBox UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-1-ip-fabric-source-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 1: IP Fabric Source Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-2-ip-fabric-snapshots-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 2: IP Fabric Snapshots Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-3-ip-fabric-sync-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 3: IP Fabric Sync Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7185,7 +7318,7 @@
   <span class="md-ellipsis">
     
   
-    User Guide
+    Release Notes
   
 
     
@@ -7201,7 +7334,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    User Guide
+    Release Notes
   
 
           </label>
@@ -7214,13 +7347,13 @@
   
   
     <li class="md-nav__item">
-      <a href="User_Guide/02_getting_started/" class="md-nav__link">
+      <a href="Release_Notes/version_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Getting Started
+    v1 Release Notes
   
 
     
@@ -7241,13 +7374,13 @@
   
   
     <li class="md-nav__item">
-      <a href="User_Guide/03_sources/" class="md-nav__link">
+      <a href="Release_Notes/version_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Sources
+    v2 Release Notes
   
 
     
@@ -7268,13 +7401,13 @@
   
   
     <li class="md-nav__item">
-      <a href="User_Guide/04_transform_maps/" class="md-nav__link">
+      <a href="Release_Notes/version_3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Transform Maps
+    v3 Release Notes
   
 
     
@@ -7295,94 +7428,13 @@
   
   
     <li class="md-nav__item">
-      <a href="User_Guide/05_ingestion/" class="md-nav__link">
+      <a href="Release_Notes/version_4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Data Ingestion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="User_Guide/06_branches/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Branches
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="User_Guide/07_extras/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Extras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="User_Guide/10_FAQ/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
+    v4 Release Notes
   
 
     
@@ -7430,7 +7482,7 @@
   <span class="md-ellipsis">
     
   
-    Administration
+    User Guide
   
 
     
@@ -7446,7 +7498,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Administration
+    User Guide
   
 
           </label>
@@ -7459,13 +7511,13 @@
   
   
     <li class="md-nav__item">
-      <a href="administration/01_install/" class="md-nav__link">
+      <a href="User_Guide/FAQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Plugin Installation Instructions
+    FAQ
   
 
     
@@ -7486,88 +7538,13 @@
   
   
     <li class="md-nav__item">
-      <a href="administration/02_transform_map/" class="md-nav__link">
+      <a href="User_Guide/data_mapping/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Transform Map Installation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_6_3_3_3" id="__nav_6_3_3_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Release Notes
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_3_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Release Notes
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="administration/Release_Notes/version_3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v3 Release Notes
+    Data Mapping
   
 
     
@@ -7588,13 +7565,13 @@
   
   
     <li class="md-nav__item">
-      <a href="administration/Release_Notes/version_2/" class="md-nav__link">
+      <a href="User_Guide/extras/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v2 Release Notes
+    Extras
   
 
     
@@ -7615,13 +7592,13 @@
   
   
     <li class="md-nav__item">
-      <a href="administration/Release_Notes/version_1/" class="md-nav__link">
+      <a href="User_Guide/ingestions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v1 Release Notes
+    Ingestions
   
 
     
@@ -7635,9 +7612,109 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="User_Guide/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    NetBox Plugin Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="User_Guide/sources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Define Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="User_Guide/syncs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Syncs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="User_Guide/transform_maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Transform Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -15039,6 +15116,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-differencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Differencing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-source-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Source Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#netbox-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15050,13 +15210,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#screenshots" class="md-nav__link">
+  <a href="#important-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Screenshots
+        Important Notes
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots-from-netbox-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots from NetBox UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screenshots from NetBox UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-1-ip-fabric-source-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 1: IP Fabric Source Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-2-ip-fabric-snapshots-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 2: IP Fabric Snapshots Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-3-ip-fabric-sync-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image 3: IP Fabric Sync Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -15132,77 +15342,152 @@
   
 
 
-<h1 id="overview">Overview</h1>
-<p>This plugin allows the integration and data synchronization between IP Fabric and NetBox.</p>
-<p>The plugin uses IP Fabric to collect network data utilizing the <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric">IP Fabric Python SDK</a>. This plugin relies on helpful features in NetBox like <a href="https://netboxlabs.com/docs/netbox/en/stable/plugins/development/staged-changes/">Staged Changes</a> and <a href="https://netboxlabs.com/docs/netbox/en/stable/plugins/development/background-tasks/">Background Tasks</a> to make the job of bringing in data to NetBox easier.</p>
+<h1 id="netbox-plugin-overview">NetBox plugin Overview</h1>
+<p>The IP Fabric NetBox plugin enables data synchronization between IP Fabric and NetBox platforms. This plugin serves as a bridge between network discovery (IP Fabric) and source of truth (NetBox), allowing network engineers and operators to maintain a single source of truth for network infrastructure data.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="data-synchronization">Data Synchronization</h3>
+<p>The plugin leverages the <a href="https://gitlab.com/ip-fabric/integrations/python-ipfabric">IP Fabric Python SDK</a> to collect comprehensive network data from IP Fabric instances. It then transforms this data into NetBox&rsquo;s data model, enabling automated documentation of network infrastructure.</p>
+<h3 id="branches">Branches</h3>
+<p>Built on <a href="https://docs.netboxlabs.com/netbox-extensions/branching/">NetBox Branching</a> feature, the plugin allows review of proposed changes before they are applied to the production database, providing an additional layer of validation and control.</p>
+<h3 id="scheduled-operations">Scheduled Operations</h3>
+<p>Administrators can configure automated, periodic synchronization jobs to ensure NetBox data remains current with the actual network state discovered by IP Fabric.</p>
+<h3 id="visual-differencing">Visual Differencing</h3>
+<p>The plugin provides visual differencing capabilities to easily identify changes between synchronization operations, making it simple to track network infrastructure evolution over time.</p>
+<h3 id="multiple-source-support">Multiple Source Support</h3>
+<p>Connect to multiple IP Fabric instances simultaneously, allowing for comprehensive network visibility across different environments or network segments.</p>
+<h2 id="use-cases">Use Cases</h2>
 <ul>
-<li>Multiple IP Fabric Sources</li>
-<li>Transform Maps</li>
-<li>Scheduled Synchronization</li>
-<li>Diff Visualization</li>
+<li><strong>Network Documentation Automation</strong>: Automatically document network devices, interfaces, IP addresses, and VLANs discovered by IP Fabric</li>
+<li><strong>Configuration Validation</strong>: Compare intended network state (NetBox) with actual state (IP Fabric)</li>
+<li><strong>Change Management</strong>: Review and approve network changes through the staged changes workflow</li>
+<li><strong>Network Inventory Management</strong>: Maintain accurate inventory of network devices and components</li>
+<li><strong>IP Address Management</strong>: Synchronize IP address allocation and usage information</li>
 </ul>
 <h2 id="netbox-compatibility">NetBox Compatibility</h2>
-<p>These are the required NetBox versions for corresponding plugin version. Any other versions won&rsquo;t work due to breaking changes in NetBox codebase.</p>
+<p>The plugin requires specific NetBox versions due to API changes and feature dependencies. Please ensure compatibility before installation.</p>
 <table>
 <thead>
 <tr>
-<th>Netbox Version</th>
+<th>NetBox Version</th>
 <th>Plugin Version</th>
+<th>Release Date</th>
+<th>Key Features</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>4.2.4 and up</td>
-<td>3.2.2 and up</td>
+<td>4.3.0 and up</td>
+<td>4.0.0  and up</td>
+<td>TDB</td>
+<td>NetBox 4.3 support and netbox-branching plugin</td>
+</tr>
+<tr>
+<td>4.2.4 - 4.2.9</td>
+<td>3.2.2 - 3.2.4</td>
+<td>2025-03-15</td>
+<td>Enhanced transform maps, improved performance</td>
 </tr>
 <tr>
 <td>4.2.0 - 4.2.3</td>
 <td>3.2.0 - 3.2.1</td>
+<td>2025-02-01</td>
+<td>NetBox 4.2 compatibility updates</td>
 </tr>
 <tr>
 <td>4.1.5 - 4.1.11</td>
 <td>3.1.1 - 3.1.3</td>
+<td>2024-12-10</td>
+<td>Bug fixes, stability improvements</td>
 </tr>
 <tr>
 <td>4.1.0 - 4.1.4</td>
 <td>3.1.0</td>
+<td>2024-11-05</td>
+<td>NetBox 4.1 compatibility</td>
 </tr>
 <tr>
 <td>4.0.1</td>
 <td>3.0.1 - 3.0.3</td>
+<td>2024-09-20</td>
+<td>Bug fixes</td>
 </tr>
 <tr>
 <td>4.0.0</td>
 <td>3.0.0</td>
+<td>2024-08-15</td>
+<td>Major rewrite for NetBox 4.0</td>
 </tr>
 <tr>
 <td>3.7.0 - 3.7.8</td>
 <td>2.0.0 - 2.0.6</td>
+<td>2024-05-10</td>
+<td>Enhanced data synchronization</td>
 </tr>
 <tr>
 <td>3.4.0 - 3.6.9</td>
 <td>1.0.0 - 1.0.11</td>
+<td>2023-11-01</td>
+<td>Initial release</td>
 </tr>
 </tbody>
 </table>
+<h2 id="important-notes">Important Notes</h2>
 <div class="admonition danger">
-<p class="admonition-title">Danger</p>
+<p class="admonition-title">Installation Location</p>
 <p>Integrations should be installed outside of the IP Fabric VM unless the IP
 Fabric team explicitly instructs otherwise.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">System Access</p>
 <p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
 or <code>autoboss</code> account may cause irreversible, detrimental changes to the
 product. Actions taken without direct communication with the IP Fabric
 Support or Solution Architect teams can render the system unusable.</p>
 </div>
-<h2 id="screenshots">Screenshots</h2>
-<p><a class="glightbox" href="images/user_guide/source_sync.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source" src="images/user_guide/source_sync.png" /></a></p>
-<p><a class="glightbox" href="images/user_guide/snapshot_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="images/user_guide/snapshot_detail.png" /></a></p>
-<p><a class="glightbox" href="images/user_guide/tm_edit_hostname.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Transform Maps" src="images/user_guide/tm_edit_hostname.png" /></a></p>
-<p><a class="glightbox" href="images/user_guide/ingestion_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ingesion" src="images/user_guide/ingestion_detail.png" /></a></p>
-<p><a class="glightbox" href="images/user_guide/branch_changes_update_diff.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Diff" src="images/user_guide/branch_changes_update_diff.png" /></a></p>
+<h2 id="screenshots-from-netbox-ui">Screenshots from NetBox UI</h2>
+<h3 id="image-1-ip-fabric-source-details">Image 1: IP Fabric Source Details</h3>
+<p>This image shows the details page for an IP Fabric source named <code>IPFabric-Demo</code> in the NetBox interface. The page displays key configuration information including:</p>
+<ul>
+<li>Source type: <code>Local</code></li>
+<li>Status: <code>New</code></li>
+<li>URL: <code>https://demo2.eu.ipfabric.io</code></li>
+<li>Authentication credentials (masked with asterisks)</li>
+<li>Verification and timeout settings</li>
+<li>No tags or comments have been assigned</li>
+<li>The source was created and last updated on May 22, 2025</li>
+</ul>
+<p>The left sidebar shows the hierarchical navigation menu for the NetBox interface with IP Fabric functionality integrated as a section. Action buttons at the top allow for syncing, bookmarking, subscribing, editing, or deleting the source.
+<a class="glightbox" href="images/user_guide/source_synced.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric source configuration page showing connection details and status" src="images/user_guide/source_synced.png" /></a></p>
+<h3 id="image-2-ip-fabric-snapshots-management">Image 2: IP Fabric Snapshots Management</h3>
+<p>This image displays the IP Fabric Snapshots management page, showing 6 snapshots from the IPFabric-Demo source. The snapshots are listed chronologically with the following details:</p>
+<ul>
+<li>Name (mostly following <code>netlab - [snapshot type]</code> naming convention)</li>
+<li>Source (all from <code>IPFabric Test</code>)</li>
+<li>Snapshot ID (unique identifiers)</li>
+<li>Status (<code>Loaded</code>/<code>Unloaded</code>)</li>
+<li>Date (ranging from April 2024 to July 2024)</li>
+</ul>
+<p>The snapshots include various types such as <code>Post Change</code> and <code>Day 3</code>. Each snapshot has a delete option, and there&rsquo;s a <code>Delete Selected</code> button at the bottom for batch operations. The table is configurable and supports filtering and searching.</p>
+<p><a class="glightbox" href="images/user_guide/source_snapshots.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric snapshots list showing multiple snapshot entries with their details" src="images/user_guide/source_snapshots.png" /></a></p>
+<h3 id="image-3-ip-fabric-sync-details">Image 3: IP Fabric Sync Details</h3>
+<p>This image shows an active sync configuration named <code>IPF Demo2 Sync</code>. The page displays:</p>
+<p>Sync information section showing:</p>
+<ul>
+<li>Name: <code>IPF Demo2 Sync</code></li>
+<li>Source: <code>IPFabric Test</code></li>
+<li>Snapshot: <code>netlab - [Post Change] - 04-Jul-24 08:00:01</code></li>
+<li>Status: <code>Syncing</code></li>
+<li>Latest branch timestamp</li>
+<li>No schedule or interval set</li>
+<li>User: <code>netbox</code></li>
+</ul>
+<p>Parameters section listing various network elements being ingested:</p>
+<ul>
+<li>All key network parameters (VRF, site, vlan, device, etc.) are set to <code>True</code></li>
+<li>Sites parameter shows an empty array <code>[]</code></li>
+</ul>
+<p>The page has action buttons for <code>Adhoc Ingestion</code>, <code>Edit</code>, and <code>Delete</code> operations. There are also tabs for <code>IP Fabric Sync</code>, <code>Ingestions</code>, and <code>Changelog</code> with job information.</p>
+<p><a class="glightbox" href="images/user_guide/sync_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP Fabric sync configuration page showing sync status and parameters" src="images/user_guide/sync_detail.png" /></a></p>
 
 
 
@@ -15223,7 +15508,7 @@ Support or Solution Architect teams can render the system unusable.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 16:15:36">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2025 11:34:27">May 29, 2025</span>
   </span>
 
     
@@ -15318,13 +15603,13 @@ Support or Solution Architect teams can render the system unusable.</p>
         
         
           
-          <a href="User_Guide/02_getting_started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started">
+          <a href="Release_Notes/version_1/" class="md-footer__link md-footer__link--next" aria-label="Next: v1 Release Notes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Getting Started
+                v1 Release Notes
               </div>
             </div>
             <div class="md-footer__button md-icon">
