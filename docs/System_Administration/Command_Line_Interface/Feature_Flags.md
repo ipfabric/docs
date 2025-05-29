@@ -189,6 +189,65 @@ After updating the environment file, you must restart IP Fabric application by r
 sudo systemctl restart ipf-appliance
 ```
 
+### Configuration Management Optimizations
+
+Starting in version `7.2.0`, you can enable additional configuration management performance optimizations by adding the following entries to the syslogworker environment file at `/etc/default/ipf-discovery-syslogworker-local`.
+
+Remember to restart the syslogworker after modifying the environment file:
+
+```bash
+sudo systemctl restart ipf-discovery-syslogworker
+```
+
+#### Git File Commit Optimization
+
+This feature accelerates file history retrieval operations. It improves performance scaling as Git repositories grow.
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_FILE_COMMIT=true
+```
+
+#### Git Repository Configuration
+
+Applies Git configuration enhancements including:
+
+- In-memory Git index preloading
+- Commit graph files for faster history traversal
+- Automatic commit graph maintenance
+
+These settings optimize Git operation performance with minimal overhead.
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_CONFIGURE_REPOSITORY=true
+```
+
+#### Git Repository Optimization
+
+Performs repository optimization during worker initialization stage including:
+
+- Comprehensive garbage collection
+- Storage-optimized repository repacking
+- Commit graph generation for accelerated traversal
+
+This optimization significantly increases startup time but improves runtime performance.
+
+```bash
+ENABLE_EXPERIMENTAL_GIT_OPTIMIZE_REPOSITORY=true
+```
+
+#### Performance Logging
+
+Enables detailed execution time tracking for critical operations:
+
+- Configuration updates
+- Git operations
+- Database queries
+- Device connections
+
+```bash
+ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING=true
+```
+
 ## Deprecated Feature Flags
 
 ### GCP Discovery (Removed in `7.0`)
