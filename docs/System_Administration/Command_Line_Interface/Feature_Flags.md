@@ -42,11 +42,13 @@ Discovery tasker environment file:
 
 ### ACI Service Graphs
 
-Since `6.4.0`, ACI service graphs can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+Since `6.4.0`, ACI service graphs (data collection and L3 path lookup) can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
 ```
 ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS=true
 ```
+
+Since `7.3.0`, ACI service graphs L2 path lookup is supported.
 
 ### Download of FMC ICMP Object Definitions 1 by 1
 
