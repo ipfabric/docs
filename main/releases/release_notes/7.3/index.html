@@ -8837,6 +8837,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#palo-alto-external-dynamic-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto External Dynamic Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#transparent-firewalls" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14837,6 +14848,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#palo-alto-external-dynamic-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto External Dynamic Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#transparent-firewalls" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14979,7 +15001,7 @@ following key combinations:</p>
 </ul>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
-<h2 id="v730-unreleased"><code>v7.3.0</code> (UNRELEASED)</h2>
+<h2 id="v730-unreleased">v7.3.0 (UNRELEASED)</h2>
 <h3 id="new-features">New Features</h3>
 <h4 id="ipv6-discovery-support">IPv6 Discovery Support</h4>
 <p>Extended network discovery capabilities to support IPv6 networks alongside IPv4, ensuring all existing IPv4 functionality remains unaffected.</p>
@@ -15195,8 +15217,8 @@ and enter the name of the list as it appears in the configuration.</li>
 </ul>
 <h4 id="vendor-support-and-improvements">Vendor Support and Improvements</h4>
 <ul>
-<li>Interface uptime/downtime is now available for <strong>Arista</strong>.</li>
-<li>Switch priority is now available for <strong>Cisco</strong> <strong>StackWise</strong>.</li>
+<li>Interface uptime/downtime is now available for <strong>Arista</strong> located in the new <code>Last Status Change</code> (<code>lastStatusChange</code>) column in the <strong>Inventory</strong> &gt; <strong>Interfaces</strong> table.</li>
+<li>Switch priority is now available for <strong>Cisco</strong> <strong>StackWise</strong> located in the new <code>Switch Priority</code> (<code>switchPriority</code>) <strong>Technology</strong> &rarr; <strong>Platforms</strong> &rarr; <strong>Cisco VSS</strong> &rarr; <strong>Chassis</strong> table.</li>
 <li>Added IPv6 support for the FortiGate zone firewall task.</li>
 <li>Added IPv6 support for FortiGate GRE tunnels.</li>
 <li>Added IPv6 support for the Cisco ACI, ASA, IOS, and IOS-XE NTP task.</li>
@@ -15208,8 +15230,6 @@ and enter the name of the list as it appears in the configuration.</li>
 <li>Added IPv6 support for Cisco ASA IPv6 tunnels.</li>
 <li>Added IPv6 support for Cisco ASA, IOS, and IOS-XE IPv6 IPsec.</li>
 <li>New <code>Switch stack</code> column added in <strong>Inventory</strong> &rarr; <strong>Devices</strong> to show if switch is considered as stack</li>
-<li>Downloading the content of the <code>External Dynamic List</code> object for <strong>Palo Alto</strong>&rsquo;s URL Filtering and IP List must be
-<a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#velocloud-discovery">enabled manually via a feature flag</a> (<code>ENABLE_PALOALTO_EDL_IPLIST</code>, <code>ENABLE_PALOALTO_EDL_URLLIST</code>).</li>
 </ul>
 <h4 id="advanced-filters">Advanced Filters</h4>
 <ul>
@@ -15325,6 +15345,9 @@ now support <strong>Uptime</strong> as a device property.</li>
 <h4 id="cisco-aci-service-graphs-improvements">Cisco ACI Service Graphs Improvements</h4>
 <p>The path lookup capability for Layer 2 (L2) has been added to Cisco ACI Service Graphs.</p>
 <p>To collect Service Graph data, the feature flag <code>ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS</code> must be enabled. For more information, see <a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#aci-service-graphs">feature flag documentation</a>.</p>
+<h4 id="palo-alto-external-dynamic-lists">Palo Alto External Dynamic Lists</h4>
+<p>The ingestion of Palo Alto&rsquo;s External Dynamic Lists for URL Filtering and IP Lists is currently available as an experimental feature.</p>
+<p>To access this functionality, respective <a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#palo-alto-external-dynamic-lists">feature flags</a> must be enabled. (<code>ENABLE_PALOALTO_EDL_IPLIST</code> and <code>ENABLE_PALOALTO_EDL_URLLIST</code>).</p>
 <h4 id="transparent-firewalls">Transparent Firewalls</h4>
 <p>Initial support for <strong>transparent firewalls</strong> has been introduced. Since transparent firewalls typically operate at Layer 2 and remain <strong>invisible to other network devices</strong>,
 manual link configuration is required to incorporate them into the network model.</p>
@@ -15373,7 +15396,7 @@ manual link configuration is required to incorporate them into the network model
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 5, 2025</span>
   </span>
 
     

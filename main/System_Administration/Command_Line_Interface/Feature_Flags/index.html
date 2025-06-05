@@ -6477,10 +6477,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#extensions-added-in-70" class="md-nav__link">
+  <a href="#extensions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extensions (Added in 7.0)
+        Extensions
       
     </span>
   </a>
@@ -6545,6 +6545,17 @@ here.
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palo-alto-external-dynamic-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto External Dynamic Lists
+      
+    </span>
+  </a>
   
 </li>
         
@@ -14733,10 +14744,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#extensions-added-in-70" class="md-nav__link">
+  <a href="#extensions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extensions (Added in 7.0)
+        Extensions
       
     </span>
   </a>
@@ -14801,6 +14812,17 @@ here.
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palo-alto-external-dynamic-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palo Alto External Dynamic Lists
+      
+    </span>
+  </a>
   
 </li>
         
@@ -14965,12 +14987,12 @@ here.
 
 
 <h1 id="feature-flags">Feature Flags</h1>
-<p>Since <code>6.4.0</code>, IP Fabric supports feature flags.</p>
+<p>Since <code>6.4</code>, IP Fabric supports feature flags.</p>
 <p>Feature flags, also known as feature toggles, are used in software development to enable or disable functionality without deploying new code.</p>
 <p>Instead of deploying new features to everyone at once, feature flags allow the gradual roll out of functionality.</p>
 <p>Features can be enabled for a small subset of users to collect feedback, and then their availability can be expanded.</p>
 <p>Feature flags allow early access to beta features, bug fixes, and features that might cause issues or errors, enabling quick rollbacks by disabling the problematic functionality.</p>
-<p>In IP Fabric version <code>6.7.0</code>, we introduced a simple way how to enable/disable feature flags using the <code>EnvironmentFile=</code> of services.</p>
+<p>In IP Fabric version <code>6.7</code>, we introduced a simple way how to enable/disable feature flags using the <code>EnvironmentFile=</code> of services.</p>
 <p>When enabling or disabling a feature flag, a global or service-related <code>EnvironmentFile=</code> needs to be created, edited, or removed.</p>
 <h3 id="environmentfile-locations"><code>EnvironmentFile=</code> Locations</h3>
 <p>Global environment file:</p>
@@ -14984,57 +15006,57 @@ here.
 </code></pre></div>
 <h2 id="current-feature-flags">Current Feature Flags</h2>
 <h3 id="aci-service-graphs">ACI Service Graphs</h3>
-<p>Since <code>6.4.0</code>, ACI service graphs (data collection and L3 path lookup) can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>6.4</code>, ACI service graphs can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS=true
 </code></pre></div>
-<p>Since <code>7.3.0</code>, ACI service graphs L2 path lookup is supported.</p>
+<p>Since <code>7.3</code>, ACI service graphs L2 path lookup is supported.</p>
 <h3 id="download-of-fmc-icmp-object-definitions-1-by-1">Download of FMC ICMP Object Definitions 1 by 1</h3>
 <p>The FMC API has a bug returning malformed data for the <code>/objects/icmpv4objects?expanded=true</code> endpoint.</p>
-<p>Since <code>6.5.0</code>, a new feature flag was introduced to download ICMP object definitions 1 by 1.</p>
+<p>Since <code>6.5</code>, a new feature flag was introduced to download ICMP object definitions 1 by 1.</p>
 <p>This can be done by adding the following line to the <code>tasker</code> environment file <code>/etc/default/ipf-discovery-tasker-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_FMC_NONEXPANDED_ICMP_CALL=true
 </code></pre></div>
 <h3 id="non-paralel-download-of-fmc-interface-related-tasks">Non-Paralel Download of FMC Interface-Related Tasks</h3>
 <p>IP Fabric receives <code>Error 400</code> in customers&rsquo; networks without any further details during attempts to download the list of interfaces on Firepower devices via API. This might be caused by the current approach using parallel calls while obtaining this information.</p>
-<p>Therefore, in <code>6.7.0</code>, a new feature flag was introduced to change this behavior and call all interface-related requests 1 by 1.</p>
+<p>Therefore, in <code>6.7</code>, a new feature flag was introduced to change this behavior and call all interface-related requests 1 by 1.</p>
 <p>This can be done by adding the following line to the <code>tasker</code> environment file <code>/etc/default/ipf-discovery-tasker-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_FMC_SERIAL_INTERFACE_DOWNLOAD=true
 </code></pre></div>
 <h3 id="discovery-of-fmc-hosted-by-cisco-defense-orchestrator">Discovery of FMC Hosted by Cisco Defense Orchestrator</h3>
 <p>When FMC is hosted by Cisco Defense Orchestrator, discovery and data collection has to be handled differently. The main difference is in using an API key instead of a username/password.</p>
-<p>Since <code>6.7.0</code>, it is possible to enable API key authentication for FMC by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>6.7</code>, it is possible to enable API key authentication for FMC by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_FMC_TOKEN_AUTH=true
 </code></pre></div>
 <p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
 </code></pre></div>
 <h3 id="velocloud-discovery">VeloCloud Discovery</h3>
-<p>Since <code>6.9.0</code>, VeloCloud devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>6.9</code>, VeloCloud devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_VELOCLOUD=true
 </code></pre></div>
 <p>After updating the environment file, you must restart IP Fabric application by running the following command:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
 </code></pre></div>
 <h3 id="nokia-sros-discovery">Nokia SROS Discovery</h3>
-<p>Since <code>6.5.0</code>, Nokia SROS (Service Router Operating System) devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
+<p>Since <code>6.5</code>, Nokia SROS (Service Router Operating System) devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_NOKIA=true
 </code></pre></div>
 <h3 id="opengear-acmcmom-support">Opengear ACM/CM/OM Support</h3>
-<p>Since <code>7.0.0</code>, Opengear ACM/CM/OM devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>7.0</code>, Opengear ACM/CM/OM devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_OPENGEAR_OM_CM_ACM=true
 </code></pre></div>
 <h3 id="opengear-prompt-detection">Opengear <code>$</code> Prompt Detection</h3>
 <p>Opengear can be configured with only the <code>$</code> sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.</p>
-<p>Since <code>6.7.0</code>, the <code>$</code> prompt can be enabled for Opengear devices by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>6.7</code>, the <code>$</code> prompt can be enabled for Opengear devices by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_OPENGEAR_DOLLAR_PROMPT=true
 </code></pre></div>
 <h3 id="opengear-prompt-detection_1">Opengear <code>#</code> Prompt Detection</h3>
 <p>Opengear can be configured with only the <code>#</code> sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.</p>
-<p>Since <code>7.2.0</code>, the <code>#</code> prompt can be enabled for Opengear devices by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>7.2</code>, the <code>#</code> prompt can be enabled for Opengear devices by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_OPENGEAR_HASH_PROMPT=true
 </code></pre></div>
-<h3 id="extensions-added-in-70">Extensions (Added in 7.0)</h3>
-<p>Since <code>7.0.0</code>, Extensions can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<h3 id="extensions">Extensions</h3>
+<p>Since <code>7.0</code>, Extensions can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_EXTENSIONS=true
 </code></pre></div>
 <p>This feature flag enables the Extensions functionality, which allows users to add and customize their IP Fabric instance with tailored functionality through containerized applications. Extensions can be managed through the IP Fabric UI under the <strong>Extensions</strong> menu.</p>
@@ -15055,7 +15077,7 @@ here.
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-appliance
 </code></pre></div>
 <h3 id="configuration-management-optimizations">Configuration Management Optimizations</h3>
-<p>Starting in version <code>7.2.0</code>, you can enable additional configuration management performance optimizations by adding the following entries to the syslogworker environment file at <code>/etc/default/ipf-discovery-syslogworker-local</code>.</p>
+<p>Starting in version <code>7.2</code>, you can enable additional configuration management performance optimizations by adding the following entries to the syslogworker environment file at <code>/etc/default/ipf-discovery-syslogworker-local</code>.</p>
 <p>Remember to restart the syslogworker after modifying the environment file:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-discovery-syslogworker
 </code></pre></div>
@@ -15093,14 +15115,21 @@ here.
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nv">ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
+<h3 id="palo-alto-external-dynamic-lists">Palo Alto External Dynamic Lists</h3>
+<p>Starting in version <code>7.3</code>, these feature flags enable downloading content from configured External Dynamic Lists.</p>
+<p>The associated files contain IP address or URL lists, which are then passed to the firewall rules on a device.</p>
+<p>To enable collection of respective lists, following lines need to be added to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
+<div class="highlight"><pre><span></span><code>ENABLE_PALOALTO_EDL_IPLIST=true
+ENABLE_PALOALTO_EDL_URLLIST=true
+</code></pre></div>
 <h3 id="enable-manual-links-transparent-firewall">Enable Manual Links / Transparent Firewall</h3>
 <p>This feature flag enable manual link configuration option in both global and snapshot settings.
 For more information about feature, see the <a href="../../../releases/release_notes/7.3/#initial-transparent-firewall-support-behind-feature-flag">7.3 Release Notes</a>.</p>
-<p>Since <code>7.3.0</code>, the manual link support can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<p>Since <code>7.3</code>, the manual link support can be enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_MANUAL_LINKS=true
 </code></pre></div>
 <h3 id="meraki-catalyst-switches-discovery">Meraki Catalyst Switches Discovery</h3>
-<p>Starting with version <code>7.3.5</code>, cloud-managed Cisco Catalyst switches can be discovered via the Meraki API.</p>
+<p>Starting with version <code>7.3</code>, cloud-managed Cisco Catalyst switches can be discovered via the Meraki API.</p>
 <p><strong>Identification criteria</strong>: Firmware starting with <code>CS</code> and Monitoring Version set to <code>n/a</code>.</p>
 <p>Discovery is enabled by default. To disable it, add the following line to the global environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>DISABLE_DISCOVERY_CLOUD_MANAGED_CATALYST_SWITCHES=true
@@ -15149,7 +15178,7 @@ For more information about feature, see the <a href="../../../releases/release_n
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 5, 2025</span>
   </span>
 
     
