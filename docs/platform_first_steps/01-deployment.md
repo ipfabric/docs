@@ -14,7 +14,7 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
 The appliance is built on top of Debian 12, which has been officially supported
 since
-[ESXi version `8.0`](https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=Software&productid=58268&vcl=true&supRel=396,589,652,668,692&testConfig=16).
+[ESXi version `8.0`](https://compatibilityguide.broadcom.com/search?program=software&persona=live&column=osVendors&order=asc&osFamilyName=%5BDebian+12%5D&activePage=1&activeDelta=20).
 
 The minimal required Virtual Hardware Version is `vmx-20`, supported by ESXi
 `8.0`, Fusion `13.6`, Workstation Pro `17.x`, and Workstation Player `17.x`. For
