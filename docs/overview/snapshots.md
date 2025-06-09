@@ -12,7 +12,7 @@ Network snapshots record the state of the network at a specific time, enabling y
 
 ![Snapshot management overview](snapshot_management_overview.png)
 
-Up to five (5) snapshots can be loaded simultaneously into active memory. When the snapshot is active, it is considered "loaded". Other snapshots can be stored on the HDD, with only free HDD space being the limiting factor.
+Up to 5 (100 when using PSQL) snapshots can be loaded simultaneously into active memory. When the snapshot is active, it is considered "loaded". Other snapshots can be stored on the HDD, with only free HDD space being the limiting factor.
 
 Locking an active snapshot will always keep it in memory.
 
