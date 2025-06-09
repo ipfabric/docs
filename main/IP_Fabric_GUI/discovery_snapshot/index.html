@@ -4557,13 +4557,13 @@ here.
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention/" class="md-nav__link">
+      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Snapshot Retention
+    Snapshot Collection
   
 
     
@@ -15344,7 +15344,7 @@ in the global <strong>Settings</strong> or in the
 <a href="#snapshot-specific-settings">snapshot-specific settings</a> (highlighted in the blue
 box).</p>
 <p>For creating automatic snapshots, follow the instructions in
-<a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention/#create-snapshots-periodically">Create Snapshots Periodically</a>.</p>
+<a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection/#create-snapshots-periodically">Create Snapshots Periodically</a>.</p>
 <h3 id="resource-checks-before-creating-a-new-snapshot">Resource Checks Before Creating a New Snapshot</h3>
 <p>Before creating a new snapshot, IP Fabric performs the following resource
 checks (if any of them fails, a new snapshot won&rsquo;t be created):</p>
@@ -15367,7 +15367,7 @@ checks (if any of them fails, a new snapshot won&rsquo;t be created):</p>
 <p>Even if the new snapshot would have the size of the largest loaded snapshot,
    any locked snapshots would not be automatically deleted based on the <code>Delete
 Snapshots: If HDD utilization reaches ... percent</code> value (default 80) set in
-   <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention</strong>.</p>
+   <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Collection</strong>.</p>
 <ul>
 <li>If this condition is not met, <code>Not Enough Disk Space</code> is thrown.</li>
 </ul>
@@ -15429,10 +15429,10 @@ from the snapshot. However, toggling all the Vendors to <code>off</code> will pr
 <p>The <strong>Delete Devices</strong> action allows you to manually select certain devices and remove them from the snapshot. When devices are removed and were previously being displayed in Network Diagrams or Path Lookups, IP Fabric
 will then show a <code>transit cloud</code> indicating it does not have information about the next destination or connected device.</p>
 <h2 id="snapshot-actions">Snapshot Actions</h2>
-<p>Due to database maintenance, only up to 5 snapshots can be loaded into memory. The default configuration allows only 3 loaded snapshots, but you can change this in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention &rarr; Maximum number of loaded snapshots</strong>.</p>
+<p>Due to database maintenance, only up to 5 snapshots can be loaded into memory. The default configuration allows only 3 loaded snapshots, but you can change this in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Collection &rarr; Maximum number of loaded snapshots</strong>.</p>
 <h3 id="lock-snapshot">Lock Snapshot</h3>
 <p><a class="glightbox" href="../snapshots/snapshot_lock.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lock snapshot" src="../snapshots/snapshot_lock.png" /></a></p>
-<p>By selecting <code>Lock snapshot</code>, IP Fabric won&rsquo;t automatically unload the snapshot to the hard disk and will keep it in memory. The default configuration allows only 1 locked snapshot, but you can change this in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Retention &rarr; Maximum number of locked snapshots</strong>.</p>
+<p>By selecting <code>Lock snapshot</code>, IP Fabric won&rsquo;t automatically unload the snapshot to the hard disk and will keep it in memory. The default configuration allows only 1 locked snapshot, but you can change this in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Snapshot Collection &rarr; Maximum number of locked snapshots</strong>.</p>
 <h3 id="loaded-snapshots">Loaded Snapshots</h3>
 <p><a class="glightbox" href="../snapshots/snapshot_unload.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Unload snapshot" src="../snapshots/snapshot_unload.png" /></a></p>
 <p>If the maximum number of loaded snapshots is set to 5 and there are already 5 loaded snapshots when a 6<sup>th</sup> snapshot is created or loaded, IP Fabric will automatically unload the oldest loaded snapshot from memory and save it to the hard disk. This can also be done manually for a selected snapshot by clicking <strong>Unload snapshot</strong>.</p>
@@ -15446,7 +15446,7 @@ that will delete snapshots after the hard disk space utilization reaches a
 certain threshold.</p>
 <ul>
 <li>For more information, please see:<ul>
-<li><a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_retention/">Snapshot Retention</a></li>
+<li><a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection/">Snapshot Collection</a></li>
 <li><a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/">Schedule System Backup</a></li>
 </ul>
 </li>
@@ -15496,7 +15496,7 @@ one in IP Fabric.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 22, 2025</span>
   </span>
 
     
