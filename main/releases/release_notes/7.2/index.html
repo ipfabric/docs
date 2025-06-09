@@ -9079,13 +9079,30 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post-upgrade-notice" class="md-nav__link">
+  <a href="#fixes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Post-Upgrade Notice
+        Fixes
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#something-went-wrong-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Something went wrong Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -9117,6 +9134,17 @@ here.
     <span class="md-ellipsis">
       
         BGP Communities Filtering Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management-process-not-closing-ssh-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration management process not closing SSH sessions
       
     </span>
   </a>
@@ -15123,13 +15151,30 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post-upgrade-notice" class="md-nav__link">
+  <a href="#fixes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Post-Upgrade Notice
+        Fixes
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#something-went-wrong-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Something went wrong Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -15161,6 +15206,17 @@ here.
     <span class="md-ellipsis">
       
         BGP Communities Filtering Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management-process-not-closing-ssh-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration management process not closing SSH sessions
       
     </span>
   </a>
@@ -15570,8 +15626,9 @@ MD5 (unsupported-ESXi7.0-ipfabric-7-2-17+0.ova) = f01491bf442d304105a9c9e13a26f2
 SHA256 (ESXi8.0-ipfabric-7-2-17+0.ova) = 25da28f1a6320f5c7a121ce517835407447eac5e15bc103ecb5c3143f2b93e30
 MD5 (ESXi8.0-ipfabric-7-2-17+0.ova) = a90c335120c91b98a77c0e61f7bfa0e5
 </code></pre></div>
-<h3 id="post-upgrade-notice">Post-Upgrade Notice</h3>
-<p>If you encounter a <code>Something went wrong</code> error when accessing the IP Fabric GUI after upgrading, clear your browser cache using <code>CTRL</code>+<code>F5</code> (Windows/Linux) or <code>Command</code>+<code>Shift</code>+<code>R</code> (macOS). This resolves issues caused by outdated cached resources.</p>
+<h3 id="fixes">Fixes</h3>
+<h4 id="something-went-wrong-error">Something went wrong Error</h4>
+<p>After an upgrade  a <code>Something went wrong</code> error when accessing the IP Fabric GUI after upgrading was shown. This issue has been resolved on <code>7.2.17</code> release.</p>
 <p><a class="glightbox" href="7.2_browser_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Something went wrong.&quot; error" class="center" src="7.2_browser_error.png" /></a></p>
 <h3 id="known-issues">Known Issues</h3>
 <h4 id="license-or-database-errors-after-upgrade">License or Database Errors After Upgrade</h4>
@@ -15649,6 +15706,23 @@ arangod    876 arangodb   26u  IPv6  17979      0t0  TCP *:8529 (LISTEN)
 </li>
 </ol>
 <p>These issues are scheduled for resolution in an upcoming patch release.</p>
+<h4 id="configuration-management-process-not-closing-ssh-sessions">Configuration management process not closing SSH sessions</h4>
+<p>On HP Aruba SW family devices, the Configuration Management process doesn&rsquo;t close SSH connections.
+In case a login banner is not detected, SSH sessions may remain open.</p>
+<p>To check the entire situation, go to the IPF appliance CLI and run the following command:</p>
+<div class="highlight"><pre><span></span><code>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">22</span>
+</code></pre></div>
+<p>If SSH connections remain open, you will see the following:</p>
+<div class="highlight"><pre><span></span><code>root@ipfabric:~#<span class="w"> </span>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">22</span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:52784<span class="w">      </span><span class="m">10</span>.20.94.22:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:22184<span class="w">      </span><span class="m">10</span>.20.88.20:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:5650<span class="w">       </span><span class="m">10</span>.20.130.22:22<span class="w">         </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:27698<span class="w">      </span><span class="m">10</span>.20.130.21:22<span class="w">         </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:30666<span class="w">      </span><span class="m">10</span>.20.94.24:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
+</code></pre></div>
+<p>To resolve this problem, please proceed with restarting the Configuration Management service using:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-discovery-syslogworker.service
+</code></pre></div>
 <h2 id="v725-march-17th-2025-ea">v7.2.5 (March 17<sup>th</sup>, 2025; EA)</h2>
 <h3 id="api-endpoints-deprecation">API Endpoints Deprecation</h3>
 <p>The below API endpoints have been marked as deprecated and the intention is to remove them in version <code>7.5</code>.</p>
