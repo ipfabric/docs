@@ -247,7 +247,7 @@ ENABLE_PALOALTO_EDL_URLLIST=true
 ### Enable Manual Links / Transparent Firewall
 
 This feature flag enable manual link configuration option in both global and snapshot settings.
-For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#initial-transparent-firewall-support-behind-feature-flag).
+For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#transparent-firewalls).
 
 Since `7.3`, the manual link support can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
