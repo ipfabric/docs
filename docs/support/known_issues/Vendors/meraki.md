@@ -15,9 +15,9 @@ These are the known limitations:
 - CDP/LLDP might be not linked between devices correctly, as the reported port
   ID doesn't allow it.
 - CDP/LLDP timespan is 2 hours, so it might not show the actual state.
-- ARP is missing; the MAC table is reconstructed from endpoints.
+- ARP is available only for L3 switches; the MAC table is reconstructed from endpoints.
 - DHCP/STATIC doesn't provide an IP mask.
-- STP is missing.
+- STP is partially provided for switches.
 - The routing table includes static routes only for firewalls.
 - Path lookup is not working because forwarding tables are not provided.
 - Can't add a Meraki device into a snapshot (refresh works).
