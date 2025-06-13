@@ -9168,10 +9168,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration-management-process-not-closing-ssh-sessions" class="md-nav__link">
+  <a href="#configuration-management-process-fails-to-close-ssh-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration management process not closing SSH sessions
+        Configuration Management Process Fails to Close SSH Sessions
       
     </span>
   </a>
@@ -9185,6 +9185,17 @@ here.
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7213-may-21st-2025-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.2.13 (May 21st, 2025; GA)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -15267,10 +15278,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration-management-process-not-closing-ssh-sessions" class="md-nav__link">
+  <a href="#configuration-management-process-fails-to-close-ssh-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration management process not closing SSH sessions
+        Configuration Management Process Fails to Close SSH Sessions
       
     </span>
   </a>
@@ -15284,6 +15295,17 @@ here.
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7213-may-21st-2025-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.2.13 (May 21st, 2025; GA)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -15642,9 +15664,9 @@ here.
 <p>We support the following upgrade paths:</p>
 <ul>
 <li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example, <code>6.10.7</code> &rarr; <code>7.2.13</code>).</li>
+  current major line (for example, <code>6.10.7</code> &rarr; <code>7.2.17</code>).</li>
 <li>Any version in the current major line &rarr; any newer version in the current
-  major line (for example, <code>7.0.15</code> &rarr; <code>7.2.13</code>).</li>
+  major line (for example, <code>7.0.15</code> &rarr; <code>7.2.17</code>).</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -15682,7 +15704,7 @@ MD5 (ESXi8.0-ipfabric-7-2-17+0.ova) = a90c335120c91b98a77c0e61f7bfa0e5
 </code></pre></div>
 <h3 id="fixes">Fixes</h3>
 <h4 id="something-went-wrong-error">Something went wrong Error</h4>
-<p>After an upgrade  a <code>Something went wrong</code> error when accessing the IP Fabric GUI after upgrading was shown. This issue has been resolved on <code>7.2.17</code> release.</p>
+<p>After an upgrade  a <code>Something went wrong</code> error when accessing the IP Fabric GUI after upgrading was shown. This issue was resolved in the <code>7.2.17</code> release but may still occur in rare situations. Clear the browser cache to resolve this issue.</p>
 <p><a class="glightbox" href="7.2_browser_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Something went wrong.&quot; error" class="center" src="7.2_browser_error.png" /></a></p>
 <h3 id="known-issues">Known Issues</h3>
 <h4 id="license-or-database-errors-after-upgrade">License or Database Errors After Upgrade</h4>
@@ -15760,23 +15782,22 @@ arangod    876 arangodb   26u  IPv6  17979      0t0  TCP *:8529 (LISTEN)
 </li>
 </ol>
 <p>These issues are scheduled for resolution in an upcoming patch release.</p>
-<h4 id="configuration-management-process-not-closing-ssh-sessions">Configuration management process not closing SSH sessions</h4>
-<p>On HP Aruba SW family devices, the Configuration Management process doesn&rsquo;t close SSH connections.
-In case a login banner is not detected, SSH sessions may remain open.</p>
-<p>To check the entire situation, go to the IPF appliance CLI and run the following command:</p>
-<div class="highlight"><pre><span></span><code>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">22</span>
+<h4 id="configuration-management-process-fails-to-close-ssh-sessions">Configuration Management Process Fails to Close SSH Sessions</h4>
+<p>On HPE <code>arubasw</code> family devices, the Configuration Management process sometimes fails to terminate SSH connections properly. This occurs when a login banner isn&rsquo;t detected, causing SSH sessions to remain open indefinitely.</p>
+<p>To verify if this is happening, access your IP Fabric appliance&rsquo;s command line interface and execute the following when the Configuration Management process is not running:</p>
+<div class="highlight"><pre><span></span><code>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:22
 </code></pre></div>
-<p>If SSH connections remain open, you will see the following:</p>
-<div class="highlight"><pre><span></span><code>root@ipfabric:~#<span class="w"> </span>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">22</span>
+<p>If you see persistent SSH connections, the output will display multiple active sessions like this:</p>
+<div class="highlight"><pre><span></span><code>root@ipfabric:~#<span class="w"> </span>netstat<span class="w"> </span>-tnpa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;ESTABLISHED&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>syslogWorkerBu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:22
 tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:52784<span class="w">      </span><span class="m">10</span>.20.94.22:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
 tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:22184<span class="w">      </span><span class="m">10</span>.20.88.20:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
-tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:5650<span class="w">       </span><span class="m">10</span>.20.130.22:22<span class="w">         </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
 tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:27698<span class="w">      </span><span class="m">10</span>.20.130.21:22<span class="w">         </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
 tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>.0.192.108:30666<span class="w">      </span><span class="m">10</span>.20.94.24:22<span class="w">          </span>ESTABLISHED<span class="w"> </span><span class="m">624</span>/syslogWorkerBui
 </code></pre></div>
-<p>To resolve this problem, please proceed with restarting the Configuration Management service using:</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>ipf-discovery-syslogworker.service
+<p>To resolve this, restart the Configuration Management service with command:</p>
+<div class="highlight"><pre><span></span><code>systemctl restart ipf-discovery-syslogworker.service
 </code></pre></div>
+<h2 id="v7213-may-21st-2025-ga">v7.2.13 (May 21<sup>st</sup>, 2025; GA)</h2>
 <h2 id="v725-march-17th-2025-ea">v7.2.5 (March 17<sup>th</sup>, 2025; EA)</h2>
 <h3 id="api-endpoints-deprecation">API Endpoints Deprecation</h3>
 <p>The below API endpoints have been marked as deprecated and the intention is to remove them in version <code>7.5</code>.</p>
@@ -16001,7 +16022,7 @@ are now visible in path lookups. More details can be found in <a href="../../../
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2025</span>
   </span>
 
     
