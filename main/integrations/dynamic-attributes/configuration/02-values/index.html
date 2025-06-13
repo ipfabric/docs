@@ -7415,6 +7415,17 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overwriting-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overwriting Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#static-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14867,6 +14878,17 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overwriting-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overwriting Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#static-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15003,6 +15025,29 @@ here.
 <p>This section describes how to assign values to dynamic attributes in IP Fabric using the <code>ipf_dynamic_attributes</code> 
 utility. Values can be static, calculated, or derived from device configurations or tables.</p>
 <p>In the next sections we will go into more detail with examples of how to use these features effectively.</p>
+<h2 id="overwriting-values">Overwriting Values</h2>
+<p>By default, if an attribute already exists in the IP Fabric environment, the utility will not overwrite it. This can be 
+modified by setting the <code>overwrite</code> attribute in the rule or globally in the <code>default</code> or <code>default_config</code> section.</p>
+<div class="highlight"><span class="filename">Overwrite Example</span><pre><span></span><code><span class="nt">default</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># Defaults to null, setting to a boolean value will propagate to all rules</span>
+<span class="nt">default_config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Overwrite Example</span>
+<span class="w">    </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># Since this is null, the default true will be used when merging rules</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Do Not Overwrite Example</span>
+<span class="w">    </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Set to false to not overwrite existing attributes and ignore the default</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Config Rule Example</span>
+<span class="w">    </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">current</span>
+</code></pre></div>
+<p>In the above example:</p>
+<ul>
+<li>The <code>default.overwrite</code> is a boolean value and not null so it will propagate to all rules if <code>overwrite</code> is not set.</li>
+<li>&ldquo;Overwrite Example&rdquo; is a <code>null</code> value the default <code>true</code> will be used when merging rules.</li>
+<li>&ldquo;Do Not Overwrite Example&rdquo; is explicitly set to <code>false</code>, so it will not overwrite existing attributes.</li>
+<li>&ldquo;Config Rule Example&rdquo; will evaluate to <code>false</code> since the <code>default_config.overwrite</code> and the <code>rule.overwrite</code> are <code>null</code>.</li>
+</ul>
 <h2 id="static-values">Static Values</h2>
 <p>Static values are hard coded values assigned to attributes. They can be used when the value does not change or is 
 known in advance.</p>
@@ -15137,7 +15182,7 @@ specified, the value will be set to <code>null</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
   </span>
 
     

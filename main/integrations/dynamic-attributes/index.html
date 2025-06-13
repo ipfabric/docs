@@ -7365,6 +7365,23 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Command Line Interface (CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printing-merged-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Printing Merged Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15013,6 +15030,23 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Command Line Interface (CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printing-merged-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Printing Merged Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15144,6 +15178,7 @@ Support or Solution Architect teams can render the system unusable.</p>
 <li>Flexible filtering for inventory and device data. </li>
 <li>Default dry-run mode for safe testing.</li>
 <li>Creates a pandas DataFrame for easy data manipulation and reporting.</li>
+<li>Multiple configuration files can be merged into a single file for easier management.</li>
 </ul>
 <h2 id="minimum-requirements">Minimum Requirements</h2>
 <ul>
@@ -15164,16 +15199,16 @@ Support or Solution Architect teams can render the system unusable.</p>
 <h2 id="running">Running</h2>
 <h3 id="command-line-interface-cli">Command Line Interface (CLI)</h3>
 <p>To run the utility from the command line, you can use the following command:</p>
-<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>ipf_dynamic_attributes<span class="w"> </span>&lt;path_to_config_file&gt;
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>ipf_dynamic_attributes<span class="w"> </span><span class="o">[</span>&lt;path_to_config_file&gt;<span class="w"> </span>...<span class="o">]</span>
 </code></pre></div>
 <p>For full usage information, you can run <code>-h|--help</code>:
 <div class="highlight"><span class="filename">Command Line Help</span><pre><span></span><code>&gt; ipf_dynamic_attributes -h
-usage: ipf_dynamic_attributes.cmd [-h] [-f {csv,json,excel}] [-o OUTFILE] [filename]
+usage: ipf_dynamic_attributes.cmd [-h] [-f {csv,json,excel}] [-o OUTFILE] [-m] [filenames ...]
 
 IP Fabric Dynamic Attribute.
 
 positional arguments:
-  filename              Configuration filename, defaults to &#39;config.yml&#39;.
+  filenames             Configuration filename(s), defaults to &#39;config.yml&#39;.
 
 options:
   -h, --help            show this help message and exit
@@ -15181,11 +15216,17 @@ options:
                         Output format for the report. Default is &#39;csv&#39;. Use &#39;json&#39; for JSON output.
   -o OUTFILE, --outfile OUTFILE
                         Output filename to send report instead of standard out.
+  -m, --merge-only      Merge the default rule settings into rules and display the resulting file; does not run any automation. This will also merge multiple configuration files into a single file.     
 
-    This script will run the AttributeSync with the provided configuration file which defaults to &#39;config.yml&#39;.
-    You can specify a different configuration file by passing the filename as an argument:
-    ipf_dynamic_attributes example_configs/mgmt-ip.yml
+    This script will run the AttributeSync with the provided configuration file(s) which defaults to &#39;config.yml&#39;.
+    You can specify a different or multiple configuration files by passing the filename as an argument:
+    ipf_dynamic_attributes mgmt-ip.yml region.yml
 </code></pre></div></p>
+<h4 id="printing-merged-configurations">Printing Merged Configurations</h4>
+<p>To merge the default rule settings into the rules and display the resulting file without running any automation, you 
+can use the <code>-m</code> or <code>--merge-only</code> option. This will also merge multiple configuration files into a single file:</p>
+<div class="highlight"><pre><span></span><code>ipf_dynamic_attributes<span class="w"> </span>-m<span class="w"> </span>config.yml<span class="w"> </span>config2.yml
+</code></pre></div>
 <h3 id="extension_1">Extension</h3>
 <p>Coming soon&hellip;</p>
 <h3 id="python-script">Python Script</h3>
@@ -15210,7 +15251,7 @@ options:
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
   </span>
 
     

@@ -7119,6 +7119,23 @@ here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Search
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7134,6 +7151,97 @@ here.
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6 Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-hop-ip-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Hop IP Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -14780,6 +14888,86 @@ here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6 Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-hop-ip-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Hop IP Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -14870,11 +15058,11 @@ here.
 <h1 id="routing-search">Routing Search</h1>
 <p>In version <code>6.9.0</code> of the <code>ipfabric</code> Python SDK a new <code>ipf_route_search</code> CLI tool was added.
 After installing the package it can be run from the command line.</p>
-<h1 id="requirements">Requirements</h1>
+<h2 id="requirements">Requirements</h2>
 <p>Required environment variables exported (<code>IPF_URL</code> and <code>IPF_TOKEN</code> or <code>IPF_USERNAME &amp; IPF_PASSWORD</code>) or a
 <a href="../../#environment-variables"><code>.env</code> file</a> located in the current working directory or your home directory.</p>
 <p>Installing <code>rich</code> will enable prettier output (<code>pip install rich</code> or <code>pip install ipfabric[cli]</code>).</p>
-<h1 id="documentation">Documentation</h1>
+<h2 id="documentation">Documentation</h2>
 <div class="highlight"><span class="filename">IPF Route Search Help</span><pre><span></span><code><span class="gp"># </span>ipf_route_search<span class="w"> </span>-h
 <span class="go">usage: ipf_route_search [-h] [-o OPERATOR] [-d] [-n] [-s SNAPSHOT] [-b BASE_URL] [-t TOKEN] [-u USERNAME] [-p PASSWORD] [-c] [-v] [-j] [-R] address</span>
 
@@ -14919,7 +15107,7 @@ After installing the package it can be run from the command line.</p>
 <span class="go">    `@|sect`: CIDR overlaps (10.0.0.0/24 -&gt; 10.0.0.0/[8..32], 0.0.0.0/0)</span>
 <span class="go">    `!@|nsect`: CIDR does not overlap (10.0.0.0/24 -&gt; 10.1.0.0/24)</span>
 </code></pre></div>
-<h1 id="usage">Usage</h1>
+<h2 id="usage">Usage</h2>
 <div class="highlight"><span class="filename">Find all routes equal to '1.23.4.5/32'.</span><pre><span></span><code><span class="c1"># ipf_route_search 1.23.4.5/32</span>
 
 Technology<span class="w"> </span>—<span class="w"> </span>Routing<span class="w"> </span>—<span class="w"> </span>Routes:<span class="w"> </span><span class="s2">&quot;Cumulative IPv4 routing table&quot;</span>
@@ -14983,7 +15171,7 @@ https://demo1.us.ipfabric.io/technology/routing/routes?options<span class="o">=<
 Technology<span class="w"> </span>—<span class="w"> </span>Routing<span class="w"> </span>—<span class="w"> </span>Routes:<span class="w"> </span><span class="s2">&quot;Cumulative IPv4 routing table&quot;</span>:<span class="w"> </span><span class="m">73638</span>
 https://demo1.us.ipfabric.io/technology/routing/routes?options<span class="o">=</span>%7B%22filters%22%3A%7B%22and%22%3A%5B%7B%22network%22%3A%5B%22nsect%22%2C%2210.81.254.0%2F28%22%5D%7D%2C%7B%22network%22%3A%5B%22neq%22%2C%220.0.0.0%2F0%22%5D%7D%5D%7D%7D
 </code></pre></div>
-<h2 id="ipv6-search">IPv6 Search</h2>
+<h3 id="ipv6-search">IPv6 Search</h3>
 <p><strong>IPv6 search only supports <code>=|eq</code> or <code>ip|IP</code> operators at this time.</strong></p>
 <div class="highlight"><span class="filename">Find IPv6 Routes equal to 'fc00:71:110:ff00::1/128'.</span><pre><span></span><code><span class="c1"># ipf_route_search fc00:71:110:ff00::1/128     </span>
 
@@ -15025,7 +15213,7 @@ https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="
 Technology<span class="w"> </span>—<span class="w"> </span>Routing<span class="w"> </span>—<span class="w"> </span>Routes:<span class="w"> </span><span class="s2">&quot;Cumulative IPv6 routing table&quot;</span>:<span class="w"> </span><span class="m">3</span>
 https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="o">=</span>%7B%22filters%22%3A%7B%22network%22%3A%5B%22ip%22%2C%22fc00%3A71%3A110%3Aff00%3A%3A1%22%5D%7D%7D
 </code></pre></div>
-<h2 id="next-hop-ip-search">Next Hop IP Search</h2>
+<h3 id="next-hop-ip-search">Next Hop IP Search</h3>
 <div class="highlight"><span class="filename">Find all routes with a Next Hop IP of '10.31.172.114'.</span><pre><span></span><code><span class="c1"># ipf_route_search 10.31.172.114 -n -c</span>
 
 Technology<span class="w"> </span>—<span class="w"> </span>Routing<span class="w"> </span>—<span class="w"> </span>Routes:<span class="w"> </span><span class="s2">&quot;Cumulative IPv4 routing table&quot;</span>:<span class="w"> </span><span class="m">22</span>
@@ -15041,7 +15229,7 @@ https://demo1.us.ipfabric.io/technology/routing/routes?options<span class="o">=<
 Technology<span class="w"> </span>—<span class="w"> </span>Routing<span class="w"> </span>—<span class="w"> </span>Routes:<span class="w"> </span><span class="s2">&quot;Cumulative IPv6 routing table&quot;</span>:<span class="w"> </span><span class="m">5</span>
 https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="o">=</span>%7B%22filters%22%3A%7B%22and%22%3A%5B%7B%22nexthop%22%3A%5B%22any%22%2C%22ip%22%2C%22eq%22%2C%22fe80%3A%3A21f%3Acaff%3Afe08%3A8035%22%5D%7D%2C%7B%22network%22%3A%5B%22neq%22%2C%22%3A%3A%2F0%22%5D%7D%5D%7D%7D
 </code></pre></div>
-<h2 id="json-output">JSON Output</h2>
+<h3 id="json-output">JSON Output</h3>
 <p>If using JSON output disable <code>rich</code> with the <code>-R|--rich-disable</code> flag prior to sending to <code>jq</code>.</p>
 <div class="highlight"><span class="filename">Find IPv4 Routes that overlap '10.81.254.0/28' returning unformatted JSON piping to 'jq'.</span><pre><span></span><code><span class="c1"># ipf_route_search 10.81.254.0/28 -o sect -d -j -R | jq &#39;.data[0]&#39; </span>
 <span class="o">{</span>
@@ -15092,7 +15280,7 @@ https://demo1.us.ipfabric.io/technology/routing/routes/ipv6?options<span class="
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
   </span>
 
     
