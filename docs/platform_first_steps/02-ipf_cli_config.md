@@ -36,3 +36,8 @@ Its documentation can be found in
     The self-signed SSL certificate can be replaced by a trusted certificate in
     the main IP Fabric user interface. Please see
     [IPF Certificates](../IP_Fabric_Settings/system/ipf_cert.md).
+
+!!! note "Password Requirements"
+
+    The `osadmin` password complexity requirements can be found on the 
+    [Update osadmin Password](../System_Administration/IPF_CLI_Config/change_osadmin_pass.md#password-requirements).
