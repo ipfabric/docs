@@ -76,6 +76,16 @@ least:
 | Router                 | `router`  |
 | Load Balancer          | `lb`      |
 
+### NSX-T
+
+One license is consumed by each networking object. Currently, these are at
+least:
+
+| NSX-T Networking Object  | IP Fabric |
+| ----------------------   | --------- |
+| Tier 0 router            | `tier-0`  |
+| Tier 1 router            | `tier-1`  |
+
 ## Changes
 
 ### Release `4.4.0`
