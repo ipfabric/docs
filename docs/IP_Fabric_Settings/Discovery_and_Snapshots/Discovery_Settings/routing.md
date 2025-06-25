@@ -55,7 +55,7 @@ graph TD
 
 1. **Community Configuration Priority**  
    When present, BGP communities override thresholds. The system:
-   - Downloads **all** routes matching community filters
+   - Downloads **all** routes matching community filters (on Cisco IOS-XR router, processing a large number of routes in the community may take some time)
    - Ignores threshold limits
    - Processes all specified VRFs
 
