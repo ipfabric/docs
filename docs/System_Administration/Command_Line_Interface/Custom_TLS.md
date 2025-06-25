@@ -24,7 +24,7 @@ To re-enable an older version of TLS, follow these steps:
 
 1. Log in to the IP Fabric CLI as the `osadmin` user.
 2. Switch to `root`: `sudo su -`
-3. Edit the TLS configuration file `/etc/nginx/conf.d/ipf-ssl-params.conf` with
+3. Edit the TLS configuration file `/etc/nginx/conf.d/ipf-ssl-version.conf` with
    your preferred editor.
 4. Modify the first line of the configuration file by adding other TLS versions
    separated by spaces:
@@ -55,19 +55,11 @@ root@ipfabric-server:~# systemctl status nginx
              ├─244199 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
 ```
 
-Updated `/etc/nginx/conf.d/ipf-ssl-params.conf` file to support TLSv1.2:
+Updated `/etc/nginx/conf.d/ipf-ssl-version.conf` file to support TLSv1.2:
 
 ```shell
     ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_prefer_server_ciphers on;
     ssl_ciphers EECDH+AESGCM:EDH+AESGCM;
-    ssl_ecdh_curve secp384r1;
-    ssl_session_timeout  10m;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_tickets off;
-    ssl_stapling on;
-    ssl_stapling_verify on;
-    gzip off;
 ```
 
 !!! warning "File Changes During IP Fabric Upgrade"
@@ -101,27 +93,33 @@ ls /etc/nginx/conf.d/ -l | grep ssl
 
 ```shell
 root@ipfabric-server:~# ls /etc/nginx/conf.d/ -l | grep ssl
--rw-r--r-- 1 root root 300 Nov  2 21:01 ipf-ssl-params.conf
--rw-r--r-- 1 root root 292 Aug 31 13:17 ipf-ssl-params.conf.29865.2022-11-02@21:01:39~
+-rw-r--r-- 1 root root 208 May  6 08:34 ipf-ssl-params.conf
+-rw-r--r-- 1 root root  64 May  6 08:34 ipf-ssl-version.conf
 ```
 
-In the output above, there are two TLS configuration files. To see which one is
-being used by `nginx`, run:
+In the output above, you can see two TLS-related configuration files.
+To confirm which files are actually being used by `nginx`, you can run:
+
 
 ```shell
 nginx -T | grep ssl
 ```
 
+This command displays the fully compiled `nginx` configuration, including all active TLS-related directives.
+If both files appear with their paths, it means both are included via conf.d/ and used by `nginx`.
+
 ```shell
 root@ipfabric-server:~# nginx -T | grep ssl
-nginx: [warn] the "ssl" directive is deprecated, use the "listen ... ssl" directive instead in /etc/nginx/sites-enabled/ipf-nimpee-update:28
-nginx: [warn] the "ssl" directive is deprecated, use the "listen ... ssl" directive instead in /etc/nginx/sites-enabled/nimpee-webng:35
-nginx: [warn] "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/server.crt"
-nginx: [warn] "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/server.crt"
+2025/06/17 12:17:19 [warn] 2494109#2494109: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/ssl/server.crt"
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
-# configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:                                                  gzip off;
+# configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:
+<omitted>
+# configuration file /etc/nginx/conf.d/ipf-ssl-version.conf:
+<omitted>
 ```
 
-Based on the output above, the configuration file in use is
-`/etc/nginx/conf.d/ipf-ssl-params.conf`.
+In this case, `nginx` is loading configuration directives from both files. They serve different purposes:
+
+- `ipf-ssl-version.conf` defines which TLS protocol versions are allowed and specifies the cipher suites via `ssl_ciphers`.
+- `ipf-ssl-params.conf` contains additional SSL/TLS settings like stapling, session timeouts, etc.
