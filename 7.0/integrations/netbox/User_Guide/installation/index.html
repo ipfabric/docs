@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.ipfabric.io/7.0/integrations/netbox/User_Guide/installation/">
       
       
-        <link rel="prev" href="../ingestions/">
+        <link rel="prev" href="../../Release_Notes/version_1/">
       
       
         <link rel="next" href="../sources/">
@@ -6926,40 +6926,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Release_Notes/version_1/" class="md-nav__link">
+      <a href="../../Release_Notes/version_4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v1 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Release_Notes/version_2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v2 Release Notes
+    v4 Release Notes
   
 
     
@@ -7007,13 +6980,40 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Release_Notes/version_4/" class="md-nav__link">
+      <a href="../../Release_Notes/version_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    v4 Release Notes
+    v2 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Release_Notes/version_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    v1 Release Notes
   
 
     
@@ -7084,114 +7084,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data_mapping/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Data Mapping
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extras/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Extras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ingestions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Ingestions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -7634,6 +7526,114 @@
     
   
     Transform Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_mapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingestions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Extras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
   
 
     
@@ -14668,7 +14668,7 @@
     
     
       <li class="md-path__item">
-        <a href="../FAQ/" class="md-path__link">
+        <a href="./" class="md-path__link">
           
   <span class="md-ellipsis">
     User Guide
@@ -14789,20 +14789,17 @@ In case you want to install a specific version of the plugin, you can specify th
 </ol>
 <h3 id="24-configure-database-router-to-support-branching">2.4. Configure database router to support branching:</h3>
 <ol>
-<li>Create <code>local_settings.py</code> with following content.<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">netbox_branching.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">DATABASE</span>
-
-<span class="c1"># Wrap DATABASES with DynamicSchemaDict for dynamic schema support</span>
-<span class="n">DATABASES</span> <span class="o">=</span> <span class="n">DynamicSchemaDict</span><span class="p">({</span>
-    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="n">DATABASE</span><span class="p">,</span>
-<span class="p">})</span>
-
-<span class="c1"># Employ our custom database router</span>
-<span class="n">DATABASE_ROUTERS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;netbox_branching.database.BranchAwareRouter&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</code></pre></div>
-2. Place the file to <code>/opt/netbox/netbox/netbox/</code>, same directory that contains <code>settings.py</code>.</p>
+<li>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.
+     ```python
+    from netbox_branching.utilities import DynamicSchemaDict<p># Wrap DATABASES with DynamicSchemaDict for dynamic schema support
+  DATABASES = DynamicSchemaDict({
+      &lsquo;default&rsquo;: $ORIGINAL_DATABASE_CONFIG,
+  })</p>
+<p># Employ netbox-branching custom database router
+  DATABASE_ROUTERS = [
+      &lsquo;netbox_branching.database.BranchAwareRouter&rsquo;,
+  ]
+   ```</p>
 </li>
 </ol>
 <h3 id="25-apply-database-migrations">2.5 Apply Database Migrations</h3>
@@ -14894,26 +14891,6 @@ pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span c
 </thead>
 <tbody>
 <tr>
-<td>ipfabric_6_6</td>
-<td>6.6.x</td>
-<td>6.6.x</td>
-</tr>
-<tr>
-<td>ipfabric_6_7</td>
-<td>6.7.x</td>
-<td>6.7.x</td>
-</tr>
-<tr>
-<td>ipfabric_6_8</td>
-<td>6.8.x</td>
-<td>6.8.x</td>
-</tr>
-<tr>
-<td>ipfabric_6_9</td>
-<td>6.9.x</td>
-<td>6.9.x</td>
-</tr>
-<tr>
 <td>ipfabric_6_10</td>
 <td>6.10.x</td>
 <td>6.10.x</td>
@@ -14922,6 +14899,11 @@ pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span c
 <td>ipfabric_7_0</td>
 <td>7.0.x</td>
 <td>7.0.x</td>
+</tr>
+<tr>
+<td>ipfabric_7_2</td>
+<td>7.2.x</td>
+<td>7.2.x</td>
 </tr>
 </tbody>
 </table>
@@ -15017,24 +14999,23 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 <p>For a smooth upgrade to v4.0.0, upgrading must be done at the same time as upgrading to NetBox v4.3.0+. The crucial part is running all migrations from both upgrades at once.</p>
 <p>The plugin now depends on <code>netbox-branching</code> plugin and these extra steps are simplified installation instructions of the plugin:</p>
 <ol>
-<li>Enable the plugin in <code>configuration.py</code> (must be last!)
-<div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c1"># ...</span>
-    <span class="s1">&#39;netbox_branching&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</code></pre></div></li>
-<li>Create <code>/opt/netbox/netbox/netbox/local_settings.py</code> with the following content. It assumes your <code>configuration.py</code> is in <code>/opt/netbox/netbox/netbox/</code>.
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">netbox_branching.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">DATABASE</span>
+<li>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">netbox_branching.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
 
 <span class="c1"># Wrap DATABASES with DynamicSchemaDict for dynamic schema support</span>
 <span class="n">DATABASES</span> <span class="o">=</span> <span class="n">DynamicSchemaDict</span><span class="p">({</span>
-    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="n">DATABASE</span><span class="p">,</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="err">$</span><span class="n">ORIGINAL_DATABASE_CONFIG</span><span class="p">,</span>
 <span class="p">})</span>
 
-<span class="c1"># Employ our custom database router</span>
+<span class="c1"># Employ netbox-branching custom database router</span>
 <span class="n">DATABASE_ROUTERS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;netbox_branching.database.BranchAwareRouter&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Add `netbox-branching` to plugins list (must be last!)</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;netbox_branching&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 </code></pre></div></li>
 </ol>
@@ -15070,7 +15051,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2025</span>
   </span>
 
     
@@ -15148,7 +15129,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ingestions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ingestions">
+          <a href="../../Release_Notes/version_1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: v1 Release Notes">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -15158,7 +15139,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
                 Previous
               </span>
               <div class="md-ellipsis">
-                Ingestions
+                v1 Release Notes
               </div>
             </div>
           </a>
