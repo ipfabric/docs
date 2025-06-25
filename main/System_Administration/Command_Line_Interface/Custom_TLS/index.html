@@ -14932,7 +14932,7 @@ Support or Solution Architect teams can render the system unusable.</p>
 <ol>
 <li>Log in to the IP Fabric CLI as the <code>osadmin</code> user.</li>
 <li>Switch to <code>root</code>: <code>sudo su -</code></li>
-<li>Edit the TLS configuration file <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> with
+<li>Edit the TLS configuration file <code>/etc/nginx/conf.d/ipf-ssl-version.conf</code> with
    your preferred editor.</li>
 <li>Modify the first line of the configuration file by adding other TLS versions
    separated by spaces:<ol>
@@ -14960,17 +14960,9 @@ Support or Solution Architect teams can render the system unusable.</p>
 <span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/nginx.service
 <span class="w">             </span>├─244199<span class="w"> </span>nginx:<span class="w"> </span>master<span class="w"> </span>process<span class="w"> </span>/usr/sbin/nginx<span class="w"> </span>-g<span class="w"> </span>daemon<span class="w"> </span>on<span class="p">;</span><span class="w"> </span>master_process<span class="w"> </span>on<span class="p">;</span>
 </code></pre></div>
-<p>Updated <code>/etc/nginx/conf.d/ipf-ssl-params.conf</code> file to support TLSv1.2:</p>
+<p>Updated <code>/etc/nginx/conf.d/ipf-ssl-version.conf</code> file to support TLSv1.2:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span>ssl_protocols<span class="w"> </span>TLSv1.2<span class="w"> </span>TLSv1.3<span class="p">;</span>
-<span class="w">    </span>ssl_prefer_server_ciphers<span class="w"> </span>on<span class="p">;</span>
 <span class="w">    </span>ssl_ciphers<span class="w"> </span>EECDH+AESGCM:EDH+AESGCM<span class="p">;</span>
-<span class="w">    </span>ssl_ecdh_curve<span class="w"> </span>secp384r1<span class="p">;</span>
-<span class="w">    </span>ssl_session_timeout<span class="w">  </span>10m<span class="p">;</span>
-<span class="w">    </span>ssl_session_cache<span class="w"> </span>shared:SSL:10m<span class="p">;</span>
-<span class="w">    </span>ssl_session_tickets<span class="w"> </span>off<span class="p">;</span>
-<span class="w">    </span>ssl_stapling<span class="w"> </span>on<span class="p">;</span>
-<span class="w">    </span>ssl_stapling_verify<span class="w"> </span>on<span class="p">;</span>
-<span class="w">    </span>gzip<span class="w"> </span>off<span class="p">;</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">File Changes During IP Fabric Upgrade</p>
@@ -14997,24 +14989,29 @@ your own have been discovered, please make the necessary updates and restart the
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/etc/nginx/conf.d/<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>ls<span class="w"> </span>/etc/nginx/conf.d/<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">300</span><span class="w"> </span>Nov<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">21</span>:01<span class="w"> </span>ipf-ssl-params.conf
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">292</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">13</span>:17<span class="w"> </span>ipf-ssl-params.conf.29865.2022-11-02@21:01:39~
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">208</span><span class="w"> </span>May<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">08</span>:34<span class="w"> </span>ipf-ssl-params.conf
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">64</span><span class="w"> </span>May<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">08</span>:34<span class="w"> </span>ipf-ssl-version.conf
 </code></pre></div>
-<p>In the output above, there are two TLS configuration files. To see which one is
-being used by <code>nginx</code>, run:</p>
+<p>In the output above, you can see two TLS-related configuration files.
+To confirm which files are actually being used by <code>nginx</code>, you can run:</p>
 <div class="highlight"><pre><span></span><code>nginx<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
 </code></pre></div>
+<p>This command displays the fully compiled <code>nginx</code> configuration, including all active TLS-related directives.
+If both files appear with their paths, it means both are included via conf.d/ and used by <code>nginx</code>.</p>
 <div class="highlight"><pre><span></span><code>root@ipfabric-server:~#<span class="w"> </span>nginx<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssl
-nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/ipf-nimpee-update:28
-nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>is<span class="w"> </span>deprecated,<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;listen ... ssl&quot;</span><span class="w"> </span>directive<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/nginx/sites-enabled/nimpee-webng:35
-nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
-nginx:<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="s2">&quot;ssl_stapling&quot;</span><span class="w"> </span>ignored,<span class="w"> </span>issuer<span class="w"> </span>certificate<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>certificate<span class="w"> </span><span class="s2">&quot;/etc/nginx/ssl/server.crt&quot;</span>
+<span class="m">2025</span>/06/17<span class="w"> </span><span class="m">12</span>:17:19<span class="w"> </span><span class="o">[</span>warn<span class="o">]</span><span class="w"> </span><span class="m">2494109</span><span class="c1">#2494109: &quot;ssl_stapling&quot; ignored, issuer certificate not found for certificate &quot;/etc/nginx/ssl/server.crt&quot;</span>
 nginx:<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>file<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span>syntax<span class="w"> </span>is<span class="w"> </span>ok
 nginx:<span class="w"> </span>configuration<span class="w"> </span>file<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="nb">test</span><span class="w"> </span>is<span class="w"> </span>successful
-<span class="c1"># configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:                                                  gzip off;</span>
+<span class="c1"># configuration file /etc/nginx/conf.d/ipf-ssl-params.conf:</span>
+&lt;omitted&gt;
+<span class="c1"># configuration file /etc/nginx/conf.d/ipf-ssl-version.conf:</span>
+&lt;omitted&gt;
 </code></pre></div>
-<p>Based on the output above, the configuration file in use is
-<code>/etc/nginx/conf.d/ipf-ssl-params.conf</code>.</p>
+<p>In this case, <code>nginx</code> is loading configuration directives from both files. They serve different purposes:</p>
+<ul>
+<li><code>ipf-ssl-version.conf</code> defines which TLS protocol versions are allowed and specifies the cipher suites via <code>ssl_ciphers</code>.</li>
+<li><code>ipf-ssl-params.conf</code> contains additional SSL/TLS settings like stapling, session timeouts, etc.</li>
+</ul>
 
 
 
@@ -15035,7 +15032,7 @@ nginx:<span class="w"> </span>configuration<span class="w"> </span>file<span cla
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2025</span>
   </span>
 
     
