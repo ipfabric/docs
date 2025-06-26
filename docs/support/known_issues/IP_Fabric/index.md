@@ -28,6 +28,8 @@ description: This page describes general known issues affecting the IP Fabric pl
 - Site Separation -- Changing "Firewall in site" and new
   discovery/recalculation can change Site names.
 
+- When entering IP addresses in the Settings UI, changes will only be saved if you click the **Add to list** button next to the input field or press the **Enter** key. Although a red validation message appears below the field, it does not prevent the UI from saving the settings—however, any IP addresses not added to the list will be omitted. This issue affects all input fields that accept IP addresses.
+
 ## Snapshots
 
 - When discovery is stopped mid-way, and then Refresh is executed, the
