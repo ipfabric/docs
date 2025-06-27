@@ -286,10 +286,12 @@ Please be careful -- running `mike` with `--push` will result in immediate
 changes in the repository (no reviews and such), as described in the steps
 taken.
 
-Let's assume that we are on version `4.5` and want to release a brand new `4.6`.
-The current `main` corresponds to the content of the `4.6` release. To release
+Let's assume that the latest visible version is `7.3` and want to release a brand new `7.5`.
+The current `main` corresponds to the content of the `7.5` release. To release
 it, we just need to do the following:
 
+<!--
+Keeping following lines there to ensure they are not lost until a new lines are properly tested
 - tag `main` with `4.6` to mark the point in time when we have made the cut
 - run `mike deploy --push --update-aliases 4.6 latest` -- this:
   - builds a static site with the release
@@ -302,9 +304,58 @@ make mike
 source venv/bin/activate
 mike deploy --config-file mkdocs_insiders.yml 5.0
 mike alias --update-aliases 5.0 latest
-
-# if everything looks good, push `gh-pages`
+ if everything looks good, push `gh-pages`
+-->
 ```
+- Create a new release branch
+- Run `make mike`
+- Switch to `venv`
+- Run `mike deploy` both commands as below
+  - A new release branch gets its own alias, and any changes in main will apply to an upcoming unreleased version, such as 7.6.
+
+```
+git checkout -B release/7.5
+make mike
+source venv/bin/activate
+mike deploy --config-file mkdocs_insiders.yml 7.5
+mike deploy --push --update-aliases 7.5
+```
+
+### Post-Steps and Notes After New Branch Creation
+
+#### Low Level Release Notes
+
+The **Low Level Release Notes** should be generated for every new release.
+
+#### Display Rules
+
+We use a `.pages.yml` file to display and sort **Release Notes** and **Low Level Release Notes**
+pages. This configuration must be version-specific for each release.
+
+- The **Release Notes** section:
+  - Should not show more than 3 the most recent release note pages by default.
+  - All older versions must be grouped under a **Previous releases** section.
+- The **Low Level Release Notes** section:
+  - Follows similar logic to **Release Notes**.
+  - However, versions are moved to **Previous releases** only based on **major version**.
+  - This means that any LLRN with version `7.X` must remain outside **Previous releases** until version `8.0` is released.
+
+#### Finalizing a Specific Version
+
+For each finalized release version:
+
+- Remove the `tags: ["draft"]` metadata.
+- Remove the `!!! danger "Unreleased Version"` section from the release notes.
+
+- The `latest` version marker must **only** be changed after the **General Availability (GA)** release.
+- Creating a new release branch and publishing release pages does **not** imply a GA.
+- Releasing new release pages corresponds to the **Early Access (EA)** stage.
+
+#### Release Overview
+
+The **IP Fabric Releases Overview** page must be updated accordingly to reflect the newly added version and its categorization.
+
+- `snippets/upgrade_version_policy.md`
 
 ### Release Update to Existing Version
 
@@ -350,7 +401,7 @@ website. Use with caution!
 ### Updating Low-Level Release Notes (LLRN) From JIRA
 
 Script `jira_release_notes.py` will refresh all low-level
-release notes from JIRA. There are certain shortcuts, like hard-coded
+release notes from JIRA from version `7.0.0`. There are certain shortcuts, like hard-coded
 configuration values. Also, check your release filtering in there to limit which
 releases are actually refreshed.
 
