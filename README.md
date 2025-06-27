@@ -305,8 +305,8 @@ source venv/bin/activate
 mike deploy --config-file mkdocs_insiders.yml 5.0
 mike alias --update-aliases 5.0 latest
  if everything looks good, push `gh-pages`
--->
 ```
+-->
 - Create a new release branch
 - Run `make mike`
 - Switch to `venv`
