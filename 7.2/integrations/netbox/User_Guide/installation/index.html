@@ -15274,7 +15274,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 <p>The plugin now depends on <code>netbox-branching</code> plugin and these extra steps are simplified installation instructions of the plugin:</p>
 <ol>
 <li>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">netbox_branching.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">netbox_branching.utilities</span> <span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
 
 <span class="c1"># Wrap DATABASES with DynamicSchemaDict for dynamic schema support</span>
 <span class="n">DATABASES</span> <span class="o">=</span> <span class="n">DynamicSchemaDict</span><span class="p">({</span>
