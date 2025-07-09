@@ -9133,6 +9133,34 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9190,7 +9218,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
+  <a href="#known-issues_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Known Issues
@@ -15295,6 +15323,34 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15352,7 +15408,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
+  <a href="#known-issues_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Known Issues
@@ -15836,13 +15892,25 @@ MD5 (ESXi8.0-ipfabric-7-2-20+0.ova) = e6ab51e846ad0d30f6154d37078457db
 <h3 id="fixes">Fixes</h3>
 <h4 id="aruba-central-ap-discovery">Aruba Central AP Discovery</h4>
 <p>In this release, we reverted the Aruba Central AP discovery logic from version <code>6.10</code> due to issues that arose when Central-managed APs functioned as controllers for other APs, rather than operating solely as individual devices.</p>
+<h3 id="known-issues">Known Issues</h3>
+<h4 id="fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues">Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues</h4>
+<p>When NAT44 and Zone Firewall tasks are enabled, discovery processes may hang or
+experience significant delays when handling Fortinet devices. This can result
+in failed discoveries or cause devices to be missing from snapshots.</p>
+<p>Temporarily disabling both <code>NAT44</code> and <code>Zone firewall</code> discovery tasks for the
+<code>fortigate</code> <strong>Family</strong> (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery
+Settings &rarr; Disabled Discovery Tasks</strong>) is the recommended hotfix until this
+issue is resolved in one of the upcoming releases.</p>
+<p><a class="glightbox" href="7.2_disabled_task_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disabled Discovery Tasks" src="7.2_disabled_task_list.png" /></a></p>
+<p><a class="glightbox" href="7.2_disabled_task_forti_zonefw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable Zone firewall discovery task for FortiGate" src="7.2_disabled_task_forti_zonefw.png" /></a></p>
+<p><a class="glightbox" href="7.2_disabled_task_forti_nat44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable NAT44 discovery task for FortiGate" src="7.2_disabled_task_forti_nat44.png" /></a></p>
 <h2 id="v7219-june-30th-2025-ga">v7.2.19 (June 30<sup>th</sup>, 2025; GA)</h2>
 <h3 id="fixes_1">Fixes</h3>
 <h4 id="bgp-communities-filtering">BGP Communities Filtering</h4>
 <p>Starting with release <code>7.2.19</code>, the new BGP communities filtering feature is fully supported on both manual and automated snapshots. Cisco IOS-XR compatibility has also been added.</p>
 <h4 id="configuration-management-process-fails-to-close-ssh-sessions">Configuration Management Process Fails to Close SSH Sessions</h4>
 <p>Since <code>7.2.19</code>, the Configuration Management process for HPE <code>arubasw</code> devices now properly terminates SSH connections and correctly detects login banners.</p>
-<h3 id="known-issues">Known Issues</h3>
+<h3 id="known-issues_1">Known Issues</h3>
 <h4 id="license-or-database-errors-after-upgrade">License or Database Errors After Upgrade</h4>
 <p>If the IP Fabric GUI redirects to the status page after an upgrade and displays errors such as <strong>License Error</strong>, <strong>ArangoDB Disconnected</strong>, or <strong>Failed to load initial app data</strong>, this may indicate an issue with the ArangoDB configuration.</p>
 <p><a class="glightbox" href="7.2_app_data_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Failed to load initial app data&quot; error" class="center" src="7.2_app_data_error.png" /></a></p>
