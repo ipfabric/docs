@@ -9094,6 +9094,45 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-or-database-errors-after-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License or Database Errors After Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v7314-july-10th-2025-ea" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9122,34 +9161,6 @@ here.
     <span class="md-ellipsis">
       
         Aruba Central AP Discovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known Issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
       
     </span>
   </a>
@@ -15289,6 +15300,45 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-or-database-errors-after-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License or Database Errors After Upgrade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v7314-july-10th-2025-ea" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15317,34 +15367,6 @@ here.
     <span class="md-ellipsis">
       
         Aruba Central AP Discovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known Issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
       
     </span>
   </a>
@@ -15856,6 +15878,72 @@ following key combinations:</p>
 </ul>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
+<h2 id="known-issues">Known Issues</h2>
+<h4 id="license-or-database-errors-after-upgrade">License or Database Errors After Upgrade</h4>
+<p>If the IP Fabric GUI redirects to the status page after an upgrade and displays errors such as <strong>License Error</strong>, <strong>ArangoDB Disconnected</strong>, or <strong>Failed to load initial app data</strong>, this may indicate an issue with the ArangoDB configuration.</p>
+<p><a class="glightbox" href="../7.2/7.2_app_data_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="&quot;Failed to load initial app data&quot; error" class="center" src="../7.2/7.2_app_data_error.png" /></a></p>
+<p><a class="glightbox" href="../7.2/7.2_license_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="License error" class="center" src="../7.2/7.2_license_error.png" /></a></p>
+<p><strong>To diagnose the issue:</strong></p>
+<ol>
+<li>
+<p>Log in to the IP Fabric appliance via CLI and switch to the root user using <code>sudo -i</code>.</p>
+</li>
+<li>
+<p>Check if ArangoDB is listening on port <code>8529</code> via IPv6 (expected for IP Fabric <code>7.2</code>):</p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# lsof -i | grep 8529 | grep LISTEN
+arangod      952    arangodb   26u  IPv6   19501      0t0  TCP *:8529 (LISTEN)
+</code></pre></div>
+<p>If ArangoDB is bound to IPv4 instead, this likely causes the error:</p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# lsof -i | grep 8529 | grep LISTEN
+arangod     874 arangodb   26u  IPv4  20599      0t0  TCP *:8529 (LISTEN)
+</code></pre></div>
+</li>
+<li>
+<p>Verify the <code>arangod.conf</code> file in <code>/etc/arangodb3</code> is a symbolic link to <code>arangod.conf.ipf</code>. The directory should show:</p>
+<div class="highlight"><pre><span></span><code>root@IPF:~# cd /etc/arangodb3
+root@IPF:/etc/arangodb3# ls -lsa | grep arangod.conf
+0 lrwxrwxrwx   1 root root    16 Nov 27  2023 arangod.conf -&gt; arangod.conf.ipf
+4 -rw-r--r--   1 root root  1687 Feb 11 12:07 arangod.conf.ipf
+4 -rw-r--r--   1 root root  1696 Nov 27  2023 arangod.conf.ipf-orig
+</code></pre></div>
+</li>
+</ol>
+<p><strong>If the symlink is missing (i.e., <code>arangod.conf</code> is a regular file):</strong></p>
+<ol>
+<li>
+<p>Run these commands to restore the symlink:</p>
+<div class="highlight"><pre><span></span><code>cd /etc/arangodb3/
+mv arangod.conf arangod.conf.bkp
+ln -s arangod.conf.ipf arangod.conf
+systemctl restart arangodb3
+</code></pre></div>
+</li>
+<li>
+<p>Confirm the symlink exists and ArangoDB uses IPv6:</p>
+<div class="highlight"><pre><span></span><code>root@IPF:/etc/arangodb3# ls -lsa | grep arangod.conf
+0 lrwxrwxrwx   1 root root    16 May 27 09:30 arangod.conf -&gt; arangod.conf.ipf
+4 -rw-r--r--   1 root root  1697 May 27 09:22 arangod.conf.bkp
+4 -rw-r--r--   1 root root  1693 Jan 22  2021 arangod.conf.dpkg-old
+4 -rw-r--r--   1 root root  1687 Apr 23 13:42 arangod.conf.ipf
+4 -rw-r--r--   1 root root  1696 Mar  4 10:44 arangod.conf.ipf-orig
+
+root@IPF:~# lsof -i | grep 8529 | grep LISTEN
+arangod    876 arangodb   26u  IPv6  17979      0t0  TCP *:8529 (LISTEN)
+</code></pre></div>
+</li>
+</ol>
+<p>After these steps, the GUI should function correctly.</p>
+<h4 id="fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues">Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues</h4>
+<p>When NAT44 and Zone Firewall tasks are enabled, discovery processes may hang or
+experience significant delays when handling Fortinet devices. This can result
+in failed discoveries or cause devices to be missing from snapshots.</p>
+<p>Temporarily disabling both <code>NAT44</code> and <code>Zone firewall</code> discovery tasks for the
+<code>fortigate</code> <strong>Family</strong> (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery
+Settings &rarr; Disabled Discovery Tasks</strong>) is the recommended hotfix until this
+issue is resolved in one of the upcoming releases.</p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disabled Discovery Tasks" src="../7.2/7.2_disabled_task_list.png" /></a></p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_zonefw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable Zone firewall discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_zonefw.png" /></a></p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_nat44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable NAT44 discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_nat44.png" /></a></p>
 <h2 id="v7314-july-10th-2025-ea">v7.3.14 (July 10<sup>th</sup>, 2025; EA)</h2>
 <div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-7-3-14+0.tar.zst.sig) = 1477bde8206beb2fa5250d93fd945ba9371600fd27d8416836196286abc03f76
 MD5 (ipfabric-update-7-3-14+0.tar.zst.sig) = 418ed9ced8ad619a85c9678d71e458cf
@@ -15875,18 +15963,6 @@ MD5 (ESXi8.0-ipfabric-7-3-14+0.ova) = e01a3085b075f6dccf09daa620757dfa
 <h3 id="fixes">Fixes</h3>
 <h4 id="aruba-central-ap-discovery">Aruba Central AP Discovery</h4>
 <p>In this release, we reverted the Aruba Central AP discovery logic from version <code>6.10</code> due to issues that arose when Central-managed APs functioned as controllers for other APs, rather than operating solely as individual devices.</p>
-<h3 id="known-issues">Known Issues</h3>
-<h4 id="fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues">Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues</h4>
-<p>When NAT44 and Zone Firewall tasks are enabled, discovery processes may hang or
-experience significant delays when handling Fortinet devices. This can result
-in failed discoveries or cause devices to be missing from snapshots.</p>
-<p>Temporarily disabling both <code>NAT44</code> and <code>Zone firewall</code> discovery tasks for the
-<code>fortigate</code> <strong>Family</strong> (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery
-Settings &rarr; Disabled Discovery Tasks</strong>) is the recommended hotfix until this
-issue is resolved in one of the upcoming releases.</p>
-<p><a class="glightbox" href="../7.2/7.2_disabled_task_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disabled Discovery Tasks" src="../7.2/7.2_disabled_task_list.png" /></a></p>
-<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_zonefw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable Zone firewall discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_zonefw.png" /></a></p>
-<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_nat44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable NAT44 discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_nat44.png" /></a></p>
 <h2 id="v7313-june-30th-2025-ea">v7.3.13 (June 30<sup>th</sup>, 2025; EA)</h2>
 <h3 id="fixes_1">Fixes</h3>
 <h4 id="configuration-management-process-fails-to-close-ssh-sessions">Configuration Management Process Fails to Close SSH Sessions</h4>
