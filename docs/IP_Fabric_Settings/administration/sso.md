@@ -782,3 +782,29 @@ mapped to the example `read-only` IP Fabric role.
   ]
 }
 ```
+
+## Disabling Local Authentication
+
+!!! danger "Risk of Being Locked Out"
+
+    If you disable local authentication and your SSO provider becomes unavailable, you will not be able to log in to the IP Fabric GUI. To regain access, you will need to revert this change by re-enabling local authentication.
+
+You can disable local authentication for the IP Fabric GUI, which will remove the username and password fields from the login page (unless LDAP is configured on the appliance).
+
+To do this, add the `"enableLocalAuthentication": false` property to the `app` object in `/opt/ipf-api/conf.d/api.json`. Ensure that the JSON syntax is correct: the `"url"` key-value pair must be followed by a comma.
+
+```json hl_lines="4"
+{
+  "app": {
+    "url": "https://<FQDN>/api",
+    "enableLocalAuthentication": false
+  }
+}
+```
+
+After making changes to `/opt/ipf-api/conf.d/api.json`, you need to restart the
+API service:
+
+```bash
+systemctl restart ipf-api.service
+```
