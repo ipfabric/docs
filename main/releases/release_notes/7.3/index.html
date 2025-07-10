@@ -9091,6 +9091,79 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aruba-central-ap-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aruba Central AP Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7313-june-30th-2025-ea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.3.13 (June 30th, 2025; EA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.3.13 (June 30th, 2025; EA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuration-management-process-fails-to-close-ssh-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15213,6 +15286,79 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aruba-central-ap-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aruba Central AP Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v7313-june-30th-2025-ea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.3.13 (June 30th, 2025; EA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.3.13 (June 30th, 2025; EA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuration-management-process-fails-to-close-ssh-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15656,19 +15802,14 @@ here.
 
 
 <h1 id="ip-fabric-v73">IP Fabric v7.3</h1>
-<div class="admonition danger">
-<p class="admonition-title">Unreleased Version</p>
-<p>This is an upcoming IP Fabric version, which has not been released yet and
-is not available for download.</p>
-</div>
 <div class="admonition info">
 <p class="admonition-title">Upgrade Version Policy</p>
 <p>We support the following upgrade paths:</p>
 <ul>
 <li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example, <code>6.10.7</code> &rarr; <code>7.2.20</code>).</li>
+  current major line (for example, <code>6.10.7</code> &rarr; <code>7.3.14</code>).</li>
 <li>Any version in the current major line &rarr; any newer version in the current
-  major line (for example, <code>7.0.15</code> &rarr; <code>7.2.20</code>).</li>
+  major line (for example, <code>7.0.15</code> &rarr; <code>7.3.14</code>).</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -15705,6 +15846,22 @@ SHA256 (ESXi8.0-ipfabric-7-3-14+0.ova) = bb6899ad499a812ed7f0f6cfd6d0d74ca7f5224
 MD5 (ESXi8.0-ipfabric-7-3-14+0.ova) = e01a3085b075f6dccf09daa620757dfa
 </code></pre></div>
 <h3 id="fixes">Fixes</h3>
+<h4 id="aruba-central-ap-discovery">Aruba Central AP Discovery</h4>
+<p>In this release, we reverted the Aruba Central AP discovery logic from version <code>6.10</code> due to issues that arose when Central-managed APs functioned as controllers for other APs, rather than operating solely as individual devices.</p>
+<h3 id="known-issues">Known Issues</h3>
+<h4 id="fortinet-nat44-and-zone-firewall-tasks-causing-discovery-issues">Fortinet NAT44 and Zone Firewall Tasks Causing Discovery Issues</h4>
+<p>When NAT44 and Zone Firewall tasks are enabled, discovery processes may hang or
+experience significant delays when handling Fortinet devices. This can result
+in failed discoveries or cause devices to be missing from snapshots.</p>
+<p>Temporarily disabling both <code>NAT44</code> and <code>Zone firewall</code> discovery tasks for the
+<code>fortigate</code> <strong>Family</strong> (in <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery
+Settings &rarr; Disabled Discovery Tasks</strong>) is the recommended hotfix until this
+issue is resolved in one of the upcoming releases.</p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disabled Discovery Tasks" src="../7.2/7.2_disabled_task_list.png" /></a></p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_zonefw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable Zone firewall discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_zonefw.png" /></a></p>
+<p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_nat44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable NAT44 discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_nat44.png" /></a></p>
+<h2 id="v7313-june-30th-2025-ea">v7.3.13 (June 30<sup>th</sup>, 2025; EA)</h2>
+<h3 id="fixes_1">Fixes</h3>
 <h4 id="configuration-management-process-fails-to-close-ssh-sessions">Configuration Management Process Fails to Close SSH Sessions</h4>
 <p>Since <code>7.3.13</code>, the Configuration Management process for HPE <code>arubasw</code> devices now properly terminates SSH connections and correctly detects login banners.</p>
 <h2 id="v7311-june-12th-2025-ea">v7.3.11 (June 12<sup>th</sup>, 2025; EA)</h2>
