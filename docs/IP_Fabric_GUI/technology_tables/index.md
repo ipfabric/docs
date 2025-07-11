@@ -155,49 +155,12 @@ the `...` menu:
 ![Restore table settings](table_restore.png){ .center }
 
 ## Regular Expression Syntax
-
-A regular expression may consist of literal characters and the following characters and sequences:
-
-- `.` -- The dot matches any single character except line terminators. To include line terminators, use `[\s\S]` instead to simulate `.` with the `DOTALL` flag.
-- `\d` -- Matches a single digit, equivalent to `[0-9]`.
-- `\s` -- Matches a single whitespace character.
-- `\S` -- Matches a single non-whitespace character.
-- `\b` -- Matches a word boundary. This match is zero-length.
-- `\B` -- Negation of `\b`. The match is zero-length.
-- `[xyz]` -- Set of characters. Matches any of the enclosed characters (here `x`, `y`, or `z`).
-- `[^xyz]` -- Negated set of characters. Matches any other character than the enclosed ones (i.e., anything but `x`, `y`, or `z` in this case).
-- `[x-z]` -- Range of characters. Matches any of the characters in the specified range (e.g., `[0-9A-F]` to match any character in `0123456789ABCDEF`).
-- `[^x-z]` -- Negated range of characters. Matches any other character than the ones specified in the range.
-- `(xyz)` -- Defines and matches a pattern group. Also defines a capturing group.
-- `(?:xyz)` -- Defines and matches a pattern group without capturing the match.
-- `(xy|z)` -- Matches either `xy` or `z`.
-- `^` -- Matches the beginning of the string (e.g., `^xyz`).
-- `$` -- Matches the end of the string (e.g., `xyz$`).
-
-To literally match one of the characters that have a special meaning in regular expressions (`.`, `*`, `?`, `[`, `]`, `(`, `)`, `{`, `}`, `^`, `$`, and `\`), you may need to escape the character with a backslash, which typically requires escaping itself. The backslash of shorthand character classes like `\d`, `\s`, and `\b` counts as literal backslash. However, the backslash of JSON escape sequences like `\t` (tabulation), `\r` (carriage return), and `\n` (line feed) does not.
+Regular expressions are evaluated in PostgreSQL using POSIX standard with some extensions. For supported syntax and examples, refer to [POSIX Regular Expressions](https://www.postgresql.org/docs/15/functions-matching.html#FUNCTIONS-POSIX-REGEXP) section in PostgreSQL documentation.
 
 !!! note "Literal Backlashes Require Different Amounts of Escaping Depending on the Context"
 
     - `\` in bind variables (Table view mode) in the web UI (automatically escaped to `\\` unless the value is wrapped in double quotes and already escaped properly).
     - `\\` in bind variables (JSON view mode) and queries in the web UI.
-    - `\\` in bind variables in `arangosh`.
-    - `\\\\` in queries in `arangosh`.
-    - Double the amount compared to `arangosh` in shells that use backslashes for escaping (`\\\\` in bind variables and `\\\\\\\\` in queries).
-
-Characters and sequences may optionally be repeated using the following quantifiers:
-
-- `x?` -- Matches one or zero occurrences of `x`.
-- `x*` -- Matches zero or more occurrences of `x` (greedy).
-- `x+` -- Matches one or more occurrences of `x` (greedy).
-- `x*?` -- Matches zero or more occurrences of `x` (non-greedy).
-- `x+?` -- Matches one or more occurrences of `x` (non-greedy).
-- `x{y}` -- Matches exactly y occurrences of `x`.
-- `x{y,z}` -- Matches between y and z occurrences of `x`.
-- `x{y,}` -- Matches at least y occurrences of `x`.
-
-Note that `xyz+` matches `xyzzz`, but if you want to match `xyzxyz` instead, you need to define a pattern group by wrapping the sub-expression in parentheses and place the quantifier right behind it, like `(xyz)+`.
-
-You can use 3rd-party services, like [regex101](https://regex101.com/), to fine-tune and troubleshoot your regular expressions.
 
 ## Create Links to Table Views
 
