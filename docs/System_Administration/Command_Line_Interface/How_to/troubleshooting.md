@@ -365,43 +365,33 @@ systemctl status nginx.service
     ```
 
 ```shell
-systemctl status arangodb3.service
+systemctl status postgresql@15-main.service
 ```
 
 !!! example
 
     ```shell
-    osadmin@ipfabric-howto1118135353:~$ systemctl status arangodb3.service
-    ● arangodb3.service - ArangoDB database server
-         Loaded: loaded (/lib/systemd/system/arangodb3.service; enabled; vendor preset: enabled)
-        Drop-In: /etc/systemd/system/arangodb3.service.d
-                 └─ipf-nofile-override.conf
-         Active: active (running) since Fri 2022-11-18 13:11:48 UTC; 20min ago
-        Process: 662 ExecStartPre=/usr/bin/install -g arangodb -o arangodb -d /var/tmp/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 744 ExecStartPre=/usr/bin/install -g arangodb -o arangodb -d /var/run/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 799 ExecStartPre=/usr/bin/env chown -R arangodb:arangodb /var/log/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 800 ExecStartPre=/usr/bin/env chmod 700 /var/log/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 801 ExecStartPre=/usr/bin/env chown -R arangodb:arangodb /var/lib/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 880 ExecStartPre=/usr/bin/env chmod 700 /var/lib/arangodb3 (code=exited, status=0/SUCCESS)
-        Process: 885 ExecStartPre=/usr/bin/env chown -R arangodb:arangodb /var/lib/arangodb3-apps (code=exited, status=0/SUCCESS)
-        Process: 887 ExecStartPre=/usr/bin/env chmod 700 /var/lib/arangodb3-apps (code=exited, status=0/SUCCESS)
-       Main PID: 888 (arangod)
-          Tasks: 49 (limit: 131072)
-         Memory: 3.4G
-            CPU: 29.865s
-         CGroup: /system.slice/arangodb3.service
-                 └─888 /usr/sbin/arangod --uid arangodb --gid arangodb --pid-file /var/run/arangodb3/arangod.pid --temp.path /var/tmp/arangodb3 --log.foreground-tty true
-
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [e52b0] ArangoDB 3.5.7 [linux] 64bit, using jemalloc, build tags/v3.5.7-0-ga94761e8c6, VPack 0.1.33, RocksDB 6.2.0, ICU 58.1, V8 7.1.302.28, OpenSSL 1.1.1h  22 Sep 2020
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [75ddc] detected operating system: Linux version 5.10.0-19-amd64 (debian-kernel@lists.debian.org) (gcc-10 (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2) #1 SMP Debia>
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [43396] {authentication} Jwt secret not specified, generating...
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [144fe] using storage engine mmfiles
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [3bb7d] {cluster} Starting up with role SINGLE
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [a1c60] {syscall} file-descriptors (nofiles) hard limit is 1048576, soft limit is 1048576
-    Nov 18 13:11:48 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:48Z [888] INFO [3844e] {authentication} Authentication is turned on (system only), authentication for unix sockets is turned on
-    Nov 18 13:11:49 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:49Z [888] INFO [8767f] {engines} DB recovery finished successfully
-    Nov 18 13:11:50 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:50Z [888] INFO [6ea38] using endpoint 'http+tcp://0.0.0.0:8529' for non-encrypted requests
-    Nov 18 13:11:50 ipfabric-howto1118135353 arangod[888]: 2022-11-18T13:11:50Z [888] INFO [cf3f4] ArangoDB (version 3.5.7 [linux]) is ready for business. Have fun!
+    osadmin@ipfabric-howto1118135353:~$ systemctl status postgresql@15-main.service
+    ● postgresql@15-main.service - PostgreSQL Cluster 15-main
+    Loaded: loaded (/lib/systemd/system/postgresql@.service; enabled-runtime; preset: enabled)
+    Active: active (running) since Fri 2025-07-11 10:34:44 UTC; 3h 57min ago
+    Process: 1097 ExecStart=/usr/bin/pg_ctlcluster --skip-systemctl-redirect 15-main start (code=exited, status=0/SUCCESS)
+    Main PID: 1299 (postgres)
+    Tasks: 8 (limit: 18685)
+    Memory: 1.2G
+    CPU: 1min 42.461s
+    CGroup: /system.slice/system-postgresql.slice/postgresql@15-main.service
+    ├─ 1299 /usr/lib/postgresql/15/bin/postgres -D /var/lib/postgresql/15/main -c config_file=/etc/postgresql/15/main/postgresql.conf
+    ├─ 1373 "postgres: 15/main: checkpointer "
+    ├─ 1374 "postgres: 15/main: background writer "
+    ├─ 1379 "postgres: 15/main: walwriter "
+    ├─ 1380 "postgres: 15/main: autovacuum launcher "
+    ├─ 1381 "postgres: 15/main: logical replication launcher "
+    ├─ 1899 "postgres: 15/main: ipf_api_user ipf_appliance_db ::1(3782) idle"
+    └─21716 "postgres: 15/main: postgres ipf_appliance_db [local] idle"
+    
+    Jul 11 10:34:41 ipfabric-howto1118135353 systemd[1]: Starting postgresql@15-main.service - PostgreSQL Cluster 15-main...
+    Jul 11 10:34:44 ipfabric-howto1118135353 systemd[1]: Started postgresql@15-main.service - PostgreSQL Cluster 15-main.
     ```
 
 ## Check if There Are Any Failed Services
