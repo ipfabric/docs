@@ -155,7 +155,9 @@ the `...` menu:
 ![Restore table settings](table_restore.png){ .center }
 
 ## Regular Expression Syntax
-Regular expressions are evaluated in PostgreSQL using POSIX standard with some extensions. For supported syntax and examples, refer to [POSIX Regular Expressions](https://www.postgresql.org/docs/15/functions-matching.html#FUNCTIONS-POSIX-REGEXP) section in PostgreSQL documentation.
+Regular expressions are evaluated in PostgreSQL using POSIX standard with some extensions. Detailed information can be found in [Regular Expression Details](https://www.postgresql.org/docs/15/functions-matching.html#FUNCTIONS-POSIX-REGEXP:~:text=9.7.3.1.%C2%A0Regular%20Expression%20Details) section of PostgreSQL documentation.
+
+For a quick introduction to regular expressions, refer to [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html) guide on [Regular-Expressions.info](https://www.regular-expressions.info/).
 
 !!! note "Literal Backlashes Require Different Amounts of Escaping Depending on the Context"
 
