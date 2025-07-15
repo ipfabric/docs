@@ -7545,7 +7545,23 @@ here.
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overwrite-unsupported-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overwrite Unsupported Attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#filtering" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7555,8 +7571,8 @@ here.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#attribute-value" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7610,11 +7626,6 @@ here.
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -14978,7 +14989,23 @@ here.
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overwrite-unsupported-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overwrite Unsupported Attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#filtering" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14988,8 +15015,8 @@ here.
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#attribute-value" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15043,11 +15070,6 @@ here.
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -15189,6 +15211,7 @@ using the <code>merge_default_filters</code> variable.</p>
 <span class="w">  </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># The Attribute to set in all rules</span>
 <span class="w">  </span><span class="nt">delete_attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># Defaults to None, can be set to true to delete the attribute if not matched</span>
 <span class="w">  </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># Defaults to null, setting to a boolean value will propagate to all rules</span>
+<span class="w">  </span><span class="nt">overwrite_unsupported</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Defaults to null, setting to a boolean value will propagate to all rules</span>
 <span class="w">  </span><span class="nt">filters</span><span class="p">:</span><span class="w">  </span><span class="c1"># Further filtering of the Inventory &gt; Devices; cannot be used with filter_string</span>
 <span class="w">  </span><span class="c1"># Disable by setting merge_default_filters to false in rules</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primaryIp</span>
@@ -15216,6 +15239,7 @@ using the <code>merge_default_filters</code> variable.</p>
 <span class="w">    </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IP_HTTP_SERVER</span>
 <span class="w">    </span><span class="nt">delete_attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
 <span class="w">    </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">overwrite_unsupported</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">merge_default_filters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">static</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DISABLED</span>
@@ -15233,7 +15257,34 @@ using the <code>merge_default_filters</code> variable.</p>
 <span class="w">      </span><span class="nt">no_config_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IPF Unsupported</span>
 <span class="w">    </span><span class="nt">inventory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># Used Internally Only for merging multiple configuration files</span>
 </code></pre></div>
-<h3 id="filtering">Filtering</h3>
+<h2 id="overwrite-unsupported-attributes">Overwrite Unsupported Attributes</h2>
+<p>If the <code>overwrite_unsupported</code> is set to <code>true</code>, then the utility will overwrite attributes that are not supported by 
+IP Fabric. This is useful for attributes that are not supported by the device or vendor, but you still want to set the
+value based on the <code>value[no_config_value]</code>.</p>
+<p>The default value is <code>false</code>, which means that unsupported attributes will not be overwritten. This allows your team to
+manually set these unsupported attributes without overwriting them with the utility.</p>
+<p>Example: Device has <code>IP_HTTP_SERVER</code> attribute manually set to <code>DISABLED</code>, but the device does not support the IP Fabric
+configuration task.</p>
+<div class="highlight"><span class="filename">Overwrite Unsupported Example</span><pre><span></span><code><span class="nt">rules</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP Server</span>
+<span class="w">    </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IP_HTTP_SERVER</span>
+<span class="w">    </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">overwrite_unsupported</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">static</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DISABLED</span>
+<span class="w">      </span><span class="nt">regex</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^no ip http server</span>
+<span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">        </span><span class="nt">flags</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IGNORECASE</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MULTILINE</span>
+<span class="w">      </span><span class="nt">null_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENABLED</span>
+<span class="w">      </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">current</span>
+<span class="w">      </span><span class="nt">no_config_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IPF Unsupported</span>
+</code></pre></div>
+<p>In the above example, the device will not be overwritten with <code>IPF Unsupported</code>. Instead, it will keep the manually set value of <code>DISABLED</code>.</p>
+<p>If <code>overwrite_unsupported: true</code> is set, then the attribute will be overwritten with <code>IPF Unsupported</code>.</p>
+<h2 id="filtering">Filtering</h2>
 <p>Unlike Table Rule Filters, Configuration Rule Filters will apply an additional limit of the device inventory. This uses
 the Inventory &gt; Devices table to collect a list of Serial Numbers of the devices.</p>
 <p><a class="glightbox" href="../../images/table_description.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Table Description Example" src="../../images/table_description.png" /></a></p>
@@ -15260,10 +15311,10 @@ of that inventory:</p>
 <span class="w">        </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eq</span>
 <span class="w">        </span><span class="nt">column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vendor</span>
 </code></pre></div>
-<h3 id="attribute-value">Attribute Value</h3>
+<h2 id="attribute-value">Attribute Value</h2>
 <p>The Rule Value is the value that will be set for the attribute. This either comes a regex match, a static value, or a
 null value.</p>
-<h4 id="configuration-type-and-no-configuration-value">Configuration Type and No Configuration Value</h4>
+<h3 id="configuration-type-and-no-configuration-value">Configuration Type and No Configuration Value</h3>
 <p><em>This is only applicable to Configuration Rules not Table Rules.</em></p>
 <div class="highlight"><span class="filename">Configuration Not Supported Example</span><pre><span></span><code><span class="nt">rules</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configuration Type Example</span>
@@ -15278,11 +15329,11 @@ To verify IP Fabric collects the configuration for your device, you can check th
 verify the <code>Current config</code> or <code>Startup config</code> tasks are supported for your device&rsquo;s vendor and family.</p>
 <p>The <code>no_config_value</code> are hard coded values assigned to attributes when IP Fabric does not have the device config.</p>
 <p>Use Case: Set <code>IPF Unsupported</code> if the device does not have a configuration available in IP Fabric.</p>
-<h4 id="regex">Regex</h4>
+<h3 id="regex">Regex</h3>
 <p>The <code>regex</code> key is required and is used to search the device configuration. The <code>pattern</code> key is the
 regular expression pattern to match and the <code>group</code> key is the group number to extract. The <code>transform</code> key is used
 to transform the value before regex processing.</p>
-<h5 id="static-example">Static Example</h5>
+<h4 id="static-example">Static Example</h4>
 <div class="highlight"><span class="filename">Static Value Example</span><pre><span></span><code><span class="nt">rules</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filters</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco</span>
@@ -15318,7 +15369,7 @@ to transform the value before regex processing.</p>
 </ol>
 </li>
 </ol>
-<h5 id="regex-group-example">Regex Group Example</h5>
+<h4 id="regex-group-example">Regex Group Example</h4>
 <div class="highlight"><span class="filename">Regex Group Example</span><pre><span></span><code><span class="nt">rules</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SSH Version</span>
 <span class="w">    </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SSH_VERSION</span>
@@ -15355,7 +15406,7 @@ not found then <code>Unsupported</code> will be used.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2025</span>
   </span>
 
     
