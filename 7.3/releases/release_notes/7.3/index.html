@@ -6351,13 +6351,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../System_Administration/Command_Line_Interface/Ipf_checker/" class="md-nav__link">
+      <a href="../../../System_Administration/Command_Line_Interface/Logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    ipf-checker
+    Understanding System Logs
   
 
     
@@ -6378,13 +6378,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../System_Administration/Command_Line_Interface/Logging/" class="md-nav__link">
+      <a href="../../../System_Administration/Command_Line_Interface/ipf_checker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Understanding System Logs
+    ipf-checker
   
 
     
@@ -8702,15 +8702,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#v7315-july-15th-2025-ea" class="md-nav__link">
+  <a href="#v7315-july-15th-2025-ga" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v7.3.15 (July 15th, 2025; EA)
+        v7.3.15 (July 15th, 2025; GA)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v7.3.15 (July 15th, 2025; EA)">
+    <nav class="md-nav" aria-label="v7.3.15 (July 15th, 2025; GA)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -14980,15 +14980,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#v7315-july-15th-2025-ea" class="md-nav__link">
+  <a href="#v7315-july-15th-2025-ga" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v7.3.15 (July 15th, 2025; EA)
+        v7.3.15 (July 15th, 2025; GA)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v7.3.15 (July 15th, 2025; EA)">
+    <nav class="md-nav" aria-label="v7.3.15 (July 15th, 2025; GA)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -15542,10 +15542,18 @@
 <p>We support the following upgrade paths:</p>
 <ul>
 <li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example, <code>6.10.7</code> &rarr; <code>7.3.14</code>).</li>
+  current major line (for example, <code>6.10.7</code> &rarr; <code>7.3.15</code>).</li>
 <li>Any version in the current major line &rarr; any newer version in the current
-  major line (for example, <code>7.0.15</code> &rarr; <code>7.3.14</code>).</li>
+  major line (for example, <code>7.0.15</code> &rarr; <code>7.3.15</code>).</li>
+<li>An upgrade to <code>7.5.X</code> and later can be performed solely from the latest <code>7.3.15</code> release.</li>
 </ul>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Required Steps Before Upgrading to <code>v7.5</code></p>
+<p>The upcoming <code>v7.5</code> release introduces a new PostgreSQL-based database, which brings updated hardware requirements.
+To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
+To assess your current hardware performance, use our <a href="../../../System_Administration/Command_Line_Interface/ipf_checker/">ipf-checker</a> tool by running <code>sudo ipf-checker -d -s</code>.</p>
+<p><strong>WARNING</strong>: The test may take a long time to complete. The default timeout is 30 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Clearing Browser Cache</p>
@@ -15630,7 +15638,7 @@ issue is resolved in one of the upcoming releases.</p>
 <p><a class="glightbox" href="../7.2/7.2_disabled_task_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disabled Discovery Tasks" src="../7.2/7.2_disabled_task_list.png" /></a></p>
 <p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_zonefw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable Zone firewall discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_zonefw.png" /></a></p>
 <p><a class="glightbox" href="../7.2/7.2_disabled_task_forti_nat44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Disable NAT44 discovery task for FortiGate" src="../7.2/7.2_disabled_task_forti_nat44.png" /></a></p>
-<h2 id="v7315-july-15th-2025-ea">v7.3.15 (July 15<sup>th</sup>, 2025; EA)</h2>
+<h2 id="v7315-july-15th-2025-ga">v7.3.15 (July 15<sup>th</sup>, 2025; GA)</h2>
 <div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-7-3-15+0.tar.zst.sig) = a6afc4481406fccf98c3be2d38de6f68a57163a617738a853c31d6789751a0be
 MD5 (ipfabric-update-7-3-15+0.tar.zst.sig) = f9cdd873a843d454a886b8c09c6cc90c
 SHA256 (ipfabric-7-3-15+0.qcow2) = 2e3e74dfcdf2f920f306246a3f38a65cfb7747f1e0c237445e09b2242bc80796
@@ -15648,7 +15656,7 @@ MD5 (ESXi8.0-ipfabric-7-3-15+0.ova) = a71be7773f4b218d4a1740cc3ba96075
 </code></pre></div>
 <h3 id="fixes">Fixes</h3>
 <h4 id="fatal-error-while-discovery-on-paloalto">Fatal Error While Discovery on PaloAlto</h4>
-<p>In this release, we resolved an error that was inadvertently introduced by a bug fix in the previous patch release <code>v7.3.14</code>.</p>
+<p>In this release, we resolved an issue where Discovery of PaloAlto devices was failing.</p>
 <h2 id="v7314-july-10th-2025-ea">v7.3.14 (July 10<sup>th</sup>, 2025; EA)</h2>
 <h3 id="fixes_1">Fixes</h3>
 <h4 id="aruba-central-ap-discovery">Aruba Central AP Discovery</h4>
@@ -16064,7 +16072,7 @@ manual link configuration is required to incorporate them into the network model
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 15, 2025 17:48:54">July 15, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 16, 2025 08:47:35">July 16, 2025</span>
   </span>
 
     
