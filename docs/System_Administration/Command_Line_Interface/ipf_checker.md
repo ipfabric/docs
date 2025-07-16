@@ -2,16 +2,20 @@
 description: This section provides a guide how to use `ipf-checker` tool to check IP Fabric system health.
 ---
 
-# `ipf-checker`
+# ipf-checker
 
-`ipf-checker` is a Python
-script, which is inspired by
-`rpk redpanda check` resource checker.
-It reports whether the hardware requirements, environment checks and dependencies are all met by 
-the IP Fabric appliance to ensure smooth operation.
+!!! info "Required Steps Before Upgrading to `v7.5`"
+
+    The upcoming `v7.5` release introduces a new PostgreSQL-based database, which brings updated hardware requirements.
+    To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
+    To assess your current hardware performance use the tool by running `sudo ipf-checker -d -s`.
+
+    **WARNING**: The test may take a long time to complete. The default timeout is 30 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.
+
+The `ipf-checker` is a Python script, which reports whether the hardware requirements,
+environment checks and dependencies are all met by the IP Fabric appliance to ensure smooth operation.
 
 It can display the results in a clean, readable table and also write them to a file.
-The end goal is to include it in every deployment of IPF appliances and trigger it automatically with each techsupport generation.
 
 ## Use
 
@@ -40,7 +44,7 @@ options:
 !!! example "Results table"
 
     The script will generate a table with the results of the checks performed.
-    ![Example ipf-chekcer output](ipf_checker/ipf_checker_table.png){ align=left }
+    ![Example ipf-chekcer output](ipf_checker_table.png){ align=left }
 
 ## Environment variables
 
@@ -67,4 +71,4 @@ There is an `ipf-checker` role you can choose for the token, ensuring the tool h
     and clicking on the **Generate Token** button. Copy the token and use it with the `-t` option or 
     set it in the `.ipf-checker/env` file as `IPF_CHECKER_TOKEN`.
 
-    ![Example token geneartion](ipf_checker/ipf_checker_token.png)
+    ![Example token geneartion](ipf_checker_token.png)
