@@ -3,6 +3,7 @@
     We support the following upgrade paths:
 
     - The **latest** version in the previous major line --> any version in the
-      current major line (for example, `6.10.7` --> `7.3.14`).
+      current major line (for example, `6.10.7` --> `7.3.15`).
     - Any version in the current major line --> any newer version in the current
-      major line (for example, `7.0.15` --> `7.3.14`).
+      major line (for example, `7.0.15` --> `7.3.15`).
+    - An upgrade to `7.5.X` and later can be performed solely from the latest `7.3.15` release.
