@@ -10,7 +10,7 @@ description: This section provides a guide how to use `ipf-checker` tool to chec
     To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
     To assess your current hardware performance use the tool by running `sudo ipf-checker -d -s`.
 
-    **WARNING**: The test may take a long time to complete. The default timeout is 30 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.
+    **WARNING**: The test may take a long time to complete. The default timeout is 45 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.
 
 The `ipf-checker` is a Python script, which reports whether the hardware requirements,
 environment checks and dependencies are all met by the IP Fabric appliance to ensure smooth operation.
