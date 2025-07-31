@@ -52,14 +52,18 @@ Below is an example of a successful local backup output triggered via CLI:
     ```shell
     root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -b
     find: ‘/root/.cache/duplicity/’: Permission denied
-    Nov 18 14:27:00 [INFO] Backup destination: local
-    Nov 18 14:27:00 [INFO] Storage status: OK
-    Nov 18 14:27:00 [INFO] ** Backup has started **
-    Nov 18 14:27:00 [INFO] Cleaning up backup
-    Nov 18 14:27:00 [INFO] Dumping up ArangoDB
-    Nov 18 14:27:06 [INFO] Creating backups list
-    Nov 18 14:27:14 [INFO] ** Backup has finished **
-    Nov 18 14:27:14 [INFO] Removing temp backup files.
+    find: Failed to restore initial working directory: /root: Permission denied
+    Jul 11 11:09:34 [INFO] Backup destination: local
+    Jul 11 11:09:34 [INFO] Storage status: OK
+    Jul 11 11:09:34 [INFO] ** Backup has started **
+    Jul 11 11:09:34 [INFO] Cleaning up backup
+    Jul 11 11:09:34 [INFO] Dumping up ArangoDB
+    Jul 11 11:09:38 [INFO] Dumping up PostgresDB
+    du: cannot access '/opt/ipf-nimpee-update/server/etc/config.json': No such file or directory
+    Jul 11 11:10:26 [INFO] Creating backups list
+    Jul 11 11:10:43 [INFO] ** Backup has finished **
+    Jul 11 11:10:43 [INFO] Removing temp backup files.
+    rm: cannot remove '/var/backups/database/': Permission denied
     ```
 
 ## Restore via CLI
@@ -143,33 +147,33 @@ sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l backup
 To restore only the database, use the following command format:
 
 ```shell
-sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r arangodb-xxx -d <date&time of the backup>
+sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r postgresdb-xxx -d <date&time of the backup>
 ```
 
 To list database backups for restoration, run the following command in the IP Fabric CLI:
 
 ```shell
-sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l arangodb
+sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l postgresdb
 ```
 
 !!! example "List Example"
 
     ```shell
-    root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l arangodb
+    root@system-backup:/# sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -l postgresdb
     Nov 18 13:54:30 [INFO] Backup destination: local
     Nov 18 13:54:30 [INFO] Storage status: OK
     Nov 18 13:54:30 [INFO] Removing temp backup files.
     Nov 18 13:54:31 [INFO] Local backup DB same as online list
 
     ## LIST ##
-    arangodb-zsindylek-mq-70-20241118-1349-7_0_4+0; 2024-11-18T13:49:28
+    postgresdb-test-10640358365-20250711-1026-7_5_0+0; 2025-07-11T10:26:46
     ## LIST END ##
     ```
 
 !!! Example "Restore Database Command Example"
 
     ```shell
-    sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r arangodb-zsindylek-mq-70-20241118-1349-7_0_4+0 -d 2024-11-18T13:49:28
+    sudo -u autoboss /opt/nimpee/sys-backup-duplicity.sh -r postgresdb-test-10640358365-20250711-1026-7_5_0+0 -d 2025-07-11T10:26:46
     ```
 
 ### Restore Specific Snapshot

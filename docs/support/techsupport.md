@@ -125,7 +125,7 @@ IP Fabric Support.
 
 ## What Techsupport File Includes
 
-1. **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, MongoDB, ArangoDB,
+1. **System logs** -- Includes `syslog`, `dmesg`, RabbitMQ, NGINX, PostgreSQL, ArangoDB, Redis,
    and IP Fabric API service logs. Customer data are **not** included.
 
 2. **Service logs** -- Includes IP Fabric discovery service logs without CLI.
