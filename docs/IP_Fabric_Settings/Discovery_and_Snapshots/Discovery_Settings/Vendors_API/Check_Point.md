@@ -26,3 +26,5 @@ In SmartConsole, go to **Manage & Settings --> Blades** and click **Advanced Set
 In case you use the setting **All IP addresses that can be used for GUI clients**, don't forget to add the IP Fabric appliance's address to **Manage & Settings --> Permissions** and **Administrators --> Trusted Clients**.
 
 In case you use a Multi-Domain server, all necessary settings are in the Multi Domain menu (i.e., **Multi Domain --> Blades**).
+
+IP Fabric must use the same IP address as the management server to discover each Check Point gateway.
