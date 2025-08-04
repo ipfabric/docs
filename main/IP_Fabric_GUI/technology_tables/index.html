@@ -15484,48 +15484,18 @@ user.</p>
 the <code>...</code> menu:</p>
 <p><a class="glightbox" href="table_restore.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Restore table settings" class="center" src="table_restore.png" /></a></p>
 <h2 id="regular-expression-syntax">Regular Expression Syntax</h2>
-<p>A regular expression may consist of literal characters and the following characters and sequences:</p>
-<ul>
-<li><code>.</code> &ndash; The dot matches any single character except line terminators. To include line terminators, use <code>[\s\S]</code> instead to simulate <code>.</code> with the <code>DOTALL</code> flag.</li>
-<li><code>\d</code> &ndash; Matches a single digit, equivalent to <code>[0-9]</code>.</li>
-<li><code>\s</code> &ndash; Matches a single whitespace character.</li>
-<li><code>\S</code> &ndash; Matches a single non-whitespace character.</li>
-<li><code>\b</code> &ndash; Matches a word boundary. This match is zero-length.</li>
-<li><code>\B</code> &ndash; Negation of <code>\b</code>. The match is zero-length.</li>
-<li><code>[xyz]</code> &ndash; Set of characters. Matches any of the enclosed characters (here <code>x</code>, <code>y</code>, or <code>z</code>).</li>
-<li><code>[^xyz]</code> &ndash; Negated set of characters. Matches any other character than the enclosed ones (i.e., anything but <code>x</code>, <code>y</code>, or <code>z</code> in this case).</li>
-<li><code>[x-z]</code> &ndash; Range of characters. Matches any of the characters in the specified range (e.g., <code>[0-9A-F]</code> to match any character in <code>0123456789ABCDEF</code>).</li>
-<li><code>[^x-z]</code> &ndash; Negated range of characters. Matches any other character than the ones specified in the range.</li>
-<li><code>(xyz)</code> &ndash; Defines and matches a pattern group. Also defines a capturing group.</li>
-<li><code>(?:xyz)</code> &ndash; Defines and matches a pattern group without capturing the match.</li>
-<li><code>(xy|z)</code> &ndash; Matches either <code>xy</code> or <code>z</code>.</li>
-<li><code>^</code> &ndash; Matches the beginning of the string (e.g., <code>^xyz</code>).</li>
-<li><code>$</code> &ndash; Matches the end of the string (e.g., <code>xyz$</code>).</li>
-</ul>
-<p>To literally match one of the characters that have a special meaning in regular expressions (<code>.</code>, <code>*</code>, <code>?</code>, <code>[</code>, <code>]</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>^</code>, <code>$</code>, and <code>\</code>), you may need to escape the character with a backslash, which typically requires escaping itself. The backslash of shorthand character classes like <code>\d</code>, <code>\s</code>, and <code>\b</code> counts as literal backslash. However, the backslash of JSON escape sequences like <code>\t</code> (tabulation), <code>\r</code> (carriage return), and <code>\n</code> (line feed) does not.</p>
+<p>Regular expressions are evaluated in the PostgreSQL using the POSIX standard with some extensions.
+Detailed information can be found in the <a href="https://www.postgresql.org/docs/15/functions-matching.html#FUNCTIONS-POSIX-REGEXP:~:text=9.7.3.1.%C2%A0Regular%20Expression%20Details">Regular Expression Details</a>
+section of the PostgreSQL documentation.</p>
+<p>For a quick introduction to regular expressions, refer to <a href="https://www.regular-expressions.info/quickstart.html">Regular Expressions Quick Start</a>
+guide on <a href="https://www.regular-expressions.info/">Regular-Expressions.info</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Literal Backlashes Require Different Amounts of Escaping Depending on the Context</p>
 <ul>
 <li><code>\</code> in bind variables (Table view mode) in the web UI (automatically escaped to <code>\\</code> unless the value is wrapped in double quotes and already escaped properly).</li>
 <li><code>\\</code> in bind variables (JSON view mode) and queries in the web UI.</li>
-<li><code>\\</code> in bind variables in <code>arangosh</code>.</li>
-<li><code>\\\\</code> in queries in <code>arangosh</code>.</li>
-<li>Double the amount compared to <code>arangosh</code> in shells that use backslashes for escaping (<code>\\\\</code> in bind variables and <code>\\\\\\\\</code> in queries).</li>
 </ul>
 </div>
-<p>Characters and sequences may optionally be repeated using the following quantifiers:</p>
-<ul>
-<li><code>x?</code> &ndash; Matches one or zero occurrences of <code>x</code>.</li>
-<li><code>x*</code> &ndash; Matches zero or more occurrences of <code>x</code> (greedy).</li>
-<li><code>x+</code> &ndash; Matches one or more occurrences of <code>x</code> (greedy).</li>
-<li><code>x*?</code> &ndash; Matches zero or more occurrences of <code>x</code> (non-greedy).</li>
-<li><code>x+?</code> &ndash; Matches one or more occurrences of <code>x</code> (non-greedy).</li>
-<li><code>x{y}</code> &ndash; Matches exactly y occurrences of <code>x</code>.</li>
-<li><code>x{y,z}</code> &ndash; Matches between y and z occurrences of <code>x</code>.</li>
-<li><code>x{y,}</code> &ndash; Matches at least y occurrences of <code>x</code>.</li>
-</ul>
-<p>Note that <code>xyz+</code> matches <code>xyzzz</code>, but if you want to match <code>xyzxyz</code> instead, you need to define a pattern group by wrapping the sub-expression in parentheses and place the quantifier right behind it, like <code>(xyz)+</code>.</p>
-<p>You can use 3<sup>rd</sup>-party services, like <a href="https://regex101.com/">regex101</a>, to fine-tune and troubleshoot your regular expressions.</p>
 <h2 id="create-links-to-table-views">Create Links to Table Views</h2>
 <p><a class="glightbox" href="table_share_url_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Share URL options for tables" class="center" src="table_share_url_options.png" /></a></p>
 <p>To point to a particular dataset, the link may include
@@ -15571,7 +15541,7 @@ the <code>...</code> menu:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2025</span>
   </span>
 
     
