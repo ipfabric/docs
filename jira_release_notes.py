@@ -139,7 +139,12 @@ def main():
         major = int(version_match[1])
         minor = int(version_match[2])
 
-        if major < 7:
+#        if major < 7:
+#            print(f"Skipping release {v['name']}")
+#            continue
+
+        # Include only versions 7.3 and later
+        if (major * 1000 + minor) < 7003:
             print(f"Skipping release {v['name']}")
             continue
 
