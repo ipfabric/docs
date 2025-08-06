@@ -88,6 +88,10 @@ least:
 
 ## Changes
 
+### Release `7.3.16`
+
+Starting from version `7.3.16`, when Aruba Instant Access Points (IAPs) are already managed by Aruba Central, discovering their Virtual Controller (VC) will no longer consume a license.
+
 ### Release `4.4.0`
 
 Starting from version `4.4.0`, every device (virtual or physical) will consume
