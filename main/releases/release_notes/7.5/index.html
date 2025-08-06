@@ -15531,6 +15531,17 @@ following key combinations:</p>
 <li>The XDP Unidirectional Neighbors table may be unable to load.</li>
 <li>During snapshot loading, the GUI may become unresponsive, requiring a page refresh.</li>
 </ul>
+<ul>
+<li>
+<p><strong>Computing Intent Verification Rules</strong> during the loading of an existing snapshot or the creation of a new snapshot (as part of pre-discovery calculations)
+may take longer than expected, as this process is not yet optimized. Performance improvements are planned and will be included in an upcoming patch release.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The duration of the computation depends on the number of currently loaded snapshots. To reduce the time spent on Computing Intent Verification Rules,
+it is recommended to minimize the number of loaded snapshots.</p>
+</div>
+</li>
+</ul>
 <h3 id="rbac-policies">RBAC Policies</h3>
 <p>When updating or creating RBAC policies, the following endpoints cannot be configured:</p>
 <div class="highlight"><pre><span></span><code>POST /support/callhome
