@@ -14681,7 +14681,7 @@
 <h1 id="sdk-basics">SDK Basics</h1>
 <p>After initializing the IPFClient, you can easily access various configuration details related to your IP Fabric instance. 
 Below are examples of how to retrieve the hostname, API version, and base URL of the connected IP Fabric instance.</p>
-<div class="highlight"><span class="filename">Get IP Fabric hostname, API version, and base URL.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Get IP Fabric hostname, API version, and base URL.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipf</span><span class="o">.</span><span class="n">hostname</span>
 <span class="go">&#39;eu-demo02a.hel1-cloud.ipf.cx&#39;</span>
@@ -14695,7 +14695,7 @@ Below are examples of how to retrieve the hostname, API version, and base URL of
 <span class="go">URL(&#39;https://demo2.ipfabric.io/api/v6.9/&#39;)</span>
 </code></pre></div>
 <p>For more available options, you can use the <code>dir()</code> function to list all the attributes and methods of the <code>IPFClient</code> class.</p>
-<div class="highlight"><span class="filename">List all attributes and methods of the IPFClient class.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">List all attributes and methods of the IPFClient class.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">ipf</span><span class="p">)</span>
 </code></pre></div>
@@ -14704,7 +14704,7 @@ Below are examples of how to retrieve the hostname, API version, and base URL of
 methods categorized under the <code>inventory</code> attribute. Each method corresponds to a specific inventory or protocol table, 
 allowing you to access detailed information about devices, interfaces, and other network components. Below is a list 
 of available inventory table methods that you can use to extract and analyze different types of data:</p>
-<div class="highlight"><span class="filename">Inventory Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Inventory Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">print_tables</span><span class="p">()</span>  <span class="c1"># Added in SDK v6.9.4</span>
 <span class="go">[</span>
@@ -14716,13 +14716,13 @@ of available inventory table methods that you can use to extract and analyze dif
 <p>The following example demonstrates how to retrieve an inventory of all devices from your IP Fabric instance using 
 the <code>IPFClient</code>. This method fetches a comprehensive list of all devices, which you can then use for further 
 analysis or reporting.</p>
-<div class="highlight"><span class="filename">Get inventory of all devices.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Get inventory of all devices.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 <span class="n">devices</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div>
 <p>Following the same pattern, you can retrieve the number of items in a table using the <code>count()</code> method.
-<div class="highlight"><span class="filename">Get number of all devices.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Get number of all devices.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 <span class="n">devices</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -14762,7 +14762,7 @@ value to filter by. For example, <code>{"siteName": ["eq", "MPLS CORE"]}</code> 
 </div>
 <p>In the following example, only defined columns are retrieved from device inventory. This can significantly reduce the 
 amount of data received from the API.</p>
-<div class="highlight"><span class="filename">Filter devices by site name and vendor and limit columns received.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Filter devices by site name and vendor and limit columns received.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 
@@ -14780,7 +14780,7 @@ amount of data received from the API.</p>
 <p>In this example, we use the <code>attr_filters</code> argument to filter devices based on specific attributes. This is useful when
 you want to filter devices based on attributes that are not part of the standard inventory columns.
 More about <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes">Device Attributes</a>.</p>
-<div class="highlight"><span class="filename">Filter devices by attribute.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Filter devices by attribute.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 
 <span class="c1"># Define the attribute filters for specific Site Name</span>
@@ -14797,7 +14797,7 @@ More about <a href="https://docs.ipfabric.io/latest/IP_Fabric_Settings/Discovery
 through the technology attribute. These methods allow you to retrieve detailed information on various networking 
 technologies, such as addressing, routing, security, and more. Below is a list of available technology table 
 methods that you can use to extract and analyze different types of network data:</p>
-<div class="highlight"><span class="filename">Technology Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Technology Table Methods.</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">print_tables</span><span class="p">()</span>
 <span class="go">[&#39;serial_ports&#39;]</span>
@@ -14823,7 +14823,7 @@ devices. Each one of these technologies relates to data IP Fabric has gathered a
 <li>
 <p>Using the Technology Table Method:</p>
 <p>You can directly access the NTP Summary Table through the IPFClient&rsquo;s technology module:
-  <div class="highlight"><span class="filename">NTP Sources Table through technology module.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+  <div class="highlight"><span class="filename">NTP Sources Table through technology module.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">technology</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">ntp_sources</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div>
   This method fetches all entries from the NTP Summary Table.</p>
@@ -14831,7 +14831,7 @@ devices. Each one of these technologies relates to data IP Fabric has gathered a
 <li>
 <p>Using the API URL:</p>
 <p>Alternatively, you can retrieve the same data by specifying the API URL directly:
-  <div class="highlight"><span class="filename">NTP Sources Table using API URL.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+  <div class="highlight"><span class="filename">NTP Sources Table using API URL.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/tables/management/ntp/sources&#39;</span><span class="p">)</span>
 </code></pre></div>
   This approach is useful if you are familiar with the specific API endpoints.</p>
@@ -14839,7 +14839,7 @@ devices. Each one of these technologies relates to data IP Fabric has gathered a
 <li>
 <p>Using the Front End GUI URL:</p>
 <p>You can also use the URL format from the IP Fabric GUI to fetch the NTP Summary data:
-  <div class="highlight"><span class="filename">NTP Sources Table using Front End GUI URL.</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+  <div class="highlight"><span class="filename">NTP Sources Table using Front End GUI URL.</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
 <span class="n">ntp</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="s1">&#39;/technology/management/ntp/sources&#39;</span><span class="p">)</span>
 </code></pre></div>
   This method offers flexibility, especially when translating paths from the IP Fabric web interface to API calls.</p>
@@ -14866,7 +14866,7 @@ devices. Each one of these technologies relates to data IP Fabric has gathered a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 4, 2025 08:50:54">August 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2025 12:34:09">August 6, 2025</span>
   </span>
 
     
