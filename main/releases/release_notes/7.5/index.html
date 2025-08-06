@@ -9133,17 +9133,6 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#broken-psql-since-release-73" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Broken PSQL Since Release 7.3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#database-migration-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15164,17 +15153,6 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#broken-psql-since-release-73" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Broken PSQL Since Release 7.3
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#database-migration-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15508,15 +15486,6 @@ following key combinations:</p>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
 <h2 id="known-issues">Known Issues</h2>
-<h3 id="broken-psql-since-release-73">Broken PSQL Since Release 7.3</h3>
-<p>The <strong>PostgreSQL (PSQL)</strong> database was introduced in release 7.3, but it was not yet actively used. In some deployments, the PSQL database may be broken due to a missing role: <code>ipf_appliance_shared_role</code>.</p>
-<p><strong>Before upgrading to version 7.5</strong>, ensure that the previous upgrade to <strong>7.3 completed without the error</strong>: <code>ERROR: role "ipf_appliance_shared_role" does not exist</code>. Run the following command to check:  </p>
-<div class="highlight"><pre><span></span><code>grep &quot;ipf_appliance_shared_role&quot; /var/log/ipf/system-upgrade-ipf/package-upgrade
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If the error found, do <strong>not</strong> proceed with the upgrade.</p>
-</div>
 <h3 id="database-migration-issues">Database Migration Issues</h3>
 <ul>
 <li>In rare cases, Vendor API credentials may not migrate correctly to the PSQL database and may require re-entry.</li>
@@ -15592,7 +15561,7 @@ There are three changes compared to the previous version:</p>
   marking those that are not present in the currently selected snapshot. This change eliminates various glitches
   when a different snapshot is selected while having the attribute filter active.</li>
 <li>The &ldquo;Snapshot Retention&rdquo; page has been renamed to &ldquo;Snapshot Collection,&rdquo; with a corresponding URL update. This change more accurately reflects the content and purpose of the pages.</li>
-<li>The snapshot management system has undergone a redesign to enhance usability and efficiency, 
+<li>The snapshot management system has undergone a redesign to enhance usability and efficiency,
   particularly when dealing with extensive sets of snapshots. Key improvements include:<ul>
 <li>Categorization by Time Period: Snapshots are intuitively organized based on their creation time.</li>
 <li>Filtering by Name: Users can easily filter snapshots by their names.</li>
@@ -15611,7 +15580,7 @@ There are three changes compared to the previous version:</p>
 <li>Added IPv6 support for the Cisco IOS-XE IS-IS task.</li>
 <li>Added IPv6 support for the Cisco ASA BGP Neighbors task.</li>
 <li>Added support for multi-segment routing for VeloCloud (only IPv4).</li>
-<li>Added support for the MAC address table on Meraki switches. </li>
+<li>Added support for the MAC address table on Meraki switches.</li>
 <li>Added mapping for STP port statuses on Meraki switches.</li>
 <li>A new task Cloud Subnets was added to save more information related to cloud subnets in the device JSON.</li>
 <li>A new task Cloud Scaling Groups was added to save more information related to scaling groups in the device JSON.</li>
@@ -15621,7 +15590,7 @@ There are three changes compared to the previous version:</p>
 <p>Added support for F5 rSeries (F5OSA) and F5 VELOS (F5OSC) discovery.</p>
 <div class="admonition warning">
 <p class="admonition-title">Do not forget to update IAM policy</p>
-<p>To collect VM instances from Azure Virtual Machine Scale Sets in Uniform mode, the corresponding IAM policy must be updated. 
+<p>To collect VM instances from Azure Virtual Machine Scale Sets in Uniform mode, the corresponding IAM policy must be updated.
 You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_5.json">here</a>.</p>
 </div>
 </li>
@@ -15674,7 +15643,7 @@ You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 6, 2025</span>
   </span>
 
     
