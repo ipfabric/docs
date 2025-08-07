@@ -9155,17 +9155,6 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#missing-psql-database-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Missing PSQL Database Status
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#multicast-path-lookup-not-working" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9237,6 +9226,17 @@ here.
   
     <nav class="md-nav" aria-label="New Features">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based-filtering-for-discovery-history-seeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-Based Filtering for Discovery History Seeds
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#aws-cloud" class="md-nav__link">
@@ -15186,17 +15186,6 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#missing-psql-database-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Missing PSQL Database Status
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#multicast-path-lookup-not-working" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15268,6 +15257,17 @@ here.
   
     <nav class="md-nav" aria-label="New Features">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based-filtering-for-discovery-history-seeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-Based Filtering for Discovery History Seeds
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#aws-cloud" class="md-nav__link">
@@ -15515,12 +15515,8 @@ following key combinations:</p>
 <h3 id="database-migration-issues">Database Migration Issues</h3>
 <ul>
 <li>In rare cases, Vendor API credentials may not migrate correctly to the PSQL database and may require re-entry.</li>
-</ul>
-<ul>
 <li>BGP community settings may not import correctly and may need reconfiguration.</li>
 </ul>
-<h3 id="missing-psql-database-status">Missing PSQL Database Status</h3>
-<p>The status page lacks PSQL database status information and a service restart option.</p>
 <h3 id="multicast-path-lookup-not-working">Multicast Path-Lookup Not Working</h3>
 <p>Multicast path lookups are displayed incorrectly due to an error in the end-to-end algorithm.</p>
 <h3 id="duplicate-data-on-security-related-tables">Duplicate Data on Security-Related Tables</h3>
@@ -15530,8 +15526,6 @@ following key combinations:</p>
 <li>The Wireless AP table may load very slowly.</li>
 <li>The XDP Unidirectional Neighbors table may be unable to load.</li>
 <li>During snapshot loading, the GUI may become unresponsive, requiring a page refresh.</li>
-</ul>
-<ul>
 <li>
 <p><strong>Computing Intent Verification Rules</strong> during the loading of an existing snapshot or the creation of a new snapshot (as part of pre-discovery calculations)
 may take longer than expected, as this process is not yet optimized. Performance improvements are planned and will be included in an upcoming patch release.</p>
@@ -15551,6 +15545,44 @@ GET /support/vpn-stop
 </code></pre></div>
 <h2 id="v754-unreleased-ea">v7.5.4 (UNRELEASED; EA)</h2>
 <h3 id="new-features">New Features</h3>
+<h4 id="time-based-filtering-for-discovery-history-seeds">Time-Based Filtering for Discovery History Seeds</h4>
+<p>We have introduced a new setting that allows users to precisely control which IP addresses from Discovery History are reused as seeds.</p>
+<p><strong>API Extension</strong></p>
+<p>This feature is configurable through a new <code>discoveryHistorySeeds</code> attribute in the existing <code>PATCH /settings</code> API. The attribute accepts an object with these properties:</p>
+<p><code>enabled</code> <em>(required)</em> – Enables/disables seed reuse from Discovery History
+<code>daysLimit</code> <em>(optional)</em> – Restricts seed reuse to IPs discovered within the last X days
+<code>afterDate</code> <em>(optional)</em> – Restricts seed reuse to IPs discovered after a specified date</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>daysLimit</code> and <code>afterDate</code> are mutually exclusive — only one may be configured at a time.</p>
+</div>
+<p><strong>Use Cases</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Current Behavior</strong> &ndash; Use all IPs from Discovery History</td>
+<td><code>{ enabled: true }</code></td>
+</tr>
+<tr>
+<td><strong>Disable seed reuse</strong></td>
+<td><code>{ enabled: false }</code> (preserves existing <code>daysLimit</code>/<code>afterDate</code> values)</td>
+</tr>
+<tr>
+<td><strong>Use only IPs discovered in the last 7 days</strong></td>
+<td><code>{ enabled: true, daysLimit: 7 }</code></td>
+</tr>
+<tr>
+<td><strong>Use only IPs discovered after June 1, 2025</strong></td>
+<td><code>{ enabled: true, afterDate: "2025-06-01" }</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="aws-cloud">AWS Cloud</h4>
 <ul>
 <li><strong>AWS Cloud WAN</strong> &ndash; Basic support for AWS Global and Core Networks. A new device type, &ldquo;AWS Core Network Edge&rdquo;, will be discovered.
@@ -15654,10 +15686,24 @@ You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_a
 </ul>
 <h3 id="other-changes">Other Changes</h3>
 <ul>
-<li>Removed feature flag <code>ENABLE_ACI_FVTENANT</code></li>
-<li>Tables <strong>IPv4 routing table</strong> and <strong>IPv6 routing table</strong> were previously named <strong>Cumulative IPv4 routing table</strong>
-  and <strong>Cumulative IPv6 routing table</strong>. These original names were misleading when displayed in the Device Explorer.
-  Aside from the renaming, the tables remain unchanged — same data, same URL, and same structure.</li>
+<li>Feature flag <code>ENABLE_ACI_FVTENANT</code> <strong>was removed</strong></li>
+<li>
+<p><strong>Routing tables</strong> in Device Explorer <strong>were renamed</strong>:</p>
+<ul>
+<li><code>Cumulative IPv4 routing table</code> → <strong>IPv4 routing table</strong></li>
+<li><code>Cumulative IPv6 routing table</code> → <strong>IPv6 routing table</strong></li>
+</ul>
+<p><em>(Data, URLs, and structure remain unchanged; original names were misleading)</em>  </p>
+</li>
+</ul>
+<ul>
+<li><strong>Added documentation link</strong> to Support Menu: <code>API Documentation</code></li>
+<li>
+<p><strong>Enhanced Feature Matrix</strong> with IPv6 support indicators:</p>
+<ul>
+<li>Added toggle filter to show/hide IPv6 support information  </li>
+</ul>
+</li>
 </ul>
 
 
@@ -15679,7 +15725,7 @@ You can download the new policy <a href="../../../IP_Fabric_Settings/Discovery_a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 7, 2025</span>
   </span>
 
     
