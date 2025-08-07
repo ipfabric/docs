@@ -9144,6 +9144,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#performance-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#database-migration-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9170,17 +9181,6 @@ here.
     <span class="md-ellipsis">
       
         Duplicate Data on Security-Related Tables
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance Issues
       
     </span>
   </a>
@@ -15175,6 +15175,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#performance-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#database-migration-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15201,17 +15212,6 @@ here.
     <span class="md-ellipsis">
       
         Duplicate Data on Security-Related Tables
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance Issues
       
     </span>
   </a>
@@ -15512,16 +15512,7 @@ following key combinations:</p>
 <li>Snapshots from release <code>5.X</code> and earlier are not supported and may fail to load properly.</li>
 </ul>
 <h2 id="known-issues">Known Issues</h2>
-<h3 id="database-migration-issues">Database Migration Issues</h3>
-<ul>
-<li>In rare cases, Vendor API credentials may not migrate correctly to the PSQL database and may require re-entry.</li>
-<li>BGP community settings may not import correctly and may need reconfiguration.</li>
-</ul>
-<h3 id="multicast-path-lookup-not-working">Multicast Path-Lookup Not Working</h3>
-<p>Multicast path lookups are displayed incorrectly due to an error in the end-to-end algorithm.</p>
-<h3 id="duplicate-data-on-security-related-tables">Duplicate Data on Security-Related Tables</h3>
-<p>Using filters may result in duplicate entries in security-related tables such as NAT44 and ACL.</p>
-<h3 id="performance-issues">Performance Issues</h3>
+<h3 id="performance-limitations">Performance Limitations</h3>
 <ul>
 <li>The Wireless AP table may load very slowly.</li>
 <li>The XDP Unidirectional Neighbors table may be unable to load.</li>
@@ -15536,6 +15527,15 @@ it is recommended to minimize the number of loaded snapshots.</p>
 </div>
 </li>
 </ul>
+<h3 id="database-migration-issues">Database Migration Issues</h3>
+<ul>
+<li>In rare cases, Vendor API credentials may not migrate correctly to the PSQL database and may require re-entry.</li>
+<li>BGP community settings may not import correctly and may need reconfiguration.</li>
+</ul>
+<h3 id="multicast-path-lookup-not-working">Multicast Path-Lookup Not Working</h3>
+<p>Multicast path lookups are displayed incorrectly due to an error in the end-to-end algorithm.</p>
+<h3 id="duplicate-data-on-security-related-tables">Duplicate Data on Security-Related Tables</h3>
+<p>Using filters may result in duplicate entries in security-related tables such as NAT44 and ACL.</p>
 <h3 id="rbac-policies">RBAC Policies</h3>
 <p>When updating or creating RBAC policies, the following endpoints cannot be configured:</p>
 <div class="highlight"><pre><span></span><code>POST /support/callhome
