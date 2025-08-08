@@ -411,3 +411,9 @@ To use this script, you need to export two environment variables:
 - `JIRA_PASS` -- a token you can get from the
   [JIRA API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
+- `export JIRA_USER=###########` 
+- `export JIRA_PASS=###########`
+
+To run this script, go to `venv` and run `python3 jira_release_notes.py`.
+
+Side note: Always remove version, team and customer information stuff from Ticket Summary!!!
