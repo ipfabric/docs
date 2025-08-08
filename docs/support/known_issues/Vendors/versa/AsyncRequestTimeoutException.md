@@ -1,10 +1,8 @@
 ---
-description: This page describes known issues with Versa and how to fix them.
+description: This page describes known issue for Versa vendor and how to fix it.
 ---
 
-# Versa
-
-## HTTP 500 Error `AsyncRequestTimeoutException`
+# HTTP 500 Error **AsyncRequestTimeoutException**
 
 **Known affected platforms:** all
 

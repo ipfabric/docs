@@ -274,6 +274,21 @@ After updating the environment file, you must restart the IP Fabric application 
 sudo systemctl restart ipf-appliance
 ```
 
+### Versa VOS forwarding table
+
+This feature flag allows you to configure the limit for the Versa VOS forwarding table length. By default, it is set to 5000000, which corresponds to approximately 100,000 forwarding table records.
+To change the limit, add the following line to the global environment file at `/etc/default/ipf-appliance-local`:
+
+```
+VERSA_FORWARDING_TABLE_LIMIT=your_new_limit
+```
+
+After updating the environment file, you must restart the IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
 ## Deprecated Feature Flags
 
 ### GCP Discovery (Removed in `7.0`)
