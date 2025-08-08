@@ -28,4 +28,5 @@ Optionally, you may enable **Allow API+CLI combined discovery**, which allows th
 
 ## Known Issue
 
-- [HTTP 500 Error `AsyncRequestTimeoutException`](../../../../support/known_issues/Vendors/versa.md)
+- [HTTP 500 Error **AsyncRequestTimeoutException**](../../../../support/known_issues/Vendors/versa/AsyncRequestTimeoutException.md).
+- [Forwarding Table Duplicate Output](../../../../support/known_issues/Vendors/versa/forwarding-table-duplicate-output.md).
