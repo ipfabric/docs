@@ -63,7 +63,7 @@ to make a successful call to the platform.
 
     - **Sunset** — indicates the date after which the deprecated behavior may be removed.
 
-    For more information please refer to [Versioning URL schema](versioning.md#url-schema-a-version-in-url) section of our API documentation.
+    For more information please refer to [Versioning URL schema](versioning.md#api-version-in-url-path-deprecated) section of our API documentation.
 
 A dedicated [Versioning](versioning.md) page is now available with detailed information, including upcoming changes.
 

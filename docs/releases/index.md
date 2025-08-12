@@ -4,7 +4,7 @@ description: In this section, we publish release notes and low-level release not
 
 # IP Fabric Releases
 
---8<-- "snippets/upgrade_version_policy.md"
+--8<-- "snippets/upgrade_version_policy_7_5.md"
 
 Our release naming follows [semantic versioning](https://semver.org/), where
 the components of the version are:

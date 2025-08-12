@@ -32,17 +32,17 @@ The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popc
 
     We recommend using processors from Intel Cascade Lake or newer, or AMD Zen 2 or newer, as higher single-thread performance is crucial for a smoother user experience. In most cases, it is more beneficial than a high core count with lower per-thread performance.
     
-IP Fabric utilizes around 8 GB of RAM when idle, and an additional 8 GB of RAM is required for collected network information. The base installation requires 80 GB of disk space, with an additional 50 MB per network device.
+IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM is required for collected network information. The base installation requires 180 GB of disk space.
 
-!!! info "Solid State Storage Recommendation"
+!!! info "NVMe Storage Recommendation"
 
-    For optimal performance, we recommend using solid-state drives (SSDs) with a minimum of 2000 IOPS for virtual machine storage. Replacing traditional spinning disks with solid-state drives (SSDs) will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
+    For optimal performance, we recommend using Non-Volatile Memory express drives (NVMe) with a minimum of 2000 IOPS for virtual machine storage. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 The minimum requirements are:
 
-| CPU | RAM   | Disk  |
-| --- | ----- | ----- |
-| 4   | 16 GB | 90 GB |
+| CPU | RAM   | Disk   |
+| --- | ----- | ------ |
+| 8   | 32 GB | 180 GB |
 
 Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and disk space overhead for IP Fabric and system logs.
 
@@ -50,44 +50,40 @@ For networks with medium complexity and many access points (>50%) or networks wi
 
 | Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
-|     500 |   4 |  16 GB |    90 GB |
-|   1 000 |   8 |  16 GB |    90 GB |
-|   2 000 |  12 |  32 GB |   100 GB |
-|   5 000 |  16 |  64 GB |   250 GB |
-|  10 000 |  20 | 100 GB |   450 GB |
-|  20 000 |  24 | 190 GB |   850 GB |
+|     500 |   8 |  32 GB |   180 GB |
+|   1 000 |  10 |  48 GB |   200 GB |
+|   2 000 |  12 |  64 GB |   200 GB |
+|   5 000 |  16 |  64 GB |   500 GB |
+|  10 000 |  20 |  64 GB |   900 GB |
+|  20 000 |  24 |  64 GB | 1 700 GB |
 
 For networks with complex configurations (large routing tables, many VRFs, many STP domains, large MAC and ARP tables, etc.) and few or no access points (<20%):
 
 | Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
-|     500 |   4 |  24 GB |    90 GB |
-|   1 000 |   8 |  36 GB |   100 GB |
-|   2 000 |  12 |  64 GB |   160 GB |
-|   5 000 |  16 | 150 GB |   400 GB |
-|  10 000 |  20 | 280 GB |   750 GB |
-|  20 000 |  24 | 560 GB | 1 500 GB |
+|     500 |   8 |  32 GB |   180 GB |
+|   1 000 |  10 |  48 GB |   200 GB |
+|   2 000 |  12 |  64 GB |   320 GB |
+|   5 000 |  16 |  64 GB |   800 GB |
+|  10 000 |  20 |  64 GB | 1 500 GB |
+|  20 000 |  24 |  64 GB | 3 000 GB |
 
 For managed service provider (MSP) networks:
 
-| Devices | CPU |    RAM |    Disk |
-| ------: | --: | -----: | ------: |
-|     500 |   8 |  40 GB |  150 GB |
-|   1 000 |  12 |  70 GB |  250 GB |
-|   2 000 |  16 | 128 GB |  500 GB |
-|   5 000 |  20 | 300 GB | 1200 GB |
+| Devices | CPU |    RAM |     Disk |
+| ------: | --: | -----: | -------: |
+|     500 |   8 |  48 GB |   300 GB |
+|   1 000 |  12 |  64 GB |   500 GB |
+|   2 000 |  16 |  64 GB | 1 000 GB |
+|   5 000 |  20 |  64 GB | 2 400 GB |
 
 !!! warning
 
-    If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 180 GB for 500 devices, 200 GB for 1 000 devices, and so on.
+    If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 360 GB for 500 devices, 400 GB for 1 000 devices, and so on.
 
-!!! info "Additional resources requirements"
+!!! info "Additional Resource Requirements"
 
-    To ensure you have sufficient resources, please use the following formulas:
-
-    Data **disk storage** requires 1 MB per device per each snapshot (example: 1350 devices, plan is to keep up to 100 snapshots => 135 GB data storage).
-
-    **Memory** requires 5 MB of RAM per device for each **loaded** snapshot (example: 1200 devices, up to 100 snapshots but only 3 loaded at a time (1200 x 5 = 6000 x 3) => 18 GB RAM).
+    When increasing the number of discovery workers, we recommend allocating an additional 5 GB of RAM **per worker**.
 
 !!! note
 
@@ -193,7 +189,6 @@ Therefore, we suggest a 2-stage deployment of new IP Fabric releases for complex
 !!! info
 
     You will need a valid license for the staging deployment. Please contact our sales team to check your eligibility for a complimentary license.
-
 The second stage is the deployment to the production/live environment. The staging environment's sizing follows the suggestions mentioned above for a standard deployment. We don't provide special staging builds; these are just regular production builds, which are deployed separately to potentially avoid disrupting the day-to-day use of IP Fabric within the organization.
 
 We suggest making the staging as close as possible to the final production environment. The staging environment should discover the same devices as the production (e.g., there is only a limited value if the staging environment "sees" only 500 network devices, while the whole network consists of thousands of devices). On the other hand, it is perfectly fine to provision the staging environment dynamically if your deployment environment allows it. Also, a typical "acceptance test" on the staging environment lasts only a couple of days to verify overall functionality.
