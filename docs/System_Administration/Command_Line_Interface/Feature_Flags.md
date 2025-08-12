@@ -290,6 +290,22 @@ sudo systemctl restart ipf-appliance
 
 ## Deprecated Feature Flags
 
+### ACI `fvTenant` API Endpoint (Removed in `7.5`)
+
+Prior to version `6.5`, IP Fabric used a single `fvTenant` API call to retrieve all necessary subtree classes for discovery.
+
+In large environments, the size of the output could cause this API call -- and consequently the entire APIC discovery process -- to fail.
+
+Starting in version `6.5`, IP Fabric defaults to using separate API calls for each required subtree class of `fvTenant`.
+
+The previous behavior (retrieving all data via a single `fvTenant` API call) could be re-enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_ACI_FVTENANT_ENDPOINT=true
+```
+
+This option was removed in `7.5` release. The current implementation exclusively uses separate API calls for each `fvTenant` subtree class.
+
 ### GCP Discovery (Removed in `7.0`)
 
 Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
@@ -310,16 +326,6 @@ ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
 
 This feature was permanently added to the product in the `7.0` release.
 
-### Fortinet FortiSwitch Discovery (Removed in `6.8`)
-
-Since `6.7.0`, Fortinet FortiSwitch devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
-
-```
-ENABLE_DISCOVERY_DEVICES_FORTISWITCH=true
-```
-
-This feature was permanently added to the product in the `6.8` release.
-
 ### Citrix NetScaler ADC Discovery (Removed in `6.9`)
 
 Since `6.8.0`, Citrix NetScaler devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
@@ -329,4 +335,14 @@ ENABLE_DISCOVERY_DEVICES_CITRIX=true
 ```
 
 This feature was permanently added to the product in the `6.9` release.
+
+### Fortinet FortiSwitch Discovery (Removed in `6.8`)
+
+Since `6.7.0`, Fortinet FortiSwitch devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_FORTISWITCH=true
+```
+
+This feature was permanently added to the product in the `6.8` release.
 
