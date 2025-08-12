@@ -175,7 +175,13 @@ these steps:
    openssl req -in customer.csr -noout -text
    ```
 
-10. Download the new `customer.csr` (for example with `scp`) for signing.
+10. Change the owner and group of the two new files to `autoboss`:
+
+   ```shell
+   chown autoboss:autoboss customer.csr customer.key
+   ```
+
+11. Download the new `customer.csr` (for example with `scp`) for signing.
 
 Once you have the signed certificate ready, navigate to **Settings --> System
 --> IPF Certificates** and click **Upload** to begin the process of uploading
