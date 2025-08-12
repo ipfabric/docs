@@ -9151,10 +9151,49 @@ here.
   <a href="#backward-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backward compatibility
+        Backward Compatibility
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-guide-for-75-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Guide for 7.5 Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Guide for 7.5 Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Begin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-upgrade-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Upgrade Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -15276,10 +15315,49 @@ here.
   <a href="#backward-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backward compatibility
+        Backward Compatibility
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-guide-for-75-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Guide for 7.5 Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Guide for 7.5 Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Begin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-upgrade-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Upgrade Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -15605,22 +15683,20 @@ here.
   
 
 
-<h1 id="ip-fabric-v75">IP Fabric <code>v7.5</code></h1>
+<h1 id="ip-fabric-v75">IP Fabric v7.5</h1>
 <div class="admonition danger">
 <p class="admonition-title">Unreleased Version</p>
 <p>This is an upcoming IP Fabric version, which has not been released yet and
 is not available for download.</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Upgrade Version Policy</p>
-<p>We support the following upgrade paths:</p>
-<ul>
-<li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example: <code>6.10.7</code> &rarr; <code>7.3.17</code>).</li>
-<li>Any version in the current major line &rarr; any newer version in the current
-  major line (for example: <code>7.0.15</code> &rarr; <code>7.3.17</code>).</li>
-<li>An upgrade to <code>7.5.X</code> or later can be performed only from the latest <code>7.3.17</code> release.</li>
-</ul>
+<div class="admonition danger">
+<p class="admonition-title">Upgrade Notice</p>
+<p>An upgrade to <code>7.5.x</code> or later is <strong>only</strong> possible from release <code>7.3.17</code>.</p>
+<p>When upgrading to <code>7.5</code> release, database will be migrated from <strong>ArangoDB</strong> to <strong>PostgreSQL</strong>.</p>
+<p>For detailed upgrade guide, see <a href="/releases/release_notes/7.5/#upgrade-guide-for-75-release">Upgrade Guide for <strong>7.5</strong> Release</a>.</p>
+<p>Note that <a href="/overview/#hardware-requirements">hardware requirements</a> differ from previous releases.</p>
+<p>We strongly recommend installing release <code>7.5</code> only on secondary instances within the EA program.</p>
+<p>Before upgrading, review the <a href="/releases/release_notes/7.5/#api-changes">API Changes</a>, <a href="/releases/release_notes/7.5/#backward-compatibility">Backward Compatibility</a> and <a href="/releases/release_notes/7.5/#known-issues">Known Issues</a> sections.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Clearing Browser Cache</p>
@@ -15639,10 +15715,112 @@ following key combinations:</p>
 </ul>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
-<h2 id="backward-compatibility">Backward compatibility</h2>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
 <ul>
-<li>Snapshots from release <code>5.X</code> and earlier are not supported and may fail to load properly.</li>
+<li>Snapshots from release <code>5.x</code> and earlier are not supported and may fail to load properly.</li>
 </ul>
+<h2 id="upgrade-guide-for-75-release">Upgrade Guide for <strong>7.5</strong> Release</h2>
+<p>This guide walks you through a safe, in-place upgrade from IP Fabric <code>v7.3</code> (or newer) to <code>v7.5</code>,<br />
+which in turn migrates the database from <strong>ArangoDB</strong> to <strong>PostgreSQL</strong>.</p>
+<hr />
+<h3 id="before-you-begin">Before You Begin</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported Starting Version</strong></td>
+<td>Your appliance must be on the latest version of <strong>v7.3</strong>.</td>
+</tr>
+<tr>
+<td><strong>Hardware</strong></td>
+<td><strong>Ideally directly attached NVMe storage is necessary.</strong> Minimum requirements: <strong>8 vCPU, 32 GB RAM</strong>.<div class="admonition info"><p class="admonition-title">Why NVMe?</p><p>PostgreSQL’s performance relies heavily on fast random I/O. Rotary (HDD) storage is no longer supported for production.</p></div></td>
+</tr>
+<tr>
+<td><strong>Downtime</strong></td>
+<td>Plan a maintenance window of <strong>2+ hours</strong>, depending on snapshot sizes, amount and hardware performance.</td>
+</tr>
+<tr>
+<td><strong>Backup</strong></td>
+<td>Take a <strong>hypervisor snapshot</strong> <em>after shutting down</em> the VM (cold snapshot).</td>
+</tr>
+<tr>
+<td><strong>Benchmark (optional but strongly recommended)</strong></td>
+<td>Run <code>ipf-checker</code> for <strong>at least 30 minutes</strong> to measure disk performance. (The test saturates the appliance; <strong>schedule during off-hours</strong>.)</td>
+</tr>
+<tr>
+<td><strong>Customer Support</strong></td>
+<td>Have your IP Fabric Support contact handy in case questions arise. You can also <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">submit a ticket</a> to our service desk.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="step-by-step-upgrade-workflow">Step-by-Step Upgrade Workflow</h3>
+<p>Follow the steps in order. <strong>Do not interrupt the process</strong> once Step 4 (Launch the <code>v7.5</code> upgrade) begins.</p>
+<details class="note">
+<summary>Step 1 - Plan &amp; Notify</summary>
+<ol>
+<li>Make sure that prerequisites above are met.</li>
+<li>Schedule a downtime window and inform stakeholders that the appliance will be offline.</li>
+</ol>
+</details>
+<details class="note">
+<summary>Step 2 - Prepare the Appliance</summary>
+<ol>
+<li>Shut down the appliance gracefully from the UI (<strong>System → Shutdown</strong>).</li>
+<li>Create a cold snapshot in your hypervisor; verify its completion.</li>
+<li>Power the appliance back on.</li>
+</ol>
+</details>
+<details class="note">
+<summary>Step 3 - Run Pre-upgrade Health Check <em>(optional)</em></summary>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ipf-checker<span class="w"> </span>-d<span class="w"> </span>-s
+</code></pre></div>
+Let the test run to completion (≈ 30 minutes).
+Save the output for future reference; we would appreciate if you shared this output with our team, if possible.
+Reach out to the team <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">here</a>.</p>
+</details>
+<details class="note">
+<summary>Step 4 - Launch the <code>v7.5</code> Upgrade</summary>
+<ol>
+<li>Log in via SSH as an administrative user.</li>
+<li>Download and execute the upgrade package provided by IP Fabric.</li>
+<li>
+<p>Monitor the console; the upgrade will:</p>
+<ul>
+<li>Export configuration and snapshots </li>
+<li>Stop services</li>
+<li>Install <code>v7.5</code> components</li>
+<li>Start services and migrate data to <strong>PostgreSQL</strong></li>
+<li>Import configuration and snapshots</li>
+</ul>
+</li>
+<li>
+<p>When the upgrade completes successfully, proceed to Step 5.</p>
+</li>
+</ol>
+</details>
+<details class="note">
+<summary>Step 5 - Post-upgrade Validation</summary>
+<ol>
+<li>Log in to the UI, ensure the dashboard loads without errors. If you see errors, reach out to our team.</li>
+<li>Navigate through a few historical snapshots to confirm data integrity (i.e. check your list of devices to confirm it matches what you expect).</li>
+<li>Launch a Discovery and verify that it finishes.</li>
+<li>Optionally run a quick API request or path lookup to confirm core functionality.</li>
+<li>Observe CPU, RAM usage to ensure the VM is not overloaded.</li>
+</ol>
+</details>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Migrating to <strong>PostgreSQL</strong> will accelerate delivery of <strong>future IP Fabric features and enhancements</strong>, enabling greater scalability.</p>
+<p>We appreciate your cooperation in following the guide above closely to ensure a seamless upgrade.</p>
+<p>If you need guidance, please reach out to our team &ndash; <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">Support Portal</a>.</p>
+</div>
 <h2 id="known-issues">Known Issues</h2>
 <h3 id="performance-limitations">Performance Limitations</h3>
 <ul>
