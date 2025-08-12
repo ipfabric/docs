@@ -6691,6 +6691,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aci-fvtenant-api-endpoint-removed-in-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACI fvTenant API Endpoint (Removed in 7.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcp-discovery-removed-in-70" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6713,10 +6724,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#fortinet-fortiswitch-discovery-removed-in-68" class="md-nav__link">
+  <a href="#citrix-netscaler-adc-discovery-removed-in-69" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fortinet FortiSwitch Discovery (Removed in 6.8)
+        Citrix NetScaler ADC Discovery (Removed in 6.9)
       
     </span>
   </a>
@@ -6724,10 +6735,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#citrix-netscaler-adc-discovery-removed-in-69" class="md-nav__link">
+  <a href="#fortinet-fortiswitch-discovery-removed-in-68" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Citrix NetScaler ADC Discovery (Removed in 6.9)
+        Fortinet FortiSwitch Discovery (Removed in 6.8)
       
     </span>
   </a>
@@ -15571,6 +15582,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#aci-fvtenant-api-endpoint-removed-in-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACI fvTenant API Endpoint (Removed in 7.5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcp-discovery-removed-in-70" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15593,10 +15615,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#fortinet-fortiswitch-discovery-removed-in-68" class="md-nav__link">
+  <a href="#citrix-netscaler-adc-discovery-removed-in-69" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fortinet FortiSwitch Discovery (Removed in 6.8)
+        Citrix NetScaler ADC Discovery (Removed in 6.9)
       
     </span>
   </a>
@@ -15604,10 +15626,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#citrix-netscaler-adc-discovery-removed-in-69" class="md-nav__link">
+  <a href="#fortinet-fortiswitch-discovery-removed-in-68" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Citrix NetScaler ADC Discovery (Removed in 6.9)
+        Fortinet FortiSwitch Discovery (Removed in 6.8)
       
     </span>
   </a>
@@ -15851,6 +15873,14 @@ To change the limit, add the following line to the global environment file at <c
 <div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
 </code></pre></div>
 <h2 id="deprecated-feature-flags">Deprecated Feature Flags</h2>
+<h3 id="aci-fvtenant-api-endpoint-removed-in-75">ACI <code>fvTenant</code> API Endpoint (Removed in <code>7.5</code>)</h3>
+<p>Prior to version <code>6.5</code>, IP Fabric used a single <code>fvTenant</code> API call to retrieve all necessary subtree classes for discovery.</p>
+<p>In large environments, the size of the output could cause this API call &ndash; and consequently the entire APIC discovery process &ndash; to fail.</p>
+<p>Starting in version <code>6.5</code>, IP Fabric defaults to using separate API calls for each required subtree class of <code>fvTenant</code>.</p>
+<p>The previous behavior (retrieving all data via a single <code>fvTenant</code> API call) could be re-enabled by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<div class="highlight"><pre><span></span><code>ENABLE_ACI_FVTENANT_ENDPOINT=true
+</code></pre></div>
+<p>This option was removed in <code>7.5</code> release. The current implementation exclusively uses separate API calls for each <code>fvTenant</code> subtree class.</p>
 <h3 id="gcp-discovery-removed-in-70">GCP Discovery (Removed in <code>7.0</code>)</h3>
 <p>Since <code>6.5.0</code>, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_GCP=true
@@ -15861,16 +15891,16 @@ To change the limit, add the following line to the global environment file at <c
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
 </code></pre></div>
 <p>This feature was permanently added to the product in the <code>7.0</code> release.</p>
-<h3 id="fortinet-fortiswitch-discovery-removed-in-68">Fortinet FortiSwitch Discovery (Removed in <code>6.8</code>)</h3>
-<p>Since <code>6.7.0</code>, Fortinet FortiSwitch devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
-<div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_FORTISWITCH=true
-</code></pre></div>
-<p>This feature was permanently added to the product in the <code>6.8</code> release.</p>
 <h3 id="citrix-netscaler-adc-discovery-removed-in-69">Citrix NetScaler ADC Discovery (Removed in <code>6.9</code>)</h3>
 <p>Since <code>6.8.0</code>, Citrix NetScaler devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
 <div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_CITRIX=true
 </code></pre></div>
 <p>This feature was permanently added to the product in the <code>6.9</code> release.</p>
+<h3 id="fortinet-fortiswitch-discovery-removed-in-68">Fortinet FortiSwitch Discovery (Removed in <code>6.8</code>)</h3>
+<p>Since <code>6.7.0</code>, Fortinet FortiSwitch devices can be discovered by adding the following line to the <code>worker</code> environment file <code>/etc/default/ipf-discovery-worker-local</code>:</p>
+<div class="highlight"><pre><span></span><code>ENABLE_DISCOVERY_DEVICES_FORTISWITCH=true
+</code></pre></div>
+<p>This feature was permanently added to the product in the <code>6.8</code> release.</p>
 
 
 
