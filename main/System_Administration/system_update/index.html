@@ -6336,6 +6336,23 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Online Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15091,6 +15108,23 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Online Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15207,6 +15241,52 @@ forget to add the following line to the <code>/etc/environment</code> file:</p>
 used in the backround to check connectivity with IP Fabric API and they attempt to
 reach <code>localhost</code> through the proxy server.</p>
 </div>
+<h4 id="release-channels">Release Channels</h4>
+<p>Release channels provide controlled access to updates based on stability.</p>
+<p>The default release channel is <code>production</code>.</p>
+<p>To switch IP Fabric to a different channel:  </p>
+<ol>
+<li>
+<p>Create or edit <code>/etc/default/ipf-system-upgrade-local</code> (this file doesn&rsquo;t exist by default)</p>
+</li>
+<li>
+<p>Set your release channel:</p>
+<div class="highlight"><pre><span></span><code>IPF_SYSTEM_UPGRADE_VERSIONS_QUERY_CHANNEL=&#39;&lt;assigned_channel&gt;&#39;  # e.g., &#39;early-access&#39;
+</code></pre></div>
+</li>
+</ol>
+<p>Apply changes by either:</p>
+<ul>
+<li>Running: <code>sudo systemctl restart system-upgrade-version-fetcher-ipf.service</code></li>
+</ul>
+<ul>
+<li>Waiting ≤15 minutes for automatic refresh</li>
+</ul>
+<p>To verify the active channel, run:</p>
+<div class="highlight"><pre><span></span><code>cat /var/lib/ipf-system-upgrade/versions.json
+</code></pre></div>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;production&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;possibleUpdates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<p>To return instance to the stable production channel, there are two options:</p>
+<ol>
+<li>
+<p><strong>Option 1</strong>: Remove the configuration file
+   <div class="highlight"><pre><span></span><code>sudo rm /etc/default/ipf-system-upgrade-local
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Option 2</strong>: Explicitly set the release channel to <code>production</code></p>
+<div class="highlight"><pre><span></span><code>IPF_SYSTEM_UPGRADE_VERSIONS_QUERY_CHANNEL=&#39;production&#39;
+</code></pre></div>
+</li>
+</ol>
+<p>Apply changes using either method above (restart service or wait ≤15 minutes).</p>
 <h3 id="offline-update">Offline Update</h3>
 <p>If your IP Fabric instance does not have direct internet connectivity, you may
 use offline update:</p>
@@ -15252,7 +15332,7 @@ reach <code>localhost</code> through the proxy server.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2025</span>
   </span>
 
     
