@@ -288,6 +288,27 @@ After updating the environment file, you must restart the IP Fabric application 
 sudo systemctl restart ipf-appliance
 ```
 
+### Disable Network Bandwidth Shaper
+
+Starting in version `7.5`, this feature flag allows removal of bandwidth shaper limitations during the discovery process.
+
+When shaper is disabled, workers still internally calculate bandwidth at 100 Mb/s -- this only affects the maximum number of concurrent sessions/requests but removes interface limitations.
+
+This is useful for troubleshooting connectivity issues (isolates shaper-related problems vs. other issues).
+
+To disable network bandwidth shaper, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_SHAPER_DISABLING=true
+```
+
+After updating the file, restart the IP Fabric application:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
