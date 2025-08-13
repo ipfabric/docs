@@ -35,8 +35,8 @@ In **Settings --> Discovery & Snapshots --> Snapshot Collection**, you can chang
 
 - **Maximum number of loaded snapshots**
   - Maximum number of snapshots that can be loaded in **Discovery Snapshot**.
-  - Default value: 3
-  - Possible values: 1-5
+  - Default value: 10
+  - Possible values: 1-100
 - **Maximum number of locked snapshots**
   - Maximum number of loaded snapshots that can be locked in **Discovery Snapshot** to prevent them from being unloaded.
   - Default value: 1
