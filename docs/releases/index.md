@@ -4,7 +4,20 @@ description: In this section, we publish release notes and low-level release not
 
 # IP Fabric Releases
 
---8<-- "snippets/upgrade_version_policy_7_5.md"
+!!! danger "Upgrade Notice"
+
+    An upgrade to `7.5.x` or later is **only** possible from release `7.3.17`.
+
+    When upgrading to `7.5` release, database will be migrated from **ArangoDB** to **PostgreSQL**.
+
+    For detailed upgrade guide, see [Upgrade Guide for **7.5** Release](release_notes/7.5.md#upgrade-guide-for-75-release).
+
+    Note that [hardware requirements](../overview/index.md#hardware-requirements) differ from previous releases.
+
+    We strongly recommend installing release `7.5` only on secondary instances within the EA program.
+
+    Before upgrading, review the [API Changes](release_notes/7.5.md#api-changes),
+    [Backward Compatibility](release_notes/7.5.md#backward-compatibility) and [Known Issues](release_notes/7.5.md#known-issues) sections.
 
 Our release naming follows [semantic versioning](https://semver.org/), where
 the components of the version are:
