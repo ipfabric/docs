@@ -53,6 +53,58 @@ To proceed with an online update, follow these steps:
 
 --8<-- "snippets/no_proxy_localhost.md"
 
+#### Release Channels
+
+Release channels provide controlled access to updates based on stability.
+
+The default release channel is `production`.
+
+To switch IP Fabric to a different channel:  
+
+1. Create or edit `/etc/default/ipf-system-upgrade-local` (this file doesn't exist by default)
+
+2. Set your release channel:
+
+   ```
+   IPF_SYSTEM_UPGRADE_VERSIONS_QUERY_CHANNEL='<assigned_channel>'  # e.g., 'early-access'
+   ```
+
+Apply changes by either:
+
+- Running: `sudo systemctl restart system-upgrade-version-fetcher-ipf.service`
+
+- Waiting ≤15 minutes for automatic refresh
+
+To verify the active channel, run:
+
+```
+cat /var/lib/ipf-system-upgrade/versions.json
+```
+
+??? Example
+
+    ``` json
+    {
+       "channel": "production",
+       "possibleUpdates": []
+    }
+    ```
+
+To return instance to the stable production channel, there are two options:
+
+1. **Option 1**: Remove the configuration file
+   ```
+   sudo rm /etc/default/ipf-system-upgrade-local
+   ```
+
+2. **Option 2**: Explicitly set the release channel to `production`
+
+   ```
+   IPF_SYSTEM_UPGRADE_VERSIONS_QUERY_CHANNEL='production'
+   ```
+
+Apply changes using either method above (restart service or wait ≤15 minutes).
+
 ### Offline Update
 
 If your IP Fabric instance does not have direct internet connectivity, you may
