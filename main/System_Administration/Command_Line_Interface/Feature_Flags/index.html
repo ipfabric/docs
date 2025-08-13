@@ -6673,6 +6673,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#disable-network-bandwidth-shaper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Network Bandwidth Shaper
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15564,6 +15575,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#disable-network-bandwidth-shaper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Network Bandwidth Shaper
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15872,6 +15894,16 @@ To change the limit, add the following line to the global environment file at <c
 <p>After updating the environment file, you must restart the IP Fabric application by running the following command:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
 </code></pre></div>
+<h3 id="disable-network-bandwidth-shaper">Disable Network Bandwidth Shaper</h3>
+<p>Starting in version <code>7.5</code>, this feature flag allows removal of bandwidth shaper limitations during the discovery process.</p>
+<p>When shaper is disabled, workers still internally calculate bandwidth at 100 Mb/s &ndash; this only affects the maximum number of concurrent sessions/requests but removes interface limitations.</p>
+<p>This is useful for troubleshooting connectivity issues (isolates shaper-related problems vs. other issues).</p>
+<p>To disable network bandwidth shaper, add the following line to the <code>global</code> environment file <code>/etc/default/ipf-appliance-local</code>:</p>
+<div class="highlight"><pre><span></span><code>ENABLE_SHAPER_DISABLING=true
+</code></pre></div>
+<p>After updating the file, restart the IP Fabric application:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart ipf-appliance
+</code></pre></div>
 <h2 id="deprecated-feature-flags">Deprecated Feature Flags</h2>
 <h3 id="aci-fvtenant-api-endpoint-removed-in-75">ACI <code>fvTenant</code> API Endpoint (Removed in <code>7.5</code>)</h3>
 <p>Prior to version <code>6.5</code>, IP Fabric used a single <code>fvTenant</code> API call to retrieve all necessary subtree classes for discovery.</p>
@@ -15921,7 +15953,7 @@ To change the limit, add the following line to the global environment file at <c
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2025</span>
   </span>
 
     
