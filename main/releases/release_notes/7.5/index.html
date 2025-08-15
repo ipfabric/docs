@@ -15772,8 +15772,8 @@ which in turn migrates the database from <strong>ArangoDB</strong> to <strong>Po
 <td>Take a <strong>hypervisor snapshot</strong> <em>after shutting down</em> the VM (cold snapshot).</td>
 </tr>
 <tr>
-<td><strong>Benchmark (optional but strongly recommended)</strong></td>
-<td>Run <code>ipf-checker</code> for <strong>at least 30 minutes</strong> to measure disk performance. (The test saturates the appliance; <strong>schedule during off-hours</strong>.)</td>
+<td><strong>Benchmark</strong></td>
+<td>Run <code>ipf-checker</code> to measure disk performance. This is an informational test only. (<strong>Note:</strong> The test saturates the appliance, takes approximately 5-6 minutes, and should be scheduled during off-hours.)</td>
 </tr>
 <tr>
 <td><strong>Customer Support</strong></td>
@@ -15794,28 +15794,19 @@ which in turn migrates the database from <strong>ArangoDB</strong> to <strong>Po
 <details class="note">
 <summary>Step 2 - Prepare the Appliance</summary>
 <ol>
-<li>Shut down the appliance gracefully from the UI (<strong>System → Shutdown</strong>).</li>
+<li>Shut down the appliance gracefully <a href="../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/#reboot-and-shutdown">from the CLI</a>.</li>
 <li>Create a cold snapshot in your hypervisor; verify its completion.</li>
 <li>Power the appliance back on.</li>
 </ol>
 </details>
 <details class="note">
-<summary>Step 3 - Run Pre-upgrade Health Check <em>(optional)</em></summary>
-<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ipf-checker<span class="w"> </span>-d<span class="w"> </span>-s
-</code></pre></div>
-Let the test run to completion (≈ 30 minutes).
-Save the output for future reference; we would appreciate if you shared this output with our team, if possible.
-Reach out to the team <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">here</a>.</p>
-</details>
-<details class="note">
-<summary>Step 4 - Launch the <code>v7.5</code> Upgrade</summary>
+<summary>Step 3 - Launch the <code>v7.5</code> Upgrade</summary>
 <ol>
-<li>Log in via SSH as an administrative user.</li>
-<li>Download and execute the upgrade package provided by IP Fabric.</li>
+<li>Follow <a href="../../../System_Administration/system_update/#offline-update">offline update manual</a> or set <a href="#release-channels">EA release channel</a> to receive online updates.</li>
 <li>
-<p>Monitor the console; the upgrade will:</p>
+<p>The upgrade will:</p>
 <ul>
-<li>Export configuration and snapshots </li>
+<li>Export configuration and snapshots</li>
 <li>Stop services</li>
 <li>Install <code>v7.5</code> components</li>
 <li>Start services and migrate data to <strong>PostgreSQL</strong></li>
@@ -15823,18 +15814,21 @@ Reach out to the team <a href="https://ipfabric.atlassian.net/servicedesk/custom
 </ul>
 </li>
 <li>
-<p>When the upgrade completes successfully, proceed to Step 5.</p>
+<p>After completing the upgrade, proceed to Step 4, if any issues occur during the process, please contact our <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">Support Team</a> for assistance.</p>
 </li>
 </ol>
 </details>
 <details class="note">
-<summary>Step 5 - Post-upgrade Validation</summary>
+<summary>Step 4 - Post-upgrade Validation</summary>
 <ol>
-<li>Log in to the UI, ensure the dashboard loads without errors. If you see errors, reach out to our team.</li>
-<li>Navigate through a few historical snapshots to confirm data integrity (i.e. check your list of devices to confirm it matches what you expect).</li>
+<li>Log in to the UI, ensure all settings and snapshots have been migrated.</li>
 <li>Launch a Discovery and verify that it finishes.</li>
 <li>Optionally run a quick API request or path lookup to confirm core functionality.</li>
 <li>Observe CPU, RAM usage to ensure the VM is not overloaded.</li>
+<li>Run disk performance benchmark
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ipf-checker<span class="w"> </span>-d<span class="w"> </span>-s
+</code></pre></div>
+   Save the output for future reference. If possible, we would appreciate you sharing this output with our team through the <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1">Support Portal</a>.</li>
 </ol>
 </details>
 <hr />
@@ -16065,7 +16059,7 @@ For migration instructions, please refer to the <a href="../../../IP_Fabric_API/
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2025</span>
   </span>
 
     
