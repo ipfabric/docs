@@ -36,7 +36,7 @@ IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM 
 
 !!! info "NVMe Storage Recommendation"
 
-    For optimal performance, we recommend using Non-Volatile Memory express drives (NVMe) with a minimum of 2000 IOPS for virtual machine storage. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
+    For optimal performance, we recommend using directly attached Non-Volatile Memory express drives (NVMe) storage for virtual machine. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
 
 The minimum requirements are:
 
