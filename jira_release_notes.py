@@ -14,6 +14,15 @@ OUT_DIR = os.path.dirname(__file__) + "/docs/releases/release_notes_low-level/"
 PROJECT_KEYS = ("NIM", "DOS")
 
 
+# Team name patterns to remove from ticket summaries (case-insensitive)
+TEAM_CLEANUP_PATTERNS = [
+    "[NAE]",
+    "[FE]",
+    "[BE]",
+    "[OPS]",
+]
+
+
 def get_project_versions(project):
     response = requests.get(
         JIRA_BASE_URL + "rest/api/2/project/" + project + "/versions", auth=AUTH
@@ -53,10 +62,24 @@ def get_project_issues_from_version(project, projectVersion, startAt=0):
     return response.json()
 
 
+def clean_title(summary):
+    """Remove team name patterns from ticket summaries"""
+    cleaned_summary = summary
+    
+    # Remove team names and trailing spaces
+    for pattern in TEAM_CLEANUP_PATTERNS:
+        cleaned_summary = re.sub(re.escape(pattern) + r'\s*', "", cleaned_summary, flags=re.IGNORECASE)
+    
+    # Clean up extra spaces and trim
+    cleaned_summary = re.sub(r'\s+', ' ', cleaned_summary).strip()
+    return cleaned_summary
+
+
 def format_issue(issue):
+    cleaned_summary = clean_title(issue['fields']['summary'])
     i = f"""
     `{issue['key']}` --
-    {issue['fields']['priority']['name']} -- {issue['fields']['summary']}
+    {issue['fields']['priority']['name']} -- {cleaned_summary}
     """
     return i
 
