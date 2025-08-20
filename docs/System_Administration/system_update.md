@@ -6,9 +6,22 @@ description: This page explains how to update IP Fabric over the internet or usi
 
 --8<-- "snippets/clear_browser_cache.md"
 
-## Back Up System Before Update
+## Best Practices Before Update
 
-The best practice is to save the virtual machine's state (VM snapshot) using
+### Unloading Loaded Snapshots
+
+Unload all loaded snapshots on the `/snapshot-management` page.
+This will drastically reduce maintenance time during the update process. In extreme cases, it can save several hours.
+
+The entire background process consists of unloading all snapshots, deleting indexes, reloading snapshots one by one, and
+creating new indexes. This can take anywhere from a few minutes to multiple hours.
+
+During maintenance, the application is unusable. However, if you manually unload all snapshots before the update and then
+reload them afterward, you can continue using the appliance or perform discoveries while the snapshots are being reloaded.
+
+### Back Up System
+
+Save the virtual machine's state (VM snapshot) using
 your hypervisor. Alternatively, you may use an IP Fabric backup. To proceed with
 IP Fabric backup, follow the instructions on the
 [Restore or Backup](Command_Line_Interface/How_to/backup_restore_CLI.md) page.
