@@ -6285,13 +6285,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#back-up-system-before-update" class="md-nav__link">
+  <a href="#best-practices-before-update" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Back Up System Before Update
+        Best Practices Before Update
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Best Practices Before Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unloading-loaded-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unloading Loaded Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-up-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back Up System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -14575,13 +14603,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#back-up-system-before-update" class="md-nav__link">
+  <a href="#best-practices-before-update" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Back Up System Before Update
+        Best Practices Before Update
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Best Practices Before Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unloading-loaded-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unloading Loaded Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-up-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back Up System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -14673,8 +14729,16 @@ following key combinations:</p>
 </ul>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
-<h2 id="back-up-system-before-update">Back Up System Before Update</h2>
-<p>The best practice is to save the virtual machine&rsquo;s state (VM snapshot) using
+<h2 id="best-practices-before-update">Best Practices Before Update</h2>
+<h3 id="unloading-loaded-snapshots">Unloading Loaded Snapshots</h3>
+<p>Unload all loaded snapshots on the <code>/snapshot-management</code> page.
+This will drastically reduce maintenance time during the update process. In extreme cases, it can save several hours.</p>
+<p>The entire background process consists of unloading all snapshots, deleting indexes, reloading snapshots one by one, and
+creating new indexes. This can take anywhere from a few minutes to multiple hours.</p>
+<p>During maintenance, the application is unusable. However, if you manually unload all snapshots before the update and then
+reload them afterward, you can continue using the appliance or perform discoveries while the snapshots are being reloaded.</p>
+<h3 id="back-up-system">Back Up System</h3>
+<p>Save the virtual machine&rsquo;s state (VM snapshot) using
 your hypervisor. Alternatively, you may use an IP Fabric backup. To proceed with
 IP Fabric backup, follow the instructions on the
 <a href="../Command_Line_Interface/How_to/backup_restore_CLI/">Restore or Backup</a> page.</p>
@@ -14767,7 +14831,7 @@ reach <code>localhost</code> through the proxy server.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 14, 2025 14:22:49">February 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 20, 2025 14:24:59">August 20, 2025</span>
   </span>
 
     
