@@ -159,7 +159,7 @@ other users, and they will be able to see this view.
 ### Export Current View To SVG/PNG/VSDX
 
 The view can be exported in the form of a SVG, PNG image, or VSDX file by clicking
-**Export** and selecting the format you want.
+**Export** and selecting the format you want. The pre-defined name of the file is auto-generated based on the network name, number of shown networks, IP addresses, or name of the saved view.
 
 ![Export button](network_viewer/button_export.png)
 
@@ -214,6 +214,10 @@ With the example below, you are now able to hide only the DGW protocol
 without affecting the other Layer 3 protocols:
 
 ![Hide protocol](network_viewer/protocols_hide_dgw.png)
+
+VRF labels are now shown as line-cap labels on topology graph edges for Layer 3 protocols, making it easier to identify VRF associations directly in the graph.
+
+![VRF labels](network_viewer/protocols_vrf_labels.png)
 
 ### Link Grouping
 

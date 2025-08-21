@@ -24,6 +24,10 @@ The options for filtering are:
 
 ![Select attribute](global_filter/select_attribute.png)
 
+Attributes from all snapshots are displayed. Attributes not available in the currently selected snapshot are disabled and include a tooltip with an explanation.
+
+![Select attribute](global_filter/attribute_filter_disabled.png)
+
 In this example, we are filtering on `siteName` with the value `35COLO`.
 
 ![Select value(s) for siteName](global_filter/select_values_for_sitename.png)

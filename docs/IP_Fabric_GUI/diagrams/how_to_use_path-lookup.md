@@ -43,6 +43,7 @@ Packets will use the indicated source IP address.
 ### Source/Destination IP Address and Port
 
 A plain IP address or a CIDR (Classless Inter-Domain Routing) can be used as a source/destination IP address, for example, when simulating path lookup from a host to a network.
+Note that the global attribute filter is applied to suggestions for source and destination IP addresses, as well as hostnames when the User-Defined First Hop Algorithm is used.
 
 By default, the `ICMP` protocol and the `Echo request` option are chosen for path lookup.
 
