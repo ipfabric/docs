@@ -28,6 +28,8 @@ To work with snapshots, click the **Discovery Snapshot** menu entry (highlighted
 in the yellow box). This will display all loaded and unloaded snapshots and allow
 you to create new snapshots or perform operations on existing snapshots.
 
+Snapshots are grouped by date and state in collapsible sections. You can show or hide unloaded snapshots, or quickly find a specific one using the search field.
+
 A new snapshot can be taken at any time by clicking **+ New Snapshot**
 (highlighted in the red box) and then the green **Start discovery** button. This will
 start a new snapshot of the network with globally set parameters in the
@@ -118,6 +120,8 @@ Each successful or unsuccessful connection attempt is logged (see the following 
 examining them, you can find the reason why a device wasn't correctly or fully discovered or what led to a connection failure.
 
 ![Discovery Connectivity Report](snapshots/discovery_connectivity_report.png)
+
+![Discovery Connectivity Report](snapshots/discovery_connectivity_report_logs.png)
 
 ## Modifying Snapshot Devices
 
