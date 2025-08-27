@@ -202,27 +202,90 @@ or it can be installed locally as part of the `ldap-utils` Linux package. It is
 recommended to **always test the LDAP configuration from the IP Fabric
 appliance** to rule out connectivity issues.
 
+#### Testing LDAP
+
+You can test LDAP connectivity with command:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub
+```
+You will be asked for a bind password interactively. This command returns all records from search base directory.
+
+**User Specific Filtering**
+
+You can filter out information for a specific user, for example via `sAMAccountName` attribute:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub sAMAccountName=$USERNAME
+```
+
+You can also use different attributes for filtering, for example `userPrincipalName=$USERNAME` or `uid=$USERNAME`.
+
+**Nested Groups Membership Search**
+
+In a similar way, you can display all members of a specific nested group:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub member:1.2.840.113556.1.4.1941:=$NESTED_GROUP
+```
+
+#### Testing LDAPS
+
+In a similar way as LDAP, you can use the following command to return all records from search base directory or you can use filtering as described above.
+
 !!! warning
 
     The following example doesn't verify the SSL certificate if LDAPS is used.
 
 ```bash title="Basic Bind as Search DN"
-LDAPTLS_REQCERT=ALLOW ldapsearch \
+LDAPTLS_REQCERT=never ldapsearch \
   -W -H "ldaps://your-ldap-server:636" \
   -D "$LDAP_BIND_DN" \
   -b "$LDAP_SEARCH_BASE" \
   -s sub
 ```
 
-The exit code of the command above is zero if `ldapsearch` was able to establish
-a connection and bind. It will ask for a bind password interactively. An LDAP
-search/filter query can be added to the end of the previous example code.
+#### Error Codes
 
-```text title="Search for a Specific User Account"
-(uid=$LOGIN_INPUT)
-(|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
+The exit code of a successful command is zero if `ldapsearch` was able to establish a connection and bind.
+
+IP Fabric reports all LDAP login errors as `Invalid Credentials` in the GUI, thats not always the case.
+
+There are several common LDAP error codes which indicate an issue with the fields being specified when attempting to configure AD LDAP external authentication.
+
+You can find the latest error messages with CLI command:
+
+```
+less /var/log/ipf/ipf-api/api.log | grep LdapErr
 ```
 
-```text title="Nested Groups Membership Search"
-(member:1.2.840.113556.1.4.1941:=$USER_DN)
-```
+!!! Example
+
+    ```
+    Aug 27 08:26:19 warn : {"contextMessage":"LDAP error","initiator":{"id":"4b18d393-00d2-49ea-bb82-71d493938484","type":"request"},"level":"warn","message":"80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000","messageType":"error","name":"InvalidCredentialsError","pid":1764,"stack":"InvalidCredentialsError: 80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000\n    at messageCallback (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:1220:45)\n    at Parser.onMessage (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:888:14)\n    at Parser.emit (node:events:513:28)\n    at Parser.write (/snapshot/ipfabric-product/node_modules/ldapjs/lib/messages/parser.js:107:8)\n    at Socket.onData (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:875:22)\n    at Socket.emit (node:events:513:28)\n    at addChunk (node:internal/streams/readable:324:12)\n    at readableAddChunk (node:internal/streams/readable:297:9)\n    at Readable.push (node:internal/streams/readable:234:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)","timestamp":"2025-08-27T08:26:19.968Z"}
+    ```
+|-----|-----|
+|Data Code| Meaning|
+|525 |	User not found|
+|52e |	Invalid credentials|
+|530|	Not permitted to log in at this time.|
+|531|	Not permitted to log in to this workstation.|
+|533|	Account disabled|
+|534|	The user has not been granted the requested login type at this machine.|
+|701|	The account has expired.|
+|773|	User must reset their password.|
+|775|	User account locked.|
+
+
