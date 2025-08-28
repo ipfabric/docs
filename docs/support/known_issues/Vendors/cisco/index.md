@@ -4,6 +4,32 @@ description: This page describes known issues with Cisco and how to fix them.
 
 # Overview
 
+**Affected platforms:** Cisco Nexus 9000 Series Switches 16.0(5h)
+
+**Description:** Routes show negative ages in the base shell. This doesn’t affect the ages in `vsh`, so this is cosmetic.
+
+```shell
+pod8-leaf3# show ip route vrf management
+IP Route Table for VRF "management"
+...
+0.0.0.0/0, ubest/mbest: 1/0
+    *via 10.122.145.129/32, mgmt0, [0], -1d22h, local
+```
+**Result:** IP Fabric Routing table is empty, as the parsing is not working.
+Routes are skipped due to the negative age, which breaks parsing.
+This affects E2E path lookup and related functionality.
+
+**Fix**: Parsing was improved on version `7.5.7` and newer so negative numbers are processed and displayed correctly.
+
+**Resource**: [CSCwo46438](https://bst.cisco.com/quickview/bug/CSCwo46438)
+
+!!! note
+
+    Keep your network devices always **up to date**.  
+    This is crucial to ensure all devices are on the **newest version** to resolve bugs. 
+
+---
+
 **Affected platforms:** 15.1(4)M4, 15.1(4)M4.7, 15.1(4)M5, 12.2(50)SE3, 6.0(2)N2(3), 15.5(3.0l)M
 
 **Description:** The `show transceivers` command can cause fatal issues on some Cisco platforms, including device crashes. It takes several minutes to finish the command on some platforms.
