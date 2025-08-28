@@ -184,45 +184,115 @@ To disable LDAP authentication, delete all LDAP configuration domains in
 
 ## Troubleshooting
 
-The two most common issues are either incorrectly configured search account
-(**Bind DN**, **Bind credentials**) or an incorrect **Search base**. These will
-typically result in an `LDAP Search Failed` error being shown.
+The two most common issues are an incorrectly configured search account (**Bind DN** or **Bind credentials**) or an incorrect **Search base**. These typically result in an `LDAP Search Failed` error.
 
-Please be aware that due to security concerns, all LDAP errors regarding server
-connection and user binding are returned as `LDAP as provided is not reachable`.
+For security reasons, all LDAP errors related to server connectivity and user binding are generalized and displayed as `LDAP as provided is not reachable`.
 
-Before contacting our Support team, please make sure that the information you
-entered in the IP Fabric GUI is correct.
+Before contacting Support Team, please verify that the information entered in the IP Fabric GUI is correct.
 
-### Using `ldapsearch` To Verify LDAP Configuration
+### Using `ldapsearch` to Verify LDAP Configuration
 
-You can use the `ldapsearch` command-line utility to independently query LDAP
-servers. `ldapsearch` is present on the IP Fabric appliance (access it via SSH),
-or it can be installed locally as part of the `ldap-utils` Linux package. It is
-recommended to **always test the LDAP configuration from the IP Fabric
-appliance** to rule out connectivity issues.
+You can use the `ldapsearch` command-line utility to independently query LDAP servers. `ldapsearch` is available on the IP Fabric appliance (accessible via SSH) or can be installed locally as part of the `ldap-utils` package on Linux.
 
-!!! warning
+It is highly recommended to **test the LDAP configuration directly from the IP Fabric appliance** to rule out connectivity issues.
 
-    The following example doesn't verify the SSL certificate if LDAPS is used.
+#### Prerequisites
 
-```bash title="Basic Bind as Search DN"
-LDAPTLS_REQCERT=ALLOW ldapsearch \
+- Ensure you have SSH access to the IP Fabric appliance.
+- Gather the following information:
+  - LDAP server address and port
+  - Bind DN
+  - Bind password
+  - Search base
+
+#### Testing LDAP
+
+Use the following command to test LDAP connectivity:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub
+```
+
+You will be prompted to enter the bind password interactively. This command returns all records from the specified search base.
+
+##### User-Specific Filtering
+
+To filter results for a specific user, use attributes such as `sAMAccountName`:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub sAMAccountName="$USERNAME"
+```
+
+You can also use other attributes for filtering, such as `userPrincipalName=$USERNAME` or `uid=$USERNAME`.
+
+##### Nested Group Membership Search
+
+To display all members of a specific nested group, use:
+
+```bash
+ldapsearch \
+  -W -H "ldap://your-ldap-server:389" \
+  -D "$LDAP_BIND_DN" \
+  -b "$LDAP_SEARCH_BASE" \
+  -s sub member:1.2.840.113556.1.4.1941:="$NESTED_GROUP_PATH_OR_USER_PATH"
+```
+
+#### Testing LDAPS
+
+Use the following command to test LDAPS. Note that this example disables SSL certificate verification:
+
+```bash title="Basic Bind as Search DN (Insecure)"
+LDAPTLS_REQCERT=never ldapsearch \
   -W -H "ldaps://your-ldap-server:636" \
   -D "$LDAP_BIND_DN" \
   -b "$LDAP_SEARCH_BASE" \
   -s sub
 ```
 
-The exit code of the command above is zero if `ldapsearch` was able to establish
-a connection and bind. It will ask for a bind password interactively. An LDAP
-search/filter query can be added to the end of the previous example code.
+!!! Warning
 
-```text title="Search for a Specific User Account"
-(uid=$LOGIN_INPUT)
-(|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
+    Disabling certificate verification (`LDAPTLS_REQCERT=never`) poses a security risk. Use this only for testing purposes in a safe environment.
+
+#### Login Error Handling
+
+A successful `ldapsearch` command returns an exit code of zero, indicating a successful connection and bind.
+
+IP Fabric displays all LDAP login errors as `Invalid Credentials` in the GUI, though the underlying cause may vary.
+
+Common LDAP error codes indicate issues with the AD/LDAP configuration. To retrieve the latest error messages, use:
+
+```bash
+sudo cat /var/log/ipf/ipf-api/api.log | grep LdapErr
 ```
 
-```text title="Nested Groups Membership Search"
-(member:1.2.840.113556.1.4.1941:=$USER_DN)
-```
+!!! Example "Example Log Entry"
+
+    ```
+    Aug 27 08:26:19 warn : {"contextMessage":"LDAP error", ... "message":"80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000", ... }
+    ```
+
+    This message includes an LDAP error code (e.g., `data 52e`).
+
+Common error codes and their meanings include:
+
+| Data Code | Meaning                                                                 | Suggested Action                          |
+|-----------|-------------------------------------------------------------------------|-------------------------------------------|
+| 525       | User not found                                                          | Verify the username and search base       |
+| 52e       | Invalid credentials                                                     | Check the username and password            |
+| 530       | Not permitted to log in at this time                                    | Check account time restrictions           |
+| 531       | Not permitted to log in to this workstation                             | Review workstation restrictions           |
+| 533       | Account disabled                                                        | Enable the user account                   |
+| 534       | The user has not been granted the requested login type at this machine  | Review login rights                       |
+| 701       | Account expired                                                         | Renew the account                         |
+| 773       | User must reset password                                                | Request a password reset                  |
+| 775       | User account locked                                                     | Unlock the account                        |
+
+For further assistance, provide the relevant error codes and logs to Support Team.
