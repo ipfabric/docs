@@ -5730,10 +5730,88 @@ here.
   <a href="#using-ldapsearch-to-verify-ldap-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using ldapsearch To Verify LDAP Configuration
+        Using ldapsearch to Verify LDAP Configuration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Using ldapsearch to Verify LDAP Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing LDAP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-specific-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-Specific Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-group-membership-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Group Membership Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-ldaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing LDAPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -15143,10 +15221,88 @@ here.
   <a href="#using-ldapsearch-to-verify-ldap-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using ldapsearch To Verify LDAP Configuration
+        Using ldapsearch to Verify LDAP Configuration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Using ldapsearch to Verify LDAP Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing LDAP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-specific-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-Specific Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-group-membership-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Group Membership Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-ldaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing LDAPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -15398,37 +15554,131 @@ assign them permissions.</p>
 <p>To disable LDAP authentication, delete all LDAP configuration domains in
 <strong>Settings &rarr; Administration &rarr; LDAP</strong>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p>The two most common issues are either incorrectly configured search account
-(<strong>Bind DN</strong>, <strong>Bind credentials</strong>) or an incorrect <strong>Search base</strong>. These will
-typically result in an <code>LDAP Search Failed</code> error being shown.</p>
-<p>Please be aware that due to security concerns, all LDAP errors regarding server
-connection and user binding are returned as <code>LDAP as provided is not reachable</code>.</p>
-<p>Before contacting our Support team, please make sure that the information you
-entered in the IP Fabric GUI is correct.</p>
-<h3 id="using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> To Verify LDAP Configuration</h3>
-<p>You can use the <code>ldapsearch</code> command-line utility to independently query LDAP
-servers. <code>ldapsearch</code> is present on the IP Fabric appliance (access it via SSH),
-or it can be installed locally as part of the <code>ldap-utils</code> Linux package. It is
-recommended to <strong>always test the LDAP configuration from the IP Fabric
-appliance</strong> to rule out connectivity issues.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The following example doesn&rsquo;t verify the SSL certificate if LDAPS is used.</p>
-</div>
-<div class="highlight"><span class="filename">Basic Bind as Search DN</span><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span><span class="se">\</span>
+<p>The two most common issues are an incorrectly configured search account (<strong>Bind DN</strong> or <strong>Bind credentials</strong>) or an incorrect <strong>Search base</strong>. These typically result in an <code>LDAP Search Failed</code> error.</p>
+<p>For security reasons, all LDAP errors related to server connectivity and user binding are generalized and displayed as <code>LDAP as provided is not reachable</code>.</p>
+<p>Before contacting Support Team, please verify that the information entered in the IP Fabric GUI is correct.</p>
+<h3 id="using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> to Verify LDAP Configuration</h3>
+<p>You can use the <code>ldapsearch</code> command-line utility to independently query LDAP servers. <code>ldapsearch</code> is available on the IP Fabric appliance (accessible via SSH) or can be installed locally as part of the <code>ldap-utils</code> package on Linux.</p>
+<p>It is highly recommended to <strong>test the LDAP configuration directly from the IP Fabric appliance</strong> to rule out connectivity issues.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<ul>
+<li>Ensure you have SSH access to the IP Fabric appliance.</li>
+<li>Gather the following information:<ul>
+<li>LDAP server address and port</li>
+<li>Bind DN</li>
+<li>Bind password</li>
+<li>Search base</li>
+</ul>
+</li>
+</ul>
+<h4 id="testing-ldap">Testing LDAP</h4>
+<p>Use the following command to test LDAP connectivity:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap://your-ldap-server:389&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_BIND_DN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s<span class="w"> </span>sub
+</code></pre></div>
+<p>You will be prompted to enter the bind password interactively. This command returns all records from the specified search base.</p>
+<h5 id="user-specific-filtering">User-Specific Filtering</h5>
+<p>To filter results for a specific user, use attributes such as <code>sAMAccountName</code>:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap://your-ldap-server:389&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_BIND_DN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="nv">sAMAccountName</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>You can also use other attributes for filtering, such as <code>userPrincipalName=$USERNAME</code> or <code>uid=$USERNAME</code>.</p>
+<h5 id="nested-group-membership-search">Nested Group Membership Search</h5>
+<p>To display all members of a specific nested group, use:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap://your-ldap-server:389&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_BIND_DN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-s<span class="w"> </span>sub<span class="w"> </span>member:1.2.840.113556.1.4.1941:<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$NESTED_GROUP_PATH_OR_USER_PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h4 id="testing-ldaps">Testing LDAPS</h4>
+<p>Use the following command to test LDAPS. Note that this example disables SSL certificate verification:</p>
+<div class="highlight"><span class="filename">Basic Bind as Search DN (Insecure)</span><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>never<span class="w"> </span>ldapsearch<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldaps://your-ldap-server:636&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-D<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_BIND_DN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-b<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LDAP_SEARCH_BASE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-s<span class="w"> </span>sub
 </code></pre></div>
-<p>The exit code of the command above is zero if <code>ldapsearch</code> was able to establish
-a connection and bind. It will ask for a bind password interactively. An LDAP
-search/filter query can be added to the end of the previous example code.</p>
-<div class="highlight"><span class="filename">Search for a Specific User Account</span><pre><span></span><code>(uid=$LOGIN_INPUT)
-(|(sAMAccountName=$LOGIN_INPUT)(userPrincipalName=$LOGIN_INPUT))
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Disabling certificate verification (<code>LDAPTLS_REQCERT=never</code>) poses a security risk. Use this only for testing purposes in a safe environment.</p>
+</div>
+<h4 id="login-error-handling">Login Error Handling</h4>
+<p>A successful <code>ldapsearch</code> command returns an exit code of zero, indicating a successful connection and bind.</p>
+<p>IP Fabric displays all LDAP login errors as <code>Invalid Credentials</code> in the GUI, though the underlying cause may vary.</p>
+<p>Common LDAP error codes indicate issues with the AD/LDAP configuration. To retrieve the latest error messages, use:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cat<span class="w"> </span>/var/log/ipf/ipf-api/api.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LdapErr
 </code></pre></div>
-<div class="highlight"><span class="filename">Nested Groups Membership Search</span><pre><span></span><code>(member:1.2.840.113556.1.4.1941:=$USER_DN)
+<div class="admonition example">
+<p class="admonition-title">Example Log Entry</p>
+<div class="highlight"><pre><span></span><code>Aug 27 08:26:19 warn : {&quot;contextMessage&quot;:&quot;LDAP error&quot;, ... &quot;message&quot;:&quot;80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000&quot;, ... }
 </code></pre></div>
+<p>This message includes an LDAP error code (e.g., <code>data 52e</code>).</p>
+</div>
+<p>Common error codes and their meanings include:</p>
+<table>
+<thead>
+<tr>
+<th>Data Code</th>
+<th>Meaning</th>
+<th>Suggested Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>525</td>
+<td>User not found</td>
+<td>Verify the username and search base</td>
+</tr>
+<tr>
+<td>52e</td>
+<td>Invalid credentials</td>
+<td>Check the username and password</td>
+</tr>
+<tr>
+<td>530</td>
+<td>Not permitted to log in at this time</td>
+<td>Check account time restrictions</td>
+</tr>
+<tr>
+<td>531</td>
+<td>Not permitted to log in to this workstation</td>
+<td>Review workstation restrictions</td>
+</tr>
+<tr>
+<td>533</td>
+<td>Account disabled</td>
+<td>Enable the user account</td>
+</tr>
+<tr>
+<td>534</td>
+<td>The user has not been granted the requested login type at this machine</td>
+<td>Review login rights</td>
+</tr>
+<tr>
+<td>701</td>
+<td>Account expired</td>
+<td>Renew the account</td>
+</tr>
+<tr>
+<td>773</td>
+<td>User must reset password</td>
+<td>Request a password reset</td>
+</tr>
+<tr>
+<td>775</td>
+<td>User account locked</td>
+<td>Unlock the account</td>
+</tr>
+</tbody>
+</table>
+<p>For further assistance, provide the relevant error codes and logs to Support Team.</p>
 
 
 
@@ -15449,7 +15699,7 @@ search/filter query can be added to the end of the previous example code.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2025</span>
   </span>
 
     

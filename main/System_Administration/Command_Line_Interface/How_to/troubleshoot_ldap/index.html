@@ -15172,23 +15172,7 @@ here.
 <h2 id="users-cannot-log-in">Users Cannot Log In</h2>
 <p>The <code>ldapsearch</code> is the best tool to troubleshoot LDAP issues. Sometimes, groups
 or users are not found, and LDAP needs to be troubleshot.</p>
-<p>To troubleshoot user login or missing group issues, use the following command
-with similar fields:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap(s)://ldap-server:port&quot;</span><span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;Service account AD path&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;Base directory path&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="nv">sAMAccountName</span><span class="o">=</span><span class="s2">&quot;Username of the user who wants to log in&quot;</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This command will prompt you to enter the service account password.</p>
-<p>The output of this command could be extensive. It shows the information
-about the user and the groups they are part of and checks if they match the
-group settings in IP Fabric.</p>
-<p>If the user is not part of any required group, you can try to use the next
-command, which will search in nested groups.</p>
-</div>
-<p>To troubleshoot nested groups, use the following command to list the groups of a
-specific user:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">LDAPTLS_REQCERT</span><span class="o">=</span>ALLOW<span class="w"> </span>ldapsearch<span class="w"> </span>-W<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;ldap(s)://ldap-server:port&quot;</span><span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;Service account AD path&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;Base directory path&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span>member:1.2.840.113556.1.4.1941:<span class="o">=</span><span class="s2">&quot;Username of the user that wants to log in&quot;</span>
-</code></pre></div>
+<p>Please follow instructions on <a href="../../../../IP_Fabric_Settings/administration/ldap/#using-ldapsearch-to-verify-ldap-configuration">Using <code>ldapsearch</code> to Verify LDAP Configuration</a> page to continue with troubleshooting.</p>
 <h2 id="ldaps-troubleshooting">LDAPS Troubleshooting</h2>
 <p>If you want to use LDAPS, these criteria need to be met:</p>
 <ol>
@@ -15249,7 +15233,7 @@ key length.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2025</span>
   </span>
 
     
