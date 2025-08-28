@@ -9282,6 +9282,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#f5os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F5OS
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15435,6 +15446,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#f5os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F5OS
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15694,7 +15716,7 @@ following key combinations:</p>
 <li>Snapshots from release <code>5.x</code> and earlier are not supported and may fail to load properly.</li>
 </ul>
 <h2 id="upgrade-guide-for-75-release">Upgrade Guide for <strong>7.5</strong> Release</h2>
-<p>This guide walks you through a safe, in-place upgrade from IP Fabric <code>v7.3</code> (or newer) to <code>v7.5</code>,<br />
+<p>This guide walks you through a safe, in-place upgrade from IP Fabric <code>v7.3</code> (or newer) to <code>v7.5</code>,
 which in turn migrates the database from <strong>ArangoDB</strong> to <strong>PostgreSQL</strong>.</p>
 <hr />
 <h3 id="before-you-begin">Before You Begin</h3>
@@ -15899,6 +15921,14 @@ There are three changes compared to the previous version:</p>
 },
 </code></pre></div>
 </div>
+<h4 id="f5os">F5OS</h4>
+<ul>
+<li><strong>F5OSa &amp; F5OSc</strong> &ndash; Basic API discovery support is available for both F5OS systems. As these systems run on F5 chassis, we have implemented support primarily for inventory, SN, and devInfo tasks. Network coverage is limited. Complex management and inventory of chassis and its objects is planned for future releases.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Discovery via api</p>
+<p>F5OS is discovered via API. You need to configure API vendors for successful discovery. Otherwise, all tenants running TMOS are discovered using SSH.</p>
+</div>
 <h3 id="improvements">Improvements</h3>
 <h4 id="gui">GUI</h4>
 <ul>
@@ -15985,12 +16015,12 @@ For migration instructions, please refer to the <a href="../../../IP_Fabric_API/
 <li><strong>Routing tables</strong> in Device Explorer <strong>were renamed</strong>:<ul>
 <li><code>Cumulative IPv4 routing table</code> → <strong>IPv4 routing table</strong></li>
 <li><code>Cumulative IPv6 routing table</code> → <strong>IPv6 routing table</strong>
-<em>(Data, URLs, and structure remain unchanged; original names were misleading)</em>  </li>
+<em>(Data, URLs, and structure remain unchanged; original names were misleading)</em></li>
 </ul>
 </li>
 <li><strong>Added documentation link</strong> to Support Menu: <code>API Documentation</code></li>
 <li><strong>Enhanced Feature Matrix</strong> with IPv6 support indicators:<ul>
-<li>Added toggle filter to show/hide IPv6 support information  </li>
+<li>Added toggle filter to show/hide IPv6 support information</li>
 </ul>
 </li>
 <li>The current status of the PostgreSQL database is now displayed on the <a href="../../../IP_Fabric_GUI/tips/system_status/">Status Page</a> page.<ul>
