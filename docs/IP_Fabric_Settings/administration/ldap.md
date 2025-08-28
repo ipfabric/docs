@@ -219,7 +219,7 @@ ldapsearch \
 
 You will be prompted to enter the bind password interactively. This command returns all records from the specified search base.
 
-**User-Specific Filtering**
+##### User-Specific Filtering
 
 To filter results for a specific user, use attributes such as `sAMAccountName`:
 
@@ -233,7 +233,7 @@ ldapsearch \
 
 You can also use other attributes for filtering, such as `userPrincipalName=$USERNAME` or `uid=$USERNAME`.
 
-**Nested Group Membership Search**
+##### Nested Group Membership Search
 
 To display all members of a specific nested group, use:
 
@@ -270,7 +270,7 @@ IP Fabric displays all LDAP login errors as `Invalid Credentials` in the GUI, th
 Common LDAP error codes indicate issues with the AD/LDAP configuration. To retrieve the latest error messages, use:
 
 ```bash
-less /var/log/ipf/ipf-api/api.log | grep LdapErr
+sudo cat /var/log/ipf/ipf-api/api.log | grep LdapErr
 ```
 
 !!! Example "Example Log Entry"
