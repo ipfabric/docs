@@ -9,30 +9,7 @@ description: This section contains information on how to troubleshoot LDAP-relat
 The `ldapsearch` is the best tool to troubleshoot LDAP issues. Sometimes, groups
 or users are not found, and LDAP needs to be troubleshot.
 
-To troubleshoot user login or missing group issues, use the following command
-with similar fields:
-
-```shell
-LDAPTLS_REQCERT=ALLOW ldapsearch -W -H "ldap(s)://ldap-server:port" -D "Service account AD path" -b "Base directory path" -s sub sAMAccountName="Username of the user who wants to log in"
-```
-
-!!! note
-
-    This command will prompt you to enter the service account password.
-
-    The output of this command could be extensive. It shows the information
-    about the user and the groups they are part of and checks if they match the
-    group settings in IP Fabric.
-
-    If the user is not part of any required group, you can try to use the next
-    command, which will search in nested groups.
-
-To troubleshoot nested groups, use the following command to list the groups of a
-specific user:
-
-```shell
-LDAPTLS_REQCERT=ALLOW ldapsearch -W -H "ldap(s)://ldap-server:port" -D "Service account AD path" -b "Base directory path" -s sub member:1.2.840.113556.1.4.1941:="Username of the user that wants to log in"
-```
+Please follow instructions on [Using `ldapsearch` to Verify LDAP Configuration](../../../IP_Fabric_Settings/administration/ldap.md#using-ldapsearch-to-verify-ldap-configuration) page to continue with troubleshooting.
 
 ## LDAPS Troubleshooting
 
