@@ -184,27 +184,30 @@ To disable LDAP authentication, delete all LDAP configuration domains in
 
 ## Troubleshooting
 
-The two most common issues are either incorrectly configured search account
-(**Bind DN**, **Bind credentials**) or an incorrect **Search base**. These will
-typically result in an `LDAP Search Failed` error being shown.
+The two most common issues are an incorrectly configured search account (**Bind DN** or **Bind credentials**) or an incorrect **Search base**. These typically result in an `LDAP Search Failed` error.
 
-Please be aware that due to security concerns, all LDAP errors regarding server
-connection and user binding are returned as `LDAP as provided is not reachable`.
+For security reasons, all LDAP errors related to server connectivity and user binding are generalized and displayed as `LDAP as provided is not reachable`.
 
-Before contacting our Support team, please make sure that the information you
-entered in the IP Fabric GUI is correct.
+Before contacting Support Team, please verify that the information entered in the IP Fabric GUI is correct.
 
-### Using `ldapsearch` To Verify LDAP Configuration
+### Using `ldapsearch` to Verify LDAP Configuration
 
-You can use the `ldapsearch` command-line utility to independently query LDAP
-servers. `ldapsearch` is present on the IP Fabric appliance (access it via SSH),
-or it can be installed locally as part of the `ldap-utils` Linux package. It is
-recommended to **always test the LDAP configuration from the IP Fabric
-appliance** to rule out connectivity issues.
+You can use the `ldapsearch` command-line utility to independently query LDAP servers. `ldapsearch` is available on the IP Fabric appliance (accessible via SSH) or can be installed locally as part of the `ldap-utils` package on Linux.
+
+It is highly recommended to **test the LDAP configuration directly from the IP Fabric appliance** to rule out connectivity issues.
+
+#### Prerequisites
+
+- Ensure you have SSH access to the IP Fabric appliance.
+- Gather the following information:
+  - LDAP server address and port
+  - Bind DN
+  - Bind password
+  - Search base
 
 #### Testing LDAP
 
-You can test LDAP connectivity with command:
+Use the following command to test LDAP connectivity:
 
 ```bash
 ldapsearch \
@@ -213,43 +216,40 @@ ldapsearch \
   -b "$LDAP_SEARCH_BASE" \
   -s sub
 ```
-You will be asked for a bind password interactively. This command returns all records from search base directory.
 
-**User Specific Filtering**
+You will be prompted to enter the bind password interactively. This command returns all records from the specified search base.
 
-You can filter out information for a specific user, for example via `sAMAccountName` attribute:
+**User-Specific Filtering**
+
+To filter results for a specific user, use attributes such as `sAMAccountName`:
 
 ```bash
 ldapsearch \
   -W -H "ldap://your-ldap-server:389" \
   -D "$LDAP_BIND_DN" \
   -b "$LDAP_SEARCH_BASE" \
-  -s sub sAMAccountName=$USERNAME
+  -s sub sAMAccountName="$USERNAME"
 ```
 
-You can also use different attributes for filtering, for example `userPrincipalName=$USERNAME` or `uid=$USERNAME`.
+You can also use other attributes for filtering, such as `userPrincipalName=$USERNAME` or `uid=$USERNAME`.
 
-**Nested Groups Membership Search**
+**Nested Group Membership Search**
 
-In a similar way, you can display all members of a specific nested group:
+To display all members of a specific nested group, use:
 
 ```bash
 ldapsearch \
   -W -H "ldap://your-ldap-server:389" \
   -D "$LDAP_BIND_DN" \
   -b "$LDAP_SEARCH_BASE" \
-  -s sub member:1.2.840.113556.1.4.1941:=$NESTED_GROUP
+  -s sub member:1.2.840.113556.1.4.1941:="$NESTED_GROUP_PATH_OR_USER_PATH"
 ```
 
 #### Testing LDAPS
 
-In a similar way as LDAP, you can use the following command to return all records from search base directory or you can use filtering as described above.
+Use the following command to test LDAPS. Note that this example disables SSL certificate verification:
 
-!!! warning
-
-    The following example doesn't verify the SSL certificate if LDAPS is used.
-
-```bash title="Basic Bind as Search DN"
+```bash title="Basic Bind as Search DN (Insecure)"
 LDAPTLS_REQCERT=never ldapsearch \
   -W -H "ldaps://your-ldap-server:636" \
   -D "$LDAP_BIND_DN" \
@@ -257,35 +257,43 @@ LDAPTLS_REQCERT=never ldapsearch \
   -s sub
 ```
 
-#### Error Codes
+!!! Warning
 
-The exit code of a successful command is zero if `ldapsearch` was able to establish a connection and bind.
+    Disabling certificate verification (`LDAPTLS_REQCERT=never`) poses a security risk. Use this only for testing purposes in a safe environment.
 
-IP Fabric reports all LDAP login errors as `Invalid Credentials` in the GUI, thats not always the case.
+#### Login Error Handling
 
-There are several common LDAP error codes which indicate an issue with the fields being specified when attempting to configure AD LDAP external authentication.
+A successful `ldapsearch` command returns an exit code of zero, indicating a successful connection and bind.
 
-You can find the latest error messages with CLI command:
+IP Fabric displays all LDAP login errors as `Invalid Credentials` in the GUI, though the underlying cause may vary.
 
-```
+Common LDAP error codes indicate issues with the AD/LDAP configuration. To retrieve the latest error messages, use:
+
+```bash
 less /var/log/ipf/ipf-api/api.log | grep LdapErr
 ```
 
-!!! Example
+!!! Example "Example Log Entry"
 
     ```
-    Aug 27 08:26:19 warn : {"contextMessage":"LDAP error","initiator":{"id":"4b18d393-00d2-49ea-bb82-71d493938484","type":"request"},"level":"warn","message":"80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000","messageType":"error","name":"InvalidCredentialsError","pid":1764,"stack":"InvalidCredentialsError: 80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000\n    at messageCallback (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:1220:45)\n    at Parser.onMessage (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:888:14)\n    at Parser.emit (node:events:513:28)\n    at Parser.write (/snapshot/ipfabric-product/node_modules/ldapjs/lib/messages/parser.js:107:8)\n    at Socket.onData (/snapshot/ipfabric-product/node_modules/ldapjs/lib/client/client.js:875:22)\n    at Socket.emit (node:events:513:28)\n    at addChunk (node:internal/streams/readable:324:12)\n    at readableAddChunk (node:internal/streams/readable:297:9)\n    at Readable.push (node:internal/streams/readable:234:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)","timestamp":"2025-08-27T08:26:19.968Z"}
+    Aug 27 08:26:19 warn : {"contextMessage":"LDAP error", ... "message":"80090308: LdapErr: DSID-0C090439, comment: AcceptSecurityContext error, data 52e, v4563\u0000", ... }
     ```
-|-----|-----|
-|Data Code| Meaning|
-|525 |	User not found|
-|52e |	Invalid credentials|
-|530|	Not permitted to log in at this time.|
-|531|	Not permitted to log in to this workstation.|
-|533|	Account disabled|
-|534|	The user has not been granted the requested login type at this machine.|
-|701|	The account has expired.|
-|773|	User must reset their password.|
-|775|	User account locked.|
 
+    This message includes an LDAP error code (e.g., `data 52e`).
+
+Common error codes and their meanings include:
+
+| Data Code | Meaning                                                                 | Suggested Action                          |
+|-----------|-------------------------------------------------------------------------|-------------------------------------------|
+| 525       | User not found                                                          | Verify the username and search base       |
+| 52e       | Invalid credentials                                                     | Check the username and password            |
+| 530       | Not permitted to log in at this time                                    | Check account time restrictions           |
+| 531       | Not permitted to log in to this workstation                             | Review workstation restrictions           |
+| 533       | Account disabled                                                        | Enable the user account                   |
+| 534       | The user has not been granted the requested login type at this machine  | Review login rights                       |
+| 701       | Account expired                                                         | Renew the account                         |
+| 773       | User must reset password                                                | Request a password reset                  |
+| 775       | User account locked                                                     | Unlock the account                        |
+
+For further assistance, provide the relevant error codes and logs to Support Team.
 
