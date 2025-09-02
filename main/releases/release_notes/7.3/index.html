@@ -16495,18 +16495,30 @@ here.
 <p>We support the following upgrade paths:</p>
 <ul>
 <li>The <strong>latest</strong> version in the previous major line &rarr; any version in the
-  current major line (for example: <code>6.10.7</code> &rarr; <code>7.3.17</code>).</li>
+  current major line (for example: <code>6.10.7</code> &rarr; <code>7.3.18</code>).</li>
 <li>Any version in the current major line &rarr; any newer version in the current
-  major line (for example: <code>7.0.15</code> &rarr; <code>7.3.17</code>).</li>
-<li>An upgrade to <code>7.5.X</code> or later can be performed only from the latest <code>7.3.17</code> release.</li>
+  major line (for example: <code>7.0.15</code> &rarr; <code>7.3.18</code>).</li>
+<li>An upgrade to <code>7.5.x</code> can be <strong>only</strong> performed from version <code>7.3.17</code> or newer.</li>
 </ul>
 </div>
 <div class="admonition danger">
-<p class="admonition-title">Required Steps Before Upgrading to <code>v7.5</code></p>
+<p class="admonition-title">Before Upgrading to <code>v7.5</code></p>
 <p>The upcoming <code>v7.5</code> release introduces a new PostgreSQL-based database, which brings updated hardware requirements.
-To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
-To assess your current hardware performance, use our <a href="../../../System_Administration/Command_Line_Interface/ipf_checker/">ipf-checker</a> tool by running <code>sudo ipf-checker -d -s</code>.</p>
-<p><strong>WARNING</strong>: The test may take a long time to complete. The default timeout is 45 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.</p>
+To ensure stability and optimal performance after the upgrade, we strongly recommend <strong>using directly attached SSD or NVMe storage</strong>.</p>
+<p>To evaluate your current system&rsquo;s readiness, please run the hardware assessment tool manually using the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo ipf-checker -d -s
+</code></pre></div>
+<p>Please share the results with our Customer Support team. As performance baselines are still being established, we will need to review each result individually.</p>
+<p>You can provide the results by:</p>
+<ol>
+<li>
+<p><strong>Generating a Techsupport file</strong> with System logs only after running the command, or</p>
+</li>
+<li>
+<p><strong>Copying the terminal output</strong> into a text file.</p>
+</li>
+</ol>
+<p>Please ensure you create a ticket in our <a href="https://support.ipfabric.io">Customer Support Portal</a> and attach the results file for our analysis.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Clearing Browser Cache</p>
@@ -17060,7 +17072,7 @@ manual link configuration is required to incorporate them into the network model
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2025</span>
   </span>
 
     
