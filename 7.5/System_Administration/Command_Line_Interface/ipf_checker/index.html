@@ -15118,15 +15118,36 @@
 
 <h1 id="ipf-checker">ipf-checker</h1>
 <div class="admonition info">
-<p class="admonition-title">Required Steps Before Upgrading to <code>v7.5</code></p>
+<p class="admonition-title">Before Upgrading to <code>v7.5</code></p>
 <p>The upcoming <code>v7.5</code> release introduces a new PostgreSQL-based database, which brings updated hardware requirements.
-To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
-To assess your current hardware performance use the tool by running <code>sudo ipf-checker -d -s</code>.</p>
-<p><strong>WARNING</strong>: The test may take a long time to complete. The default timeout is 45 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.</p>
+To ensure stability and optimal performance after the upgrade, we strongly recommend <strong>using directly attached SSD or NVMe storage</strong>.</p>
+<p>To evaluate your current system&rsquo;s readiness, please run the hardware assessment tool manually using the following command:</p>
+<div class="highlight"><pre><span></span><code>sudo ipf-checker -d -s
+</code></pre></div>
+<p>Please share the results with our Customer Support team. As performance baselines are still being established, we will need to review each result individually.</p>
+<p>You can provide the results by:</p>
+<ol>
+<li>
+<p><strong>Generating a Techsupport file</strong> with System logs only after running the command, or</p>
+</li>
+<li>
+<p><strong>Copying the terminal output</strong> into a text file.</p>
+</li>
+</ol>
+<p>Please ensure you create a ticket in our <a href="https://support.ipfabric.io">Customer Support Portal</a> and attach the results file for our analysis.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Disk benchmark example</p>
+<p><a class="glightbox" href="../ipf_checker_disk_benchmark.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Example disk benchmark output" src="../ipf_checker_disk_benchmark.png" /></a></p>
 </div>
 <p>The <code>ipf-checker</code> is a Python script, which reports whether the hardware requirements,
 environment checks and dependencies are all met by the IP Fabric appliance to ensure smooth operation.</p>
-<p>It can display the results in a clean, readable table and also write them to a file.</p>
+<p>It can display the results in a clean, readable table. It also logs every result to a log file for further inspection.</p>
+<div class="admonition note">
+<p class="admonition-title">Log file location</p>
+<p>The log file is located at <code>/var/log/ipf/ipf-checker/ipf-checker.log</code>.</p>
+<p>It gets attached to the <strong>Techsupport</strong> file, for inspection by our Customer Support team.</p>
+</div>
 <h2 id="use">Use</h2>
 <p>Execute shell command <code>ipf-checker</code> and use options if needed.</p>
 <div class="highlight"><pre><span></span><code>ipf-checker<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-q<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="w"> </span><span class="o">[</span>TIMEOUT_MINUTES<span class="o">]]</span><span class="w"> </span><span class="o">[</span>-b<span class="w"> </span><span class="o">[</span>username<span class="o">]</span><span class="w"> </span><span class="o">[</span>password<span class="o">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>x-api-token<span class="o">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>-a<span class="w"> </span><span class="o">[</span>access-token<span class="o">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>-s<span class="o">]</span>
@@ -15138,7 +15159,7 @@ options:
 <span class="w">  </span>-q,<span class="w"> </span>--quiet<span class="w">           </span>Quiet<span class="w"> </span>option<span class="w"> </span><span class="k">for</span><span class="w"> </span>ipf-checker<span class="w"> </span>with<span class="w"> </span>no<span class="w"> </span>output<span class="w"> </span><span class="k">in</span><span class="w"> </span>console.
 <span class="w">  </span>-c,<span class="w"> </span>--no-color<span class="w">        </span>No<span class="w"> </span>color<span class="w"> </span>or<span class="w"> </span>style<span class="w"> </span>output<span class="w"> </span><span class="k">in</span><span class="w"> </span>console.
 <span class="w">  </span>-d<span class="w"> </span><span class="o">[</span>TIMEOUT_MINUTES<span class="o">]</span>,<span class="w"> </span>--disk-benchmark<span class="w"> </span><span class="o">[</span>TIMEOUT_MINUTES<span class="o">]</span>
-<span class="w">                        </span>Perform<span class="w"> </span>a<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and<span class="w"> </span>write<span class="w"> </span>disk<span class="w"> </span>benchmark<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>machine.<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>argument<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>passed<span class="w"> </span>to<span class="w"> </span>specify<span class="w"> </span>the<span class="w"> </span>timeout<span class="w"> </span><span class="k">in</span><span class="w"> </span>minutes.<span class="w"> </span>WARNING!!!<span class="w"> </span>The<span class="w"> </span><span class="nb">test</span><span class="w"> </span>might<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>really<span class="w"> </span>long<span class="w"> </span>time.
+<span class="w">                        </span>Perform<span class="w"> </span>a<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and<span class="w"> </span>write<span class="w"> </span>disk<span class="w"> </span>benchmark<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>machine.<span class="w"> </span>An<span class="w"> </span>optional<span class="w"> </span>argument<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>passed<span class="w"> </span>to<span class="w"> </span>specify<span class="w"> </span>the<span class="w"> </span>timeout<span class="w"> </span><span class="k">in</span><span class="w"> </span>minutes.
 <span class="w">  </span>-b<span class="w"> </span><span class="o">[</span>username<span class="o">]</span><span class="w"> </span><span class="o">[</span>password<span class="o">]</span>,<span class="w"> </span>--basic<span class="w"> </span><span class="o">[</span>username<span class="o">]</span><span class="w"> </span><span class="o">[</span>password<span class="o">]</span>
 <span class="w">                        </span>Passing<span class="w"> </span>basic<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>calling<span class="w"> </span>IP<span class="w"> </span>Fabric<span class="w"> </span>endpoints.
 <span class="w">  </span>-t<span class="w"> </span><span class="o">[</span>x-api-token<span class="o">]</span>,<span class="w"> </span>--x-api-token<span class="w"> </span><span class="o">[</span>x-api-token<span class="o">]</span>
@@ -15148,9 +15169,10 @@ options:
 <span class="w">  </span>-s,<span class="w"> </span>--skip-auth<span class="w">       </span>Skipping<span class="w"> </span>tests<span class="w"> </span>that<span class="w"> </span>need<span class="w"> </span>authentication.
 </code></pre></div>
 <div class="admonition example">
-<p class="admonition-title">Results table</p>
-<p>The script will generate a table with the results of the checks performed.
-<a class="glightbox" href="../ipf_checker_table.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Example ipf-chekcer output" src="../ipf_checker_table.png" /></a></p>
+<p class="admonition-title">Results table example</p>
+<p>The script will generate a table with the results of the checks performed.</p>
+<p><a class="glightbox" href="../ipf_checker_full_table_pt1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Example ipf-chekcer output" src="../ipf_checker_full_table_pt1.png" /></a></p>
+<p><a class="glightbox" href="../ipf_checker_full_table_pt2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Example ipf-chekcer output" src="../ipf_checker_full_table_pt2.png" /></a></p>
 </div>
 <h2 id="environment-variables">Environment variables</h2>
 <p>In your home directory, you can create the <code>.ipf-checker/env</code> file, which can
@@ -15190,7 +15212,7 @@ set it in the <code>.ipf-checker/env</code> file as <code>IPF_CHECKER_TOKEN</cod
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 18, 2025 09:17:35 UTC">July 18, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 2, 2025 18:43:56 UTC">September 2, 2025</span>
   </span>
 
     
