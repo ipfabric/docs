@@ -4,18 +4,41 @@ description: This section provides a guide how to use `ipf-checker` tool to chec
 
 # ipf-checker
 
-!!! info "Required Steps Before Upgrading to `v7.5`"
+!!! info "Before Upgrading to `v7.5`"
 
     The upcoming `v7.5` release introduces a new PostgreSQL-based database, which brings updated hardware requirements.
-    To ensure stability and optimal performance after the upgrade, we strongly recommend using directly attached SSD or NVMe storage.
-    To assess your current hardware performance use the tool by running `sudo ipf-checker -d -s`.
+    To ensure stability and optimal performance after the upgrade, we strongly recommend **using directly attached SSD or NVMe storage**.
 
-    **WARNING**: The test may take a long time to complete. The default timeout is 45 minutes. We recommend avoiding any use of the IP Fabric appliance while the test is running.
+    To evaluate your current system's readiness, please run the hardware assessment tool manually using the following command:
+
+    ```
+    sudo ipf-checker -d -s
+    ```
+
+    Please share the results with our Customer Support team. As performance baselines are still being established, we will need to review each result individually.
+
+    You can provide the results by:
+
+    1. **Generating a Techsupport file** with System logs only after running the command, or
+
+    2. **Copying the terminal output** into a text file.
+
+    Please ensure you create a ticket in our [Customer Support Portal](https://support.ipfabric.io) and attach the results file for our analysis.
+
+!!! example "Disk benchmark example"
+
+    ![Example disk benchmark output](ipf_checker_disk_benchmark.png){ align=left }
 
 The `ipf-checker` is a Python script, which reports whether the hardware requirements,
 environment checks and dependencies are all met by the IP Fabric appliance to ensure smooth operation.
 
-It can display the results in a clean, readable table and also write them to a file.
+It can display the results in a clean, readable table. It also logs every result to a log file for further inspection.
+
+!!! note "Log file location"
+
+    The log file is located at `/var/log/ipf/ipf-checker/ipf-checker.log`.
+    
+    It gets attached to the **Techsupport** file, for inspection by our Customer Support team.
 
 ## Use
 
@@ -31,7 +54,7 @@ options:
   -q, --quiet           Quiet option for ipf-checker with no output in console.
   -c, --no-color        No color or style output in console.
   -d [TIMEOUT_MINUTES], --disk-benchmark [TIMEOUT_MINUTES]
-                        Perform a read and write disk benchmark on the machine. An optional argument can be passed to specify the timeout in minutes. WARNING!!! The test might take a really long time.
+                        Perform a read and write disk benchmark on the machine. An optional argument can be passed to specify the timeout in minutes.
   -b [username] [password], --basic [username] [password]
                         Passing basic credentials for calling IP Fabric endpoints.
   -t [x-api-token], --x-api-token [x-api-token]
@@ -41,10 +64,13 @@ options:
   -s, --skip-auth       Skipping tests that need authentication.
 ```
 
-!!! example "Results table"
+!!! example "Results table example"
 
     The script will generate a table with the results of the checks performed.
-    ![Example ipf-chekcer output](ipf_checker_table.png){ align=left }
+
+    ![Example ipf-chekcer output](ipf_checker_full_table_pt1.png){ align=left }
+
+    ![Example ipf-chekcer output](ipf_checker_full_table_pt2.png){ align=left }
 
 ## Environment variables
 
