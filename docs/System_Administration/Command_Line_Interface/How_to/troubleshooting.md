@@ -236,23 +236,29 @@ top
 
     ```shell
     osadmin@ipfabric-howto1118135353:~$ top
-    top - 13:19:40 up 7 min,  1 user,  load average: 0.01, 0.13, 0.10
-    Tasks: 186 total,   1 running, 185 sleeping,   0 stopped,   0 zombie
-    %Cpu(s):  0.1 us,  0.2 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-    MiB Mem :  15630.1 total,   8321.4 free,   4659.0 used,   2649.7 buff/cache
-    MiB Swap:    980.0 total,    980.0 free,      0.0 used.  10713.4 avail Mem
+    top - 08:24:59 up 13 min,  2 users,  load average: 0.22, 0.14, 0.10
+    Tasks: 289 total,   5 running, 284 sleeping,   0 stopped,   0 zombie
+    %Cpu(s):  5.9 us,  2.0 sy,  0.0 ni, 89.1 id,  2.6 wa,  0.0 hi,  0.5 si,  0.0 st
+    MiB Mem :  31337.8 total,  24126.5 free,   6125.0 used,   1684.1 buff/cache
+    MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  25212.8 avail Mem
 
         PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-        683 rabbitmq  20   0 5397952 116476   7984 S   1.3   0.7   0:13.36 beam.smp
-        888 arangodb  20   0 8397360   3.3g   1.9g S   1.0  21.7   0:23.53 arangod
-        690 redis     20   0   67308  10480   8256 S   0.7   0.1   0:00.85 redis-server
-       1423 autoboss  20   0 1056132 272092  38308 S   0.3   1.7   0:04.59 ipfabric-api
-       2528 osadmin   20   0   10192   3764   3016 R   0.3   0.0   0:00.02 top
-          1 root      20   0  102700  10680   7672 S   0.0   0.1   0:01.46 systemd
-          2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
-          3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
-          4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
-          6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+       2044 autoboss  20   0   31.4g 679504  46556 S  56.7   2.1   0:21.73 ipfabric-api
+       2069 postgres  20   0 4519376  87744  67064 S  30.0   0.3   0:01.41 postgres
+       1003 rabbitmq  20   0 4333988 212260  68512 S   5.7   0.7   0:09.29 beam.smp
+          1 root      20   0  169180  13708   9160 S   3.0   0.0   0:05.43 systemd
+        438 root      20   0       0      0      0 S   1.7   0.0   0:00.18 jbd2/dm-1-8
+       5347 autoboss  20   0  302240  33612  24552 D   1.3   0.1   0:00.04 updaterBuild
+        217 root       0 -20       0      0      0 I   1.0   0.0   0:00.06 kworker/7:1H-kblockd
+        919 message+  20   0    8060   4496   3784 S   1.0   0.0   0:01.70 dbus-daemon
+       5349 autoboss  20   0  302548  33348  24276 R   1.0   0.1   0:00.03 updaterBuild
+       1047 root      20   0 1573940  51148  27876 S   0.7   0.2   0:03.48 containerd
+       1373 vector    20   0  807644 421408  41868 S   0.7   1.3   0:05.23 vector
+       2962 root      20   0       0      0      0 I   0.7   0.0   0:00.07 kworker/u32:0-events_unbound
+       5348 autoboss  20   0  302240  34932  25812 R   0.7   0.1   0:00.02 updaterBuild
+       5350 autoboss  20   0  302240  36876  25704 R   0.7   0.1   0:00.02 updaterBuild
+       5356 autoboss  20   0  165180  25904  19928 D   0.7   0.1   0:00.02 workerBuild
+       5357 autoboss  20   0  165180  23992  20056 R   0.7   0.1   0:00.02 workerBuild
     [...]
     ```
 
@@ -266,23 +272,27 @@ top -o %MEM
 
     ```shell
     osadmin@ipfabric-howto1118135353:~$ top -o %MEM
-    top - 13:20:55 up 9 min,  1 user,  load average: 0.00, 0.10, 0.09
-    Tasks: 184 total,   1 running, 183 sleeping,   0 stopped,   0 zombie
-    %Cpu(s):  0.9 us,  0.3 sy,  0.0 ni, 98.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-    MiB Mem :  15630.1 total,   8321.8 free,   4658.6 used,   2649.8 buff/cache
-    MiB Swap:    980.0 total,    980.0 free,      0.0 used.  10716.3 avail Mem
-
+    Tasks: 294 total,   2 running, 292 sleeping,   0 stopped,   0 zombie
+    %Cpu(s): 33.3 us,  0.0 sy,  0.0 ni, 66.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+    MiB Mem :  31337.8 total,  22013.0 free,   7099.0 used,   3048.6 buff/cache
+    MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  24238.8 avail Mem
+    
         PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-        888 arangodb  20   0 8398384   3.3g   1.9g S   0.7  21.7   0:24.11 arangod
-        672 autoboss  20   0 4171476   1.7g  40324 S   0.0  10.9   0:35.67 ipfabric-api
-       1429 autoboss  20   0 1137824 309384  40568 S   0.0   1.9   0:07.04 ipfabric-api
-       1435 autoboss  20   0 1123412 275388  38776 S   0.0   1.7   0:04.67 ipfabric-api
-       1417 autoboss  20   0 1122176 273100  38760 S   0.3   1.7   0:06.45 ipfabric-api
-       1423 autoboss  20   0 1056132 271580  38308 S   0.0   1.7   0:04.63 ipfabric-api
-        701 autoboss  20   0   10.8g 170648  32152 S   0.0   1.1   0:02.52 syslogWorkerBui
-        683 rabbitmq  20   0 5398464 116380   7984 S   1.3   0.7   0:14.47 beam.smp
-        673 autoboss  20   0  945264 112476  32556 S   0.0   0.7   0:01.76 nimpee-update
-        737 autoboss  20   0  811620  53092  30736 S   0.0   0.3   0:00.37 ipfabric-webhoo
+       2027 autoboss  20   0  154.0g   2.4g  48576 S   0.0   7.9   0:43.63 ipfabric-api
+       2044 autoboss  20   0   31.4g 680884  46620 S   0.0   2.1   0:35.72 ipfabric-api
+       2050 autoboss  20   0   31.3g 592972  47180 S   0.0   1.8   0:15.22 ipfabric-api
+       6362 autoboss  20   0   21.3g 569300  39076 S   0.0   1.8   0:05.71 taskerBuild
+       1373 vector    20   0  807644 473256  42056 S   0.0   1.5   0:06.45 vector
+        924 autoboss  20   0   21.1g 323556  38444 S   0.0   1.0   0:07.55 syslogWorkerBui
+        991 ipf-vic+  20   0 1515444 253420  14216 S   0.0   0.8   0:04.31 victoria-metric
+       6520 postgres  20   0 4661336 233624 191276 S   0.0   0.7   0:02.21 postgres
+       6578 postgres  20   0 4646108 222564 196132 S   6.7   0.7   0:01.40 postgres
+       5710 postgres  20   0 4674564 221224 167688 S   0.0   0.7   0:03.38 postgres
+        966 autoboss  20   0   20.7g 218404  38220 S   0.0   0.7   0:02.91 ipf-backend-ext
+       1003 rabbitmq  20   0 4335184 217416  68512 S   0.0   0.7   0:12.62 beam.smp
+       6499 postgres  20   0 4508660 202916 191528 S  26.7   0.6   0:05.06 postgres
+       6521 postgres  20   0 4513440 198104 178964 S   0.0   0.6   0:00.74 postgres
+       6575 postgres  20   0 4525416 195656 164960 S  40.0   0.6   0:02.08 postgres
     [...]
     ```
 

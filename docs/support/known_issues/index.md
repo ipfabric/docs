@@ -35,12 +35,6 @@ Also documented here are known issues with the IP Fabric platform itself. These
 pages provide possible explanations for the causes of issues and, if applicable,
 solutions for addressing the issues.
 
-!!! example "Example: `Error: AQL: internal error - in index`"
-
-    The documentation page for this error contains two possible solutions to get
-    your IP Fabric instance back up and running (running System Maintenance
-    and/or restarting ArangoDB).
-
 Bugs that have been fixed are documented on the
 [Releases](../../releases/index.md) page, either under the `Release notes` or
 the `Release notes low level`.
