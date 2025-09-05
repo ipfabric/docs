@@ -57,7 +57,6 @@ Below is an example of a successful local backup output triggered via CLI:
     Jul 11 11:09:34 [INFO] Storage status: OK
     Jul 11 11:09:34 [INFO] ** Backup has started **
     Jul 11 11:09:34 [INFO] Cleaning up backup
-    Jul 11 11:09:34 [INFO] Dumping up ArangoDB
     Jul 11 11:09:38 [INFO] Dumping up PostgresDB
     du: cannot access '/opt/ipf-nimpee-update/server/etc/config.json': No such file or directory
     Jul 11 11:10:26 [INFO] Creating backups list

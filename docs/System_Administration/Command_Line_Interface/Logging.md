@@ -13,14 +13,13 @@ activity and help with troubleshooting issues.
 System logs are stored in the `/var/log` directory. The `osadmin` user has
 access to these sub-directories:
 
-| Files                   | Description                                                                                                        |
-|:------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| `/var/log/syslog*`      | All service and system logs, contains additional logs from components called by the `worker` and `tasker` services |
-| `/var/log/postgresql/*` | PostgreSQL-related logs                                                                                            |
-| `/var/log/arangodb3/*`  | ArangoDB-related logs                                                                                              |
-| `/var/log/nginx/*`      | nginx-related logs                                                                                                 |
-| `/var/log/redis/*`      | Redis-related logs                                                                                                 |
-| `/var/log/rabbitmq/*`   | RabbitMQ-related logs                                                                                              |
+| Files | Description |
+| ------------------------ |---------|
+| `/var/log/syslog*` | All service and system logs, contains additional logs from components called by <br> the `worker` and `tasker` services |
+| `/var/log/postgresql/*` | PostgreSQL-related logs |
+| `/var/log/nginx/*`      | nginx-related logs |
+| `/var/log/redis/*`      | Redis-related logs |
+| `/var/log/rabbitmq/*`   | RabbitMQ-related logs |
 
 ## Service Logs
 
