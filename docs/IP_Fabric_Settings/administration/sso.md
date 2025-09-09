@@ -893,20 +893,4 @@ mapped to the example `read-only` IP Fabric role.
 
 You can disable local authentication for the IP Fabric GUI, which will remove the username and password fields from the login page (unless LDAP is configured on the appliance).
 
-To do this, add the `"enableLocalAuthentication": false` property to the `app` object in `/opt/ipf-api/conf.d/api.json`. Ensure that the JSON syntax is correct: the `"url"` key-value pair must be followed by a comma.
-
-```json hl_lines="4"
-{
-  "app": {
-    "url": "https://<FQDN>/api",
-    "enableLocalAuthentication": false
-  }
-}
-```
-
-After making changes to `/opt/ipf-api/conf.d/api.json`, you need to restart the
-API service:
-
-```bash
-systemctl restart ipf-api.service
-```
+Please see the instructions at [Disabling Local Authentication](../../System_Administration/Command_Line_Interface/Authentication_Settings.md/#disabling-local-authentication).
