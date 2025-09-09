@@ -1513,28 +1513,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changing-default-token-expiration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Changing Default Token Expiration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-local-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disabling Local Authentication
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#token-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6519,6 +6497,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../System_Administration/Command_Line_Interface/Authentication_Settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../System_Administration/Command_Line_Interface/Custom_TLS/" class="md-nav__link">
         
   
@@ -6637,10 +6642,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_5_3_6" id="__nav_5_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3_7" id="__nav_5_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -6657,8 +6662,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -15213,28 +15218,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changing-default-token-expiration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Changing Default Token Expiration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-local-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disabling Local Authentication
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#token-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15429,76 +15412,6 @@ specified API version: <code>&lt;API_VERSION&gt;/auth/token</code>. Use <code>au
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer eyJhbGc...&#39;</span>
 </code></pre></div>
-<h3 id="changing-default-token-expiration">Changing Default Token Expiration</h3>
-<p>The default token expiration is as follows:</p>
-<ul>
-<li><code>accessToken</code> &ndash; 30 minutes (1800 seconds)</li>
-<li><code>refreshToken</code> &ndash; 24 hours (86400 seconds)</li>
-</ul>
-<p>Many company standards require shorter expiration times, and this can be
-accomplished via the CLI settings.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
-or <code>autoboss</code> account may cause irreversible, detrimental changes to the
-product. Actions taken without direct communication with the IP Fabric
-Support or Solution Architect teams can render the system unusable.</p>
-</div>
-<ol>
-<li>Log in to the IP Fabric CLI as <code>osadmin</code>.</li>
-<li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
-<li>
-<p>Create a new file <code>/opt/ipf-api/conf.d/api.json</code> or extend the existing one
-   with the below JSON. In this example, the <code>accessToken</code> expires in 10
-   minutes, and the <code>refreshToken</code> expires in 15 minutes:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;accessToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;expiresIn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;refreshToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;expiresIn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</li>
-<li>
-<p>Change file permissions: <code>chmod 644 /opt/ipf-api/conf.d/api.json</code></p>
-</li>
-<li>Restart the API: <code>systemctl restart ipf-api.service</code></li>
-</ol>
-<h3 id="disabling-local-authentication">Disabling Local Authentication</h3>
-<p>In case you don&rsquo;t want to use local authentication (username/password) and want
-to log in only via SSO or LDAP, you can disable it via the CLI settings (both
-token and basic authentication will be disabled). Please note that
-<a href="../../IP_Fabric_Settings/integration/api_tokens/">API Tokens</a> will still work.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
-or <code>autoboss</code> account may cause irreversible, detrimental changes to the
-product. Actions taken without direct communication with the IP Fabric
-Support or Solution Architect teams can render the system unusable.</p>
-</div>
-<ol>
-<li>Log in to the IP Fabric CLI as <code>osadmin</code>.</li>
-<li>Elevate to root using <code>sudo -s</code> and <code>osadmin</code> password.</li>
-<li>
-<p>Create a new file <code>/opt/ipf-api/conf.d/api.json</code> or extend the existing one
-   with the below JSON:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;enableLocalAuthentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</li>
-<li>
-<p>Change file permissions: <code>chmod 644 /opt/ipf-api/conf.d/api.json</code></p>
-</li>
-<li>Restart the API: <code>systemctl restart ipf-api.service</code></li>
-</ol>
 <h3 id="token-errors">Token Errors</h3>
 <p>When an error is encountered, the API returns an object with a machine-readable
 error code and a human-readable error message in the response body:</p>
@@ -15557,7 +15470,7 @@ error code and a human-readable error message in the response body:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 18, 2024 15:57:08 UTC">December 18, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 9, 2025 14:43:16">September 9, 2025</span>
   </span>
 
     
