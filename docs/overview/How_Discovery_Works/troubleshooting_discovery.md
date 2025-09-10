@@ -12,7 +12,7 @@ This section describes the Global Settings. You can also make adjustments to spe
 Changes made to the Global Settings do not apply to previously run snapshots. Here are
 two methods for testing snapshot settings:
 
-1. Make your changes in the snapshot **Settings** and then try to
+1. Make your changes in the **[Snapshot Settings](../../IP_Fabric_GUI/discovery_snapshot.md/#snapshot-specific-settings)** and then try to
    **Add Devices** (or `Rediscover timed out devices`). If these changes fixed
    your issue, then apply them globally.
 
@@ -94,7 +94,7 @@ the discovery completed successfully.
 
 !!! important
 
-    Do not confuse the include list with the seed list. The include list will only
+    **Do not confuse the include list with the seed list.** The include list will only
     try to discover an IP address if it is found through the Discovery task or the
     IP address is in the seeds. Also note that IP Fabric does not do any ICMP pings to find
     hosts, so having a `/16` here will not send massive amounts of pings.
@@ -344,10 +344,13 @@ If you need further assistance, please feel free to reach out to your IP Fabric 
 Architect or open a ticket following
 the [Technical Support](../../support/index.md) instructions.
 
-Finally, another option for testing devices is to log in to the IP Fabric CLI
-using the `osadmin` account and manually trying to SSH into your devices,
-preferably using the username and password the system was configured to use. If
-you cannot open a connection, this is due to an external reason.
+Finally, another option for 
+[Testing Network Connectivity](../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md/#test-network-connectivity) 
+is to log in to the IP Fabric CLI using the `osadmin` account and manually run the 
+[ipf-connection-tester](../../System_Administration/Command_Line_Interface/How_to/troubleshooting.md/#ipf-connection-tester) 
+utility, preferably using the username and password the system was configured to use. 
+
+If you cannot open a connection, please contact Support with the logs of the `ipf-connection-tester`.
 
 Further information can be found
 in [No Devices Discovered](common_problems/no-devices-discovered.md).
