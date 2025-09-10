@@ -95,6 +95,8 @@ The snapshot will enter an **error** state and be marked as **Force Stopped** wi
 
 ## Snapshot-Specific Settings
 
+![Snapshot-specific settings](snapshots/snapshot_specific_settings.png)
+
 ![Snapshot-specific settings](snapshots/snapshot_settings.png)
 
 Adjusting the settings for either a new snapshot or a previously created snapshot will override the global **Settings**.
