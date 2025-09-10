@@ -15492,7 +15492,7 @@ Changes made to the Global Settings do not apply to previously run snapshots. He
 two methods for testing snapshot settings:</p>
 <ol>
 <li>
-<p>Make your changes in the snapshot <strong>Settings</strong> and then try to
+<p>Make your changes in the <strong><a href="../../../IP_Fabric_GUI/discovery_snapshot/#snapshot-specific-settings">Snapshot Settings</a></strong> and then try to
    <strong>Add Devices</strong> (or <code>Rediscover timed out devices</code>). If these changes fixed
    your issue, then apply them globally.</p>
 <p><a class="glightbox" href="../troubleshooting/add_devices.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add devices" src="../troubleshooting/add_devices.png" /></a></p>
@@ -15562,7 +15562,7 @@ terminal server, which IP Fabric could not understand; once added to the exclude
 the discovery completed successfully.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Do not confuse the include list with the seed list. The include list will only
+<p><strong>Do not confuse the include list with the seed list.</strong> The include list will only
 try to discover an IP address if it is found through the Discovery task or the
 IP address is in the seeds. Also note that IP Fabric does not do any ICMP pings to find
 hosts, so having a <code>/16</code> here will not send massive amounts of pings.</p>
@@ -15835,10 +15835,12 @@ and the CLI output of the device is usually helpful as well.</p>
 <p>If you need further assistance, please feel free to reach out to your IP Fabric Solution
 Architect or open a ticket following
 the <a href="../../../support/">Technical Support</a> instructions.</p>
-<p>Finally, another option for testing devices is to log in to the IP Fabric CLI
-using the <code>osadmin</code> account and manually trying to SSH into your devices,
-preferably using the username and password the system was configured to use. If
-you cannot open a connection, this is due to an external reason.</p>
+<p>Finally, another option for 
+<a href="../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/#test-network-connectivity">Testing Network Connectivity</a> 
+is to log in to the IP Fabric CLI using the <code>osadmin</code> account and manually run the 
+<a href="../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/#ipf-connection-tester">ipf-connection-tester</a> 
+utility, preferably using the username and password the system was configured to use. </p>
+<p>If you cannot open a connection, please contact Support with the logs of the <code>ipf-connection-tester</code>.</p>
 <p>Further information can be found
 in <a href="../common_problems/no-devices-discovered/">No Devices Discovered</a>.</p>
 <h2 id="troubleshooting-configuration-management">Troubleshooting Configuration Management</h2>
@@ -15891,7 +15893,7 @@ configuration management, then configurations will not be backed up.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2025</span>
   </span>
 
     
