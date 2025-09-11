@@ -164,7 +164,7 @@ This feature flag enables the Extensions functionality, which allows users to ad
     sudo systemctl enable docker && sudo systemctl start docker
     ```
 
-For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/7.0.md#extensions-engineering-preview) for more information.
+For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.0.md#extensions-engineering-preview) for more information.
 
 After updating the environment file, you must restart IP Fabric application by running the following command:
 
