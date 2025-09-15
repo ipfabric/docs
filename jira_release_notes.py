@@ -25,7 +25,7 @@ TEAM_CLEANUP_PATTERNS = [
 
 def get_project_versions(project):
     response = requests.get(
-        JIRA_BASE_URL + "rest/api/2/project/" + project + "/versions", auth=AUTH
+        JIRA_BASE_URL + "rest/api/3/project/" + project + "/versions", auth=AUTH
     )
     response.raise_for_status()
     versions = response.json()
@@ -36,7 +36,7 @@ def get_project_versions(project):
     return versions
 
 
-def get_project_issues_from_version(project, projectVersion, startAt=0):
+def get_project_issues_from_version(project, projectVersion, nextPageToken=None):
     additional_conditions = ""
     if project == "NIM":
         additional_conditions = " AND (resolution = Done) "
@@ -50,13 +50,17 @@ def get_project_issues_from_version(project, projectVersion, startAt=0):
         + " AND (resolution IS NOT EMPTY OR statusCategory = Done) AND (labels NOT IN (skip_LLRN) OR labels IS EMPTY) ORDER BY key"
     )
     params = {
-        "projectId": projectVersion["projectId"],
-        "startAt": startAt,
-        "maxResults": 1000,
         "jql": jql,
+        "maxResults": 100,  # API limit is 100 for /search/jql
+        "fields": "*all"
     }
+    
+    # Add nextPageToken if provided
+    if nextPageToken:
+        params["nextPageToken"] = nextPageToken
+    
     response = requests.get(
-        JIRA_BASE_URL + "/rest/api/2/search", auth=AUTH, params=params
+        JIRA_BASE_URL + "rest/api/3/search/jql", auth=AUTH, params=params
     )
     response.raise_for_status()
     return response.json()
@@ -193,18 +197,20 @@ def main():
 
             for project in PROJECT_KEYS:
                 project_issues = []
-                start_at = 0
+                next_page_token = None
 
                 while True:
-                    response = get_project_issues_from_version(project, v, start_at)
+                    response = get_project_issues_from_version(project, v, next_page_token)
                     response_len = len(response["issues"])
                     print(
-                        f"For {project} fetched {response_len}, so far {len(project_issues)}, should be {response['total']} issues"
+                        f"For {project} fetched {response_len}, so far {len(project_issues)}"
                     )
                     project_issues += response["issues"]
-                    start_at += response_len
-
-                    if response_len == 0 or len(project_issues) == response["total"]:
+                    
+                    # Check if there's a next page token for pagination
+                    next_page_token = response.get("nextPageToken")
+                    
+                    if response_len == 0 or not next_page_token:
                         break
 
                 issues += project_issues
