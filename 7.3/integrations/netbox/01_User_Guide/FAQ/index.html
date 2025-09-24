@@ -71,20 +71,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="FAQ - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Frequently asked questions about the IP Fabric NetBox Plugin." />
-<meta property="og:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/01_User_Guide/FAQ.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/7.3/integrations/netbox/01_User_Guide/FAQ/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="FAQ - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Frequently asked questions about the IP Fabric NetBox Plugin." />
-<meta property="twitter:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/01_User_Guide/FAQ.png" />
- <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7552,7 +7539,7 @@
   <a href="#cannot-resolve-bases-for-modelstate-ipfabric_netboxipfabricbranch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cannot resolve bases for [&lt;ModelState: 'ipfabric_netbox.IPFabricBranch'&gt;]
+        Cannot resolve bases for [&lt;ModelState: &lsquo;ipfabric_netbox.IPFabricBranch&rsquo;>]
       
     </span>
   </a>
@@ -14640,7 +14627,7 @@
   <a href="#cannot-resolve-bases-for-modelstate-ipfabric_netboxipfabricbranch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cannot resolve bases for [&lt;ModelState: 'ipfabric_netbox.IPFabricBranch'&gt;]
+        Cannot resolve bases for [&lt;ModelState: &lsquo;ipfabric_netbox.IPFabricBranch&rsquo;>]
       
     </span>
   </a>
@@ -14752,7 +14739,10 @@
 <p>If you get the error message <code>CERTIFICATE_VERIFY_FAILED</code>, it is due to the certificate not being trusted. This can be resolved by setting the <code>Verify</code> field to <code>false</code> when creating the source. This will disable the validation of the certificate. Currently, there is no way to validate custom certificates; we are working on that, but disabling the validation is a temporary way to get around this issue.</p>
 <h3 id="vlan-name-too-long">VLAN Name Too Long</h3>
 <p>If you encounter the error message <code>value too long for the type character varying(64)</code>, it means that the string you are using is longer than the maximum value allowed by NetBox. This can occur when the <code>vlanName</code> contains more than 64 characters. The error message will display the name of the transform map. You can edit it and restrict the input to the necessary number of characters using <code>{{ object.vlanName[:64] }}</code>.</p>
-<h3 id="cannot-resolve-bases-for-modelstate-ipfabric_netboxipfabricbranch">Cannot resolve bases for <code>[&lt;ModelState: 'ipfabric_netbox.IPFabricBranch'&gt;]</code></h3>
+<!-- vale off -->
+<h3 id="cannot-resolve-bases-for-modelstate-ipfabric_netboxipfabricbranch">Cannot resolve bases for [&lt;ModelState: &lsquo;ipfabric_netbox.IPFabricBranch&rsquo;&gt;]</h3>
+<!-- vale on -->
+
 <p>This error message appear if you were running <code>ipfabric_netbox</code> plugin with version &lt;4.0.0 and upgraded to NetBox v4.3.0+.</p>
 <p>The root cause is removed model in NetBox v4.3.0 that is used as parent of <code>IPFabricBranch</code>.</p>
 <p>To resolve this issue, you need to completely purge plugin from your database and proceed with clean installation. Following steps should help you:</p>
@@ -14768,8 +14758,9 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 </code></pre></div></li>
 </ol>
 </li>
-<li>Drop all tables related to ipfabric_netbox plugin:
+<li>Drop all tables related to ipfabric_netbox plugin including migration records:
    <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span>
+<span class="w">    </span><span class="n">ipfabric_netbox_ipfabricbranch</span><span class="p">,</span>
 <span class="w">    </span><span class="n">ipfabric_netbox_ipfabricdata</span><span class="p">,</span>
 <span class="w">    </span><span class="n">ipfabric_netbox_ipfabricingestion</span><span class="p">,</span>
 <span class="w">    </span><span class="n">ipfabric_netbox_ipfabricrelationshipfield</span><span class="p">,</span>
@@ -14779,6 +14770,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <span class="w">    </span><span class="n">ipfabric_netbox_ipfabrictransformfield</span><span class="p">,</span>
 <span class="w">    </span><span class="n">ipfabric_netbox_ipfabrictransformmap</span>
 <span class="k">CASCADE</span><span class="p">;</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">django_migrations</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ipfabric_netbox&#39;</span><span class="p">;</span>
 </code></pre></div></li>
 <li>Re-add plugin to <code>PLUGINS</code> list in <code>configuration.py</code>.</li>
 <li>Run migrations.</li>
@@ -14803,7 +14795,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2025 18:06:05">September 15, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 24, 2025 10:03:58">September 24, 2025</span>
   </span>
 
     
