@@ -114,7 +114,7 @@ consult the
 3. Create a new configuration file in the `/etc/syslog-ng/conf.d/` directory:
 
     ```shell
-    nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf`
+    nano /etc/syslog-ng/conf.d/custom-remote-syslog.conf
     ```
 
     The file name should be unique and must not conflict with other files in the
