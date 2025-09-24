@@ -71,20 +71,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="NetBox Plugin Installation - IP Fabric Documentation Portal" />
-<meta property="og:description" content="Comprehensive installation instructions for the IP Fabric NetBox plugin with version-specific details, multiple approaches, and troubleshooting tips." />
-<meta property="og:image" content="https://docs.ipfabric.io/7.5/assets/images/social/integrations/netbox/01_User_Guide/installation.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/7.5/integrations/netbox/01_User_Guide/installation/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="NetBox Plugin Installation - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="Comprehensive installation instructions for the IP Fabric NetBox plugin with version-specific details, multiple approaches, and troubleshooting tips." />
-<meta property="twitter:image" content="https://docs.ipfabric.io/7.5/assets/images/social/integrations/netbox/01_User_Guide/installation.png" />
- <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7632,6 +7619,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../dynamic-attributes/example_configs/log_version_name/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Log File Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../dynamic-attributes/example_configs/mgmt_ip/" class="md-nav__link">
         
   
@@ -8380,10 +8394,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#73-upgrading-plugin-to-v400-netbox-v430" class="md-nav__link">
+  <a href="#73-upgrading-plugin-to-v40-netbox-v430" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3 Upgrading plugin to v4.0.0 (NetBox v4.3.0+)
+        7.3 Upgrading plugin to v4.0+ (NetBox v4.3.0+)
       
     </span>
   </a>
@@ -15567,10 +15581,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#73-upgrading-plugin-to-v400-netbox-v430" class="md-nav__link">
+  <a href="#73-upgrading-plugin-to-v40-netbox-v430" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.3 Upgrading plugin to v4.0.0 (NetBox v4.3.0+)
+        7.3 Upgrading plugin to v4.0+ (NetBox v4.3.0+)
       
     </span>
   </a>
@@ -15780,17 +15794,20 @@ In case you want to install a specific version of the plugin, you can specify th
 </ol>
 <h3 id="24-configure-database-router-to-support-branching">2.4. Configure database router to support branching:</h3>
 <ol>
-<li>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.
-     ```python
-    from netbox_branching.utilities import DynamicSchemaDict<p># Wrap DATABASES with DynamicSchemaDict for dynamic schema support
-  DATABASES = DynamicSchemaDict({
-      &lsquo;default&rsquo;: $ORIGINAL_DATABASE_CONFIG,
-  })</p>
-<p># Employ netbox-branching custom database router
-  DATABASE_ROUTERS = [
-      &lsquo;netbox_branching.database.BranchAwareRouter&rsquo;,
-  ]
-   ```</p>
+<li>
+<p>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">netbox_branching.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">DynamicSchemaDict</span>
+
+<span class="c1"># Wrap DATABASES with DynamicSchemaDict for dynamic schema support</span>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="n">DynamicSchemaDict</span><span class="p">({</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="err">$</span><span class="n">ORIGINAL_DATABASE_CONFIG</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1"># Employ netbox-branching custom database router</span>
+<span class="n">DATABASE_ROUTERS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;netbox_branching.database.BranchAwareRouter&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
 </li>
 </ol>
 <h3 id="25-apply-database-migrations">2.5 Apply Database Migrations</h3>
@@ -15896,6 +15913,11 @@ pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span c
 <td>7.2.x</td>
 <td>7.2.x</td>
 </tr>
+<tr>
+<td>ipfabric_7_3</td>
+<td>7.3.x</td>
+<td>7.3.x</td>
+</tr>
 </tbody>
 </table>
 <h2 id="5-verification">5. Verification</h2>
@@ -15986,8 +16008,11 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>netbox
 docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-<h3 id="73-upgrading-plugin-to-v400-netbox-v430">7.3 Upgrading plugin to v4.0.0 (NetBox v4.3.0+)</h3>
-<p>For a smooth upgrade to v4.0.0, upgrading must be done at the same time as upgrading to NetBox v4.3.0+. The crucial part is running all migrations from both upgrades at once.</p>
+<h3 id="73-upgrading-plugin-to-v40-netbox-v430">7.3 Upgrading plugin to v4.0+ (NetBox v4.3.0+)</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For a smooth upgrade to v4.0+, we strongly suggest to upgrade to IP Fabric <code>v4.0.1</code> before upgrading NetBox to <code>v4.3.0+</code>. The preferred version of NetBox for this upgrade is <code>v4.2.6</code>, but anything greater than <code>v4.2.4</code> and before <code>v4.3.0</code> should work.</p>
+</div>
 <p>The plugin now depends on <code>netbox-branching</code> plugin and these extra steps are simplified installation instructions of the plugin:</p>
 <ol>
 <li>Modify your <code>configuration.py</code> with the following content. Replace <code>$ORIGINAL_DATABASE_CONFIG</code> with your original <code>DATABASE</code> configuration dictionary. If you are using other <code>DATABASE_ROUTERS</code>, make sure to include them in the list.
@@ -16042,7 +16067,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2025 18:02:22 UTC">September 15, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 24, 2025 09:59:57 UTC">September 24, 2025</span>
   </span>
 
     
