@@ -6,7 +6,7 @@ image: debian:bookworm
 deploy_to_production:
   stage: deploy
   only:
-    - gh-pages
+    - gh-pages-dr
   script:
     - apt-get update && apt-get install --yes curl zstd && rm -rf /var/lib/apt/lists/*
     - /usr/bin/tar --create --exclude-from=deploy-exclude.lst --use-compress-program='/usr/bin/zstd -T0 -9' --file=/tmp/ipf-docs-site.tar.zst ./
