@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device.">
+        <meta name="description" content="After the intelligent discovery completes, the scanner may run to detect devices in distant networks learned from device routing tables. Distant networks are those not reachable by the standard discovery process. Only networks enabled for discovery through the include/exclude policy are eligible.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Scanner Settings - IP Fabric Documentation Portal</title>
+        <title>Network-scanner selection & scanning behavior - IP Fabric Documentation Portal</title>
       
     
     
@@ -71,20 +71,7 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Scanner Settings - IP Fabric Documentation Portal" />
-<meta property="og:description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device." />
-<meta property="og:image" content="https://docs.ipfabric.io/7.5/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.ipfabric.io/7.5/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Scanner Settings - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="The Scanner intelligently scans the parts of the network which are not reachable using standard methods by testing the login (SSH/Telnet) to each IP address from IP networks without any discovered device." />
-<meta property="twitter:image" content="https://docs.ipfabric.io/7.5/assets/images/social/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings.png" />
- <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -112,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scanner-settings" class="md-skip">
+        <a href="#network-scanner-selection-scanning-behavior" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scanner Settings
+              Network-scanner selection &amp; scanning behavior
             
           </span>
         </div>
@@ -5316,13 +5303,30 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Network-scanner selection &amp; scanning behavior
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     
   
-    Scanner Settings
+    Network-scanner selection &amp; scanning behavior
   
 
     
@@ -5331,6 +5335,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-candidate-networks-are-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How candidate networks are selected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniqueness-vrf-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uniqueness &amp; VRF considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanning-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scanning behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -14980,6 +15047,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-candidate-networks-are-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How candidate networks are selected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniqueness-vrf-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uniqueness &amp; VRF considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanning-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scanning behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -15084,20 +15203,44 @@
   
 
 
-<h1 id="scanner-settings">Scanner Settings</h1>
-<p>The Scanner intelligently scans the parts of the network that are not reachable
-using standard methods by testing the login (SSH/Telnet) to each IP address from
-IP networks without any discovered device.</p>
-<p>In other words, the Scanner takes each unique route for which the next hop device was 
-not discovered. The Scanner excludes a network from scanning if we have already discovered
-a device with such a network configured on its L3 interface. Scanning itself attempts
-to log in to every IP address within a provided subnet. If Scanner successfully connects
-to an IP address, it schedules it for a regular discovery and proceeds with scanning.</p>
-<p>For example, if after standard intelligent discovery, there is a network
-<code>10.0.0.0/24</code> in a routing table that is not configured on any interface 
-of already discovered devices, the Scanner will attempt to log in to <code>10.0.0.1</code>,
-then to <code>10.0.0.2</code>, then to <code>10.0.0.3</code>, and so on, until all of the addresses
-in the <code>10.0.0.0/24</code> network has been attempted.</p>
+<h1 id="network-scanner-selection-scanning-behavior">Network-scanner selection &amp; scanning behavior</h1>
+<p>After the intelligent discovery completes, the scanner may run to detect devices in distant networks learned from device routing tables. Distant networks are those not reachable by the standard discovery process. Only networks enabled for discovery through the include/exclude policy are eligible.</p>
+<h3 id="how-candidate-networks-are-selected">How candidate networks are selected</h3>
+<p>Before scanning begins, the system builds a unique list of candidate networks. A network is qualified for scanning only if all of the following conditions are met:</p>
+<ol>
+<li>
+<p>Learned from a routing table
+The network appears in the routing table of at least one device discovered during intelligent discovery.</p>
+</li>
+<li>
+<p>Mask is not too broad
+The network’s prefix length is equal to or longer than the configured minimum mask for scanning (i.e., it must not have a mask that is lower than the configured minimum).</p>
+</li>
+<li>
+<p>Not directly connected
+The network is not a directly connected network. We rely on ARP or equivalent sources - for example, Cisco ACI endpoint tables - to learn about devices on directly connected networks.</p>
+</li>
+<li>
+<p>Has an IP next-hop
+The route has an associated IP next-hop. This excludes summary routes, null routes, and any others that do not represent an IP-reachable distant network.</p>
+</li>
+<li>
+<p>No discovered L3 interface in that network
+There is no discovered L3 interface connected to that specific network (an exact network/mask match is required).
+Example 1: While evaluating 10.10.10.0/24 as a candidate, if an L3 interface 10.10.10.1/24 was discovered, then 10.10.10.0/24 is excluded from scanning.
+Example 2: While evaluating 10.10.10.0/24 as a candidate, if an L3 interface 10.10.10.1/25 was discovered, then 10.10.10.0/24 is kept for scanning.</p>
+</li>
+</ol>
+<h3 id="uniqueness-vrf-considerations">Uniqueness &amp; VRF considerations</h3>
+<p>The system builds a final list of unique candidate networks so that each network appears only once.</p>
+<p>VRFs are ignored during the selection process: networks in different VRFs are treated as identical. Likewise, the VRF of any discovered L3 interface is not considered when excluding networks.</p>
+<h3 id="scanning-behavior">Scanning behavior</h3>
+<p>A qualified network is scanned until either all addresses are tried or a device in the scanned range is found. If a device is found, scanning is paused, and further processing waits until the device is fully discovered. Scanning for that subnet resumes only when the discovered device does not have an L3 or a directly connected route that exactly matches that subnet (an exact prefix and mask match is required to stop scanning).</p>
+<p>Scanning proceeds in an alternating outward-in sequence: it probes the minimum usable IP, then the maximum usable IP, then the next lowest (minimum + 1), then the next highest (maximum -  1), and so on - i.e., [min, max, min + 1, max - 1, min + 2, max - 2, …].</p>
+<p>Example: For <code>10.0.0.0/24</code>, the scanner checks <code>10.0.0.1</code>, then <code>10.0.0.254</code>, then <code>10.0.0.2</code>, then <code>10.0.0.253</code>, and continues in that pattern until all usable addresses have been probed.</p>
+<p>For each IP that is trying to connect, the Scanner will use the credentials from the global settings to check if it can login with any of them.</p>
+<p>If new networks are found in the next scanning iteration, those that have already been scanned in the previous iteration will be filtered out.</p>
+<h3 id="how-to-use">How to use</h3>
 <p>Turn on the Scanner to increase the number of discovered devices.</p>
 <p>Go to <strong>Settings &rarr; Discovery &amp; Snapshots &rarr; Discovery Settings &rarr; Discovery
 &rarr; Scanner settings</strong> and turn on the <strong>Use scanner in discovery</strong> toggle.</p>
@@ -15126,7 +15269,7 @@ is <code>/16</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 29, 2024 13:11:23 UTC">November 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2025 13:35:40 UTC">October 13, 2025</span>
   </span>
 
     
