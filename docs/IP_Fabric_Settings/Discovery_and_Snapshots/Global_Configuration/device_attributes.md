@@ -85,3 +85,37 @@ Editing a snapshot's Local Attributes will require recalculations if a device's 
 
 Please see the example at
 [`examples/settings/local_attributes.py`](https://gitlab.com/ip-fabric/integrations/python-ipfabric/-/blob/develop/examples/settings/local_attributes.py).
+
+## Device Attributes Import/Export
+
+The device attributes import/export feature allows you to manage custom device attributes using CSV files, making it easy to bulk-add or update device information.
+
+![Device Attributes Import/Export](device_attributes/device_attributes_import_export.png)
+
+### Export Functionality
+
+#### Export Current Data
+- Click the **Export** button to download all existing device attributes as a CSV file.
+- The file will be named `Device_Attributes.csv`.
+- The CSV file contains the following columns: Serial Number, Hostname, Attribute, Value.
+
+### Import Functionality
+
+#### File Requirements
+- **Format:** CSV file only
+- **Maximum size:** 10 MB
+- **Required columns:** Serial Number, Attribute, Value
+- **Optional column:** Hostname (for reference only)
+
+#### Import Options
+
+##### Import Data
+- Adds new attributes from the CSV file.
+- **Duplicate handling:** Prevents adding attributes that already exist for a device; duplicate rows are ignored and the import continues.
+- Existing data remains unchanged.
+
+##### Import & Replace
+- This option **overrides** all existing attributes and **imports** new ones.
+!!! warning  "Warning"
+    
+	Use with caution — this operation completely replaces your attribute data.
