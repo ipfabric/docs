@@ -50,6 +50,12 @@ ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS=true
 
 Support for Layer 2 (L2) path lookup in ACI service graphs was introduced in version `7.3`.
 
+After updating the Environment file, restart the IP Fabric application:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
 ### Download of FMC ICMP Object Definitions 1 by 1
 
 The FMC API has a bug returning malformed data for the `/objects/icmpv4objects?expanded=true` endpoint.
@@ -119,24 +125,10 @@ Since `7.0`, Opengear ACM/CM/OM devices can be discovered by adding the followin
 ENABLE_DISCOVERY_DEVICES_OPENGEAR_OM_CM_ACM=true
 ```
 
-### Opengear `$` Prompt Detection
-
-Opengear can be configured with only the `$` sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.
-
-Since `6.7`, the `$` prompt can be enabled for Opengear devices by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+After updating the Environment file, restart the IP Fabric application:
 
 ```
-ENABLE_OPENGEAR_DOLLAR_PROMPT=true
-```
-
-### Opengear `#` Prompt Detection
-
-Opengear can be configured with only the `#` sign as a prompt. As this is too general and also some Linux systems use the same prompt, this feature is hidden behind a feature flag.
-
-Since `7.2`, the `#` prompt can be enabled for Opengear devices by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_OPENGEAR_HASH_PROMPT=true
+sudo systemctl restart ipf-appliance
 ```
 
 ### Extensions
@@ -174,7 +166,8 @@ sudo systemctl restart ipf-appliance
 
 ### Configuration Management Optimizations
 
-Starting in version `7.2`, you can enable additional configuration management performance optimizations by adding the following entries to the syslogworker environment file at `/etc/default/ipf-discovery-syslogworker-local`.
+Starting in version `7.2`, you can enable additional configuration management performance optimizations by adding the following entries to the
+syslogworker environment file at `/etc/default/ipf-discovery-syslogworker-local`.
 
 Remember to restart the syslogworker after modifying the environment file:
 
@@ -231,6 +224,23 @@ Enables detailed execution time tracking for critical operations:
 ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING=true
 ```
 
+### Enable Manual Links / Transparent Firewall
+
+This configuration flag enable manual link configuration option in both global and snapshot settings.
+For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#transparent-firewalls).
+
+Since `7.3`, the manual link support can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_MANUAL_LINKS=true
+```
+
+After updating the Environment file, restart the IP Fabric application:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
 ### Palo Alto External Dynamic Lists
 
 Starting in version `7.3`, these feature flags enable downloading content from configured External Dynamic Lists.
@@ -243,71 +253,6 @@ To enable collection of respective lists, following lines need to be added to th
 ENABLE_PALOALTO_EDL_IPLIST=true
 ENABLE_PALOALTO_EDL_URLLIST=true
 ```
-
-### Enable Manual Links / Transparent Firewall
-
-This feature flag enable manual link configuration option in both global and snapshot settings.
-For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#transparent-firewalls).
-
-Since `7.3`, the manual link support can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_MANUAL_LINKS=true
-```
-
-### Meraki Catalyst Switches Discovery
-
-Starting with version `7.3`, cloud-managed Cisco Catalyst switches can be discovered via the Meraki API.
-
-**Identification criteria**: Firmware starting with `CS` and Monitoring Version set to `n/a`.
-
-Discovery is enabled by default. To disable it, add the following line to the global environment file `/etc/default/ipf-appliance-local`:
-
-```
-DISABLE_DISCOVERY_CLOUD_MANAGED_CATALYST_SWITCHES=true
-```
-
-After updating the environment file, you must restart the IP Fabric application by running the following command:
-
-```
-sudo systemctl restart ipf-appliance
-```
-
-### Versa VOS forwarding table
-
-This feature flag allows you to configure the limit for the Versa VOS forwarding table length. By default, it is set to 5000000, which corresponds to approximately 100,000 forwarding table records.
-To change the limit, add the following line to the global environment file at `/etc/default/ipf-appliance-local`:
-
-```
-VERSA_FORWARDING_TABLE_LIMIT=your_new_limit
-```
-
-After updating the environment file, you must restart the IP Fabric application by running the following command:
-
-```
-sudo systemctl restart ipf-appliance
-```
-
-### Disable Network Bandwidth Shaper
-
-Starting in version `7.5`, this feature flag allows removal of bandwidth shaper limitations during the discovery process.
-
-When shaper is disabled, workers still internally calculate bandwidth at 100 Mb/s -- this only affects the maximum number of concurrent sessions/requests but removes interface limitations.
-
-This is useful for troubleshooting connectivity issues (isolates shaper-related problems vs. other issues).
-
-To disable network bandwidth shaper, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_SHAPER_DISABLING=true
-```
-
-After updating the file, restart the IP Fabric application:
-
-```
-sudo systemctl restart ipf-appliance
-```
-
 
 ## Deprecated Feature Flags
 

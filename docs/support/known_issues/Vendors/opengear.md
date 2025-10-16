@@ -12,7 +12,7 @@ description: This page describes known issues with Opengear and how to fix them.
 (dollar) sign.
 
 **Fix:** To discover Opengear with a `$`-only prompt, enable the needed
-[feature flag](../../../System_Administration/Command_Line_Interface/Feature_Flags.md#opengear-prompt-detection).
+[Configuration Flag](../../../System_Administration/Command_Line_Interface/Configuration_Flags.md#opengear-prompt-detection).
 
 ## Opengear OM -- Slow response to NTP command
 
