@@ -71,7 +71,20 @@
 
     
     
-   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Transform Maps - IP Fabric Documentation Portal" />
+<meta property="og:description" content="Installation instructions importing transform maps." />
+<meta property="og:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/01_User_Guide/transform_maps.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.ipfabric.io/7.3/integrations/netbox/01_User_Guide/transform_maps/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Transform Maps - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="Installation instructions importing transform maps." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/7.3/assets/images/social/integrations/netbox/01_User_Guide/transform_maps.png" />
+ <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7355,10 +7368,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation-instructions-restore-method" class="md-nav__link">
+  <a href="#restoring-transform-maps-without-group" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Instructions - Restore Method
+        Restoring Transform Maps without Group
       
     </span>
   </a>
@@ -7366,10 +7379,232 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-instructions-manual-method" class="md-nav__link">
+  <a href="#transform-maps_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Instructions - Manual Method
+        Transform Maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-map-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Map Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Map Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-transform-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloning Transform Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Field
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalesce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-relationship-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Relationship Field
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Relationship Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-field_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coalesce_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalesce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Chart
       
     </span>
   </a>
@@ -14484,10 +14719,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation-instructions-restore-method" class="md-nav__link">
+  <a href="#restoring-transform-maps-without-group" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Instructions - Restore Method
+        Restoring Transform Maps without Group
       
     </span>
   </a>
@@ -14495,10 +14730,232 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-instructions-manual-method" class="md-nav__link">
+  <a href="#transform-maps_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Instructions - Manual Method
+        Transform Maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-map-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Map Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Map Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-transform-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloning Transform Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Field
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coalesce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalesce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-relationship-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Relationship Field
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Relationship Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-field_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coalesce_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coalesce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Chart
       
     </span>
   </a>
@@ -14595,29 +15052,10 @@
 
 
 <h1 id="transform-maps">Transform Maps</h1>
-<p>By default, we provide users with the option to create their own transform map. This allows users to customize the transform map to their specific needs. However, we also offer a default transform map that can serve as a starting point. These come pre-installed using Django migrations.</p>
-<h2 id="installation-instructions-restore-method">Installation Instructions - Restore Method</h2>
+<p>By default, we provide users with the option to create their own transform map. This allows users to customize the transform map to their specific needs. However, we also offer a default transform map that can serve as a starting point. These come pre-installed using Django migrations, executed during installation process. They cover common usage scenarios and can be restored at any time. We strongly suggest to not change these and instead use transform map groups for any custom maps.</p>
+<h2 id="restoring-transform-maps-without-group">Restoring Transform Maps without Group</h2>
 <p>Within the transform map page, you can easily restore the default transform maps. This will overwrite any existing transform maps without a group. You can do this by selecting restore in the top-right corner of the transform map page.</p>
-<h2 id="installation-instructions-manual-method">Installation Instructions - Manual Method</h2>
-<p>Follow these steps to install the transform maps:</p>
-<ol>
-<li>
-<p>Download the script using <code>wget</code>:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>update_tm.sh<span class="w"> </span><span class="s2">&quot;https://gitlab.com/ip-fabric/integrations/ipfabric-netbox/-/raw/main/scripts/update_tm.sh&quot;</span>
-</code></pre></div>
-</li>
-<li>
-<p>Make the script executable:</p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>update_tm.sh
-</code></pre></div>
-</li>
-<li>
-<p>Run the script to install the transform maps:</p>
-<div class="highlight"><pre><span></span><code>./update_tm.sh
-</code></pre></div>
-</li>
-</ol>
-<h1 id="transform-maps_1">Transform Maps</h1>
+<h2 id="transform-maps_1">Transform Maps</h2>
 <p>In this scenario, envision a transform map as akin to a carefully crafted recipe. This recipe serves as a guide, orchestrating the process of extracting data from IP Fabric and delicately depositing it into the appropriate &ldquo;containers&rdquo; represented by Django models within NetBox. Its primary objective is to guarantee precise and efficient organization of the data, meticulously tailored to meet your network management requirements. In essence, it acts as a bridge, harmonizing disparate data formats and structures, ensuring a seamless integration of your network data with your NetBox database.</p>
 <p>The concept of transform maps is not novel; it has been widely employed in various tools for transforming data from one format to another, a practice commonly referred to as ETL (Extract, Transform, Load). This concept draws substantial inspiration from ServiceNow and their implementation of Transform Maps.</p>
 <p>The IP Fabric plugin has four key transform map areas:</p>
@@ -14917,7 +15355,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 24, 2025 10:03:59">September 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2025 15:40:51">October 21, 2025</span>
   </span>
 
     
