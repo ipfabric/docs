@@ -15273,7 +15273,7 @@ here.
   <a href="#upgraded-nodejs-to-v22190" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upgraded NodeJS to v22.19.0
+        Upgraded Node.js to v22.19.0
       
     </span>
   </a>
@@ -15281,10 +15281,10 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#credentials-to-access-a-database-and-rabbitmq-moved-out-of-the-built-code" class="md-nav__link">
+  <a href="#database-and-rabbitmq-credentials-moved-out-of-built-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Credentials to access a database and RabbitMQ moved out of the built code
+        Database and RabbitMQ Credentials Moved Out of Built Code
       
     </span>
   </a>
@@ -15313,17 +15313,6 @@ here.
     <span class="md-ellipsis">
       
         Endpoint payload size limit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rbac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        RBAC
       
     </span>
   </a>
@@ -15478,13 +15467,12 @@ The installation process has also been improved to better handle dependencies be
 <h4 id="jumphost-logs-included-in-techsupport-exports">Jumphost Logs Included in TechSupport Exports</h4>
 <p>The <code>ipf-jumphost</code> service, which has logged to <code>/var/log/ipf/ipf-jumphost/</code> since release 7.0 to keep its logs separate from system logs, now includes
 these logs in TechSupport exports to assist with troubleshooting.</p>
-<h4 id="upgraded-nodejs-to-v22190">Upgraded NodeJS to v22.19.0</h4>
-<p>All JavaScript services are now running on a version <code>v22.19.0</code> of NodeJS.</p>
-<h4 id="credentials-to-access-a-database-and-rabbitmq-moved-out-of-the-built-code">Credentials to access a database and RabbitMQ moved out of the built code</h4>
-<p>Previously, due to how application configuration was handled via the JSON file, several credentials were embedded
-directly into the built JavaScript code. This is no longer the case — these credentials are now automatically
-generated and provided through environment variables. The default guest account for RabbitMQ has been removed.
-Only internal, non-management accounts are now used for communication between the application and the broker.</p>
+<h4 id="upgraded-nodejs-to-v22190">Upgraded Node.js to v22.19.0</h4>
+<p>All JavaScript-based services are now running on Node.js version <code>v22.19.0</code>.</p>
+<h4 id="database-and-rabbitmq-credentials-moved-out-of-built-code">Database and RabbitMQ Credentials Moved Out of Built Code</h4>
+<p>Previously, due to how the application configuration was managed through a JSON file, several credentials were embedded
+directly into the built JavaScript code. This is no longer the case — credentials are now automatically generated and supplied via environment variables.
+The default RabbitMQ guest account has been removed. Only internal, non-management accounts are now used for communication between the application and the message broker.</p>
 <h3 id="api-changes">API Changes</h3>
 <h4 id="endpoint-payload-size-limit">Endpoint payload size limit</h4>
 <p>The payload size limit has been introduced with a default of 20 MB, except for the following endpoints with their respective limits:</p>
@@ -15498,15 +15486,17 @@ Only internal, non-management accounts are now used for communication between th
 <li><code>/os/upload-nimpee-cert</code> -&gt; 5 MB</li>
 <li><code>PATCH /settings</code> -&gt; 100 MB</li>
 </ul>
-<h4 id="rbac">RBAC</h4>
-<p>The built-in RBAC policy <code>others</code> (ID: read) has been renamed for greater clarity.
-Despite its ID, this policy also allows write operations for saved filters and graphs.</p>
 <h3 id="other-changes">Other Changes</h3>
 <ul>
 <li>The system status page is now accessible only after login.</li>
 <li>The license upload endpoint is now protected by authentication and accessible only to admin users.</li>
 <li>When a user changes their password, all active sessions for that user are invalidated.</li>
 <li>Session token is now invalidated upon logout.</li>
+<li>The built-in Role-Based Access Control (RBAC) policy previously named others (ID: read) has been renamed for improved clarity.<ul>
+<li>Despite its ID, this policy also permits write operations for saved filters and graphs. The rename helps better reflect its actual
+  permissions and avoid confusion between read-only and read/write capabilities.</li>
+</ul>
+</li>
 </ul>
 
 
