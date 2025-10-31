@@ -727,6 +727,68 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Hardware Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal IOPS Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimal IOPS Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approximate-ipf-checker-results-for-minimal-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximate ipf-checker Results for Minimal IOPS Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended IOPS Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended IOPS Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approximate-ipf-checker-results-for-recommended-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximate ipf-checker Results for Recommended IOPS Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15340,6 +15402,68 @@ here.
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Hardware Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal IOPS Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimal IOPS Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approximate-ipf-checker-results-for-minimal-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximate ipf-checker Results for Minimal IOPS Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended IOPS Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended IOPS Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approximate-ipf-checker-results-for-recommended-iops-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approximate ipf-checker Results for Recommended IOPS Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -15506,16 +15630,12 @@ here.
 </ul>
 <p>For a seamless experience, we recommend using a browser at Full HD (1920 × 1080 px) resolution or higher without custom scaling.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. </p>
+<p>The IP Fabric platform runs on any x64 CPU with these instructions: <code>avx</code>, <code>popcnt</code>, <code>sse</code>, <code>sse2</code>, <code>sse4.1</code>, <code>sse4.2</code>, <code>sse4a</code>, and <code>ssse3</code>. The system runs with at least 8 parallel threads, but scheduling can handle operations down to a single thread if necessary. </p>
 <div class="admonition info">
 <p class="admonition-title">Single Thread Performance Recommendation</p>
 <p>We recommend using processors from Intel Cascade Lake or newer, or AMD Zen 2 or newer, as higher single-thread performance is crucial for a smoother user experience. In most cases, it is more beneficial than a high core count with lower per-thread performance.</p>
 </div>
-<p>IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM is required for collected network information. The base installation requires 180 GB of disk space.</p>
-<div class="admonition info">
-<p class="admonition-title">NVMe Storage Recommendation</p>
-<p>For optimal performance, we recommend using directly attached Non-Volatile Memory express drives (NVMe) storage for virtual machine. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as <a href="../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance/">System Maintenance</a>.</p>
-</div>
+<p>IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM is required for collected network information. The base installation requires 150 GB of disk space.</p>
 <p>The minimum requirements are:</p>
 <table>
 <thead>
@@ -15529,7 +15649,7 @@ here.
 <tr>
 <td>8</td>
 <td>32 GB</td>
-<td>180 GB</td>
+<td>150 GB</td>
 </tr>
 </tbody>
 </table>
@@ -15549,7 +15669,7 @@ here.
 <td style="text-align: right;">500</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">32 GB</td>
-<td style="text-align: right;">180 GB</td>
+<td style="text-align: right;">150 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">1 000</td>
@@ -15561,7 +15681,7 @@ here.
 <td style="text-align: right;">2 000</td>
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">64 GB</td>
-<td style="text-align: right;">200 GB</td>
+<td style="text-align: right;">250 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">5 000</td>
@@ -15604,7 +15724,7 @@ here.
 <td style="text-align: right;">1 000</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">48 GB</td>
-<td style="text-align: right;">200 GB</td>
+<td style="text-align: right;">250 GB</td>
 </tr>
 <tr>
 <td style="text-align: right;">2 000</td>
@@ -15671,7 +15791,7 @@ here.
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 360 GB for 500 devices, 400 GB for 1 000 devices, and so on.</p>
+<p>If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 300 GB for 500 devices, 400 GB for 1 000 devices, and so on.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Additional Resource Requirements</p>
@@ -15680,6 +15800,99 @@ here.
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The recommended hardware resources may not allow for running the most demanding graph traversal functions. These functions may require a sizable memory pool to complete successfully.</p>
+</div>
+<h4 id="minimal-iops-requirements">Minimal IOPS Requirements</h4>
+<table>
+<thead>
+<tr>
+<th>Dedicated IOPS for Cloud Deployments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2500</td>
+</tr>
+</tbody>
+</table>
+<h5 id="approximate-ipf-checker-results-for-minimal-iops-requirements">Approximate <code>ipf-checker</code> Results for Minimal IOPS Requirements</h5>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>IOPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO PSQL WAL Write</td>
+<td>750</td>
+</tr>
+<tr>
+<td>IO Data Write</td>
+<td>550</td>
+</tr>
+<tr>
+<td>IO OLTP Mixed Read</td>
+<td>280</td>
+</tr>
+<tr>
+<td>IO OLTP Mixed Write</td>
+<td>120</td>
+</tr>
+<tr>
+<td>IO Fsync Test</td>
+<td>165</td>
+</tr>
+</tbody>
+</table>
+<p>However, we recommend using the Recommended hardware resources to ensure optimal performance and stability.</p>
+<h4 id="recommended-iops-requirements">Recommended IOPS Requirements</h4>
+<table>
+<thead>
+<tr>
+<th>Dedicated IOPS for Cloud Deployments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5000</td>
+</tr>
+</tbody>
+</table>
+<h5 id="approximate-ipf-checker-results-for-recommended-iops-requirements">Approximate <code>ipf-checker</code> Results for Recommended IOPS Requirements</h5>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>IOPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO PSQL WAL Write</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>IO Data Write</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>IO OLTP Mixed Read</td>
+<td>600</td>
+</tr>
+<tr>
+<td>IO OLTP Mixed Write</td>
+<td>250</td>
+</tr>
+<tr>
+<td>IO Fsync Test</td>
+<td>350</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">NVMe Storage Recommendation</p>
+<p>For optimal performance, we recommend using directly attached Non-Volatile Memory express drives (NVMe) storage for virtual machine. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as <a href="../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance/">System Maintenance</a> and post-discovery calculations.</p>
 </div>
 <h3 id="supported-virtualization-platforms">Supported Virtualization Platforms</h3>
 <p>For deploying the IP Fabric appliance, we recommend using either VMware ESXi or vSphere. For more information, please see <a href="../platform_first_steps/01-deployment/#ova-distribution-details">Deploying IP Fabric Virtual Machine (VM) &ndash; OVA Distribution Details</a>.</p>
@@ -15845,7 +16058,7 @@ privilege cmd level 1 mode exec command terminal
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2025</span>
   </span>
 
     
