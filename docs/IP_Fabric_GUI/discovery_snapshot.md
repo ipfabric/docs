@@ -112,8 +112,6 @@ The **Snapshot data version** (visible in the middle of the screenshot) represen
 
 ## Inspection of Network Issues
 
-![Connectivity Report and Summary of Issues](snapshots/connectivity_report.png)
-
 The initial snapshot of the network may not include all information about your network. This could be due to a variety of
 reasons, including authorization or firewall issues; please take a look at
 [Troubleshooting Discovery](../overview/How_Discovery_Works/troubleshooting_discovery.md).

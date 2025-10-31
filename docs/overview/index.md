@@ -26,23 +26,19 @@ For a seamless experience, we recommend using a browser at Full HD (1920 × 1080
 
 ### Hardware Requirements
 
-The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popcnt`, `sse`, `sse2`, `sse4.1`, `sse4.2`, `sse4a`, and `ssse3`. The system runs with at least 4 parallel threads, but scheduling can handle operations down to a single thread if necessary. 
+The IP Fabric platform runs on any x64 CPU with these instructions: `avx`, `popcnt`, `sse`, `sse2`, `sse4.1`, `sse4.2`, `sse4a`, and `ssse3`. The system runs with at least 8 parallel threads, but scheduling can handle operations down to a single thread if necessary. 
 
 !!! info "Single Thread Performance Recommendation"
 
     We recommend using processors from Intel Cascade Lake or newer, or AMD Zen 2 or newer, as higher single-thread performance is crucial for a smoother user experience. In most cases, it is more beneficial than a high core count with lower per-thread performance.
     
-IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM is required for collected network information. The base installation requires 180 GB of disk space.
-
-!!! info "NVMe Storage Recommendation"
-
-    For optimal performance, we recommend using directly attached Non-Volatile Memory express drives (NVMe) storage for virtual machine. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md).
+IP Fabric utilizes around 8 GB of RAM when idle, and an additional 24 GB of RAM is required for collected network information. The base installation requires 150 GB of disk space.
 
 The minimum requirements are:
 
 | CPU | RAM   | Disk   |
 | --- | ----- | ------ |
-| 8   | 32 GB | 180 GB |
+| 8   | 32 GB | 150 GB |
 
 Since every network environment is different, we cannot recommend one general setting. Instead, we provide three examples of hardware requirements. Each example assumes 5 loaded snapshots, 1 snapshot being discovered, 100 unloaded snapshots on disk, and disk space overhead for IP Fabric and system logs.
 
@@ -50,9 +46,9 @@ For networks with medium complexity and many access points (>50%) or networks wi
 
 | Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
-|     500 |   8 |  32 GB |   180 GB |
+|     500 |   8 |  32 GB |   150 GB |
 |   1 000 |  10 |  48 GB |   200 GB |
-|   2 000 |  12 |  64 GB |   200 GB |
+|   2 000 |  12 |  64 GB |   250 GB |
 |   5 000 |  16 |  64 GB |   500 GB |
 |  10 000 |  20 |  64 GB |   900 GB |
 |  20 000 |  24 |  64 GB | 1 700 GB |
@@ -62,7 +58,7 @@ For networks with complex configurations (large routing tables, many VRFs, many 
 | Devices | CPU |    RAM |     Disk |
 | ------: | --: | -----: | -------: |
 |     500 |   8 |  32 GB |   180 GB |
-|   1 000 |  10 |  48 GB |   200 GB |
+|   1 000 |  10 |  48 GB |   250 GB |
 |   2 000 |  12 |  64 GB |   320 GB |
 |   5 000 |  16 |  64 GB |   800 GB |
 |  10 000 |  20 |  64 GB | 1 500 GB |
@@ -79,7 +75,7 @@ For managed service provider (MSP) networks:
 
 !!! warning
 
-    If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 360 GB for 500 devices, 400 GB for 1 000 devices, and so on.
+    If you plan to use FTP/SFTP IP Fabric backup, the recommended disk space must be doubled: 300 GB for 500 devices, 400 GB for 1 000 devices, and so on.
 
 !!! info "Additional Resource Requirements"
 
@@ -88,6 +84,44 @@ For managed service provider (MSP) networks:
 !!! note
 
     The recommended hardware resources may not allow for running the most demanding graph traversal functions. These functions may require a sizable memory pool to complete successfully.
+
+#### Minimal IOPS Requirements
+
+| Dedicated IOPS for Cloud Deployments |
+| --- |
+| 2500 |
+
+##### Approximate `ipf-checker` Results for Minimal IOPS Requirements
+
+| Test | IOPS   |
+| --- | ----- |
+| IO PSQL WAL Write | 750 |
+| IO Data Write | 550 |
+| IO OLTP Mixed Read | 280 |
+| IO OLTP Mixed Write | 120 |
+| IO Fsync Test | 165 |
+
+However, we recommend using the Recommended hardware resources to ensure optimal performance and stability.
+
+#### Recommended IOPS Requirements
+
+| Dedicated IOPS for Cloud Deployments |
+| --- |
+| 5000 |
+
+##### Approximate `ipf-checker` Results for Recommended IOPS Requirements
+
+| Test | IOPS   |
+| --- | ----- |
+| IO PSQL WAL Write | 1500 |
+| IO Data Write | 1100 |
+| IO OLTP Mixed Read | 600 |
+| IO OLTP Mixed Write | 250 |
+| IO Fsync Test | 350 |
+
+!!! info "NVMe Storage Recommendation"
+
+    For optimal performance, we recommend using directly attached Non-Volatile Memory express drives (NVMe) storage for virtual machine. Replacing traditional spinning disks NVMe will significantly improve the performance of database-intensive operations, such as [System Maintenance](../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance.md) and post-discovery calculations.
 
 ### Supported Virtualization Platforms
 

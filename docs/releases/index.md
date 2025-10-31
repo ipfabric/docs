@@ -6,7 +6,7 @@ description: In this section, we publish release notes and low-level release not
 
 !!! danger "Upgrade Notice"
 
-    An upgrade to `7.5.x` or later is **only** possible from release `7.3.17`.
+    An upgrade to `7.5.x` or later is **only** possible from release `7.3.23` or newer.
 
     When upgrading to `7.5` release, database will be migrated from **ArangoDB** to **PostgreSQL**.
 
@@ -14,9 +14,7 @@ description: In this section, we publish release notes and low-level release not
 
     Note that [hardware requirements](../overview/index.md#hardware-requirements) differ from previous releases.
 
-    We strongly recommend installing release `7.5` only on secondary instances within the EA program.
-
-    Before upgrading, review the [API Changes](release_notes/7.5.md#api-changes),
+    Before upgrading, review the [7.5 FAQ](release_notes/7.5_FAQ.md), [API Changes](release_notes/7.5.md#api-changes),
     [Backward Compatibility](release_notes/7.5.md#backward-compatibility) and [Known Issues](release_notes/7.5.md#known-issues) sections.
 
 Our release naming follows [semantic versioning](https://semver.org/), where
