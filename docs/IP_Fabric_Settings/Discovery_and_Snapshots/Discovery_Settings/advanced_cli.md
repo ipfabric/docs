@@ -10,7 +10,7 @@ IP Fabric primarily uses the Command-Line Interface (CLI) for discovering
 network elements. The CLI parameters can be found in **Settings --> Discovery &
 Snapshots --> Discovery Settings --> Advanced CLI**.
 
-![CLI Settings](advanced_cli/cli_settings.png)
+![CLI Settings](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_cli_settings.png)
 
 !!! tip
 
@@ -122,13 +122,13 @@ adjustments:
 In the following example, we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
 
-![Add custom SSH/Telnet port](advanced_cli/add_custom_ssh_telnet_port.png)
+![Add custom SSH/Telnet port](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_add_custom_ssh_telnet_port.png)
 
 As a result of such configuration, a new item will be created in the **Custom
 SSH/Telnet ports** table, which will be applied to every new snapshot created in
 IP Fabric.
 
-![Custom SSH/Telnet ports](advanced_cli/custom_ssh_telnet_ports.png)
+![Custom SSH/Telnet ports](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_custom_ssh_telnet_ports.png)
 
 ## Telnet/SSH URL Handler on MS Windows 7 and Later
 

@@ -110,7 +110,7 @@ points:
   - `IdP name`
 
     - This is the name that will appear on the
-    [SSO Button](sso/sso_button_name.png).
+    [SSO Button](../../images/settings/IP_Fabric_Settings-administration-sso_sso_button_name.png).
     <!-- used this style instead of showing same picture twice -->
 
     - Only `a-z`, `0-9`, and `_` are allowed.
@@ -315,7 +315,7 @@ corresponds to `staticClient` in the Dex configuration).
     capitalized (e.g., `sso` --> `Sso`); therefore, it is recommended to use
     names such as `azure` or `okta`.
 
-    ![SSO button](sso/sso_button_name.png)
+    ![SSO button](../../images/settings/IP_Fabric_Settings-administration-sso_sso_button_name.png)
 
 - `clientId` -- User-defined value. Suggested to keep `ipfabric`.
   - Used in [`ipf-dex.yaml`](#static-clients) for `id` under `staticClients`.
@@ -357,7 +357,7 @@ corresponds to `staticClient` in the Dex configuration).
 
 Example how to find `roleId`:
 
-![Role ID](roles/roles_id.png)
+![Role ID](../../images/settings/IP_Fabric_Settings-administration-roles_roles_id.png)
 
 ## SSO Configuration `ipf-dex.yaml`
 
@@ -466,7 +466,7 @@ oauth2:
   skipApprovalScreen: true
 ```
 
-![Grant Access](sso/sso_approval.png)
+![Grant Access](../../images/settings/IP_Fabric_Settings-administration-sso_sso_approval.png)
 
 ### Static Clients
 
@@ -521,7 +521,7 @@ staticClients:
 Here is a concise illustration of how the `/opt/ipf-api/conf.d/api.json` values
 map to `/etc/ipf-dex.yaml`:
 
-![JSON YAML mapping](sso/sso_api_dex_mapping.png)
+![JSON YAML mapping](../../images/settings/IP_Fabric_Settings-administration-sso_sso_api_dex_mapping.png)
 
 ### OpenID Connect (OIDC)
 
@@ -647,25 +647,25 @@ directory only`.
 5. When the registration finishes, the Azure portal displays the app
    registration's Overview pane. You will see the Application (client) ID.
 
-   ![Azure App registration's Overview](sso/azure-app-registration-overview.png)
+   ![Azure App registration's Overview](../../images/settings/IP_Fabric_Settings-administration-sso_azure-app-registration-overview.png)
 
 6. From the **Certificates & secrets** menu, select `+ New client secret`.
 
 7. Enter a `Name` for the secret. E.g., `clientSecret`. **Make sure to copy and
    save the generated value for the `clientSecret`.**
 
-   ![Azure App registration's Secret](sso/azure-app-registration-secret.png)
+   ![Azure App registration's Secret](../../images/settings/IP_Fabric_Settings-administration-sso_azure-app-registration-secret.png)
 
 8. From the **API permissions** menu, select `+ Add a permission`.
 
 9. Find the `User.Read` permission (under `Microsoft Graph`) and grant it to the
    created application:
 
-   ![Azure AD API permissions](sso/azure-api-permissions.png)
+   ![Azure AD API permissions](../../images/settings/IP_Fabric_Settings-administration-sso_azure-api-permissions.png)
 
 10. From the **Token Configuration** menu, select `+ Add groups claim`:
 
-    ![Azure AD token configuration](sso/azure-token-configuration.png)
+    ![Azure AD token configuration](../../images/settings/IP_Fabric_Settings-administration-sso_azure-token-configuration.png)
 
     - `All groups`: Emits security groups, distribution lists, and roles.
 

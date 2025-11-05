@@ -17,7 +17,7 @@ fill in the following login details:
 - **TSG ID** -- [Tenant service group ID](https://docs.paloaltonetworks.com/common-services/subscription-and-tenant-management/manage-multitenants/what-is-a-tenant)
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Prisma](prisma_api_add.png)
+![Add Connection - Prisma](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_prisma_api_add.png)
 
 ## Known Issue
 

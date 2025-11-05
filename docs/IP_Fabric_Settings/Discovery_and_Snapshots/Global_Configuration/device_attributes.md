@@ -12,7 +12,7 @@ spaces or special characters.
 
 ## Attribute Requirements
 
-![Attribute field warning](device_attributes/device_attributes_warning.png)
+![Attribute field warning](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-device_attributes_device_attributes_warning.png)
 
 Attribute names must match the following regex:
 `/^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$/`. The underscore `_` is valid and will
@@ -25,7 +25,7 @@ assign global attributes, navigate to **Settings --> Discovery & Snapshots -->
 Global Configuration --> Device Attributes**. Once an attribute is assigned, a
 new snapshot is required for it to be applied.
 
-![Device Attributes table](device_attributes/device_attributes.png)
+![Device Attributes table](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-device_attributes_device_attributes.png)
 
 - `Serial number` is IP Fabric's "Unique Serial Number" (API column
   `sn`). Note that this is not the `Serial Number` column, which represents the
@@ -43,11 +43,11 @@ new snapshot is required for it to be applied.
 
 To create a rule in the UI, click **+ Add attribute** and fill out the form:
 
-![Device Attributes - create rule](device_attributes/device_attributes_rules.png)
+![Device Attributes - create rule](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-device_attributes_device_attributes_rules.png)
 
 The dropdown is intuitive and will let you search based on SN or hostname.
 
-![Device Attributes - dropdown](device_attributes/device_attributes_dropdown.png)
+![Device Attributes - dropdown](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-device_attributes_device_attributes_dropdown.png)
 
 ### Creating Rules via the API
 
@@ -90,7 +90,7 @@ Please see the example at
 
 The device attributes import/export feature allows you to manage custom device attributes using CSV files, making it easy to bulk-add or update device information.
 
-![Device Attributes Import/Export](device_attributes/device_attributes_import_export.png)
+![Device Attributes Import/Export](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-device_attributes_device_attributes_import_export.png)
 
 ### Export Functionality
 

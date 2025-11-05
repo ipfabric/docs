@@ -20,7 +20,7 @@ However, if the number exceeds this threshold, IP Fabric will only collect
 routes from other available routing protocols on the device. In this scenario,
 no BGP routes from the routing table will be collected.
 
-![Limit download of BGP routes](limit-bgp-routes.png)
+![Limit download of BGP routes](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes.png)
 
 Currently supported vendors:
 

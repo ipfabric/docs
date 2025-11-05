@@ -55,17 +55,17 @@ Search for **Subscriptions** and select the subscription you like to add to IP F
 1. On the overview page, note the **Subscription ID**.
 2. From the left menu, click Access control (IAM), click **+ Add**, and then **Add custom role**. Fill in the role name. IP Fabric requires specific permissions to make API calls. Select **Start from JSON** and upload the JSON file with the required permissions (find it at the very bottom of this page). Click the Next button to continue.
 
-   ![Creating Custom Role](azure/create_custom_role.png)
+   ![Creating Custom Role](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-azure_create_custom_role.png)
 
 3. Review the permissions and click Next. Now you must assign a scope for this role. Click **Add assignable scopes** and from the right panel, select Type: Subscription, and then click the Subscription you want to assign.
 
-   ![Assigning Scopes](azure/assign_scopes.png)
+   ![Assigning Scopes](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-azure_assign_scopes.png)
 
 4. Click **Review + Create**.
 5. Now you must assign the newly created Role to the Registered App. From the left menu, select **Access control (IAM)** again, then click **+ New** and **Add role assignment**.
 6. Find the previously created role, click **Next**, and then click **+ Select members**. Find the app you created before. Click **Review + Assign**.
 
-   ![Add Role assignment](azure/add_role_assignment.png)
+   ![Add Role assignment](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-azure_add_role_assignment.png)
 
 ### Role Definitions for IP Fabric
 

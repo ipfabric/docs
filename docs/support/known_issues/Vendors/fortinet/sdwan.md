@@ -12,7 +12,7 @@ In end-to-end path lookups, health-check and SLA values are not taken into
 account, and we display all paths except for dead members. Information about
 SLA/health-check configuration is available in a tree view.
 
- ![Tree view SD-WAN rule](fg_sdwan_treeview.png)
+ ![Tree view SD-WAN rule](../../../../images/support/support-known_issues-Vendors-fortinet_fg_sdwan_treeview.png)
 
 SD-WAN neighbors and the application of route-map-out-preferable are not
 currently implemented, nor are route-maps in general on FortiGate.

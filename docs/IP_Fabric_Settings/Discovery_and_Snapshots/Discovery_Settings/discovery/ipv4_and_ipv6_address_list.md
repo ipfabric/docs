@@ -4,7 +4,7 @@ description: In this section, we will learn how IP filtering works for both IPv4
 
 # IPv4 and IPv6 address list
 
-![IPv4 and IPv6 address list](ipv4_and_ipv6_address_list.png)
+![IPv4 and IPv6 address list](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_ipv4_and_ipv6_address_list.png)
 
 The **IPv4 and IPv6** address list is an interactive input and list management component tailored for handling sets of IP addresses.
 It is designed for users who require precise and responsive tools to search, filter, and manage both IPv4 and IPv6 addresses.

@@ -19,14 +19,14 @@ In case of any issues, please contact our Support team at
 This is the [support portal](https://support.ipfabric.io) from which you can
 contact our Support team in case of any issues with IP Fabric.
 
-![IP Fabric Help Center](help_center.png)
+![IP Fabric Help Center](../images/support/support_help_center.png)
 
-### ![Technical Support](ico_tech.png) Technical Support
+### ![Technical Support](../images/support/support_ico_tech.png) Technical Support
 
 Select this option if you are experiencing problems with installation, upgrades,
 backups, configuration, or technical use of the IP Fabric product.
 
-### ![Bug](ico_bug.png) Report a Bug
+### ![Bug](../images/support/support_ico_bug.png) Report a Bug
 
 If you feel that the product is not behaving as it should, please select this
 option to inform us about the issues you are experiencing.
@@ -48,11 +48,11 @@ occurred during your network discovery.
 To send that diagnostic data to our development team, select **Send
 Diagnostics** in the product's **Support** menu:
 
-![Diagnostics](diagnostics.png)
+![Diagnostics](../images/support/support_diagnostics.png)
 
 and click **Send**:
 
-![Parsing Errors](parsing.png)
+![Parsing Errors](../images/support/support_parsing.png)
 
 (the `Parsing errors` option should be selected by default)
 

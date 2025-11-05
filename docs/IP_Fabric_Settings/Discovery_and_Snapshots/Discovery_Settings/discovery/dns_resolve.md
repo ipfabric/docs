@@ -11,4 +11,4 @@ the configured DNS servers.
 To enable this option, go to **Settings --> Discovery & Snapshots --> Discovery
 Settings --> DNS resolve** and click the **on/off** toggle.
 
-![DNS resolve](dns_resolve.png)
+![DNS resolve](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_dns_resolve.png)

@@ -6,7 +6,7 @@ description: This page explains how to use path lookup.
 
 ## Unicast Path Lookup
 
-![Unicast form](pathlookup/unicast.png)
+![Unicast form](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_unicast.png)
 
 ### First Hop Algorithm And VRF
 
@@ -14,7 +14,7 @@ The **First Hop Algorithm** adds the possibility to start the path lookup simula
 
 If the **Automatic** option is selected, IP Fabric initiates the path lookup simulation from the closest possible device. VRF is also automatically selected by default but can be changed manually.
 
-![First hop algorithm](pathlookup/first_hop_algorithm.png)
+![First hop algorithm](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_first_hop_algorithm.png)
 
 The **User defined** First Hop Algorithm can be useful when simulating a flow where the source network is not known by IP Fabric.
 
@@ -26,7 +26,7 @@ Packets will use the indicated source IP address.
 
     In the example below, the source network `10.25.25.0/24` is not known by IP Fabric. To show the path between a client in this network and a server in a network known by IP Fabric:
 
-    ![User Defined First hop algorithm example](pathlookup/user_defined_first_hop_algorithm_example_drawing.png){: style="height:150px"}
+    ![User Defined First hop algorithm example](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_user_defined_first_hop_algorithm_example_drawing.png){: style="height:150px"}
 
     1. Select the **User defined** First Hop Algorithm.
     2. Search for the device where you want to start the path: `L43EXR1`.
@@ -34,11 +34,11 @@ Packets will use the indicated source IP address.
     4. Enter the source IP from the network outside the scope of IP Fabric: `10.25.25.10`.
     5. Finally, enter the destination IP: `10.66.122.110`.
 
-    ![User Defined First hop algorithm](pathlookup/user_defined_first_hop_algorithm.png)
+    ![User Defined First hop algorithm](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_user_defined_first_hop_algorithm.png)
 
     This is the result you will get:
 
-    ![User Defined First hop algorithm Result](pathlookup/user_defined_first_hop_algorithm_result.png)
+    ![User Defined First hop algorithm Result](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_user_defined_first_hop_algorithm_result.png)
 
 ### Source/Destination IP Address and Port
 
@@ -47,15 +47,15 @@ Note that the global attribute filter is applied to suggestions for source and d
 
 By default, the `ICMP` protocol and the `Echo request` option are chosen for path lookup.
 
-![Source and destination](pathlookup/pathlookup_src_dst.png)
+![Source and destination](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_src_dst.png)
 
 When switched to `Web HTTP/HTTPS`, TCP destination ports `80` and `443` with the `(web|http|https)` application are set by default.
 
-![HTTP default](pathlookup/pathlookup_http_default.png)
+![HTTP default](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_http_default.png)
 
 When extending details, the transport protocol and range of ports can be specified for a source and for a destination. When more destination ports are specified, IP Fabric will analyze all of them individually during the path lookup.
 
-![Source and destination ports](pathlookup/pathlookup_src_dst_port.png)
+![Source and destination ports](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_src_dst_port.png)
 
 The port can be changed to an arbitrary one for TCP/UDP protocols.
 
@@ -65,7 +65,7 @@ The following flags can also be set for TCP traffic: `None` / `ACK` / `FIN` / `S
 
 In **More details**, **TTL** (Time to live) and **Fragment offset** can be set -- thus affecting the path lookup output. The default TTL is 128 and Fragment offset is set to 0.
 
-![TTL and Fragmentation](pathlookup/pathlookup_ttl_fragment.png)
+![TTL and Fragmentation](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_ttl_fragment.png)
 
 ### Application
 
@@ -79,7 +79,7 @@ It's almost impossible to standardize application names across all vendors. You 
     The application name input is simply a string, so it must be defined
     exactly as it appears in a security rule!
 
-![Application](pathlookup/pathlookup_application.png)
+![Application](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_application.png)
 
 ### Source/Destination IP Regions
 
@@ -94,7 +94,7 @@ By default, IP regions are not evaluated.
     IP regions are represented as strings, so they must be defined exactly as
     they are appear in a security rule!
 
-![Regions](pathlookup/pathlookup_src_dst_regions.png)
+![Regions](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_src_dst_regions.png)
 
 ### Path Lookup Mode
 
@@ -110,16 +110,16 @@ Then click **Submit**.
 
 This is how the path lookup might look:
 
-![Path lookup example](pathlookup/example.png)
+![Path lookup example](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_example.png)
 
 ### Security Rules
 
-![Path lookup drop](pathlookup/pathlookup_drop.png)
+![Path lookup drop](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_drop.png)
 
 If **Drop** is selected, the path lookup will stop when a security rule denies
 traffic.
 
-![Path lookup continue](pathlookup/pathlookup_continue.png)
+![Path lookup continue](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_pathlookup_continue.png)
 
 If **Continue** is selected, the path lookup continues and does not apply the 
 policy's deny; in the detail pane, it is labeled as `(not applied)`.
@@ -136,11 +136,11 @@ tunnel endpoints are now displayed in path lookups. You can examine these links 
 If multiple tunnels of the same type exist between two devices (where the type is either IPsec or VXLAN), only a single tunnel of that type will be displayed.
 In some cases, new connections may not be visible if a tunnel connection overlaps with an existing connection, for example:
 
-![IPsec connection overlapping with existing connections](ipsec_edge_overlapping.png){ width="473" .center}
+![IPsec connection overlapping with existing connections](../../images/diagrams/IP_Fabric_GUI-diagrams_ipsec_edge_overlapping.png){ width="473" .center}
 
 To resolve this, move the middle device to a different position:
 
-![IPsec connection overlapping resolved by moving device](ipsec_edge_overlapping_resolved.png){ width="473" .center}
+![IPsec connection overlapping resolved by moving device](../../images/diagrams/IP_Fabric_GUI-diagrams_ipsec_edge_overlapping_resolved.png){ width="473" .center}
 
 ## Multicast Tree Lookup
 
@@ -148,16 +148,16 @@ If you want to understand how a certain multicast flow is used, you can use
 the **Multicast Tree Lookup** tab. Just select the correct option and
 enter the relevant details.
 
-![Multicast form](pathlookup/multicast.png)
+![Multicast form](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_multicast.png)
 
 You will then see the Multicast Tree:
 
-![Multicast example](pathlookup/multicast_example.png)
+![Multicast example](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_multicast_example.png)
 
 And you will have access to a lot of information regarding the Multicast
 forwarding decision:
 
-![Multicast path inspector](pathlookup/multicast_path_inspector.png)
+![Multicast path inspector](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_multicast_path_inspector.png)
 
 ## Host To Gateway
 
@@ -165,7 +165,7 @@ To find out more details between a host and its network gateway, you can
 use the **Host To Gateway** tab. You only need to provide the host, and
 you will the details:
 
-![Host To Gateway form](pathlookup/host_to_gw.png)
+![Host To Gateway form](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_host_to_gw.png)
 
 ## Inspecting and Adjusting Path Lookup
 
@@ -173,11 +173,11 @@ you will the details:
 
 With the right mouse click, more options are enabled:
 
-![Path controls](pathlookup/path_controls.png)
+![Path controls](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_path_controls.png)
 
 After opening the details with `Explore`, you can select the destination link to proceed with packet analysis:
 
-![Path detail](pathlookup/path_detail.png)
+![Path detail](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_path_detail.png)
 
 ### Understand the Path Selection
 
@@ -189,16 +189,16 @@ several interfaces that can be used to forward the traffic, you will
 have to choose one. Then, in the middle of the table, you will see the
 forwarding decision:
 
-![Forwarding decision](pathlookup/forwarding_decision.png)
+![Forwarding decision](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_forwarding_decision.png)
 
 In this example, we are looking at the device `L21C11`, which has 2
 incoming interfaces and one forwarding for this flow:
 
-![Forwarding decision animation](pathlookup/forwarding_decision_animation.gif)
+![Forwarding decision animation](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_forwarding_decision_animation.gif)
 
 ### Visualization Setup
 
 You can set up what you want to prioritize in the view. Simply move
 the bars up or down.
 
-![Visualization setup](pathlookup/visualization_setup_movable.png)
+![Visualization setup](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_visualization_setup_movable.png)

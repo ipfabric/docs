@@ -16,11 +16,11 @@ In contrast, **Routing Locators (RLOCs)** represent the current network location
 
 The **Routes** tab contains a list of EID/RLOC mappings where `hostname` is the RLOC, and the `EID prefix` is the EID.
 
-![LISP IPv4 Routes table](lisp/lisp-routes-ipv4.png)
+![LISP IPv4 Routes table](../../images/technology/IP_Fabric_GUI-technology_tables-lisp_lisp-routes-ipv4.png)
 
 The **Map Resolvers** tab contains a list of references to database servers which house the `EID/RLOC` mappings.
 
-![LISP IPv4 Map Resolvers table](lisp/lisp-routes-mapResolver-ipv4.png)
+![LISP IPv4 Map Resolvers table](../../images/technology/IP_Fabric_GUI-technology_tables-lisp_lisp-routes-mapResolver-ipv4.png)
 
 ## Mapping System
 

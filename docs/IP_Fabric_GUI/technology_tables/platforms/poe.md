@@ -13,7 +13,7 @@ The **Devices** tab displays all devices that support the PoE protocol, the numb
 interfaces, current power usage, the number of ports that uses PoE, and highest PoE
 class available on the device
 
-![PoE devices table](poe_devices.png)
+![PoE devices table](../../../images/technology/IP_Fabric_GUI-technology_tables-platforms_poe_devices.png)
 
 ## Interfaces
 
@@ -25,7 +25,7 @@ status of every enabled PoE port. The type/PID of powered devices are available 
 the `Powered Device` column, if available. The last four columns describe PoE
 class and power usage.
 
-![PoE Interfaces table](poe_interfaces.png)
+![PoE Interfaces table](../../../images/technology/IP_Fabric_GUI-technology_tables-platforms_poe_interfaces.png)
 
 ## Modules
 
@@ -33,4 +33,4 @@ The **Modules** tab shows the PoE module statistics. This table is especially
 significant because it shows the used power consumption in watts, percentage, and how
 many watts are left.
 
-![PoE - Device Modules table](poe_device_modules.png)
+![PoE - Device Modules table](../../../images/technology/IP_Fabric_GUI-technology_tables-platforms_poe_device_modules.png)

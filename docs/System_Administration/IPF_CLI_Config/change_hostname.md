@@ -17,7 +17,7 @@ CLI, follow these steps:
 
 3. Modify the hostname -- the very first option:
 
-  ![Enter the short hostname](change_hostname2.png)
+  ![Enter the short hostname](../../images/settings/System_Administration-IPF_CLI_Config_change_hostname2.png)
 
   !!! info "Valid Hostnames"
 
@@ -26,7 +26,7 @@ CLI, follow these steps:
 
 4. Modify the DNS domain name -- the second option:
 
-  ![Enter the DNS domain name](change_dns_domain_name.png)
+  ![Enter the DNS domain name](../../images/settings/System_Administration-IPF_CLI_Config_change_dns_domain_name.png)
 
   !!! note
 
@@ -38,4 +38,4 @@ CLI, follow these steps:
 
 5. Select `Yes` to reboot the system:
 
-   ![Reboot system](reboot.png)
+   ![Reboot system](../../images/settings/System_Administration-IPF_CLI_Config_reboot.png)

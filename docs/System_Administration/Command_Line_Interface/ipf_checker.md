@@ -27,7 +27,7 @@ description: This section provides a guide how to use `ipf-checker` tool to chec
 
 !!! example "Disk benchmark example"
 
-    ![Example disk benchmark output](ipf_checker_disk_benchmark.png){ align=left }
+    ![Example disk benchmark output](../../images/miscellaneous/System_Administration-Command_Line_Interface_ipf_checker_disk_benchmark.png){ align=left }
 
 The `ipf-checker` is a Python script, which reports whether the hardware requirements,
 environment checks and dependencies are all met by the IP Fabric appliance to ensure smooth operation.
@@ -68,9 +68,9 @@ options:
 
     The script will generate a table with the results of the checks performed.
 
-    ![Example ipf-chekcer output](ipf_checker_full_table_pt1.png){ align=left }
+    ![Example ipf-chekcer output](../../images/miscellaneous/System_Administration-Command_Line_Interface_ipf_checker_full_table_pt1.png){ align=left }
 
-    ![Example ipf-chekcer output](ipf_checker_full_table_pt2.png){ align=left }
+    ![Example ipf-chekcer output](../../images/miscellaneous/System_Administration-Command_Line_Interface_ipf_checker_full_table_pt2.png){ align=left }
 
 ## Environment variables
 
@@ -97,4 +97,4 @@ There is an `ipf-checker` role you can choose for the token, ensuring the tool h
     and clicking on the **Generate Token** button. Copy the token and use it with the `-t` option or 
     set it in the `.ipf-checker/env` file as `IPF_CHECKER_TOKEN`.
 
-    ![Example token geneartion](ipf_checker_token.png)
+    ![Example token geneartion](../../images/miscellaneous/System_Administration-Command_Line_Interface_ipf_checker_token.png)

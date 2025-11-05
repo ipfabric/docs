@@ -16,7 +16,7 @@ select `Meraki REST` from the list, and fill in:
 - **Base URL** -- URL of the Meraki Dashboard API (e.g., `https://api.meraki.com/api` or `https://nXYZ.meraki.com/api`). For organizations hosted in the China Dashboard, please use `.cn` instead of `.com`.
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Meraki REST](add_meraki_rest.png)
+![Add Connection - Meraki REST](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_add_meraki_rest.png)
 
 ## Login IP for Cisco Meraki
 
@@ -39,7 +39,7 @@ publicIp has the lowest priority.
 
 To understand what is being sent from the Meraki Dashboard, we need to investigate the Discovery Snapshot and download the Tasker file or log file from the device:
 
-![Discovery Snapshot](discovery_snapshot.png)
+![Discovery Snapshot](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_discovery_snapshot.png)
 
 The Tasker file contains complete communication between IP Fabric and the Meraki Dashboard. We can use the device hostname to locate the JSON source:
 

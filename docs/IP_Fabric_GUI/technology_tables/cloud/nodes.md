@@ -6,4 +6,4 @@ description: Nodes section provide a summary of all discovered cloud resources.
 
 The **Nodes** section offers a comprehensive overview of all the discovered cloud resources, including their names, serial numbers, vendor, locations, and tags.
 
-![Technology table showing Nodes](nodes.png)
+![Technology table showing Nodes](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_nodes.png)

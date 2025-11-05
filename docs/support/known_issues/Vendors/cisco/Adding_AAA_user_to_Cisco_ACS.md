@@ -36,17 +36,17 @@ We can create the ACS components listed above. First, we need to create
 a device group called **RoutersHQ**. To do so, go to **Network Resources -->
 Network Device Groups --> Device Type --> Create**:
 
-![acs1](acs1.png)
+![acs1](../../../../images/support/support-known_issues-Vendors-cisco_acs1.png)
 
 Enter the device group information and click the **Submit** button:
 
-![acs2](acs2.png)
+![acs2](../../../../images/support/support-known_issues-Vendors-cisco_acs2.png)
 
 After the device group has been created, we need to add a router in it.
 To do this, go to **Network Resources --> Network Devices and AAA Clients
 --> Create**:
 
-![acs1](acs3.png)
+![acs1](../../../../images/support/support-known_issues-Vendors-cisco_acs3.png)
 
 
 Under **Name**, enter the name for the router (it does not have to match the
@@ -55,74 +55,74 @@ you’ve created in the previous step. Under **IP address**, enter the IP
 address of the router. Under **Authentication options**, click the checkbox
 next to the protocol that will be used and type the password.
 
-![acs4](acs4.png)
+![acs4](../../../../images/support/support-known_issues-Vendors-cisco_acs4.png)
 
 Next, we need to create two user groups: **Admin** and **HelpDesk**. To do this,
 go to **Users and Identity Stores --> Identity Groups --> Create**:
 
-![acs5](acs5.png)
+![acs5](../../../../images/support/support-known_issues-Vendors-cisco_acs5.png)
 
 Enter the group information:
 
-![acs6](acs6.png)
+![acs6](../../../../images/support/support-known_issues-Vendors-cisco_acs6.png)
 
 Repeat the process to create the second group:
 
-![acs7](acs7.png)
+![acs7](../../../../images/support/support-known_issues-Vendors-cisco_acs7.png)
 
 Now we need to create two users and place them in the appropriate
 identity groups. To do that, go to **Users and Identity Stores --> Internal
 Identity Stores --> Users --> Create**:
 
-![acs8](acs8.png)
+![acs8](../../../../images/support/support-known_issues-Vendors-cisco_acs8.png)
 
 Under** Name**, enter **Administrator**. Under **Identity Group**, select
 the **Admin** group. Under **Password**, configure the password for the user.
 When you are done, click **Submit** to create the user:
 
-![acs9](acs9.png)
+![acs9](../../../../images/support/support-known_issues-Vendors-cisco_acs9.png)
 
 Repeat the process for the **Helpdesk** user. Make sure to select
 the **HelpDesk** group:
 
-![acs10](acs10.png)
+![acs10](../../../../images/support/support-known_issues-Vendors-cisco_acs10.png)
 
 The next step is to create authorization policies to give full access to
 users in the **Admin** group and limited access to users in
 the **HelpDesk** group. Go to **Access Policies --> Access Services -->
 Default Device Admin --> Authorization --> Create**:
 
-![acs11](acs11.png)
+![acs11](../../../../images/support/support-known_issues-Vendors-cisco_acs11.png)
 
 Name this policy **AdminRole**. Under **Identity Group**, choose
 the **Admin** group. Under **NDG:Device Type**, choose
 the**RoutersHQ** device group. Click the **Select** button next
 to **Shell Profile**:
 
-![acs12](acs12.png)
+![acs12](../../../../images/support/support-known_issues-Vendors-cisco_acs12.png)
 
 We will not use the preconfigured profiles – we will create our own.
 Click** Create**:
 
-![acs13](acs13.png)
+![acs13](../../../../images/support/support-known_issues-Vendors-cisco_acs13.png)
 
 Name the profile and click the **Common Tasks** tab:
 
-![acs14](acs14.png)
+![acs14](../../../../images/support/support-known_issues-Vendors-cisco_acs14.png)
 
 Change the **Default privilege **level to **Static**, and assign the
 privilege level of **15**:
 
-![acs15](acs15.png)
+![acs15](../../../../images/support/support-known_issues-Vendors-cisco_acs15.png)
 
 Click **Submit**. We need to repeat the process to create the **HelpDeskRole**:
 
-![acs16](acs16.png)
-![acs17](acs17.png)
+![acs16](../../../../images/support/support-known_issues-Vendors-cisco_acs16.png)
+![acs17](../../../../images/support/support-known_issues-Vendors-cisco_acs17.png)
 
 This time, assign the privilege level of **1**:
 
-![acs16](acs18.png)
+![acs16](../../../../images/support/support-known_issues-Vendors-cisco_acs18.png)
 
 You can now test the user and then add it to the IP Fabric authentication
 list.

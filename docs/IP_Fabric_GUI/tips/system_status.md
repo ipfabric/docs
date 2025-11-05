@@ -12,7 +12,7 @@ running services.
 
 The most CPU-intensive system processes are also displayed.
 
-![System status](system_status.png)
+![System status](../../images/support/IP_Fabric_GUI-tips_system_status.png)
 
 
 !!! info

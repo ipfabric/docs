@@ -61,7 +61,7 @@ maintain a consistent mapping to local groups and roles.
 
 ## Enable LDAP Authentication
 
-![LDAP Configuration](ldap_configuration.png)
+![LDAP Configuration](../../images/settings/IP_Fabric_Settings-administration_ldap_configuration.png)
 
 1. Log in to IP Fabric as a user with admin rights.
 
@@ -159,7 +159,7 @@ maintain a consistent mapping to local groups and roles.
 
 ## LDAP Group Permissions
 
-![LDAP Configuration - Permissions settings](ldap_group_permissions.png)
+![LDAP Configuration - Permissions settings](../../images/settings/IP_Fabric_Settings-administration_ldap_group_permissions.png)
 
 After the LDAP server is added, group permissions can be set.
 

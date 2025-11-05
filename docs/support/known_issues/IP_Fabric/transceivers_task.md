@@ -24,7 +24,7 @@ While we strive to prevent task execution on all software and hardware versions 
 
 Navigate to **Technology --> Interfaces --> Transceivers**:
 
-![IP Fabric menu](ipf_issues/transceivers_interfaces.png)
+![IP Fabric menu](../../../images/support/support-known_issues-IP_Fabric-ipf_issues_transceivers_interfaces.png)
 
 ## How To Enable/Disable Transceivers Task
 
@@ -32,10 +32,10 @@ This task is **enabled by default** for all vendors and product families, meanin
 
 You can **enable/disable** this task in **Settings --> Discovery & Snapshots --> Discovery Settings --> Disabled Discovery Tasks**.
 
-![Transceivers settings](ipf_issues/transceivers_settings.png)
+![Transceivers settings](../../../images/support/support-known_issues-IP_Fabric-ipf_issues_transceivers_settings.png)
 
 To **disable** this task, you need to **delete the default `Transceivers` task** or **edit** it.
 
 When **editing** this task, you select devices by using a regular expression where this command **should not** be executed. For example, if you don't want to run the `show interface transceivers` command on all Cisco devices, enter `cisco` in the **Vendor** field. More specific device selection can be done using the **Family**, **Platform**, **Model**, and **Version** fields. You can test your regex rules with the **Test rules** button.
 
-![Edit transceivers rule](ipf_issues/transceivers_edit.png)
+![Edit transceivers rule](../../../images/support/support-known_issues-IP_Fabric-ipf_issues_transceivers_edit.png)

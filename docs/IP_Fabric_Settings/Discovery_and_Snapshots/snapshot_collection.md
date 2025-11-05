@@ -18,7 +18,7 @@ Set the **snapshot start time** to schedule snapshots minutely, hourly, daily, w
 Here is an example of an automatic discovery run at **10 minutes past
 every hour** (0:10, 1:10, 2:10, 3:10, etc.).
 
-![Create Snapshots Periodically](snapshot_collection/create_snapshots_periodically.png)
+![Create Snapshots Periodically](../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-snapshot_collection_create_snapshots_periodically.png)
 
 ### How Scheduling Works in IP Fabric
 
@@ -27,7 +27,7 @@ takes 4 hours and 20 minutes to be created. Then, the next snapshot will be sche
 once the previous snapshot finishes. The scheduled time will be set at
 the next possible period according to the cron setup.
 
-![Cron Setup](snapshot_collection/cron_setup.jpg)
+![Cron Setup](../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-snapshot_collection_cron_setup.jpg)
 
 ## Maximum Number of Loaded/Locked Snapshots
 
@@ -42,13 +42,13 @@ In **Settings --> Discovery & Snapshots --> Snapshot Collection**, you can chang
   - Default value: 1
   - Possible values: 0-4
 
-![Maximum number of loaded/locked snapshots](snapshot_collection/maximum_number_of_loaded_or_locked_snapshots.png)
+![Maximum number of loaded/locked snapshots](../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-snapshot_collection_maximum_number_of_loaded_or_locked_snapshots.png)
 
 ## Snapshot Retention Rules
 
 In version `4.1`, we added support for various snapshot retention policies.
 
-![Snapshot Retention Rules](snapshot_collection/snapshot_retention_rules.png)
+![Snapshot Retention Rules](../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-snapshot_collection_snapshot_retention_rules.png)
 
 ### How Snapshot Retention Works
 

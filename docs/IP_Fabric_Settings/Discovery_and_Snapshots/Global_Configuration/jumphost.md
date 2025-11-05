@@ -58,11 +58,11 @@ versions:
 
 2. On the page, click **+ Add**:
 
-   ![Add button](jumphost/add_button.png)
+   ![Add button](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_add_button.png)
 
 3. Fill in all necessary data:
 
-   ![Add Jumphost form](jumphost/add_jumphost_form.png)
+   ![Add Jumphost form](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_add_jumphost_form.png)
 
    - **Label** -- _(mandatory)_ Name of the configuration.
 
@@ -110,7 +110,7 @@ versions:
 5. If the connection is open, you will see `Yes` in the `Status` column in the
    `Jumphost settings` table:
 
-   ![Jumphost settings table - Yes status for jumphost](jumphost/jumphost_settings_table.png)
+   ![Jumphost settings table - Yes status for jumphost](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_jumphost_settings_table.png)
 
 ### SSH Key Configuration
 
@@ -123,7 +123,7 @@ versions:
 
 1. Download the SSH key from Jumphost settings:
 
-   ![Download public key button](jumphost/download_public_key_button.png)
+   ![Download public key button](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_download_public_key_button.png)
 
 2. Save `jumphost-public-key.pub`.
 
@@ -161,13 +161,13 @@ versions:
 
 1. Edit the configuration that needs to be disabled, i.e.:
 
-   ![Edit icon](jumphost/edit_icon.png)
+   ![Edit icon](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_edit_icon.png)
 
 2. Change the setting to `Disabled`.
 
 3. Click **Update**.
 
-   ![Disable jumphost](jumphost/disable_jumphost.png)
+   ![Disable jumphost](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_disable_jumphost.png)
 
 ### Remove Jumphost Configuration
 
@@ -175,7 +175,7 @@ versions:
 
 2. Click **Delete**.
 
-   ![Delete jumphost](jumphost/delete_jumphost.png)
+   ![Delete jumphost](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_delete_jumphost.png)
 
 3. (If SSH key authentication was enabled) Delete the inserted IP Fabric public
    key from the `authorized_keys` file on the jumphost server added in the
@@ -270,13 +270,13 @@ follow these steps:
 7. Make a screenshot or copy the settings of the old jumphost. Then, delete or
    edit the jumphost settings.
 
-   ![Jumphost settings - edit or delete](jumphost/jumphost_delete_settings.png)
+   ![Jumphost settings - edit or delete](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_jumphost_delete_settings.png)
 
 8. Put the **IP address/subnet of the IP Fabric machine** to **Exclude IPv4
    subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP
    address of IP Fabric**:
 
-   ![Add IP Fabric VM's IP address to jumphost's exclude list](jumphost/jumphost_exclude.png)
+   ![Add IP Fabric VM's IP address to jumphost's exclude list](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Global_Configuration-jumphost_jumphost_exclude.png)
 
 !!! info
 

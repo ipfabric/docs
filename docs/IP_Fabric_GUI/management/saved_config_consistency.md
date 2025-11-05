@@ -8,7 +8,7 @@ description: This page explains the Saved config consistency table in the Manage
 and `Current` configurations of network devices and to compare the differences
 (if any) between these two configurations.
 
-![Saved config consistency table](saved_config_consistency.png)
+![Saved config consistency table](../../images/management/IP_Fabric_GUI-management_saved_config_consistency.png)
 
 For this section to work, it is necessary to remove the `Configuration saved`
 rule from **Settings --> Discovery & Snapshots --> Discovery Settings -->
