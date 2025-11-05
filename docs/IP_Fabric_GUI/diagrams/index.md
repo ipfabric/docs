@@ -52,7 +52,7 @@ The end-to-end path can be found in **Diagrams --> End to end path** or
 in any diagram using the **Path Lookup** menu on the left (see the picture
 below).
 
-![End to end](../../images/diagrams/IP_Fabric_GUI-diagrams_diagrams_end_end.png)
+![End to end](../../images/diagrams/IP_Fabric_GUI-diagrams_diagrams_end_end.webp)
 
 For more details, check [How To Use Path Lookup](how_to_use_path-lookup.md).
 
@@ -65,6 +65,6 @@ The host-to-gateway path can be found in **Diagrams --> Host to gateway
 path** or in any diagram using the **Path Lookup** menu on the left and
 selecting **Host To Gateway** (see the picture below).
 
-![Host to gateway](../../images/diagrams/IP_Fabric_GUI-diagrams_diagrams_host_gateway.png)
+![Host to gateway](../../images/diagrams/IP_Fabric_GUI-diagrams_diagrams_host_gateway.webp)
 
 For more details, check [How To Use Path Lookup](how_to_use_path-lookup.md).

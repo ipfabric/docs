@@ -27,4 +27,4 @@ select `Silver Peak` from the list, and fill in:
 
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Silver Peak](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_silver_peak_api_add.png)
+![Add Connection - Silver Peak](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_silver_peak_api_add.webp)

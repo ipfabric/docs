@@ -13,7 +13,7 @@ The IPv6 Managed IP Summary table provides a comprehensive overview of sites and
 
 This table includes information about all subnets, regardless of devices they are configured on.
 
-![IPv6 Managed IP Summary table heading](../../../images/technology/IP_Fabric_GUI-technology_tables-addressing_IPv6-managed-ip-summary-table-heading.png)
+![IPv6 Managed IP Summary table heading](../../../images/technology/IP_Fabric_GUI-technology_tables-addressing_IPv6-managed-ip-summary-table-heading.webp)
 
 There is typically a one-to-one relationship between an L3 subnet and its corresponding VLAN ID and VRF name. The `#Vlans` and `#Vrfs` columns help verify this relationship by showing the count of unique VLAN IDs or VRF names associated with each subnet (per site).
 

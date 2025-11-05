@@ -69,7 +69,7 @@ available to all users.
 
 #### Device-based advanced filters
 
-![Device Filters](../../images/technology/IP_Fabric_GUI-technology_tables_table_device_filters.png){ width=250 .center }
+![Device Filters](../../images/technology/IP_Fabric_GUI-technology_tables_table_device_filters.webp){ width=250 .center }
 
 Supported device properties:
 
@@ -93,11 +93,11 @@ For detailed information, consult the **`Rapidoc`** documentation specific to yo
 To navigate to `Rapidoc`, follow these steps:  
 
 1. **Open the target table:** Navigate to any table where you want to use **Device-based advanced filters**. Click the `...` menu to access **Table Description**.  
-   ![Table Description](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_Navigate_to_table_desc.png){ width="500" .center } 
+   ![Table Description](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_Navigate_to_table_desc.webp){ width="500" .center } 
 2. **Access API documentation:** Scroll down and select **API Documentation**.  
-   ![API Documentation](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_navigate_to_rapidoc.png){ width="500" .center } 
+   ![API Documentation](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_navigate_to_rapidoc.webp){ width="500" .center } 
 3. **Review applicable filters:** Switch to the **Schema** tab to view all available filters for the selected table.  
-   ![Schema](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_switch_to_schema.png){ width="500" .center } 
+   ![Schema](../../images/rapidoc/to-be-checked-IP_Fabric_GUI-technology_tables-index_advanced_filtering_switch_to_schema.webp){ width="500" .center } 
 
 !!! note  
     For tables displaying a **local device** connected to a **neighbor device**, filtering is **only supported for the local device**.  
@@ -120,11 +120,11 @@ content.
 Each table contains built-in help in `Table description` under the `...` menu
 (in the top-right corner of the table):
 
-![Table description](../../images/technology/IP_Fabric_GUI-technology_tables_table_description_option.png){ .center }
+![Table description](../../images/technology/IP_Fabric_GUI-technology_tables_table_description_option.webp){ .center }
 
 Hover the mouse cursor over a column header for the column's description:
 
-![On-hover tooltip](../../images/miscellaneous/tips_tricks/filters_related_images/IP_Fabric_GUI-tips-navigate_in_tables_table_onhover.png){ .center }
+![On-hover tooltip](../../images/miscellaneous/tips_tricks/filters_related_images/IP_Fabric_GUI-tips-navigate_in_tables_table_onhover.webp){ .center }
 
 ## Column Visibility
 
@@ -134,7 +134,7 @@ however, not all columns need to always be visible.
 Select `Display settings` under the `...` menu and choose which columns to show
 or hide:
 
-![Display settings](../../images/miscellaneous/tips_tricks/three_dot_menu/IP_Fabric_GUI-tips-navigate_in_tables_table_display_settings_option.png){ .center }
+![Display settings](../../images/miscellaneous/tips_tricks/three_dot_menu/IP_Fabric_GUI-tips-navigate_in_tables_table_display_settings_option.webp){ .center }
 
 ## Column Size
 
@@ -142,7 +142,7 @@ Use the `Auto size` toggle to either automatically size columns to fit their
 current content (when enabled) or let columns remember user-defined widths
 (when disabled):
 
-![Auto size](../../images/miscellaneous/tips_tricks/IP_Fabric_GUI-tips-navigate_in_tables_table_auto_size.png){ .center }
+![Auto size](../../images/miscellaneous/tips_tricks/IP_Fabric_GUI-tips-navigate_in_tables_table_auto_size.webp){ .center }
 
 ## Persistent Table View
 
@@ -152,7 +152,7 @@ user.
 To reset a table to its original state, select `Restore table settings` under
 the `...` menu:
 
-![Restore table settings](../../images/miscellaneous/tips_tricks/three_dot_menu/IP_Fabric_GUI-tips-navigate_in_tables_table_restore.png){ .center }
+![Restore table settings](../../images/miscellaneous/tips_tricks/three_dot_menu/IP_Fabric_GUI-tips-navigate_in_tables_table_restore.webp){ .center }
 
 ## Regular Expression Syntax
 
@@ -170,7 +170,7 @@ guide on [Regular-Expressions.info](https://www.regular-expressions.info/).
 
 ## Create Links to Table Views
 
-![Share URL options for tables](../../images/technology/IP_Fabric_GUI-technology_tables_table_share_url_options.png){ .center }
+![Share URL options for tables](../../images/technology/IP_Fabric_GUI-technology_tables_table_share_url_options.webp){ .center }
 
 To point to a particular dataset, the link may include
 [a snapshot ID that IP Fabric will switch to](../discovery_snapshot.md#create-url-pointing-to-specific-snapshot) after opening.
@@ -193,10 +193,10 @@ Also, you can generate the link in two forms:
 
 To pin any page in the Technology Tables, click the pin button next to the table name. The page will instantly appear in the left Main Menu.
 
-![Pin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_pin.png){ width="250" .center }
+![Pin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_pin.webp){ width="250" .center }
 
 ### Unpin a Page from the Main Menu
 
 If you no longer want it in the Menu, you can unpin it by clicking the pin in the Main Menu or by clicking the pin next to the page title again.
 
-![Unpin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_unpin.png){ width="250" .center }
+![Unpin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_unpin.webp){ width="250" .center }

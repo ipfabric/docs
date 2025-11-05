@@ -11,7 +11,7 @@ a cloud to explore further that specific site.
 
 Top-level view with all networks:
 
-![Network Viewer - All network](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_all_network.png)
+![Network Viewer - All network](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_all_network.webp)
 
 ## Adding Networks to the View
 
@@ -29,7 +29,7 @@ For example, to see a diagram of the particular sites `35HEADOFFICE` and
 
 3.  Click **Submit**.
 
-![Networks selected to show](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_networks_selected_to_show.png)
+![Networks selected to show](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_networks_selected_to_show.webp)
 
 ## Removing Networks
 
@@ -60,7 +60,7 @@ operations can change their layout:
 
 The **Center View** button can also center the screen view.
 
-![Center View button](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_center_view.png)
+![Center View button](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_center_view.webp)
 
 ## Hide/Collapse Items in the View
 
@@ -69,16 +69,16 @@ option to either:
 
 1. collapse the selected items into a new cloud:
 
-   ![Collapse selected nodes](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_collapse_selected_nodes.png)
+   ![Collapse selected nodes](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_collapse_selected_nodes.webp)
 
-   ![Selected nodes collapsed](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_collapse_selected_nodes_done.png)
+   ![Selected nodes collapsed](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_collapse_selected_nodes_done.webp)
 
 
 2. or hide them:
 
-   ![Hide selected nodes](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_hide_selected_nodes.png)
+   ![Hide selected nodes](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_hide_selected_nodes.webp)
 
-   ![Selected nodes hidden](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_hide_selected_nodes_done.png)
+   ![Selected nodes hidden](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_hide_selected_nodes_done.webp)
 
 ## Layouts
 
@@ -91,9 +91,9 @@ the **User-Defined Layout**. By clicking the **Floppy disk** icon, you
 will update the default view (see below). Please be aware that only
 the position of the visible nodes will be saved.
 
-![Save user-defined or choose another layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_user_defined_1.png)
+![Save user-defined or choose another layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_user_defined_1.webp)
 
-![Save user-defined layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_user_defined_2.png)
+![Save user-defined layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_user_defined_2.webp)
 
 ### Use User-Defined Layout as the Default Layout
 
@@ -101,19 +101,19 @@ Once you have created a user-defined layout, you probably want to use
 this as the default layout. For this, click the icon of the site you
 want to update, then select the User-Defined layout and click **Save**.
 
-![Set default user layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_set_user_defined_layout_as_default_1.png)
+![Set default user layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_set_user_defined_layout_as_default_1.webp)
 
-![Set default user layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_set_user_defined_layout_as_default_2.png)
+![Set default user layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_set_user_defined_layout_as_default_2.webp)
 
 From now on, this will be the default layout for this site:
 
-![Default user defined layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_network_default_user_defined_layout.png)
+![Default user defined layout](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_network_default_user_defined_layout.webp)
 
 ### Choose a Specific Layout for a Selection of Devices
 
 You can now specify which layout you want to use for a set of devices:
 
-![Use specific layout for selected devices](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_specific_layout_for_selected_devices.gif)
+![Use specific layout for selected devices](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_specific_layout_for_selected_devices.webp)
 
 ### Choose a Layout to Apply for the Whole Site
 
@@ -122,7 +122,7 @@ selection.
 
 - Circular Layout can be used only for 500 nodes or less.
 
-![Change diagram layout for site](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_change_diagram_layout_for_site.png)
+![Change diagram layout for site](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_change_diagram_layout_for_site.webp)
 
 ## Save, Load, and Share View
 
@@ -133,7 +133,7 @@ later.
 
 Click the **Floppy disk** icon on the menu on the right end side:
 
-![Save View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_view.png)
+![Save View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_save_view.webp)
 
 Enter a name for that view and click **Save**.
 
@@ -143,7 +143,7 @@ Enter a name for that view and click **Save**.
 
 ### Load View
 
-![Select View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_select_view.png)
+![Select View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_select_view.webp)
 
 The view can be loaded by clicking the **Folder** icon.
 
@@ -151,7 +151,7 @@ Select the desired view and click to load.
 
 ### Share View
 
-![Share View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_share_view.png)
+![Share View](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_share_view.webp)
 
 By clicking here, a URL will be displayed, which you can share with
 other users, and they will be able to see this view.
@@ -161,9 +161,9 @@ other users, and they will be able to see this view.
 The view can be exported in the form of a SVG, PNG image, or VSDX file by clicking
 **Export** and selecting the format you want. The pre-defined name of the file is auto-generated based on the network name, number of shown networks, IP addresses, or name of the saved view.
 
-![Export button](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_export.png)
+![Export button](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_export.webp)
 
-![Expanded Export menu](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_export_menu_expanded.png){ width=300 }
+![Expanded Export menu](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_export_menu_expanded.webp){ width=300 }
 
 !!! Note "VSDX Export Limitations"
     - Export of `Intent checks` in diagrams (colorful nodes are not supported).
@@ -176,14 +176,14 @@ Search looks up any text currently present on the diagram. Typing query
 filters the view, and clicking the **Search** button focuses and zooms in
 on the item.
 
-![Search diagram](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_search_diagram.png)
+![Search diagram](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_button_search_diagram.webp)
 
-![Search diagram results](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_search_diagram_results.png)
+![Search diagram results](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_search_diagram_results.webp)
 
 If you hover the mouse cursor on one entry, you will see the device on the
 diagram:
 
-![Hover over search diagram results](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_search_diagram_results_hover.png)
+![Hover over search diagram results](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_search_diagram_results_hover.webp)
 
 ## Protocols
 
@@ -191,7 +191,7 @@ You can filter connection protocols between devices of the second
 and third layer of ISO OSI by using filters in the **Network Viewer -->
 Visualization setup --> Protocols** menu.
 
-![Protocols - Visualization setup](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_visualization_setup.png)
+![Protocols - Visualization setup](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_visualization_setup.webp)
 
 You can decide which layer/protocol you want to display/hide and
 group/ungroup.
@@ -203,32 +203,32 @@ they belong to. This is the **System** view. You can edit this, which
 means you are able to ungroup certain protocols. For this, click the
 **Settings** icon:
 
-![Configure visualization setup](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_visualization_setup_settings.png)
+![Configure visualization setup](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_visualization_setup_settings.webp)
 
 Drag and drop protocols you want to put to a custom group to the **Other
 Protocols**, click **Save as** and give a name to the new protocol view.
 
-![Drag and drop protocol](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_drag_drop.png)
+![Drag and drop protocol](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_drag_drop.webp)
 
 With the example below, you are now able to hide only the DGW protocol
 without affecting the other Layer 3 protocols:
 
-![Hide protocol](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_hide_dgw.png)
+![Hide protocol](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_hide_dgw.webp)
 
 VRF labels are now shown as line-cap labels on topology graph edges for Layer 3 protocols, making it easier to identify VRF associations directly in the graph.
 
-![VRF labels](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_vrf_labels.png)
+![VRF labels](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_vrf_labels.webp)
 
 ### Link Grouping
 
-![Link grouping](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_link_grouping.png)
+![Link grouping](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_link_grouping.webp)
 
 Link grouping means that protocols of the specific layer are not shown
 as separate lines but together as a single line.
 
 ### Layer Grouping
 
-![Layer grouping](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_layer_grouping.png)
+![Layer grouping](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_layer_grouping.webp)
 
 Layer grouping collapses groups of devices according to the types of
 links that connect these, either in Layer 2 or 3 groups. Devices
@@ -239,11 +239,11 @@ connected with different layer protocols can't be grouped together.
 You can select/unselect the type of devices you want to see on the
 diagram.
 
-![Select type of devices to see](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_select_device_type.png)
+![Select type of devices to see](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_select_device_type.webp)
 
 ### Device Information Deep Dive
 
 After right-clicking the device, you can display additional
 information about it by selecting **Explore**:
 
-![Device - Explore](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_device_explore.png)
+![Device - Explore](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_device_explore.webp)

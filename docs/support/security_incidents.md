@@ -25,7 +25,7 @@ We use industry-standard
 [CVSS](https://en.wikipedia.org/wiki/Common_Vulnerability_Scoring_System)
 scoring for the classification of reported/discovered vulnerabilities.
 
-![CVSS Score](../images/support/support_cvss.png)
+![CVSS Score](../images/support/support_cvss.webp)
 
 The timeline and escalation path are as follows:
 

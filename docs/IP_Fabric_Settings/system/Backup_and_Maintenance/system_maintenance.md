@@ -20,4 +20,4 @@ back soon!` message.
 Sometimes, it is necessary to run maintenance manually; this can be done with
 the **Start Maintenance** button:
 
-![Schedule System Maintenance](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-system_maintenance_schedule_system_maintenance.png)
+![Schedule System Maintenance](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-system_maintenance_schedule_system_maintenance.webp)

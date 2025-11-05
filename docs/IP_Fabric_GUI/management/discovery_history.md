@@ -28,4 +28,4 @@ IP addresses in this list are also used as seed addresses during discovery. **De
 Perhaps your team wants to delete all discovery history older than 1 month to speed up the discovery process. The picture below shows using a
 `Last discovery time` filter to check for entries `<=` to a certain date.
 
-![Discovery history](../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_history.png)
+![Discovery history](../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_history.webp)

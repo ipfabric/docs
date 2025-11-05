@@ -15,7 +15,7 @@ Configurations can be retrieved in `full` or `sanitized` forms. Sanitization rem
 Network access credentials allowing the `show run` command (or equivalent)
 are necessary for configuration storage and configuration management to work properly. Please review [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
-![Config Credentials](../../images/management/IP_Fabric_GUI-management-config_config_auth.png)
+![Config Credentials](../../images/management/IP_Fabric_GUI-management-config_config_auth.webp)
 
 These credentials need to have the **Use for configuration management** box
 checked.
@@ -44,7 +44,7 @@ Note that every table row, once you filter output for a specific hostname, repre
 
 Let's consider the following example:
 
-![Configuration table example](../../images/management/IP_Fabric_GUI-management-config_config_table_example.png)
+![Configuration table example](../../images/management/IP_Fabric_GUI-management-config_config_table_example.webp)
 
 Let's go from the bottom of the output:
 
@@ -60,11 +60,11 @@ Stored configurations are displayed in a table that shows information such as th
 
 The table can be used to compare between two different configurations directly from the user interface. This is done by selecting exactly 2 configuration states to compare followed by clicking the `Compare` button.
 
-![Selecting configs for comparison](../../images/management/IP_Fabric_GUI-management-config_config_select_compare.png)
+![Selecting configs for comparison](../../images/management/IP_Fabric_GUI-management-config_config_select_compare.webp)
 
 There is also a shortcut for comparing configurations directly with their previous state by clicking this button instead:
 
-![alt text](../../images/management/IP_Fabric_GUI-management-config_config_quick_comparison.png)
+![alt text](../../images/management/IP_Fabric_GUI-management-config_config_quick_comparison.webp)
 
 
 !!! Note "Last configuration quick compare behaviour"
@@ -74,16 +74,16 @@ There is also a shortcut for comparing configurations directly with their previo
 The resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
 
 <figure markdown>
-  ![Side by side](../../images/management/IP_Fabric_GUI-management-config_config_side_by_side.png)
+  ![Side by side](../../images/management/IP_Fabric_GUI-management-config_config_side_by_side.webp)
   <figcaption>Side by side</figcaption>
 </figure>
 
 <figure markdown>
-  ![Inline](../../images/management/IP_Fabric_GUI-management-config_config_inline.png)
+  ![Inline](../../images/management/IP_Fabric_GUI-management-config_config_inline.webp)
   <figcaption>Inline</figcaption>
 </figure>
 
 <figure markdown>
-  ![Inline diff](../../images/management/IP_Fabric_GUI-management-config_config_inline_diff.png)
+  ![Inline diff](../../images/management/IP_Fabric_GUI-management-config_config_inline_diff.webp)
   <figcaption>Inline diff</figcaption>
 </figure>

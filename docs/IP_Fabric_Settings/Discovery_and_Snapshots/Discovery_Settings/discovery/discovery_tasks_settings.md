@@ -17,7 +17,7 @@ network, using the selected methods for new device detection (ARP, ACI Endpoints
 Routing Table records, or a Traceroute). The default is to use all available
 options.
 
-![Discovery tasks settings](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_tasks_settings.png)
+![Discovery tasks settings](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_tasks_settings.webp)
 
 The feature is especially helpful for large, complex networks with already
 defined device scope to avoid multiple repetitive failed SSH/Telnet attempts

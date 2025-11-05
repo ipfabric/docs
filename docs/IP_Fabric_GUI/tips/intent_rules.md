@@ -14,18 +14,18 @@ In our example, we will use the **Port-Channel Members State** rule above the
 **Link Aggregation (LAG)/Portchannel/Etherchannel Member status table** (in
 **Technology --> Port channels --> Member status table**).
 
-![Port-Channel Members State intent rule](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_port-channel_members_state_intent_rule.png)
+![Port-Channel Members State intent rule](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_port-channel_members_state_intent_rule.webp)
 
 Now we can check and change the predefined coloring rules:
 
-![Intent Rule Detail](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_intent_rule_detail.png)
+![Intent Rule Detail](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_intent_rule_detail.webp)
 
 Let's change the coloring from amber to red for `Aggregated interfaces with
 membership status '(S)', '(F)', or '(I)'.`:
 
 1. Remove rules from the amber color. Click the **amber color** and then the
    **Trash** icon next to each rule (the **Description** can be also removed):  
-   ![Remove rules from color/state](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_remove_rules_from_color_state.png)
+   ![Remove rules from color/state](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_remove_rules_from_color_state.webp)
 2. Click the **red color**.
 3. Set the **Description** to `Aggregated interfaces with membership status
    '(S)', '(F)', or '(I)'.`
@@ -40,7 +40,7 @@ membership status '(S)', '(F)', or '(I)'.`:
    defined rules apply.
 6. Click **Preview** to see if the rule works.
 7. If it works as expected, click **Update**.
-   ![Add rules in color/state](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_add_rules_in_color_state.png)
+   ![Add rules in color/state](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_add_rules_in_color_state.webp)
 
 ## Create Intent Verification Rule
 
@@ -52,14 +52,14 @@ Aggregation (LAG)/Portchannel/Etherchannel Member status table**:
 1. Go to **Technology --> Port channels --> Member status table**.
 2. Click `...` in the top-right corner of the table and select `Add intent
    verification rule`:  
-   ![Add intent verification rule option](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_add_intent_verification_rule_option.png)
+   ![Add intent verification rule option](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_add_intent_verification_rule_option.webp)
 3. Specify the **Rule name**. For example, `Protocol Check`.
 4. Select **Colorized column**. In our case, it's `Protocol`.
 5. Leave **Dashboard Widgets** empty for now.
 6. Click the **blue color**.
 7. Create a rule "`Protocol` insensitive equal `lacp`".
-   ![Create intent verification rule](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_create_intent_verification_rule.png)
+   ![Create intent verification rule](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_create_intent_verification_rule.webp)
 8. Click the **amber color**.
 9. Create a rule "`Protocol` equal `static`".
 10. Click **Create**.  
-    ![Create intent verification rule - remaining steps](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_create_intent_verification_rule_2.png)
+    ![Create intent verification rule - remaining steps](../../images/miscellaneous/intent_rules/IP_Fabric_GUI-tips-intent_rules_create_intent_verification_rule_2.webp)

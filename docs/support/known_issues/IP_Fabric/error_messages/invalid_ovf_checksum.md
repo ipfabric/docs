@@ -7,7 +7,7 @@ description: This page describes a known issue with some older ESXi/vSphere vers
 When importing the IP Fabric OVA image on vSphere/ESXi, you might encounter the
 following error:
 
-![OVA error](../../../../images/support/support-known_issues-IP_Fabric-error_messages_ova_error.png)
+![OVA error](../../../../images/support/support-known_issues-IP_Fabric-error_messages_ova_error.webp)
 
 To resolve this issue, please follow the instructions in
 [Deploying IP Fabric Virtual Machine (VM) -- OVA Distribution Details](../../../../platform_first_steps/01-deployment.md#ova-distribution-details).

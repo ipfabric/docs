@@ -27,11 +27,11 @@ Connection through proxy servers should work, but it is not guaranteed.
 
 2. Select **Remote support VPN**:
 
-   ![Select Remote support VPN in Support menu](../images/support/support-vpn_menu.png)
+   ![Select Remote support VPN in Support menu](../images/support/support-vpn_menu.webp)
 
 3. On the newly opened page, click **Connect**:
 
-   ![Remote support over VPN - Connect](../images/support/support-vpn_connect.png)
+   ![Remote support over VPN - Connect](../images/support/support-vpn_connect.webp)
 
 4. The `VPN status` should change to `connected`, and you should see the
    assigned IP address.
@@ -56,7 +56,7 @@ Connection through proxy servers should work, but it is not guaranteed.
    sudo -u autoboss nimpee-support-vpn start
    ```
 
-   ![Start VPN from CLI](../images/support/support-vpn_cli_vpn_connect.png)
+   ![Start VPN from CLI](../images/support/support-vpn_cli_vpn_connect.webp)
 
 ## How To Tear Down Support VPN
 
@@ -67,7 +67,7 @@ Connection through proxy servers should work, but it is not guaranteed.
 
 2. On the newly opened page, click **Disconnect**:
 
-   ![Remote support over VPN - Disconnect](../images/support/support-vpn_disconnect.png)
+   ![Remote support over VPN - Disconnect](../images/support/support-vpn_disconnect.webp)
 
 3. The `VPN status` should change to `disconnected`.
 
@@ -83,4 +83,4 @@ Connection through proxy servers should work, but it is not guaranteed.
    sudo -u autoboss nimpee-support-vpn stop
    ```
 
-   ![Stop VPN from CLI](../images/support/support-vpn_cli_vpn_disconnect.png)
+   ![Stop VPN from CLI](../images/support/support-vpn_cli_vpn_disconnect.webp)

@@ -8,57 +8,57 @@ description: This section contains information on how to set up API discovery fo
 
 1. Select a project for which you want to create a service account:
 
-   ![Select a project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAProject.png)
+   ![Select a project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAProject.webp)
 
 2. Navigate to **IAM & Admin --> Service Accounts**:
 
-   ![Navigate to Service Accounts](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_gcpSideBarServiceAccount.png)
+   ![Navigate to Service Accounts](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_gcpSideBarServiceAccount.webp)
 
 3. Click **+ CREATE SERVICE ACCOUNT**:
 
-   ![Create a service account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_createAServiceAccount.png)
+   ![Create a service account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_createAServiceAccount.webp)
 
 4. Give it a name and click **CREATE AND CONTINUE**:
 
-   ![Service account details](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_giveAServiceAccountName.png)
+   ![Service account details](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_giveAServiceAccountName.webp)
 
 5. Select a role for the account. We recommend using the `Viewer` role as it
    provides only read access to the project. Then, click **CONTINUE**.
 
-   ![Grant this service account access to project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAViewRole.png)
+   ![Grant this service account access to project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAViewRole.webp)
 
 6. In the last step, simply click **DONE**:
 
-   ![Grant users access to this service account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_finishAccountCreation.png)
+   ![Grant users access to this service account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_finishAccountCreation.webp)
 
 7. Search for the account that was just created and select it:
 
-   ![Select the account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectTheCreateAccount.png)
+   ![Select the account](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectTheCreateAccount.webp)
 
 8. Navigate to the **KEYS** tab, click **ADD KEY**, and select `Create new key`.
    (You can use your own key, but the properties must be the same as when you
    generate it. Therefore, it is highly recommended to use the `Create new key` option.)
 
-   ![Create a new private key](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectToCreateANewKey.png)
+   ![Create a new private key](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectToCreateANewKey.webp)
 
 9. The key type we support is `JSON`. Click **CREATE**, and the private key will
    be downloaded to your computer.
 
-   ![Generate a JSON key](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectJsonKey.png)
+   ![Generate a JSON key](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectJsonKey.webp)
 
 ## Load the `JSON` Key to IP Fabric
 
 1. In the IP Fabric GUI, navigate to **Settings --> Discovery & Snapshots -->
    Discovery Settings --> Vendors API**, and click **+ Add**:
 
-   ![Vendors API - Add](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_addingNewVendor.png)
+   ![Vendors API - Add](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_addingNewVendor.webp)
 
 2. Select `Google Cloud Platform` from the list.
 
 3. Move your key to the Drag&Drop area or select it from your computer, and
    enter the other required information:
 
-   ![Add Connection - Google Cloud Platform](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_loadingKeyFile.png)
+   ![Add Connection - Google Cloud Platform](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_loadingKeyFile.webp)
 
 ## What Counts Against IP Fabric License
 

@@ -16,7 +16,7 @@ For instructions on how to collect APIC-related information, please check [Add C
 
 The **Controllers** tab contains a list of all discovered controllers, their health and IP addresses.
 
-![Controllers table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicControllers.png)
+![Controllers table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicControllers.webp)
 
 ### Contexts
 
@@ -24,13 +24,13 @@ The **Contexts** tab contains a list of all contexts, to which tenant they belon
 
 By selecting a number in the `Bridge domains` column, you will be redirected to the **Bridge Domains** tab with a filter applied to show all bridge domains belonging to this context.
 
-![Contexts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicContexts.png)
+![Contexts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicContexts.webp)
 
 ### Bridge Domains
 
 The **Bridge Domains** tab contains a list of all bridge domains, to which tenant and context they belong, their pcTag scope, type, and a list of all their subnets.
 
-![Bridge Domains table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicBridgeDomains.png)
+![Bridge Domains table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicBridgeDomains.webp)
 
 ### Applications
 
@@ -38,7 +38,7 @@ The **Applications** tab contains a list of all configured applications, to whic
 
 By selecting a number in the `Endpoint groups` column, you will be redirected to the **Endpoint Groups** tab with a filter applied to show all endpoint groups belonging to this application.
 
-![Applications table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicApplications.png)
+![Applications table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicApplications.webp)
 
 ### Endpoint Groups
 
@@ -46,22 +46,22 @@ The **Endpoint Groups** tab contains a list of all endpoint groups, tenant name,
 
 By selecting a number in the `Contracts` column, you will be redirected to the **Endpoint Groups - Contracts** tab with a filter applied to show this endpoint group.
 
-![Endpoint Groups table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicEndpointGroups.png)
+![Endpoint Groups table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicEndpointGroups.webp)
 
 ### Endpoint Groups - Contracts
 
 The **Endpoint Groups - Contracts** tab contains a list of all contracts associated with the endpoint group and if the endpoint group is a consumer or provider.
 
-![Endpoint Groups - Contracts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicEpgContract.png)
+![Endpoint Groups - Contracts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicEpgContract.webp)
 
 ### Contracts
 
 The **Contracts** tab contains a list of all contracts, to which tenant they belong, their subject's name, match strategy, if they should reverse filters in the opposite direction, and names of their filters. There is also information about applied Service Graph.
 
-![Contracts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicContracts.png)
+![Contracts table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicContracts.webp)
 
 ### Service Graphs
 
 The **Service Graphs** tab contains a list of all Service Graph templates including their type, list of nodes and devices.
 
-![Service Graphs table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicServiceGraphs.png)
+![Service Graphs table](../../images/technology/IP_Fabric_GUI-technology_tables-SDN-cisco-apic_CiscoApicServiceGraphs.webp)

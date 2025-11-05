@@ -18,9 +18,9 @@ Please keep the license file safe, as it is also used as part of the key to encr
 
 Drag the `license.key` file into the **Drop a file** area. Or click the area (or the **Upload & accept** button) and browse to the file.
 
-![Upload License link](../images/miscellaneous/platform_first_steps_ui_license_1.png)
+![Upload License link](../images/miscellaneous/platform_first_steps_ui_license_1.webp)
 
-![License Upload page](../images/miscellaneous/platform_first_steps_ui_license_2.png)
+![License Upload page](../images/miscellaneous/platform_first_steps_ui_license_2.webp)
 
 If the license installation fails, contact the IP Fabric Support team.
 
@@ -28,7 +28,7 @@ Once the license is validated, the system will present a login screen.
 
 Log in with the username `admin` and a password created in a previous step ([IPF CLI Config](02-ipf_cli_config.md)).
 
-![Log in to IP Fabric](../images/miscellaneous/platform_first_steps_ui_admin.png)
+![Log in to IP Fabric](../images/miscellaneous/platform_first_steps_ui_admin.webp)
 
 ## Managing additional users
 
@@ -36,4 +36,4 @@ When logged in with the `admin` account, you can manage all users in the main IP
 
 Navigate to **Settings --> Administration --> Local Users** to create, edit, delete local users, and change their passwords.
 
-![Creating a new user account](../images/miscellaneous/platform_first_steps_modify_local_accounts.png)
+![Creating a new user account](../images/miscellaneous/platform_first_steps_modify_local_accounts.webp)

@@ -11,7 +11,7 @@ uses standard Linux OS OIDs.
 To enable SNMP in IP Fabric, go to **Settings --> System --> SNMP**, enable the
 **on/off** toggle, and select `2c` or `3` from the **Version** list:
 
-![SNMP](../../images/settings/IP_Fabric_Settings-system-snmp_enable_snmp.png)
+![SNMP](../../images/settings/IP_Fabric_Settings-system-snmp_enable_snmp.webp)
 
 !!! check "Security Note"
 
@@ -28,7 +28,7 @@ If you selected version `2c`, please configure:
    monitoring server.
 5. Click **Save**.
 
-![Version 2c](../../images/settings/IP_Fabric_Settings-system-snmp_version_2c.png)
+![Version 2c](../../images/settings/IP_Fabric_Settings-system-snmp_version_2c.webp)
 
 If you selected version `3`, please configure:
 
@@ -47,6 +47,6 @@ If you selected version `3`, please configure:
    `SHA 256`, or `SHA 512`). Prefer the stronger algorithm, `SHA 512`.
 8. Click **Save**.
 
-![Version 3](../../images/settings/IP_Fabric_Settings-system-snmp_version_3.png)
+![Version 3](../../images/settings/IP_Fabric_Settings-system-snmp_version_3.webp)
 
 --8<-- "snippets/username_password_regex.md"

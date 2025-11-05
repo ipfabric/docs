@@ -33,7 +33,7 @@ To enable scheduled configuration management, go to **Settings --> Configuration
 
     Example for scheduling a check every day at 5:00, 5:30, 10:00, 10:30, 15:00, 15:30, 20:00, and 20:30.
 
-    ![Configuration Management Setup](../images/settings/IP_Fabric_Settings_configuration_management_setup.png)
+    ![Configuration Management Setup](../images/settings/IP_Fabric_Settings_configuration_management_setup.webp)
 
 Multiple values from the lists can be selected while holding the `Ctrl` or `Shift` keys.
 

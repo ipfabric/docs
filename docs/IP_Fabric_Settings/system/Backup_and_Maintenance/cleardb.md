@@ -23,16 +23,16 @@ Maintenance** and click **Clear DB**.
 When running Clear DB, all loaded snapshots are automatically unloaded, and the
 database recreated.
 
-![Clear DB](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb.png)
+![Clear DB](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb.webp)
 
 There are two-way confirmations.
 
-![First confirmation](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb_first_confirmation.png)
+![First confirmation](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb_first_confirmation.webp)
 
 In the second screen, you can choose between **Reset Settings** and **Keep
 Settings**:
 
-![Second confirmation](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb_second_confirmation.png)
+![Second confirmation](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-cleardb_cleardb_second_confirmation.webp)
 
 We recommend selecting **Keep Settings**. If you select **Reset Settings**, all
 system and discovery settings will be lost, including login credentials, Site

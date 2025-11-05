@@ -24,7 +24,7 @@ verified in the database with each API call, but they can be revoked easily.
 To use API tokens, you need to generate them in the UI (in **Settings -->
 Integration --> API Tokens**) or using the API.
 
-![Create new API token form](../../images/settings/IP_Fabric_Settings-integration_create_new_api_token.png)
+![Create new API token form](../../images/settings/IP_Fabric_Settings-integration_create_new_api_token.webp)
 
 Please note that the token string is only visible when you create the token in
 the UI or in the returned API JSON response. For this reason, please make sure

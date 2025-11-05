@@ -8,4 +8,4 @@ The user interface includes numerous views covering a range of technologies. To 
 
 IP Fabric provides quick navigation to its technology tables rather than supporting full-text search for all database values. For example, the search does not return results for `1500`, but searching for `MTU` will return the appropriate technology view, which can then be filtered for specific MTU values. Similarly, the search will not return results for an IP address; however, looking for hosts, endpoints, or devices first will point to the right technology view, which can then be filtered for a specific search intent.
 
-![Search bar](../../images/miscellaneous/IP_Fabric_GUI-tips_search.png)
+![Search bar](../../images/miscellaneous/IP_Fabric_GUI-tips_search.webp)

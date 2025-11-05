@@ -16,7 +16,7 @@ Duplicate IPs discovery**, enter one or more subnets to *disable* the test for
 duplicate IP addresses for specific networks (so devices with duplicate IP
 addresses in those networks will be discovered).
 
-![Duplicate IPs discovery](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery.png)
+![Duplicate IPs discovery](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery.webp)
 
 !!! info
 

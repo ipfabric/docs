@@ -75,7 +75,7 @@ Breaking this down, we can see that the report:
 
 We can compare that with the web UI dialog for the same check:
 
-![Intent verification rule](../images/miscellaneous/IP_Fabric_API_intent_verification_rule.png)
+![Intent verification rule](../images/miscellaneous/IP_Fabric_API_intent_verification_rule.webp)
 
 So, once we have found the report we are looking for, we retrieve the technology table from the `apiEndpoint` field in the report dictionary, filtered for the color that matches the condition we're interested in from the validation check. From our above example, to retrieve the DMVPN tunnels that are in an `UP` state, we make a POST request to `/api/{api_version}/tables/security/dmvpn` with the following request payload:
 

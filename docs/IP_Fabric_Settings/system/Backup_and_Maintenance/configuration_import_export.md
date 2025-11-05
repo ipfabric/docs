@@ -14,7 +14,7 @@ replacing the existing configuration.
 
 To export the current configuration, click the **Export Configuration** button.
 
-![Export Configuration Button](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration_button.png)
+![Export Configuration Button](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration_button.webp)
 
 A side panel will appear, allowing you to export the full configuration or select specific parts to export.
 You will need to enter a passphrase to encrypt the data in the exported file.
@@ -24,18 +24,18 @@ You will need to enter a passphrase to encrypt the data in the exported file.
     The password must be at least 8 characters long.
     We recommend using a strong passphrase that includes a mix of uppercase and lowercase letters, numbers, and special characters.
 
-![Export Configuration UI](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration.png)
+![Export Configuration UI](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration.webp)
 
 After submitting the export, a `Configuration Export` job will be queued. Once the job is complete, you will receive a notification,
 and the exported configuration file will be available for download from the job's notification.
 
-![Export Configuration Download](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration_download.png)
+![Export Configuration Download](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_export_configuration_download.webp)
 
 ## Configuration Import
 
 To import the configuration, follow these steps and click the **Import Configuration** button.
 
-![Import Configuration Button](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_import_configuration_button.png)
+![Import Configuration Button](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_import_configuration_button.webp)
 
 A side panel will appear, prompting you to enter the correct passphrase and select a file containing the exported configuration.
 
@@ -44,7 +44,7 @@ A side panel will appear, prompting you to enter the correct passphrase and sele
     Importing the configuration will overwrite the entire current configuration file with the imported data.
     We recommend creating a backup before proceeding with the import.
 
-![Import Configuration UI](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_import_configuration.png)
+![Import Configuration UI](../../../images/settings/IP_Fabric_Settings-system-Backup_and_Maintenance-configuration_import_export_import_configuration.webp)
 
 After submitting the import, a `Configuration Import` job will be queued. Once the job is complete, you will receive a notification.
 After the import, we recommend logging out and logging back in to ensure all imported data is correctly loaded.

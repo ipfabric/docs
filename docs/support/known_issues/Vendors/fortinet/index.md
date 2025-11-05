@@ -36,9 +36,9 @@ Follow these steps:
    VDOMs are enabled). See the screenshots below from FortiOS versions `6.0` and
    `7.0`:
 
-   ![Admin Profile, FortiOS 6.0](../../../../images/support/support-known_issues-Vendors-fortinet_fortios-60-admin-profile.png "Admin Profile, FortiOS 6.0")
+   ![Admin Profile, FortiOS 6.0](../../../../images/support/support-known_issues-Vendors-fortinet_fortios-60-admin-profile.webp "Admin Profile, FortiOS 6.0")
 
-   ![Admin Profile, FortiOS 7.0](../../../../images/support/support-known_issues-Vendors-fortinet_fortios-70-admin-profile.png "Admin Profile, FortiOS 7.0")
+   ![Admin Profile, FortiOS 7.0](../../../../images/support/support-known_issues-Vendors-fortinet_fortios-70-admin-profile.webp "Admin Profile, FortiOS 7.0")
 
 !!! note
 

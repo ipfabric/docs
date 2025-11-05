@@ -9,7 +9,7 @@ discover network elements. Certain default CLI parameters that can be
 found in **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Advanced CLI --> CLI settings**:
 
-![Fine-Tune SSH/Telnet CLI parameters](../../../images/snapshot-management/overview-How_Discovery_Works-common_problems_finetune-ssh-telnet.png)
+![Fine-Tune SSH/Telnet CLI parameters](../../../images/snapshot-management/overview-How_Discovery_Works-common_problems_finetune-ssh-telnet.webp)
 
 According to the summary of issues in the very first completed snapshot,
 the CLI Settings can be adjusted. Here are some of the most common

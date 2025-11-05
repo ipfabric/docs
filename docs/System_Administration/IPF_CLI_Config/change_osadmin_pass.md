@@ -30,20 +30,20 @@ description: This section explains how to change the osadmin password using IPF 
 
 3. Select `Yes` to proceed:
 
-  ![Do you want to change osadmin user password?](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change2.png){width=500 .center}
+  ![Do you want to change osadmin user password?](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change2.webp){width=500 .center}
 
 4. Enter the new `osadmin` password twice:
 
-   ![Enter osadmin shell user password](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change3.png){width=500 .center}
+   ![Enter osadmin shell user password](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change3.webp){width=500 .center}
 
-   ![Repeat osadmin user password](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change4.png){width=500 .center}
+   ![Repeat osadmin user password](../../images/settings/System_Administration-IPF_CLI_Config_osadmin_password_change4.webp){width=500 .center}
 
    Password setup contains password [complexity check](#password-requirements); simple passwords are
    rejected.
 
 5. Select `Yes` to reboot the system:
 
-  ![Reboot system](../../images/settings/System_Administration-IPF_CLI_Config_reboot.png){width=500 .center}
+  ![Reboot system](../../images/settings/System_Administration-IPF_CLI_Config_reboot.webp){width=500 .center}
 
 ## Password Requirements
 

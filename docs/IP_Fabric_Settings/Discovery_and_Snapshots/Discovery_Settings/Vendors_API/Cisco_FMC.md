@@ -21,7 +21,7 @@ API**, click **+ Add**, select `Cisco FMC` from the list, and fill in:
 - **Base URL** of Cisco FMC server (e.g., `https://cisco-fmc-ip-address`)
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Cisco FMC](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAdd.png)
+![Add Connection - Cisco FMC](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAdd.webp)
 
 ## Known Issue
 

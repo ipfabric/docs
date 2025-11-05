@@ -6,7 +6,7 @@ description: You can overlay the intent verification rules on top of any diagram
 
 You can overlay the intent verification rules on top of any diagrams.
 
-![Intent Checks](../../images/diagrams/IP_Fabric_GUI-diagrams_intent_checks.png)
+![Intent Checks](../../images/diagrams/IP_Fabric_GUI-diagrams_intent_checks.webp)
 
 **Intent Checks** include:
 
@@ -45,4 +45,4 @@ The algorithm visually marks these critical bridges for easy identification.
 **Path Checks** serve for checking of source and destination ports. Simply
 add source and destination, and a diagram will be displayed.
 
-![Path Checks](../../images/diagrams/IP_Fabric_GUI-diagrams_path_checks.png)
+![Path Checks](../../images/diagrams/IP_Fabric_GUI-diagrams_path_checks.webp)

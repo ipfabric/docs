@@ -31,7 +31,7 @@ IP Fabric backup, follow the instructions on the
 The system update functionality is accessible at
 `https://ipfabric-ip-or-fqdn/ipf-system-upgrade/`.
 
-![IP Fabric System Upgrade](../images/support/System_Administration_ipf-system-upgrade.jpg)
+![IP Fabric System Upgrade](../images/support/System_Administration_ipf-system-upgrade.webp)
 
 ### Online Update
 

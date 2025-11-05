@@ -13,7 +13,7 @@ To enable periodic discovery runs, check the [Automatic Snapshots](../../IP_Fabr
 
 ## Comparing Changes
 
-![Changes](../../images/management/IP_Fabric_GUI-management_changes.png)
+![Changes](../../images/management/IP_Fabric_GUI-management_changes.webp)
 
 To control changes between two discovery runs, navigate to **Management --> Changes**.
 

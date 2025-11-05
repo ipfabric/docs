@@ -15,7 +15,7 @@ your imagination.
 
 To set up a webhook, navigate to **Settings --> Integration --> Webhooks**.
 
-![Add webhook](../../images/settings/IP_Fabric_Settings-integration_webhooks.png)
+![Add webhook](../../images/settings/IP_Fabric_Settings-integration_webhooks.webp)
 
 ## Events
 

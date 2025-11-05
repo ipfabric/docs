@@ -36,7 +36,7 @@ Exclude list (in **Settings --> Discovery & Snapshots --> Discovery Settings
 --> Discovery --> IP Scope --> IP networks to exclude from discovery and
 analysis**).
 
-![IP Scope](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_ip_scope.png)
+![IP Scope](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_ip_scope.webp)
 
 !!! warning "Priority"
 
