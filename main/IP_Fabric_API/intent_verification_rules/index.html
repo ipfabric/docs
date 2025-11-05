@@ -15291,7 +15291,7 @@ here.
 <li>sets the color to a value of 0 (which maps to green) if the tunnels are in the <code>UP</code> state, signified by the content of the &ldquo;state&rdquo; column having the value <code>UP</code>; otherwise, it resorts to the default of 20 (which maps to amber) if the tunnels are in any other state</li>
 </ul>
 <p>We can compare that with the web UI dialog for the same check:</p>
-<p><a class="glightbox" href="../../images/miscellaneous/IP_Fabric_API_intent_verification_rule.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Intent verification rule" src="../../images/miscellaneous/IP_Fabric_API_intent_verification_rule.png" /></a></p>
+<p><a class="glightbox" href="../../images/miscellaneous/IP_Fabric_API_intent_verification_rule.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Intent verification rule" src="../../images/miscellaneous/IP_Fabric_API_intent_verification_rule.webp" /></a></p>
 <p>So, once we have found the report we are looking for, we retrieve the technology table from the <code>apiEndpoint</code> field in the report dictionary, filtered for the color that matches the condition we&rsquo;re interested in from the validation check. From our above example, to retrieve the DMVPN tunnels that are in an <code>UP</code> state, we make a POST request to <code>/api/{api_version}/tables/security/dmvpn</code> with the following request payload:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>

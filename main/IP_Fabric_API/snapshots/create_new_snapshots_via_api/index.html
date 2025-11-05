@@ -15374,7 +15374,7 @@ here.
 </ul>
 <h2 id="create-a-new-snapshot-with-the-existing-settings">Create a New Snapshot With the Existing Settings</h2>
 <p>If you want to start a discovery using the existing settings, it is a simple <code>POST</code> request to <code>/api/{api_version}/snapshot</code>, without a body.</p>
-<p><a class="glightbox" href="../../../images/miscellaneous/IP_Fabric_API-snapshots_configure_of_Creating_snapshoot.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configure of Creating snapshot" src="../../../images/miscellaneous/IP_Fabric_API-snapshots_configure_of_Creating_snapshoot.gif" /></a></p>
+<p><a class="glightbox" href="../../../images/miscellaneous/IP_Fabric_API-snapshots_configure_of_Creating_snapshoot.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configure of Creating snapshot" src="../../../images/miscellaneous/IP_Fabric_API-snapshots_configure_of_Creating_snapshoot.webp" /></a></p>
 <h2 id="create-a-new-snapshot-with-different-settings-than-the-default-ones">Create a New Snapshot With Different Settings Than the Default Ones</h2>
 <p>What if you wanted a snapshot for a smaller scope of your network? For this, you can use the API to start a new discovery with some specific settings used for that specific discovery.</p>
 <p>Here is an example of a body to use to perform a discovery with a new scope (<code>networks</code>), new seed devices (<code>seedList</code>), and not considering the Vendor APIs (Check Point, Meraki, AWS, etc.) that you may have configured in your settings. (All fields are optional. If not specified, the values from your settings will be used.)</p>
@@ -15400,7 +15400,7 @@ here.
 </code></pre></div>
 </div>
 <p>Let&rsquo;s see how it looks when using Postman:</p>
-<p><a class="glightbox" href="../../../images/miscellaneous/IP_Fabric_API-snapshots_create_snapshot.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="create snapshot" src="../../../images/miscellaneous/IP_Fabric_API-snapshots_create_snapshot.gif" /></a></p>
+<p><a class="glightbox" href="../../../images/miscellaneous/IP_Fabric_API-snapshots_create_snapshot.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="create snapshot" src="../../../images/miscellaneous/IP_Fabric_API-snapshots_create_snapshot.webp" /></a></p>
 <h2 id="settings-for-creating-a-new-snapshot">Settings for Creating a New Snapshot</h2>
 <p>There is a long list of what you can use in the request body to change the settings for this new discovery. The example above is probably enough for some use cases. If you wanted to change different settings, you can collect the settings of your IP Fabric instance via a <code>GET</code> on the endpoint <code>/api/{api_version}/settings</code>.</p>
 <p>The response will look like this <em>(this is just an extract of the JSON)</em>:</p>
