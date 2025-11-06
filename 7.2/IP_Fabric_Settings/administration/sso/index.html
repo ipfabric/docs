@@ -71,7 +71,20 @@
 
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Single Sign-On (SSO) - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This section provides instructions on how to configure Single Sign-On (SSO) for IP Fabric." />
+<meta property="og:image" content="https://docs.ipfabric.io/7.2/assets/images/social/IP_Fabric_Settings/administration/sso.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.ipfabric.io/7.2/IP_Fabric_Settings/administration/sso/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Single Sign-On (SSO) - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This section provides instructions on how to configure Single Sign-On (SSO) for IP Fabric." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/7.2/assets/images/social/IP_Fabric_Settings/administration/sso.png" />
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7605,6 +7618,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/netbox/01_User_Guide/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15005,7 +15045,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <p>This name will be displayed on the login page of the GUI. This name will be
   capitalized (e.g., <code>sso</code> &rarr; <code>Sso</code>); therefore, it is recommended to use
   names such as <code>azure</code> or <code>okta</code>.</p>
-<p><a class="glightbox" href="sso_button_name.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SSO button" src="sso_button_name.png" /></a></p>
+<p><a class="glightbox" href="sso_button_name.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SSO button" src="sso_button_name.webp" /></a></p>
 </li>
 </ul>
 </li>
@@ -15067,7 +15107,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 </li>
 </ul>
 <p>Example how to find <code>roleId</code>:</p>
-<p><a class="glightbox" href="../roles/roles_id.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Role ID" src="../roles/roles_id.png" /></a></p>
+<p><a class="glightbox" href="../roles/roles_id.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Role ID" src="../roles/roles_id.webp" /></a></p>
 <h2 id="sso-configuration-ipf-dexyaml">SSO Configuration <code>ipf-dex.yaml</code></h2>
 <p>While Dex supports various connectors, we strongly recommend using OpenID
 Connect (OIDC) for SSO integration. (Azure uses a special <code>microsoft</code> connector,
@@ -15159,7 +15199,7 @@ Access</code> screen to be presented to your users on every login. By setting it
 <div class="highlight"><pre><span></span><code><span class="nt">oauth2</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">skipApprovalScreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p><a class="glightbox" href="sso_approval.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Grant Access" src="sso_approval.png" /></a></p>
+<p><a class="glightbox" href="sso_approval.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Grant Access" src="sso_approval.webp" /></a></p>
 <h3 id="static-clients">Static Clients</h3>
 <p>The <code>staticClients</code> section contains the configuration for the IP Fabric portal,
 which acts as a client to <code>dex</code>.</p>
@@ -15220,7 +15260,7 @@ updates.</p>
 <h3 id="config-file-mapping">Config File Mapping</h3>
 <p>Here is a concise illustration of how the <code>/opt/ipf-api/conf.d/api.json</code> values
 map to <code>/etc/ipf-dex.yaml</code>:</p>
-<p><a class="glightbox" href="sso_api_dex_mapping.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="JSON YAML mapping" src="sso_api_dex_mapping.png" /></a></p>
+<p><a class="glightbox" href="sso_api_dex_mapping.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="JSON YAML mapping" src="sso_api_dex_mapping.webp" /></a></p>
 <h3 id="openid-connect-oidc">OpenID Connect (OIDC)</h3>
 <p>Please review the
 <a href="https://dexidp.io/docs/connectors/oidc/">Dex documentation on OIDC</a> for all
@@ -15354,7 +15394,7 @@ directory only</code>.</p>
 <li>
 <p>When the registration finishes, the Azure portal displays the app
    registration&rsquo;s Overview pane. You will see the Application (client) ID.</p>
-<p><a class="glightbox" href="azure-app-registration-overview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="azure-app-registration-overview.png" /></a></p>
+<p><a class="glightbox" href="azure-app-registration-overview.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="azure-app-registration-overview.webp" /></a></p>
 </li>
 <li>
 <p>From the <strong>Certificates &amp; secrets</strong> menu, select <code>+ New client secret</code>.</p>
@@ -15362,7 +15402,7 @@ directory only</code>.</p>
 <li>
 <p>Enter a <code>Name</code> for the secret. E.g., <code>clientSecret</code>. <strong>Make sure to copy and
    save the generated value for the <code>clientSecret</code>.</strong></p>
-<p><a class="glightbox" href="azure-app-registration-secret.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.png" /></a></p>
+<p><a class="glightbox" href="azure-app-registration-secret.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="azure-app-registration-secret.webp" /></a></p>
 </li>
 <li>
 <p>From the <strong>API permissions</strong> menu, select <code>+ Add a permission</code>.</p>
@@ -15370,11 +15410,11 @@ directory only</code>.</p>
 <li>
 <p>Find the <code>User.Read</code> permission (under <code>Microsoft Graph</code>) and grant it to the
    created application:</p>
-<p><a class="glightbox" href="azure-api-permissions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD API permissions" src="azure-api-permissions.png" /></a></p>
+<p><a class="glightbox" href="azure-api-permissions.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD API permissions" src="azure-api-permissions.webp" /></a></p>
 </li>
 <li>
 <p>From the <strong>Token Configuration</strong> menu, select <code>+ Add groups claim</code>:</p>
-<p><a class="glightbox" href="azure-token-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.png" /></a></p>
+<p><a class="glightbox" href="azure-token-configuration.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure AD token configuration" src="azure-token-configuration.webp" /></a></p>
 <p>- <code>All groups</code>: Emits security groups, distribution lists, and roles.</p>
 <p>- <code>Security groups</code>: Emits security groups of which the user is a member in
     the groups claim.</p>
@@ -15600,7 +15640,7 @@ API service:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
   </span>
 
     

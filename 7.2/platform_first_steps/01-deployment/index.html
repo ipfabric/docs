@@ -71,7 +71,20 @@
 
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Deploying IP Fabric Virtual Machine (VM) - IP Fabric Documentation Portal" />
+<meta property="og:description" content="In this first step, we will guide you through the deployment of the IP Fabric virtual machine." />
+<meta property="og:image" content="https://docs.ipfabric.io/7.2/assets/images/social/platform_first_steps/01-deployment.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.ipfabric.io/7.2/platform_first_steps/01-deployment/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Deploying IP Fabric Virtual Machine (VM) - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="In this first step, we will guide you through the deployment of the IP Fabric virtual machine." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/7.2/assets/images/social/platform_first_steps/01-deployment.png" />
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7644,6 +7657,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/netbox/01_User_Guide/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -15004,7 +15044,7 @@ on how to resolve the issue.</p>
 <li>
 <p>A <code>New virtual machine</code> dialog appears. In its 1<sup>st</sup> step <code>Select creation
    type</code>, select <strong>Create a new virtual machine</strong>:</p>
-<p><a class="glightbox" href="../esxi-vmdk/create-vm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Create a new virtual machine" src="../esxi-vmdk/create-vm.png" /></a></p>
+<p><a class="glightbox" href="../esxi-vmdk/create-vm.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Create a new virtual machine" src="../esxi-vmdk/create-vm.webp" /></a></p>
 </li>
 <li>
 <p>In the 2<sup>nd</sup> step <code>Select a name and guest OS</code>:</p>
@@ -15041,17 +15081,17 @@ For the best experience, use a supported version of ESXi.</p>
 <ol>
 <li>
 <p>Remove the automatically added hard disk:</p>
-<p><a class="glightbox" href="../esxi-vmdk/remove-disk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Remove disk" src="../esxi-vmdk/remove-disk.png" /></a></p>
+<p><a class="glightbox" href="../esxi-vmdk/remove-disk.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Remove disk" src="../esxi-vmdk/remove-disk.webp" /></a></p>
 </li>
 <li>
 <p>Change the <strong>SCSI Controller</strong> to <code>VMware Paravirtual</code> (<code>PVSCSI</code>) and
     the <strong>Adapter Type</strong> under <strong>Network Adapter</strong> to <code>VMXNET 3</code>:</p>
-<p><a class="glightbox" href="../esxi-vmdk/storage-and-network.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Change storage and network" src="../esxi-vmdk/storage-and-network.png" /></a></p>
+<p><a class="glightbox" href="../esxi-vmdk/storage-and-network.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Change storage and network" src="../esxi-vmdk/storage-and-network.webp" /></a></p>
 </li>
 <li>
 <p>Click <strong>Add hard disk</strong>, select <strong>Existing hard disk</strong>, and import the
     downloaded <code>ipfabric-&lt;x.y.z+build&gt;.vmdk</code> file:</p>
-<p><a class="glightbox" href="../esxi-vmdk/add-disk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Add disk" src="../esxi-vmdk/add-disk.png" /></a></p>
+<p><a class="glightbox" href="../esxi-vmdk/add-disk.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware ESXi - Add disk" src="../esxi-vmdk/add-disk.webp" /></a></p>
 </li>
 </ol>
 <div class="admonition warning">
@@ -15090,35 +15130,35 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 <li>
 <p>Create a new Hyper-V virtual machine and specify its <strong>Name</strong> and <strong>Location</strong>:</p>
-<p><a class="glightbox" href="../hyperv_create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Name and Location" src="../hyperv_create.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_create.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Name and Location" src="../hyperv_create.webp" /></a></p>
 </li>
 <li>
 <p>In the <strong>Specify Generation</strong> step, select <code>Generation 1</code>:</p>
-<p><a class="glightbox" href="../hyperv_generation.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Generation" src="../hyperv_generation.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_generation.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Specify Generation" src="../hyperv_generation.webp" /></a></p>
 </li>
 <li>
 <p>Assign memory. (Check requirements in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.)</p>
-<p><a class="glightbox" href="../hyperv_memory.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Assign Memory" src="../hyperv_memory.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_memory.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Assign Memory" src="../hyperv_memory.webp" /></a></p>
 </li>
 <li>
 <p>Configure networking:</p>
-<p><a class="glightbox" href="../hyperv_networking.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Configure Networking" src="../hyperv_networking.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_networking.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Configure Networking" src="../hyperv_networking.webp" /></a></p>
 </li>
 <li>
 <p>Connect a virtual hard disk:</p>
-<p><a class="glightbox" href="../hyperv_harddisk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Connect Virtual Hard Disk" src="../hyperv_harddisk.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_harddisk.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Connect Virtual Hard Disk" src="../hyperv_harddisk.webp" /></a></p>
 </li>
 <li>
 <p>Verify the Summary and click <strong>Finish</strong>:</p>
-<p><a class="glightbox" href="../hyperv_summary.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Summary" src="../hyperv_summary.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_summary.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - Summary" src="../hyperv_summary.webp" /></a></p>
 </li>
 <li>
 <p>Wait for the VM to be created.</p>
 </li>
 <li>
 <p>Edit the VM CPU settings. (Check requirements in the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.)</p>
-<p><a class="glightbox" href="../hyperv_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings" src="../hyperv_settings.png" /></a></p>
-<p><a class="glightbox" href="../hyperv_settings_cpu.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings - Hardware - Processor" src="../hyperv_settings_cpu.png" /></a></p>
+<p><a class="glightbox" href="../hyperv_settings.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings" src="../hyperv_settings.webp" /></a></p>
+<p><a class="glightbox" href="../hyperv_settings_cpu.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hyper-V - VM Settings - Hardware - Processor" src="../hyperv_settings_cpu.webp" /></a></p>
 </li>
 <li>
 <p>Optionally, increase the disk size based on the <a href="../../overview/#operational-requirements">Operational Requirements</a> section.</p>
@@ -15195,27 +15235,27 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 <li>
 <p>Import the <code>OVA</code> image via <strong>File &rarr; Import Appliance&hellip;</strong>:</p>
-<p><a class="glightbox" href="../virtualbox_import-virtual-appliance.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance" src="../virtualbox_import-virtual-appliance.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_import-virtual-appliance.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance" src="../virtualbox_import-virtual-appliance.webp" /></a></p>
 </li>
 <li>
 <p>In the next step of the <strong>Import Virtual Appliance</strong> guide:</p>
 <p>1. Set <strong>CPU</strong> and <strong>RAM</strong> as per the <a href="../../overview/#hardware-requirements">hardware requirements</a> for your use-case.</p>
 <p>2. Set the <strong>Network Adapter</strong> to <code>Paravirtualized Network (virtio-net)</code>.</p>
 <p>3. Keep the <code>Import hard drives as VDI</code> option checked for importing the disk image in the default VirtualBox format. (Otherwise, the disk image will be imported as VDMK, the default format of VMware.)</p>
-<p><a class="glightbox" href="../virtualbox_import-virtual-appliance-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance - Appliance Settings" src="../virtualbox_import-virtual-appliance-2.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_import-virtual-appliance-2.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - Import Virtual Appliance - Appliance Settings" src="../virtualbox_import-virtual-appliance-2.webp" /></a></p>
 </li>
 <li>
 <p>Right-click the newly created virtual machine and select its <strong>Settings&hellip;</strong></p>
 </li>
 <li>
 <p>In the <strong>System</strong> section, select <code>ICH9</code> as the <strong>Chipset</strong>:</p>
-<p><a class="glightbox" href="../virtualbox_vm-settings_system.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - System" src="../virtualbox_vm-settings_system.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_vm-settings_system.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - System" src="../virtualbox_vm-settings_system.webp" /></a></p>
 </li>
 <li>
 <p>In the <strong>Display</strong> section, select <code>VMSVGA</code> as the <strong>Graphics Controller</strong>:</p>
-<p><a class="glightbox" href="../virtualbox_vm-settings_display.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display" src="../virtualbox_vm-settings_display.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_vm-settings_display.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display" src="../virtualbox_vm-settings_display.webp" /></a></p>
 <p>- Or to what VirtualBox suggests when an invalid Graphics Controller is selected:</p>
-<p><a class="glightbox" href="../virtualbox_vm-settings_display-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display - Invalid settings detected" src="../virtualbox_vm-settings_display-2.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_vm-settings_display-2.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Display - Invalid settings detected" src="../virtualbox_vm-settings_display-2.webp" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When an invalid Graphics Controller is selected, it can lead to issues in the virtual machine and even on the host machine.</p>
@@ -15223,11 +15263,11 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 <li>
 <p>In the <strong>Storage</strong> section, select <code>virtio-scsi</code> as the Controller <strong>Type</strong>:</p>
-<p><a class="glightbox" href="../virtualbox_vm-settings_storage.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Storage" src="../virtualbox_vm-settings_storage.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_vm-settings_storage.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Storage" src="../virtualbox_vm-settings_storage.webp" /></a></p>
 </li>
 <li>
 <p>In the <strong>Network</strong> section, select <code>Bridged Adapter</code> and re-check in <strong>Advanced</strong> that the <strong>Adapter Type</strong> is <code>Paravirtualized Network (virtio-net)</code>:</p>
-<p><a class="glightbox" href="../virtualbox_vm-settings_network.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Network" src="../virtualbox_vm-settings_network.png" /></a></p>
+<p><a class="glightbox" href="../virtualbox_vm-settings_network.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VirtualBox - VM Settings - Network" src="../virtualbox_vm-settings_network.webp" /></a></p>
 </li>
 <li>
 <p>Start the VM.</p>
@@ -15244,17 +15284,17 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 <p>&hellip; a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.</p>
 </blockquote>
 <p>Please follow the instructions in <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups">Create resource groups</a>.</p>
-<p><a class="glightbox" href="../azure-imgs/azure-01-Create-resource-group.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Resource group" src="../azure-imgs/azure-01-Create-resource-group.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-01-Create-resource-group.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Resource group" src="../azure-imgs/azure-01-Create-resource-group.webp" /></a></p>
 </li>
 <li>
 <p>Create or use an existing Storage Account for the IP Fabric VM.</p>
 <p>A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager overview</a> and <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1">Creating Storage Account</a>.</p>
-<p><a class="glightbox" href="../azure-imgs/azure-02-Create-storage-account.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage account" src="../azure-imgs/azure-02-Create-storage-account.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-02-Create-storage-account.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Storage account" src="../azure-imgs/azure-02-Create-storage-account.webp" /></a></p>
 </li>
 <li>
 <p>Create or use an existing Blob Storage Container.</p>
 <p>Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Introduction to Azure Blob Storage</a>.</p>
-<p><a class="glightbox" href="../azure-imgs/azure-03-storage-blob-container.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Blob Storage container" src="../azure-imgs/azure-03-storage-blob-container.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-03-storage-blob-container.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create a Blob Storage container" src="../azure-imgs/azure-03-storage-blob-container.webp" /></a></p>
 </li>
 <li>
 <p>Convert the IP Fabric-provided <code>qcow2</code> image to VHD using <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image:</p>
@@ -15273,7 +15313,7 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure">Upload the VHD image</a> to the storage account blob container created using the <a href="https://azure.microsoft.com/en-us/products/storage/storage-explorer/">Azure Storage Explorer</a>.</p>
-<p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-04-uploaded-vhd.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Upload the VHD image" src="../azure-imgs/azure-04-uploaded-vhd.webp" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Blob Type</p>
 <p>When uploading the VHD image to Azure, make sure to select <code>Page Blob</code> as the Blob Type. Azure images can only be created from a <code>Page Blob</code> source.</p>
@@ -15315,9 +15355,9 @@ Azure Regions contain different server sizes, so performing this step will ensur
 <li>Record the <code>Instance</code> and <code>Region</code> names you would like to use for the deployment.</li>
 </ol>
 <h3 id="creating-image">Creating Image</h3>
-<p><a class="glightbox" href="../azure-imgs/azure-05-1-images.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Search Images" src="../azure-imgs/azure-05-1-images.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-05-1-images.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Search Images" src="../azure-imgs/azure-05-1-images.webp" /></a></p>
 <p>Search and select <code>Images</code> in the portal&rsquo;s search bar, and then <code>Create</code> a new Image.</p>
-<p><a class="glightbox" href="../azure-imgs/azure-05-create-image.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create an Image from VHD" src="../azure-imgs/azure-05-create-image.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-05-create-image.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create an Image from VHD" src="../azure-imgs/azure-05-create-image.webp" /></a></p>
 <ol>
 <li>Select the correct <code>Subscription</code> and <code>Resource group</code>.</li>
 <li>Name the image.</li>
@@ -15333,10 +15373,10 @@ Azure Regions contain different server sizes, so performing this step will ensur
 </ol>
 <h3 id="creating-vm">Creating VM</h3>
 <p>After creating the Image, go to the Resource and select <code>Create VM</code>:</p>
-<p><a class="glightbox" href="../azure-imgs/azure-06-create-vm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create VM" src="../azure-imgs/azure-06-create-vm.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-06-create-vm.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create VM" src="../azure-imgs/azure-06-create-vm.webp" /></a></p>
 <h4 id="basics">Basics</h4>
-<p><a class="glightbox" href="../azure-imgs/azure-07-vm-details.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Details" src="../azure-imgs/azure-07-vm-details.png" /></a></p>
-<p><a class="glightbox" href="../azure-imgs/azure-08-basics-cont.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Basics Continued" src="../azure-imgs/azure-08-basics-cont.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-07-vm-details.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Details" src="../azure-imgs/azure-07-vm-details.webp" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-08-basics-cont.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Basics Continued" src="../azure-imgs/azure-08-basics-cont.webp" /></a></p>
 <ol>
 <li>
 <p>Fill out the required <code>Project details</code> and <code>Instance details</code> sections:</p>
@@ -15378,7 +15418,7 @@ Azure Regions contain different server sizes, so performing this step will ensur
 </li>
 </ol>
 <h4 id="disks">Disks</h4>
-<p><a class="glightbox" href="../azure-imgs/azure-09-disks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Disks" src="../azure-imgs/azure-09-disks.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-09-disks.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Disks" src="../azure-imgs/azure-09-disks.webp" /></a></p>
 <ol>
 <li>
 <p>Enabling <code>Encryption at host</code> is recommended if it is available.</p>
@@ -15391,7 +15431,7 @@ Azure Regions contain different server sizes, so performing this step will ensur
 </li>
 </ol>
 <h4 id="networking">Networking</h4>
-<p><a class="glightbox" href="../azure-imgs/azure-10-networking.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Networking" src="../azure-imgs/azure-10-networking.png" /></a></p>
+<p><a class="glightbox" href="../azure-imgs/azure-10-networking.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Networking" src="../azure-imgs/azure-10-networking.webp" /></a></p>
 <ol>
 <li>
 <p>Select or create a new <code>Virtual network</code> and <code>Subnet</code>.</p>
@@ -15460,7 +15500,7 @@ We can connect to the appliance via SSH with the default/factory <code>osadmin</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
   </span>
 
     

@@ -71,7 +71,20 @@
 
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="IPF Certificates - IP Fabric Documentation Portal" />
+<meta property="og:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates." />
+<meta property="og:image" content="https://docs.ipfabric.io/7.2/assets/images/social/IP_Fabric_Settings/system/ipf_cert.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.ipfabric.io/7.2/IP_Fabric_Settings/system/ipf_cert/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="IPF Certificates - IP Fabric Documentation Portal" />
+<meta property="twitter:description" content="This page explains how to generate a CSR and then upload a signed server certificate in the IP Fabric GUI. It also describes how to handle some special requirements regarding certificates." />
+<meta property="twitter:image" content="https://docs.ipfabric.io/7.2/assets/images/social/IP_Fabric_Settings/system/ipf_cert.png" />
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -7444,6 +7457,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/netbox/01_User_Guide/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14556,7 +14596,7 @@ CSR, switch off the <strong>Include DNS short name in CSR SAN</strong> toggle.<
 <p>This is for security reasons.</p>
 <p>If this is too restrictive, please follow the instructions in
 <a href="#generate-csr-with-special-characters">Generate CSR with Special Characters</a>.</p>
-<p><a class="glightbox" href="org_dep_fields.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Organization and department fields" src="org_dep_fields.png" /></a></p>
+<p><a class="glightbox" href="org_dep_fields.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Organization and department fields" src="org_dep_fields.webp" /></a></p>
 </div>
 <ol>
 <li>Go to <strong>Settings &rarr; System &rarr; IPF Certificates</strong>.</li>
@@ -14609,7 +14649,7 @@ in the final certificate uploaded to IP Fabric in one continuous file:</p>
 the character <code>&amp;</code> is not allowed) as the <strong>Organization name</strong>. After filling in
 the remaining fields, when we click <strong>Generate</strong>, an <code>Invalid Input</code> error will
 be displayed.</p>
-<p><a class="glightbox" href="create_a_csr_invalid_input.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generate a CSR - Invalid Input" src="create_a_csr_invalid_input.png" /></a></p>
+<p><a class="glightbox" href="create_a_csr_invalid_input.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generate a CSR - Invalid Input" src="create_a_csr_invalid_input.webp" /></a></p>
 <p>If any special characters are required in any of the mentioned fields, follow
 these steps:</p>
 <ol>
@@ -14617,7 +14657,7 @@ these steps:</p>
 <p>Fill out the <strong>Create a CSR (Certificate Signing Request)</strong> form, but avoid
    any special characters (in our example, we replaced <code>Test Company with &amp;</code>
    with <code>Test Company with</code>):</p>
-<p><a class="glightbox" href="create_a_csr_without_special_chars.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generate a CSR - with avoiding any special characters" src="create_a_csr_without_special_chars.png" /></a></p>
+<p><a class="glightbox" href="create_a_csr_without_special_chars.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generate a CSR - with avoiding any special characters" src="create_a_csr_without_special_chars.webp" /></a></p>
 </li>
 <li>
 <p>Click <strong>Generate</strong>.</p>
@@ -14651,7 +14691,7 @@ these steps:</p>
 <li>
 <p>Modify <code>customer.conf</code> (for example with <code>vi customer.conf</code>; in our example,
    we changed <code>Test Company with</code> to <code>Test Company with &amp;</code>):</p>
-<p><a class="glightbox" href="edit_customer_conf_file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Edit customer.conf file" src="edit_customer_conf_file.png" /></a></p>
+<p><a class="glightbox" href="edit_customer_conf_file.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Edit customer.conf file" src="edit_customer_conf_file.webp" /></a></p>
 </li>
 <li>
 <p>Generate new <code>customer.key</code> and <code>customer.csr</code> files using the modified
@@ -14906,7 +14946,7 @@ certificate.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
   </span>
 
     
