@@ -16,7 +16,7 @@ click **Start Discovery**.
 In the **Discovery Snapshot** section, click **+ New snapshot** and then **Start
 discovery**:
 
-![Start discovery](start_discovery.png)
+![Start discovery](start_discovery.webp)
 
 IP Fabric will attempt to connect to the default gateway of the VM and any
 provided seed IP addresses. Once connected to a device, IP Fabric will identify

@@ -10,4 +10,4 @@ Each vendor provides a different scope of information for VMs, so IP Fabric may 
 
 The **Endpoints** section provides detailed information about cloud virtual machines, including their hostnames, sites, VM names, status, OS version, number of interfaces, and interface details (e.g., IP address, MAC address, etc.).
 
-![Technology table showing Cloud endpoints](endpoints.png)
+![Technology table showing Cloud endpoints](endpoints.webp)

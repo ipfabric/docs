@@ -50,7 +50,7 @@ To schedule automatic local backups, follow these steps:
 6. Change the **Destination** to `Local hard drive`.
 7. Click **Save**.
 
-![Schedule local backup](system_backup/schedule_local_backup.png)
+![Schedule local backup](system_backup/schedule_local_backup.webp)
 
 ## Automatic Remote Backups
 
@@ -78,7 +78,7 @@ To set up remote backup, follow these steps:
 3. Enable backup.
 4. Set a backup schedule. See the example for `Every day at 5:15 and 17:15` (to
    select multiple values, hold `Ctrl` or `Shift` during the selection).
-   ![Backup schedule](system_backup/backup_schedule.png)
+   ![Backup schedule](system_backup/backup_schedule.webp)
 5. Change the **Destination** to `FTP` or `SFTP`.
 6. Enter the remote FTP/SFTP **Server** FQDN or IP address. Make sure that your
    DNS client is configured and working properly in case of FQDN.

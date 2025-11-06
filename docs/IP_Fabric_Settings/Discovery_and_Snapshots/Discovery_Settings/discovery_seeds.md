@@ -17,7 +17,7 @@ network subnets. Existing inventory data can also be imported.
 If no seed information is entered, discovery will begin from the current default
 gateway.
 
-![Discovery Seeds](discovery_seeds.png)
+![Discovery Seeds](discovery_seeds.webp)
 
 !!! note
     

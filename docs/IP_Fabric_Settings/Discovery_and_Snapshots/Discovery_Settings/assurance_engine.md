@@ -6,7 +6,7 @@ description: This section contains information on how to skip some discovery fea
 
 Since version `6.0`, IP Fabric can skip some of the discovery features to decrease discovery time.
 
-![Assurance Engine](assurance_engine.png)
+![Assurance Engine](assurance_engine.webp)
 
 The **Assurance Engine** section allows you to disable the following features to speed up the discovery process, but it will also limit application features:
 

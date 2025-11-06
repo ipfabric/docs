@@ -12,7 +12,7 @@ Since `6.8.0`, IP Fabric supports discovering Cisco Viptela devices in combined 
 
 1. To add Viptela to global discovery settings, go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API** and click **+ Add**:
 
-   ![Add Vendor API](vendor_api_add.png)
+   ![Add Vendor API](vendor_api_add.webp)
 
 2. Afterward, choose `Viptela` from the list and fill in:
 
@@ -22,7 +22,7 @@ Since `6.8.0`, IP Fabric supports discovering Cisco Viptela devices in combined 
 
 3. Optionally, you may enable **Allow API+CLI combined discovery**, which allows the retrieval of data partially using API calls and partially using CLI commands.
 
-   ![Add Connection - Viptela](viptela_api_add.png)
+   ![Add Connection - Viptela](viptela_api_add.webp)
 
 ## Cisco Viptela cEdge
 
