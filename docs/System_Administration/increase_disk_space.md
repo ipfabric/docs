@@ -7,16 +7,28 @@ description: This section describes how to increase disk space on the IP Fabric 
 Starting with version `5.0.0`, the IP Fabric appliance deploys as a single hard
 disk installation instead of two disk volumes.
 
+Starting with versions `7.3.23` and `7.5.11`, new installations utilise the GPT
+disk partitioning scheme, while older versions and all pre-existing installations
+utilise the MBR partitioning scheme.
+
 The IP Fabric appliance uses LVM for the **root** and **swap** partitions. In a
 default installation, **swap** has 16 GB, and **root** has approximately 72 GB
 of disk space.
 
-We automatically resize the **boot** disk as follows:
+In the current versions we automatically resize the **boot** disk.
+
+On appliances with the MBR partitioning scheme it works like this:
 
 1. Resize the primary partition to the full size of the disk.
 2. Resize the extended partition to the full size of the primary partition.
 3. Extend `ipfabric-vg/root` to `+100%FREE`.
 4. Online resize the `ext4` partition.
+
+On appliances with the GPT partitioning scheme the process is similar, with one less step:
+
+1. Resize the system (LVM) partition to the full size of the disk.
+2. Extend `ipfabric-vg/root` to `+100%FREE`.
+3. Online resize the `ext4` partition.
 
 ## Increasing Disk Space on IP Fabric Appliance
 
@@ -88,6 +100,21 @@ recommend using an additional disk located on a different datastore than the
    └─vda5                  254:5    0 75,8G  0 part
      ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
      └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
+   vdb                     254:16   0   20G  0 disk             # <-- We want to use this device for the /backup directory.
+   ```
+
+   On systems utilising the GPT partitioning layout, the `lsblk` output may look different:
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76,3G  0 disk
+   ├─vda1                  254:1    0  256M  0 part /boot/efi
+   ├─vda2                  254:2    0    1M  0 part
+   ├─vda3                  254:1    0  512M  0 part /boot
+   └─vda4                  254:5    0 75,5G  0 part
+     ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:1    0 59,5G  0 lvm  /
    vdb                     254:16   0   20G  0 disk             # <-- We want to use this device for the /backup directory.
    ```
 
@@ -166,6 +193,22 @@ recommend using an additional disk located on a different datastore than the
    └─vda5                  254:5    0 75,8G  0 part
      ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
      └─ipfabric--vg-root   253:1    0 59,8G  0 lvm  /
+   vdb                     254:16   0   20G  0 disk
+   └─backup--vg-backup     253:2    0   20G  0 lvm  /backup
+   ```
+
+	or, on systems with GPT partitioning:
+
+   ```shell
+   osadmin@ipfabric:~$ lsblk
+   NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+   vda                     254:0    0 76,3G  0 disk
+   ├─vda1                  254:1    0  256M  0 part /boot/efi
+   ├─vda2                  254:2    0    1M  0 part
+   ├─vda3                  254:1    0  512M  0 part /boot
+   └─vda4                  254:5    0 75,5G  0 part
+     ├─ipfabric--vg-swap_1 253:0    0   16G  0 lvm  [SWAP]
+     └─ipfabric--vg-root   253:1    0 59,5G  0 lvm  /
    vdb                     254:16   0   20G  0 disk
    └─backup--vg-backup     253:2    0   20G  0 lvm  /backup
    ```
@@ -381,8 +424,9 @@ is more versatile and is not limited to `sd[a-z]` disks.
 
 !!! error "Deprecated Script"
 
-    This script should not be used anymore. You should run it only when you know
-    what you are doing.
+    This script should not be used anymore. The script also only supports the
+    MBR partitioning scheme, and doesn't work with the GPT partitioning scheme.
+    You should run it only when you know what you are doing.
 
 Script location: `/opt/nimpee/sys-lvm-resize.sh`
 
