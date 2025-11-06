@@ -55,11 +55,11 @@ versions:
 
 2. On the page, click **+ Add**:
 
-   ![Add button](jumphost/add_button.png)
+   ![Add button](jumphost/add_button.webp)
 
 3. Fill in all necessary data:
 
-   ![Add Jumphost form](jumphost/add_jumphost_form.png)
+   ![Add Jumphost form](jumphost/add_jumphost_form.webp)
 
    - **Label** -- _(mandatory)_ Name of the configuration.
 
@@ -74,7 +74,7 @@ versions:
         IP/FQDN:PORT
         ```
 
-        ![Add Jumphost form - custom port](jumphost/jumphost_custom_port.png)
+        ![Add Jumphost form - custom port](jumphost/jumphost_custom_port.webp)
 
    - **IPv4 subnets** -- _(mandatory)_ Subnet in CIDR representation. Allows
      adding more than one, separated with spaces. The subnet `0.0.0.0/0` cannot
@@ -116,7 +116,7 @@ versions:
 5. If the connection is open, you will see `Yes` in the `Status` column in the
    `Jumphost settings` table:
 
-   ![Jumphost settings table - Yes status for jumphost](jumphost/jumphost_settings_table.png)
+   ![Jumphost settings table - Yes status for jumphost](jumphost/jumphost_settings_table.webp)
 
 ### SSH Key Configuration
 
@@ -129,7 +129,7 @@ versions:
 
 1. Download the SSH key from Jumphost settings:
 
-   ![Download public key button](jumphost/download_public_key_button.png)
+   ![Download public key button](jumphost/download_public_key_button.webp)
 
 2. Save `jumphost-public-key.pub`.
 
@@ -167,13 +167,13 @@ versions:
 
 1. Edit the configuration that needs to be disabled, i.e.:
 
-   ![Edit icon](jumphost/edit_icon.png)
+   ![Edit icon](jumphost/edit_icon.webp)
 
 2. Change the setting to `Disabled`.
 
 3. Click **Update**.
 
-   ![Disable jumphost](jumphost/disable_jumphost.png)
+   ![Disable jumphost](jumphost/disable_jumphost.webp)
 
 ### Remove Jumphost Configuration
 
@@ -181,7 +181,7 @@ versions:
 
 2. Click **Delete**.
 
-   ![Delete jumphost](jumphost/delete_jumphost.png)
+   ![Delete jumphost](jumphost/delete_jumphost.webp)
 
 3. (If SSH key authentication was enabled) Delete the inserted IP Fabric public
    key from the `authorized_keys` file on the jumphost server added in the
@@ -276,13 +276,13 @@ follow these steps:
 7. Make a screenshot or copy the settings of the old jumphost. Then, delete or
    edit the jumphost settings.
 
-   ![Jumphost settings - edit or delete](jumphost/jumphost_delete_settings.png)
+   ![Jumphost settings - edit or delete](jumphost/jumphost_delete_settings.webp)
 
 8. Put the **IP address/subnet of the IP Fabric machine** to **Exclude IPv4
    subnets** or **edit** the **IPv4 subnets** so it does **not contain the IP
    address of IP Fabric**:
 
-   ![Add IP Fabric VM's IP address to jumphost's exclude list](jumphost/jumphost_exclude.png)
+   ![Add IP Fabric VM's IP address to jumphost's exclude list](jumphost/jumphost_exclude.webp)
 
 !!! info
 

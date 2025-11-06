@@ -12,7 +12,7 @@ diagrams. More information about traceroute as a protocol can be found on
 For traceroute configuration, go to **Settings --> Discovery & Snapshots -->
 Discovery Settings --> Discovery --> Traceroute settings**.
 
-![Traceroute settings](traceroute_settings.png)
+![Traceroute settings](traceroute_settings.webp)
 
 **Trace scope** -- Limits traceroute scope to the defined subnets. This prevents
 scanning networks outside an internal network.

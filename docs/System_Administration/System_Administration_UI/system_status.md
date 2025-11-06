@@ -11,7 +11,7 @@ services.
 
 The most CPU-intensive system processes are also displayed.
 
-![System status](system_status.png)
+![System status](system_status.webp)
 
 Additionally, you can **restart** specific system services or **restart / shut
 down** the entire virtual machine.

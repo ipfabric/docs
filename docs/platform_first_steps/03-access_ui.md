@@ -16,7 +16,7 @@ After logging in as the `osadmin` user, go to the **Create admin** menu and
     present by default. It is mandatory to create a new local administrator
     account.
 
-![Creating new admin user](admin_create_new.png)
+![Creating new admin user](admin_create_new.webp)
 
 With this new account, you will be able to log in to the main IP Fabric user
 interface.
@@ -26,7 +26,7 @@ can change the password of the new account.
 
 In **Settings --> Administration --> Local Users**, you can also create or delete local users and change their passwords.
 
-![Creating a new user account](modify_local_accounts.png)
+![Creating a new user account](modify_local_accounts.webp)
 
 ## Accessing the Main User Interface
 
@@ -42,9 +42,9 @@ Please keep the license file safe, as it is also used as part of the key to encr
 
 Drag the `license.key` file into the **Drop a file** area. Or click the area (or the **Upload & accept** button) and browse to the file.
 
-![Upload License link](ui_license_1.png)
+![Upload License link](ui_license_1.webp)
 
-![License Upload page](ui_license_2.png)
+![License Upload page](ui_license_2.webp)
 
 If the license installation fails, contact the IP Fabric Support team.
 
@@ -52,4 +52,4 @@ Once the license is validated, the system will present a login screen.
 
 Log in with the account created in [Creating The First IP Fabric User](#creating-the-first-ip-fabric-user):
 
-![Log in to IP Fabric](ui_admin.png)
+![Log in to IP Fabric](ui_admin.webp)

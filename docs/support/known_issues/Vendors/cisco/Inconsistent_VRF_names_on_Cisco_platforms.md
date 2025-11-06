@@ -16,7 +16,7 @@ As per the following example, the excerpt from the
 **Technology --> Addressing --> Managed IP** table, all records are for Cisco
 devices, but different families are involved:
 
-![Inconsistent VRF names](inconsistent_vrf_names.png)
+![Inconsistent VRF names](inconsistent_vrf_names.webp)
 
 ## How the Internal Algorithms Operate
 

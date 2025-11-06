@@ -69,7 +69,7 @@ available to all users.
 
 #### Device-based advanced filters
 
-![Device Filters](table_device_filters.png)
+![Device Filters](table_device_filters.webp)
 
 Supported device properties:
 
@@ -638,11 +638,11 @@ content.
 Each table contains built-in help in `Table description` under the `...` menu
 (in the top-right corner of the table):
 
-![Table description](table_description_option.png).
+![Table description](table_description_option.webp).
 
 Hover the mouse cursor over a column header for the column's description:
 
-![On-hover tooltip](table_onhover.png)
+![On-hover tooltip](table_onhover.webp)
 
 ## Column Visibility
 
@@ -652,7 +652,7 @@ however, not all columns need to always be visible.
 Select `Display settings` under the `...` menu and choose which columns to show
 or hide:
 
-![Display settings](table_display_settings_option.png)
+![Display settings](table_display_settings_option.webp)
 
 ## Column Size
 
@@ -660,7 +660,7 @@ Use the `Auto size` toggle to either automatically size columns to fit their
 current content (when enabled) or let columns remember user-defined widths
 (when disabled):
 
-![Auto size](table_auto_size.png)
+![Auto size](table_auto_size.webp)
 
 ## Persistent Table View
 
@@ -670,7 +670,7 @@ user.
 To reset a table to its original state, select `Restore table settings` under
 the `...` menu:
 
-![Restore table settings](table_restore.png)
+![Restore table settings](table_restore.webp)
 
 ## Regular Expression Syntax
 
@@ -719,7 +719,7 @@ You can use 3rd-party services, like [regex101](https://regex101.com/), to fine-
 
 ## Create Links to Table Views
 
-![Share URL options for tables](../../IP_Fabric_GUI/technology_tables/table_share_url_options.png)
+![Share URL options for tables](../../IP_Fabric_GUI/technology_tables/table_share_url_options.webp)
 
 To point to a particular dataset, the link may include
 [a snapshot ID that IP Fabric will switch to](../discovery_snapshot.md#create-url-pointing-to-specific-snapshot) after opening.

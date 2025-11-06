@@ -14,7 +14,7 @@ description: This section explains how to change the osadmin password using IPF 
 
 3. Select `Yes` to proceed:
 
-  ![Do you want to change osadmin user password?](osadmin_password_change2.png)
+  ![Do you want to change osadmin user password?](osadmin_password_change2.webp)
 
   !!! attention
 
@@ -28,9 +28,9 @@ description: This section explains how to change the osadmin password using IPF 
 
 4. Enter the new `osadmin` password twice:
 
-   ![Enter osadmin shell user password](osadmin_password_change3.png)
+   ![Enter osadmin shell user password](osadmin_password_change3.webp)
 
-   ![Repeat osadmin user password](osadmin_password_change4.png)
+   ![Repeat osadmin user password](osadmin_password_change4.webp)
 
    Password setup contains password complexity check; simple passwords are
    rejected.
@@ -57,4 +57,4 @@ description: This section explains how to change the osadmin password using IPF 
 
 5. Select `Yes` to reboot the system:
 
-  ![Reboot system](reboot.png)
+  ![Reboot system](reboot.webp)

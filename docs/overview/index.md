@@ -10,7 +10,7 @@ The IP Fabric network infrastructure management platform provides on-demand netw
 
 A distributed system of microservice components resides within the IP Fabric VM, all based around a multi-model database with a mathematical network model at its core. Operating system-level controls provide high availability, security, and log collection. The kernel-level bidirectional traffic shaper and application-level worker flow control mechanisms provide comprehensive traffic management and automatically respond to any signs of network congestion to ensure that only freely available bandwidth is utilized. The user interface is available on port `443` of the VM's IP address through any modern web browser and on any screen. Table output can be exported into CSV format for further processing, and selected reports are exportable into Word format.
 
-![IP Fabric Architecture](architecture.png)
+![IP Fabric Architecture](architecture.webp)
 
 ## Operational Requirements
 

@@ -10,7 +10,7 @@ administrator account.
 Changing the password of an already existing account is not possible in this
 section.
 
-![Create local administrator](create_admin.png)
+![Create local administrator](create_admin.webp)
 
 Creating new non-admin accounts and changing passwords are only possible in the
 IP Fabric main GUI -- in **Settings --> Administration --> Local Users**. See

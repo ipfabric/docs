@@ -22,4 +22,4 @@ no BGP routes from the routing table will be collected.
 
 The lowest limit currently available is 10000 BGP routes.
 
-![Limit download of BGP routes](limit-bgp-routes.png)
+![Limit download of BGP routes](limit-bgp-routes.webp)

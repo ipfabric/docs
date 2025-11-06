@@ -40,7 +40,7 @@ When a new IP Fabric version is available, a green indicator will appear in the
 top-right corner of the main GUI. The image below shows an example of the new
 version `6.8.6+0` being available:
 
-![New version 6.8.6+0 available](system_update_new_version.png)
+![New version 6.8.6+0 available](system_update_new_version.webp)
 
 To proceed with an online update, follow these steps:
 
@@ -72,7 +72,7 @@ use offline update:
 5. Perform the VM backup as described in the section above.
 6. Navigate to **System update**.
 7. Select or drag-and-drop the downloaded update file:
-   ![System update section](system_update.png)
+   ![System update section](system_update.webp)
 8. After a successful package upload, the update process will start
    automatically, and the IP Fabric VM will reboot once completed.
 9. Afterwards, it is recommended to create a new discovery snapshot on the

@@ -52,7 +52,7 @@ Expression is used as the Site Name.
 
 !!! Example "Regex Based on Hostname Using Default Option"
 
-    ![Hostname regex: default site name](site_separation/hostname_regex_default.png)
+    ![Hostname regex: default site name](site_separation/hostname_regex_default.webp)
 
     The regular expression matches hostnames such as `Prague-123`, `London-456`, the
     resulting Site Names would be `PRAGUE` and `LONDON` respectively.
@@ -68,7 +68,7 @@ used in the Site Name is checked in UI to prevent any typos or other mistakes.
 
 !!! Example "Regex Based on Hostname Using Customized Site Name"
 
-    ![Hostname regex: custom site name](site_separation/hostname_regex_custom.png)
+    ![Hostname regex: custom site name](site_separation/hostname_regex_custom.webp)
 
     The regular expression matches hostnames such as `Prague-Parizska-4`,
     `London-Downing_street-10`, the resulting Site Names would be `parizska-of-prague` and
@@ -78,17 +78,17 @@ used in the Site Name is checked in UI to prevent any typos or other mistakes.
 
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Regex based on SNMP location**, and click **+ Add rule** to create a new rule.
 
-![SNMP regex](site_separation/snmp_regex.png)
+![SNMP regex](site_separation/snmp_regex.webp)
 
 ### Testing
 
 The UI allows you to edit and test your rules directly in the browser by selecting the **Test rule** option. Here, you can see a live preview of devices that will match the regex you created.
 
-![Testing hostname regex](site_separation/testing_hostname.png)
+![Testing hostname regex](site_separation/testing_hostname.webp)
 
 You can also test SNMP location rules:
 
-![Testing SNMP location regex](site_separation/testing_snmp.png)
+![Testing SNMP location regex](site_separation/testing_snmp.webp)
 
 !!! example "Regex Example"
 
@@ -123,7 +123,7 @@ Read more about regular expression and assertion at <https://developer.mozilla.o
 
 ## Device Neighborship
 
-![Device Neighborship](site_separation/device_neighborship.png)
+![Device Neighborship](site_separation/device_neighborship.webp)
 
 This option will try to define a device based on its neighbor relationship if a device does not match any previous rule. Perhaps you have devices in your environment that do not follow the normal standard, such as those in a DMZ zone or Day 0 devices that have not been fully configured. If that device is connected to a device that did match a rule, IP Fabric will intelligently group it to the correct Site.
 
@@ -133,15 +133,15 @@ This option will try to define a device based on its neighbor relationship if a 
 
 To configure **Device Attributes**, first enable the **Manual site separation** toggle in **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, and then select **Configure device attributes**:
 
-![Configure device attributes](site_separation/configure_device_attributes.png)
+![Configure device attributes](site_separation/configure_device_attributes.webp)
 
 or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Device Attributes**:
 
-![Device Attributes menu](site_separation/device_attributes_menu.png)
+![Device Attributes menu](site_separation/device_attributes_menu.webp)
 
 ### Device Attributes
 
-![Device Attributes table](site_separation/device_attributes_table.png)
+![Device Attributes table](site_separation/device_attributes_table.webp)
 
 - `Serial number` is IP Fabric's "Unique Serial Number" (API column `sn`). This is not the `Serial Number` column, which represents the Hardware SN (API column `snHw`). Devices discovered via API can also be assigned using Device Attributes.
 - `Hostname` is populated by IP Fabric when a device matching the `Serial number` is found.
@@ -152,9 +152,9 @@ or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Devic
 
 You can create rules in the UI by clicking **+ Add attribute**. This will provide you with a form to fill out.
 
-![Add Attribute](site_separation/add_attribute.png)
+![Add Attribute](site_separation/add_attribute.webp)
 
-![Dropdown](site_separation/dropdown.png)
+![Dropdown](site_separation/dropdown.webp)
 
 ### Creating Rules via the API
 
@@ -177,7 +177,7 @@ The API is the preferred method of creating rules as it allows for bulk importin
 
 ## Rule Priority
 
-![Rule priority](site_separation/rule_priority.png)
+![Rule priority](site_separation/rule_priority.webp)
 
 Rule precedence is defined by the order from top to bottom. So, in the example above:
 

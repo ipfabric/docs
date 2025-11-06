@@ -7,7 +7,7 @@ description: Once you log in for the first time, you will see the Configuration 
 Once you log in for the first time, you will see the **Configuration Wizard**.
 It will guide you through the initial setup to start the first discovery.
 
-![Configuration Wizard](wizard.png)
+![Configuration Wizard](wizard.webp)
 
 1. [Device Credentials](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md#configure-network-infrastructure-access)
 2. [Discovery Seeds](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds.md) / [IP Scope](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope.md)

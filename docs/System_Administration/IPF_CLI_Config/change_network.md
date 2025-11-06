@@ -26,7 +26,7 @@ IP Fabric appliance from the CLI, follow these steps:
 4. Next, select DHCP or static IP address assignment. Use the `up`/`down` and
    `Space` keys to change `()` to `(*)`.
 
-   ![Use DHCP or Static IP Address](change_ip_assignment.png)
+   ![Use DHCP or Static IP Address](change_ip_assignment.webp)
 
 5. If you selected static IP address assignment, then enter:
 
@@ -36,8 +36,8 @@ IP Fabric appliance from the CLI, follow these steps:
    - primary DNS
    - secondary DNS
 
-   ![Configure a static IP](change_static_ip.png)
+   ![Configure a static IP](change_static_ip.webp)
 
 6. Select `Yes` to reboot the system:
 
-   ![Reboot system](reboot.png)
+   ![Reboot system](reboot.webp)

@@ -12,4 +12,4 @@ Each vendor provides a different scope of information for VMs. Thus, IP Fabric m
 
 New tables in this section provide detailed information about cloud virtual machines -- their hostnames, sites, VM names, status, OS version running, number of interfaces and their details (IP address, MAC address, etc.).
 
-![Technology table showing Cloud VMs](cloud_vms.png)
+![Technology table showing Cloud VMs](cloud_vms.webp)

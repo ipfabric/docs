@@ -18,11 +18,11 @@ A network snapshot is a fully functional software copy of your network, includin
 
 The network information displayed in IP Fabric corresponds to the network snapshot selected in the **Current Snapshot** drop-down menu in the left panel.
 
-![Current Snapshot](snapshots/current_snapshot.png)
+![Current Snapshot](snapshots/current_snapshot.webp)
 
 ## New Snapshot
 
-![New snapshot](snapshots/new_snapshot.png)
+![New snapshot](snapshots/new_snapshot.webp)
 
 To work with snapshots, click the **Discovery Snapshot** menu entry (highlighted
 in the yellow box). This will display all loaded and unloaded snapshots and allow
@@ -65,14 +65,14 @@ change.
 
 ## Snapshot-Specific Settings
 
-![Snapshot-specific settings](snapshots/snapshot_settings.png)
+![Snapshot-specific settings](snapshots/snapshot_settings.webp)
 
 Adjusting the settings for either a new snapshot or a previously created snapshot will override the global **Settings**.
 This is useful, for example, for testing different SSH settings, Site Separation rules, or authentication methods.
 
 ## Inspection of Network Issues
 
-![Connectivity Report and Summary of Issues](snapshots/connectivity_report.png)
+![Connectivity Report and Summary of Issues](snapshots/connectivity_report.webp)
 
 The initial snapshot of the network may not include all information about your network. This could be due to a variety of
 reasons, including authorization or firewall issues; please take a look at
@@ -81,15 +81,15 @@ reasons, including authorization or firewall issues; please take a look at
 Each successful or unsuccessful connection attempt is logged (see the following picture). Logs for each device can be found in the snapshot's **Connectivity Report** (highlighted in the red box). These logs are especially helpful when an error occurs. By
 examining them, you can find the reason why a device wasn't correctly or fully discovered or what led to a connection failure.
 
-![Discovery Connectivity Report](snapshots/discovery_connectivity_report.png)
+![Discovery Connectivity Report](snapshots/discovery_connectivity_report.webp)
 
 ## Modifying Snapshot Devices
 
 ### Adding Devices
 
-![Add Devices button](snapshots/snapshot_add_devices_button.png)
+![Add Devices button](snapshots/snapshot_add_devices_button.webp)
 
-![Add Devices dialog](snapshots/snapshot_add_device.png)
+![Add Devices dialog](snapshots/snapshot_add_device.webp)
 
 A new device can be added to an already existing snapshot by clicking the **+ Add Devices** button (highlighted in the red box). You can then add a list of IP addresses or subnets to be tried in discovery and added to the currently selected snapshot.
 This might be desirable if you performed almost a full snapshot of the network, but only a few devices were not included or had connectivity issues that were later resolved (for example, wrong AAA configuration, firewall rules, forgot to include a
@@ -106,9 +106,9 @@ from the snapshot. However, toggling all the Vendors to `off` will prevent IP Fa
 
 ### Refresh Devices
 
-![Select devices to refresh](snapshots/snapshot_refresh_device_select.png)
+![Select devices to refresh](snapshots/snapshot_refresh_device_select.webp)
 
-![Refresh Devices button](snapshots/snapshot_refresh_device.png)
+![Refresh Devices button](snapshots/snapshot_refresh_device.webp)
 
 The **Refresh Devices** action will make the snapshot rediscover the selected devices and update the data models. You can manually select certain devices or, as shown in the example above, filter by the Site `L77` and refresh all devices in that site.
 
@@ -116,9 +116,9 @@ Please note that changes in those devices might affect other devices, such as wh
 
 ### Delete Devices
 
-![Select devices to delete](snapshots/snapshot_delete_device_select.png)
+![Select devices to delete](snapshots/snapshot_delete_device_select.webp)
 
-![Delete Devices button](snapshots/snapshot_delete_device.png)
+![Delete Devices button](snapshots/snapshot_delete_device.webp)
 
 The **Delete Devices** action allows you to manually select certain devices and remove them from the snapshot. When devices are removed and were previously being displayed in Network Diagrams or Path Lookups, IP Fabric
 will then show a `transit cloud` indicating it does not have information about the next destination or connected device.
@@ -129,19 +129,19 @@ Due to database maintenance, only up to 5 snapshots can be loaded into memory. T
 
 ### Lock Snapshot
 
-![Lock snapshot](snapshots/snapshot_lock.png)
+![Lock snapshot](snapshots/snapshot_lock.webp)
 
 By selecting `Lock snapshot`, IP Fabric won't automatically unload the snapshot to the hard disk and will keep it in memory. The default configuration allows only 1 locked snapshot, but you can change this in **Settings --> Discovery & Snapshots --> Snapshot Retention --> Maximum number of locked snapshots**.
 
 ### Loaded Snapshots
 
-![Unload snapshot](snapshots/snapshot_unload.png)
+![Unload snapshot](snapshots/snapshot_unload.webp)
 
 If the maximum number of loaded snapshots is set to 5 and there are already 5 loaded snapshots when a 6th snapshot is created or loaded, IP Fabric will automatically unload the oldest loaded snapshot from memory and save it to the hard disk. This can also be done manually for a selected snapshot by clicking **Unload snapshot**.
 
 ### Unloaded Snapshots
 
-![Load snapshot](snapshots/snapshot_load.png)
+![Load snapshot](snapshots/snapshot_load.webp)
 
 When a snapshot is unloaded, it is safely stored on the hard disk, but the data from that snapshot cannot be accessed directly through the IP Fabric user interface. To browse an unloaded snapshot, it needs to be loaded again to memory by clicking **Load snapshot**.
 
@@ -157,25 +157,25 @@ When a snapshot is unloaded, it is safely stored on the hard disk, but the data 
 
 ### Download Snapshots
 
-![Download snapshot](snapshots/snapshot_download.png)
+![Download snapshot](snapshots/snapshot_download.webp)
 
 If needed, a selected snapshot can be downloaded from IP Fabric to your local storage by selecting `Download snapshot`.
 
 ### Clone Snapshot
 
-![Clone snapshot](snapshots/snapshot_clone.png)
+![Clone snapshot](snapshots/snapshot_clone.webp)
 
 Both loaded and unloaded snapshots can be cloned with `Clone snapshot`. This is handy if you want to make some changes to the snapshot (such as adding a device), but you want to keep its original version as a backup.
 
 ### Delete Snapshot
 
-![Delete snapshot](snapshots/snapshot_delete.png)
+![Delete snapshot](snapshots/snapshot_delete.webp)
 
 Snapshots can be deleted using `Delete snapshot`.
 
 ## Load Snapshot From File
 
-![Load From File](snapshots/snapshot_load_from_file.png)
+![Load From File](snapshots/snapshot_load_from_file.webp)
 
 A downloaded snapshot can be loaded back onto the IP Fabric platform with the **Load From File** button.
 
