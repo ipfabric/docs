@@ -7229,6 +7229,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../integrations/netbox/01_User_Guide/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -14209,17 +14236,17 @@
 <h2 id="configuring-access-to-aws-api">Configuring Access to AWS API</h2>
 <p>To add AWS to discovery, you will need an access key and secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.</p>
-<p><a class="glightbox" href="../aws/aws-management-console.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS Management Console" src="../aws/aws-management-console.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws-management-console.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS Management Console" src="../aws/aws-management-console.webp" /></a></p>
 <p>Click <code>My Security Credentials</code> and open the <code>Access keys</code> tab.</p>
-<p><a class="glightbox" href="../aws/aws-your-security-credentials.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Your Security Credentials" src="../aws/aws-your-security-credentials.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws-your-security-credentials.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Your Security Credentials" src="../aws/aws-your-security-credentials.webp" /></a></p>
 <p>To generate keys, click <strong>Create New Access Key</strong>, and your keys will be
 generated. These access keys are available globally for all of your AWS
 regions.</p>
-<p><a class="glightbox" href="../aws/aws-create-access-key.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Create Access Key" src="../aws/aws-create-access-key.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws-create-access-key.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Create Access Key" src="../aws/aws-create-access-key.webp" /></a></p>
 <p>Copy those keys to the AWS API settings in your IP Fabric, and don&rsquo;t
 forget to <strong>fill in the regions where the devices you want to discover
 are located</strong>. Multiple regions can be set for one API key and secret.</p>
-<p><a class="glightbox" href="../aws/aws-vendor-api.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection" src="../aws/aws-vendor-api.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws-vendor-api.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection" src="../aws/aws-vendor-api.webp" /></a></p>
 <h2 id="required-iam-policy">Required IAM Policy</h2>
 <p>To ensure that IP Fabric can retrieve all the required data to model the
 AWS networks, a series of specific policies are required to be applied
@@ -14227,7 +14254,7 @@ to the user account or role used for the API key. <a href="../aws/IAM-policy-IPF
 contains a JSON description of the required IAM policies.</p>
 <h2 id="aws-assumerole">AWS AssumeRole</h2>
 <p>IP Fabric enables you to add <code>AssumeRole</code> targets to AWS API configuration. <code>AssumeRole</code> is typically used for delegating access to additional resources/account in AWS. IP Fabric will iterate through all listed ARNs, call <code>AssumeRole</code> against those, and perform discovery on resources which became accessible.</p>
-<p><a class="glightbox" href="../aws/aws-assumerole.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection with AssumeRole" src="../aws/aws-assumerole.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws-assumerole.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Add Connection with AssumeRole" src="../aws/aws-assumerole.webp" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">How <code>AssumeRole</code> Works</p>
 <p>It returns a set of temporary access credentials that can be used to access
@@ -14245,7 +14272,7 @@ The AWS library also has a restriction on the number of parallel requests,
 which is 2.</p>
 <p>When trying to add more regions and roles, the test will fail with the
 following error:</p>
-<p><a class="glightbox" href="../aws/aws_connection_test_limit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Connection testing limitation" src="../aws/aws_connection_test_limit.png" /></a></p>
+<p><a class="glightbox" href="../aws/aws_connection_test_limit.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AWS - Connection testing limitation" src="../aws/aws_connection_test_limit.webp" /></a></p>
 </div>
 <h2 id="what-counts-against-ip-fabric-license">What Counts Against IP Fabric License</h2>
 <p>See <a href="../../../../../overview/licensing/#aws">Licensing &ndash; AWS</a>.</p>
@@ -14269,7 +14296,7 @@ following error:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
   </span>
 
     
