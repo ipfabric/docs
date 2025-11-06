@@ -15434,9 +15434,9 @@ To understand more about snapshots in IP Fabric, please refer to the
 <h2 id="retrieving-snapshot-ids-and-metadata">Retrieving Snapshot IDs and Metadata</h2>
 <p>Before operating on snapshots, you may want to retrieve information about available snapshots. Here we offer examples of
 how to access snapshot IDs and metadata:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">unloaded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Default is False</span>
@@ -15495,7 +15495,7 @@ is selected by default) or <code>$prev</code> to retrieve the previous snapshot,
 with its snapshot ID. In this sense, the <code>$prev</code> is considered a representative snapshot id for the previous snapshot.</p>
 <p>After initializing the client with a specific snapshot, all tables and methods will operate on the data from that 
 snapshot unless a specific snapshot ID is passed into a method.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize client with the previous to the most recent snapshot</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">snapshot_id</span><span class="o">=</span><span class="s2">&quot;$prev&quot;</span><span class="p">)</span>
@@ -15510,7 +15510,7 @@ snapshot unless a specific snapshot ID is passed into a method.</p>
 </code></pre></div>
 <h2 id="loading-and-unloading-snapshots">Loading and Unloading Snapshots</h2>
 <p>All operations available in the UI are available in SDK and loading and unloading snapshots is no exception.</p>
-<div class="highlight"><span class="filename">Loading and Unloading Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><span class="filename">Loading and Unloading Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">unloaded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15533,8 +15533,8 @@ snapshot unless a specific snapshot ID is passed into a method.</p>
 <p>You can also lock or unlock snapshots as needed. By locking a snapshot, you prevent it from being modified, deleted or unloaded.
 For more information on locking and unlocking snapshots, please refer to the 
 <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/discovery_snapshot/?h=lock#lock-snapshot">Locking Snapshots</a></p>
-<div class="highlight"><span class="filename">Locking and Unlocking Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight"><span class="filename">Locking and Unlocking Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
@@ -15555,9 +15555,9 @@ using the default values or by specifying custom values. The <code>create_snapsh
 newly created snapshot and the information about the Job that was scheduled.</p>
 <p>If a discovery process is already running no snapshot ID is provided until the newly created job starts. The job can
 be queried by the newly implemented <code>get_job_by_scheduled_time</code> method of the <code>Jobs</code> object.</p>
-<div class="highlight"><span class="filename">Creating Snapshots</span><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight"><span class="filename">Creating Snapshots</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
 
@@ -15630,7 +15630,7 @@ These methods allow you to add new devices, rediscover existing devices, and del
 <h3 id="adding-devices">Adding Devices</h3>
 <h4 id="adding-devices-by-ip">Adding Devices by IP</h4>
 <p>To add new devices to a snapshot by IP address or subnet:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
@@ -15645,7 +15645,7 @@ These methods allow you to add new devices, rediscover existing devices, and del
 </code></pre></div>
 <h4 id="adding-and-refreshing-devices">Adding and Refreshing Devices</h4>
 <p>To add new devices, retry timed-out devices, and refresh vendor API devices:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
@@ -15662,7 +15662,7 @@ These methods allow you to add new devices, rediscover existing devices, and del
 </code></pre></div>
 <h3 id="rediscovering-devices">Rediscovering Devices</h3>
 <p>To rediscover devices in the snapshot based on their serial numbers:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
@@ -15678,7 +15678,7 @@ These methods allow you to add new devices, rediscover existing devices, and del
 </code></pre></div>
 <h3 id="deleting-devices">Deleting Devices</h3>
 <p>To delete devices from the snapshot based on their serial numbers:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ipfabric</span> <span class="kn">import</span> <span class="n">IPFClient</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
 
 <span class="c1"># Initialize the IPFClient</span>
 <span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">()</span>
@@ -15736,7 +15736,7 @@ especially when deleting devices, to maintain the integrity of your network inve
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 31, 2025 18:33:25 UTC">October 31, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 6, 2025 16:26:58 UTC">November 6, 2025</span>
   </span>
 
     
