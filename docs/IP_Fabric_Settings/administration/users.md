@@ -20,7 +20,7 @@ upon logging in or accessing the API.
 To add or modify **Roles**, follow the instructions in the [Roles](roles.md)
 section.
 
-![Add local user button and Create User form](users/users_add_local.png)
+![Add local user button and Create User form](users/users_add_local.webp)
 
 ## List of Users
 
@@ -28,7 +28,7 @@ The `Users` table lists all local and non-local (LDAP and SSO) users,
 including their details, and allows you to modify or delete them. _(Exception:
 A currently logged-in user cannot delete their account.)_
 
-![Users table](users/users_table.png)
+![Users table](users/users_table.webp)
 
 ## Edit Local User
 
@@ -36,7 +36,7 @@ A currently logged-in user cannot delete their account.)_
    table and click the **Edit** icon. (Optionally, you may select `Yes` in the
    `Local user` column header to show only local users.)
 
-   ![Users table - edit local user](users/users_table_edit_local.png)
+   ![Users table - edit local user](users/users_table_edit_local.webp)
 
 2. Then, to modify the user's details, update the data in the **User Profile**
    form and click **Update user profile**.
@@ -44,7 +44,7 @@ A currently logged-in user cannot delete their account.)_
 3. Or, to modify the user's password, fill out the **Update Password** form and
    click **Update Password**.
 
-   ![Edit local user](users/users_edit_local.png)
+   ![Edit local user](users/users_edit_local.webp)
 
 ## Edit LDAP/SSO User
 
@@ -55,23 +55,23 @@ it's not possible to modify their **Roles** in the UI (unlike local users).
    **Edit** icon. (Optionally, you may select `No` in the `Local user` column
    header to show only non-local users.)
 
-   ![Users table - edit LDAP/SSO user](users/users_table_edit_ldap.png)
+   ![Users table - edit LDAP/SSO user](users/users_table_edit_ldap.webp)
 
 2. Then, to modify the user's details, update the data in the **User Profile**
    form and click **Update user profile**:
 
-   ![Edit LDAP/SSO user](users/users_edit_ldap.png)
+   ![Edit LDAP/SSO user](users/users_edit_ldap.webp)
 
 ## Delete User
 
 1. To delete a user, find the user in the `Users` table and click the **Delete**
    icon:
 
-   ![Users table - Delete icon](users/users_table_delete.png)
+   ![Users table - Delete icon](users/users_table_delete.webp)
 
 2. To confirm the action, click **Delete**:
 
-   ![User will be deleted dialog](users/users_table_delete_confirm.png)
+   ![User will be deleted dialog](users/users_table_delete_confirm.webp)
 
 ## Disable Local User's Access
 

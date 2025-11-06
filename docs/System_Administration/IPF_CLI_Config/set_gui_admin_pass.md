@@ -16,13 +16,13 @@ description: This section explains how to set initial admin password to IPF GUI 
 
 3. Select `Yes` to proceed:
 
-   ![Do you want to set admin user password?](gui_admin_password_change.png){: width="500" .center}
+   ![Do you want to set admin user password?](gui_admin_password_change.webp){: width="500" .center}
 
 4. Enter the new `admin` password twice:
 
-   ![Enter admin user password](gui_admin_password_change2.png){: width="600" .center}
+   ![Enter admin user password](gui_admin_password_change2.webp){: width="600" .center}
 
-   ![Repeat admin user password](gui_admin_password_change3.png){: width="600" .center}
+   ![Repeat admin user password](gui_admin_password_change3.webp){: width="600" .center}
 
    Password setup contains password complexity check; simple passwords are
    rejected.
@@ -51,11 +51,11 @@ description: This section explains how to set initial admin password to IPF GUI 
 
       If the password is already set or the database has not started yet, you can retry.
 
-      ![Retry setting an admin password](gui_admin_password_change4.png){: width="500" .center}
+      ![Retry setting an admin password](gui_admin_password_change4.webp){: width="500" .center}
 
 5. Select `No` to prevent rebooting the system.
 
-   ![Do not reboot the system](gui_admin_password_change5.png){: width="500" .center}
+   ![Do not reboot the system](gui_admin_password_change5.webp){: width="500" .center}
 
 ## Create a User with Administrative Privileges via CLI
 

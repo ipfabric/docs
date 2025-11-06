@@ -51,7 +51,7 @@ Turn on the Scanner to increase the number of discovered devices.
 Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
 --> Scanner settings** and turn on the **Use scanner in discovery** toggle.
 
-![Scanner settings](scanner_settings.png)
+![Scanner settings](scanner_settings.webp)
 
 **Shortest mask of the network to scan** -- Defines the maximum size of the
 networks in a routing table to be scanned. A smaller prefix length means a

@@ -103,7 +103,7 @@ VMware's KB article on converting OVA images:
 4. A `New virtual machine` dialog appears. In its 1st step `Select creation
    type`, select **Create a new virtual machine**:
 
-   ![VMware ESXi - Create a new virtual machine](esxi-vmdk/create-vm.png)
+   ![VMware ESXi - Create a new virtual machine](esxi-vmdk/create-vm.webp)
 
 5. In the 2nd step `Select a name and guest OS`:
 
@@ -131,17 +131,17 @@ VMware's KB article on converting OVA images:
 
    1. Remove the automatically added hard disk:
 
-      ![VMware ESXi - Remove disk](esxi-vmdk/remove-disk.png)
+      ![VMware ESXi - Remove disk](esxi-vmdk/remove-disk.webp)
 
    2. Change the **SCSI Controller** to `VMware Paravirtual` (`PVSCSI`) and
       the **Adapter Type** under **Network Adapter** to `VMXNET 3`:
 
-      ![VMware ESXi - Change storage and network](esxi-vmdk/storage-and-network.png)
+      ![VMware ESXi - Change storage and network](esxi-vmdk/storage-and-network.webp)
 
    3. Click **Add hard disk**, select **Existing hard disk**, and import the
       downloaded `ipfabric-<x.y.z+build>.vmdk` file:
 
-      ![VMware ESXi - Add disk](esxi-vmdk/add-disk.png)
+      ![VMware ESXi - Add disk](esxi-vmdk/add-disk.webp)
 
   !!! warning "Unsupported and/or invalid disk type while importing VMDK"
 
@@ -169,35 +169,35 @@ Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manua
 
 3. Create a new Hyper-V virtual machine and specify its **Name** and **Location**:
 
-   ![Hyper-V - Specify Name and Location](hyperv_create.png)
+   ![Hyper-V - Specify Name and Location](hyperv_create.webp)
 
 4. In the **Specify Generation** step, select `Generation 1`:
 
-   ![Hyper-V - Specify Generation](hyperv_generation.png)
+   ![Hyper-V - Specify Generation](hyperv_generation.webp)
 
 5. Assign memory. (Check requirements in the [Operational Requirements](../overview/index.md#operational-requirements) section.)
 
-   ![Hyper-V - Assign Memory](hyperv_memory.png)
+   ![Hyper-V - Assign Memory](hyperv_memory.webp)
 
 6. Configure networking:
 
-   ![Hyper-V - Configure Networking](hyperv_networking.png)
+   ![Hyper-V - Configure Networking](hyperv_networking.webp)
 
 7. Connect a virtual hard disk:
 
-   ![Hyper-V - Connect Virtual Hard Disk](hyperv_harddisk.png)
+   ![Hyper-V - Connect Virtual Hard Disk](hyperv_harddisk.webp)
 
 8. Verify the Summary and click **Finish**:
 
-   ![Hyper-V - Summary](hyperv_summary.png)
+   ![Hyper-V - Summary](hyperv_summary.webp)
 
 9. Wait for the VM to be created.
 
 10. Edit the VM CPU settings. (Check requirements in the [Operational Requirements](../overview/index.md#operational-requirements) section.)
 
-    ![Hyper-V - VM Settings](hyperv_settings.png)
+    ![Hyper-V - VM Settings](hyperv_settings.webp)
 
-    ![Hyper-V - VM Settings - Hardware - Processor](hyperv_settings_cpu.png)
+    ![Hyper-V - VM Settings - Hardware - Processor](hyperv_settings_cpu.webp)
 
 11. Optionally, increase the disk size based on the [Operational Requirements](../overview/index.md#operational-requirements) section.
 
@@ -263,7 +263,7 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 2.  Import the `OVA` image via **File --> Import Appliance...**:
 
-    ![VirtualBox - Import Virtual Appliance](virtualbox_import-virtual-appliance.png)
+    ![VirtualBox - Import Virtual Appliance](virtualbox_import-virtual-appliance.webp)
 
 3.  In the next step of the **Import Virtual Appliance** guide:
 
@@ -273,21 +273,21 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
     3. Keep the `Import hard drives as VDI` option checked for importing the disk image in the default VirtualBox format. (Otherwise, the disk image will be imported as VDMK, the default format of VMware.)
 
-    ![VirtualBox - Import Virtual Appliance - Appliance Settings](virtualbox_import-virtual-appliance-2.png)
+    ![VirtualBox - Import Virtual Appliance - Appliance Settings](virtualbox_import-virtual-appliance-2.webp)
 
 4.  Right-click the newly created virtual machine and select its **Settings...**
 
 5.  In the **System** section, select `ICH9` as the **Chipset**:
 
-    ![VirtualBox - VM Settings - System](virtualbox_vm-settings_system.png)
+    ![VirtualBox - VM Settings - System](virtualbox_vm-settings_system.webp)
 
 6.  In the **Display** section, select `VMSVGA` as the **Graphics Controller**:
 
-    ![VirtualBox - VM Settings - Display](virtualbox_vm-settings_display.png)
+    ![VirtualBox - VM Settings - Display](virtualbox_vm-settings_display.webp)
 
     - Or to what VirtualBox suggests when an invalid Graphics Controller is selected:
 
-    ![VirtualBox - VM Settings - Display - Invalid settings detected](virtualbox_vm-settings_display-2.png)
+    ![VirtualBox - VM Settings - Display - Invalid settings detected](virtualbox_vm-settings_display-2.webp)
 
   !!! warning
 
@@ -295,11 +295,11 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 7.  In the **Storage** section, select `virtio-scsi` as the Controller **Type**:
 
-    ![VirtualBox - VM Settings - Storage](virtualbox_vm-settings_storage.png)
+    ![VirtualBox - VM Settings - Storage](virtualbox_vm-settings_storage.webp)
 
 8.  In the **Network** section, select `Bridged Adapter` and re-check in **Advanced** that the **Adapter Type** is `Paravirtualized Network (virtio-net)`:
 
-    ![VirtualBox - VM Settings - Network](virtualbox_vm-settings_network.png)
+    ![VirtualBox - VM Settings - Network](virtualbox_vm-settings_network.webp)
 
 9.  Start the VM.
 
@@ -317,19 +317,19 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
 
    Please follow the instructions in [Create resource groups](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
 
-   ![Create a Resource group](azure-imgs/azure-01-Create-resource-group.png)
+   ![Create a Resource group](azure-imgs/azure-01-Create-resource-group.webp)
 
 2. Create or use an existing Storage Account for the IP Fabric VM.
 
    A storage account is an Azure Resource Manager resource. Resource Manager is the deployment and management service for Azure. For more information, see [Azure Resource Manager overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and [Creating Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account-1).
 
-   ![Create a Storage account](azure-imgs/azure-02-Create-storage-account.png)
+   ![Create a Storage account](azure-imgs/azure-02-Create-storage-account.webp)
 
 3. Create or use an existing Blob Storage Container.
 
    Azure Blob Storage allows you to store large amounts of unstructured object data. You can use Blob Storage to gather or expose media, content, or application data to users. Because all blob data is stored within containers, you must create a storage container before you can begin to upload data. To learn more about Blob Storage, read the [Introduction to Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
 
-   ![Create a Blob Storage container](azure-imgs/azure-03-storage-blob-container.png)
+   ![Create a Blob Storage container](azure-imgs/azure-03-storage-blob-container.webp)
 
 4. Convert the IP Fabric-provided `qcow2` image to VHD using [QEMU](https://www.qemu.org/download/). The recommended way to convert the image:
 
@@ -351,7 +351,7 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
 
 5. [Upload the VHD image](https://learn.microsoft.com/en-us/azure/virtual-desktop/set-up-customize-master-image#upload-master-image-to-a-storage-account-in-azure) to the storage account blob container created using the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/).
 
-   ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.png)
+   ![Upload the VHD image](azure-imgs/azure-04-uploaded-vhd.webp)
 
   !!! warning "Blob Type"
 
@@ -393,11 +393,11 @@ For this example, we will use minimum of 16 CPUs and 32 GB memory requirements.
 
 ### Creating Image
 
-![Search Images](azure-imgs/azure-05-1-images.png)
+![Search Images](azure-imgs/azure-05-1-images.webp)
 
 Search and select `Images` in the portal's search bar, and then `Create` a new Image.
 
-![Create an Image from VHD](azure-imgs/azure-05-create-image.png)
+![Create an Image from VHD](azure-imgs/azure-05-create-image.webp)
 
 1. Select the correct `Subscription` and `Resource group`.
 2. Name the image.
@@ -415,13 +415,13 @@ Search and select `Images` in the portal's search bar, and then `Create` a new I
 
 After creating the Image, go to the Resource and select `Create VM`:
 
-![Create VM](azure-imgs/azure-06-create-vm.png)
+![Create VM](azure-imgs/azure-06-create-vm.webp)
 
 #### Basics
 
-![VM Details](azure-imgs/azure-07-vm-details.png)
+![VM Details](azure-imgs/azure-07-vm-details.webp)
 
-![Basics Continued](azure-imgs/azure-08-basics-cont.png)
+![Basics Continued](azure-imgs/azure-08-basics-cont.webp)
 
 1. Fill out the required `Project details` and `Instance details` sections:
 
@@ -452,7 +452,7 @@ After creating the Image, go to the Resource and select `Create VM`:
 
 #### Disks
 
-![VM Disks](azure-imgs/azure-09-disks.png)
+![VM Disks](azure-imgs/azure-09-disks.webp)
 
 1. Enabling `Encryption at host` is recommended if it is available.
 
@@ -462,7 +462,7 @@ After creating the Image, go to the Resource and select `Create VM`:
 
 #### Networking
 
-![VM Networking](azure-imgs/azure-10-networking.png)
+![VM Networking](azure-imgs/azure-10-networking.webp)
 
 1. Select or create a new `Virtual network` and `Subnet`.
 

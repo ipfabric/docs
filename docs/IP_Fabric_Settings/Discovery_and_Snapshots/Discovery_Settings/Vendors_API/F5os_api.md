@@ -31,5 +31,5 @@ description: This section contains information on how to set up API discovery fo
   !!! Note 
       Tenants on both systems (F5OSA, F5OSC) are discovered using CLI.
 
-![Add Connection - F5OS](f5os/F5OS_add_connection.png)
+![Add Connection - F5OS](f5os/F5OS_add_connection.webp)
 

@@ -15,7 +15,7 @@ your imagination.
 
 To set up a webhook, navigate to **Settings --> Integration --> Webhooks**.
 
-![Add webhook](webhooks.png)
+![Add webhook](webhooks.webp)
 
 ## Events
 

@@ -71,7 +71,7 @@ example screenshot shows the AWS configuration).
 : An optional free-text field for you to capture additional information about the
   API instance.
 
-![Slug and Comment](slug_and_comment.png)
+![Slug and Comment](slug_and_comment.webp)
 
 ## Use System Proxy Configuration
 
@@ -90,7 +90,7 @@ undesired.
 
 This setting can be enabled/disabled per Vendor API.
 
-![Proxy and certificates settings](proxy_and_certificates_settings.png)
+![Proxy and certificates settings](proxy_and_certificates_settings.webp)
 
 ## Advanced Settings
 
@@ -104,8 +104,8 @@ for each Vendor API in the GUI (without going directly to the database):
 - `refillRate` (number of requests per specified milliseconds)
   - See [How API Discovery Works -- Rate Limiting](../../../../overview/How_Discovery_Works/API_discovery.md#rate-limiting).
 
-![Show advanced settings](show_advanced_settings.png)
+![Show advanced settings](show_advanced_settings.webp)
 
 These are the default values for `Meraki REST`:
 
-![Advanced settings for Meraki REST](advanced_settings_for_meraki_rest.png)
+![Advanced settings for Meraki REST](advanced_settings_for_meraki_rest.webp)

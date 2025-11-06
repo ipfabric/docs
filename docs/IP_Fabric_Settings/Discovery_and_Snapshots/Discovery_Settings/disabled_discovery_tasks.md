@@ -29,7 +29,7 @@ disabled Tasks by the device's Serial Number.
 
 ## Default Disabled Discovery Tasks
 
-![Default Disabled Discovery Tasks](default_disabled_discovery_tasks.png)
+![Default Disabled Discovery Tasks](default_disabled_discovery_tasks.webp)
 
 Since version `6.9`, **Disabled Discovery Tasks** contain the following four
 predefined rules:
@@ -58,4 +58,4 @@ vEOS. The test for the rule reveals 4 matches.
     be found in
     [Regular Expression Syntax](../../../IP_Fabric_GUI/technology_tables/index.md#regular-expression-syntax).
 
-![Example](disabled_discovery_tasks_example.png)
+![Example](disabled_discovery_tasks_example.webp)

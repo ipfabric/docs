@@ -23,16 +23,16 @@ Maintenance** and click **Clear DB**.
 When running Clear DB, all loaded snapshots are automatically unloaded, and the
 database recreated.
 
-![Clear DB](cleardb/cleardb.png)
+![Clear DB](cleardb/cleardb.webp)
 
 There are two-way confirmations.
 
-![First confirmation](cleardb/cleardb_first_confirmation.png)
+![First confirmation](cleardb/cleardb_first_confirmation.webp)
 
 In the second screen, you can choose between **Reset Settings** and **Keep
 Settings**:
 
-![Second confirmation](cleardb/cleardb_second_confirmation.png)
+![Second confirmation](cleardb/cleardb_second_confirmation.webp)
 
 We recommend selecting **Keep Settings**. If you select **Reset Settings**, all
 system and discovery settings will be lost, including login credentials, Site

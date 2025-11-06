@@ -16,7 +16,7 @@ two methods for testing snapshot settings:
    **Add Devices** (or `Rediscover timed out devices`). If these changes fixed
    your issue, then apply them globally.
 
-   ![Add devices](troubleshooting/add_devices.png)
+   ![Add devices](troubleshooting/add_devices.webp)
 
 2. Make your changes globally and then run a new snapshot. In **Settings -->
    Discovery & Snapshots --> Discovery Settings --> Discovery --> IP Scope -->
@@ -25,14 +25,14 @@ two methods for testing snapshot settings:
    time. In the example below, we allow only one subnet to be part of the
    discovery:
 
-   ![Limit discovery to subnet](troubleshooting/limit_discovery_to_subnet.png)
+   ![Limit discovery to subnet](troubleshooting/limit_discovery_to_subnet.webp)
 
 ### Discovery Seeds
 
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Discovery Seeds**
 
-![Discovery Seeds](troubleshooting/discovery_seeds.png)
+![Discovery Seeds](troubleshooting/discovery_seeds.webp)
 
 These are **user-defined** IP addresses that IP Fabric will try to connect to and
 discover. If a device is successfully discovered, it will check the settings in
@@ -53,7 +53,7 @@ Fabric can discover and crawl those.
 
 Location: **Management --> Discovery History**
 
-![Discovery History](troubleshooting/discovery_history.png)
+![Discovery History](troubleshooting/discovery_history.webp)
 
 The **Discovery History** table is also used by IP Fabric as seed addresses.
 Once a device is discovered in a snapshot, it will be added to this table for
@@ -78,7 +78,7 @@ use in other snapshots.
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Discovery --> IP Scope**
 
-![IP Scope](troubleshooting/ip_scope.png)
+![IP Scope](troubleshooting/ip_scope.webp)
 
 **IP Scope** tells IP Fabric which networks to include or exclude in the discovery
 process. The default is set to include everything (`0.0.0.0/0` and `::/0`). When IP Fabric
@@ -104,7 +104,7 @@ the discovery completed successfully.
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Discovery --> Discovery tasks settings**
 
-![Discovery tasks settings](troubleshooting/discovery_tasks_settings.png)
+![Discovery tasks settings](troubleshooting/discovery_tasks_settings.webp)
 
 **Discovery tasks settings** are where the magic happens for automated discovery of
 new devices on your network.
@@ -145,7 +145,7 @@ new devices on your network.
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Advanced CLI**
 
-![Advanced CLI](troubleshooting/advanced_cli.png)
+![Advanced CLI](troubleshooting/advanced_cli.webp)
 
 See [Advanced CLI](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli.md) for
 the explanation of these settings.
@@ -155,7 +155,7 @@ the explanation of these settings.
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
 Vendors API**
 
-![Vendors API](troubleshooting/vendors_api.png)
+![Vendors API](troubleshooting/vendors_api.webp)
 
 See [Vendors API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) as
 each vendor has different requirements.
@@ -165,7 +165,7 @@ each vendor has different requirements.
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings --> Device
 Credentials**
 
-![Device Credentials](troubleshooting/device_credentials.png)
+![Device Credentials](troubleshooting/device_credentials.webp)
 
 **Authentication** is where you define the username and password IP Fabric uses to
 connect to a physical device (devices discovered through the API are managed
@@ -187,7 +187,7 @@ in [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discove
 Each snapshot under the **Discovery Snapshot** menu has a **Summary of Issues**
 tab:
 
-![Summary of Issues tab](troubleshooting/summary_of_issues.png)
+![Summary of Issues tab](troubleshooting/summary_of_issues.webp)
 
 | Error Type                                  | Description                                                                                                                     |
 | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
@@ -227,7 +227,7 @@ require elevated or `admin` profiles to pull all data.
 
 #### CDP/LLDP --> Unmanaged neighbors
 
-![Unmanaged Neighbors](troubleshooting/unmanaged_neighbors.png)
+![Unmanaged Neighbors](troubleshooting/unmanaged_neighbors.webp)
 
 This is the best table to start with because it not only shows the local host
 and interface names but also provides the remote hostname, interface name, and
@@ -241,7 +241,7 @@ neighbors, but only 40 unique remote hostnames.
 
 #### Interfaces --> Connectivity matrix --> Unmanaged Neighbors Detail
 
-![Unmanaged Neighbors Detail](troubleshooting/unmanaged_neighbors_detail.png)
+![Unmanaged Neighbors Detail](troubleshooting/unmanaged_neighbors_detail.webp)
 
 This table displays unmanaged neighbors based on various protocols and includes
 a built-in default intent check for you.
@@ -314,8 +314,8 @@ could not discover.
 
 ### Connectivity Report
 
-![Connectivity Report button](troubleshooting/connectivity_report_button.png)
-![Discovery Connectivity Report](troubleshooting/discovery_connectivity_report.png)
+![Connectivity Report button](troubleshooting/connectivity_report_button.webp)
+![Discovery Connectivity Report](troubleshooting/discovery_connectivity_report.webp)
 
 The **Connectivity Report** is a per-snapshot report stating successes or
 errors for IP addresses that IP Fabric tried to discover. Once you have a list of
@@ -357,7 +357,7 @@ in [No Devices Discovered](common_problems/no-devices-discovered.md).
 
 ## Troubleshooting Configuration Management
 
-![Configuration Management](troubleshooting/configuration_management.png)
+![Configuration Management](troubleshooting/configuration_management.webp)
 
 **Configuration Management** is a separate process from discovery. First, a device
 must be discovered in a snapshot and placed in the **Management -->

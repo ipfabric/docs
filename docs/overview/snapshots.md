@@ -6,11 +6,11 @@ description: Network snapshots record the state of the network at a specific tim
 
 Network snapshots record the state of the network at a specific time, enabling you to retrieve historical information, track network state changes, analyze connectivity, and more. A network snapshot is a fully functional software copy of the network, including all configuration and state data. The active network view displays information from a network snapshot, which can be selected using the **Current Snapshot** drop-down menu in the left panel of the main GUI.
 
-![Current Snapshot drop-down menu](snapshot_selector_menu.png)
+![Current Snapshot drop-down menu](snapshot_selector_menu.webp)
 
 ## Snapshot Management
 
-![Snapshot management overview](snapshot_management_overview.png)
+![Snapshot management overview](snapshot_management_overview.webp)
 
 Up to 5 (100 when using PSQL) snapshots can be loaded simultaneously into active memory. When the snapshot is active, it is considered "loaded". Other snapshots can be stored on the HDD, with only free HDD space being the limiting factor.
 
@@ -30,24 +30,24 @@ New network state snapshots can be created from the **Discovery Snapshot** secti
 
 To add devices to an existing snapshot, use the **+ Add Devices** button. When adding devices, no data is overwritten.
 
-![Add Devices](snapshot_add_device.png)
+![Add Devices](snapshot_add_device.webp)
 
 To refresh network state data for specific devices in an existing snapshot:
 
 1. Select the devices you want to refresh:
 
-   ![Selecting devices](snapshot_select_device.png)
+   ![Selecting devices](snapshot_select_device.webp)
 
 2. Click **Refresh Devices**:
 
-   ![Refresh Devices](snapshot_refresh_device.png)
+   ![Refresh Devices](snapshot_refresh_device.webp)
 
 To delete devices from an existing snapshot:
 
 1. Select the devices you want to delete:
 
-   ![Selecting devices](snapshot_select_device.png)
+   ![Selecting devices](snapshot_select_device.webp)
 
 2. Click **Delete Devices**:
 
-   ![Delete Devices](snapshot_delete_device.png)
+   ![Delete Devices](snapshot_delete_device.webp)

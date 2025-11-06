@@ -66,12 +66,12 @@ Vendors API**.
         ```text
         apic:LOCAL-DOMAIN-NAME\\username
         ```
-        ![APIC login screen](apic_local_domain.png)
-        ![IP Fabric settings - Username](local_domain_apic_ipf_settings.png)
+        ![APIC login screen](apic_local_domain.webp)
+        ![IP Fabric settings - Username](local_domain_apic_ipf_settings.webp)
 
 5. Click **Save** to add the configuration.
 
-![Add Connection - Cisco APIC](cisco/apic/ciscoApicAPIAdd.png)
+![Add Connection - Cisco APIC](cisco/apic/ciscoApicAPIAdd.webp)
 
 Benefits:
 
