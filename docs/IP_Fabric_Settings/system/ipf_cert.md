@@ -59,7 +59,7 @@ System --> IPF Certificates** on its own is not sufficient.
     If this is too restrictive, please follow the instructions in
     [Generate CSR with Special Characters](#generate-csr-with-special-characters).
 
-    ![Organization and department fields](ipf_cert/org_dep_fields.png)
+    ![Organization and department fields](ipf_cert/org_dep_fields.webp)
 
 1. Go to **Settings --> System --> IPF Certificates**.
 2. Fill out the **Create a CSR (Certificate Signing Request)** form.
@@ -118,7 +118,7 @@ the character `&` is not allowed) as the **Organization name**. After filling in
 the remaining fields, when we click **Generate**, an `Invalid Input` error will
 be displayed.
 
-![Generate a CSR - Invalid Input](ipf_cert/create_a_csr_invalid_input.png)
+![Generate a CSR - Invalid Input](ipf_cert/create_a_csr_invalid_input.webp)
 
 If any special characters are required in any of the mentioned fields, follow
 these steps:
@@ -127,7 +127,7 @@ these steps:
    any special characters (in our example, we replaced `Test Company with &`
    with `Test Company with`):
 
-   ![Generate a CSR - with avoiding any special characters](ipf_cert/create_a_csr_without_special_chars.png)
+   ![Generate a CSR - with avoiding any special characters](ipf_cert/create_a_csr_without_special_chars.webp)
 
 2. Click **Generate**.
   - In your browser, a file called `nimpee.csr` will be downloaded. **Please do
@@ -160,7 +160,7 @@ these steps:
 7. Modify `customer.conf` (for example with `vi customer.conf`; in our example,
    we changed `Test Company with` to `Test Company with &`):
 
-   ![Edit customer.conf file](ipf_cert/edit_customer_conf_file.png)
+   ![Edit customer.conf file](ipf_cert/edit_customer_conf_file.webp)
 
 8. Generate new `customer.key` and `customer.csr` files using the modified
    `customer.conf`:

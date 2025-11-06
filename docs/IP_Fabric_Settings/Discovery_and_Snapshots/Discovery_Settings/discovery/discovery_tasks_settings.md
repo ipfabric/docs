@@ -17,7 +17,7 @@ network, using the selected methods for new device detection (ARP, CDP/LLDP,
 Routing Table records, or a Traceroute). The default is to use all available
 options.
 
-![Discovery tasks settings](discovery_tasks_settings.png)
+![Discovery tasks settings](discovery_tasks_settings.webp)
 
 The feature is especially helpful for large, complex networks with already
 defined device scope to avoid multiple repetitive failed SSH/Telnet attempts

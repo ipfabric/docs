@@ -20,24 +20,24 @@ is used below to demonstrate the functionality of tables.
 
 ### Table Description
 
-![Table description option](navigate_in_tables/table_description.png)
+![Table description option](navigate_in_tables/table_description.webp)
 
 By clicking `...` (the 3-dot button in the top-right corner of the table) and
 selecting `Table description`, you can get a short description of the current
 table along with API examples.
 
-![Table Description](navigate_in_tables/table_api_description.png)
+![Table Description](navigate_in_tables/table_api_description.webp)
 
 ### Export to CSV
 
-![Export to CSV](navigate_in_tables/table_csv.png)
+![Export to CSV](navigate_in_tables/table_csv.webp)
 
 The current table view can be exported to CSV. This is useful for additional
 data processing in an external application.
 
 ### Contextual Help
 
-![Tooltip](navigate_in_tables/table_onhover.png)
+![Tooltip](navigate_in_tables/table_onhover.webp)
 
 Contextual help (tooltip) is displayed when the mouse cursor hovers over a table
 header text or a table icon.
@@ -49,7 +49,7 @@ the API documentation found in the [Table Description](#table-description).
 
 #### Simple Filtering
 
-![Table filter](navigate_in_tables/table_filter.png)
+![Table filter](navigate_in_tables/table_filter.webp)
 
 In most columns, you can type in what you are looking for. The example above
 shows a search for all devices with an IP address starting with `10.67.254`
@@ -57,15 +57,15 @@ throughout all the ARP tables in our lab environment.
 
 Use this button to clear the filter:
 
-![Clear filter](navigate_in_tables/filter_clear_btn.png)
+![Clear filter](navigate_in_tables/filter_clear_btn.webp)
 
 #### Advanced Filtering
 
-![Advanced Filter](navigate_in_tables/table_advanced_filter.png)
+![Advanced Filter](navigate_in_tables/table_advanced_filter.webp)
 
 If you need a more precise filter, use `Advanced Filter`.
 
-![Filtering rules](navigate_in_tables/table_filter_rules.png)
+![Filtering rules](navigate_in_tables/table_filter_rules.webp)
 
 Filters are defined by groups and rules. Each group can contain one or more
 rules or another group. There is always one root group which cannot be deleted
@@ -82,11 +82,11 @@ interface `Et7/2`, plus all devices with hostname `L43SD73` with interface
 
 When filtering values in number columns using `Simple Filtering` or in the `Advanced Filters`, you can type not only numbers but also some measure prefixes (like `10k`, `15M`, etc.):
 
-![Clear filter](navigate_in_tables/table_number_simple_filter.png)
+![Clear filter](navigate_in_tables/table_number_simple_filter.webp)
 
 or
 
-![Clear filter](navigate_in_tables/table_number_advanced_filter.png)
+![Clear filter](navigate_in_tables/table_number_advanced_filter.webp)
 
 These are the available prefixes:
 
@@ -100,13 +100,13 @@ These are the available prefixes:
 
 ### Share Table View
 
-![Get view URL](navigate_in_tables/table_share.png)
+![Get view URL](navigate_in_tables/table_share.webp)
 
 The table view can be shared with other users.
 
 ### Intent Verification Rules (Colorizing Columns)
 
-![Add intent verification rule](navigate_in_tables/table_colorize.png)
+![Add intent verification rule](navigate_in_tables/table_colorize.webp)
 
 The table column can be colored based on pre-defined rules. The existing (as
 well as the default) rules are visible above the table and can be edited or
@@ -126,7 +126,7 @@ Finally, specify a filter rule to color the selected column:
    no other rules are matched.
 4. Click **Update rule** or **Create rule** to save your changes.
 
-![Intent Rule Detail](navigate_in_tables/table_colorize_rules.png)
+![Intent Rule Detail](navigate_in_tables/table_colorize_rules.webp)
 
 In the example above, all items in the `VRF` column which are named `VRF1` will
 be colored red. A summary number of items which match this rule will also be
@@ -134,9 +134,9 @@ displayed in the `Interfaces` widget on the **Dashboard**.
 
 ### Display Settings
 
-![Display settings option](navigate_in_tables/table_display_settings_option.png)
+![Display settings option](navigate_in_tables/table_display_settings_option.webp)
 
-![Display Settings](navigate_in_tables/table_display_settings.png)
+![Display Settings](navigate_in_tables/table_display_settings.webp)
 
 In `Display Settings`, you may select what columns are displayed. This will also
 change the behavior of [Export to CSV](#export-to-csv) and the API documentation
@@ -144,7 +144,7 @@ in the [Table Description](#table-description).
 
 ### Auto Size
 
-![Auto size option](navigate_in_tables/table_auto_size.png)
+![Auto size option](navigate_in_tables/table_auto_size.webp)
 
 `Auto size` (enabled by default) ensures that columns are automatically sized to
 fit their current content each time the table is opened.
@@ -153,7 +153,7 @@ By disabling `Auto size`, columns will remember user-defined widths.
 
 ### Restore Table Settings
 
-![Restore table settings](navigate_in_tables/table_restore.png)
+![Restore table settings](navigate_in_tables/table_restore.webp)
 
 Table filters and other settings can be restored using the `Restore table
 settings` option. Coloring rules will not be removed!

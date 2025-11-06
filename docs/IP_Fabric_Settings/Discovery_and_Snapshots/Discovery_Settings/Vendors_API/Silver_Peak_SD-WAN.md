@@ -25,4 +25,4 @@ select `Silver Peak` from the list, and fill in:
 
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Silver Peak](silver_peak_api_add.png)
+![Add Connection - Silver Peak](silver_peak_api_add.webp)

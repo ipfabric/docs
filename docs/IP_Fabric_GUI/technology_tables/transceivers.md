@@ -38,7 +38,7 @@ Notes:
 
 Navigate to **Technology --> Interfaces --> Transceivers**.
 
-![Transceivers in the menu](transceivers_list.png)
+![Transceivers in the menu](transceivers_list.webp)
 
 ## How To Enable/Disable Transceivers Task
 
@@ -49,7 +49,7 @@ device**.
 The function can be **enabled/disabled** in **Settings --> Discovery & Snapshots
 --> Discovery Settings --> Disabled Discovery Tasks**.
 
-![Transceivers task](transceivers_tasks.png)
+![Transceivers task](transceivers_tasks.webp)
 
 To **disable** this task, you need to **delete the default Transceivers
 task** or **edit** it.
@@ -61,4 +61,4 @@ devices, put `cisco` in the **Vendor** field. More specific device selection
 can be done by the **Family**, **Platform**, **Model**, and **Version** fields.
 You can test your regex rules with the **Test rules** button.
 
-![Edit Transceivers task](transceivers_tasks_edit.png)
+![Edit Transceivers task](transceivers_tasks_edit.webp)

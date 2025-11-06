@@ -68,7 +68,7 @@ assigned to the user. IP Fabric requires role features to be set as read-only,
 except for "Virtual-System", where read-write is needed (only if VSX firewalls
 are in your network; otherwise, read-only is sufficient).
 
-![Check Point - Edit Role - ipfRole](checkpoint/checkpoint_role.png)
+![Check Point - Edit Role - ipfRole](checkpoint/checkpoint_role.webp)
 
 Running some commands requires elevated permissions. See the example below:
 

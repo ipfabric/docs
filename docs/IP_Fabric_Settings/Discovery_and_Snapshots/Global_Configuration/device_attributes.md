@@ -12,7 +12,7 @@ spaces or special characters.
 
 ## Attribute Requirements
 
-![Attribute field warning](device_attributes/device_attributes_warning.png)
+![Attribute field warning](device_attributes/device_attributes_warning.webp)
 
 Attribute names must match the following regex:
 `/^[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]+$/`. The underscore `_` is valid and will
@@ -25,7 +25,7 @@ assign global attributes, navigate to **Settings --> Discovery & Snapshots -->
 Global Configuration --> Device Attributes**. Once an attribute is assigned, a
 new snapshot is required for it to be applied.
 
-![Device Attributes table](device_attributes/device_attributes.png)
+![Device Attributes table](device_attributes/device_attributes.webp)
 
 - `Serial number` is IP Fabric's "Unique Serial Number" (API column
   `sn`). Note that this is not the `Serial Number` column, which represents the
@@ -43,11 +43,11 @@ new snapshot is required for it to be applied.
 
 To create a rule in the UI, click **+ Add attribute** and fill out the form:
 
-![Device Attributes - create rule](device_attributes/device_attributes_rules.png)
+![Device Attributes - create rule](device_attributes/device_attributes_rules.webp)
 
 The dropdown is intuitive and will let you search based on SN or hostname.
 
-![Device Attributes - dropdown](device_attributes/device_attributes_dropdown.png)
+![Device Attributes - dropdown](device_attributes/device_attributes_dropdown.webp)
 
 ### Creating Rules via the API
 

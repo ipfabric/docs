@@ -13,17 +13,17 @@ The **Addressing** section provides information about every IP address on every 
 - **NAT:** Contains NAT information from the supported devices.
 - **IPv6 Neighbor discovery:** List of the IPv6 neighbors.
 
-![Addressing in Technology menu](addressing/menu.png)
+![Addressing in Technology menu](addressing/menu.webp)
 
 ## NAT
 
 The **NAT** sub-section contains information about NAT policies and rules configured on a device. Currently, only IPv4 NAT is supported -- in the `NAT44` table.
 
-![NAT44 table](addressing/nat44-table.png)
+![NAT44 table](addressing/nat44-table.webp)
 
 A graphical representation (as shown below) of the policy chain can be accessed by clicking a `Policy Name` or `Sequence` (rule sequence number).
 
-![natPostRouting chain on Forcepoint](addressing/forcepoint-natPostRouting.png)
+![natPostRouting chain on Forcepoint](addressing/forcepoint-natPostRouting.webp)
 
 
 !!! Note

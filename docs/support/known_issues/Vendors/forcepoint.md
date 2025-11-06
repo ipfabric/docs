@@ -17,4 +17,4 @@ account lacks these privileges, attempting to run the commands will result in a
 
 ### List of All `sg-*` Commands
 
-![List of commands](forcepoint_sg_command_list.png)
+![List of commands](forcepoint_sg_command_list.webp)

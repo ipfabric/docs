@@ -7,7 +7,7 @@ description: The Vendors section provides vendor-specific inventory tables for t
 The **Vendors** section provides vendor-specific inventory tables for three cloud providers -- AWS, GCP, and Azure.
 Each vendor's inventory table presents slightly different information to reflect the unique characteristics of their resources.
 
-![Technology table showing Vendors](vendors.png){: width="200" .center}
+![Technology table showing Vendors](vendors.webp){: width="200" .center}
 
 ## AWS
 

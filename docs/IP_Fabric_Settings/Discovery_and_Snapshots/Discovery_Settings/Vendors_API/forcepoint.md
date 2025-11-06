@@ -12,7 +12,7 @@ Starting with version `6.1.0`, IP Fabric supports the Forcepoint SMC API. Forcep
 
 1. Log in to the Forcepoint SMC web UI.
 
-   ![Forcepoint login page](forcepoint/smc/forcepoint_login_page.png)
+   ![Forcepoint login page](forcepoint/smc/forcepoint_login_page.webp)
 
 2. Generate API tokens:
 
@@ -20,11 +20,11 @@ Starting with version `6.1.0`, IP Fabric supports the Forcepoint SMC API. Forcep
    - Navigate to **Configuration --> Administration --> Access Rights --> API Clients**.
    - Then, click **New**.
 
-   ![Location where to generate new API key](forcepoint/smc/forcepoint_generate_api_token.png)
+   ![Location where to generate new API key](forcepoint/smc/forcepoint_generate_api_token.webp)
 
 3. Add a name for the newly created entry and **copy the token**. Once the settings are saved, the **token will be hidden**. Also, add read-access privileges.
 
-   ![Create new API key](forcepoint/smc/forcepoint_generate_token.png)
+   ![Create new API key](forcepoint/smc/forcepoint_generate_token.webp)
 
 4. The API endpoint needs to be enabled explicitly, as it is disabled by default:
 
@@ -33,7 +33,7 @@ Starting with version `6.1.0`, IP Fabric supports the Forcepoint SMC API. Forcep
    - Find your management server that you will use to query the data.
    - Go to the **SMC API** tab, where you must enable it, and you can also specify other parameters.
 
-   ![Enable SMC API](forcepoint/smc/forcepoint_enable_api.png)
+   ![Enable SMC API](forcepoint/smc/forcepoint_enable_api.webp)
 
 ### Add Forcepoint to Vendors API in IP Fabric
 
@@ -45,7 +45,7 @@ select `Forcepoint` from the list, and fill in:
 - **Authentication Key** -- The generated authentication API key from the SMC.
 - [**Slug**](index.md#slug-and-comment)
 
-  ![Add Connection - Forcepoint](forcepoint/smc/forcepoint_ipf_add_vendor.png)
+  ![Add Connection - Forcepoint](forcepoint/smc/forcepoint_ipf_add_vendor.webp)
 
 ## Known Issue
 

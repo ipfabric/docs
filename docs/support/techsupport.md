@@ -30,12 +30,12 @@ description: This page explains how to generate and upload a techsupport file fo
 
 1. In the IP Fabric GUI, go to **Support --> Generate Techsupport**:
 
-   ![Generate techsupport file](techsupport/techsupport_generation-20250307.png)
+   ![Generate techsupport file](techsupport/techsupport_generation-20250307.webp)
 
 2. Select the data to be included in the techsupport file (when in doubt, keep
    the defaults):
 
-   ![Configure what to include in techsupport file](techsupport/techsupport_generation_settings-20250307.png)
+   ![Configure what to include in techsupport file](techsupport/techsupport_generation_settings-20250307.webp)
 
 !!! note "Possible error when generating Techsupport file"
 
@@ -102,7 +102,7 @@ redirected to `upload.EU.ipfabric.io` or `upload.US.ipfabric.io` (this can be
 switched on the page). The username and password are provided by IP Fabric
 Support.
 
-![Upload techsupport file](techsupport/upload.png)
+![Upload techsupport file](techsupport/upload.webp)
 
 ### `curl`
 

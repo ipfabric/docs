@@ -14,7 +14,7 @@ There are two ways to check if your problem is related to the described bug:
 
 1. Log in to the GUI, navigate to `/snapshot-management`, and select the `Failed` snapshot.
    - Check `Tasker` under `Services logs` and look for an error message similar to the following:  
-     ![Tasker under Service Logs](vGraphNode_issue_image/tasker_location.png)
+     ![Tasker under Service Logs](vGraphNode_issue_image/tasker_location.webp)
 
 2. Log in to the CLI and run the following command:
 
@@ -23,7 +23,7 @@ There are two ways to check if your problem is related to the described bug:
    ```
 
    - Review the end of the file and compare it with this output:
-     ![Collection vGraphNode - save failed](vGraphNode_issue_image/tasker_output.png).
+     ![Collection vGraphNode - save failed](vGraphNode_issue_image/tasker_output.webp).
 
 ## How to Resolve the Issue
 

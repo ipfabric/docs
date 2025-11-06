@@ -14,7 +14,7 @@ Sometimes, the download process freeze and needs to be recovered to its initial 
     while true; do ls -l /tmp/ipfabric-update*; sleep 2; done:
     ```
 
-    ![Current progress](download_process_freeze/download_check.png)
+    ![Current progress](download_process_freeze/download_check.webp)
 
   - The expected file size is **1,005,374,050** bytes (for version `7.0.15`). If the file size is smaller than this value, the download is **not** complete.
   - Wait a few seconds or minutes, then check again if the file size has increased. If it is growing, the download is still in progress.

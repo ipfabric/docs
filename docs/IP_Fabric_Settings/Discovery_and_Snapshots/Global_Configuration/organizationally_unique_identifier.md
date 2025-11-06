@@ -11,7 +11,7 @@ device is discovered through:
 - the ARP table
 - the CDP/LLDP information if it contains the MAC address of the remote device
 
-![OUI table](OUI.png)
+![OUI table](OUI.webp)
 
 This table can be found in **Settings --> Discovery & Snapshots --> Global
 Configuration --> OUI**.
