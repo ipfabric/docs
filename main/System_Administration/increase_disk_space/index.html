@@ -15563,13 +15563,23 @@ here.
 <h1 id="server-disk-space-summary">Server Disk Space Summary</h1>
 <p>Starting with version <code>5.0.0</code>, the IP Fabric appliance deploys as a single hard
 disk installation instead of two disk volumes.</p>
+<p>Starting with versions <code>7.3.23</code> and <code>7.5.11</code>, new installations utilise the GPT
+disk partitioning scheme, while older versions and all pre-existing installations
+utilise the MBR partitioning scheme.</p>
 <p>The IP Fabric appliance uses LVM for the <strong>root</strong> and <strong>swap</strong> partitions. In a
 default installation, <strong>swap</strong> has 16 GB, and <strong>root</strong> has approximately 72 GB
 of disk space.</p>
-<p>We automatically resize the <strong>boot</strong> disk as follows:</p>
+<p>In the current versions we automatically resize the <strong>boot</strong> disk.</p>
+<p>On appliances with the MBR partitioning scheme it works like this:</p>
 <ol>
 <li>Resize the primary partition to the full size of the disk.</li>
 <li>Resize the extended partition to the full size of the primary partition.</li>
+<li>Extend <code>ipfabric-vg/root</code> to <code>+100%FREE</code>.</li>
+<li>Online resize the <code>ext4</code> partition.</li>
+</ol>
+<p>On appliances with the GPT partitioning scheme the process is similar, with one less step:</p>
+<ol>
+<li>Resize the system (LVM) partition to the full size of the disk.</li>
 <li>Extend <code>ipfabric-vg/root</code> to <code>+100%FREE</code>.</li>
 <li>Online resize the <code>ext4</code> partition.</li>
 </ol>
@@ -15633,6 +15643,18 @@ vda<span class="w">                     </span><span class="m">254</span>:0<span
 └─vda5<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
 <span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
 <span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
+vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w">             </span><span class="c1"># &lt;-- We want to use this device for the /backup directory.</span>
+</code></pre></div>
+<p>On systems utilising the GPT partitioning layout, the <code>lsblk</code> output may look different:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
+NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
+vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
+├─vda1<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>256M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot/efi
+├─vda2<span class="w">                  </span><span class="m">254</span>:2<span class="w">    </span><span class="m">0</span><span class="w">    </span>1M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+├─vda3<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>512M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot
+└─vda4<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,5G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+<span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
+<span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,5G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
 vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk<span class="w">             </span><span class="c1"># &lt;-- We want to use this device for the /backup directory.</span>
 </code></pre></div>
 </li>
@@ -15703,6 +15725,19 @@ vda<span class="w">                     </span><span class="m">254</span>:0<span
 └─vda5<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
 <span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
 <span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,8G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
+vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
+└─backup--vg-backup<span class="w">     </span><span class="m">253</span>:2<span class="w">    </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/backup
+</code></pre></div>
+<p>or, on systems with GPT partitioning:</p>
+<div class="highlight"><pre><span></span><code>osadmin@ipfabric:~$<span class="w"> </span>lsblk
+NAME<span class="w">                    </span>MAJ:MIN<span class="w"> </span>RM<span class="w">  </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w"> </span>MOUNTPOINT
+vda<span class="w">                     </span><span class="m">254</span>:0<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">76</span>,3G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
+├─vda1<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>256M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot/efi
+├─vda2<span class="w">                  </span><span class="m">254</span>:2<span class="w">    </span><span class="m">0</span><span class="w">    </span>1M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+├─vda3<span class="w">                  </span><span class="m">254</span>:1<span class="w">    </span><span class="m">0</span><span class="w">  </span>512M<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w"> </span>/boot
+└─vda4<span class="w">                  </span><span class="m">254</span>:5<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">75</span>,5G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+<span class="w">  </span>├─ipfabric--vg-swap_1<span class="w"> </span><span class="m">253</span>:0<span class="w">    </span><span class="m">0</span><span class="w">   </span>16G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span><span class="o">[</span>SWAP<span class="o">]</span>
+<span class="w">  </span>└─ipfabric--vg-root<span class="w">   </span><span class="m">253</span>:1<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">59</span>,5G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/
 vdb<span class="w">                     </span><span class="m">254</span>:16<span class="w">   </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
 └─backup--vg-backup<span class="w">     </span><span class="m">253</span>:2<span class="w">    </span><span class="m">0</span><span class="w">   </span>20G<span class="w">  </span><span class="m">0</span><span class="w"> </span>lvm<span class="w">  </span>/backup
 </code></pre></div>
@@ -15908,8 +15943,9 @@ and you could choose how <code>sd[c-z]</code> would be used. The new approach wi
 is more versatile and is not limited to <code>sd[a-z]</code> disks.</p>
 <div class="admonition error">
 <p class="admonition-title">Deprecated Script</p>
-<p>This script should not be used anymore. You should run it only when you know
-what you are doing.</p>
+<p>This script should not be used anymore. The script also only supports the
+MBR partitioning scheme, and doesn&rsquo;t work with the GPT partitioning scheme.
+You should run it only when you know what you are doing.</p>
 </div>
 <p>Script location: <code>/opt/nimpee/sys-lvm-resize.sh</code></p>
 <h2 id="increase-disk-space-for-vmware">Increase Disk Space for VMware</h2>
@@ -16006,7 +16042,7 @@ what you are doing.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
   </span>
 
     
