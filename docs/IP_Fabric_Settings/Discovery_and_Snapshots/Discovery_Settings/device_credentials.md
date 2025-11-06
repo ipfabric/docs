@@ -51,7 +51,7 @@ for a part of your network using the **Use in subnets**
 and **Don't use in subnets** fields. Please be aware that the **Use in subnets** 
 field will also affect the credential selection algorithm.
 
-![Add new CLI credential](add-new-cli-credential.png)
+![Add new CLI credential](add-new-cli-credential.webp)
 
 Provided credentials can be used for configuration change tracking and saved
 configuration consistency (i.e., they allow commands such as `show run` and
@@ -74,4 +74,4 @@ management. However, some platforms require privileged credentials to access
 basic network state information, such as MST spanning-tree state or 802.1X
 session information.
 
-![Passwords for enable mode](passwords-for-enable-mode.png)
+![Passwords for enable mode](passwords-for-enable-mode.webp)

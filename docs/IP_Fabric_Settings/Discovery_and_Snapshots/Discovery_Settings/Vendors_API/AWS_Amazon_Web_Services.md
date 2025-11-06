@@ -9,23 +9,23 @@ description: This section contains information on how to set up API discovery fo
 To add AWS to discovery, you will need an access key and secret access key from your AWS account. These keys can be found/generated under your account in the AWS
 dashboard.
 
-![AWS Management Console](aws/aws-management-console.png)
+![AWS Management Console](aws/aws-management-console.webp)
 
 Click `My Security Credentials` and open the `Access keys` tab.
 
-![AWS - Your Security Credentials](aws/aws-your-security-credentials.png)
+![AWS - Your Security Credentials](aws/aws-your-security-credentials.webp)
 
 To generate keys, click **Create New Access Key**, and your keys will be
 generated. These access keys are available globally for all of your AWS
 regions.
 
-![AWS - Create Access Key](aws/aws-create-access-key.png)
+![AWS - Create Access Key](aws/aws-create-access-key.webp)
 
 Copy those keys to the AWS API settings in your IP Fabric, and don't
 forget to **fill in the regions where the devices you want to discover
 are located**. Multiple regions can be set for one API key and secret.
 
-![Add Connection](aws/aws-vendor-api.png)
+![Add Connection](aws/aws-vendor-api.webp)
 
 ## Required IAM Policy
 
@@ -38,7 +38,7 @@ contains a JSON description of the required IAM policies.
 
 IP Fabric enables you to add `AssumeRole` targets to AWS API configuration. `AssumeRole` is typically used for delegating access to additional resources/account in AWS. IP Fabric will iterate through all listed ARNs, call `AssumeRole` against those, and perform discovery on resources which became accessible.
 
-![Add Connection with AssumeRole](aws/aws-assumerole.png)
+![Add Connection with AssumeRole](aws/aws-assumerole.webp)
 
 !!! info "How `AssumeRole` Works"
 
@@ -59,7 +59,7 @@ IP Fabric enables you to add `AssumeRole` targets to AWS API configuration. `Ass
     When trying to add more regions and roles, the test will fail with the
     following error:
 
-    ![AWS - Connection testing limitation](aws/aws_connection_test_limit.png)
+    ![AWS - Connection testing limitation](aws/aws_connection_test_limit.webp)
 
 ## What Counts Against IP Fabric License
 

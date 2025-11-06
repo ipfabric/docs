@@ -29,13 +29,13 @@ The **Routing Policies** tab contains definitions of routing policies, their nam
 
 In case the match condition uses a reference to an ACL or Prefix list, it is hyperlinked to the appropriate ACL/Prefix list in its section.
 
-![Routing Policies](routing/routingPolicy/routingPolicies.png)
+![Routing Policies](routing/routingPolicy/routingPolicies.webp)
 
 ### PBR Interfaces
 
 The **PBR Interfaces** tab contains information about interfaces that have some routing policy assigned on them (used for policy-based routing). Optionally, there is also information about the used address family or status of the routing policy.
 
-![PBR Interfaces](routing/routingPolicy/pbrInterfaces.png)
+![PBR Interfaces](routing/routingPolicy/pbrInterfaces.webp)
 
 ### Policy Based Routing
 
@@ -43,11 +43,11 @@ The **Policy Based Routing (PBR)** tab contains matching conditions for traffic 
 
 In case the match condition uses a reference to an ACL, it is hyperlinked to the appropriate ACL list in its section.
 
-![Policy Based Routing](routing/routingPolicy/policyBasedRouting.png)
+![Policy Based Routing](routing/routingPolicy/policyBasedRouting.webp)
 
 Clicking `Policy Name` opens a tree view.
 
-![PBR Tree](routing/routingPolicy/pbrTree.png)
+![PBR Tree](routing/routingPolicy/pbrTree.webp)
 
 Policy-based routing rules are now also applied to packets in end-to-end path diagrams.
 
@@ -57,6 +57,6 @@ Selecting PBR's name in a decision table opens a tree view with the highlighted 
 
     Currently, only IP-based policy-based routing nexthops are supported.
 
-![PBR Decision Table](routing/routingPolicy/pbrDecisionTable.png)
+![PBR Decision Table](routing/routingPolicy/pbrDecisionTable.webp)
 
-![PBR Decision Tree](routing/routingPolicy/pbrDecisionTree.png)
+![PBR Decision Tree](routing/routingPolicy/pbrDecisionTree.webp)

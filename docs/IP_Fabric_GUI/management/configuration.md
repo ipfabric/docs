@@ -15,7 +15,7 @@ Configurations can be retrieved in `full` or `sanitized` forms. Sanitization rem
 Network access credentials allowing the `show run` command (or equivalent)
 are necessary for configuration storage and configuration management to work properly. Please review [Device Credentials](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials.md).
 
-![Config Credentials](config/config_auth.png)
+![Config Credentials](config/config_auth.webp)
 
 These credentials need to have the **Use for configuration management** box
 checked.
@@ -44,7 +44,7 @@ Note that every table row, once you filter output for a specific hostname, repre
 
 Let's consider the following example:
 
-![Output for L45EXR2](config/config_L45EXR2.png)
+![Output for L45EXR2](config/config_L45EXR2.webp)
 
 Let's go from the bottom of the output:
 
@@ -57,25 +57,25 @@ Let's go from the bottom of the output:
 
 ## Comparing Configurations
 
-![Selecting older config](config/older_config.png)
+![Selecting older config](config/older_config.webp)
 
-![Selecting newer config](config/newer_config.png)
+![Selecting newer config](config/newer_config.webp)
 
 Stored configurations are displayed in a table that shows information such as the serial number of the device, the device hostname, the time when configuration change was detected (the `Last Change At` column), and the last time a particular configuration was saved in the `Last Check At` column.
 
 The table can be used to compare between two different configurations directly from the user interface. This is done by selecting the `Before` and `After` states to compare, and the resulting differences can be displayed side-by-side, inline with all rows, or inline with only rows where the changes have occurred.
 
 <figure markdown>
-  ![Side by side](config/config_side_by_side.png)
+  ![Side by side](config/config_side_by_side.webp)
   <figcaption>Side by side</figcaption>
 </figure>
 
 <figure markdown>
-  ![Inline](config/config_inline.png)
+  ![Inline](config/config_inline.webp)
   <figcaption>Inline</figcaption>
 </figure>
 
 <figure markdown>
-  ![Inline diff](config/config_inline_diff.png)
+  ![Inline diff](config/config_inline_diff.webp)
   <figcaption>Inline diff</figcaption>
 </figure>

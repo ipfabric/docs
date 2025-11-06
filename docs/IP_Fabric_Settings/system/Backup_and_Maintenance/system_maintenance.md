@@ -20,4 +20,4 @@ back soon!` message.
 Sometimes, it is necessary to run maintenance manually; this can be done with
 the **Start Maintenance** button:
 
-![Schedule System Maintenance](system_maintenance/schedule_system_maintenance.png)
+![Schedule System Maintenance](system_maintenance/schedule_system_maintenance.webp)

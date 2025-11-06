@@ -11,7 +11,7 @@ aggregated scorecard calculated from the performance, capacity, and risk
 metrics. Issues covered by the radar charts and compliance tables link to
 detailed reports.
 
-![Dashboard](dashboard/dashboard.png)
+![Dashboard](dashboard/dashboard.webp)
 
 ## Adding Information to the Dashboard
 
@@ -31,9 +31,9 @@ You can add any intent verification rule to the dashboard.
    State**.
 10. Switch **Select Widget View** to percentage (default) or absolute numbers.
 11. Select view type (summary table or graph). 
-    ![Select Widget](dashboard/select_widget.png)
+    ![Select Widget](dashboard/select_widget.webp)
 12. Click **Save** in the top-right corner.
 
 And here is the new dashboard widget:
 
-![New dashboard widget](dashboard/new_dashboard_widget.png)
+![New dashboard widget](dashboard/new_dashboard_widget.webp)
