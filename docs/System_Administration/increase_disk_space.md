@@ -7,7 +7,7 @@ description: This section describes how to increase disk space on the IP Fabric 
 Starting with version `5.0.0`, the IP Fabric appliance deploys as a single hard
 disk installation instead of two disk volumes.
 
-Starting with versions `7.3.23` and `7.5.11`, new installations utilise the GPT
+Starting with versions `7.3.23` and `7.5.11`, all new installations utilize the GPT
 disk partitioning scheme, while older versions and all pre-existing installations
 utilise the MBR partitioning scheme.
 
