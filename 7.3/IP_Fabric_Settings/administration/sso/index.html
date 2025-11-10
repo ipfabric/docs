@@ -5985,6 +5985,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Debugging Dex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-microsoft-groups-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Microsoft Groups using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -15074,6 +15102,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Debugging Dex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-microsoft-groups-using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Microsoft Groups using PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Assignments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -15206,7 +15262,7 @@ as your CA certificate will need to be added to the system&rsquo;s trust-store.<
 <p>To make changes to certain files, you must log in to the IP Fabric CLI as the
 <code>osadmin</code> user and gain <code>root</code> access. For more information, please see the
 <a href="../../../System_Administration/Command_Line_Interface/">CLI Overview</a>.</p>
-<div class="highlight"><pre><span></span><code>justin@ubuntu:~$<span class="w"> </span>ssh<span class="w"> </span>osadmin@demo.ipfabric.io
+<div class="highlight"><pre><span></span><code>user@ubuntu:~$<span class="w"> </span>ssh<span class="w"> </span>osadmin@demo.ipfabric.io
 osadmin@demo:~$<span class="w"> </span>sudo<span class="w"> </span>-s
 <span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>osadmin:
 root@demo:/home/osadmin#
@@ -15998,6 +16054,34 @@ Oct<span class="w">  </span><span class="m">3</span><span class="w"> </span><spa
 <code>/opt/ipf-api/conf.d/api.json</code> file. Please note that group names can have spaces like in the example above and that
 <code>Everyone</code> and <code>Solution Architecture</code> are two separate groups. It is best to consult the SSO provider for the group
 names as the log messages can be difficult to read.</p>
+<h3 id="debugging-microsoft-groups-using-powershell">Debugging Microsoft Groups using PowerShell</h3>
+<p>Microsoft Active Directory Groups can be debugged using <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation">Microsoft Graph PowerShell SDK</a>.</p>
+<p>The Microsoft Graph SDK is very large, and for the following script, it is only necessary to install three modules:</p>
+<p><code>Install-Module Microsoft.Graph.Users, Microsoft.Graph.Authentication, Microsoft.Graph.Groups -Scope CurrentUser -Repository PSGallery -Force</code></p>
+<div class="highlight"><pre><span></span><code><span class="c"># Connect to Microsoft Graph</span>
+<span class="nb">Connect-MgGraph</span>
+
+<span class="c"># Get your logged in User Account to search against</span>
+<span class="nv">$User</span> <span class="p">=</span> <span class="nb">Get-MgContext</span> <span class="p">|</span> <span class="nb">select </span><span class="n">Account</span> <span class="n">-ExpandProperty</span> <span class="n">Account</span>
+
+<span class="c"># If troubleshooting another user set &#39;$User&#39; with the email: $User = &quot;ipf.user@ipfabric.io&quot;</span>
+
+<span class="nv">$Groups</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="c"># Get Groups based on your user account. </span>
+<span class="nb">Get-MgUserMemberOf</span> <span class="n">-UserId</span> <span class="nv">$User</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$Groups</span> <span class="p">+=</span> <span class="nb">Get-MgGroup</span> <span class="n">-GroupId</span> <span class="nv">$_</span><span class="p">.</span><span class="n">id</span> <span class="p">|</span> <span class="nb">select </span><span class="n">DisplayName</span> <span class="n">-ExpandProperty</span> <span class="n">DisplayName</span><span class="p">}</span>
+
+<span class="nb">Write-Output</span> <span class="s2">&quot; &quot;</span> <span class="s2">&quot;Groups for ${User}:&quot;</span> <span class="s2">&quot;---------------&quot;</span> <span class="nv">$Groups</span>
+</code></pre></div>
+<p>If you run into any errors or issues, please try updating the modules and rerunning:</p>
+<p><code>Update-Module -Name Microsoft.Graph.Users, Microsoft.Graph.Authentication, Microsoft.Graph.Groups -Force</code></p>
+<div class="highlight"><pre><span></span><code>Groups for ipf.user@ipfabric.io:
+---------------
+Solution Architecture
+Everyone
+&lt;...&gt;
+</code></pre></div>
+<h3 id="role-assignments">Role Assignments</h3>
+<p>Assignment of a external Group to IP Fabric role is configured in the <code>/opt/ipf-api/conf.d/api.json</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;roleAssignments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -16056,7 +16140,7 @@ API service:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 6, 2025 13:39:07">November 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2025 13:03:48">November 10, 2025</span>
   </span>
 
     
