@@ -11,16 +11,15 @@ all the necessary data for the IP Fabric model.
 
 These are the known limitations:
 
-- Multiple Meraki devices can have the same public IP address.
-- CDP/LLDP might be not linked between devices correctly, as the reported port
-  ID doesn't allow it.
-- CDP/LLDP timespan is 2 hours, so it might not show the actual state.
-- ARP is available only for L3 switches; the MAC table is reconstructed from endpoints.
-- DHCP/STATIC doesn't provide an IP mask.
-- STP is partially provided for switches.
-- The routing table includes static routes only for firewalls.
-- Path lookup is not working because forwarding tables are not provided.
-- Can't add a Meraki device into a snapshot (refresh works).
-- Limited snapshot -- Meraki tasks will always be downloaded.
-- MX firewall uplink ports -- It is not possible to determine if traffic load
-  balancing is enabled and/or which port is primary and which is backup.
+ - Multiple Meraki devices can share the same public IP address.
+ - CDP/LLDP data has a timespan of 2 hours, so it may not always reflect the current state.
+ - ARP and MAC tables are available only for switches.
+ - Firewalls use the client table as the source of ARP-like data, which includes only records related to the LAN side of the firewall.
+ - Path lookup has certain limitations — it works correctly through switches, but for firewalls and access points (APs), functionality depends on available data (limited ARP and no MAC table).
+ - The device must have a statically configured management interface for the management mask and gateway to be available — DHCP provides only the IP address.
+ - STP data is partially available for switches.
+ - The LAN side of a firewall includes switch ports that do not support STP.
+ - The routing table includes only static routes for firewalls.
+ - A Meraki device cannot be added to a snapshot (only refresh operations are supported).
+ - Limited snapshot functionality — Meraki tasks are always downloaded.
+ - For MX firewall uplink ports, it is not possible to determine whether traffic load balancing is enabled, or which port is primary and which is backup.
