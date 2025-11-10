@@ -62,7 +62,7 @@ To make changes to certain files, you must log in to the IP Fabric CLI as the
 [CLI Overview](../../System_Administration/Command_Line_Interface/index.md).
 
 ```bash
-justin@ubuntu:~$ ssh osadmin@demo.ipfabric.io
+user@ubuntu:~$ ssh osadmin@demo.ipfabric.io
 osadmin@demo:~$ sudo -s
 [sudo] password for osadmin:
 root@demo:/home/osadmin#
@@ -859,6 +859,48 @@ The groups attribute must be returned in order for IP Fabric to match the role a
 `/opt/ipf-api/conf.d/api.json` file. Please note that group names can have spaces like in the example above and that
 `Everyone` and `Solution Architecture` are two separate groups. It is best to consult the SSO provider for the group
 names as the log messages can be difficult to read.
+
+### Debugging Microsoft Groups using PowerShell
+
+Microsoft Active Directory Groups can be debugged using [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation).
+
+The Microsoft Graph SDK is very large, and for the following script, it is only necessary to install three modules:
+
+`Install-Module Microsoft.Graph.Users, Microsoft.Graph.Authentication, Microsoft.Graph.Groups -Scope CurrentUser -Repository PSGallery -Force`
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph
+
+# Get your logged in User Account to search against
+$User = Get-MgContext | select Account -ExpandProperty Account
+
+# If troubleshooting another user set '$User' with the email: $User = "ipf.user@ipfabric.io"
+
+$Groups = @()
+# Get Groups based on your user account. 
+Get-MgUserMemberOf -UserId $User | ForEach-Object { $Groups += Get-MgGroup -GroupId $_.id | select DisplayName -ExpandProperty DisplayName}
+
+Write-Output " " "Groups for ${User}:" "---------------" $Groups
+
+```
+
+If you run into any errors or issues, please try updating the modules and rerunning:
+
+`Update-Module -Name Microsoft.Graph.Users, Microsoft.Graph.Authentication, Microsoft.Graph.Groups -Force`
+
+
+```
+Groups for ipf.user@ipfabric.io:
+---------------
+Solution Architecture
+Everyone
+<...>
+```
+
+### Role Assignments
+
+Assignment of a external Group to IP Fabric role is configured in the `/opt/ipf-api/conf.d/api.json` file.
 
 ```json
 {
