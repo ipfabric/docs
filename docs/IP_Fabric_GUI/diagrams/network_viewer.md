@@ -219,6 +219,10 @@ VRF labels are now shown as line-cap labels on topology graph edges for Layer 3 
 
 ![VRF labels](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_vrf_labels.webp)
 
+Interface descriptions can now appear as labels at the ends of topology graph edges for most protocols, making it easier to identify interfaces directly within the diagram.
+
+![VRF labels](../../images/diagrams/IP_Fabric_GUI-diagrams-protocols_interface_description_labels.webp)
+
 ### Link Grouping
 
 ![Link grouping](../../images/diagrams/IP_Fabric_GUI-diagrams-network_viewer_protocols_link_grouping.webp)
