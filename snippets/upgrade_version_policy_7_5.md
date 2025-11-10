@@ -1,6 +1,6 @@
 !!! danger "Upgrade Notice"  
  
-    An upgrade to `7.5.x` is **only** possible from version `7.3.17` or newer.
+    An upgrade to `7.5.x` is **only** possible from version `7.3.23` or newer.
 
     When upgrading to `7.5` release, database will be migrated from **ArangoDB** to **PostgreSQL**.
 
