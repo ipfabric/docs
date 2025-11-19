@@ -15485,7 +15485,7 @@ have occurred on the system. They can be used to track core system or snapshot
 activity and help with troubleshooting issues.</p>
 <h2 id="system-logs">System Logs</h2>
 <p>System logs are stored in the <code>/var/log</code> directory. The <code>osadmin</code> user has
-access to these sub-directories:</p>
+access to these subdirectories:</p>
 <table>
 <thead>
 <tr>
@@ -15504,7 +15504,7 @@ access to these sub-directories:</p>
 </tr>
 <tr>
 <td><code>/var/log/nginx/*</code></td>
-<td>nginx-related logs</td>
+<td>NGINX-related logs</td>
 </tr>
 <tr>
 <td><code>/var/log/redis/*</code></td>
@@ -15527,12 +15527,28 @@ access to these sub-directories:</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>/var/log/ipf/ipf-api/api-errors.log</code></td>
-<td style="text-align: left;">API error logs</td>
+<td style="text-align: left;"><code>journalctl --namespace ipf-api</code></td>
+<td style="text-align: left;">API logs, including error logs</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>/var/log/ipf/ipf-api/api.log</code></td>
-<td style="text-align: left;">All API logs, including error logs</td>
+<td style="text-align: left;"><code>journalctl --namespace ipf-discovery</code></td>
+<td style="text-align: left;">Discovery logs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>journalctl --namespace ipf-webhook-worker</code></td>
+<td style="text-align: left;">Webhook worker logs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>journalctl --namespace ipf-syslogworker</code></td>
+<td style="text-align: left;">Configuration management logs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>journalctl --namespace ipf-sys-scale-workers</code></td>
+<td style="text-align: left;">Discovery worker scaling logs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>journalctl --unit ipf-netshaper</code></td>
+<td style="text-align: left;">Discovery bandwidth control logs</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/var/log/nimpee/ipf-migrate/migrateBuild*.log</code></td>
@@ -15549,10 +15565,6 @@ access to these sub-directories:</p>
 <tr>
 <td style="text-align: left;"><code>/var/log/nimpee/sys-lvm-resize.log</code></td>
 <td style="text-align: left;">Logs for automatic hard disk resize</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>journalctl -u ipf-netshaper</code></td>
-<td style="text-align: left;">Discovery bandwidth control logs</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/var/log/nimpee/support-vpn.log</code></td>
@@ -15578,27 +15590,11 @@ access to these sub-directories:</p>
 <td style="text-align: left;"><code>/var/log/ipf/system-upgrade-ipf/package-*</code></td>
 <td style="text-align: left;">IP Fabric new version update logs</td>
 </tr>
-<tr>
-<td style="text-align: left;"><code>/var/log/ipf/ipf-webhook-worker/webhook-worker-errors.log</code></td>
-<td style="text-align: left;">Webhook error logs</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>/var/log/ipf/ipf-webhook-worker/webhook-worker.log</code></td>
-<td style="text-align: left;">Webhook worker logs</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>/var/log/nimpee/frontend.log</code></td>
-<td style="text-align: left;">Web console errors (received by API)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>/var/log/nimpee/discovery/syslogWorker/*</code></td>
-<td style="text-align: left;">Configuration management logs</td>
-</tr>
 </tbody>
 </table>
 <h2 id="snapshot-logs">Snapshot Logs</h2>
 <p>Snapshots are stored in the <code>/home/autoboss/snapshots</code> directory. Each
-sub-directory represents one snapshot. Snapshot-related logs are in
+subdirectory represents one snapshot. Snapshot-related logs are in
 <code>/home/autoboss/snapshots/&lt;id&gt;/*</code>:</p>
 <table>
 <thead>
@@ -15712,12 +15708,12 @@ Support or Solution Architect teams can render the system unusable.</p>
 </code></pre></div>
 <p>The file name should be unique and must not conflict with other files in the
   directory:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/etc/syslog-ng/conf.d/<span class="w"> </span>-l
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span>/etc/syslog-ng/conf.d
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>root@ipfabric-server:~# ls /etc/syslog-ng/conf.d/ -l
+<div class="highlight"><pre><span></span><code>root@ipfabric-server:~# ls -l /etc/syslog-ng/conf.d
 total 8
--rw-r--r-- 1 root root  580 Nov  5 11:10 ipf-api-syslog.conf
--rw-r--r-- 1 root root 1414 Oct 11 13:31 ipfabric-log.conf
+-rw-r--r-- 1 root root  213 Oct 20 12:50 ipf-cli-config.conf
+-rw-r--r-- 1 root root 1355 Oct 23 10:24 ipf-syslog-worker.conf
 </code></pre></div>
 </li>
 <li>
@@ -15791,7 +15787,7 @@ log {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 25, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2025</span>
   </span>
 
     
