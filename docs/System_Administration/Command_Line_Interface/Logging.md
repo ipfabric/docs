@@ -11,44 +11,43 @@ activity and help with troubleshooting issues.
 ## System Logs
 
 System logs are stored in the `/var/log` directory. The `osadmin` user has
-access to these sub-directories:
+access to these subdirectories:
 
-| Files | Description |
-| ------------------------ |---------|
-| `/var/log/syslog*` | All service and system logs, contains additional logs from components called by <br> the `worker` and `tasker` services |
-| `/var/log/postgresql/*` | PostgreSQL-related logs |
-| `/var/log/nginx/*`      | nginx-related logs |
-| `/var/log/redis/*`      | Redis-related logs |
-| `/var/log/rabbitmq/*`   | RabbitMQ-related logs |
+| Files                   | Description                                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `/var/log/syslog*`      | All service and system logs, contains additional logs from components called by <br> the `worker` and `tasker` services |
+| `/var/log/postgresql/*` | PostgreSQL-related logs                                                                                                 |
+| `/var/log/nginx/*`      | NGINX-related logs                                                                                                      |
+| `/var/log/redis/*`      | Redis-related logs                                                                                                      |
+| `/var/log/rabbitmq/*`   | RabbitMQ-related logs                                                                                                   |
 
 ## Service Logs
 
 Service logs for IP Fabric services are stored in the `/var/log/nimpee` and `/var/log/ipf` directories:
 
-| File(s)                                                              | Description                                 |
-| :------------------------------------------------------------------- |:------------------------------------------- |
-| `/var/log/ipf/ipf-api/api-errors.log`                                | API error logs                              |
-| `/var/log/ipf/ipf-api/api.log`                                       | All API logs, including error logs          |
-| `/var/log/nimpee/ipf-migrate/migrateBuild*.log`                      | Database migration logs                     |
-| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log`                     | IPF CLI Config logs                         |
-| `/var/log/ipf/ipf-jumphost/*.log`                                    | Logs related to a specific jumphost service |
-| `/var/log/nimpee/sys-lvm-resize.log`                                 | Logs for automatic hard disk resize         |
-| `journalctl -u ipf-netshaper`                                        | Discovery bandwidth control logs            |
-| `/var/log/nimpee/support-vpn.log`                                    | Support VPN-related logs                    |
-| `/var/log/nimpee/sys-backup-duplicity.log`                           | Logs for backup services                    |
-| `/var/log/nimpee/duplicity/sys-duplicity-*.log`                      | Detailed logs for each backup session       |
-| `/var/log/nimpee/sys-certificate.log`                                | SSL certificate-related logs                |
-| `/var/log/ipf/ipf-techsupport-exporter/ipf-techsupport-exporter.log` | Techsupport-related logs                    |
-| `/var/log/ipf/system-upgrade-ipf/package-*`                          | IP Fabric new version update logs           |
-| `/var/log/ipf/ipf-webhook-worker/webhook-worker-errors.log`          | Webhook error logs                          |
-| `/var/log/ipf/ipf-webhook-worker/webhook-worker.log`                 | Webhook worker logs                         |
-| `/var/log/nimpee/frontend.log`                                       | Web console errors (received by API)        |
-| `/var/log/nimpee/discovery/syslogWorker/*`                           | Configuration management logs               |
+| File(s)                                                                  | Description                                 |
+|:-------------------------------------------------------------------------|:--------------------------------------------|
+| `journalctl --namespace ipf-api`                                         | API logs, including error logs              |
+| `journalctl --namespace ipf-discovery`                                   | Discovery logs                              |
+| `journalctl --namespace ipf-webhook-worker`                              | Webhook worker logs                         |
+| `journalctl --namespace ipf-syslogworker`                                | Configuration management logs               |
+| `journalctl --namespace ipf-sys-scale-workers`                           | Discovery worker scaling logs               |
+| `journalctl --unit ipf-netshaper`                                        | Discovery bandwidth control logs            |
+| `/var/log/nimpee/ipf-migrate/migrateBuild*.log`                          | Database migration logs                     |
+| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log`                         | IPF CLI Config logs                         |
+| `/var/log/ipf/ipf-jumphost/*.log`                                        | Logs related to a specific jumphost service |
+| `/var/log/nimpee/sys-lvm-resize.log`                                     | Logs for automatic hard disk resize         |
+| `/var/log/nimpee/support-vpn.log`                                        | Support VPN-related logs                    |
+| `/var/log/nimpee/sys-backup-duplicity.log`                               | Logs for backup services                    |
+| `/var/log/nimpee/duplicity/sys-duplicity-*.log`                          | Detailed logs for each backup session       |
+| `/var/log/nimpee/sys-certificate.log`                                    | SSL certificate-related logs                |
+| `/var/log/ipf/ipf-techsupport-exporter/ipf-techsupport-exporter.log`     | Techsupport-related logs                    |
+| `/var/log/ipf/system-upgrade-ipf/package-*`                              | IP Fabric new version update logs           |
 
 ## Snapshot Logs
 
 Snapshots are stored in the `/home/autoboss/snapshots` directory. Each
-sub-directory represents one snapshot. Snapshot-related logs are in
+subdirectory represents one snapshot. Snapshot-related logs are in
 `/home/autoboss/snapshots/<id>/*`:
 
 | Files                                     | Description                                                        |
@@ -120,14 +119,14 @@ consult the
     directory:
 
     ```shell
-    ls /etc/syslog-ng/conf.d/ -l
+    ls -l /etc/syslog-ng/conf.d
     ```
 
     ```
-    root@ipfabric-server:~# ls /etc/syslog-ng/conf.d/ -l
+    root@ipfabric-server:~# ls -l /etc/syslog-ng/conf.d
     total 8
-    -rw-r--r-- 1 root root  580 Nov  5 11:10 ipf-api-syslog.conf
-    -rw-r--r-- 1 root root 1414 Oct 11 13:31 ipfabric-log.conf
+    -rw-r--r-- 1 root root  213 Oct 20 12:50 ipf-cli-config.conf
+    -rw-r--r-- 1 root root 1355 Oct 23 10:24 ipf-syslog-worker.conf
     ```
 
 4. Add the configuration options (replace `<YOUR_IP>` with the IP address of
