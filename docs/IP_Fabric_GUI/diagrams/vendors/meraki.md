@@ -29,17 +29,26 @@ Currently supported path types include:
   - Limitation: For ARP data, only the client table is used, and no MAC table
     is available. As a result, traffic is flooded to all internal (LAN/VLAN)
     interfaces.
+- Access Points - running in bridge mode.
+
+### Examples
+
+#### Path Lookup Using Meraki Network Only
 
 ![Meraki Path Lookup 1](../../../images/diagrams/Meraki_1.webp)
 
+#### Path Lookup Across Multi-vendor Network
+
 ![Meraki Path Lookup 2](../../../images/diagrams/Meraki_2.webp)
 
- ## Example
+#### From LAN via Firewall
 
 ![From LAN via FW](../../../images/diagrams/Meraki-from_Lan.webp)
 
 The absence of a MAC table is illustrated here. The orange firewall floods
 traffic to all internal (LAN/VLAN) ports.
+
+#### To LAN via Firewall
 
 ![To LAN via FW](../../../images/diagrams/Meraki-to_Lan.webp)
 
