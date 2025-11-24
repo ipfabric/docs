@@ -321,6 +321,15 @@ mike deploy --config-file mkdocs_insiders.yml 7.5
 mike deploy --push --update-aliases 7.5
 ```
 
+### Manage List of Versions
+
+Those changes should be done just on `main` branch. Don't forget to switch into `venv`.
+You can add, remove or change `latest` for any branch as per below:
+
+- To add a branch run `mike deploy --push --update-aliases <version -> 7.5 for example>`. This will add a new entry in `mike list`.
+- To delete a branch run `mike delete --push <target branch>` to remove obsolete releases from the website. Use with caution! Then check `mike list` if obsolete version disappeared. The branch will still stay.
+- To move `latest` tag for, for example, version 7.5, run `mike deploy --push --update-aliases 7.5 latest`. Check `mike list`, you should see a new version with `[latest]` tag.
+
 ### Post-Steps and Notes After New Branch Creation
 
 #### Low Level Release Notes
@@ -392,11 +401,6 @@ means that the `541d97e0d` was deployed to version `5.0` on the website.
   ```
 
 - agrr, profit!
-
-### Removing Old Release
-
-You can use `mike list` and `mike delete` to remove obsolete releases from the
-website. Use with caution!
 
 ### Updating Low-Level Release Notes (LLRN) From JIRA
 
