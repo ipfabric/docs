@@ -4,7 +4,76 @@ description: This section contains information on how to set up API discovery fo
 
 # Google Cloud Platform (GCP)
 
-## Generate a Private Key for Your GCP Service Account
+## How To Enable GCP APIs
+
+Since version 7.8 and above requires these GCP APIs to be enabled for full functionality:
+
+- Cloud Resource Manager API (cloudresourcemanager.googleapis.com)
+- Compute Engine API (compute.googleapis.com)
+- Network Connectivity API (networkconnectivity.googleapis.com)
+
+1. Select the project where you want to enable the API:
+
+   ![Select a project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAProject.webp)
+
+2. Navigate to **APIs & Services --> API Library --> Browse**, search for the API, and select it:
+
+   ![Go to API Explorer](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-goToApiExplorer.webp)
+
+3. Enable the API:
+
+   ![Enable the API](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-enableTheApi.webp)
+
+4. Repeat these steps for all required APIs and projects.
+
+## How To Create a Custom Role
+
+1. Select your organization. If you don’t have an organization, or if you prefer not to grant IP Fabric access to the entire organization, you can create the custom roles at the project level:
+
+   ![Select your organization](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectOrganization.webp)
+
+2. Navigate to **IAM & Admin --> Roles**:
+
+   ![Navigate the IAM](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-navigateToIAM.webp)
+
+3. Create a custom role and assign the following permissions required for IP Fabric version 7.8 and above:
+
+   ```
+   resourcemanager.projects.list (organization-level permission)
+   resourcemanager.projects.get
+   networkconnectivity.regionalEndpoints.get
+   compute.addresses.list
+   compute.autoscalers.list
+   compute.backendServices.get
+   compute.backendServices.list
+   compute.firewalls.list
+   compute.forwardingRules.list
+   compute.instanceGroupManagers.list
+   compute.instanceGroups.list
+   compute.instanceTemplates.list
+   compute.instances.list
+   compute.interconnectAttachments.list
+   compute.networkEndpointGroups.list
+   compute.networks.list
+   compute.routers.get
+   compute.routers.list
+   compute.routes.list
+   compute.serviceAttachments.list
+   compute.subnetworks.list
+   compute.targetGrpcProxies.list
+   compute.targetHttpProxies.list
+   compute.targetHttpsProxies.list
+   compute.targetTcpProxies.list
+   compute.targetVpnGateways.list
+   compute.urlMaps.list
+   compute.vpnGateways.list
+   compute.vpnTunnels.list
+   compute.zones.list
+   ```
+
+   ![Create a role](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-createArole.webp)
+
+## How To Generate a Private Key for Your GCP Service Account
 
 1. Select a project for which you want to create a service account:
 
@@ -22,8 +91,7 @@ description: This section contains information on how to set up API discovery fo
 
    ![Service account details](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_giveAServiceAccountName.webp)
 
-5. Select a role for the account. We recommend using the `Viewer` role as it
-   provides only read access to the project. Then, click **CONTINUE**.
+5. Select the custom role you created in the previous step for the account, then click **CONTINUE**:
 
    ![Grant this service account access to project](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAViewRole.webp)
 
@@ -46,7 +114,21 @@ description: This section contains information on how to set up API discovery fo
 
    ![Generate a JSON key](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectJsonKey.webp)
 
-## Load the `JSON` Key to IP Fabric
+## Grant the Service Account Access to Your Organization
+
+1. Select your organization. (Alternatively, you can perform this step within individual projects.):
+
+   ![Select your organization](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectOrganization.webp)
+
+2. Navigate to **IAM & Admin --> IAM**, and click **Grant access**:
+
+   ![Navigate to organization permissions](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_navigateToOrgPermissions.webp)
+
+3. Enter the Service Account email address and assign the custom role:
+
+   ![Grant organizational access](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_grantOrgAccess.webp)
+
+## How To Load the `JSON` Key to IP Fabric
 
 1. In the IP Fabric GUI, navigate to **Settings --> Discovery & Snapshots -->
    Discovery Settings --> Vendors API**, and click **+ Add**:
