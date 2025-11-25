@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section, you can find the release notes for `v7.6` releases.">
+        <meta name="description" content="In this section, you can find the release notes for `v7.8` releases.">
       
       
       
@@ -74,7 +74,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="IP Fabric v7.8 - IP Fabric Documentation Portal" />
-<meta property="og:description" content="In this section, you can find the release notes for `v7.6` releases." />
+<meta property="og:description" content="In this section, you can find the release notes for `v7.8` releases." />
 <meta property="og:image" content="https://docs.ipfabric.io/main/assets/images/social/releases/release_notes/7.8.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/main/releases/release_notes/7.8/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="IP Fabric v7.8 - IP Fabric Documentation Portal" />
-<meta property="twitter:description" content="In this section, you can find the release notes for `v7.6` releases." />
+<meta property="twitter:description" content="In this section, you can find the release notes for `v7.8` releases." />
 <meta property="twitter:image" content="https://docs.ipfabric.io/main/assets/images/social/releases/release_notes/7.8.png" />
  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -15652,18 +15652,36 @@ following key combinations:</p>
 </ul>
 <h4 id="vendor-support-and-improvements">Vendor Support and Improvements</h4>
 <ul>
-<li>Added IPv6 support for the Palo Alto AAA, NTP, SNMP, Syslog and OSPFv3 tasks.</li>
-<li>Added IPv6 support for the Cisco NX-OS AAA, ACL, SNMP and Syslog tasks.</li>
+<li><strong>Palo Alto</strong><ul>
+<li>Now supports AAA, NTP, SNMP, Syslog, OSPFv3 tasks and IPv4 and IPv6 route summary tables.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Fortinet</strong><ul>
+<li>Now supports IPv4 and IPv6 route summary tables.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Meraki</strong><ul>
+<li>Now supports LAN side for firewalls and port-channel and management interface for switches.</li>
+<li>Corrected xDP interface numbering for firewalls.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Cisco</strong><ul>
+<li>Now supports IPv6 AAA, ACL, SNMP and Syslog tasks on NX-OS and IPv6 route summary tables on ASA, ACI, IOS XR, NX-OS.</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><strong>Aruba IAP - AOS 10+</strong><ul>
 <li>Virtual Controllers are no longer created as devices in IP Fabric due to architectural changes introduced in AOS 10.</li>
 <li>The cluster group name is now displayed in a new column, <code>AP Cluster Name</code>, within the table: <code>Technology/Wireless/Access points</code>.</li>
 </ul>
 </li>
-<li>Added support for Fortinet IPv4 and IPv6 route summary tables.</li>
-<li>Added support for Cisco ASA, ACI, IOS XR, NX-OS, FTD and Palo Alto IPv6 route summary tables.</li>
-<li>Added port-channel support and management interface for Meraki switches.</li>
-<li>Fixed xDP interface numbering for Meraki firewalls.</li>
-<li>Added switchport support on the LAN side of Meraki firewalls.</li>
 </ul>
 <h3 id="api-changes">API Changes</h3>
 <ul>
@@ -15698,7 +15716,7 @@ following key combinations:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2025</span>
   </span>
 
     
