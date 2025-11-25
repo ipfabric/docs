@@ -327,7 +327,8 @@ Those changes should be done just on `main` branch. Don't forget to switch into 
 You can add, remove or change `latest` for any branch as per below:
 
 - To add a branch run `mike deploy --push --update-aliases <version -> 7.5 for example>`. This will add a new entry in `mike list`.
-- To delete a branch run `mike delete --push <target branch>` to remove obsolete releases from the website. Use with caution! Then check `mike list` if obsolete version disappeared. The branch will still stay.
+- To delete a branch run `mike delete --push <target branch number>` to remove obsolete releases from the website. Use with caution! Then check `mike list` if obsolete version disappeared. The branch will still stay.
+  - For example, use `mike delete --push 7.8`
 - To move `latest` tag for, for example, version 7.5, run `mike deploy --push --update-aliases 7.5 latest`. Check `mike list`, you should see a new version with `[latest]` tag.
 
 ### Post-Steps and Notes After New Branch Creation
