@@ -29,6 +29,18 @@ The Virtual Machine Scale Sets table provides information about scale sets inclu
 
 ![Technology table showing Azure Virtual Machine Scale Sets](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_virtual_machine_scale_sets.webp)
 
+The Service Endpoints table provides information about Azure service endpoints, covering the subnet, service name, state, location, and scope (service endpoint policy).
+
+![Technology table showing Azure Service Endpoints](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_service_endpoints.webp)
+
+The Private Link table provides information about private link endpoints, private link services, and their connections. It contains three tabs: one for private endpoints, one for private link services, and one for private link service connections.
+
+![Technology table showing Azure Private Link](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_private_link.webp)
+
+The VNet Integration table provides information about resources that are enabled for VNet integration. It contains three tabs: App Services, Container Apps, Flexible Servers and SQL Managed Instances
+
+![Technology table showing Azure VNet Integration](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_vnet_integration.webp)
+
 
 ## GCP (Google Cloud Platform)
 
