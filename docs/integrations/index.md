@@ -15,13 +15,6 @@ security platforms. This enhances network visibility, simplifies troubleshooting
 security. These integrations foster efficient operations, proactive issue resolution, and robust protection, crucial in
 the dynamic landscape of modern networking.
 
-!!! warning "Some integrations are no longer supported"
-    IP Fabric has **discontinued support and maintenance** for several integrations.
-    From now on, IP Fabric officially supports only the following integrations: **NetBox, Splunk, ServiceNow, and Python**.
-    Other integrations remain available **for reference and use at your own risk**, but they are **no longer maintained or supported**
-    and may not function correctly with current or future IP Fabric versions.
-
-
 ## Maintained Integrations
 
 | Integration Documentation                                | Location(s)                                                                                                                                             |
@@ -31,7 +24,7 @@ the dynamic landscape of modern networking.
 | [ServiceNow Integration](service-now/index.md)           | [`ipfabric-snow` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-snow)<br/>[`ipfabric-snow` PyPI](https://pypi.org/project/ipfabric-snow/)     |
 | [IP Fabric Splunk TA](splunk/index.md)                   | [Splunkbase Add-on](https://splunkbase.splunk.com/app/6707)<br/>[`splunk-ta-ip-fabric` GitLab](https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric) |
 
-## Not Maintained Integrations
+## Partner-Led Integrations
 
 | Integration Documentation                                                                                      | Location(s)                                                                                                                                                                               |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
