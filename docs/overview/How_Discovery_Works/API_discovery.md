@@ -21,7 +21,7 @@ List of supported Vendor APIs (the links lead to the settings specific for each
 vendor):
 
 - [AWS](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/AWS_Amazon_Web_Services.md)
-- [Azure](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Azure_Networking.md)
+- [Azure](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Azure.md)
 - [Check Point Management](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Check_Point.md)
 - [Cisco APIC](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_APIC.md)
 - [Cisco FMC](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_FMC.md)

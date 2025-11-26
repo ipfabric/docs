@@ -2,25 +2,7 @@
 description: This section contains information on how to set up API discovery for Azure.
 ---
 
-# Azure Networking
-
-Starting from version `4.3`, IP Fabric supports discovery of the Azure Cloud
-infrastructure. Azure devices are discovered only through API. IP
-Fabric covers the IaaS (Infrastructure as a Service) part of the cloud.
-Azure Cloud Compute provides an abstract view of the Azure physical
-infrastructure.
-
-- [Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
-- [NAT Gateway](https://docs.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-gateway-resource)
-- Virtual Network Gateway (both types: [VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/) and [ExpressRoute](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-about-virtual-network-gateways)) and devices related to a [Virtual WAN](https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about) solution:
-
-  - Virtual HUB
-  - VPN Gateway (the same functionality as VNGw type VPN)
-  - ExpressRoute Gateway (the same functionality as VNGw type ExpressRoute)
-
-Since version `7.2`, IP Fabric has introduced support for Load Balancers and Application Gateways.
-
-## Azure Setup
+# Azure
 
 To add Azure devices to the global discovery settings, go to **Settings -->
 Discovery & Snapshots --> Discovery Settings --> Vendors API**, click **+ Add**,
@@ -69,10 +51,10 @@ Search for **Subscriptions** and select the subscription you like to add to IP F
 
 ### Role Definitions for IP Fabric
 
-The following JSON format applies to IP Fabric version `7.5` and above:
+The following JSON format applies to IP Fabric version `7.8` and above:
 
-```json title="azure-role-7_5.json"
---8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_5.json"
+```json title="azure-role-7_8.json"
+--8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_8.json"
 ```
 
 ## What Counts Against IP Fabric License

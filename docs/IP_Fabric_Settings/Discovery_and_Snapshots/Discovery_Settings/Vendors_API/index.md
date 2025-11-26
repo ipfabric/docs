@@ -11,7 +11,7 @@ Discovery & Snapshots --> Discovery Settings --> Vendors API --> + Add -->
 Type**):
 
 - [AWS](AWS_Amazon_Web_Services.md)
-- [Azure](Azure_Networking.md)
+- [Azure](Azure.md)
 - [Check Point Management](Check_Point.md)
 - [Cisco APIC](Cisco_APIC.md)
 - [Cisco FMC](Cisco_FMC.md)
