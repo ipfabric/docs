@@ -46,6 +46,8 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    compute.autoscalers.list
    compute.backendServices.get
    compute.backendServices.list
+   compute.regionBackendServices.get
+   compute.regionBackendServices.list
    compute.firewalls.list
    compute.forwardingRules.list
    compute.instanceGroupManagers.list
