@@ -17,7 +17,11 @@ AWS's inventory table offers the Amazon Resource Name (ARN), resource type, reso
 
 The Scaling Group table shows details of scaling groups including names, ARNs, number of virtual machines, instance types, target group ARNs, launch template and launch template versions.
 
-![Technology table showing GCP Instance & Network Endpoint Groups](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-aws_scaling_groups.webp)
+![Technology table showing AWS Scaling Groups](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-aws_scaling_groups.webp)
+
+The Subnets table shows details of subnets such as their VPC ID, name, IP ranges, route table ID, availability zone, ARN, and whether the subnet is public.
+
+![Technology table showing AWS subnets](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-aws_subnets.webp)
 
 ## Azure
 
