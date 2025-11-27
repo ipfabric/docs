@@ -684,10 +684,10 @@ def format_release_notes(notes: ReleaseNotes) -> str:
     sections = []
     
     if notes.improvements:
-        sections.append("## Improvements\n" + "\n".join(f"- {item}" for item in notes.improvements))
+        sections.append("### Improvements\n" + "\n".join(f"- {item}" for item in notes.improvements))
     
     if notes.bug_fixes:
-        sections.append("## Bug Fixes\n" + "\n".join(f"- {item}" for item in notes.bug_fixes))
+        sections.append("### Bug Fixes\n" + "\n".join(f"- {item}" for item in notes.bug_fixes))
     
     return "\n\n".join(sections)
 
