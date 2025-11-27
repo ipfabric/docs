@@ -5,6 +5,9 @@ import re
 import requests
 
 from snakemd import Document
+from dotenv import load_dotenv
+
+load_dotenv()
 
 AUTH = None  # Assigned in main()
 JIRA_BASE_URL = "https://ipfabric.atlassian.net/"
@@ -146,12 +149,15 @@ def generate_release_notes(rn, project_issues):
 
 def main():
     global AUTH
-    try:
-        AUTH = (os.environ["JIRA_USER"], os.environ["JIRA_PASS"])
-    except KeyError as err:
-        print(f"Given key not found - {err}")
-        print("You need to set JIRA_USER and JIRA_PASS environment variables")
+    JIRA_USER = os.getenv("JIRA_USER")
+    JIRA_PASS = os.getenv("JIRA_PASS")
+    
+    if not JIRA_USER or not JIRA_PASS:
+        print("Error: JIRA_USER and JIRA_PASS environment variables are required")
+        print("Please set them in your .env file")
         exit(1)
+    
+    AUTH = (JIRA_USER, JIRA_PASS)
 
     branches = {}
 

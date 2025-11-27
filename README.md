@@ -410,15 +410,187 @@ release notes from JIRA from version `7.0.0`. There are certain shortcuts, like 
 configuration values. Also, check your release filtering in there to limit which
 releases are actually refreshed.
 
-To use this script, you need to export two environment variables:
+To use this script, you need to edit two environment variables in .env file:
 
 - `JIRA_USER` -- your username (e.g. `first.last@ipfabric.io`)
 - `JIRA_PASS` -- a token you can get from the
   [JIRA API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
-- `export JIRA_USER=###########` 
-- `export JIRA_PASS=###########`
 
-To run this script, go to `venv` and run `python3 jira_release_notes.py`.
+To run this script, activate `venv` and run `python3 jira_release_notes.py`.
 
 Side note: Always remove version, team and customer information stuff from Ticket Summary!!!
+
+
+## Jira AI Agent - Patch Release Notes Generator
+
+An intelligent AI agent for generating concise patch release notes from Jira tickets using PydanticAI and GPT-5.
+
+### Features
+
+- **Patch Release Focus**: Optimized for patch version releases (e.g., 7.5.21), generating only:
+  - **Improvements**: Enhancements, vendor support, GUI changes, network discovery, experimental features
+  - **Bug Fixes**: All bug fixes, corrections, parsing issues, algorithm fixes, UI fixes
+
+- **Intelligent Grouping**: Automatically groups related fixes by vendor/technology:
+  - Groups multiple fixes for the same vendor/family under a parent item with sub-bullets
+  - Integrates vendor names naturally for single fixes (no unnecessary prefixes)
+  - Identifies vendors from labels (@vendor, @family, !technology) and ticket descriptions
+
+- **Detail Extraction**: Extracts specific details from tickets:
+  - Exact command names, error messages, field names
+  - Vendor and device family information from labels and descriptions
+  - Specific features, tables, columns, or components
+  - Version numbers (only for regressions where initial version is stated)
+
+- **Interactive Refinement**: After generating initial release notes, you can chat with the agent to refine and improve them with full access to original ticket data
+
+- **Concise Summaries**: Generates one sentence per item with specific details, focusing on what was done based on ticket content
+
+### Setup
+
+1. **Install Dependencies**:
+   ```bash
+   make mike
+   ```
+
+2. **Configure Environment Variables**:
+   - Copy `.env.example` to `.env`
+   - Fill in your Jira credentials and OpenAI API key:
+     ```
+     JIRA_USER=your-email@example.com
+     JIRA_PASS=your-jira-api-token
+     OPENAI_API_KEY=sk-your-openai-api-key
+     ```
+
+   To get your Jira API token:
+   - Go to https://id.atlassian.com/manage-profile/security/api-tokens
+   - Click "Create API token"
+   - Copy the token to your `.env` file
+
+   To get OpenAI API key, contact internal IT department.
+
+### Usage
+
+Run the script:
+```bash
+python3 jira_ai_agent.py
+```
+
+The agent will:
+1. Ask for the fixVersion (e.g., "7.5.21")
+2. Fetch all issues from Jira (NIM, DOS, IPF projects)
+3. Detect if it's a major or patch release (warns if major)
+4. Generate two-section release notes (Improvements and Bug Fixes)
+5. Offer interactive refinement with full ticket context
+
+#### Interactive Commands
+
+During the refinement phase:
+- Ask for changes: `"Add more details about the Cisco ACI fixes"`
+- Ask questions: `"What does ticket NIM-1234 do?"`
+- Request refinements: `"Make the FortiGate fix more specific"`
+- Show current notes: type `show`
+- Finish: type `done`
+
+### Examples
+
+#### Patch Version (7.5.21) - Recommended
+Generates Improvements and Bug Fixes sections:
+```
+Enter fixVersion: 7.5.21
+```
+
+#### Major Version Warning (7.5.0)
+The script will warn that it's optimized for patch releases:
+```
+Enter fixVersion: 7.5.0
+⚠️  WARNING: This appears to be a major version release.
+This script is optimized for patch releases and will only generate 'Improvements' and 'Bug Fixes' sections.
+```
+
+### Output
+
+The agent generates:
+1. Console output with formatted release notes
+2. A markdown file: `release_notes_7_5_21.md` (or similar)
+
+#### Key Output Features
+
+- **Smart Grouping**: Multiple fixes for the same vendor are automatically grouped under a parent item
+- **No Redundant Prefixes**: Single fixes integrate vendor names naturally without unnecessary prefixes
+- **Specific Details**: Includes exact error messages, command names, column names from tickets
+- **Concise**: One sentence per item with relevant technical details
+- **Vendor Context**: Identifies and includes vendor/family information from labels and descriptions
+
+### How It Works
+
+1. **Fetch Issues**: Uses Jira API v3 (`/rest/api/3/search/jql`) with `nextPageToken` pagination to fetch all issues for the specified fixVersion across NIM, DOS, and IPF projects (100 items per page)
+
+2. **Pre-categorization**: Analyzes ticket types to pre-categorize into two buckets:
+   - Improvements: All non-bug tickets (enhancements, tasks, stories, etc.)
+   - Bug Fixes: All bug tickets
+
+3. **AI Generation with Two-Step Process**:
+   - **Step 1**: Creates individual release notes for each ticket with vendor/family identified from:
+     - Labels: @vendor (e.g., @cisco, @juniper), @family (e.g., @nxos, @iosxe), !technology (e.g., !aci, !bgp)
+     - Summary: Scans for vendor names (Cisco, Juniper, Arista, Fortinet, etc.)
+     - Description: Scans for device families (NX-OS, IOS-XE, EOS, FortiGate, etc.)
+   
+   - **Step 2**: Analyzes all release notes to identify patterns and group:
+     - 2+ fixes for same vendor/family → Parent item with sub-bullets (e.g., "Cisco NX-OS fixes:\n  - Item 1\n  - Item 2")
+     - Single fix → Natural integration without prefix (e.g., "Fixed MAC table on Cisco NX-OS devices")
+
+4. **Interactive Refinement**: Chat with the agent to refine output, with full access to original ticket summaries, descriptions, labels, and metadata
+
+### Technical Details
+
+- **API**: Jira API v3 REST endpoints (`/rest/api/3/search/jql`)
+- **Pagination**: Uses `nextPageToken` with `maxResults: 100`
+- **Filtering**: Excludes tickets with `skip_LLRN` label; for NIM project, only includes resolved/done tickets
+- **AI Model**: OpenAI GPT-5 via PydanticAI
+- **Data Models**: Pydantic BaseModel for structured output (ReleaseNotes with improvements and bug_fixes)
+- **Projects**: Fetches from NIM, DOS, and IPF projects
+- **Version Detection**: Auto-detects major vs patch based on version number (patch >= .3)
+
+#### Label Conventions
+
+The agent recognizes and uses these label formats from Jira tickets:
+
+- **@vendor**: Vendor identification (e.g., `@cisco`, `@juniper`, `@arista`, `@fortinet`, `@paloalto`)
+- **@family**: Device family (e.g., `@nxos` = NX-OS, `@iosxe` = IOS-XE, `@eos` = EOS, `@fortigate` = FortiGate)
+- **!technology**: Technology area (e.g., `!aci` = ACI, `!bgp` = BGP, `!vlan` = VLAN)
+
+The agent also scans ticket summaries and descriptions for vendor/family mentions when labels are not present.
+
+### Troubleshooting
+
+**Error: "Please set JIRA_USER, JIRA_PASS, and OPENAI_API_KEY"**
+- Make sure your `.env` file exists and contains all required variables
+- Verify your Jira API token is valid (not expired)
+- Check that your OpenAI API key is active
+
+**Error: "No issues found for version X.X.X"**
+- Verify the version exists in Jira
+- Check that tickets have the fixVersion set correctly
+- Ensure tickets don't have the `skip_LLRN` label
+- For NIM project, verify tickets are resolved/done
+
+**Import errors (ModuleNotFoundError)**
+- Run `pip install -r requirements_ai_agent.txt`
+- Ensure you're using Python 3.9 or higher
+
+**Empty or poor quality release notes**
+- Check that tickets have detailed descriptions
+- Verify tickets have appropriate labels (@vendor, @family, !technology)
+- Use the interactive refinement mode to improve output
+- Ask the agent for more specifics: "Add more technical details"
+
+**JSON parsing errors**
+- This usually self-corrects with the fallback parsing logic
+- If persistent, try running again or use interactive mode to regenerate
+
+**Version detection issues**
+- Major versions (.0, .1, .2) will show a warning
+- The script works but is optimized for patch versions (.3+)
+- Use interactive mode to adjust focus if needed
