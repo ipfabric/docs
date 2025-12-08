@@ -1,0 +1,102 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "IPFabricEC2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeCustomerGateways",
+                "ec2:DescribeEgressOnlyInternetGateways",
+                "ec2:DescribeImages",
+                "ec2:DescribeInstances",
+                "ec2:DescribeInternetGateways",
+                "ec2:DescribeManagedPrefixLists",
+                "ec2:DescribeNatGateways",
+                "ec2:DescribeNetworkAcls",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribePrefixLists",
+                "ec2:DescribeRegions",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSecurityGroupRules",
+                "ec2:DescribeSubnets",
+                "ec2:GetManagedPrefixListEntries"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2VPC",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeVpcEndpoints",
+                "ec2:DescribeVpcPeeringConnections",
+                "ec2:DescribeVpcs"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2Instances",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2VPNGW",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeVpnConnections",
+                "ec2:DescribeVpnGateways"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2LocalGW",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeLocalGateways"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2TransitGW",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeTransitGatewayAttachments",
+                "ec2:DescribeTransitGatewayConnects",
+                "ec2:DescribeTransitGatewayConnectPeers",
+                "ec2:DescribeTransitGatewayRouteTables",
+                "ec2:DescribeTransitGateways",
+                "ec2:DescribeTransitGatewayVpcAttachments",
+                "ec2:GetTransitGatewayRouteTablePropagations",
+                "ec2:SearchTransitGatewayRoutes"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricDirectConnect",
+            "Effect": "Allow",
+            "Action": [
+                "directconnect:DescribeConnections",
+                "directconnect:DescribeDirectConnectGatewayAssociations",
+                "directconnect:DescribeDirectConnectGatewayAttachments",
+                "directconnect:DescribeDirectConnectGateways",
+                "directconnect:DescribeLags",
+                "directconnect:DescribeLocations",
+                "directconnect:DescribeRouterConfiguration",
+                "directconnect:DescribeVirtualGateways",
+                "directconnect:describeVirtualInterfaces"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricElasticLoadBalancing",
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:Describe*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
