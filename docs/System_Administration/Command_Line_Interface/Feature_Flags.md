@@ -227,7 +227,7 @@ ENABLE_EXPERIMENTAL_SYSLOGWORKER_PERFORMANCE_LOGGING=true
 ### Enable Manual Links / Transparent Firewall
 
 This configuration flag enable manual link configuration option in both global and snapshot settings.
-For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#transparent-firewalls).
+For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.3.md#transparent-firewalls).
 
 Since `7.3`, the manual link support can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
