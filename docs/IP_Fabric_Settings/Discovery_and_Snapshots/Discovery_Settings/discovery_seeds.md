@@ -27,6 +27,28 @@ This feature enables filtering by age or specific date, or disabling the reuse o
 
 ![Discovery Seeds](../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_seeds.webp)
 
+### Configuring via API
+
+This feature is configurable through a new `discoveryHistorySeeds` attribute in the existing `PATCH /settings` API. The attribute accepts an object with these properties:
+
+- `enabled` *(required)* – Enables/disables seed reuse from Discovery History.
+- `daysLimit` *(optional)* – Restricts seed reuse to IPs discovered within the last X days.
+- `afterDate` *(optional)* – Restricts seed reuse to IPs discovered after a specified date.
+
+
+**Use Cases**
+
+| Scenario | Configuration |
+|--|--|
+| **Current Behavior** -- Use all IPs from Discovery History | `{ enabled: true }` |
+| **Disable seed reuse** | `{ enabled: false }` (preserves existing `daysLimit`/`afterDate` values)|
+| **Use only IPs discovered in the last 7 days** | `{ enabled: true, daysLimit: 7 }`|
+| **Use only IPs discovered after June 1, 2025** | `{ enabled: true, afterDate: "2025-06-01" }` |
+
+!!! Note
+
+    `daysLimit` and `afterDate` are mutually exclusive — only one may be configured at a time.
+
 !!! note
     
     It is recommended to provide multiple IP addresses of core routers as
