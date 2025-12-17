@@ -1379,6 +1379,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creating-image-definition-only-for-deployments-with-nvme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Image Definition (Only for Deployments With NVMe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creating-vm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15744,6 +15755,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creating-image-definition-only-for-deployments-with-nvme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Image Definition (Only for Deployments With NVMe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creating-vm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16231,6 +16253,11 @@ Using this method, we will create a <code>VHDX</code> usable on Microsoft Hyper-
 </li>
 </ol>
 <h2 id="deploying-vm-on-azure">Deploying VM on Azure</h2>
+<div class="admonition info">
+<p class="admonition-title">NVMe Controller</p>
+<p>If you plan to deploy a VM with an <strong>NVMe</strong> controller (which provides increased disk performance compared to the default SCSI controller), please ensure that after <a href="#creating-image">creating the VM image</a>, you also create an <a href="#creating-image-definition-only-for-deployments-with-nvme">image definition enabled for NVMe</a>.</p>
+<p>Additionally, when <a href="#creating-vm">creating the VM</a>, in the <a href="#other-configuration-options">Advanced configuration settings</a>, enable <code>Higher remote disk storage performance with NVMe</code>.</p>
+</div>
 <h3 id="uploading-ip-fabric-disk-file">Uploading IP Fabric Disk File</h3>
 <p>The first step of deploying to Azure requires creating a VHD file from the <code>qcow2</code> image, uploading it to a blob storage container, and then creating an Image to use for a Virtual Machine.</p>
 <ol>
@@ -16320,16 +16347,42 @@ Azure Regions contain different server sizes, so performing this step will ensur
 <li>Name the image.</li>
 <li>Select the <code>Region</code> that was recorded from <a href="#azure-vm-finder">Azure VM Finder</a>.</li>
 <li>Set <code>OS type</code> to <code>Linux</code>.</li>
-<li><strong>Set <code>VM generation</code> to <code>Gen 1</code>.</strong></li>
+<li>Set <code>VM generation</code> to either <code>Gen 2</code> or <code>Gen 1</code> as desired. <code>Gen 2</code> is required for NVMe. Both are supported by IP Fabric.</li>
 <li>Browse the <code>Storage blob</code> to find and select your uploaded VHD.</li>
 <li>Set <code>Account type</code> to <code>Premium SSD</code>.</li>
 <li>Set <code>Host Caching</code> to <code>Read/write</code>.</li>
 <li>Set <code>Key management</code> to <code>Platform-managed key</code>.</li>
 <li>Optional: Add custom <code>Tags</code>.</li>
 <li>Select <code>Review + create</code>, wait for validation, and then click <code>Create</code>.</li>
+<li>If you plan to deploy a VM with <strong>NVMe</strong>, follow the <a href="#creating-image-definition-only-for-deployments-with-nvme">next step</a>. Otherwise, skip to <a href="#creating-vm">Creating VM</a>.</li>
+</ol>
+<h3 id="creating-image-definition-only-for-deployments-with-nvme">Creating Image Definition (Only for Deployments With NVMe)</h3>
+<p>For NVMe deployments, follow these additional steps to create an image definition with NVMe support enabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Azure Compute Gallery</p>
+<p>The image definition will be created inside an Azure Compute Gallery. Please ensure that the gallery you choose or create for this purpose <strong>does not have public sharing enabled</strong>.</p>
+<p><a class="glightbox" href="../platform_first_steps-azure-imgs_azure-compgal-01.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Compute Gallery sharing method" src="../platform_first_steps-azure-imgs_azure-compgal-01.webp" /></a></p>
+</div>
+<p><a class="glightbox" href="../platform_first_steps-azure-imgs_azure-imgdef-01.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Image Definition Pt.1" src="../platform_first_steps-azure-imgs_azure-imgdef-01.webp" /></a></p>
+<p><a class="glightbox" href="../platform_first_steps-azure-imgs_azure-imgdef-02.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Image Definition Pt.2" src="../platform_first_steps-azure-imgs_azure-imgdef-02.webp" /></a></p>
+<ol>
+<li>Within the selected Azure Compute Gallery, click <strong>Add</strong> → <strong>VM image definition</strong>.</li>
+<li>Name the image.</li>
+<li>Select the <code>Region</code> that was recorded from <a href="#azure-vm-finder">Azure VM Finder</a>.</li>
+<li>Set <code>OS type</code> to <code>Linux</code>.</li>
+<li>Set <code>Security type</code> to <code>Standard</code>.</li>
+<li>Set <code>VM generation</code> to <code>Gen 2</code>. (This is required for NVMe deployments.)</li>
+<li>Enable the <code>Higher storage performance with NVMe</code> option.</li>
+<li>Leave the <code>Accelerated networking</code> and <code>Hibernation supported</code> options disabled.</li>
+<li>Set <code>OS state</code> to <code>Generalized</code>.</li>
+<li>Set <code>Publisher</code> / <code>Offer</code> / <code>SKU</code> values.</li>
+<li>In the next page, set the <code>Version name</code>, preferably to the same value as the IP Fabric version.</li>
+<li>Select the <code>Region</code> where the source image exists, then select the correct source image created in the <a href="#creating-image">Creating Image</a> step.</li>
+<li>Optional: Add custom <code>Tags</code>.</li>
+<li>Select <code>Review + create</code>, wait for validation, and then click <code>Create</code>.</li>
 </ol>
 <h3 id="creating-vm">Creating VM</h3>
-<p>After creating the Image, go to the Resource and select <code>Create VM</code>:</p>
+<p>After creating the Image (for NVMe deployments), go to the respective resource and select <code>Create VM</code>:</p>
 <p><a class="glightbox" href="../azure-imgs/azure-06-create-vm.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create VM" src="../azure-imgs/azure-06-create-vm.webp" /></a></p>
 <h4 id="basics">Basics</h4>
 <p><a class="glightbox" href="../azure-imgs/azure-07-vm-details.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VM Details" src="../azure-imgs/azure-07-vm-details.webp" /></a></p>
@@ -16405,6 +16458,7 @@ Azure Regions contain different server sizes, so performing this step will ensur
 <ol>
 <li><code>Management</code>: Can be left to defaults.</li>
 <li><code>Monitoring</code> and <code>Advanced</code>:<ul>
+<li><strong>For NVMe deployments</strong>: Under Advanced → <code>Performance (NVMe)</code>, enable <code>Higher remote disk storage performance with NVMe</code>.</li>
 <li>This is outside the scope of a normal IP Fabric deployment.</li>
 <li>Installing <code>Extensions</code> may impact the application, and future upgrades could remove these from the VM.</li>
 <li>If required, please reach out to your Solution Architect to explore options.</li>
@@ -16457,7 +16511,7 @@ We can connect to the appliance via SSH with the default/factory <code>osadmin</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 6, 2025 08:29:05 UTC">November 6, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 17, 2025 19:37:58 UTC">December 17, 2025</span>
   </span>
 
     
