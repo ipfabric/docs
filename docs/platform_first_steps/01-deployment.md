@@ -305,6 +305,12 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 
 ## Deploying VM on Azure
 
+!!! info "NVMe Controller"
+
+    If you plan to deploy a VM with an **NVMe** controller (which provides increased disk performance compared to the default SCSI controller), please ensure that after [creating the VM image](#creating-image), you also create an [image definition enabled for NVMe](#creating-image-definition-only-for-deployments-with-nvme).
+
+    Additionally, when [creating the VM](#creating-vm), in the [Advanced configuration settings](#other-configuration-options), enable `Higher remote disk storage performance with NVMe`.
+
 ### Uploading IP Fabric Disk File
 
 The first step of deploying to Azure requires creating a VHD file from the `qcow2` image, uploading it to a blob storage container, and then creating an Image to use for a Virtual Machine.
@@ -403,17 +409,47 @@ Search and select `Images` in the portal's search bar, and then `Create` a new I
 2. Name the image.
 3. Select the `Region` that was recorded from [Azure VM Finder](#azure-vm-finder).
 4. Set `OS type` to `Linux`.
-5. **Set `VM generation` to `Gen 1`.**
+5. Set `VM generation` to either `Gen 2` or `Gen 1` as desired. `Gen 2` is required for NVMe. Both are supported by IP Fabric.
 6. Browse the `Storage blob` to find and select your uploaded VHD.
 7. Set `Account type` to `Premium SSD`.
 8. Set `Host Caching` to `Read/write`.
 9. Set `Key management` to `Platform-managed key`.
 10. Optional: Add custom `Tags`.
 11. Select `Review + create`, wait for validation, and then click `Create`.
+12. If you plan to deploy a VM with **NVMe**, follow the [next step](#creating-image-definition-only-for-deployments-with-nvme). Otherwise, skip to [Creating VM](#creating-vm).
+
+### Creating Image Definition (Only for Deployments With NVMe)
+
+For NVMe deployments, follow these additional steps to create an image definition with NVMe support enabled.
+
+!!! warning "Azure Compute Gallery"
+
+    The image definition will be created inside an Azure Compute Gallery. Please ensure that the gallery you choose or create for this purpose **does not have public sharing enabled**.
+    
+    ![Compute Gallery sharing method](../images/miscellaneous/platform_first_steps-azure-imgs_azure-compgal-01.webp)
+
+![Create Image Definition Pt.1](../images/miscellaneous/platform_first_steps-azure-imgs_azure-imgdef-01.webp)
+
+![Create Image Definition Pt.2](../images/miscellaneous/platform_first_steps-azure-imgs_azure-imgdef-02.webp)
+
+1. Within the selected Azure Compute Gallery, click **Add** → **VM image definition**.
+2. Name the image.
+3. Select the `Region` that was recorded from [Azure VM Finder](#azure-vm-finder).
+4. Set `OS type` to `Linux`.
+5. Set `Security type` to `Standard`.
+6. Set `VM generation` to `Gen 2`. (This is required for NVMe deployments.)
+7. Enable the `Higher storage performance with NVMe` option.
+8. Leave the `Accelerated networking` and `Hibernation supported` options disabled.
+9. Set `OS state` to `Generalized`.
+10. Set `Publisher` / `Offer` / `SKU` values.
+11. In the next page, set the `Version name`, preferably to the same value as the IP Fabric version.
+12. Select the `Region` where the source image exists, then select the correct source image created in the [Creating Image](#creating-image) step.
+13. Optional: Add custom `Tags`.
+14. Select `Review + create`, wait for validation, and then click `Create`.
 
 ### Creating VM
 
-After creating the Image, go to the Resource and select `Create VM`:
+After creating the Image (for NVMe deployments), go to the respective resource and select `Create VM`:
 
 ![Create VM](../images/miscellaneous/platform_first_steps-azure-imgs_azure-06-create-vm.webp)
 
@@ -476,6 +512,7 @@ After creating the Image, go to the Resource and select `Create VM`:
 
 1. `Management`: Can be left to defaults.
 2. `Monitoring` and `Advanced`:
+   - **For NVMe deployments**: Under Advanced → `Performance (NVMe)`, enable `Higher remote disk storage performance with NVMe`.
    - This is outside the scope of a normal IP Fabric deployment.
    - Installing `Extensions` may impact the application, and future upgrades could remove these from the VM.
    - If required, please reach out to your Solution Architect to explore options.
