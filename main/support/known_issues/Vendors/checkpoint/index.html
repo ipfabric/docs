@@ -14323,6 +14323,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#extend-command-to-get-better-ntp-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extend command to get better NTP results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#required-permissions-for-successful-discovery-over-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15622,6 +15633,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#extend-command-to-get-better-ntp-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extend command to get better NTP results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#required-permissions-for-successful-discovery-over-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15780,6 +15802,23 @@ extended commands to it if needed. See the
 collect information about active users. Log in to the Check Point Gaia appliance
 with the credentials used by IP Fabric discovery and run the command to verify
 the configuration.</p>
+<h2 id="extend-command-to-get-better-ntp-results">Extend command to get better NTP results</h2>
+<p>On Check Point Gaia, IP Fabric uses the CLISH command <code>show ntp servers</code> to collect data about NTP sources. Unfortunately, this command doesn’t provide enough detail to populate the API and the related Technology table.</p>
+<p>To obtain detailed information about NTP sources (for example, stratum, reference ID, or timers), IP Fabric can execute the <code>ntpq</code> command, which is available only in Expert mode. Instead of accessing Expert mode directly, IP Fabric supports extended commands.</p>
+<p>To make <code>ntpq</code> available from CLISH, the command must be extended (either from CLISH or directly from Expert mode).</p>
+<p>From the CLISH:</p>
+<div class="highlight"><pre><span></span><code>&gt; add command ntpq path /sbin/ntpq description &quot;ntpq for IP Fabric&quot;
+&gt; save config
+</code></pre></div>
+<p>If you prefer extending from the Expert mode, run the following command:</p>
+<div class="highlight"><pre><span></span><code># clish -s -c &quot;add command ntpq path /sbin/ntpq description \&quot;ntpq for IP Fabric\&quot;&quot;
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Verify the <code>ntpq</code> command path. It might differ depending on the Gaia OS version.</p>
+<p>Both commands above can be also extended as <code>ipf_ntpq</code>. IP Fabric will try both.</p>
+<p>Don’t forget to adjust permissions for the role assigned to the SSH user. See the instructions below.</p>
+</div>
 <h2 id="required-permissions-for-successful-discovery-over-cli">Required Permissions for Successful Discovery Over CLI</h2>
 <p>To successfully discover a Check Point Gateway, the correct role must be
 assigned to the user. IP Fabric requires role features to be set as read-only,
@@ -15811,7 +15850,7 @@ configured &ndash; the user should be in the group <code>bin</code> (recommended
 <p>Click <strong>Add</strong> and fill in the name. In the <strong>Features</strong> tab, select all items
    and mark them as <strong>Read-Only</strong>. The following permissions from the <strong>Extended
    Commands</strong> tab are needed (only if Gaia acts as a management server): <code>fwm</code>,
-   <code>ipf_pdp</code>, and <code>ipf_pep</code>.</p>
+   <code>ipf_pdp</code>, <code>ipf_pep</code> and <code>ntpq</code> (alternatively <code>ipf_ntpq</code>) for all Gaia appliances.</p>
 </li>
 <li>
 <p>If you have a VSx firewall in your network, you must set the
@@ -15852,7 +15891,7 @@ a minimal working setup (IP Fabric <code>4.0</code>, Gaia <code>R81</code>):</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2025</span>
   </span>
 
     
