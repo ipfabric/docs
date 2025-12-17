@@ -61,6 +61,35 @@ collect information about active users. Log in to the Check Point Gaia appliance
 with the credentials used by IP Fabric discovery and run the command to verify
 the configuration.
 
+## Extend command to get better NTP results
+
+On Check Point Gaia, IP Fabric uses the CLISH command `show ntp servers` to collect data about NTP sources. Unfortunately, this command doesn’t provide enough detail to populate the API and the related Technology table.
+
+To obtain detailed information about NTP sources (for example, stratum, reference ID, or timers), IP Fabric can execute the `ntpq` command, which is available only in Expert mode. Instead of accessing Expert mode directly, IP Fabric supports extended commands.
+
+To make `ntpq` available from CLISH, the command must be extended (either from CLISH or directly from Expert mode).
+
+From the CLISH:
+
+```commandline
+> add command ntpq path /sbin/ntpq description "ntpq for IP Fabric"
+> save config
+```
+
+If you prefer extending from the Expert mode, run the following command:
+
+```
+# clish -s -c "add command ntpq path /sbin/ntpq description \"ntpq for IP Fabric\""
+```
+
+!!! info
+
+    Verify the `ntpq` command path. It might differ depending on the Gaia OS version.
+
+    Both commands above can be also extended as `ipf_ntpq`. IP Fabric will try both.
+
+    Don’t forget to adjust permissions for the role assigned to the SSH user. See the instructions below.
+
 ## Required Permissions for Successful Discovery Over CLI
 
 To successfully discover a Check Point Gateway, the correct role must be
@@ -99,7 +128,7 @@ configured -- the user should be in the group `bin` (recommended) or be `admin`
 3. Click **Add** and fill in the name. In the **Features** tab, select all items
    and mark them as **Read-Only**. The following permissions from the **Extended
    Commands** tab are needed (only if Gaia acts as a management server): `fwm`,
-   `ipf_pdp`, and `ipf_pep`.
+   `ipf_pdp`, `ipf_pep` and `ntpq` (alternatively `ipf_ntpq`) for all Gaia appliances.
 
 4. If you have a VSx firewall in your network, you must set the
    **Virtual-System** feature to **Read-Write** (we call `set virtual-system
