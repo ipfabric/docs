@@ -76,3 +76,7 @@ for private IPs is enabled.
 The Private Service Connect tables provide detailed information about Endpoints, Published Services, and Published Service Connections in separate tabs.
 
 ![Technology table showing GCP Published Services in Private Service Connect](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-gcp_private-service-connect.webp)
+
+The Serverless Services tables provide information about App Engine, Cloud Functions, and Cloud Run services that use VPC Access Connectors.
+
+![Technology table showing GCP Serverless Services](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-gcp_serverless-services.webp)

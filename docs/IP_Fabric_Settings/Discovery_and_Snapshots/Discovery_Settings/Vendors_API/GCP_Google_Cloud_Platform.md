@@ -36,7 +36,9 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
 
    ![Navigate the IAM](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-navigateToIAM.webp)
 
-3. Create a custom role and assign the following permissions required for IP Fabric version 7.8 and above:
+3. Create a custom role and assign the following required permissions:
+
+   For IP Fabric version 7.8 and above:
 
    ```
    resourcemanager.projects.list (organization-level permission)
@@ -71,6 +73,14 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    compute.vpnGateways.list
    compute.vpnTunnels.list
    compute.zones.list
+   ```
+
+   Additional roles for IP Fabric version 7.9 and above:
+   ```
+   cloudfunctions.functions.list
+   run.services.list
+   appengine.services.list
+   appengine.versions.list
    ```
 
    ![Create a role](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-createArole.webp)
