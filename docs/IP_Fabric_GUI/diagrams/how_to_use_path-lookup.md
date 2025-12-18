@@ -6,6 +6,8 @@ description: This page explains how to use path lookup.
 
 ## Unicast Path Lookup
 
+Unicast Path Lookup supports both IPv4 and IPv6 traffic. For IPv6 paths, routing, security evaluation, 6in4, GRE, and IPsec are evaluated. NAT and PBR are currently available only for IPv4; they are not yet supported in IPv6 lookups.
+
 ![Unicast form](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_unicast.webp)
 
 ### First Hop Algorithm And VRF
@@ -42,7 +44,8 @@ Packets will use the indicated source IP address.
 
 ### Source/Destination IP Address and Port
 
-A plain IP address or a CIDR (Classless Inter-Domain Routing) can be used as a source/destination IP address, for example, when simulating path lookup from a host to a network.
+A plain IP address or a CIDR (Classless Inter-Domain Routing) can be used as a source/destination IP address, for example, when simulating path lookup from a host to a network. Both IPv4 and IPv6 addresses and prefixes are supported.
+
 Note that the global attribute filter is applied to suggestions for source and destination IP addresses, as well as hostnames when the User-Defined First Hop Algorithm is used.
 
 By default, the `ICMP` protocol and the `Echo request` option are chosen for path lookup.
@@ -162,10 +165,12 @@ forwarding decision:
 ## Host To Gateway
 
 To find out more details between a host and its network gateway, you can
-use the **Host To Gateway** tab. You only need to provide the host, and
+use the **Host To Gateway** tab. You only need to provide the host (IPv4 or IPv6), and
 you will the details:
 
 ![Host To Gateway form](../../images/diagrams/IP_Fabric_GUI-diagrams-pathlookup_host_to_gw.webp)
+
+**Host To Gateway** uses the same IPv6 capabilities and limitations as Unicast Path Lookup -- routing, security evaluation, 6in4, GRE, and IPsec are evaluated for IPv6 paths, while NAT and PBR are not yet supported in IPv6 lookups.
 
 ## Inspecting and Adjusting Path Lookup
 
