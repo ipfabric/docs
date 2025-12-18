@@ -55,6 +55,13 @@ The VNet Integration table provides information about resources that are enabled
 
 ![Technology table showing Azure VNet Integration](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_vnet_integration.webp)
 
+The DNS table provides information about DNS configuration. It contains five tabs: VNet DNS Configuration, Private Resolvers, Private Resolver Endpoints, Forwarding Rulesets, and Forwarding Rules.
+
+![Technology table showing Azure DNS Configuration](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_dns_vnet.webp)
+![Technology table showing Azure DNS Private Resolvers](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_dns_private_resolver.webp)
+![Technology table showing Azure DNS Private Resolvers Endpoints](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_dns_resolvers_endpoints.webp)
+![Technology table showing Azure DNS Forwarding Rulesets](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_dns_forwarding_rulesets.webp)
+![Technology table showing Azure DNS Forwarding Rules](../../../images/technology/IP_Fabric_GUI-technology_tables-cloud_vendors-azure_dns_forwarding_rulesets_rules.webp)
 
 ## GCP (Google Cloud Platform)
 
