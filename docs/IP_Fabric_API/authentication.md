@@ -195,3 +195,17 @@ error code and a human-readable error message in the response body:
 | `API_EXPIRED_ACCESS_TOKEN`  | The provided access token (from the Authorization header) is expired.                                |
 | `API_INVALID_ACCESS_TOKEN`  | The provided access token (from the Authorization header) is invalid.                                |
 | `API_INVALID_REFRESH_TOKEN` | The provided refresh token (typically sent in the request body) is revoked (blacklisted) or expired. |
+
+### Password Requirements
+
+To improve account security, passwords are validated in both the UI and API using the rules below.
+
+**Length** must be 8–200 characters.
+
+**Complexity** must include **at least one character from at least 3** of the following 5 character sets:
+
+- Uppercase Letters (A-Z)
+- Lowercase Letters (a-z)
+- Digits (0-9)
+- Non-Alphanumeric/Special ASCII Characters: `!”#$%&’()\*+,-./:;<=>[|]`
+- Non-ASCII Alphabetic Characters (any Unicode character categorized as alphabetic that isn’t included above; this includes printable Unicode characters from Asian languages)
