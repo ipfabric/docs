@@ -15662,6 +15662,17 @@ here.
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#enhanced-password-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Password Security
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15810,7 +15821,7 @@ following key combinations:</p>
 <h2 id="known-issues">Known Issues</h2>
 <h3 id="google-cloud-platform-gcp">Google Cloud Platform (GCP)</h3>
 <ul>
-<li>Using separate Vendor API configurations to discover the Shared VPC host and service projects leads to inconsistent results. This will be fixed in a future release. 
+<li>Using separate Vendor API configurations to discover the Shared VPC host and service projects leads to inconsistent results. This will be fixed in a future release.
   More details regarding the issue can be seen <a href="../../../support/known_issues/Vendors/gcp/">here</a>.</li>
 </ul>
 <h2 id="v791-unreleased">v7.9.1 (UNRELEASED)</h2>
@@ -15842,10 +15853,15 @@ routing, security evaluation, 6in4, GRE, and IPsec.</p>
 <p><a class="glightbox" href="../../../images/miscellaneous/release_7.9_cloud_routing_without_interface_in_e2e.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="release_7.9_cloud_routing_without_interface_in_e2e.webp" src="../../../images/miscellaneous/release_7.9_cloud_routing_without_interface_in_e2e.webp" /></a></p>
 <h4 id="vendor-support">Vendor Support</h4>
 <ul>
-<li><strong>Check Point Gaia</strong> &ndash; Improved NTP data collection by supporting the  extended <code>ntpq</code> command, providing detailed NTP source information. For more details, see <a href="../../../support/known_issues/Vendors/checkpoint/#extend-command-to-get-better-ntp-results">Extend command to get better NTP results</a>.</li>
+<li><strong>Check Point Gaia</strong> &ndash; Improved NTP data collection by supporting the extended <code>ntpq</code> command, providing detailed NTP source information. For more details, see <a href="../../../support/known_issues/Vendors/checkpoint/#extend-command-to-get-better-ntp-results">Extend command to get better NTP results</a>.</li>
 <li><strong>GCP</strong> &ndash; Added support for VPC Network Peering configured between VPC networks in different Google Cloud projects.</li>
 <li><strong>Azure</strong> &ndash; Improved security evaluation for Azure Firewall.</li>
 </ul>
+<h4 id="enhanced-password-security">Enhanced Password Security</h4>
+<p>Password validation has been strengthened in both the UI and API.
+Passwords must be 8–200 characters long and include at least 3 of 5 character categories
+(uppercase, lowercase, numerals, special ASCII, Unicode alphabetic).
+More details on <a href="../../../IP_Fabric_API/authentication/#password-requirements">Authentication page</a>.</p>
 <h3 id="experimental-features">Experimental Features</h3>
 <h4 id="dedicated-api-discovery-worker">Dedicated API Discovery Worker</h4>
 <p>An experimental dedicated worker for API-based discovery is available. When enabled, it improves scalability and discovery performance for <strong>API-only devices</strong> by running API discovery independently from other discovery processes.</p>
