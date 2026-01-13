@@ -315,6 +315,7 @@ mike alias --update-aliases 5.0 latest
 
 ```
 git checkout -B release/7.5
+git push                          #trigger the command, DO NOT create Merge Request as we want to create just new branch
 make mike
 source venv/bin/activate
 mike deploy --config-file mkdocs_insiders.yml 7.5
