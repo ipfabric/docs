@@ -6,7 +6,7 @@ description: In this section, we publish release notes and low-level release not
 
 !!! danger "Upgrade Notice"
 
-    An upgrade to `7.5.x` or later is **only** possible from release `7.3.23` or newer.
+    An upgrade to `7.5.x` or later is **only** possible from release `7.3.25` or newer.
 
     When upgrading to `7.5` release, database will be migrated from **ArangoDB** to **PostgreSQL**.
 
