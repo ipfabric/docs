@@ -6578,6 +6578,23 @@ here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6593,6 +6610,81 @@ here.
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Hardening
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-home-directory-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Home Directory Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Home Directory Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-single-sign-on-saml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on Single Sign-On (SAML)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -15623,6 +15715,70 @@ here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Hardening
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-home-directory-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Home Directory Permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Home Directory Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact-on-single-sign-on-saml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impact on Single Sign-On (SAML)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -15719,6 +15875,22 @@ or <code>autoboss</code> account may cause irreversible, detrimental changes to 
 product. Actions taken without direct communication with the IP Fabric
 Support or Solution Architect teams can render the system unusable.</p>
 </div>
+<h2 id="security-hardening">Security Hardening</h2>
+<h3 id="default-home-directory-permissions">Default Home Directory Permissions</h3>
+<p>Newly created user home directories are assigned permissions of <code>0700</code> (<code>rwx------</code>), making them accessible only by the owning user.</p>
+<p>Home directories frequently contain sensitive data such as SSH keys, configuration files, credentials, and application state.
+Allowing read or execute access by other local users increases the risk of information disclosure, privilege escalation, and lateral movement in multi-user systems.</p>
+<p>Restricting home directories to the owning user aligns with security best practices and commonly accepted hardening standards.</p>
+<h4 id="security-impact">Security Impact</h4>
+<ul>
+<li>Files stored in <code>/home/&lt;user&gt;</code> are now <strong>private by default</strong>.</li>
+<li>Data previously shared between users via home directories will no longer be accessible unless permissions are explicitly relaxed.</li>
+<li>Applications or scripts that rely on cross-user access to files in <code>/home</code> may fail and must be reviewed.</li>
+</ul>
+<h4 id="impact-on-single-sign-on-saml">Impact on Single Sign-On (SAML)</h4>
+<p>If you are using SAML for SSO, ensure that the certificate is <strong>not</strong> stored in <code>/home/autoboss</code>. Use a preferred location such as <code>/opt/ipf-dex/etc/</code> and update the <code>ipf-dex</code>
+configuration to point to the new certificate location.</p>
+<p>For more information, see <a href="../../IP_Fabric_Settings/administration/sso/#saml-connector">Single Sign-On (SSO) - SAML Connector</a>.</p>
 
 
 
@@ -15739,7 +15911,7 @@ Support or Solution Architect teams can render the system unusable.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2026</span>
   </span>
 
     
