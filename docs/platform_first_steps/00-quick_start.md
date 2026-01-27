@@ -4,16 +4,12 @@ description: This page will guide you through installing IP Fabric in your envir
 
 # Quick Start Installation Guide
 
-<figure markdown>
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x3WXQFk6paY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <figcaption>Solution Architect Dan Kelcher will guide you through the installation and configuration of IP Fabric in under 25 minutes!</figcaption>
-</figure>
-
 ## Operational Requirements
 
 Please reference [Operational Requirements](../overview/index.md#operational-requirements) for important requirements pertaining to:
 
 1. [Hardware Requirements](../overview/index.md#hardware-requirements)
+   1. [Minimal IOPS Requirements](../overview/index.md#minimal-iops-requirements)
 2. [Network Connectivity Requirements](../overview/index.md#network-connectivity-requirements)
 3. [Network Access Credentials Requirements](../overview/index.md#network-access-credentials-requirements)
 
@@ -30,7 +26,7 @@ Access is restricted to registered customers only.
     Please contact our [sales representative](mailto:sales@ipfabric.io)
     if you are interested in a trial of IP Fabric.
 
-We provide two different images listed below along with links to installation
+We provide three different images listed below along with links to installation
 instructions.
 
 1. OVA can be deployed on:
@@ -47,9 +43,10 @@ instructions.
 !!! important "Hardware Requirements"
 
     After deploying the VM, please ensure that it has been configured correctly
-    per the [Hardware Requirements](../overview/index.md#hardware-requirements).
-    Importing the OVA will use the base requirements of 4 CPUs, 16 GB RAM, and
-    90 GB HDD.
+    per the [Hardware Requirements](../overview/index.md#hardware-requirements) and
+    [Minimal IOPS Requirements](../overview/index.md#minimal-iops-requirements).
+    Importing the OVA will use the base requirements of 8 CPUs, 32 GB RAM, and
+    150 GB HDD.
 
 ## IPF CLI Config
 
@@ -65,7 +62,7 @@ Follow the instructions in [IPF CLI Config](02-ipf_cli_config.md).
 To access the main IP Fabric user interface, a license must be uploaded to IP
 Fabric. Please contact your salesperson for the license key and follow the
 instructions in
-[Accessing the Main User Interface](03-access_ui.md#accessing-the-main-user-interface)
+[Accessing the Main User Interface](03-access_ui.md#accessing-the-main-user-interface).
 
 !!! important "Licensing"
 
