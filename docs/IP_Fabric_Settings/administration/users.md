@@ -73,6 +73,15 @@ it's not possible to modify their **Roles** in the UI (unlike local users).
 
    ![User will be deleted dialog](../../images/settings/IP_Fabric_Settings-administration-users_users_table_delete_confirm.webp)
 
+!!! warning "Deleting User will Remove All Associated Data"
+    
+    Resources to be deleted along with the user include:
+
+    - API tokens created by the user.
+    - Webhooks created by the user.
+    - Shared table links created by the user.
+    - Saved diagrams (graph views) created by the user.
+
 ## Disable Local User's Access
 
 To disable a local user's access to IP Fabric, follow the steps in
