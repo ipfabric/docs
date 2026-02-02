@@ -127,17 +127,6 @@ alter this behavior by adjusting the value in the following line in
 CLEAN_UP_VARIABLE="1"
 ```
 
-!!! tip
-
-    As
-    [restore does not function properly when two full backups are present](../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups.md),
-    you may want to keep `CLEAN_UP_VARIABLE="1"` (i.e., retaining only one full
-    backup and its increments).
-
-    Please note that this approach has a downside -- when a new full backup is
-    created, all previous backup files will be removed from the backup
-    directory.
-
 If you are unsure, please contact IP Fabric Support for assistance.
 
 !!! example "Examples"
