@@ -44,6 +44,12 @@ Multiple values from the lists can be selected while holding the `Ctrl` or `Shif
     80. If you need to lower the default value, please
     [contact our Support team](https://support.ipfabric.io).
 
+!!! warning
+
+    The Configuration Management feature is not tied to a specific snapshot. For scheduled runs, the seed IP baseline is derived from the entire discovery history — that is, the complete list of all device IP addresses that have ever been discovered by IP Fabric.
+
+    **Important:** The include/exclude IP scope discovery policy is not taken into account for this feature.
+
 ## API Trigger
 
 Configuration collection can be triggered for a single device via an API call
