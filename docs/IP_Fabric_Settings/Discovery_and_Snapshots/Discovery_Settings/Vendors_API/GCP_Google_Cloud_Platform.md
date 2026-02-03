@@ -58,6 +58,7 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    compute.instances.list
    compute.interconnectAttachments.list
    compute.networkEndpointGroups.list
+   compute.networkEndpointGroups.get
    compute.networks.list
    compute.routers.get
    compute.routers.list
