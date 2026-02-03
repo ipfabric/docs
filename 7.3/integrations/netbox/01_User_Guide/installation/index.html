@@ -16,7 +16,7 @@
         <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../sources/">
+        <link rel="next" href="../sync_process_overview/">
       
       
         
@@ -7597,6 +7597,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#74-upgrading-plugin-to-v50-netbox-v440" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Upgrading plugin to v5.0+ (NetBox v4.4.0+)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7629,13 +7640,40 @@
   
   
     <li class="md-nav__item">
+      <a href="../sync_process_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync Process Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     
   
-    Define Sources
+    Sources
   
 
     
@@ -7663,6 +7701,87 @@
     
   
     Syncs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ingestions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingestions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
   
 
     
@@ -7717,33 +7836,6 @@
     
   
     Data Mapping
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ingestions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Ingestions
   
 
     
@@ -7893,6 +7985,33 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Release_Notes/version_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    v5 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -15658,6 +15777,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#74-upgrading-plugin-to-v50-netbox-v440" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Upgrading plugin to v5.0+ (NetBox v4.4.0+)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -15965,11 +16095,11 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 <h2 id="4-version-specific-installations">4. Version-Specific Installations</h2>
 <h3 id="41-locking-ip-fabric-python-sdk-version">4.1 Locking IP Fabric Python SDK Version</h3>
 <p>It&rsquo;s recommended to use the same SDK version as your IP Fabric API version. To lock the SDK dependency to a specific minor version, install the plugin with the appropriate extras:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For IP Fabric version 6.10.x</span>
-pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span class="o">[</span>ipfabric_6_10<span class="o">]</span>
-
-<span class="c1"># For IP Fabric version 7.0.x</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># For IP Fabric version 7.0.x</span>
 pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span class="o">[</span>ipfabric_7_0<span class="o">]</span>
+
+<span class="c1"># For IP Fabric version 7.9.x</span>
+pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span class="o">[</span>ipfabric_7_9<span class="o">]</span>
 </code></pre></div>
 <h3 id="42-available-version-extras">4.2 Available Version Extras</h3>
 <p>The following extras are currently available:</p>
@@ -15982,11 +16112,6 @@ pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span c
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>ipfabric_6_10</td>
-<td>6.10.x</td>
-<td>6.10.x</td>
-</tr>
 <tr>
 <td>ipfabric_7_0</td>
 <td>7.0.x</td>
@@ -16001,6 +16126,21 @@ pip<span class="w"> </span>install<span class="w"> </span>ipfabric_netbox<span c
 <td>ipfabric_7_3</td>
 <td>7.3.x</td>
 <td>7.3.x</td>
+</tr>
+<tr>
+<td>ipfabric_7_5</td>
+<td>7.5.x</td>
+<td>7.5.x</td>
+</tr>
+<tr>
+<td>ipfabric_7_8</td>
+<td>7.8.x</td>
+<td>7.8.x</td>
+</tr>
+<tr>
+<td>ipfabric_7_9</td>
+<td>7.9.x</td>
+<td>7.9.x</td>
 </tr>
 </tbody>
 </table>
@@ -16126,6 +16266,42 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <p>Follow <a href="../FAQ/#cannot-resolve-bases-for-modelstate-ipfabric_netboxipfabricbranch">Cannot resolve bases for <code>[&lt;ModelState: 'ipfabric_netbox.IPFabricBranch'&gt;]</code></a> instructions to resolve this issue.</p>
 </div>
+<h3 id="74-upgrading-plugin-to-v50-netbox-v440">7.4 Upgrading plugin to v5.0+ (NetBox v4.4.0+)</h3>
+<p>There are several API changes compared to previous version. If you are not using API, please do the following:</p>
+<ul>
+<li>Check Transform Map names do not contain <code>[NEEDS CORRECTION]</code> after running migration. This appears in case of an issue during migration and will need to be corrected manually.</li>
+<li>Newly added objects (<code>Endpoints</code>, <code>Filters</code>, <code>Filter Expressions</code>) will need permissions assigned to users/groups that need access to the plugin.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users who previously had access to the plugin will need these permissions assigned to continue working with the new features. Existing permissions for other plugin objects remain unchanged.</p>
+</div>
+<p>The following changes need to be implemented in any custom scripts or integrations using the plugin API:</p>
+<ul>
+<li>Sync settings now uses standard <code>app_label.model</code> notation for models instead of <code>ipf_model(s)</code>. For example, use <code>dcim.device</code> instead of <code>device</code>. The following is the whole mapping of old to new model names:
+<div class="highlight"><pre><span></span><code><span class="p">{</span> <span class="c1"># old_value : new_value</span>
+    <span class="s2">&quot;site&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.site&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vlan&quot;</span><span class="p">:</span> <span class="s2">&quot;ipam.vlan&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.manufacturer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vrf&quot;</span><span class="p">:</span> <span class="s2">&quot;ipam.vrf&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;platform&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.platform&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;devicerole&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.devicerole&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;devicetype&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.devicetype&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;ipam.prefix&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.device&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;virtualchassis&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.virtualchassis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ipaddress&quot;</span><span class="p">:</span> <span class="s2">&quot;ipam.ipaddress&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;interface&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.interface&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inventoryitem&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.inventoryitem&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;macaddress&quot;</span><span class="p">:</span> <span class="s2">&quot;dcim.macaddress&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<ul>
+<li>Sync is now linked to Filters. Please provide default filters when creating new Syncs via API.</li>
+<li>Transform Maps now link to Endpoint model using field <code>source_endpoint</code> instead of using old value <code>source_model</code> field.</li>
+<li>Transform Maps now link to each other in parent-child relationship. When creating Transform Map that needs to be child of another Transform Map, provide <code>parent</code> field with ID of the parent Transform Map.</li>
+</ul>
 <h2 id="8-additional-resources">8. Additional Resources</h2>
 <ul>
 <li><a href="https://netboxlabs.com/docs/netbox/">NetBox Documentation</a></li>
@@ -16151,7 +16327,7 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 19, 2025 19:07:25">December 19, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 3, 2026 19:57:51">February 3, 2026</span>
   </span>
 
     
@@ -16246,13 +16422,13 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
         
         
           
-          <a href="../sources/" class="md-footer__link md-footer__link--next" aria-label="Next: Define Sources">
+          <a href="../sync_process_overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Sync Process Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Define Sources
+                Sync Process Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
