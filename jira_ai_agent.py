@@ -205,7 +205,7 @@ def categorize_issues(issues: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, 
 
 # Define the agent with OpenAI - using Pydantic model for structured output
 agent = Agent(
-    'openai:gpt-5',
+    'openai:gpt-5.2-chat-latest',
     system_prompt="""You are a Jira Support Team AI Agent specialized in creating concise release notes.
 
 Your task is to analyze Jira tickets and create very concise summaries (1 sentence per item) for release notes.
