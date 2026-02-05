@@ -15,3 +15,5 @@ SSH version validation and subsequent discovery issues.
 For more details see: [CSCsq51052](https://quickview.cloudapps.cisco.com/quickview/bug/CSCsq51052)
 
 **Fix:** To resolve the issue, enforce SSH version 2 on IOS devices using the command `ip ssh version 2`. Subsequently, validate the current SSH version using the command `show ip ssh`.
+
+**Fix:** Starting with IP Fabric v7.10, our SSH client recognizes SSH protocol version 2.99 and is able to connect to affected Cisco IOS devices.
