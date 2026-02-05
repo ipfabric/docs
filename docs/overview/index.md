@@ -79,7 +79,7 @@ For managed service provider (MSP) networks:
 
 !!! info "Additional Resource Requirements"
 
-    When increasing the number of discovery workers, we recommend allocating an additional 5 GB of RAM **per worker**.
+    IP Fabric supports increasing both the number of discovery workers and the maximum allocation threshold per worker. Either change can significantly increase total RAM usage.
 
 !!! note
 
