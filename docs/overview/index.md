@@ -96,10 +96,10 @@ For managed service provider (MSP) networks:
 | Test | IOPS   |
 | --- | ----- |
 | IO PSQL WAL Write | 750 |
-| IO Data Write | 550 |
-| IO OLTP Mixed Read | 280 |
-| IO OLTP Mixed Write | 120 |
-| IO Fsync Test | 165 |
+| IO Data Write | 4400 |
+| IO OLTP Mixed Read | 4480 |
+| IO OLTP Mixed Write | 1920 |
+| IO Fsync Test | 5280 |
 
 However, we recommend using the Recommended hardware resources to ensure optimal performance and stability.
 
@@ -114,10 +114,10 @@ However, we recommend using the Recommended hardware resources to ensure optimal
 | Test | IOPS   |
 | --- | ----- |
 | IO PSQL WAL Write | 1500 |
-| IO Data Write | 1100 |
-| IO OLTP Mixed Read | 600 |
-| IO OLTP Mixed Write | 250 |
-| IO Fsync Test | 350 |
+| IO Data Write | 8800 |
+| IO OLTP Mixed Read | 9600 |
+| IO OLTP Mixed Write | 4000 |
+| IO Fsync Test | 11200 |
 
 !!! info "NVMe Storage Recommendation"
 
