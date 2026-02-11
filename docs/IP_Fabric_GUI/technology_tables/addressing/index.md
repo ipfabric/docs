@@ -13,7 +13,7 @@ The **Addressing** section provides information about every IP address on every 
 - **NAT:** Contains NAT information from the supported devices.
 - **IPv6 Neighbor discovery:** List of the IPv6 neighbors.
 
-![Addressing in Technology menu](../../../images/support/support-vpn_menu.webp)
+![Addressing in Technology menu](../../../images/technology/IP_Fabric_GUI-technology_tables-addressing_menu.webp)
 
 ## NAT
 
