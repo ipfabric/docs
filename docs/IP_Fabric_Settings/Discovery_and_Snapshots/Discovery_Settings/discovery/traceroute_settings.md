@@ -14,6 +14,12 @@ Discovery Settings --> Discovery --> Traceroute settings**.
 
 ![Traceroute settings](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
+
+    ![Traceroute settings - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings2.webp)
+
 **Trace scope** -- Limits traceroute scope to the defined subnets. This prevents
 scanning networks outside an internal network.
 

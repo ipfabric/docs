@@ -18,6 +18,12 @@ addresses in those networks will be discovered).
 
 ![Duplicate IPs discovery](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
+
+    ![Duplicate IPs discovery - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery2.webp)
+
 !!! info
 
     This option was added to the GUI in version `7.0`.

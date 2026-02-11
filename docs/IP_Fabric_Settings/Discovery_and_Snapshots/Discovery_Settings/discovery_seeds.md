@@ -27,6 +27,12 @@ This feature enables filtering by age or specific date, or disabling the reuse o
 
 ![Discovery Seeds](../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_seeds.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings.
+
+    ![Discovery Seeds - New Design](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_discovery_seeds2.webp)
+
 ### Configuring via API
 
 This feature is configurable through a new `discoveryHistorySeeds` attribute in the existing `PATCH /settings` API. The attribute accepts an object with these properties:

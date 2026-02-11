@@ -10,6 +10,12 @@ This feature enables configuration of BGP communities on a **per-device**, **per
 
 ![BGP communities settings](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_bgp_communities.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings.
+
+    ![BGP communities settings - New Design](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_bgp_communities2.webp)
+
 ### Problem Statement
 
 During network discovery processes, full routing tables containing BGP routes is typically downloaded.

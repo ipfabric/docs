@@ -22,6 +22,12 @@ no BGP routes from the routing table will be collected.
 
 ![Limit download of BGP routes](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located in a different tab: Routing --> Threshold settings.
+
+    ![Limit download of BGP routes - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes2.webp)
+
 Currently supported vendors:
 
 - IPv4

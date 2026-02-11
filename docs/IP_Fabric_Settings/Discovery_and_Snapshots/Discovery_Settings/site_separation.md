@@ -161,6 +161,12 @@ To configure **Device Attributes**, first enable the **Manual site separation** 
 
 ![Configure device attributes](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-site_separation_configure_device_attributes.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings.
+
+    ![Configure device attributes - New Design](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-site_separation_configure_device_attributes2.webp)
+
 or go to **Settings --> Discovery & Snapshots --> Global Configuration --> Device Attributes**:
 
 ![Device Attributes menu](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-site_separation_device_attributes_menu.webp)

@@ -53,6 +53,12 @@ Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery
 
 ![Scanner settings](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_scanner_settings.webp)
 
+!!! info "New Design"
+
+    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
+
+    ![Scanner settings - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_scanner_settings2.webp)
+
 **Shortest mask of the network to scan** -- Defines the maximum size of the
 networks in a routing table to be scanned. A smaller prefix length means a
 larger network and therefore a longer scan time. The minimum prefix length size
