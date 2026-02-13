@@ -29,16 +29,31 @@ are located**. Multiple regions can be set for one API key and secret.
 
 ## Required IAM Policy
 
-To ensure that IP Fabric can retrieve all the required data to model the AWS
-networks, a series of specific policies are required to be applied to the user
-account or role used for the API key.
+To allow IP Fabric to retrieve all required data for AWS network modeling,
+an IAM policy must be applied to the user account or role used for the API key. 
 
-We provide 2 versions of the actual IAM policy (pick one):
+We provide two policy options. Both grant access to all required endpoints.
 
-- Simplified version using multi-character match wildcards in action names
-  [IAM-policy-IPF_7.5.json](aws/IAM-policy-IPF_7.5.json)
-- Granular policy [IAM-policy-IPF_7.5-full.json](aws/IAM-policy-IPF_7.5-full.json)
-  showing all actions
+### Policy Options
+
+- **Simplified policy**
+  - File: [IAM-policy-IPF_simplified_7.5_or_newer.json](aws/IAM-policy-IPF_simplified_7.5_or_newer.json)
+  - Uses wildcard action matching
+  - Easier to maintain
+  - Compatible with all supported versions
+
+- **Granular policy**
+  - File: [IAM-policy-IPF_7.10-full.json](aws/IAM-policy-IPF_7.10-full.json)
+  - Lists all individual AWS actions explicitly
+  - Suitable for environments requiring strict permission control
+
+!!! info " Which Policy Should I Use?"
+
+    - If you are deploying AWS discovery for the first time --> Use policy that follows **best practices in your environment**.
+
+    - If you are already using the **simplified policy** -->  **No action is required**.
+
+    - If you are using an older **granular policy** --> **You must update** to the latest granular policy version.
 
 
 ## AWS AssumeRole
