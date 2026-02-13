@@ -89,7 +89,15 @@ For managed service provider (MSP) networks:
 
 | Dedicated IOPS for Cloud Deployments |
 | --- |
-| 2500 |
+| 4500 |
+
+!!! info "Deployments in Azure"
+
+    Some validation tests may fail in Azure environments even when disk IOPS
+    meet minimum or recommended requirements. All Azure deployments require
+    the `ipf-checker` bypass to proceed with upgrades.
+
+    Contact [Customer Support](https://ipfabric.atlassian.net/servicedesk/customer/portal/1/group/1/create/1) for assistance.
 
 ##### Approximate `ipf-checker` Results for Minimal IOPS Requirements
 
@@ -107,7 +115,7 @@ However, we recommend using the Recommended hardware resources to ensure optimal
 
 | Dedicated IOPS for Cloud Deployments |
 | --- |
-| 5000 |
+| 9000 |
 
 ##### Approximate `ipf-checker` Results for Recommended IOPS Requirements
 
