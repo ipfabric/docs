@@ -467,24 +467,22 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 ### Extend Existing Virtual Disk (for System and Data)
 
 1. Open Hyper-V Manager.
-2. Shutdown the VM. (When started, Hyper-V won't let you change any hardware
-   settings.)
+2. Shutdown the VM (Hyper-V won’t let you change hardware settings while it’s running).
 3. Right-click the VM name and select **Settings**.
-4. Select **IDE Controller --> Hard Drive --> ipfabric-x-x-x-disk1.vhdx**.
+4. Select **IDE Controller/SCSI Controller --> Hard Drive --> ipfabric-x-x-x.vhdx**.
 5. Click **Edit** -- **Choose Action** -- select the option **Expand**, click
    **Next**.
 6. Set up the required disk size and click **Finish**.
 7. Start the VM.
-8. The disk space is automatically increased if you resized the first disk.
+8. The disk space is automatically increased.
 
 ### Add New Virtual Disk (as an Additional Backup Disk)
 
 1. Open Hyper-V Manager.
-2. Shutdown the VM. (When started, Hyper-V won't let you change any hardware
-   settings.)
+2. Shutdown the VM (Hyper-V won’t let you change hardware settings while it’s running).
 3. Right-click the VM name and select **Settings**.
    ![Hyper-V settings](../images/miscellaneous/platform_first_steps_hyperv_settings.webp)
-4. Select **IDE Controller 1 --> Hard Drive** and click **Add**.
+4. Select **IDE Controller 1/SCSI Controller --> Hard Drive** and click **Add**.
    ![Hyper-V Add hard drive](../images/miscellaneous/System_Administration_hyperv_add_hdd.webp)
 5. Select **Virtual hard disk** and click **New**. In the `Choose Disk Format`
    step, select **VHDX** and click **Next**.

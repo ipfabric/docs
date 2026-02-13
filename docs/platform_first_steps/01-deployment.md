@@ -149,63 +149,129 @@ VMware's KB article on converting OVA images:
 
 8. Power on the VM and [complete IPF CLI Config](02-ipf_cli_config.md).
 
-## Deploying VM on Hyper-V
+## Deploying a VM on Hyper-V
 
-The `qcow2` disk image file can be converted to different formats.
-Using this method, we will create a `VHDX` usable on Microsoft Hyper-V and manually create a new VM.
+This section describes how to deploy the IP Fabric virtual appliance on Microsoft Hyper-V.
 
-1. Download `ipfabric-*.qcow2` from the official source.
+!!! warning "Generation 2 Version Requirement"
+    Deployment using **Generation 2** is supported only for **new deployments**
+    running version **7.3.25, 7.5.14, 7.9.4, or newer**.
 
-2. Convert the `qcow2` image to `VHDX`. (Be sure to change the filenames in the command examples below.)
+    Upgrading an existing Generation 1 VM to Generation 2 is not supported.
+    A new VM deployment is **required**.
 
-   - Windows instructions:
-     1. Download the [QEMU disk image utility for Windows](https://cloudbase.it/qemu-img-windows/).
-     2. Unzip `qemu-img-windows`.
-     3. Run: `qemu-img.exe convert ipfabric-<*>.qcow2 -O vhdx -o subformat=dynamic ipfabric-<*>.vhdx`
+---
 
-   - Linux instructions:
-     1. Install `qemu-utils`: `sudo apt install qemu-utils`
-     2. Run: `qemu-img convert -f qcow2 -o subformat=dynamic -O vhdx ipfabric-<*>.qcow2 ipfabric-<*>.vhdx`
+### Prerequisites
 
-3. Create a new Hyper-V virtual machine and specify its **Name** and **Location**:
+- Download `ipfabric-*.vhdx.zst` from the official source.
+- Decompress the archive to obtain the `ipfabric-*.vhdx` disk image.
+- Review the [Operational Requirements](../overview/index.md#operational-requirements).
+
+---
+
+### Generation 1 Deployment
+
+1. Open **Hyper-V Manager** and select **New --> Virtual Machine**.
+
+2. In **Specify Name and Location**, define the VM name.
 
    ![Hyper-V - Specify Name and Location](../images/miscellaneous/platform_first_steps_hyperv_create.webp)
 
-4. In the **Specify Generation** step, select `Generation 1`:
+3. In **Specify Generation**, select **Generation 1**.
 
    ![Hyper-V - Specify Generation](../images/miscellaneous/platform_first_steps_hyperv_generation.webp)
 
-5. Assign memory. (Check requirements in the [Operational Requirements](../overview/index.md#operational-requirements) section.)
+4. In **Assign Memory**:
+   - Configure memory according to the [Hardware Requirements](../overview/index.md#hardware-requirements).
+   - You may use **Dynamic Memory** or assign fixed memory.
 
    ![Hyper-V - Assign Memory](../images/miscellaneous/platform_first_steps_hyperv_memory.webp)
 
-6. Configure networking:
+5. In **Configure Networking**, select the appropriate **Virtual Switch**.
 
    ![Hyper-V - Configure Networking](../images/miscellaneous/platform_first_steps_hyperv_networking.webp)
 
-7. Connect a virtual hard disk:
+6. In **Connect Virtual Hard Disk**:
+   - Select **Use an existing virtual hard disk**.
+   - Choose the decompressed `ipfabric-*.vhdx` file.
 
    ![Hyper-V - Connect Virtual Hard Disk](../images/miscellaneous/platform_first_steps_hyperv_harddisk.webp)
 
-8. Verify the Summary and click **Finish**:
+7. Review the **Summary** and click **Finish**.
 
    ![Hyper-V - Summary](../images/miscellaneous/platform_first_steps_hyperv_summary.webp)
 
-9. Wait for the VM to be created.
+8. After the VM is created, open **Settings**.
 
-10. Edit the VM CPU settings. (Check requirements in the [Operational Requirements](../overview/index.md#operational-requirements) section.)
+   ![Hyper-V - VM Settings](../images/miscellaneous/platform_first_steps_hyperv_settings.webp)
 
-    ![Hyper-V - VM Settings](../images/miscellaneous/platform_first_steps_hyperv_settings.webp)
+9. In **Processor**, configure the required number of vCPUs according to the
+   [Hardware Requirements](../overview/index.md#hardware-requirements).
 
-    ![Hyper-V - VM Settings - Hardware - Processor](../images/miscellaneous/platform_first_steps_hyperv_settings_cpu.webp)
+   ![Hyper-V - VM Settings - Hardware - Processor](../images/miscellaneous/platform_first_steps_hyperv_settings_cpu.webp)
 
-11. Optionally, increase the disk size based on the [Operational Requirements](../overview/index.md#operational-requirements) section.
+10. (Optional) Increase disk capacity if required:
 
-    - [Extend the system disk or add a new empty virtual disk](../System_Administration/increase_disk_space.md#increase-disk-space-for-hyper-v) if necessary.
+   - See: [Increase Disk Space for Hyper-V](../System_Administration/increase_disk_space.md#increase-disk-space-for-hyper-v)
 
-12. Close the VM Settings window.
+11. Click **OK** and start the VM.
 
-13. Start the VM.
+---
+
+### Generation 2 Deployment
+
+1. Open **Hyper-V Manager** and select **New --> Virtual Machine**.
+
+2. In **Specify Name and Location**, define the VM name.
+
+   ![Hyper-V - Specify Name and Location](../images/miscellaneous/platform_first_steps_hyperv_create_gen2.webp)
+
+3. In **Specify Generation**, select **Generation 2**.
+
+   ![Hyper-V - Specify Generation](../images/miscellaneous/platform_first_steps_hyperv_generation_2.webp)
+
+4. In **Assign Memory**:
+   - Configure memory according to the [Hardware Requirements](../overview/index.md#hardware-requirements).
+   - You may use **Dynamic Memory** or assign fixed memory.
+
+   ![Hyper-V - Assign Memory](../images/miscellaneous/platform_first_steps_hyperv_memory_gen2.webp)
+
+5. In **Configure Networking**, select the appropriate **Virtual Switch**.
+
+   ![Hyper-V - Configure Networking](../images/miscellaneous/platform_first_steps_hyperv_networking.webp)
+
+6. In **Connect Virtual Hard Disk**:
+   - Select **Use an existing virtual hard disk**.
+   - Choose the decompressed `ipfabric-*.vhdx` file.
+
+   ![Hyper-V - Connect Virtual Hard Disk](../images/miscellaneous/platform_first_steps_hyperv_harddisk_gen2.webp)
+
+7. Review the **Summary** and click **Finish**.
+
+   ![Hyper-V - Summary](../images/miscellaneous/platform_first_steps_hyperv_summary_gen2.webp)
+
+8. After the VM is created, open **Settings**.
+
+   ![Hyper-V - VM Settings](../images/miscellaneous/platform_first_steps_hyperv_settings.webp)
+
+9. In **Processor**, configure the required number of vCPUs according to the
+   [Hardware Requirements](../overview/index.md#hardware-requirements).
+
+   ![Hyper-V - VM Settings - Hardware - Processor](../images/miscellaneous/platform_first_steps_hyperv_settings_cpu.webp)
+
+10. In **Security**, set **Secure Boot** to:
+
+    `Microsoft UEFI Certificate Authority`
+
+   ![Hyper-V - VM Settings - Security - Secure Boot](../images/miscellaneous/platform_first_steps_hyperv_secure_boot_gen2.webp)
+
+11. (Optional) Increase disk capacity if required:
+
+   - See: [Increase Disk Space for Hyper-V](../System_Administration/increase_disk_space.md#increase-disk-space-for-hyper-v)
+
+12. Click **OK** and start the VM.
+
 
 ## Deploying VM on Nutanix
 
