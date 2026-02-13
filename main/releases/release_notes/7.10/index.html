@@ -15939,6 +15939,20 @@ following key combinations:</p>
 <ul>
 <li><strong>Meraki</strong> &ndash; Added support for switch stacks </li>
 </ul>
+<ul>
+<li>
+<p><strong>AWS</strong> — Updated IAM policies to resolve missing permissions.</p>
+<p>If you are using AWS API discovery:</p>
+<ul>
+<li>Users of the <strong>Simplified policy</strong> (<a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/aws/IAM-policy-IPF_simplified_7.5_or_newer.json">IAM-policy-IPF_simplified_7.5_or_newer.json</a>) → No changes are required.</li>
+</ul>
+<ul>
+<li>Users of a previous <strong>Granular policy version</strong> → You must update to the latest granular policy:
+    <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/aws/IAM-policy-IPF_7.10-full.json">IAM-policy-IPF_7.10-full.json</a></li>
+</ul>
+<p>For mode details, see: <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/AWS_Amazon_Web_Services/#required-iam-policy">AWS API Configuration – Required IAM Policy</a>.</p>
+</li>
+</ul>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <ul>
 <li>The <code>ipf-checker</code> now reports more accurate values. These changes do not affect any functionality (only increased values are observed).</li>

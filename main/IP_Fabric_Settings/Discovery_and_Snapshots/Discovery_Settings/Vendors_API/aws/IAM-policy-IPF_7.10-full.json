@@ -17,15 +17,18 @@
             "Sid": "IPFabricEc2",
             "Effect": "Allow",
             "Action": [
+                "ec2:DescribeAddresses",
                 "ec2:DescribeCustomerGateways",
                 "ec2:DescribeImages",
                 "ec2:DescribeInstances",
                 "ec2:DescribeInternetGateways",
+                "ec2:DescribeLaunchTemplateVersions",
                 "ec2:DescribeManagedPrefixLists",
                 "ec2:DescribeNatGateways",
                 "ec2:DescribeNetworkAcls",
                 "ec2:DescribeNetworkInterfaces",
                 "ec2:DescribePrefixLists",
+                "ec2:DescribeRegions",
                 "ec2:DescribeRouteTables",
                 "ec2:DescribeSecurityGroupRules",
                 "ec2:DescribeSecurityGroups",
@@ -61,6 +64,14 @@
             "Resource": "*"
         },
         {
+            "Sid": "IPFabricAutoscaling",
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DescribeAutoScalingGroups"
+            ],
+            "Resource": "*"
+        },
+        {
             "Sid": "IPFabricElasticloadbalancing",
             "Effect": "Allow",
             "Action": [
@@ -70,14 +81,6 @@
                 "elasticloadbalancing:DescribeTargetGroupAttributes",
                 "elasticloadbalancing:DescribeTargetGroups",
                 "elasticloadbalancing:DescribeTargetHealth"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "IPFabricAutoscaling",
-            "Effect": "Allow",
-            "Action": [
-                "autoscaling:DescribeAutoScalingGroups"
             ],
             "Resource": "*"
         }
