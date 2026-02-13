@@ -7793,6 +7793,34 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#502-2026-02-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0.2 (2026-02-11)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.2 (2026-02-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#501-2026-02-10" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7816,7 +7844,7 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes" class="md-nav__link">
+  <a href="#fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -7855,7 +7883,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_1" class="md-nav__link">
+  <a href="#fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -15854,6 +15882,34 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#502-2026-02-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0.2 (2026-02-11)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.2 (2026-02-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#501-2026-02-10" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15877,7 +15933,7 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes" class="md-nav__link">
+  <a href="#fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -15916,7 +15972,7 @@ here.
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_1" class="md-nav__link">
+  <a href="#fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Fixes
@@ -16021,13 +16077,26 @@ here.
 
 
 <h1 id="v5-release-notes">v5 Release Notes</h1>
+<h2 id="502-2026-02-11">5.0.2 (2026-02-11)</h2>
+<h3 id="fixes">Fixes</h3>
+<ul>
+<li>Preprocessing data for Devices could run twice if <code>dcim.virtualchassis</code> was also enabled.</li>
+<li>VSS <code>Endpoint</code> data were never pulled, even when <code>dcim.virtualchassis</code> was enabled.</li>
+<li>Fix for following error happening when removing master <code>Device</code> from <code>VirtualChassis</code> and not assigning it to different one.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{&#39;vc_position&#39;: [&#39;A device assigned to a virtual chassis must have its position defined.&#39;]}
+</code></pre></div>
+<ul>
+<li>Devices <code>Endpoint</code> is pulled only when linked in TransformMap or when syncing <code>VirtualChassis</code>, <code>Interface</code> or <code>IPAddress</code> models since they need it too.</li>
+<li>Endpoints tab in Sync now correctly shows all Endpoints that will get pulled.</li>
+</ul>
 <h2 id="501-2026-02-10">5.0.1 (2026-02-10)</h2>
 <h2 id="changes">Changes</h2>
 <ul>
 <li>Changed <code>Platform</code> transform map to use expected <code>slug</code> value.</li>
 <li>Corrected <code>slug</code> value for all existing <code>Plaform</code>s.</li>
 </ul>
-<h3 id="fixes">Fixes</h3>
+<h3 id="fixes_1">Fixes</h3>
 <ul>
 <li>Fixed moving master <code>Device</code> from <code>VirtualChassis</code> to another one.</li>
 <li>Make sure master of <code>VirtualChassis</code> os assigned only if the <code>Device</code> is member of the <code>VirtualChassis</code>.</li>
@@ -16060,7 +16129,7 @@ here.
 <li>Added endpoint for VSS members to sync them to Virtual Chassis too.</li>
 <li>Branching plugin version no longer has upper limit.</li>
 </ul>
-<h4 id="fixes_1">Fixes</h4>
+<h4 id="fixes_2">Fixes</h4>
 <ul>
 <li>Fixed memory leak during sync causing ~1,6GB RAM consumption per 10k changes.</li>
 <li>Correctly ignore <code>global</code> VRF during sync as it&rsquo;s the default in NetBox.</li>
@@ -16099,7 +16168,7 @@ here.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2026</span>
   </span>
 
     
