@@ -40,7 +40,7 @@ instructions.
    1. [VMware](01-deployment.md#deploying-vm-on-vmware-esxi-using-vmdk-image)
    2. [Nutanix](01-deployment.md#deploying-vm-on-nutanix)
 3. qcow2 can be deployed on:
-   1. [Hyper-V](01-deployment.md#deploying-vm-on-hyper-v)
+   1. [Hyper-V](01-deployment.md#deploying-a-vm-on-hyper-v)
    2. [Azure](01-deployment.md#deploying-vm-on-azure)
    3. [KVM](01-deployment.md#deploying-vm-on-kvm)
 

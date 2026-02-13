@@ -7,7 +7,7 @@ description: This section describes how to increase disk space on the IP Fabric 
 Starting with version `5.0.0`, the IP Fabric appliance deploys as a single hard
 disk installation instead of two disk volumes.
 
-Starting with versions `7.3.23` and `7.5.11`, new installations utilise the GPT
+Starting with versions `7.3.23` and `7.5.11`, all new installations utilize the GPT
 disk partitioning scheme, while older versions and all pre-existing installations
 utilise the MBR partitioning scheme.
 
@@ -453,7 +453,7 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
    2. For the backup volume, it is recommended to select a different datastore,
       ideally on different physical storage.
 6. Click **OK**.
-   ![VMware virtual hardware](vmware_virtual_hardware.webp)
+   ![VMware virtual hardware](../images/miscellaneous/System_Administration_vmware_virtual_hardware.webp)
 7. Launch the Remote (Web) Console.
 8. Reboot (the **Send Ctrl+Alt+Delete** function can be also used) or power on
    the IP Fabric VM.
@@ -467,36 +467,34 @@ Script location: `/opt/nimpee/sys-lvm-resize.sh`
 ### Extend Existing Virtual Disk (for System and Data)
 
 1. Open Hyper-V Manager.
-2. Shutdown the VM. (When started, Hyper-V won't let you change any hardware
-   settings.)
+2. Shutdown the VM (Hyper-V won’t let you change hardware settings while it’s running).
 3. Right-click the VM name and select **Settings**.
-4. Select **IDE Controller --> Hard Drive --> ipfabric-x-x-x-disk1.vhdx**.
+4. Select **IDE Controller/SCSI Controller --> Hard Drive --> ipfabric-x-x-x.vhdx**.
 5. Click **Edit** -- **Choose Action** -- select the option **Expand**, click
    **Next**.
 6. Set up the required disk size and click **Finish**.
 7. Start the VM.
-8. The disk space is automatically increased if you resized the first disk.
+8. The disk space is automatically increased.
 
 ### Add New Virtual Disk (as an Additional Backup Disk)
 
 1. Open Hyper-V Manager.
-2. Shutdown the VM. (When started, Hyper-V won't let you change any hardware
-   settings.)
+2. Shutdown the VM (Hyper-V won’t let you change hardware settings while it’s running).
 3. Right-click the VM name and select **Settings**.
-   ![Hyper-V settings](hyperv_settings.webp)
-4. Select **IDE Controller 1 --> Hard Drive** and click **Add**.
-   ![Hyper-V Add hard drive](hyperv_add_hdd.webp)
+   ![Hyper-V settings](../images/miscellaneous/platform_first_steps_hyperv_settings.webp)
+4. Select **IDE Controller 1/SCSI Controller --> Hard Drive** and click **Add**.
+   ![Hyper-V Add hard drive](../images/miscellaneous/System_Administration_hyperv_add_hdd.webp)
 5. Select **Virtual hard disk** and click **New**. In the `Choose Disk Format`
    step, select **VHDX** and click **Next**.
-   ![Hyper-V Add hard drive - format](hyperv_add_hdd_format.webp)
+   ![Hyper-V Add hard drive - format](../images/miscellaneous/System_Administration_hyperv_add_hdd_format.webp)
 6. In the `Choose Disk Type` step, select **Dynamically expanding** and click
    **Next**.
-   ![Hyper-V Add hard drive - type](hyperv_add_hdd_type.webp)
+   ![Hyper-V Add hard drive - type](../images/miscellaneous/System_Administration_hyperv_add_hdd_type.webp)
 7. Specify the name and location of the disk and click **Next**.
 8. In the `Configure Disk` step, select **Create a new blank virtual hard
    disk**, change the **Size** to the required value, and click
    **Finish**.
-   ![Hyper-V Add hard drive - space](hyperv_add_hdd_space.webp)
+   ![Hyper-V Add hard drive - space](../images/miscellaneous/System_Administration_hyperv_add_hdd_space.webp)
 9. Apply the new disk in the **Settings** window and close **Settings**.
 10. Start the VM.
 11. Follow
