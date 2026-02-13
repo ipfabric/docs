@@ -23,6 +23,24 @@ API**, click **+ Add**, select `Cisco FMC` from the list, and fill in:
 
 ![Add Connection - Cisco FMC](cisco/fmc/ciscoFmcAPIAdd.webp)
 
+### Discovery of FMC Hosted by Cisco Defense Orchestrator
+
+When FMC is hosted by Cisco Defense Orchestrator, discovery and data collection has to be handled differently. The main difference is in using an API key instead of a username/password.
+
+Since `6.7`, it is possible to enable API key authentication for FMC by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_FMC_TOKEN_AUTH=true
+```
+
+After updating the environment file, you must restart IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+![Add Connection - Cisco FMC - Bearer token](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAddBearer.webp)
+
 ## Known Issue
 
 - [FMC REST API Calls Returns HTTP Error Code 500](../../../../support/known_issues/Vendors/cisco/FMC_REST_API.md)
