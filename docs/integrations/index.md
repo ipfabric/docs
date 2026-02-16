@@ -19,10 +19,10 @@ the dynamic landscape of modern networking.
 
 | Integration Documentation                      | Location(s)                                                                                                                                                   |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [NetBox](netbox/index.md)                      | [`ipfabric-netbox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-netbox)<br/>[`ipfabric-netbox` PyPI](https://pypi.org/project/ipfabric-netbox/) |
+| [NetBox](https://ip-fabric.gitlab.io/integrations/ipfabric-netbox)                      | [`ipfabric-netbox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-netbox)<br/>[`ipfabric-netbox` PyPI](https://pypi.org/project/ipfabric-netbox/) |
 | [IP Fabric Python SDK](python/index.md)        | [`python-ipfabric` GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric)<br/>[`ipfabric` PyPI](https://pypi.org/project/ipfabric/)               |
 | [ServiceNow Integration](service-now/index.md) | [`ipfabric-snow` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-snow)<br/>[`ipfabric-snow` PyPI](https://pypi.org/project/ipfabric-snow/)         |
-| [IP Fabric Splunk TA](splunk/index.md)         | [Splunkbase Add-on](https://splunkbase.splunk.com/app/6707)<br/>[`splunk-ta-ip-fabric` GitLab](https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric) |
+| [IP Fabric Splunk TA](https://ip-fabric.gitlab.io/integrations/splunk-ta-ip-fabric)         | [Splunkbase Add-on](https://splunkbase.splunk.com/app/6707)<br/>[`splunk-ta-ip-fabric` GitLab](https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric) |
 
 ## Partner-Led Integrations
 
@@ -31,7 +31,7 @@ the dynamic landscape of modern networking.
 | [Ansible](https://ipfabric-ansible.readthedocs.io/en/latest/)                                                  | [`ipfabric-ansible` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-ansible)                                                                               |
 | Dynamic Attributes                                                                                             | Merged in `ipfabric` SDK in version 7.5.2. See [CLI docs](python/CLI_Tools/dynamic-attributes/index.md).                                                              |
 | Grafana                                                                                                        | [`ipfabric-grafana` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-grafana)                                                                               |
-| [Infoblox](infoblox/index.md)                                                                                  | [`ipfabric-infoblox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-infoblox)<br/>[`ipfabric-infoblox` PyPI](https://pypi.org/project/ipfabric-infoblox/) |
+| [Infoblox](https://ip-fabric.gitlab.io/integrations/ipfabric-infoblox)                                                                                  | [`ipfabric-infoblox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-infoblox)<br/>[`ipfabric-infoblox` PyPI](https://pypi.org/project/ipfabric-infoblox/) |
 | [Itential IP Fabric Adapter](https://www.itential.com/tech-partners/ipfabric/)                                 | [`adapter-ipfabric` GitLab](https://gitlab.com/itentialopensource/adapters/telemetry-analytics/adapter-ipfabric)                                                      |
 | [Nautobot ChatOps IP Fabric](https://docs.nautobot.com/projects/chatops/en/latest/user/integrations/ipfabric/) | [`nautobot-plugin-chatops` GitHub](https://github.com/nautobot/nautobot-plugin-chatops)<br/>[`nautobot-chatops` PyPI](https://pypi.org/project/nautobot-chatops/)     |
 | [Nautobot SSoT IP Fabric](https://docs.nautobot.com/projects/ssot/en/latest/user/integrations/ipfabric/)       | [`nautobot-plugin-ssot` GitHub](https://github.com/nautobot/nautobot-plugin-ssot)<br/>[`nautobot-ssot` PyPI](https://pypi.org/project/nautobot-ssot/)                 |
