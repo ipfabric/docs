@@ -3,9 +3,9 @@ FROM python:3.11-alpine
 ENV PACKAGES=/usr/local/lib/python3.11/site-packages
 ENV PYTHONDONTWRITEBYTECODE=1
 
-ARG GL_DEPLOY_USER
-ARG GL_DEPLOY_TOKEN
-ARG MATERIAL_TAG
+#ARG GL_DEPLOY_USER
+#ARG GL_DEPLOY_TOKEN
+#ARG MATERIAL_TAG
 
 WORKDIR /tmp
 
@@ -41,11 +41,6 @@ RUN \
 
 RUN \
   pip install --no-cache-dir -r requirements.txt \
-  && \
-  pip uninstall -y mkdocs-material \
-  && \
-  pip install --no-cache-dir \
-  "git+https://${GL_DEPLOY_USER}:${GL_DEPLOY_TOKEN}@gitlab.com/ip-fabric/documentation/mkdocs-material-insiders-mirror.git@${MATERIAL_TAG}" \
   && \
   apk del .build \
   && \
