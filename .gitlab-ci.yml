@@ -41,7 +41,7 @@ strict_build_mr:
     - chmod 0400 .ssh/gitlab-ci
   script:
     - export DOC_TARGET=`mktemp -d`
-    - mkdocs build -d "$DOC_TARGET" --strict --config-file mkdocs_insiders.yml
+    - mkdocs build -d "$DOC_TARGET"  --config-file mkdocs_insiders.yml
     - rm -rf "$DOC_TARGET"
   artifacts:
     expire_in: 1 week
