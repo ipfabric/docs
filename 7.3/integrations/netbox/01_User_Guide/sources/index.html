@@ -13703,6 +13703,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../support/known_issues/IP_Fabric/windows_ssh_mac_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows SSH Client - Incorrect MAC Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -13714,10 +13741,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_13" >
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_12" id="__nav_9_6_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_13" id="__nav_9_6_2_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -13734,8 +13761,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_12">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -15459,16 +15486,16 @@
 </div>
 <h2 id="creating-a-source">Creating a Source</h2>
 <p>To create a source, navigate to <strong>Plugins &rarr; IP Fabric &rarr; Sources &rarr; [ + ]</strong>. In our case, the source is set to <code>Local</code>. If type is set to <code>Remote</code>, data for the snapshots will need to be pushed via API. The API endpoint to do this can be seen in the NetBox OpenAPI spec.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_new.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_new.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Create Source" src="../../images/user_guide/source_new.webp" /></a></p>
 <h2 id="syncing-a-source">Syncing a Source</h2>
 <p>Once a source has been added to NetBox, it does not mean that data will be synchronized. NetBox does not know what snapshots to synchronize from IP Fabric. So first the snapshots must be synchronized.</p>
 <p>Navigate to your source and click the <strong>Sync</strong> button. This will create a background task to synchronize the snapshots from IP Fabric.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_synced.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sync Source" src="../../images/user_guide/source_synced.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_synced.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sync Source" src="../../images/user_guide/source_synced.webp" /></a></p>
 <p>Once the synchronization has completed, you will see the number of snapshots shown within the <strong>Related Objects</strong> section.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_snapshots.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source Snapshots" src="../../images/user_guide/source_snapshots.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_snapshots.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Source Snapshots" src="../../images/user_guide/source_snapshots.webp" /></a></p>
 <h2 id="snapshots">Snapshots</h2>
 <p>Clicking through to the snapshots will show you all the snapshots that have been synchronized from IP Fabric into NetBox. There will be one snapshot created with the <code>snapshot_id</code> of <code>$last</code>, this is IP Fabric&rsquo;s way of getting information from the API for the latest snapshot.</p>
-<p><a class="glightbox" href="../../images/user_guide/source_snapshot_detail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="../../images/user_guide/source_snapshot_detail.png" /></a></p>
+<p><a class="glightbox" href="../../images/user_guide/source_snapshot_detail.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Snapshots" src="../../images/user_guide/source_snapshot_detail.webp" /></a></p>
 <p>Each snapshot will show the following information:</p>
 <ul>
 <li>IP Fabric Version (e.g. <code>7.0.15</code>)</li>
@@ -15500,7 +15527,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 19:02:14">February 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 23, 2026 08:23:14">February 23, 2026</span>
   </span>
 
     
