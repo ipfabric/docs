@@ -7678,6 +7678,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Cloning Transform Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-and-children-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent and Children Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -14501,6 +14529,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../support/known_issues/IP_Fabric/windows_ssh_mac_algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows SSH Client - Incorrect MAC Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -14512,10 +14567,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_13">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_14">
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_13" id="__nav_9_6_2_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_14" id="__nav_9_6_2_14_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -14532,8 +14587,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_13">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16140,6 +16195,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Cloning Transform Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-and-children-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent and Children Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -16583,8 +16666,133 @@
 </ul>
 </div>
 <h3 id="cloning-transform-map">Cloning Transform Map</h3>
-<p>You can clone a transform map by clicking the <code>Clone</code> button in the top-right corner of the transform map detail page. This will create a new transform map with the same source endpoint and target model. Cloning of related Fields and Relationships is enabled by default.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/tm_clone.png" data-desc-position="bottom"><img alt="Clone Transform Map" src="../../images/user_guide/tm_clone.png"></a></p>
+<p>You can clone a transform map by clicking the <code>Clone</code> button in the top-right corner of the transform map detail page. This will create a new transform map with the same source endpoint and target model.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/tm_clone.webp" data-desc-position="bottom"><img alt="Clone Transform Map" src="../../images/user_guide/tm_clone.webp"></a></p>
+<h4 id="clone-options">Clone Options</h4>
+<p>When cloning a transform map, you can configure the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><code>Clone of [Original Name]</code></td>
+<td>Name for the new transform map</td>
+</tr>
+<tr>
+<td><strong>Target Group</strong></td>
+<td>None</td>
+<td>Transform Map Group to assign the cloned map to</td>
+</tr>
+<tr>
+<td><strong>Clone Child Fields</strong></td>
+<td>✓ Enabled</td>
+<td>Copy all field mappings from the original map</td>
+</tr>
+<tr>
+<td><strong>Clone Child Relationships</strong></td>
+<td>✓ Enabled</td>
+<td>Copy all relationship field mappings from the original map</td>
+</tr>
+<tr>
+<td><strong>Link Parent Transform Maps</strong></td>
+<td>✓ Enabled</td>
+<td>Link parent transform maps and update children (see below)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parent-and-children-linking">Parent and Children Linking</h4>
+<p>When <strong>Link Parent Transform Maps</strong> is enabled (default), the clone operation intelligently manages parent-child relationships:</p>
+<p><strong>Parent Linking (Smart Matching):</strong></p>
+<ul>
+<li>The cloned map will have its parent relationships linked.</li>
+<li>Parents are matched by <code>(group, source_endpoint, target_model)</code> - the same uniqueness criteria used for transform maps.</li>
+<li><strong>Preference order:</strong><ol>
+<li>First, looks for a matching parent in the <strong>target group</strong> (same <code>source_endpoint</code> + <code>target_model</code>).</li>
+<li>If not found, falls back to the <strong>original parent</strong> (from the source group).</li>
+</ol>
+</li>
+</ul>
+<p><strong>Example - Parent Preference:</strong>
+</p><div class="highlight"><pre><span></span><code>Original Group (None):
+  Site TM → Platform TM (has parent: Manufacturer TM from default group)
+
+Target Group (Production):
+  Manufacturer TM (exists in Production group)
+
+Result when cloning Platform TM to Production:
+  → Links to Manufacturer TM from Production group ✅ (preferred)
+  → NOT to Manufacturer TM from default group (fallback not needed)
+</code></pre></div><p></p>
+<p><strong>Children Linking (Automatic Relinking):</strong></p>
+<ul>
+<li>The system automatically updates children in the <strong>target group</strong> to reference the new cloned parent.</li>
+<li>Only affects children that:<ul>
+<li>Are in the same group as the cloned map.</li>
+<li>Match the structure of the original map’s children (by <code>source_endpoint</code> + <code>target_model</code>).</li>
+</ul>
+</li>
+<li>Adds the new cloned map as their parent (does not remove existing parent relationships).</li>
+</ul>
+<p><strong>Example - Children Relinking:</strong>
+</p><div class="highlight"><pre><span></span><code>Original Group (None):
+  Site TM (parent)
+    └── Manufacturer TM (child in default group)
+
+Target Group (Production):
+  Manufacturer TM (child, currently has no parent)
+
+Result when cloning Site TM to Production:
+  Production Group:
+    Site TM Clone (new parent)
+      └── Manufacturer TM (now has Site TM Clone as parent) ✅
+</code></pre></div><p></p>
+<p><strong>Success Messages:</strong></p>
+<p>After cloning, you’ll see a detailed success message showing:</p>
+<ul>
+<li>The name of the cloned transform map</li>
+<li>Parent linking details:<ul>
+<li>Number of parents from target group (preferred matches)</li>
+<li>Number of parents from original group (fallback matches)</li>
+<li>Names of all linked parents</li>
+</ul>
+</li>
+<li>Children linking details:<ul>
+<li>Number of children relinked in target group</li>
+<li>Names of all relinked children</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example message:</strong>
+</p><div class="highlight"><pre><span></span><code>Successfully cloned transform map 'Site Transform Map' to 'Site Transform Map Clone'.
+Linked 2 parent(s): 1 from target group (Manufacturer TM); 1 from original group (Device Role TM).
+Relinked 3 child(ren) in target group: Platform TM, Device Type TM, VLAN TM.
+</code></pre></div><p></p>
+<div class="admonition tip">
+<p class="admonition-title">Use Case: Group Migration</p>
+<p>The parent/children linking feature is particularly useful when migrating transform maps to a new group:</p>
+<ol>
+<li>Clone parent maps to the new group.</li>
+<li>Clone child maps to the new group.</li>
+<li>The system automatically maintains the parent-child hierarchy using maps from the new group.</li>
+<li>Your new group has a complete, self-contained set of transform maps.</li>
+</ol>
+<p>This ensures consistency - transform maps in a group reference other maps from the same group whenever possible.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">When Parent Linking is Disabled</p>
+<p>If you do not check “Link Parent Transform Maps”, the cloned transform map will have:</p>
+<ul>
+<li>No parent relationships (even if the original had parents)</li>
+<li>No effect on children in the target group</li>
+</ul>
+<p>This is useful when you want to create an independent map without inheriting the hierarchy.</p>
+</div>
 <h2 id="transform-field">Transform Field</h2>
 <p>Transform fields belong to a transform map and are used to map the source fields to the destination fields. The source fields are the fields from the IP Fabric table and the destination fields are the fields from the NetBox model.</p>
 <h3 id="parameters_2">Parameters</h3>
@@ -16777,7 +16985,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 18:53:41 UTC">February 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 23, 2026 12:11:05 UTC">February 23, 2026</span>
   </span>
 
     
