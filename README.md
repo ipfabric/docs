@@ -84,9 +84,9 @@ similar in other documentation builders (except Sphinx). You can read more at
 [MkDocs documentation on file
 layout](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
-Instead, we have opted for `awesome-pages` plugin, which allows for a
+Instead, we have opted for `awesome-nav` plugin, which allows for a
 combination of manual navigation entries as well as automated ones (based on
-filenames). Check the `.pages.yml` file in the directories.
+filenames). Check the `.nav.yml` file in the directories.
 
 ### Including Documentation From Other Repositories
 
@@ -340,7 +340,7 @@ The **Low Level Release Notes** should be generated for every new release.
 
 #### Display Rules
 
-We use a `.pages.yml` file to display and sort **Release Notes** and **Low Level Release Notes**
+We use a `.nav.yml` file to display and sort **Release Notes** and **Low Level Release Notes**
 pages. This configuration must be version-specific for each release.
 
 - The **Release Notes** section:
