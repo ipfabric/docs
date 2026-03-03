@@ -1,0 +1,70 @@
+[data-md-color-scheme="ipfabric"] {
+  --md-primary-fg-color: #264183;
+  --md-primary-fg-color--light: #1d7ec1;
+  --md-primary-fg-color--dark: #13537e;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #264183;
+  --md-primary-fg-color--light: #1d7ec1;
+  --md-primary-fg-color--dark: #13537e;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   HIDE UNLISTED RELEASE NOTES FROM SIDEBAR
+   ============================================================
+
+   PROBLEM:
+     Some release-note pages (7.6, 7.8, 7.10, 8.0, 7.5_FAQ)
+     must be reachable by URL but should NOT appear in the
+     sidebar. awesome-nav's "ignore" removes them from the nav
+     tree entirely, which causes the sidebar to disappear when
+     a user visits one of those pages directly.
+
+   HOW THE FIX WORKS (two parts):
+
+     Part 1 — .nav.yml (keeps pages in the nav tree):
+       append_unmatched: true   ← adds unlisted files to nav
+       nav:
+         - 7.9.md               ← sidebar position 1
+         - 7.5.md               ← sidebar position 2
+         - previous_releases    ← sidebar position 3
+       # 7.6, 7.8, … are auto-appended at positions 4, 5, …
+
+     Part 2 — this CSS (hides the auto-appended items):
+       We hide every sidebar item from position 4 onward, but
+       ONLY inside the "Release notes" section.
+
+   HOW WE IDENTIFY THE "Release notes" SECTION:
+     CSS cannot match by section title, so we look for a <nav>
+     at depth 2 that contains a link whose URL includes "7.9"
+     or "7.5". We need BOTH selectors because the browser
+     rewrites the active page's link to href="." — so when a
+     user is viewing 7.9, only the 7.5 link still carries a
+     recognizable URL, and vice versa.
+
+   WHEN TO UPDATE THIS CSS:
+     • New page added to .nav.yml → change n+4 to n+5 (etc.)
+     • Page moved into previous_releases/ → no change needed
+
+   TODO: Remove when awesome-nav supports native "unlisted".
+   See: https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/TBD
+   ============================================================ */
+
+/* Match the section via the 7.9 link … */
+nav[data-md-level="2"]:has(a[href*="7.9"])
+  > .md-nav__list
+  > .md-nav__item:nth-child(n+4),
+
+/* … or via the 7.5 link (fallback when 7.9 is the active page) */
+nav[data-md-level="2"]:has(a[href*="7.5"])
+  > .md-nav__list
+  > .md-nav__item:nth-child(n+4) {
+
+  display: none !important;
+}
