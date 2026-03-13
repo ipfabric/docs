@@ -163,6 +163,8 @@ maintain a consistent mapping to local groups and roles.
 
 After the LDAP server is added, group permissions can be set.
 
+When assigning a role to an LDAP group, the **Group** value must be the group’s **full Distinguished Name (DN)**, including the `CN=...` as well as the complete `OU=...` path and `DC=...` components. For example: `CN=Tester,OU=TEST_OU,DC=ipf,DC=ipfabric,DC=io`
+
 All authenticated users will get the assigned role configured for `Authenticated
 user`:
 
