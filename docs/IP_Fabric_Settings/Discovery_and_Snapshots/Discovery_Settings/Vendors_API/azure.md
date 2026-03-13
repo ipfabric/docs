@@ -51,10 +51,10 @@ Search for **Subscriptions** and select the subscription you like to add to IP F
 
 ### Role Definitions for IP Fabric
 
-The following JSON format applies to IP Fabric version `7.8` and above:
+The following JSON format applies to IP Fabric version `7.11` and above:
 
-```json title="azure-role-7_8.json"
---8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_8.json"
+```json title="azure-role-7_11.json"
+--8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_11.json"
 ```
 
 ## What Counts Against IP Fabric License
