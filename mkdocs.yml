@@ -21,6 +21,7 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - search.share
     - toc.follow
 
   palette:
@@ -108,20 +109,58 @@ extra:
   version:
     provider: mike
 
+# Plugins configuration — single unified config (previously split into mkdocs.yml + mkdocs_insiders.yml)
+# All features from Material Insiders are now in the community edition (v9.5+).
+# See: https://squidfunk.github.io/mkdocs-material/blog/2025/11/11/insiders-now-free-for-everyone/
 plugins:
+  # Navigation ordering via .nav.yml files in docs directories
   - awesome-nav:
       filename: .nav.yml
+  # Shows "last updated" date on each page (from git commit history)
   - git-revision-date-localized:
       strict: false
+  # Per-page metadata overrides (formerly Insiders-only)
+  - meta:
+  # Full-text search with improved tokenization for multi-word queries
   - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  # Auto-generated social/OpenGraph cards for link previews (formerly Insiders-only)
   - social:
+      cards_layout: default/variant
+      cards_layout_options:
+        background_color: "#143352"
+        color: "#FFFFFF"
+  # Page tagging support (formerly Insiders-only)
+  - tags:
+  # Lightbox for images — click to zoom
   - glightbox:
       zoomable: true
+  # Exclude pages tagged as draft/excluded from the build
   - mkdocs_exclude_tagged_files:
       tags_to_exclude:
         - draft
         - excluded
+  # Import docs from external integration repositories (nornir, postman, python SDK, ServiceNow)
+  # Requires SSH deploy key (docs_ci_bot) in each target repository
+  - multirepo:
+      cleanup: false
+      temp_dir: temp_multirepo
+      repos:
+        - section: "nornir"
+          section_path: "integrations"
+          import_url: "https://gitlab.com/ip-fabric/integrations/ipfabric_nornir.git?branch=main"
+        - section: "postman"
+          section_path: "integrations"
+          import_url: "https://gitlab.com/ip-fabric/integrations/postman.git?branch=main"
+        - section: "python"
+          section_path: "integrations"
+          import_url: "https://gitlab.com/ip-fabric/integrations/python-ipfabric.git?branch=main"
+        - section: "service-now"
+          section_path: "integrations"
+          import_url: "https://gitlab.com/ip-fabric/integrations/ipfabric-snow.git?branch=main"
+  # Open external links in new tab
   - open-in-new-tab:
+  # mike: versioning tool — builds and deploys versioned docs to gh-pages branch
   - mike:
       version_selector: true
       css_dir: css
