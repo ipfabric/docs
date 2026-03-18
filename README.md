@@ -199,8 +199,9 @@ The `cairo` library must be installed and available in the PATH.
 3. Open your browser and navigate to http://127.0.0.1:8000/.
 4. To deactivate the virtual environment afterward, run `deactivate`.
 
-Please note that you may see slightly different results compared to our production documentation, which uses
-[MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/).
+Please note that your local preview should now match production exactly, as all
+[MkDocs Material](https://squidfunk.github.io/mkdocs-material/) features
+(formerly Insiders-only) are now included in the community edition.
 
 **Troubleshooting**
 
@@ -216,10 +217,9 @@ As mentioned in the `Live Preview` section above, we have a Docker image which
 is used by the CI pipeline for building the documentation site, as well as can
 be leveraged during writing the documentation for live preview.
 
-The main motivation behind the image is to allow leveraging
-[MkDocs Material Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)
-without publishing its sources, while still allowing us to publish the source
-code of our documentation.
+The image contains all MkDocs plugins and the
+[MkDocs Material](https://squidfunk.github.io/mkdocs-material/) theme
+(all features formerly exclusive to Insiders are now free in the community edition).
 
 ### Updating Container Image
 
@@ -236,13 +236,12 @@ You probably don't need to read this section. :)
 checkout locally and then pushing it to the appropriate directory under
 the `gh-pages` branch.
 
-BEWARE that incorporating MkDocs Material Insiders made things a bit more
-complicated.
+BEWARE that `mike` pushes directly to `gh-pages` — there is no review process.
+
 Make sure that in case you need to run `mike`, you either:
 
-- use the Docker image, which includes MkDocs Material Insiders
-- use a virtual environment created with `make mike`, which replaces
-  `mkdocs-material` with the Insiders edition.
+- use the Docker image, which includes all required dependencies
+- use a virtual environment created with `make mike`
 
 ### Why Do We Have `gh-pages` on GitLab?
 
@@ -302,7 +301,7 @@ Keeping following lines there to ensure they are not lost until a new lines are 
 ```
 make mike
 source venv/bin/activate
-mike deploy --config-file mkdocs_insiders.yml 5.0
+mike deploy 5.0
 mike alias --update-aliases 5.0 latest
  if everything looks good, push `gh-pages`
 ```
@@ -318,7 +317,7 @@ git checkout -B release/7.5
 git push                          #trigger the command, DO NOT create Merge Request as we want to create just new branch
 make mike
 source venv/bin/activate
-mike deploy --config-file mkdocs_insiders.yml 7.5
+mike deploy 7.5
 mike deploy --push --update-aliases 7.5
 ```
 
@@ -399,7 +398,7 @@ means that the `541d97e0d` was deployed to version `5.0` on the website.
   ```
   make mike
   source venv/bin/activate
-  mike deploy --config-file mkdocs_insiders.yml --push 5.0
+  mike deploy --push 5.0
   ```
 
 - agrr, profit!

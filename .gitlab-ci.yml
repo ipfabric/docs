@@ -1,8 +1,16 @@
+# CI/CD Pipeline for IP Fabric Documentation
+# Uses Docker image from registry.gitlab.com/ip-fabric/documentation/docs
+# which contains all MkDocs plugins and mkdocs-material (community edition).
+# No Insiders token needed — all features are now free.
+# See: https://squidfunk.github.io/mkdocs-material/blog/2025/11/11/insiders-now-free-for-everyone/
+
 variables:
+  # SSH key for multirepo plugin (fetching docs from integration repos)
   GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no -i "${CI_PROJECT_DIR}/.ssh/gitlab-ci"'
   GIT_STRATEGY: clone
   VALE_RELEASE: "https://github.com/errata-ai/vale/releases/download/v3.9.1/vale_3.9.1_Linux_64-bit.tar.gz"
 
+# Docker image with all MkDocs dependencies pre-installed (built via Makefile docker-build)
 image:
   name: registry.gitlab.com/ip-fabric/documentation/docs
   pull_policy: always
@@ -11,6 +19,9 @@ default:
   tags:
     - lowperf
 
+# Deploy docs from main branch using mike (versioning tool)
+# Builds site with mkdocs.yml (includes multirepo, social cards, etc.)
+# and pushes to gh-pages branch which is then deployed to docs.ipfabric.io
 build_main_pages:
   stage: deploy
   only:
@@ -25,8 +36,10 @@ build_main_pages:
   script:
     - git fetch origin gh-pages --depth=1
     - cp -v main_preamble.html overrides/main.html
-    - mike deploy --config-file mkdocs_insiders.yml --push main
+    - mike deploy --push main
 
+# Strict build validation for merge requests — catches broken links,
+# missing files, and config errors before merge
 strict_build_mr:
   stage: build
   only:
@@ -41,13 +54,14 @@ strict_build_mr:
     - chmod 0400 .ssh/gitlab-ci
   script:
     - export DOC_TARGET=`mktemp -d`
-    - mkdocs build -d "$DOC_TARGET" --strict --config-file mkdocs_insiders.yml
+    - mkdocs build -d "$DOC_TARGET" --strict
     - rm -rf "$DOC_TARGET"
   artifacts:
     expire_in: 1 week
     paths:
       - temp_multirepo/
 
+# Vale syntax and style checker for Markdown
 vale_mr:
   stage: test
   only:
@@ -55,6 +69,7 @@ vale_mr:
   script:
     - make vale
 
+# SEO and link checker for Markdown files
 seo_lint_mr:
   stage: test
   only:
@@ -62,6 +77,7 @@ seo_lint_mr:
   script:
     - ./.gitlab/description_lint
 
+# Danger gem for automated code review comments
 danger:
   stage: build
   image: ruby:3.0
