@@ -1,9 +1,13 @@
 # Docker image registry for the documentation site (used by CI/CD and local preview)
 IMAGE=registry.gitlab.com/ip-fabric/documentation/docs
 
-# Image tag — current production image
-# Update this when building a new Docker image
-TAG=9.7.0-insiders-4.53.18
+# Image tag — auto-generated from requirements.txt versions
+# Format: <material-version>-material-mkdocs-<mkdocs-version>
+# Example: 9.7.5-material-mkdocs-1.6.1
+# Override with: make docker-build TAG=custom-tag
+MKDOCS_VER=$(shell grep '^mkdocs==' requirements.txt | cut -d'=' -f3)
+MATERIAL_VER=$(shell grep '^mkdocs-material==' requirements.txt | cut -d'=' -f3)
+TAG=$(MATERIAL_VER)-material-mkdocs-$(MKDOCS_VER)
 
 # Vale linter release URL for documentation style checking
 VALE_RELEASE=https://github.com/errata-ai/vale/releases/download/v3.9.1/vale_3.9.1_Linux_64-bit.tar.gz
