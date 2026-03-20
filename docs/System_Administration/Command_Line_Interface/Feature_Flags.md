@@ -40,22 +40,6 @@ Discovery tasker environment file:
 
 ## Current Feature Flags
 
-### ACI Service Graphs
-
-Since `6.4`, ACI service graphs can be enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_ACI_SERVICEGRAPHS_ENDPOINTS=true
-```
-
-Support for Layer 2 (L2) path lookup in ACI service graphs was introduced in version `7.3`.
-
-After updating the Environment file, restart the IP Fabric application:
-
-```
-sudo systemctl restart ipf-appliance
-```
-
 ### Download of FMC ICMP Object Definitions 1 by 1
 
 The FMC API has a bug returning malformed data for the `/objects/icmpv4objects?expanded=true` endpoint.
@@ -258,57 +242,34 @@ ENABLE_PALOALTO_EDL_URLLIST=true
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
 
-Prior to version `6.5`, IP Fabric used a single `fvTenant` API call to retrieve all necessary subtree classes for discovery.
-
-In large environments, the size of the output could cause this API call -- and consequently the entire APIC discovery process -- to fail.
-
-Starting in version `6.5`, IP Fabric defaults to using separate API calls for each required subtree class of `fvTenant`.
-
-The previous behavior (retrieving all data via a single `fvTenant` API call) could be re-enabled by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
-
-```
-ENABLE_ACI_FVTENANT_ENDPOINT=true
-```
-
-This option was removed in `7.5` release. The current implementation exclusively uses separate API calls for each `fvTenant` subtree class.
+**This feature was permanently added to the product in the `7.5` release.**
 
 ### GCP Discovery (Removed in `7.0`)
 
-Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered by adding the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+Since `6.5.0`, GCP (Google Cloud Platform) devices can be discovered.
 
-```
-ENABLE_DISCOVERY_DEVICES_GCP=true
-```
-
-This feature was permanently added to the product in the `7.0` release.
+**This feature was permanently added to the product in the `7.0` release.**
 
 ### Stormshield Discovery (Removed in `7.0`)
 
-Since `6.5.0`, Stormshield devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+Since `6.5`, Stormshield devices can be discovered.
 
-```
-ENABLE_DISCOVERY_DEVICES_STORMSHIELD=true
-```
-
-This feature was permanently added to the product in the `7.0` release.
+**This feature was permanently added to the product in the `7.0` release.**
 
 ### Citrix NetScaler ADC Discovery (Removed in `6.9`)
 
-Since `6.8.0`, Citrix NetScaler devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+Since `6.8`, Citrix NetScaler devices can be discovered.
 
-```
-ENABLE_DISCOVERY_DEVICES_CITRIX=true
-```
-
-This feature was permanently added to the product in the `6.9` release.
+**This feature was permanently added to the product in the `6.9` release.**
 
 ### Fortinet FortiSwitch Discovery (Removed in `6.8`)
 
-Since `6.7.0`, Fortinet FortiSwitch devices can be discovered by adding the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+Since `6.7`, Fortinet FortiSwitch devices can be discovered.
 
-```
-ENABLE_DISCOVERY_DEVICES_FORTISWITCH=true
-```
+**This feature was permanently added to the product in the `6.8` release.**
 
-This feature was permanently added to the product in the `6.8` release.
+### ACI Service Graphs (Removed in `7.11`)
 
+In versions `6.4` through `7.10`, ACI service graphs could be enabled.
+
+**This feature was permanently added to the product in the `7.11` release.**
