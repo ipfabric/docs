@@ -54,16 +54,17 @@ Currently, these are at least:
 
 | Azure Networking Object  | IP Fabric |
 | ------------------------ | --------- |
+| Application Gateway      | `appgw`   |
+| Azure Firewall           | `azfw`    |
+| Express Route Circuit    | `erc`     |
 | Express Route gateway    | `erg`     |
+| Load Balancer            | `lb`      |
 | NAT gateway              | `nat`     |
+| Route Server             | `ars`     |
 | Virtual HUB              | `vhub`    |
 | Virtual Network          | `vnet`    |
 | Virtual Network gateway  | `vngw`    |
 | VPN gateway              | `vpngw`   |
-| Load Balancer            | `lb`      |
-| Application Gateway      | `appgw`   |
-| Express Route Circuit    | `erc`     |
-| Route Server             | `ars`     |
 
 ### GCP
 
