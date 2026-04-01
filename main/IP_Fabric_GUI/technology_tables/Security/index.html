@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Security section contains information about access control lists on the network.">
+        <meta name="description" content="The Security section contains information about access control lists and SSL certificates on the network.">
       
       
       
@@ -71,7 +71,7 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="Security - IP Fabric Documentation Portal">
-<meta property="og:description" content="The Security section contains information about access control lists on the network.">
+<meta property="og:description" content="The Security section contains information about access control lists and SSL certificates on the network.">
 <meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_GUI/technology_tables/Security.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -79,7 +79,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/latest/IP_Fabric_GUI/technology_tables/Security/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Security - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="The Security section contains information about access control lists on the network.">
+<meta property="twitter:description" content="The Security section contains information about access control lists and SSL certificates on the network.">
 <meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_GUI/technology_tables/Security.png">
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -3433,6 +3433,24 @@ here.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3449,6 +3467,64 @@ here.
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Lists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -15600,6 +15676,53 @@ here.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Lists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -15673,11 +15796,28 @@ here.
 
 
 <h1 id="security">Security</h1>
-<p>The Security section contains information about access control lists on
+<p>The Security section provides visibility into security-related components across your network infrastructure.</p>
+<h2 id="access-lists">Access Lists</h2>
+<p>The Access Lists section contains information about access control lists on
 the network. The Access Lists section details each line from each access
 list present on each managed device. ACLs can be filtered by device/ACL
 name, protocol, address, or port. The ACL Interfaces section details
 access lists as they are applied to the interfaces.</p>
+<h2 id="ssl">SSL</h2>
+<h3 id="certificates">Certificates</h3>
+<p>The Certificates table provides centralized visibility into managed SSL certificates associated with cloud load balancers across AWS and Azure environments.</p>
+<p><strong>Key columns include:</strong></p>
+<ul>
+<li><strong>ID</strong> – Unique identifier for the certificate</li>
+<li><strong>Name</strong> – Certificate name or identifier as defined in the cloud platform</li>
+<li><strong>Status</strong> – Current status of the certificate (e.g., active, expired)</li>
+<li><strong>Issuer</strong> – Certificate authority or organization that issued the certificate</li>
+<li><strong>Common Name</strong> – Primary domain name for which the certificate was issued</li>
+<li><strong>Issued At</strong> – Timestamp when the certificate was created</li>
+<li><strong>Not Before</strong> – Start date of the certificate validity period</li>
+<li><strong>Not After</strong> – Expiration date of the certificate validity period</li>
+<li><strong>SAN List</strong> – Subject Alternative Names listing additional domain names covered by the certificate</li>
+</ul>
 
 
 
@@ -15698,7 +15838,7 @@ access lists as they are applied to the interfaces.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 23, 2026 08:07:33 UTC">February 23, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 1, 2026 10:01:36 UTC">April 1, 2026</span>
   </span>
 
     
