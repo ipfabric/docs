@@ -90,6 +90,11 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    compute.targetPools.list
    ```
 
+   Additional roles for IP Fabric version 7.11 and above:
+   ```
+   compute.networks.listPeeringRoutes
+   ```
+
    ![Create a role](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-createArole.webp)
 
 ## How To Generate a Private Key for Your GCP Service Account
