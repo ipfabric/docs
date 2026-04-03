@@ -3,17 +3,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="On this page, IP Fabric Filters and Filter Expressions are described and their role in refining data retrieved during synchronization.">
+        <meta name="description" content="This page describes a limitation where VRF routes are not collected on Cisco NX-OS devices if the BGP route download limit is not enabled.">
       
       
       
-        <link rel="canonical" href="https://docs.ipfabric.io/7.9/integrations/netbox/01_User_Guide/filters/">
+        <link rel="canonical" href="https://docs.ipfabric.io/latest/support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os/">
       
       
-        <link rel="prev" href="../endpoints/">
+        <link rel="prev" href="../unable_to_discover_devices_in_172_17_0_0_16_subnet/">
       
       
-        <link rel="next" href="../transform_maps/">
+        <link rel="next" href="../windows_ssh_mac_algorithm/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>Filters - IP Fabric Documentation Portal</title>
+        <title>VRF Routes Not Collected on Cisco NX-OS - IP Fabric Documentation Portal</title>
       
     
     
@@ -70,17 +70,17 @@
     
   
 <meta property="og:type" content="website">
-<meta property="og:title" content="Filters - IP Fabric Documentation Portal">
-<meta property="og:description" content="On this page, IP Fabric Filters and Filter Expressions are described and their role in refining data retrieved during synchronization.">
-<meta property="og:image" content="https://docs.ipfabric.io/7.9/assets/images/social/integrations/netbox/01_User_Guide/filters.png">
+<meta property="og:title" content="VRF Routes Not Collected on Cisco NX-OS - IP Fabric Documentation Portal">
+<meta property="og:description" content="This page describes a limitation where VRF routes are not collected on Cisco NX-OS devices if the BGP route download limit is not enabled.">
+<meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://docs.ipfabric.io/7.9/integrations/netbox/01_User_Guide/filters/">
+<meta property="og:url" content="https://docs.ipfabric.io/latest/support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os/">
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Filters - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="On this page, IP Fabric Filters and Filter Expressions are described and their role in refining data retrieved during synchronization.">
-<meta property="twitter:image" content="https://docs.ipfabric.io/7.9/assets/images/social/integrations/netbox/01_User_Guide/filters.png">
+<meta property="twitter:title" content="VRF Routes Not Collected on Cisco NX-OS - IP Fabric Documentation Portal">
+<meta property="twitter:description" content="This page describes a limitation where VRF routes are not collected on Cisco NX-OS devices if the BGP route download limit is not enabled.">
+<meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os.png">
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#filters" class="md-skip">
+        <a href="#vrf-routes-not-collected-on-cisco-nx-os" class="md-skip">
           Skip to content
         </a>
       
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Filters
+              VRF Routes Not Collected on Cisco NX-OS
             
           </span>
         </div>
@@ -354,13 +354,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../integrations/" class="md-tabs__link">
           
   
   Integrations
@@ -409,11 +407,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../support/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   Support
@@ -7123,28 +7123,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -7161,7 +7156,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -7179,7 +7174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../../../integrations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7203,26 +7198,11 @@
                 
   
   
-    
   
   
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../../../netbox" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -7235,118 +7215,6 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    NetBox
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    NetBox plugin Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_2_2" id="__nav_6_2_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    User Guide
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    User Guide
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    NetBox Plugin Installation
-  
-
-    
-  </span>
-  
-  
-
       </a>
     </li>
   
@@ -7360,899 +7228,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../sync_process_overview/" class="md-nav__link">
+      <a href="../../../../python" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    
-  
-    Sync Process Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sources/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Sources
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../syncs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Syncs
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ingestions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Ingestions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Endpoints
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Filters
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Filters
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-the-filtering-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding the Filtering System
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding the Filtering System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-filters-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Filters Work
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filters_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filter-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Types
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating a Filter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-combination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Combination
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Expressions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filter Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-filter-expression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating a Filter Expression
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating a Filter Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#obtaining-filter-json-from-ip-fabric" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Obtaining Filter JSON from IP Fabric
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expression-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expression Format
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-filter-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Testing Filter Expressions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-filter-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Viewing Filter Details
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relationships-with-other-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Relationships with Other Models
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relationships with Other Models">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endpoints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#syncs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Syncs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-expressions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Expressions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases-and-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Cases and Examples
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use Cases and Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-hostname-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Hostname Pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-device-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Device Type
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vendor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Vendor
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vlan-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by VLAN ID
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vrf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by VRF
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#combining-multiple-conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combining Multiple Conditions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../transform_maps/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Transform Maps
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data_mapping/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Data Mapping
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extras/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Extras
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    FAQ
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_2_3" id="__nav_6_2_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Release Notes
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Release Notes
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02_Release_Notes/version_5/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v5 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02_Release_Notes/version_4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v4 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02_Release_Notes/version_3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v3 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02_Release_Notes/version_2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v2 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02_Release_Notes/version_1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    v1 Release Notes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -8265,41 +7242,6 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Python
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Python SDK Overview
-  
-
-    
-  </span>
-  
-  
-
       </a>
     </li>
   
@@ -8313,820 +7255,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/snapshots/" class="md-nav__link">
+      <a href="../../../../service-now" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    
-  
-    Snapshots Basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/tables_basics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    SDK Basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4">
-        
-          
-          <label class="md-nav__link" for="__nav_6_3_4" id="__nav_6_3_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI Tools
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    CLI Tools
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_cve_report/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    CVE Reporting Tool
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_device_search/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Device Inventory Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_global_search/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Global IP and MAC Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_route_search/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Routing Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_techsupprt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    TechSupport CLI Tool
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_to_excel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric Tables to Excel
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/ipf_webhook_listener/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric Webhook Listener
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4_8">
-        
-          
-          <label class="md-nav__link" for="__nav_6_3_4_8" id="__nav_6_3_4_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynamic attributes
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_3_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Dynamic attributes
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric Dynamic Attributes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4_8_2">
-        
-          
-          <label class="md-nav__link" for="__nav_6_3_4_8_2" id="__nav_6_3_4_8_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_3_4_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3_4_8_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Configuration
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/configuration/00-index/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/configuration/01-delete/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Delete Attribute
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/configuration/02-values/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Attribute Values
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/configuration/03-tables/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Table Rules
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/configuration/04-config/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration Rules
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4_8_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_3_4_8_3" id="__nav_6_3_4_8_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Example configs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_6_3_4_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3_4_8_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Example configs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/cloud-tag-separation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Cloud Site Separation by Tags
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/config_http_server/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    HTTP Server Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/config_ssh_version/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    SSH Server Version Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/log_version_name/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Log File Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/mgmt_ip/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Management IP Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../python/CLI_Tools/dynamic-attributes/example_configs/region/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Region Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4">
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -9139,41 +7269,6 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    ServiceNow
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../service-now/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview &amp; Installation
-  
-
-    
-  </span>
-  
-  
-
       </a>
     </li>
   
@@ -9186,196 +7281,9 @@
   
   
   
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_2">
-        
-          
-          <label class="md-nav__link" for="__nav_6_4_2" id="__nav_6_4_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Command Line Interface
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Command Line Interface
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../service-now/Command-Line_Interface/" class="md-nav__link">
+      <a href="../../../../splunk" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    
-  
-    Using the ipfabric-snow CLI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_4_3" id="__nav_6_4_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric ServiceNow Application
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    IP Fabric ServiceNow Application
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../service-now/IP_Fabric_ServiceNow_Application/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric ServiceNow Application Installation and Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5">
-        
-          
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -9388,50 +7296,7 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Splunk
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../splunk/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Splunk TA Overview
-  
-
-    
-  </span>
-  
-  
-
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -9491,22 +7356,9 @@
   
   
   
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../../../infoblox" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_1">
-        
-          
-          <label class="md-nav__link" for="__nav_6_6_1" id="__nav_6_6_1_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -9519,41 +7371,6 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Infoblox
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../infoblox/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
       </a>
     </li>
   
@@ -9567,166 +7384,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../infoblox/configuration/" class="md-nav__link">
+      <a href="../../../../nornir" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../infoblox/installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_1_4">
-        
-          
-          <label class="md-nav__link" for="__nav_6_6_1_4" id="__nav_6_6_1_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    
-  
-    Contributing
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_6_1_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_1_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Contributing
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../infoblox/contributing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Contributing to the IP Fabric Infoblox Integration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_2">
-        
-          
-          <label class="md-nav__link" for="__nav_6_6_2" id="__nav_6_6_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -9739,19 +7398,11 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Nornir
+      </a>
+    </li>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+              
             
               
                 
@@ -9760,56 +7411,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nornir/" class="md-nav__link">
+      <a href="../../../../postman" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_6_3" id="__nav_6_6_3_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     
@@ -9822,50 +7425,7 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Postman
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../postman/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -13909,23 +11469,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -13942,7 +11507,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -13960,7 +11525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -13987,7 +11552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/security_bulletins/" class="md-nav__link">
+      <a href="../../../security_bulletins/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14014,7 +11579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/security_incidents/" class="md-nav__link">
+      <a href="../../../security_incidents/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14041,7 +11606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/support_vpn/" class="md-nav__link">
+      <a href="../../../support_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14068,7 +11633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/techsupport/" class="md-nav__link">
+      <a href="../../../techsupport/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14092,6 +11657,8 @@
                 
   
   
+    
+  
   
   
     
@@ -14101,11 +11668,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6" checked>
         
           
           <label class="md-nav__link" for="__nav_9_6" id="__nav_9_6_label" tabindex="0">
@@ -14125,7 +11692,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -14143,7 +11710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14167,6 +11734,8 @@
                 
   
   
+    
+  
   
   
     
@@ -14176,11 +11745,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_9_6_2" id="__nav_9_6_2_label" tabindex="0">
@@ -14200,7 +11769,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_6_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -14218,7 +11787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14245,7 +11814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/" class="md-nav__link">
+      <a href="../Customer_name_in_techsupport/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14272,7 +11841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/FTP_backup_and_restore_are_not_working/" class="md-nav__link">
+      <a href="../FTP_backup_and_restore_are_not_working/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14299,7 +11868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/Missing_lsof_package/" class="md-nav__link">
+      <a href="../Missing_lsof_package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14326,7 +11895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/Service_passwords/" class="md-nav__link">
+      <a href="../Service_passwords/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14353,7 +11922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/URL_unsafe_and_reserved_proxy_password/" class="md-nav__link">
+      <a href="../URL_unsafe_and_reserved_proxy_password/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14380,7 +11949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/data_not_received/" class="md-nav__link">
+      <a href="../data_not_received/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14407,7 +11976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/ipv4-over-ipv6-limitations/" class="md-nav__link">
+      <a href="../ipv4-over-ipv6-limitations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14434,7 +12003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
+      <a href="../local_time_inconsistencies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14461,7 +12030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/restore_not_working_with_2_full_backups/" class="md-nav__link">
+      <a href="../restore_not_working_with_2_full_backups/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14488,7 +12057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/transceivers_task/" class="md-nav__link">
+      <a href="../transceivers_task/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14515,7 +12084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-nav__link">
+      <a href="../unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14539,10 +12108,47 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    VRF Routes Not Collected on Cisco NX-OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/windows_ssh_mac_algorithm/" class="md-nav__link">
+      <a href="../windows_ssh_mac_algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14579,10 +12185,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_14">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_15">
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_14" id="__nav_9_6_2_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_15" id="__nav_9_6_2_15_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -14599,8 +12205,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_14">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_15">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -14617,7 +12223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/" class="md-nav__link">
+      <a href="../error_messages/http_504-database_overloaded/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14644,7 +12250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+      <a href="../error_messages/invalid_ovf_checksum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14671,7 +12277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
+      <a href="../error_messages/resource_conflict/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14762,7 +12368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/3com/" class="md-nav__link">
+      <a href="../../Vendors/3com/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14789,7 +12395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/arista/" class="md-nav__link">
+      <a href="../../Vendors/arista/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14816,7 +12422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/brocade/" class="md-nav__link">
+      <a href="../../Vendors/brocade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14843,7 +12449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/checkpoint/" class="md-nav__link">
+      <a href="../../Vendors/checkpoint/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14870,7 +12476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/dell/" class="md-nav__link">
+      <a href="../../Vendors/dell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14897,7 +12503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/extreme/" class="md-nav__link">
+      <a href="../../Vendors/extreme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14924,7 +12530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/f5/" class="md-nav__link">
+      <a href="../../Vendors/f5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14951,7 +12557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/forcepoint/" class="md-nav__link">
+      <a href="../../Vendors/forcepoint/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -14978,7 +12584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/gcp/" class="md-nav__link">
+      <a href="../../Vendors/gcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15005,7 +12611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/hp/" class="md-nav__link">
+      <a href="../../Vendors/hp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15032,7 +12638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/huawei/" class="md-nav__link">
+      <a href="../../Vendors/huawei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15059,7 +12665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/juniper/" class="md-nav__link">
+      <a href="../../Vendors/juniper/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15086,7 +12692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/meraki/" class="md-nav__link">
+      <a href="../../Vendors/meraki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15113,7 +12719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/mikrotik/" class="md-nav__link">
+      <a href="../../Vendors/mikrotik/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15140,7 +12746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/opengear/" class="md-nav__link">
+      <a href="../../Vendors/opengear/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15167,7 +12773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/stormshield/" class="md-nav__link">
+      <a href="../../Vendors/stormshield/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15194,7 +12800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/vmware_nsxt/" class="md-nav__link">
+      <a href="../../Vendors/vmware_nsxt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15221,7 +12827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/vmware_velocloud/" class="md-nav__link">
+      <a href="../../Vendors/vmware_velocloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15296,7 +12902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/Palo_Alto_Networks/" class="md-nav__link">
+      <a href="../../Vendors/Palo_Alto_Networks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15323,7 +12929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/Palo_Alto_Networks/panorama/" class="md-nav__link">
+      <a href="../../Vendors/Palo_Alto_Networks/panorama/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15406,7 +13012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/" class="md-nav__link">
+      <a href="../../Vendors/cisco/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15433,7 +13039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15460,7 +13066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Cisco_ASA_In_Transparent_Mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15487,7 +13093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Command_cli_whitespace_completion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15514,7 +13120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/FMC_Firepower_NAT/" class="md-nav__link">
+      <a href="../../Vendors/cisco/FMC_Firepower_NAT/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15541,7 +13147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/FMC_REST_API/" class="md-nav__link">
+      <a href="../../Vendors/cisco/FMC_REST_API/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15568,7 +13174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15595,7 +13201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Invalid_Identification_String/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Invalid_Identification_String/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15622,7 +13228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/MAB_configuration_crashes_on_CLI/" class="md-nav__link">
+      <a href="../../Vendors/cisco/MAB_configuration_crashes_on_CLI/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15649,7 +13255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Nexus_9k_Show_Version/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15676,7 +13282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/SG500_requires_special_login_process/" class="md-nav__link">
+      <a href="../../Vendors/cisco/SG500_requires_special_login_process/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15703,7 +13309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Show_Interface_Transceivers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15730,7 +13336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/" class="md-nav__link">
+      <a href="../../Vendors/cisco/VRFs_are_not_found_on_IOS-XR/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15757,7 +13363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Viptela_cEdge_omp_limit/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_cEdge_omp_limit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15784,7 +13390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Viptela_cEdge_shows_only_one_next_hop/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_cEdge_shows_only_one_next_hop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15811,7 +13417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/cisco/Viptela_vSmart_SN/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_vSmart_SN/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15894,7 +13500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/fortinet/" class="md-nav__link">
+      <a href="../../Vendors/fortinet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -15921,7 +13527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/fortinet/sdwan/" class="md-nav__link">
+      <a href="../../Vendors/fortinet/sdwan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -16004,7 +13610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/versa/AsyncRequestTimeoutException/" class="md-nav__link">
+      <a href="../../Vendors/versa/AsyncRequestTimeoutException/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -16031,7 +13637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/known_issues/Vendors/versa/forwarding-table-duplicate-output/" class="md-nav__link">
+      <a href="../../Vendors/versa/forwarding-table-duplicate-output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -16102,342 +13708,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-the-filtering-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding the Filtering System
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding the Filtering System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-filters-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Filters Work
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filters_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filter-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Types
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating a Filter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-combination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Combination
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Expressions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filter Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-filter-expression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating a Filter Expression
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating a Filter Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#obtaining-filter-json-from-ip-fabric" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Obtaining Filter JSON from IP Fabric
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expression-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expression Format
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-filter-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Testing Filter Expressions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-filter-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Viewing Filter Details
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relationships-with-other-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Relationships with Other Models
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relationships with Other Models">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endpoints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#syncs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Syncs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-expressions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter Expressions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases-and-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Cases and Examples
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use Cases and Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-hostname-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Hostname Pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-device-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Device Type
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vendor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by Vendor
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vlan-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by VLAN ID
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtering-by-vrf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filtering by VRF
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#combining-multiple-conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combining Multiple Conditions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -16464,7 +13734,7 @@
         <a href="../../../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Integrations
+    Support
   </span>
 
         </a>
@@ -16481,7 +13751,7 @@
         <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
-    NetBox
+    Known issues
   </span>
 
         </a>
@@ -16495,10 +13765,10 @@
     
     
       <li class="md-path__item">
-        <a href="../installation/" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    User Guide
+    IP Fabric
   </span>
 
         </a>
@@ -16517,7 +13787,7 @@
 
 
   
-    <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-netbox.git/edit/main/docs/01_User_Guide/filters.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ipfabric/docs/edit/main/docs/support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -16525,367 +13795,10 @@
   
 
 
-<h1 id="filters">Filters</h1>
-<p>Filters allow you to control which data is retrieved from IP Fabric during synchronization. By associating filters with <a href="../endpoints/">Endpoints</a> and <a href="../syncs/">Syncs</a>, you can limit the scope of data collection to specific devices, networks, or other criteria. The plugin uses a two-tier filtering system consisting of <strong>Filters</strong> and <strong>Filter Expressions</strong> to provide flexibility in defining complex query conditions.</p>
-<h2 id="understanding-the-filtering-system">Understanding the Filtering System</h2>
-<p>The filtering system is designed to mirror IP Fabric’s native filtering capabilities, allowing you to apply the same filters you use in the IP Fabric UI to your NetBox synchronization process. Since some filters can be used on multiple endpoints, the filters is designed with reusability of filter expressions in mind.</p>
-<h3 id="how-filters-work">How Filters Work</h3>
-<p>During a <a href="../syncs/">sync</a>, the plugin:</p>
-<ol>
-<li>Identifies which <a href="../endpoints/">Endpoints</a> need to be queried based on enabled <a href="../syncs/#data-synchronization-parameters">Sync parameters</a>.</li>
-<li>For each endpoint, retrieves all associated Filters that are linked to this Sync.</li>
-<li>Merges all Filter Expressions from those Filters according to their Filter Type (AND/OR).</li>
-<li>Combines the merged filters with any site filters from the Sync configuration.</li>
-<li>Uses the final combined filter when querying the IP Fabric API.</li>
-</ol>
-<p>This hierarchical approach allows you to create reusable filter components and combine them in different ways for different synchronization scenarios.</p>
-<h2 id="filters_1">Filters</h2>
-<p>A Filter is a container that groups one or more Filter Expressions together and defines how they should be combined (using AND/OR logic). Filters can be associated with multiple endpoints and syncs, making them reusable across your synchronization configuration.</p>
-<h3 id="parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Unique name for the filter (e.g., “Production Sites Only”)</td>
-<td><code>CharField</code></td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Optional description explaining the filter’s purpose</td>
-<td><code>TextField</code></td>
-</tr>
-<tr>
-<td>Endpoints</td>
-<td>IP Fabric endpoints this filter applies to</td>
-<td><code>ManyToMany</code></td>
-</tr>
-<tr>
-<td>Filter Type</td>
-<td>How to combine expressions: AND/OR</td>
-<td><code>ChoiceField</code></td>
-</tr>
-<tr>
-<td>Syncs</td>
-<td>Sync jobs that should use this filter</td>
-<td><code>ManyToMany</code></td>
-</tr>
-<tr>
-<td>Expressions</td>
-<td>Filter Expression objects that define the actual filter conditions</td>
-<td><code>ManyToMany</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="filter-types">Filter Types</h4>
-<ul>
-<li><strong>AND</strong>: All filter expressions must match. Use this for restrictive filtering where all conditions must be met.</li>
-<li><strong>OR</strong>: At least one filter expression must match. Use this for inclusive filtering where any condition can satisfy the filter.</li>
-</ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/filter_list.webp" data-desc-position="bottom"><img alt="Filter List" src="../../images/user_guide/filter_list.webp"></a></p>
-<h3 id="creating-a-filter">Creating a Filter</h3>
-<p>To create a filter, navigate to <strong>Plugins → IP Fabric → Filters → + Add</strong>.</p>
-<ol>
-<li>Provide a descriptive <strong>Name</strong> and optional <strong>Description</strong>.</li>
-<li>Select the <strong>Endpoints</strong> this filter should apply to.</li>
-<li>Choose the <strong>Filter Type</strong> (AND or OR).</li>
-<li>Optionally associate the filter with specific <strong>Syncs</strong>.</li>
-<li>Add <strong>Filter Expressions</strong> that define the actual filtering logic.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Best Practice</p>
-<p>Create focused filters that target specific endpoints or use cases. For example, create separate filters for “Core Routers” and “Cisco Devices” rather than combining all filtering logic into a single filter. This makes filters more reusable and easier to maintain.</p>
-</div>
-<h3 id="filter-combination">Filter Combination</h3>
-<p>When multiple filters are associated with the same endpoint and sync, they are combined on the endpoint model. The combination process:</p>
-<ol>
-<li>Groups all filter expressions by their filter type (AND/OR).</li>
-<li>Recursively merges expressions with matching nested structures.</li>
-<li>Adds any site-specific filters from the sync parameters.</li>
-<li>Returns a final filter object that is sent to the IP Fabric API.</li>
-</ol>
-<p>When filters have the same nested structure (matching <code>and</code>/<code>or</code> keys at the same level), they are intelligently merged. For example, if you have:</p>
-<ul>
-<li>Filter A (AND type) with expression <code>{"or": [{"hostname": ["like", "router1"]}]}</code></li>
-<li>Filter B (AND type) with expression <code>{"or": [{"hostname": ["like", "router2"]}]}</code></li>
-<li>Filter C (OR type) with expression <code>{"vendor": ["eq", "cisco"]}</code></li>
-</ul>
-<p>The final combined filter sent to IP Fabric would be:
-</p><div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cisco"</span><span class="p">]}</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">"and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"router1"</span><span class="p">]},</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"router2"</span><span class="p">]}</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div><p></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/filter_combination.webp" data-desc-position="bottom"><img alt="Filter Combination Example" src="../../images/user_guide/filter_combination.webp"></a></p>
-<p>Note how filters A and B were merged into a single <code>or</code> array because they had the same nested structure, while filter C remained separate as it has a different filter type.</p>
-<h2 id="filter-expressions">Filter Expressions</h2>
-<p>Filter Expressions contain the actual JSON filter criteria that will be sent to the IP Fabric API. These expressions use the same format as IP Fabric’s native filtering system, specifically the <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/tips/navigate_in_tables/#advanced-filtering">Advanced Filtering</a> format, which can be captured directly from the IP Fabric UI.</p>
-<div class="admonition info">
-<p class="admonition-title">IP Fabric Advanced Filtering</p>
-<p>Filter expressions in NetBox use the exact same format as IP Fabric’s Advanced Filter feature. In IP Fabric, filters are defined by groups and rules, where each group can contain one or more rules or nested groups with logical operators (AND/OR).</p>
-<p>For detailed information about how filtering rules work in IP Fabric, see the <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/tips/navigate_in_tables/#advanced-filtering">Advanced Filtering documentation</a>.</p>
-<p>For complete filter specifications and available filter fields for each endpoint, refer to IP Fabric’s API documentation in <strong>RapiDoc</strong>. You can access RapiDoc by following the instructions in the <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/technology_tables/#accessing-rapidoc">Accessing RapiDoc</a> section of the IP Fabric documentation. Each endpoint has its own set of available filters documented in the API specification.</p>
-</div>
-<h3 id="parameters_1">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Unique name for the expression (e.g., “Site1 Devices”)</td>
-<td><code>CharField</code></td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Optional description of what the expression filters</td>
-<td><code>TextField</code></td>
-</tr>
-<tr>
-<td>Expression</td>
-<td>JSON filter expression in IP Fabric format</td>
-<td><code>JSONField</code></td>
-</tr>
-<tr>
-<td>Filters</td>
-<td>Filter objects that use this expression</td>
-<td><code>ManyToMany</code></td>
-</tr>
-</tbody>
-</table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/filter_expression_list.webp" data-desc-position="bottom"><img alt="Filter Expression List" src="../../images/user_guide/filter_expression_list.webp"></a></p>
-<h3 id="creating-a-filter-expression">Creating a Filter Expression</h3>
-<p>To create a filter expression, navigate to <strong>Plugins → IP Fabric → Filter Expressions → + Add</strong>.</p>
-<h4 id="obtaining-filter-json-from-ip-fabric">Obtaining Filter JSON from IP Fabric</h4>
-<p>The easiest and most accurate way to create filter expressions is to capture them directly from IP Fabric:</p>
-<ol>
-<li>Open IP Fabric in your browser and navigate to any table view.</li>
-<li>In IP Fabric, click <strong>Advanced Filter</strong> to open the filtering interface.</li>
-<li>Define your filter using groups and rules with the desired logical operators (AND/OR).</li>
-<li>Apply the filter to the table.</li>
-<li>Open the <strong>Table Description</strong> item under the 3-dots menu in the top right corner of the table.
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/3dots_table_description.webp" data-desc-position="bottom"><img alt="3 Dots - Table Description" src="../../images/user_guide/3dots_table_description.webp"></a></li>
-<li>
-<p>Find and copy the <code>filters</code> object value from the request body.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/table_description_filter.webp" data-desc-position="bottom"><img alt="Table Description - Request Payload" src="../../images/user_guide/table_description_filter.webp"></a></p>
-</li>
-<li>
-<p>Paste the value (example below) into the <strong>Expression</strong> field in NetBox.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="s2">"eq"</span><span class="p">,</span>
-<span class="w">      </span><span class="s2">"s4xsw01"</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="s2">"eq"</span><span class="p">,</span>
-<span class="w">      </span><span class="s2">"arista"</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Table Description</p>
-<p>The Table Description dialog shows the exact API request that IP Fabric uses to fetch the filtered data. The <code>filters</code> object contains the filter structure that IP Fabric uses internally, ensuring compatibility and correctness when used in NetBox.</p>
-</div>
-<h4 id="expression-format">Expression Format</h4>
-<p>Filter expressions must be a JSON array of filter conditions. Each condition is a dictionary with field names as keys and arrays as values. Number of items in the array can be up to 4 but the most common is <code>[operator, value]</code>.</p>
-<p><strong>Common Operators:</strong></p>
-<ul>
-<li><code>eq</code> - Equals</li>
-<li><code>neq</code> - Not equals</li>
-<li><code>ieq</code> - Equals (case-insensitive)</li>
-<li><code>nieq</code> - Not equals (case-insensitive)</li>
-<li><code>like</code> - Contains</li>
-<li><code>notlike</code> - Not contains</li>
-<li><code>reg</code> - Regex</li>
-<li><code>nreg</code> - Negative regex</li>
-<li><code>ireg</code> - Regex (case-insensitive)</li>
-<li><code>nireg</code> - Negative regex (case-insensitive)</li>
-<li><code>empty</code> - Is empty (uses <code>True</code> as value or <code>False</code> if not empty)</li>
-</ul>
-<p><strong>Available Filter Fields:</strong></p>
-<p>The available filter fields depend on the specific endpoint being queried. Each IP Fabric endpoint has its own set of filterable fields. To find the complete list of available filters for a specific endpoint:</p>
-<ol>
-<li>Access IP Fabric’s <strong>RapiDoc</strong> API documentation (see <a href="https://docs.ipfabric.io/latest/IP_Fabric_GUI/technology_tables/#accessing-rapidoc">Accessing RapiDoc</a>).</li>
-<li>Navigate to the endpoint you want to filter (e.g., <code>/tables/inventory/devices</code>).</li>
-<li>Review the filter schema documentation for that endpoint.</li>
-<li>Use the field names from the API specification in your filter expressions.</li>
-</ol>
-<p>Common filterable fields across endpoints include: <code>siteName</code>, <code>hostname</code>, <code>vendor</code>, <code>family</code>, <code>model</code>, <code>sn</code> (serial number), <code>intName</code> (interface name), but each endpoint has its own specific set of available filters.</p>
-<p><strong>Example Expressions:</strong></p>
-<p>Simple hostname filter:
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ROUTER-01"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<p>Hostname pattern matching:
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"regex"</span><span class="p">,</span><span class="w"> </span><span class="s2">"router.*"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<p>Multiple conditions:
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"empty"</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">]},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cisco"</span><span class="p">]}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<p>Complex nested filter:
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cisco"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"juniper"</span><span class="p">]}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<h3 id="testing-filter-expressions">Testing Filter Expressions</h3>
-<p>The Filter Expression form includes built-in testing capabilities to verify your expressions work correctly before using them in a sync.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/filter_expression_test.webp" data-desc-position="bottom"><img alt="Test Filter Expression" src="../../images/user_guide/filter_expression_test.webp"></a></p>
-<p>When editing a filter expression:</p>
-<ol>
-<li>The <strong>Test Source</strong> field automatically populates if the expression is associated with filters that have a common source.</li>
-<li>The <strong>Test Endpoint</strong> field automatically populates if the expression is associated with filters that target a single endpoint.</li>
-<li>Click the <strong>Test</strong> button to query IP Fabric using your expression.</li>
-<li>Review the results to confirm the filter returns the expected data.</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Testing sends real request to your IP Fabric instance. It must be reachable from NetBox for this feature to work.</p>
-</div>
-<h2 id="viewing-filter-details">Viewing Filter Details</h2>
-<p>To view filter details, navigate to <strong>Plugins → IP Fabric → Filters</strong> and select a filter. The detail page displays:</p>
-<ul>
-<li>Filter name, description, and type</li>
-<li>Linked endpoints, expressions and syncs</li>
-</ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/user_guide/filter_detail.webp" data-desc-position="bottom"><img alt="Filter Detail" src="../../images/user_guide/filter_detail.webp"></a></p>
-<h2 id="relationships-with-other-models">Relationships with Other Models</h2>
-<h3 id="endpoints">Endpoints</h3>
-<p>Filters have a many-to-many relationship with <a href="../endpoints/">Endpoints</a>. You can associate a filter with multiple endpoints if the same filtering logic applies across different data sources. When an endpoint is queried during a sync, all filters associated with that endpoint are combined into the final query.</p>
-<h3 id="syncs">Syncs</h3>
-<p>Filters can be associated with specific <a href="../syncs/">Syncs</a> through a many-to-many relationship. This allows you to apply different filtering rules to different synchronization jobs. For example, you might have one sync that filters for production sites only, and another that includes all sites.</p>
-<p>When a sync runs, it only uses filters that are explicitly associated with that sync job.</p>
-<h3 id="filter-expressions_1">Filter Expressions</h3>
-<p>Filters contain one or more Filter Expressions through a many-to-many relationship. This allows you to:</p>
-<ul>
-<li>Reuse common filter expressions across multiple filters.</li>
-<li>Build complex filtering logic by combining simple expressions.</li>
-<li>Maintain a library of reusable filter components.</li>
-</ul>
-<h2 id="use-cases-and-examples">Use Cases and Examples</h2>
-<h3 id="filtering-by-hostname-pattern">Filtering by Hostname Pattern</h3>
-<p>Create a filter to synchronize only devices matching a naming convention:</p>
-<p><strong>Filter Expression:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"core-"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dist-"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"access-"</span><span class="p">]}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<p>Associate this with the device endpoint and create similar expression replacing <code>hostname</code> with <code>device.hostname</code> for interface and IP address endpoints to limit all synchronized data to devices matching these patterns.</p>
-<h3 id="filtering-by-device-type">Filtering by Device Type</h3>
-<p>Create a filter to synchronize only routers and switches:</p>
-<p><strong>Filter Expression:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"switch"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"router"</span><span class="p">]}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<h3 id="filtering-by-vendor">Filtering by Vendor</h3>
-<p>Create a filter for specific vendors:</p>
-<p><strong>Filter Expression:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cisco"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"juniper"</span><span class="p">]}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<h3 id="filtering-by-vlan-id">Filtering by VLAN ID</h3>
-<p>Create a filter to synchronize specific VLANs:</p>
-<p><strong>Filter Expression:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vlanId"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"100"</span><span class="p">]},</span>
-<span class="w">      </span><span class="p">{</span><span class="nt">"vlanId"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"200"</span><span class="p">]}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div><p></p>
-<h3 id="filtering-by-vrf">Filtering by VRF</h3>
-<p>Create a filter to synchronize specific VRFs:</p>
-<p><strong>Filter Expression:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"vrf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"like"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PROD-"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<h3 id="combining-multiple-conditions">Combining Multiple Conditions</h3>
-<p>Create a filter for Cisco routers in production VRFs using AND logic:</p>
-<p><strong>Filter Expression 1 - Vendor:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cisco"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<p><strong>Filter Expression 2 - VRF:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"vrf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"reg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PROD-.*"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<p><strong>Filter Expression 3 - Device Type:</strong>
-</p><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="s2">"router"</span><span class="p">]}]</span>
-</code></pre></div><p></p>
-<p>Create a Filter with type “AND” and add all three expressions. This ensures only Cisco routers in production VRFs are synchronized.</p>
-<h2 id="best-practices">Best Practices</h2>
-<ol>
-<li>
-<p><strong>Use Descriptive Names</strong>: Name your filters and expressions clearly to indicate their purpose (e.g., “Core Routers Only”, “Production VLANs”).</p>
-</li>
-<li>
-<p><strong>Test Before Use</strong>: Always test filter expressions using the built-in test functionality before associating them with a sync.</p>
-</li>
-<li>
-<p><strong>Keep Expressions Simple</strong>: Create focused filter expressions that do one thing well, then combine them using filters for complex logic.</p>
-</li>
-<li>
-<p><strong>Reuse Components</strong>: Build a library of reusable filter expressions that can be mixed and matched across different filters.</p>
-</li>
-<li>
-<p><strong>Document Complex Filters</strong>: Use the description field to explain complex filtering logic, especially when combining multiple expressions.</p>
-</li>
-<li>
-<p><strong>Capture from IP Fabric</strong>: Rather than manually writing filter JSON, capture it from IP Fabric’s UI to ensure correct syntax.</p>
-</li>
-<li>
-<p><strong>Consider Performance</strong>: Overly broad filters may retrieve large amounts of data. Use specific filtering criteria to improve sync performance.</p>
-</li>
-</ol>
+<h1 id="vrf-routes-not-collected-on-cisco-nx-os">VRF Routes Not Collected on Cisco NX-OS</h1>
+<p>VRF routes are not collected on Cisco NX-OS devices if the BGP route download limit is not enabled.</p>
+<p><strong>Workaround</strong></p>
+<p>Enable Limit download BGP routes and set a sufficiently high threshold (e.g., 100000 or higher) to allow full route collection.</p>
 
 
 
@@ -16906,7 +13819,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2026 16:20:43 UTC">March 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 1, 2026 08:56:14 UTC">April 1, 2026</span>
   </span>
 
     
@@ -16984,7 +13897,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../endpoints/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Endpoints">
+          <a href="../unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unable to discover devices in 172.17.0.0/16 subnet">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -16994,20 +13907,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Endpoints
+                Unable to discover devices in 172.17.0.0/16 subnet
               </div>
             </div>
           </a>
         
         
           
-          <a href="../transform_maps/" class="md-footer__link md-footer__link--next" aria-label="Next: Transform Maps">
+          <a href="../windows_ssh_mac_algorithm/" class="md-footer__link md-footer__link--next" aria-label="Next: Windows SSH Client - Incorrect MAC Algorithm">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Transform Maps
+                Windows SSH Client - Incorrect MAC Algorithm
               </div>
             </div>
             <div class="md-footer__button md-icon">
