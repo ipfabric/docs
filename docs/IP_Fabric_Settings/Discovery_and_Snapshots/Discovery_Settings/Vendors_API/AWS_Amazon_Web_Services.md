@@ -37,13 +37,13 @@ We provide two policy options. Both grant access to all required endpoints.
 ### Policy Options
 
 - **Simplified policy**
-  - File: [IAM-policy-IPF_simplified_7.5_or_newer.json](aws/IAM-policy-IPF_simplified_7.5_or_newer.json)
+  - File: [IAM-policy-IPF_simplified_7.11_or_newer.json](aws/IAM-policy-IPF_simplified_7.11_or_newer.json)
   - Uses wildcard action matching
   - Easier to maintain
   - Compatible with all supported versions
 
 - **Granular policy**
-  - File: [IAM-policy-IPF_7.10-full.json](aws/IAM-policy-IPF_7.10-full.json)
+  - File: [IAM-policy-IPF_7.11-full.json](aws/IAM-policy-IPF_7.11-full.json)
   - Lists all individual AWS actions explicitly
   - Suitable for environments requiring strict permission control
 
