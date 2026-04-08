@@ -75,6 +75,7 @@ least:
 | VPC                    | `vpc`     |
 | Router                 | `router`  |
 | Load Balancer          | `lb`      |
+| VPN gateway            | `vpngw`   |
 
 ### NSX-T
 
