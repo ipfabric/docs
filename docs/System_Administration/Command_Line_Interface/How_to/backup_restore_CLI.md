@@ -2,7 +2,7 @@
 description: This page explains how to manually back up or restore your IP Fabric data via CLI.
 ---
 
-# How to Backup and Restore IP Fabric via CLI
+# How To Backup and Restore IP Fabric via CLI
 
 !!! warning
 
