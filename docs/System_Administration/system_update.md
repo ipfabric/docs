@@ -136,3 +136,8 @@ use offline update:
 5. It is recommended to create a new discovery snapshot on the latest version
 
 --8<-- "snippets/no_proxy_localhost.md"
+
+## Update Via CLI
+
+Since version `7.9`, IP Fabric has introduced a [command-line tool `/opt/ipf-system-upgrade/bin/cli`](Command_Line_Interface/How_to/upgrade_CLI.md)
+that allows users to perform online/offline system upgrades in the same manner as via the web interface.
