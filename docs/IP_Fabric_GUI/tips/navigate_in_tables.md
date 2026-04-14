@@ -126,7 +126,7 @@ Finally, specify a filter rule to color the selected column:
    no other rules are matched.
 4. Click **Update rule** or **Create rule** to save your changes.
 
-![Intent Rule Detail](../../images/miscellaneous/IP_Fabric_GUI-tips-navigate_in_tables_table_colorize_rules.webp)
+![Intent Rule Detail](../../images/miscellaneous/ipf/IP_Fabric_GUI-tips-navigate_in_tables_table_colorize_rules.webp)
 
 In the example above, all items in the `VRF` column which are named `VRF1` will
 be colored red. A summary number of items which match this rule will also be

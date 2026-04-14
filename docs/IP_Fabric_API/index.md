@@ -80,7 +80,7 @@ be used with filters as well):
 
 ![Table description option](../images/technology/IP_Fabric_GUI-technology_tables_table_description_option.webp)
 
-![API Endpoint inline description](../images/technology/IP_Fabric_API_endpoint_inline_description.webp)
+![API Endpoint inline description](../images/technology/platforms/IP_Fabric_API_endpoint_inline_description.webp)
 
 ## Payload Definition
 

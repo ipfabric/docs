@@ -66,12 +66,12 @@ Vendors API**.
         ```text
         apic:LOCAL-DOMAIN-NAME\\username
         ```
-        ![APIC login screen](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_apic_local_domain.webp)
-        ![IP Fabric settings - Username](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_local_domain_apic_ipf_settings.webp)
+        ![APIC login screen](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_apic_local_domain.webp)
+        ![IP Fabric settings - Username](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API_local_domain_apic_ipf_settings.webp)
 
 5. Click **Save** to add the configuration.
 
-![Add Connection - Cisco APIC](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-apic_ciscoApicAPIAdd.webp)
+![Add Connection - Cisco APIC](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-apic_ciscoApicAPIAdd.webp)
 
 Benefits:
 

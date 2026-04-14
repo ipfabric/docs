@@ -31,7 +31,7 @@ This feature enables filtering by age or specific date, or disabling the reuse o
 
     Since version 7.10, we are testing a new design of Discovery Settings.
 
-    ![Discovery Seeds - New Design](../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_discovery_seeds2.webp)
+    ![Discovery Seeds - New Design](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_discovery_seeds2.webp)
 
 ### Configuring via API
 

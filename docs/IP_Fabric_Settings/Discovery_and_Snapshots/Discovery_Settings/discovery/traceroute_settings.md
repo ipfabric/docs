@@ -12,13 +12,13 @@ diagrams. More information about traceroute as a protocol can be found on
 For traceroute configuration, go to **Settings --> Discovery & Snapshots -->
 Discovery Settings --> Discovery --> Traceroute settings**.
 
-![Traceroute settings](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings.webp)
+![Traceroute settings](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
 
-    ![Traceroute settings - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings2.webp)
+    ![Traceroute settings - New Design](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_traceroute_settings2.webp)
 
 **Trace scope** -- Limits traceroute scope to the defined subnets. This prevents
 scanning networks outside an internal network.

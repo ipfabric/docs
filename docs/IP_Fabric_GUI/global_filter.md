@@ -37,4 +37,4 @@ filtered to show only devices from the Site `35COLO`.
 
 ![siteName 35COLO selected](../images/miscellaneous/global_filter_attribute/IP_Fabric_GUI-global_filter_sitename_selected.webp)
 
-![Attribute filter for siteName 35COLO applied](../images/inventory/IP_Fabric_GUI-global_filter_attribute_filter_applied.webp)
+![Attribute filter for siteName 35COLO applied](../images/inventory/devices/IP_Fabric_GUI-global_filter_attribute_filter_applied.webp)

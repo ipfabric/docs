@@ -21,7 +21,7 @@ discovery at least once a day to capture any network changes.
 
 A connection to every attempted address either succeeds or is recorded in the **Connectivity Report**:
 
-![Connectivity Report button](../../images/snapshot-management/overview-How_Discovery_Works-CLI_discovery_connectivity_report.webp)
+![Connectivity Report button](../../images/snapshot-management/errors/overview-How_Discovery_Works-CLI_discovery_connectivity_report.webp)
 
 which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.
 

@@ -193,10 +193,10 @@ Also, you can generate the link in two forms:
 
 To pin any page in the Technology Tables, click the pin button next to the table name. The page will instantly appear in the left Main Menu.
 
-![Pin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_pin.webp){ width="250" .center }
+![Pin a page](../../images/technology/platforms/IP_Fabric_GUI-technology_tables_page_pin.webp){ width="250" .center }
 
 ### Unpin a Page from the Main Menu
 
 If you no longer want it in the Menu, you can unpin it by clicking the pin in the Main Menu or by clicking the pin next to the page title again.
 
-![Unpin a page](../../images/technology/IP_Fabric_GUI-technology_tables_page_unpin.webp){ width="250" .center }
+![Unpin a page](../../images/technology/platforms/IP_Fabric_GUI-technology_tables_page_unpin.webp){ width="250" .center }

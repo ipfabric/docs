@@ -12,23 +12,23 @@ Juniper Mist devices are discovered only through the API.
 
 1. Log in to the [Juniper Mist website](https://manage.mist.com/signin.html#!signin):
 
-   ![Juniper Mist login page](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_login.webp)
+   ![Juniper Mist login page](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_login.webp)
 
-   ![Juniper Mist main GUI](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_gui.webp)
+   ![Juniper Mist main GUI](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_gui.webp)
 
 2. Once logged in, open a new tab in the same browser and go to the [API token generation](https://api.mist.com/api/v1/self/apitokens) page:
 
-   ![Create API token](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_api_token.webp)
+   ![Create API token](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_api_token.webp)
 
 3. Once generated, the API token can be used in the IP Fabric GUI.
 
-   ![Create API token - copy generated API token](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_api_create.webp)
+   ![Create API token - copy generated API token](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_api_create.webp)
 
 4. In the IP Fabric GUI, go to **Settings --> Discovery & Snapshots -->
    Discovery Settings --> Vendors API**, click **+ Add**, select `Juniper Mist`
    from the list, and fill in the fields:
 
-   ![Add Connection - Juniper Mist](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_ipf_settings.webp)
+   ![Add Connection - Juniper Mist](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-mist_mist_ipf_settings.webp)
 
 ## Known Issues
 

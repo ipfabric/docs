@@ -21,7 +21,7 @@ API**, click **+ Add**, select `Cisco FMC` from the list, and fill in:
 - **Base URL** of Cisco FMC server (e.g., `https://cisco-fmc-ip-address`)
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - Cisco FMC](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAdd.webp)
+![Add Connection - Cisco FMC](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAdd.webp)
 
 ### Discovery of FMC Hosted by Cisco Defense Orchestrator
 
@@ -39,7 +39,7 @@ After updating the environment file, you must restart IP Fabric application by r
 sudo systemctl restart ipf-appliance
 ```
 
-![Add Connection - Cisco FMC - Bearer token](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAddBearer.webp)
+![Add Connection - Cisco FMC - Bearer token](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-cisco-fmc_ciscoFmcAPIAddBearer.webp)
 
 ## Known Issue
 

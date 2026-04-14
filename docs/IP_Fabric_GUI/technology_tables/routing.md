@@ -29,13 +29,13 @@ The **Routing Policies** tab contains definitions of routing policies, their nam
 
 In case the match condition uses a reference to an ACL or Prefix list, it is hyperlinked to the appropriate ACL/Prefix list in its section.
 
-![Routing Policies](../../images/technology/IP_Fabric_GUI-technology_tables-routing-routingPolicy_routingPolicies.webp)
+![Routing Policies](../../images/technology/routing/IP_Fabric_GUI-technology_tables-routing-routingPolicy_routingPolicies.webp)
 
 ### PBR Interfaces
 
 The **PBR Interfaces** tab contains information about interfaces that have some routing policy assigned on them (used for policy-based routing). Optionally, there is also information about the used address family or status of the routing policy.
 
-![PBR Interfaces](../../images/technology/IP_Fabric_GUI-technology_tables-routing-routingPolicy_pbrInterfaces.webp)
+![PBR Interfaces](../../images/technology/routing/IP_Fabric_GUI-technology_tables-routing-routingPolicy_pbrInterfaces.webp)
 
 ### Policy Based Routing
 
@@ -43,7 +43,7 @@ The **Policy Based Routing (PBR)** tab contains matching conditions for traffic 
 
 In case the match condition uses a reference to an ACL, it is hyperlinked to the appropriate ACL list in its section.
 
-![Policy Based Routing](../../images/technology/IP_Fabric_GUI-technology_tables-routing-routingPolicy_policyBasedRouting.webp)
+![Policy Based Routing](../../images/technology/routing/IP_Fabric_GUI-technology_tables-routing-routingPolicy_policyBasedRouting.webp)
 
 Clicking `Policy Name` opens a tree view.
 

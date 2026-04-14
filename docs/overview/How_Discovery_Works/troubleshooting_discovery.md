@@ -314,8 +314,8 @@ could not discover.
 
 ### Connectivity Report
 
-![Connectivity Report button](../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_connectivity_report_button.webp)
-![Discovery Connectivity Report](../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_discovery_connectivity_report.webp)
+![Connectivity Report button](../../images/snapshot-management/errors/overview-How_Discovery_Works-troubleshooting_connectivity_report_button.webp)
+![Discovery Connectivity Report](../../images/snapshot-management/errors/overview-How_Discovery_Works-troubleshooting_discovery_connectivity_report.webp)
 
 The **Connectivity Report** is a per-snapshot report stating successes or
 errors for IP addresses that IP Fabric tried to discover. Once you have a list of

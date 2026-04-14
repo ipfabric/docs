@@ -95,9 +95,9 @@ The snapshot will enter an **error** state and be marked as **Force Stopped** wi
 
 ## Snapshot-Specific Settings
 
-![Snapshot-specific settings](../images/snapshot-management/IP_Fabric_GUI-snapshots_snapshot_specific_settings.webp)
+![Snapshot-specific settings](../images/snapshot-management/settings/IP_Fabric_GUI-snapshots_snapshot_specific_settings.webp)
 
-![Snapshot-specific settings](../images/snapshot-management/IP_Fabric_GUI-snapshots_snapshot_settings.webp)
+![Snapshot-specific settings](../images/snapshot-management/settings/IP_Fabric_GUI-snapshots_snapshot_settings.webp)
 
 Adjusting the settings for either a new snapshot or a previously created snapshot will override the global **Settings**.
 This is useful, for example, for testing different SSH settings, Site Separation rules, or authentication methods.
@@ -119,9 +119,9 @@ reasons, including authorization or firewall issues; please take a look at
 Each successful or unsuccessful connection attempt is logged (see the following picture). Logs for each device can be found in the snapshot's **Connectivity Report** (highlighted in the red box). These logs are especially helpful when an error occurs. By
 examining them, you can find the reason why a device wasn't correctly or fully discovered or what led to a connection failure.
 
-![Discovery Connectivity Report](../images/snapshot-management/IP_Fabric_GUI-snapshots_discovery_connectivity_report.webp)
+![Discovery Connectivity Report](../images/snapshot-management/errors/IP_Fabric_GUI-snapshots_discovery_connectivity_report.webp)
 
-![Discovery Connectivity Report](../images/snapshot-management/IP_Fabric_GUI-snapshots_discovery_connectivity_report_logs.webp)
+![Discovery Connectivity Report](../images/snapshot-management/errors/IP_Fabric_GUI-snapshots_discovery_connectivity_report_logs.webp)
 
 ## Modifying Snapshot Devices
 

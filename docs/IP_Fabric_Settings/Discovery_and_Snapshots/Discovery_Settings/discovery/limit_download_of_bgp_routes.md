@@ -20,13 +20,13 @@ However, if the number exceeds this threshold, IP Fabric will only collect
 routes from other available routing protocols on the device. In this scenario,
 no BGP routes from the routing table will be collected.
 
-![Limit download of BGP routes](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes.webp)
+![Limit download of BGP routes](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located in a different tab: Routing --> Threshold settings.
 
-    ![Limit download of BGP routes - New Design](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes2.webp)
+    ![Limit download of BGP routes - New Design](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_limit-bgp-routes2.webp)
 
 Currently supported vendors:
 
