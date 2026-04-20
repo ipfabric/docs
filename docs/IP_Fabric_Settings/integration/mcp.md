@@ -334,11 +334,12 @@ How to use:
 - **VS Code with GitHub Copilot** — Type `@ipfabric-mcp` in the chat to invoke the MCP server, then describe the path analysis you need.
 
 Parameters:
-    - `snapshot` — Snapshot name to analyze
-    - `source` — Source IP or device name
-    - `destination` — Destination IP (for unicast)
-    - `group` — Multicast group (if applicable)
-    - `protocol` — TCP, UDP, or ICMP (optional)
+
+- `snapshot` — Snapshot name to analyze
+- `source` — Source IP or device name
+- `destination` — Destination IP (for unicast)
+- `group` — Multicast group (if applicable)
+- `protocol` — TCP, UDP, or ICMP (optional)
 
 This prompt generates a comprehensive analysis including hop-by-hop breakdown, issue identification, and
 topology improvement recommendations.
