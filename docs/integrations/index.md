@@ -19,6 +19,7 @@ the dynamic landscape of modern networking.
 
 | Integration Documentation                      | Location(s)                                                                                                                                                   |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [MCP Server](../IP_Fabric_Settings/integration/mcp.md) | Built into the IP Fabric appliance.                                                                                                                          |
 | [NetBox](https://ip-fabric.gitlab.io/integrations/ipfabric-netbox)                      | [`ipfabric-netbox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-netbox)<br/>[`ipfabric-netbox` PyPI](https://pypi.org/project/ipfabric-netbox/) |
 | [IP Fabric Python SDK](python/index.md)        | [`python-ipfabric` GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric)<br/>[`ipfabric` PyPI](https://pypi.org/project/ipfabric/)               |
 | [ServiceNow Integration](service-now/index.md) | [`ipfabric-snow` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-snow)<br/>[`ipfabric-snow` PyPI](https://pypi.org/project/ipfabric-snow/)         |
