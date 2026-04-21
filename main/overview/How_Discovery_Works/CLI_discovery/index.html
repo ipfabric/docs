@@ -15974,6 +15974,10 @@ discovery at least once a day to capture any network changes.</p>
 <p>which details the reason for the connection failure. The most frequent reason for failure is a timeout of the login attempt. A connectivity report can be useful for troubleshooting failed credentials and other unreachability reasons. An authentication failure message denotes an unsuccessful login attempt and describes how the device responded.</p>
 <h2 id="bandwidth-limit">Bandwidth Limit</h2>
 <p>Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.</p>
+<div class="admonition note">
+<p class="admonition-title">Not All Traffic Is Shaped</p>
+<p>The bandwidth limit applies only to traffic on destination ports <strong>22</strong> (SSH) and <strong>23</strong> (Telnet). Traffic for Vendor API discovery and any custom ports is <strong>not</strong> subject to this shaping.</p>
+</div>
 <p>To further distribute the network load and reduce the possibility of bottlenecks, the connection scheduler sorts connections attempts to addresses that are farthest away. For example, in a list of addresses <code>10.10.10.1, 10.10.10.2, 10.20.10.1, 10.10.20.1</code>, after attempting a
 connection to <code>10.10.10.1</code>, the next IP scheduled is <code>10.20.10.1</code>, because it shares only 11 bits with <code>10.10.10.1</code>. This lowest common mask rule enables statistically distributing the load without prior topology knowledge.</p>
 <p>The selected number of megabits per second also controls the number of simultaneous connections. Each additional megabit adds 3 parallel sessions.</p>
@@ -16041,7 +16045,7 @@ IP ranges in different VRFs within your management network) and configure
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 14, 2026 13:01:34 UTC">April 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 21, 2026 11:51:10 UTC">April 21, 2026</span>
   </span>
 
     
