@@ -87,6 +87,6 @@ and the APIC controllers.
 
 ### ACI Service Graphs
 
-In versions `6.4` through `7.6`, ACI service graphs can be enabled [via feature flag](../../../../System_Administration/Command_Line_Interface/Feature_Flags.md#aci-service-graphs).
+In versions `6.4` through `7.6`, ACI service graphs can be enabled [via feature flag](../../../../System_Administration/Command_Line_Interface/Feature_Flags.md#aci-service-graphs-removed-in-711).
 
 As of version `7.11`, ACI service graphs are always enabled and no configuration is required.

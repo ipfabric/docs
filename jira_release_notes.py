@@ -176,8 +176,8 @@ def main():
 #            print(f"Skipping release {v['name']}")
 #            continue
 
-        # Include only versions 7.3 and later
-        if (major * 1000 + minor) < 7003:
+        # Include only versions 7.9 and later
+        if (major * 1000 + minor) < 7009:
             print(f"Skipping release {v['name']}")
             continue
 

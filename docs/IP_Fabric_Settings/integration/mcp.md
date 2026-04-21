@@ -115,10 +115,6 @@ will open `claude_desktop_config.json`.
     - The token value is kept in `env` to avoid exposing it directly in the args.
       Use the format `Bearer <token>`.
 
-    The `-y` flag in the args above is required on macOS to skip the interactive
-    install prompt. If the command fails, try replacing `npx` with the full path
-    to the `npx` shell script (e.g., `/usr/local/bin/npx`).
-
 **3. Restart Claude Desktop** to apply the configuration.
 
 **4. Verify the connection:** Look for the MCP tools icon in Claude's interface.
