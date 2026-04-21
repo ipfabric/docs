@@ -29,6 +29,10 @@ which details the reason for the connection failure. The most frequent reason fo
 
 Bandwidth limit controls the amount of traffic sent to and received from the network infrastructure using bidirectional shaper and application flow control mechanisms. The traffic rate never exceeds the configured limit in either direction, allowing discovery and analysis processes to be run during business hours, thereby not overloading the network infrastructure devices any more than during standard operational procedures.
 
+!!! note "Not All Traffic Is Shaped"
+
+    The bandwidth limit applies only to traffic on destination ports **22** (SSH) and **23** (Telnet). Traffic for Vendor API discovery and any custom ports is **not** subject to this shaping.
+
 To further distribute the network load and reduce the possibility of bottlenecks, the connection scheduler sorts connections attempts to addresses that are farthest away. For example, in a list of addresses `10.10.10.1, 10.10.10.2, 10.20.10.1, 10.10.20.1`, after attempting a
 connection to `10.10.10.1`, the next IP scheduled is `10.20.10.1`, because it shares only 11 bits with `10.10.10.1`. This lowest common mask rule enables statistically distributing the load without prior topology knowledge.
 
