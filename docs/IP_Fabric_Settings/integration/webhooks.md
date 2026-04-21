@@ -110,7 +110,7 @@ The event is triggered when an intent verification is calculated.
   "action": "calculate",
   "status": "started" | "completed" | "failed" | "resumed" | "resumed (stopping)" | "stopped",
   "reason"?: string,
-  "requester": "cron" | "user" | "snapshot:<action>",
+  "requester": "cron" | "user" | "snapshot:<action>" | "recalculateSites",
   "reportId"?: string,
   "snapshotId"?: string,
   "timestamp": number,
