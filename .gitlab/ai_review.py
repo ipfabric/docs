@@ -64,7 +64,12 @@ Rules:
 - Do NOT suggest changes to code blocks, YAML frontmatter, URLs, or image references.
 - Each suggestion must target a SINGLE line (or a small range of consecutive lines).
 - Provide the COMPLETE replacement for the line(s) — not partial edits.
-- Maximum 15 suggestions per file.
+- ONLY suggest changes for lines marked with >>> (these are the changed lines in the MR).
+- Lines WITHOUT >>> are context only — do NOT suggest changes to them.
+- Note that Markdown files may wrap long sentences across multiple lines. \
+  Consider adjacent lines as part of the same sentence when they are not \
+  separated by a blank line.
+- Maximum 10 suggestions per file.
 
 CRITICAL: Respond with ONLY a JSON array. No other text. Each element:
 {{
@@ -80,11 +85,11 @@ If no improvements needed, respond with: []
 
 File: {filename}
 
-### Vale findings
+### Vale findings (only for changed lines)
 
 {vale_output}
 
-### File content (with line numbers)
+### Changed content (lines marked with >>> are changed, others are context)
 
 {content}
 """
@@ -168,31 +173,82 @@ def get_changed_lines(filepath):
     return changed
 
 
-def run_vale(filepath):
-    """Run Vale on a single file and return its output."""
+def run_vale(filepath, changed_lines):
+    """Run Vale on a single file and return output filtered to changed lines only."""
     try:
         result = subprocess.run(
-            [VALE_PATH, filepath], capture_output=True, text=True
+            [VALE_PATH, "--output=line", filepath], capture_output=True, text=True
         )
-        output = result.stdout.strip()
-        return output if output else "No issues found."
+        if not result.stdout.strip():
+            return "No issues found."
+        # Filter Vale output to only include issues on changed lines
+        filtered = []
+        for line in result.stdout.strip().split("\n"):
+            # Vale --output=line format: file:line:col:level:message
+            parts = line.split(":")
+            if len(parts) >= 2:
+                try:
+                    line_num = int(parts[1])
+                    if line_num in changed_lines:
+                        filtered.append(line)
+                except ValueError:
+                    pass
+        return "\n".join(filtered) if filtered else "No issues on changed lines."
     except FileNotFoundError:
         print(f"WARNING: Vale not found at {VALE_PATH}")
         return "Vale not available — skipped."
 
 
-def review_file(client, filepath, vale_output):
-    """Send file content + Vale findings to Claude, get JSON suggestions."""
+def get_diff_content(filepath):
+    """Get the unified diff for a specific file (with context lines)."""
+    base_sha = CI_MERGE_REQUEST_DIFF_BASE_SHA or "HEAD~1"
+    try:
+        result = subprocess.run(
+            ["git", "diff", "-U3", base_sha, "HEAD", "--", filepath],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError:
+        return ""
+
+
+def review_file(client, filepath, vale_output, changed_lines):
+    """Send only changed content + Vale findings to Claude, get JSON suggestions."""
     try:
         lines = Path(filepath).read_text(encoding="utf-8").splitlines()
     except FileNotFoundError:
         return []
 
-    if len(lines) < 3:
+    if not changed_lines:
         return []
 
-    # Add line numbers for Claude
-    numbered = "\n".join(f"{i+1:4d} | {line}" for i, line in enumerate(lines))
+    # Build content with only changed lines + 3 lines context around them
+    # This way Claude sees complete context, not the entire file
+    context_radius = 3
+    lines_to_include = set()
+    for ln in changed_lines:
+        for i in range(max(1, ln - context_radius), min(len(lines) + 1, ln + context_radius + 1)):
+            lines_to_include.add(i)
+
+    # Build numbered content — only relevant sections
+    sections = []
+    current_section = []
+    prev_ln = 0
+    for ln in sorted(lines_to_include):
+        if ln > prev_ln + 1 and current_section:
+            sections.append("\n".join(current_section))
+            current_section = []
+            current_section.append("     ...")
+        if ln <= len(lines):
+            marker = ">>>" if ln in changed_lines else "   "
+            current_section.append(f"{ln:4d} {marker} | {lines[ln-1]}")
+        prev_ln = ln
+    if current_section:
+        sections.append("\n".join(current_section))
+
+    numbered = "\n".join(sections)
     if len(numbered) > MAX_FILE_SIZE:
         numbered = numbered[:MAX_FILE_SIZE] + "\n...[truncated]..."
 
@@ -309,8 +365,8 @@ def main():
             continue
         print(f"  Changed lines: {sorted(changed_lines)[:20]}{'...' if len(changed_lines) > 20 else ''}")
 
-        vale_output = run_vale(filepath)
-        suggestions = review_file(client, filepath, vale_output)
+        vale_output = run_vale(filepath, changed_lines)
+        suggestions = review_file(client, filepath, vale_output, changed_lines)
 
         if not suggestions:
             print(f"  No suggestions for {filepath}.")

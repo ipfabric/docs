@@ -61,13 +61,29 @@ strict_build_mr:
     paths:
       - temp_multirepo/
 
-# Vale syntax and style checker for Markdown
+# Vale syntax and style checker for Markdown (changed files only)
 vale_mr:
   stage: test
   only:
     - merge_requests
   script:
-    - make vale
+    - make /tmp/vale/vale
+    - |
+      BASE_SHA="${CI_MERGE_REQUEST_DIFF_BASE_SHA}"
+      if [ -z "$BASE_SHA" ]; then
+        git fetch origin "${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:-main}" --depth=50
+        BASE_SHA="origin/${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:-main}"
+      fi
+      CHANGED_MD=$(git diff --name-only --diff-filter=ACMR "${BASE_SHA}" HEAD -- '*.md' \
+        | grep -v 'release_notes_low-level/' \
+        | grep -v 'previous_releases/' || true)
+      if [ -z "$CHANGED_MD" ]; then
+        echo "No changed Markdown files to lint."
+        exit 0
+      fi
+      echo "Linting changed files:"
+      echo "$CHANGED_MD"
+      echo "$CHANGED_MD" | xargs /tmp/vale/vale
 
 # SEO and link checker for Markdown files
 seo_lint_mr:
