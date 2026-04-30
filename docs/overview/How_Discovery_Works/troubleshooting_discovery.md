@@ -8,9 +8,9 @@ search:
 
 ## Discovery Settings
 
-This section describes the Global Settings. You can also make adjustments to specific snapshots.
-Changes made to the Global Settings do not apply to previously run snapshots. Here are
-two methods for testing snapshot settings:
+This section describes the Global Settings which you can use to configure the discovery process. You can also make various different adjustments to specific individual snapshots if that is something you need to do.
+Note that changes in the Global Settings don't affect snapshots that you created before. Here are
+two methods that you can use to test snapshot settings:
 
 1. Make your changes in the **[Snapshot Settings](../../IP_Fabric_GUI/discovery_snapshot.md/#snapshot-specific-settings)** and then try to
    **Add Devices** (or `Rediscover timed out devices`). If these changes fixed

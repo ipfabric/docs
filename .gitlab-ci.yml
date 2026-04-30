@@ -90,3 +90,16 @@ danger:
     - "ls -al"
     - export CI_MERGE_REQUEST_IID=${CI_OPEN_MERGE_REQUESTS#*!}
     - danger --fail-on-errors=true
+
+# AI-powered documentation review: Vale linter (Hemingway rules) + Claude
+# Runs Vale on changed files, feeds findings to Claude for rewrite suggestions,
+# and posts a single MR comment. Non-blocking.
+ai_review_mr:
+  stage: test
+  only:
+    - merge_requests
+  allow_failure: true
+  script:
+    - make /tmp/vale/vale
+    - pip install --quiet -r .gitlab/requirements-ai-review.txt
+    - python3 .gitlab/ai_review.py
