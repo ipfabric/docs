@@ -19,14 +19,14 @@ In case of any issues, please contact our Support team at
 This is the [support portal](https://support.ipfabric.io) from which you can
 contact our Support team in case of any issues with IP Fabric.
 
-![IP Fabric Help Center](../images/support/support_help_center.webp)
+![IP Fabric Help Center](../images/support/support_help-center.webp)
 
-### ![Technical Support](../images/support/support_ico_tech.webp) Technical Support
+### ![Technical Support](../images/support/support_ico-tech.webp) Technical Support
 
 Select this option if you are experiencing problems with installation, upgrades,
 backups, configuration, or technical use of the IP Fabric product.
 
-### ![Bug](../images/support/support_ico_bug.webp) Report a Bug
+### ![Bug](../images/support/support_ico-bug.webp) Report a Bug
 
 If you feel that the product is not behaving as it should, please select this
 option to inform us about the issues you are experiencing.

@@ -20,11 +20,11 @@ to create or modify roles.
 
 1. To add a new role, click **+ Add role**:
 
-   ![Add role button](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table.webp)
+   ![Add role button](../../images/settings/administration/roles/settings-administration-roles_table.webp)
 
 2. Set a role name, description, select policies, and click **Save**:
 
-   ![Add role form](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_add.webp)
+   ![Add role form](../../images/settings/administration/roles/settings-administration-roles_add.webp)
 
 ## List of Roles
 
@@ -32,35 +32,35 @@ The `Roles` table lists all roles, including their details, and allows you to
 **modify** or **delete** them _(except for the built-in **admin** and
 **ipf-checker** roles, which cannot be modified nor deleted)_.
 
-![Roles table](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table.webp)
+![Roles table](../../images/settings/administration/roles/settings-administration-roles_table.webp)
 
 ## Edit Role
 
 1. To modify the details of a role, click the **Edit** icon next to it in the
    `Roles` table:
 
-   ![Roles table - Edit icon](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table_edit.webp)
+   ![Roles table - Edit icon](../../images/settings/administration/roles/settings-administration-roles_roles-table-edit.webp)
 
 2. Update the data in the **Edit role** form and click **Save**:
 
-   ![Edit role form](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_edit.webp)
+   ![Edit role form](../../images/settings/administration/roles/settings-administration-roles_edit.webp)
 
 ## Copy Role
 
 1. To copy a role, click the **Copy** icon next to it in the `Roles` table:
 
-   ![Roles table - Copy icon](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table_copy.webp)
+   ![Roles table - Copy icon](../../images/settings/administration/roles/settings-administration-roles_roles-table-copy.webp)
 
 2. Update the data in the **Copy role** form and click **Save**:
 
-   ![Copy role form](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_copy.webp)
+   ![Copy role form](../../images/settings/administration/roles/settings-administration-roles_copy.webp)
 
 ## Delete Role
 
 1. To delete a role, click the **Delete** icon next to it in the `Roles` table:
 
-   ![Roles table - Delete icon](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table_delete.webp)
+   ![Roles table - Delete icon](../../images/settings/administration/roles/settings-administration-roles_delete.webp)
 
 2. To confirm the action, click **Delete**:
 
-   ![Role will be removed dialog](../../images/settings/administration/roles/IP_Fabric_Settings-administration-roles_roles_table_delete_confirm.webp)
+   ![Role will be removed dialog](../../images/settings/administration/roles/settings-administration-roles_confirm.webp)

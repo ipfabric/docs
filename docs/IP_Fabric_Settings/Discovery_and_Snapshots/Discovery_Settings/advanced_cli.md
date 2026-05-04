@@ -10,13 +10,13 @@ IP Fabric primarily uses the Command-Line Interface (CLI) for discovering
 network elements. The CLI parameters can be found in **Settings --> Discovery &
 Snapshots --> Discovery Settings --> Advanced CLI**.
 
-![CLI Settings](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_cli_settings.webp)
+![CLI Settings](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_cli_settings.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings.
 
-    ![CLI Settings - New Design](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_cli_settings2.webp)
+    ![CLI Settings - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_cli_settings2.webp)
 
 !!! tip
 
@@ -128,13 +128,13 @@ adjustments:
 In the following example, we configure the discovery process to use port `8080`
 for SSH connections to `192.168.168.10`:
 
-![Add custom SSH/Telnet port](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_add_custom_ssh_telnet_port.webp)
+![Add custom SSH/Telnet port](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_add_custom_ssh_telnet_port.webp)
 
 As a result of such configuration, a new item will be created in the **Custom
 SSH/Telnet ports** table, which will be applied to every new snapshot created in
 IP Fabric.
 
-![Custom SSH/Telnet ports](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-advanced_cli_custom_ssh_telnet_ports.webp)
+![Custom SSH/Telnet ports](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_custom_ssh_telnet_ports.webp)
 
 ## Telnet/SSH URL Handler on MS Windows 7 and Later
 

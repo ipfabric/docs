@@ -24,8 +24,8 @@ list, select type of authentication, and fill in the following details:
 - **Base URL** of VeloCloud Orchestrator (e.g., `https://velocloud-ip-address`)
 - [**Slug**](index.md#slug-and-comment)
 
-![Add Connection - VeloCloud - username](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-velocloud_VeloCloud_username.webp)
-![Add Connection - VeloCloud - API token](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-velocloud_VeloCloud_token.webp)
+![Add Connection - VeloCloud - username](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_velocloud_VeloCloud_username.webp)
+![Add Connection - VeloCloud - API token](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_velocloud_VeloCloud_token.webp)
 
 Please note that since version `7.0` VeloCloud discovery utilizes both REST API and WebSocket
 connections for network discovery.

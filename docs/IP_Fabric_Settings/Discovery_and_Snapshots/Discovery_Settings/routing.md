@@ -8,13 +8,13 @@ description: Configure BGP communities on a per-device, per-protocol (IPv4/IPv6)
 
 This feature enables configuration of BGP communities on a **per-device**, **per-protocol** (IPv4/IPv6), and **per-VRF** basis.
 
-![BGP communities settings](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_bgp_communities.webp)
+![BGP communities settings](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_bgp_communities.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings.
 
-    ![BGP communities settings - New Design](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_bgp_communities2.webp)
+    ![BGP communities settings - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_bgp_communities2.webp)
 
 ### Problem Statement
 
@@ -41,7 +41,7 @@ BGP communities filters can be set for more precise control:
 
 Routes matching these filters will be downloaded, while others are excluded.
 
-![How to add BGP community filter](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_AddDeviceBGPCommunity.webp){ width=300 .center }
+![How to add BGP community filter](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_AddDeviceBGPCommunity.webp){ width=300 .center }
 
 ### Discovery Process Prioritization
 

@@ -11,25 +11,25 @@ neighbors, switch identifications, and routes.
 
 The **Summary** tab contains the summary of neighbors, switch IDs, and routes.
 
-![Summary table](../../../images/technology/platforms/IP_Fabric_GUI-technology_tables-platforms_fabricPathSummary.webp)
+![Summary table](../../../images/technology/platforms/technology-platforms_fabric-path-summary.webp)
 
 ## IS-IS Neighbors
 
 The **IS-IS neighbors** tab contains information about the adjacency of devices
 that contribute to FabricPath.
 
-![IS-IS Neighbors table](../../../images/technology/platforms/IP_Fabric_GUI-technology_tables-platforms_fabricPathIsisNeighbors.webp)
+![IS-IS Neighbors table](../../../images/technology/platforms/technology-platforms_fabric-path-isis-neighbors.webp)
 
 ## Switch IDs
 
 The **Switch IDs** tab contains information about a list of Switch IDs that the
 current device knows about.
 
-![Switch IDs table](../../../images/technology/platforms/IP_Fabric_GUI-technology_tables-platforms_fabricPathSwitchIds.webp)
+![Switch IDs table](../../../images/technology/platforms/technology-platforms_fabric-path-switch-ids.webp)
 
 ## Routes
 
 The **Routes** tab contains information about routes from the specific device
 contributing to FabricPath.
 
-![Routes table](../../../images/technology/platforms/IP_Fabric_GUI-technology_tables-platforms_fabricPathRoutes.webp)
+![Routes table](../../../images/technology/platforms/technology-platforms_fabric-path-routes.webp)

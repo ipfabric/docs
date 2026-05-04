@@ -16,13 +16,13 @@ Duplicate IPs discovery**, enter one or more subnets to *disable* the test for
 duplicate IP addresses for specific networks (so devices with duplicate IP
 addresses in those networks will be discovered).
 
-![Duplicate IPs discovery](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery.webp)
+![Duplicate IPs discovery](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_duplicate_ips_discovery.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
 
-    ![Duplicate IPs discovery - New Design](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_duplicate_ips_discovery2.webp)
+    ![Duplicate IPs discovery - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_duplicate_ips_discovery2.webp)
 
 !!! info
 

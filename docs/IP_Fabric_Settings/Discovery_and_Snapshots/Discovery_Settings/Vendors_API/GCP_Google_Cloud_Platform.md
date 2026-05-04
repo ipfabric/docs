@@ -14,15 +14,15 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
 
 1. Select the project where you want to enable the API:
 
-   ![Select a project](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAProject.webp)
+   ![Select a project](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectAProject.webp)
 
 2. Navigate to **APIs & Services --> API Library --> Browse**, search for the API, and select it:
 
-   ![Go to API Explorer](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-goToApiExplorer.webp)
+   ![Go to API Explorer](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_goToApiExplorer.webp)
 
 3. Enable the API:
 
-   ![Enable the API](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-enableTheApi.webp)
+   ![Enable the API](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_enableTheApi.webp)
 
 4. Repeat these steps for all required APIs and projects.
 
@@ -30,11 +30,11 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
 
 1. Select your organization. If you don’t have an organization, or if you prefer not to grant IP Fabric access to the entire organization, you can create the custom roles at the project level:
 
-   ![Select your organization](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectOrganization.webp)
+   ![Select your organization](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectOrganization.webp)
 
 2. Navigate to **IAM & Admin --> Roles**:
 
-   ![Navigate the IAM](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-navigateToIAM.webp)
+   ![Navigate the IAM](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_navigateToIAM.webp)
 
 3. Create a custom role and assign the following required permissions:
 
@@ -94,76 +94,76 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    ```
    compute.networks.listPeeringRoutes
    ```
-   ![Create a role](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-createArole.webp)
+   ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
 
 ## How To Generate a Private Key for Your GCP Service Account
 
 1. Select a project for which you want to create a service account:
 
-   ![Select a project](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAProject.webp)
+   ![Select a project](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectAProject.webp)
 
 2. Navigate to **IAM & Admin --> Service Accounts**:
 
-   ![Navigate to Service Accounts](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_gcpSideBarServiceAccount.webp)
+   ![Navigate to Service Accounts](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_gcpSideBarServiceAccount.webp)
 
 3. Click **+ CREATE SERVICE ACCOUNT**:
 
-   ![Create a service account](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_createAServiceAccount.webp)
+   ![Create a service account](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_createAServiceAccount.webp)
 
 4. Give it a name and click **CREATE AND CONTINUE**:
 
-   ![Service account details](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_giveAServiceAccountName.webp)
+   ![Service account details](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_giveAServiceAccountName.webp)
 
 5. Select the custom role you created in the previous step for the account, then click **CONTINUE**:
 
-   ![Grant this service account access to project](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectAViewRole.webp)
+   ![Grant this service account access to project](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectAViewRole.webp)
 
 6. In the last step, simply click **DONE**:
 
-   ![Grant users access to this service account](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_finishAccountCreation.webp)
+   ![Grant users access to this service account](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_finishAccountCreation.webp)
 
 7. Search for the account that was just created and select it:
 
-   ![Select the account](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectTheCreateAccount.webp)
+   ![Select the account](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectTheCreateAccount.webp)
 
 8. Navigate to the **KEYS** tab, click **ADD KEY**, and select `Create new key`.
    (You can use your own key, but the properties must be the same as when you
    generate it. Therefore, it is highly recommended to use the `Create new key` option.)
 
-   ![Create a new private key](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectToCreateANewKey.webp)
+   ![Create a new private key](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectToCreateANewKey.webp)
 
 9. The key type we support is `JSON`. Click **CREATE**, and the private key will
    be downloaded to your computer.
 
-   ![Generate a JSON key](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectJsonKey.webp)
+   ![Generate a JSON key](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectJsonKey.webp)
 
 ## Grant the Service Account Access to Your Organization
 
 1. Select your organization. (Alternatively, you can perform this step within individual projects.):
 
-   ![Select your organization](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_selectOrganization.webp)
+   ![Select your organization](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectOrganization.webp)
 
 2. Navigate to **IAM & Admin --> IAM**, and click **Grant access**:
 
-   ![Navigate to organization permissions](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_navigateToOrgPermissions.webp)
+   ![Navigate to organization permissions](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_navigateToOrgPermissions.webp)
 
 3. Enter the Service Account email address and assign the custom role:
 
-   ![Grant organizational access](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_grantOrgAccess.webp)
+   ![Grant organizational access](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_grantOrgAccess.webp)
 
 ## How To Load the `JSON` Key to IP Fabric
 
 1. In the IP Fabric GUI, navigate to **Settings --> Discovery & Snapshots -->
    Discovery Settings --> Vendors API**, and click **+ Add**:
 
-   ![Vendors API - Add](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_addingNewVendor.webp)
+   ![Vendors API - Add](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_addingNewVendor.webp)
 
 2. Select `Google Cloud Platform` from the list.
 
 3. Move your key to the Drag&Drop area or select it from your computer, and
    enter the other required information:
 
-   ![Add Connection - Google Cloud Platform](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp_loadingKeyFile.webp)
+   ![Add Connection - Google Cloud Platform](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_loadingKeyFile.webp)
 
 ## What Counts Against IP Fabric License
 

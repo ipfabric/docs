@@ -36,17 +36,17 @@ We can create the ACS components listed above. First, we need to create
 a device group called **RoutersHQ**. To do so, go to **Network Resources -->
 Network Device Groups --> Device Type --> Create**:
 
-![acs1](../../../../images/support/support-known_issues-Vendors-cisco_acs1.webp)
+![acs1](../../../../images/support/support_known-issues-vendors_cisco-acs1.webp)
 
 Enter the device group information and click the **Submit** button:
 
-![acs2](../../../../images/support/support-known_issues-Vendors-cisco_acs2.webp)
+![acs2](../../../../images/support/support_known-issues-vendors_cisco-acs2.webp)
 
 After the device group has been created, we need to add a router in it.
 To do this, go to **Network Resources --> Network Devices and AAA Clients
 --> Create**:
 
-![acs1](../../../../images/support/support-known_issues-Vendors-cisco_acs3.webp)
+![acs1](../../../../images/support/support_known-issues-vendors_cisco-acs3.webp)
 
 
 Under **Name**, enter the name for the router (it does not have to match the
@@ -55,74 +55,74 @@ you’ve created in the previous step. Under **IP address**, enter the IP
 address of the router. Under **Authentication options**, click the checkbox
 next to the protocol that will be used and type the password.
 
-![acs4](../../../../images/support/support-known_issues-Vendors-cisco_acs4.webp)
+![acs4](../../../../images/support/support_known-issues-vendors_cisco-acs4.webp)
 
 Next, we need to create two user groups: **Admin** and **HelpDesk**. To do this,
 go to **Users and Identity Stores --> Identity Groups --> Create**:
 
-![acs5](../../../../images/support/support-known_issues-Vendors-cisco_acs5.webp)
+![acs5](../../../../images/support/support_known-issues-vendors_cisco-acs5.webp)
 
 Enter the group information:
 
-![acs6](../../../../images/support/support-known_issues-Vendors-cisco_acs6.webp)
+![acs6](../../../../images/support/support_known-issues-vendors_cisco-acs6.webp)
 
 Repeat the process to create the second group:
 
-![acs7](../../../../images/support/support-known_issues-Vendors-cisco_acs7.webp)
+![acs7](../../../../images/support/support_known-issues-vendors_cisco-acs7.webp)
 
 Now we need to create two users and place them in the appropriate
 identity groups. To do that, go to **Users and Identity Stores --> Internal
 Identity Stores --> Users --> Create**:
 
-![acs8](../../../../images/support/support-known_issues-Vendors-cisco_acs8.webp)
+![acs8](../../../../images/support/support_known-issues-vendors_cisco-acs8.webp)
 
 Under** Name**, enter **Administrator**. Under **Identity Group**, select
 the **Admin** group. Under **Password**, configure the password for the user.
 When you are done, click **Submit** to create the user:
 
-![acs9](../../../../images/support/support-known_issues-Vendors-cisco_acs9.webp)
+![acs9](../../../../images/support/support_known-issues-vendors_cisco-acs9.webp)
 
 Repeat the process for the **Helpdesk** user. Make sure to select
 the **HelpDesk** group:
 
-![acs10](../../../../images/support/support-known_issues-Vendors-cisco_acs10.webp)
+![acs10](../../../../images/support/support_known-issues-vendors_cisco-acs10.webp)
 
 The next step is to create authorization policies to give full access to
 users in the **Admin** group and limited access to users in
 the **HelpDesk** group. Go to **Access Policies --> Access Services -->
 Default Device Admin --> Authorization --> Create**:
 
-![acs11](../../../../images/support/support-known_issues-Vendors-cisco_acs11.webp)
+![acs11](../../../../images/support/support_known-issues-vendors_cisco-acs11.webp)
 
 Name this policy **AdminRole**. Under **Identity Group**, choose
 the **Admin** group. Under **NDG:Device Type**, choose
 the**RoutersHQ** device group. Click the **Select** button next
 to **Shell Profile**:
 
-![acs12](../../../../images/support/support-known_issues-Vendors-cisco_acs12.webp)
+![acs12](../../../../images/support/support_known-issues-vendors_cisco-acs12.webp)
 
 We will not use the preconfigured profiles – we will create our own.
 Click** Create**:
 
-![acs13](../../../../images/support/support-known_issues-Vendors-cisco_acs13.webp)
+![acs13](../../../../images/support/support_known-issues-vendors_cisco-acs13.webp)
 
 Name the profile and click the **Common Tasks** tab:
 
-![acs14](../../../../images/support/support-known_issues-Vendors-cisco_acs14.webp)
+![acs14](../../../../images/support/support_known-issues-vendors_cisco-acs14.webp)
 
 Change the **Default privilege **level to **Static**, and assign the
 privilege level of **15**:
 
-![acs15](../../../../images/support/support-known_issues-Vendors-cisco_acs15.webp)
+![acs15](../../../../images/support/support_known-issues-vendors_cisco-acs15.webp)
 
 Click **Submit**. We need to repeat the process to create the **HelpDeskRole**:
 
-![acs16](../../../../images/support/support-known_issues-Vendors-cisco_acs16.webp)
-![acs17](../../../../images/support/support-known_issues-Vendors-cisco_acs17.webp)
+![acs16](../../../../images/support/support_known-issues-vendors_cisco-acs16.webp)
+![acs17](../../../../images/support/support_known-issues-vendors_cisco-acs17.webp)
 
 This time, assign the privilege level of **1**:
 
-![acs16](../../../../images/support/support-known_issues-Vendors-cisco_acs18.webp)
+![acs16](../../../../images/support/support_known-issues-vendors_cisco-acs18.webp)
 
 You can now test the user and then add it to the IP Fabric authentication
 list.

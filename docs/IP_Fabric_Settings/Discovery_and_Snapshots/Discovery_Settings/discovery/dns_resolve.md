@@ -11,10 +11,10 @@ the configured DNS servers.
 To enable this option, go to **Settings --> Discovery & Snapshots --> Discovery
 Settings --> DNS resolve** and click the **on/off** toggle.
 
-![DNS resolve](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_dns_resolve.webp)
+![DNS resolve](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_dns_resolve.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
 
-    ![DNS resolve - New Design](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-discovery_dns_resolve2.webp)
+    ![DNS resolve - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_dns_resolve2.webp)

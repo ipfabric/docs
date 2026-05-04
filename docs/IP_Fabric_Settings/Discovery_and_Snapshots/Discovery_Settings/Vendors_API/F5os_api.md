@@ -31,5 +31,5 @@ description: This section contains information on how to set up API discovery fo
   !!! Note 
       Tenants on both systems (F5OSA, F5OSC) are discovered using CLI.
 
-![Add Connection - F5OS](../../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-f5os_F5OS_add_connection.webp)
+![Add Connection - F5OS](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_f5os_F5OS_add_connection.webp)
 

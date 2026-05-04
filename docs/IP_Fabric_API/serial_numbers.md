@@ -26,17 +26,17 @@ By default, only the new `Serial Number` column (with serial numbers as captured
 on devices / as seen on other platforms) is shown in the **Device Inventory**
 table:
 
-![Default view of Device Inventory table](../images/inventory/devices/IP_Fabric_API-serial_numbers_device_inventory_default_view.webp)
+![Default view of Device Inventory table](../images/inventory/devices/inventory-devices_serial-numbers-device-inventory-default-view.webp)
 
 The `Unique serial number` column can be additionally enabled (click `...` in
 the top-right corner of the table and select `Display settings`):
 
-![Enable Unique serial number column](../images/inventory/devices/IP_Fabric_API-serial_numbers_enable_unique_serial_number_column.webp)
+![Enable Unique serial number column](../images/inventory/devices/inventory-devices_serial-numbers-enable-unique-serial-number-column.webp)
 
 As expected, some devices have different values in their `Unique serial number`
 and `Serial Number` columns:
 
-![Comparison of Unique serial number and Serial Number columns](../images/inventory/devices/IP_Fabric_API-serial_numbers_comparison_of_columns.webp)
+![Comparison of Unique serial number and Serial Number columns](../images/inventory/devices/inventory-devices_serial-numbers-comparison-of-columns.webp)
 
 !!! info
 

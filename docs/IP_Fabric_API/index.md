@@ -78,9 +78,9 @@ At a technology table, click `...` (3-dot button) in the top right corner of the
 table and select the `Table description` option that exposes the endpoints (can
 be used with filters as well):
 
-![Table description option](../images/technology/IP_Fabric_GUI-technology_tables_table_description_option.webp)
+![Table description option](../images/technology/technology_table-description-option.webp)
 
-![API Endpoint inline description](../images/technology/platforms/IP_Fabric_API_endpoint_inline_description.webp)
+![API Endpoint inline description](../images/technology/platforms/technology-platforms_endpoint-inline-description.webp)
 
 ## Payload Definition
 

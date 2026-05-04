@@ -17,7 +17,7 @@ CLI, follow these steps:
 
 3. Modify the hostname -- the very first option:
 
-  ![Enter the short hostname](../../images/settings/cli/System_Administration-IPF_CLI_Config_change_hostname2.webp)
+  ![Enter the short hostname](../../images/settings/cli/settings-cli_change_hostname2.webp)
 
   !!! info "Valid Hostnames"
 
@@ -26,7 +26,7 @@ CLI, follow these steps:
 
 4. Modify the DNS domain name -- the second option:
 
-  ![Enter the DNS domain name](../../images/settings/cli/System_Administration-IPF_CLI_Config_change_dns_domain_name.webp)
+  ![Enter the DNS domain name](../../images/settings/cli/settings-cli_change_dns_domain_name.webp)
 
   !!! note
 
@@ -38,4 +38,4 @@ CLI, follow these steps:
 
 5. Select `Yes` to reboot the system:
 
-   ![Reboot system](../../images/settings/cli/System_Administration-IPF_CLI_Config_reboot.webp)
+   ![Reboot system](../../images/settings/cli/settings-cli_reboot.webp)

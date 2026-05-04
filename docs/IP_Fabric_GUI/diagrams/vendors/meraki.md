@@ -17,7 +17,7 @@ As of version `7.8`, the Meraki network diagram displays:
 - L2 connections based on the RSTP protocol
 - L3 links derived from ARP and routing information
 
-![Meraki Network](../../../images/diagrams/Meraki_network.webp)
+![Meraki Network](../../../images/diagrams/diagrams_Meraki-network.webp)
 
 ## Path Lookup
 
@@ -35,22 +35,22 @@ Currently supported path types include:
 
 #### Path Lookup Using Meraki Network Only
 
-![Meraki Path Lookup 1](../../../images/diagrams/Meraki_1.webp)
+![Meraki Path Lookup 1](../../../images/diagrams/diagrams_Meraki-1.webp)
 
 #### Path Lookup Across Multi-vendor Network
 
-![Meraki Path Lookup 2](../../../images/diagrams/Meraki_2.webp)
+![Meraki Path Lookup 2](../../../images/diagrams/diagrams_Meraki-2.webp)
 
 #### From LAN via Firewall
 
-![From LAN via FW](../../../images/diagrams/Meraki-from_Lan.webp)
+![From LAN via FW](../../../images/diagrams/diagrams_Meraki-from-Lan.webp)
 
 The absence of a MAC table is illustrated here. The orange firewall floods
 traffic to all internal (LAN/VLAN) ports.
 
 #### To LAN via Firewall
 
-![To LAN via FW](../../../images/diagrams/Meraki-to_Lan.webp)
+![To LAN via FW](../../../images/diagrams/diagrams_Meraki-to-Lan.webp)
 
 ## Workarounds for Not Available Data
 

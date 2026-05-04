@@ -39,30 +39,30 @@ allows you to create or modify policies.
 
 1. To add a new policy, click **+ Add policy**:
 
-   ![Add policy button](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table.webp)
+   ![Add policy button](../../images/settings/administration/policies/settings-administration-policies_table.webp)
 
 2. Click **Attributes scope**:
 
-   ![Add policy - Attributes scope](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_attributes_add.webp)
+   ![Add policy - Attributes scope](../../images/settings/administration/policies/settings-administration-policies_add.webp)
 
 3. Set a policy name, add attributes (create filters), select values, and click
    **Save**:
 
-   ![Specify attributes scope policy](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_attributes_select.webp)
+   ![Specify attributes scope policy](../../images/settings/administration/policies/settings-administration-policies_select.webp)
 
 ## Add API Endpoints Scope Policy
 
 1. To add a new policy, click **+ Add policy**:
 
-   ![Add policy button](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table.webp)
+   ![Add policy button](../../images/settings/administration/policies/settings-administration-policies_table.webp)
 
 2. **API endpoints scope** should be selected by default:
 
-   ![Add policy - API endpoints scope](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_endpoints_add.webp)
+   ![Add policy - API endpoints scope](../../images/settings/administration/policies/settings-administration-policies_policies-endpoints-add.webp)
 
 3. Set a policy name, select API endpoints, and click **Save**:
 
-   ![Specify API endpoints scope policy](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_endpoints_select.webp)
+   ![Specify API endpoints scope policy](../../images/settings/administration/policies/settings-administration-policies_policies-endpoints-select.webp)
 
 ## List of Policies
 
@@ -70,36 +70,36 @@ The `Policies` table lists all policies including their details and allows you
 to **modify** or **delete** them _(except for the built-in policies, which
 cannot be modified or deleted)_.
 
-![Policies table](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table.webp)
+![Policies table](../../images/settings/administration/policies/settings-administration-policies_table.webp)
 
 ## Edit Policy
 
 1. To modify the details of a policy, click the **Edit** icon next to it in the
    `Policies` table:
 
-   ![Policies table - Edit icon](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table_edit.webp)
+   ![Policies table - Edit icon](../../images/settings/administration/policies/settings-administration-policies_policies-table-edit.webp)
 
 2. Update the data in the **Edit policy** form and click **Save**:
 
-   ![Edit policy form](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_edit.webp)
+   ![Edit policy form](../../images/settings/administration/policies/settings-administration-policies_edit.webp)
 
 ## Copy Policy
 
 1. To copy a policy, click the **Copy** icon next to it in the `Policies` table:
 
-   ![Policies table - Copy icon](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table_copy.webp)
+   ![Policies table - Copy icon](../../images/settings/administration/policies/settings-administration-policies_policies-table-copy.webp)
 
 2. Update the data in the **Copy policy** form and click **Save**:
 
-   ![Copy policy form](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_copy.webp)
+   ![Copy policy form](../../images/settings/administration/policies/settings-administration-policies_copy.webp)
 
 ## Delete Policy
 
 1. To delete a policy, click the **Delete** icon next to it in the `Policies`
    table:
 
-   ![Policies table - Delete icon](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table_delete.webp)
+   ![Policies table - Delete icon](../../images/settings/administration/policies/settings-administration-policies_delete.webp)
 
 2. To confirm the action, click **Delete**:
 
-   ![Policy will be removed dialog](../../images/settings/administration/policies/IP_Fabric_Settings-administration-policies_policies_table_delete_confirm.webp)
+   ![Policy will be removed dialog](../../images/settings/administration/policies/settings-administration-policies_confirm.webp)

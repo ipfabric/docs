@@ -46,7 +46,7 @@ The TUI provides two main options:
 
 Example main menu:
 
-![IPF System Upgrade main menu](../../../images/miscellaneous/System_Administration-Command_Line_Interface-How_to-CLI_upgrade-initial_TUI.webp)
+![IPF System Upgrade main menu](../../../images/miscellaneous/miscellaneous_initial-TUI.webp)
 
 #### Remote Upgrade
 
@@ -56,7 +56,7 @@ If updates are available, they are displayed in the TUI. After selecting a versi
 
 Example version selection screen:
 
-![Available remote upgrades](../../../images/miscellaneous/System_Administration-Command_Line_Interface-How_to-CLI_upgrade-online_available.webp)
+![Available remote upgrades](../../../images/miscellaneous/miscellaneous_online-available.webp)
 
 #### Local Upgrade
 
@@ -64,11 +64,11 @@ The **Local Upgrade** option upgrades IP Fabric from a local upgrade package.
 
 When selected in the TUI, the tool looks for upgrade files in the directory from which the command was started. If a valid package is found, it is offered for selection:
 
-![Local upgrade package selection](../../../images/miscellaneous/System_Administration-Command_Line_Interface-How_to-CLI_upgrade-local_file.webp)
+![Local upgrade package selection](../../../images/miscellaneous/miscellaneous_local-file.webp)
 
 After selecting the file, the tool asks for confirmation:
 
-![Local upgrade confirmation](../../../images/miscellaneous/System_Administration-Command_Line_Interface-How_to-CLI_upgrade-local_confirm_file.webp)
+![Local upgrade confirmation](../../../images/miscellaneous/miscellaneous_local-confirm-file.webp)
 
 !!! Warning "Local Upgrades Behavior"
 
@@ -105,7 +105,7 @@ After selecting the file, the tool asks for confirmation:
 
 Once the upgrade package is selected and the upgrade is in progress, the web-based upgrade portal will display the same status.
 
-![Upgrade progress](../../../images/miscellaneous/System_Administration-Command_Line_Interface-How_to-CLI_upgrade-visible_progress_GUI.webp)
+![Upgrade progress](../../../images/miscellaneous/miscellaneous_visible-progress-GUI.webp)
 
 ## CLI Upgrade Without TUI
 

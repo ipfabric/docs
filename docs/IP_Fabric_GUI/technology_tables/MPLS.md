@@ -12,10 +12,10 @@ The **RSVP** (Resource Reservation Protocol) section contains information about 
 
 The **Neighbors** tab contains information about all relations, including local and neighbor addresses, IDs, status of the neighborship, and information about link protection.
 
-![RSVP Neighbors table](../../images/technology/mpls/IP_Fabric_GUI-technology_tables-MPLS-rsvp_RsvpNeighbors.webp)
+![RSVP Neighbors table](../../images/technology/mpls/technology-mpls_rsvp-neighbors.webp)
 
 ### Interfaces
 
 The **Interfaces** tab contains information about each interface used for RSVP, including maximal and allocated bandwidth, and link protection.
 
-![RSVP Interfaces table](../../images/technology/mpls/IP_Fabric_GUI-technology_tables-MPLS-rsvp_RsvpInterfaces.webp)
+![RSVP Interfaces table](../../images/technology/mpls/technology-mpls_rsvp-interfaces.webp)

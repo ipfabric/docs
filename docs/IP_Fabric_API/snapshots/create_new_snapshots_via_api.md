@@ -23,7 +23,7 @@ Headers must contain:
 
 If you want to start a discovery using the existing settings, it is a simple `POST` request to `/api/{api_version}/snapshot`, without a body.
 
-![configure of Creating snapshot](../../images/miscellaneous/ipf/IP_Fabric_API-snapshots_configure_of_Creating_snapshoot.webp)
+![configure of Creating snapshot](../../images/miscellaneous/ipf/miscellaneous-ipf_creating-snapshoot.webp)
 
 ## Create a New Snapshot With Different Settings Than the Default Ones
 
@@ -59,7 +59,7 @@ Here is an example of a body to use to perform a discovery with a new scope (`ne
 
 Let's see how it looks when using Postman:
 
-![create snapshot](../../images/miscellaneous/ipf/IP_Fabric_API-snapshots_create_snapshot.webp)
+![create snapshot](../../images/miscellaneous/ipf/miscellaneous-ipf_create-snapshot.webp)
 
 ## Settings for Creating a New Snapshot
 

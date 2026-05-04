@@ -36,13 +36,13 @@ Exclude list (in **Settings --> Discovery & Snapshots --> Discovery Settings
 --> Discovery --> IP Scope --> IP networks to exclude from discovery and
 analysis**).
 
-![IP Scope](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_ip_scope.webp)
+![IP Scope](../../../../images/snapshot-management/snapshot-management_troubleshooting-ip-scope.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card. The fields are now called 'Include in discovery' and 'Exclude from discovery'.
 
-    ![IP Scope - New Design](../../../../images/snapshot-management/overview-How_Discovery_Works-troubleshooting_ip_scope2.webp)
+    ![IP Scope - New Design](../../../../images/snapshot-management/snapshot-management_troubleshooting-ip-scope2.webp)
 
 !!! warning "Priority"
 

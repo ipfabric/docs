@@ -29,13 +29,13 @@ disabled Tasks by the device's Serial Number.
 
 ## Default Disabled Discovery Tasks
 
-![Default Disabled Discovery Tasks](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_default_disabled_discovery_tasks.webp)
+![Default Disabled Discovery Tasks](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_default_disabled_discovery_tasks.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings.
 
-    ![Default Disabled Discovery Tasks - New Design](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_default_disabled_discovery_tasks2.webp)
+    ![Default Disabled Discovery Tasks - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_default_disabled_discovery_tasks2.webp)
 
 Since version `6.9`, **Disabled Discovery Tasks** contain the following four
 predefined rules:
@@ -64,10 +64,10 @@ vEOS. The test for the rule reveals 4 matches.
     be found in
     [Regular Expression Syntax](../../../IP_Fabric_GUI/technology_tables/index.md#regular-expression-syntax).
 
-![Example](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_disabled_discovery_tasks_example.webp)
+![Example](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_disabled_discovery_tasks_example.webp)
 
 !!! info "New Design"
 
     Since version 7.10, we are testing a new design of Discovery Settings.
 
-    ![Example - New Design](../../../images/settings/discovery-snapshots/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings_disabled_discovery_tasks_example2.webp)
+    ![Example - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_disabled_discovery_tasks_example2.webp)
