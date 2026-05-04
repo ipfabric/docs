@@ -67,6 +67,14 @@ Below is an example of a successful local backup output triggered via CLI:
 
 ## Restore via CLI
 
+!!! warning
+
+    Restoring a backup from FTP/SFTP requires backup server configuration
+    through the GUI. GUI access requires a valid license file uploaded
+    to the appliance. Keep your license file readily available.
+    Without it, you cannot configure the backup server or perform
+    the restore.
+
 To restore a backup, perform the following two steps:
 
 1. Configure the backup server in the main GUI, navigate to
