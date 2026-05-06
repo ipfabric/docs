@@ -166,18 +166,21 @@ ipf-connection-tester ssh userName@device-IP-or-Hostname
     root@ipfabric-server:~# ipf-connection-tester ssh 192.168.121.119
     Username? username1
     Password?
-    2022-12-14T16:33:30.505Z - debug: Custom crypto binding not available
-    2022-12-14T16:33:30.507Z - debug: Local ident: 'SSH-2.0-ssh2js1.10.0'
-    2022-12-14T16:33:30.507Z - debug: Client: Trying 192.168.121.119 on port 22 ...
-    2022-12-14T16:33:33.576Z - debug: Socket error: connect ETIMEDOUT 192.168.121.119:22
-    2022-12-14T16:33:33.579Z - info: Awaiting connectionEndedPromise...
-    2022-12-14T16:33:33.580Z - debug: Socket closed
-    2022-12-14T16:33:33.582Z - info: SocketClosedPromise finished.
-    2022-12-14T16:33:33.582Z - info: LogList:  [
-      "Trying SSH connect to 192.168.121.119:22",
-      "SSH Error: Error: connect ETIMEDOUT 192.168.121.119:22"
-    ]
-    2022-12-14T16:33:33.583Z - error: connect ETIMEDOUT 192.168.121.119:22 {"name":"ABConnectionError","stack":"Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:00.989Z","messageType":"text","message":"Custom crypto binding not available"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:00.990Z","messageType":"text","message":"Local ident: 'SSH-2.0-ssh2js1.11.0'"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:00.990Z","messageType":"text","message":"Client: Trying 192.168.121.119 on port 22 ..."}
+    {"level":"debug","timestamp":"2026-04-01T05:29:08.213Z","messageType":"text","message":"Socket error: connect ETIMEDOUT 192.168.121.119:22"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:08.214Z","messageType":"error","name":"Error","message":"connect ETIMEDOUT 192.168.121.119:22","stack":"Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","code":"ETIMEDOUT","contextMessage":"SSH protocol error","source":"cli","protocol":"SSH","loggingEntityId":"SshClient:ea852894-2ae8-44a7-991b-7bb45295c849"}
+    {"level":"error","timestamp":"2026-04-01T05:29:08.214Z","messageType":"text","message":"SSH error: Error: connect ETIMEDOUT 192.168.121.119:22"}
+    {"level":"error","timestamp":"2026-04-01T05:29:08.214Z","messageType":"text","message":"connect ETIMEDOUT 192.168.121.119:22"}
+    {"level":"error","timestamp":"2026-04-01T05:29:08.217Z","messageType":"text","message":"SSH protocol error"}
+    {"level":"error","timestamp":"2026-04-01T05:29:08.218Z","messageType":"text","message":"SSH protocol error"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:08.218Z","messageType":"text","message":"Already disconnected","source":"cli","protocol":"SSH","loggingEntityId":"SshClient:ea852894-2ae8-44a7-991b-7bb45295c849"}
+    {"level":"debug","timestamp":"2026-04-01T05:29:08.219Z","messageType":"error","name":"ABConnectionError","message":"connect ETIMEDOUT 192.168.121.119:22","stack":"Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)","contextMessage":"Session (re-)establishment failed","logData":{"failedSessionReestablishmentInRowCount":0},"source":"cli","protocol":"SSH","loggingEntityId":"SshClient:ea852894-2ae8-44a7-991b-7bb45295c849"}
+    {"level":"info","timestamp":"2026-04-01T05:29:08.219Z","messageType":"text","message":"Awaiting connectionEndedPromise..."}
+    {"level":"debug","timestamp":"2026-04-01T05:29:08.219Z","messageType":"text","message":"Socket closed"}
+    {"level":"info","timestamp":"2026-04-01T05:29:08.219Z","messageType":"text","message":"SocketClosedPromise finished."}
+    {"level":"error","timestamp":"2026-04-01T05:29:08.219Z","messageType":"error","name":"ABConnectionError","message":"connect ETIMEDOUT 192.168.121.119:22","stack":"Error: connect ETIMEDOUT 192.168.121.119:22\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)"}
     ```
 
 If you are getting timeouts, you may increase the default timeout options:
@@ -276,7 +279,7 @@ top -o %MEM
     %Cpu(s): 33.3 us,  0.0 sy,  0.0 ni, 66.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
     MiB Mem :  31337.8 total,  22013.0 free,   7099.0 used,   3048.6 buff/cache
     MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  24238.8 avail Mem
-    
+
         PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
        2027 autoboss  20   0  154.0g   2.4g  48576 S   0.0   7.9   0:43.63 ipfabric-api
        2044 autoboss  20   0   31.4g 680884  46620 S   0.0   2.1   0:35.72 ipfabric-api
@@ -399,7 +402,7 @@ systemctl status postgresql@15-main.service
     ├─ 1381 "postgres: 15/main: logical replication launcher "
     ├─ 1899 "postgres: 15/main: ipf_api_user ipf_appliance_db ::1(3782) idle"
     └─21716 "postgres: 15/main: postgres ipf_appliance_db [local] idle"
-    
+
     Jul 11 10:34:41 ipfabric-howto1118135353 systemd[1]: Starting postgresql@15-main.service - PostgreSQL Cluster 15-main...
     Jul 11 10:34:44 ipfabric-howto1118135353 systemd[1]: Started postgresql@15-main.service - PostgreSQL Cluster 15-main.
     ```

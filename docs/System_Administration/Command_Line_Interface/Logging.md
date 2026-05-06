@@ -67,10 +67,9 @@ the `messageSubType` key as follows:
 The following 4 services -- Networker, Tasker, Updater, and Worker -- all log in
 two formats:
 
-| File                                                               | Description                                      |
-| :----------------------------------------------------------------- | :----------------------------------------------- |
-| `/home/autoboss/snapshots/<id>/services/<service>/all.txt`         | Simple text format, basic information            |
-| `/home/autoboss/snapshots/<id>/services/<service>/structured.json` | More detailed information in `JSON Lines` format |
+| File                                                                                    | Description                                      |
+| :-------------------------------------------------------------------------------------- | :----------------------------------------------- |
+| `/home/autoboss/snapshots/<id>/services/<service>/structured-{snapshot-timestamp}.json` | More detailed information in `JSON Lines` format |
 
 Service directories and their descriptions:
 
@@ -80,6 +79,7 @@ Service directories and their descriptions:
 | `/home/autoboss/snapshots/<id>/services/tasker/`    | Tasker prepares `vTask` records -- connecting into (network) devices.                    |
 | `/home/autoboss/snapshots/<id>/services/updater/`   | Updater is transforming device JSONs into the database.                                  |
 | `/home/autoboss/snapshots/<id>/services/worker/`    | Worker does the parsing.                                                                 |
+| `/home/autoboss/snapshots/<id>/services/scanworker/`| ScanWorker does the scanning. Optional folder if the scanner is enabled                  |
 
 ## Remote Syslog
 
