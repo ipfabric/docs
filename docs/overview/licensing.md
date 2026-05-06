@@ -43,9 +43,10 @@ Currently, these are at least:
 | Internet gateway       | `igw`     |
 | NAT gateway            | `nat`     |
 | Transit gateway        | `tgw`     |
-| VPC endpoint           | `vpce`    |
 | VPC                    | `vpc`     |
 | VPN gateway            | `vgw`     |
+
+VPC endpoints (`vpce`) do not use a license.
 
 ### Azure
 
