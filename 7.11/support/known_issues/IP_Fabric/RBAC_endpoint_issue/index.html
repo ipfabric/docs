@@ -3,35 +3,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This section is about how to configure the ServiceNow and IP Fabric integration.">
+        <meta name="description" content="RBAC configuration may cause intermittent 403 errors on the Support Status page when the `/support/status` endpoint is excluded from API scope.">
       
       
       
-        <link rel="canonical" href="https://docs.ipfabric.io/latest/integrations/service-now/">
+        <link rel="canonical" href="https://docs.ipfabric.io/latest/support/known_issues/IP_Fabric/RBAC_endpoint_issue/">
       
       
-        <link rel="prev" href="../python/CLI_Tools/dynamic-attributes/example_configs/region/">
+        <link rel="prev" href="../Missing_lsof_package/">
       
       
-        <link rel="next" href="Command-Line_Interface/">
+        <link rel="next" href="../Service_passwords/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/favicon.png">
+      <link rel="icon" href="../../../../assets/favicon.png">
       <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.6">
     
     
       
-        <title>Overview &amp; Installation - IP Fabric Documentation Portal</title>
+        <title>Support Status Page Endpoint Error - IP Fabric Documentation Portal</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/theme.css">
+      <link rel="stylesheet" href="../../../../stylesheets/theme.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -70,18 +70,18 @@
     
   
 <meta property="og:type" content="website">
-<meta property="og:title" content="Overview &amp; Installation - IP Fabric Documentation Portal">
-<meta property="og:description" content="This section is about how to configure the ServiceNow and IP Fabric integration.">
-<meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/integrations/service-now/index.png">
+<meta property="og:title" content="Support Status Page Endpoint Error - IP Fabric Documentation Portal">
+<meta property="og:description" content="RBAC configuration may cause intermittent 403 errors on the Support Status page when the `/support/status` endpoint is excluded from API scope.">
+<meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/support/known_issues/IP_Fabric/RBAC_endpoint_issue.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://docs.ipfabric.io/latest/integrations/service-now/">
+<meta property="og:url" content="https://docs.ipfabric.io/latest/support/known_issues/IP_Fabric/RBAC_endpoint_issue/">
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Overview &amp; Installation - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="This section is about how to configure the ServiceNow and IP Fabric integration.">
-<meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/integrations/service-now/index.png">
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<meta property="twitter:title" content="Support Status Page Endpoint Error - IP Fabric Documentation Portal">
+<meta property="twitter:description" content="RBAC configuration may cause intermittent 403 errors on the Support Status page when the `/support/status` endpoint is excluded from API scope.">
+<meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/support/known_issues/IP_Fabric/RBAC_endpoint_issue.png">
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview-installation" class="md-skip">
+        <a href="#support-status-page-endpoint-error" class="md-skip">
           Skip to content
         </a>
       
@@ -128,9 +128,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="IP Fabric Documentation Portal" class="md-header__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
+    <a href="../../../.." title="IP Fabric Documentation Portal" class="md-header__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview &amp; Installation
+              Support Status Page Endpoint Error
             
           </span>
         </div>
@@ -277,7 +277,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
   
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../IP_Fabric_API/" class="md-tabs__link">
+        <a href="../../../../IP_Fabric_API/" class="md-tabs__link">
           
   
   
@@ -317,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../IP_Fabric_GUI/dashboard/" class="md-tabs__link">
+        <a href="../../../../IP_Fabric_GUI/dashboard/" class="md-tabs__link">
           
   
   
@@ -337,7 +337,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../IP_Fabric_Settings/configuration_management/" class="md-tabs__link">
+        <a href="../../../../IP_Fabric_Settings/configuration_management/" class="md-tabs__link">
           
   
   
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../System_Administration/increase_disk_space/" class="md-tabs__link">
+        <a href="../../../../System_Administration/increase_disk_space/" class="md-tabs__link">
           
   
   
@@ -373,13 +373,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../integrations/" class="md-tabs__link">
           
   
   
@@ -418,7 +416,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../releases/" class="md-tabs__link">
+        <a href="../../../../releases/" class="md-tabs__link">
           
   
   
@@ -434,11 +432,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../support/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -472,9 +472,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="IP Fabric Documentation Portal" class="md-nav__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
+    <a href="../../../.." title="IP Fabric Documentation Portal" class="md-nav__button md-logo" aria-label="IP Fabric Documentation Portal" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     IP Fabric Documentation Portal
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../../overview/" class="md-nav__link">
         
   
   
@@ -657,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/faq/" class="md-nav__link">
+      <a href="../../../../overview/faq/" class="md-nav__link">
         
   
   
@@ -685,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/glossary/" class="md-nav__link">
+      <a href="../../../../overview/glossary/" class="md-nav__link">
         
   
   
@@ -713,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/licensing/" class="md-nav__link">
+      <a href="../../../../overview/licensing/" class="md-nav__link">
         
   
   
@@ -741,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/snapshots/" class="md-nav__link">
+      <a href="../../../../overview/snapshots/" class="md-nav__link">
         
   
   
@@ -819,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/API_discovery/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/API_discovery/" class="md-nav__link">
         
   
   
@@ -847,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/CLI_discovery/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/CLI_discovery/" class="md-nav__link">
         
   
   
@@ -875,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/troubleshooting_discovery/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/troubleshooting_discovery/" class="md-nav__link">
         
   
   
@@ -953,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/common_problems/connectivity_report/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/common_problems/connectivity_report/" class="md-nav__link">
         
   
   
@@ -981,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/common_problems/finetune-ssh-telnet/" class="md-nav__link">
         
   
   
@@ -1009,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/common_problems/no-devices-discovered/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/common_problems/no-devices-discovered/" class="md-nav__link">
         
   
   
@@ -1037,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/How_Discovery_Works/common_problems/quagga-frr/" class="md-nav__link">
+      <a href="../../../../overview/How_Discovery_Works/common_problems/quagga-frr/" class="md-nav__link">
         
   
   
@@ -1139,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/00-quick_start/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/00-quick_start/" class="md-nav__link">
         
   
   
@@ -1167,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/01-deployment/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/01-deployment/" class="md-nav__link">
         
   
   
@@ -1195,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/02-ipf_cli_config/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/02-ipf_cli_config/" class="md-nav__link">
         
   
   
@@ -1223,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/03-access_ui/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/03-access_ui/" class="md-nav__link">
         
   
   
@@ -1251,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/04-configuration_wizard/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/04-configuration_wizard/" class="md-nav__link">
         
   
   
@@ -1279,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform_first_steps/05-initial_discovery/" class="md-nav__link">
+      <a href="../../../../platform_first_steps/05-initial_discovery/" class="md-nav__link">
         
   
   
@@ -1372,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/" class="md-nav__link">
         
   
   
@@ -1400,7 +1400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/authentication/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/authentication/" class="md-nav__link">
         
   
   
@@ -1428,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/versioning/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/versioning/" class="md-nav__link">
         
   
   
@@ -1456,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/intent_verification_rules/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/intent_verification_rules/" class="md-nav__link">
         
   
   
@@ -1484,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/manual_config_backup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/manual_config_backup/" class="md-nav__link">
         
   
   
@@ -1512,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/retrieving_configurations/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/retrieving_configurations/" class="md-nav__link">
         
   
   
@@ -1540,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/retrieving_device_json_file/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/retrieving_device_json_file/" class="md-nav__link">
         
   
   
@@ -1568,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/retrieving_device_log_file/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/retrieving_device_log_file/" class="md-nav__link">
         
   
   
@@ -1596,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/serial_numbers/" class="md-nav__link">
         
   
   
@@ -1624,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/techsupport/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/techsupport/" class="md-nav__link">
         
   
   
@@ -1702,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Path_Lookup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Path_Lookup/" class="md-nav__link">
         
   
   
@@ -1730,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Path_Lookup/host_to_gateway_path_lookup/" class="md-nav__link">
         
   
   
@@ -1758,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Path_Lookup/multicast_path_lookup/" class="md-nav__link">
         
   
   
@@ -1786,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Path_Lookup/path_lookup_ICMP_decoder/" class="md-nav__link">
         
   
   
@@ -1814,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Path_Lookup/unicast_path_lookup/" class="md-nav__link">
         
   
   
@@ -1900,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Settings/bgp_route_collection/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Settings/bgp_route_collection/" class="md-nav__link">
         
   
   
@@ -1986,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/snapshots/create_new_snapshots_via_api/" class="md-nav__link">
         
   
   
@@ -2014,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/snapshots/modifying_snapshots/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/snapshots/modifying_snapshots/" class="md-nav__link">
         
   
   
@@ -2042,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/snapshots/snapshot_table/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/snapshots/snapshot_table/" class="md-nav__link">
         
   
   
@@ -2128,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Tutorials/interating_over_large_collections/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Tutorials/interating_over_large_collections/" class="md-nav__link">
         
   
   
@@ -2156,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_API/Tutorials/simulate_unicast_path_lookup_using_python/" class="md-nav__link">
         
   
   
@@ -2249,7 +2249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/dashboard/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/dashboard/" class="md-nav__link">
         
   
   
@@ -2277,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/discovery_snapshot/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/discovery_snapshot/" class="md-nav__link">
         
   
   
@@ -2305,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/extensions/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/extensions/" class="md-nav__link">
         
   
   
@@ -2333,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/global_filter/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/global_filter/" class="md-nav__link">
         
   
   
@@ -2361,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/inventory/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/inventory/" class="md-nav__link">
         
   
   
@@ -2389,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/reports/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/reports/" class="md-nav__link">
         
   
   
@@ -2417,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/usage_data_collection/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/usage_data_collection/" class="md-nav__link">
         
   
   
@@ -2495,7 +2495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/" class="md-nav__link">
         
   
   
@@ -2523,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/compare_snapshot/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/compare_snapshot/" class="md-nav__link">
         
   
   
@@ -2551,7 +2551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/how_to_use_path-lookup/" class="md-nav__link">
         
   
   
@@ -2579,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/intent_checks/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/intent_checks/" class="md-nav__link">
         
   
   
@@ -2607,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/network_viewer/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/network_viewer/" class="md-nav__link">
         
   
   
@@ -2685,7 +2685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/diagrams/vendors/meraki/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/diagrams/vendors/meraki/" class="md-nav__link">
         
   
   
@@ -2779,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/management/changes/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/management/changes/" class="md-nav__link">
         
   
   
@@ -2807,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/management/configuration/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/management/configuration/" class="md-nav__link">
         
   
   
@@ -2835,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/management/discovery_history/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/management/discovery_history/" class="md-nav__link">
         
   
   
@@ -2863,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/management/saved_config_consistency/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/management/saved_config_consistency/" class="md-nav__link">
         
   
   
@@ -2949,7 +2949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/" class="md-nav__link">
         
   
   
@@ -2977,7 +2977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/CDP_LLDP/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/CDP_LLDP/" class="md-nav__link">
         
   
   
@@ -3005,7 +3005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/DHCP/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/DHCP/" class="md-nav__link">
         
   
   
@@ -3033,7 +3033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/First_hop_redundancy_protocols/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/First_hop_redundancy_protocols/" class="md-nav__link">
         
   
   
@@ -3061,7 +3061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/interfaces/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/interfaces/" class="md-nav__link">
         
   
   
@@ -3089,7 +3089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/ip_telephony/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/ip_telephony/" class="md-nav__link">
         
   
   
@@ -3117,7 +3117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/lisp/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/lisp/" class="md-nav__link">
         
   
   
@@ -3145,7 +3145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/load_balancing/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/load_balancing/" class="md-nav__link">
         
   
   
@@ -3173,7 +3173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/MPLS/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/MPLS/" class="md-nav__link">
         
   
   
@@ -3201,7 +3201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/management_table/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/management_table/" class="md-nav__link">
         
   
   
@@ -3229,7 +3229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/networks/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/networks/" class="md-nav__link">
         
   
   
@@ -3257,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/port-channels/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/port-channels/" class="md-nav__link">
         
   
   
@@ -3285,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/QoS/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/QoS/" class="md-nav__link">
         
   
   
@@ -3313,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/routing/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/routing/" class="md-nav__link">
         
   
   
@@ -3341,7 +3341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/routing_analysis/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/routing_analysis/" class="md-nav__link">
         
   
   
@@ -3369,7 +3369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/SDN/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/SDN/" class="md-nav__link">
         
   
   
@@ -3397,7 +3397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/Security/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/Security/" class="md-nav__link">
         
   
   
@@ -3425,7 +3425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/serial_ports/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/serial_ports/" class="md-nav__link">
         
   
   
@@ -3453,7 +3453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/stp/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/stp/" class="md-nav__link">
         
   
   
@@ -3481,7 +3481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/transceivers/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/transceivers/" class="md-nav__link">
         
   
   
@@ -3509,7 +3509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/wireless/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/wireless/" class="md-nav__link">
         
   
   
@@ -3587,7 +3587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/addressing/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/addressing/" class="md-nav__link">
         
   
   
@@ -3615,7 +3615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/addressing/ipv4-managed-ip-summary/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/addressing/ipv4-managed-ip-summary/" class="md-nav__link">
         
   
   
@@ -3643,7 +3643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/addressing/ipv6-managed-ip-summary/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/addressing/ipv6-managed-ip-summary/" class="md-nav__link">
         
   
   
@@ -3729,7 +3729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/endpoints/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/endpoints/" class="md-nav__link">
         
   
   
@@ -3757,7 +3757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/nodes/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/nodes/" class="md-nav__link">
         
   
   
@@ -3785,7 +3785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/private_link/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/private_link/" class="md-nav__link">
         
   
   
@@ -3813,7 +3813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/public_ips/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/public_ips/" class="md-nav__link">
         
   
   
@@ -3841,7 +3841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/subnets/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/subnets/" class="md-nav__link">
         
   
   
@@ -3869,7 +3869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/cloud/vendors/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/cloud/vendors/" class="md-nav__link">
         
   
   
@@ -3955,7 +3955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/platforms/cisco_fabricpath/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/platforms/cisco_fabricpath/" class="md-nav__link">
         
   
   
@@ -3983,7 +3983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/platforms/environment/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/platforms/environment/" class="md-nav__link">
         
   
   
@@ -4011,7 +4011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/platforms/logical_devices/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/platforms/logical_devices/" class="md-nav__link">
         
   
   
@@ -4039,7 +4039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/platforms/poe/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/platforms/poe/" class="md-nav__link">
         
   
   
@@ -4067,7 +4067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/platforms/stacks/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/platforms/stacks/" class="md-nav__link">
         
   
   
@@ -4153,7 +4153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/SDWAN/silverpeak/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/SDWAN/silverpeak/" class="md-nav__link">
         
   
   
@@ -4181,7 +4181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/SDWAN/versa/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/SDWAN/versa/" class="md-nav__link">
         
   
   
@@ -4209,7 +4209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/technology_tables/SDWAN/viptela/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/technology_tables/SDWAN/viptela/" class="md-nav__link">
         
   
   
@@ -4303,7 +4303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/intent_rules/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/intent_rules/" class="md-nav__link">
         
   
   
@@ -4331,7 +4331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/native_vrfs/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/native_vrfs/" class="md-nav__link">
         
   
   
@@ -4359,7 +4359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/navigate_in_tables/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/navigate_in_tables/" class="md-nav__link">
         
   
   
@@ -4387,7 +4387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/search/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/search/" class="md-nav__link">
         
   
   
@@ -4415,7 +4415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/system_status/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/system_status/" class="md-nav__link">
         
   
   
@@ -4443,7 +4443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/time_conversion/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/time_conversion/" class="md-nav__link">
         
   
   
@@ -4471,7 +4471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_GUI/tips/vague_messages/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_GUI/tips/vague_messages/" class="md-nav__link">
         
   
   
@@ -4564,7 +4564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/configuration_management/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/configuration_management/" class="md-nav__link">
         
   
   
@@ -4642,7 +4642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/" class="md-nav__link">
         
   
   
@@ -4670,7 +4670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/ldap/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/ldap/" class="md-nav__link">
         
   
   
@@ -4698,7 +4698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/policies/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/policies/" class="md-nav__link">
         
   
   
@@ -4726,7 +4726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/roles/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/roles/" class="md-nav__link">
         
   
   
@@ -4754,7 +4754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/sso/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/sso/" class="md-nav__link">
         
   
   
@@ -4782,7 +4782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/administration/users/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/administration/users/" class="md-nav__link">
         
   
   
@@ -4868,7 +4868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/snapshot_collection/" class="md-nav__link">
         
   
   
@@ -4946,7 +4946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/advanced_cli/" class="md-nav__link">
         
   
   
@@ -4974,7 +4974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/assurance_engine/" class="md-nav__link">
         
   
   
@@ -5002,7 +5002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/device_credentials/" class="md-nav__link">
         
   
   
@@ -5030,7 +5030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/disabled_discovery_tasks/" class="md-nav__link">
         
   
   
@@ -5058,7 +5058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery_seeds/" class="md-nav__link">
         
   
   
@@ -5086,7 +5086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/manual_links/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/manual_links/" class="md-nav__link">
         
   
   
@@ -5114,7 +5114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/routing/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/routing/" class="md-nav__link">
         
   
   
@@ -5142,7 +5142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/site_separation/" class="md-nav__link">
         
   
   
@@ -5220,7 +5220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/discovery_tasks_settings/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/discovery_tasks_settings/" class="md-nav__link">
         
   
   
@@ -5248,7 +5248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/dns_resolve/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/dns_resolve/" class="md-nav__link">
         
   
   
@@ -5276,7 +5276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/duplicate_ips_discovery/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/duplicate_ips_discovery/" class="md-nav__link">
         
   
   
@@ -5304,7 +5304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ip_scope/" class="md-nav__link">
         
   
   
@@ -5332,7 +5332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ipv4_and_ipv6_address_list/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/ipv4_and_ipv6_address_list/" class="md-nav__link">
         
   
   
@@ -5360,7 +5360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/limit_download_of_bgp_routes/" class="md-nav__link">
         
   
   
@@ -5388,7 +5388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/scanner_settings/" class="md-nav__link">
         
   
   
@@ -5416,7 +5416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/traceroute_settings/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/discovery/traceroute_settings/" class="md-nav__link">
         
   
   
@@ -5502,7 +5502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/" class="md-nav__link">
         
   
   
@@ -5530,7 +5530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/AWS_Amazon_Web_Services/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/AWS_Amazon_Web_Services/" class="md-nav__link">
         
   
   
@@ -5558,7 +5558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/" class="md-nav__link">
         
   
   
@@ -5586,7 +5586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Check_Point/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Check_Point/" class="md-nav__link">
         
   
   
@@ -5614,7 +5614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_APIC/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_APIC/" class="md-nav__link">
         
   
   
@@ -5642,7 +5642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_FMC/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_FMC/" class="md-nav__link">
         
   
   
@@ -5670,7 +5670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Meraki/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Meraki/" class="md-nav__link">
         
   
   
@@ -5698,7 +5698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Viptela_SD-WAN/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Cisco_Viptela_SD-WAN/" class="md-nav__link">
         
   
   
@@ -5726,7 +5726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/F5os_api/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/F5os_api/" class="md-nav__link">
         
   
   
@@ -5754,7 +5754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/forcepoint/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/forcepoint/" class="md-nav__link">
         
   
   
@@ -5782,7 +5782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/GCP_Google_Cloud_Platform/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/GCP_Google_Cloud_Platform/" class="md-nav__link">
         
   
   
@@ -5810,7 +5810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/juniper_mist/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/juniper_mist/" class="md-nav__link">
         
   
   
@@ -5838,7 +5838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/PaloAlto_Prisma/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/PaloAlto_Prisma/" class="md-nav__link">
         
   
   
@@ -5866,7 +5866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Ruckus_Virtual_SmartZone/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Ruckus_Virtual_SmartZone/" class="md-nav__link">
         
   
   
@@ -5894,7 +5894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Silver_Peak_SD-WAN/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Silver_Peak_SD-WAN/" class="md-nav__link">
         
   
   
@@ -5922,7 +5922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/VeloCloud_SD-WAN/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/VeloCloud_SD-WAN/" class="md-nav__link">
         
   
   
@@ -5950,7 +5950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Versa_Networks_SD-WAN/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/Versa_Networks_SD-WAN/" class="md-nav__link">
         
   
   
@@ -5978,7 +5978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/VMware_NSX-T/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/VMware_NSX-T/" class="md-nav__link">
         
   
   
@@ -6072,7 +6072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes/" class="md-nav__link">
         
   
   
@@ -6100,7 +6100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/jumphost/" class="md-nav__link">
         
   
   
@@ -6128,7 +6128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/organizationally_unique_identifier/" class="md-nav__link">
         
   
   
@@ -6222,7 +6222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/integration/api_tokens/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/integration/api_tokens/" class="md-nav__link">
         
   
   
@@ -6250,7 +6250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/integration/mcp/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/integration/mcp/" class="md-nav__link">
         
   
   
@@ -6278,7 +6278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/integration/webhooks/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/integration/webhooks/" class="md-nav__link">
         
   
   
@@ -6364,7 +6364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/ca/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/ca/" class="md-nav__link">
         
   
   
@@ -6392,7 +6392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/hsts/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/hsts/" class="md-nav__link">
         
   
   
@@ -6420,7 +6420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/ipf_cert/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/ipf_cert/" class="md-nav__link">
         
   
   
@@ -6448,7 +6448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/snmp/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/snmp/" class="md-nav__link">
         
   
   
@@ -6526,7 +6526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/cleardb/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/cleardb/" class="md-nav__link">
         
   
   
@@ -6554,7 +6554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/configuration_import_export/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/configuration_import_export/" class="md-nav__link">
         
   
   
@@ -6582,7 +6582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_backup/" class="md-nav__link">
         
   
   
@@ -6610,7 +6610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance/" class="md-nav__link">
+      <a href="../../../../IP_Fabric_Settings/system/Backup_and_Maintenance/system_maintenance/" class="md-nav__link">
         
   
   
@@ -6711,7 +6711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/increase_disk_space/" class="md-nav__link">
+      <a href="../../../../System_Administration/increase_disk_space/" class="md-nav__link">
         
   
   
@@ -6739,7 +6739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/system_update/" class="md-nav__link">
+      <a href="../../../../System_Administration/system_update/" class="md-nav__link">
         
   
   
@@ -6817,7 +6817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/" class="md-nav__link">
         
   
   
@@ -6845,7 +6845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/Authentication_Settings/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/Authentication_Settings/" class="md-nav__link">
         
   
   
@@ -6873,7 +6873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/Configuration_Flags/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/Configuration_Flags/" class="md-nav__link">
         
   
   
@@ -6901,7 +6901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/Custom_TLS/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/Custom_TLS/" class="md-nav__link">
         
   
   
@@ -6929,7 +6929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/Feature_Flags/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/Feature_Flags/" class="md-nav__link">
         
   
   
@@ -6957,7 +6957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/ipf_checker/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/ipf_checker/" class="md-nav__link">
         
   
   
@@ -6985,7 +6985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/Logging/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/Logging/" class="md-nav__link">
         
   
   
@@ -7063,7 +7063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/add_system_repositories/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/add_system_repositories/" class="md-nav__link">
         
   
   
@@ -7091,7 +7091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/backup_restore_CLI/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/backup_restore_CLI/" class="md-nav__link">
         
   
   
@@ -7119,7 +7119,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/jumphost_troubleshooting/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/change_ntp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How To Change NTP Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/jumphost_troubleshooting/" class="md-nav__link">
         
   
   
@@ -7147,7 +7175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/troubleshoot_ldap/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/troubleshoot_ldap/" class="md-nav__link">
         
   
   
@@ -7175,7 +7203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/troubleshooting/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/troubleshooting/" class="md-nav__link">
         
   
   
@@ -7203,7 +7231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/Command_Line_Interface/How_to/upgrade_CLI/" class="md-nav__link">
+      <a href="../../../../System_Administration/Command_Line_Interface/How_to/upgrade_CLI/" class="md-nav__link">
         
   
   
@@ -7297,7 +7325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/IPF_CLI_Config/" class="md-nav__link">
+      <a href="../../../../System_Administration/IPF_CLI_Config/" class="md-nav__link">
         
   
   
@@ -7325,7 +7353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/IPF_CLI_Config/change_hostname/" class="md-nav__link">
+      <a href="../../../../System_Administration/IPF_CLI_Config/change_hostname/" class="md-nav__link">
         
   
   
@@ -7353,7 +7381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/IPF_CLI_Config/change_network/" class="md-nav__link">
+      <a href="../../../../System_Administration/IPF_CLI_Config/change_network/" class="md-nav__link">
         
   
   
@@ -7381,7 +7409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/IPF_CLI_Config/change_osadmin_pass/" class="md-nav__link">
+      <a href="../../../../System_Administration/IPF_CLI_Config/change_osadmin_pass/" class="md-nav__link">
         
   
   
@@ -7409,7 +7437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../System_Administration/IPF_CLI_Config/set_gui_admin_pass/" class="md-nav__link">
+      <a href="../../../../System_Administration/IPF_CLI_Config/set_gui_admin_pass/" class="md-nav__link">
         
   
   
@@ -7449,29 +7477,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -7489,7 +7512,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -7507,7 +7530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../../integrations/" class="md-nav__link">
         
   
   
@@ -7613,7 +7636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
+      <a href="../../../../integrations/python/" class="md-nav__link">
         
   
   
@@ -7641,7 +7664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/snapshots/" class="md-nav__link">
+      <a href="../../../../integrations/python/snapshots/" class="md-nav__link">
         
   
   
@@ -7669,7 +7692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/tables_basics/" class="md-nav__link">
+      <a href="../../../../integrations/python/tables_basics/" class="md-nav__link">
         
   
   
@@ -7747,7 +7770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_cve_report/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_cve_report/" class="md-nav__link">
         
   
   
@@ -7775,7 +7798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_device_search/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_device_search/" class="md-nav__link">
         
   
   
@@ -7803,7 +7826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_global_search/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_global_search/" class="md-nav__link">
         
   
   
@@ -7831,7 +7854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_route_search/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_route_search/" class="md-nav__link">
         
   
   
@@ -7859,7 +7882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_techsupprt/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_techsupprt/" class="md-nav__link">
         
   
   
@@ -7887,7 +7910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_to_excel/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_to_excel/" class="md-nav__link">
         
   
   
@@ -7915,7 +7938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/ipf_webhook_listener/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/ipf_webhook_listener/" class="md-nav__link">
         
   
   
@@ -7993,7 +8016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/" class="md-nav__link">
         
   
   
@@ -8071,7 +8094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/00-index/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/00-index/" class="md-nav__link">
         
   
   
@@ -8099,7 +8122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/01-delete/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/01-delete/" class="md-nav__link">
         
   
   
@@ -8127,7 +8150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/02-values/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/02-values/" class="md-nav__link">
         
   
   
@@ -8155,7 +8178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/03-tables/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/03-tables/" class="md-nav__link">
         
   
   
@@ -8183,7 +8206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/04-config/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/04-config/" class="md-nav__link">
         
   
   
@@ -8211,7 +8234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/configuration/05-rbac/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/configuration/05-rbac/" class="md-nav__link">
         
   
   
@@ -8297,7 +8320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/cloud-tag-separation/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/cloud-tag-separation/" class="md-nav__link">
         
   
   
@@ -8325,7 +8348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/config_http_server/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/config_http_server/" class="md-nav__link">
         
   
   
@@ -8353,7 +8376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/config_ssh_version/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/config_ssh_version/" class="md-nav__link">
         
   
   
@@ -8381,7 +8404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/log_version_name/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/log_version_name/" class="md-nav__link">
         
   
   
@@ -8409,7 +8432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/mgmt_ip/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/mgmt_ip/" class="md-nav__link">
         
   
   
@@ -8437,7 +8460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/CLI_Tools/dynamic-attributes/example_configs/region/" class="md-nav__link">
+      <a href="../../../../integrations/python/CLI_Tools/dynamic-attributes/example_configs/region/" class="md-nav__link">
         
   
   
@@ -8494,27 +8517,11 @@
                 
   
   
-    
   
   
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../../../service-now" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -8528,331 +8535,7 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    ServiceNow
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview &amp; Installation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview &amp; Installation
-  
-
-    
-  </span>
-  
-  
-
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pypi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PyPI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Poetry
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_2">
-        
-          
-          <label class="md-nav__link" for="__nav_6_4_2" id="__nav_6_4_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Command Line Interface
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Command Line Interface
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Command-Line_Interface/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Using the ipfabric-snow CLI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3">
-        
-          
-          <label class="md-nav__link" for="__nav_6_4_3" id="__nav_6_4_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric ServiceNow Application
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    IP Fabric ServiceNow Application
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="IP_Fabric_ServiceNow_Application/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IP Fabric ServiceNow Application Installation and Management
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -9021,7 +8704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nornir/" class="md-nav__link">
+      <a href="../../../../integrations/nornir/" class="md-nav__link">
         
   
   
@@ -9107,7 +8790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../postman/" class="md-nav__link">
+      <a href="../../../../integrations/postman/" class="md-nav__link">
         
   
   
@@ -9235,7 +8918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/" class="md-nav__link">
+      <a href="../../../../releases/" class="md-nav__link">
         
   
   
@@ -9313,7 +8996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/7.11/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/7.11/" class="md-nav__link">
         
   
   
@@ -9341,7 +9024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/7.10/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/7.10/" class="md-nav__link">
         
   
   
@@ -9369,7 +9052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/7.9/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/7.9/" class="md-nav__link">
         
   
   
@@ -9497,7 +9180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.5/" class="md-nav__link">
         
   
   
@@ -9525,7 +9208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.3/" class="md-nav__link">
         
   
   
@@ -9553,7 +9236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.2/" class="md-nav__link">
         
   
   
@@ -9581,7 +9264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.0/" class="md-nav__link">
         
   
   
@@ -9667,7 +9350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.10/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.10/" class="md-nav__link">
         
   
   
@@ -9695,7 +9378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.9/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.9/" class="md-nav__link">
         
   
   
@@ -9723,7 +9406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.8/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.8/" class="md-nav__link">
         
   
   
@@ -9751,7 +9434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.7/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.7/" class="md-nav__link">
         
   
   
@@ -9779,7 +9462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.6/" class="md-nav__link">
         
   
   
@@ -9807,7 +9490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.5/" class="md-nav__link">
         
   
   
@@ -9835,7 +9518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.4/" class="md-nav__link">
         
   
   
@@ -9863,7 +9546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.3/" class="md-nav__link">
         
   
   
@@ -9891,7 +9574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.2/" class="md-nav__link">
         
   
   
@@ -9919,7 +9602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.1/" class="md-nav__link">
         
   
   
@@ -9947,7 +9630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v6.x.x/6.0/" class="md-nav__link">
         
   
   
@@ -9983,7 +9666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/5.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/5.0/" class="md-nav__link">
         
   
   
@@ -10061,7 +9744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.4/" class="md-nav__link">
         
   
   
@@ -10089,7 +9772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.3/" class="md-nav__link">
         
   
   
@@ -10117,7 +9800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.2/" class="md-nav__link">
         
   
   
@@ -10145,7 +9828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.1/" class="md-nav__link">
         
   
   
@@ -10173,7 +9856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/IP_Fabric_v4.x.x/4.0/" class="md-nav__link">
         
   
   
@@ -10209,7 +9892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/v3.x.x_ip_fabric/" class="md-nav__link">
         
   
   
@@ -10237,7 +9920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/nimpee_v2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/nimpee_v2/" class="md-nav__link">
         
   
   
@@ -10265,7 +9948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/previous_releases/nimpee_v1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/previous_releases/nimpee_v1/" class="md-nav__link">
         
   
   
@@ -10301,7 +9984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes/7.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes/7.6/" class="md-nav__link">
         
   
   
@@ -10437,7 +10120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.11/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.11/" class="md-nav__link">
         
   
   
@@ -10465,7 +10148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.10/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.10/" class="md-nav__link">
         
   
   
@@ -10493,7 +10176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.9/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.9/" class="md-nav__link">
         
   
   
@@ -10521,7 +10204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.8/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.8/" class="md-nav__link">
         
   
   
@@ -10549,7 +10232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.5/" class="md-nav__link">
         
   
   
@@ -10577,7 +10260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.3/" class="md-nav__link">
         
   
   
@@ -10605,7 +10288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.2/" class="md-nav__link">
         
   
   
@@ -10633,7 +10316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/7.x/7.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/7.x/7.0/" class="md-nav__link">
         
   
   
@@ -10819,7 +10502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.10.x/6.10.7/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.10.x/6.10.7/" class="md-nav__link">
         
   
   
@@ -10847,7 +10530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.10.x/6.10.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.10.x/6.10.6/" class="md-nav__link">
         
   
   
@@ -10875,7 +10558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.10.x/6.10.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.10.x/6.10.5/" class="md-nav__link">
         
   
   
@@ -10903,7 +10586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.10.x/6.10.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.10.x/6.10.2/" class="md-nav__link">
         
   
   
@@ -10931,7 +10614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.10.x/6.10.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.10.x/6.10.0/" class="md-nav__link">
         
   
   
@@ -11017,7 +10700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.7/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.7/" class="md-nav__link">
         
   
   
@@ -11045,7 +10728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.6/" class="md-nav__link">
         
   
   
@@ -11073,7 +10756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.5/" class="md-nav__link">
         
   
   
@@ -11101,7 +10784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.4/" class="md-nav__link">
         
   
   
@@ -11129,7 +10812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.3/" class="md-nav__link">
         
   
   
@@ -11157,7 +10840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.2/" class="md-nav__link">
         
   
   
@@ -11185,7 +10868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.9.x/6.9.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.9.x/6.9.1/" class="md-nav__link">
         
   
   
@@ -11271,7 +10954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.6/" class="md-nav__link">
         
   
   
@@ -11299,7 +10982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.5/" class="md-nav__link">
         
   
   
@@ -11327,7 +11010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.4/" class="md-nav__link">
         
   
   
@@ -11355,7 +11038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.3/" class="md-nav__link">
         
   
   
@@ -11383,7 +11066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.2/" class="md-nav__link">
         
   
   
@@ -11411,7 +11094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.1/" class="md-nav__link">
         
   
   
@@ -11439,7 +11122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.8.x/6.8.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.8.x/6.8.0/" class="md-nav__link">
         
   
   
@@ -11525,7 +11208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.7/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.7/" class="md-nav__link">
         
   
   
@@ -11553,7 +11236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.6/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.6/" class="md-nav__link">
         
   
   
@@ -11581,7 +11264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.5/" class="md-nav__link">
         
   
   
@@ -11609,7 +11292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.4/" class="md-nav__link">
         
   
   
@@ -11637,7 +11320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.3/" class="md-nav__link">
         
   
   
@@ -11665,7 +11348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.2/" class="md-nav__link">
         
   
   
@@ -11693,7 +11376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.1/" class="md-nav__link">
         
   
   
@@ -11721,7 +11404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.7.x/6.7.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.7.x/6.7.0/" class="md-nav__link">
         
   
   
@@ -11807,7 +11490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.6.x/6.6.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.6.x/6.6.3/" class="md-nav__link">
         
   
   
@@ -11835,7 +11518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.6.x/6.6.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.6.x/6.6.2/" class="md-nav__link">
         
   
   
@@ -11863,7 +11546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.6.x/6.6.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.6.x/6.6.1/" class="md-nav__link">
         
   
   
@@ -11891,7 +11574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.6.x/6.6.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.6.x/6.6.0/" class="md-nav__link">
         
   
   
@@ -11977,7 +11660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.5.x/6.5.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.5.x/6.5.3/" class="md-nav__link">
         
   
   
@@ -12005,7 +11688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.5.x/6.5.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.5.x/6.5.2/" class="md-nav__link">
         
   
   
@@ -12033,7 +11716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.5.x/6.5.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.5.x/6.5.1/" class="md-nav__link">
         
   
   
@@ -12061,7 +11744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.5.x/6.5.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.5.x/6.5.0/" class="md-nav__link">
         
   
   
@@ -12147,7 +11830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.4.x/6.4.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.4.x/6.4.3/" class="md-nav__link">
         
   
   
@@ -12175,7 +11858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.4.x/6.4.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.4.x/6.4.2/" class="md-nav__link">
         
   
   
@@ -12203,7 +11886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.4.x/6.4.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.4.x/6.4.1/" class="md-nav__link">
         
   
   
@@ -12231,7 +11914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.4.x/6.4.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.4.x/6.4.0/" class="md-nav__link">
         
   
   
@@ -12317,7 +12000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.3.x/6.3.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.3.x/6.3.2/" class="md-nav__link">
         
   
   
@@ -12345,7 +12028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.3.x/6.3.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.3.x/6.3.1/" class="md-nav__link">
         
   
   
@@ -12373,7 +12056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.3.x/6.3.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.3.x/6.3.0/" class="md-nav__link">
         
   
   
@@ -12459,7 +12142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.2.x/6.2.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.2.x/6.2.2/" class="md-nav__link">
         
   
   
@@ -12487,7 +12170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.2.x/6.2.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.2.x/6.2.1/" class="md-nav__link">
         
   
   
@@ -12515,7 +12198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.2.x/6.2.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.2.x/6.2.0/" class="md-nav__link">
         
   
   
@@ -12601,7 +12284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.1.x/6.1.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.1.x/6.1.1/" class="md-nav__link">
         
   
   
@@ -12629,7 +12312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.1.x/6.1.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.1.x/6.1.0/" class="md-nav__link">
         
   
   
@@ -12715,7 +12398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.0.x/6.0.1/" class="md-nav__link">
         
   
   
@@ -12743,7 +12426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/6.x/6.0.x/6.0.0/" class="md-nav__link">
         
   
   
@@ -12887,7 +12570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.2/" class="md-nav__link">
         
   
   
@@ -12915,7 +12598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.1/" class="md-nav__link">
         
   
   
@@ -12943,7 +12626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/5.x/5.0.x/5.0.0/" class="md-nav__link">
         
   
   
@@ -13087,7 +12770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.3/" class="md-nav__link">
         
   
   
@@ -13115,7 +12798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.2/" class="md-nav__link">
         
   
   
@@ -13143,7 +12826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.1/" class="md-nav__link">
         
   
   
@@ -13171,7 +12854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.4.x/4.4.0/" class="md-nav__link">
         
   
   
@@ -13257,7 +12940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.5/" class="md-nav__link">
         
   
   
@@ -13285,7 +12968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.4/" class="md-nav__link">
         
   
   
@@ -13313,7 +12996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.3/" class="md-nav__link">
         
   
   
@@ -13341,7 +13024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.2/" class="md-nav__link">
         
   
   
@@ -13369,7 +13052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.1/" class="md-nav__link">
         
   
   
@@ -13397,7 +13080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/" class="md-nav__link">
+      <a href="../../../../releases/release_notes_low-level/4.x/4.3.x/4.3.0/" class="md-nav__link">
         
   
   
@@ -13461,24 +13144,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -13496,7 +13184,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -13514,7 +13202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   
@@ -13542,7 +13230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/security_bulletins/" class="md-nav__link">
+      <a href="../../../security_bulletins/" class="md-nav__link">
         
   
   
@@ -13570,7 +13258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/security_incidents/" class="md-nav__link">
+      <a href="../../../security_incidents/" class="md-nav__link">
         
   
   
@@ -13598,7 +13286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/support_vpn/" class="md-nav__link">
+      <a href="../../../support_vpn/" class="md-nav__link">
         
   
   
@@ -13626,7 +13314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/techsupport/" class="md-nav__link">
+      <a href="../../../techsupport/" class="md-nav__link">
         
   
   
@@ -13651,6 +13339,8 @@
                 
   
   
+    
+  
   
   
     
@@ -13661,11 +13351,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6" checked>
         
           
           <label class="md-nav__link" for="__nav_9_6" id="__nav_9_6_label" tabindex="0">
@@ -13686,7 +13376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -13704,7 +13394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -13729,6 +13419,8 @@
                 
   
   
+    
+  
   
   
     
@@ -13739,11 +13431,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_9_6_2" id="__nav_9_6_2_label" tabindex="0">
@@ -13764,7 +13456,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_6_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -13782,7 +13474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -13810,7 +13502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/Customer_name_in_techsupport/" class="md-nav__link">
+      <a href="../Customer_name_in_techsupport/" class="md-nav__link">
         
   
   
@@ -13838,7 +13530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/data_not_received/" class="md-nav__link">
+      <a href="../data_not_received/" class="md-nav__link">
         
   
   
@@ -13866,7 +13558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/FTP_backup_and_restore_are_not_working/" class="md-nav__link">
+      <a href="../FTP_backup_and_restore_are_not_working/" class="md-nav__link">
         
   
   
@@ -13894,7 +13586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/fortigate_cli_paging_causes_incomplete_parsing/" class="md-nav__link">
+      <a href="../fortigate_cli_paging_causes_incomplete_parsing/" class="md-nav__link">
         
   
   
@@ -13922,7 +13614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/ipv4-over-ipv6-limitations/" class="md-nav__link">
+      <a href="../ipv4-over-ipv6-limitations/" class="md-nav__link">
         
   
   
@@ -13950,7 +13642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/local_time_inconsistencies/" class="md-nav__link">
+      <a href="../local_time_inconsistencies/" class="md-nav__link">
         
   
   
@@ -13978,7 +13670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/Missing_lsof_package/" class="md-nav__link">
+      <a href="../Missing_lsof_package/" class="md-nav__link">
         
   
   
@@ -14003,10 +13695,107 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Status Page Endpoint Error
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Status Page Endpoint Error
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#affects-versions-79-and-higher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Affects versions 7.9 and higher
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workaround" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workaround:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/Service_passwords/" class="md-nav__link">
+      <a href="../Service_passwords/" class="md-nav__link">
         
   
   
@@ -14034,7 +13823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/transceivers_task/" class="md-nav__link">
+      <a href="../transceivers_task/" class="md-nav__link">
         
   
   
@@ -14062,7 +13851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/URL_unsafe_and_reserved_proxy_password/" class="md-nav__link">
+      <a href="../URL_unsafe_and_reserved_proxy_password/" class="md-nav__link">
         
   
   
@@ -14090,7 +13879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-nav__link">
+      <a href="../unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-nav__link">
         
   
   
@@ -14118,7 +13907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/vrf_routes_not_collected_on_cisco_nx-os/" class="md-nav__link">
+      <a href="../vrf_routes_not_collected_on_cisco_nx-os/" class="md-nav__link">
         
   
   
@@ -14146,7 +13935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/windows_ssh_mac_algorithm/" class="md-nav__link">
+      <a href="../windows_ssh_mac_algorithm/" class="md-nav__link">
         
   
   
@@ -14185,10 +13974,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_15">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_16">
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_15" id="__nav_9_6_2_15_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_16" id="__nav_9_6_2_16_label" tabindex="0">
             
   
   
@@ -14206,8 +13995,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_15">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -14224,7 +14013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/error_messages/http_504-database_overloaded/" class="md-nav__link">
+      <a href="../error_messages/http_504-database_overloaded/" class="md-nav__link">
         
   
   
@@ -14252,7 +14041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/error_messages/invalid_ovf_checksum/" class="md-nav__link">
+      <a href="../error_messages/invalid_ovf_checksum/" class="md-nav__link">
         
   
   
@@ -14280,7 +14069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/IP_Fabric/error_messages/resource_conflict/" class="md-nav__link">
+      <a href="../error_messages/resource_conflict/" class="md-nav__link">
         
   
   
@@ -14374,7 +14163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/3com/" class="md-nav__link">
+      <a href="../../Vendors/3com/" class="md-nav__link">
         
   
   
@@ -14402,7 +14191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/arista/" class="md-nav__link">
+      <a href="../../Vendors/arista/" class="md-nav__link">
         
   
   
@@ -14430,7 +14219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/azure/" class="md-nav__link">
+      <a href="../../Vendors/azure/" class="md-nav__link">
         
   
   
@@ -14458,7 +14247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/brocade/" class="md-nav__link">
+      <a href="../../Vendors/brocade/" class="md-nav__link">
         
   
   
@@ -14486,7 +14275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/checkpoint/" class="md-nav__link">
+      <a href="../../Vendors/checkpoint/" class="md-nav__link">
         
   
   
@@ -14514,7 +14303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/dell/" class="md-nav__link">
+      <a href="../../Vendors/dell/" class="md-nav__link">
         
   
   
@@ -14542,7 +14331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/extreme/" class="md-nav__link">
+      <a href="../../Vendors/extreme/" class="md-nav__link">
         
   
   
@@ -14570,7 +14359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/f5/" class="md-nav__link">
+      <a href="../../Vendors/f5/" class="md-nav__link">
         
   
   
@@ -14598,7 +14387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/forcepoint/" class="md-nav__link">
+      <a href="../../Vendors/forcepoint/" class="md-nav__link">
         
   
   
@@ -14626,7 +14415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/gcp/" class="md-nav__link">
+      <a href="../../Vendors/gcp/" class="md-nav__link">
         
   
   
@@ -14654,7 +14443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/hp/" class="md-nav__link">
+      <a href="../../Vendors/hp/" class="md-nav__link">
         
   
   
@@ -14682,7 +14471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/huawei/" class="md-nav__link">
+      <a href="../../Vendors/huawei/" class="md-nav__link">
         
   
   
@@ -14710,7 +14499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/juniper/" class="md-nav__link">
+      <a href="../../Vendors/juniper/" class="md-nav__link">
         
   
   
@@ -14738,7 +14527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/meraki/" class="md-nav__link">
+      <a href="../../Vendors/meraki/" class="md-nav__link">
         
   
   
@@ -14766,7 +14555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/mikrotik/" class="md-nav__link">
+      <a href="../../Vendors/mikrotik/" class="md-nav__link">
         
   
   
@@ -14794,7 +14583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/opengear/" class="md-nav__link">
+      <a href="../../Vendors/opengear/" class="md-nav__link">
         
   
   
@@ -14822,7 +14611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/stormshield/" class="md-nav__link">
+      <a href="../../Vendors/stormshield/" class="md-nav__link">
         
   
   
@@ -14850,7 +14639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/vmware_nsxt/" class="md-nav__link">
+      <a href="../../Vendors/vmware_nsxt/" class="md-nav__link">
         
   
   
@@ -14878,7 +14667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/vmware_velocloud/" class="md-nav__link">
+      <a href="../../Vendors/vmware_velocloud/" class="md-nav__link">
         
   
   
@@ -14956,7 +14745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/" class="md-nav__link">
+      <a href="../../Vendors/cisco/" class="md-nav__link">
         
   
   
@@ -14984,7 +14773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Adding_AAA_user_to_Cisco_ACS/" class="md-nav__link">
         
   
   
@@ -15012,7 +14801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Cisco_ASA_In_Transparent_Mode/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Cisco_ASA_In_Transparent_Mode/" class="md-nav__link">
         
   
   
@@ -15040,7 +14829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Command_cli_whitespace_completion/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Command_cli_whitespace_completion/" class="md-nav__link">
         
   
   
@@ -15068,7 +14857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/FMC_Firepower_NAT/" class="md-nav__link">
+      <a href="../../Vendors/cisco/FMC_Firepower_NAT/" class="md-nav__link">
         
   
   
@@ -15096,7 +14885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/FMC_REST_API/" class="md-nav__link">
+      <a href="../../Vendors/cisco/FMC_REST_API/" class="md-nav__link">
         
   
   
@@ -15124,7 +14913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Inconsistent_VRF_names_on_Cisco_platforms/" class="md-nav__link">
         
   
   
@@ -15152,7 +14941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Invalid_Identification_String/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Invalid_Identification_String/" class="md-nav__link">
         
   
   
@@ -15180,7 +14969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/MAB_configuration_crashes_on_CLI/" class="md-nav__link">
+      <a href="../../Vendors/cisco/MAB_configuration_crashes_on_CLI/" class="md-nav__link">
         
   
   
@@ -15208,7 +14997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Nexus_9k_Show_Version/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Nexus_9k_Show_Version/" class="md-nav__link">
         
   
   
@@ -15236,7 +15025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/SG500_requires_special_login_process/" class="md-nav__link">
+      <a href="../../Vendors/cisco/SG500_requires_special_login_process/" class="md-nav__link">
         
   
   
@@ -15264,7 +15053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Show_Interface_Transceivers/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Show_Interface_Transceivers/" class="md-nav__link">
         
   
   
@@ -15292,7 +15081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Viptela_cEdge_omp_limit/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_cEdge_omp_limit/" class="md-nav__link">
         
   
   
@@ -15320,7 +15109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Viptela_cEdge_shows_only_one_next_hop/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_cEdge_shows_only_one_next_hop/" class="md-nav__link">
         
   
   
@@ -15348,7 +15137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/Viptela_vSmart_SN/" class="md-nav__link">
+      <a href="../../Vendors/cisco/Viptela_vSmart_SN/" class="md-nav__link">
         
   
   
@@ -15376,7 +15165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/cisco/VRFs_are_not_found_on_IOS-XR/" class="md-nav__link">
+      <a href="../../Vendors/cisco/VRFs_are_not_found_on_IOS-XR/" class="md-nav__link">
         
   
   
@@ -15462,7 +15251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/fortinet/" class="md-nav__link">
+      <a href="../../Vendors/fortinet/" class="md-nav__link">
         
   
   
@@ -15490,7 +15279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/fortinet/sdwan/" class="md-nav__link">
+      <a href="../../Vendors/fortinet/sdwan/" class="md-nav__link">
         
   
   
@@ -15576,7 +15365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/Palo_Alto_Networks/" class="md-nav__link">
+      <a href="../../Vendors/Palo_Alto_Networks/" class="md-nav__link">
         
   
   
@@ -15604,7 +15393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/Palo_Alto_Networks/panorama/" class="md-nav__link">
+      <a href="../../Vendors/Palo_Alto_Networks/panorama/" class="md-nav__link">
         
   
   
@@ -15690,7 +15479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/versa/AsyncRequestTimeoutException/" class="md-nav__link">
+      <a href="../../Vendors/versa/AsyncRequestTimeoutException/" class="md-nav__link">
         
   
   
@@ -15718,7 +15507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/known_issues/Vendors/versa/forwarding-table-duplicate-output/" class="md-nav__link">
+      <a href="../../Vendors/versa/forwarding-table-duplicate-output/" class="md-nav__link">
         
   
   
@@ -15797,10 +15586,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#affects-versions-79-and-higher" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Affects versions 7.9 and higher
       
     </span>
   </a>
@@ -15808,49 +15597,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#workaround" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pypi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PyPI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#poetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Poetry
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
+        Workaround:
       
     </span>
   </a>
@@ -15883,10 +15633,10 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="../../../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Integrations
+    Support
   </span>
 
         </a>
@@ -15901,10 +15651,28 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
-    ServiceNow
+    Known issues
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    IP Fabric
   </span>
 
         </a>
@@ -15923,7 +15691,7 @@
 
 
   
-    <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-snow.git/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/ipfabric/docs/edit/main/docs/support/known_issues/IP_Fabric/RBAC_endpoint_issue.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -15931,78 +15699,11 @@
   
 
 
-<h1 id="overview-installation">Overview &amp; Installation</h1>
-<h2 id="overview">Overview</h2>
-<p>There are 2 main focus areas for this integration:</p>
-<ol>
-<li>The CLI tool <code>ipfabric-snow</code> that is used to sync data between IP Fabric and ServiceNow.</li>
-<li>The ServiceNow application that is installed in the ServiceNow instance.</li>
-</ol>
-<p>The <code>ipfabric-snow</code> integration is a powerful command-line tool designed to facilitate the synchronization of network inventory data between IP Fabric and ServiceNow. This Python application is built with minimal dependencies, ensuring ease of setup and maintenance. Key features and requirements of this tool include:</p>
-<ul>
-<li><strong>Staging Table Requirement:</strong> <code>ipfabric-snow</code> requires a staging table in ServiceNow. This table acts as an intermediate location where data from IP Fabric is temporarily stored before being processed or transferred to the final destination table. In ServiceNow, this is referred to as a import set. Reference ServiceNow’s documentation on <a href="https://docs.servicenow.com/bundle/vancouver-integrate-applications/page/administer/import-sets/reference/import-sets-landing-page.html">import sets</a>.</li>
-</ul>
-<ul>
-<li><strong>Transformation Maps:</strong> The integration utilizes transformation maps, a component in ServiceNow, to map and transform data fields from IP Fabric to corresponding fields in ServiceNow. See ServiceNow’s documentation on <a href="https://docs.servicenow.com/csh?topicname=c_CreatingNewTransformMaps.html&amp;version=latest">transformation maps</a>.</li>
-</ul>
-<ul>
-<li><strong>Diffing with CMDB Network Gear Table:</strong> The main functionality of <code>ipfabric-snow</code> is its ability to perform differential analysis between the data in IP Fabric and the existing data in ServiceNow’s CMDB (Configuration Management Database) network gear table. This feature allows users to identify and synchronize any discrepancies between the two data sources.</li>
-</ul>
-<ul>
-<li><strong>Command-Line Interface:</strong> <code>ipfabric-snow</code> is a command-line utility, offering a user-friendly interface with various commands and options. This approach makes it versatile for different environments and use cases, allowing automation and scripting.</li>
-</ul>
-<ul>
-<li><strong>Dry Run Feature:</strong> Supports a “dry run” mode, which allows users to simulate the synchronization process without making actual changes.</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Integrations should be installed outside of the IP Fabric VM unless the IP
-Fabric team explicitly instructs otherwise.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Any action on the Command-Line Interface (CLI) using the <code>root</code>, <code>osadmin</code>,
-or <code>autoboss</code> account may cause irreversible, detrimental changes to the
-product. Actions taken without direct communication with the IP Fabric
-Support or Solution Architect teams can render the system unusable.</p>
-</div>
-<h2 id="installation">Installation</h2>
-<p>For the Command Line Interface (CLI) tool, <code>ipfabric-snow</code>, you can install it using either PyPI or Poetry. The installation process is straightforward and requires minimal setup.</p>
-<p>Requirements:</p>
-<ul>
-<li>Python 3.10+</li>
-<li>Access to IP Fabric and ServiceNow</li>
-</ul>
-<h3 id="pypi">PyPI</h3>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipfabric-snow
-</code></pre></div>
-<h3 id="poetry">Poetry</h3>
-<p>Clone <a href="https://gitlab.com/ip-fabric/integrations/ipfabric-snow">the repository</a> and run:</p>
-<div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>install
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To install the servicenow application, please refer to the <a href="IP_Fabric_ServiceNow_Application/">IP Fabric ServiceNow Application Installation and Management</a> documentation.</p>
-</div>
-<h2 id="example">Example</h2>
-<div class="highlight"><pre><span></span><code>❯<span class="w"> </span>ipfabric-snow<span class="w"> </span>--help
-
-<span class="w"> </span>Usage:<span class="w"> </span>ipfabric-snow<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...<span class="w">                                                                                                                                                                                                            </span>
-
-╭─<span class="w"> </span>Options<span class="w"> </span>─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│<span class="w"> </span>--log-level<span class="w">                                 </span>TEXT<span class="w">  </span>Log<span class="w"> </span>level<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>INFO<span class="o">]</span><span class="w">                                                                                                                                                                               </span>│
-│<span class="w"> </span>--log-to-file<span class="w">           </span>--no-log-to-file<span class="w">          </span>Log<span class="w"> </span>to<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>log-to-file<span class="o">]</span><span class="w">                                                                                                                                                                      </span>│
-│<span class="w"> </span>--log-file-name<span class="w">                             </span>TEXT<span class="w">  </span>Log<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>ipf_serviceNow.log<span class="o">]</span><span class="w">                                                                                                                                                             </span>│
-│<span class="w"> </span>--log-json<span class="w">              </span>--no-log-json<span class="w">             </span>Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>JSON<span class="w"> </span>format<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>no-log-json<span class="o">]</span><span class="w">                                                                                                                                                               </span>│
-│<span class="w"> </span>--install-completion<span class="w">                              </span>Install<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell.<span class="w">                                                                                                                                                               </span>│
-│<span class="w"> </span>--show-completion<span class="w">                                 </span>Show<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell,<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>it<span class="w"> </span>or<span class="w"> </span>customize<span class="w"> </span>the<span class="w"> </span>installation.<span class="w">                                                                                                                        </span>│
-│<span class="w"> </span>--help<span class="w">                                            </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                                                                                                                             </span>│
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─<span class="w"> </span>Commands<span class="w"> </span>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│<span class="w"> </span>env<span class="w">                            </span>Setup<span class="w"> </span>environment<span class="w"> </span>variables<span class="w">                                                                                                                                                                                                </span>│
-│<span class="w"> </span>sync<span class="w">                           </span>Sync<span class="w"> </span>Inventory<span class="w"> </span>data<span class="w"> </span>with<span class="w"> </span>ServiceNow<span class="w">                                                                                                                                                                                        </span>│
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-</code></pre></div>
+<h1 id="support-status-page-endpoint-error">Support Status Page Endpoint Error</h1>
+<h4 id="affects-versions-79-and-higher">Affects versions <code>7.9</code> and higher</h4>
+<p>When a policy excludes the <code>GET /support/status</code> endpoint in API scope, the Support Status page may load correctly or show a <code>403</code> <code>Failed to load data</code> error.</p>
+<h4 id="workaround">Workaround:</h4>
+<p>Include <code>GET /support/status</code> in the policy. This allows access to hardware information while still restricting actions such as service restarts.</p>
 
 
 
@@ -16023,7 +15724,7 @@ Support or Solution Architect teams can render the system unusable.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 6, 2026 07:10:30 UTC">May 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 5, 2026 15:52:34 UTC">May 5, 2026</span>
   </span>
 
     
@@ -16111,7 +15812,7 @@ Support or Solution Architect teams can render the system unusable.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../python/CLI_Tools/dynamic-attributes/example_configs/region/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Region Example">
+          <a href="../Missing_lsof_package/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Missing lsof Package">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -16121,20 +15822,20 @@ Support or Solution Architect teams can render the system unusable.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Region Example
+                Missing lsof Package
               </div>
             </div>
           </a>
         
         
           
-          <a href="Command-Line_Interface/" class="md-footer__link md-footer__link--next" aria-label="Next: Using the ipfabric-snow CLI">
+          <a href="../Service_passwords/" class="md-footer__link md-footer__link--next" aria-label="Next: Service Passwords">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Using the ipfabric-snow CLI
+                Service Passwords
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -16150,7 +15851,7 @@ Support or Solution Architect teams can render the system unusable.</p>
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   <div class="md-copyright__highlight">
-    <a href="https://ipfabric.io" target="_blank"><img src="../../assets/logo_white.svg" width="200px" alt="IP Fabric Logo"></a>
+    <a href="https://ipfabric.io" target="_blank"><img src="../../../../assets/logo_white.svg" width="200px" alt="IP Fabric Logo"></a>
   </div>
 </div>
       
@@ -16291,12 +15992,12 @@ Support or Solution Architect teams can render the system unusable.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../js/open_in_new_tab.js"></script>
+        <script src="../../../../js/open_in_new_tab.js"></script>
       
     
   
