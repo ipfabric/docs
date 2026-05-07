@@ -142,6 +142,15 @@ maintain a consistent mapping to local groups and roles.
     [`LDAP_MATCHING_RULE_IN_CHAIN`](https://ldapwiki.com/wiki/Wiki.jsp?page=LDAP_MATCHING_RULE_IN_CHAIN),
     which might be slow in your local setup.
 
+  !!! warning "Nested LDAP Groups"
+
+      The GUI LDAP configuration has limits for nested group retrieval and may not work reliably in all LDAP or Active Directory environments.
+
+      For environments that require nested group membership, we recommend configuring LDAP through SSO with Dex IdP instead.
+
+      See [LDAP Connector](sso.md/#ldap-connector) for LDAP, LDAPS, and nested group configuration examples.
+
+
 12. Click **Confirm**.
 
 !!! note
@@ -272,7 +281,13 @@ IP Fabric displays all LDAP login errors as `Invalid Credentials` in the GUI, th
 Common LDAP error codes indicate issues with the AD/LDAP configuration. To retrieve the latest error messages, use:
 
 ```bash
-sudo cat /var/log/ipf/ipf-api/api.log | grep LdapErr
+grep LdapErr /var/log/syslog
+```
+
+or
+
+```bash
+journalctl --namespace ipf-api --since <timestamp, for example 2026-05-07> | grep LdapErr
 ```
 
 !!! Example "Example Log Entry"

@@ -133,7 +133,7 @@ points:
       - Client Secret.
       - Issuer.
 
-    - [Azure Active Directory (Azure AD)](#azure)
+    - [Azure Active Directory (Azure AD)](#azure-ad)
 
       - Application (Client) ID.
       - Client Secret.
@@ -523,6 +523,92 @@ map to `/etc/ipf-dex.yaml`:
 
 ![JSON YAML mapping](../../images/settings/administration/ldap/IP_Fabric_Settings-administration-sso_sso_api_dex_mapping.webp)
 
+### YAML Validation
+
+While Dex itself determines the validity of the actual configuration, it can be handy to check parsing of the configuration YAML. You can use the following command to get a JSON representation of `/etc/ipf-dex.yaml`:
+
+```bash
+python3 -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))' < /etc/ipf-dex.yaml  | jq .
+```
+
+??? example "Correct YAML"
+
+    Let's assume the following YAML fragment as an input:
+
+    ```yaml
+    connectors:
+      - type: microsoft
+        id: sso_azure
+        config:
+          scopes:
+            - openid
+            - profile
+            - email
+            - groups
+    ```
+
+    The output of the command will be:
+
+    ```json
+    {
+      "connectors": [
+        {
+          "type": "microsoft",
+          "id": "sso_azure",
+          "config": {
+            "scopes": [
+              "openid",
+              "profile",
+              "email",
+              "groups"
+            ]
+          }
+        }
+      ]
+    }
+    ```
+
+    As you can see, `scopes` has been correctly parsed as a list.
+
+??? example "Wrong YAML"
+
+    Let's assume the following YAML fragment as an input:
+
+    ```yaml
+    connectors:
+      - type: microsoft
+        id: sso_azure
+        config:
+          scopes:
+          - openid
+            - profile
+            - email
+            - groups
+    ```
+
+    The output of the command will be:
+
+    ```json
+    {
+      "connectors": [
+        {
+          "type": "microsoft",
+          "id": "sso_azure",
+          "config": {
+            "scopes": [
+              "openid - profile - email - groups"
+            ]
+          }
+        }
+      ]
+    }
+    ```
+
+    As you can see, `scopes` has been completely incorrectly parsed as a
+    multiline string.
+
+## Dex Connectors
+
 ### OpenID Connect (OIDC)
 
 Please review the
@@ -580,7 +666,7 @@ connectors:
 - `claimMapping` -- Some providers return non-standard claims (i.e., roles). Use
   `claimMapping` to map those claims to standard claims.
 
-### Azure
+### Azure AD
 
 !!! warning
 
@@ -744,91 +830,239 @@ connectors:
   never-changing. Use `nameIDPolicyFormat` to ensure this is set to a value
   which satisfies these requirements.
 
-### YAML Validation
+### LDAP Connector
 
-While the validity of the actual configuration is determined by Dex itself, it
-can be handy to verify parsing of the configuration YAML. You can use the
-following command to get a JSON representation of `/etc/ipf-dex.yaml`:
+Dex can also authenticate users against an LDAP-compatible directory, such as Microsoft Active Directory, by using the `ldap` connector.
 
-```bash
-python3 -c 'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))' < /etc/ipf-dex.yaml  | jq .
+LDAP SSO is configured in `/etc/ipf-dex.yaml` in the `connectors` section. The examples below show common Active Directory configurations for:
+
+- LDAP without TLS
+- LDAPS with a trusted CA certificate
+- LDAPS with certificate verification disabled
+- LDAP with StartTLS
+
+!!! warning
+
+    LDAP without TLS is not recommended for production environments.
+
+    Dex verifies the user's password by binding to LDAP as that user. When LDAP is used without TLS, user passwords are sent over the network in clear text. Prefer LDAPS on port `636`, or LDAP with StartTLS, whenever possible.
+
+#### LDAP without TLS
+
+Use this configuration only for testing or in environments where LDAP traffic is otherwise protected.
+
+```yaml
+connectors:
+  - type: ldap
+    name: ActiveDirectory
+    id: ad
+    config:
+      host: ad.example.com:389
+
+      # Required when connecting to LDAP without TLS.
+      insecureNoSSL: true
+
+      # Has no effect when insecureNoSSL is true.
+      insecureSkipVerify: false
+
+      bindDN: CN=ipfabric-sso,OU=service_accounts,OU=users,DC=example,DC=com
+      bindPW: <BIND_PASSWORD>
+
+      usernamePrompt: LDAP Username
+
+      userSearch:
+        baseDN: OU=users,DC=example,DC=com
+        filter: "(objectClass=person)"
+        username: sAMAccountName
+
+        # DN must be uppercase when used as a Dex attribute value.
+        idAttr: DN
+
+        # The attribute used inside in IP Fabric as an username.
+        # For Active Directory, userPrincipalName or mail is usually preferred.
+        # sAMAccountName can be used if no email-like attribute is available.
+        emailAttr: userPrincipalName
+        nameAttr: cn
+
+      groupSearch:
+        baseDN: OU=groups,DC=example,DC=com
+        filter: "(objectClass=group)"
+        userMatchers:
+          - userAttr: DN
+            groupAttr: member
+        nameAttr: cn
 ```
 
-??? example "Correct YAML"
+#### LDAPS with Certificate Verification
 
-    Let's assume the following YAML fragment as an input:
+Use this configuration when the LDAP server listens on LDAPS, typically on TCP port `636`.
 
-    ```yaml
-    connectors:
-      - type: microsoft
-        id: sso_azure
-        config:
-          scopes:
-            - openid
-            - profile
-            - email
-            - groups
-    ```
+```yaml
+connectors:
+  - type: ldap
+    name: ActiveDirectory
+    id: ad
+    config:
+      host: ad.example.com:636
 
-    The output of the command will be:
+      # Optional when using LDAPS, shown here for clarity.
+      insecureNoSSL: false
 
-    ```json
-    {
-      "connectors": [
-        {
-          "type": "microsoft",
-          "id": "sso_azure",
-          "config": {
-            "scopes": [
-              "openid",
-              "profile",
-              "email",
-              "groups"
-            ]
-          }
-        }
-      ]
-    }
-    ```
+      # Keep certificate verification enabled.
+      insecureSkipVerify: false
 
-    As you can see, `scopes` has been correctly parsed as a list.
+      # Path to the CA certificate that signed the LDAP server certificate.
+      # If the certificate is already trusted by the operating system, this can be omitted.
+      rootCA: /etc/dex/ldap.ca
 
-??? example "Incorrect YAML"
+      bindDN: CN=ipfabric-sso,OU=service_accounts,OU=users,DC=example,DC=com
+      bindPW: <BIND_PASSWORD>
 
-    Let's assume the following YAML fragment as an input:
+      usernamePrompt: LDAP Username
 
-    ```yaml
-    connectors:
-      - type: microsoft
-        id: sso_azure
-        config:
-          scopes:
-          - openid
-            - profile
-            - email
-            - groups
-    ```
+      userSearch:
+        baseDN: OU=users,DC=example,DC=com
+        filter: "(objectClass=person)"
+        username: sAMAccountName
+        idAttr: DN
+        emailAttr: userPrincipalName
+        nameAttr: cn
 
-    The output of the command will be:
+      groupSearch:
+        baseDN: OU=groups,DC=example,DC=com
+        filter: "(objectClass=group)"
+        userMatchers:
+          - userAttr: DN
+            groupAttr: member
+        nameAttr: cn
+```
 
-    ```json
-    {
-      "connectors": [
-        {
-          "type": "microsoft",
-          "id": "sso_azure",
-          "config": {
-            "scopes": [
-              "openid - profile - email - groups"
-            ]
-          }
-        }
-      ]
-    }
-    ```
+#### LDAPS with Certificate Verification Disabled
 
-    As you can see, `scopes` has been completely incorrectly parsed as a
-    multiline string.
+Use `insecureSkipVerify: true` only for testing or troubleshooting. This disables LDAP server certificate verification.
+
+```yaml
+connectors:
+  - type: ldap
+    name: ActiveDirectory
+    id: ad
+    config:
+      host: ad.example.com:636
+
+      insecureNoSSL: false
+      insecureSkipVerify: true
+
+      bindDN: CN=ipfabric-sso,OU=service_accounts,OU=users,DC=example,DC=com
+      bindPW: <BIND_PASSWORD>
+
+      usernamePrompt: LDAP Username
+
+      userSearch:
+        baseDN: OU=users,DC=example,DC=com
+        filter: "(objectClass=person)"
+        username: sAMAccountName
+        idAttr: DN
+        emailAttr: userPrincipalName
+        nameAttr: cn
+
+      groupSearch:
+        baseDN: OU=groups,DC=example,DC=com
+        filter: "(objectClass=group)"
+        userMatchers:
+          - userAttr: DN
+            groupAttr: member
+        nameAttr: cn
+```
+
+#### LDAP with StartTLS
+
+If the LDAP server listens on port `389` but supports StartTLS, use `startTLS: true` instead of `insecureNoSSL: true`.
+
+```yaml
+connectors:
+  - type: ldap
+    name: ActiveDirectory
+    id: ad
+    config:
+      host: ad.example.com:389
+
+      # Connect with ldap:// first, then upgrade the connection with StartTLS.
+      startTLS: true
+
+      insecureSkipVerify: false
+      rootCA: /etc/dex/ldap.ca
+
+      bindDN: CN=ipfabric-sso,OU=service_accounts,OU=users,DC=example,DC=com
+      bindPW: <BIND_PASSWORD>
+
+      usernamePrompt: LDAP Username
+
+      userSearch:
+        baseDN: OU=users,DC=example,DC=com
+        filter: "(objectClass=person)"
+        username: sAMAccountName
+        idAttr: DN
+        emailAttr: userPrincipalName
+        nameAttr: cn
+
+      groupSearch:
+        baseDN: OU=groups,DC=example,DC=com
+        filter: "(objectClass=group)"
+        userMatchers:
+          - userAttr: DN
+            groupAttr: member
+        nameAttr: cn
+```
+#### Group Membership Options
+
+##### Direct Group Membership
+
+For direct group membership, match the user's distinguished name against the group's `member` attribute.
+
+```yaml
+groupSearch:
+  baseDN: OU=groups,DC=example,DC=com
+  filter: "(objectClass=group)"
+  userMatchers:
+    - userAttr: DN
+      groupAttr: member
+  nameAttr: cn
+```
+
+This returns groups that list the user directly as a member.
+
+##### Nested Group Membership in Active Directory
+
+For Active Directory nested groups, use the LDAP matching rule `1.2.840.113556.1.4.1941` on the `member` attribute.
+
+```yaml
+groupSearch:
+  baseDN: OU=groups,DC=example,DC=com
+  filter: "(objectClass=group)"
+  userMatchers:
+    - userAttr: DN
+      groupAttr: "member:1.2.840.113556.1.4.1941:"
+  nameAttr: cn
+```
+
+Use this when IP Fabric role assignment should work not only for groups where the user is a direct member, but also for parent groups that contain the user's group.
+
+##### Nested Group Membership Using Dex Recursive Group Lookup
+
+Some LDAP schemas support nested groups by storing groups as members of other groups. Dex can recursively resolve these parent groups by using `recursionGroupAttr`.
+
+```yaml
+groupSearch:
+  baseDN: OU=groups,DC=example,DC=com
+  filter: "(objectClass=group)"
+  userMatchers:
+    - userAttr: DN
+      groupAttr: member
+      recursionGroupAttr: member
+  nameAttr: cn
+```
+
+If `recursionGroupAttr` is not set, Dex performs only a single-level group lookup.
 
 ## Restarting Services
 
@@ -851,7 +1085,7 @@ systemctl restart ipf-dex.service
 Dex logs can be found in `/var/log/syslog`.
 
 ```shell title="Example successful login message"
-~# grep 'connector_id=' /var/log/syslog
+~# grep 'dex\[' /var/log/syslog
 Oct  3 12:30:37 ipf-server dex[692]: time=2024-10-03T12:30:37.496Z level=INFO msg="login successful" connector_id=sso username="IPF User" preferred_username="" email=ipf.user@ipfabric.io groups="[Everyone Solution Architecture]"
 ```
 
