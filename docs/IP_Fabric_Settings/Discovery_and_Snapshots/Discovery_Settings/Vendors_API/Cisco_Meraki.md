@@ -18,6 +18,47 @@ select `Meraki REST` from the list, and fill in:
 
 ![Add Connection - Meraki REST](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_Vendors_API_add_meraki_rest.webp)
 
+## Filtering Options
+
+You can limit Meraki discovery to a specific subset of devices by using
+**Filtering options** in the `Meraki REST` configuration.
+
+These filters help scope API-based discovery when you only want to collect
+devices from selected networks, platforms, or tags.
+
+### Supported Fields
+
+You can build Meraki filtering rules from the following fields:
+
+- `Network ID`
+- `Platform`
+- `Tag`
+
+### Supported Operators
+
+Each filter rule supports:
+
+- exact matching: `equal` and `not equal`
+- regex matching with the `regex` operator
+
+You can combine rules and groups with `And` / `Or` logic.
+
+### How the Filters Work
+
+- IP Fabric evaluates filters only for the configured `Meraki REST` Vendor API instance.
+- You can group rules to build more specific discovery scopes.
+- `And` means all rules in the group must match.
+- `Or` means any matching rule or group is enough.
+- Regex rules match patterns instead of single fixed values.
+
+### Expected Results
+
+- With no filters, IP Fabric discovers all Meraki devices available through the configured organization IDs.
+- With **Filtering Options** enabled, IP Fabric discovers only devices matching the configured scope.
+- If you use exclusion with `not equal` or regex logic, IP Fabric excludes devices outside the matching scope.
+
+Review your filter logic carefully before starting discovery, especially when combining groups with `And` and `Or`.
+
 ## Login IP for Cisco Meraki
 
 For CLI (SSH/Telnet) discovery, the Login IP represents the IP address that the platform uses to discover the device. IP Fabric discovers Cisco Meraki via API, and therefore, different logic described below is used to assign the Login IP parameter for Meraki devices in the main inventory.

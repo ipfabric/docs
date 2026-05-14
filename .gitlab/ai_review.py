@@ -19,6 +19,7 @@ Optional:
 
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -98,6 +99,13 @@ MAX_FILE_SIZE = 12000  # characters — leave room for Vale output in token budg
 
 HEADERS = {"PRIVATE-TOKEN": GITLAB_TOKEN}
 
+# Max AI suggestions per line across all runs
+MAX_SUGGESTIONS_PER_LINE = 2
+# Max total AI review runs per MR (safety net against infinite loops)
+MAX_AI_REVIEW_RUNS = 3
+# Marker prefix used to identify AI review comments
+AI_REVIEW_MARKER = "**AI Review**"
+
 
 def get_head_sha():
     """Get HEAD commit SHA."""
@@ -107,6 +115,65 @@ def get_head_sha():
         ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True
     )
     return result.stdout.strip()
+
+
+def get_existing_ai_suggestions():
+    """Fetch existing AI Review discussions from the MR.
+
+    Returns:
+        - ai_run_count: how many distinct AI review runs have been posted
+        - line_suggestions: dict mapping (filepath, line_num) → count of existing suggestions
+    """
+    if not all([GITLAB_TOKEN, CI_PROJECT_ID, CI_MERGE_REQUEST_IID]):
+        return 0, {}
+
+    url = (
+        f"{CI_API_V4_URL}/projects/{CI_PROJECT_ID}"
+        f"/merge_requests/{CI_MERGE_REQUEST_IID}/discussions"
+    )
+
+    line_suggestions = {}  # (filepath, line) → count
+    ai_comments = []
+    page = 1
+
+    while True:
+        resp = requests.get(
+            url, headers=HEADERS, params={"per_page": 100, "page": page}, timeout=30
+        )
+        if resp.status_code != 200:
+            print(f"WARNING: Failed to fetch discussions: {resp.status_code}")
+            break
+
+        discussions = resp.json()
+        if not discussions:
+            break
+
+        for disc in discussions:
+            for note in disc.get("notes", []):
+                body = note.get("body", "")
+                if not body.startswith(AI_REVIEW_MARKER):
+                    continue
+                ai_comments.append(note)
+                pos = note.get("position")
+                if pos:
+                    filepath = pos.get("new_path", "")
+                    new_line = pos.get("new_line")
+                    if filepath and new_line:
+                        key = (filepath, new_line)
+                        line_suggestions[key] = line_suggestions.get(key, 0) + 1
+
+        page += 1
+
+    # Count distinct AI runs: group comments by created_at (within 2 min = same run)
+    ai_run_count = 0
+    if ai_comments:
+        timestamps = sorted(note.get("created_at", "") for note in ai_comments)
+        ai_run_count = 1
+        for i in range(1, len(timestamps)):
+            if timestamps[i][:16] != timestamps[i - 1][:16]:
+                ai_run_count += 1
+
+    return ai_run_count, line_suggestions
 
 
 def get_changed_files():
@@ -253,7 +320,7 @@ def review_file(client, filepath, vale_output, changed_lines):
         numbered = numbered[:MAX_FILE_SIZE] + "\n...[truncated]..."
 
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-latest",
         max_tokens=2000,
         messages=[
             {
@@ -331,13 +398,22 @@ def main():
     # Skip if this commit is from applying a GitLab suggestion
     # (prevents infinite loop: suggestion → apply → commit → pipeline → suggestion)
     commit_title = os.environ.get("CI_COMMIT_TITLE", "")
-    if "Apply suggestion" in commit_title or "Apply 1 suggestion" in commit_title:
-        print(f"Skipping: commit is from applying a suggestion ({commit_title!r}).")
+    if re.search(r"Apply \d+ suggestion", commit_title):
+        print(f"Skipping: commit is from applying suggestions ({commit_title!r}).")
         return
 
     if not ANTHROPIC_API_KEY:
         print("ERROR: ANTHROPIC_API_KEY not set.")
         sys.exit(1)
+
+    # Check existing AI suggestions in the MR
+    ai_run_count, line_suggestions = get_existing_ai_suggestions()
+    print(f"Existing AI review runs: {ai_run_count}/{MAX_AI_REVIEW_RUNS}")
+    print(f"Lines with existing suggestions: {len(line_suggestions)}")
+
+    if ai_run_count >= MAX_AI_REVIEW_RUNS:
+        print(f"Skipping: reached max AI review runs ({MAX_AI_REVIEW_RUNS}).")
+        return
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -354,6 +430,7 @@ def main():
 
     total_posted = 0
     total_skipped = 0
+    posted_this_run = set()  # (filepath, line) — max 1 suggestion per line per run
 
     for filepath in changed_files:
         print(f"\n  Reviewing: {filepath}")
@@ -387,9 +464,27 @@ def main():
                 total_skipped += 1
                 continue
 
+            # Check per-line suggestion limit (anchor = end_line)
+            line_key = (filepath, end)
+
+            # Max 1 suggestion per line in this run
+            if line_key in posted_this_run:
+                print(f"  Skipping L{start}-{end}: already posted in this run")
+                total_skipped += 1
+                continue
+
+            # Max total suggestions per line across all runs
+            existing_count = line_suggestions.get(line_key, 0)
+            if existing_count >= MAX_SUGGESTIONS_PER_LINE:
+                print(f"  Skipping L{start}-{end}: already {existing_count} suggestion(s) on this line (max {MAX_SUGGESTIONS_PER_LINE})")
+                total_skipped += 1
+                continue
+
             ok = post_suggestion(filepath, start, end, replacement, reason, base_sha, head_sha)
             if ok:
                 total_posted += 1
+                posted_this_run.add(line_key)
+                line_suggestions[line_key] = existing_count + 1
 
     print(f"\nDone. Posted {total_posted} suggestion(s), skipped {total_skipped}.")
 
