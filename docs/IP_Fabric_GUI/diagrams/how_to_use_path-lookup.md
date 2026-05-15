@@ -76,6 +76,8 @@ When evaluating security rules and security appliances on the path check traffic
 
 It's almost impossible to standardize application names across all vendors. You can define your own application name with regular expressions.
 
+From 7.12, you can also disable regex matching on application names.
+
 
 !!! info
 
