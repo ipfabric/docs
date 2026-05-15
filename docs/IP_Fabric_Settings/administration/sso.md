@@ -4,19 +4,13 @@ description: This section provides instructions on how to configure Single Sign-
 
 # Single Sign-On (SSO)
 
-!!! warning "Outdated SSO User Records in IP Fabric Might Cause Login Issues"
+!!! warning "Username Conflict"
 
-    With SSO configured, each sign-in of a new user into IP Fabric via SSO will
-    create a new (non-local) user record in **Settings --> Administration -->
-    Local Users** -- with the user's current username and email from the
-    Identity Provider (IdP).
+    The **email address** is the primary identity value used by IP Fabric during authentication. The email returned by LDAP or SSO, or otherwise configured as the user’s email in IP Fabric, must be unique across all authentication sources.
 
-    If the user's username or email changes on the IdP side, the user will
-    encounter an `Authentication Failure` while logging in to IP Fabric via SSO
-    -- due to a username/email mismatch between the IdP and IP Fabric.
+    If the same email address is **already used** by a **local user, another LDAP provide or an SSO provider**, the user will be unable to log in. The API may return `API_AUTHENTICATION_FAILURE` with `Error: User with username "xxx" already exists`, or the GUI may show `Username Conflict`.
 
-    In that case, please remove the outdated user record of that user in
-    **Settings --> Administration --> Local Users**.
+    When this happens, review the local user settings uder (**Settings --> Administration --> Local Users**) and remove any users or external user records that are no longer relevant. IP Fabric does not refresh or merge user records with the same email address across multiple authentication sources for security reasons. Customers are responsible for keeping user records and authentication sources clean, current, and free of conflicting email addresses.
 
 IP Fabric includes support for Single Sign-On (SSO). We have opted for
 [Dex](https://dexidp.io/) (a federated OpenID Connect provider) as a key

@@ -59,6 +59,14 @@ for external authentication methods also being created, but these will have
 authentication. Records are created for housekeeping reasons, primarily to
 maintain a consistent mapping to local groups and roles.
 
+!!! Warning "Username Conflict"
+
+    The **email address** is the primary identity value IP Fabric uses during authentication. The email returned by LDAP or SSO, or configured as the user's email in IP Fabric, must be unique across all authentication sources.
+
+    If the same email address is **already used** by a **local user, another LDAP provider, or an SSO provider**, the user cannot log in. The API may return `API_AUTHENTICATION_FAILURE` with `Error: User with username "xxx" already exists`, or the GUI may show `Username Conflict`.
+
+    When this happens, review the local user settings under **Settings --> Administration --> Local Users** and remove any users or external user records that are no longer relevant. IP Fabric does not refresh or merge user records with the same email address across multiple authentication sources for security reasons. Keep user records and authentication sources clean, current, and free of conflicting email addresses.
+
 ## Enable LDAP Authentication
 
 ![LDAP Configuration](../../images/settings/administration/ldap/settings-administration-ldap_configuration.webp)
