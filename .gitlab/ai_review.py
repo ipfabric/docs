@@ -320,7 +320,7 @@ def review_file(client, filepath, vale_output, changed_lines):
         numbered = numbered[:MAX_FILE_SIZE] + "\n...[truncated]..."
 
     message = client.messages.create(
-        model="claude-sonnet-4-latest",
+        model="claude-sonnet-4-6",
         max_tokens=2000,
         messages=[
             {
