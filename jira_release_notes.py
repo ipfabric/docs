@@ -17,13 +17,12 @@ OUT_DIR = os.path.dirname(__file__) + "/docs/releases/release_notes_low-level/"
 PROJECT_KEYS = ("NIM", "DOS")
 
 
-# Team name patterns to remove from ticket summaries (case-insensitive)
-TEAM_CLEANUP_PATTERNS = [
-    "[NAE]",
-    "[FE]",
-    "[BE]",
-    "[OPS]",
-]
+# Regex patterns for content in square brackets to strip from summaries:
+# - Team codes: 1-4 uppercase letters, e.g. [PE], [NAE], [DP], [PL]
+# - Versions: digits/dots/slashes, e.g. [7.11], [7.11/7.12], [8.0]
+BRACKET_CLEANUP_RE = re.compile(
+    r'\s*\[(?:[A-Z]{1,4}|[\d]+\.[\d]+(?:/[\d]+\.[\d]+)?)\]\s*'
+)
 
 
 def get_project_versions(project):
@@ -70,16 +69,13 @@ def get_project_issues_from_version(project, projectVersion, nextPageToken=None)
 
 
 def clean_title(summary):
-    """Remove team name patterns from ticket summaries"""
-    cleaned_summary = summary
-    
-    # Remove team names and trailing spaces
-    for pattern in TEAM_CLEANUP_PATTERNS:
-        cleaned_summary = re.sub(re.escape(pattern) + r'\s*', "", cleaned_summary, flags=re.IGNORECASE)
-    
-    # Clean up extra spaces and trim
-    cleaned_summary = re.sub(r'\s+', ' ', cleaned_summary).strip()
-    return cleaned_summary
+    """Remove team name tags and version tags in square brackets from summaries"""
+    cleaned = BRACKET_CLEANUP_RE.sub(' ', summary)
+    # Clean up extra spaces, leading/trailing dashes+spaces
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    cleaned = re.sub(r'^-\s*', '', cleaned)
+    cleaned = re.sub(r'\s*-\s*$', '', cleaned)
+    return cleaned
 
 
 def format_issue(issue):
