@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="In this section, you can find the release notes for `v7.11` releases. To see this page, please update `.nav.yml`.">
+        <meta name="description" content="In this section, you can find the release notes for `v7.11` releases.">
       
       
       
@@ -71,7 +71,7 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="IP Fabric v7.11 - IP Fabric Documentation Portal">
-<meta property="og:description" content="In this section, you can find the release notes for `v7.11` releases. To see this page, please update `.nav.yml`.">
+<meta property="og:description" content="In this section, you can find the release notes for `v7.11` releases.">
 <meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/releases/release_notes/7.11.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -79,7 +79,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/latest/releases/release_notes/7.11/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="IP Fabric v7.11 - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="In this section, you can find the release notes for `v7.11` releases. To see this page, please update `.nav.yml`.">
+<meta property="twitter:description" content="In this section, you can find the release notes for `v7.11` releases.">
 <meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/releases/release_notes/7.11.png">
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -9325,17 +9325,6 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#support-status-page-endpoint-error" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9351,6 +9340,39 @@ here.
     <span class="md-ellipsis">
       
         Wrong Elapsed Time When Loading a Snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vrf-routes-not-collected-on-cisco-nx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VRF Routes Not Collected on Cisco NX-OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery-stuck-due-to-scanner-processing-excluded-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery Stuck Due to Scanner Processing Excluded IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
       
     </span>
   </a>
@@ -16131,17 +16153,6 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#support-status-page-endpoint-error" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16157,6 +16168,39 @@ here.
     <span class="md-ellipsis">
       
         Wrong Elapsed Time When Loading a Snapshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vrf-routes-not-collected-on-cisco-nx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VRF Routes Not Collected on Cisco NX-OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery-stuck-due-to-scanner-processing-excluded-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery Stuck Due to Scanner Processing Excluded IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
       
     </span>
   </a>
@@ -16474,15 +16518,25 @@ following key combinations:</p>
 <p>This will only affect the browser cache for the IP Fabric appliance.</p>
 </div>
 <h2 id="known-issues">Known Issues</h2>
-<h3 id="maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced">Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced</h3>
-<p>The <strong>Maximum number of parallel sessions</strong> value configured in the GUI is not propagated to discovery workers, so discovery runs in unlimited mode regardless of the configured value.</p>
-<p>A workaround is available through worker settings, but it requires manual changes to service files with Support assistance. Customers who need this limit enforced should <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1/group/1/create/1">contact Support</a>.</p>
-<p><strong>Fix</strong> delivered in 7.11.5 version.</p>
 <h3 id="support-status-page-endpoint-error">Support Status Page Endpoint Error</h3>
 <p>When a policy excludes the <code>GET /support/status</code> endpoint in API scope, the Support Status page may intermittently switch between loading correctly and showing a <code>403</code> <code>Failed to load data</code> error.</p>
 <p><strong>Workaround:</strong> Include <code>GET /support/status</code> in the policy. This allows access to hardware information while still restricting actions such as service restarts.</p>
 <h3 id="wrong-elapsed-time-when-loading-a-snapshot">Wrong Elapsed Time When Loading a Snapshot</h3>
 <p>When loading a before unloaded snapshot, the displayed elapsed time may appear unexpectedly high. This is a display issue only and does not affect data integrity.</p>
+<h3 id="vrf-routes-not-collected-on-cisco-nx-os">VRF Routes Not Collected on Cisco NX-OS</h3>
+<p>VRF routes are not collected on Cisco NX-OS devices if the BGP route download limit is not enabled.</p>
+<p><strong>Workaround</strong></p>
+<p>Enable Limit download BGP routes and set a sufficiently high threshold (e.g., 100000 or higher) to allow full route collection.</p>
+<h3 id="discovery-stuck-due-to-scanner-processing-excluded-ips">Discovery Stuck Due to Scanner Processing Excluded IPs</h3>
+<p>Discovery may get stuck when scanner jobs receive IPs that are later removed by the exclude list during the discovery process.</p>
+<p>After the exclude list is applied, a <code>scanworker</code> can end up with no IPs left to scan. The job may not finish correctly, blocking discovery progress.</p>
+<p>We track this issue internally under reference <code>NIM-23846</code>.</p>
+<p><strong>Symptoms:</strong> Scanner process is enabled, discovery is stuck or not progressing, scanner appears to process IPs from the exclude list, <code>scanworker</code> jobs remain active even though there are no valid IPs left to scan.</p>
+<p><strong>Workaround:</strong> Review the discovery scope and exclude list. If there are IPs for a <code>scanworker</code> which are part of exclude list, adjust the discovery scope or exclude list.</p>
+<h3 id="maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced">Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced</h3>
+<p>The <strong>Maximum number of parallel sessions</strong> value configured in the GUI is not propagated to discovery workers, so discovery runs in unlimited mode regardless of the configured value.</p>
+<p>A workaround is available through worker settings, but it requires manual changes to service files with Support assistance. Customers who need this limit enforced should <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1/group/1/create/1">contact Support</a>.</p>
+<p><strong>Fix</strong> delivered in version <code>7.11.5</code>.</p>
 <h2 id="v7117-may-12th-2026-ga">v7.11.7 (May 12<sup>th</sup>, 2026; GA)</h2>
 <div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-7-11-7+0.tar.zst.sig) = 3e799cebe68ceb16a4bc347b909c2d00d3787da27ff66c578d95f68631b52646
 MD5 (ipfabric-update-7-11-7+0.tar.zst.sig) = 51bef8ba9a058322fff9d00ccdf74f48
@@ -16676,7 +16730,7 @@ If you are using AWS API discovery, update your IAM policy to include AWS Certif
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 12, 2026 18:44:42 UTC">May 12, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 18, 2026 14:40:16 UTC">May 18, 2026</span>
   </span>
 
     
