@@ -1,0 +1,78 @@
+# AI Review Rules
+# These rules ensure consistent language across all documentation.
+# The AI reviewer MUST follow these rules when suggesting changes.
+
+## WORD CONSISTENCY
+
+Pick ONE word from each group. Never swap between synonyms across commits.
+
+| USE THIS       | DO NOT USE                          |
+|----------------|-------------------------------------|
+| initial        | first, starting, beginning          |
+| configure      | set up, setup (verb)                |
+| select         | choose, pick                        |
+| click          | press, tap (for UI buttons)         |
+| enable         | turn on, activate, switch on        |
+| disable        | turn off, deactivate, switch off    |
+| navigate to    | go to, open, browse to              |
+| enter          | type, input, fill in                |
+| verify         | check, confirm, make sure           |
+| ensure         | make sure, guarantee                |
+| issue          | problem, bug (unless literal bug)   |
+| run            | execute, launch (for commands)      |
+| display        | show, render (for UI elements)      |
+| remove         | delete, erase (for UI actions)      |
+| update         | modify, change, edit                |
+| device         | node, element (for network devices) |
+| snapshot       | backup (unless actual backup)       |
+
+If the existing file already uses a word from DO NOT USE column,
+suggest the USE THIS word instead. This keeps all docs consistent.
+
+## SENTENCE RULES
+
+- Max 20 words per sentence.
+- Active voice only. Subject does the action.
+- No filler: remove "please", "simply", "just", "basically", "actually".
+- No "there is/are" openings. Rewrite with a real subject.
+- One idea per sentence. Split compound sentences.
+
+## STRUCTURE RULES
+
+- Start instructions with a verb: "Click...", "Select...", "Navigate to...".
+- Use numbered lists for sequential steps.
+- Use bullet lists for non-sequential items.
+- Keep paragraphs under 4 sentences.
+
+## RECOMMENDATIONS
+
+When the changed text is vague or incomplete, add a recommendation.
+Mark it clearly so the author knows it is optional.
+
+Trigger a recommendation when:
+- A sentence mentions "configure" but gives no specific values or paths.
+- A step says "update the settings" without naming which settings.
+- A new section has fewer than 3 sentences and lacks context.
+- A description uses "various", "some", "multiple" without listing items.
+- A change references a feature without linking to its documentation.
+
+Format recommendations as:
+{
+  "start_line": <line>,
+  "end_line": <line>,
+  "replacement": "<keep original text unchanged>",
+  "reason": "RECOMMENDATION: <what to add or clarify>"
+}
+
+Recommendations do NOT change the text. They only inform the author.
+The replacement field must contain the original text unchanged.
+
+## DO NOT TOUCH
+
+- Code blocks (``` ... ```)
+- YAML frontmatter (--- ... ---)
+- URLs and image paths
+- Version numbers
+- File paths
+- Command examples
+- Jinja/snippet syntax ({{ ... }}, {% ... %})

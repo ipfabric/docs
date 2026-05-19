@@ -45,6 +45,8 @@ CI_MERGE_REQUEST_DIFF_BASE_SHA = os.environ.get("CI_MERGE_REQUEST_DIFF_BASE_SHA"
 CI_COMMIT_SHA = os.environ.get("CI_COMMIT_SHA")
 VALE_PATH = os.environ.get("VALE_PATH", "/tmp/vale/vale")
 
+RULES_FILE = Path(__file__).parent / "ai_review_rules.txt"
+
 REVIEW_PROMPT = """\
 You are a technical documentation editor. Review the Markdown file below \
 and suggest line-level improvements for clarity and readability.
@@ -52,15 +54,23 @@ and suggest line-level improvements for clarity and readability.
 A linter (Vale) has already flagged specific issues — listed under "Vale findings". \
 Use them as a starting point but also find issues the linter missed.
 
-Focus on:
-1. Sentences over 25 words — suggest shorter alternatives.
+### Style rules (from ai_review_rules.txt)
+
+{rules}
+
+### Additional focus
+
+1. Sentences over 20 words — suggest shorter alternatives.
 2. Passive voice — rewrite in active voice.
 3. Complex words — suggest simpler synonyms (e.g., "utilize" → "use").
 4. Weak openings — rewrite "There is/are..." constructions.
-5. Filler words — remove "basically", "obviously", "actually", etc.
+5. Filler words — remove "please", "simply", "just", "basically", "actually".
 6. Clarity — fix ambiguous or vague statements.
+7. Word consistency — if a word violates the consistency table, suggest the correct one.
+8. Vague content — if text is vague, add a RECOMMENDATION (do not change the text).
 
-Rules:
+### Output rules
+
 - Only suggest changes that improve readability WITHOUT changing technical meaning.
 - Do NOT suggest changes to code blocks, YAML frontmatter, URLs, or image references.
 - Each suggestion must target a SINGLE line (or a small range of consecutive lines).
@@ -71,6 +81,7 @@ Rules:
   Consider adjacent lines as part of the same sentence when they are not \
   separated by a blank line.
 - Maximum 10 suggestions per file.
+- Recommendations count toward the 10 suggestions limit.
 
 CRITICAL: Respond with ONLY a JSON array. No other text. Each element:
 {{
@@ -319,6 +330,13 @@ def review_file(client, filepath, vale_output, changed_lines):
     if len(numbered) > MAX_FILE_SIZE:
         numbered = numbered[:MAX_FILE_SIZE] + "\n...[truncated]..."
 
+    # Load rules file
+    rules_text = ""
+    if RULES_FILE.exists():
+        rules_text = RULES_FILE.read_text(encoding="utf-8")
+    else:
+        print(f"  WARNING: Rules file not found: {RULES_FILE}")
+
     message = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=2000,
@@ -329,6 +347,7 @@ def review_file(client, filepath, vale_output, changed_lines):
                     filename=filepath,
                     vale_output=vale_output,
                     content=numbered,
+                    rules=rules_text,
                 ),
             }
         ],
