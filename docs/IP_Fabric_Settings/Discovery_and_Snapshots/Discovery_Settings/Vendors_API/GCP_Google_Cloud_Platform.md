@@ -44,6 +44,7 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    resourcemanager.projects.list (organization-level permission)
    resourcemanager.projects.get
    networkconnectivity.regionalEndpoints.get
+   networkconnectivity.regionalEndpoints.list
    compute.addresses.list
    compute.autoscalers.list
    compute.backendServices.get
@@ -82,6 +83,7 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    run.services.list
    appengine.services.list
    appengine.versions.list
+   vpcaccess.connectors.get
    ```
 
    ![Create a role](../../../../images/settings/IP_Fabric_Settings-Discovery_and_Snapshots-Discovery_Settings-Vendors_API-gcp-createArole.webp)
