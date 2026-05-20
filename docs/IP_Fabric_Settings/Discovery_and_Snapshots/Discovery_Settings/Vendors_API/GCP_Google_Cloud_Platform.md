@@ -44,6 +44,7 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    resourcemanager.projects.list (organization-level permission)
    resourcemanager.projects.get
    networkconnectivity.regionalEndpoints.get
+   networkconnectivity.regionalEndpoints.list
    compute.addresses.list
    compute.autoscalers.list
    compute.backendServices.get
@@ -82,6 +83,7 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    run.services.list
    appengine.services.list
    appengine.versions.list
+   vpcaccess.connectors.get
    ```
 
    Additional roles for IP Fabric version 7.10 and above:
@@ -94,6 +96,22 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    ```
    compute.networks.listPeeringRoutes
    ```
+
+   More roles for IP Fabric version 7.12 and above:
+
+   ```
+   resourcemanager.organizations.get (organization-level permission)
+   resourcemanager.folders.get (organization-level permission)
+   resourcemanager.folders.list (organization-level permission)
+   resourcemanager.projects.list (organization-level permission)
+   networkconnectivity.hubs.list
+   networkconnectivity.hubRoutes.list
+   certificatemanager.certmapentries.list
+   certificatemanager.certs.list
+   compute.sslCertificates.list
+   compute.targetSslProxies.list
+   ```
+
    ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
 
 ## How To Generate a Private Key for Your GCP Service Account
