@@ -209,3 +209,13 @@ You can set up what you want to prioritize in the view. Simply move
 the bars up or down.
 
 ![Visualization setup](../../images/diagrams/diagrams_pathlookup-visualization-setup-movable.webp)
+
+### Device Colors
+
+* <span style="color:red">**Red**</span> -- The device blocked the traffic (for example, due to a firewall policy, ACL, or routing failure).
+* <span style="color:green">**Green**</span> -- The device explicitly permitted and forwarded the traffic.
+* <span style="color:blue">**Blue**</span> -- The device forwarded the traffic during normal path traversal.
+* <span style="color:darkblue">**Dark Blue**</span> -- L3 regression. The device cannot determine the next Layer 2 hop (typically missing MAC table data). Path Lookup falls back to Layer 3 routing.
+* <span style="color:orange">**Amber/Orange**</span> -- Flooding. The device has no matching entry in the MAC table and floods traffic to all LAN/VLAN ports.
+* <span style="color:black">**Black**</span> -- Endpoint device (host, server, or client).
+* <span style="color:grey">**Grey**</span> -- Cloud, WAN, or transit network (external or abstracted connectivity).
