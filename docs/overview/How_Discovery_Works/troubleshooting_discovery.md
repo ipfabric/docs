@@ -102,7 +102,7 @@ the discovery completed successfully.
 ### Discovery tasks settings
 
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
-Discovery --> Discovery tasks settings**
+Discovery --> Advanced Settings**
 
 ![Discovery tasks settings](../../images/snapshot-management/snapshot-management_troubleshooting-discovery-tasks-settings.webp)
 
@@ -153,23 +153,22 @@ the explanation of these settings.
 ### Vendors API
 
 Location: **Settings --> Discovery & Snapshots --> Discovery Settings -->
-Vendors API**
+Authentication --> Vendor APIs**
 
 ![Vendors API](../../images/snapshot-management/snapshot-management_troubleshooting-vendors-api.webp)
 
 See [Vendors API](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/index.md) as
 each vendor has different requirements.
 
-### Device Credentials
+### Authentication
 
-Location: **Settings --> Discovery & Snapshots --> Discovery Settings --> Device
-Credentials**
+Location: **Settings --> Discovery & Snapshots --> Discovery Settings --> Authentication**
 
 ![Device Credentials](../../images/snapshot-management/snapshot-management_troubleshooting-device-credentials.webp)
 
 **Authentication** is where you define the username and password IP Fabric uses to
 connect to a physical device (devices discovered through the API are managed
-through **Advanced --> Vendors API**). Ensure that you have a username configured
+through **Vendor APIs**). Ensure that you have a username configured
 for all scopes of the network you wish to discover or set to the default
 of `0.0.0.0/0` for IPv4 and `::/0` for IPv6.
 

@@ -10,8 +10,7 @@ in 2023.
 Downloading and processing such a large amount of data is time-consuming and may
 not provide any relevant information about the internal IP addressing scheme.
 
-You can find the threshold configuration in **Settings --> Discovery Settings
---> Discovery --> Limit download BGP routes**.
+You can find the threshold configuration in **Settings --> Discovery & Snapshots --> Discovery Settings --> Routing --> Threshold Settings --> Limit Download of BGP Routes**.
 
 If the number of BGP routes in the routing table is below the specified
 threshold, IP Fabric will collect all routes from this table.
@@ -21,12 +20,6 @@ routes from other available routing protocols on the device. In this scenario,
 no BGP routes from the routing table will be collected.
 
 ![Limit download of BGP routes](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_limit-bgp-routes.webp)
-
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located in a different tab: Routing --> Threshold settings.
-
-    ![Limit download of BGP routes - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_limit-bgp-routes2.webp)
 
 Currently supported vendors:
 

@@ -25,24 +25,13 @@ graph LR
     style doNotDiscover fill:#dd3300
 ```
 
-Discovery can be limited to one or more subnets using the Include list (in
-**Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery -->
-IP Scope --> IP networks to include in discovery and analysis**). Enter one or
-more subnets to limit the discovery process to addresses from particular
-networks.
+Both lists are in the **Discovery** tab, in the **Advanced Settings** card under **Settings --> Discovery & Snapshots --> Discovery Settings**.
 
-Specific parts of the network can also be excluded from discovery using the
-Exclude list (in **Settings --> Discovery & Snapshots --> Discovery Settings
---> Discovery --> IP Scope --> IP networks to exclude from discovery and
-analysis**).
+Use the **Include in discovery** field to limit discovery to one or more subnets. Enter one or more subnets to restrict discovery to addresses from specific networks.
+
+Use the **Exclude from discovery** field to exclude specific parts of the network from discovery.
 
 ![IP Scope](../../../../images/snapshot-management/snapshot-management_troubleshooting-ip-scope.webp)
-
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card. The fields are now called 'Include in discovery' and 'Exclude from discovery'.
-
-    ![IP Scope - New Design](../../../../images/snapshot-management/snapshot-management_troubleshooting-ip-scope2.webp)
 
 !!! warning "Priority"
 

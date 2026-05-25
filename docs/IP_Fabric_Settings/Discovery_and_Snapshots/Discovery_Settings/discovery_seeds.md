@@ -25,13 +25,7 @@ the Discovery History are used as seeds for subsequent discoveries.
 By default, IP Fabric uses all IP addresses stored in Management → Discovery History as seed.
 This feature enables filtering by age or specific date, or disabling the reuse of historical seeds entirely.
 
-![Discovery Seeds](../../../images/snapshot-management/snapshot-management_troubleshooting-discovery-seeds.webp)
-
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings.
-
-    ![Discovery Seeds - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_seeds2.webp)
+![Discovery Seeds](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_seeds.webp)
 
 ### Configuring via API
 

@@ -12,12 +12,6 @@ Snapshots --> Discovery Settings --> Advanced CLI**.
 
 ![CLI Settings](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_cli_settings.webp)
 
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings.
-
-    ![CLI Settings - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_advanced_cli_cli_settings2.webp)
-
 !!! tip
 
     If you see many examples of **Authentication error** during discovery,

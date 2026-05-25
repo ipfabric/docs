@@ -8,12 +8,6 @@ Since version `6.0`, IP Fabric can skip some of the discovery features to decrea
 
 ![Assurance Engine](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_assurance_engine.webp)
 
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings.
-
-    ![Assurance Engine - New Design](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_assurance_engine2.webp)
-
 The **Assurance Engine** section allows you to disable the following features to speed up the discovery process, but it will also limit application features:
 
 1. **Loading Graph cache**

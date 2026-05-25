@@ -11,18 +11,13 @@ already discovered devices and their local interface IP addresses. If you have
 duplicate IP addresses in your network, it can be worthwhile to allowlist some
 subnets.
 
-In **Settings --> Discovery & Snapshots --> Discovery Settings --> Discovery -->
-Duplicate IPs discovery**, enter one or more subnets to *disable* the test for
-duplicate IP addresses for specific networks (so devices with duplicate IP
+In **Settings --> Discovery & Snapshots --> Discovery Settings**, scroll to the
+bottom of the **Discovery** tab and use **Duplicate IPs discovery** in the
+**Advanced settings** card to enter one or more subnets to *disable* the test
+for duplicate IP addresses for specific networks (so devices with duplicate IP
 addresses in those networks will be discovered).
 
 ![Duplicate IPs discovery](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_duplicate_ips_discovery.webp)
-
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
-
-    ![Duplicate IPs discovery - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_duplicate_ips_discovery2.webp)
 
 !!! info
 

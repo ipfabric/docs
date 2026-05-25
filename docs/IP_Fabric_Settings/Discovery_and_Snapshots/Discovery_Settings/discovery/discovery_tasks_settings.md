@@ -17,13 +17,10 @@ network, using the selected methods for new device detection (ARP, ACI Endpoints
 Routing Table records, or a Traceroute). The default is to use all available
 options.
 
-![Discovery tasks settings](../../../../images/snapshot-management/snapshot-management_troubleshooting-discovery-tasks-settings.webp)
+You can find this setting at the bottom of the **Discovery** tab in the
+**Advanced settings** card in **Settings --> Discovery & Snapshots --> Discovery Settings**.
 
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
-
-    ![Discovery tasks settings - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_discovery_tasks_settings2.webp)
+![Discovery tasks settings](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_discovery_tasks_settings.webp)
 
 The feature is especially helpful for large, complex networks with already
 defined device scope to avoid multiple repetitive failed SSH/Telnet attempts

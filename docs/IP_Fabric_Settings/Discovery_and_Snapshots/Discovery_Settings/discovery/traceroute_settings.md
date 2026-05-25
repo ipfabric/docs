@@ -9,16 +9,12 @@ discovered using traceroute are marked as *unmanaged* in IP Fabric site
 diagrams. More information about traceroute as a protocol can be found on
 [Wikipedia](https://en.wikipedia.org/wiki/Traceroute).
 
-For traceroute configuration, go to **Settings --> Discovery & Snapshots -->
-Discovery Settings --> Discovery --> Traceroute settings**.
+For traceroute configuration, go to **Settings --> Discovery & Snapshots -->
+Discovery Settings**, scroll to the bottom of the **Discovery** tab, and find
+**Trace scope** in the **Advanced settings** card.
 
 ![Traceroute settings](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_traceroute_settings.webp)
 
-!!! info "New Design"
-
-    Since version 7.10, we are testing a new design of Discovery Settings. In the new design, this setting is located at the bottom of the Discovery tab in the 'Advanced settings' card.
-
-    ![Traceroute settings - New Design](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_discovery_traceroute_settings2.webp)
 
 **Trace scope** -- Limits traceroute scope to the defined subnets. This prevents
 scanning networks outside an internal network.
