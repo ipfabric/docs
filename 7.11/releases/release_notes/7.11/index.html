@@ -9338,10 +9338,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vrf-routes-not-collected-on-cisco-nx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VRF Routes Not Collected on Cisco NX-OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
     <span class="md-ellipsis">
       
         Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v71110-jun-2nd-2026-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.11.10 (Jun 2nd, 2026; GA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.11.10 (Jun 2nd, 2026; GA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
       
     </span>
   </a>
@@ -9361,23 +9400,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="v7.11.8 (Withdrawn)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#official-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Official Statement
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -9405,7 +9427,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Bug Fixes
@@ -9444,7 +9466,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Bug Fixes
@@ -16127,10 +16149,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vrf-routes-not-collected-on-cisco-nx-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VRF Routes Not Collected on Cisco NX-OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced" class="md-nav__link">
     <span class="md-ellipsis">
       
         Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v71110-jun-2nd-2026-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v7.11.10 (Jun 2nd, 2026; GA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v7.11.10 (Jun 2nd, 2026; GA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
       
     </span>
   </a>
@@ -16150,23 +16211,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="v7.11.8 (Withdrawn)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#official-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Official Statement
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -16194,7 +16238,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes" class="md-nav__link">
+  <a href="#bug-fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Bug Fixes
@@ -16233,7 +16277,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bug-fixes_1" class="md-nav__link">
+  <a href="#bug-fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Bug Fixes
@@ -16487,53 +16531,78 @@ following key combinations:</p>
 <p>We track this issue internally under reference <code>NIM-23846</code>.</p>
 <p><strong>Symptoms:</strong> Scanner process is enabled, discovery is stuck or not progressing, scanner appears to process IPs from the exclude list, <code>scanworker</code> jobs remain active even though there are no valid IPs left to scan.</p>
 <p><strong>Workaround:</strong> Review the discovery scope and exclude list. If there are IPs for a <code>scanworker</code> which are part of exclude list, adjust the discovery scope or exclude list.</p>
-<!--
-### VRF Routes Not Collected on Cisco NX-OS
-
-VRF routes are not collected on Cisco NX-OS devices when the BGP route download limit is disabled.
-
-**Workaround**
-
-Enable the **Limit download BGP routes** setting and set a sufficiently high threshold (for example, 100000 or higher) to allow full route collection.
-
-**Fix** delivered in version `7.11.8`.
-
--->
+<h3 id="vrf-routes-not-collected-on-cisco-nx-os">VRF Routes Not Collected on Cisco NX-OS</h3>
+<p>VRF routes are not collected on Cisco NX-OS devices when the BGP route download limit is disabled.</p>
+<p><strong>Workaround</strong></p>
+<p>Enable the <strong>Limit download BGP routes</strong> setting and set a sufficiently high threshold (for example, 100000 or higher) to allow full route collection.</p>
+<p><strong>Fix</strong> delivered in version <code>7.11.8</code>.</p>
 <h3 id="maximum-number-of-parallel-sessions-setting-in-gui-is-not-enforced">Maximum Number of Parallel Sessions Setting in GUI Is Not Enforced</h3>
 <p>The <strong>Maximum number of parallel sessions</strong> value configured in the GUI is not propagated to discovery workers, so discovery runs in unlimited mode regardless of the configured value.</p>
 <p>A workaround is available through worker settings, but it requires manual changes to service files with Support assistance. Customers who need this limit enforced should <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1/group/1/create/1">contact Support</a>.</p>
 <p><strong>Fix</strong> delivered in version <code>7.11.5</code>.</p>
-<h2 id="v7118-withdrawn">v7.11.8 (Withdrawn)</h2>
-<h3 id="official-statement">Official Statement</h3>
-<p>This version has been <strong>withdrawn</strong> and is <strong>no longer available for
-download or installation</strong>. It may cause issues with loading previously
-created snapshots in some environments. Many existing deployments continue to
-run <code>v7.11.8</code> without impact. A corrected build will be published in the next
-patch release.</p>
-<p>Customers who deployed <code>v7.11.8</code> and experience snapshot load issues should <a href="https://ipfabric.atlassian.net/servicedesk/customer/portal/1/group/1/create/1">contact Support</a>.
-If a pre-upgrade VM snapshot is available, Support can assist with rolling back to the last stable release, <code>v7.11.7</code>.</p>
-<h2 id="v7117-may-12th-2026-ga">v7.11.7 (May 12<sup>th</sup>, 2026; GA)</h2>
-<div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-7-11-7+0.tar.zst.sig) = 3e799cebe68ceb16a4bc347b909c2d00d3787da27ff66c578d95f68631b52646
-MD5 (ipfabric-update-7-11-7+0.tar.zst.sig) = 51bef8ba9a058322fff9d00ccdf74f48
-SHA256 (ipfabric-7-11-7+0.qcow2) = 4a2da91fdf2de2ea28e57862e29463878fcfe55030cf4383eb46c6273a9280a3
-MD5 (ipfabric-7-11-7+0.qcow2) = 42e76fe6160112e16b4ac0aec5d929f9
-SHA256 (ipfabric-7-11-7+0.vmdk) = 4e3bea83426fd0f3fba43d0d07ec52636de966e7fa91c4059567a6b3513fdebb
-MD5 (ipfabric-7-11-7+0.vmdk) = 2a2fb20af6c5c7f69aff39478e9d42ac
-SHA256 (ipfabric-7-11-7+0.vhdx.zst) = bdfda5105fac70c8ab80d81f0f109dd2f4af1f82fcf42d46bf6ff57db1c89c8e
-MD5 (ipfabric-7-11-7+0.vhdx.zst) = 51d34bf302ace1cbae833784093f5bf5
-SHA256 (unsupported-ESXi6.7U2-ipfabric-7-11-7+0.ova) = 71f809d5e296d9a7cb4fcfb12020cab9526398de16ecf1051d6d656889f34945
-MD5 (unsupported-ESXi6.7U2-ipfabric-7-11-7+0.ova) = ebd9702f290fa313f43eac5b571ad940
-SHA256 (unsupported-ESXi7.0-ipfabric-7-11-7+0.ova) = da4968053034aa89877b85f396b855683ecc558af2417fdfd19975c709aece68
-MD5 (unsupported-ESXi7.0-ipfabric-7-11-7+0.ova) = a04ec3af65f5a6d8b8c549c29c556e8f
-SHA256 (ESXi8.0-ipfabric-7-11-7+0.ova) = dbdd28b37b9d5fbf7c74110dcc0fc38610fc2c818dbda665e4d0a56b8c05975b
-MD5 (ESXi8.0-ipfabric-7-11-7+0.ova) = 5d3bcdd544a9901b6d44222e703ebead
+<h2 id="v71110-jun-2nd-2026-ga">v7.11.10 (Jun 2<sup>nd</sup>, 2026; GA)</h2>
+<div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-7-11-10+0.tar.zst.sig) = ba8f355f06280ac5815320bc165bb5ed7af8c93bb9222144998aaad1ae8542a6
+MD5 (ipfabric-update-7-11-10+0.tar.zst.sig) = a99b00b064b7199689a26a8ac175fa8f
+SHA256 (ipfabric-7-11-10+0.qcow2) = d9b1bff226fe8f4add836235ef771fdd427fdd08d8d9b8f8ba4b1bff7c744a20
+MD5 (ipfabric-7-11-10+0.qcow2) = c77fb149b5d9c45b4cce2e9812b681bd
+SHA256 (ipfabric-7-11-10+0.vmdk) = 3d9bc189435e6ddc5e147c819c59cc096110ea1dcbf3c517d35a533a4504b666
+MD5 (ipfabric-7-11-10+0.vmdk) = 86ee1773f4eb3048a83946aee55ceeef
+SHA256 (ipfabric-7-11-10+0.vhdx.zst) = 4950e04ca6cf2f98a517f510404daf5442cfaffa3b54729faff6157165f4f544
+MD5 (ipfabric-7-11-10+0.vhdx.zst) = 7340825d8cb290e2f38e92246cc2e3dd
+SHA256 (unsupported-ESXi6.7U2-ipfabric-7-11-10+0.ova) = 82563bc50f956789e6f39639a0fdf41d9705f9fcb59259fdf92e2e8f8199c686
+MD5 (unsupported-ESXi6.7U2-ipfabric-7-11-10+0.ova) = 069410de39c00c0f36373a7ad8d3d498
+SHA256 (unsupported-ESXi7.0-ipfabric-7-11-10+0.ova) = e1b83ce6f0522c1f2c294394fec796f9156496f37403b3a4d3873d94620df868
+MD5 (unsupported-ESXi7.0-ipfabric-7-11-10+0.ova) = 05bde081f34def834491ebea901401c2
+SHA256 (ESXi8.0-ipfabric-7-11-10+0.ova) = ba308e5c0f0779a99e6eee59099358911126332134ddb4594150f3132cea0671
+MD5 (ESXi8.0-ipfabric-7-11-10+0.ova) = 771c96f91322277c8dbb97a5fa22eaf4
 </code></pre></div>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>Discovery &amp; snapshot fixes:<ul>
+<li>Fixed an issue where discovery could remain stuck in the <code>Discovery onDone started</code> state. This occurred due to CLI log compression running at the end of discovery. CLI logs for successfully discovered devices are now compressed immediately, reducing end-of-discovery processing overhead.</li>
+<li>Resolved discovery getting stuck due to <code>scanworker</code> jobs remaining active when no IPs were left to scan after applying the exclude list. This also addresses the known issue tracked internally before this release.</li>
+<li>Fixed missing multicast snapshots in PostgreSQL causing Path Lookup E2E test failures.</li>
+</ul>
+</li>
+<li>Palo Alto PAN-OS fixes:<ul>
+<li>Fixed missing MAC addresses on subinterfaces that caused wrong Path Lookup results.</li>
+<li>Corrected Advanced routing mode handling on firewalls running in cluster mode.</li>
+<li>Virtual IPs are now displayed in the <strong>IPv4 Managed IP Summary</strong> table.</li>
+<li>Corrected zone firewall rule duplication during configuration parsing.</li>
+</ul>
+</li>
+<li>Cisco fixes:<ul>
+<li><strong>NX-OS:</strong> Fixed issue where VRF routes were not collected when the configuration had no BGP limit.</li>
+<li><strong>IOS-XR:</strong> Resolved an issue where the worker kept waiting for command output after the server closed the session.</li>
+<li><strong>ACI:</strong> Resolved an exception on leaf devices when a host appeared on many VLANs.</li>
+<li><strong>Path Lookup:</strong> Fixed failure with <code>Invalid packet annotation</code> error when VRF was missing.</li>
+</ul>
+</li>
+<li>GCP fixes:<ul>
+<li>Resolved duplicate IP issue with <code>wan-x.x.x.x</code> interfaces.</li>
+<li>Corrected missing pagination when retrieving the GCP projects list.</li>
+<li>Suppressed errors for empty Network Endpoint Groups (<code>NEGs</code>) and unassigned tags in the ACL task.</li>
+<li>Resolved errors for NAT44 tasks for load balancers.</li>
+<li>Corrected Path Lookup ACL evaluation for Echo Request (ICMP).</li>
+</ul>
+</li>
+<li>Azure fixes:<ul>
+<li>IP Fabric now uses the correct subscription when a VNet peers with a gateway in a different subscription.</li>
+</ul>
+</li>
+<li>AWS fixes:<ul>
+<li>Reduced excessive duration of AWS load balancer health check queries to prevent slow discoveries.</li>
+</ul>
+</li>
+</ul>
+<h2 id="v7118-withdrawn">v7.11.8 (Withdrawn)</h2>
+<h2 id="v7117-may-12th-2026-ga">v7.11.7 (May 12<sup>th</sup>, 2026; GA)</h2>
 <h3 id="improvements">Improvements</h3>
 <ul>
 <li>Improved <strong>Azure Path Lookup</strong> handling.</li>
 <li>Optimized the <strong>Connectivity Report</strong> query, reducing load time by about 6 seconds.</li>
 </ul>
-<h3 id="bug-fixes">Bug Fixes</h3>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
 <ul>
 <li>Resolved <strong>AWS Discovery</strong> errors: <code>Cannot read properties of undefined (reading 'send')</code> and <code>ABRequestFailed</code>.</li>
 <li>Applied critical <strong>Azure Discovery</strong> fixes:<ul>
@@ -16553,7 +16622,7 @@ MD5 (ESXi8.0-ipfabric-7-11-7+0.ova) = 5d3bcdd544a9901b6d44222e703ebead
 <li>When rediscovery of device occurs, it respects snapshot settings.</li>
 <li>Improvements of Azure and GCP discovery.</li>
 </ul>
-<h3 id="bug-fixes_1">Bug Fixes</h3>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
 <ul>
 <li>Fixed duplicated Path Inspector path options occurring on port-channels.</li>
 <li>Corrected Palo Alto security policy evaluation where self-originated traffic was incorrectly matched against <strong>Security Policy</strong> rules.</li>
@@ -16705,7 +16774,7 @@ If you are using AWS API discovery, update your IAM policy to include AWS Certif
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 29, 2026 18:02:19 UTC">May 29, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 2, 2026 16:50:26 UTC">June 2, 2026</span>
   </span>
 
     
