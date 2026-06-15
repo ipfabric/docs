@@ -1,0 +1,23 @@
+[data-md-color-scheme="ipfabric"] {
+  --md-primary-fg-color: #264183;
+  --md-primary-fg-color--light: #1d7ec1;
+  --md-primary-fg-color--dark: #13537e;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #264183;
+  --md-primary-fg-color--light: #1d7ec1;
+  --md-primary-fg-color--dark: #13537e;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hide draft RN pages appended by awesome-nav after "Previous releases".
+   Workaround for https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/145 */
+nav[data-md-level="2"]:has(a[href*="7.9"]) > .md-nav__list > .md-nav__item--nested ~ .md-nav__item:not(.md-nav__item--nested),
+nav[data-md-level="2"]:has(a[href*="7.5"]) > .md-nav__list > .md-nav__item--nested ~ .md-nav__item:not(.md-nav__item--nested) {
+  display: none !important;
+}
