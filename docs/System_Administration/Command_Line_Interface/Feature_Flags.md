@@ -238,6 +238,18 @@ ENABLE_PALOALTO_EDL_IPLIST=true
 ENABLE_PALOALTO_EDL_URLLIST=true
 ```
 
+### Cisco VTY Line Transport Methods
+
+Since `8.0`, IP Fabric supports collecting operational data from Cisco IOS and IOS-XE VTY lines by running the `show line vty <id>` command per VTY range.
+
+This allows IP Fabric to discover which transport methods (such as SSH and Telnet) each VTY line range permits.
+
+To enable this feature, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+
+```
+ENABLE_CISCO_LINE_VTY=true
+```
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
