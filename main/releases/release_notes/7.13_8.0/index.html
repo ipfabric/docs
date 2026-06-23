@@ -10368,6 +10368,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v7xx-unreleased" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14350,6 +14361,34 @@ here.
   
   
     <li class="md-nav__item">
+      <a href="../../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_10_88_0_0_16_subnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unable to discover devices in 10.88.0.0/16 subnet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet/" class="md-nav__link">
         
   
@@ -14445,10 +14484,10 @@ here.
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_16">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_6_2_17">
         
           
-          <label class="md-nav__link" for="__nav_9_6_2_16" id="__nav_9_6_2_16_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9_6_2_17" id="__nav_9_6_2_17_label" tabindex="0">
             
   
   
@@ -14466,8 +14505,8 @@ here.
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_6_2_16">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_6_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_6_2_17">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16068,6 +16107,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v7xx-unreleased" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16328,6 +16378,17 @@ following key combinations:</p>
 </div>
 <h2 id="known-issues">Known Issues</h2>
 <p>.</p>
+<h2 id="breaking-changes">Breaking Changes</h2>
+<ul>
+<li>As of <code>v8.0.0</code>, Podman replaced Docker. See <a href="../../../IP_Fabric_GUI/extensions/">Extensions</a> for details.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Container Runtime &amp; Subnet Change</p>
+<p>The default container subnet also changes from <code>172.17.0.0/16</code> (Docker) to <code>10.88.0.0/16</code> (Podman), and the service is now started via:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>podman.socket
+</code></pre></div>
+<p>If <code>10.88.0.0/16</code> overlaps with your network, configure a custom subnet first — see <a href="../../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_10_88_0_0_16_subnet/">Unable to Discover Devices in <code>10.88.0.0/16</code> Subnet</a>.</p>
+</div>
 <h2 id="v7xx-unreleased"><code>v7.X.X</code> (UNRELEASED)</h2>
 <p>.</p>
 <h3 id="fixes">Fixes</h3>
@@ -16357,6 +16418,16 @@ following key combinations:</p>
 </ul>
 </li>
 </ul>
+<ul>
+<li><strong>Meraki</strong><ul>
+<li>Added support for <strong>MX L3 outbound firewall rules</strong> and <strong>MX L7 firewall rules</strong> visible under <strong>Technology &gt; Security &gt; Zone Firewall</strong>. Note that L3 rules referencing FQDN objects are not supported — IP-based rules only are collected.</li>
+<li>Added support for <strong>Group Policy firewall rules</strong> with time scheduling (currently visible but not enforced in path lookup) and <strong>VPN-to-VPN firewall rules</strong>, also visible under <strong>Technology &gt; Security &gt; Zone Firewall</strong>.</li>
+<li>Added support for <strong>NAT rules</strong> — port forwarding, one-to-one, and one-to-many — visible under <strong>Technology &gt; Addressing &gt; NAT</strong>.</li>
+<li>Added support for MS switch <strong>ACL rules</strong> with VLAN selector, visible under <strong>Technology &gt; Security &gt; ACL</strong> and reflected in path lookup results.</li>
+<li>Added support for <strong>License information</strong> discovery across Meraki organizations. Licenses display under <strong>Technology &gt; Management &gt; Licenses</strong> and cover <strong>co-term</strong>, <strong>per-device</strong>, and <strong>subscription</strong> licensing models.</li>
+</ul>
+</li>
+</ul>
 <h3 id="api-endpoint-deprecation">API Endpoint Deprecation</h3>
 <p>.</p>
 <h3 id="experimental-features">Experimental Features</h3>
@@ -16383,7 +16454,7 @@ following key combinations:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 15, 2026 13:37:04 UTC">May 15, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 23, 2026 19:19:19 UTC">June 23, 2026</span>
   </span>
 
     
