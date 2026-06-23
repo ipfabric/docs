@@ -40,19 +40,21 @@ Before creating extensions, ensure you have:
 
 Starting with version 7.0, enable Extensions with the `ENABLE_EXTENSIONS=true` [feature flag](../System_Administration/Command_Line_Interface/Feature_Flags.md) in `/etc/default/ipf-appliance-local`.
 
-⚠️ Docker Default Subnet Configuration Required
+⚠️ Podman Default Subnet Configuration Required
 
 **Important**: As of version `7.0.14`, the Docker service is **disabled by default** to prevent subnet conflicts with your network infrastructure.
 
-The default Docker subnet (`172.17.0.0/16`) may conflict with existing network ranges in your environment.
+**Important**: As of version `8.0.0`, Podman replaced Docker.
+
+The default Podman subnet (`10.88.0.0/16`) may conflict with existing network ranges. This conflict occurs only when at least one container is running.
 
 ### Configuration Options
 
-**Option 1: Customize Docker Subnet** (Recommended)
+**Option 1: Customize Podman Subnet** (Recommended)
 
-Edit `/etc/docker/daemon.json` to use a non-conflicting subnet range.
+Update `/etc/containers/containers.conf.d/subnet.conf` with a non-conflicting subnet range.
 
-📖 [See detailed configuration guide](../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet.md)
+📖 [See detailed configuration guide](../support/known_issues/IP_Fabric/unable_to_discover_devices_in_10_88_0_0_16_subnet.md)
 
 **Option 2: Get Support**
 
@@ -60,13 +62,13 @@ Contact our support team for assistance via the [support portal](https://support
 
 **Option 3: Use Default Subnet** (Only if safe)
 
-If `172.17.0.0/16` is completely unused in your environment:
+If your environment does not use `10.88.0.0/16`:
 
 ```bash
-sudo systemctl enable docker && sudo systemctl start docker
+sudo systemctl enable --now podman.socket
 ```
 
-⚠️ **Before proceeding**: Verify that `172.17.0.0/16` does not conflict with your network infrastructure.
+⚠️ **Before proceeding**: Verify that `10.88.0.0/16` does not conflict with your network infrastructure.
 
 ## Creating Extensions
 
@@ -83,7 +85,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 - Does not need to be unique across the platform
 - Example: "Network Security Dashboard"
 
-**Slug** (Required)  
+**Slug** (Required)
 
 - Unique identifier automatically generated from your extension name
 - Uses dash-separated format (e.g., "network-security-dashboard")
@@ -134,7 +136,7 @@ DEBUG=true
 #### CPU Allocation
 
 - Minimum: 0.01 units
-- Increment: 0.01 units  
+- Increment: 0.01 units
 - Example: 1.00 units = 1 CPU core
 - Note: CPU allocation is not guaranteed (soft limit)
 
@@ -219,7 +221,7 @@ Extensions are governed by atomic permissions assigned through security policies
 Required permissions for different operations:
 
 - **Viewing Extensions dashboard**: Basic extension permissions
-- **Register new Extensions**: Extension creation permissions  
+- **Register new Extensions**: Extension creation permissions
 - **Starting/Stopping Extensions**: Extension management permissions
 - **Remove Extensions**: Extension deletion permissions
 
@@ -277,7 +279,7 @@ Please note that Extensions utilize temporary storage in the `/tmp` folder for:
   ✓ Correct:
   API_KEY=secret123
   DEBUG=true
-  
+
   ✗ Incorrect:
   API_KEY=secret123, DEBUG=true
   ```
