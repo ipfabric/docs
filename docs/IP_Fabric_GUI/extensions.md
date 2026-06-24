@@ -33,6 +33,7 @@ Before creating extensions, ensure you have:
 | Feature | Version | Description |
 |---------|---------|-------------|
 | Basic Extensions | 7.0+ | Core extension functionality, Docker deployment |
+| Basic Extensions V2 | 8.0+ | Podman deployment |
 | Resource Allocation | 7.2+ | CPU and memory limits, security enhancements |
 | Access Control | 7.2+ | User-based access permissions |
 
@@ -40,13 +41,11 @@ Before creating extensions, ensure you have:
 
 Starting with version 7.0, enable Extensions with the `ENABLE_EXTENSIONS=true` [feature flag](../System_Administration/Command_Line_Interface/Feature_Flags.md) in `/etc/default/ipf-appliance-local`.
 
-⚠️ Podman Default Subnet Configuration Required
+!!! warning "Podman Default Subnet Configuration Required"
 
-**Important**: As of version `7.0.14`, the Docker service is **disabled by default** to prevent subnet conflicts with your network infrastructure.
+    **Important**: As of version `8.0.0`, Podman replaced Docker. The Podman service is **disabled by default** to prevent subnet conflicts with your network infrastructure.
 
-**Important**: As of version `8.0.0`, Podman replaced Docker.
-
-The default Podman subnet (`10.88.0.0/16`) may conflict with existing network ranges. This conflict occurs only when at least one container is running.
+    The default Podman subnet (`10.88.0.0/16`) may conflict with existing network ranges. This conflict occurs only when at least one container is running.
 
 ### Configuration Options
 
@@ -68,7 +67,9 @@ If your environment does not use `10.88.0.0/16`:
 sudo systemctl enable --now podman.socket
 ```
 
-⚠️ **Before proceeding**: Verify that `10.88.0.0/16` does not conflict with your network infrastructure.
+!!! warning "Before proceeding"
+
+    Verify that `10.88.0.0/16` does not conflict with your network infrastructure.
 
 ## Creating Extensions
 
@@ -243,7 +244,7 @@ Extension creators can control who accesses their extensions through the Access 
 
 - **Architecture**: `linux/amd64` only
 - **Port**: Applications with web interfaces must listen on port `80/tcp`
-- **Container Runtime**: Standard Docker container support
+- **Container Runtime**: Podman (Docker-format images supported)
 
 ### Storage Considerations
 

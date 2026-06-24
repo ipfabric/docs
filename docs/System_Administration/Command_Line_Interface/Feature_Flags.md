@@ -125,19 +125,19 @@ ENABLE_EXTENSIONS=true
 
 This feature flag enables the Extensions functionality, which allows users to add and customize their IP Fabric instance with tailored functionality through containerized applications. Extensions can be managed through the IP Fabric UI under the **Extensions** menu.
 
-!!! warning "Docker Default Subnet"
+!!! warning "Podman Default Subnet"
 
-    As of version `7.0.14`, the Docker service, which is used for extensions, is **disabled and stopped by default** to prevent potential subnet conflicts in its default configuration (`172.17.0.0/16`). This subnet may collide with existing network infrastructure.
+    As of version `8.0.0`, Podman replaced Docker. Podman is used for extensions and is **disabled and stopped by default** to prevent subnet conflicts. The default configuration uses `10.88.0.0/16`, which may collide with existing network infrastructure. This conflict occurs only when at least one container is running.
 
-    **To customize the Docker subnet:**
+    **To customize the Podman subnet:**
 
-    1. Edit the configuration in `/etc/docker/daemon.json`, [see](../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_172_17_0_0_16_subnet.md) OR 
+    1. Edit the configuration in `/etc/containers/containers.conf.d/subnet.conf` — [see known issue](../../support/known_issues/IP_Fabric/unable_to_discover_devices_in_10_88_0_0_16_subnet.md), OR
     2. Contact our customer support team via the [support portal](https://support.ipfabric.io)
 
-    **To use Docker with the default subnet** (only if `172.17.0.0/16` is unused in your environment) run: 
+    **To use Podman with the default subnet** (only if `10.88.0.0/16` is unused in your environment), run:
 
     ```bash
-    sudo systemctl enable docker && sudo systemctl start docker
+    sudo systemctl enable --now podman.socket
     ```
 
 For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.0.md#extensions-engineering-preview) for more information.

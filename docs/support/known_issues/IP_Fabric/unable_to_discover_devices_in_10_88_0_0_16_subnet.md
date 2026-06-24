@@ -24,7 +24,6 @@ default_subnet_pools = [
 ]
 END
 ufw route allow in on podman0 out on eth0 from xx.xx.0.0/16
-ufw route allow in on eth0 out on podman0 to xx.xx.0.0/16
 podman network reload --all
 ```
 4. Restart the `podman` service using `systemctl restart podman.service podman.socket`.
