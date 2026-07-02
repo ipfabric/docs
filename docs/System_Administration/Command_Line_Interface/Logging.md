@@ -25,24 +25,25 @@ access to these subdirectories:
 
 Service logs for IP Fabric services are stored in the `/var/log/nimpee` and `/var/log/ipf` directories:
 
-| File(s)                                                                  | Description                                 |
-|:-------------------------------------------------------------------------|:--------------------------------------------|
-| `journalctl --namespace ipf-api`                                         | API logs, including error logs              |
-| `journalctl --namespace ipf-discovery`                                   | Discovery logs                              |
-| `journalctl --namespace ipf-webhook-worker`                              | Webhook worker logs                         |
-| `journalctl --namespace ipf-syslogworker`                                | Configuration management logs               |
-| `journalctl --namespace ipf-sys-scale-workers`                           | Discovery worker scaling logs               |
-| `journalctl --unit ipf-netshaper`                                        | Discovery bandwidth control logs            |
-| `/var/log/nimpee/ipf-migrate/migrateBuild*.log`                          | Database migration logs                     |
-| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log`                         | IPF CLI Config logs                         |
-| `/var/log/ipf/ipf-jumphost/*.log`                                        | Logs related to a specific jumphost service |
-| `/var/log/nimpee/sys-lvm-resize.log`                                     | Logs for automatic hard disk resize         |
-| `/var/log/nimpee/support-vpn.log`                                        | Support VPN-related logs                    |
-| `/var/log/nimpee/sys-backup-duplicity.log`                               | Logs for backup services                    |
-| `/var/log/nimpee/duplicity/sys-duplicity-*.log`                          | Detailed logs for each backup session       |
-| `/var/log/nimpee/sys-certificate.log`                                    | SSL certificate-related logs                |
-| `/var/log/ipf/ipf-techsupport-exporter/ipf-techsupport-exporter.log`     | Techsupport-related logs                    |
-| `/var/log/ipf/system-upgrade-ipf/package-*`                              | IP Fabric new version update logs           |
+| File(s)                                                              | Description                                 |
+|:---------------------------------------------------------------------|:--------------------------------------------|
+| `journalctl --namespace ipf-api`                                     | API logs, including error logs              |
+| `journalctl --namespace ipf-discovery`                               | Discovery logs                              |
+| `journalctl --namespace ipf-webhook-worker`                          | Webhook worker logs                         |
+| `journalctl --namespace ipf-syslogworker`                            | Configuration management logs               |
+| `journalctl --namespace ipf-sys-scale-workers`                       | Discovery worker scaling logs               |
+| `journalctl --unit ipf-netshaper`                                    | Discovery bandwidth control logs            |
+| `journalctl --unit ipf-kafka`                                        | Kafka logs                                  |
+| `/var/log/nimpee/ipf-migrate/migrateBuild*.log`                      | Database migration logs                     |
+| `/var/log/ipf/ipf-cli-config/ipf-cli-config.log`                     | IPF CLI Config logs                         |
+| `/var/log/ipf/ipf-jumphost/*.log`                                    | Logs related to a specific jumphost service |
+| `/var/log/nimpee/sys-lvm-resize.log`                                 | Automatic hard disk resize logs             |
+| `/var/log/nimpee/support-vpn.log`                                    | Support VPN-related logs                    |
+| `/var/log/nimpee/sys-backup-duplicity.log`                           | Logs for backup services                    |
+| `/var/log/nimpee/duplicity/sys-duplicity-*.log`                      | Detailed logs for each backup session       |
+| `/var/log/nimpee/sys-certificate.log`                                | SSL certificate-related logs                |
+| `/var/log/ipf/ipf-techsupport-exporter/ipf-techsupport-exporter.log` | Techsupport-related logs                    |
+| `/var/log/ipf/system-upgrade-ipf/package-*`                          | IP Fabric new version update logs           |
 
 ## Snapshot Logs
 
