@@ -250,6 +250,18 @@ To enable this feature, add the following line to the `worker` environment file 
 ENABLE_CISCO_LINE_VTY=true
 ```
 
+### Versa Interface Collection Split
+
+Since `8.0`, IP Fabric can collect Versa VOS interface data using separate lightweight API calls instead of the single heavy `interfaces?deep` call.
+
+When enabled, IP Fabric queries `interfaces/brief`, `interfaces/detail`, and `interfaces/dynamic-tunnels` individually and recombines the results. This improves reliability on Versa Directors that struggle to return the full payload in one response.
+
+To enable this feature, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+
+```
+ENABLE_VERSA_VOS_INTERFACES_SPLIT=true
+```
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
