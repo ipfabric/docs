@@ -85,6 +85,11 @@ Data from the snapshot will be partially available, and no other actions will be
 
 If you don't want to wait for the Assurance Engine process to finish while stopping discovery, you can use the **Force Stop** option.
 
+!!! warning
+
+    Force-stopping the Topology Calculation process is temporarily unavailable in the 8.0.0 release.
+    As a temporary workaround, run `systemctl restart ipf-api.service` to stop the process.
+
 ![Discovery Force Stop](../images/snapshot-management/snapshot-management_discovery-force-stop.webp)
 
 To ensure UI access is maintained after a discovery **Force Stop**, any system jobs scheduled to start afterward will be cancelled.
