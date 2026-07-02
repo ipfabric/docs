@@ -17,5 +17,4 @@ The most CPU-intensive system processes are also displayed.
 
 !!! info
 
-    When no discovery process is running, its services (`Tasker`, `Updater`,
-    `Workers`, `Net Worker`, and `Scanner Workers`) are expected to be inactive.
+    When no discovery process is running, its services (`Tasker`, `Workers`, `Net Worker`, and `Scanner Workers`) are expected to be inactive.

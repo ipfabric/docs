@@ -65,7 +65,7 @@ the `messageSubType` key as follows:
   and the responses received. Usable for scripting on top of the logs.
 - `cliInternal`: Messages with no formal structure used purely for debugging.
 
-The following 4 services -- Networker, Tasker, Updater, and Worker -- all log in
+The following services -- Networker, Tasker, and Worker -- all log in
 two formats:
 
 | File                                                                                    | Description                                      |
@@ -78,7 +78,6 @@ Service directories and their descriptions:
 | :-------------------------------------------------- | :--------------------------------------------------------------------------------------- |
 | `/home/autoboss/snapshots/<id>/services/networker/` | Networker via `traceroute` looks for other possible next tasks for the `worker` service. |
 | `/home/autoboss/snapshots/<id>/services/tasker/`    | Tasker prepares `vTask` records -- connecting into (network) devices.                    |
-| `/home/autoboss/snapshots/<id>/services/updater/`   | Updater is transforming device JSONs into the database.                                  |
 | `/home/autoboss/snapshots/<id>/services/worker/`    | Worker does the parsing.                                                                 |
 | `/home/autoboss/snapshots/<id>/services/scanworker/`| ScanWorker does the scanning. Optional folder if the scanner is enabled                  |
 
