@@ -262,18 +262,6 @@ To enable this feature, add the following line to the `worker` environment file 
 ENABLE_VERSA_VOS_INTERFACES_SPLIT=true
 ```
 
-### JSON Schema Task Validation
-
-Starting in version `8.0`, IP Fabric can validate selected discovery task results with JSON Schema definitions from product contracts instead of legacy Joi schemas.
-
-This is an opt-in validation mode. When this feature flag is disabled, IP Fabric continues to use legacy task validation.
-
-To enable this feature, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
-
-```
-ENABLE_JSON_SCHEMA_TASK_VALIDATION=true
-```
-
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
