@@ -301,7 +301,9 @@ Path lookup has changed significantly in the NCM. The following cloud constructs
 
 #### Technology Tables
 
-New technology tables have been added and are available under this feature flag: **Networks inventory**, **Peering inventory**, **Security Addresses**, and **Route Tables**. Existing cloud tables have also been updated. The **Hostname** column has been marked as deprecated in all existing cloud tables.
+New technology tables have been added and are available under this feature flag: **Networks inventory**, **Peering inventory**, **Security Addresses**, **Route Tables**, and **Network Interfaces**. Existing cloud tables have also been updated. The **Hostname** column has been marked as deprecated in all existing cloud tables.
+
+VMware NSX-T data is no longer included in the cloud endpoints tables (`/technology/cloud/endpoints/virtual-machines` and `/technology/cloud/endpoints/virtual-machines-interfaces`) when this feature flag is enabled. VMware virtual machine data is instead available in the new `/inventory/hosts/virtual-machines` and `/inventory/hosts/virtual-machines-interfaces` tables, which do not require this feature flag.
 
 ![New Cloud Model -- Route Tables](../../images/technology/cloud/technology-cloud_new-cloud-model-route-tables.webp)
 
