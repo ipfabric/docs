@@ -274,6 +274,57 @@ To enable this feature, add the following line to the `worker` environment file 
 ENABLE_JSON_SCHEMA_TASK_VALIDATION=true
 ```
 
+### New Cloud Model
+
+Since `8.0`, IP Fabric includes the New Cloud Model (NCM), which replaces the adapted on-premises abstractions with cloud-native constructs as first-class entities: VPCs/VNets, subnets, vNICs, route tables, peering, and security policies — structured the way cloud providers actually expose them.
+
+#### Data Collection
+
+A single org-scoped cloud collector task is created per AWS account and region, Azure subscription, or GCP project. A larger, hierarchy-aware task set (resource hierarchy, networks, subnets, route tables, peering, security, VMs, and more) runs against that one collector instead of many per-VPC devices.
+
+#### Network Diagrams
+
+Cloud network constructs are displayed as nodes in the network and sites diagram instead of VPCs/VNets being represented as devices. The detail tab shows relevant data for each construct. A new **Cloud** group of protocols has been added, containing **Cloud Gateway** and **Cloud Peering**.
+
+![New Cloud Model -- Network Diagrams](../../images/diagrams/diagrams_cloud-new-cloud-model-diagraming.webp)
+
+#### Path Lookup
+
+Path lookup has changed significantly in the NCM. The following cloud constructs are now shown in the path:
+
+- Virtual NIC (network interface)
+- Subnet
+- Peering
+
+![New Cloud Model -- Path Lookup](../../images/diagrams/diagrams_pathlookup-new-cloud-model.webp)
+
+
+#### Technology Tables
+
+New technology tables have been added and are available under this feature flag: **Networks inventory**, **Peering inventory**, **Security Addresses**, and **Route Tables**. Existing cloud tables have also been updated. The **Hostname** column has been marked as deprecated in all existing cloud tables.
+
+![New Cloud Model -- Route Tables](../../images/technology/cloud/technology-cloud_new-cloud-model-route-tables.webp)
+
+![New Cloud Model -- Peering](../../images/technology/cloud/technology-cloud_new-cloud-model-peering.webp)
+
+#### Enabling the Feature Flag
+
+To enable the new cloud model, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_NEW_CLOUD_MODEL=true
+```
+
+After updating the environment file, you must restart IP Fabric application by running the following command:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+!!! warning
+
+    The new cloud model uses new database tables. Snapshots taken without this feature flag enabled (using the old model) are not compatible with the new model. If you load an old snapshot after enabling this feature flag, some data may be missing or incomplete, as the old snapshot data cannot be mapped to the new table structure.
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
