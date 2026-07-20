@@ -67,6 +67,11 @@ box.
     using special characters, please make sure that the password is within the
     ```[A-Za-z0-9+-!?@#$%^&*()_`~[]{}<>,./|\:;'" ]``` range.
 
+If the network device supports key-based authentication, specify it as an alternative to a password.
+An SSH private key is sensitive information. When you add it, IP Fabric stores it encrypted
+and uses it to authenticate to matching network devices. Only add keys your organization has approved for this purpose,
+limited to the required devices.
+
 ## (Optional) Passwords for Enable Mode
 
 Privileged credentials are generally only necessary for configuration
