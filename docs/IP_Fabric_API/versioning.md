@@ -77,71 +77,50 @@ While a deprecated version is still callable, each such response includes header
 - `Sunset` returns the exact date in the RFC3339 format after which the version might be permanently unavailable without further notice.
 
 
-## API Version in URL Path [Deprecated]
+## API Version in URL Path (Removed in `v8.0`)
 
-We are deprecating the path-based API version identifier (`/v7.x`) in favor of header-based versioning.
+!!! danger "Removed in v8.0"
 
-Starting with IP Fabric `7.5`, any request whose URL contains `/v7.x` will still behave exactly as before, 
-but the response will now include the following HTTP response headers:
+    The path-based API version identifier (`/v7.x`) has been **removed** as of IP Fabric `v8.0`.
+    Requests that include a version segment in the URL path will return `HTTP 410 Gone`.
 
-- **Deprecation: true** -- signals that the endpoint is deprecated.
-
-- **Sunset** -- indicates the date after which the deprecated behavior may be removed.
-
-After the sunset date, the endpoint may return the HTTP `410 Gone` without further notice.
-
-### What is Changing
-
-|                                 | **Previously (Deprecated)**                             | **Currently (Supported)**                                                                |
-|---------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
-| **Endpoint**                    | `https://your_ipf_instance/api/v7.5/snapshots`          | `https://your_ipf_instance/api/snapshots`                                                |
-| **Additional response headers** | `Deprecation: true`  <br>`Sunset: 2026-02-01T00:00:00Z` | `X‑API‑Version: 1`  <br>`X-API-Versions-Supported: 1`  <br>`X-Product-Version: v7.5` |
-| **Response payload**            | _Unchanged_                                             | _Unchanged_                                                                              |
-
-No functional behaviour is altered -- you can migrate by **simply removing** `/v7.x` from the path.
+IP Fabric `7.5` deprecated the path-based API version (`/v7.x`) in favor of [header-based versioning](#versioning).
+During the deprecation period, affected responses included the `Deprecation` and `Sunset` headers announcing the upcoming removal.
+IP Fabric `v8.0` fully removed support for path-based versioning.
 
 ### Migration Guide
 
-1. **Remove the `/v7.5` segment** from every request URL.
-2. **Verify** that your integration treats the response identically (payloads are unchanged).
-3. **Update SDKs or client wrappers** if they hard‑code the version segment.
-4. **Monitor** for any warnings or errors during testing.
-
-#### Example
+Remove the `/v7.x` segment from all API request URLs. No other changes are required — payloads are the same.
 
 ```http
-# Deprecated request
+# No longer supported — returns HTTP 410 Gone
 GET /api/v7.5/snapshots HTTP/1.1
-Host: localhost
+Host: your_ipf_instance
 ```
 
 ```http
-# Preferred request
+# Correct request
 GET /api/snapshots HTTP/1.1
-Host: localhost
+Host: your_ipf_instance
 ```
+
+To pin a specific endpoint version, use the `X-API-Version` header instead.
+See the [header-based versioning](#versioning) section above for details.
 
 ### Timeline
 
-- **Jul 1, 2025** -- deprecation announced. `Deprecation: true` and `Sunset` headers activated.
-- **Feb 1, 2026 00:00 UTC** -- sunset date. The `/v7.5` path **may be removed** at, or any time after this point.
-
-We strongly recommend completing your migration **well before** the sunset date.
+- **IP Fabric `7.5`** — deprecation announced. `Deprecation: true` and `Sunset` headers activated on affected responses.
+- **IP Fabric `8.0`** — path-based versioning removed. URLs containing `/v7.x` return `HTTP 410 Gone`.
 
 ### Frequently Asked Questions
 
-**Will anything break before the sunset date?**
+**What happens to existing requests using `/v7.x`?**
 
-No. Until the sunset date, requests containing `/v7.x` continue to work unchanged.
+Clients receive an `HTTP 410 Gone` response. Update your client code, SDKs, or automation scripts to remove the version segment from the URL path.
 
-**Do I need to set a new header?**
+**Do you need to set new headers?**
 
-No. You only need to remove `/v7.x` from the request path. No additional headers are required on your side.
-
-**How can I test now?**
-
-Issue calls **without** the version segment in your staging or sandbox environment.
-The responses are identical, so you can compare outputs directly.
+No. Remove `/v7.x` from the URL path. The `X-API-Version` header is optional and only needed to target a specific endpoint version.
 
 **Where can I get help?**
 
