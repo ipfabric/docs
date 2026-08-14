@@ -34,6 +34,107 @@ sequenceDiagram
     have it configured by your Solution Architect. If you are unsure who your
     Solution Architect is, please contact our Support team.
 
+## Pre-Configuration Checklist
+
+Use this checklist to prepare everything **before** you enable SSO. Most delays
+during an SSO integration come from missing information or unfinished changes on
+the Identity Provider (IdP) side. Completing these steps up front makes the
+configuration quick and predictable.
+
+Work through the sections in order. Tick each box that applies to your
+environment. For anything you cannot complete, note why and who owns it, then
+resolve it before continuing. Copy the tables into your own notes or fill them in directly.
+
+!!! tip "How to use this checklist"
+
+    The items below are the same prerequisites the configuration relies on
+    ([Requirements](#requirements), [certificates](#certificate),
+    [API configuration](#api-configuration-apijson),
+    [Dex connectors](#dex-connectors), and
+    [role mapping](#role-assignments)). Each step links to the detailed
+    reference so you can go deeper where needed.
+
+### Step 1 · Environment & Access
+
+Confirm you can reach and administer the appliance and that a fallback login
+exists.
+
+- [ ] SSH access to the appliance as `osadmin` with `sudo` (root) — verify this before starting. See [CLI Access](#cli-access).
+- [ ] A local break-glass admin account exists in the GUI, independent of SSO/LDAP.
+- [ ] The appliance can resolve the FQDN and reach the IdP (DNS / proxy / firewall).
+- [ ] Schedule a maintenance window — services restart briefly and no discovery should be running (see [Preparing to Run the Script](#preparing-to-run-the-script)).
+
+### Step 2 · Identity Provider
+
+Prepare the application registration and the values IP Fabric needs from your
+IdP (Entra ID, Okta, Duo, Ping, etc.). We recommend **OpenID Connect (OIDC)**.
+
+- [ ] The protocol is **OIDC** (recommended). IP Fabric has deprecated SAML — flag it if SAML or LDAP is required.
+- [ ] The IdP does **not** mandate PKCE for the client — PKCE is not supported and is a blocker if enforced.
+- [ ] You have created an application/app registration for IP Fabric.
+- [ ] Register the redirect URI exactly (case-sensitive): `https://<FQDN>/api/oauth2/external/<API-DEX-PROVIDERS-NAME>`.
+- [ ] Record the **Client ID** and **Issuer URL** (collect the client secret at configuration time — never send secrets by email).
+- [ ] Enable a **groups** (or roles) claim in the token or user Info — [role mapping](#role-assignments) requires this.
+- [ ] Every SSO user has an **email address** in the IdP — email is the primary identity (see the [Username Conflict](#single-sign-on-sso) warning at the top of this page).
+- [ ] *Entra ID only:* admin consent is possible; `Directory.Read.All` is acceptable, **or** your team has agreed on an OIDC connector with a groups claim.
+
+Record the key values here:
+
+| Item | Value |
+| ------------------------------- | ----- |
+| IP Fabric FQDN                  |       |
+| Identity provider               |       |
+| Protocol (OIDC / SAML / LDAP)   |       |
+| Client / Application ID         |       |
+| Issuer / Tenant URL             |       |
+
+### Step 3 · Certificates & TLS
+
+SSO requires a CA-signed web certificate — self-signed certificates do **not**
+work. See [Certificate](#certificate) and [IPF Certificates](../system/ipf_cert.md).
+
+- [ ] The web certificate is CA-signed (`Issuer` ≠ `Subject`).
+- [ ] The full chain is available as files: server certificate + intermediate(s) + root CA.
+- [ ] The certificate SAN includes the exact FQDN used above.
+- [ ] If your deployment uses an internal or private CA, you can add it to the appliance OS trust-store — see [Certificate Authorities](../system/ca.md).
+
+### Step 4 · RBAC — Roles & Group Mapping
+
+Decide how IdP groups map to IP Fabric access. Navigate to
+**Settings → Administration → Roles / Policies** to manage roles and policies. Role names may contain letters,
+numbers, `_` and `-` only.
+
+- [ ] Define access tiers (e.g. admin, read-only, site-restricted).
+- [ ] Create the required roles and policies in IP Fabric.
+- [ ] Create IdP groups and assign pilot users.
+- [ ] Record group names **exactly** as emitted in the token — Entra ID may emit object IDs instead of names.
+- [ ] Map at least one group to an admin role.
+- [ ] Define the default for users in no mapped group — recommended: no access (see [Role Assignments](#role-assignments)).
+
+!!! note "Record your mapping externally"
+
+    Keep a record of your **IdP group → IP Fabric role → access level** mapping
+    in your own documentation (for example a wiki page or change ticket). Note
+    the exact group name or object ID as emitted in the token, the target
+    IP Fabric role, and the intended access level. This is invaluable for later
+    reference and troubleshooting, and keeps your live values out of the public
+    documentation.
+
+### Step 5 · Existing Users
+
+Because email is the primary identity, duplicate emails across authentication
+sources block SSO login (see the [Username Conflict](#single-sign-on-sso) warning).
+
+- [ ] Check for duplicate emails across local / LDAP / SSO users — duplicates cause a **Username Conflict** and block SSO login.
+- [ ] Agree a cleanup plan for duplicate accounts — deleted accounts lose their settings and API tokens.
+- [ ] Decide whether to disable local login after go-live — this requires a break-glass plan (see [Disabling Local Authentication](#disabling-local-authentication)).
+
+Once you have ticked every applicable box, you are ready to configure SSO. Use
+either the
+[automated helper script](#automated-sso-enablement-for-the-ipf-application) or
+edit the [API](#api-configuration-apijson) and
+[Dex](#sso-configuration-ipf-dexyaml) configuration files manually.
+
 ## Requirements
 
 ### Certificate
