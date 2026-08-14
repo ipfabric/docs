@@ -20,7 +20,7 @@ cat <<END > /etc/containers/containers.conf.d/subnet.conf
 [network]
 default_subnet = "xx.xx.0.0/17"
 default_subnet_pools = [
-    {"base": "xx.xx.128.0/17", "size": 24}
+    { base = "xx.xx.128.0/17", size = 24 }
 ]
 END
 ufw route allow in on podman0 out on eth0 from xx.xx.0.0/16
