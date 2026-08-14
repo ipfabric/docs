@@ -282,6 +282,10 @@ Since `8.0`, IP Fabric includes the New Cloud Model (NCM), which replaces the ad
 
 A single org-scoped cloud collector task is created per AWS account and region, Azure subscription, or GCP project. A larger, hierarchy-aware task set (resource hierarchy, networks, subnets, route tables, peering, security, VMs, and more) runs against that one collector instead of many per-VPC devices.
 
+!!! warning "Device Count Impact"
+
+    VPCs/VNets no longer appear as devices. They no longer count toward the device count. Expect your device count to decrease after enabling this feature flag.
+
 #### Network Diagrams
 
 Cloud network constructs are displayed as nodes in the network and sites diagram instead of VPCs/VNets being represented as devices. The detail tab shows relevant data for each construct. A new **Cloud** group of protocols has been added, containing **Cloud Gateway** and **Cloud Peering**.
