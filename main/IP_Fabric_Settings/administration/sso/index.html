@@ -4869,6 +4869,78 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#pre-configuration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Configuration Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Configuration Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-environment-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 · Environment &amp; Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 · Identity Provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-certificates-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 · Certificates &amp; TLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-rbac-roles-group-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 · RBAC — Roles &amp; Group Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-existing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 · Existing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16314,6 +16386,78 @@ here.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#pre-configuration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Configuration Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Configuration Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-environment-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 · Environment &amp; Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 · Identity Provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-certificates-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 · Certificates &amp; TLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-rbac-roles-group-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 · RBAC — Roles &amp; Group Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-existing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 · Existing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16862,6 +17006,119 @@ building block to allow a broader set of Identity Providers (IdP).</p>
 have it configured by your Solution Architect. If you are unsure who your
 Solution Architect is, please contact our Support team.</p>
 </div>
+<h2 id="pre-configuration-checklist">Pre-Configuration Checklist</h2>
+<p>Use this checklist to prepare everything <strong>before</strong> you enable SSO. Most delays
+during an SSO integration come from missing information or unfinished changes on
+the Identity Provider (IdP) side. Completing these steps up front makes the
+configuration quick and predictable.</p>
+<p>Work through the sections in order. Tick each box that applies to your
+environment. For anything you cannot complete, note why and who owns it, then
+resolve it before continuing. Copy the tables into your own notes or fill them in directly.</p>
+<div class="admonition tip">
+<p class="admonition-title">How to use this checklist</p>
+<p>The items below are the same prerequisites the configuration relies on
+(<a href="#requirements">Requirements</a>, <a href="#certificate">certificates</a>,
+<a href="#api-configuration-apijson">API configuration</a>,
+<a href="#dex-connectors">Dex connectors</a>, and
+<a href="#role-assignments">role mapping</a>). Each step links to the detailed
+reference so you can go deeper where needed.</p>
+</div>
+<h3 id="step-1-environment-access">Step 1 · Environment &amp; Access</h3>
+<p>Confirm you can reach and administer the appliance and that a fallback login
+exists.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> SSH access to the appliance as <code>osadmin</code> with <code>sudo</code> (root) — verify this before starting. See <a href="#cli-access">CLI Access</a>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> A local break-glass admin account exists in the GUI, independent of SSO/LDAP.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The appliance can resolve the FQDN and reach the IdP (DNS / proxy / firewall).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Schedule a maintenance window — services restart briefly and no discovery should be running (see <a href="#preparing-to-run-the-script">Preparing to Run the Script</a>).</li>
+</ul>
+<h3 id="step-2-identity-provider">Step 2 · Identity Provider</h3>
+<p>Prepare the application registration and the values IP Fabric needs from your
+IdP (Entra ID, Okta, Duo, Ping, etc.). We recommend <strong>OpenID Connect (OIDC)</strong>.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The protocol is <strong>OIDC</strong> (recommended). IP Fabric has deprecated SAML — flag it if SAML or LDAP is required.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The IdP does <strong>not</strong> mandate PKCE for the client — PKCE is not supported and is a blocker if enforced.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> You have created an application/app registration for IP Fabric.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Register the redirect URI exactly (case-sensitive): <code>https://&lt;FQDN&gt;/api/oauth2/external/&lt;API-DEX-PROVIDERS-NAME&gt;</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Record the <strong>Client ID</strong> and <strong>Issuer URL</strong> (collect the client secret at configuration time — never send secrets by email).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Enable a <strong>groups</strong> (or roles) claim in the token or user Info — <a href="#role-assignments">role mapping</a> requires this.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Every SSO user has an <strong>email address</strong> in the IdP — email is the primary identity (see the <a href="#single-sign-on-sso">Username Conflict</a> warning at the top of this page).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> <em>Entra ID only:</em> admin consent is possible; <code>Directory.Read.All</code> is acceptable, <strong>or</strong> your team has agreed on an OIDC connector with a groups claim.</li>
+</ul>
+<p>Record the key values here:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP Fabric FQDN</td>
+<td></td>
+</tr>
+<tr>
+<td>Identity provider</td>
+<td></td>
+</tr>
+<tr>
+<td>Protocol (OIDC / SAML / LDAP)</td>
+<td></td>
+</tr>
+<tr>
+<td>Client / Application ID</td>
+<td></td>
+</tr>
+<tr>
+<td>Issuer / Tenant URL</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-3-certificates-tls">Step 3 · Certificates &amp; TLS</h3>
+<p>SSO requires a CA-signed web certificate — self-signed certificates do <strong>not</strong>
+work. See <a href="#certificate">Certificate</a> and <a href="../../system/ipf_cert/">IPF Certificates</a>.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The web certificate is CA-signed (<code>Issuer</code> ≠ <code>Subject</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The full chain is available as files: server certificate + intermediate(s) + root CA.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> The certificate SAN includes the exact FQDN used above.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> If your deployment uses an internal or private CA, you can add it to the appliance OS trust-store — see <a href="../../system/ca/">Certificate Authorities</a>.</li>
+</ul>
+<h3 id="step-4-rbac-roles-group-mapping">Step 4 · RBAC — Roles &amp; Group Mapping</h3>
+<p>Decide how IdP groups map to IP Fabric access. Navigate to
+<strong>Settings → Administration → Roles / Policies</strong> to manage roles and policies. Role names may contain letters,
+numbers, <code>_</code> and <code>-</code> only.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Define access tiers (e.g. admin, read-only, site-restricted).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Create the required roles and policies in IP Fabric.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Create IdP groups and assign pilot users.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Record group names <strong>exactly</strong> as emitted in the token — Entra ID may emit object IDs instead of names.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Map at least one group to an admin role.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Define the default for users in no mapped group — recommended: no access (see <a href="#role-assignments">Role Assignments</a>).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Record your mapping externally</p>
+<p>Keep a record of your <strong>IdP group → IP Fabric role → access level</strong> mapping
+in your own documentation (for example a wiki page or change ticket). Note
+the exact group name or object ID as emitted in the token, the target
+IP Fabric role, and the intended access level. This is invaluable for later
+reference and troubleshooting, and keeps your live values out of the public
+documentation.</p>
+</div>
+<h3 id="step-5-existing-users">Step 5 · Existing Users</h3>
+<p>Because email is the primary identity, duplicate emails across authentication
+sources block SSO login (see the <a href="#single-sign-on-sso">Username Conflict</a> warning).</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Check for duplicate emails across local / LDAP / SSO users — duplicates cause a <strong>Username Conflict</strong> and block SSO login.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Agree a cleanup plan for duplicate accounts — deleted accounts lose their settings and API tokens.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Decide whether to disable local login after go-live — this requires a break-glass plan (see <a href="#disabling-local-authentication">Disabling Local Authentication</a>).</li>
+</ul>
+<p>Once you have ticked every applicable box, you are ready to configure SSO. Use
+either the
+<a href="#automated-sso-enablement-for-the-ipf-application">automated helper script</a> or
+edit the <a href="#api-configuration-apijson">API</a> and
+<a href="#sso-configuration-ipf-dexyaml">Dex</a> configuration files manually.</p>
 <h2 id="requirements">Requirements</h2>
 <h3 id="certificate">Certificate</h3>
 <p>Prior to configuring SSO, the IP Fabric server must not be using a self-signed
@@ -17944,7 +18201,7 @@ mapped to the example <code>read-only</code> IP Fabric role.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 3, 2026 08:27:06 UTC">July 3, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 14, 2026 09:40:05 UTC">August 14, 2026</span>
   </span>
 
     
