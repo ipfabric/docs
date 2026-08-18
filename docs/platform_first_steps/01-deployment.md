@@ -12,9 +12,9 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
 ## OVA Distribution Details
 
-The appliance is built on top of Debian 12, which has been officially supported
+The appliance runs on Debian 13, officially supported
 since
-[ESXi version `8.0`](https://compatibilityguide.broadcom.com/search?program=software&persona=live&column=osVendors&order=asc&osFamilyName=%5BDebian+12%5D&activePage=1&activeDelta=20).
+[ESXi version `9.0`](https://compatibilityguide.broadcom.com/search?program=software&persona=live&column=osVendors&order=asc&osFamilyName=%5BDebian+13%5D&activePage=1&activeDelta=20).
 
 The minimal required Virtual Hardware Version is `vmx-20`, supported by ESXi
 `8.0`, Fusion `13.6`, Workstation Pro `17.x`, and Workstation Player `17.x`. For
@@ -42,7 +42,7 @@ If you do not have access to an ESXi host for importing, you can try to import
 the disk (VMDK) and set up the machine manually. Ensure the following are
 configured correctly:
 
-- Virtual Hardware Version is at least `vmx-20`
+- Virtual Hardware Version: `vmx-20` minimum (`vmx-22` recommended where available)
 - virtio/paravirtualized drivers for storage and network
   - [`PVSCSI`](https://kb.vmware.com/s/article/1010398) (Paravirtual SCSI)
   - [`VMXNET 3`](https://kb.vmware.com/s/article/1001805)
