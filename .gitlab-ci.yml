@@ -38,6 +38,28 @@ build_main_pages:
     - cp -v main_preamble.html overrides/main.html
     - mike deploy --push main
 
+# Draft preview via GitLab Pages (proofreading only — NOT production).
+# Publishes the site built with mkdocs.yml to the project's GitLab Pages URL
+# whenever you push to the "docs-draft" branch. Does not affect docs.ipfabric.io.
+pages:
+  stage: deploy
+  only:
+    - docs-draft
+  before_script:
+    # SSH key so the multirepo plugin can fetch integration docs (same as prod jobs)
+    - git config --global user.email "devops+gl_ci_bot@ipfabric.io"
+    - git config --global user.name "Bot IPFabric"
+    - mkdir -pvm 0700 .ssh
+    - echo "$ssh_deploy_key" > "$CI_PROJECT_DIR/.ssh/gitlab-ci"
+    - chmod 0400 .ssh/gitlab-ci
+  script:
+    # GitLab Pages serves the "public/" directory
+    - mkdocs build -d public
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
+
 # Strict build validation for merge requests — catches broken links,
 # missing files, and config errors before merge
 strict_build_mr:

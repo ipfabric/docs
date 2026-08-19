@@ -211,6 +211,26 @@ If you encounter issues with missing cairo-related packages, try adding the Home
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
 ```
 
+#### Shared Draft Preview (Proofreading)
+
+When you want team members to review or proofread your changes without running
+anything locally, push your work to the `docs-draft` branch. This triggers the
+[`pages`](.gitlab-ci.yml) CI/CD job, which builds the site with `mkdocs build`
+and publishes it to the project's GitLab Pages URL for review. This environment is
+isolated from production (`docs.ipfabric.io`) and does not affect the `main`
+branch or the `mike` versioned deployment.
+
+```shell
+git checkout -b docs-draft   # initial setup only; afterwards switch to it
+git push -u origin docs-draft
+```
+
+Each later push to `docs-draft` rebuilds and republishes to the same
+GitLab Pages URL, so reviewers can always find the latest draft at the same
+address. Find the Pages URL under **Deploy → Pages** in GitLab. A project
+Maintainer can share it and, if desired, restrict Pages visibility to
+project members only.
+
 ## Docker Image
 
 As mentioned in the `Live Preview` section above, we have a Docker image which
@@ -403,10 +423,10 @@ means that the `541d97e0d` was deployed to version `5.0` on the website.
 
 - agrr, profit!
 
-### Updating Low-Level Release Notes (LLRN) From JIRA
+### Updating Low-Level Release Notes (LLRN) From Jira
 
 Script `jira_release_notes.py` will refresh all low-level
-release notes from JIRA from version `7.0.0`. There are certain shortcuts, like hard-coded
+release notes from Jira from version `7.0.0`. There are certain shortcuts, like hard-coded
 configuration values. Also, check your release filtering in there to limit which
 releases are actually refreshed.
 
@@ -414,7 +434,7 @@ To use this script, you need to edit two environment variables in .env file:
 
 - `JIRA_USER` -- your username (e.g. `first.last@ipfabric.io`)
 - `JIRA_PASS` -- a token you can get from the
-  [JIRA API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
+  [Jira API Tokens](https://id.atlassian.com/manage-profile/security/api-tokens)
   page
 
 To run this script, activate `venv` and run `python3 jira_release_notes.py`.
@@ -570,7 +590,7 @@ The agent also scans ticket summaries and descriptions for vendor/family mention
 - Verify your Jira API token is valid (not expired)
 - Check that your OpenAI API key is active
 
-**Error: "No issues found for version X.X.X"**
+**Error: "No issues found for version `X.X.X`"**
 - Verify the version exists in Jira
 - Check that tickets have the fixVersion set correctly
 - Ensure tickets don't have the `skip_LLRN` label
