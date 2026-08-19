@@ -226,7 +226,7 @@ git push -u origin docs-draft
 ```
 
 Each later push to `docs-draft` rebuilds and republishes to the same
-GitLab Pages URL, so reviewers can always find the latest draft at the same
+[GitLab Pages URL](https://ip-fabric.gitlab.io/documentation/docs), so reviewers can always find the latest draft at the same
 address. Find the Pages URL under **Deploy → Pages** in GitLab. A project
 Maintainer can share it and, if desired, restrict Pages visibility to
 project members only.
