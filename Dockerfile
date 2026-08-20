@@ -56,8 +56,11 @@ RUN \
   -exec rm -f {} \;
 
 # Trust git directory, required for git >= 2.35.2
-# Needed because /docs is a bind-mounted volume from the host
-RUN git config --global --add safe.directory /docs
+# Needed because /docs is a bind-mounted volume from the host.
+# Use --system (not --global) so the exception applies to any UID the
+# container runs as. `make serve` runs with `-u $(id -u):$(id -g)`, a
+# non-root user with no HOME, so a root-owned ~/.gitconfig would be ignored.
+RUN git config --system --add safe.directory /docs
 
 # Set working directory -- mount your docs repository here
 WORKDIR /docs

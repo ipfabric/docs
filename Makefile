@@ -12,12 +12,27 @@ TAG=$(MATERIAL_VER)-material-mkdocs-$(MKDOCS_VER)
 # Vale linter release URL for documentation style checking
 VALE_RELEASE=https://github.com/errata-ai/vale/releases/download/v3.9.1/vale_3.9.1_Linux_64-bit.tar.gz
 
-.PHONY: mike vale serve
+.PHONY: mike vale serve serve-fast
 
 # Run local docs preview in Docker container (uses mkdocs.yml by default)
-# Mounts current directory into the container for live editing
+# Mounts current directory into the container for live editing.
+# ':delegated' relaxes bind-mount consistency for much better I/O on macOS.
+# '.cache' is a named volume so social-card reads/writes don't cross the slow
+# host bind mount (major speedup on Docker Desktop for Mac/Windows).
 serve:
-	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 -v $(CURDIR):/docs $(IMAGE):$(TAG)
+	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 \
+		-v $(CURDIR):/docs:delegated -v mkdocs-cache:/docs/.cache $(IMAGE):$(TAG)
+
+# Fast local preview: skips the two most expensive, production-only plugins
+# (social cards + git revision dates). Use this while writing/reviewing content.
+# Rebuilds go from ~7-10 min to well under a minute.
+# Uses an anonymous '.cache' volume: since social cards are disabled here, the
+# cache has little to persist, so it's discarded with the container to avoid
+# stale-cache surprises.
+serve-fast:
+	docker run -it --rm -u $(shell id -u):$(shell id -g) --name mkdocs -p 8000:8000 \
+		-e SOCIAL=false -e GIT_DATES=false \
+		-v $(CURDIR):/docs:delegated -v /docs/.cache $(IMAGE):$(TAG)
 
 # Create/update Python virtual environment from requirements.txt
 venv: venv/touchfile

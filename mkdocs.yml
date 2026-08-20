@@ -119,7 +119,9 @@ plugins:
   - awesome-nav:
       filename: .nav.yml
   # Shows "last updated" date on each page (from git commit history)
+  # Disable locally for faster builds: set GIT_DATES=false (see `make serve-fast`)
   - git-revision-date-localized:
+      enabled: !ENV [GIT_DATES, true]
       strict: false
   # Per-page metadata overrides (formerly Insiders-only)
   - meta:
@@ -127,7 +129,10 @@ plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   # Auto-generated social/OpenGraph cards for link previews (formerly Insiders-only)
+  # This is the single most expensive plugin (renders a PNG per page via cairo/Pillow).
+  # Disable locally for much faster builds: set SOCIAL=false (see `make serve-fast`)
   - social:
+      enabled: !ENV [SOCIAL, true]
       cards_layout: default/variant
       cards_layout_options:
         background_color: "#143352"
