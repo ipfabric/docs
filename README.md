@@ -243,10 +243,58 @@ The image contains all MkDocs plugins and the
 
 ### Updating Container Image
 
+Rebuild the image and push it to the GitLab container registry (for example,
+after bumping versions in `requirements.txt`). Verify that Docker (Linux) or
+Docker Desktop (macOS) is running before you start.
+
+**1. Authenticate to the registry**
+
 ```shell
+docker login registry.gitlab.com
+```
+
+- **Username** -- your GitLab account name.
+- **Password** -- a [Personal Access Token](https://gitlab.com/-/user_settings/personal_access_tokens)
+  with the `read_registry` and `write_registry` scopes. Your GitLab account
+  password will **not** work.
+
+**2. Build the image**
+
+```shell
+# Linux users
 make docker-build
+
+# macOS users (Apple Silicon) -- force the amd64 platform used by the CI runners
+DOCKER_DEFAULT_PLATFORM=linux/amd64 make docker-build
+```
+
+On Apple Silicon, a plain `make docker-build` produces an `arm64`-only image.
+The `amd64` CI runners cannot pull that image. Set the `DOCKER_DEFAULT_PLATFORM`
+environment variable to cross-build the `linux/amd64` image via emulation.
+This requires no changes to the `Makefile`.
+
+**3. Verify the image**
+
+Verify that you see both the `latest` tag and the version tag (for example,
+`9.7.6-material-mkdocs-1.6.1`):
+
+```shell
+docker image list
+```
+
+**4. Push the image**
+
+This pushes both the version tag and `latest`:
+
+```shell
 make docker-push
 ```
+
+**5. Confirm in the registry**
+
+Verify that the new image is present with the correct version tag and as
+`latest` in the
+[GitLab container registry](https://gitlab.com/ip-fabric/documentation/docs/container_registry/3462887).
 
 ## `mike` Cookbook
 
