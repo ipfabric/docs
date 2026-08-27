@@ -3590,6 +3590,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#path-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Lookup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vendor-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -15975,6 +15986,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#path-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Lookup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vendor-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16074,6 +16096,12 @@ here.
   fabric node in the SPBM control plane.</li>
 <li><strong>Fabric Area</strong> – The fabric area classification of an entry, either <code>HOME</code>
   (the local fabric area) or <code>REMOTE</code> (reachable through another area).</li>
+<li><strong>L2 VSN (Layer 2 Virtual Services Network)</strong> – A Layer 2 service carried
+  over the backbone. It maps a customer VLAN to an I-SID at the fabric edge.</li>
+<li><strong>BEB (Backbone Edge Bridge)</strong> – A fabric node at the edge of the backbone.
+  It adds the backbone header to customer traffic and removes it again.</li>
+<li><strong>BCB (Backbone Core Bridge)</strong> – A fabric node inside the backbone. It
+  forwards encapsulated traffic on the B-MAC and the B-VLAN alone.</li>
 </ul>
 <h2 id="tabs-in-technology-spbm">Tabs in Technology → SPBM</h2>
 <p>The <strong>SPBM</strong> section has two tabs: <strong>Services</strong> and <strong>B-MAC Forwarding</strong>.</p>
@@ -16187,6 +16215,16 @@ here.
 </tr>
 </tbody>
 </table>
+<h2 id="path-lookup">Path Lookup</h2>
+<p>Since version <code>8.1</code>, path lookup follows traffic through SPBM <strong>L2 VSN</strong> services. It also follows the service across fabric areas, so <strong>multi-area forwarding</strong> is traced end to end.</p>
+<p>Path lookup resolves each hop from the collected SPBM data:</p>
+<ul>
+<li><strong>Ingress BEB</strong> – The MAC table match returns the I-SID, the destination B-MAC, and the B-VLAN for the customer MAC address. Path lookup then adds the backbone header. The packet action shows the pushed header, and the <strong>Backbone</strong> stack in the packet detail shows <code>B-DA</code>, <code>B-SA</code>, <code>I-SID</code>, and <code>B-VLAN</code>.</li>
+<li><strong>Transit BCB</strong> – Forwarding follows the B-MAC forwarding entry for the destination B-MAC and the B-VLAN. The customer header stays untouched.</li>
+<li><strong>Egress BEB</strong> – Path lookup removes the backbone header. It then continues in the customer VLAN mapped to the I-SID.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/technology/spbm/technology-spbm_path-lookup_l2-vsn.webp" data-desc-position="bottom"><img alt="SPBM L2 VSN path lookup" src="../../../images/technology/spbm/technology-spbm_path-lookup_l2-vsn.webp"></a></p>
+<p>The topology view labels backbone links with the I-SID and access links with the customer VLAN. This makes the boundary between the customer service and the backbone visible in the diagram.</p>
 <h2 id="vendor-support">Vendor Support</h2>
 <p>SPBM data collection is currently supported on the following platforms:</p>
 <ul>
@@ -16215,7 +16253,7 @@ list of supported vendors and features.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 13, 2026 09:29:00 UTC">July 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2026 05:36:43 UTC">August 27, 2026</span>
   </span>
 
     
