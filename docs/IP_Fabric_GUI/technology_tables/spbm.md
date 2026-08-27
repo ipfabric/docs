@@ -20,6 +20,12 @@ A **Service Instance Identifier (I-SID)**, a 24-bit value, identifies services a
   fabric node in the SPBM control plane.
 - **Fabric Area** -- The fabric area classification of an entry, either `HOME`
   (the local fabric area) or `REMOTE` (reachable through another area).
+- **L2 VSN (Layer 2 Virtual Services Network)** -- A Layer 2 service carried
+  over the backbone. It maps a customer VLAN to an I-SID at the fabric edge.
+- **BEB (Backbone Edge Bridge)** -- A fabric node at the edge of the backbone.
+  It adds the backbone header to customer traffic and removes it again.
+- **BCB (Backbone Core Bridge)** -- A fabric node inside the backbone. It
+  forwards encapsulated traffic on the B-MAC and the B-VLAN alone.
 
 ## Tabs in Technology --> SPBM
 
@@ -63,6 +69,20 @@ The **B-MAC Forwarding** tab displays the SPBM underlay unicast forwarding entri
 | Egress Interface | Egress interface used to reach the destination B-MAC. |
 | Path Metric | Path metric (cost) associated with the forwarding entry. |
 | Fabric Area | Fabric area classification (`HOME` or `REMOTE`). |
+
+## Path Lookup
+
+Since version `8.1`, path lookup follows traffic through SPBM **L2 VSN** services. It also follows the service across fabric areas, so **multi-area forwarding** is traced end to end.
+
+Path lookup resolves each hop from the collected SPBM data:
+
+- **Ingress BEB** -- The MAC table match returns the I-SID, the destination B-MAC, and the B-VLAN for the customer MAC address. Path lookup then adds the backbone header. The packet action shows the pushed header, and the **Backbone** stack in the packet detail shows `B-DA`, `B-SA`, `I-SID`, and `B-VLAN`.
+- **Transit BCB** -- Forwarding follows the B-MAC forwarding entry for the destination B-MAC and the B-VLAN. The customer header stays untouched.
+- **Egress BEB** -- Path lookup removes the backbone header. It then continues in the customer VLAN mapped to the I-SID.
+
+![SPBM L2 VSN path lookup](../../images/technology/spbm/technology-spbm_path-lookup_l2-vsn.webp)
+
+The topology view labels backbone links with the I-SID and access links with the customer VLAN. This makes the boundary between the customer service and the backbone visible in the diagram.
 
 ## Vendor Support
 
