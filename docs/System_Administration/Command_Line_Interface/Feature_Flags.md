@@ -331,6 +331,42 @@ sudo systemctl restart ipf-appliance
 
     The new cloud model uses new database tables. Snapshots taken without this feature flag enabled (using the old model) are not compatible with the new model. If you load an old snapshot after enabling this feature flag, some data may be missing or incomplete, as the old snapshot data cannot be mapped to the new table structure.
 
+
+### Fast Discovery for Cisco Wireless LAN Controllers
+
+Since `8.1`, IP Fabric can discover Cisco Wireless LAN Controllers using controller-wide (bulk) CLI commands instead of running commands per access point and per wireless client.
+
+This reduces the number of CLI commands and the runtime of WLC-related discovery tasks in large wireless environments. The tasks, their output schemas, and the resulting technology tables remain unchanged.
+
+Supported platforms:
+
+- Cisco AireOS wireless controllers running AireOS `8.1` or newer (validated on
+  AireOS `8.10`)
+- Cisco Catalyst 9800 (IOS-XE) wireless controllers (validated on IOS-XE `17.15`
+  and `17.18`)
+
+Fast discovery relies on the `show ap inventory all` command, which is not available on AireOS releases older than `8.1`. Controllers running an older AireOS release use full mode even when the flag is enabled.
+
+Controllers of other vendors and platforms are always discovered in full mode,
+so a single snapshot may mix fast-discovered and fully discovered controllers.
+
+The following data is **not** collected in fast mode:
+
+- Per-radio BSSID values and access point group WLAN membership (AireOS)
+- Per-access-point subnet mask, default gateway, and routing table (AireOS)
+- Structured access point inventory part list — model and serial number are
+  still collected (IOS-XE)
+- Detailed wireless client telemetry — signal strength (RSSI), signal-to-noise
+  ratio, traffic counters, encryption cipher, BSSID, and mobility state
+- VLAN ID for clients on WLANs mapped to an interface group or to an untagged
+  interface (AireOS)
+
+To enable this feature, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+
+```
+ENABLE_WLC_FAST_DISCOVERY=true
+```
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
