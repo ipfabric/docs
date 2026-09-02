@@ -67,36 +67,51 @@ In case of ongoing issues, it is possible to disable these resource checks in
 `/opt/ipf-api/conf.d/api.json`. Please contact IP Fabric Support for such a
 change.
 
-### Stopping Discovery
+### Canceling a Running Process
 
-![Discovery Stop](../images/snapshot-management/snapshot-management_discovery-stop.webp)
+![Canceling a Running Process](../images/snapshot-management/snapshot-management_discovery-cancel.webp)
 
-While discovery is running, it can be stopped (highlighted in the red box) at its current state, preventing any further network device discoveries.
+While Discovery, a Snapshot Load, or a Topology Calculation is running, click **Cancel** (highlighted in the red box) to stop it immediately. A confirmation dialog displays, worded for whichever process is currently running:
 
-The snapshot will then begin the topology calculation and Assurance Engine process for the devices discovered up to that point.
+- **Cancel Discovery** — stops further network device discovery. Topology Calculation and Assurance Engine checks do not execute for the partially discovered data.
+- **Cancel Snapshot Load** — stops the snapshot load process and unloads the snapshot.
+- **Cancel Topology Calculation** — stops the Topology Calculation process and discards any other still-queued post-discovery actions for that snapshot: **Calculating labels**, **Load graph cache**, **Calculating data for changes**, and **Calculating reports**.
 
-![Discovery Stopping](../images/snapshot-management/snapshot-management_discovery-stopping.webp)
+!!! info "Stop and Force Stop Are Now Cancel"
 
-The snapshot will enter a **Stopping** state (highlighted in the red box), and the message **Network topology building has been started** (highlighted in the green box) will be displayed.
+    Earlier releases offered two separate actions while a discovery was running:
 
-Data from the snapshot will be partially available, and no other actions will be performed until the process is complete.
+    - **Stop** — a graceful stop that still ran Topology Calculation and Assurance Engine checks over the partially discovered data.
+    - **Force Stop** — an immediate termination that skipped Topology Calculation and Assurance Engine entirely and marked the snapshot **error** and **Force Stopped**.
 
-### Force Stopping Discovery
+    As of `v8.1.0`, both actions are replaced by the single **Cancel** action described above. A canceled discovery now enters the **canceled** state (see below) rather than **error**.
 
-If you don't want to wait for the Assurance Engine process to finish while stopping discovery, you can use the **Force Stop** option.
+While the system processes a cancellation, the snapshot briefly shows a **Stopping** state. Data from the snapshot will be partially available. No other actions will run until the process is complete.
 
-!!! warning
+### Canceled Snapshots
 
-    Force-stopping the Topology Calculation process is temporarily unavailable in the 8.0.0 release.
-    As a temporary workaround, run `systemctl restart ipf-api.service` to stop the process.
+![Canceled Snapshots](../images/snapshot-management/snapshot-management_discovery-canceled.webp)
 
-![Discovery Force Stop](../images/snapshot-management/snapshot-management_discovery-force-stop.webp)
+Canceling a running Discovery puts the snapshot into the **canceled** state:
 
-To ensure UI access is maintained after a discovery **Force Stop**, any system jobs scheduled to start afterward will be cancelled.
+- The snapshot stays **loaded and viewable**, using the data collected up to the point of cancellation.
+- The snapshot displays a **(Canceled)** label — in both the snapshot list and the **Current Snapshot** selector — with a note: _The discovery was canceled, data could be inconsistent and unusable._
+- Browsing any page that requires a snapshot (for example, Technology Tables or Topology) while a canceled snapshot is active displays a banner: _Selected snapshot was canceled. Data may be incomplete._
+- The **canceled** status remains even if the snapshot is later unloaded or transferred. Running **Refresh Devices** or **Add Devices** against the snapshot afterward does not clear the **canceled** marker either.
+- You can run Topology Calculation and the Assurance Engine checks manually over the partial data — see [Running Topology Calculation](#running-topology-calculation).
+- If the snapshot is later unloaded and reloaded successfully, Topology Calculation and the Assurance Engine checks run **automatically** afterward — the same as for a normal snapshot reload. No manual trigger is required.
 
-The snapshot will enter an **error** state and be marked as **Force Stopped** with a note stating: _The discovery process was force-stopped, data may be inconsistent and unusable._
+Canceling the Topology Calculation of a snapshot unloads it in both cases, since re-running Topology Calculation requires reloading the snapshot. The snapshot status differs by starting state: a **canceled** snapshot stays **canceled**, while a complete snapshot becomes **done**.
 
-![Discovery Force Stopped](../images/snapshot-management/snapshot-management_discovery-force-stopped.webp)
+### Running Topology Calculation
+
+![Run Topology Calculation](../images/snapshot-management/snapshot-management_run-topology-calculation.webp)
+
+For a [canceled](#canceled-snapshots) snapshot, **Run Topology Calculation** is available from the overflow (**⋯**) menu next to **Load/Unload Snapshot**. It lets you manually trigger Topology Calculation and the Assurance Engine checks over the partially discovered data, without needing a full snapshot reload.
+
+- Visible only while the snapshot is **canceled**; not available while the snapshot is unloaded.
+- It's possible to run only for canceled discovery — reloading a snapshot triggers Topology Calculation and the Assurance Engine checks automatically.
+- Whether the run finishes successfully or errors, the snapshot stays **canceled** — it does not resolve to **done** or **error**.
 
 ## Snapshot-Specific Settings
 
