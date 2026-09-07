@@ -106,6 +106,28 @@ The switch **Include also cloud devices discovered via SSH or Vendor API** funct
 
 ![Slug](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_site_separation_slug_aws_azure.webp )
 
+### Cloud Tags
+
+Go to **Settings --> Discovery & Snapshots --> Discovery Settings --> Site Separation**, select **Cloud Tags**, and click **+ Add rule** to create a new rule.
+
+This rule uses **AWS**, **Azure**, or **GCP** cloud resource tags to build the site name.
+
+Under **Selected tag(s)**, add one or more tag names using the search field. The field suggests tag names discovered in your environment. A cloud resource can carry many tags but can only belong to a single site. The order of tag names matters: IP Fabric evaluates tags in order and uses only the **first match as the site attribute**. If a resource does not carry any of the listed tag names, this rule does not match it.
+
+You can transform the resulting Site Name to upper case, lower case, or keep it as-is. This works the same as with other cloud rules.
+
+The **Include cloud devices discovered via SSH or Vendor API** switch works the same as in the [Cloud Resource ID](#cloud-resource-id) site separation rule.
+
+![Cloud Tags edit rule](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_site_separation_cloud_tags_edit_rule.webp)
+
+!!! example "Cloud Tags Site Separation"
+
+    A rule with tag names `owner` and `team` (in that order): a resource tagged both `owner=alice` and `team=network` is assigned to site `alice`, since `owner` is listed first. Reversing the order to `team`, `owner` would instead assign it to site `network`.
+
+Click **Test rule** to preview which resources match. The **Matched** and **Unmatched** tabs display a live list of resources and their resulting **Site** based on the current rule configuration.
+
+![Cloud Tags test rule](../../../images/settings/discovery-snapshots/settings-discovery-snapshots_site_separation_cloud_tags_test_rule.webp)
+
 ### Testing
 
 The UI allows you to edit and test your rules directly in the browser by selecting the **Test rule** option. Here, you can see a live preview of devices that will match the regex you created.
