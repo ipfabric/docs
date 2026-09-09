@@ -10,6 +10,8 @@ All VM images are available at <https://releases.ipfabric.io/images/>. Access i
 
     Please remember that IP Fabric uses CLI access (SSH or Telnet) to connect to devices for collecting data. It's important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.
 
+--8<-- "snippets/vm_sizing.md"
+
 ## OVA Distribution Details
 
 The appliance is built on top of Debian 12, which has been officially supported
@@ -93,6 +95,8 @@ VMware's KB article on converting OVA images:
 
 ### Deploying VM on VMware ESXi Using VMDK Image
 
+--8<-- "snippets/vm_sizing.md"
+
 1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
    highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
 
@@ -167,6 +171,8 @@ This section describes how to deploy the IP Fabric virtual appliance on Microsof
 - Download `ipfabric-*.vhdx.zst` from the official source.
 - Decompress the archive to obtain the `ipfabric-*.vhdx` disk image.
 - Review the [Operational Requirements](../overview/index.md#operational-requirements).
+
+--8<-- "snippets/vm_sizing.md"
 
 ---
 
@@ -275,6 +281,8 @@ This section describes how to deploy the IP Fabric virtual appliance on Microsof
 
 ## Deploying VM on Nutanix
 
+--8<-- "snippets/vm_sizing.md"
+
 1. Go to <https://releases.ipfabric.io/images/>, select the folder with the
    highest version number, and download the `ipfabric-<x.y.z+build>.vmdk` file.
 
@@ -300,21 +308,23 @@ This section describes how to deploy the IP Fabric virtual appliance on Microsof
 
 We currently have the limitation that drives need to be `/dev/sdx`. Usually, Linux hypervisors use the `virtio-blk` driver, which is represented as `/dev/vdx` in the guest system. To overcome this limitation, use `virtio-scsi` as the drive controller.
 
+--8<-- "snippets/vm_sizing.md"
+
 1. Download `qcow2` system disk to your KVM hypervisor.
 
 2. Resize the `qcow2` data disk so it corresponds to [your network's needs](../overview/index.md#operational-requirements) if necessary. Use the following command:
 
    ```shell
-   qemu-img resize ipfabric-disk1.qcow2 100G # (up to 1000G for 20 000 devices)
+   qemu-img resize ipfabric-disk1.qcow2 150G # minimum; see the sizing tables for larger networks
    ```
 
-3. Deploy the VM to your hypervisor with the `virt-install` utility by issuing the following command (chose CPU and RAM size according to the size of your network):
+3. Deploy the VM to your hypervisor with the `virt-install` utility. Replace the `--vcpu` and `--ram` values with the values required for your network size:
 
    ```shell
-   virt-install --name=IP_Fabric --disk path=<path to the disk>.qcow2 --graphics spice --vcpu=4 --ram=16384 --network bridge=virbr0 --import
+   virt-install --name=IP_Fabric --disk path=<path to the disk>.qcow2 --graphics spice --vcpu=<cpu count> --ram=<memory in MB> --network bridge=virbr0 --import
    ```
 
-   - This command deploys a new virtual machine with the name `IP_Fabric`, system `qcow2` disk, 4 CPU cores, 16 GB of RAM, and connects the VM to the internet through the `virtbr0` interface. (If your machine has a different bridge interface name or you want to connect it to the internet directly through the device network card, you need to change the `--network` parameter.)
+   - This command deploys a new virtual machine named `IP_Fabric`. It attaches the system `qcow2` disk and connects to the network through the `virbr0` interface. Update the `--network` parameter if your bridge interface name differs or you want to connect directly through the device network card.
    - This command also starts up the VM.
 
 4. Additionally, you can [create and add a new empty virtual disk](../System_Administration/increase_disk_space.md) if needed.
@@ -324,6 +334,8 @@ We currently have the limitation that drives need to be `/dev/sdx`. Usually, Lin
 !!! warning
 
     Deploying IP Fabric on VirtualBox is currently not officially supported -- it is not tested, and we cannot guarantee that it will work.
+
+--8<-- "snippets/vm_sizing.md"
 
 1.  Download the `OVA` image.
 
@@ -406,7 +418,7 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
 4. Convert the IP Fabric-provided `qcow2` image to VHD using [QEMU](https://www.qemu.org/download/). The recommended way to convert the image:
 
    ```shell
-   qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-6-3-1+1.qcow2 ipfabric-6-3-1+1.vhd
+   qemu-img convert -f qcow2 -o subformat=fixed,force_size -O vpc ipfabric-<IPF-version>.qcow2 ipfabric-<IPF-version>.vhd
    ```
 
   !!! important "QEMU Version"
@@ -433,7 +445,7 @@ The first step of deploying to Azure requires creating a VHD file from the `qcow
 
       For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:
 
-      > The specified cookie value in VHD footer indicates that disk 'ipfabric-6-3-1+1.vhd' with blob https://.../vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
+      > The specified cookie value in VHD footer indicates that disk 'ipfabric-<IPF-version>.vhd' with blob https://.../vhd/ipfabric-<IPF-version>.vhd is not a supported VHD. Disk is expected to have cookie value 'conectix'.
 
 ### Sizing IP Fabric VM
 
@@ -448,14 +460,11 @@ Azure Regions contain different server sizes, so performing this step will ensur
 
 #### Azure VM Finder
 
-For this example, we will use minimum of 16 CPUs and 32 GB memory requirements.
-
 1. Please visit the [Azure Find your VM](https://azure.microsoft.com/en-us/pricing/vm-selector/) website.
 2. Select `Find VMs by workload type`.
 3. Select all for `Workload type` and click `Next`.
-4. Enter minimum and maximum CPU and RAM values.
-   1. vCPU: min 16, max 24
-   2. RAM: min 32 GB, max 56 GB
+4. Enter the CPU and RAM values you recorded from the
+   [Hardware Requirements](../overview/index.md#hardware-requirements).
 5. Select `Premium SSD` for `Disk Storage`.
 6. `Data Disk` can be left as default as IP Fabric does not use a separate disk for data.
 7. Under `Operating system`: `To use a custom VM image, select Linux and then CentOS to see VM availability and pricing information.`
@@ -553,6 +562,8 @@ After creating the Image (for NVMe deployments), go to the respective resource a
 4. Set `Licensing > License type` to `Other`.
 
 #### Disks
+
+--8<-- "snippets/vm_sizing.md"
 
 ![VM Disks](../images/miscellaneous/Cloud-install/miscellaneous-cloud-install_azure-09-disks.webp)
 

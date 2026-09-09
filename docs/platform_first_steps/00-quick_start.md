@@ -45,8 +45,11 @@ instructions.
     After deploying the VM, please ensure that it has been configured correctly
     per the [Hardware Requirements](../overview/index.md#hardware-requirements) and
     [Minimal IOPS Requirements](../overview/index.md#minimal-iops-requirements).
-    Importing the OVA will use the base requirements of 8 CPUs, 32 GB RAM, and
-    150 GB HDD.
+
+    The images ship with base requirements only. **Resize CPU, RAM, and disk to match your environment** — see the sizing tables in
+    [Hardware Requirements](../overview/index.md#hardware-requirements).
+
+    Resource values in deployment screenshots are examples, **not** recommendations.
 
 ## IPF CLI Config
 
