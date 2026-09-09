@@ -12,6 +12,11 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
 - Compute Engine API (compute.googleapis.com)
 - Network Connectivity API (networkconnectivity.googleapis.com)
 
+More APIs are required for IP Fabric version 8.1 and above:
+
+- Network Security API (networksecurity.googleapis.com)
+- Cloud Asset API (cloudasset.googleapis.com)
+
 1. Select the project where you want to enable the API:
 
    ![Select a project](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectAProject.webp)
@@ -107,9 +112,18 @@ Since version 7.8 and above requires these GCP APIs to be enabled for full funct
    networkconnectivity.hubs.list
    networkconnectivity.hubRoutes.list
    certificatemanager.certmapentries.list
+   certificatemanager.certmaps.list
    certificatemanager.certs.list
    compute.sslCertificates.list
    compute.targetSslProxies.list
+   ```
+
+   More roles are required for IP Fabric version 8.1 and above:
+
+   ```
+   compute.firewallPolicies.list
+   networksecurity.addressGroups.list
+   cloudasset.assets.searchAllResources
    ```
 
    ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
