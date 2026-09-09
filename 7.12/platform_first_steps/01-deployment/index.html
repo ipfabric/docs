@@ -16649,6 +16649,14 @@
 <p class="admonition-title">Important</p>
 <p>Please remember that IP Fabric uses CLI access (SSH or Telnet) to connect to devices for collecting data. It’s important to place the VM in the proper network segment to prevent high ACL or firewall configuration overhead.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <h2 id="ova-distribution-details">OVA Distribution Details</h2>
 <p>The appliance is built on top of Debian 12, which has been officially supported
 since
@@ -16727,6 +16735,14 @@ is invalid. Please refer to <a href="#ova-distribution-details">OVA Distribution
 on how to resolve the issue.</p>
 </div>
 <h3 id="deploying-vm-on-vmware-esxi-using-vmdk-image">Deploying VM on VMware ESXi Using VMDK Image</h3>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <ol>
 <li>
 <p>Go to <a href="https://releases.ipfabric.io/images/">https://releases.ipfabric.io/images/</a>, select the folder with the
@@ -16816,6 +16832,14 @@ A new VM deployment is <strong>required</strong>.</p>
 <li>Decompress the archive to obtain the <code>ipfabric-*.vhdx</code> disk image.</li>
 <li>Review the <a href="../../overview/#operational-requirements">Operational Requirements</a>.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <hr>
 <h3 id="generation-1-deployment">Generation 1 Deployment</h3>
 <ol>
@@ -16936,6 +16960,14 @@ A new VM deployment is <strong>required</strong>.</p>
 </li>
 </ol>
 <h2 id="deploying-vm-on-nutanix">Deploying VM on Nutanix</h2>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <ol>
 <li>
 <p>Go to <a href="https://releases.ipfabric.io/images/">https://releases.ipfabric.io/images/</a>, select the folder with the
@@ -16966,21 +16998,29 @@ A new VM deployment is <strong>required</strong>.</p>
 </ol>
 <h2 id="deploying-vm-on-kvm">Deploying VM on KVM</h2>
 <p>We currently have the limitation that drives need to be <code>/dev/sdx</code>. Usually, Linux hypervisors use the <code>virtio-blk</code> driver, which is represented as <code>/dev/vdx</code> in the guest system. To overcome this limitation, use <code>virtio-scsi</code> as the drive controller.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <ol>
 <li>
 <p>Download <code>qcow2</code> system disk to your KVM hypervisor.</p>
 </li>
 <li>
 <p>Resize the <code>qcow2</code> data disk so it corresponds to <a href="../../overview/#operational-requirements">your network’s needs</a> if necessary. Use the following command:</p>
-<div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>resize<span class="w"> </span>ipfabric-disk1.qcow2<span class="w"> </span>100G<span class="w"> </span><span class="c1"># (up to 1000G for 20 000 devices)</span>
+<div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>resize<span class="w"> </span>ipfabric-disk1.qcow2<span class="w"> </span>150G<span class="w"> </span><span class="c1"># minimum; see the sizing tables for larger networks</span>
 </code></pre></div>
 </li>
 <li>
-<p>Deploy the VM to your hypervisor with the <code>virt-install</code> utility by issuing the following command (chose CPU and RAM size according to the size of your network):</p>
-<div class="highlight"><pre><span></span><code>virt-install<span class="w"> </span>--name<span class="o">=</span>IP_Fabric<span class="w"> </span>--disk<span class="w"> </span><span class="nv">path</span><span class="o">=</span>&lt;path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>disk&gt;.qcow2<span class="w"> </span>--graphics<span class="w"> </span>spice<span class="w"> </span>--vcpu<span class="o">=</span><span class="m">4</span><span class="w"> </span>--ram<span class="o">=</span><span class="m">16384</span><span class="w"> </span>--network<span class="w"> </span><span class="nv">bridge</span><span class="o">=</span>virbr0<span class="w"> </span>--import
+<p>Deploy the VM to your hypervisor with the <code>virt-install</code> utility. Replace the <code>--vcpu</code> and <code>--ram</code> values with the values required for your network size:</p>
+<div class="highlight"><pre><span></span><code>virt-install<span class="w"> </span>--name<span class="o">=</span>IP_Fabric<span class="w"> </span>--disk<span class="w"> </span><span class="nv">path</span><span class="o">=</span>&lt;path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>disk&gt;.qcow2<span class="w"> </span>--graphics<span class="w"> </span>spice<span class="w"> </span>--vcpu<span class="o">=</span>&lt;cpu<span class="w"> </span>count&gt;<span class="w"> </span>--ram<span class="o">=</span>&lt;memory<span class="w"> </span><span class="k">in</span><span class="w"> </span>MB&gt;<span class="w"> </span>--network<span class="w"> </span><span class="nv">bridge</span><span class="o">=</span>virbr0<span class="w"> </span>--import
 </code></pre></div>
 <ul>
-<li>This command deploys a new virtual machine with the name <code>IP_Fabric</code>, system <code>qcow2</code> disk, 4 CPU cores, 16 GB of RAM, and connects the VM to the internet through the <code>virtbr0</code> interface. (If your machine has a different bridge interface name or you want to connect it to the internet directly through the device network card, you need to change the <code>--network</code> parameter.)</li>
+<li>This command deploys a new virtual machine named <code>IP_Fabric</code>. It attaches the system <code>qcow2</code> disk and connects to the network through the <code>virbr0</code> interface. Update the <code>--network</code> parameter if your bridge interface name differs or you want to connect directly through the device network card.</li>
 <li>This command also starts up the VM.</li>
 </ul>
 </li>
@@ -16992,6 +17032,14 @@ A new VM deployment is <strong>required</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Deploying IP Fabric on VirtualBox is currently not officially supported – it is not tested, and we cannot guarantee that it will work.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
 </div>
 <ol>
 <li>
@@ -17067,7 +17115,7 @@ A new VM deployment is <strong>required</strong>.</p>
 </li>
 <li>
 <p>Convert the IP Fabric-provided <code>qcow2</code> image to VHD using <a href="https://www.qemu.org/download/">QEMU</a>. The recommended way to convert the image:</p>
-<div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>convert<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-o<span class="w"> </span><span class="nv">subformat</span><span class="o">=</span>fixed,force_size<span class="w"> </span>-O<span class="w"> </span>vpc<span class="w"> </span>ipfabric-6-3-1+1.qcow2<span class="w"> </span>ipfabric-6-3-1+1.vhd
+<div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>convert<span class="w"> </span>-f<span class="w"> </span>qcow2<span class="w"> </span>-o<span class="w"> </span><span class="nv">subformat</span><span class="o">=</span>fixed,force_size<span class="w"> </span>-O<span class="w"> </span>vpc<span class="w"> </span>ipfabric-&lt;IPF-version&gt;.qcow2<span class="w"> </span>ipfabric-&lt;IPF-version&gt;.vhd
 </code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">QEMU Version</p>
@@ -17091,7 +17139,7 @@ A new VM deployment is <strong>required</strong>.</p>
 <p class="admonition-title">VHD Upload</p>
 <p>For uploading the VHD image, please use the Azure Storage Explorer (a native Windows app) instead of the Azure web UI. If you upload the VHD image via the Azure web UI, you might encounter the following error:</p>
 <blockquote>
-<p>The specified cookie value in VHD footer indicates that disk ‘ipfabric-6-3-1+1.vhd’ with blob https://…/vhd/ipfabric-6-3-1+1.vhd is not a supported VHD. Disk is expected to have cookie value ‘conectix’.</p>
+<p>The specified cookie value in VHD footer indicates that disk ‘ipfabric-<ipf-version>.vhd’ with blob https://…/vhd/ipfabric-<ipf-version>.vhd is not a supported VHD. Disk is expected to have cookie value ‘conectix’.</ipf-version></ipf-version></p>
 </blockquote>
 </div>
 </li>
@@ -17106,16 +17154,12 @@ Azure Regions contain different server sizes, so performing this step will ensur
 <li>Record the RAM requirements.</li>
 </ol>
 <h4 id="azure-vm-finder">Azure VM Finder</h4>
-<p>For this example, we will use minimum of 16 CPUs and 32 GB memory requirements.</p>
 <ol>
 <li>Please visit the <a href="https://azure.microsoft.com/en-us/pricing/vm-selector/">Azure Find your VM</a> website.</li>
 <li>Select <code>Find VMs by workload type</code>.</li>
 <li>Select all for <code>Workload type</code> and click <code>Next</code>.</li>
-<li>Enter minimum and maximum CPU and RAM values.<ol>
-<li>vCPU: min 16, max 24</li>
-<li>RAM: min 32 GB, max 56 GB</li>
-</ol>
-</li>
+<li>Enter the CPU and RAM values you recorded from the
+   <a href="../../overview/#hardware-requirements">Hardware Requirements</a>.</li>
 <li>Select <code>Premium SSD</code> for <code>Disk Storage</code>.</li>
 <li><code>Data Disk</code> can be left as default as IP Fabric does not use a separate disk for data.</li>
 <li>Under <code>Operating system</code>: <code>To use a custom VM image, select Linux and then CentOS to see VM availability and pricing information.</code></li>
@@ -17213,6 +17257,14 @@ Azure Regions contain different server sizes, so performing this step will ensur
 </li>
 </ol>
 <h4 id="disks">Disks</h4>
+<div class="admonition warning">
+<p class="admonition-title">Sizing Your Virtual Machine</p>
+<p>Size the virtual machine according to your own environment. See
+<a href="../../overview/#hardware-requirements">Hardware Requirements</a> for
+the minimum specification and the sizing tables based on device count. See
+also <a href="../../overview/#minimal-iops-requirements">Minimal IOPS Requirements</a>
+for the required storage performance.</p>
+</div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/miscellaneous/Cloud-install/miscellaneous-cloud-install_azure-09-disks.webp" data-desc-position="bottom"><img alt="VM Disks" src="../../images/miscellaneous/Cloud-install/miscellaneous-cloud-install_azure-09-disks.webp"></a></p>
 <ol>
 <li>
@@ -17296,7 +17348,7 @@ We can connect to the appliance via SSH with the default/factory <code>osadmin</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 4, 2026 12:53:05 UTC">May 4, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 9, 2026 12:51:56 UTC">September 9, 2026</span>
   </span>
 
     
