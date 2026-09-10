@@ -31,6 +31,31 @@ after the initial delivery. If IP Fabric cannot deliver the webhook in
 these five attempts, it gives up. All delivery attempts are recorded in
 the webhook delivery history (in the webhook **Edit** view).
 
+## Triggers
+
+By default, a webhook triggers on every event of the types it subscribes
+to. For finer control, switch the webhook to advanced trigger selection.
+Then select exactly which events should trigger it.
+
+![Add webhook](../../images/settings/integration/settings-integration_webhook_new_features.webp)
+
+IP Fabric currently exposes two groups of triggers:
+
+- **Snapshot events** -- `discover`, `clone`, `delete`, `download`, `load`, and `unload`,
+
+- **Intent verification events** -- `started`, `completed`, `failed`, `resumed`, `resumed (stopping)`, and `stopped`.
+
+You can subscribe broadly (for example, all snapshot events) or narrowly (for
+example, only a snapshot `discover` that has `completed`). A trigger with no
+action or status set matches every value of that field.
+
+!!! note
+
+    Custom payloads, custom headers, outbound authentication tokens, and custom
+    certificate authorities are available only for webhooks that use advanced
+    trigger selection. Legacy webhooks (subscribed by type) keep their original
+    behavior.
+
 ## Payload Hash
 
 Since the webhook payload might be delivered over untrusted networks,
@@ -50,6 +75,31 @@ const hmac = createHmac("sha256", secret);
 hmac.update(bodyString);
 const verified = hmac.digest("hex") === request.headers["x-ipf-signature"];
 ```
+
+## Authentication
+
+When your endpoint requires an outbound credential, you can store a static
+authentication token with the webhook. IP Fabric encrypts the token at rest
+and treats it as **write-only**: the API never returns it, and the webhook
+form only shows whether a token is currently stored.
+
+To send the token, reference it as the `{{{token}}}` variable in a custom header
+(see [Custom Headers](#custom-headers) below) -- for example, an `Authorization`
+IP Fabric decrypts the token and substitutes it only at delivery time.
+The plaintext value never leaves the appliance until then.
+
+When editing a webhook:
+
+- Leave the token field empty to keep the stored token unchanged.
+
+- Enter a new value to replace it.
+
+- Use the clear-token option to remove it.
+
+!!! note
+
+    The token is sent only if a custom header references `{{{token}}}`. Without
+    such a header, the stored token is never transmitted.
 
 ## Test Webhook
 
@@ -128,3 +178,61 @@ When the intent verification is related to:
 - a snapshot, its ID is available as `snapshotId`.
 
 If you are testing the webhook, the `test` field is set to `true`.
+
+## Custom Payload
+
+For webhooks that use advanced trigger selection, you can replace the default
+payload with your own template. Select the `json` or `xml` format and write the
+body as a Mustache template. IP Fabric renders the template for each delivery.
+The editor starts from a default template that reproduces the standard
+payload, so you can adjust it from there.
+
+![Add webhook](../../images/settings/integration/settings-integration_webhook_payload.webp)
+
+Reference event values with the triple-brace syntax `{{{variable}}}`. IP Fabric
+encodes each value for the chosen format and inserts it as-is, so the rendered
+payload stays valid `json` or `xml`. The following variables are available:
+
+- `{{{timestamp}}}`, `{{{user_id}}}`, and `{{{test}}}` at the root,
+
+- for snapshot events, the fields of the `snapshot` payload under `snapshot`, e.g. `{{{snapshot.action}}}`, `{{{snapshot.status}}}`, `{{{snapshot.snapshot.id}}}`, `{{{snapshot.snapshot.cloneId}}}`, and `{{{snapshot.snapshot.file}}}`,
+
+- for intent verification events, the fields of the `intent-verification` payload under `intent_check`, e.g. `{{{intent_check.action}}}`, `{{{intent_check.status}}}`, `{{{intent_check.reportId}}}`, and `{{{intent_check.snapshotId}}}`.
+
+The fields available for each event correspond to the payloads described in
+[Webhook Types](#webhook-types) above.
+
+```json
+{
+  "event": {{{snapshot.action}}},
+  "status": {{{snapshot.status}}},
+  "snapshotId": {{{snapshot.snapshot.id}}},
+  "at": {{{timestamp}}}
+}
+```
+
+!!! note
+
+    Always use the triple-brace `{{{variable}}}` syntax, not `{{variable}}`. If
+    the rendered payload is not valid for the selected format, or the template
+    references an unknown variable, the delivery is recorded as failed and
+    nothing is sent.
+
+## Custom Headers
+
+Webhooks that use advanced trigger selection can send additional outbound HTTP
+headers. Each header has a name and a value. IP Fabric renders the value as
+a Mustache template for each delivery.
+
+![Add webhook](../../images/settings/integration/settings-integration_webhook_headers.webp)
+
+Header values support the `{{{timestamp}}}`, `{{{user_id}}}`, and `{{{token}}}`
+(stored authentication token) variables. For example, an `Authorization` header
+with the value `Bearer {{{token}}}` attaches the token to every call.
+
+- Header names must be valid HTTP header names and must be unique.
+
+- IP Fabric reserves `X-IPF-Signature` and you cannot override it.
+
+- IP Fabric always sets `Content-Type`, `User-Agent`, and `X-IPF-Signature`.
+  You cannot override these headers. `Content-Type` follows the selected payload format.
