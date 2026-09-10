@@ -18,10 +18,13 @@ For example:
   regardless of the number of switches in the stack.
 - For wireless access points, a single license is consumed by the centralized
   controller, regardless of the number of APs controlled by it.
-- For cloud infrastructure providers, one license is consumed by each networking
-  construct (VPC, gateway, etc.). For details, see
-  [What Counts Against IP Fabric License in Cloud](#what-counts-against-ip-fabric-license-in-cloud)
-  below.
+- For public cloud providers, licensing uses Cloud Connectivity Units
+  (CCUs), not a license per device. See
+  [Cloud Licensing](#cloud-licensing) below, and
+  [What Counts Against a License, by Provider](#what-counts-against-a-license-by-provider)
+  for construct level details.
+- Each VMware NSX-T Tier-0 and Tier-1 router consumes one license. See
+  [NSX-T](#nsx-t) below.
 
 !!! info
 
@@ -29,67 +32,243 @@ For example:
   	to missing information from the CLI or API calls), the device will be
   	counted as unlicensed.
 
-## What Counts Against IP Fabric License in Cloud
+## Cloud Licensing
 
-### AWS
+Cloud licensing covers the public cloud providers IP Fabric discovers -- AWS,
+Azure, and GCP. IP Fabric licenses VMware NSX-T as on-premises infrastructure.
+It is not part of this model; see [NSX-T](#nsx-t) below.
 
-One license is consumed by each networking object (VPC, gateway, etc.).
-Currently, these are at least:
+### How Cloud Licensing Works
 
-| AWS Networking Object  | IP Fabric |
-| ---------------------- | --------- |
-| Direct Connect gateway | `dxgw`    |
-| Elastic Load Balancer  | `elb`     |
-| Internet gateway       | `igw`     |
-| NAT gateway            | `nat`     |
-| Transit gateway        | `tgw`     |
-| VPC                    | `vpc`     |
-| VPN gateway            | `vgw`     |
+IP Fabric discovers a large number of cloud objects, but **not every object
+consumes a license**. Cloud licensing uses **Cloud Connectivity Units
+(CCUs)**. IP Fabric assigns each supported construct a CCU value based on the role it
+plays in the network:
 
-VPC endpoints (`vpce`) do not use a license.
+| Tier       | CCU per Object | What It Represents                                                                                      |
+| ---------- | -------------- | ------------------------------------------------------------------------------------------------------- |
+| **Tier A** | **1 CCU**      | Primary routing and security control points                                                             |
+| **Tier B** | **0.5 CCU**    | Traffic-steering objects that are smaller, simpler, or far more numerous than an on-premises equivalent |
+| **Tier C** | **0 CCU**      | Objects that are discovered and displayed, but do not bill on their own                                 |
 
-### Azure
+Two principles govern this page:
 
-One license is consumed by each networking object (VNet, gateway, etc.).
-Currently, these are at least:
+- **Everything we license is listed here.** If a construct is not shown in the
+  tables below, it is **not yet discovered or supported** -- it is _not_ a
+  silent "free" object. The moment we begin discovering a new construct, we
+  decide its tier and add it here.
+- **Non-billable (0 CCU) constructs are listed explicitly.** We do not leave
+  the non-billable constructs implicit.
 
-| Azure Networking Object  | IP Fabric |
-| ------------------------ | --------- |
-| Application Gateway      | `appgw`   |
-| Azure Firewall           | `azfw`    |
-| Express Route Circuit    | `erc`     |
-| Express Route gateway    | `erg`     |
-| Load Balancer            | `lb`      |
-| NAT gateway              | `nat`     |
-| Route Server             | `ars`     |
-| Virtual HUB              | `vhub`    |
-| Virtual Network          | `vnet`    |
-| Virtual Network gateway  | `vngw`    |
-| VPN gateway              | `vpngw`   |
+!!! info "Why CCUs instead of one license per object?"
 
-### GCP
+    Cloud environments fragment functions that an on-premises network would
+    concentrate in a single device. A single on-premises load balancer may
+    correspond to hundreds of individual cloud load-balancer constructs
+    deployed per application. Flat per-object licensing would penalize exactly
+    the customers who adopt cloud-native, elastic, infrastructure-as-code
+    patterns. The tiered CCU model keeps licensing proportional to network
+    _function_, not object count.
 
-One license is consumed by each networking object. Currently, these are at
-least:
+### Tier Definitions
 
-| GCP Networking Object  | IP Fabric |
-| ---------------------- | --------- |
-| VPC                    | `vpc`     |
-| Router                 | `router`  |
-| Load Balancer          | `lb`      |
-| VPN gateway            | `vpngw`   |
+These definitions are authoritative. When a new construct appears, IP Fabric places it
+in a tier using these definitions.
 
-### NSX-T
+#### Tier A -- 1 CCU
 
-One license is consumed by each networking object. Currently, these are at
-least:
+A construct qualifies as Tier A when it does **all** of the following:
 
-| NSX-T Networking Object  | IP Fabric |
-| ----------------------   | --------- |
-| Tier 0 router            | `tier-0`  |
-| Tier 1 router            | `tier-1`  |
+- **Makes routing decisions or enforces a traffic policy**, and
+- **Requires real configuration effort** (it has a non-trivial configuration
+  surface), and
+- Is **functionally similar to an on-premises device** (it behaves like a
+  router, firewall, or equivalent appliance you would otherwise deploy in
+  hardware).
+
+In short, it is a primary control point you would recognize as a "device"
+on-premises.
+
+#### Tier B -- 0.5 CCU
+
+A construct is Tier B when it behaves like a Tier A construct but **fails one**
+of the Tier A conditions. Typical cases:
+
+- It influences routing or enforces policy, but is **far smaller and more
+  granular than its on-premises equivalent** (for example, one complex
+  on-premises load balancer versus hundreds of fine-grained cloud load
+  balancers), or
+- It influences routing or enforces policy, but has **effectively no
+  configuration** -- an on/off, "flip-the-switch" object, or
+- It **does not make routing or policing decisions itself**, but is more than a
+  passive connector.
+
+#### Tier C -- 0 CCU (Discovered, Not Billed)
+
+A construct is Tier C when it does not deliver a network function on its own.
+Three groups exist:
+
+- **Contributing objects with no standalone function** -- routing tables, rule
+  sets, tags.
+- **Connectors and link representations** -- provided the parent construct they
+  attach to is already Tier A or Tier B. This avoids double-charging the same
+  connectivity. For example, Transit Gateway attachments and VPC peerings.
+- **Objects with no influence on traffic** -- hosts and compute such as virtual
+  machines and EC2 instances.
+
+### What Counts Against a License, by Provider
+
+CCU values below are the current agreed values. Object codes are the internal
+identifiers IP Fabric uses. Rows in the 0 CCU tables are discovered but never
+billed.
+
+#### AWS
+
+Billed:
+
+| AWS Networking Object  | Object Code | Tier | CCU |
+| ---------------------- | ----------- | ---- | --- |
+| VPC                    | `vpc`       | A    | 1   |
+| Transit gateway        | `tgw`       | A    | 1   |
+| Direct Connect gateway | `dxgw`      | A    | 1   |
+| VPN gateway            | `vgw`       | A    | 1   |
+| Core Network Edge      | `cne`       | A    | 1   |
+| Internet gateway       | `igw`       | B    | 0.5 |
+| Elastic Load Balancer  | `elb`       | B    | 0.5 |
+| NAT gateway            | `nat`       | B    | 0.5 |
+
+Not billed (Tier C, 0 CCU):
+
+| AWS Object                                |
+| ----------------------------------------- |
+| Transit gateway attachment                |
+| VPC peering and connections               |
+| VPC endpoint                              |
+| EC2 instances, ENIs, Elastic IPs          |
+| Route tables and individual route entries |
+| Security group rule counts                |
+| Tags and metadata                         |
+
+VPC endpoints are discovered as devices, under the object code `vpce`, and are
+priced explicitly at 0 CCU.
+
+#### Azure
+
+Billed:
+
+| Azure Networking Object             | Object Code    | Tier | CCU |
+| ----------------------------------- | -------------- | ---- | --- |
+| Virtual Network                     | `vnet`         | A    | 1   |
+| Azure Firewall                      | `azfw`         | A    | 1   |
+| Route Server                        | `ars`          | A    | 1   |
+| Virtual HUB                         | `vhub`         | A    | 1   |
+| Virtual Network gateway             | `vngw`         | A    | 1   |
+| VPN gateway                         | `vpngw`        | A    | 1   |
+| Express Route Circuit               | `erc`          | A    | 1   |
+| Load Balancer / Application Gateway | `lb` / `appgw` | B    | 0.5 |
+| NAT gateway                         | `nat`          | B    | 0.5 |
+
+Not billed (Tier C, 0 CCU):
+
+| Azure Object              |
+| ------------------------- |
+| Express Route gateway     |
+| VNet peering              |
+| Route tables and UDRs     |
+| Virtual machines and NICs |
+| Public IP objects         |
+| NSG rules                 |
+| Resource groups           |
+
+Express Route gateways are discovered as devices, under the object code `erg`,
+but are not assigned a CCU cost.
+
+#### GCP
+
+Billed:
+
+| GCP Networking Object | Object Code | Tier | CCU |
+| --------------------- | ----------- | ---- | --- |
+| VPC                   | `vpc`       | A    | 1   |
+| (Cloud) Router        | `router`    | A    | 1   |
+| VPN gateway           | `vpngw`     | A    | 1   |
+| Load Balancer         | `lb`        | B    | 0.5 |
+
+Not billed (Tier C, 0 CCU):
+
+| GCP Object                |
+| ------------------------- |
+| Cloud NAT                 |
+| Virtual machines and NICs |
+| Route tables and entries  |
+| Firewall rule counts      |
+| Labels and metadata       |
+
+Cloud NAT is discovered as a device, under the object code `nats`, but is not
+assigned a CCU cost.
+
+### Consistency Across Providers
+
+When the same function appears in multiple providers, we aim to license it
+consistently. For example, an Azure ExpressRoute gateway and an AWS Transit
+Gateway play comparable roles, and their tiering should be reasoned about
+consistently. If applying the tier definition to one provider yields a
+different result than another, that is a signal to revisit the definition, not
+to special-case a single cloud.
+
+### Empty VPC, VNet, or VPC Network
+
+!!! warning "Planned, not yet in effect"
+
+    This behavior is not active in release `8.1`. In `8.1`, an empty VPC or
+    VNet is still discovered and still consumes its CCU. The rules below
+    describe the intended future behavior once implemented.
+
+The intent is that a VPC, VNet, or VPC Network with **no active participation
+in the topology** will be classified as **empty** and billed at **0 CCU**, even
+though a populated VPC or VNet is Tier A. It will remain discovered and
+visible; it just will not bill.
+
+IP Fabric treats a construct as **non-empty** (and bills it at its normal CCU) if
+any of these signals are present:
+
+| Signal                                          | AWS                                         | Azure                                                  | GCP                                                                |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------ |
+| Active route table beyond default/system routes | Route table with custom routes              | UDR with custom routes                                 | Custom routes in a routing table                                   |
+| Attached gateway                                | IGW, NAT GW, VGW, TGW attachment, CNE, DXGW | ExpressRoute GW, VPN GW, Azure Firewall                | Cloud Router with peer, Cloud NAT, VPN GW, Interconnect attachment |
+| Active peering with route propagation           | VPC peering                                 | VNet peering                                           | VPC peering                                                        |
+| Compute resources deployed                      | Instance                                    | Virtual machine                                        | Instance                                                           |
+| Service connectivity                            | Private Link service or endpoint            | Subnet with service delegation / private endpoint, DNS | Private Service Connect endpoint or service                        |
+
+If none of these is detected, the construct is empty and excluded from billing.
+
+## NSX-T
+
+VMware NSX-T is licensed as on-premises infrastructure. Its constructs are not
+assigned CCUs and do not fall under [Cloud Licensing](#cloud-licensing) above.
+
+One license is consumed by each NSX-T networking object, counted against your
+device limit. Currently, these are at least:
+
+| NSX-T Networking Object | Object Code |
+| ----------------------- | ----------- |
+| Tier 0 router           | `tier0`     |
+| Tier 1 router           | `tier1`     |
+
+!!! info
+
+    NSX-T Tier-0 and Tier-1 routers are unrelated to the CCU tiers described
+    under [Tier Definitions](#tier-definitions). They are VMware's own names
+    for the two router types in an NSX-T topology.
 
 ## Changes
+
+### Release `8.1.0`
+
+Starting from version `8.1.0`, licenses can use the new CCU cloud licensing
+strategy instead of counting cloud constructs against the on-premises device
+limit. See [Cloud Licensing](#cloud-licensing) above.
+Licenses without a CCU limit continue to use the devices strategy.
 
 ### Release `7.3.16`
 
