@@ -265,6 +265,12 @@ ENABLE_PALOALTO_EDL_URLLIST=true
 
 ### Enable Manual Links / Transparent Firewall
 
+!!! danger "Known issue"
+
+    A known issue in all `7.X` versions causes the [Configuration Import](../../IP_Fabric_Settings/system/Backup_and_Maintenance/configuration_import_export.md) feature to fail when importing a configuration containing any [Manual Links](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/manual_links.md).
+    
+    To mitigate this issue, upgrade to the latest version. Alternatively, remove all manual links before exporting the configuration.
+
 This feature flag enable manual link configuration option in both global and snapshot settings.
 For more information about feature, see the [7.3 Release Notes](../../releases/release_notes/7.3.md#transparent-firewalls).
 
