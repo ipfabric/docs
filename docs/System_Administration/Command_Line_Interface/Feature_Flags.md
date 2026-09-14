@@ -367,6 +367,22 @@ To enable this feature, add the following line to the `worker` environment file 
 ENABLE_WLC_FAST_DISCOVERY=true
 ```
 
+### ZPE Nodegrid Discovery
+
+Since `8.1`, you can discover ZPE Nodegrid devices. Add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_ZPE=true
+```
+
+After updating the environment file, run the following command to restart the IP Fabric application:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+Without this flag, IP Fabric does not send the ZPE version command during discovery. Nodegrid devices are not identified or discovered.
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
