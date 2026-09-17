@@ -22,7 +22,7 @@ the dynamic landscape of modern networking.
 | [MCP Server](../IP_Fabric_Settings/integration/mcp.md) | Built into the IP Fabric appliance.                                                                                                                          |
 | [NetBox](https://ip-fabric.gitlab.io/integrations/ipfabric-netbox)                      | [`ipfabric-netbox` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-netbox)<br/>[`ipfabric-netbox` PyPI](https://pypi.org/project/ipfabric-netbox/) |
 | [IP Fabric Python SDK](python/index.md)        | [`python-ipfabric` GitLab](https://gitlab.com/ip-fabric/integrations/python-ipfabric)<br/>[`ipfabric` PyPI](https://pypi.org/project/ipfabric/)               |
-| [ServiceNow Integration](service-now/index.md) | [`ipfabric-snow` GitLab](https://gitlab.com/ip-fabric/integrations/ipfabric-snow)<br/>[`ipfabric-snow` PyPI](https://pypi.org/project/ipfabric-snow/)         |
+| [ServiceNow Integration](https://ip-fabric.gitlab.io/integrations/servicenow-graph-connector/) | [`ServiceNow Portal`](https://store.servicenow.com/store/app/1c095cd547da4310def56992e36d4346)        |
 | [IP Fabric Splunk TA](https://ip-fabric.gitlab.io/integrations/splunk-ta-ip-fabric)         | [Splunkbase Add-on](https://splunkbase.splunk.com/app/6707)<br/>[`splunk-ta-ip-fabric` GitLab](https://gitlab.com/ip-fabric/integrations/splunk-ta-ip-fabric) |
 
 ## Partner-Led Integrations
