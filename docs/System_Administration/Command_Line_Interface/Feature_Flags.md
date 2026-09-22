@@ -284,7 +284,8 @@ A single org-scoped cloud collector task is created per AWS account and region, 
 
 !!! warning "Device Count Impact"
 
-    VPCs/VNets no longer appear as devices. They no longer count toward the device count. Expect your device count to decrease after enabling this feature flag.
+    VPCs/VNets no longer display as devices in the UI. This only changes how and where VPCs/VNets display. It does not change how VPCs/VNets are counted against your license. Your displayed device count will decrease after you enable this feature flag.
+
 
 #### Network Diagrams
 

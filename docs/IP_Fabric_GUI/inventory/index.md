@@ -117,6 +117,20 @@ may prevent the inclusion of IP addresses from the ARP in the Hosts' inventory:
 - No CDP/LLDP information should be coming from that IP.
 - The MAC shouldn't be in the OUI flagged as "Enabled for Discovery".
 
+### Virtual Machines and Virtual Machine Interfaces
+
+The **Virtual Machines** (`/inventory/hosts/virtual-machines`) and **Virtual
+Machine Interfaces** (`/inventory/hosts/virtual-machines-interfaces`) tables
+are device-centric inventory tables, currently populated with VMware NSX-T
+data only. No feature flag is required to access them.
+
+These tables replace the existing
+[`/technology/cloud/endpoints`](../technology_tables/cloud/endpoints.md) location
+for VMware virtual machine data. When you enable the
+[New Cloud Model](../../System_Administration/Command_Line_Interface/Feature_Flags.md#new-cloud-model)
+feature flag, VMware entries no longer appear in the old location. Those tables
+are moving away from a device-centric model.
+
 ## Applications { .aim }
 
 The application inventory adds application-level context to the network data
