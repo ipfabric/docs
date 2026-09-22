@@ -337,4 +337,4 @@ When your license expires:
 An expired **feature** license behaves differently: only that capability becomes
 unavailable, and the rest of the platform is unaffected. If the AIM feature's
 validity period ends while the product license is still valid, AIM simply stops
-being accessible -- see [Add-on Licenses](#feature-licenses).
+being accessible -- see [Add-on Licenses](#add-on-licenses).
