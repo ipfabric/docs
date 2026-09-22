@@ -48,8 +48,8 @@ Every API response includes headers to help you track which version was used:
 
 ## Error Handling
 
-Requests for an invalid or unsupported version will receive an `HTTP 410 Gone` response.
-We use `HTTP 410 Gone` consistently for all version-related errors to provide a distinct signal,
+A request with an invalid or unsupported `X-API-Version` header receives an `HTTP 410 Gone` response.
+We use `HTTP 410 Gone` consistently for endpoint version errors to provide a distinct signal,
 avoiding confusion with other statuses like `HTTP 404 Not Found` and `HTTP 406 Not Acceptable`.
 
 The error response body is a JSON object containing the latest supported version for that endpoint:
@@ -75,53 +75,3 @@ While a deprecated version is still callable, each such response includes header
 
 - `Deprecation` returns boolean value indicating that a requested version entered a deprecation cycle.
 - `Sunset` returns the exact date in the RFC3339 format after which the version might be permanently unavailable without further notice.
-
-
-## API Version in URL Path (Removed in `v8.0`)
-
-!!! danger "Removed in v8.0"
-
-    The path-based API version identifier (`/v7.x`) has been **removed** as of IP Fabric `v8.0`.
-    Requests that include a version segment in the URL path will return `HTTP 410 Gone`.
-
-IP Fabric `7.5` deprecated the path-based API version (`/v7.x`) in favor of [header-based versioning](#versioning).
-During the deprecation period, affected responses included the `Deprecation` and `Sunset` headers announcing the upcoming removal.
-IP Fabric `v8.0` fully removed support for path-based versioning.
-
-### Migration Guide
-
-Remove the `/v7.x` segment from all API request URLs. No other changes are required — payloads are the same.
-
-```http
-# No longer supported — returns HTTP 410 Gone
-GET /api/v7.5/snapshots HTTP/1.1
-Host: your_ipf_instance
-```
-
-```http
-# Correct request
-GET /api/snapshots HTTP/1.1
-Host: your_ipf_instance
-```
-
-To pin a specific endpoint version, use the `X-API-Version` header instead.
-See the [header-based versioning](#versioning) section above for details.
-
-### Timeline
-
-- **IP Fabric `7.5`** — deprecation announced. `Deprecation: true` and `Sunset` headers activated on affected responses.
-- **IP Fabric `8.0`** — path-based versioning removed. URLs containing `/v7.x` return `HTTP 410 Gone`.
-
-### Frequently Asked Questions
-
-**What happens to existing requests using `/v7.x`?**
-
-Clients receive an `HTTP 410 Gone` response. Update your client code, SDKs, or automation scripts to remove the version segment from the URL path.
-
-**Do you need to set new headers?**
-
-No. Remove `/v7.x` from the URL path. The `X-API-Version` header is optional and only needed to target a specific endpoint version.
-
-**Where can I get help?**
-
-For assistance and related questions, reach out to our team for [Technical Support](https://docs.ipfabric.io/main/support).

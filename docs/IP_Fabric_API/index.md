@@ -52,21 +52,6 @@ to make a successful call to the platform.
     - [Part 3: Webhooks](https://ipfabric.io/blog/api-programmability-part-3-webhooks/) -- Creating webhooks to further your automation journey based on IP Fabric events.
     - [Part 4: Diagramming](https://ipfabric.io/blog/api-programmability-part-4-diagramming/) -- Utilizing the official [IP Fabric Python Diagramming SDK](https://pypi.org/project/ipfabric-diagrams/) to automate the creation of Network and Path Lookup Diagrams.
 
-## API Versioning
-
-!!! warning "Deprecation of the path-based API versioning"
-
-    Starting with IPF 7.5, any request whose URL contains /v7.x will still behave exactly as before,
-    but the response will now include the following HTTP response headers:
-
-    - **Deprecation: true** — signals that the endpoint is deprecated.
-
-    - **Sunset** — indicates the date after which the deprecated behavior may be removed.
-
-    For more information please refer to [Versioning URL schema](versioning.md#api-version-in-url-path-deprecated) section of our API documentation.
-
-A dedicated [Versioning](versioning.md) page is now available with detailed information, including upcoming changes.
-
 ## Technology Table Endpoints
 
 The technology tables use `POST` requests **only** for reading information, and
