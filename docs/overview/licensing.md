@@ -261,6 +261,10 @@ device limit. Currently, these are at least:
     under [Tier Definitions](#tier-definitions). They are VMware's own names
     for the two router types in an NSX-T topology.
 
+## License Consumption Overview
+
+The [License Consumption Overview](../IP_Fabric_Settings/administration/license_consumption_overview.md) displays a breakdown of license consumption.
+
 ## Add-on Licenses
 
 Some capabilities are licensed separately from the device count. They are enabled
@@ -320,27 +324,6 @@ Licenses without a CCU limit continue to use the devices strategy.
 ### Release `7.3.16`
 
 Starting from version `7.3.16`, when Aruba Instant Access Points (IAPs) are already managed by Aruba Central, discovering their Virtual Controller (VC) will no longer consume a license.
-
-### Release `4.4.0`
-
-Starting from version `4.4.0`, every device (virtual or physical) will consume
-one license. This now applies to devices where information is collected via CLI
-or API. The only exception is wireless access points, which do not consume any
-licenses.
-
-This change in licensing will affect the following vendors:
-
-- SD-WAN -- Versa, Viptela, Silver Peak
-- Wireless access points -- Meraki, Juniper MIST
-- Cloud infrastructure -- AWS, Azure
-
-### Releases <= `4.3.x`
-
-For versions `4.3.x` or older, every device (virtual or physical) with
-information collected via CLI will consume one license. Any devices with
-information collected via API would _not_ consume a license. Examples of
-API-collected devices are SD-WAN (Versa, Viptela, Silver Peak), cloud wireless
-(Meraki), and cloud infrastructure (AWS).
 
 ## Expired License
 
