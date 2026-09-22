@@ -15,6 +15,39 @@
     margin: 0 auto;
 }
 
+/* Feature-availability badge.
+   Marks a heading whose feature needs a specific product license, e.g.
+   `### Integrations { .aim }`. The label is rendered from CSS rather than
+   written into the heading text, so it stays out of the table of contents and
+   out of the heading's anchor — existing links to the section keep working.
+   Use `.aim-badge` on an inline element for the same badge in running text. */
+.md-typeset h2.aim::after,
+.md-typeset h3.aim::after,
+.md-typeset h4.aim::after,
+.md-typeset h5.aim::after {
+    content: "AIM";
+}
+
+.md-typeset h2.aim::after,
+.md-typeset h3.aim::after,
+.md-typeset h4.aim::after,
+.md-typeset h5.aim::after,
+.md-typeset .aim-badge {
+    display: inline-block;
+    margin-left: 0.6em;
+    padding: 0.15em 0.55em;
+    border-radius: 1em;
+    background-color: var(--md-primary-fg-color--light);
+    color: #fff;
+    font-size: 0.6em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
 /* Hide draft RN pages appended by awesome-nav after "Previous releases".
    Workaround for https://github.com/lukasgeiter/mkdocs-awesome-nav/issues/145 */
 nav[data-md-level="2"]:has(a[href*="7.9"]) > .md-nav__list > .md-nav__item--nested ~ .md-nav__item:not(.md-nav__item--nested),
