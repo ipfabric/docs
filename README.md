@@ -180,6 +180,24 @@ Please note that it will utilize `--dirtyreload` which can lead to
 inconsistencies, but is significantly faster to reload, when editing just a
 couple of pages.
 
+**Faster preview while writing**
+
+For a rapid local preview, use:
+
+```shell
+make serve-fast
+```
+
+This skips the two most expensive, production-only plugins -- social card
+generation and git revision dates -- which brings a rebuild down from roughly
+7-10 minutes to well under a minute. Use it while writing or reviewing content.
+
+The trade-off is that the preview no longer matches production exactly: pages
+show no "last updated" date, and social/OpenGraph cards are not generated. Both
+are irrelevant to the content itself, but run `make serve` when you need a
+faithful preview -- for example before a release, or when checking how a page
+looks when shared as a link.
+
 #### Python Virtual Environment
 
 If you don't have access to the internal container image, you can alternatively utilize a Python virtual environment.

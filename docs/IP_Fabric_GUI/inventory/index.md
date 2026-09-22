@@ -1,5 +1,5 @@
 ---
-description: The inventory provides an overview list of sites, devices, modules, interfaces, and users discovered within the network.
+description: The inventory provides an overview list of sites, devices, modules, interfaces, users, and applications discovered within the network.
 ---
 
 # Inventory
@@ -7,7 +7,8 @@ description: The inventory provides an overview list of sites, devices, modules,
 ## Overview
 
 The inventory provides an overview list of sites, devices, modules, interfaces,
-and users discovered within the network.
+and users discovered within the network, together with the applications that run
+on top of it.
 
 ## Sites
 
@@ -74,7 +75,7 @@ following information (`Human Readable Name (apiColumnName)`):
   device (i.e., a Firewall is labeled `fw` and a Wireless Access Point as `ap`).
   This is used for internal decisions such as the device icon to display in
   diagrams and cannot be changed. To set a custom type, please
-  see [Device Attributes](../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
+  see [Device Attributes](../../IP_Fabric_Settings/Discovery_and_Snapshots/Global_Configuration/device_attributes.md).
 - `Object Id (objectId)` is a Unique ID for API devices used during discovery.
 - `Ts Discovery Start (tsDiscoveryStart)` is the timestamp when device discovery
   starts.
@@ -115,6 +116,37 @@ may prevent the inclusion of IP addresses from the ARP in the Hosts' inventory:
 - There cannot be any route pointing to that interface.
 - No CDP/LLDP information should be coming from that IP.
 - The MAC shouldn't be in the OUI flagged as "Enabled for Discovery".
+
+## Applications { .aim }
+
+The application inventory adds application-level context to the network data
+IP Fabric already collects. It is built from Application Infrastructure Mapping
+(AIM) data -- applications, their workloads, the flows between those workloads,
+and the network devices that carry the traffic -- and is presented as four
+tables:
+
+- **Applications** -- the applications known to IP Fabric, with their workload,
+  flow, and device counts.
+- **Workloads** -- the individual endpoints that make up each application.
+- **Flows** -- the observed communication between two workloads.
+- **Devices** -- the network devices a flow's traffic traverses, identified by an
+  on-demand path-lookup calculation.
+
+The Applications and Flows tables also let you start that path-lookup
+calculation, and to open the resulting path as a diagram.
+
+AIM data reaches IP Fabric from a third-party integration such as Illumio, from
+records maintained in the Discovery Settings, or through the AIM API. Configuring
+those sources is described in
+[Application Mapping](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/application_mapping.md).
+
+!!! note "Application mapping requires an AIM license"
+
+    Without the AIM feature on your product license, **Inventory -->
+    Applications** shows an overview of the capability instead of the tables.
+
+For a detailed description of each table, its columns, and the path-lookup
+actions, see [Applications](applications.md).
 
 ## End of Life Milestones
 

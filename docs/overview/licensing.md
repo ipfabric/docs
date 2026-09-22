@@ -261,6 +261,53 @@ device limit. Currently, these are at least:
     under [Tier Definitions](#tier-definitions). They are VMware's own names
     for the two router types in an NSX-T topology.
 
+## Add-on Licenses
+
+Some capabilities are licensed separately from the device count. They are enabled
+through an **additional feature** entry in the product license file, and each such
+entry carries its own validity period. Until a license containing the entry is
+uploaded, the capability is not available -- there is no setting or switch in the
+product that turns it on.
+
+### Application Infrastructure Mapping (AIM)
+
+Application Infrastructure Mapping requires the **AIM feature** to be enabled in
+the uploaded product license.
+
+- The AIM feature has **its own validity period**, which sits within the
+  license's overall validity. It **cannot extend beyond the product license's
+  expiration date**, but it can be shorter -- which is how an AIM trial period is
+  issued.
+- Because that period can be shorter, AIM can expire -- or not have started yet
+  -- while the rest of the license remains perfectly valid.
+- AIM is available only when the product license is valid **and** the current
+  date falls within the AIM feature's validity period. Both conditions have to
+  hold, so the feature never outlives the product license.
+- **All AIM functionality in the product is gated by this feature license.**
+  Without it:
+    - the **Application mapping** section is hidden from the Discovery Settings;
+    - **Inventory --> Applications** shows an overview of the capability instead
+      of the inventory tables;
+    - the AIM API endpoints return `403`;
+    - the path-lookup address fields stop suggesting application and workload
+      names, and match IP addresses and DNS names only.
+
+### Getting AIM
+
+AIM is a **premium add-on**. For what it covers, see
+[go.ipfabric.io/aim](https://go.ipfabric.io/aim), or the
+[Application Infrastructure Mapping (AIM)](application_infrastructure_mapping.md)
+overview in this documentation.
+
+To add or renew it, contact your **Customer Success Manager** or email
+[support@ipfabric.io](mailto:support@ipfabric.io), then upload the reissued
+license file.
+
+The product shows the same guidance in place of the feature: without the AIM
+license, **Inventory --> Applications** displays a **Premium add-on** page
+carrying the link and contact details above. See
+[Without an AIM License](../IP_Fabric_GUI/inventory/applications.md#without-an-aim-license).
+
 ## Changes
 
 ### Release `8.1.0`
@@ -303,3 +350,8 @@ When your license expires:
 - New snapshots will not be created, and automatic snapshots will stop.
 - API calls may still work.
 - Configuration management will run in the background.
+
+An expired **feature** license behaves differently: only that capability becomes
+unavailable, and the rest of the platform is unaffected. If the AIM feature's
+validity period ends while the product license is still valid, AIM simply stops
+being accessible -- see [Add-on Licenses](#feature-licenses).
