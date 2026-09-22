@@ -64,6 +64,32 @@ The port can be changed to an arbitrary one for TCP/UDP protocols.
 
 The following flags can also be set for TCP traffic: `None` / `ACK` / `FIN` / `SYN` / `RST` / `PSH` / `URG`.
 
+#### Searching by Application or Workload Name { .aim }
+
+Typing into the source or destination IP address field matches the entered text against known IP addresses and their DNS names. With Application Infrastructure Mapping (AIM), the same field also matches **application names** and **workload names**, so you can find an address by the application it belongs to instead of having to know the address itself.
+
+![Source IP suggestions grouped by application and workload](../../images/diagrams/diagrams_pathlookup-src-dst-aim-suggestions.webp)
+
+Matching suggestions are presented in two groups:
+
+- **IP Address / Application / Workload** -- addresses that belong to an AIM workload, each shown as `IP address / application / workload`. A `-` means the corresponding name is unknown.
+- **IP Address / DNS** -- the addresses and DNS names that were already suggested before, unchanged.
+
+Selecting an entry from either group fills the **IP address** into the field -- the application and workload names are there to help you find the right address, and are not submitted with the path lookup.
+
+!!! note "Where application suggestions are available"
+
+    Application and workload names are suggested in the **Unicast** and **Host to Gateway** forms. The **Multicast** form suggests IP addresses and DNS names only.
+
+The suggestions are built from the interface IP addresses of AIM workloads, so a workload contributes one entry per interface address it has. A workload with no interface address does not appear.
+
+Two conditions have to be met for the application group to show up:
+
+- The product license has the AIM feature enabled. Without it, the field behaves exactly as before and only IP addresses and DNS names are matched.
+- The snapshot contains AIM data, and its topology has been calculated -- the suggestion list is rebuilt as part of the post-discovery processing, so freshly ingested application data becomes searchable once that finishes.
+
+For where AIM data comes from and how to review it, see [Applications](../inventory/applications.md) and [Application Mapping](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/application_mapping.md).
+
 ### TTL and Fragment Offset
 
 In **More details**, **TTL** (Time to live) and **Fragment offset** can be set -- thus affecting the path lookup output. The default TTL is 128 and Fragment offset is set to 0.
