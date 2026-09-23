@@ -124,6 +124,8 @@ More APIs are required for IP Fabric version 8.1 and above:
    compute.firewallPolicies.list
    networksecurity.addressGroups.list
    cloudasset.assets.searchAllResources
+   compute.globalNetworkEndpointGroups.get
+   compute.regionNetworkEndpointGroups.get
    ```
 
    ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
