@@ -15,7 +15,7 @@ your imagination.
 
 To set up a webhook, navigate to **Settings --> Integration --> Webhooks**.
 
-![Add webhook](../../images/settings/integration/settings-integration_webhooks.webp)
+![Add webhook](../../images/settings/integration/settings-webhook_newui.webp)
 
 ## Events
 
@@ -29,7 +29,45 @@ reachable, it returns a bad status code, or the delivery times out), IP Fabric
 tries to deliver the webhook payload again 1, 2, 5, and 10 minutes
 after the initial delivery. If IP Fabric cannot deliver the webhook in
 these five attempts, it gives up. All delivery attempts are recorded in
-the webhook delivery history (in the webhook **Edit** view).
+the webhook delivery history (see [Recent Deliveries](#recent-deliveries) below).
+
+## Recent Deliveries
+
+Open the **Recent deliveries** tab on the Webhooks page to browse the delivery
+history of every webhook in one place. Each row is a single outbound delivery
+attempt, newest first.
+
+![Recent deliveries](../../images/settings/integration/webhook_deliveriestab.webp)
+
+The table shows the following columns:
+
+- **Status** -- the HTTP response status code the endpoint returns (for
+example, `200`), or `error` when the attempt fails before receiving a
+response,
+
+- **Webhook** -- the name of the webhook that produced the delivery,
+
+- **Delivery date** -- when IP Fabric made the attempt,
+
+- **Event type** -- the event that triggered the delivery (`Snapshot` or
+`Intent verification`),
+
+- **Retry** -- whether the attempt was a retry (`Yes`) or the first delivery
+attempt (`No`),
+
+- **Action** -- opens the delivery detail dialog.
+
+Filter the list by **Webhook**, **Delivery date**, **Event type**, and
+**Retry** to narrow down the attempts you want to inspect.
+
+Use the **Action** button on a row to inspect a single delivery. The detail
+dialog displays the target URL, time, request body, payload hash,
+response headers, status, and error message when the delivery fails.
+
+To reach this tab pre-filtered to a single webhook, use the **View all
+deliveries** link in the webhook **Edit** view. The **click here** link in the
+confirmation shown after a [Test Webhook](#test-webhook) also opens the
+**Recent deliveries** tab filtered to that webhook.
 
 ## Triggers
 
@@ -101,6 +139,24 @@ When editing a webhook:
     The token is sent only if a custom header references `{{{token}}}`. Without
     such a header, the stored token is never transmitted.
 
+## Custom Certificate Authority
+
+If your webhook endpoint uses HTTPS with a certificate signed by a private or
+internal certificate authority (CA), IP Fabric must trust that CA to deliver
+the payload. In the webhook form, upload a CA certificate in PEM format, or
+select one already uploaded. A single CA can then be reused across many webhooks.
+
+![Add webhook](../../images/settings/integration/settings-webhook_token_cert.webp)
+
+Uploaded certificate authorities are also managed in **Settings --> System -->
+Certificate Authorities**.
+
+!!! note
+
+    A custom CA applies only to `https://` endpoints. Publicly trusted
+    certificate authorities are always accepted, so a custom CA is only needed
+    for endpoints signed by a CA that is not publicly trusted.
+
 ## Test Webhook
 
 To test your webhook (even an inactive one), use the **Test** button in the UI.
@@ -108,6 +164,10 @@ Pick the webhook type and action and confirm the popup dialog. IP Fabric will
 send a dummy payload corresponding to the selected webhook. To
 distinguish the testing payloads from the real ones, IP Fabric adds the `test: true`
 property to the testing messages.
+
+After IP Fabric sends the test, a confirmation appears with a **click here** link.
+The link opens the [Recent Deliveries](#recent-deliveries) tab filtered to that webhook,
+where you can view the test delivery and its result.
 
 ## Webhook Types
 
