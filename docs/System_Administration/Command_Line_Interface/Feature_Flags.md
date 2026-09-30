@@ -384,6 +384,24 @@ sudo systemctl restart ipf-appliance
 
 Without this flag, IP Fabric does not send the ZPE version command during discovery. Nodegrid devices are not identified or discovered.
 
+### Labels
+
+Since `8.1`, you can tag devices and L2 interfaces with labels. Use them as columns and filters across technology tables and intent checks. See [Labels](../../IP_Fabric_Settings/Discovery_Data_Enrichment/index.md) for details.
+
+Add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_LABELS=true
+```
+
+After updating the environment file, run the following command to restart the IP Fabric application:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+Without this flag, **Discovery Data Enrichment** does not appear in the **Settings** menu. Labels are not calculated after discovery. The **Labels** columns in tables and in the API remain empty.
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
