@@ -17,6 +17,20 @@ user conversationally.
 The user gives (or you ask for) a `fixVersion`, e.g. `7.5.21` or `8.0.10`, and wants release
 notes drafted from the Jira tickets tied to that version.
 
+## Branch rule — never change `main`
+
+Never make changes directly on `main`. Check the current branch (`git branch --show-current`)
+before editing any file (including this skill and the release notes). If `main` is checked out
+and the user requests changes:
+
+1. Tell the user that changes cannot be made directly on `main`.
+2. Ask the user for a name for a new branch.
+3. Create and switch to that branch (`git switch -c <name>`).
+4. Apply the requested changes only on the new branch.
+
+Read-only work (fetching Jira tickets, showing a draft in chat) is fine on `main`; the rule
+applies as soon as a file would be written.
+
 ## Prerequisites
 
 - The Atlassian Jira MCP connector must be available in this session (tools prefixed
@@ -133,9 +147,12 @@ Categories to populate (only these two; omit a section if it has no items):
 ## Step 5 — Show a draft, then refine conversationally
 
 Present the drafted Improvements/Bug Fixes lists to the user as normal chat output (not a
-separate tool call), with each item linked to its Jira ticket key so the user can trace it
-back and ask follow-up questions. Ask if they want changes — added detail, rewording,
-reordering, removed items, or questions about a specific ticket key. Since the full ticket
+separate tool call). **Do not include Jira ticket keys (e.g. `NIM-25309`) or hyperlinks of any
+kind in the draft** — the user does not need them; show plain item text only. Keep the key
+mapping in your own context so you can still answer follow-up questions about a specific item
+(the user can refer to an item by its wording), and mention a ticket key only if the user
+asks for it. Ask if they want changes — added detail, rewording, reordering, or removed
+items. Since the full ticket
 data is already in context, answer directly and produce an updated list; there's no need for
 a second "conversation agent" or JSON round-tripping — that machinery in the original script
 existed only to work around calling an external API.
@@ -150,11 +167,11 @@ the user approves the draft, ask whether to insert it under a new version headin
 relevant file (creating the heading in the right place, newest-first) rather than just leaving
 it in chat, and only write the file after they confirm.
 
-**Before writing to the docs file**, strip every internal ticket reference (Jira keys like
-`NIM-25309`, and any link to `ipfabric.atlassian.net`) from the text. Ticket keys are useful
-in the chat draft for traceability with the user, but release notes are customer-facing and
-must not expose internal project/ticket identifiers. Existing entries in this file never
-reference ticket keys — match that.
+The text written to the docs file must contain no internal ticket references (Jira keys like
+`NIM-25309`, or any link to `ipfabric.atlassian.net`). The Step 5 draft already omits them, so
+there should be nothing to strip — but double-check before writing. Release notes are
+customer-facing and must not expose internal project/ticket identifiers; existing entries in
+this file never reference ticket keys — match that.
 
 ## Key differences from `jira_ai_agent.py`
 
