@@ -173,6 +173,54 @@ there should be nothing to strip — but double-check before writing. Release no
 customer-facing and must not expose internal project/ticket identifiers; existing entries in
 this file never reference ticket keys — match that.
 
+## Step 7 — Low-level release notes (LLRN)
+
+When the user asks to update the low-level release notes (LLRN) for a version, **do not run
+`jira_ai_agent.py`** (that is the patch release-notes generator). The script that regenerates
+LLRN is `jira_release_notes.py` (needs `JIRA_USER`/`JIRA_PASS` in `.env` and rewrites every 8.x
+file), so instead update the file by hand from the Jira connector data, in the same format the
+script produces. Follow the Branch rule first (e.g. `LLRN-<version>`, branched from `main` so
+it doesn't mix with the release-notes branch).
+
+1. **Fetch** NIM and DOS issues for the `fixVersion` with the Step 2 JQL (fields `summary,
+   issuetype, priority, labels`). IPF is not part of LLRN. The Step 2 data can be reused.
+2. **File**: `docs/releases/release_notes_low-level/<major>.x/<major>.<minor>.md`. Insert a
+   new `## <version>` section directly above the previous patch version (newest first).
+3. **Group by issue type**, in this order, omitting empty ones, each with its intro sentence
+   copied from an existing section of the file: `### Epics`, `### Stories`, `### Bugs`,
+   `### Tasks`, `### Sub-Tasks` (Jira `Sub-task`).
+4. **Item format**: `` - `KEY-123` -- <Priority> -- <summary> `` — here the ticket key **is**
+   kept (unlike the customer-facing release notes). Clean the summary like the script's
+   `clean_title`: strip team codes (`[DP]`, `[PE]`, …) and version tags (`[7.11]`,
+   `[7.11/7.12]`), collapse spaces, trim leading/trailing dashes.
+5. **Sort by priority within each type**: Highest, High, Medium, Low, Lowest, then by key
+   within the same priority.
+6. **Update the issue count** in the page's intro paragraph (`...contains a total of N fixed
+   issues.`) by adding the number of issues fetched for the new version.
+7. **Do not touch** older version sections.
+8. Show the user the diff (`git diff <file>`) and ask before committing.
+
+### Check for non-public information before writing
+
+LLRN pages are public, and ticket summaries are copied verbatim. Before writing, scan every
+summary (and the release-note items in Step 4) for non-public data and **tell the user about
+each hit** — quote the ticket and the offending text, and propose a sanitized wording — instead
+of silently publishing or silently altering it:
+
+- Customer, partner or company names (e.g. in `Found on <customer>` or `<customer> prod` style
+  text)
+- IP addresses, hostnames/device names from a real network, MAC addresses, serial numbers,
+  usernames, credentials, tokens
+- Internal URLs (SharePoint, Slack, privatebin, `atlassian.net`) and support-case IDs such as
+  `NSD-1234`
+- Version or team information that the README says to remove from ticket summaries (e.g.
+  `[DP]`, `[8.0]`; the cleanup in step 4 handles the bracketed forms, but check for
+  versions written in plain text)
+
+Vendor/product/platform names (Cisco NX-OS, FortiGate, AWS) are fine. If unsure, ask the user.
+Descriptions often contain such data even when the summary does not — never copy description
+text into the notes beyond the specific technical facts allowed in Step 4.
+
 ## Key differences from `jira_ai_agent.py`
 
 | Original script | This skill |
