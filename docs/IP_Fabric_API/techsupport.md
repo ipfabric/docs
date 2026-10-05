@@ -9,7 +9,7 @@ API, follow these steps:
 
 1. Send a POST request to `/os/techsupport`. The request body specifies what to
    include in the techsupport file. In the example below, the default options
-   from the GUI (system and service logs, usage data, and a specific snapshot
+   from the GUI (system and service logs, and a specific snapshot
    `SNAPSHOT_ID` with its database records) are shown.
 
    ```json
@@ -21,8 +21,7 @@ API, follow these steps:
        "id": "SNAPSHOT_ID",
        "removeCli": false
      },
-     "systemLogs": true,
-     "usageData": true
+     "systemLogs": true
    }
    ```
 

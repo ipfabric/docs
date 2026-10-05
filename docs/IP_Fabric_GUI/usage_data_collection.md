@@ -12,8 +12,4 @@ emails, etc. The data describe the user environment (browser, operating system,
 window size, etc.) and user interactions with the application (clicks, page
 views, etc.).
 
-The data are collected locally on your IP Fabric instance. Usage data will be
-included in the Techsupport file unless you opt out when selecting what to
-include in the Techsupport file.
-
-![Techsupport file settings - Usage data](../images/support/support_usage-data-techsupport.webp)
+The data are collected locally on your IP Fabric instance.

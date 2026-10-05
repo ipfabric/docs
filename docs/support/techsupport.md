@@ -58,15 +58,14 @@ description: This page explains how to generate and upload a techsupport file fo
 
 3. Run the `ipf-techsupport-exporter.sh` script as the `autoboss` user to
    generate an encrypted techsupport file with the recommended default contents 
-   (system and service logs, usage data, and a specific snapshot `SNAPSHOT_ID` 
+   (system and service logs, and a specific snapshot `SNAPSHOT_ID` 
    with its database records).
 
    ```shell
    sudo -u autoboss /opt/ipf-techsupport-exporter/bin/ipf-techsupport-exporter.sh \
    -e -1 -2 \
    -3 <SNAPSHOT_ID> \
-   -4 <SNAPSHOT_ID> \ 
-   -6
+   -4 <SNAPSHOT_ID>
    ```
 
    If needed, you can use the following options to select what to include in the
@@ -79,7 +78,6 @@ description: This page explains how to generate and upload a techsupport file fo
 	-3	Snapshots (specify snapshot number)
 	-4	DB dump (specify snapshot number or use "full" keyword for complete dump)
 	-5	Exclude CLI logs from snapshot
-	-6	Usage data
    ```
 
 4. By default, the file will be named `techsupport-<JOB_ID>.tar` and stored in
@@ -144,10 +142,6 @@ IP Fabric Support.
 
 5. **Database dump without devices data** -- Removes all collected data from
    devices. The dump contains only error and service tables.
-
-6. **Usage data** -- Includes
-   [usage data](../IP_Fabric_GUI/usage_data_collection.md). Providing this data
-   helps us improve the product.
 
 !!! info
 
