@@ -134,8 +134,8 @@ danger:
 # and posts a single MR comment. Non-blocking.
 ai_review_mr:
   stage: test
-  only:
-    - merge_requests
+  rules:
+    - when: never  # temporarily disabled
   allow_failure: true
   script:
     - make /tmp/vale/vale
