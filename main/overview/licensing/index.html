@@ -851,6 +851,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-your-license-counts-cloud-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Your License Counts Cloud Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tier-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -889,6 +900,17 @@ here.
     <span class="md-ellipsis">
       
         Tier C – 0 CCU (Discovered, Not Billed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#never-billed-separately-all-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Billed Separately (All Providers)
       
     </span>
   </a>
@@ -1049,6 +1071,17 @@ here.
   
     <nav class="md-nav" aria-label="Changes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-820" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release 8.2.0
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#release-810" class="md-nav__link">
@@ -16546,6 +16579,17 @@ here.
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-your-license-counts-cloud-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Your License Counts Cloud Objects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tier-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16584,6 +16628,17 @@ here.
     <span class="md-ellipsis">
       
         Tier C – 0 CCU (Discovered, Not Billed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#never-billed-separately-all-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Billed Separately (All Providers)
       
     </span>
   </a>
@@ -16744,6 +16799,17 @@ here.
   
     <nav class="md-nav" aria-label="Changes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-820" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release 8.2.0
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#release-810" class="md-nav__link">
@@ -16926,8 +16992,10 @@ plays in the network:</p>
   tables below, it is <strong>not yet discovered or supported</strong> – it is <em>not</em> a
   silent “free” object. The moment we begin discovering a new construct, we
   decide its tier and add it here.</li>
-<li><strong>Non-billable (0 CCU) constructs are listed explicitly.</strong> We do not leave
-  the non-billable constructs implicit.</li>
+<li><strong>Non-billable (0 CCU) constructs are listed explicitly.</strong> Standalone objects
+  are listed per provider, grouped. The parts, links, and labels that belong to
+  other objects are covered by one general rule – see
+  <a href="#never-billed-separately-all-providers">Never Billed Separately</a>.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Why CCUs instead of one license per object?</p>
@@ -16939,6 +17007,43 @@ the customers who adopt cloud-native, elastic, infrastructure-as-code
 patterns. The tiered CCU model keeps licensing proportional to network
 <em>function</em>, not object count.</p>
 </div>
+<h3 id="how-your-license-counts-cloud-objects">How Your License Counts Cloud Objects</h3>
+<p>Your license type determines how these tiers apply:</p>
+<table>
+<thead>
+<tr>
+<th>License</th>
+<th>Tier A Object</th>
+<th>Tier B Object</th>
+<th>Tier C Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cloud (CCU) license</strong></td>
+<td>1 CCU</td>
+<td>0.5 CCU</td>
+<td>0 CCU</td>
+</tr>
+<tr>
+<td><strong>Device-based license</strong></td>
+<td>1 device license</td>
+<td>1 device license</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Cloud (CCU) license:</strong> cloud objects never consume device licenses. The
+  device limit applies to on-premises devices only.</li>
+<li><strong>Device-based license</strong> (all licenses issued before version <code>8.1.0</code>, and
+  licenses without cloud licensing): every Tier A or Tier B cloud object
+  consumes one full device license, including Tier B objects. Tier C objects
+  consume nothing.</li>
+<li>A snapshot is counted under the license that was active when it was
+  discovered. Changing your license applies to snapshots discovered after the
+  change; existing snapshots keep the licensing they were discovered with.</li>
+</ul>
 <h3 id="tier-definitions">Tier Definitions</h3>
 <p>These definitions are authoritative. When a new construct appears, IP Fabric places it
 in a tier using these definitions.</p>
@@ -16975,10 +17080,27 @@ Three groups exist:</p>
   sets, tags.</li>
 <li><strong>Connectors and link representations</strong> – provided the parent construct they
   attach to is already Tier A or Tier B. This avoids double-charging the same
-  connectivity. For example, Transit Gateway attachments and VPC peerings.</li>
+  connectivity. For example, VPC peerings, or an ExpressRoute gateway
+  connecting a VNet to its (billed) ExpressRoute circuit.</li>
 <li><strong>Objects with no influence on traffic</strong> – hosts and compute such as virtual
   machines and EC2 instances.</li>
 </ul>
+<h4 id="never-billed-separately-all-providers">Never Billed Separately (All Providers)</h4>
+<p>These are discovered and shown, but they are not constructs in their own right,
+so they never consume a license:</p>
+<ul>
+<li><strong>Parts of another object</strong> – routes and route entries, address ranges and
+  CIDR blocks, NAT rules, peering prefixes, the entries of an address list, the
+  rules inside a security group, and the connections of a private-link service.
+  They are covered by their parent object.</li>
+<li><strong>Links between objects</strong> – attachments and associations, for example
+  subnet to route table, NAT gateway to subnet, network interface to security
+  group, Transit Gateway and other gateway attachments, and tag assignments.</li>
+<li><strong>Labels and organizational context</strong> – tags and labels, accounts,
+  subscriptions, projects, resource groups, and regions.</li>
+</ul>
+<p>An object that IP Fabric shows in several places (inventory, topology, path
+lookup) is counted once.</p>
 <h3 id="what-counts-against-a-license-by-provider">What Counts Against a License, by Provider</h3>
 <p>CCU values below are the current agreed values. Object codes are the internal
 identifiers IP Fabric uses. Rows in the 0 CCU tables are discovered but never
@@ -16996,7 +17118,7 @@ billed.</p>
 </thead>
 <tbody>
 <tr>
-<td>VPC</td>
+<td>VPC (see <a href="#empty-vpc-vnet-or-vpc-network">Empty VPC</a>)</td>
 <td><code>vpc</code></td>
 <td>A</td>
 <td>1</td>
@@ -17004,12 +17126,6 @@ billed.</p>
 <tr>
 <td>Transit gateway</td>
 <td><code>tgw</code></td>
-<td>A</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Direct Connect gateway</td>
-<td><code>dxgw</code></td>
 <td>A</td>
 <td>1</td>
 </tr>
@@ -17024,6 +17140,12 @@ billed.</p>
 <td><code>cne</code></td>
 <td>A</td>
 <td>1</td>
+</tr>
+<tr>
+<td>Direct Connect gateway</td>
+<td><code>dxgw</code></td>
+<td>B</td>
+<td>0.5</td>
 </tr>
 <tr>
 <td>Internet gateway</td>
@@ -17049,35 +17171,34 @@ billed.</p>
 <table>
 <thead>
 <tr>
-<th>AWS Object</th>
+<th>Group</th>
+<th>AWS Objects</th>
+<th>Object Code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Transit gateway attachment</td>
+<td>Networks and addressing</td>
+<td>Subnets, Elastic IPs (public IP addresses), managed prefix lists</td>
+<td>–</td>
 </tr>
 <tr>
-<td>VPC peering and connections</td>
+<td>Connectivity</td>
+<td>VPC peering connections; VPC endpoints (gateway type, and interface or Gateway Load Balancer type)</td>
+<td><code>vpce</code> (gateway type)</td>
 </tr>
 <tr>
-<td>VPC endpoint</td>
+<td>Routing and security</td>
+<td>Route tables, security groups</td>
+<td>–</td>
 </tr>
 <tr>
-<td>EC2 instances, ENIs, Elastic IPs</td>
-</tr>
-<tr>
-<td>Route tables and individual route entries</td>
-</tr>
-<tr>
-<td>Security group rule counts</td>
-</tr>
-<tr>
-<td>Tags and metadata</td>
+<td>Compute</td>
+<td>EC2 instances, Elastic Network Interfaces (ENIs), Auto Scaling groups</td>
+<td>–</td>
 </tr>
 </tbody>
 </table>
-<p>VPC endpoints are discovered as devices, under the object code <code>vpce</code>, and are
-priced explicitly at 0 CCU.</p>
 <h4 id="azure">Azure</h4>
 <p>Billed:</p>
 <table>
@@ -17091,7 +17212,7 @@ priced explicitly at 0 CCU.</p>
 </thead>
 <tbody>
 <tr>
-<td>Virtual Network</td>
+<td>Virtual Network (see <a href="#empty-vpc-vnet-or-vpc-network">Empty VNet</a>)</td>
 <td><code>vnet</code></td>
 <td>A</td>
 <td>1</td>
@@ -17103,19 +17224,13 @@ priced explicitly at 0 CCU.</p>
 <td>1</td>
 </tr>
 <tr>
-<td>Route Server</td>
-<td><code>ars</code></td>
-<td>A</td>
-<td>1</td>
-</tr>
-<tr>
 <td>Virtual HUB</td>
 <td><code>vhub</code></td>
 <td>A</td>
 <td>1</td>
 </tr>
 <tr>
-<td>Virtual Network gateway</td>
+<td>Virtual Network gateway, VPN or Local Gateway type</td>
 <td><code>vngw</code></td>
 <td>A</td>
 <td>1</td>
@@ -17127,10 +17242,16 @@ priced explicitly at 0 CCU.</p>
 <td>1</td>
 </tr>
 <tr>
-<td>Express Route Circuit</td>
+<td>ExpressRoute circuit</td>
 <td><code>erc</code></td>
 <td>A</td>
 <td>1</td>
+</tr>
+<tr>
+<td>Route Server</td>
+<td><code>ars</code></td>
+<td>B</td>
+<td>0.5</td>
 </tr>
 <tr>
 <td>Load Balancer / Application Gateway</td>
@@ -17150,35 +17271,39 @@ priced explicitly at 0 CCU.</p>
 <table>
 <thead>
 <tr>
-<th>Azure Object</th>
+<th>Group</th>
+<th>Azure Objects</th>
+<th>Object Code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Express Route gateway</td>
+<td>Gateways to a billed ExpressRoute circuit</td>
+<td>ExpressRoute gateway (vWAN construct); Virtual Network gateway of ExpressRoute type (VNet construct)</td>
+<td><code>erg</code>, <code>vngw</code></td>
 </tr>
 <tr>
-<td>VNet peering</td>
+<td>Networks and addressing</td>
+<td>Subnets, public IP addresses and prefixes, application security groups, service tags</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Route tables and UDRs</td>
+<td>Connectivity</td>
+<td>VNet peerings, private endpoints, Private Link services</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Virtual machines and NICs</td>
+<td>Routing and security</td>
+<td>Route tables (User-Defined Routes, UDRs), Network Security Groups (NSG)</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Public IP objects</td>
-</tr>
-<tr>
-<td>NSG rules</td>
-</tr>
-<tr>
-<td>Resource groups</td>
+<td>Compute</td>
+<td>Virtual machines, network interfaces, Virtual Machine Scale Sets</td>
+<td>–</td>
 </tr>
 </tbody>
 </table>
-<p>Express Route gateways are discovered as devices, under the object code <code>erg</code>,
-but are not assigned a CCU cost.</p>
 <h4 id="gcp">GCP</h4>
 <p>Billed:</p>
 <table>
@@ -17192,19 +17317,19 @@ but are not assigned a CCU cost.</p>
 </thead>
 <tbody>
 <tr>
-<td>VPC</td>
+<td>VPC (see <a href="#empty-vpc-vnet-or-vpc-network">Empty VPC Network</a>)</td>
 <td><code>vpc</code></td>
 <td>A</td>
 <td>1</td>
 </tr>
 <tr>
-<td>(Cloud) Router</td>
+<td>Cloud Router</td>
 <td><code>router</code></td>
 <td>A</td>
 <td>1</td>
 </tr>
 <tr>
-<td>VPN gateway</td>
+<td>VPN gateway (HA and Classic)</td>
 <td><code>vpngw</code></td>
 <td>A</td>
 <td>1</td>
@@ -17217,33 +17342,40 @@ but are not assigned a CCU cost.</p>
 </tr>
 </tbody>
 </table>
+<p>Cloud NAT is configured on a Cloud Router and is currently covered by that
+router; it is not billed separately.</p>
 <p>Not billed (Tier C, 0 CCU):</p>
 <table>
 <thead>
 <tr>
-<th>GCP Object</th>
+<th>Group</th>
+<th>GCP Objects</th>
+<th>Object Code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cloud NAT</td>
+<td>Networks and addressing</td>
+<td>Subnets, external (public) IP addresses, address groups</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Virtual machines and NICs</td>
+<td>Connectivity</td>
+<td>VPC peerings, Private Service Connect endpoints and services</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Route tables and entries</td>
+<td>Routing and security</td>
+<td>Routes, firewall rules and firewall policies</td>
+<td>–</td>
 </tr>
 <tr>
-<td>Firewall rule counts</td>
-</tr>
-<tr>
-<td>Labels and metadata</td>
+<td>Compute</td>
+<td>VM instances, network interfaces, instance groups and network endpoint groups</td>
+<td>–</td>
 </tr>
 </tbody>
 </table>
-<p>Cloud NAT is discovered as a device, under the object code <code>nats</code>, but is not
-assigned a CCU cost.</p>
 <h3 id="consistency-across-providers">Consistency Across Providers</h3>
 <p>When the same function appears in multiple providers, we aim to license it
 consistently. For example, an Azure ExpressRoute gateway and an AWS Transit
@@ -17252,16 +17384,15 @@ consistently. If applying the tier definition to one provider yields a
 different result than another, that is a signal to revisit the definition, not
 to special-case a single cloud.</p>
 <h3 id="empty-vpc-vnet-or-vpc-network">Empty VPC, VNet, or VPC Network</h3>
-<div class="admonition warning">
-<p class="admonition-title">Planned, not yet in effect</p>
-<p>This behavior is not active in release <code>8.1</code>. In <code>8.1</code>, an empty VPC or
-VNet is still discovered and still consumes its CCU. The rules below
-describe the intended future behavior once implemented.</p>
+<div class="admonition info">
+<p class="admonition-title">In effect from version <code>8.2.0</code></p>
+<p>In version <code>8.1</code>, an empty VPC or VNet is still discovered and still
+consumes its CCU.</p>
 </div>
-<p>The intent is that a VPC, VNet, or VPC Network with <strong>no active participation
-in the topology</strong> will be classified as <strong>empty</strong> and billed at <strong>0 CCU</strong>, even
-though a populated VPC or VNet is Tier A. It will remain discovered and
-visible; it just will not bill.</p>
+<p>A VPC, VNet, or VPC Network with <strong>no active participation in the topology</strong> is
+classified as <strong>empty</strong> and billed at <strong>0 CCU</strong> (Tier C). It remains discovered
+and visible; it just does not bill. Under a device-based license, it does not
+consume a device license either.</p>
 <p>IP Fabric treats a construct as <strong>non-empty</strong> (and bills it at its normal CCU) if
 any of these signals are present:</p>
 <table>
@@ -17275,38 +17406,41 @@ any of these signals are present:</p>
 </thead>
 <tbody>
 <tr>
-<td>Active route table beyond default/system routes</td>
-<td>Route table with custom routes</td>
-<td>UDR with custom routes</td>
-<td>Custom routes in a routing table</td>
+<td>Route beyond default/system routes</td>
+<td>Route table with custom routes (anything other than the local route or the plain default route to the VPC’s internet gateway)</td>
+<td>A route table associated with a subnet</td>
+<td>Custom routes (excluding the default route, peering-learned routes, and subnet routes)</td>
 </tr>
 <tr>
 <td>Attached gateway</td>
-<td>IGW, NAT GW, VGW, TGW attachment, CNE, DXGW</td>
-<td>ExpressRoute GW, VPN GW, Azure Firewall</td>
-<td>Cloud Router with peer, Cloud NAT, VPN GW, Interconnect attachment</td>
+<td>NAT gateway, VPN gateway, Transit Gateway attachment, Core Network Edge, Direct Connect gateway; internet gateway (except the one AWS attaches to the default VPC)</td>
+<td>ExpressRoute gateway, VPN gateway, Azure Firewall, Route Server, NAT gateway on a subnet</td>
+<td>Cloud Router with Cloud NAT, an Interconnect attachment, or a BGP peer; VPN gateway (HA or Classic)</td>
 </tr>
 <tr>
-<td>Active peering with route propagation</td>
+<td>Active peering</td>
 <td>VPC peering</td>
-<td>VNet peering</td>
-<td>VPC peering</td>
+<td>Connected VNet peering</td>
+<td>Active VPC peering</td>
 </tr>
 <tr>
-<td>Compute resources deployed</td>
-<td>Instance</td>
-<td>Virtual machine</td>
-<td>Instance</td>
+<td>Compute or load balancing deployed</td>
+<td>Instance; any managed network interface (load balancer, NAT gateway, Lambda, endpoint, Transit Gateway attachment). An unattached plain network interface does not count</td>
+<td>Virtual machine, load balancer, Application Gateway</td>
+<td>Instance, load-balancer forwarding rule</td>
 </tr>
 <tr>
 <td>Service connectivity</td>
 <td>Private Link service or endpoint</td>
-<td>Subnet with service delegation / private endpoint, DNS</td>
-<td>Private Service Connect endpoint or service</td>
+<td>Subnet with service delegation, private endpoint, or Private Link service; DNS linkage</td>
+<td>Private Service Connect endpoint or service; Serverless VPC Access connector</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>If none of these is detected, the construct is empty and excluded from billing.</p>
+</div>
 <h2 id="nsx-t">NSX-T</h2>
 <p>VMware NSX-T is licensed as on-premises infrastructure. Its constructs are not
 assigned CCUs and do not fall under <a href="#cloud-licensing">Cloud Licensing</a> above.</p>
@@ -17379,11 +17513,20 @@ license, <strong>Inventory → Applications</strong> displays a <strong>Premium 
 carrying the link and contact details above. See
 <a href="../../IP_Fabric_GUI/inventory/applications/#without-an-aim-license">Without an AIM License</a>.</p>
 <h2 id="changes">Changes</h2>
+<h3 id="release-820">Release <code>8.2.0</code></h3>
+<ul>
+<li>An empty VPC, VNet, or VPC Network is billed at 0 CCU (Tier C). See
+  <a href="#empty-vpc-vnet-or-vpc-network">Empty VPC, VNet, or VPC Network</a> above.</li>
+<li>Direct Connect gateways and internet gateways (AWS), and Route Servers
+  (Azure), are Tier B (0.5 CCU). ExpressRoute gateways and ExpressRoute-type Virtual Network
+  gateways (Azure) are Tier C (0 CCU).</li>
+</ul>
 <h3 id="release-810">Release <code>8.1.0</code></h3>
 <p>Starting from version <code>8.1.0</code>, licenses can use the new CCU cloud licensing
 strategy instead of counting cloud constructs against the on-premises device
 limit. See <a href="#cloud-licensing">Cloud Licensing</a> above.
-Licenses without a CCU limit continue to use the devices strategy.</p>
+Device-based licenses – including all licenses issued before <code>8.1.0</code> –
+continue to count cloud constructs against the device limit.</p>
 <h3 id="release-7316">Release <code>7.3.16</code></h3>
 <p>Starting from version <code>7.3.16</code>, when Aruba Instant Access Points (IAPs) are already managed by Aruba Central, discovering their Virtual Controller (VC) will no longer consume a license.</p>
 <h2 id="expired-license">Expired License</h2>
@@ -17418,7 +17561,7 @@ being accessible – see <a href="#add-on-licenses">Add-on Licenses</a>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2026 22:32:52 UTC">September 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 7, 2026 14:11:02 UTC">October 7, 2026</span>
   </span>
 
     
