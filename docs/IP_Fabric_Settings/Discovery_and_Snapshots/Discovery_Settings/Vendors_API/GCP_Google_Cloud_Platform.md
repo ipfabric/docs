@@ -128,6 +128,13 @@ More APIs are required for IP Fabric version 8.1 and above:
    compute.regionNetworkEndpointGroups.get
    ```
 
+   IP Fabric version 8.2 and above requires these extra roles:
+
+   ```
+   compute.disks.list
+   compute.images.get
+   ```
+
    ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
 
 ## How To Generate a Private Key for Your GCP Service Account
