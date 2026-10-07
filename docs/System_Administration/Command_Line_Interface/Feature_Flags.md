@@ -316,7 +316,7 @@ VMware NSX-T data is no longer included in the cloud endpoints tables (`/technol
 
 #### Enabling the Feature Flag
 
-To enable the new cloud model, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+To enable the New Cloud Model, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
 ```
 ENABLE_NEW_CLOUD_MODEL=true
@@ -330,7 +330,7 @@ sudo systemctl restart ipf-appliance
 
 !!! warning
 
-    The new cloud model uses new database tables. Snapshots taken without this feature flag enabled (using the old model) are not compatible with the new model. If you load an old snapshot after enabling this feature flag, some data may be missing or incomplete, as the old snapshot data cannot be mapped to the new table structure.
+    The New Cloud Model uses new database tables. Snapshots taken without this feature flag enabled are not compatible with the new model. If you load an old snapshot after enabling this feature flag, some data may be missing or incomplete. The old snapshot data cannot be mapped to the new table structure.
 
 
 ### Fast Discovery for Cisco Wireless LAN Controllers

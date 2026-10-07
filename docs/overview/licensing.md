@@ -57,8 +57,10 @@ Two principles govern this page:
   tables below, it is **not yet discovered or supported** -- it is _not_ a
   silent "free" object. The moment we begin discovering a new construct, we
   decide its tier and add it here.
-- **Non-billable (0 CCU) constructs are listed explicitly.** We do not leave
-  the non-billable constructs implicit.
+- **Non-billable (0 CCU) constructs are listed explicitly.** Standalone objects
+  are listed per provider, grouped. The parts, links, and labels that belong to
+  other objects are covered by one general rule -- see
+  [Never Billed Separately](#never-billed-separately-all-providers).
 
 !!! info "Why CCUs instead of one license per object?"
 
@@ -69,6 +71,25 @@ Two principles govern this page:
     the customers who adopt cloud-native, elastic, infrastructure-as-code
     patterns. The tiered CCU model keeps licensing proportional to network
     _function_, not object count.
+
+### How Your License Counts Cloud Objects
+
+Your license type determines how these tiers apply:
+
+| License                    | Tier A Object    | Tier B Object    | Tier C Object |
+| -------------------------- | ---------------- | ---------------- | ------------- |
+| **Cloud (CCU) license**    | 1 CCU            | 0.5 CCU          | 0 CCU         |
+| **Device-based license**   | 1 device license | 1 device license | None          |
+
+- **Cloud (CCU) license:** cloud objects never consume device licenses. The
+  device limit applies to on-premises devices only.
+- **Device-based license** (all licenses issued before version `8.1.0`, and
+  licenses without cloud licensing): every Tier A or Tier B cloud object
+  consumes one full device license, including Tier B objects. Tier C objects
+  consume nothing.
+- A snapshot is counted under the license that was active when it was
+  discovered. Changing your license applies to snapshots discovered after the
+  change; existing snapshots keep the licensing they were discovered with.
 
 ### Tier Definitions
 
@@ -112,9 +133,28 @@ Three groups exist:
   sets, tags.
 - **Connectors and link representations** -- provided the parent construct they
   attach to is already Tier A or Tier B. This avoids double-charging the same
-  connectivity. For example, Transit Gateway attachments and VPC peerings.
+  connectivity. For example, VPC peerings, or an ExpressRoute gateway
+  connecting a VNet to its (billed) ExpressRoute circuit.
 - **Objects with no influence on traffic** -- hosts and compute such as virtual
   machines and EC2 instances.
+
+#### Never Billed Separately (All Providers)
+
+These are discovered and shown, but they are not constructs in their own right,
+so they never consume a license:
+
+- **Parts of another object** -- routes and route entries, address ranges and
+  CIDR blocks, NAT rules, peering prefixes, the entries of an address list, the
+  rules inside a security group, and the connections of a private-link service.
+  They are covered by their parent object.
+- **Links between objects** -- attachments and associations, for example
+  subnet to route table, NAT gateway to subnet, network interface to security
+  group, Transit Gateway and other gateway attachments, and tag assignments.
+- **Labels and organizational context** -- tags and labels, accounts,
+  subscriptions, projects, resource groups, and regions.
+
+An object that IP Fabric shows in several places (inventory, topology, path
+lookup) is counted once.
 
 ### What Counts Against a License, by Provider
 
@@ -126,86 +166,74 @@ billed.
 
 Billed:
 
-| AWS Networking Object  | Object Code | Tier | CCU |
-| ---------------------- | ----------- | ---- | --- |
-| VPC                    | `vpc`       | A    | 1   |
-| Transit gateway        | `tgw`       | A    | 1   |
-| Direct Connect gateway | `dxgw`      | A    | 1   |
-| VPN gateway            | `vgw`       | A    | 1   |
-| Core Network Edge      | `cne`       | A    | 1   |
-| Internet gateway       | `igw`       | B    | 0.5 |
-| Elastic Load Balancer  | `elb`       | B    | 0.5 |
-| NAT gateway            | `nat`       | B    | 0.5 |
+| AWS Networking Object                                      | Object Code | Tier | CCU |
+| ---------------------------------------------------------- | ----------- | ---- | --- |
+| VPC (see [Empty VPC](#empty-vpc-vnet-or-vpc-network))      | `vpc`       | A    | 1   |
+| Transit gateway                                            | `tgw`       | A    | 1   |
+| VPN gateway                                                | `vgw`       | A    | 1   |
+| Core Network Edge                                          | `cne`       | A    | 1   |
+| Direct Connect gateway                                     | `dxgw`      | B    | 0.5 |
+| Internet gateway                                           | `igw`       | B    | 0.5 |
+| Elastic Load Balancer                                      | `elb`       | B    | 0.5 |
+| NAT gateway                                                | `nat`       | B    | 0.5 |
 
 Not billed (Tier C, 0 CCU):
 
-| AWS Object                                |
-| ----------------------------------------- |
-| Transit gateway attachment                |
-| VPC peering and connections               |
-| VPC endpoint                              |
-| EC2 instances, ENIs, Elastic IPs          |
-| Route tables and individual route entries |
-| Security group rule counts                |
-| Tags and metadata                         |
-
-VPC endpoints are discovered as devices, under the object code `vpce`, and are
-priced explicitly at 0 CCU.
+| Group                   | AWS Objects                                                                                     | Object Code           |
+| ----------------------- | ----------------------------------------------------------------------------------------------- | --------------------- |
+| Networks and addressing | Subnets, Elastic IPs (public IP addresses), managed prefix lists                                | --                    |
+| Connectivity            | VPC peering connections; VPC endpoints (gateway type, and interface or Gateway Load Balancer type) | `vpce` (gateway type) |
+| Routing and security    | Route tables, security groups                                                                   | --                    |
+| Compute                 | EC2 instances, Elastic Network Interfaces (ENIs), Auto Scaling groups                           | --                    |
 
 #### Azure
 
 Billed:
 
-| Azure Networking Object             | Object Code    | Tier | CCU |
-| ----------------------------------- | -------------- | ---- | --- |
-| Virtual Network                     | `vnet`         | A    | 1   |
-| Azure Firewall                      | `azfw`         | A    | 1   |
-| Route Server                        | `ars`          | A    | 1   |
-| Virtual HUB                         | `vhub`         | A    | 1   |
-| Virtual Network gateway             | `vngw`         | A    | 1   |
-| VPN gateway                         | `vpngw`        | A    | 1   |
-| Express Route Circuit               | `erc`          | A    | 1   |
-| Load Balancer / Application Gateway | `lb` / `appgw` | B    | 0.5 |
-| NAT gateway                         | `nat`          | B    | 0.5 |
+| Azure Networking Object                                         | Object Code    | Tier | CCU |
+| --------------------------------------------------------------- | -------------- | ---- | --- |
+| Virtual Network (see [Empty VNet](#empty-vpc-vnet-or-vpc-network)) | `vnet`      | A    | 1   |
+| Azure Firewall                                                  | `azfw`         | A    | 1   |
+| Virtual HUB                                                     | `vhub`         | A    | 1   |
+| Virtual Network gateway, VPN or Local Gateway type              | `vngw`         | A    | 1   |
+| VPN gateway                                                     | `vpngw`        | A    | 1   |
+| ExpressRoute circuit                                            | `erc`          | A    | 1   |
+| Route Server                                                    | `ars`          | B    | 0.5 |
+| Load Balancer / Application Gateway                             | `lb` / `appgw` | B    | 0.5 |
+| NAT gateway                                                     | `nat`          | B    | 0.5 |
 
 Not billed (Tier C, 0 CCU):
 
-| Azure Object              |
-| ------------------------- |
-| Express Route gateway     |
-| VNet peering              |
-| Route tables and UDRs     |
-| Virtual machines and NICs |
-| Public IP objects         |
-| NSG rules                 |
-| Resource groups           |
-
-Express Route gateways are discovered as devices, under the object code `erg`,
-but are not assigned a CCU cost.
+| Group                                     | Azure Objects                                                                                                | Object Code     |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------- |
+| Gateways to a billed ExpressRoute circuit | ExpressRoute gateway (vWAN construct); Virtual Network gateway of ExpressRoute type (VNet construct)          | `erg`, `vngw`   |
+| Networks and addressing                   | Subnets, public IP addresses and prefixes, application security groups, service tags                         | --              |
+| Connectivity                              | VNet peerings, private endpoints, Private Link services                                                      | --              |
+| Routing and security                      | Route tables (User-Defined Routes, UDRs), Network Security Groups (NSG)                                      | --              |
+| Compute                                   | Virtual machines, network interfaces, Virtual Machine Scale Sets                                             | --              |
 
 #### GCP
 
 Billed:
 
-| GCP Networking Object | Object Code | Tier | CCU |
-| --------------------- | ----------- | ---- | --- |
-| VPC                   | `vpc`       | A    | 1   |
-| (Cloud) Router        | `router`    | A    | 1   |
-| VPN gateway           | `vpngw`     | A    | 1   |
-| Load Balancer         | `lb`        | B    | 0.5 |
+| GCP Networking Object                                        | Object Code | Tier | CCU |
+| ------------------------------------------------------------ | ----------- | ---- | --- |
+| VPC (see [Empty VPC Network](#empty-vpc-vnet-or-vpc-network)) | `vpc`      | A    | 1   |
+| Cloud Router                                                 | `router`    | A    | 1   |
+| VPN gateway (HA and Classic)                                 | `vpngw`     | A    | 1   |
+| Load Balancer                                                | `lb`        | B    | 0.5 |
+
+Cloud NAT is configured on a Cloud Router and is currently covered by that
+router; it is not billed separately.
 
 Not billed (Tier C, 0 CCU):
 
-| GCP Object                |
-| ------------------------- |
-| Cloud NAT                 |
-| Virtual machines and NICs |
-| Route tables and entries  |
-| Firewall rule counts      |
-| Labels and metadata       |
-
-Cloud NAT is discovered as a device, under the object code `nats`, but is not
-assigned a CCU cost.
+| Group                   | GCP Objects                                                                                   | Object Code |
+| ----------------------- | --------------------------------------------------------------------------------------------- | ----------- |
+| Networks and addressing | Subnets, external (public) IP addresses, address groups                                       | --          |
+| Connectivity            | VPC peerings, Private Service Connect endpoints and services                                  | --          |
+| Routing and security    | Routes, firewall rules and firewall policies                                                  | --          |
+| Compute                 | VM instances, network interfaces, instance groups and network endpoint groups                 | --          |
 
 ### Consistency Across Providers
 
@@ -218,29 +246,30 @@ to special-case a single cloud.
 
 ### Empty VPC, VNet, or VPC Network
 
-!!! warning "Planned, not yet in effect"
+!!! info "In effect from version `8.2.0`"
 
-    This behavior is not active in release `8.1`. In `8.1`, an empty VPC or
-    VNet is still discovered and still consumes its CCU. The rules below
-    describe the intended future behavior once implemented.
+    In version `8.1`, an empty VPC or VNet is still discovered and still
+    consumes its CCU.
 
-The intent is that a VPC, VNet, or VPC Network with **no active participation
-in the topology** will be classified as **empty** and billed at **0 CCU**, even
-though a populated VPC or VNet is Tier A. It will remain discovered and
-visible; it just will not bill.
+A VPC, VNet, or VPC Network with **no active participation in the topology** is
+classified as **empty** and billed at **0 CCU** (Tier C). It remains discovered
+and visible; it just does not bill. Under a device-based license, it does not
+consume a device license either.
 
 IP Fabric treats a construct as **non-empty** (and bills it at its normal CCU) if
 any of these signals are present:
 
-| Signal                                          | AWS                                         | Azure                                                  | GCP                                                                |
-| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------ |
-| Active route table beyond default/system routes | Route table with custom routes              | UDR with custom routes                                 | Custom routes in a routing table                                   |
-| Attached gateway                                | IGW, NAT GW, VGW, TGW attachment, CNE, DXGW | ExpressRoute GW, VPN GW, Azure Firewall                | Cloud Router with peer, Cloud NAT, VPN GW, Interconnect attachment |
-| Active peering with route propagation           | VPC peering                                 | VNet peering                                           | VPC peering                                                        |
-| Compute resources deployed                      | Instance                                    | Virtual machine                                        | Instance                                                           |
-| Service connectivity                            | Private Link service or endpoint            | Subnet with service delegation / private endpoint, DNS | Private Service Connect endpoint or service                        |
+| Signal                             | AWS                                                                                                                                  | Azure                                                                                       | GCP                                                                                      |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Route beyond default/system routes | Route table with custom routes (anything other than the local route or the plain default route to the VPC's internet gateway)       | A route table associated with a subnet                                                      | Custom routes (excluding the default route, peering-learned routes, and subnet routes)   |
+| Attached gateway                   | NAT gateway, VPN gateway, Transit Gateway attachment, Core Network Edge, Direct Connect gateway; internet gateway (except the one AWS attaches to the default VPC) | ExpressRoute gateway, VPN gateway, Azure Firewall, Route Server, NAT gateway on a subnet   | Cloud Router with Cloud NAT, an Interconnect attachment, or a BGP peer; VPN gateway (HA or Classic) |
+| Active peering                     | VPC peering                                                                                                                          | Connected VNet peering                                                                      | Active VPC peering                                                                       |
+| Compute or load balancing deployed | Instance; any managed network interface (load balancer, NAT gateway, Lambda, endpoint, Transit Gateway attachment). An unattached plain network interface does not count | Virtual machine, load balancer, Application Gateway                                         | Instance, load-balancer forwarding rule                                                  |
+| Service connectivity               | Private Link service or endpoint                                                                                                     | Subnet with service delegation, private endpoint, or Private Link service; DNS linkage      | Private Service Connect endpoint or service; Serverless VPC Access connector             |
 
-If none of these is detected, the construct is empty and excluded from billing.
+!!! info
+
+    If none of these is detected, the construct is empty and excluded from billing.
 
 ## NSX-T
 
@@ -314,12 +343,21 @@ carrying the link and contact details above. See
 
 ## Changes
 
+### Release `8.2.0`
+
+- An empty VPC, VNet, or VPC Network is billed at 0 CCU (Tier C). See
+  [Empty VPC, VNet, or VPC Network](#empty-vpc-vnet-or-vpc-network) above.
+- Direct Connect gateways and internet gateways (AWS), and Route Servers
+  (Azure), are Tier B (0.5 CCU). ExpressRoute gateways and ExpressRoute-type Virtual Network
+  gateways (Azure) are Tier C (0 CCU).
+
 ### Release `8.1.0`
 
 Starting from version `8.1.0`, licenses can use the new CCU cloud licensing
 strategy instead of counting cloud constructs against the on-premises device
 limit. See [Cloud Licensing](#cloud-licensing) above.
-Licenses without a CCU limit continue to use the devices strategy.
+Device-based licenses -- including all licenses issued before `8.1.0` --
+continue to count cloud constructs against the device limit.
 
 ### Release `7.3.16`
 
