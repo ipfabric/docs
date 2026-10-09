@@ -6800,6 +6800,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-python-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Python SDK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#verify-the-import" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16351,6 +16362,17 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-python-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Python SDK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#verify-the-import" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16453,15 +16475,18 @@ default. To enable labels, set the <code>ENABLE_LABELS</code> feature flag. See
 passed in the <code>X-API-Token</code> header. The user owning the token must have access
 to <strong>Settings</strong>. See <a href="../../../IP_Fabric_API/authentication/">API Authentication</a>
 for other authentication methods.</p>
+<p>API URLs do not include a version. The <code>X-API-Version</code> header is optional.
+Use it only to pin a specific endpoint version. See
+<a href="../../../IP_Fabric_API/versioning/">Versioning</a>.</p>
 <h2 id="step-1-import-the-label-catalog">Step 1: Import the Label Catalog</h2>
 <p>Send one <code>POST /labels</code> request per label name:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/labels'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
---data-raw<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">  "name": "region",</span>
-<span class="s1">  "values": ["EMEA", "APAC", "US"]</span>
-<span class="s1">}'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/labels'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "name": "region",</span>
+<span class="s1">    "values": ["EMEA", "APAC", "US"]</span>
+<span class="s1">  }'</span>
 </code></pre></div>
 <table>
 <thead>
@@ -16497,8 +16522,8 @@ for other authentication methods.</p>
 </code></pre></div>
 <p><code>POST /labels</code> identifies catalog entries by <code>name</code>. When an entry with the same name already exists, the call replaces its <code>values</code> with the list you send and keeps the same <code>id</code>. It does not merge the two lists, so you can run the same import again safely. Always send the full list of values for each label.</p>
 <p>To check the imported catalog, list all entries with <code>GET /labels</code>:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/labels'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/labels'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span>
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -16509,23 +16534,23 @@ in the catalog.</p>
 <h2 id="step-2-import-label-assignments">Step 2: Import Label Assignments</h2>
 <p>IP Fabric makes label assignments in a specific snapshot. First, find the ID of a loaded snapshot — the latest one — with <code>GET /snapshots</code>. The <code>snapshotId</code> field must be a snapshot UUID; <code>$last</code> is not accepted.</p>
 <p>Then assign labels with <code>POST /labels/assignments</code>. A single call can assign several labels to many devices and interfaces at once:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/labels/assignments'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
---data-raw<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">  "snapshotId": "&lt;SNAPSHOT_ID&gt;",</span>
-<span class="s1">  "labels": [</span>
-<span class="s1">    { "name": "region", "value": "EMEA" },</span>
-<span class="s1">    { "name": "pci" }</span>
-<span class="s1">  ],</span>
-<span class="s1">  "targets": [</span>
-<span class="s1">    { "type": "device", "sn": "&lt;DEVICE_SN_1&gt;" },</span>
-<span class="s1">    { "type": "device", "sn": "&lt;DEVICE_SN_2&gt;" },</span>
-<span class="s1">    { "type": "intL2", "sn": "&lt;DEVICE_SN_3&gt;", "interfaceName": "Gi1/0/1" }</span>
-<span class="s1">  ],</span>
-<span class="s1">  "inherit": false,</span>
-<span class="s1">  "reflectToRules": true</span>
-<span class="s1">}'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/labels/assignments'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "snapshotId": "&lt;SNAPSHOT_ID&gt;",</span>
+<span class="s1">    "labels": [</span>
+<span class="s1">      { "name": "region", "value": "EMEA" },</span>
+<span class="s1">      { "name": "pci" }</span>
+<span class="s1">    ],</span>
+<span class="s1">    "targets": [</span>
+<span class="s1">      { "type": "device", "sn": "&lt;DEVICE_SN_1&gt;" },</span>
+<span class="s1">      { "type": "device", "sn": "&lt;DEVICE_SN_2&gt;" },</span>
+<span class="s1">      { "type": "intL2", "sn": "&lt;DEVICE_SN_3&gt;", "interfaceName": "Gi1/0/1" }</span>
+<span class="s1">    ],</span>
+<span class="s1">    "inherit": false,</span>
+<span class="s1">    "reflectToRules": true</span>
+<span class="s1">  }'</span>
 </code></pre></div>
 <table>
 <thead>
@@ -16583,27 +16608,69 @@ with <code>GET /labels/assignment-targets?search=&lt;TERM&gt;</code>.</p>
 <h3 id="removing-assignments">Removing Assignments</h3>
 <p>To remove labels, send the same body to <code>POST /labels/assignments/unassign</code>.
 Set <code>"reflectToRules": true</code> to also remove the labels from future snapshots:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/labels/assignments/unassign'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
---data-raw<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">  "snapshotId": "&lt;SNAPSHOT_ID&gt;",</span>
-<span class="s1">  "labels": [{ "name": "region", "value": "EMEA" }],</span>
-<span class="s1">  "targets": [{ "type": "device", "sn": "&lt;DEVICE_SN_1&gt;" }],</span>
-<span class="s1">  "reflectToRules": true</span>
-<span class="s1">}'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/labels/assignments/unassign'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "snapshotId": "&lt;SNAPSHOT_ID&gt;",</span>
+<span class="s1">    "labels": [{ "name": "region", "value": "EMEA" }],</span>
+<span class="s1">    "targets": [{ "type": "device", "sn": "&lt;DEVICE_SN_1&gt;" }],</span>
+<span class="s1">    "reflectToRules": true</span>
+<span class="s1">  }'</span>
 </code></pre></div>
+<h2 id="using-the-python-sdk">Using the Python SDK</h2>
+<p>Run the same import with the
+<a href="../../../integrations/python/">IP Fabric Python SDK</a> (<code>ipfabric</code>
+package). Label methods are available under <code>IPFClient().settings.labels</code> from
+<code>ipfabric</code> <code>8.1.0</code>. To install the pre-release version, run <code>pip install --pre ipfabric</code>.</p>
+<!-- TODO(SDK): Replace the two `ipf.post()` calls with `labels.assign_labels()` / `labels.unassign_labels()` once they handle the `204 No Content` response (they currently raise `JSONDecodeError` after a successful call). -->
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ipfabric</span><span class="w"> </span><span class="kn">import</span> <span class="n">IPFClient</span>
+
+<span class="n">ipf</span> <span class="o">=</span> <span class="n">IPFClient</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="s2">"https://&lt;FQDN&gt;"</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="s2">"&lt;YOUR_API_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">ipf</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">labels</span>
+
+<span class="c1"># Step 1: Import the label catalog -- one call per label name</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">create_label</span><span class="p">(</span><span class="s2">"region"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"EMEA"</span><span class="p">,</span> <span class="s2">"APAC"</span><span class="p">,</span> <span class="s2">"US"</span><span class="p">])</span>
+
+<span class="c1"># Optional: find targets by hostname, serial number, or interface name</span>
+<span class="n">targets</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">search_assignment_targets</span><span class="p">(</span><span class="s2">"&lt;TERM&gt;"</span><span class="p">)</span>
+
+<span class="c1"># Step 2: Import label assignments in the latest loaded snapshot</span>
+<span class="c1"># `ipf.snapshot_id` is the snapshot UUID; the API does not accept `$last`</span>
+<span class="n">ipf</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">"labels/assignments"</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"snapshotId"</span><span class="p">:</span> <span class="n">ipf</span><span class="o">.</span><span class="n">snapshot_id</span><span class="p">,</span>
+        <span class="s2">"labels"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"region"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"EMEA"</span><span class="p">},</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"pci"</span><span class="p">}],</span>
+        <span class="s2">"targets"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"device"</span><span class="p">,</span> <span class="s2">"sn"</span><span class="p">:</span> <span class="s2">"&lt;DEVICE_SN_1&gt;"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"intL2"</span><span class="p">,</span> <span class="s2">"sn"</span><span class="p">:</span> <span class="s2">"&lt;DEVICE_SN_3&gt;"</span><span class="p">,</span> <span class="s2">"interfaceName"</span><span class="p">:</span> <span class="s2">"Gi1/0/1"</span><span class="p">},</span>
+        <span class="p">],</span>
+        <span class="s2">"inherit"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"reflectToRules"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+<span class="c1"># Verify the import</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">assignments</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"hostname"</span><span class="p">,</span> <span class="s2">"target"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">,</span> <span class="s2">"assignment"</span><span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><code>labels.assignments</code> is the <code>tables/labels</code> table. <code>all()</code> handles pagination
+and uses the client’s current snapshot. To remove assignments, send the same
+body to <code>labels/assignments/unassign</code> using <code>ipf.post()</code>.</p>
 <h2 id="verify-the-import">Verify the Import</h2>
 <p>List every label assignment in the snapshot with <code>POST /tables/labels</code>:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/&lt;API_VERSION&gt;/tables/labels'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
---data-raw<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">  "columns": ["type", "hostname", "target", "label", "assignment"],</span>
-<span class="s1">  "filters": {},</span>
-<span class="s1">  "snapshot": "&lt;SNAPSHOT_ID&gt;",</span>
-<span class="s1">  "pagination": { "limit": 100, "start": 0 }</span>
-<span class="s1">}'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://&lt;FQDN&gt;/api/tables/labels'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: &lt;YOUR_API_TOKEN&gt;'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "columns": ["type", "hostname", "target", "label", "assignment"],</span>
+<span class="s1">    "filters": {},</span>
+<span class="s1">    "snapshot": "&lt;SNAPSHOT_ID&gt;",</span>
+<span class="s1">    "pagination": { "limit": 100, "start": 0 }</span>
+<span class="s1">  }'</span>
 </code></pre></div>
 <p>Each row has the target type (<code>device</code> or <code>intL2</code>), the hostname, the target, the label, and the assignment source (<code>manual</code>, <code>auto</code>, or <code>inherited</code>). Imported assignments have the source <code>manual</code>.</p>
 <p>You can also check the result in the GUI, in <strong>Settings → Discovery &amp;
@@ -16628,7 +16695,7 @@ Snapshots → Discovery Data Enrichment → Assigned labels</strong>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 30, 2026 08:26:03 UTC">September 30, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2026 10:49:05 UTC">October 9, 2026</span>
   </span>
 
     
