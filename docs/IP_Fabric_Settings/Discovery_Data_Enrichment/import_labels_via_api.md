@@ -18,18 +18,22 @@ passed in the `X-API-Token` header. The user owning the token must have access
 to **Settings**. See [API Authentication](../../IP_Fabric_API/authentication.md)
 for other authentication methods.
 
+API URLs do not include a version. The `X-API-Version` header is optional.
+Use it only to pin a specific endpoint version. See
+[Versioning](../../IP_Fabric_API/versioning.md).
+
 ## Step 1: Import the Label Catalog
 
 Send one `POST /labels` request per label name:
 
 ```shell
-curl --location --request POST 'https://<FQDN>/api/<API_VERSION>/labels' \
---header 'Content-Type: application/json' \
---header 'X-API-Token: <YOUR_API_TOKEN>' \
---data-raw '{
-  "name": "region",
-  "values": ["EMEA", "APAC", "US"]
-}'
+curl -X POST 'https://<FQDN>/api/labels' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-Token: <YOUR_API_TOKEN>' \
+  -d '{
+    "name": "region",
+    "values": ["EMEA", "APAC", "US"]
+  }'
 ```
 
 | Field    | Required | Description                                                                                             |
@@ -56,8 +60,8 @@ The response (`201 Created`) has the catalog entry, including its `id`:
 To check the imported catalog, list all entries with `GET /labels`:
 
 ```shell
-curl --location --request GET 'https://<FQDN>/api/<API_VERSION>/labels' \
---header 'X-API-Token: <YOUR_API_TOKEN>'
+curl 'https://<FQDN>/api/labels' \
+  --header 'X-API-Token: <YOUR_API_TOKEN>'
 ```
 
 !!! info
@@ -73,23 +77,23 @@ IP Fabric makes label assignments in a specific snapshot. First, find the ID of 
 Then assign labels with `POST /labels/assignments`. A single call can assign several labels to many devices and interfaces at once:
 
 ```shell
-curl --location --request POST 'https://<FQDN>/api/<API_VERSION>/labels/assignments' \
---header 'Content-Type: application/json' \
---header 'X-API-Token: <YOUR_API_TOKEN>' \
---data-raw '{
-  "snapshotId": "<SNAPSHOT_ID>",
-  "labels": [
-    { "name": "region", "value": "EMEA" },
-    { "name": "pci" }
-  ],
-  "targets": [
-    { "type": "device", "sn": "<DEVICE_SN_1>" },
-    { "type": "device", "sn": "<DEVICE_SN_2>" },
-    { "type": "intL2", "sn": "<DEVICE_SN_3>", "interfaceName": "Gi1/0/1" }
-  ],
-  "inherit": false,
-  "reflectToRules": true
-}'
+curl -X POST 'https://<FQDN>/api/labels/assignments' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-Token: <YOUR_API_TOKEN>' \
+  -d '{
+    "snapshotId": "<SNAPSHOT_ID>",
+    "labels": [
+      { "name": "region", "value": "EMEA" },
+      { "name": "pci" }
+    ],
+    "targets": [
+      { "type": "device", "sn": "<DEVICE_SN_1>" },
+      { "type": "device", "sn": "<DEVICE_SN_2>" },
+      { "type": "intL2", "sn": "<DEVICE_SN_3>", "interfaceName": "Gi1/0/1" }
+    ],
+    "inherit": false,
+    "reflectToRules": true
+  }'
 ```
 
 | Field            | Required | Description                                                                                                                                                                                                                       |
@@ -126,31 +130,78 @@ To remove labels, send the same body to `POST /labels/assignments/unassign`.
 Set `"reflectToRules": true` to also remove the labels from future snapshots:
 
 ```shell
-curl --location --request POST 'https://<FQDN>/api/<API_VERSION>/labels/assignments/unassign' \
---header 'Content-Type: application/json' \
---header 'X-API-Token: <YOUR_API_TOKEN>' \
---data-raw '{
-  "snapshotId": "<SNAPSHOT_ID>",
-  "labels": [{ "name": "region", "value": "EMEA" }],
-  "targets": [{ "type": "device", "sn": "<DEVICE_SN_1>" }],
-  "reflectToRules": true
-}'
+curl -X POST 'https://<FQDN>/api/labels/assignments/unassign' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-Token: <YOUR_API_TOKEN>' \
+  -d '{
+    "snapshotId": "<SNAPSHOT_ID>",
+    "labels": [{ "name": "region", "value": "EMEA" }],
+    "targets": [{ "type": "device", "sn": "<DEVICE_SN_1>" }],
+    "reflectToRules": true
+  }'
 ```
+
+## Using the Python SDK
+
+Run the same import with the
+[IP Fabric Python SDK](../../integrations/python/index.md) (`ipfabric`
+package). Label methods are available under `IPFClient().settings.labels` from
+`ipfabric` `8.1.0`. To install the pre-release version, run `pip install --pre ipfabric`.
+
+<!-- TODO(SDK): Replace the two `ipf.post()` calls with `labels.assign_labels()` / `labels.unassign_labels()` once they handle the `204 No Content` response (they currently raise `JSONDecodeError` after a successful call). -->
+
+```python
+from ipfabric import IPFClient
+
+ipf = IPFClient(base_url="https://<FQDN>", auth="<YOUR_API_TOKEN>")
+labels = ipf.settings.labels
+
+# Step 1: Import the label catalog -- one call per label name
+labels.create_label("region", ["EMEA", "APAC", "US"])
+
+# Optional: find targets by hostname, serial number, or interface name
+targets = labels.search_assignment_targets("<TERM>")
+
+# Step 2: Import label assignments in the latest loaded snapshot
+# `ipf.snapshot_id` is the snapshot UUID; the API does not accept `$last`
+ipf.post(
+    "labels/assignments",
+    json={
+        "snapshotId": ipf.snapshot_id,
+        "labels": [{"name": "region", "value": "EMEA"}, {"name": "pci"}],
+        "targets": [
+            {"type": "device", "sn": "<DEVICE_SN_1>"},
+            {"type": "intL2", "sn": "<DEVICE_SN_3>", "interfaceName": "Gi1/0/1"},
+        ],
+        "inherit": False,
+        "reflectToRules": True,
+    },
+).raise_for_status()
+
+# Verify the import
+rows = labels.assignments.all(
+    columns=["type", "hostname", "target", "label", "assignment"],
+)
+```
+
+`labels.assignments` is the `tables/labels` table. `all()` handles pagination
+and uses the client's current snapshot. To remove assignments, send the same
+body to `labels/assignments/unassign` using `ipf.post()`.
 
 ## Verify the Import
 
 List every label assignment in the snapshot with `POST /tables/labels`:
 
 ```shell
-curl --location --request POST 'https://<FQDN>/api/<API_VERSION>/tables/labels' \
---header 'Content-Type: application/json' \
---header 'X-API-Token: <YOUR_API_TOKEN>' \
---data-raw '{
-  "columns": ["type", "hostname", "target", "label", "assignment"],
-  "filters": {},
-  "snapshot": "<SNAPSHOT_ID>",
-  "pagination": { "limit": 100, "start": 0 }
-}'
+curl -X POST 'https://<FQDN>/api/tables/labels' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-Token: <YOUR_API_TOKEN>' \
+  -d '{
+    "columns": ["type", "hostname", "target", "label", "assignment"],
+    "filters": {},
+    "snapshot": "<SNAPSHOT_ID>",
+    "pagination": { "limit": 100, "start": 0 }
+  }'
 ```
 
 Each row has the target type (`device` or `intL2`), the hostname, the target, the label, and the assignment source (`manual`, `auto`, or `inherited`). Imported assignments have the source `manual`.
