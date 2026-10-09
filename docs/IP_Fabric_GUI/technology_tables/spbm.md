@@ -84,6 +84,23 @@ Path lookup resolves each hop from the collected SPBM data:
 
 The topology view labels backbone links with the I-SID and access links with the customer VLAN. This makes the boundary between the customer service and the backbone visible in the diagram.
 
+### Fabric Edge Without STP
+
+IP Fabric mainly uses STP to discover Layer 2 forwarding between switches. On a **Switched UNI (S-UNI)** port, the BEB maps customer VLANs to an I-SID. STP does not run between the BEB and the neighboring Ethernet switch.
+
+Since version `8.2`, IP Fabric closes this gap with a dedicated fabric-edge relation. It creates the relation when:
+
+- LLDP connects a BEB port to a port on a standard Ethernet switch.
+- The BEB port is an S-UNI port with a configured I-SID.
+- The VLAN matches on both sides.
+
+The relation covers physical ports and MLT aggregates. Path lookup uses it to cross from the Ethernet network into the SPBM fabric and back out.
+
+!!! info "LLDP Required"
+
+    LLDP must be enabled on the S-UNI ports. Without an LLDP neighbor, IP Fabric
+    cannot create the fabric-edge relation.
+
 ## Vendor Support
 
 SPBM data collection is currently supported on the following platforms:
