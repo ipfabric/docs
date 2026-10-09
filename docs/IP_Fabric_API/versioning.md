@@ -18,7 +18,7 @@ It contains an integer value and this header should be provided for any request.
 curl --request GET \
      --url https://your_ipf_instance/api/snapshots \
      --header "Accept: application/json" \
-     --header "X‑API‑Version: 1"
+     --header "X-API-Version: 1"
 ```
 
 **Default Behavior:**
