@@ -180,6 +180,16 @@ IP Fabric currently collects EoL information on the following Vendors:
 - F5
 - Fortinet
 - HP/H3C/3COM
+- Huawei
 - Juniper
 - Palo Alto
 - Riverbed
+
+!!! info "Huawei End of Life Milestones"
+
+    Huawei publishes lifecycle dates per orderable model, for example
+    `S5720-28X-SI-AC`. In the EoL reports, **End of Sale** is Huawei's End of
+    Marketing (EOM) date. **End of Support** is Huawei's End of Service and
+    Support (EOS) date. Huawei does not publish an End of Maintenance date for
+    hardware, so that column stays empty. Only models with an announced end of
+    life are listed.
