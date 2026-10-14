@@ -402,6 +402,22 @@ sudo systemctl restart ipf-appliance
 
 Without this flag, **Discovery Data Enrichment** does not appear in the **Settings** menu. Labels are not calculated after discovery. The **Labels** columns in tables and in the API remain empty.
 
+### Avocent ACS Discovery
+
+Since `8.2`, you can discover Avocent ACS console servers. Add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_AVOCENT=true
+```
+
+After updating the environment file, run the following command to restart IP Fabric:
+
+```
+sudo systemctl restart ipf-appliance
+```
+
+Without this flag, IP Fabric does not send the Avocent version command during discovery. Discovery does not identify or discover ACS devices.
+
 ## Deprecated Feature Flags
 
 ### ACI `fvTenant` API Endpoint (Removed in `7.5`)
