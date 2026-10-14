@@ -1,5 +1,5 @@
 ---
-description: User guide for working with IP Fabric Application Infrastructure Mapping (AIM) data through the IP Fabric MCP Server -- list imported applications, trigger path-lookup calculations on demand, and read the resulting network devices from an AI assistant.
+description: User guide for working with IP Fabric Application Infrastructure Mapping (AIM) data through the IP Fabric MCP Server -- import application data, list imported applications, trigger path-lookup calculations on demand, and read the resulting network devices from an AI assistant.
 ---
 
 # Using AIM Through the MCP Server
@@ -7,9 +7,9 @@ description: User guide for working with IP Fabric Application Infrastructure Ma
 --8<-- "snippets/aim_license_required.md"
 
 The [IP Fabric MCP Server](../../IP_Fabric_Settings/integration/mcp.md) lets an AI
-assistant work with your AIM data conversationally: check whether an import
-finished, list the imported applications and flows, trigger a path-lookup
-calculation, and read back the network devices a flow traverses.
+assistant work with your AIM data conversationally: import the data, check whether
+the import finished, list the imported applications and flows, trigger a
+path-lookup calculation, and read back the network devices a flow traverses.
 
 This page assumes the MCP server is already enabled and connected to your AI
 client. For enabling the server, generating an API token, and configuring Claude
@@ -33,9 +33,10 @@ three generic API discovery tools, which expose the whole IP Fabric API:
 
 Applied to AIM, this yields the following capability matrix:
 
-| Task                                        | Endpoint                                        | Through MCP  |
-| :------------------------------------------ | :---------------------------------------------- | :----------- |
-| Import AIM data from CSV files              | `POST /aim/import/{snapshotId}`                 | **No** -- see below |
+| Task                                         | Endpoint                                        | Through MCP  |
+| :------------------------------------------- | :---------------------------------------------- | :----------- |
+| Import AIM data as JSON                      | `POST /aim/import/{snapshotId}`                 | Yes          |
+| Import AIM data by uploading CSV files       | `POST /aim/import/{snapshotId}`                 | **No** -- see below |
 | Check whether an import or calculation ended | `POST /tables/jobs`                             | Yes          |
 | List applications                            | `POST /tables/inventory/applications`           | Yes          |
 | List workloads                               | `POST /tables/inventory/applications/workloads` | Yes          |
@@ -44,36 +45,28 @@ Applied to AIM, this yields the following capability matrix:
 | List traversed devices                       | `POST /tables/inventory/applications/devices`   | Yes          |
 | Resolve the snapshot to work with            | `GET /snapshots`                                | Yes          |
 
-!!! warning "The CSV import cannot be performed through the MCP server"
+The import endpoint accepts the rows in a JSON body as well as in uploaded
+files, and `ipf_api_endpoint_invoke` sends JSON bodies -- so the whole AIM
+workflow, ingestion included, now runs through the MCP server.
 
-    `POST /aim/import/{snapshotId}` requires a `multipart/form-data` body
-    containing file parts. `ipf_api_endpoint_invoke` sends a **JSON** body and has
-    no mechanism for attaching files, so the request reaches IP Fabric with no
-    file parts and is rejected:
+!!! note "File upload still needs a normal HTTP client"
 
-    ```json
-    {
-      "code": "API_VALIDATION_FAILED",
-      "message": "Invalid Input",
-      "errors": [
-        { "message": "At least one file must be provided" }
-      ]
-    }
-    ```
+    `ipf_api_endpoint_invoke` has no mechanism for attaching files, so the
+    `multipart/form-data` form of the endpoint remains out of reach. Use the JSON
+    form instead, or upload the files with a normal HTTP client -- see
+    [Import AIM Data](index.md#import-aim-data).
 
-    Perform the import itself with a normal HTTP client -- see
-    [Import AIM Data From CSV Files](index.md#import-aim-data-from-csv-files) --
-    and use the MCP server for every step afterwards. Because the request is
-    rejected before any job is created, an accidental attempt through the MCP
-    server changes nothing.
+    Uploading is still the better choice for bulk ingestion. Both formats share
+    one 20 MB request limit, and the same rows take roughly twice as much space
+    as JSON -- so a CSV upload carries about twice as many of them.
 
 ## Prerequisites
 
 - The MCP server enabled and connected to your AI client.
 - An API token whose RBAC scope covers the endpoints you intend to use. The MCP
   server has no implicit access -- every call is authorized solely by that token.
-  For the AIM workflow the token needs the **Tables** system policy; the import
-  step, performed outside the MCP server, additionally needs **Settings**.
+  Reading and calculating need the **Tables** system policy; importing
+  additionally needs **Settings**.
 - A valid **AIM license**, otherwise the AIM endpoints return `403`.
 - A **loaded** snapshot for path-lookup calculations.
 
@@ -93,8 +86,10 @@ Applied to AIM, this yields the following capability matrix:
 
 ## Step 1 -- Identify the Snapshot
 
-The AIM endpoints require a snapshot **UUID**. Unlike the table endpoints, they do
-not accept the reserved keywords `$last`, `$prev`, or `$lastLocked`.
+The import endpoint and the table endpoints accept the reserved keywords `$last`,
+`$prev`, and `$lastLocked` as well as a UUID. The **path-lookup** endpoint still
+requires a snapshot **UUID**, so it is worth resolving one up front and reusing it
+for the whole session.
 
 !!! example "Example Prompt"
 
@@ -115,10 +110,80 @@ Each entry includes `id`, `name`, `state`, and `tsEnd`. Pick the `id` of a
 snapshot whose `state` is `loaded`; the newest is the one with the highest
 `tsEnd`.
 
-## Step 2 -- Confirm the Import Job Finished
+## Step 2 -- Import the Data
 
-After importing the CSV files outside the MCP server, you receive a `jobId`. Ask
-the assistant to check it.
+Ask the assistant to import the rows. It sends them as a JSON body, so no file
+upload is involved.
+
+!!! example "Example Prompt"
+
+    ```text
+    Import this application into AIM in snapshot <snapshot-id>: application
+    app-001 "Frontend Service" in prod, with workload wl-001 "web-server-01"
+    on 10.0.1.10, enforcement mode full.
+    ```
+
+The assistant calls `ipf_api_endpoint_invoke`:
+
+```json
+{
+  "method": "post",
+  "path": "/aim/import/{snapshotId}",
+  "parameters": { "snapshotId": "{snapshotId}" },
+  "body": {
+    "applications": [
+      { "externalId": "app-001", "name": "Frontend Service", "environment": "prod" }
+    ],
+    "workloads": [
+      {
+        "externalId": "wl-001",
+        "applicationExternalId": "app-001",
+        "name": "web-server-01",
+        "enforcementMode": "full"
+      }
+    ],
+    "interfaces": [
+      { "workloadExternalId": "wl-001", "ipAddress": "10.0.1.10", "linkState": "up" }
+    ]
+  }
+}
+```
+
+```json
+{
+  "jobId": "177"
+}
+```
+
+The body field names match the CSV column names, so the
+[CSV File Formats](index.md#csv-file-formats) tables double as the field
+reference. Types are native: `protocol` and the ports are numbers, `online` and
+`managed` are booleans, and `labels` is a list of `{ "key": ..., "value": ... }`
+objects rather than a packed string.
+
+!!! tip "Point the assistant at a file it can read"
+
+    If the rows already exist as CSV on your machine, ask the assistant to read
+    the files with its own filesystem tooling and convert them. That keeps the
+    data flowing through the JSON body, which is what the MCP server can send.
+
+!!! info "Row mistakes come back immediately"
+
+    A bad value is rejected with `422` before any job is created, and the error
+    names the array, the row index, and the property -- for example
+    `["flows", 0, "protocol"]`. The assistant can correct the payload and retry
+    without waiting for a job to fail. Cross-references between applications,
+    workloads, and flows are still checked inside the job.
+
+!!! warning "Large data sets belong in a file upload"
+
+    A request is limited to 20 MB, and the same rows are roughly twice the size
+    as JSON that they are as CSV. For bulk ingestion, upload CSV files with a
+    normal HTTP client instead -- see [Import AIM Data](index.md#import-aim-data).
+
+## Step 3 -- Confirm the Import Job Finished
+
+The import returns a `jobId`. Ask the assistant to check it.
 
 !!! example "Example Prompt"
 
@@ -145,7 +210,7 @@ The assistant calls `ipf_api_endpoint_invoke`:
   "data": [
     {
       "id": "177",
-      "name": "aimCsvImport",
+      "name": "aimImport",
       "status": "done",
       "isDone": true,
       "startedAt": 1787063861543,
@@ -168,10 +233,10 @@ request rather than the one selected in the UI.
 !!! tip "Lost the job ID"
 
     Ask for the most recent import instead -- the assistant can filter on
-    `"name": ["eq", "aimCsvImport"]` and sort by `scheduledAt` descending. The
+    `"name": ["eq", "aimImport"]` and sort by `scheduledAt` descending. The
     same works for `aimFlowPathLookup`.
 
-## Step 3 -- List the Imported Data
+## Step 4 -- List the Imported Data
 
 !!! example "Example Prompt"
 
@@ -262,7 +327,7 @@ get a `flowId` and its `pathLookupsCalculationStatus` boolean:
 }
 ```
 
-## Step 4 -- Trigger the Path-Lookup Calculation
+## Step 5 -- Trigger the Path-Lookup Calculation
 
 This is what populates the Devices table. Provide **exactly one** of
 `applicationId` or `flowId`.
@@ -312,7 +377,7 @@ The assistant calls `ipf_api_endpoint_invoke`:
     supply the value in `parameters`. Substituting the UUID directly into `path`
     prevents the MCP server from matching the endpoint in its index.
 
-Then poll the returned `jobId` exactly as in [Step 2](#step-2-confirm-the-import-job-finished);
+Then poll the returned `jobId` exactly as in [Step 3](#step-3-confirm-the-import-job-finished);
 the job `name` is `aimFlowPathLookup`.
 
 !!! info "Re-running is harmless"
@@ -323,7 +388,7 @@ the job `name` is `aimFlowPathLookup`.
     for the other -- expect the second application's `flowsCalculated` to rise
     without you asking for it.
 
-## Step 5 -- List the Resulting Devices
+## Step 6 -- List the Resulting Devices
 
 !!! example "Example Prompt"
 
@@ -373,20 +438,25 @@ application means matching **both** sides with an `or` filter. Rows are
 `{flow, device}` pairs, so the same device repeats once per traversing flow --
 ask the assistant to de-duplicate on `sn` for a unique device list.
 
-Re-running Step 3 afterwards confirms the outcome: `flowsCalculated` and
+Re-running Step 4 afterwards confirms the outcome: `flowsCalculated` and
 `devices` should both have increased.
 
 ## Worked Example
 
-A complete session, from a finished import to the device list:
+A complete session, from raw data to the device list, entirely through the MCP
+server:
 
 ```text
 You:  List the IP Fabric snapshots and tell me the latest loaded one.
 AI:   The latest loaded snapshot is 8366fec8-... (finished 2026-08-18 14:37 UTC,
       41 devices).
 
-You:  Has AIM import job 177 finished?
-AI:   Yes -- job 177 (aimCsvImport) completed with status "done", no errors,
+You:  Read ./aim-data/*.csv and import it into AIM in that snapshot.
+AI:   Converted 2 applications, 2 workloads, 2 interfaces and 1 flow into a JSON
+      payload and imported them. Scheduled job 177.
+
+You:  Has that import finished?
+AI:   Yes -- job 177 (aimImport) completed with status "done", no errors,
       in 85 ms, against snapshot 8366fec8-...
 
 You:  List the AIM applications in that snapshot.
@@ -407,23 +477,25 @@ AI:   One device: SW-CORE-01 (SN12345678), via the flow
 
 ## Tips
 
-- **Give the assistant the snapshot UUID up front.** The AIM endpoints reject
-  `$last`, so a prompt that only says "the latest snapshot" costs an extra
-  round-trip while the assistant resolves it.
+- **Say "the latest snapshot" freely for importing and reading.** Those endpoints
+  resolve `$last` themselves. Give the assistant a UUID up front only if the
+  session will reach a path-lookup calculation, which still needs one.
 - **Name the application, not the ID.** Asking for `"Frontend Service"` lets the
   assistant look up the numeric `id` itself from the Applications table.
 - **Ask for a CSV export** when you want the result as a file rather than a
   table: adding `"format": { "exportToFile": true, "dataType": "csv" }` to any
   table request works through the MCP server too.
-- **Watch the snapshot in job results.** Since the import is snapshot-scoped and
-  performed outside the MCP server, the `snapshot` column in the Jobs table is
-  the quickest way to catch data that landed in the wrong place.
+- **Watch the snapshot in job results.** The import is snapshot-scoped, so the
+  `snapshot` column in the Jobs table is the quickest way to catch data that
+  landed in the wrong place.
 
 ## Troubleshooting
 
 | Symptom                                                            | Cause and resolution                                                                                                                        |
 | :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| `400 -- At least one file must be provided` on the import endpoint | The import was attempted through the MCP server, which cannot send file parts. Import with a normal HTTP client instead.                     |
+| `400 -- At least one file must be provided` on the import endpoint | The request carried no rows. Send at least one non-empty array of `applications`, `workloads`, `interfaces`, or `flows` in the body.          |
+| `422` on the import endpoint                                       | A row failed validation, or a property name is misspelled -- unknown properties are rejected. `errors[].field` gives the array, the row index, and the property. |
+| `413` on the import endpoint                                       | The request exceeds 20 MB. Split the rows across several imports, or upload CSV files with a normal HTTP client -- CSV fits about twice as many rows. |
 | `API endpoint not found: POST /aim/...`                            | The endpoint is missing from the MCP server's index. Wait for the background reindex and re-check with `ipf_api_endpoint_details`.            |
 | `Endpoint ... is not callable with the provided credentials`       | The API token is missing, expired, or lacks the RBAC policy for that endpoint. Verify it under **Settings --> Integration --> API Tokens**.    |
 | `403` on an AIM endpoint                                           | No AIM license, or the token's policy does not cover AIM.                                                                                    |

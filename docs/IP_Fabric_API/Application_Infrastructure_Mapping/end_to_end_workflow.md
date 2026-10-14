@@ -1,5 +1,5 @@
 ---
-description: How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.
+description: How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV or JSON data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.
 ---
 
 # End-to-End Workflow
@@ -11,7 +11,8 @@ The two AIM endpoints described in
 schedules a background job and returns a `jobId`. A complete integration
 therefore combines them with the Jobs table and the AIM inventory tables:
 
-1. **Import** the CSV files -- `POST /aim/import/{snapshotId}`.
+1. **Import** the data, as CSV files or a JSON body --
+   `POST /aim/import/{snapshotId}`.
 2. **Poll** the import job until it finishes -- `POST /tables/jobs`.
 3. **Look up** the application or flow ID --
    `POST /tables/inventory/applications` or
@@ -93,7 +94,7 @@ Content-Type: application/json
     }
     ```
 
-The `name` column identifies the job type: `aimCsvImport` for the import and
+The `name` column identifies the job type: `aimImport` for the import and
 `aimFlowPathLookup` for the path-lookup calculation. Timestamps are Unix
 milliseconds.
 
@@ -101,7 +102,7 @@ milliseconds.
 
     If you lose the `jobId`, filter on the action name instead and sort by
     schedule time -- for example
-    `"filters": { "name": ["eq", "aimCsvImport"] }` with
+    `"filters": { "name": ["eq", "aimImport"] }` with
     `"sort": { "column": "scheduledAt", "order": "desc" }`.
 
 ### Job Status Values
@@ -120,8 +121,10 @@ Poll until `isDone` is `true`, then branch on `status`:
 
 ### Reading Validation Errors
 
-When a CSV fails validation, the job ends with `status: "error"` and `reason`
-holds a JSON-encoded object pinpointing the offending row:
+Where a validation error surfaces depends on how the data was sent.
+
+**CSV upload.** The job ends with `status: "error"` and `reason` holds a
+JSON-encoded object pinpointing the offending row:
 
 ```json
 {
@@ -133,14 +136,51 @@ holds a JSON-encoded object pinpointing the offending row:
 
 `row` counts the header as row 1, so `row: 3` is the second data row. It is
 `null` for errors that are not tied to a specific row, such as an unresolved
-cross-file reference.
+cross-reference.
+
+**JSON body.** Row-level problems never reach a job -- the request itself is
+rejected with `422` before one is scheduled, and the response lists every
+problem at once:
+
+```json
+{
+  "code": "API_VALIDATION_FAILED",
+  "message": "Invalid Input",
+  "errors": [
+    { "field": ["workloads", 1, "enforcementMode"], "message": "Invalid enum value. Expected 'visibility_only' | 'selective' | 'full' | 'idle' | 'unknown', received 'strict'" }
+  ]
+}
+```
+
+The `field` path carries the **array index**, so the row that a CSV reports as
+`row: 3` appears here as `1`.
+
+Cross-references between applications, workloads, and flows need a database
+lookup, so they are checked inside the job in both formats -- a `202` followed by
+a failed job is still possible with a JSON body.
+
+!!! note "`file` follows the format you sent"
+
+    A CSV upload reports the file name, `flows.csv`. A JSON body reports the
+    property name instead, so the same cross-reference failure reads:
+
+    ```json
+    {
+      "file": "flows",
+      "row": null,
+      "message": "dstWorkloadExternalId 'wl-999' not found in workloads data"
+    }
+    ```
+
+    Match on the section rather than on the exact string if your client handles
+    both formats.
 
 !!! note "Follow-up jobs after a successful import"
 
     A successful import also schedules the standard post-processing jobs for the
     snapshot, such as topology calculation and intent verification. These appear
     as separate entries in the Jobs table. They do not block the path-lookup
-    calculation, so you can proceed as soon as the `aimCsvImport` job reports
+    calculation, so you can proceed as soon as the `aimImport` job reports
     `done`.
 
 ## Reading the Results
@@ -215,6 +255,28 @@ resulting devices.
       -F "flows=@${CSV_DIR}/flows.csv;type=text/csv" | jq -r .jobId)
     echo "Import job: ${import_job}"
     wait_for_job "$import_job"
+    ```
+
+    To send a JSON payload instead, replace step 1 with the following. The rest
+    of the script is unchanged, because both formats return the same `jobId`:
+
+    ```bash
+    # 1. Import a JSON payload. A 422 here means a row failed validation, and
+    #    no job was created - so check for jobId before waiting on it.
+    response=$(curl -sk -X POST \
+      "https://${IPF_SERVER}/api/aim/import/${SNAPSHOT}" \
+      -H "X-API-Token: ${IPF_TOKEN}" \
+      -H 'Content-Type: application/json' \
+      --data-binary "@${CSV_DIR}/aim-import.json")
+
+    import_job=$(echo "$response" | jq -r '.jobId // empty')
+    if [ -z "$import_job" ]; then
+      echo "Import rejected:" >&2
+      echo "$response" | jq -r '.errors[]? | "  \(.field | join(".")): \(.message)"' >&2
+      exit 1
+    fi
+    echo "Import job: ${import_job}"
+    wait_for_job "$import_job"
 
     # 2. Resolve the application ID from its externalId.
     app_id=$(api "tables/inventory/applications" "{
@@ -243,11 +305,14 @@ resulting devices.
 
 | Symptom                                                        | Cause and resolution                                                                                                                     |
 | :------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| `400 -- At least one file must be provided`                    | No file part was received. Send at least one CSV as `multipart/form-data`, and do not set `Content-Type` manually.                        |
+| `400 -- At least one file must be provided`                    | Nothing to import. For an upload, send at least one CSV as `multipart/form-data` and do not set `Content-Type` manually. For a JSON body, include at least one non-empty array. |
+| `400 -- Malformed JSON`                                        | The request is declared as `application/json` but the body is not valid JSON. Most often `-H 'Content-Type: application/json'` was sent alongside `-F` file parts; drop the header and let `curl` build the multipart one. |
+| `422` on the import endpoint                                   | Invalid `snapshotId`, or a JSON row failed validation. `errors[].field` names the array, the row index, and the property. No job was created, so fix the payload and resend. |
 | `403` on either AIM endpoint                                   | Missing AIM license, or the API token's policy does not cover the endpoint.                                                               |
 | `404` on the path-lookup endpoint, but the snapshot exists     | The snapshot is not loaded. Path lookups need the snapshot's routing data.                                                                |
-| `413`                                                          | A file exceeds 50 MB. Split it and import in several requests.                                                                            |
-| Import job `status: "error"`                                   | Read `reason` for the file, row, and message. Fix that row and re-import -- the merge behavior makes retries safe.                        |
+| `413`, as an HTML page rather than JSON                        | The request exceeds the 20 MB limit, which covers the whole request in both formats. Split the data and import in several requests.       |
+| Import job `status: "error"`                                   | Read `reason` for the file, row, and message. Fix that row and re-import -- applications, workloads, and interfaces merge on re-import, so retrying is safe. With a JSON body this indicates a cross-reference failure, since row errors are caught before the job. |
+| A flow appears twice after re-importing the same data          | The flow leaves `srcPort`, `dstPort`, or `flowDirection` empty, and empty values do not match on re-import. Send all three -- see [How Data Is Merged](index.md#how-data-is-merged). |
 | Import succeeded but the Applications `devices` count is `0`   | Expected. Run the path-lookup calculation.                                                                                               |
 | Flows `devices` is empty rather than a number                  | That flow has no path-lookup result yet. On the Flows table such a flow returns `null`, not `0`; check `pathLookupsCalculationStatus` for the state. |
 | Path lookup `done` but `devices` is still `0`                  | The flow's addresses do not trace a path in this snapshot. `flowsCalculated` and `pathLookupsCalculationStatus` still advance, because a result is recorded even when no device is traversed. Verify that `srcIp` and `dstIp` exist in the snapshot's routing tables. |

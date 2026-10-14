@@ -1,5 +1,5 @@
 ---
-description: Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.
+description: Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files or a JSON payload and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.
 ---
 
 # Overview
@@ -19,7 +19,8 @@ appliance:
    for future releases.
 2. **In the Discovery Settings, through the IP Fabric UI.** Create entries
    manually, or import them from CSV files.
-3. **Through the AIM API endpoint, using CSV files.** Described on this page.
+3. **Through the AIM API endpoint, using CSV files or a JSON payload.** Described
+   on this page.
 
 Of the three ingestion methods above, only **option 3** has a dedicated API
 endpoint. This document is an overview and reference of that endpoint together
@@ -27,7 +28,8 @@ with the other AIM endpoints available over the API. They fall into four
 independent groups:
 
 - **Data ingestion** -- `POST /aim/import/{snapshotId}` writes applications,
-  workloads, workload interfaces, and flows from CSV files into a snapshot.
+  workloads, workload interfaces, and flows into a snapshot, either from
+  uploaded CSV files or from a JSON request body.
 - **Path-lookup calculation** -- `POST /aim/flow-path-lookups/{snapshotId}`
   calculates on demand which network devices the traffic of an application, or of
   one specific flow, traverses.
@@ -72,8 +74,8 @@ see [End-to-End Workflow](end_to_end_workflow.md).
 
 Ingesting and calculating:
 
-- `/api/aim/import/{snapshotId}` -- a `POST` method to import AIM data from CSV
-  files.
+- `/api/aim/import/{snapshotId}` -- a `POST` method to import AIM data, from CSV
+  files or from a JSON payload.
 - `/api/aim/flow-path-lookups/{snapshotId}` -- a `POST` method to calculate which
   devices the imported flows traverse.
 
@@ -112,15 +114,21 @@ Headers must contain:
 - `X-API-Token:` -- An API token generated in IP Fabric Settings. See
   [Authentication](../authentication.md) for alternatives such as Basic or Bearer
   token authentication.
-- `Content-Type: application/json` -- for the path-lookup endpoint only.
+- `Content-Type: application/json` -- for every endpoint on this page except a
+  **file upload** to the import endpoint.
 
-!!! warning "Do not set `Content-Type` manually on the import request"
+!!! warning "Do not set `Content-Type` manually when uploading CSV files"
 
-    `/aim/import/{snapshotId}` expects `multipart/form-data`. Let your HTTP
-    client generate the header so that the multipart boundary is included. In
-    `curl`, use `-F` and omit `-H 'Content-Type: ...'` entirely. Sending a JSON
-    body results in `400 -- At least one file must be provided`, because no file
-    parts are found.
+    Uploading files to `/aim/import/{snapshotId}` requires `multipart/form-data`.
+    Let your HTTP client generate the header so that the multipart boundary is
+    included. In `curl`, use `-F` and omit `-H 'Content-Type: ...'` entirely.
+    Setting `Content-Type: application/json` alongside `-F` parts makes the
+    request unparsable: the appliance tries to read the multipart bytes as JSON
+    and rejects them with `400 -- Malformed JSON` (`API_MALFORMED_BODY`).
+
+    This does not apply to the JSON variant of the same endpoint, which takes an
+    ordinary `Content-Type: application/json` body and no file parts -- see
+    [Send the Rows as JSON](#send-the-rows-as-json).
 
 !!! note "TLS certificate verification"
 
@@ -134,24 +142,55 @@ Headers must contain:
     curl --cacert /path/to/ipfabric-ca.pem -X POST 'https://{ipf_server}/api/...'
     ```
 
-## Import AIM Data From CSV Files
+## Import AIM Data
 
-Parses the supplied CSV files and writes applications, workloads, workload
-interfaces, and flows into the given snapshot.
+Writes applications, workloads, workload interfaces, and flows into the given
+snapshot. The same endpoint accepts the data in **two interchangeable formats**,
+chosen by the request's `Content-Type`:
 
 ```text
 POST /api/aim/import/{snapshotId}
-Content-Type: multipart/form-data
+Content-Type: multipart/form-data   # upload CSV files
+Content-Type: application/json      # send the rows in the request body
 ```
+
+Both formats feed the same import job and apply the same validation rules and
+merge behavior. Which one to use:
+
+| Use                          | When                                                                                   |
+| :--------------------------- | :------------------------------------------------------------------------------------- |
+| `multipart/form-data` (CSV)  | You already have CSV files, or the data set is large -- CSV fits roughly twice as many rows into the same [request size limit](#payload-size). |
+| `application/json`           | You are generating the data programmatically, or calling through the [MCP server](mcp_server_guide.md). Row errors are reported immediately. |
+
+!!! important "Through the MCP server, only the JSON format is supported"
+
+    The [IP Fabric MCP Server](mcp_server_guide.md) invokes endpoints with a JSON
+    body and has no mechanism for attaching files, so **`application/json` is the
+    only format it can use for this endpoint**. `multipart/form-data` requires a
+    normal HTTP client.
+
+    This is a limitation of file upload over MCP, not of the endpoint: everything
+    the CSV upload can import, the JSON body can import too, within the same
+    [request size limit](#payload-size).
 
 ### Request Parameters
 
-| Parameter    | In   | Type            | Required | Description                                  |
-| :----------- | :--- | :-------------- | :------- | :------------------------------------------- |
-| `snapshotId` | path | `string` (UUID) | yes      | UUID of the snapshot to import data into. Reserved keywords such as `$last` are **not** accepted here. |
+| Parameter    | In   | Type     | Required | Description                                  |
+| :----------- | :--- | :------- | :------- | :------------------------------------------- |
+| `snapshotId` | path | `string` | yes      | UUID of the snapshot to import data into, or one of the reserved keywords `$last`, `$lastLocked`, `$prev`. |
 
-Each form field accepts a **single** CSV file of up to **50 MB**. At least one
-field must be present; you do not have to send all four.
+!!! tip "Reserved snapshot keywords are accepted"
+
+    `$last`, `$lastLocked`, and `$prev` are resolved by the appliance, so you do
+    not have to look the UUID up first. In a shell, quote the value with single
+    quotes -- `'https://{ipf_server}/api/aim/import/$last'` -- otherwise the
+    shell expands `$last` to an empty string.
+
+### Upload CSV Files
+
+Each form field accepts a **single** CSV file. At least one field must be
+present; you do not have to send all four. The files share one request budget --
+see [Payload Size](#payload-size).
 
 | Form field     | Type   | Required | Description                          |
 | :------------- | :----- | :------- | :----------------------------------- |
@@ -169,10 +208,17 @@ All files are parsed with a header row; column order does not matter and values
 are trimmed. Columns marked optional may be omitted entirely or left empty (an
 empty value is stored as `null`).
 
-!!! tip "Downloadable sample files"
+!!! tip "Downloadable sample data"
 
-    All four example files shown below are also available as a single ZIP
-    archive: [aim-sample-ingestion-data.zip](aim-sample-ingestion-data.zip).
+    [aim-sample-ingestion-data.zip](aim-sample-ingestion-data.zip) holds a
+    working example of both formats, carrying the same data:
+
+    - `csv/` -- the four files shown below, plus a `curl` file with the upload
+      command.
+    - `json/` -- `import.json`, the equivalent single payload, plus a `curl` file
+      with the request, a job-polling call, and two negative checks.
+
+    Both sets import cleanly as they are; point them at a snapshot of your own.
 
 #### `applications.csv`
 
@@ -260,25 +306,192 @@ empty value is stored as `null`).
     10.0.1.10,10.0.2.20,6,allowed,wl-001,wl-002,54321,8080,egress
     ```
 
+### Send the Rows as JSON
+
+Instead of uploading files, send the rows directly in the request body. The body
+is an object with up to four arrays, named after the four CSV files. At least one
+array must be present and non-empty.
+
+```json
+{
+  "applications": [ ... ],
+  "workloads": [ ... ],
+  "interfaces": [ ... ],
+  "flows": [ ... ]
+}
+```
+
+Each array holds one object per row, using the **same field names** as the CSV
+columns documented above, with the same required and optional fields. Because
+JSON has real data types, four things differ from the CSV encoding:
+
+| Field group                                                        | CSV                                   | JSON                                                    |
+| :----------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------ |
+| `protocol`, `srcPort`, `dstPort`, `numConnections`, `cidrBlock`     | `"6"` -- every cell is text            | `6` -- a number                                          |
+| `online`, `managed`                                                 | `"true"` / `"false"`                   | `true` / `false` -- a boolean                            |
+| `firstDetected`, `lastDetected`                                     | ISO 8601 string                        | ISO 8601 string **or** Unix milliseconds                 |
+| `labels`                                                            | `"tier=web,region=eu-west"`            | `[{ "key": "tier", "value": "web" }, ...]`               |
+
+Optional fields may be **omitted entirely** or sent as `null`; both are stored as
+`null`.
+
+!!! warning "Use `null` rather than an empty string for non-string fields"
+
+    An empty string is accepted only on the optional fields whose value is
+    textual: `description`, `environment`, `hostname`, `osType`, `osDetail`,
+    `network`, `publicIp`, `defaultGateway`, the interface `name`,
+    `firstDetected`, and `lastDetected` all treat `""` as `null`. Required
+    fields reject it, as they reject a missing value.
+
+    `online`, `managed`, `srcPort`, `dstPort`, `numConnections`, `cidrBlock`, and
+    `flowDirection` do not: `""` is the wrong type for a boolean, a number, or an
+    enumerated value, and the request fails with `422`. This matters when
+    converting CSV rows to JSON, where every empty cell starts life as `""`.
+
+!!! tip "Structured labels can hold commas and equals signs"
+
+    The CSV `labels` column packs pairs into `key=value,key=value`, so a label
+    whose key or value contains `,` or `=` cannot be expressed. The JSON form has
+    no such limit.
+
+!!! warning "Unknown properties are rejected"
+
+    A misspelled array name or row property fails validation rather than being
+    ignored, so a typo cannot silently import nothing. `{"aplications": [...]}`
+    returns `422`, not `202`.
+
+!!! example "Sample JSON payload"
+
+    The same data as the four sample CSV files above. Note that the flow's
+    `dstWorkloadExternalId` is `wl-002`, so the workload defining it has to be in
+    the payload as well -- or already in the snapshot.
+
+    ```json
+    {
+      "applications": [
+        { "externalId": "app-001", "name": "Frontend Service", "description": "Web frontend", "environment": "prod" },
+        { "externalId": "app-002", "name": "Backend API", "description": "REST API service", "environment": "prod" }
+      ],
+      "workloads": [
+        {
+          "externalId": "wl-001",
+          "applicationExternalId": "app-001",
+          "name": "web-server-01",
+          "enforcementMode": "full",
+          "hostname": "web01.example.com",
+          "online": true,
+          "managed": true,
+          "publicIp": "203.0.113.10",
+          "labels": [
+            { "key": "tier", "value": "web" },
+            { "key": "region", "value": "eu-west" }
+          ]
+        },
+        {
+          "externalId": "wl-002",
+          "applicationExternalId": "app-002",
+          "name": "api-server-01",
+          "enforcementMode": "selective",
+          "hostname": "api01.example.com",
+          "online": true,
+          "managed": true,
+          "publicIp": "203.0.113.11",
+          "labels": [
+            { "key": "tier", "value": "api" },
+            { "key": "region", "value": "eu-west" }
+          ]
+        }
+      ],
+      "interfaces": [
+        { "workloadExternalId": "wl-001", "ipAddress": "10.0.1.10", "linkState": "up", "cidrBlock": 24, "network": "10.0.1.0/24" },
+        { "workloadExternalId": "wl-002", "ipAddress": "10.0.2.20", "linkState": "up", "cidrBlock": 24, "network": "10.0.2.0/24" }
+      ],
+      "flows": [
+        {
+          "srcIp": "10.0.1.10",
+          "dstIp": "10.0.2.20",
+          "protocol": 6,
+          "policyDecision": "allowed",
+          "srcWorkloadExternalId": "wl-001",
+          "dstWorkloadExternalId": "wl-002",
+          "srcPort": 54321,
+          "dstPort": 8080,
+          "flowDirection": "egress"
+        }
+      ]
+    }
+    ```
+
+### Payload Size
+
+The whole request is limited to **20 MB**, whichever format it uses. For a file
+upload that budget covers all four files together, not each one separately.
+
+!!! warning "JSON is roughly twice the size of the same data as CSV"
+
+    JSON repeats every field name on every row, so the format you choose decides
+    how many rows fit. As a rough guide, 120,000 flow rows are around 19 MB of
+    CSV but around 39 MB of JSON.
+
+    Split anything larger across several requests. The import merges on the keys
+    in your data, so importing in batches gives the same result as one request.
+
 ### Validation Rules
 
-Validation is strict and **aborts the whole import on the first error** -- the
-job fails and nothing from the failing file is applied.
+Both formats apply the same rules. What differs is **when** you find out: a JSON
+body is validated before the job is scheduled, while CSV files are parsed inside
+the job.
+
+| Validation                                                 | CSV upload                                   | JSON body                                                        |
+| :--------------------------------------------------------- | :------------------------------------------- | :--------------------------------------------------------------- |
+| Field types, required fields, enumerations, duplicate `externalId` | Job fails; read `reason` for file, row, message | Request fails immediately with `422` and the path to each bad value |
+| Cross-references between applications, workloads, and flows | Job fails                                    | Job fails -- these need a database lookup, so they stay in the job  |
+
+A `422` from a JSON body lists every problem it found, each with the array name,
+the row index, and the property:
+
+```json
+{
+  "code": "API_VALIDATION_FAILED",
+  "message": "Invalid Input",
+  "errors": [
+    { "field": ["flows", 0, "protocol"], "message": "Expected number, received string" },
+    { "field": ["applications", 2, "externalId"], "message": "field is required" }
+  ]
+}
+```
+
+!!! note "Row numbering differs between the two formats"
+
+    A CSV `reason` counts the header as row 1, so the first data row is `row: 2`.
+    A JSON `field` path carries the **array index**, so the same row is `0`.
+
+Whichever format fails, the import is **all or nothing** -- nothing from the
+failing data set is applied.
+
+The rules themselves:
 
 - **Required fields** must be present and non-empty.
 - **Enumerated fields** must hold one of the listed values.
-- **Duplicate `externalId`** values within `applications.csv` or `workloads.csv`
-  are rejected. `interfaces.csv` and `flows.csv` are not de-duplicated.
-- **Cross-file references** are resolved against the uploaded files first and,
-  when a file is not part of the request, against data already stored in the
+- **Duplicate `externalId`** values within the applications or workloads data are
+  rejected. Interfaces and flows are not de-duplicated.
+- **Cross-references** are resolved against the data in the request first and,
+  when a section is not part of the request, against data already stored in the
   snapshot:
     - `workloads.applicationExternalId` must resolve to a known application.
     - `interfaces.workloadExternalId` must resolve to a known workload.
     - `flows.srcWorkloadExternalId` and `flows.dstWorkloadExternalId` must
       resolve to known workloads.
 
-This means you can upload files incrementally -- for example `flows.csv` alone --
-as long as the referenced workloads already exist in the snapshot.
+This means you can import incrementally -- for example flows alone -- as long as
+the referenced workloads already exist in the snapshot.
+
+!!! note "A failing CSV file stops at the first bad row"
+
+    The CSV parser aborts as soon as it hits an invalid row, so `reason` names
+    one problem even when the file has several. A JSON body is validated as a
+    whole and reports all of them at once, so a payload with five mistakes takes
+    one round trip to diagnose rather than five.
 
 ### How Data Is Merged
 
@@ -289,31 +502,47 @@ affected.
 Records are either merged in place (inserted when new, updated when the key
 already exists) or replaced wholesale:
 
-| File           | Behavior | Key used for matching                                                            |
+| Section        | Behavior | Key used for matching                                                            |
 | :------------- | :------- | :------------------------------------------------------------------------------- |
 | `applications` | merge    | `externalId`                                                                     |
 | `workloads`    | merge    | `externalId`                                                                     |
 | `interfaces`   | replace  | All interfaces of each referenced workload are deleted and re-created.            |
-| `flows`        | merge    | source workload + destination workload + `protocol` + `flowDirection`             |
+| `flows`        | merge    | source workload + destination workload + `srcIp` + `dstIp` + `protocol` + `srcPort` + `dstPort` + `policyDecision` + `flowDirection` |
 
-Re-running an import with the same files is therefore safe: rows are updated in
-place rather than duplicated.
+Re-running an import with the same data updates rows in place rather than
+duplicating them -- with one exception for flows, described below.
 
-!!! warning "Uploading `workloads.csv` clears interfaces and labels"
+!!! warning "A flow with an empty key field is re-inserted, not updated"
+
+    `srcPort`, `dstPort`, and `flowDirection` are optional, and the database
+    treats two empty values as different rather than equal. A flow row that
+    leaves any of the three empty therefore never matches the row an earlier
+    import created, and re-importing the same data **adds a second copy** of it.
+
+    Send all three on every flow if you intend to re-import the same rows. Flows
+    that carry complete keys are unaffected.
+
+!!! warning "Importing workloads clears interfaces and labels"
 
     A workload's interfaces and labels are replaced from the request, not merged.
-    If you upload `workloads.csv` **without** `interfaces.csv`, the existing
-    interfaces of every workload listed in that file are removed. Likewise, an
-    empty `labels` column clears that workload's labels. When updating workload
-    attributes, re-send `interfaces.csv` and the full `labels` value alongside.
+    If you send workloads **without** interfaces, the existing interfaces of every
+    workload listed are removed. Likewise, an empty `labels` value clears that
+    workload's labels. When updating workload attributes, re-send the interfaces
+    and the full `labels` value alongside.
 
-!!! note "Flow uniqueness ignores ports"
+!!! note "Every field of the flow key counts"
 
-    Because the flow matching key does not include `srcPort` or `dstPort`, two
-    rows between the same workload pair with the same protocol and direction but
-    different ports are treated as **one** flow, and the last row wins.
+    The flow matching key covers the addresses, the ports, the protocol,
+    `policyDecision`, and `flowDirection`. Two rows between the same workload
+    pair that differ in **any** of those -- a different source port, for example
+    -- are two distinct flows, not one. Only a row matching on all of them
+    updates an existing flow instead of adding one.
 
-### Example Request
+    A source system that reports one connection per ephemeral source port
+    therefore produces one flow row per connection. Aggregate on the source side
+    if that is not what you want.
+
+### Example Requests
 
 !!! example "Import All Four CSV Files"
 
@@ -334,6 +563,41 @@ place rather than duplicated.
       -F 'flows=@flows.csv;type=text/csv'
     ```
 
+!!! example "Import a JSON Payload"
+
+    From a file:
+
+    ```bash
+    curl -X POST 'https://{ipf_server}/api/aim/import/{snapshotId}' \
+      --header 'X-API-Token: {api_token}' \
+      --header 'Content-Type: application/json' \
+      --data-binary @aim-import.json
+    ```
+
+    Inline, into the latest snapshot. Note the single quotes around the URL, so
+    that the shell does not expand `$last`:
+
+    ```bash
+    curl -X POST 'https://{ipf_server}/api/aim/import/$last' \
+      --header 'X-API-Token: {api_token}' \
+      --header 'Content-Type: application/json' \
+      -d '{
+            "flows": [
+              {
+                "srcIp": "10.0.1.10",
+                "dstIp": "10.0.2.20",
+                "protocol": 6,
+                "policyDecision": "allowed",
+                "srcWorkloadExternalId": "wl-001",
+                "dstWorkloadExternalId": "wl-002",
+                "srcPort": 54321,
+                "dstPort": 8080,
+                "flowDirection": "egress"
+              }
+            ]
+          }'
+    ```
+
 ### Response
 
 A successful request returns `202 Accepted` with a JSON body containing a single
@@ -351,24 +615,32 @@ key:
     }
     ```
 
-The scheduled job has the action name `aimCsvImport`.
+The scheduled job has the action name `aimImport`. The Jobs table exposes it as
+the `name` column, so a script can find the job again by filtering on
+`"name": ["eq", "aimImport"]`.
 
-| Code  | Meaning                                                              |
-| :---- | :------------------------------------------------------------------- |
-| `202` | Import job scheduled. The body contains the `jobId`.                 |
-| `400` | No files provided, or `snapshotId` is not a valid UUID.              |
-| `401` | Unauthorized.                                                        |
-| `403` | Missing RBAC permissions or no AIM license.                          |
-| `404` | Snapshot not found.                                                  |
-| `413` | A file exceeds the 50 MB limit.                                      |
-| `500` | Internal server error.                                               |
+| Code  | Meaning                                                                       |
+| :---- | :---------------------------------------------------------------------------- |
+| `202` | Import job scheduled. The body contains the `jobId`.                          |
+| `400` | Nothing to import -- no files, or a JSON body with no rows in any section. The message reads `At least one file must be provided` for both formats. |
+| `400` | `Malformed JSON` (`API_MALFORMED_BODY`) -- the body is declared as `application/json` but is not valid JSON. |
+| `401` | Unauthorized.                                                                 |
+| `403` | Missing RBAC permissions or no AIM license.                                   |
+| `404` | Snapshot not found.                                                           |
+| `413` | The request exceeds 20 MB. Returned by the appliance's web server, so the body is an HTML error page rather than the usual JSON envelope. |
+| `422` | Invalid `snapshotId`, or a JSON body that failed row validation. `errors[].field` gives the path to each bad value. |
+| `500` | Internal server error.                                                        |
 
-!!! info "`202` does not mean the data was accepted"
+!!! info "`202` does not mean the whole import succeeded"
 
-    The response confirms only that the job was **scheduled**. CSV parsing and
-    validation happen inside the job, so a malformed file still returns `202`
-    here and fails later. Always poll the job -- see
+    The response confirms that the job was **scheduled**. Cross-reference checks
+    run inside the job in both formats, and for a CSV upload the parsing and row
+    validation do too -- so a malformed file still returns `202` here and fails
+    later. Always poll the job -- see
     [End-to-End Workflow](end_to_end_workflow.md).
+
+    A JSON body is the exception for row-level problems only: those are caught
+    before the job exists and returned as `422`.
 
 ### Imported Data Does Not Survive a Snapshot Reload
 
