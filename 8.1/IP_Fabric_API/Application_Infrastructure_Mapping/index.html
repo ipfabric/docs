@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
+        <meta name="description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files or a JSON payload and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
       
       
       
@@ -71,7 +71,7 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="Overview - IP Fabric Documentation Portal">
-<meta property="og:description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
+<meta property="og:description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files or a JSON payload and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
 <meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_API/Application_Infrastructure_Mapping/index.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -79,7 +79,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/latest/IP_Fabric_API/Application_Infrastructure_Mapping/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Overview - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
+<meta property="twitter:description" content="Reference for the IP Fabric Application Infrastructure Mapping (AIM) API endpoints that ingest application data from CSV files or a JSON payload and calculate which network devices an application's flows traverse. One of three supported AIM ingestion methods.">
 <meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_API/Application_Infrastructure_Mapping/index.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -1830,15 +1830,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-aim-data-from-csv-files" class="md-nav__link">
+  <a href="#import-aim-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Import AIM Data From CSV Files
+        Import AIM Data
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Import AIM Data From CSV Files">
+    <nav class="md-nav" aria-label="Import AIM Data">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1846,6 +1846,17 @@
     <span class="md-ellipsis">
       
         Request Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload CSV Files
       
     </span>
   </a>
@@ -1914,6 +1925,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#send-the-rows-as-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send the Rows as JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#validation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1936,10 +1969,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-request" class="md-nav__link">
+  <a href="#example-requests" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Request
+        Example Requests
       
     </span>
   </a>
@@ -1997,7 +2030,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-request_1" class="md-nav__link">
+  <a href="#example-request" class="md-nav__link">
     <span class="md-ellipsis">
       
         Example Request
@@ -16651,15 +16684,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-aim-data-from-csv-files" class="md-nav__link">
+  <a href="#import-aim-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Import AIM Data From CSV Files
+        Import AIM Data
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Import AIM Data From CSV Files">
+    <nav class="md-nav" aria-label="Import AIM Data">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -16667,6 +16700,17 @@
     <span class="md-ellipsis">
       
         Request Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-csv-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload CSV Files
       
     </span>
   </a>
@@ -16735,6 +16779,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#send-the-rows-as-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send the Rows as JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#validation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16757,10 +16823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-request" class="md-nav__link">
+  <a href="#example-requests" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Request
+        Example Requests
       
     </span>
   </a>
@@ -16818,7 +16884,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-request_1" class="md-nav__link">
+  <a href="#example-request" class="md-nav__link">
     <span class="md-ellipsis">
       
         Example Request
@@ -17118,7 +17184,8 @@ appliance:</p>
    for future releases.</li>
 <li><strong>In the Discovery Settings, through the IP Fabric UI.</strong> Create entries
    manually, or import them from CSV files.</li>
-<li><strong>Through the AIM API endpoint, using CSV files.</strong> Described on this page.</li>
+<li><strong>Through the AIM API endpoint, using CSV files or a JSON payload.</strong> Described
+   on this page.</li>
 </ol>
 <p>Of the three ingestion methods above, only <strong>option 3</strong> has a dedicated API
 endpoint. This document is an overview and reference of that endpoint together
@@ -17126,7 +17193,8 @@ with the other AIM endpoints available over the API. They fall into four
 independent groups:</p>
 <ul>
 <li><strong>Data ingestion</strong> – <code>POST /aim/import/{snapshotId}</code> writes applications,
-  workloads, workload interfaces, and flows from CSV files into a snapshot.</li>
+  workloads, workload interfaces, and flows into a snapshot, either from
+  uploaded CSV files or from a JSON request body.</li>
 <li><strong>Path-lookup calculation</strong> – <code>POST /aim/flow-path-lookups/{snapshotId}</code>
   calculates on demand which network devices the traffic of an application, or of
   one specific flow, traverses.</li>
@@ -17169,8 +17237,8 @@ see <a href="end_to_end_workflow/">End-to-End Workflow</a>.</p>
 <h2 id="api-endpoints">API Endpoints</h2>
 <p>Ingesting and calculating:</p>
 <ul>
-<li><code>/api/aim/import/{snapshotId}</code> – a <code>POST</code> method to import AIM data from CSV
-  files.</li>
+<li><code>/api/aim/import/{snapshotId}</code> – a <code>POST</code> method to import AIM data, from CSV
+  files or from a JSON payload.</li>
 <li><code>/api/aim/flow-path-lookups/{snapshotId}</code> – a <code>POST</code> method to calculate which
   devices the imported flows traverse.</li>
 </ul>
@@ -17208,15 +17276,20 @@ version <code>1</code>, which is also the default. Responses echo
 <li><code>X-API-Token:</code> – An API token generated in IP Fabric Settings. See
   <a href="../authentication/">Authentication</a> for alternatives such as Basic or Bearer
   token authentication.</li>
-<li><code>Content-Type: application/json</code> – for the path-lookup endpoint only.</li>
+<li><code>Content-Type: application/json</code> – for every endpoint on this page except a
+  <strong>file upload</strong> to the import endpoint.</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Do not set <code>Content-Type</code> manually on the import request</p>
-<p><code>/aim/import/{snapshotId}</code> expects <code>multipart/form-data</code>. Let your HTTP
-client generate the header so that the multipart boundary is included. In
-<code>curl</code>, use <code>-F</code> and omit <code>-H 'Content-Type: ...'</code> entirely. Sending a JSON
-body results in <code>400 -- At least one file must be provided</code>, because no file
-parts are found.</p>
+<p class="admonition-title">Do not set <code>Content-Type</code> manually when uploading CSV files</p>
+<p>Uploading files to <code>/aim/import/{snapshotId}</code> requires <code>multipart/form-data</code>.
+Let your HTTP client generate the header so that the multipart boundary is
+included. In <code>curl</code>, use <code>-F</code> and omit <code>-H 'Content-Type: ...'</code> entirely.
+Setting <code>Content-Type: application/json</code> alongside <code>-F</code> parts makes the
+request unparsable: the appliance tries to read the multipart bytes as JSON
+and rejects them with <code>400 -- Malformed JSON</code> (<code>API_MALFORMED_BODY</code>).</p>
+<p>This does not apply to the JSON variant of the same endpoint, which takes an
+ordinary <code>Content-Type: application/json</code> body and no file parts – see
+<a href="#send-the-rows-as-json">Send the Rows as JSON</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">TLS certificate verification</p>
@@ -17228,12 +17301,44 @@ certificate authority so that verification succeeds:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--cacert<span class="w"> </span>/path/to/ipfabric-ca.pem<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://{ipf_server}/api/...'</span>
 </code></pre></div>
 </div>
-<h2 id="import-aim-data-from-csv-files">Import AIM Data From CSV Files</h2>
-<p>Parses the supplied CSV files and writes applications, workloads, workload
-interfaces, and flows into the given snapshot.</p>
+<h2 id="import-aim-data">Import AIM Data</h2>
+<p>Writes applications, workloads, workload interfaces, and flows into the given
+snapshot. The same endpoint accepts the data in <strong>two interchangeable formats</strong>,
+chosen by the request’s <code>Content-Type</code>:</p>
 <div class="highlight"><pre><span></span><code>POST /api/aim/import/{snapshotId}
-Content-Type: multipart/form-data
+Content-Type: multipart/form-data   # upload CSV files
+Content-Type: application/json      # send the rows in the request body
 </code></pre></div>
+<p>Both formats feed the same import job and apply the same validation rules and
+merge behavior. Which one to use:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Use</th>
+<th style="text-align: left;">When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>multipart/form-data</code> (CSV)</td>
+<td style="text-align: left;">You already have CSV files, or the data set is large – CSV fits roughly twice as many rows into the same <a href="#payload-size">request size limit</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>application/json</code></td>
+<td style="text-align: left;">You are generating the data programmatically, or calling through the <a href="mcp_server_guide/">MCP server</a>. Row errors are reported immediately.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Through the MCP server, only the JSON format is supported</p>
+<p>The <a href="mcp_server_guide/">IP Fabric MCP Server</a> invokes endpoints with a JSON
+body and has no mechanism for attaching files, so <strong><code>application/json</code> is the
+only format it can use for this endpoint</strong>. <code>multipart/form-data</code> requires a
+normal HTTP client.</p>
+<p>This is a limitation of file upload over MCP, not of the endpoint: everything
+the CSV upload can import, the JSON body can import too, within the same
+<a href="#payload-size">request size limit</a>.</p>
+</div>
 <h3 id="request-parameters">Request Parameters</h3>
 <table>
 <thead>
@@ -17249,14 +17354,23 @@ Content-Type: multipart/form-data
 <tr>
 <td style="text-align: left;"><code>snapshotId</code></td>
 <td style="text-align: left;">path</td>
-<td style="text-align: left;"><code>string</code> (UUID)</td>
+<td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">yes</td>
-<td style="text-align: left;">UUID of the snapshot to import data into. Reserved keywords such as <code>$last</code> are <strong>not</strong> accepted here.</td>
+<td style="text-align: left;">UUID of the snapshot to import data into, or one of the reserved keywords <code>$last</code>, <code>$lastLocked</code>, <code>$prev</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>Each form field accepts a <strong>single</strong> CSV file of up to <strong>50 MB</strong>. At least one
-field must be present; you do not have to send all four.</p>
+<div class="admonition tip">
+<p class="admonition-title">Reserved snapshot keywords are accepted</p>
+<p><code>$last</code>, <code>$lastLocked</code>, and <code>$prev</code> are resolved by the appliance, so you do
+not have to look the UUID up first. In a shell, quote the value with single
+quotes – <code>'https://{ipf_server}/api/aim/import/$last'</code> – otherwise the
+shell expands <code>$last</code> to an empty string.</p>
+</div>
+<h3 id="upload-csv-files">Upload CSV Files</h3>
+<p>Each form field accepts a <strong>single</strong> CSV file. At least one field must be
+present; you do not have to send all four. The files share one request budget –
+see <a href="#payload-size">Payload Size</a>.</p>
 <table>
 <thead>
 <tr>
@@ -17300,9 +17414,16 @@ field must be present; you do not have to send all four.</p>
 are trimmed. Columns marked optional may be omitted entirely or left empty (an
 empty value is stored as <code>null</code>).</p>
 <div class="admonition tip">
-<p class="admonition-title">Downloadable sample files</p>
-<p>All four example files shown below are also available as a single ZIP
-archive: <a href="aim-sample-ingestion-data.zip">aim-sample-ingestion-data.zip</a>.</p>
+<p class="admonition-title">Downloadable sample data</p>
+<p><a href="aim-sample-ingestion-data.zip">aim-sample-ingestion-data.zip</a> holds a
+working example of both formats, carrying the same data:</p>
+<ul>
+<li><code>csv/</code> – the four files shown below, plus a <code>curl</code> file with the upload
+  command.</li>
+<li><code>json/</code> – <code>import.json</code>, the equivalent single payload, plus a <code>curl</code> file
+  with the request, a job-polling call, and two negative checks.</li>
+</ul>
+<p>Both sets import cleanly as they are; point them at a snapshot of your own.</p>
 </div>
 <h4 id="applicationscsv"><code>applications.csv</code></h4>
 <table>
@@ -17593,24 +17714,214 @@ wl-002,10.0.2.20,up,24,10.0.2.0/24
 10.0.1.10,10.0.2.20,6,allowed,wl-001,wl-002,54321,8080,egress
 </code></pre></div>
 </div>
+<h3 id="send-the-rows-as-json">Send the Rows as JSON</h3>
+<p>Instead of uploading files, send the rows directly in the request body. The body
+is an object with up to four arrays, named after the four CSV files. At least one
+array must be present and non-empty.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"applications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"workloads"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"interfaces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"flows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Each array holds one object per row, using the <strong>same field names</strong> as the CSV
+columns documented above, with the same required and optional fields. Because
+JSON has real data types, four things differ from the CSV encoding:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field group</th>
+<th style="text-align: left;">CSV</th>
+<th style="text-align: left;">JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>protocol</code>, <code>srcPort</code>, <code>dstPort</code>, <code>numConnections</code>, <code>cidrBlock</code></td>
+<td style="text-align: left;"><code>"6"</code> – every cell is text</td>
+<td style="text-align: left;"><code>6</code> – a number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>online</code>, <code>managed</code></td>
+<td style="text-align: left;"><code>"true"</code> / <code>"false"</code></td>
+<td style="text-align: left;"><code>true</code> / <code>false</code> – a boolean</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>firstDetected</code>, <code>lastDetected</code></td>
+<td style="text-align: left;">ISO 8601 string</td>
+<td style="text-align: left;">ISO 8601 string <strong>or</strong> Unix milliseconds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>labels</code></td>
+<td style="text-align: left;"><code>"tier=web,region=eu-west"</code></td>
+<td style="text-align: left;"><code>[{ "key": "tier", "value": "web" }, ...]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Optional fields may be <strong>omitted entirely</strong> or sent as <code>null</code>; both are stored as
+<code>null</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Use <code>null</code> rather than an empty string for non-string fields</p>
+<p>An empty string is accepted only on the optional fields whose value is
+textual: <code>description</code>, <code>environment</code>, <code>hostname</code>, <code>osType</code>, <code>osDetail</code>,
+<code>network</code>, <code>publicIp</code>, <code>defaultGateway</code>, the interface <code>name</code>,
+<code>firstDetected</code>, and <code>lastDetected</code> all treat <code>""</code> as <code>null</code>. Required
+fields reject it, as they reject a missing value.</p>
+<p><code>online</code>, <code>managed</code>, <code>srcPort</code>, <code>dstPort</code>, <code>numConnections</code>, <code>cidrBlock</code>, and
+<code>flowDirection</code> do not: <code>""</code> is the wrong type for a boolean, a number, or an
+enumerated value, and the request fails with <code>422</code>. This matters when
+converting CSV rows to JSON, where every empty cell starts life as <code>""</code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Structured labels can hold commas and equals signs</p>
+<p>The CSV <code>labels</code> column packs pairs into <code>key=value,key=value</code>, so a label
+whose key or value contains <code>,</code> or <code>=</code> cannot be expressed. The JSON form has
+no such limit.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Unknown properties are rejected</p>
+<p>A misspelled array name or row property fails validation rather than being
+ignored, so a typo cannot silently import nothing. <code>{"aplications": [...]}</code>
+returns <code>422</code>, not <code>202</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Sample JSON payload</p>
+<p>The same data as the four sample CSV files above. Note that the flow’s
+<code>dstWorkloadExternalId</code> is <code>wl-002</code>, so the workload defining it has to be in
+the payload as well – or already in the snapshot.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"applications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-001"</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frontend Service"</span><span class="p">,</span><span class="w"> </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web frontend"</span><span class="p">,</span><span class="w"> </span><span class="nt">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-002"</span><span class="p">,</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Backend API"</span><span class="p">,</span><span class="w"> </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REST API service"</span><span class="p">,</span><span class="w"> </span><span class="nt">"environment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"workloads"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-001"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"applicationExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-001"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web-server-01"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"enforcementMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web01.example.com"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"managed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"publicIp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"203.0.113.10"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tier"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"region"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu-west"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-002"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"applicationExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-002"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api-server-01"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"enforcementMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"selective"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api01.example.com"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"managed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"publicIp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"203.0.113.11"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tier"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"region"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu-west"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"interfaces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"workloadExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-001"</span><span class="p">,</span><span class="w"> </span><span class="nt">"ipAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.1.10"</span><span class="p">,</span><span class="w"> </span><span class="nt">"linkState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"up"</span><span class="p">,</span><span class="w"> </span><span class="nt">"cidrBlock"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nt">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.1.0/24"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"workloadExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-002"</span><span class="p">,</span><span class="w"> </span><span class="nt">"ipAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.2.20"</span><span class="p">,</span><span class="w"> </span><span class="nt">"linkState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"up"</span><span class="p">,</span><span class="w"> </span><span class="nt">"cidrBlock"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nt">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.2.0/24"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"flows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"srcIp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.1.10"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"dstIp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.2.20"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"policyDecision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allowed"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"srcWorkloadExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-001"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"dstWorkloadExternalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wl-002"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"srcPort"</span><span class="p">:</span><span class="w"> </span><span class="mi">54321</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"dstPort"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"flowDirection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"egress"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<h3 id="payload-size">Payload Size</h3>
+<p>The whole request is limited to <strong>20 MB</strong>, whichever format it uses. For a file
+upload that budget covers all four files together, not each one separately.</p>
+<div class="admonition warning">
+<p class="admonition-title">JSON is roughly twice the size of the same data as CSV</p>
+<p>JSON repeats every field name on every row, so the format you choose decides
+how many rows fit. As a rough guide, 120,000 flow rows are around 19 MB of
+CSV but around 39 MB of JSON.</p>
+<p>Split anything larger across several requests. The import merges on the keys
+in your data, so importing in batches gives the same result as one request.</p>
+</div>
 <h3 id="validation-rules">Validation Rules</h3>
-<p>Validation is strict and <strong>aborts the whole import on the first error</strong> – the
-job fails and nothing from the failing file is applied.</p>
+<p>Both formats apply the same rules. What differs is <strong>when</strong> you find out: a JSON
+body is validated before the job is scheduled, while CSV files are parsed inside
+the job.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Validation</th>
+<th style="text-align: left;">CSV upload</th>
+<th style="text-align: left;">JSON body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Field types, required fields, enumerations, duplicate <code>externalId</code></td>
+<td style="text-align: left;">Job fails; read <code>reason</code> for file, row, message</td>
+<td style="text-align: left;">Request fails immediately with <code>422</code> and the path to each bad value</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cross-references between applications, workloads, and flows</td>
+<td style="text-align: left;">Job fails</td>
+<td style="text-align: left;">Job fails – these need a database lookup, so they stay in the job</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>422</code> from a JSON body lists every problem it found, each with the array name,
+the row index, and the property:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_VALIDATION_FAILED"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Input"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"flows"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"protocol"</span><span class="p">],</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expected number, received string"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"applications"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"externalId"</span><span class="p">],</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field is required"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Row numbering differs between the two formats</p>
+<p>A CSV <code>reason</code> counts the header as row 1, so the first data row is <code>row: 2</code>.
+A JSON <code>field</code> path carries the <strong>array index</strong>, so the same row is <code>0</code>.</p>
+</div>
+<p>Whichever format fails, the import is <strong>all or nothing</strong> – nothing from the
+failing data set is applied.</p>
+<p>The rules themselves:</p>
 <ul>
 <li><strong>Required fields</strong> must be present and non-empty.</li>
 <li><strong>Enumerated fields</strong> must hold one of the listed values.</li>
-<li><strong>Duplicate <code>externalId</code></strong> values within <code>applications.csv</code> or <code>workloads.csv</code>
-  are rejected. <code>interfaces.csv</code> and <code>flows.csv</code> are not de-duplicated.</li>
-<li><strong>Cross-file references</strong> are resolved against the uploaded files first and,
-  when a file is not part of the request, against data already stored in the
+<li><strong>Duplicate <code>externalId</code></strong> values within the applications or workloads data are
+  rejected. Interfaces and flows are not de-duplicated.</li>
+<li><strong>Cross-references</strong> are resolved against the data in the request first and,
+  when a section is not part of the request, against data already stored in the
   snapshot:
     - <code>workloads.applicationExternalId</code> must resolve to a known application.
     - <code>interfaces.workloadExternalId</code> must resolve to a known workload.
     - <code>flows.srcWorkloadExternalId</code> and <code>flows.dstWorkloadExternalId</code> must
       resolve to known workloads.</li>
 </ul>
-<p>This means you can upload files incrementally – for example <code>flows.csv</code> alone –
-as long as the referenced workloads already exist in the snapshot.</p>
+<p>This means you can import incrementally – for example flows alone – as long as
+the referenced workloads already exist in the snapshot.</p>
+<div class="admonition note">
+<p class="admonition-title">A failing CSV file stops at the first bad row</p>
+<p>The CSV parser aborts as soon as it hits an invalid row, so <code>reason</code> names
+one problem even when the file has several. A JSON body is validated as a
+whole and reports all of them at once, so a payload with five mistakes takes
+one round trip to diagnose rather than five.</p>
+</div>
 <h3 id="how-data-is-merged">How Data Is Merged</h3>
 <p>Imported records are attached to the snapshot’s <strong>manual</strong> AIM data source, which
 is created on the first import. Existing integration-sourced AIM data is not
@@ -17620,7 +17931,7 @@ already exists) or replaced wholesale:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">File</th>
+<th style="text-align: left;">Section</th>
 <th style="text-align: left;">Behavior</th>
 <th style="text-align: left;">Key used for matching</th>
 </tr>
@@ -17644,27 +17955,41 @@ already exists) or replaced wholesale:</p>
 <tr>
 <td style="text-align: left;"><code>flows</code></td>
 <td style="text-align: left;">merge</td>
-<td style="text-align: left;">source workload + destination workload + <code>protocol</code> + <code>flowDirection</code></td>
+<td style="text-align: left;">source workload + destination workload + <code>srcIp</code> + <code>dstIp</code> + <code>protocol</code> + <code>srcPort</code> + <code>dstPort</code> + <code>policyDecision</code> + <code>flowDirection</code></td>
 </tr>
 </tbody>
 </table>
-<p>Re-running an import with the same files is therefore safe: rows are updated in
-place rather than duplicated.</p>
+<p>Re-running an import with the same data updates rows in place rather than
+duplicating them – with one exception for flows, described below.</p>
 <div class="admonition warning">
-<p class="admonition-title">Uploading <code>workloads.csv</code> clears interfaces and labels</p>
+<p class="admonition-title">A flow with an empty key field is re-inserted, not updated</p>
+<p><code>srcPort</code>, <code>dstPort</code>, and <code>flowDirection</code> are optional, and the database
+treats two empty values as different rather than equal. A flow row that
+leaves any of the three empty therefore never matches the row an earlier
+import created, and re-importing the same data <strong>adds a second copy</strong> of it.</p>
+<p>Send all three on every flow if you intend to re-import the same rows. Flows
+that carry complete keys are unaffected.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Importing workloads clears interfaces and labels</p>
 <p>A workload’s interfaces and labels are replaced from the request, not merged.
-If you upload <code>workloads.csv</code> <strong>without</strong> <code>interfaces.csv</code>, the existing
-interfaces of every workload listed in that file are removed. Likewise, an
-empty <code>labels</code> column clears that workload’s labels. When updating workload
-attributes, re-send <code>interfaces.csv</code> and the full <code>labels</code> value alongside.</p>
+If you send workloads <strong>without</strong> interfaces, the existing interfaces of every
+workload listed are removed. Likewise, an empty <code>labels</code> value clears that
+workload’s labels. When updating workload attributes, re-send the interfaces
+and the full <code>labels</code> value alongside.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Flow uniqueness ignores ports</p>
-<p>Because the flow matching key does not include <code>srcPort</code> or <code>dstPort</code>, two
-rows between the same workload pair with the same protocol and direction but
-different ports are treated as <strong>one</strong> flow, and the last row wins.</p>
+<p class="admonition-title">Every field of the flow key counts</p>
+<p>The flow matching key covers the addresses, the ports, the protocol,
+<code>policyDecision</code>, and <code>flowDirection</code>. Two rows between the same workload
+pair that differ in <strong>any</strong> of those – a different source port, for example
+– are two distinct flows, not one. Only a row matching on all of them
+updates an existing flow instead of adding one.</p>
+<p>A source system that reports one connection per ephemeral source port
+therefore produces one flow row per connection. Aggregate on the source side
+if that is not what you want.</p>
 </div>
-<h3 id="example-request">Example Request</h3>
+<h3 id="example-requests">Example Requests</h3>
 <div class="admonition example">
 <p class="admonition-title">Import All Four CSV Files</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://{ipf_server}/api/aim/import/{snapshotId}'</span><span class="w"> </span><span class="se">\</span>
@@ -17678,6 +18003,36 @@ different ports are treated as <strong>one</strong> flow, and the last row wins.
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://{ipf_server}/api/aim/import/{snapshotId}'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: {api_token}'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-F<span class="w"> </span><span class="s1">'flows=@flows.csv;type=text/csv'</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Import a JSON Payload</p>
+<p>From a file:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://{ipf_server}/api/aim/import/{snapshotId}'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: {api_token}'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-binary<span class="w"> </span>@aim-import.json
+</code></pre></div>
+<p>Inline, into the latest snapshot. Note the single quotes around the URL, so
+that the shell does not expand <code>$last</code>:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'https://{ipf_server}/api/aim/import/$last'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'X-API-Token: {api_token}'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--header<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">        "flows": [</span>
+<span class="s1">          {</span>
+<span class="s1">            "srcIp": "10.0.1.10",</span>
+<span class="s1">            "dstIp": "10.0.2.20",</span>
+<span class="s1">            "protocol": 6,</span>
+<span class="s1">            "policyDecision": "allowed",</span>
+<span class="s1">            "srcWorkloadExternalId": "wl-001",</span>
+<span class="s1">            "dstWorkloadExternalId": "wl-002",</span>
+<span class="s1">            "srcPort": 54321,</span>
+<span class="s1">            "dstPort": 8080,</span>
+<span class="s1">            "flowDirection": "egress"</span>
+<span class="s1">          }</span>
+<span class="s1">        ]</span>
+<span class="s1">      }'</span>
 </code></pre></div>
 </div>
 <h3 id="response">Response</h3>
@@ -17706,7 +18061,9 @@ key:</p>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<p>The scheduled job has the action name <code>aimCsvImport</code>.</p>
+<p>The scheduled job has the action name <code>aimImport</code>. The Jobs table exposes it as
+the <code>name</code> column, so a script can find the job again by filtering on
+<code>"name": ["eq", "aimImport"]</code>.</p>
 <table>
 <thead>
 <tr>
@@ -17721,7 +18078,11 @@ key:</p>
 </tr>
 <tr>
 <td style="text-align: left;"><code>400</code></td>
-<td style="text-align: left;">No files provided, or <code>snapshotId</code> is not a valid UUID.</td>
+<td style="text-align: left;">Nothing to import – no files, or a JSON body with no rows in any section. The message reads <code>At least one file must be provided</code> for both formats.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>400</code></td>
+<td style="text-align: left;"><code>Malformed JSON</code> (<code>API_MALFORMED_BODY</code>) – the body is declared as <code>application/json</code> but is not valid JSON.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>401</code></td>
@@ -17737,7 +18098,11 @@ key:</p>
 </tr>
 <tr>
 <td style="text-align: left;"><code>413</code></td>
-<td style="text-align: left;">A file exceeds the 50 MB limit.</td>
+<td style="text-align: left;">The request exceeds 20 MB. Returned by the appliance’s web server, so the body is an HTML error page rather than the usual JSON envelope.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>422</code></td>
+<td style="text-align: left;">Invalid <code>snapshotId</code>, or a JSON body that failed row validation. <code>errors[].field</code> gives the path to each bad value.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>500</code></td>
@@ -17746,11 +18111,14 @@ key:</p>
 </tbody>
 </table>
 <div class="admonition info">
-<p class="admonition-title"><code>202</code> does not mean the data was accepted</p>
-<p>The response confirms only that the job was <strong>scheduled</strong>. CSV parsing and
-validation happen inside the job, so a malformed file still returns <code>202</code>
-here and fails later. Always poll the job – see
+<p class="admonition-title"><code>202</code> does not mean the whole import succeeded</p>
+<p>The response confirms that the job was <strong>scheduled</strong>. Cross-reference checks
+run inside the job in both formats, and for a CSV upload the parsing and row
+validation do too – so a malformed file still returns <code>202</code> here and fails
+later. Always poll the job – see
 <a href="end_to_end_workflow/">End-to-End Workflow</a>.</p>
+<p>A JSON body is the exception for row-level problems only: those are caught
+before the job exists and returned as <code>422</code>.</p>
 </div>
 <h3 id="imported-data-does-not-survive-a-snapshot-reload">Imported Data Does Not Survive a Snapshot Reload</h3>
 <div class="admonition warning">
@@ -17846,7 +18214,7 @@ redirects: it must start with a single <code>/</code> and must not contain a sch
 host, whitespace, or backslashes. This field only affects the UI
 notification and can be omitted for headless integrations.</p>
 </div>
-<h3 id="example-request_1">Example Request</h3>
+<h3 id="example-request">Example Request</h3>
 <div class="admonition example">
 <p class="admonition-title">Calculate Every Flow of One Application</p>
 <p>Sample payload:</p>
@@ -18846,7 +19214,7 @@ job failures, and chain all of these calls into a single automated sequence, see
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2026 21:14:42 UTC">September 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 14:25:26 UTC">October 14, 2026</span>
   </span>
 
     

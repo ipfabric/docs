@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
+        <meta name="description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV or JSON data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
       
       
       
@@ -71,7 +71,7 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="End-to-End Workflow - IP Fabric Documentation Portal">
-<meta property="og:description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
+<meta property="og:description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV or JSON data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
 <meta property="og:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_API/Application_Infrastructure_Mapping/end_to_end_workflow.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -79,7 +79,7 @@
 <meta property="og:url" content="https://docs.ipfabric.io/latest/IP_Fabric_API/Application_Infrastructure_Mapping/end_to_end_workflow/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="End-to-End Workflow - IP Fabric Documentation Portal">
-<meta property="twitter:description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
+<meta property="twitter:description" content="How to combine the IP Fabric AIM API endpoints into a complete workflow -- import CSV or JSON data, poll the background jobs, calculate flow path lookups, and read the resulting applications, flows, and devices.">
 <meta property="twitter:image" content="https://docs.ipfabric.io/latest/assets/images/social/IP_Fabric_API/Application_Infrastructure_Mapping/end_to_end_workflow.png">
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -16469,7 +16469,8 @@ license file.</p>
 schedules a background job and returns a <code>jobId</code>. A complete integration
 therefore combines them with the Jobs table and the AIM inventory tables:</p>
 <ol>
-<li><strong>Import</strong> the CSV files – <code>POST /aim/import/{snapshotId}</code>.</li>
+<li><strong>Import</strong> the data, as CSV files or a JSON body –
+   <code>POST /aim/import/{snapshotId}</code>.</li>
 <li><strong>Poll</strong> the import job until it finishes – <code>POST /tables/jobs</code>.</li>
 <li><strong>Look up</strong> the application or flow ID –
    <code>POST /tables/inventory/applications</code> or
@@ -16542,14 +16543,14 @@ in the request body, or the request is rejected.</p>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<p>The <code>name</code> column identifies the job type: <code>aimCsvImport</code> for the import and
+<p>The <code>name</code> column identifies the job type: <code>aimImport</code> for the import and
 <code>aimFlowPathLookup</code> for the path-lookup calculation. Timestamps are Unix
 milliseconds.</p>
 <div class="admonition tip">
 <p class="admonition-title">Finding a job without its ID</p>
 <p>If you lose the <code>jobId</code>, filter on the action name instead and sort by
 schedule time – for example
-<code>"filters": { "name": ["eq", "aimCsvImport"] }</code> with
+<code>"filters": { "name": ["eq", "aimImport"] }</code> with
 <code>"sort": { "column": "scheduledAt", "order": "desc" }</code>.</p>
 </div>
 <h3 id="job-status-values">Job Status Values</h3>
@@ -16593,8 +16594,9 @@ schedule time – for example
 </tbody>
 </table>
 <h3 id="reading-validation-errors">Reading Validation Errors</h3>
-<p>When a CSV fails validation, the job ends with <code>status: "error"</code> and <code>reason</code>
-holds a JSON-encoded object pinpointing the offending row:</p>
+<p>Where a validation error surfaces depends on how the data was sent.</p>
+<p><strong>CSV upload.</strong> The job ends with <code>status: "error"</code> and <code>reason</code> holds a
+JSON-encoded object pinpointing the offending row:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"workloads.csv"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"row"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
@@ -16603,13 +16605,42 @@ holds a JSON-encoded object pinpointing the offending row:</p>
 </code></pre></div>
 <p><code>row</code> counts the header as row 1, so <code>row: 3</code> is the second data row. It is
 <code>null</code> for errors that are not tied to a specific row, such as an unresolved
-cross-file reference.</p>
+cross-reference.</p>
+<p><strong>JSON body.</strong> Row-level problems never reach a job – the request itself is
+rejected with <code>422</code> before one is scheduled, and the response lists every
+problem at once:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_VALIDATION_FAILED"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Input"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"workloads"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"enforcementMode"</span><span class="p">],</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid enum value. Expected 'visibility_only' | 'selective' | 'full' | 'idle' | 'unknown', received 'strict'"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>field</code> path carries the <strong>array index</strong>, so the row that a CSV reports as
+<code>row: 3</code> appears here as <code>1</code>.</p>
+<p>Cross-references between applications, workloads, and flows need a database
+lookup, so they are checked inside the job in both formats – a <code>202</code> followed by
+a failed job is still possible with a JSON body.</p>
+<div class="admonition note">
+<p class="admonition-title"><code>file</code> follows the format you sent</p>
+<p>A CSV upload reports the file name, <code>flows.csv</code>. A JSON body reports the
+property name instead, so the same cross-reference failure reads:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flows"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"row"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dstWorkloadExternalId 'wl-999' not found in workloads data"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Match on the section rather than on the exact string if your client handles
+both formats.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Follow-up jobs after a successful import</p>
 <p>A successful import also schedules the standard post-processing jobs for the
 snapshot, such as topology calculation and intent verification. These appear
 as separate entries in the Jobs table. They do not block the path-lookup
-calculation, so you can proceed as soon as the <code>aimCsvImport</code> job reports
+calculation, so you can proceed as soon as the <code>aimImport</code> job reports
 <code>done</code>.</p>
 </div>
 <h2 id="reading-the-results">Reading the Results</h2>
@@ -16706,6 +16737,25 @@ wait_for_job<span class="o">()</span><span class="w"> </span><span class="o">{</
 <span class="w">  </span>-F<span class="w"> </span><span class="s2">"flows=@</span><span class="si">${</span><span class="nv">CSV_DIR</span><span class="si">}</span><span class="s2">/flows.csv;type=text/csv"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.jobId<span class="k">)</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Import job: </span><span class="si">${</span><span class="nv">import_job</span><span class="si">}</span><span class="s2">"</span>
 wait_for_job<span class="w"> </span><span class="s2">"</span><span class="nv">$import_job</span><span class="s2">"</span>
+</code></pre></div>
+<p>To send a JSON payload instead, replace step 1 with the following. The rest
+of the script is unchanged, because both formats return the same <code>jobId</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Import a JSON payload. A 422 here means a row failed validation, and</span>
+<span class="c1">#    no job was created - so check for jobId before waiting on it.</span>
+<span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-sk<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"https://</span><span class="si">${</span><span class="nv">IPF_SERVER</span><span class="si">}</span><span class="s2">/api/aim/import/</span><span class="si">${</span><span class="nv">SNAPSHOT</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"X-API-Token: </span><span class="si">${</span><span class="nv">IPF_TOKEN</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-binary<span class="w"> </span><span class="s2">"@</span><span class="si">${</span><span class="nv">CSV_DIR</span><span class="si">}</span><span class="s2">/aim-import.json"</span><span class="k">)</span>
+
+<span class="nv">import_job</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.jobId // empty'</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$import_job</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Import rejected:"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.errors[]? | "  \(.field | join(".")): \(.message)"'</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Import job: </span><span class="si">${</span><span class="nv">import_job</span><span class="si">}</span><span class="s2">"</span>
+wait_for_job<span class="w"> </span><span class="s2">"</span><span class="nv">$import_job</span><span class="s2">"</span>
 
 <span class="c1"># 2. Resolve the application ID from its externalId.</span>
 <span class="nv">app_id</span><span class="o">=</span><span class="k">$(</span>api<span class="w"> </span><span class="s2">"tables/inventory/applications"</span><span class="w"> </span><span class="s2">"{</span>
@@ -16741,7 +16791,15 @@ api<span class="w"> </span><span class="s2">"tables/inventory/applications/devic
 <tbody>
 <tr>
 <td style="text-align: left;"><code>400 -- At least one file must be provided</code></td>
-<td style="text-align: left;">No file part was received. Send at least one CSV as <code>multipart/form-data</code>, and do not set <code>Content-Type</code> manually.</td>
+<td style="text-align: left;">Nothing to import. For an upload, send at least one CSV as <code>multipart/form-data</code> and do not set <code>Content-Type</code> manually. For a JSON body, include at least one non-empty array.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>400 -- Malformed JSON</code></td>
+<td style="text-align: left;">The request is declared as <code>application/json</code> but the body is not valid JSON. Most often <code>-H 'Content-Type: application/json'</code> was sent alongside <code>-F</code> file parts; drop the header and let <code>curl</code> build the multipart one.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>422</code> on the import endpoint</td>
+<td style="text-align: left;">Invalid <code>snapshotId</code>, or a JSON row failed validation. <code>errors[].field</code> names the array, the row index, and the property. No job was created, so fix the payload and resend.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>403</code> on either AIM endpoint</td>
@@ -16752,12 +16810,16 @@ api<span class="w"> </span><span class="s2">"tables/inventory/applications/devic
 <td style="text-align: left;">The snapshot is not loaded. Path lookups need the snapshot’s routing data.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>413</code></td>
-<td style="text-align: left;">A file exceeds 50 MB. Split it and import in several requests.</td>
+<td style="text-align: left;"><code>413</code>, as an HTML page rather than JSON</td>
+<td style="text-align: left;">The request exceeds the 20 MB limit, which covers the whole request in both formats. Split the data and import in several requests.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Import job <code>status: "error"</code></td>
-<td style="text-align: left;">Read <code>reason</code> for the file, row, and message. Fix that row and re-import – the merge behavior makes retries safe.</td>
+<td style="text-align: left;">Read <code>reason</code> for the file, row, and message. Fix that row and re-import – applications, workloads, and interfaces merge on re-import, so retrying is safe. With a JSON body this indicates a cross-reference failure, since row errors are caught before the job.</td>
+</tr>
+<tr>
+<td style="text-align: left;">A flow appears twice after re-importing the same data</td>
+<td style="text-align: left;">The flow leaves <code>srcPort</code>, <code>dstPort</code>, or <code>flowDirection</code> empty, and empty values do not match on re-import. Send all three – see <a href="../#how-data-is-merged">How Data Is Merged</a>.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Import succeeded but the Applications <code>devices</code> count is <code>0</code></td>
@@ -16805,7 +16867,7 @@ api<span class="w"> </span><span class="s2">"tables/inventory/applications/devic
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 22, 2026 21:14:42 UTC">September 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 14:25:26 UTC">October 14, 2026</span>
   </span>
 
     
