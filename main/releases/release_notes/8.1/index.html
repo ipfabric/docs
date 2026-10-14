@@ -9661,6 +9661,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Infrastructure Mapping (AIM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9750,7 +9761,7 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+  <a href="#application-infrastructure-mapping-aim_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Application Infrastructure Mapping (AIM)
@@ -16591,6 +16602,17 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Infrastructure Mapping (AIM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16680,7 +16702,7 @@ here.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+  <a href="#application-infrastructure-mapping-aim_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Application Infrastructure Mapping (AIM)
@@ -16973,6 +16995,22 @@ MD5 (unsupported-ESXi7.0-ipfabric-8-1-4+0.ova) = 3dbf46b4b46c3ecf4dab7fbfa302e8b
 SHA256 (ESXi8.0-ipfabric-8-1-4+0.ova) = 60912b67f8afb4f0e331ed2c45a4166aa6d20e47d0a32f5d9c068e8fd452c512
 MD5 (ESXi8.0-ipfabric-8-1-4+0.ova) = e2106058b9ac75afaebee947a5965bb8
 </code></pre></div>
+<h3 id="application-infrastructure-mapping-aim">Application Infrastructure Mapping (AIM)</h3>
+<p><strong>API</strong></p>
+<p><code>POST /aim/import/{snapshotId}</code> now accepts the data either as uploaded CSV files or as a JSON payload in the request body. Both encodings carry the same fields and
+apply the same validation and merge rules, so either can be used interchangeably. JSON additionally allows native types and structured workload labels, which the packed
+<code>key=value</code> CSV column cannot express. See <a href="../../../IP_Fabric_API/Application_Infrastructure_Mapping/">AIM API</a>.</p>
+<p>A JSON payload is validated row by row <strong>before</strong> the import job is scheduled. Invalid rows are rejected immediately with <code>422</code> and the array, row index, and property of
+each bad value, instead of surfacing later as a failed job. Cross-references between applications, workloads, and flows continue to be checked inside the job.</p>
+<p>The endpoint now also accepts the <code>$last</code>, <code>$lastLocked</code>, and <code>$prev</code> snapshot keywords in place of a snapshot UUID.</p>
+<div class="admonition warning">
+<p class="admonition-title">Migration</p>
+<p>The background job scheduled by <code>POST /aim/import/{snapshotId}</code> is now named <code>aimImport</code> instead of <code>aimCsvImport</code>. The upgrade renames existing job records as well,
+so the Jobs table reports the new name for past imports too. Update any automation that filters on <code>"name": ["eq", "aimCsvImport"]</code>.</p>
+</div>
+<p><strong>MCP Server</strong></p>
+<p>AIM data can now be imported through the IP Fabric MCP Server, which sends the JSON payload – so the whole AIM workflow, ingestion included, runs from an AI assistant.
+Uploading CSV files still requires a normal HTTP client. See <a href="../../../IP_Fabric_API/Application_Infrastructure_Mapping/mcp_server_guide/">Using AIM Through the MCP Server</a>.</p>
 <h3 id="improvements">Improvements</h3>
 <ul>
 <li>Improved topology calculation performance by speeding up graph edge sorting</li>
@@ -17004,7 +17042,7 @@ MD5 (ESXi8.0-ipfabric-8-1-4+0.ova) = e2106058b9ac75afaebee947a5965bb8
 <li>Fixed interface media type not being populated for Cisco NCS 560 devices running IOS-XR</li>
 </ul>
 <h2 id="v813-september-23rd-2026-ga">v8.1.3 (September 23<sup>rd</sup>, 2026; GA)</h2>
-<h3 id="application-infrastructure-mapping-aim">Application Infrastructure Mapping (AIM)</h3>
+<h3 id="application-infrastructure-mapping-aim_1">Application Infrastructure Mapping (AIM)</h3>
 <p>A new premium add-on that correlates your application inventory – applications, workloads, workload interfaces, and flows – with the discovered
 network, and calculates which network devices an application’s traffic traverses. Requires the AIM feature in the product license.
 See <a href="../../../overview/application_infrastructure_mapping/">Application Infrastructure Mapping (AIM)</a>.</p>
@@ -17146,7 +17184,7 @@ You can also use them to scope intent checks and import them through the API.</p
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 7, 2026 14:11:02 UTC">October 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 14:10:46 UTC">October 14, 2026</span>
   </span>
 
     
