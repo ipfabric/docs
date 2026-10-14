@@ -40,7 +40,7 @@ Three ingestion methods are supported, and they can be used side by side:
 | :--------------------------------------- | :-------------------------------------------------------- | :---------------------------------- |
 | **External data provider, via API crawling** | Discovery Settings, Integrations tab                   | Each discovery run.                 |
 | **Records maintained in IP Fabric**      | Discovery Settings -- forms, or a CSV import in the UI      | Saving the settings form.           |
-| **The AIM API**                          | `POST /aim/import/{snapshotId}`, with CSV files            | Each API call.                      |
+| **The AIM API**                          | `POST /aim/import/{snapshotId}`, with CSV files or JSON  | Each API call.                      |
 
 Illumio is the external provider supported today; the source is not limited to
 micro-segmentation platforms, and support for further platform types is planned
@@ -56,7 +56,7 @@ and the third in
 flowchart LR
     P[External provider<br/>e.g. Illumio] -->|discovery| S[(Snapshot<br/>AIM data)]
     M[Discovery Settings<br/>forms / CSV] -->|save| S
-    A[AIM API<br/>CSV import] -->|job| S
+    A[AIM API<br/>CSV or JSON import] -->|job| S
     S --> T[Inventory --> Applications<br/>tables]
     S --> L[Path-lookup<br/>calculation]
     L --> D[Traversed devices]
@@ -122,7 +122,7 @@ licensing works in general, see [Licensing](licensing.md).
 | Browse the AIM inventory and calculate devices                 | [Applications](../IP_Fabric_GUI/inventory/applications.md)                                                       |
 | See the AIM section in the wider inventory                     | [Inventory](../IP_Fabric_GUI/inventory/index.md)                                                                 |
 | Find an address by application name in path lookup             | [How To Use Path Lookup](../IP_Fabric_GUI/diagrams/how_to_use_path-lookup.md#searching-by-application-or-workload-name) |
-| Ingest CSV data over the API                                   | [AIM API -- Import](../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#import-aim-data-from-csv-files)  |
+| Ingest data over the API (CSV or JSON)                         | [AIM API -- Import](../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#import-aim-data)  |
 | Read the AIM inventory tables over the API                     | [AIM API -- Inventory Tables](../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#aim-inventory-tables)  |
 | Test an integration's connection over the API                  | [AIM API -- Verify](../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#verify-an-aim-integration-connection) |
 | Automate the whole ingest-to-devices sequence                  | [End-to-End Workflow](../IP_Fabric_API/Application_Infrastructure_Mapping/end_to_end_workflow.md)                |

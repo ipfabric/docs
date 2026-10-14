@@ -267,7 +267,7 @@ rows.
 !!! warning "This is not the same CSV format as the AIM import API"
 
     The import in this settings panel and the
-    [AIM import API endpoint](../../../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#import-aim-data-from-csv-files)
+    [AIM import API endpoint](../../../IP_Fabric_API/Application_Infrastructure_Mapping/index.md#import-aim-data)
     use **different column names**. The settings import links records with
     IP Fabric `id` values, while the API import uses your own `externalId` keys
     and a separate interfaces file. Use the example files from the panel for the
