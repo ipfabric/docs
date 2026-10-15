@@ -18,15 +18,15 @@ versions:
 
 | Jumphost's Python Version  | Status        |
 | :------------------------- | : ----------- |
-| `2.7`                      | tested        |
-| `3.4`                      | tested        |
-| `3.5`                      | tested        |
-| `3.6`                      | **supported** |
-| `3.7`                      | **supported** |
-| `3.8`                      | **supported** |
+| `2.7`                      | not supported |
+| `3.4`                      | not tested    |
+| `3.5`                      | not tested    |
+| `3.6`                      | tested        |
+| `3.7`                      | tested        |
+| `3.8`                      | tested        |
 | `3.9`                      | **supported** |
-| `3.10`                     | tested        |
-| `3.11`                     | tested        |
+| `3.10`                     | **supported** |
+| `3.11`                     | **supported** |
 | `3.12`                     | tested        |
 | `3.13`                     | tested        |
 
@@ -38,6 +38,12 @@ versions:
     `supported` -- Python version was successfully tested on a jumphost and is
     officially supported by the underlying SSH tunnel project. **We strongly
     recommend using a supported Python version in your production environment.**
+
+    `not supported` -- Python version is not compatible with the jumphost setup.
+    For example, discovery results were incomplete.
+
+    `not tested` -- Python version was not tested on a jumphost, and
+    it is not officially supported by the underlying SSH tunnel project.
 
 !!! warning
 
