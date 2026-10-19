@@ -362,11 +362,13 @@ The following data is **not** collected in fast mode:
 - VLAN ID for clients on WLANs mapped to an interface group or to an untagged
   interface (AireOS)
 
-To enable this feature, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
+Since `8.2`, this feature is enabled by default. To disable it and collect the full data set, add the following line to the `worker` environment file `/etc/default/ipf-discovery-worker-local`:
 
 ```
-ENABLE_WLC_FAST_DISCOVERY=true
+ENABLE_WLC_FAST_DISCOVERY=false
 ```
+
+In `8.1`, this feature is disabled by default. To enable it, set `ENABLE_WLC_FAST_DISCOVERY=true` in the same file.
 
 ### ZPE Nodegrid Discovery
 
@@ -401,6 +403,20 @@ sudo systemctl restart ipf-appliance
 ```
 
 Without this flag, **Discovery Data Enrichment** does not appear in the **Settings** menu. Labels are not calculated after discovery. The **Labels** columns in tables and in the API remain empty.
+
+### Aruba Central Discovery (Partial)
+
+Since `8.2`, you can discover switches, gateways, and access points managed by HPE Aruba Networking Central via API. Support is partial: IP Fabric collects device inventory, serial numbers, L2 and L3 interfaces, VLANs, neighbors, ARP and MAC address tables, and routing tables. Other tasks are not yet supported for Aruba Central.
+
+Add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+
+```
+ENABLE_DISCOVERY_DEVICES_ARUBANEWCENTRAL=true
+```
+
+After you update the environment file, run the following command to restart the IP Fabric application:
+
+Without this flag, Aruba Central does not appear in **Settings --> Discovery & Snapshots --> Discovery Settings --> Vendors API**.
 
 ### Avocent ACS Discovery
 
