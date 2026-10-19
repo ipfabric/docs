@@ -74,7 +74,7 @@ Since `6.7`, it is possible to enable API key authentication for FMC by adding t
 ENABLE_FMC_TOKEN_AUTH=true
 ```
 
-After updating the environment file, you must restart IP Fabric application by running the following command:
+After updating the environment file, you must restart the IP Fabric application by running the following command:
 
 ```
 sudo systemctl restart ipf-appliance
@@ -88,7 +88,7 @@ Since `6.9`, VeloCloud devices can be discovered by adding the following line to
 ENABLE_DISCOVERY_DEVICES_VELOCLOUD=true
 ```
 
-After updating the environment file, you must restart IP Fabric application by running the following command:
+After updating the environment file, you must restart the IP Fabric application by running the following command:
 
 ```
 sudo systemctl restart ipf-appliance
@@ -142,7 +142,7 @@ This feature flag enables the Extensions functionality, which allows users to ad
 
 For more information about Extensions, see the [7.0 Release Notes](../../releases/release_notes/previous_releases/IP_Fabric_v7.x.x/7.0.md#extensions-engineering-preview) for more information.
 
-After updating the environment file, you must restart IP Fabric application by running the following command:
+After updating the environment file, you must restart the IP Fabric application by running the following command:
 
 ```bash
 sudo systemctl restart ipf-appliance
@@ -278,13 +278,15 @@ ENABLE_JSON_SCHEMA_TASK_VALIDATION=true
 
 Since `8.0`, IP Fabric includes the New Cloud Model (NCM), which replaces the adapted on-premises abstractions with cloud-native constructs as first-class entities: VPCs/VNets, subnets, vNICs, route tables, peering, and security policies — structured the way cloud providers actually expose them.
 
+Since `8.2`, IP Fabric enables the New Cloud Model by default.
+
 #### Data Collection
 
 A single org-scoped cloud collector task is created per AWS account and region, Azure subscription, or GCP project. A larger, hierarchy-aware task set (resource hierarchy, networks, subnets, route tables, peering, security, VMs, and more) runs against that one collector instead of many per-VPC devices.
 
 !!! warning "Device Count Impact"
 
-    VPCs/VNets no longer display as devices in the UI. This only changes how and where VPCs/VNets display. It does not change how VPCs/VNets are counted against your license. Your displayed device count will decrease after you enable this feature flag.
+    VPCs/VNets no longer display as devices in the UI. This only changes how and where VPCs/VNets display. It does not change how VPCs/VNets count against your license. Snapshots discovered with this feature flag enabled **display a lower device count**.
 
 
 #### Network Diagrams
@@ -314,23 +316,27 @@ VMware NSX-T data is no longer included in the cloud endpoints tables (`/technol
 
 ![New Cloud Model -- Peering](../../images/technology/cloud/technology-cloud_new-cloud-model-peering.webp)
 
-#### Enabling the Feature Flag
+#### Disabling the Feature Flag
 
-To enable the New Cloud Model, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
+Since `8.2`, IP Fabric enables the New Cloud Model by default. No additional configuration is required.
+
+To switch back to the old cloud model, add the following line to the `global` environment file `/etc/default/ipf-appliance-local`:
 
 ```
-ENABLE_NEW_CLOUD_MODEL=true
+ENABLE_NEW_CLOUD_MODEL=false
 ```
 
-After updating the environment file, you must restart IP Fabric application by running the following command:
+After updating the environment file, you must restart the IP Fabric application by running the following command:
 
 ```
 sudo systemctl restart ipf-appliance
 ```
 
+This option is temporary. IP Fabric will remove it in a future release.
+
 !!! warning
 
-    The New Cloud Model uses new database tables. Snapshots taken without this feature flag enabled are not compatible with the new model. If you load an old snapshot after enabling this feature flag, some data may be missing or incomplete. The old snapshot data cannot be mapped to the new table structure.
+    The New Cloud Model uses new database tables. Snapshots taken with the old model — before upgrading to `8.2` or with this feature flag disabled — are not compatible with the new model. Loading such a snapshot with the New Cloud Model may result in missing or incomplete data. The old snapshot data cannot be mapped to the new table structure.
 
 
 ### Fast Discovery for Cisco Wireless LAN Controllers

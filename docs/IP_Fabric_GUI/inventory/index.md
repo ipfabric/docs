@@ -126,10 +126,10 @@ data only. No feature flag is required to access them.
 
 These tables replace the existing
 [`/technology/cloud/endpoints`](../technology_tables/cloud/endpoints.md) location
-for VMware virtual machine data. When you enable the
+for VMware virtual machine data. Since `8.2`, the
 [New Cloud Model](../../System_Administration/Command_Line_Interface/Feature_Flags.md#new-cloud-model)
-feature flag, VMware entries no longer appear in the old location. Those tables
-are moving away from a device-centric model.
+is enabled by default, so VMware entries no longer appear in the old location
+unless you disable it. Those tables are moving away from a device-centric model.
 
 ## Applications { .aim }
 

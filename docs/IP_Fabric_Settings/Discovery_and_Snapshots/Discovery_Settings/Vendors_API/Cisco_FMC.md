@@ -33,7 +33,7 @@ Since `6.7`, it is possible to enable API key authentication for FMC by adding t
 ENABLE_FMC_TOKEN_AUTH=true
 ```
 
-After updating the environment file, you must restart IP Fabric application by running the following command:
+After updating the environment file, you must restart the IP Fabric application by running the following command:
 
 ```
 sudo systemctl restart ipf-appliance
