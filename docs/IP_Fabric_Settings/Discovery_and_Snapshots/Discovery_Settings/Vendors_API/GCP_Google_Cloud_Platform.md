@@ -17,6 +17,10 @@ More APIs are required for IP Fabric version 8.1 and above:
 - Network Security API (networksecurity.googleapis.com)
 - Cloud Asset API (cloudasset.googleapis.com)
 
+IP Fabric version 8.2 and above also requires:
+
+- Service Usage API (serviceusage.googleapis.com). Enable it in the project that hosts the service account.
+
 1. Select the project where you want to enable the API:
 
    ![Select a project](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_gcp_selectAProject.webp)
@@ -133,7 +137,14 @@ More APIs are required for IP Fabric version 8.1 and above:
    ```
    compute.disks.list
    compute.images.get
+   serviceusage.services.list
    ```
+
+   !!! info "Disabled GCP APIs"
+
+       Starting with IP Fabric 8.2, discovery uses the Service Usage API to check which APIs are enabled in each project and skips requests to disabled APIs (Compute Engine, Network Security, Certificate Manager, Network Connectivity, Cloud Functions, Cloud Run). This prevents `SERVICE_DISABLED` errors in IP Fabric discovery and unnecessary entries in your GCP audit logs.
+
+       The Service Usage API must be enabled in the project that hosts the service account, and the role must include `serviceusage.services.list` (also included in the predefined role `roles/serviceusage.serviceUsageViewer`). If the Service Usage API is not available, IP Fabric falls back to the previous behavior and sends all requests.
 
    ![Create a role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_createArole.webp)
 
