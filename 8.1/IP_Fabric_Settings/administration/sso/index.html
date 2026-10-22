@@ -17740,7 +17740,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 <p>This name will be displayed on the login page of the GUI. This name will be
   capitalized (e.g., <code>sso</code> → <code>Sso</code>); therefore, it is recommended to use
   names such as <code>azure</code> or <code>okta</code>.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_sso_button_name.webp" data-desc-position="bottom"><img alt="SSO button" src="../../../images/settings/administration/ldap/settings-administration-ldap_sso_button_name.webp"></a></p>
 </li>
 </ul>
 </li>
@@ -17802,7 +17802,7 @@ corresponds to <code>staticClient</code> in the Dex configuration).</p>
 </li>
 </ul>
 <p>Example how to find <code>roleId</code>:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/roles/settings-administration-roles_id.webp" data-desc-position="bottom"><img alt="Role ID" src="../../../images/settings/administration/roles/settings-administration-roles_id.webp"></a></p>
 <h2 id="sso-configuration-ipf-dexyaml">SSO Configuration <code>ipf-dex.yaml</code></h2>
 <p>While Dex supports various connectors, we strongly recommend using OpenID
 Connect (OIDC) for SSO integration. (Azure uses a special <code>microsoft</code> connector,
@@ -17894,7 +17894,7 @@ Access</code> screen to be presented to your users on every login. By setting it
 <div class="highlight"><pre><span></span><code><span class="nt">oauth2</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">skipApprovalScreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_sso_approval.webp" data-desc-position="bottom"><img alt="Grant Access" src="../../../images/settings/administration/ldap/settings-administration-ldap_sso_approval.webp"></a></p>
 <h3 id="static-clients">Static Clients</h3>
 <p>The <code>staticClients</code> section contains the configuration for the IP Fabric portal,
 which acts as a client to <code>dex</code>.</p>
@@ -17955,7 +17955,7 @@ updates.</p>
 <h3 id="config-file-mapping">Config File Mapping</h3>
 <p>Here is a concise illustration of how the <code>/opt/ipf-api/conf.d/api.json</code> values
 map to <code>/etc/ipf-dex.yaml</code>:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_sso_api_dex_mapping.webp" data-desc-position="bottom"><img alt="JSON YAML mapping" src="../../../images/settings/administration/ldap/settings-administration-ldap_sso_api_dex_mapping.webp"></a></p>
 <h3 id="yaml-validation">YAML Validation</h3>
 <p>While Dex itself determines the validity of the actual configuration, it can be handy to check parsing of the configuration YAML. You can use the following command to get a JSON representation of <code>/etc/ipf-dex.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import sys, yaml, json; y=yaml.safe_load(sys.stdin.read()); print(json.dumps(y))'</span><span class="w"> </span>&lt;<span class="w"> </span>/etc/ipf-dex.yaml<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
@@ -18158,7 +18158,7 @@ directory only</code>.</p>
 <li>
 <p>When the registration finishes, the Azure portal displays the app
    registration’s Overview pane. You will see the Application (client) ID.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_azure-app-registration-overview.webp" data-desc-position="bottom"><img alt="Azure App registration's Overview" src="../../../images/settings/administration/ldap/settings-administration-ldap_azure-app-registration-overview.webp"></a></p>
 </li>
 <li>
 <p>From the <strong>Certificates &amp; secrets</strong> menu, select <code>+ New client secret</code>.</p>
@@ -18166,7 +18166,7 @@ directory only</code>.</p>
 <li>
 <p>Enter a <code>Name</code> for the secret. E.g., <code>clientSecret</code>. <strong>Make sure to copy and
    save the generated value for the <code>clientSecret</code>.</strong></p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_azure-app-registration-secret.webp" data-desc-position="bottom"><img alt="Azure App registration's Secret" src="../../../images/settings/administration/ldap/settings-administration-ldap_azure-app-registration-secret.webp"></a></p>
 </li>
 <li>
 <p>From the <strong>API permissions</strong> menu, select <code>+ Add a permission</code>.</p>
@@ -18174,11 +18174,11 @@ directory only</code>.</p>
 <li>
 <p>Find the <code>User.Read</code> permission (under <code>Microsoft Graph</code>) and grant it to the
    created application:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_azure-api-permissions.webp" data-desc-position="bottom"><img alt="Azure AD API permissions" src="../../../images/settings/administration/ldap/settings-administration-ldap_azure-api-permissions.webp"></a></p>
 </li>
 <li>
 <p>From the <strong>Token Configuration</strong> menu, select <code>+ Add groups claim</code>:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/ldap/settings-administration-ldap_azure-token-configuration.webp" data-desc-position="bottom"><img alt="Azure AD token configuration" src="../../../images/settings/administration/ldap/settings-administration-ldap_azure-token-configuration.webp"></a></p>
 <p>- <code>All groups</code>: Emits security groups, distribution lists, and roles.</p>
 <p>- <code>Security groups</code>: Emits security groups of which the user is a member in
     the groups claim.</p>
