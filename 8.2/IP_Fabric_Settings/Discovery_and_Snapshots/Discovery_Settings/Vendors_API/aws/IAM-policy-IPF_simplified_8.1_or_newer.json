@@ -1,0 +1,67 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "IPFabricDirectConnect",
+            "Effect": "Allow",
+            "Action": [
+                "directconnect:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricEC2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:GetManagedPrefixListEntries",
+                "ec2:GetTransitGatewayRouteTablePropagations",
+                "ec2:SearchTransitGatewayRoutes"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricNetworkManager",
+            "Effect": "Allow",
+            "Action": [
+                "networkmanager:Describe*",
+                "networkmanager:Get*",
+                "networkmanager:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricAutoScaling",
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricOrganizations",
+            "Effect": "Allow",
+            "Action": [
+                "organizations:Describe*",
+                "organizations:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricElasticLoadBalancing",
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IPFabricAcm",
+            "Effect": "Allow",
+            "Action": [
+                "acm:Describe*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
