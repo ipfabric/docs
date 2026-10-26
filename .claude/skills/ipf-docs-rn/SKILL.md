@@ -193,8 +193,14 @@ it doesn't mix with the release-notes branch).
    kept (unlike the customer-facing release notes). Clean the summary like the script's
    `clean_title`: strip team codes (`[DP]`, `[PE]`, …) and version tags (`[7.11]`,
    `[7.11/7.12]`), collapse spaces, trim leading/trailing dashes.
-5. **Sort by priority within each type**: Highest, High, Medium, Low, Lowest, then by key
-   within the same priority.
+5. **Sort by priority within each type — every time**: Highest, High, Medium, Low, Lowest,
+   then by key within the same priority. This applies to every `##` version section you
+   write **and** to every section produced by `jira_release_notes.py` (the script sorts only
+   by key, so its output is never in priority order). After running the script, or after
+   writing a section by hand, re-sort the item lists of each new/changed version section and
+   verify the order (e.g. with `awk`/`uniq -c` on the priority column) before showing the
+   diff. Sorting must not add, drop or change any item — compare the bullet count before and
+   after.
 6. **Update the issue count** in the page's intro paragraph (`...contains a total of N fixed
    issues.`) by adding the number of issues fetched for the new version.
 7. **Do not touch** older version sections.
