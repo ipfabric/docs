@@ -26,7 +26,7 @@ AIM adds four record types to a snapshot, plus one that is computed:
 | **Application**        | A business application, optionally labelled with an environment.                                          |
 | **Workload**           | An endpoint that makes up part of an application -- a server, a container, a virtual machine.              |
 | **Workload interface** | An IP address belonging to a workload. A workload can have several.                                       |
-| **Flow**               | Observed communication between two workloads, with addresses, ports, and protocol.                        |
+| **Flow**               | Observed communication, typically between two workloads, with addresses, ports, and protocol.             |
 | **Traversed device**   | A network device a flow's traffic passes through. Not ingested -- computed on demand by a path lookup.     |
 
 A flow can span two applications, since its source and destination workloads may

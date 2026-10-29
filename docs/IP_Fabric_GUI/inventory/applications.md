@@ -14,7 +14,7 @@ data as four tables:
 | :--------------- | :--------------------------------------------------------------------------- |
 | **Applications** | The applications known to IP Fabric, with workload, flow, and device counts.  |
 | **Workloads**    | The endpoints that make up each application, with their interface addresses.   |
-| **Flows**        | Observed communication between two workloads.                                 |
+| **Flows**        | Observed communication, typically between two workloads.                      |
 | **Devices**      | The network devices a flow's traffic traverses.                               |
 
 The data comes from a third-party integration such as Illumio, from records
@@ -99,7 +99,8 @@ appears twice, differing only in **Workload interface**.
 
 ## Flows Table
 
-One row per flow -- a communication between two workloads.
+One row per flow -- a communication between two workloads, or between two
+addresses when the source did not identify the workloads.
 
 ![Flows table](../../images/inventory/applications/inventory-applications_flows-table.webp)
 
@@ -206,9 +207,9 @@ Ports the source left unspecified are submitted as the full ephemeral range
 `1024-65535`. Protocols are mapped to their path-lookup equivalents: ICMP, TCP,
 UDP, and ICMPv6.
 
-A flow missing a source or destination IP, or carrying a protocol the simulation
-engine does not model, cannot form a lookup -- for those rows the cell stays
-plain text with no link.
+A flow missing a source or destination IP or a protocol, or carrying a protocol
+the simulation engine does not model, cannot form a lookup -- for those rows the
+cell stays plain text with no link.
 
 ## Related Documentation
 
