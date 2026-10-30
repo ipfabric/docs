@@ -205,8 +205,11 @@ see [Payload Size](#payload-size).
 ### CSV File Formats
 
 All files are parsed with a header row; column order does not matter and values
-are trimmed. Columns marked optional may be omitted entirely or left empty (an
-empty value is stored as `null`).
+are trimmed. Columns marked optional may be omitted entirely or left empty. An
+empty cell is stored as `null` whatever the column's type -- this includes the
+enumerated columns, a quoted empty value (`""`), and a cell holding only spaces.
+CSV has no other way to express `null`: a literal `NULL` is read as text and is
+rejected wherever a specific value is expected.
 
 !!! tip "Downloadable sample data"
 
@@ -242,9 +245,9 @@ empty value is stored as `null`).
 | Column                  | Required | Format / Allowed values                                        | Notes                                                        |
 | :---------------------- | :------- | :------------------------------------------------------------- | :----------------------------------------------------------- |
 | `externalId`            | yes      | non-empty string                                               | Unique key for the workload. Must be unique within the file.  |
-| `applicationExternalId` | yes      | non-empty string                                               | Must match an `externalId` in `applications.csv` or an application already stored in the snapshot. |
+| `applicationExternalId` | no       | string                                                         | When set, must match an `externalId` in `applications.csv` or an application already stored in the snapshot. When empty, the workload is imported without an application. |
 | `name`                  | yes      | non-empty string                                               |                                                              |
-| `enforcementMode`       | yes      | `visibility_only`, `selective`, `full`, `idle`, `unknown`       | The column must be present and hold one of these values.      |
+| `enforcementMode`       | no       | `visibility_only`, `selective`, `full`, `idle`, `unknown`       |                                                              |
 | `hostname`              | no       | string                                                         |                                                              |
 | `description`           | no       | string                                                         |                                                              |
 | `osType`                | no       | string                                                         |                                                              |
@@ -267,10 +270,10 @@ empty value is stored as `null`).
 | Column               | Required | Format / Allowed values     | Notes                                                        |
 | :------------------- | :------- | :-------------------------- | :----------------------------------------------------------- |
 | `workloadExternalId` | yes      | non-empty string            | Must match an `externalId` in `workloads.csv` or a workload already stored in the snapshot. |
-| `ipAddress`          | yes      | IPv4 or IPv6 address        |                                                              |
-| `linkState`          | yes      | `up`, `down`, `unknown`     |                                                              |
+| `ipAddress`          | no       | IPv4 or IPv6 address        |                                                              |
+| `linkState`          | no       | `up`, `down`, `unknown`     |                                                              |
 | `name`               | no       | string                      | Interface name.                                              |
-| `cidrBlock`          | no       | integer                     | Prefix length. Validated against `ipAddress`: `0-32` for IPv4, `0-128` for IPv6. |
+| `cidrBlock`          | no       | integer                     | Prefix length. When `ipAddress` is set, validated against it: `0-32` for IPv4, `0-128` for IPv6. Without `ipAddress`, the range is not checked. |
 | `defaultGateway`     | no       | IPv4 or IPv6 address        |                                                              |
 | `network`            | no       | string                      | For example `10.0.1.0/24`.                                   |
 
@@ -286,18 +289,24 @@ empty value is stored as `null`).
 
 | Column                     | Required | Format / Allowed values                                        | Notes                                                        |
 | :------------------------- | :------- | :------------------------------------------------------------- | :----------------------------------------------------------- |
-| `srcIp`                    | yes      | IPv4 or IPv6 address                                           |                                                              |
-| `dstIp`                    | yes      | IPv4 or IPv6 address                                           |                                                              |
-| `protocol`                 | yes      | integer                                                        | IANA protocol number, for example `6` for TCP.               |
-| `policyDecision`           | yes      | `allowed`, `potentially_blocked`, `blocked`, `unknown`          |                                                              |
-| `srcWorkloadExternalId`    | yes      | non-empty string                                               | Must match a workload in `workloads.csv` or in the snapshot. |
-| `dstWorkloadExternalId`    | yes      | non-empty string                                               | Must match a workload in `workloads.csv` or in the snapshot. |
+| `srcIp`                    | no       | IPv4 or IPv6 address                                           | Needed for a path lookup.                                    |
+| `dstIp`                    | no       | IPv4 or IPv6 address                                           | Needed for a path lookup.                                    |
+| `protocol`                 | no       | integer                                                        | IANA protocol number, for example `6` for TCP. Needed for a path lookup. |
+| `policyDecision`           | no       | `allowed`, `potentially_blocked`, `blocked`, `unknown`          |                                                              |
+| `srcWorkloadExternalId`    | no       | string                                                         | When set, must match a workload in `workloads.csv` or in the snapshot. |
+| `dstWorkloadExternalId`    | no       | string                                                         | When set, must match a workload in `workloads.csv` or in the snapshot. |
 | `srcPort`                  | no       | integer                                                        |                                                              |
 | `dstPort`                  | no       | integer                                                        |                                                              |
-| `flowDirection`            | no       | `intra_app`, `ingress`, `egress`                               | Empty is stored as `null`.                                   |
+| `flowDirection`            | no       | `intra_app`, `ingress`, `egress`                               |                                                              |
 | `numConnections`           | no       | integer                                                        |                                                              |
-| `firstDetected`            | no       | ISO 8601 timestamp                                             | Stored as Unix milliseconds.                                 |
-| `lastDetected`             | no       | ISO 8601 timestamp                                             | Stored as Unix milliseconds.                                 |
+| `firstDetected`            | no       | ISO 8601 timestamp or Unix milliseconds                        | Stored as Unix milliseconds.                                 |
+| `lastDetected`             | no       | ISO 8601 timestamp or Unix milliseconds                        | Stored as Unix milliseconds.                                 |
+
+Every flow column is optional, so a flow can describe the traffic by addresses
+alone, by workloads alone, or by both. Only a flow that carries `srcIp`, `dstIp`,
+and a `protocol` the path-lookup engine models -- ICMP, TCP, UDP, or ICMPv6 -- can
+be traced in a [path lookup](#calculate-flow-path-lookups); the calculation skips
+the others.
 
 !!! example "Sample `flows.csv`"
 
@@ -329,8 +338,11 @@ JSON has real data types, four things differ from the CSV encoding:
 | :----------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------ |
 | `protocol`, `srcPort`, `dstPort`, `numConnections`, `cidrBlock`     | `"6"` -- every cell is text            | `6` -- a number                                          |
 | `online`, `managed`                                                 | `"true"` / `"false"`                   | `true` / `false` -- a boolean                            |
-| `firstDetected`, `lastDetected`                                     | ISO 8601 string                        | ISO 8601 string **or** Unix milliseconds                 |
 | `labels`                                                            | `"tier=web,region=eu-west"`            | `[{ "key": "tier", "value": "web" }, ...]`               |
+| No value in an optional field                                       | empty cell, in every column            | omit the property or send `null`; `""` only on textual fields -- see below |
+
+`firstDetected` and `lastDetected` take the same two forms in both encodings:
+an ISO 8601 string or Unix milliseconds.
 
 Optional fields may be **omitted entirely** or sent as `null`; both are stored as
 `null`.
@@ -338,15 +350,24 @@ Optional fields may be **omitted entirely** or sent as `null`; both are stored a
 !!! warning "Use `null` rather than an empty string for non-string fields"
 
     An empty string is accepted only on the optional fields whose value is
-    textual: `description`, `environment`, `hostname`, `osType`, `osDetail`,
-    `network`, `publicIp`, `defaultGateway`, the interface `name`,
-    `firstDetected`, and `lastDetected` all treat `""` as `null`. Required
-    fields reject it, as they reject a missing value.
+    textual. These treat `""` as `null`:
 
-    `online`, `managed`, `srcPort`, `dstPort`, `numConnections`, `cidrBlock`, and
+    - applications: `description`, `environment`
+    - workloads: `applicationExternalId`, `hostname`, `description`, `osType`,
+      `osDetail`, `publicIp`
+    - interfaces: `ipAddress`, `name`, `defaultGateway`, `network`
+    - flows: `srcIp`, `dstIp`, `srcWorkloadExternalId`, `dstWorkloadExternalId`,
+      `firstDetected`, `lastDetected`
+
+    Required fields reject it, as they reject a missing value.
+
+    `online`, `managed`, `protocol`, `srcPort`, `dstPort`, `numConnections`,
+    `cidrBlock`, `enforcementMode`, `linkState`, `policyDecision`, and
     `flowDirection` do not: `""` is the wrong type for a boolean, a number, or an
-    enumerated value, and the request fails with `422`. This matters when
-    converting CSV rows to JSON, where every empty cell starts life as `""`.
+    enumerated value, and the request fails with `422`. This is the one place
+    where the encodings differ on empty values -- a CSV file stores an empty
+    cell as `null` in every column. It matters when converting CSV rows to JSON,
+    where every empty cell starts life as `""`.
 
 !!! tip "Structured labels can hold commas and equals signs"
 
@@ -475,16 +496,22 @@ The rules themselves:
 - **Enumerated fields** must hold one of the listed values.
 - **Duplicate `externalId`** values within the applications or workloads data are
   rejected. Interfaces and flows are not de-duplicated.
-- **Cross-references** are resolved against the data in the request first and,
-  when a section is not part of the request, against data already stored in the
-  snapshot:
-    - `workloads.applicationExternalId` must resolve to a known application.
-    - `interfaces.workloadExternalId` must resolve to a known workload.
-    - `flows.srcWorkloadExternalId` and `flows.dstWorkloadExternalId` must
-      resolve to known workloads.
+- **Cross-references** are resolved against the data in the request first. A
+  reference not found there is looked up in the data already stored in the
+  snapshot -- also when the request carries that section, so a request can mix
+  references to new and to previously imported records:
 
-This means you can import incrementally -- for example flows alone -- as long as
-the referenced workloads already exist in the snapshot.
+  - `workloads.applicationExternalId` must resolve to a known application.
+  - `interfaces.workloadExternalId` must resolve to a known workload.
+  - `flows.srcWorkloadExternalId` and `flows.dstWorkloadExternalId` must
+    resolve to known workloads.
+
+  An empty reference is not checked: the workload is stored without an
+  application, or the flow without that workload.
+
+This means you can import incrementally -- for example flows alone, or new
+workloads for an application imported earlier -- as long as the referenced
+records already exist in the snapshot.
 
 !!! note "A failing CSV file stops at the first bad row"
 
@@ -514,12 +541,16 @@ duplicating them -- with one exception for flows, described below.
 
 !!! warning "A flow with an empty key field is re-inserted, not updated"
 
-    `srcPort`, `dstPort`, and `flowDirection` are optional, and the database
-    treats two empty values as different rather than equal. A flow row that
-    leaves any of the three empty therefore never matches the row an earlier
-    import created, and re-importing the same data **adds a second copy** of it.
+    Every field of the flow key is optional, and the database treats two empty
+    values as different rather than equal. A flow row that leaves **any** key
+    field empty -- either workload, `srcIp`, `dstIp`, `protocol`, `srcPort`,
+    `dstPort`, `policyDecision`, or `flowDirection` -- therefore never matches
+    the row an earlier import created, and re-importing the same data **adds a
+    second copy** of it.
 
-    Send all three on every flow if you intend to re-import the same rows. Flows
+    This is common with sources that do not report every key field, for
+    example flows without `policyDecision` or without workload references. Send
+    all key fields on every flow if you intend to re-import the same rows. Flows
     that carry complete keys are unaffected.
 
 !!! warning "Importing workloads clears interfaces and labels"
