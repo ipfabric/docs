@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -17411,8 +17411,11 @@ see <a href="#payload-size">Payload Size</a>.</p>
 <code>400</code>.</p>
 <h3 id="csv-file-formats">CSV File Formats</h3>
 <p>All files are parsed with a header row; column order does not matter and values
-are trimmed. Columns marked optional may be omitted entirely or left empty (an
-empty value is stored as <code>null</code>).</p>
+are trimmed. Columns marked optional may be omitted entirely or left empty. An
+empty cell is stored as <code>null</code> whatever the column’s type – this includes the
+enumerated columns, a quoted empty value (<code>""</code>), and a cell holding only spaces.
+CSV has no other way to express <code>null</code>: a literal <code>NULL</code> is read as text and is
+rejected wherever a specific value is expected.</p>
 <div class="admonition tip">
 <p class="admonition-title">Downloadable sample data</p>
 <p><a href="aim-sample-ingestion-data.zip">aim-sample-ingestion-data.zip</a> holds a
@@ -17488,9 +17491,9 @@ app-002,Backend API,REST API service,prod
 </tr>
 <tr>
 <td style="text-align: left;"><code>applicationExternalId</code></td>
-<td style="text-align: left;">yes</td>
-<td style="text-align: left;">non-empty string</td>
-<td style="text-align: left;">Must match an <code>externalId</code> in <code>applications.csv</code> or an application already stored in the snapshot.</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">When set, must match an <code>externalId</code> in <code>applications.csv</code> or an application already stored in the snapshot. When empty, the workload is imported without an application.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>name</code></td>
@@ -17500,9 +17503,9 @@ app-002,Backend API,REST API service,prod
 </tr>
 <tr>
 <td style="text-align: left;"><code>enforcementMode</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;"><code>visibility_only</code>, <code>selective</code>, <code>full</code>, <code>idle</code>, <code>unknown</code></td>
-<td style="text-align: left;">The column must be present and hold one of these values.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hostname</code></td>
@@ -17580,13 +17583,13 @@ wl-002,app-002,api-server-01,selective,api01.example.com,true,true,203.0.113.11,
 </tr>
 <tr>
 <td style="text-align: left;"><code>ipAddress</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;">IPv4 or IPv6 address</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>linkState</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;"><code>up</code>, <code>down</code>, <code>unknown</code></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -17600,7 +17603,7 @@ wl-002,app-002,api-server-01,selective,api01.example.com,true,true,203.0.113.11,
 <td style="text-align: left;"><code>cidrBlock</code></td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">integer</td>
-<td style="text-align: left;">Prefix length. Validated against <code>ipAddress</code>: <code>0-32</code> for IPv4, <code>0-128</code> for IPv6.</td>
+<td style="text-align: left;">Prefix length. When <code>ipAddress</code> is set, validated against it: <code>0-32</code> for IPv4, <code>0-128</code> for IPv6. Without <code>ipAddress</code>, the range is not checked.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>defaultGateway</code></td>
@@ -17636,39 +17639,39 @@ wl-002,10.0.2.20,up,24,10.0.2.0/24
 <tbody>
 <tr>
 <td style="text-align: left;"><code>srcIp</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;">IPv4 or IPv6 address</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Needed for a path lookup.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>dstIp</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;">IPv4 or IPv6 address</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Needed for a path lookup.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>protocol</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;">integer</td>
-<td style="text-align: left;">IANA protocol number, for example <code>6</code> for TCP.</td>
+<td style="text-align: left;">IANA protocol number, for example <code>6</code> for TCP. Needed for a path lookup.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>policyDecision</code></td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
 <td style="text-align: left;"><code>allowed</code>, <code>potentially_blocked</code>, <code>blocked</code>, <code>unknown</code></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>srcWorkloadExternalId</code></td>
-<td style="text-align: left;">yes</td>
-<td style="text-align: left;">non-empty string</td>
-<td style="text-align: left;">Must match a workload in <code>workloads.csv</code> or in the snapshot.</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">When set, must match a workload in <code>workloads.csv</code> or in the snapshot.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>dstWorkloadExternalId</code></td>
-<td style="text-align: left;">yes</td>
-<td style="text-align: left;">non-empty string</td>
-<td style="text-align: left;">Must match a workload in <code>workloads.csv</code> or in the snapshot.</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">When set, must match a workload in <code>workloads.csv</code> or in the snapshot.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>srcPort</code></td>
@@ -17686,7 +17689,7 @@ wl-002,10.0.2.20,up,24,10.0.2.0/24
 <td style="text-align: left;"><code>flowDirection</code></td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;"><code>intra_app</code>, <code>ingress</code>, <code>egress</code></td>
-<td style="text-align: left;">Empty is stored as <code>null</code>.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>numConnections</code></td>
@@ -17697,17 +17700,22 @@ wl-002,10.0.2.20,up,24,10.0.2.0/24
 <tr>
 <td style="text-align: left;"><code>firstDetected</code></td>
 <td style="text-align: left;">no</td>
-<td style="text-align: left;">ISO 8601 timestamp</td>
+<td style="text-align: left;">ISO 8601 timestamp or Unix milliseconds</td>
 <td style="text-align: left;">Stored as Unix milliseconds.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>lastDetected</code></td>
 <td style="text-align: left;">no</td>
-<td style="text-align: left;">ISO 8601 timestamp</td>
+<td style="text-align: left;">ISO 8601 timestamp or Unix milliseconds</td>
 <td style="text-align: left;">Stored as Unix milliseconds.</td>
 </tr>
 </tbody>
 </table>
+<p>Every flow column is optional, so a flow can describe the traffic by addresses
+alone, by workloads alone, or by both. Only a flow that carries <code>srcIp</code>, <code>dstIp</code>,
+and a <code>protocol</code> the path-lookup engine models – ICMP, TCP, UDP, or ICMPv6 – can
+be traced in a <a href="#calculate-flow-path-lookups">path lookup</a>; the calculation skips
+the others.</p>
 <div class="admonition example">
 <p class="admonition-title">Sample <code>flows.csv</code></p>
 <div class="highlight"><pre><span></span><code>srcIp,dstIp,protocol,policyDecision,srcWorkloadExternalId,dstWorkloadExternalId,srcPort,dstPort,flowDirection
@@ -17748,30 +17756,41 @@ JSON has real data types, four things differ from the CSV encoding:</p>
 <td style="text-align: left;"><code>true</code> / <code>false</code> – a boolean</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>firstDetected</code>, <code>lastDetected</code></td>
-<td style="text-align: left;">ISO 8601 string</td>
-<td style="text-align: left;">ISO 8601 string <strong>or</strong> Unix milliseconds</td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>labels</code></td>
 <td style="text-align: left;"><code>"tier=web,region=eu-west"</code></td>
 <td style="text-align: left;"><code>[{ "key": "tier", "value": "web" }, ...]</code></td>
 </tr>
+<tr>
+<td style="text-align: left;">No value in an optional field</td>
+<td style="text-align: left;">empty cell, in every column</td>
+<td style="text-align: left;">omit the property or send <code>null</code>; <code>""</code> only on textual fields – see below</td>
+</tr>
 </tbody>
 </table>
+<p><code>firstDetected</code> and <code>lastDetected</code> take the same two forms in both encodings:
+an ISO 8601 string or Unix milliseconds.</p>
 <p>Optional fields may be <strong>omitted entirely</strong> or sent as <code>null</code>; both are stored as
 <code>null</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Use <code>null</code> rather than an empty string for non-string fields</p>
 <p>An empty string is accepted only on the optional fields whose value is
-textual: <code>description</code>, <code>environment</code>, <code>hostname</code>, <code>osType</code>, <code>osDetail</code>,
-<code>network</code>, <code>publicIp</code>, <code>defaultGateway</code>, the interface <code>name</code>,
-<code>firstDetected</code>, and <code>lastDetected</code> all treat <code>""</code> as <code>null</code>. Required
-fields reject it, as they reject a missing value.</p>
-<p><code>online</code>, <code>managed</code>, <code>srcPort</code>, <code>dstPort</code>, <code>numConnections</code>, <code>cidrBlock</code>, and
+textual. These treat <code>""</code> as <code>null</code>:</p>
+<ul>
+<li>applications: <code>description</code>, <code>environment</code></li>
+<li>workloads: <code>applicationExternalId</code>, <code>hostname</code>, <code>description</code>, <code>osType</code>,
+  <code>osDetail</code>, <code>publicIp</code></li>
+<li>interfaces: <code>ipAddress</code>, <code>name</code>, <code>defaultGateway</code>, <code>network</code></li>
+<li>flows: <code>srcIp</code>, <code>dstIp</code>, <code>srcWorkloadExternalId</code>, <code>dstWorkloadExternalId</code>,
+  <code>firstDetected</code>, <code>lastDetected</code></li>
+</ul>
+<p>Required fields reject it, as they reject a missing value.</p>
+<p><code>online</code>, <code>managed</code>, <code>protocol</code>, <code>srcPort</code>, <code>dstPort</code>, <code>numConnections</code>,
+<code>cidrBlock</code>, <code>enforcementMode</code>, <code>linkState</code>, <code>policyDecision</code>, and
 <code>flowDirection</code> do not: <code>""</code> is the wrong type for a boolean, a number, or an
-enumerated value, and the request fails with <code>422</code>. This matters when
-converting CSV rows to JSON, where every empty cell starts life as <code>""</code>.</p>
+enumerated value, and the request fails with <code>422</code>. This is the one place
+where the encodings differ on empty values – a CSV file stores an empty
+cell as <code>null</code> in every column. It matters when converting CSV rows to JSON,
+where every empty cell starts life as <code>""</code>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Structured labels can hold commas and equals signs</p>
@@ -17905,16 +17924,24 @@ failing data set is applied.</p>
 <li><strong>Enumerated fields</strong> must hold one of the listed values.</li>
 <li><strong>Duplicate <code>externalId</code></strong> values within the applications or workloads data are
   rejected. Interfaces and flows are not de-duplicated.</li>
-<li><strong>Cross-references</strong> are resolved against the data in the request first and,
-  when a section is not part of the request, against data already stored in the
-  snapshot:
-    - <code>workloads.applicationExternalId</code> must resolve to a known application.
-    - <code>interfaces.workloadExternalId</code> must resolve to a known workload.
-    - <code>flows.srcWorkloadExternalId</code> and <code>flows.dstWorkloadExternalId</code> must
-      resolve to known workloads.</li>
+<li>
+<p><strong>Cross-references</strong> are resolved against the data in the request first. A
+  reference not found there is looked up in the data already stored in the
+  snapshot – also when the request carries that section, so a request can mix
+  references to new and to previously imported records:</p>
+<ul>
+<li><code>workloads.applicationExternalId</code> must resolve to a known application.</li>
+<li><code>interfaces.workloadExternalId</code> must resolve to a known workload.</li>
+<li><code>flows.srcWorkloadExternalId</code> and <code>flows.dstWorkloadExternalId</code> must
+  resolve to known workloads.</li>
 </ul>
-<p>This means you can import incrementally – for example flows alone – as long as
-the referenced workloads already exist in the snapshot.</p>
+<p>An empty reference is not checked: the workload is stored without an
+application, or the flow without that workload.</p>
+</li>
+</ul>
+<p>This means you can import incrementally – for example flows alone, or new
+workloads for an application imported earlier – as long as the referenced
+records already exist in the snapshot.</p>
 <div class="admonition note">
 <p class="admonition-title">A failing CSV file stops at the first bad row</p>
 <p>The CSV parser aborts as soon as it hits an invalid row, so <code>reason</code> names
@@ -17963,11 +17990,15 @@ already exists) or replaced wholesale:</p>
 duplicating them – with one exception for flows, described below.</p>
 <div class="admonition warning">
 <p class="admonition-title">A flow with an empty key field is re-inserted, not updated</p>
-<p><code>srcPort</code>, <code>dstPort</code>, and <code>flowDirection</code> are optional, and the database
-treats two empty values as different rather than equal. A flow row that
-leaves any of the three empty therefore never matches the row an earlier
-import created, and re-importing the same data <strong>adds a second copy</strong> of it.</p>
-<p>Send all three on every flow if you intend to re-import the same rows. Flows
+<p>Every field of the flow key is optional, and the database treats two empty
+values as different rather than equal. A flow row that leaves <strong>any</strong> key
+field empty – either workload, <code>srcIp</code>, <code>dstIp</code>, <code>protocol</code>, <code>srcPort</code>,
+<code>dstPort</code>, <code>policyDecision</code>, or <code>flowDirection</code> – therefore never matches
+the row an earlier import created, and re-importing the same data <strong>adds a
+second copy</strong> of it.</p>
+<p>This is common with sources that do not report every key field, for
+example flows without <code>policyDecision</code> or without workload references. Send
+all key fields on every flow if you intend to re-import the same rows. Flows
 that carry complete keys are unaffected.</p>
 </div>
 <div class="admonition warning">
@@ -19214,7 +19245,7 @@ job failures, and chain all of these calls into a single automated sequence, see
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 14:25:26 UTC">October 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 30, 2026 14:15:59 UTC">October 30, 2026</span>
   </span>
 
     
@@ -19482,10 +19513,10 @@ job failures, and chain all of these calls into a single automated sequence, see
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       
