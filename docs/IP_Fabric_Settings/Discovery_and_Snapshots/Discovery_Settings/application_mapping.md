@@ -40,7 +40,9 @@ Application mapping is available in two places, and they are independent:
 
 The tabs, forms, and validation are identical in both scopes. Editing a
 snapshot's settings never changes the global defaults, and changing the global
-settings does not retroactively alter existing snapshots.
+settings does not retroactively alter existing snapshots. Saving a snapshot's
+settings does not update its inventory right away -- see
+[Where the Data Appears](#where-the-data-appears).
 
 ## Sub-Tabs
 
@@ -74,6 +76,8 @@ icon to remove one. Selecting several rows enables a bulk **Delete**.
 | **API key**         | yes      | The Illumio API key ID. It is used as the authentication username.                                                          |
 | **API secret**      | yes\*    | The Illumio API key secret. Stored encrypted and never displayed again after saving.                                        |
 | **Organization ID** | yes      | The Illumio PCE organization ID. It forms part of the request path IP Fabric calls.                                         |
+| **Reject unauthorized certificates** | -- | On by default: the PCE's TLS certificate must be trusted by the appliance. Turn it off to connect to a PCE whose certificate is self-signed or issued by a CA the appliance does not trust. |
+| **Use system proxy configuration** | -- | On by default: requests to the PCE go through the proxy configured on the appliance. Turn it off to connect to the PCE directly. |
 | **Slug**            | yes      | A short unique identifier for this configuration -- for example `illumio-eu`. Maximum 64 characters, letters, digits, `-` and `_` only. Must be unique across integrations. |
 | **Comment**         | no       | Free-form note.                                                                                                             |
 
@@ -93,24 +97,26 @@ To crawl an Illumio PCE, IP Fabric needs REST API access:
 - Read access to the organization's **labels**, **workloads**, and
   **traffic flows**, since these are what IP Fabric maps to AIM applications,
   workloads, and flows.
-- Network reachability from the IP Fabric appliance to the PCE over HTTPS. The
-  connection is made with certificate validation enabled, and the system proxy
-  configuration is honoured.
+- Network reachability from the IP Fabric appliance to the PCE over HTTPS.
+  Certificate validation and use of the system proxy are controlled per
+  integration by the **Reject unauthorized certificates** and **Use system proxy
+  configuration** switches, both on by default.
 
 !!! note "Traffic flow collection is time-boxed and capped"
 
-    When IP Fabric queries the PCE for traffic flows, it asks for a rolling
-    window of the **last 24 hours** and caps the query at **25,000 flows**.
-    Traffic that falls outside that window, or beyond the cap, is not ingested.
+    When IP Fabric queries the PCE for traffic flows, it asks for the
+    **previous and the current calendar day** (the query takes dates, not times)
+    and caps the query at **25,000 flows**. Traffic that falls outside that
+    window, or beyond the cap, is not ingested.
 
     Both values are **fixed in this release** -- there is no setting for them in
     the integration form or anywhere else in the UI. They apply to flow
     collection only: applications, workloads, and their labels are not limited
     this way.
 
-    In practice this means the Flows tab reflects what the PCE observed over the
-    last day, not the full history, and that a busy environment can reach the cap
-    on a single discovery run.
+    In practice this means the Flows tab reflects what the PCE observed over
+    roughly the last one to two days, not the full history, and that a busy
+    environment can reach the cap on a single discovery run.
 
 ### Test Connection
 
@@ -277,10 +283,22 @@ Imported records are only stored once you **save** the settings form.
 
 ## Where the Data Appears
 
-Once AIM data has been ingested -- by discovery for integrations, or by saving
-the settings form for manual records -- it is available under
+Once AIM data has been ingested, it is available under
 **Inventory --> Applications**, in the Applications, Workloads, Flows, and
-Devices tables.
+Devices tables:
+
+- **Integrations** are crawled by discovery, so their data appears in the
+  snapshot the discovery creates.
+- **Manual records** are copied into a snapshot when its post-discovery
+  topology calculation runs. For a new discovery, that happens automatically.
+
+!!! warning "Saving a snapshot's settings does not update its inventory"
+
+    Saving the Applications, Workloads, or Flows tabs in the **Settings** of an
+    existing snapshot stores the records, but does not change that snapshot's
+    **Inventory --> Applications** tables. The records are applied the next time
+    the snapshot's topology is recalculated -- for example when the snapshot is
+    unloaded and loaded again, or when its Site Separation settings change.
 
 The **Devices** table is not populated by ingestion. It lists the network devices
 that an application's traffic traverses, which is produced by a separate

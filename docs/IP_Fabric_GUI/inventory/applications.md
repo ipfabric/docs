@@ -65,7 +65,7 @@ One row per application.
 | **Environment**      | Environment the application belongs to. **Hidden by default** -- enable it in the column selector. Populated for applications maintained in the Discovery Settings and for those imported from CSV; empty for applications collected through the Illumio integration. |
 | **External data source** | Where the application came from -- an integration, or the manual source for data you maintain yourself. |
 | **Flows calculated** | How many of the application's flows have a calculated path-lookup, out of its total flows. Also carries the calculation trigger -- see [Calculating Devices](#calculating-devices). |
-| **Devices**          | Number of network devices the application's traffic traverses. Links to the Devices tab filtered to this application. |
+| **Devices**          | Number of rows in the Devices tab for this application: one per flow and traversed device, so a device that carries several of the application's flows is counted once per flow. Links to the Devices tab filtered to this application. |
 | **Workloads**        | Number of workloads. Links to the Workloads tab filtered to this application.                        |
 | **Entrypoints**      | Reserved for a future release.                                                                        |
 | **Created at**       | When the record was first ingested.                                                                   |
@@ -112,7 +112,7 @@ addresses when the source did not identify the workloads.
 | **Destination application**     | The application owning the destination workload.                                                 |
 | **Application flow**            | Source and destination endpoints of the flow, by workload name or by IP address when the workload is unnamed. Links to the path-lookup diagram -- see [Opening the Path as a Diagram](#opening-the-path-as-a-diagram). |
 | **Calculation status**          | Whether this flow's path-lookup has been calculated. Also carries the calculation trigger -- see [Calculating Devices](#calculating-devices). |
-| **Devices**                     | Number of network devices this flow traverses. Links to the Devices tab filtered to this flow.   |
+| **Devices**                     | Number of network devices this flow traverses. Empty until the flow is calculated, and also when its path lookup failed. Links to the Devices tab filtered to this flow. |
 | **Source IP** / **Destination IP** | The flow's endpoint addresses.                                                                |
 | **Source port** / **Destination port** | The flow's ports, when the source provides them.                                          |
 | **Protocol**                    | The flow's IP protocol.                                                                          |
@@ -194,6 +194,10 @@ link, tooltipped *All path-lookups for this flow have been calculated.*
     path-lookup runs against only changes with a new snapshot, and a new snapshot
     starts with nothing calculated. That is why the trigger disappears once a
     flow is done rather than offering a refresh.
+
+    A flow whose path lookup fails also counts as calculated: it shows
+    **Calculated** with no device count and is not tried again within the
+    snapshot.
 
 ## Opening the Path as a Diagram
 
