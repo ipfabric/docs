@@ -9649,6 +9649,62 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#v822-november-6th2026-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v8.2.2 (November 6th,2026; Preview)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v8.2.2 (November 6th,2026; Preview)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Infrastructure Mapping (AIM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v821-october-26th-2026-preview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9688,6 +9744,17 @@ here.
     <span class="md-ellipsis">
       
         Vendor Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server
       
     </span>
   </a>
@@ -16469,6 +16536,62 @@ here.
 </li>
       
         <li class="md-nav__item">
+  <a href="#v822-november-6th2026-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v8.2.2 (November 6th,2026; Preview)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v8.2.2 (November 6th,2026; Preview)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-infrastructure-mapping-aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Infrastructure Mapping (AIM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v821-october-26th-2026-preview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16508,6 +16631,17 @@ here.
     <span class="md-ellipsis">
       
         Vendor Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server
       
     </span>
   </a>
@@ -16706,6 +16840,18 @@ following key combinations:</p>
 <p>The <a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#new-cloud-model">New Cloud Model</a> is now enabled by default.</p>
 <p>The New Cloud Model uses new database tables. Snapshots taken with the old model — before upgrading to <code>8.2</code> or with this feature flag disabled — are not compatible with the new model. Loading such a snapshot with the New Cloud Model may result in missing or incomplete data. The old snapshot data cannot be mapped to the new table structure.</p>
 <p>To temporarily switch back to the old cloud model, see <a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#disabling-the-feature-flag">Disabling the Feature Flag</a>.</p>
+<h2 id="v822-november-6th2026-preview">v8.2.2 (November 6<sup>th</sup>,2026; Preview)</h2>
+<h3 id="application-infrastructure-mapping-aim">Application Infrastructure Mapping (AIM)</h3>
+<p><strong>Illumio Integration</strong></p>
+<p>Each Illumio integration now has two switches: <strong>Reject unauthorized certificates</strong> and <strong>Use system proxy configuration</strong>. With certificate
+validation turned off, IP Fabric can connect to an Illumio PCE whose TLS certificate is self-signed or issued by a CA the appliance does not trust,
+both in <strong>Test connection</strong> and during discovery. Both switches are on by default, so existing integrations and snapshots behave as before.
+See <a href="../../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/application_mapping/#add-or-edit-an-integration-provider">Application Mapping</a>.</p>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<h4 id="aim">AIM</h4>
+<ul>
+<li>Fixed <code>POST /aim/flow-path-lookups/{snapshotId}</code> rejecting the <code>$last</code>, <code>$lastLocked</code>, and <code>$prev</code> snapshot keywords. They are now resolved, as in <code>POST /aim/import/{snapshotId}</code>.</li>
+</ul>
 <h2 id="v821-october-26th-2026-preview">v8.2.1 (October 26<sup>th</sup>, 2026; Preview)</h2>
 <div class="highlight"><pre><span></span><code>SHA256 (ipfabric-update-8-2-1+0.tar.zst.sig) = a9b7f3edc44d14caf4411e379284b6782e65f0044a2aad05cb2000dd3a362b0e
 MD5 (ipfabric-update-8-2-1+0.tar.zst.sig) = 23aff5f2cce7609cf53eb2e5fee48b08
@@ -16740,6 +16886,11 @@ Coverage includes :</p>
 <p class="admonition-title">Disabled by Default</p>
 <p>To enable it, set the <code>ENABLE_DISCOVERY_DEVICES_AVOCENT</code> feature flag. See <a href="../../../System_Administration/Command_Line_Interface/Feature_Flags/#avocent-acs-discovery">Feature Flags</a> for details.</p>
 </div>
+<h4 id="mcp-server">MCP Server</h4>
+<ul>
+<li>Raised the MCP server’s request body limit for JSON payloads from 100 KB to 20 MB, matching the IP Fabric API, so larger AIM imports through
+  <code>POST /aim/import/{snapshotId}</code> are no longer rejected by the MCP server.</li>
+</ul>
 <h3 id="experimental-features">Experimental Features</h3>
 <h4 id="aruba-central-discovery-partial">Aruba Central Discovery (Partial)</h4>
 <p>IP Fabric can now partially discover devices managed by HPE Aruba Networking Central via API.</p>
@@ -16769,7 +16920,7 @@ Coverage includes :</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 26, 2026 14:43:58 UTC">October 26, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 2, 2026 12:46:10 UTC">November 2, 2026</span>
   </span>
 
     
