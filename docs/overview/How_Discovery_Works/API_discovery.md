@@ -91,7 +91,8 @@ discovery is terminated.
 ## Recoverable Network Errors
 
 Vendor API clients are aware of some recoverable network errors (e.g.,
-`ECONNRESET`, `ECONNABORTED`, `ECONNREFUSED`). When a recoverable network error
+`ECONNRESET`, `ECONNABORTED`, `ECONNREFUSED`, `ETIMEDOUT`, and `EAI_AGAIN`).
+When a recoverable network error
 is detected, the request is not immediately rejected but is resent with
 exponential backoff. If the network error is not mitigated for some time, then
 the request is rejected -- but the Vendor API discovery can continue with
