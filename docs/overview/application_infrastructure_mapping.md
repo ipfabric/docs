@@ -39,8 +39,8 @@ Three ingestion methods are supported, and they can be used side by side:
 | Method                                   | Configured in                                             | Refreshed by                        |
 | :--------------------------------------- | :-------------------------------------------------------- | :---------------------------------- |
 | **External data provider, via API crawling** | Discovery Settings, Integrations tab                   | Each discovery run.                 |
-| **Records maintained in IP Fabric**      | Discovery Settings -- forms, or a CSV import in the UI      | Saving the settings form.           |
-| **The AIM API**                          | `POST /aim/import/{snapshotId}`, with CSV files or JSON  | Each API call.                      |
+| **Records maintained in IP Fabric**      | Discovery Settings -- forms, or a CSV import in the UI      | Each discovery run. In an existing snapshot, its next topology recalculation -- not saving its settings. |
+| **The AIM API**                          | `POST /aim/import/{snapshotId}`, with CSV files or JSON  | Each API call. The data is lost when the snapshot is reloaded or its topology is recalculated. |
 
 Illumio is the external provider supported today; the source is not limited to
 micro-segmentation platforms, and support for further platform types is planned
@@ -55,7 +55,7 @@ and the third in
 ```mermaid
 flowchart LR
     P[External provider<br/>e.g. Illumio] -->|discovery| S[(Snapshot<br/>AIM data)]
-    M[Discovery Settings<br/>forms / CSV] -->|save| S
+    M[Discovery Settings<br/>forms / CSV] -->|topology calculation| S
     A[AIM API<br/>CSV or JSON import] -->|job| S
     S --> T[Inventory --> Applications<br/>tables]
     S --> L[Path-lookup<br/>calculation]
@@ -91,7 +91,7 @@ Server for use from an AI assistant.
 
     No ingestion method fills the Devices table. Until a path lookup has run for
     a flow, that flow contributes no devices, and the application's device count
-    stays at `0`. This is the single most common surprise when setting AIM up.
+    shows `-` (`null` over the API) until at least one of its flows is calculated. This is the single most common surprise when setting AIM up.
 
 ## Licensing
 
@@ -134,8 +134,8 @@ AIM is delivered in stages. As of this release:
 
 - **Illumio** is the supported external data provider. Other platform types are
   planned.
-- **Flow collection from Illumio** covers a rolling 24-hour window, capped at
-  25,000 flows per query. Both values are fixed and not configurable in the UI --
+- **Flow collection from Illumio** covers the previous and the current calendar
+  day, capped at 25,000 flows per query. Both values are fixed and not configurable in the UI --
   see
   [Illumio Requirements](../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/application_mapping.md#illumio-requirements).
 - **Traversed devices** are produced by an on-demand calculation, per application

@@ -22,9 +22,10 @@ appliance:
 3. **Through the AIM API endpoint, using CSV files or a JSON payload.** Described
    on this page.
 
-Of the three ingestion methods above, only **option 3** has a dedicated API
-endpoint. This document is an overview and reference of that endpoint together
-with the other AIM endpoints available over the API. They fall into four
+Of the three ingestion methods above, only **option 3** ingests data through an
+API endpoint; option 1 has API endpoints only for testing an integration's
+connection. This document is an overview and reference of the ingestion
+endpoint together with the other AIM endpoints available over the API. They fall into four
 independent groups:
 
 - **Data ingestion** -- `POST /aim/import/{snapshotId}` writes applications,
@@ -50,7 +51,8 @@ independent groups:
 
     No ingestion method fills the **Application Devices** table. Until a
     path-lookup calculation has run for a flow, that table stays empty and
-    `devices` remains `0` in the Applications inventory.
+    `devices` is `null` in the Applications inventory until at least one of the
+    application's flows is calculated.
 
 Both AIM endpoints are asynchronous: each schedules a background job and returns a
 `jobId`. For polling those jobs and chaining the calls into an automated sequence,
@@ -683,16 +685,22 @@ the `name` column, so a script can find the job again by filtering on
     the snapshot again discards the imported records, and they have to be
     ingested through the endpoint once more.
 
-This is where the endpoint differs from the other two ingestion methods. Records
-that come from an integration, or that are maintained in the **Application
-mapping** section of the Discovery Settings, are stored as part of the settings
-and rebuilt into the inventory tables from there -- so they survive a reload.
-Only the API import writes to the tables alone.
+    The imported records are also **replaced whenever the snapshot's topology is
+    recalculated** -- for example after its Site Separation settings change or a
+    device is deleted from it. The recalculation rebuilds the snapshot's manually
+    maintained AIM data from the **Application mapping** settings, and that data
+    shares its storage with the API import.
 
-If the data needs to persist across reloads, import the same CSV files through
-the **Application mapping** section of the global Discovery Settings or of the
-snapshot's settings instead of using this endpoint. Note that the two paths do
-not share a CSV format -- see
+This is where the endpoint differs from the other two ingestion methods. Records
+that come from an integration are stored with the snapshot by the discovery, and
+records maintained in the **Application mapping** section are stored in the
+settings. Both are rebuilt into the inventory tables from there, so they survive
+a reload. Only the API import writes to the tables alone.
+
+If the data needs to persist across reloads, import it through the
+**Application mapping** section of the global Discovery Settings or of the
+snapshot's settings instead of using this endpoint. The two paths do not share a
+CSV format, so the files have to be converted first -- see
 [Application Mapping](../../IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/application_mapping.md#import-from-csv)
 for the columns that import expects.
 
@@ -716,7 +724,7 @@ Content-Type: application/json
 
 | Parameter    | In   | Type            | Required | Description                                                       |
 | :----------- | :--- | :-------------- | :------- | :---------------------------------------------------------------- |
-| `snapshotId` | path | `string` (UUID) | yes      | UUID of the snapshot to run the path lookups against. Must be loaded. |
+| `snapshotId` | path | `string` | yes      | UUID of the snapshot to run the path lookups against, or one of the reserved keywords `$last`, `$lastLocked`, `$prev`. Must be loaded. |
 
 The request body must contain **exactly one** of `flowId` or `applicationId`.
 Sending both is rejected.
@@ -1009,8 +1017,8 @@ Content-Type: application/json
 
 !!! note "Reserved snapshot keywords are allowed here"
 
-    Unlike the two AIM endpoints above, which require a UUID, the table endpoints
-    also accept `$last`, `$prev`, and `$lastLocked`.
+    Like the import and path-lookup endpoints above, the table endpoints accept
+    `$last`, `$prev`, and `$lastLocked` in place of a snapshot UUID.
 
 Each filter entry takes the form `"column": [operator, value]`, for example
 `["eq", "app-001"]` or `["like", "web"]`. Nest arrays of filter objects under
@@ -1044,7 +1052,7 @@ Lists the applications in the snapshot. This is also where you obtain the numeri
 | `flows`           | `integer` | Number of flows belonging to the application.                                  |
 | `flowsCalculated` | `integer` | How many of those flows already have a path-lookup result.                     |
 | `workloads`       | `integer` | Number of workloads.                                                           |
-| `devices`         | `integer` | Number of traversed devices. `0` until path lookups run.                       |
+| `devices`         | `integer` | Number of flow and traversed-device pairs of the application's flows. `null` until at least one of its flows is calculated. |
 | `entrypoints`     | `string`  | Reserved for a future release; not populated yet.                              |
 | `createdAt`       | `integer` | Creation timestamp.                                                            |
 | `updatedAt`       | `integer` | Last change timestamp.                                                         |
@@ -1216,9 +1224,9 @@ the numeric `id` used as `flowId` when calculating a single flow.
     traverses no device. Use `pathLookupsCalculationStatus` to test whether the
     calculation has run, not the device count.
 
-    The Applications table behaves differently: its `devices` is a total across
-    the application's flows, so it reads `0` rather than `null` before anything
-    is calculated.
+    The Applications table behaves the same way at application level: its
+    `devices` is `null` until at least one of the application's flows is
+    calculated, and a number -- possibly `0` -- afterwards.
 
 ### Devices
 

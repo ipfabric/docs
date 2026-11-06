@@ -86,10 +86,10 @@ workflow, ingestion included, now runs through the MCP server.
 
 ## Step 1 -- Identify the Snapshot
 
-The import endpoint and the table endpoints accept the reserved keywords `$last`,
-`$prev`, and `$lastLocked` as well as a UUID. The **path-lookup** endpoint still
-requires a snapshot **UUID**, so it is worth resolving one up front and reusing it
-for the whole session.
+The import, path-lookup, and table endpoints accept the reserved keywords
+`$last`, `$prev`, and `$lastLocked` as well as a UUID. A keyword is resolved on
+every call, so if a new snapshot can finish during the session, resolve a UUID up
+front and reuse it for the whole session.
 
 !!! example "Example Prompt"
 
@@ -178,8 +178,11 @@ objects rather than a packed string.
 !!! warning "Large data sets belong in a file upload"
 
     A request is limited to 20 MB, and the same rows are roughly twice the size
-    as JSON that they are as CSV. For bulk ingestion, upload CSV files with a
-    normal HTTP client instead -- see [Import AIM Data](index.md#import-aim-data).
+    as JSON that they are as CSV. The MCP server accepts JSON request bodies up
+    to the same 20 MB; because the MCP request wraps the payload, a payload very
+    close to the limit may be rejected by the MCP server rather than by the API.
+    For bulk ingestion, upload CSV files with a normal HTTP client instead -- see
+    [Import AIM Data](index.md#import-aim-data).
 
 ## Step 3 -- Confirm the Import Job Finished
 
@@ -272,7 +275,7 @@ The assistant calls `ipf_api_endpoint_invoke`:
       "flows": 1,
       "flowsCalculated": 0,
       "workloads": 1,
-      "devices": 0
+      "devices": null
     },
     {
       "id": "47",
@@ -283,7 +286,7 @@ The assistant calls `ipf_api_endpoint_invoke`:
       "flows": 1,
       "flowsCalculated": 0,
       "workloads": 1,
-      "devices": 0
+      "devices": null
     }
   ],
   "_meta": { "limit": 50, "start": 0, "count": 2, "size": 2, "snapshot": "{snapshotId}" }
@@ -298,7 +301,7 @@ Two fields matter for the next step:
 
 - **`id`** -- the numeric application ID needed to trigger a calculation.
 - **`flowsCalculated`** -- `0` means no path lookups have run yet, which is why
-  `devices` is also `0`.
+  `devices` is `null`.
 
 Ask for `/tables/inventory/applications/workloads` or
 `/tables/inventory/applications/flows` the same way. The Flows table is where you
@@ -424,6 +427,7 @@ The assistant calls `ipf_api_endpoint_invoke`:
       "hostname": "SW-CORE-01",
       "sn": "SN12345678",
       "snHw": "SN12345678",
+      "flowId": "42",
       "srcApplicationName": "Frontend Service",
       "dstApplicationName": "Backend API",
       "applicationFlow": "web-server-01 → api-server-01"
@@ -477,9 +481,9 @@ AI:   One device: SW-CORE-01 (SN12345678), via the flow
 
 ## Tips
 
-- **Say "the latest snapshot" freely for importing and reading.** Those endpoints
-  resolve `$last` themselves. Give the assistant a UUID up front only if the
-  session will reach a path-lookup calculation, which still needs one.
+- **Say "the latest snapshot" freely.** The import, path-lookup, and table
+  endpoints resolve `$last` themselves. Give the assistant a UUID up front only
+  if a new snapshot may finish during the session.
 - **Name the application, not the ID.** Asking for `"Frontend Service"` lets the
   assistant look up the numeric `id` itself from the Applications table.
 - **Ask for a CSV export** when you want the result as a file rather than a
