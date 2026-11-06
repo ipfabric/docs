@@ -10,6 +10,7 @@ description: This page provides an overview of the Administration section of IP 
 - [LDAP](ldap.md)
 - [Roles](roles.md)
 - [Policies](policies.md)
+- [Label-Based Access Control](label_based_access_control.md) (experimental, since `8.2`)
 
 IP Fabric also supports **Single Sign-On (SSO)** authentication. It uses **Dex** (a federated OpenID Connect provider) and requires the configuration of the Dex service to access third-party OpenID providers. This is not yet included in the UI.
 

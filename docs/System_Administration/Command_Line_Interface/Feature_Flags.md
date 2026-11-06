@@ -410,6 +410,8 @@ sudo systemctl restart ipf-appliance
 
 Without this flag, **Discovery Data Enrichment** does not appear in the **Settings** menu. Labels are not calculated after discovery. The **Labels** columns in tables and in the API remain empty.
 
+Since `8.2`, the same flag also enables [reserved labels](../../IP_Fabric_Settings/Discovery_Data_Enrichment/reserved_labels.md) and [label-based access control](../../IP_Fabric_Settings/administration/label_based_access_control.md). Without it, the **Endpoint policies** and **Data policies** pages are hidden, and data policies do not restrict access.
+
 ### Aruba Central Discovery (Partial)
 
 Since `8.2`, you can discover switches, gateways, and access points managed by HPE Aruba Networking Central via API. Support is partial: IP Fabric collects device inventory, serial numbers, L2 and L3 interfaces, VLANs, neighbors, ARP and MAC address tables, and routing tables. Other tasks are not yet supported for Aruba Central.

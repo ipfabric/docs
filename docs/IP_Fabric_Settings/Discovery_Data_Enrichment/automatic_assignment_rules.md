@@ -26,6 +26,12 @@ not have to assign labels manually as the network changes.
 
 ![New rule form](../../images/settings/discovery-data-enrichment/discovery-data-enrichment_new-rule.webp)
 
+**Test rule** lists the devices or interfaces in the current snapshot that the
+conditions match in the **Matched** tab, and the rest in the **Unmatched** tab.
+Click **Apply changes** to return to the rule form with the tested conditions.
+
+![Rule test results](../../images/settings/discovery-data-enrichment/discovery-data-enrichment_rule-test.webp)
+
 ## Properties and Operators
 
 A condition can use the following device properties:

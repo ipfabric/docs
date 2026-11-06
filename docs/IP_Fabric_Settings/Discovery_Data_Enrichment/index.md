@@ -54,11 +54,12 @@ Every assignment carries a source:
 | ------------- | ---------------------------------------------------------------------------------------- |
 | Manual        | Assigned directly to this device or interface.                                           |
 | Auto-assigned | Produced by an automatic assignment rule.                                                |
+| IP Fabric     | Computed by IP Fabric during topology calculation. Used by [reserved labels](reserved_labels.md) only. |
 | Inherited     | Applied to an L2 interface because its device carries the label and inheritance is on. |
 
 When the same label reaches one object from more than one source, **Manual**
-takes precedence over **Auto-assigned**, and **Auto-assigned** takes
-precedence over **Inherited**.
+takes precedence over **Auto-assigned**, **Auto-assigned** over **IP Fabric**,
+and **IP Fabric** over **Inherited**.
 
 ![Discovery Data Enrichment -- Assigned labels tab](../../images/settings/discovery-data-enrichment/discovery-data-enrichment_assigned-labels.webp)
 
@@ -84,3 +85,4 @@ not change.
 - [Automatic Assignment Rules](automatic_assignment_rules.md)
 - [Filter by Label](filter_by_label.md)
 - [Import Labels via API](import_labels_via_api.md)
+- [Reserved Labels](reserved_labels.md)
