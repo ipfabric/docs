@@ -9,6 +9,17 @@ commands through CLI using SSH or Telnet. Credentials added in **Settings -->
 Discovery & Snapshots --> Discovery Settings --> Device Credentials** will be
 used by IP Fabric to access the CLI of the network devices.
 
+!!! tip "Fetching Credentials from a Secret Manager"
+
+    You do not have to store credentials in IP Fabric. The
+    [IP Fabric Credential Broker](https://ip-fabric.gitlab.io/integrations/ipfabric-credential-broker/)
+    fetches them from your secret manager instead. It supports HashiCorp Vault,
+    Azure Key Vault, CyberArk, and AWS Secrets Manager.
+
+    The broker is a read-only service that you install on the IP Fabric
+    appliance. It listens on localhost, and IP Fabric reads the credentials from
+    it when discovery starts.
+
 ## Credential Selection Logic
 
 The credential priority can be changed using drag and drop. The credential 
