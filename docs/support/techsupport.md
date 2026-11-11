@@ -90,6 +90,8 @@ description: This page explains how to generate and upload a techsupport file fo
 Please refer to the [Techsupport](../IP_Fabric_API/techsupport.md) section of
 our API documentation.
 
+--8<-- "snippets/jobs_clear_all_files.md"
+
 ## Uploading Techsupport File
 
 ### WEB / HTTPS
