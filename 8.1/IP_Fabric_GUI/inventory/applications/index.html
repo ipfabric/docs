@@ -16544,7 +16544,7 @@ sources is described in
 <h2 id="without-an-aim-license">Without an AIM License</h2>
 <p>Without the AIM feature on the license, the page shows an overview of the
 capability instead of the four tables.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_aim-teaser.webp" data-desc-position="bottom"><img alt="Applications page feature overview shown without an AIM license" src="../../../images/inventory/applications/inventory-applications_aim-teaser.webp"></a></p>
+<p></p>
 <p>The overview explains what Application mapping does – connecting business
 applications to the network paths, cloud services, and security controls that
 deliver them – and is split into two groups:</p>
@@ -16565,10 +16565,10 @@ Customer Success Manager or email
 the reissued license file, and revisit the page. The page also links to
 <a href="https://go.ipfabric.io/aim">go.ipfabric.io/aim</a> for what AIM covers. See
 <a href="../../../overview/licensing/#getting-aim">Getting AIM</a>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_enable-aim-dialog.webp" data-desc-position="bottom"><img alt="Steps to enable Application mapping" src="../../../images/inventory/applications/inventory-applications_enable-aim-dialog.webp"></a></p>
+<p></p>
 <h2 id="applications-table">Applications Table</h2>
 <p>One row per application.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_applications-table.webp" data-desc-position="bottom"><img alt="Applications table" src="../../../images/inventory/applications/inventory-applications_applications-table.webp"></a></p>
+<p></p>
 <table>
 <thead>
 <tr>
@@ -16599,7 +16599,7 @@ the reissued license file, and revisit the page. The page also links to
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Devices</strong></td>
-<td style="text-align: left;">Number of network devices the application’s traffic traverses. Links to the Devices tab filtered to this application.</td>
+<td style="text-align: left;">Number of rows in the Devices tab for this application: one per flow and traversed device, so a device that carries several of the application’s flows is counted once per flow. Links to the Devices tab filtered to this application.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Workloads</strong></td>
@@ -16630,7 +16630,7 @@ number.</p>
 <h2 id="workloads-table">Workloads Table</h2>
 <p>One row per workload interface, so a workload with two interface addresses
 appears twice, differing only in <strong>Workload interface</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_workloads-table.webp" data-desc-position="bottom"><img alt="Workloads table" src="../../../images/inventory/applications/inventory-applications_workloads-table.webp"></a></p>
+<p></p>
 <table>
 <thead>
 <tr>
@@ -16672,7 +16672,7 @@ appears twice, differing only in <strong>Workload interface</strong>.</p>
 <h2 id="flows-table">Flows Table</h2>
 <p>One row per flow – a communication between two workloads, or between two
 addresses when the source did not identify the workloads.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_flows-table.webp" data-desc-position="bottom"><img alt="Flows table" src="../../../images/inventory/applications/inventory-applications_flows-table.webp"></a></p>
+<p></p>
 <table>
 <thead>
 <tr>
@@ -16707,7 +16707,7 @@ addresses when the source did not identify the workloads.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Devices</strong></td>
-<td style="text-align: left;">Number of network devices this flow traverses. Links to the Devices tab filtered to this flow.</td>
+<td style="text-align: left;">Number of network devices this flow traverses. Empty until the flow is calculated, and also when its path lookup failed. Links to the Devices tab filtered to this flow.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Source IP</strong> / <strong>Destination IP</strong></td>
@@ -16740,7 +16740,7 @@ application therefore also completes it for the other.</p>
 <h2 id="devices-table">Devices Table</h2>
 <p>The network devices that application traffic traverses. This table is populated
 only by the path-lookup calculation – ingesting AIM data does not fill it.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_devices-table.webp" data-desc-position="bottom"><img alt="Devices table" src="../../../images/inventory/applications/inventory-applications_devices-table.webp"></a></p>
+<p></p>
 <table>
 <thead>
 <tr>
@@ -16829,7 +16829,7 @@ start it at two levels:</p>
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_calculate-devices-trigger.webp" data-desc-position="bottom"><img alt="Calculation trigger in the Flows calculated column" src="../../../images/inventory/applications/inventory-applications_calculate-devices-trigger.webp"></a></p>
+<p></p>
 <p>The calculation runs in the background. When it finishes, a notification reports
 the result and links to the Devices tab filtered to the application you started
 it from.</p>
@@ -16851,12 +16851,15 @@ link, tooltipped <em>All path-lookups for this flow have been calculated.</em></
 path-lookup runs against only changes with a new snapshot, and a new snapshot
 starts with nothing calculated. That is why the trigger disappears once a
 flow is done rather than offering a refresh.</p>
+<p>A flow whose path lookup fails also counts as calculated: it shows
+<strong>Calculated</strong> with no device count and is not tried again within the
+snapshot.</p>
 </div>
 <h2 id="opening-the-path-as-a-diagram">Opening the Path as a Diagram</h2>
 <p>The <strong>Application flow</strong> column in both the Flows and the Devices tables links to
 the path-lookup diagram, pre-filled from the flow’s own five-tuple – source and
 destination IP, protocol, and ports.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/inventory/applications/inventory-applications_flow-path-lookup-diagram.webp" data-desc-position="bottom"><img alt="Path-lookup diagram opened from a flow" src="../../../images/inventory/applications/inventory-applications_flow-path-lookup-diagram.webp"></a></p>
+<p></p>
 <p>Ports the source left unspecified are submitted as the full ephemeral range
 <code>1024-65535</code>. Protocols are mapped to their path-lookup equivalents: ICMP, TCP,
 UDP, and ICMPv6.</p>
@@ -16890,7 +16893,7 @@ cell stays plain text with no link.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 30, 2026 14:15:59 UTC">October 30, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 9, 2026 10:53:17 UTC">November 9, 2026</span>
   </span>
 
     
