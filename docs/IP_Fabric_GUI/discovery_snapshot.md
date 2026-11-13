@@ -206,6 +206,8 @@ When a snapshot is unloaded, it is safely stored on the hard disk, but the data 
 
 If needed, a selected snapshot can be downloaded from IP Fabric to your local storage by selecting `Download snapshot`.
 
+--8<-- "snippets/jobs_clear_all_files.md"
+
 ### Clone Snapshot
 
 ![Clone snapshot](../images/snapshot-management/snapshot-management_snapshot-clone.webp)
