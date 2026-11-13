@@ -21,3 +21,14 @@ Sometimes, it is necessary to run maintenance manually; this can be done with
 the **Start Maintenance** button:
 
 ![Schedule System Maintenance](../../../images/settings/system/backup-maintenance/settings-system-backup-maintenance_system_maintenance_schedule_system_maintenance.webp)
+
+## Cleaning Up Job Files
+
+--8<-- "snippets/jobs_clear_all_files.md"
+
+To reclaim disk space occupied by such files:
+
+1. In the **Jobs** list, click **Clear all** to dismiss the finished and failed
+   job entries.
+2. Run System Maintenance manually with the **Start Maintenance** button, or
+   wait for the scheduled maintenance to run.
