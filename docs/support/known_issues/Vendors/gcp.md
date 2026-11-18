@@ -4,7 +4,7 @@ description: This page describes known issues for Google Cloud Platform (GCP)
 
 # Google Cloud Platform (GCP)
 
-**IP Fabric version:** since From version `7.8` onward 
+**IP Fabric version:** From version `7.8` onward 
  
 **Description:** For Interconnect paths, the Cloud Router (control plane) appears in the path lookup.
 
