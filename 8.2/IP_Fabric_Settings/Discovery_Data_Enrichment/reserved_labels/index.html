@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -16657,7 +16657,7 @@ warning reminds you that you are overriding the value IP Fabric calculated –
 for example:</p>
 <div class="highlight"><pre><span></span><code>You are overriding the site name computed by IP Fabric.
 </code></pre></div>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-override-warning.webp" data-desc-position="bottom"><img alt="Override warning when assigning ipf_site" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-override-warning.webp"></a></p>
 <p>Manual and auto-assigned values take precedence over the computed value:</p>
 <ol>
 <li><strong>Manual</strong></li>
@@ -16674,7 +16674,7 @@ differs from user labels, where a device keeps every assigned value.</p>
 <a href="../create_and_assign_labels/#edit-labels-in-device-explorer">Device Explorer</a>,
 both the computed value (source <strong>IP Fabric</strong>) and your override (source
 <strong>Manual</strong>) are listed. The override is the one IP Fabric uses.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-device-explorer.webp" data-desc-position="bottom"><img alt="Computed and overridden ipf_site in Device Explorer" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-device-explorer.webp"></a></p>
 <h3 id="where-reserved-labels-are-used">Where Reserved Labels Are Used</h3>
 <p>When labels are enabled, IP Fabric reads the reserved label first, and falls
 back to the calculated value only for devices without it:</p>
@@ -16684,7 +16684,7 @@ back to the calculated value only for devices without it:</p>
 <li><strong>Diagrams</strong> group devices by <strong>Site name</strong>, <strong>Routing domain</strong>, and
   <strong>STP domain</strong> using <code>ipf_site</code>, <code>ipf_routingDomain</code>, and <code>ipf_stpDomain</code>.</li>
 </ul>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-site-column.webp" data-desc-position="bottom"><img alt="Site column showing overridden ipf_site values in Device Inventory" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-site-column.webp"></a></p>
 <p>Overriding a reserved label changes how the device is shown in tables and
 diagrams. It does not change the site separation settings.</p>
 <h2 id="regions">Regions</h2>
@@ -16693,9 +16693,9 @@ diagrams. It does not change the site separation settings.</p>
 after you assign one, manually or with a rule.</p>
 <p>Once assigned, you can group diagrams by <strong>Region</strong>. The <strong>Region</strong> option is
 available only when labels are enabled.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-diagram-group-by.webp" data-desc-position="bottom"><img alt="Group Devices by Label options in the Network viewer" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-diagram-group-by.webp"></a></p>
 <p>Devices without <code>ipf_region</code> are grouped under <strong>NO VALUE</strong>.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-diagram-region.webp" data-desc-position="bottom"><img alt="Network viewer grouped by Region" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-diagram-region.webp"></a></p>
 <p>A region value is required, and it must be 1–64 characters long and contain
 only letters, digits, spaces, underscores (<code>_</code>), periods (<code>.</code>), or hyphens
 (<code>-</code>). Otherwise, the following error is shown:</p>
@@ -16711,10 +16711,10 @@ device whose hostname starts with <code>lon-</code> is placed in the <code>uk</c
 <p>Reserved labels are not added to the <a href="../create_and_assign_labels/#create-a-label-in-the-catalog">catalog</a>
 automatically. To add one, click <strong>+ Add new</strong> in the <strong>Labels</strong> tab and select
 one of the names offered under <strong>Reserved names</strong>.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-names.webp" data-desc-position="bottom"><img alt="Reserved names in the New label form" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-names.webp"></a></p>
 <p>Reserved catalog entries cannot be renamed or deleted. You can still edit their
 values. A catalog entry for <code>ipf_region</code> must have at least one value.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-labels-catalog.webp" data-desc-position="bottom"><img alt="Reserved labels in the catalog, with the delete action disabled" src="../../../images/settings/discovery-data-enrichment/discovery-data-enrichment_reserved-labels-catalog.webp"></a></p>
 <h2 id="api">API</h2>
 <p>Reserved labels use the same API endpoints as other labels. See
 <a href="../import_labels_via_api/">Import Labels via API</a>.</p>
@@ -17023,10 +17023,10 @@ values. A catalog entry for <code>ipf_region</code> must have at least one value
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -16709,7 +16709,7 @@ tokens.</p>
 <p>With <code>ENABLE_LABELS</code> enabled, <strong>Settings → Administration</strong> contains two new
 pages, <strong>Endpoint policies</strong> and <strong>Data policies</strong>, and the <strong>Roles</strong> page lets
 you link both kinds of policies to a role.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_admin-menu.webp" data-desc-position="bottom"><img alt="Endpoint policies and Data policies in the Administration menu" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_admin-menu.webp"></a></p>
 <h2 id="how-access-is-evaluated">How Access Is Evaluated</h2>
 <ul>
 <li>Data policies restrict <strong>devices</strong> and <strong>interfaces</strong>. A device or interface
@@ -16758,7 +16758,7 @@ un-enrolled, so enrolling a label never changes access by itself.</p>
    snapshot.</li>
 <li>Click <strong>Save</strong>.</li>
 </ol>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_enrolled-labels.webp" data-desc-position="bottom"><img alt="Manage enrolled labels" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_enrolled-labels.webp"></a></p>
 <p>A snapshot must be selected to manage enrolled labels.</p>
 <p>A label used by a data policy cannot be un-enrolled. Its switch is locked with
 the tooltip:</p>
@@ -16766,7 +16766,7 @@ the tooltip:</p>
 </code></pre></div>
 <p>The label also shows the policies that use it – for example,
 <strong>Used in: London PCI</strong>.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_enrolled-labels-locked.webp" data-desc-position="bottom"><img alt="Enrolled labels used by data policies" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_enrolled-labels-locked.webp"></a></p>
 <p>While a data policy uses a label, the label also cannot be renamed or deleted
 in the <a href="../../Discovery_Data_Enrichment/create_and_assign_labels/#create-a-label-in-the-catalog">catalog</a>,
 and values used by the policy cannot be removed from it.</p>
@@ -16786,11 +16786,11 @@ and values used by the policy cannot be removed from it.</p>
    interfaces the policy admits.</li>
 <li>Click <strong>Save</strong>.</li>
 </ol>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_data-policy-form.webp" data-desc-position="bottom"><img alt="New data policy form" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_data-policy-form.webp"></a></p>
 <p>The <strong>Data policies</strong> table shows each policy’s condition – for example,
 <code>ipf_site IN [LON] AND pci IS SET</code> – and its <strong>Impact</strong>, the number of devices
 and interfaces it admits in the active snapshot.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_data-policies-table.webp" data-desc-position="bottom"><img alt="Data policies table" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_data-policies-table.webp"></a></p>
 <p>A data policy applies to all snapshots.</p>
 <p>Each label can be used only once in a policy. Conditions are always combined
 with <code>AND</code>; to admit objects matching one of several conditions (<code>OR</code>), create
@@ -16807,10 +16807,10 @@ a separate data policy for each and add them all to the role.</p>
    <a href="../../integration/api_tokens/">API tokens</a>. Remove the built-in <code>ipf-gui</code>
    role and any other role without a data policy from those users and tokens.</li>
 </ol>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_role-form.webp" data-desc-position="bottom"><img alt="New role form with endpoint and data policies" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_role-form.webp"></a></p>
 <p>The <strong>Roles</strong> table lists the endpoint and data policies of each role.
 Administrator and built-in roles are read-only.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_roles-table.webp" data-desc-position="bottom"><img alt="Roles table" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_roles-table.webp"></a></p>
 <p>Deleting a data policy removes it from every role it is assigned to. If it was
 the role’s only data policy, the role then grants unrestricted access.</p>
 <h2 id="endpoint-policies">Endpoint Policies</h2>
@@ -16821,7 +16821,7 @@ policies cannot be edited or deleted.</p>
 <p>To create one, go to <strong>Settings → Administration → Endpoint policies</strong>,
 click <strong>+ Add new</strong>, enter a <strong>Policy name</strong> and an optional <strong>Description</strong>,
 and select the endpoints in <strong>Select endpoints for policy</strong>.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_endpoint-policies-table.webp" data-desc-position="bottom"><img alt="Endpoint policies table" src="../../../images/settings/administration/label-based-access-control/settings-administration-label-based-access-control_endpoint-policies-table.webp"></a></p>
 <h2 id="api">API</h2>
 <p>The built-in <strong>team</strong> policy grants access to the endpoints below.</p>
 <table>
@@ -17272,10 +17272,10 @@ previous policies.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

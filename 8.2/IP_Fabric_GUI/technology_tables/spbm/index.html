@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -16631,7 +16631,7 @@
 <p>The <strong>SPBM</strong> section has two tabs: <strong>Services</strong> and <strong>B-MAC Forwarding</strong>.</p>
 <h3 id="services">Services</h3>
 <p>The <strong>Services</strong> tab lists the I-SID service entries distributed by IS-IS across the fabric. Each entry maps an I-SID to a backbone VLAN and records the fabric node advertising the service. It also records the local access interfaces (SAPs) bound to it. The <code>Entry Origin</code> column indicates whether the entry is <code>local</code> (this device is the advertising node), <code>learned</code> (advertised by another fabric node but also configured locally on this device), or <code>remote</code> (advertised by another fabric node and not configured locally).</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/technology/spbm/technology-spbm_services.webp" data-desc-position="bottom"><img alt="SPBM Services table" src="../../../images/technology/spbm/technology-spbm_services.webp"></a></p>
 <table>
 <thead>
 <tr>
@@ -16692,7 +16692,7 @@
 </table>
 <h3 id="b-mac-forwarding">B-MAC Forwarding</h3>
 <p>The <strong>B-MAC Forwarding</strong> tab displays the SPBM underlay unicast forwarding entries toward destination backbone MAC addresses. Each entry records the destination B-MAC and the backbone VLAN. It also records the fabric node that owns the destination, the egress interface used to reach it, and the associated path metric (cost).</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/technology/spbm/technology-spbm_b-mac-forwarding.webp" data-desc-position="bottom"><img alt="SPBM B-MAC Forwarding table" src="../../../images/technology/spbm/technology-spbm_b-mac-forwarding.webp"></a></p>
 <table>
 <thead>
 <tr>
@@ -16747,7 +16747,7 @@
 <li><strong>Transit BCB</strong> – Forwarding follows the B-MAC forwarding entry for the destination B-MAC and the B-VLAN. The customer header stays untouched.</li>
 <li><strong>Egress BEB</strong> – Path lookup removes the backbone header. It then continues in the customer VLAN mapped to the I-SID.</li>
 </ul>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/technology/spbm/technology-spbm_path-lookup_l2-vsn.webp" data-desc-position="bottom"><img alt="SPBM L2 VSN path lookup" src="../../../images/technology/spbm/technology-spbm_path-lookup_l2-vsn.webp"></a></p>
 <p>The topology view labels backbone links with the I-SID and access links with the customer VLAN. This makes the boundary between the customer service and the backbone visible in the diagram.</p>
 <h3 id="fabric-edge-without-stp">Fabric Edge Without STP</h3>
 <p>IP Fabric mainly uses STP to discover Layer 2 forwarding between switches. On a <strong>Switched UNI (S-UNI)</strong> port, the BEB maps customer VLANs to an I-SID. STP does not run between the BEB and the neighboring Ethernet switch.</p>
@@ -17059,10 +17059,10 @@ list of supported vendors and features.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.footer", "navigation.path", "navigation.tabs", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       
