@@ -35,7 +35,7 @@ Search for **Active Directory**.
 Search for **Subscriptions** and select the subscription you like to add to IP Fabric (IP Fabric can do discovery per subscription).
 
 1. On the overview page, note the **Subscription ID**.
-2. From the left menu, click Access control (IAM), click **+ Add**, and then **Add custom role**. Fill in the role name. IP Fabric requires specific permissions to make API calls. Select **Start from JSON** and upload the JSON file with the [required permissions](azure/azure-role-7_12.json) (find details at the very [bottom of this page](#role-definitions-for-ip-fabric)). Click the Next button to continue.
+2. From the left menu, click Access control (IAM), click **+ Add**, and then **Add custom role**. Fill in the role name. IP Fabric requires specific permissions to make API calls. Select **Start from JSON** and upload the JSON file with the [required permissions](azure/azure-role-8_3.json) (find details at the very [bottom of this page](#role-definitions-for-ip-fabric)). Click the Next button to continue.
 
    ![Creating Custom Role](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_azure_create_custom_role.webp)
 
@@ -45,7 +45,7 @@ Search for **Subscriptions** and select the subscription you like to add to IP F
 
 4. Click **Review + Create**.
 5. Now you must assign the newly created Role to the Registered App. From the left menu, select **Access control (IAM)** again, then click **+ New** and **Add role assignment**.
-6. Find the previously created role, click **Next**, and then click **+ Select members**. Find the app you created before. Click **Review + Assign**.
+6. Find the previously created role, click **Next**, and then click **+ Select members**. Find the app you created before. Click **Review + Assign**. Set the scope for this role assignment to the subscription (or subscriptions, or management group) you want IP Fabric to discover -- this scope determines what IP Fabric will actually be able to see.
 
    ![Add Role assignment](../../../../images/settings/discovery-snapshots/settings-discovery-snapshots_azure_add_role_assignment.webp)
 
@@ -70,10 +70,10 @@ Azure only grants these permissions when the role is assigned at the management 
 
 ### Role Definitions for IP Fabric
 
-The following JSON applies to IP Fabric version `7.12` and above:
+The following JSON applies to IP Fabric version `8.3` and above:
 
-```json title="azure-role-7_12.json"
---8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-7_12.json"
+```json title="azure-role-8_3.json"
+--8<-- "docs/IP_Fabric_Settings/Discovery_and_Snapshots/Discovery_Settings/Vendors_API/azure/azure-role-8_3.json"
 ```
 
 To enable management group access, create and assign the following role at the management group scope:
